@@ -1,15 +1,17 @@
 ---
-title:                "Refactoring"
 aliases:
 - /nl/fish-shell/refactoring/
-date:                  2024-01-28T22:05:52.141884-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactoring"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/refactoring.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:05:52.141884-07:00
+description: "Refactoring is het proces van het herstructureren van bestaande code\
+  \ zonder het externe gedrag ervan te veranderen, om niet-functionele attributen\
+  \ te\u2026"
+lastmod: 2024-02-18 23:09:02.335299
+model: gpt-4-0125-preview
+summary: "Refactoring is het proces van het herstructureren van bestaande code zonder\
+  \ het externe gedrag ervan te veranderen, om niet-functionele attributen te\u2026"
+title: Refactoring
 ---
 
 {{< edit_this_page >}}

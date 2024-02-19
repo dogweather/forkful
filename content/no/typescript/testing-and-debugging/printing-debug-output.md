@@ -1,13 +1,16 @@
 ---
-title:                "Skrive ut feilsøkingsdata"
 aliases:
 - /no/typescript/printing-debug-output/
-date:                  2024-01-20T17:53:52.649198-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skrive ut feilsøkingsdata"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/printing-debug-output.md"
+date: 2024-01-20 17:53:52.649198-07:00
+description: "Debugging er prosessen med \xE5 finne og fikse feil i koden. Vi printer\
+  \ debug output for \xE5 se hva som faktisk skjer n\xE5r koden kj\xF8rer, noe som\
+  \ hjelper oss \xE5\u2026"
+lastmod: 2024-02-18 23:08:53.647524
+model: gpt-4-1106-preview
+summary: "Debugging er prosessen med \xE5 finne og fikse feil i koden. Vi printer\
+  \ debug output for \xE5 se hva som faktisk skjer n\xE5r koden kj\xF8rer, noe som\
+  \ hjelper oss \xE5\u2026"
+title: "Skrive ut feils\xF8kingsdata"
 ---
 
 {{< edit_this_page >}}

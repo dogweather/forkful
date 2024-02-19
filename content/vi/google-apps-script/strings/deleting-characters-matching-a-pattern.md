@@ -1,14 +1,20 @@
 ---
-title:                "Xóa các ký tự phù hợp với một mẫu"
 aliases:
 - /vi/google-apps-script/deleting-characters-matching-a-pattern/
-date:                  2024-02-01T21:52:35.584252-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Xóa các ký tự phù hợp với một mẫu"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/google-apps-script/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:35.584252-07:00
+description: "X\xF3a nh\u1EEFng k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EAB\
+  u c\u1EE5 th\u1EC3 l\xE0 m\u1ED9t k\u1EF9 thu\u1EADt \u0111\u01B0\u1EE3c s\u1EED\
+  \ d\u1EE5ng \u0111\u1EC3 l\xE0m s\u1EA1ch ho\u1EB7c \u0111\u1ECBnh d\u1EA1ng chu\u1ED7\
+  i trong l\u1EADp tr\xECnh. Trong b\u1ED1i c\u1EA3nh c\u1EE7a Google Apps\u2026"
+lastmod: 2024-02-18 23:08:50.200935
+model: gpt-4-0125-preview
+summary: "X\xF3a nh\u1EEFng k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EAB\
+  u c\u1EE5 th\u1EC3 l\xE0 m\u1ED9t k\u1EF9 thu\u1EADt \u0111\u01B0\u1EE3c s\u1EED\
+  \ d\u1EE5ng \u0111\u1EC3 l\xE0m s\u1EA1ch ho\u1EB7c \u0111\u1ECBnh d\u1EA1ng chu\u1ED7\
+  i trong l\u1EADp tr\xECnh. Trong b\u1ED1i c\u1EA3nh c\u1EE7a Google Apps\u2026"
+title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 ---
 
 {{< edit_this_page >}}

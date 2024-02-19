@@ -1,13 +1,16 @@
 ---
-title:                "Łączenie łańcuchów znaków"
 aliases:
 - /pl/haskell/concatenating-strings/
-date:                  2024-01-20T17:35:01.804020-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Łączenie łańcuchów znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/concatenating-strings.md"
+date: 2024-01-20 17:35:01.804020-07:00
+description: "\u0141\u0105czenie napis\xF3w to po prostu sklejanie ich ko\u0144c\xF3\
+  w. Programi\u015Bci robi\u0105 to, aby tworzy\u0107 nowe ci\u0105gi znak\xF3w \u2013\
+  \ \u015Bcie\u017Cki do plik\xF3w, wiadomo\u015Bci, dynamiczne teksty\u2026"
+lastmod: 2024-02-18 23:08:49.645422
+model: gpt-4-1106-preview
+summary: "\u0141\u0105czenie napis\xF3w to po prostu sklejanie ich ko\u0144c\xF3w.\
+  \ Programi\u015Bci robi\u0105 to, aby tworzy\u0107 nowe ci\u0105gi znak\xF3w \u2013\
+  \ \u015Bcie\u017Cki do plik\xF3w, wiadomo\u015Bci, dynamiczne teksty\u2026"
+title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 ---
 
 {{< edit_this_page >}}

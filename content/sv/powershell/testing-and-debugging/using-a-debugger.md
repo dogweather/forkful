@@ -1,13 +1,16 @@
 ---
-title:                "Att använda en debugger"
 aliases:
 - /sv/powershell/using-a-debugger/
-date:                  2024-01-26T04:08:54.836044-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda en debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/using-a-debugger.md"
+date: 2024-01-26 04:08:54.836044-07:00
+description: "Att anv\xE4nda en debugger inneb\xE4r att s\xE4tta brytpunkter, stega\
+  \ igenom din kod, \xF6vervaka variabler och inspektera tillst\xE5ndet i ditt program\
+  \ n\xE4r det k\xF6rs.\u2026"
+lastmod: 2024-02-18 23:08:52.008375
+model: gpt-4-0125-preview
+summary: "Att anv\xE4nda en debugger inneb\xE4r att s\xE4tta brytpunkter, stega igenom\
+  \ din kod, \xF6vervaka variabler och inspektera tillst\xE5ndet i ditt program n\xE4\
+  r det k\xF6rs.\u2026"
+title: "Att anv\xE4nda en debugger"
 ---
 
 {{< edit_this_page >}}

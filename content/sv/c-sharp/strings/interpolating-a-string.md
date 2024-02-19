@@ -1,13 +1,14 @@
 ---
-title:                "Interpolera en sträng"
 aliases:
 - /sv/c-sharp/interpolating-a-string/
-date:                  2024-01-20T17:50:23.371599-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolera en sträng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/interpolating-a-string.md"
+date: 2024-01-20 17:50:23.371599-07:00
+description: "Stringinterpolering i C# l\xE5ter dig smidigt infoga variabler i str\xE4\
+  ngar. Det g\xF6r koden mer l\xE4slig och underl\xE4ttar dynamisk textmanipulation."
+lastmod: 2024-02-18 23:08:51.781274
+model: gpt-4-1106-preview
+summary: "Stringinterpolering i C# l\xE5ter dig smidigt infoga variabler i str\xE4\
+  ngar. Det g\xF6r koden mer l\xE4slig och underl\xE4ttar dynamisk textmanipulation."
+title: "Interpolera en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

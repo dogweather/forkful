@@ -1,14 +1,18 @@
 ---
-title:                "Trabalhando com números complexos"
 aliases:
 - /pt/vba/working-with-complex-numbers/
-date:                  2024-02-01T22:07:40.976281-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com números complexos"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/vba/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:07:40.976281-07:00
+description: "Trabalhar com n\xFAmeros complexos envolve realizar opera\xE7\xF5es\
+  \ matem\xE1ticas em n\xFAmeros que possuem tanto uma parte real quanto uma parte\
+  \ imagin\xE1ria.\u2026"
+lastmod: 2024-02-18 23:08:57.967031
+model: gpt-4-0125-preview
+summary: "Trabalhar com n\xFAmeros complexos envolve realizar opera\xE7\xF5es matem\xE1\
+  ticas em n\xFAmeros que possuem tanto uma parte real quanto uma parte imagin\xE1\
+  ria.\u2026"
+title: "Trabalhando com n\xFAmeros complexos"
 ---
 
 {{< edit_this_page >}}

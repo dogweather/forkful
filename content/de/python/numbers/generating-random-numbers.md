@@ -1,13 +1,16 @@
 ---
-title:                "Generierung von Zufallszahlen"
 aliases:
 - /de/python/generating-random-numbers/
-date:                  2024-01-27T20:35:04.950920-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generierung von Zufallszahlen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/generating-random-numbers.md"
+date: 2024-01-27 20:35:04.950920-07:00
+description: "Das Generieren von Zufallszahlen beinhaltet das Erstellen von Zahlen,\
+  \ die nicht vern\xFCnftigerweise besser als durch Zufall vorhergesagt werden k\xF6\
+  nnen, was\u2026"
+lastmod: 2024-02-18 23:09:04.457730
+model: gpt-4-0125-preview
+summary: "Das Generieren von Zufallszahlen beinhaltet das Erstellen von Zahlen, die\
+  \ nicht vern\xFCnftigerweise besser als durch Zufall vorhergesagt werden k\xF6nnen,\
+  \ was\u2026"
+title: Generierung von Zufallszahlen
 ---
 
 {{< edit_this_page >}}

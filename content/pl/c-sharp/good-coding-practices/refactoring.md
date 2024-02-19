@@ -1,13 +1,16 @@
 ---
-title:                "Refaktoryzacja"
 aliases:
 - /pl/c-sharp/refactoring/
-date:                  2024-01-26T01:17:24.119447-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refaktoryzacja"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/refactoring.md"
+date: 2024-01-26 01:17:24.119447-07:00
+description: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu komputerowego\
+  \ bez zmiany jego zewn\u0119trznego zachowania. Programi\u015Bci robi\u0105 to,\
+  \ aby uporz\u0105dkowa\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.618844
+model: gpt-4-0125-preview
+summary: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu komputerowego\
+  \ bez zmiany jego zewn\u0119trznego zachowania. Programi\u015Bci robi\u0105 to,\
+  \ aby uporz\u0105dkowa\u0107\u2026"
+title: Refaktoryzacja
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,21 @@
 ---
-title:                "发出 HTTP 请求"
 aliases:
 - /zh/python/sending-an-http-request/
-date:                  2024-01-20T18:00:34.208592-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "发出 HTTP 请求"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/sending-an-http-request.md"
+date: 2024-01-20 18:00:34.208592-07:00
+description: "\u4EC0\u4E48&\u4E3A\u4EC0\u4E48\uFF1F \u53D1\u9001HTTP\u8BF7\u6C42\u5C31\
+  \u662F\u8BA9\u4F60\u7684\u7A0B\u5E8F\u5411\u7F51\u8DEF\u4E0A\u7684\u670D\u52A1\u5668\
+  \u8BF7\u6C42\u6570\u636E\u6216\u89E6\u53D1\u52A8\u4F5C\u3002\u7A0B\u5E8F\u5458\u8FD9\
+  \u6837\u505A\u53EF\u4EE5\u4E0E\u7F51\u7EDC\u670D\u52A1\u8FDB\u884C\u4EA4\u4E92\uFF0C\
+  \u83B7\u53D6\u8D44\u6E90\u6216\u63D0\u4EA4\u4FE1\u606F\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:58.787997
+model: gpt-4-1106-preview
+summary: "\u4EC0\u4E48&\u4E3A\u4EC0\u4E48\uFF1F \u53D1\u9001HTTP\u8BF7\u6C42\u5C31\
+  \u662F\u8BA9\u4F60\u7684\u7A0B\u5E8F\u5411\u7F51\u8DEF\u4E0A\u7684\u670D\u52A1\u5668\
+  \u8BF7\u6C42\u6570\u636E\u6216\u89E6\u53D1\u52A8\u4F5C\u3002\u7A0B\u5E8F\u5458\u8FD9\
+  \u6837\u505A\u53EF\u4EE5\u4E0E\u7F51\u7EDC\u670D\u52A1\u8FDB\u884C\u4EA4\u4E92\uFF0C\
+  \u83B7\u53D6\u8D44\u6E90\u6216\u63D0\u4EA4\u4FE1\u606F\u3002"
+title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 ---
 
 {{< edit_this_page >}}

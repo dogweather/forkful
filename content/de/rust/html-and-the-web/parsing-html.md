@@ -1,14 +1,17 @@
 ---
-title:                "HTML parsen"
 aliases:
 - /de/rust/parsing-html/
-date:                  2024-02-03T19:13:05.342740-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML parsen"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:13:05.342740-07:00
+description: "Das Parsen von HTML in Rust dient dazu, Daten aus HTML-Dokumenten zu\
+  \ extrahieren, was f\xFCr das Web-Scraping, die Datengewinnung oder den Aufbau von\
+  \ Web-\u2026"
+lastmod: 2024-02-18 23:09:04.639143
+model: gpt-4-0125-preview
+summary: "Das Parsen von HTML in Rust dient dazu, Daten aus HTML-Dokumenten zu extrahieren,\
+  \ was f\xFCr das Web-Scraping, die Datengewinnung oder den Aufbau von Web-\u2026"
+title: HTML parsen
 ---
 
 {{< edit_this_page >}}

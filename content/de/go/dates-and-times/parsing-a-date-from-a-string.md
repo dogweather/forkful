@@ -1,14 +1,16 @@
 ---
-title:                "Ein Datum aus einem String interpretieren"
 aliases:
 - /de/go/parsing-a-date-from-a-string/
-date:                  2024-02-03T18:00:08.143027-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ein Datum aus einem String interpretieren"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:00:08.143027-07:00
+description: "Das Parsen eines Datums aus einem String in Go beinhaltet die Umwandlung\
+  \ des als Text dargestellten Datums in ein nutzbareres Format (z. B. `time.Time`).\u2026"
+lastmod: 2024-02-18 23:09:04.374713
+model: gpt-4-0125-preview
+summary: "Das Parsen eines Datums aus einem String in Go beinhaltet die Umwandlung\
+  \ des als Text dargestellten Datums in ein nutzbareres Format (z. B. `time.Time`).\u2026"
+title: Ein Datum aus einem String interpretieren
 ---
 
 {{< edit_this_page >}}

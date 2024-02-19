@@ -1,14 +1,18 @@
 ---
-title:                "Écrire sur l'erreur standard"
 aliases:
 - /fr/python/writing-to-standard-error/
-date:                  2024-02-03T19:34:15.415186-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Écrire sur l'erreur standard"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:34:15.415186-07:00
+description: "\xC9crire sur l'erreur standard en Python consiste \xE0 diriger les\
+  \ messages d\u2019erreur ou les diagnostics de votre programme sur le flux d\u2019\
+  erreur (`stderr`),\u2026"
+lastmod: 2024-02-18 23:09:08.358288
+model: gpt-4-0125-preview
+summary: "\xC9crire sur l'erreur standard en Python consiste \xE0 diriger les messages\
+  \ d\u2019erreur ou les diagnostics de votre programme sur le flux d\u2019erreur\
+  \ (`stderr`),\u2026"
+title: "\xC9crire sur l'erreur standard"
 ---
 
 {{< edit_this_page >}}

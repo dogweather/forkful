@@ -1,12 +1,13 @@
 ---
-title:                "Skrive til standardfeil"
 aliases:
 - /no/python/writing-to-standard-error/
-date:                  2024-01-19
-simple_title:         "Skrive til standardfeil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/writing-to-standard-error.md"
+date: 2024-01-19
+description: "Skriving til standard error (stderr) er hvordan programmer rapporterer\
+  \ feil og advarsler uten \xE5 blande dette med hoveddatautstr\xF8mmen (stdout).\u2026"
+lastmod: 2024-02-18 23:08:53.539809
+summary: "Skriving til standard error (stderr) er hvordan programmer rapporterer feil\
+  \ og advarsler uten \xE5 blande dette med hoveddatautstr\xF8mmen (stdout).\u2026"
+title: Skrive til standardfeil
 ---
 
 {{< edit_this_page >}}

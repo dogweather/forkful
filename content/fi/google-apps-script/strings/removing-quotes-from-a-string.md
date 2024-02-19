@@ -1,14 +1,18 @@
 ---
-title:                "Merkkijonosta lainausmerkkien poistaminen"
 aliases:
 - /fi/google-apps-script/removing-quotes-from-a-string/
-date:                  2024-02-01T22:00:18.311956-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonosta lainausmerkkien poistaminen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:18.311956-07:00
+description: "Google Apps Scriptill\xE4 lainausmerkkien poistaminen merkkijonosta\
+  \ liittyy tarpeettomien lainausmerkkien eliminointiin, jotka saattavat ymp\xE4r\xF6\
+  id\xE4\u2026"
+lastmod: 2024-02-18 23:09:07.120815
+model: gpt-4-0125-preview
+summary: "Google Apps Scriptill\xE4 lainausmerkkien poistaminen merkkijonosta liittyy\
+  \ tarpeettomien lainausmerkkien eliminointiin, jotka saattavat ymp\xE4r\xF6id\xE4\
+  \u2026"
+title: Merkkijonosta lainausmerkkien poistaminen
 ---
 
 {{< edit_this_page >}}

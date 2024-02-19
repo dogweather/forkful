@@ -1,14 +1,28 @@
 ---
-title:                "使用YAML工作"
 aliases:
 - /zh/typescript/working-with-yaml/
-date:                  2024-02-03T19:26:50.985498-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用YAML工作"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:26:50.985498-07:00
+description: "YAML\uFF0C\u4E00\u79CD\u65E8\u5728\u5BF9\u4EBA\u7C7B\u53CB\u597D\u7684\
+  \u6570\u636E\u5E8F\u5217\u5316\u8BED\u8A00\uFF0C\u901A\u5E38\u7528\u4E8E\u914D\u7F6E\
+  \u6587\u4EF6\u3001\u8FDB\u7A0B\u95F4\u6D88\u606F\u4F20\u9012\u548C\u6570\u636E\u5B58\
+  \u50A8\u3002\u7A0B\u5E8F\u5458\u4E4B\u6240\u4EE5\u4F9D\u8D56YAML\uFF0C\u662F\u56E0\
+  \u4E3A\u5B83\u7684\u53EF\u8BFB\u6027\u548C\u6613\u7528\u6027\uFF0C\u7279\u522B\u662F\
+  \u5728\u5904\u7406\u590D\u6742\u7684\u7ED3\u6784\u5316\u6570\u636E\u65F6\uFF0C\u8FD9\
+  \u4F7F\u5176\u6210\u4E3ATypeScript\u5F00\u53D1\u7684\u5E94\u7528\u7A0B\u5E8F\u7684\
+  \u7EDD\u4F73\u9009\u62E9\u3002"
+lastmod: 2024-02-18 23:08:58.922039
+model: gpt-4-0125-preview
+summary: "YAML\uFF0C\u4E00\u79CD\u65E8\u5728\u5BF9\u4EBA\u7C7B\u53CB\u597D\u7684\u6570\
+  \u636E\u5E8F\u5217\u5316\u8BED\u8A00\uFF0C\u901A\u5E38\u7528\u4E8E\u914D\u7F6E\u6587\
+  \u4EF6\u3001\u8FDB\u7A0B\u95F4\u6D88\u606F\u4F20\u9012\u548C\u6570\u636E\u5B58\u50A8\
+  \u3002\u7A0B\u5E8F\u5458\u4E4B\u6240\u4EE5\u4F9D\u8D56YAML\uFF0C\u662F\u56E0\u4E3A\
+  \u5B83\u7684\u53EF\u8BFB\u6027\u548C\u6613\u7528\u6027\uFF0C\u7279\u522B\u662F\u5728\
+  \u5904\u7406\u590D\u6742\u7684\u7ED3\u6784\u5316\u6570\u636E\u65F6\uFF0C\u8FD9\u4F7F\
+  \u5176\u6210\u4E3ATypeScript\u5F00\u53D1\u7684\u5E94\u7528\u7A0B\u5E8F\u7684\u7EDD\
+  \u4F73\u9009\u62E9\u3002"
+title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 ---
 
 {{< edit_this_page >}}

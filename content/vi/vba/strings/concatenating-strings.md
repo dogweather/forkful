@@ -1,14 +1,20 @@
 ---
-title:                "Nối chuỗi ký tự"
 aliases:
 - /vi/vba/concatenating-strings/
-date:                  2024-02-01T21:50:58.968444-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Nối chuỗi ký tự"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/concatenating-strings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:58.968444-07:00
+description: "Vi\u1EC7c n\u1ED1i chu\u1ED7i trong Visual Basic for Applications (VBA)\
+  \ li\xEAn quan \u0111\u1EBFn vi\u1EC7c g\u1ED9p hai ho\u1EB7c nhi\u1EC1u chu\u1ED7\
+  i th\xE0nh m\u1ED9t th\u1EF1c th\u1EC3 duy nh\u1EA5t. \u0110\xE2y l\xE0 m\u1ED9\
+  t nhi\u1EC7m v\u1EE5 c\u01A1\u2026"
+lastmod: 2024-02-18 23:08:50.500047
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c n\u1ED1i chu\u1ED7i trong Visual Basic for Applications (VBA)\
+  \ li\xEAn quan \u0111\u1EBFn vi\u1EC7c g\u1ED9p hai ho\u1EB7c nhi\u1EC1u chu\u1ED7\
+  i th\xE0nh m\u1ED9t th\u1EF1c th\u1EC3 duy nh\u1EA5t. \u0110\xE2y l\xE0 m\u1ED9\
+  t nhi\u1EC7m v\u1EE5 c\u01A1\u2026"
+title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 ---
 
 {{< edit_this_page >}}

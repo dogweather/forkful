@@ -1,15 +1,22 @@
 ---
-title:                "Làm tròn số"
 aliases:
 - /vi/powershell/rounding-numbers/
-date:                  2024-01-28T22:07:03.205850-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm tròn số"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/powershell/rounding-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:07:03.205850-07:00
+description: "L\xE0m tr\xF2n s\u1ED1 l\xE0 vi\u1EC7c \u0111i\u1EC1u ch\u1EC9nh gi\xE1\
+  \ tr\u1ECB v\u1EC1 s\u1ED1 nguy\xEAn g\u1EA7n nh\u1EA5t ho\u1EB7c v\u1ECB tr\xED\
+  \ th\u1EADp ph\xE2n \u0111\u01B0\u1EE3c ch\u1EC9 \u0111\u1ECBnh. L\u1EADp tr\xEC\
+  nh vi\xEAn th\u01B0\u1EDDng l\xE0m tr\xF2n s\u1ED1 \u0111\u1EC3 \u0111\u01A1n gi\u1EA3\
+  n h\xF3a d\u1EEF\u2026"
+lastmod: 2024-02-18 23:08:50.926065
+model: gpt-4-0125-preview
+summary: "L\xE0m tr\xF2n s\u1ED1 l\xE0 vi\u1EC7c \u0111i\u1EC1u ch\u1EC9nh gi\xE1\
+  \ tr\u1ECB v\u1EC1 s\u1ED1 nguy\xEAn g\u1EA7n nh\u1EA5t ho\u1EB7c v\u1ECB tr\xED\
+  \ th\u1EADp ph\xE2n \u0111\u01B0\u1EE3c ch\u1EC9 \u0111\u1ECBnh. L\u1EADp tr\xEC\
+  nh vi\xEAn th\u01B0\u1EDDng l\xE0m tr\xF2n s\u1ED1 \u0111\u1EC3 \u0111\u01A1n gi\u1EA3\
+  n h\xF3a d\u1EEF\u2026"
+title: "L\xE0m tr\xF2n s\u1ED1"
 ---
 
 {{< edit_this_page >}}

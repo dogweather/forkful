@@ -1,13 +1,16 @@
 ---
-title:                "Väliaikaistiedoston luominen"
 aliases:
 - /fi/php/creating-a-temporary-file/
-date:                  2024-01-20T17:40:59.283394-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Väliaikaistiedoston luominen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:59.283394-07:00
+description: "PHP:ss\xE4 v\xE4liaikaisen tiedoston luonta mahdollistaa datan tilap\xE4\
+  inen tallennus. Ohjelmoijat tekev\xE4t sen tiedon k\xE4sittely\xE4, siirtoa tai\
+  \ turvallisuuden\u2026"
+lastmod: 2024-02-18 23:09:07.732837
+model: gpt-4-1106-preview
+summary: "PHP:ss\xE4 v\xE4liaikaisen tiedoston luonta mahdollistaa datan tilap\xE4\
+  inen tallennus. Ohjelmoijat tekev\xE4t sen tiedon k\xE4sittely\xE4, siirtoa tai\
+  \ turvallisuuden\u2026"
+title: "V\xE4liaikaistiedoston luominen"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,28 @@
 ---
-title:                "연관 배열 사용하기"
 aliases:
 - /ko/arduino/using-associative-arrays/
-date:                  2024-01-30T19:10:40.294888-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "연관 배열 사용하기"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:40.294888-07:00
+description: "\uC544\uB450\uC774\uB178\uC758 \uC138\uACC4\uC5D0\uC11C \uC5F0\uAD00\
+  \ \uBC30\uC5F4\uC740 \uAC12\uACFC \uD0A4\uB97C \uC9DD\uC9C0\uC5B4\uC8FC\uAC8C \uD574\
+  \uC8FC\uB294\uB370, \uB9C8\uCE58 \uC591\uB9D0\uC744 \uC9DD\uC9C0\uC5B4\uC8FC\uB294\
+  \ \uAC83\uCC98\uB7FC \uB9D0\uC774\uC8E0. \uC124\uBA85\uC801\uC778 \uC774\uB984\uC744\
+  \ \uC0AC\uC6A9\uD558\uC5EC \uB370\uC774\uD130\uB97C \uC800\uC7A5\uD558\uACE0 \uAC80\
+  \uC0C9\uD560 \uD544\uC694\uAC00 \uC788\uC744 \uB54C \uC774\uC6A9\uD558\uAE30 \uC88B\
+  \uC544\uC11C, \uCF54\uB4DC\uB97C \uB354 \uAE54\uB054\uD558\uACE0 \uD6E8\uC52C \uC774\
+  \uD574\uD558\uAE30 \uC27D\uAC8C \uB9CC\uB4E4\uC5B4\uC90D\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.609011
+model: gpt-4-0125-preview
+summary: "\uC544\uB450\uC774\uB178\uC758 \uC138\uACC4\uC5D0\uC11C \uC5F0\uAD00 \uBC30\
+  \uC5F4\uC740 \uAC12\uACFC \uD0A4\uB97C \uC9DD\uC9C0\uC5B4\uC8FC\uAC8C \uD574\uC8FC\
+  \uB294\uB370, \uB9C8\uCE58 \uC591\uB9D0\uC744 \uC9DD\uC9C0\uC5B4\uC8FC\uB294 \uAC83\
+  \uCC98\uB7FC \uB9D0\uC774\uC8E0. \uC124\uBA85\uC801\uC778 \uC774\uB984\uC744 \uC0AC\
+  \uC6A9\uD558\uC5EC \uB370\uC774\uD130\uB97C \uC800\uC7A5\uD558\uACE0 \uAC80\uC0C9\
+  \uD560 \uD544\uC694\uAC00 \uC788\uC744 \uB54C \uC774\uC6A9\uD558\uAE30 \uC88B\uC544\
+  \uC11C, \uCF54\uB4DC\uB97C \uB354 \uAE54\uB054\uD558\uACE0 \uD6E8\uC52C \uC774\uD574\
+  \uD558\uAE30 \uC27D\uAC8C \uB9CC\uB4E4\uC5B4\uC90D\uB2C8\uB2E4."
+title: "\uC5F0\uAD00 \uBC30\uC5F4 \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

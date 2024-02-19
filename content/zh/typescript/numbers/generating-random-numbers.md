@@ -1,13 +1,22 @@
 ---
-title:                "生成随机数"
 aliases:
 - /zh/typescript/generating-random-numbers/
-date:                  2024-01-27T20:35:44.444823-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "生成随机数"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/generating-random-numbers.md"
+date: 2024-01-27 20:35:44.444823-07:00
+description: "\u5728 TypeScript \u4E2D\u751F\u6210\u968F\u673A\u6570\u662F\u6307\u5728\
+  \u6307\u5B9A\u8303\u56F4\u5185\u521B\u5EFA\u4E0D\u53EF\u9884\u6D4B\u7684\u6570\u503C\
+  \u3002\u7A0B\u5E8F\u5458\u5229\u7528\u8FD9\u4E9B\u968F\u673A\u6570\u5B57\u8FDB\u884C\
+  \u5404\u79CD\u76EE\u7684\uFF0C\u5982\u751F\u6210\u552F\u4E00\u6807\u8BC6\u7B26\u3001\
+  \u6A21\u62DF\u6570\u636E\u8FDB\u884C\u6D4B\u8BD5\uFF0C\u6216\u4E3A\u6E38\u620F\u548C\
+  \u6A21\u62DF\u589E\u52A0\u4E0D\u53EF\u9884\u6D4B\u6027\u3002"
+lastmod: 2024-02-18 23:08:58.900188
+model: gpt-4-0125-preview
+summary: "\u5728 TypeScript \u4E2D\u751F\u6210\u968F\u673A\u6570\u662F\u6307\u5728\
+  \u6307\u5B9A\u8303\u56F4\u5185\u521B\u5EFA\u4E0D\u53EF\u9884\u6D4B\u7684\u6570\u503C\
+  \u3002\u7A0B\u5E8F\u5458\u5229\u7528\u8FD9\u4E9B\u968F\u673A\u6570\u5B57\u8FDB\u884C\
+  \u5404\u79CD\u76EE\u7684\uFF0C\u5982\u751F\u6210\u552F\u4E00\u6807\u8BC6\u7B26\u3001\
+  \u6A21\u62DF\u6570\u636E\u8FDB\u884C\u6D4B\u8BD5\uFF0C\u6216\u4E3A\u6E38\u620F\u548C\
+  \u6A21\u62DF\u589E\u52A0\u4E0D\u53EF\u9884\u6D4B\u6027\u3002"
+title: "\u751F\u6210\u968F\u673A\u6570"
 ---
 
 {{< edit_this_page >}}

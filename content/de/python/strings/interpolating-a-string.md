@@ -1,18 +1,19 @@
 ---
-title:                "Interpolation eines Strings"
 aliases:
 - /de/python/interpolating-a-string/
-date:                  2024-01-28T21:23:41.871760-07:00
-lastmod:               2024-01-29
-model:                 gpt-4-0125-preview
-simple_title:         "Interpolation eines Strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/interpolating-a-string.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
-  - 2024-01-29, dogweather, nochmal überprüft
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+- "2024-01-29, dogweather, nochmal \xFCberpr\xFCft"
+date: 2024-01-28 21:23:41.871760-07:00
+description: "String-Interpolation ist die Methode, Ausdr\xFCcke in String-Literale\
+  \ einzubetten. Programmierer verwenden sie, um dynamisch Werte in Strings einzuf\xFC\
+  gen, was\u2026"
+lastmod: 2024-02-18 23:09:04.447277
+model: gpt-4-0125-preview
+summary: "String-Interpolation ist die Methode, Ausdr\xFCcke in String-Literale einzubetten.\
+  \ Programmierer verwenden sie, um dynamisch Werte in Strings einzuf\xFCgen, was\u2026"
+title: Interpolation eines Strings
 ---
 
 {{< edit_this_page >}}

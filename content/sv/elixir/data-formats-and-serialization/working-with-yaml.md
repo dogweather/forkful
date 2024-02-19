@@ -1,14 +1,18 @@
 ---
-title:                "Att Arbeta med YAML"
 aliases:
 - /sv/elixir/working-with-yaml/
-date:                  2024-02-03T19:25:22.332085-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att Arbeta med YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:25:22.332085-07:00
+description: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r en standard\
+  \ f\xF6r serialisering av data som \xE4r l\xE4sbar f\xF6r m\xE4nniskor och som vanligtvis\
+  \ anv\xE4nds f\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.522559
+model: gpt-4-0125-preview
+summary: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r en standard f\xF6\
+  r serialisering av data som \xE4r l\xE4sbar f\xF6r m\xE4nniskor och som vanligtvis\
+  \ anv\xE4nds f\xF6r\u2026"
+title: Att Arbeta med YAML
 ---
 
 {{< edit_this_page >}}

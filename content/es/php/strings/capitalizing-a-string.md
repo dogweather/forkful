@@ -1,14 +1,17 @@
 ---
-title:                "Capitalizando una cadena de texto"
 aliases:
 - /es/php/capitalizing-a-string/
-date:                  2024-02-03T19:05:53.781569-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizando una cadena de texto"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:53.781569-07:00
+description: "Capitalizar una cadena implica modificar el primer car\xE1cter de un\
+  \ texto dado a may\xFAsculas, asegurando que frases, t\xEDtulos o nombres propios\
+  \ comiencen\u2026"
+lastmod: 2024-02-18 23:09:10.055456
+model: gpt-4-0125-preview
+summary: "Capitalizar una cadena implica modificar el primer car\xE1cter de un texto\
+  \ dado a may\xFAsculas, asegurando que frases, t\xEDtulos o nombres propios comiencen\u2026"
+title: Capitalizando una cadena de texto
 ---
 
 {{< edit_this_page >}}

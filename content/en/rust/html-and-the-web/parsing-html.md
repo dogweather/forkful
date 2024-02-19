@@ -1,12 +1,14 @@
 ---
-title:                "Parsing HTML"
 aliases:
 - /en/rust/parsing-html/
-date:                  2024-02-03T19:02:37.703546-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Parsing HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/parsing-html.md"
+date: 2024-02-03 19:02:37.703546-07:00
+description: "Parsing HTML in Rust is about extracting data from HTML documents, which\
+  \ is essential for web scraping, data extraction, or building web crawlers.\u2026"
+lastmod: 2024-02-18 23:09:10.846356
+model: gpt-4-0125-preview
+summary: "Parsing HTML in Rust is about extracting data from HTML documents, which\
+  \ is essential for web scraping, data extraction, or building web crawlers.\u2026"
+title: Parsing HTML
 ---
 
 {{< edit_this_page >}}

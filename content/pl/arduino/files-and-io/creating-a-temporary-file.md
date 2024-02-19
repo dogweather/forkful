@@ -1,13 +1,16 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
 aliases:
 - /pl/arduino/creating-a-temporary-file/
-date:                  2024-01-20T17:39:35.514667-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tworzenie pliku tymczasowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/creating-a-temporary-file.md"
+date: 2024-01-20 17:39:35.514667-07:00
+description: "(Co i Dlaczego?) Tworzenie tymczasowego pliku to po prostu robienie\
+  \ miejsca na dane, kt\xF3re s\u0105 potrzebne tylko na chwil\u0119. Programi\u015B\
+  ci robi\u0105 to, by nie\u2026"
+lastmod: 2024-02-18 23:08:49.888204
+model: gpt-4-1106-preview
+summary: "(Co i Dlaczego?) Tworzenie tymczasowego pliku to po prostu robienie miejsca\
+  \ na dane, kt\xF3re s\u0105 potrzebne tylko na chwil\u0119. Programi\u015Bci robi\u0105\
+  \ to, by nie\u2026"
+title: Tworzenie pliku tymczasowego
 ---
 
 {{< edit_this_page >}}

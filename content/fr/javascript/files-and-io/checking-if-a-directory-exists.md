@@ -1,14 +1,18 @@
 ---
-title:                "Vérifier si un répertoire existe"
 aliases:
 - /fr/javascript/checking-if-a-directory-exists/
-date:                  2024-02-03T19:07:46.602487-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Vérifier si un répertoire existe"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:07:46.602487-07:00
+description: "V\xE9rifier si un r\xE9pertoire existe en JavaScript est essentiel pour\
+  \ les t\xE2ches de manipulation de fichiers, permettant aux scripts de v\xE9rifier\
+  \ la pr\xE9sence\u2026"
+lastmod: 2024-02-18 23:09:09.272029
+model: gpt-4-0125-preview
+summary: "V\xE9rifier si un r\xE9pertoire existe en JavaScript est essentiel pour\
+  \ les t\xE2ches de manipulation de fichiers, permettant aux scripts de v\xE9rifier\
+  \ la pr\xE9sence\u2026"
+title: "V\xE9rifier si un r\xE9pertoire existe"
 ---
 
 {{< edit_this_page >}}

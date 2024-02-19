@@ -1,15 +1,16 @@
 ---
-title:                "Afronden van getallen"
 aliases:
 - /nl/swift/rounding-numbers/
-date:                  2024-01-28T22:06:46.943051-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Afronden van getallen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/swift/rounding-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:06:46.943051-07:00
+description: "Getallen afronden betekent het benaderen van een numerieke waarde tot\
+  \ een specifieke precisie, typisch om ongewenste decimalen te verwijderen.\u2026"
+lastmod: 2024-02-18 23:09:02.223571
+model: gpt-4-0125-preview
+summary: "Getallen afronden betekent het benaderen van een numerieke waarde tot een\
+  \ specifieke precisie, typisch om ongewenste decimalen te verwijderen.\u2026"
+title: Afronden van getallen
 ---
 
 {{< edit_this_page >}}

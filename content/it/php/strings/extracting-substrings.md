@@ -1,13 +1,14 @@
 ---
-title:                "Estrazione di sottostringhe"
 aliases:
 - /it/php/extracting-substrings/
-date:                  2024-01-20T17:46:05.676902-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Estrazione di sottostringhe"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/php/extracting-substrings.md"
+date: 2024-01-20 17:46:05.676902-07:00
+description: "Estrarre sottostringhe significa prendere pezzetti di testo da una stringa\
+  \ pi\xF9 grande. Lo facciamo per analizzare, manipolare o validare dati e rendere\u2026"
+lastmod: 2024-02-18 23:08:55.960389
+model: gpt-4-1106-preview
+summary: "Estrarre sottostringhe significa prendere pezzetti di testo da una stringa\
+  \ pi\xF9 grande. Lo facciamo per analizzare, manipolare o validare dati e rendere\u2026"
+title: Estrazione di sottostringhe
 ---
 
 {{< edit_this_page >}}

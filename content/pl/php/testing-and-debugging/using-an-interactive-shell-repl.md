@@ -1,13 +1,16 @@
 ---
-title:                "Korzystanie z interaktywnego shella (REPL)"
 aliases:
 - /pl/php/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:16:46.640989-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z interaktywnego shella (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:16:46.640989-07:00
+description: "Interaktywna pow\u0142oka, czyli REPL (Read-Eval-Print Loop - P\u0119\
+  tla Czytaj-Ewaluuj-Wypisz) pozwala na pisania i uruchamianie kodu PHP na bie\u017C\
+  \u0105co. Jest to\u2026"
+lastmod: 2024-02-18 23:08:49.696747
+model: gpt-4-0125-preview
+summary: "Interaktywna pow\u0142oka, czyli REPL (Read-Eval-Print Loop - P\u0119tla\
+  \ Czytaj-Ewaluuj-Wypisz) pozwala na pisania i uruchamianie kodu PHP na bie\u017C\
+  \u0105co. Jest to\u2026"
+title: Korzystanie z interaktywnego shella (REPL)
 ---
 
 {{< edit_this_page >}}

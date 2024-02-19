@@ -1,13 +1,16 @@
 ---
-title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
 aliases:
 - /de/powershell/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:16.318571-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:16.318571-07:00
+description: "HTTP-Anfragen mit Basis-Authentifizierung sind essentiell, wenn Dienste\
+  \ oder APIs einen Nutzernachweis erfordern. Entwickler verwenden sie, um Zugriff\
+  \ auf\u2026"
+lastmod: 2024-02-18 23:09:05.100880
+model: gpt-4-1106-preview
+summary: "HTTP-Anfragen mit Basis-Authentifizierung sind essentiell, wenn Dienste\
+  \ oder APIs einen Nutzernachweis erfordern. Entwickler verwenden sie, um Zugriff\
+  \ auf\u2026"
+title: HTTP-Anfragen mit Basisauthentifizierung senden
 ---
 
 {{< edit_this_page >}}

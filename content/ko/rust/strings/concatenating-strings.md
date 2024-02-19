@@ -1,14 +1,23 @@
 ---
-title:                "문자열 연결하기"
 aliases:
 - /ko/rust/concatenating-strings/
-date:                  2024-01-20T17:36:11.650731-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "문자열 연결하기"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/concatenating-strings.md"
+date: 2024-01-20 17:36:11.650731-07:00
+description: "\uBB38\uC790\uC5F4 \uC5F0\uACB0(concatenating strings)\uC774\uB780,\
+  \ \uB458 \uC774\uC0C1\uC758 \uBB38\uC790\uC5F4\uC744 \uD558\uB098\uB85C \uD569\uCE58\
+  \uB294 \uAC83\uC744 \uB73B\uD574\uC694. \uB370\uC774\uD130\uB97C \uD558\uB098\uB85C\
+  \ \uBAA8\uC544\uC11C \uCD9C\uB825\uD558\uAC70\uB098 \uB370\uC774\uD130 \uCC98\uB9AC\
+  \uB97C \uD6A8\uC728\uC801\uC73C\uB85C \uD558\uB824\uACE0 \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB294 \uBB38\uC790\uC5F4\uC744 \uC5F0\uACB0\uD574\uC694."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:05.871837
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4 \uC5F0\uACB0(concatenating strings)\uC774\uB780, \uB458\
+  \ \uC774\uC0C1\uC758 \uBB38\uC790\uC5F4\uC744 \uD558\uB098\uB85C \uD569\uCE58\uB294\
+  \ \uAC83\uC744 \uB73B\uD574\uC694. \uB370\uC774\uD130\uB97C \uD558\uB098\uB85C \uBAA8\
+  \uC544\uC11C \uCD9C\uB825\uD558\uAC70\uB098 \uB370\uC774\uD130 \uCC98\uB9AC\uB97C\
+  \ \uD6A8\uC728\uC801\uC73C\uB85C \uD558\uB824\uACE0 \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB294 \uBB38\uC790\uC5F4\uC744 \uC5F0\uACB0\uD574\uC694."
+title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

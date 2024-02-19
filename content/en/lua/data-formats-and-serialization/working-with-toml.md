@@ -1,13 +1,15 @@
 ---
-title:                "Working with TOML"
 aliases:
 - /en/lua/working-with-toml/
-date:                  2024-01-25T03:39:54.987680-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Working with TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/working-with-toml.md"
+date: 2024-01-25 03:39:54.987680-07:00
+description: "Working with TOML involves parsing and generating TOML (Tom's Obvious,\
+  \ Minimal Language) data with Lua. Programmers utilize TOML for config files due\
+  \ to\u2026"
+lastmod: 2024-02-18 23:09:11.201359
+model: gpt-4-1106-preview
+summary: "Working with TOML involves parsing and generating TOML (Tom's Obvious, Minimal\
+  \ Language) data with Lua. Programmers utilize TOML for config files due to\u2026"
+title: Working with TOML
 ---
 
 {{< edit_this_page >}}

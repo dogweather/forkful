@@ -1,14 +1,17 @@
 ---
-title:                "Convertire una data in una stringa"
 aliases:
 - /it/vba/converting-a-date-into-a-string/
-date:                  2024-02-01T21:50:53.654368-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Convertire una data in una stringa"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/vba/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:53.654368-07:00
+description: "Convertire una data in una stringa in Visual Basic for Applications\
+  \ (VBA) \xE8 un processo utilizzato per modificare il tipo di dati di una data in\
+  \ un\u2026"
+lastmod: 2024-02-18 23:08:55.735212
+model: gpt-4-0125-preview
+summary: "Convertire una data in una stringa in Visual Basic for Applications (VBA)\
+  \ \xE8 un processo utilizzato per modificare il tipo di dati di una data in un\u2026"
+title: Convertire una data in una stringa
 ---
 
 {{< edit_this_page >}}

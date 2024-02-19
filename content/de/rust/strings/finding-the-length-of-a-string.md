@@ -1,13 +1,16 @@
 ---
-title:                "Ermittlung der Zeichenkettenlänge"
 aliases:
 - /de/rust/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:15.593816-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ermittlung der Zeichenkettenlänge"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:15.593816-07:00
+description: "In Rust, die L\xE4nge eines Strings zu ermitteln bedeutet, herauszufinden,\
+  \ wie viele Zeichen der String enth\xE4lt. Programmierer m\xFCssen das oft wissen,\
+  \ um\u2026"
+lastmod: 2024-02-18 23:09:04.632101
+model: gpt-4-1106-preview
+summary: "In Rust, die L\xE4nge eines Strings zu ermitteln bedeutet, herauszufinden,\
+  \ wie viele Zeichen der String enth\xE4lt. Programmierer m\xFCssen das oft wissen,\
+  \ um\u2026"
+title: "Ermittlung der Zeichenkettenl\xE4nge"
 ---
 
 {{< edit_this_page >}}

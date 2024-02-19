@@ -1,14 +1,18 @@
 ---
-title:                "Att Arbeta med CSV"
 aliases:
 - /sv/vba/working-with-csv/
-date:                  2024-02-01T22:05:49.977988-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att Arbeta med CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/working-with-csv.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:05:49.977988-07:00
+description: "Att arbeta med CSV-filer (Comma Separated Values) inneb\xE4r att l\xE4\
+  sa fr\xE5n eller skriva till vanliga textfiler d\xE4r dataf\xE4lten \xE4r separerade\
+  \ med kommatecken.\u2026"
+lastmod: 2024-02-18 23:08:51.650390
+model: gpt-4-0125-preview
+summary: "Att arbeta med CSV-filer (Comma Separated Values) inneb\xE4r att l\xE4sa\
+  \ fr\xE5n eller skriva till vanliga textfiler d\xE4r dataf\xE4lten \xE4r separerade\
+  \ med kommatecken.\u2026"
+title: Att Arbeta med CSV
 ---
 
 {{< edit_this_page >}}

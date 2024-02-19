@@ -1,13 +1,16 @@
 ---
-title:                "Zaokrąglanie liczb"
 aliases:
 - /pl/clojure/rounding-numbers/
-date:                  2024-01-26T03:43:40.212116-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zaokrąglanie liczb"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/rounding-numbers.md"
+date: 2024-01-26 03:43:40.212116-07:00
+description: "Zaokr\u0105glanie liczb polega na dostosowaniu liczby do najbli\u017C\
+  szej liczby ca\u0142kowitej lub okre\u015Blonej precyzji dziesi\u0119tnej. Liczby\
+  \ zaokr\u0105glamy w celu ich\u2026"
+lastmod: 2024-02-18 23:08:49.259843
+model: gpt-4-0125-preview
+summary: "Zaokr\u0105glanie liczb polega na dostosowaniu liczby do najbli\u017Cszej\
+  \ liczby ca\u0142kowitej lub okre\u015Blonej precyzji dziesi\u0119tnej. Liczby zaokr\u0105\
+  glamy w celu ich\u2026"
+title: "Zaokr\u0105glanie liczb"
 ---
 
 {{< edit_this_page >}}

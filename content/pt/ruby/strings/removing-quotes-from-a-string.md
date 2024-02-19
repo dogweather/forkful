@@ -1,13 +1,14 @@
 ---
-title:                "Removendo aspas de uma string"
 aliases:
 - /pt/ruby/removing-quotes-from-a-string/
-date:                  2024-01-26T03:41:24.163245-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Removendo aspas de uma string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:41:24.163245-07:00
+description: "Remover aspas de uma string significa eliminar aquelas marcas de aspas\
+  \ duplas ou simples que envolvem os valores de texto. Programadores frequentemente\u2026"
+lastmod: 2024-02-18 23:08:58.651909
+model: gpt-4-0125-preview
+summary: "Remover aspas de uma string significa eliminar aquelas marcas de aspas duplas\
+  \ ou simples que envolvem os valores de texto. Programadores frequentemente\u2026"
+title: Removendo aspas de uma string
 ---
 
 {{< edit_this_page >}}

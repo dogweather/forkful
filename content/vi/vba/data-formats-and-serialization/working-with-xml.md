@@ -1,14 +1,20 @@
 ---
-title:                "Làm việc với XML"
 aliases:
 - /vi/vba/working-with-xml/
-date:                  2024-02-01T22:07:31.107309-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với XML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/working-with-xml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:07:31.107309-07:00
+description: "Vi\u1EC7c l\xE0m vi\u1EC7c v\u1EDBi XML trong Visual Basic for Applications\
+  \ (VBA) bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p, t\u1EA1o v\xE0 s\u1EED\
+  a \u0111\u1ED5i c\xE1c t\xE0i li\u1EC7u XML trong b\u1ED1i c\u1EA3nh c\u1EE7a c\xE1\
+  c \u1EE9ng\u2026"
+lastmod: 2024-02-18 23:08:50.537133
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c l\xE0m vi\u1EC7c v\u1EDBi XML trong Visual Basic for Applications\
+  \ (VBA) bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p, t\u1EA1o v\xE0 s\u1EED\
+  a \u0111\u1ED5i c\xE1c t\xE0i li\u1EC7u XML trong b\u1ED1i c\u1EA3nh c\u1EE7a c\xE1\
+  c \u1EE9ng\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 ---
 
 {{< edit_this_page >}}

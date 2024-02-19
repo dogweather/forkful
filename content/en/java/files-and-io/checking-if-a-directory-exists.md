@@ -1,12 +1,14 @@
 ---
-title:                "Checking if a directory exists"
 aliases:
 - /en/java/checking-if-a-directory-exists/
-date:                  2024-02-03T19:02:54.990525-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Checking if a directory exists"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/checking-if-a-directory-exists.md"
+date: 2024-02-03 19:02:54.990525-07:00
+description: "Checking if a directory exists in Java is a fundamental task that involves\
+  \ verifying the presence of a file system directory before reading from it,\u2026"
+lastmod: 2024-02-18 23:09:10.944854
+model: gpt-4-0125-preview
+summary: "Checking if a directory exists in Java is a fundamental task that involves\
+  \ verifying the presence of a file system directory before reading from it,\u2026"
+title: Checking if a directory exists
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,24 @@
 ---
-title:                "字符串大写化"
 aliases:
 - /zh/swift/capitalizing-a-string/
-date:                  2024-02-03T19:06:31.175361-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "字符串大写化"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:31.175361-07:00
+description: "\u5728Swift\u4E2D\u5927\u5199\u5316\u4E00\u4E2A\u5B57\u7B26\u4E32\u610F\
+  \u5473\u7740\u5C06\u7ED9\u5B9A\u5B57\u7B26\u4E32\u7684\u7B2C\u4E00\u4E2A\u5B57\u7B26\
+  \u8F6C\u6362\u4E3A\u5927\u5199\uFF0C\u5176\u4F59\u5B57\u7B26\u8F6C\u6362\u4E3A\u5C0F\
+  \u5199\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u6309\u7167\u8BED\
+  \u6CD5\u89C4\u5219\u6216\u7528\u6237\u754C\u9762\u6807\u51C6\u683C\u5F0F\u5316\u540D\
+  \u79F0\u6216\u53E5\u5B50\u3002"
+lastmod: 2024-02-18 23:08:59.427598
+model: gpt-4-0125-preview
+summary: "\u5728Swift\u4E2D\u5927\u5199\u5316\u4E00\u4E2A\u5B57\u7B26\u4E32\u610F\u5473\
+  \u7740\u5C06\u7ED9\u5B9A\u5B57\u7B26\u4E32\u7684\u7B2C\u4E00\u4E2A\u5B57\u7B26\u8F6C\
+  \u6362\u4E3A\u5927\u5199\uFF0C\u5176\u4F59\u5B57\u7B26\u8F6C\u6362\u4E3A\u5C0F\u5199\
+  \u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u6309\u7167\u8BED\u6CD5\
+  \u89C4\u5219\u6216\u7528\u6237\u754C\u9762\u6807\u51C6\u683C\u5F0F\u5316\u540D\u79F0\
+  \u6216\u53E5\u5B50\u3002"
+title: "\u5B57\u7B26\u4E32\u5927\u5199\u5316"
 ---
 
 {{< edit_this_page >}}

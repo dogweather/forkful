@@ -1,14 +1,28 @@
 ---
-title:                "使用YAML工作"
 aliases:
 - /zh/arduino/working-with-yaml/
-date:                  2024-02-03T19:24:43.065440-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用YAML工作"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:24:43.065440-07:00
+description: "YAML\uFF08YAML Ain't Markup Language\uFF09\u662F\u4E00\u79CD\u4EBA\u7C7B\
+  \u53EF\u8BFB\u7684\u6570\u636E\u5E8F\u5217\u5316\u6807\u51C6\uFF0C\u53EF\u4EE5\u7528\
+  \u4E8E\u914D\u7F6E\u6587\u4EF6\u3001\u7A0B\u5E8F\u95F4\u901A\u4FE1\u548C\u6570\u636E\
+  \u5B58\u50A8\u3002\u7A0B\u5E8F\u5458\u5728Arduino\u9879\u76EE\u4E2D\u4F7F\u7528\
+  YAML\u4EE5\u7B80\u5316\u5E94\u7528\u7A0B\u5E8F\u7684\u914D\u7F6E\u8FC7\u7A0B\uFF0C\
+  \u4F7F\u53C2\u6570\u4FEE\u6539\u66F4\u52A0\u5BB9\u6613\u800C\u4E0D\u9700\u8981\u6DF1\
+  \u5165\u7814\u7A76\u4EE3\u7801\uFF0C\u63D0\u9AD8\u53EF\u8BFB\u6027\uFF0C\u5E76\u7B80\
+  \u5316\u914D\u7F6E\u5171\u4EAB\u3002"
+lastmod: 2024-02-18 23:08:59.386892
+model: gpt-4-0125-preview
+summary: "YAML\uFF08YAML Ain't Markup Language\uFF09\u662F\u4E00\u79CD\u4EBA\u7C7B\
+  \u53EF\u8BFB\u7684\u6570\u636E\u5E8F\u5217\u5316\u6807\u51C6\uFF0C\u53EF\u4EE5\u7528\
+  \u4E8E\u914D\u7F6E\u6587\u4EF6\u3001\u7A0B\u5E8F\u95F4\u901A\u4FE1\u548C\u6570\u636E\
+  \u5B58\u50A8\u3002\u7A0B\u5E8F\u5458\u5728Arduino\u9879\u76EE\u4E2D\u4F7F\u7528\
+  YAML\u4EE5\u7B80\u5316\u5E94\u7528\u7A0B\u5E8F\u7684\u914D\u7F6E\u8FC7\u7A0B\uFF0C\
+  \u4F7F\u53C2\u6570\u4FEE\u6539\u66F4\u52A0\u5BB9\u6613\u800C\u4E0D\u9700\u8981\u6DF1\
+  \u5165\u7814\u7A76\u4EE3\u7801\uFF0C\u63D0\u9AD8\u53EF\u8BFB\u6027\uFF0C\u5E76\u7B80\
+  \u5316\u914D\u7F6E\u5171\u4EAB\u3002"
+title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 ---
 
 {{< edit_this_page >}}

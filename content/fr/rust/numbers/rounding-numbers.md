@@ -1,13 +1,16 @@
 ---
-title:                "Arrondir les nombres"
 aliases:
 - /fr/rust/rounding-numbers/
-date:                  2024-01-26T03:46:39.596407-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrondir les nombres"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/rounding-numbers.md"
+date: 2024-01-26 03:46:39.596407-07:00
+description: "Arrondir des nombres signifie les ajuster au nombre entier le plus proche\
+  \ ou \xE0 une fraction avec une certaine pr\xE9cision. Les programmeurs arrondissent\
+  \ les\u2026"
+lastmod: 2024-02-18 23:09:08.523282
+model: gpt-4-0125-preview
+summary: "Arrondir des nombres signifie les ajuster au nombre entier le plus proche\
+  \ ou \xE0 une fraction avec une certaine pr\xE9cision. Les programmeurs arrondissent\
+  \ les\u2026"
+title: Arrondir les nombres
 ---
 
 {{< edit_this_page >}}

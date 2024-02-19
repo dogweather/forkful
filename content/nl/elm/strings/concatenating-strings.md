@@ -1,15 +1,16 @@
 ---
-title:                "Samenvoegen van strings"
 aliases:
 - /nl/elm/concatenating-strings/
-date:                  2024-01-28T21:57:04.372091-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Samenvoegen van strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elm/concatenating-strings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:57:04.372091-07:00
+description: "Het concatenen van strings betekent het aan elkaar plakken van twee\
+  \ of meer stukken tekst. Het is net zo basisch en essentieel als het gebruik van\u2026"
+lastmod: 2024-02-18 23:09:01.750444
+model: gpt-4-0125-preview
+summary: "Het concatenen van strings betekent het aan elkaar plakken van twee of meer\
+  \ stukken tekst. Het is net zo basisch en essentieel als het gebruik van\u2026"
+title: Samenvoegen van strings
 ---
 
 {{< edit_this_page >}}

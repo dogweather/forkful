@@ -1,13 +1,16 @@
 ---
-title:                "Iniciando um novo projeto"
 aliases:
 - /pt/arduino/starting-a-new-project/
-date:                  2024-01-20T18:02:54.400249-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Iniciando um novo projeto"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/starting-a-new-project.md"
+date: 2024-01-20 18:02:54.400249-07:00
+description: "Iniciar um novo projeto Arduino significa criar um esbo\xE7o (sketch)\
+  \ do zero, um c\xF3digo que vai dar vida \xE0 sua ideia. Programadores pegam essa\
+  \ rota para\u2026"
+lastmod: 2024-02-18 23:08:58.410709
+model: gpt-4-1106-preview
+summary: "Iniciar um novo projeto Arduino significa criar um esbo\xE7o (sketch) do\
+  \ zero, um c\xF3digo que vai dar vida \xE0 sua ideia. Programadores pegam essa rota\
+  \ para\u2026"
+title: Iniciando um novo projeto
 ---
 
 {{< edit_this_page >}}

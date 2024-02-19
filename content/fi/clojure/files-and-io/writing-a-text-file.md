@@ -1,14 +1,16 @@
 ---
-title:                "Tekstitiedoston kirjoittaminen"
 aliases:
 - /fi/clojure/writing-a-text-file/
-date:                  2024-02-03T19:27:39.098128-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tekstitiedoston kirjoittaminen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:39.098128-07:00
+description: "Tekstitiedoston kirjoittaminen Clojuren avulla tarkoittaa tiedostojen\
+  \ luomista tai muokkaamista tietojen tallentamiseksi sovelluksen ulkopuolelle,\u2026"
+lastmod: 2024-02-18 23:09:07.248028
+model: gpt-4-0125-preview
+summary: "Tekstitiedoston kirjoittaminen Clojuren avulla tarkoittaa tiedostojen luomista\
+  \ tai muokkaamista tietojen tallentamiseksi sovelluksen ulkopuolelle,\u2026"
+title: Tekstitiedoston kirjoittaminen
 ---
 
 {{< edit_this_page >}}

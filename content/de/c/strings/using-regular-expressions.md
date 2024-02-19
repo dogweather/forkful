@@ -1,14 +1,16 @@
 ---
-title:                "Reguläre Ausdrücke verwenden"
 aliases:
 - /de/c/using-regular-expressions/
-date:                  2024-02-03T18:10:48.252436-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Reguläre Ausdrücke verwenden"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:48.252436-07:00
+description: "Regul\xE4re Ausdr\xFCcke (regex) bieten eine M\xF6glichkeit, Zeichenfolgen\
+  \ anhand definierter Muster zu suchen, zu vergleichen und zu manipulieren. Programmierer\u2026"
+lastmod: 2024-02-18 23:09:05.361625
+model: gpt-4-0125-preview
+summary: "Regul\xE4re Ausdr\xFCcke (regex) bieten eine M\xF6glichkeit, Zeichenfolgen\
+  \ anhand definierter Muster zu suchen, zu vergleichen und zu manipulieren. Programmierer\u2026"
+title: "Regul\xE4re Ausdr\xFCcke verwenden"
 ---
 
 {{< edit_this_page >}}

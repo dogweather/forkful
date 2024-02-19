@@ -1,14 +1,30 @@
 ---
-title:                "문자열에서 날짜 분석하기"
 aliases:
 - /ko/python/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:15:09.658496-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열에서 날짜 분석하기"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:15:09.658496-07:00
+description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD55C\
+  \uB2E4\uB294 \uAC83\uC740 \uD14D\uC2A4\uD2B8\uB85C \uB41C \uB0A0\uC9DC\uC640 \uC2DC\
+  \uAC04 \uC815\uBCF4\uB97C datetime \uAC1D\uCCB4 \uB610\uB294 \uB3D9\uB4F1\uD55C\
+  \ \uAD6C\uC870\uD654\uB41C \uD615\uC2DD\uC73C\uB85C \uBCC0\uD658\uD558\uB294 \uAC83\
+  \uC744 \uB9D0\uD569\uB2C8\uB2E4. \uC774\uB294 \uC8FC\uB85C \uB0A0\uC9DC \uC0B0\uC220\
+  , \uBE44\uAD50 \uBC0F \uD3EC\uB9F7\uD305 \uC791\uC5C5\uC744 \uC5B8\uC5B4 \uBC0F\
+  \ \uC9C0\uC5ED\uC5D0 \uAD6C\uC560\uBC1B\uC9C0 \uC54A\uB294 \uBC29\uC2DD\uC73C\uB85C\
+  \ \uAC00\uB2A5\uD558\uAC8C \uD558\uAE30 \uC704\uD574 \uC218\uD589\uB429\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\u2026"
+lastmod: 2024-02-18 23:09:05.639760
+model: gpt-4-0125-preview
+summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD55C\uB2E4\
+  \uB294 \uAC83\uC740 \uD14D\uC2A4\uD2B8\uB85C \uB41C \uB0A0\uC9DC\uC640 \uC2DC\uAC04\
+  \ \uC815\uBCF4\uB97C datetime \uAC1D\uCCB4 \uB610\uB294 \uB3D9\uB4F1\uD55C \uAD6C\
+  \uC870\uD654\uB41C \uD615\uC2DD\uC73C\uB85C \uBCC0\uD658\uD558\uB294 \uAC83\uC744\
+  \ \uB9D0\uD569\uB2C8\uB2E4. \uC774\uB294 \uC8FC\uB85C \uB0A0\uC9DC \uC0B0\uC220\
+  , \uBE44\uAD50 \uBC0F \uD3EC\uB9F7\uD305 \uC791\uC5C5\uC744 \uC5B8\uC5B4 \uBC0F\
+  \ \uC9C0\uC5ED\uC5D0 \uAD6C\uC560\uBC1B\uC9C0 \uC54A\uB294 \uBC29\uC2DD\uC73C\uB85C\
+  \ \uAC00\uB2A5\uD558\uAC8C \uD558\uAE30 \uC704\uD574 \uC218\uD589\uB429\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\u2026"
+title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uBD84\uC11D\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

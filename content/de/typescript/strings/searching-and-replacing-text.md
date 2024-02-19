@@ -1,13 +1,14 @@
 ---
-title:                "Suchen und Ersetzen von Text"
 aliases:
 - /de/typescript/searching-and-replacing-text/
-date:                  2024-01-20T17:58:59.742030-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Suchen und Ersetzen von Text"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:59.742030-07:00
+description: "Textsuche und -ersatz erm\xF6glicht uns, Muster oder spezifische Zeichenketten\
+  \ in einem Text zu finden und durch andere zu ersetzen. Programmierer nutzen\u2026"
+lastmod: 2024-02-18 23:09:04.580910
+model: gpt-4-1106-preview
+summary: "Textsuche und -ersatz erm\xF6glicht uns, Muster oder spezifische Zeichenketten\
+  \ in einem Text zu finden und durch andere zu ersetzen. Programmierer nutzen\u2026"
+title: Suchen und Ersetzen von Text
 ---
 
 {{< edit_this_page >}}

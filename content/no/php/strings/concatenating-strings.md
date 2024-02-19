@@ -1,13 +1,15 @@
 ---
-title:                "Sammenslåing av strenger"
 aliases:
 - /no/php/concatenating-strings/
-date:                  2024-01-20T17:35:31.354207-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammenslåing av strenger"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/concatenating-strings.md"
+date: 2024-01-20 17:35:31.354207-07:00
+description: "Konkatenasjon er prosessen \xE5 koble sammen tekststrenger. Det lar\
+  \ programmerere sette sammen ord og setninger dynamisk, noe som er viktig i alt\
+  \ fra \xE5 lage\u2026"
+lastmod: 2024-02-18 23:08:53.967598
+model: gpt-4-1106-preview
+summary: "Konkatenasjon er prosessen \xE5 koble sammen tekststrenger. Det lar programmerere\
+  \ sette sammen ord og setninger dynamisk, noe som er viktig i alt fra \xE5 lage\u2026"
+title: "Sammensl\xE5ing av strenger"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Manipulering av filer med CLI-enkeltkommandoer"
 aliases:
 - /no/powershell/manipulating-files-with-cli-one-liners/
-date:                  2024-01-27T16:20:40.431759-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulering av filer med CLI-enkeltkommandoer"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/powershell/manipulating-files-with-cli-one-liners.md"
+date: 2024-01-27 16:20:40.431759-07:00
+description: "\xC5 manipulere filer med CLI \xE9n-linjers kommandoer i PowerShell\
+  \ handler om \xE5 raskt endre, flytte eller hente fildata direkte fra kommandolinjen.\u2026"
+lastmod: 2024-02-18 23:08:54.095600
+model: gpt-4-0125-preview
+summary: "\xC5 manipulere filer med CLI \xE9n-linjers kommandoer i PowerShell handler\
+  \ om \xE5 raskt endre, flytte eller hente fildata direkte fra kommandolinjen.\u2026"
+title: Manipulering av filer med CLI-enkeltkommandoer
 ---
 
 {{< edit_this_page >}}

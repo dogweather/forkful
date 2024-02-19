@@ -1,14 +1,18 @@
 ---
-title:                "Att använda reguljära uttryck"
 aliases:
 - /sv/ruby/using-regular-expressions/
-date:                  2024-02-03T19:18:05.348433-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda reguljära uttryck"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:18:05.348433-07:00
+description: "Regulj\xE4ra uttryck (regex) i Ruby \xE4r m\xF6nster som anv\xE4nds\
+  \ f\xF6r att matcha teckenkombinationer i str\xE4ngar, vilket m\xF6jligg\xF6r f\xF6\
+  r utvecklare att s\xF6ka efter,\u2026"
+lastmod: 2024-02-18 23:08:52.283790
+model: gpt-4-0125-preview
+summary: "Regulj\xE4ra uttryck (regex) i Ruby \xE4r m\xF6nster som anv\xE4nds f\xF6\
+  r att matcha teckenkombinationer i str\xE4ngar, vilket m\xF6jligg\xF6r f\xF6r utvecklare\
+  \ att s\xF6ka efter,\u2026"
+title: "Att anv\xE4nda regulj\xE4ra uttryck"
 ---
 
 {{< edit_this_page >}}

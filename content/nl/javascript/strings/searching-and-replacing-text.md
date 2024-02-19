@@ -1,15 +1,18 @@
 ---
-title:                "Tekst zoeken en vervangen"
 aliases:
 - /nl/javascript/searching-and-replacing-text/
-date:                  2024-01-28T22:07:07.201559-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tekst zoeken en vervangen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/javascript/searching-and-replacing-text.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:07:07.201559-07:00
+description: "Tekst zoeken en vervangen betekent het vinden van specifieke substrings\
+  \ en deze omwisselen voor iets nieuws. Waarom zou je je hiermee bezighouden? Het\
+  \ is\u2026"
+lastmod: 2024-02-18 23:09:02.259175
+model: gpt-4-0125-preview
+summary: "Tekst zoeken en vervangen betekent het vinden van specifieke substrings\
+  \ en deze omwisselen voor iets nieuws. Waarom zou je je hiermee bezighouden? Het\
+  \ is\u2026"
+title: Tekst zoeken en vervangen
 ---
 
 {{< edit_this_page >}}

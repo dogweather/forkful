@@ -1,15 +1,18 @@
 ---
-title:                "Att använda associativa arrayer"
 aliases:
 - /sv/python/using-associative-arrays/
-date:                  2024-01-30T19:12:27.711251-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda associativa arrayer"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:27.711251-07:00
+description: "Associativa arrayer, k\xE4nda i Python som dictionaries, kopplar nycklar\
+  \ till v\xE4rden, vilket g\xF6r det enkelt att h\xE4mta, modifiera eller sp\xE5\
+  ra data med ett\u2026"
+lastmod: 2024-02-18 23:08:51.415225
+model: gpt-4-0125-preview
+summary: "Associativa arrayer, k\xE4nda i Python som dictionaries, kopplar nycklar\
+  \ till v\xE4rden, vilket g\xF6r det enkelt att h\xE4mta, modifiera eller sp\xE5\
+  ra data med ett\u2026"
+title: "Att anv\xE4nda associativa arrayer"
 ---
 
 {{< edit_this_page >}}

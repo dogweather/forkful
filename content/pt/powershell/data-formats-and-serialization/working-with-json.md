@@ -1,14 +1,18 @@
 ---
-title:                "Trabalhando com JSON"
 aliases:
 - /pt/powershell/working-with-json/
-date:                  2024-02-03T19:23:26.600595-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/powershell/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:26.600595-07:00
+description: "A integra\xE7\xE3o do PowerShell com JSON (JavaScript Object Notation)\
+  \ trata da an\xE1lise (leitura) e gera\xE7\xE3o (escrita) de dados JSON, um formato\
+  \ comum para troca\u2026"
+lastmod: 2024-02-18 23:08:58.390023
+model: gpt-4-0125-preview
+summary: "A integra\xE7\xE3o do PowerShell com JSON (JavaScript Object Notation) trata\
+  \ da an\xE1lise (leitura) e gera\xE7\xE3o (escrita) de dados JSON, um formato comum\
+  \ para troca\u2026"
+title: Trabalhando com JSON
 ---
 
 {{< edit_this_page >}}

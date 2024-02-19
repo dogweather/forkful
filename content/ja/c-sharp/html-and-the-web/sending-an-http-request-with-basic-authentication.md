@@ -1,14 +1,26 @@
 ---
-title:                "基本認証を使用したHTTPリクエストの送信"
 aliases:
 - /ja/c-sharp/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:01:43.802632-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "基本認証を使用したHTTPリクエストの送信"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:01:43.802632-07:00
+description: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u3092Basic\u8A8D\u8A3C\u3067\u9001\
+  \u308B\u306E\u306F\u3001\u30B5\u30FC\u30D0\u30FC\u3078\u30BB\u30AD\u30E5\u30A2\u306A\
+  \u65B9\u6CD5\u3067\u30E6\u30FC\u30B6\u30FC\u8A8D\u8A3C\u60C5\u5831\u3092\u4F1D\u3048\
+  \u308B\u30D7\u30ED\u30BB\u30B9\u3067\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\
+  \u306F\u3053\u306E\u65B9\u6CD5\u3092\u4F7F\u3044\u3001\u8A8D\u8A3C\u304C\u5FC5\u8981\
+  \u306AAPI\u3084\u30EA\u30BD\u30FC\u30B9\u3078\u5B89\u5168\u306B\u30A2\u30AF\u30BB\
+  \u30B9\u3057\u307E\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:54.917469
+model: gpt-4-1106-preview
+summary: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u3092Basic\u8A8D\u8A3C\u3067\u9001\u308B\
+  \u306E\u306F\u3001\u30B5\u30FC\u30D0\u30FC\u3078\u30BB\u30AD\u30E5\u30A2\u306A\u65B9\
+  \u6CD5\u3067\u30E6\u30FC\u30B6\u30FC\u8A8D\u8A3C\u60C5\u5831\u3092\u4F1D\u3048\u308B\
+  \u30D7\u30ED\u30BB\u30B9\u3067\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\
+  \u3053\u306E\u65B9\u6CD5\u3092\u4F7F\u3044\u3001\u8A8D\u8A3C\u304C\u5FC5\u8981\u306A\
+  API\u3084\u30EA\u30BD\u30FC\u30B9\u3078\u5B89\u5168\u306B\u30A2\u30AF\u30BB\u30B9\
+  \u3057\u307E\u3059\u3002"
+title: "\u57FA\u672C\u8A8D\u8A3C\u3092\u4F7F\u7528\u3057\u305FHTTP\u30EA\u30AF\u30A8\
+  \u30B9\u30C8\u306E\u9001\u4FE1"
 ---
 
 {{< edit_this_page >}}

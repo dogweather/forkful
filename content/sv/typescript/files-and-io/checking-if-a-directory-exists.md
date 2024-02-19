@@ -1,14 +1,18 @@
 ---
-title:                "Kontrollera om en katalog existerar"
 aliases:
 - /sv/typescript/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:45.468259-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kontrollera om en katalog existerar"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:45.468259-07:00
+description: "Att kontrollera om en mapp finns i TypeScript \xE4r n\xF6dv\xE4ndigt\
+  \ f\xF6r filhanteringsuppgifter, s\xE5som att l\xE4sa fr\xE5n eller skriva data\
+  \ till filer, f\xF6r att\u2026"
+lastmod: 2024-02-18 23:08:51.557341
+model: gpt-4-0125-preview
+summary: "Att kontrollera om en mapp finns i TypeScript \xE4r n\xF6dv\xE4ndigt f\xF6\
+  r filhanteringsuppgifter, s\xE5som att l\xE4sa fr\xE5n eller skriva data till filer,\
+  \ f\xF6r att\u2026"
+title: Kontrollera om en katalog existerar
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie pliku tekstowego"
 aliases:
 - /pl/lua/writing-a-text-file/
-date:                  2024-02-03T19:28:51.325773-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie pliku tekstowego"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:28:51.325773-07:00
+description: "Zapisywanie do pliku tekstowego w Lua polega na utworzeniu lub otwarciu\
+  \ pliku w trybie do zapisu, a nast\u0119pnie u\u017Cywaniu operacji na plikach do\
+  \ wstawiania\u2026"
+lastmod: 2024-02-18 23:08:49.758297
+model: gpt-4-0125-preview
+summary: "Zapisywanie do pliku tekstowego w Lua polega na utworzeniu lub otwarciu\
+  \ pliku w trybie do zapisu, a nast\u0119pnie u\u017Cywaniu operacji na plikach do\
+  \ wstawiania\u2026"
+title: Pisanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

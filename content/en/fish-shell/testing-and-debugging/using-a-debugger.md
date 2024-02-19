@@ -1,13 +1,14 @@
 ---
-title:                "Using a debugger"
 aliases:
 - /en/fish-shell/using-a-debugger/
-date:                  2024-01-25T20:50:19.217679-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Using a debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/using-a-debugger.md"
+date: 2024-01-25 20:50:19.217679-07:00
+description: "Using a debugger is all about squashing bugs\u2014the nasty, time-sucking\
+  \ errors in your code. Programmers debug because they want to find and fix issues\u2026"
+lastmod: 2024-02-18 23:09:11.485690
+model: gpt-4-1106-preview
+summary: "Using a debugger is all about squashing bugs\u2014the nasty, time-sucking\
+  \ errors in your code. Programmers debug because they want to find and fix issues\u2026"
+title: Using a debugger
 ---
 
 {{< edit_this_page >}}

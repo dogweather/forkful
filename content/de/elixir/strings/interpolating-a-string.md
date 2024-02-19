@@ -1,13 +1,15 @@
 ---
-title:                "Zeichenketten interpolieren"
 aliases:
 - /de/elixir/interpolating-a-string/
-date:                  2024-01-20T17:50:47.280284-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Zeichenketten interpolieren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/interpolating-a-string.md"
+date: 2024-01-20 17:50:47.280284-07:00
+description: "String-Interpolation erm\xF6glicht es uns, Variablen oder Ausdr\xFC\
+  cke innerhalb eines Strings einzuf\xFCgen. Das ist praktisch, um dynamische Inhalte\
+  \ zu erzeugen,\u2026"
+lastmod: 2024-02-18 23:09:04.537170
+model: gpt-4-1106-preview
+summary: "String-Interpolation erm\xF6glicht es uns, Variablen oder Ausdr\xFCcke innerhalb\
+  \ eines Strings einzuf\xFCgen. Das ist praktisch, um dynamische Inhalte zu erzeugen,\u2026"
+title: Zeichenketten interpolieren
 ---
 
 {{< edit_this_page >}}

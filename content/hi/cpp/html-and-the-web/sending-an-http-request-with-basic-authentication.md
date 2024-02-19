@@ -1,13 +1,28 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
 aliases:
 - /hi/cpp/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:28.542694-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:28.542694-07:00
+description: "HTTP \u0905\u0928\u0941\u0930\u094B\u0927 \u0915\u0947 \u0938\u093E\u0925\
+  \ \u092E\u0942\u0932 \u092A\u094D\u0930\u092E\u093E\u0923\u0940\u0915\u0930\u0923\
+  \ (Basic Authentication) \u0938\u0930\u094D\u0935\u0930 \u0915\u094B username \u0914\
+  \u0930 password \u092D\u0947\u091C\u0915\u0930 \u0905\u0928\u0941\u0930\u094B\u0927\
+  \ \u092A\u0930 \u092A\u0939\u0941\u0902\u091A \u0928\u093F\u092F\u0902\u0924\u094D\
+  \u0930\u0923 \u0915\u0930\u0924\u093E \u0939\u0948\u0964 \u092A\u094D\u0930\u094B\
+  \u0917\u094D\u0930\u093E\u092E\u0930\u094D\u0938 \u0907\u0938\u0947 \u0924\u092C\
+  \ \u0909\u092A\u092F\u094B\u0917\u2026"
+lastmod: 2024-02-18 23:09:03.888778
+model: gpt-4-1106-preview
+summary: "HTTP \u0905\u0928\u0941\u0930\u094B\u0927 \u0915\u0947 \u0938\u093E\u0925\
+  \ \u092E\u0942\u0932 \u092A\u094D\u0930\u092E\u093E\u0923\u0940\u0915\u0930\u0923\
+  \ (Basic Authentication) \u0938\u0930\u094D\u0935\u0930 \u0915\u094B username \u0914\
+  \u0930 password \u092D\u0947\u091C\u0915\u0930 \u0905\u0928\u0941\u0930\u094B\u0927\
+  \ \u092A\u0930 \u092A\u0939\u0941\u0902\u091A \u0928\u093F\u092F\u0902\u0924\u094D\
+  \u0930\u0923 \u0915\u0930\u0924\u093E \u0939\u0948\u0964 \u092A\u094D\u0930\u094B\
+  \u0917\u094D\u0930\u093E\u092E\u0930\u094D\u0938 \u0907\u0938\u0947 \u0924\u092C\
+  \ \u0909\u092A\u092F\u094B\u0917\u2026"
+title: "\u092C\u0947\u0938\u093F\u0915 \u092A\u094D\u0930\u092E\u093E\u0923\u0940\u0915\
+  \u0930\u0923 \u0915\u0947 \u0938\u093E\u0925 HTTP \u0905\u0928\u0941\u0930\u094B\
+  \u0927 \u092D\u0947\u091C\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

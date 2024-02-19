@@ -1,13 +1,26 @@
 ---
-title:                "인터랙티브 셸 (REPL) 사용하기"
 aliases:
 - /ko/javascript/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:15:47.711388-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "인터랙티브 셸 (REPL) 사용하기"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:15:47.711388-07:00
+description: "\uB300\uD654\uD615 \uC178 \uB610\uB294 REPL(Read-Eval-Print Loop, \uC77D\
+  \uAE30-\uD3C9\uAC00-\uCD9C\uB825 \uB8E8\uD504)\uC740 \uC989\uC11D\uC5D0\uC11C \uCF54\
+  \uB4DC\uB97C \uC2E4\uD589\uD558\uC5EC \uD568\uC218, \uC54C\uACE0\uB9AC\uC998\uC744\
+  \ \uD14C\uC2A4\uD2B8\uD558\uAC70\uB098 \uC544\uC774\uB514\uC5B4\uB97C \uC2DC\uB3C4\
+  \uD574 \uBCFC \uC218 \uC788\uAC8C \uD574\uC90D\uB2C8\uB2E4. \uCF54\uB529\uC758 \uBA54\
+  \uBAA8\uC7A5 \uAC19\uC740 \uAC83\uC73C\uB85C, \uC804\uCCB4 \uAC1C\uBC1C \uD658\uACBD\
+  \uC744 \uC124\uC815\uD558\uC9C0 \uC54A\uACE0\uB3C4 \uBE60\uB974\uACE0 \uAC04\uD3B8\
+  \uD558\uAC8C \uC0AC\uC6A9\uD560 \uC218\u2026"
+lastmod: 2024-02-18 23:09:06.814853
+model: gpt-4-0125-preview
+summary: "\uB300\uD654\uD615 \uC178 \uB610\uB294 REPL(Read-Eval-Print Loop, \uC77D\
+  \uAE30-\uD3C9\uAC00-\uCD9C\uB825 \uB8E8\uD504)\uC740 \uC989\uC11D\uC5D0\uC11C \uCF54\
+  \uB4DC\uB97C \uC2E4\uD589\uD558\uC5EC \uD568\uC218, \uC54C\uACE0\uB9AC\uC998\uC744\
+  \ \uD14C\uC2A4\uD2B8\uD558\uAC70\uB098 \uC544\uC774\uB514\uC5B4\uB97C \uC2DC\uB3C4\
+  \uD574 \uBCFC \uC218 \uC788\uAC8C \uD574\uC90D\uB2C8\uB2E4. \uCF54\uB529\uC758 \uBA54\
+  \uBAA8\uC7A5 \uAC19\uC740 \uAC83\uC73C\uB85C, \uC804\uCCB4 \uAC1C\uBC1C \uD658\uACBD\
+  \uC744 \uC124\uC815\uD558\uC9C0 \uC54A\uACE0\uB3C4 \uBE60\uB974\uACE0 \uAC04\uD3B8\
+  \uD558\uAC8C \uC0AC\uC6A9\uD560 \uC218\u2026"
+title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

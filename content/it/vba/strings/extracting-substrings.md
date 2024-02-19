@@ -1,14 +1,17 @@
 ---
-title:                "Estrazione di sottostringhe"
 aliases:
 - /it/vba/extracting-substrings/
-date:                  2024-02-01T21:53:09.362745-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Estrazione di sottostringhe"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/vba/extracting-substrings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:09.362745-07:00
+description: "L'estrazione di sottostringhe in Visual Basic for Applications (VBA)\
+  \ implica l'isolamento di parti specifiche di una stringa in base a criteri dati.\
+  \ I\u2026"
+lastmod: 2024-02-18 23:08:55.711099
+model: gpt-4-0125-preview
+summary: "L'estrazione di sottostringhe in Visual Basic for Applications (VBA) implica\
+  \ l'isolamento di parti specifiche di una stringa in base a criteri dati. I\u2026"
+title: Estrazione di sottostringhe
 ---
 
 {{< edit_this_page >}}

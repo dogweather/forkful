@@ -1,14 +1,18 @@
 ---
-title:                "Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem"
 aliases:
 - /pl/google-apps-script/sending-an-http-request-with-basic-authentication/
-date:                  2024-02-01T22:02:52.623620-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:02:52.623620-07:00
+description: "Wysy\u0142anie \u017C\u0105dania HTTP z uwierzytelnianiem podstawowym\
+  \ polega na zakodowaniu nazwy u\u017Cytkownika i has\u0142a w nag\u0142\xF3wku \u017C\
+  \u0105dania, aby uzyska\u0107 dost\u0119p do\u2026"
+lastmod: 2024-02-18 23:08:49.146667
+model: gpt-4-0125-preview
+summary: "Wysy\u0142anie \u017C\u0105dania HTTP z uwierzytelnianiem podstawowym polega\
+  \ na zakodowaniu nazwy u\u017Cytkownika i has\u0142a w nag\u0142\xF3wku \u017C\u0105\
+  dania, aby uzyska\u0107 dost\u0119p do\u2026"
+title: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnianiem"
 ---
 
 {{< edit_this_page >}}

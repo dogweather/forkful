@@ -1,13 +1,16 @@
 ---
-title:                "Trouver la longueur d'une chaîne de caractères"
 aliases:
 - /fr/c-sharp/finding-the-length-of-a-string/
-date:                  2024-01-20T17:46:56.809897-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Trouver la longueur d'une chaîne de caractères"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:46:56.809897-07:00
+description: "La longueur d'une cha\xEEne, c'est combien de caract\xE8res elle contient.\
+  \ On mesure \xE7a pour tout, des mots de passe aux tweets : c'est essentiel pour\
+  \ valider,\u2026"
+lastmod: 2024-02-18 23:09:08.817700
+model: gpt-4-1106-preview
+summary: "La longueur d'une cha\xEEne, c'est combien de caract\xE8res elle contient.\
+  \ On mesure \xE7a pour tout, des mots de passe aux tweets : c'est essentiel pour\
+  \ valider,\u2026"
+title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

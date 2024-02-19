@@ -1,13 +1,16 @@
 ---
-title:                "Trabalhando com números complexos"
 aliases:
 - /pt/kotlin/working-with-complex-numbers/
-date:                  2024-01-26T04:42:52.821052-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com números complexos"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/working-with-complex-numbers.md"
+date: 2024-01-26 04:42:52.821052-07:00
+description: "N\xFAmeros complexos expandem nosso sistema num\xE9rico para incluir\
+  \ as ra\xEDzes quadradas de n\xFAmeros negativos, onde a unidade 'imagin\xE1ria'\
+  \ i \xE9 igual \xE0 raiz\u2026"
+lastmod: 2024-02-18 23:08:58.095248
+model: gpt-4-0125-preview
+summary: "N\xFAmeros complexos expandem nosso sistema num\xE9rico para incluir as\
+  \ ra\xEDzes quadradas de n\xFAmeros negativos, onde a unidade 'imagin\xE1ria' i\
+  \ \xE9 igual \xE0 raiz\u2026"
+title: "Trabalhando com n\xFAmeros complexos"
 ---
 
 {{< edit_this_page >}}

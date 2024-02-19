@@ -1,13 +1,14 @@
 ---
-title:                "Avvio di un nuovo progetto"
 aliases:
 - /it/fish-shell/starting-a-new-project/
-date:                  2024-01-20T18:03:15.852054-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Avvio di un nuovo progetto"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/starting-a-new-project.md"
+date: 2024-01-20 18:03:15.852054-07:00
+description: "Iniziare un nuovo progetto \xE8 come piazzare la prima pietra di un\
+  \ edificio: definisce le fondamenta. I programmatori lo fanno per organizzare idee,\u2026"
+lastmod: 2024-02-18 23:08:56.296264
+model: gpt-4-1106-preview
+summary: "Iniziare un nuovo progetto \xE8 come piazzare la prima pietra di un edificio:\
+  \ definisce le fondamenta. I programmatori lo fanno per organizzare idee,\u2026"
+title: Avvio di un nuovo progetto
 ---
 
 {{< edit_this_page >}}

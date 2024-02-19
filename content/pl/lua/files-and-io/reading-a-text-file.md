@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
 aliases:
 - /pl/lua/reading-a-text-file/
-date:                  2024-01-20T17:54:48.058550-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie pliku tekstowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/reading-a-text-file.md"
+date: 2024-01-20 17:54:48.058550-07:00
+description: "Czytanie pliku tekstowego to proces wyci\u0105gania danych z pliku znajduj\u0105\
+  cego si\u0119 na dysku. Programi\u015Bci robi\u0105 to, \u017Ceby obs\u0142u\u017C\
+  y\u0107 zawarto\u015B\u0107 \u2013 wy\u015Bwietli\u0107 j\u0105,\u2026"
+lastmod: 2024-02-18 23:08:49.757320
+model: gpt-4-1106-preview
+summary: "Czytanie pliku tekstowego to proces wyci\u0105gania danych z pliku znajduj\u0105\
+  cego si\u0119 na dysku. Programi\u015Bci robi\u0105 to, \u017Ceby obs\u0142u\u017C\
+  y\u0107 zawarto\u015B\u0107 \u2013 wy\u015Bwietli\u0107 j\u0105,\u2026"
+title: Odczytywanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

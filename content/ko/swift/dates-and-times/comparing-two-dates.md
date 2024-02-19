@@ -1,14 +1,21 @@
 ---
-title:                "두 날짜 비교하기"
 aliases:
 - /ko/swift/comparing-two-dates/
-date:                  2024-01-20T17:34:12.301273-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "두 날짜 비교하기"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/swift/comparing-two-dates.md"
+date: 2024-01-20 17:34:12.301273-07:00
+description: "(\uBB34\uC5C7\uACFC \uC65C?) \uB0A0\uC9DC \uBE44\uAD50\uB294 \uB450\
+  \ 'Date' \uC778\uC2A4\uD134\uC2A4\uAC00 \uC5B8\uC81C\uC778\uC9C0 \uD655\uC778\uD558\
+  \uB294 \uACFC\uC815\uC785\uB2C8\uB2E4. \uC2DC\uAC04\uAD00\uB828 \uB85C\uC9C1 \uCC98\
+  \uB9AC, \uC774\uBCA4\uD2B8 \uC21C\uC11C \uACB0\uC815, \uB370\uB4DC\uB77C\uC778 \uAC80\
+  \uC0AC \uB4F1\uC5D0 \uD65C\uC6A9\uB429\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.767536
+model: gpt-4-1106-preview
+summary: "(\uBB34\uC5C7\uACFC \uC65C?) \uB0A0\uC9DC \uBE44\uAD50\uB294 \uB450 'Date'\
+  \ \uC778\uC2A4\uD134\uC2A4\uAC00 \uC5B8\uC81C\uC778\uC9C0 \uD655\uC778\uD558\uB294\
+  \ \uACFC\uC815\uC785\uB2C8\uB2E4. \uC2DC\uAC04\uAD00\uB828 \uB85C\uC9C1 \uCC98\uB9AC\
+  , \uC774\uBCA4\uD2B8 \uC21C\uC11C \uACB0\uC815, \uB370\uB4DC\uB77C\uC778 \uAC80\uC0AC\
+  \ \uB4F1\uC5D0 \uD65C\uC6A9\uB429\uB2C8\uB2E4."
+title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

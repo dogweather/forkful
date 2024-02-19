@@ -1,14 +1,24 @@
 ---
-title:                "获取当前日期"
 aliases:
 - /zh/swift/getting-the-current-date/
-date:                  2024-02-03T19:11:01.362395-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "获取当前日期"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:11:01.362395-07:00
+description: "\u5728Swift\u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u6D89\u53CA\u4F7F\
+  \u7528`Date`\u7C7B\u6765\u8BBF\u95EE\u5E94\u7528\u7A0B\u5E8F\u6B63\u5728\u8FD0\u884C\
+  \u65F6\u7684\u65E5\u671F\u548C\u65F6\u95F4\u3002\u7A0B\u5E8F\u5458\u9700\u8981\u83B7\
+  \u53D6\u5F53\u524D\u65E5\u671F\u7684\u539F\u56E0\u6709\u5F88\u591A\uFF0C\u8303\u56F4\
+  \u4ECE\u65F6\u95F4\u6233\u4E8B\u4EF6\uFF0C\u6267\u884C\u65E5\u671F\u8BA1\u7B97\uFF0C\
+  \u5230\u5728\u7528\u6237\u754C\u9762\u663E\u793A\u65E5\u671F\u548C\u65F6\u95F4\u3002"
+lastmod: 2024-02-18 23:08:59.451293
+model: gpt-4-0125-preview
+summary: "\u5728Swift\u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u6D89\u53CA\u4F7F\u7528\
+  `Date`\u7C7B\u6765\u8BBF\u95EE\u5E94\u7528\u7A0B\u5E8F\u6B63\u5728\u8FD0\u884C\u65F6\
+  \u7684\u65E5\u671F\u548C\u65F6\u95F4\u3002\u7A0B\u5E8F\u5458\u9700\u8981\u83B7\u53D6\
+  \u5F53\u524D\u65E5\u671F\u7684\u539F\u56E0\u6709\u5F88\u591A\uFF0C\u8303\u56F4\u4ECE\
+  \u65F6\u95F4\u6233\u4E8B\u4EF6\uFF0C\u6267\u884C\u65E5\u671F\u8BA1\u7B97\uFF0C\u5230\
+  \u5728\u7528\u6237\u754C\u9762\u663E\u793A\u65E5\u671F\u548C\u65F6\u95F4\u3002"
+title: "\u83B7\u53D6\u5F53\u524D\u65E5\u671F"
 ---
 
 {{< edit_this_page >}}

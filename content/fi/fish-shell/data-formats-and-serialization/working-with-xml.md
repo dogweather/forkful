@@ -1,13 +1,16 @@
 ---
-title:                "XML:n käsittely"
 aliases:
 - /fi/fish-shell/working-with-xml/
-date:                  2024-01-26T04:30:26.617499-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML:n käsittely"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/working-with-xml.md"
+date: 2024-01-26 04:30:26.617499-07:00
+description: "XML:n k\xE4sittely tarkoittaa tietojen k\xE4sittely\xE4 laajalti k\xE4\
+  ytetyss\xE4, rakenteellisessa muodossa, jota k\xE4ytet\xE4\xE4n konfiguraatioissa,\
+  \ viestinn\xE4ss\xE4 ja muussa.\u2026"
+lastmod: 2024-02-18 23:09:08.110920
+model: gpt-4-0125-preview
+summary: "XML:n k\xE4sittely tarkoittaa tietojen k\xE4sittely\xE4 laajalti k\xE4ytetyss\xE4\
+  , rakenteellisessa muodossa, jota k\xE4ytet\xE4\xE4n konfiguraatioissa, viestinn\xE4\
+  ss\xE4 ja muussa.\u2026"
+title: "XML:n k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

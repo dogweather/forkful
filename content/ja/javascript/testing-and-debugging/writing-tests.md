@@ -1,14 +1,14 @@
 ---
-title:                "テストの作成"
 aliases:
 - /ja/javascript/writing-tests/
-date:                  2024-02-03T19:31:27.794387-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "テストの作成"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:27.794387-07:00
+description: "\u2026"
+lastmod: 2024-02-18 23:08:55.272831
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u30C6\u30B9\u30C8\u306E\u4F5C\u6210"
 ---
 
 {{< edit_this_page >}}

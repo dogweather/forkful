@@ -1,13 +1,16 @@
 ---
-title:                "Rozpoczynanie nowego projektu"
 aliases:
 - /pl/elixir/starting-a-new-project/
-date:                  2024-01-20T18:03:29.042748-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rozpoczynanie nowego projektu"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/starting-a-new-project.md"
+date: 2024-01-20 18:03:29.042748-07:00
+description: "Rozpoczynanie nowego projektu to jak otwieranie nowego rozdzia\u0142\
+  u: jest \u015Bwie\u017Ce, czyste i wszystko jest mo\u017Cliwe. Programi\u015Bci\
+  \ zaczynaj\u0105 nowe projekty, by\u2026"
+lastmod: 2024-02-18 23:08:49.306595
+model: gpt-4-1106-preview
+summary: "Rozpoczynanie nowego projektu to jak otwieranie nowego rozdzia\u0142u: jest\
+  \ \u015Bwie\u017Ce, czyste i wszystko jest mo\u017Cliwe. Programi\u015Bci zaczynaj\u0105\
+  \ nowe projekty, by\u2026"
+title: Rozpoczynanie nowego projektu
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Organisation von Code in Funktionen"
 aliases:
 - /de/go/organizing-code-into-functions/
-date:                  2024-02-03T18:00:02.674929-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Organisation von Code in Funktionen"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/organizing-code-into-functions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:00:02.674929-07:00
+description: "Code in Go in Funktionen zu organisieren, bedeutet, den Code in wiederverwendbare,\
+  \ modulare Bl\xF6cke zu unterteilen, die spezifische Aufgaben ausf\xFChren.\u2026"
+lastmod: 2024-02-18 23:09:04.370159
+model: gpt-4-0125-preview
+summary: "Code in Go in Funktionen zu organisieren, bedeutet, den Code in wiederverwendbare,\
+  \ modulare Bl\xF6cke zu unterteilen, die spezifische Aufgaben ausf\xFChren.\u2026"
+title: Organisation von Code in Funktionen
 ---
 
 {{< edit_this_page >}}

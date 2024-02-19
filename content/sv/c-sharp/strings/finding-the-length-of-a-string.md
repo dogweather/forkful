@@ -1,13 +1,16 @@
 ---
-title:                "Hitta längden på en sträng"
 aliases:
 - /sv/c-sharp/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:13.384572-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Hitta längden på en sträng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:13.384572-07:00
+description: "Att hitta l\xE4ngden av en str\xE4ng inneb\xE4r att r\xE4kna antalet\
+  \ tecken den inneh\xE5ller. Programmerare beh\xF6ver detta f\xF6r att manipulera\
+  \ text, validera inmatning\u2026"
+lastmod: 2024-02-18 23:08:51.786474
+model: gpt-4-1106-preview
+summary: "Att hitta l\xE4ngden av en str\xE4ng inneb\xE4r att r\xE4kna antalet tecken\
+  \ den inneh\xE5ller. Programmerare beh\xF6ver detta f\xF6r att manipulera text,\
+  \ validera inmatning\u2026"
+title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

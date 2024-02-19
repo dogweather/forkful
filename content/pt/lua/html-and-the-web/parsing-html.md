@@ -1,12 +1,15 @@
 ---
-title:                "Análise de HTML"
 aliases:
 - /pt/lua/parsing-html/
-date:                  2024-01-20T15:32:53.283993-07:00
-simple_title:         "Análise de HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/lua/parsing-html.md"
+date: 2024-01-20 15:32:53.283993-07:00
+description: "Parsing HTML \xE9 o processo de analisar o c\xF3digo de uma p\xE1gina\
+  \ da web para extrair informa\xE7\xF5es espec\xEDficas. Programadores fazem isso\
+  \ para automatizar a\u2026"
+lastmod: 2024-02-18 23:08:58.280108
+summary: "Parsing HTML \xE9 o processo de analisar o c\xF3digo de uma p\xE1gina da\
+  \ web para extrair informa\xE7\xF5es espec\xEDficas. Programadores fazem isso para\
+  \ automatizar a\u2026"
+title: "An\xE1lise de HTML"
 ---
 
 {{< edit_this_page >}}

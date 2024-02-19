@@ -1,13 +1,14 @@
 ---
-title:                "Lecture des arguments de ligne de commande"
 aliases:
 - /fr/c-sharp/reading-command-line-arguments/
-date:                  2024-01-20T17:55:38.451775-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lecture des arguments de ligne de commande"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:38.451775-07:00
+description: "Les arguments de ligne de commande sont les donn\xE9es que vous balancez\
+  \ \xE0 votre programme au d\xE9marrage. Les programmeurs s'en servent pour customiser\u2026"
+lastmod: 2024-02-18 23:09:08.844796
+model: gpt-4-1106-preview
+summary: "Les arguments de ligne de commande sont les donn\xE9es que vous balancez\
+  \ \xE0 votre programme au d\xE9marrage. Les programmeurs s'en servent pour customiser\u2026"
+title: Lecture des arguments de ligne de commande
 ---
 
 {{< edit_this_page >}}

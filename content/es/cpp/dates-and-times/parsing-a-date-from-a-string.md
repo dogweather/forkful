@@ -1,14 +1,18 @@
 ---
-title:                "Analizando una fecha a partir de una cadena de texto"
 aliases:
 - /es/cpp/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:13:28.747705-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analizando una fecha a partir de una cadena de texto"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:13:28.747705-07:00
+description: "Analizar una fecha a partir de una cadena implica interpretar el formato\
+  \ de la cadena para extraer componentes de la fecha como el d\xEDa, el mes y el\
+  \ a\xF1o.\u2026"
+lastmod: 2024-02-18 23:09:10.320888
+model: gpt-4-0125-preview
+summary: "Analizar una fecha a partir de una cadena implica interpretar el formato\
+  \ de la cadena para extraer componentes de la fecha como el d\xEDa, el mes y el\
+  \ a\xF1o.\u2026"
+title: Analizando una fecha a partir de una cadena de texto
 ---
 
 {{< edit_this_page >}}

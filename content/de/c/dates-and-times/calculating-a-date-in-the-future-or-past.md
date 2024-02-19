@@ -1,14 +1,17 @@
 ---
-title:                "Berechnung eines zukünftigen oder vergangenen Datums"
 aliases:
 - /de/c/calculating-a-date-in-the-future-or-past/
-date:                  2024-02-03T17:52:52.671845-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Berechnung eines zukünftigen oder vergangenen Datums"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:52:52.671845-07:00
+description: "Die Berechnung eines zuk\xFCnftigen oder vergangenen Datums umfasst\
+  \ das Bestimmen eines spezifischen Datums, indem eine bestimmte Anzahl von Tagen,\
+  \ Monaten\u2026"
+lastmod: 2024-02-18 23:09:05.389286
+model: gpt-4-0125-preview
+summary: "Die Berechnung eines zuk\xFCnftigen oder vergangenen Datums umfasst das\
+  \ Bestimmen eines spezifischen Datums, indem eine bestimmte Anzahl von Tagen, Monaten\u2026"
+title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 ---
 
 {{< edit_this_page >}}

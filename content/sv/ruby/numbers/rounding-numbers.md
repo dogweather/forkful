@@ -1,13 +1,16 @@
 ---
-title:                "Avrundning av tal"
 aliases:
 - /sv/ruby/rounding-numbers/
-date:                  2024-01-26T03:46:37.786309-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Avrundning av tal"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/rounding-numbers.md"
+date: 2024-01-26 03:46:37.786309-07:00
+description: "Att avrunda tal inneb\xE4r att justera dem till n\xE4rmaste heltal eller\
+  \ till en angiven precisionsgrad. Programmerare avrundar tal f\xF6r att f\xF6renkla,\
+  \ f\xF6r att\u2026"
+lastmod: 2024-02-18 23:08:52.288496
+model: gpt-4-0125-preview
+summary: "Att avrunda tal inneb\xE4r att justera dem till n\xE4rmaste heltal eller\
+  \ till en angiven precisionsgrad. Programmerare avrundar tal f\xF6r att f\xF6renkla,\
+  \ f\xF6r att\u2026"
+title: Avrundning av tal
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Scrivere test"
 aliases:
 - /it/c-sharp/writing-tests/
-date:                  2024-02-03T19:30:13.809699-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Scrivere test"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:30:13.809699-07:00
+description: "Scrivere test in C# comporta la creazione di script automatizzati per\
+  \ validare la funzionalit\xE0 del proprio codice, assicurando che si comporti come\u2026"
+lastmod: 2024-02-18 23:08:55.891262
+model: gpt-4-0125-preview
+summary: "Scrivere test in C# comporta la creazione di script automatizzati per validare\
+  \ la funzionalit\xE0 del proprio codice, assicurando che si comporti come\u2026"
+title: Scrivere test
 ---
 
 {{< edit_this_page >}}

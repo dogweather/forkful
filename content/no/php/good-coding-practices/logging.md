@@ -1,13 +1,16 @@
 ---
-title:                "Loggføring"
 aliases:
 - /no/php/logging/
-date:                  2024-01-26T01:07:49.412606-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Loggføring"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/logging.md"
+date: 2024-01-26 01:07:49.412606-07:00
+description: "Logging er i bunn og grunn som \xE5 f\xF8re en dagbok for koden din;\
+  \ det er handlingen med \xE5 registrere hendelser, feil og andre betydningsfulle\
+  \ datapunkter som\u2026"
+lastmod: 2024-02-18 23:08:53.981434
+model: gpt-4-1106-preview
+summary: "Logging er i bunn og grunn som \xE5 f\xF8re en dagbok for koden din; det\
+  \ er handlingen med \xE5 registrere hendelser, feil og andre betydningsfulle datapunkter\
+  \ som\u2026"
+title: "Loggf\xF8ring"
 ---
 
 {{< edit_this_page >}}

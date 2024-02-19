@@ -1,14 +1,18 @@
 ---
-title:                "Att skriva en textfil"
 aliases:
 - /sv/arduino/writing-a-text-file/
-date:                  2024-02-03T19:27:09.197379-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att skriva en textfil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:09.197379-07:00
+description: "Att skriva en textfil i Arduino inneb\xE4r att spara data till en fil\
+  \ p\xE5 ett SD-kort eller liknande lagringsmodul, ofta f\xF6r datainsamlings\xE4\
+  ndam\xE5l.\u2026"
+lastmod: 2024-02-18 23:08:52.061382
+model: gpt-4-0125-preview
+summary: "Att skriva en textfil i Arduino inneb\xE4r att spara data till en fil p\xE5\
+  \ ett SD-kort eller liknande lagringsmodul, ofta f\xF6r datainsamlings\xE4ndam\xE5\
+  l.\u2026"
+title: Att skriva en textfil
 ---
 
 {{< edit_this_page >}}

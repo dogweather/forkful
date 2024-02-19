@@ -1,13 +1,16 @@
 ---
-title:                "Tratamento de erros"
 aliases:
 - /pt/clojure/handling-errors/
-date:                  2024-01-26T00:51:46.156712-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tratamento de erros"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/handling-errors.md"
+date: 2024-01-26 00:51:46.156712-07:00
+description: "O tratamento de erros \xE9 sobre gerenciar o inesperado em programas\u2014\
+  como um seguran\xE7a lidando com desordeiros. Programadores gostam de fluidez; o\
+  \ tratamento\u2026"
+lastmod: 2024-02-18 23:08:57.809988
+model: gpt-4-1106-preview
+summary: "O tratamento de erros \xE9 sobre gerenciar o inesperado em programas\u2014\
+  como um seguran\xE7a lidando com desordeiros. Programadores gostam de fluidez; o\
+  \ tratamento\u2026"
+title: Tratamento de erros
 ---
 
 {{< edit_this_page >}}

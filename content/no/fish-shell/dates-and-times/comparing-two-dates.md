@@ -1,13 +1,14 @@
 ---
-title:                "Sammenlikning av to datoer"
 aliases:
 - /no/fish-shell/comparing-two-dates/
-date:                  2024-01-20T17:33:04.863825-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammenlikning av to datoer"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/comparing-two-dates.md"
+date: 2024-01-20 17:33:04.863825-07:00
+description: "Sammenligning av to datoer handler om \xE5 sjekke hvilken som er tidligst,\
+  \ om de er like, eller om den ene ligger etter den andre. Programmerere trenger\u2026"
+lastmod: 2024-02-18 23:08:54.363701
+model: gpt-4-1106-preview
+summary: "Sammenligning av to datoer handler om \xE5 sjekke hvilken som er tidligst,\
+  \ om de er like, eller om den ene ligger etter den andre. Programmerere trenger\u2026"
+title: Sammenlikning av to datoer
 ---
 
 {{< edit_this_page >}}

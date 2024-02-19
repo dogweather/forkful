@@ -1,14 +1,24 @@
 ---
-title:                "启动新项目"
 aliases:
 - /zh/c/starting-a-new-project/
-date:                  2024-02-03T18:09:21.031237-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "启动新项目"
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/starting-a-new-project.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:09:21.031237-07:00
+description: "\u5728C\u8BED\u8A00\u4E2D\u542F\u52A8\u4E00\u4E2A\u65B0\u9879\u76EE\u6D89\
+  \u53CA\u5230\u5EFA\u7ACB\u4E00\u4E2A\u57FA\u7840\u7684\u4EE3\u7801\u7ED3\u6784\u548C\
+  \u73AF\u5883\uFF0C\u4EE5\u9AD8\u6548\u7BA1\u7406\u5F00\u53D1\u4EFB\u52A1\u3002\u7A0B\
+  \u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u7B80\u5316\u6784\u5EFA\u8FC7\u7A0B\
+  \uFF0C\u5F3A\u5236\u6267\u884C\u4E00\u81F4\u6027\uFF0C\u5E76\u4FBF\u4E8E\u8F6F\u4EF6\
+  \u968F\u65F6\u95F4\u66F4\u5BB9\u6613\u5730\u7EF4\u62A4\u548C\u6269\u5C55\u3002"
+lastmod: 2024-02-18 23:08:59.560088
+model: gpt-4-0125-preview
+summary: "\u5728C\u8BED\u8A00\u4E2D\u542F\u52A8\u4E00\u4E2A\u65B0\u9879\u76EE\u6D89\
+  \u53CA\u5230\u5EFA\u7ACB\u4E00\u4E2A\u57FA\u7840\u7684\u4EE3\u7801\u7ED3\u6784\u548C\
+  \u73AF\u5883\uFF0C\u4EE5\u9AD8\u6548\u7BA1\u7406\u5F00\u53D1\u4EFB\u52A1\u3002\u7A0B\
+  \u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u7B80\u5316\u6784\u5EFA\u8FC7\u7A0B\
+  \uFF0C\u5F3A\u5236\u6267\u884C\u4E00\u81F4\u6027\uFF0C\u5E76\u4FBF\u4E8E\u8F6F\u4EF6\
+  \u968F\u65F6\u95F4\u66F4\u5BB9\u6613\u5730\u7EF4\u62A4\u548C\u6269\u5C55\u3002"
+title: "\u542F\u52A8\u65B0\u9879\u76EE"
 ---
 
 {{< edit_this_page >}}

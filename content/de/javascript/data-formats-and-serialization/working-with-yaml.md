@@ -1,14 +1,16 @@
 ---
-title:                "Arbeiten mit YAML"
 aliases:
 - /de/javascript/working-with-yaml/
-date:                  2024-02-03T19:25:41.006016-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeiten mit YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:25:41.006016-07:00
+description: "YAML, die Abk\xFCrzung f\xFCr YAML Ain't Markup Language, ist ein menschenlesbares\
+  \ Daten-Serialisierungsformat. Programmierer verwenden es oft f\xFCr\u2026"
+lastmod: 2024-02-18 23:09:05.300462
+model: gpt-4-0125-preview
+summary: "YAML, die Abk\xFCrzung f\xFCr YAML Ain't Markup Language, ist ein menschenlesbares\
+  \ Daten-Serialisierungsformat. Programmierer verwenden es oft f\xFCr\u2026"
+title: Arbeiten mit YAML
 ---
 
 {{< edit_this_page >}}

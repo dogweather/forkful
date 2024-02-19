@@ -1,13 +1,16 @@
 ---
-title:                "Loggning"
 aliases:
 - /sv/python/logging/
-date:                  2024-01-26T01:08:30.522160-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Loggning"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/logging.md"
+date: 2024-01-26 01:08:30.522160-07:00
+description: "Loggning \xE4r processen att spela in h\xE4ndelser i en applikation\
+  \ medan ett program k\xF6rs, vilket ger ett sp\xE5r av \"smulor\" f\xF6r analys\
+  \ efter h\xE4ndelsen och f\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.427925
+model: gpt-4-1106-preview
+summary: "Loggning \xE4r processen att spela in h\xE4ndelser i en applikation medan\
+  \ ett program k\xF6rs, vilket ger ett sp\xE5r av \"smulor\" f\xF6r analys efter\
+  \ h\xE4ndelsen och f\xF6r\u2026"
+title: Loggning
 ---
 
 {{< edit_this_page >}}

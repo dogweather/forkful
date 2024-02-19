@@ -1,14 +1,28 @@
 ---
-title:                "현재 날짜 얻기"
 aliases:
 - /ko/google-apps-script/getting-the-current-date/
-date:                  2024-02-01T21:54:43.564737-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "현재 날짜 얻기"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/getting-the-current-date.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:43.564737-07:00
+description: "Google Apps Script\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC00\
+  \uC838\uC624\uB294 \uAC83\uC740 \uC2E4\uC2DC\uAC04 \uB0A0\uC9DC\uC640 \uC2DC\uAC04\
+  \uC744 \uAC00\uC838\uC624\uB294 \uC77C\uBC18\uC801\uC778 \uC791\uC5C5\uC73C\uB85C\
+  , Google\uC758 \uC0DD\uD0DC\uACC4\uC5D0 \uC5F0\uACB0\uB41C \uC571\uC5D0\uC11C \uC790\
+  \uB3D9\uD654 \uC791\uC5C5, \uB85C\uAE45, \uD0C0\uC784\uC2A4\uD0EC\uD551 \uB4F1\uC744\
+  \ \uC704\uD574 \uC0AC\uC6A9\uB429\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\
+  \uC740 \uC774 \uAE30\uB2A5\uC744 \uB3D9\uC801 \uCF58\uD150\uCE20 \uC0DD\uC131, \uB9C8\
+  \uAC10\uC77C \uCD94\uC801,\u2026"
+lastmod: 2024-02-18 23:09:05.574223
+model: gpt-4-0125-preview
+summary: "Google Apps Script\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC00\uC838\
+  \uC624\uB294 \uAC83\uC740 \uC2E4\uC2DC\uAC04 \uB0A0\uC9DC\uC640 \uC2DC\uAC04\uC744\
+  \ \uAC00\uC838\uC624\uB294 \uC77C\uBC18\uC801\uC778 \uC791\uC5C5\uC73C\uB85C, Google\uC758\
+  \ \uC0DD\uD0DC\uACC4\uC5D0 \uC5F0\uACB0\uB41C \uC571\uC5D0\uC11C \uC790\uB3D9\uD654\
+  \ \uC791\uC5C5, \uB85C\uAE45, \uD0C0\uC784\uC2A4\uD0EC\uD551 \uB4F1\uC744 \uC704\
+  \uD574 \uC0AC\uC6A9\uB429\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\
+  \ \uC774 \uAE30\uB2A5\uC744 \uB3D9\uC801 \uCF58\uD150\uCE20 \uC0DD\uC131, \uB9C8\
+  \uAC10\uC77C \uCD94\uC801,\u2026"
+title: "\uD604\uC7AC \uB0A0\uC9DC \uC5BB\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
 aliases:
 - /de/cpp/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:01:01.526459-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:01:01.526459-07:00
+description: "Das Senden einer HTTP-Anfrage mit Basis-Authentifizierung bedeutet,\
+  \ dass der Client seine Anmeldeinformationen (Benutzername und Passwort) kodiert\
+  \ im\u2026"
+lastmod: 2024-02-18 23:09:05.188733
+model: gpt-4-1106-preview
+summary: "Das Senden einer HTTP-Anfrage mit Basis-Authentifizierung bedeutet, dass\
+  \ der Client seine Anmeldeinformationen (Benutzername und Passwort) kodiert im\u2026"
+title: HTTP-Anfragen mit Basisauthentifizierung senden
 ---
 
 {{< edit_this_page >}}

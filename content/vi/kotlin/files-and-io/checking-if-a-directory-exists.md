@@ -1,15 +1,20 @@
 ---
-title:                "Kiểm tra xem thư mục có tồn tại không"
 aliases:
 - /vi/kotlin/checking-if-a-directory-exists/
-date:                  2024-01-28T21:56:57.599618-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kiểm tra xem thư mục có tồn tại không"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/kotlin/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:57.599618-07:00
+description: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3\
+  n t\u1EA1i trong Kotlin gi\xFAp b\u1EA1n x\xE1c nh\u1EADn li\u1EC7u m\u1ED9t folder\
+  \ c\xF3 m\u1EB7t tr\u01B0\u1EDBc khi b\u1EA1n th\u1EED \u0111\u1ECDc ho\u1EB7c vi\u1EBF\
+  t t\u1EC7p v\xE0o \u0111\xF3. \u0110i\u1EC1u n\xE0y gi\xFAp\u2026"
+lastmod: 2024-02-18 23:08:50.667274
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1\
+  i trong Kotlin gi\xFAp b\u1EA1n x\xE1c nh\u1EADn li\u1EC7u m\u1ED9t folder c\xF3\
+  \ m\u1EB7t tr\u01B0\u1EDBc khi b\u1EA1n th\u1EED \u0111\u1ECDc ho\u1EB7c vi\u1EBF\
+  t t\u1EC7p v\xE0o \u0111\xF3. \u0110i\u1EC1u n\xE0y gi\xFAp\u2026"
+title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 ---
 
 {{< edit_this_page >}}

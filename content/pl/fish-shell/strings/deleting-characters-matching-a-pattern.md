@@ -1,13 +1,16 @@
 ---
-title:                "Usuwanie znaków pasujących do wzorca"
 aliases:
 - /pl/fish-shell/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:59.426400-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Usuwanie znaków pasujących do wzorca"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:59.426400-07:00
+description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to spos\xF3b na pozbycie\
+  \ si\u0119 niechcianych fragment\xF3w tekstu \u2014 szybkie ci\u0119cie w danych.\
+  \ Programi\u015Bci robi\u0105 to, gdy chc\u0105\u2026"
+lastmod: 2024-02-18 23:08:50.019696
+model: gpt-4-1106-preview
+summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to spos\xF3b na pozbycie si\u0119\
+  \ niechcianych fragment\xF3w tekstu \u2014 szybkie ci\u0119cie w danych. Programi\u015B\
+  ci robi\u0105 to, gdy chc\u0105\u2026"
+title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 ---
 
 {{< edit_this_page >}}

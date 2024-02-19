@@ -1,14 +1,16 @@
 ---
-title:                "Analyse Syntaxique de HTML"
 aliases:
 - /fr/vba/parsing-html/
-date:                  2024-02-01T21:57:12.879172-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analyse Syntaxique de HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/vba/parsing-html.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:12.879172-07:00
+description: "L'analyse syntaxique du HTML dans Visual Basic pour Applications (VBA)\
+  \ consiste \xE0 extraire des informations sp\xE9cifiques d'un document HTML. Les\u2026"
+lastmod: 2024-02-18 23:09:08.575816
+model: gpt-4-0125-preview
+summary: "L'analyse syntaxique du HTML dans Visual Basic pour Applications (VBA) consiste\
+  \ \xE0 extraire des informations sp\xE9cifiques d'un document HTML. Les\u2026"
+title: Analyse Syntaxique de HTML
 ---
 
 {{< edit_this_page >}}

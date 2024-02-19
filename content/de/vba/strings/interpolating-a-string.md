@@ -1,14 +1,16 @@
 ---
-title:                "Interpolation einer Zeichenkette"
 aliases:
 - /de/vba/interpolating-a-string/
-date:                  2024-02-01T21:55:26.669784-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interpolation einer Zeichenkette"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/vba/interpolating-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:26.669784-07:00
+description: "Stringinterpolation in Visual Basic f\xFCr Applikationen (VBA) bezieht\
+  \ sich auf den Prozess, Variablen oder Ausdr\xFCcke in einem String-Literal einzubetten,\u2026"
+lastmod: 2024-02-18 23:09:04.672375
+model: gpt-4-0125-preview
+summary: "Stringinterpolation in Visual Basic f\xFCr Applikationen (VBA) bezieht sich\
+  \ auf den Prozess, Variablen oder Ausdr\xFCcke in einem String-Literal einzubetten,\u2026"
+title: Interpolation einer Zeichenkette
 ---
 
 {{< edit_this_page >}}

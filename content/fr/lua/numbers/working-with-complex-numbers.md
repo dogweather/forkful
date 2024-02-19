@@ -1,13 +1,14 @@
 ---
-title:                "Manipulation des nombres complexes"
 aliases:
 - /fr/lua/working-with-complex-numbers/
-date:                  2024-01-26T04:43:19.254417-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulation des nombres complexes"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/lua/working-with-complex-numbers.md"
+date: 2024-01-26 04:43:19.254417-07:00
+description: "Les nombres complexes \xE9tendent l'id\xE9e de la ligne num\xE9rique\
+  \ unidimensionnelle dans le plan bidimensionnel en incluant un axe imaginaire perpendiculaire.\u2026"
+lastmod: 2024-02-18 23:09:08.962952
+model: gpt-4-0125-preview
+summary: "Les nombres complexes \xE9tendent l'id\xE9e de la ligne num\xE9rique unidimensionnelle\
+  \ dans le plan bidimensionnel en incluant un axe imaginaire perpendiculaire.\u2026"
+title: Manipulation des nombres complexes
 ---
 
 {{< edit_this_page >}}

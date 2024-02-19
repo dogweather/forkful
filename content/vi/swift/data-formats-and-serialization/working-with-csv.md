@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với CSV"
 aliases:
 - /vi/swift/working-with-csv/
-date:                  2024-01-28T22:10:21.491190-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với CSV"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/swift/working-with-csv.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:21.491190-07:00
+description: "T\u1EC7p CSV (Comma-Separated Values - Gi\xE1 tr\u1ECB \u0111\u01B0\u1EE3\
+  c ph\xE2n t\xE1ch b\u1EB1ng d\u1EA5u ph\u1EA9y) l\xE0 c\xE1c t\u1EC7p v\u0103n b\u1EA3\
+  n \u0111\u01A1n gi\u1EA3n \u0111\u1EC3 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u d\u1EA1\
+  ng b\u1EA3ng. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng\u2026"
+lastmod: 2024-02-18 23:08:51.114513
+model: gpt-4-0125-preview
+summary: "T\u1EC7p CSV (Comma-Separated Values - Gi\xE1 tr\u1ECB \u0111\u01B0\u1EE3\
+  c ph\xE2n t\xE1ch b\u1EB1ng d\u1EA5u ph\u1EA9y) l\xE0 c\xE1c t\u1EC7p v\u0103n b\u1EA3\
+  n \u0111\u01A1n gi\u1EA3n \u0111\u1EC3 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u d\u1EA1\
+  ng b\u1EA3ng. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 ---
 
 {{< edit_this_page >}}

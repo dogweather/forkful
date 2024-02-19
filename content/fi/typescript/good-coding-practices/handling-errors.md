@@ -1,13 +1,16 @@
 ---
-title:                "Virheiden käsittely"
 aliases:
 - /fi/typescript/handling-errors/
-date:                  2024-01-26T00:58:43.438968-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheiden käsittely"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/handling-errors.md"
+date: 2024-01-26 00:58:43.438968-07:00
+description: "Virheiden k\xE4sittely on odottamattoman odottamista; kyse on siit\xE4\
+  , miten selvit\xE4\xE4n, kun koodissamme tapahtuu odottamattomia virheit\xE4. Sen\
+  \ avulla pyrimme\u2026"
+lastmod: 2024-02-18 23:09:07.326860
+model: gpt-4-1106-preview
+summary: "Virheiden k\xE4sittely on odottamattoman odottamista; kyse on siit\xE4,\
+  \ miten selvit\xE4\xE4n, kun koodissamme tapahtuu odottamattomia virheit\xE4. Sen\
+  \ avulla pyrimme\u2026"
+title: "Virheiden k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

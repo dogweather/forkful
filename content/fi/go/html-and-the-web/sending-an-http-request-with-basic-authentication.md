@@ -1,14 +1,18 @@
 ---
-title:                "Lähettäminen HTTP-pyyntö perustodennuksella"
 aliases:
 - /fi/go/sending-an-http-request-with-basic-authentication/
-date:                  2024-02-03T18:09:11.928836-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lähettäminen HTTP-pyyntö perustodennuksella"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:09:11.928836-07:00
+description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla Go-kielell\xE4\
+  \ sis\xE4lt\xE4\xE4 valtuutusotsikon lis\xE4\xE4misen pyynt\xF6\xF6si, joka sis\xE4\
+  lt\xE4\xE4 k\xE4ytt\xE4j\xE4nimen ja salasanan\u2026"
+lastmod: 2024-02-18 23:09:07.084540
+model: gpt-4-0125-preview
+summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla Go-kielell\xE4\
+  \ sis\xE4lt\xE4\xE4 valtuutusotsikon lis\xE4\xE4misen pyynt\xF6\xF6si, joka sis\xE4\
+  lt\xE4\xE4 k\xE4ytt\xE4j\xE4nimen ja salasanan\u2026"
+title: "L\xE4hett\xE4minen HTTP-pyynt\xF6 perustodennuksella"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,24 @@
 ---
-title:                "XML 다루기"
 aliases:
 - /ko/typescript/working-with-xml/
-date:                  2024-01-26T04:36:28.666757-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML 다루기"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/working-with-xml.md"
+date: 2024-01-26 04:36:28.666757-07:00
+description: "XML\uC744 \uB2E4\uB8EC\uB2E4\uB294 \uAC83\uC740 \uD504\uB85C\uADF8\uB798\
+  \uBC0D\uC744 \uC0AC\uC6A9\uD574 XML \uB370\uC774\uD130\uB97C \uD30C\uC2F1, \uC870\
+  \uC791, \uBC0F \uC791\uC131\uD558\uB294 \uAC83\uC744 \uC758\uBBF8\uD569\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC11C\uB85C \uB2E4\uB978 \uC2DC\uC2A4\
+  \uD15C \uAC04\uC758 \uB370\uC774\uD130 \uAD50\uD658, \uAD6C\uC131 \uD30C\uC77C,\
+  \ \uD639\uC740 XML\uC5D0 \uC758\uC874\uD558\uB294 SOAP\uACFC \uAC19\uC740 \uD45C\
+  \uC900\uC744 \uB2E4\uB8F0 \uB54C XML\uC744 \uCC98\uB9AC\uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:05.857294
+model: gpt-4-0125-preview
+summary: "XML\uC744 \uB2E4\uB8EC\uB2E4\uB294 \uAC83\uC740 \uD504\uB85C\uADF8\uB798\
+  \uBC0D\uC744 \uC0AC\uC6A9\uD574 XML \uB370\uC774\uD130\uB97C \uD30C\uC2F1, \uC870\
+  \uC791, \uBC0F \uC791\uC131\uD558\uB294 \uAC83\uC744 \uC758\uBBF8\uD569\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC11C\uB85C \uB2E4\uB978 \uC2DC\uC2A4\
+  \uD15C \uAC04\uC758 \uB370\uC774\uD130 \uAD50\uD658, \uAD6C\uC131 \uD30C\uC77C,\
+  \ \uD639\uC740 XML\uC5D0 \uC758\uC874\uD558\uB294 SOAP\uACFC \uAC19\uC740 \uD45C\
+  \uC900\uC744 \uB2E4\uB8F0 \uB54C XML\uC744 \uCC98\uB9AC\uD569\uB2C8\uB2E4."
+title: "XML \uB2E4\uB8E8\uAE30"
 ---
 
 {{< edit_this_page >}}

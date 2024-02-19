@@ -1,14 +1,18 @@
 ---
-title:                "Pobieranie strony internetowej"
 aliases:
 - /pl/vba/downloading-a-web-page/
-date:                  2024-02-01T21:53:44.072532-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pobieranie strony internetowej"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/vba/downloading-a-web-page.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:44.072532-07:00
+description: "Pobieranie strony internetowej w Visual Basic for Applications (VBA)\
+  \ polega na pobraniu zawarto\u015Bci HTML strony internetowej z Internetu. Programi\u015B\
+  ci\u2026"
+lastmod: 2024-02-18 23:08:49.432564
+model: gpt-4-0125-preview
+summary: "Pobieranie strony internetowej w Visual Basic for Applications (VBA) polega\
+  \ na pobraniu zawarto\u015Bci HTML strony internetowej z Internetu. Programi\u015B\
+  ci\u2026"
+title: Pobieranie strony internetowej
 ---
 
 {{< edit_this_page >}}

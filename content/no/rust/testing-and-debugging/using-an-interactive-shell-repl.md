@@ -1,13 +1,14 @@
 ---
-title:                "Bruke et interaktivt skall (REPL)"
 aliases:
 - /no/rust/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:18:02.984868-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke et interaktivt skall (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:18:02.984868-07:00
+description: "Et Rust-interaktivt skall, eller REPL (Read-Eval-Print Loop), lar deg\
+  \ kj\xF8re Rust-kode p\xE5 sparket, og se umiddelbare resultater, perfekt for\u2026"
+lastmod: 2024-02-18 23:08:53.686657
+model: gpt-4-0125-preview
+summary: "Et Rust-interaktivt skall, eller REPL (Read-Eval-Print Loop), lar deg kj\xF8\
+  re Rust-kode p\xE5 sparket, og se umiddelbare resultater, perfekt for\u2026"
+title: Bruke et interaktivt skall (REPL)
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,16 @@
 ---
-title:                "Utilisation des tableaux associatifs"
 aliases:
 - /fr/fish-shell/using-associative-arrays/
-date:                  2024-01-30T19:10:52.716977-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation des tableaux associatifs"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:52.716977-07:00
+description: "Les tableaux associatifs, ou maps, vous permettent de stocker des donn\xE9\
+  es sous forme de paires cl\xE9-valeur, facilitant ainsi l'organisation et la\u2026"
+lastmod: 2024-02-18 23:09:09.295617
+model: gpt-4-0125-preview
+summary: "Les tableaux associatifs, ou maps, vous permettent de stocker des donn\xE9\
+  es sous forme de paires cl\xE9-valeur, facilitant ainsi l'organisation et la\u2026"
+title: Utilisation des tableaux associatifs
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Teilstrings extrahieren"
 aliases:
 - /de/bash/extracting-substrings/
-date:                  2024-01-20T17:44:55.636805-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Teilstrings extrahieren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/extracting-substrings.md"
+date: 2024-01-20 17:44:55.636805-07:00
+description: "Das Extrahieren von Teilstrings erm\xF6glicht es dir, bestimmte Textabschnitte\
+  \ aus l\xE4ngeren Strings herauszul\xF6sen. Das ist n\xFCtzlich, wenn du Daten bearbeiten\u2026"
+lastmod: 2024-02-18 23:09:05.040334
+model: gpt-4-1106-preview
+summary: "Das Extrahieren von Teilstrings erm\xF6glicht es dir, bestimmte Textabschnitte\
+  \ aus l\xE4ngeren Strings herauszul\xF6sen. Das ist n\xFCtzlich, wenn du Daten bearbeiten\u2026"
+title: Teilstrings extrahieren
 ---
 
 {{< edit_this_page >}}

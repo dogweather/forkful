@@ -1,14 +1,17 @@
 ---
-title:                "打印调试输出"
 aliases:
 - /zh/powershell/printing-debug-output/
-date:                  2024-01-20T17:53:11.996137-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "打印调试输出"
-
-tag:                  "Testing and Debugging"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/printing-debug-output.md"
+date: 2024-01-20 17:53:11.996137-07:00
+description: "\u8C03\u8BD5\u8F93\u51FA\u662F\u7A0B\u5E8F\u8FD0\u884C\u65F6\u4FE1\u606F\
+  \u7684\u5C55\u793A\u3002\u7A0B\u5E8F\u5458\u7528\u5B83\u6765\u8FFD\u8E2A\u4EE3\u7801\
+  \u8FD0\u4F5C\uFF0C\u5FEB\u901F\u53D1\u73B0\u548C\u89E3\u51B3bug\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.334341
+model: gpt-4-1106-preview
+summary: "\u8C03\u8BD5\u8F93\u51FA\u662F\u7A0B\u5E8F\u8FD0\u884C\u65F6\u4FE1\u606F\
+  \u7684\u5C55\u793A\u3002\u7A0B\u5E8F\u5458\u7528\u5B83\u6765\u8FFD\u8E2A\u4EE3\u7801\
+  \u8FD0\u4F5C\uFF0C\u5FEB\u901F\u53D1\u73B0\u548C\u89E3\u51B3bug\u3002"
+title: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA"
 ---
 
 {{< edit_this_page >}}

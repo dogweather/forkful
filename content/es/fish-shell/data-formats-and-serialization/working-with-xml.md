@@ -1,13 +1,14 @@
 ---
-title:                "Trabajando con XML"
 aliases:
 - /es/fish-shell/working-with-xml/
-date:                  2024-01-26T04:30:02.801762-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/working-with-xml.md"
+date: 2024-01-26 04:30:02.801762-07:00
+description: "Trabajar con XML significa manipular datos en un formato estructurado\
+  \ y omnipresente utilizado en configuraciones, mensajer\xEDa y m\xE1s. Los programadores\u2026"
+lastmod: 2024-02-18 23:09:10.479702
+model: gpt-4-0125-preview
+summary: "Trabajar con XML significa manipular datos en un formato estructurado y\
+  \ omnipresente utilizado en configuraciones, mensajer\xEDa y m\xE1s. Los programadores\u2026"
+title: Trabajando con XML
 ---
 
 {{< edit_this_page >}}

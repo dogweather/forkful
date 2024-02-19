@@ -1,15 +1,20 @@
 ---
-title:                "Tìm kiếm và thay thế văn bản"
 aliases:
 - /vi/kotlin/searching-and-replacing-text/
-date:                  2024-01-28T22:07:33.962022-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tìm kiếm và thay thế văn bản"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/kotlin/searching-and-replacing-text.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:07:33.962022-07:00
+description: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n gi\u1ED1ng nh\u01B0\
+  \ ch\u01A1i tr\u1ED1n t\xECm v\u1EDBi chu\u1ED7i k\xFD t\u1EF1, sau \u0111\xF3 thay\
+  \ ng\u01B0\u1EDDi \u1EA9n b\u1EB1ng ng\u01B0\u1EDDi kh\xE1c. \u0110\xF3 l\xE0 m\u1ED9\
+  t nhi\u1EC7m v\u1EE5 l\u1EADp tr\xECnh ph\u1ED5 bi\u1EBFn, r\u1EA5t\u2026"
+lastmod: 2024-02-18 23:08:50.634451
+model: gpt-4-0125-preview
+summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n gi\u1ED1ng nh\u01B0\
+  \ ch\u01A1i tr\u1ED1n t\xECm v\u1EDBi chu\u1ED7i k\xFD t\u1EF1, sau \u0111\xF3 thay\
+  \ ng\u01B0\u1EDDi \u1EA9n b\u1EB1ng ng\u01B0\u1EDDi kh\xE1c. \u0110\xF3 l\xE0 m\u1ED9\
+  t nhi\u1EC7m v\u1EE5 l\u1EADp tr\xECnh ph\u1ED5 bi\u1EBFn, r\u1EA5t\u2026"
+title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 ---
 
 {{< edit_this_page >}}

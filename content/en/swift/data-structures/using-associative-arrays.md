@@ -1,13 +1,14 @@
 ---
-title:                "Using associative arrays"
 aliases:
 - /en/swift/using-associative-arrays/
-date:                  2024-01-30T18:57:16.065134-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using associative arrays"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/using-associative-arrays.md"
+date: 2024-01-30 18:57:16.065134-07:00
+description: "Associative arrays, known as dictionaries in Swift, let you store and\
+  \ manage data as key-value pairs. Programmers use them to organize data efficiently,\u2026"
+lastmod: 2024-02-18 23:09:11.389790
+model: gpt-4-0125-preview
+summary: "Associative arrays, known as dictionaries in Swift, let you store and manage\
+  \ data as key-value pairs. Programmers use them to organize data efficiently,\u2026"
+title: Using associative arrays
 ---
 
 {{< edit_this_page >}}

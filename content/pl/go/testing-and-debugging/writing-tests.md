@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie testów"
 aliases:
 - /pl/go/writing-tests/
-date:                  2024-02-03T18:15:25.919598-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie testów"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:15:25.919598-07:00
+description: "Pisanie test\xF3w w Go polega na tworzeniu ma\u0142ych, zarz\u0105dzalnych\
+  \ fragment\xF3w kodu, kt\xF3re weryfikuj\u0105 funkcjonalno\u015B\u0107 i zachowanie\
+  \ aplikacji. Programi\u015Bci pisz\u0105\u2026"
+lastmod: 2024-02-18 23:08:49.102124
+model: gpt-4-0125-preview
+summary: "Pisanie test\xF3w w Go polega na tworzeniu ma\u0142ych, zarz\u0105dzalnych\
+  \ fragment\xF3w kodu, kt\xF3re weryfikuj\u0105 funkcjonalno\u015B\u0107 i zachowanie\
+  \ aplikacji. Programi\u015Bci pisz\u0105\u2026"
+title: "Pisanie test\xF3w"
 ---
 
 {{< edit_this_page >}}

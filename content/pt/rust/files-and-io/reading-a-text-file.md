@@ -1,13 +1,16 @@
 ---
-title:                "Lendo um arquivo de texto"
 aliases:
 - /pt/rust/reading-a-text-file/
-date:                  2024-01-20T17:55:11.546794-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lendo um arquivo de texto"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/reading-a-text-file.md"
+date: 2024-01-20 17:55:11.546794-07:00
+description: "Ler um arquivo de texto em Rust \xE9 o processo de acessar e interpretar\
+  \ dados armazenados em arquivos no seu sistema de arquivos. Programadores fazem\
+  \ isso\u2026"
+lastmod: 2024-02-18 23:08:57.946152
+model: gpt-4-1106-preview
+summary: "Ler um arquivo de texto em Rust \xE9 o processo de acessar e interpretar\
+  \ dados armazenados em arquivos no seu sistema de arquivos. Programadores fazem\
+  \ isso\u2026"
+title: Lendo um arquivo de texto
 ---
 
 {{< edit_this_page >}}

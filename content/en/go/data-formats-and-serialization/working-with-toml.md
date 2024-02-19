@@ -1,12 +1,14 @@
 ---
-title:                "Working with TOML"
 aliases:
 - /en/go/working-with-toml/
-date:                  2024-02-03T17:50:15.883688-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Working with TOML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/working-with-toml.md"
+date: 2024-02-03 17:50:15.883688-07:00
+description: "TOML (Tom's Obvious, Minimal Language) is a configuration file format\
+  \ that's easy to read due to its simple syntax. Programmers use TOML to configure\u2026"
+lastmod: 2024-02-18 23:09:10.620304
+model: gpt-4-0125-preview
+summary: "TOML (Tom's Obvious, Minimal Language) is a configuration file format that's\
+  \ easy to read due to its simple syntax. Programmers use TOML to configure\u2026"
+title: Working with TOML
 ---
 
 {{< edit_this_page >}}

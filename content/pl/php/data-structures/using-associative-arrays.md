@@ -1,15 +1,18 @@
 ---
-title:                "Korzystanie z tablic asocjacyjnych"
 aliases:
 - /pl/php/using-associative-arrays/
-date:                  2024-01-30T19:12:55.135152-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z tablic asocjacyjnych"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:55.135152-07:00
+description: "Asocjacyjne tablice w PHP s\u0105 jak na\u0142adowane mo\u017Cliwo\u015B\
+  ciami listy, gdzie ka\u017Cdy element mo\u017Cna uzyska\u0107 przy u\u017Cyciu klucza\
+  \ zrozumia\u0142ego dla cz\u0142owieka zamiast\u2026"
+lastmod: 2024-02-18 23:08:49.687283
+model: gpt-4-0125-preview
+summary: "Asocjacyjne tablice w PHP s\u0105 jak na\u0142adowane mo\u017Cliwo\u015B\
+  ciami listy, gdzie ka\u017Cdy element mo\u017Cna uzyska\u0107 przy u\u017Cyciu klucza\
+  \ zrozumia\u0142ego dla cz\u0142owieka zamiast\u2026"
+title: Korzystanie z tablic asocjacyjnych
 ---
 
 {{< edit_this_page >}}

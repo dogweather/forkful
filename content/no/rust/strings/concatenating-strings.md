@@ -1,13 +1,16 @@
 ---
-title:                "Sammenslåing av strenger"
 aliases:
 - /no/rust/concatenating-strings/
-date:                  2024-01-20T17:35:32.634778-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammenslåing av strenger"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/concatenating-strings.md"
+date: 2024-01-20 17:35:32.634778-07:00
+description: "I programmering betyr strengkonkatenering \xE5 sette sammen to eller\
+  \ flere tekststykker til ett. Vi gj\xF8r det for \xE5 bygge setninger, lage dynamiske\
+  \ meldinger,\u2026"
+lastmod: 2024-02-18 23:08:53.677317
+model: gpt-4-1106-preview
+summary: "I programmering betyr strengkonkatenering \xE5 sette sammen to eller flere\
+  \ tekststykker til ett. Vi gj\xF8r det for \xE5 bygge setninger, lage dynamiske\
+  \ meldinger,\u2026"
+title: "Sammensl\xE5ing av strenger"
 ---
 
 {{< edit_this_page >}}

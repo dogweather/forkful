@@ -1,13 +1,16 @@
 ---
-title:                "Extrahera delsträngar"
 aliases:
 - /sv/c-sharp/extracting-substrings/
-date:                  2024-01-20T17:45:33.968163-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extrahera delsträngar"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/extracting-substrings.md"
+date: 2024-01-20 17:45:33.968163-07:00
+description: "I programmering \xE4r 'substring' en delstr\xE4ng fr\xE5n en annan str\xE4\
+  ng. Vi extraherar substrings f\xF6r att man\xF6vrera specifika textsegment \u2013\
+  \ till exempel, f\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.784181
+model: gpt-4-1106-preview
+summary: "I programmering \xE4r 'substring' en delstr\xE4ng fr\xE5n en annan str\xE4\
+  ng. Vi extraherar substrings f\xF6r att man\xF6vrera specifika textsegment \u2013\
+  \ till exempel, f\xF6r\u2026"
+title: "Extrahera delstr\xE4ngar"
 ---
 
 {{< edit_this_page >}}

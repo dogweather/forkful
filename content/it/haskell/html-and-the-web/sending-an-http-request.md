@@ -1,13 +1,14 @@
 ---
-title:                "Inviare una richiesta http"
 aliases:
 - /it/haskell/sending-an-http-request/
-date:                  2024-01-20T17:59:38.970846-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Inviare una richiesta http"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/sending-an-http-request.md"
+date: 2024-01-20 17:59:38.970846-07:00
+description: "Mandare una richiesta HTTP significa ordinare al tuo programma di chiacchierare\
+  \ con un server web. Questo lo fanno i programmatori per scambiare dati -\u2026"
+lastmod: 2024-02-18 23:08:55.927112
+model: gpt-4-1106-preview
+summary: "Mandare una richiesta HTTP significa ordinare al tuo programma di chiacchierare\
+  \ con un server web. Questo lo fanno i programmatori per scambiare dati -\u2026"
+title: Inviare una richiesta http
 ---
 
 {{< edit_this_page >}}

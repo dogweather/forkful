@@ -1,13 +1,14 @@
 ---
-title:                "Umformung eines Strings in Kleinbuchstaben"
 aliases:
 - /de/typescript/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:39:21.593123-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Umformung eines Strings in Kleinbuchstaben"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:39:21.593123-07:00
+description: "Ein String in Kleinbuchstaben umzuwandeln bedeutet, alle Buchstaben\
+  \ eines Textes in ihre entsprechende kleinbuchstabige Form zu konvertieren.\u2026"
+lastmod: 2024-02-18 23:09:04.582869
+model: gpt-4-1106-preview
+summary: "Ein String in Kleinbuchstaben umzuwandeln bedeutet, alle Buchstaben eines\
+  \ Textes in ihre entsprechende kleinbuchstabige Form zu konvertieren.\u2026"
+title: Umformung eines Strings in Kleinbuchstaben
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Trabajando con CSV"
 aliases:
 - /es/c-sharp/working-with-csv/
-date:                  2024-02-03T19:19:16.570883-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:19:16.570883-07:00
+description: "Los archivos CSV (Valores Separados por Comas) son un formato com\xFA\
+  n de intercambio de datos que representa datos tabulares en texto plano, utilizando\u2026"
+lastmod: 2024-02-18 23:09:10.006393
+model: gpt-4-0125-preview
+summary: "Los archivos CSV (Valores Separados por Comas) son un formato com\xFAn de\
+  \ intercambio de datos que representa datos tabulares en texto plano, utilizando\u2026"
+title: Trabajando con CSV
 ---
 
 {{< edit_this_page >}}

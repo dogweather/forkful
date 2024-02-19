@@ -1,13 +1,14 @@
 ---
-title:                "Redondeo de números"
 aliases:
 - /es/elixir/rounding-numbers/
-date:                  2024-01-26T03:43:42.156475-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Redondeo de números"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/rounding-numbers.md"
+date: 2024-01-26 03:43:42.156475-07:00
+description: "Redondear n\xFAmeros significa ajustarlos a un valor cercano por simplicidad\
+  \ o para coincidir con cierta precisi\xF3n. Es \xFAtil para mejorar la legibilidad,\u2026"
+lastmod: 2024-02-18 23:09:09.643018
+model: gpt-4-0125-preview
+summary: "Redondear n\xFAmeros significa ajustarlos a un valor cercano por simplicidad\
+  \ o para coincidir con cierta precisi\xF3n. Es \xFAtil para mejorar la legibilidad,\u2026"
+title: "Redondeo de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,16 @@
 ---
-title:                "Logboekregistratie"
 aliases:
 - /nl/cpp/logging/
-date:                  2024-01-28T22:02:38.735984-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Logboekregistratie"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/cpp/logging.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:02:38.735984-07:00
+description: "Loggen in de context van programmeren is het proces van het vastleggen\
+  \ van gebeurtenissen, toestanden en informatie in een bestand of een ander\u2026"
+lastmod: 2024-02-18 23:09:02.190115
+model: gpt-4-0125-preview
+summary: "Loggen in de context van programmeren is het proces van het vastleggen van\
+  \ gebeurtenissen, toestanden en informatie in een bestand of een ander\u2026"
+title: Logboekregistratie
 ---
 
 {{< edit_this_page >}}

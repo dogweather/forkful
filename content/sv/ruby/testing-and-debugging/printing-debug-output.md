@@ -1,13 +1,16 @@
 ---
-title:                "Skriva ut felsökningsdata"
 aliases:
 - /sv/ruby/printing-debug-output/
-date:                  2024-01-20T17:53:32.788516-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skriva ut felsökningsdata"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/printing-debug-output.md"
+date: 2024-01-20 17:53:32.788516-07:00
+description: "Utskrift f\xF6r fels\xF6kning \xE4r n\xE4r vi spottar ut text till konsolen\
+  \ f\xF6r att se vad som h\xE4nder i v\xE5r kod. Programmerare g\xF6r detta f\xF6\
+  r att snabbt hitta och\u2026"
+lastmod: 2024-02-18 23:08:52.297743
+model: gpt-4-1106-preview
+summary: "Utskrift f\xF6r fels\xF6kning \xE4r n\xE4r vi spottar ut text till konsolen\
+  \ f\xF6r att se vad som h\xE4nder i v\xE5r kod. Programmerare g\xF6r detta f\xF6\
+  r att snabbt hitta och\u2026"
+title: "Skriva ut fels\xF6kningsdata"
 ---
 
 {{< edit_this_page >}}

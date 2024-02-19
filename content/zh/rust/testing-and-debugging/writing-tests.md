@@ -1,14 +1,22 @@
 ---
-title:                "编写测试"
 aliases:
 - /zh/rust/writing-tests/
-date:                  2024-02-03T19:32:22.687623-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "编写测试"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:22.687623-07:00
+description: "\u7528 Rust \u7F16\u5199\u6D4B\u8BD5\u662F\u6307\u521B\u5EFA\u81EA\u52A8\
+  \u68C0\u67E5\uFF0C\u4EE5\u786E\u4FDD\u4F60\u7684\u4EE3\u7801\u6309\u9884\u671F\u6267\
+  \u884C\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u5C3D\u65E9\u6355\
+  \u6349\u5230 bug\uFF0C\u4FC3\u8FDB\u91CD\u6784\uFF0C\u5E76\u968F\u7740\u65F6\u95F4\
+  \u7684\u63A8\u79FB\u4FDD\u6301\u4EE3\u7801\u8D28\u91CF\u3002"
+lastmod: 2024-02-18 23:08:58.944373
+model: gpt-4-0125-preview
+summary: "\u7528 Rust \u7F16\u5199\u6D4B\u8BD5\u662F\u6307\u521B\u5EFA\u81EA\u52A8\
+  \u68C0\u67E5\uFF0C\u4EE5\u786E\u4FDD\u4F60\u7684\u4EE3\u7801\u6309\u9884\u671F\u6267\
+  \u884C\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u5C3D\u65E9\u6355\
+  \u6349\u5230 bug\uFF0C\u4FC3\u8FDB\u91CD\u6784\uFF0C\u5E76\u968F\u7740\u65F6\u95F4\
+  \u7684\u63A8\u79FB\u4FDD\u6301\u4EE3\u7801\u8D28\u91CF\u3002"
+title: "\u7F16\u5199\u6D4B\u8BD5"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Työskentely TOML:n kanssa"
 aliases:
 - /fi/lua/working-with-toml/
-date:                  2024-01-26T04:24:12.699271-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely TOML:n kanssa"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/working-with-toml.md"
+date: 2024-01-26 04:24:12.699271-07:00
+description: "TOML:n kanssa ty\xF6skentely sis\xE4lt\xE4\xE4 TOML-tietojen (Tom\u2019\
+  s Obvious, Minimal Language) j\xE4sent\xE4misen ja tuottamisen Lualla. Ohjelmoijat\
+  \ k\xE4ytt\xE4v\xE4t TOML:\xE4\xE4\u2026"
+lastmod: 2024-02-18 23:09:07.782303
+model: gpt-4-0125-preview
+summary: "TOML:n kanssa ty\xF6skentely sis\xE4lt\xE4\xE4 TOML-tietojen (Tom\u2019\
+  s Obvious, Minimal Language) j\xE4sent\xE4misen ja tuottamisen Lualla. Ohjelmoijat\
+  \ k\xE4ytt\xE4v\xE4t TOML:\xE4\xE4\u2026"
+title: "Ty\xF6skentely TOML:n kanssa"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,17 @@
 ---
-title:                "Usando expressões regulares"
 aliases:
 - /pt/kotlin/using-regular-expressions/
-date:                  2024-02-03T19:17:32.989217-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando expressões regulares"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:17:32.989217-07:00
+description: "Express\xF5es regulares (regex) s\xE3o uma ferramenta poderosa para\
+  \ o processamento de texto, permitindo que programadores busquem, correspondam e\
+  \ manipulem\u2026"
+lastmod: 2024-02-18 23:08:58.091427
+model: gpt-4-0125-preview
+summary: "Express\xF5es regulares (regex) s\xE3o uma ferramenta poderosa para o processamento\
+  \ de texto, permitindo que programadores busquem, correspondam e manipulem\u2026"
+title: "Usando express\xF5es regulares"
 ---
 
 {{< edit_this_page >}}

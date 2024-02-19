@@ -1,13 +1,14 @@
 ---
-title:                "Lettura di un file di testo"
 aliases:
 - /it/arduino/reading-a-text-file/
-date:                  2024-01-20T17:53:43.985233-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lettura di un file di testo"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/reading-a-text-file.md"
+date: 2024-01-20 17:53:43.985233-07:00
+description: "Leggere un file di testo con Arduino significa far s\xEC che il microcontrollore\
+  \ recuperi e utilizzi dati da un file conservato su una scheda SD o memoria\u2026"
+lastmod: 2024-02-18 23:08:56.150048
+model: gpt-4-1106-preview
+summary: "Leggere un file di testo con Arduino significa far s\xEC che il microcontrollore\
+  \ recuperi e utilizzi dati da un file conservato su una scheda SD o memoria\u2026"
+title: Lettura di un file di testo
 ---
 
 {{< edit_this_page >}}

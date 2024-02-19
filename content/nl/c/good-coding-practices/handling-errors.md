@@ -1,14 +1,16 @@
 ---
-title:                "Fouten afhandelen"
 aliases:
 - /nl/c/handling-errors/
-date:                  2024-02-03T17:58:09.804056-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Fouten afhandelen"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/handling-errors.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:58:09.804056-07:00
+description: "Fouten afhandelen in C houdt in dat je afwijkende omstandigheden detecteert\
+  \ en daarop reageert tijdens de uitvoering van het programma. Programmeurs doen\u2026"
+lastmod: 2024-02-18 23:09:02.381119
+model: gpt-4-0125-preview
+summary: "Fouten afhandelen in C houdt in dat je afwijkende omstandigheden detecteert\
+  \ en daarop reageert tijdens de uitvoering van het programma. Programmeurs doen\u2026"
+title: Fouten afhandelen
 ---
 
 {{< edit_this_page >}}

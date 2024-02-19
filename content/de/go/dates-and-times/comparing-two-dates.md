@@ -1,14 +1,16 @@
 ---
-title:                "Zwei Daten vergleichen"
 aliases:
 - /de/go/comparing-two-dates/
-date:                  2024-02-03T17:53:46.610215-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zwei Daten vergleichen"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/comparing-two-dates.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:46.610215-07:00
+description: "Das Vergleichen von zwei Daten in der Programmierung ist eine grundlegende\
+  \ Aufgabe, die Entwicklern erm\xF6glicht, die chronologische Beziehung zwischen\u2026"
+lastmod: 2024-02-18 23:09:04.378095
+model: gpt-4-0125-preview
+summary: "Das Vergleichen von zwei Daten in der Programmierung ist eine grundlegende\
+  \ Aufgabe, die Entwicklern erm\xF6glicht, die chronologische Beziehung zwischen\u2026"
+title: Zwei Daten vergleichen
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,16 @@
 ---
-title:                "Het huidige datum ophalen"
 aliases:
 - /nl/haskell/getting-the-current-date/
-date:                  2024-01-28T22:00:48.769084-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Het huidige datum ophalen"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/haskell/getting-the-current-date.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:00:48.769084-07:00
+description: "De huidige datum in je code vastleggen stelt je in staat om gebeurtenissen\
+  \ te markeren op het moment dat ze plaatsvinden. Het is essentieel voor logging,\u2026"
+lastmod: 2024-02-18 23:09:01.910349
+model: gpt-4-0125-preview
+summary: "De huidige datum in je code vastleggen stelt je in staat om gebeurtenissen\
+  \ te markeren op het moment dat ze plaatsvinden. Het is essentieel voor logging,\u2026"
+title: Het huidige datum ophalen
 ---
 
 {{< edit_this_page >}}

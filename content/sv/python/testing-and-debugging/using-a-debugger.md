@@ -1,13 +1,16 @@
 ---
-title:                "Att använda en debugger"
 aliases:
 - /sv/python/using-a-debugger/
-date:                  2024-01-26T04:08:55.145628-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda en debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/using-a-debugger.md"
+date: 2024-01-26 04:08:55.145628-07:00
+description: "\"Att anv\xE4nda en debugger\" inneb\xE4r att stega igenom din Python-kod\
+  \ f\xF6r att hitta buggar och f\xF6rst\xE5 beteenden. Vi g\xF6r det eftersom det\
+  \ \xE4r mycket enklare \xE4n\u2026"
+lastmod: 2024-02-18 23:08:51.426160
+model: gpt-4-0125-preview
+summary: "\"Att anv\xE4nda en debugger\" inneb\xE4r att stega igenom din Python-kod\
+  \ f\xF6r att hitta buggar och f\xF6rst\xE5 beteenden. Vi g\xF6r det eftersom det\
+  \ \xE4r mycket enklare \xE4n\u2026"
+title: "Att anv\xE4nda en debugger"
 ---
 
 {{< edit_this_page >}}

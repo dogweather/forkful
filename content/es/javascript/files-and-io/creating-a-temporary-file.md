@@ -1,13 +1,14 @@
 ---
-title:                "Creando un archivo temporal"
 aliases:
 - /es/javascript/creating-a-temporary-file/
-date:                  2024-01-20T17:40:37.168662-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Creando un archivo temporal"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:37.168662-07:00
+description: "Crear un archivo temporal es como anotar algo r\xE1pido en una servilleta:\
+  \ es \xFAtil para guardar datos que solo necesitas durante un rato. Los programadores\u2026"
+lastmod: 2024-02-18 23:09:10.426260
+model: gpt-4-1106-preview
+summary: "Crear un archivo temporal es como anotar algo r\xE1pido en una servilleta:\
+  \ es \xFAtil para guardar datos que solo necesitas durante un rato. Los programadores\u2026"
+title: Creando un archivo temporal
 ---
 
 {{< edit_this_page >}}

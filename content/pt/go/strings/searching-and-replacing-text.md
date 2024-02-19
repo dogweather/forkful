@@ -1,14 +1,18 @@
 ---
-title:                "Pesquisando e substituindo texto"
 aliases:
 - /pt/go/searching-and-replacing-text/
-date:                  2024-02-03T18:08:06.437284-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pesquisando e substituindo texto"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:06.437284-07:00
+description: "Buscar e substituir texto na programa\xE7\xE3o facilita a modifica\xE7\
+  \xE3o e gest\xE3o de strings, o que \xE9 uma tarefa fundamental na manipula\xE7\xE3\
+  o de dados e\u2026"
+lastmod: 2024-02-18 23:08:57.652528
+model: gpt-4-0125-preview
+summary: "Buscar e substituir texto na programa\xE7\xE3o facilita a modifica\xE7\xE3\
+  o e gest\xE3o de strings, o que \xE9 uma tarefa fundamental na manipula\xE7\xE3\
+  o de dados e\u2026"
+title: Pesquisando e substituindo texto
 ---
 
 {{< edit_this_page >}}

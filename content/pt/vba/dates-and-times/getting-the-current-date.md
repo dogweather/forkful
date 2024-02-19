@@ -1,14 +1,18 @@
 ---
-title:                "Obtendo a data atual"
 aliases:
 - /pt/vba/getting-the-current-date/
-date:                  2024-02-01T21:55:43.270650-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Obtendo a data atual"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/vba/getting-the-current-date.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:43.270650-07:00
+description: "No Visual Basic for Applications (VBA), recuperar a data atual \xE9\
+  \ uma tarefa comum que permite aos programadores trabalhar dinamicamente com datas\
+  \ em suas\u2026"
+lastmod: 2024-02-18 23:08:57.985812
+model: gpt-4-0125-preview
+summary: "No Visual Basic for Applications (VBA), recuperar a data atual \xE9 uma\
+  \ tarefa comum que permite aos programadores trabalhar dinamicamente com datas em\
+  \ suas\u2026"
+title: Obtendo a data atual
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Skrive en tekstfil"
 aliases:
 - /no/vba/writing-a-text-file/
-date:                  2024-02-01T22:08:24.685030-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skrive en tekstfil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/vba/writing-a-text-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:08:24.685030-07:00
+description: "\xC5 skrive en tekstfil i Visual Basic for Applications (VBA) involverer\
+  \ \xE5 opprette, modifisere eller legge til tekstdata i filer, en grunnleggende\
+  \ oppgave\u2026"
+lastmod: 2024-02-18 23:08:53.747559
+model: gpt-4-0125-preview
+summary: "\xC5 skrive en tekstfil i Visual Basic for Applications (VBA) involverer\
+  \ \xE5 opprette, modifisere eller legge til tekstdata i filer, en grunnleggende\
+  \ oppgave\u2026"
+title: Skrive en tekstfil
 ---
 
 {{< edit_this_page >}}

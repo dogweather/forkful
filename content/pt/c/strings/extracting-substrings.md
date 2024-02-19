@@ -1,14 +1,18 @@
 ---
-title:                "Extraindo substrings"
 aliases:
 - /pt/c/extracting-substrings/
-date:                  2024-02-03T17:56:26.414946-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Extraindo substrings"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/extracting-substrings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:26.414946-07:00
+description: "Extrair substrings em C envolve criar uma string menor (substring) a\
+  \ partir de uma string maior com base em crit\xE9rios especificados, como posi\xE7\
+  \xE3o e\u2026"
+lastmod: 2024-02-18 23:08:58.607208
+model: gpt-4-0125-preview
+summary: "Extrair substrings em C envolve criar uma string menor (substring) a partir\
+  \ de uma string maior com base em crit\xE9rios especificados, como posi\xE7\xE3\
+  o e\u2026"
+title: Extraindo substrings
 ---
 
 {{< edit_this_page >}}

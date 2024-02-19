@@ -1,14 +1,17 @@
 ---
-title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 aliases:
 - /fi/swift/capitalizing-a-string/
-date:                  2024-02-03T19:06:38.132051-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:38.132051-07:00
+description: "Merkkijonon muuttaminen isokirjaimiseksi Swiftiss\xE4 muokkaa annettua\
+  \ merkkijonoa siten, ett\xE4 sen ensimm\xE4inen merkki on isokirjain ja loput merkit\
+  \ ovat\u2026"
+lastmod: 2024-02-18 23:09:07.971661
+model: gpt-4-0125-preview
+summary: "Merkkijonon muuttaminen isokirjaimiseksi Swiftiss\xE4 muokkaa annettua merkkijonoa\
+  \ siten, ett\xE4 sen ensimm\xE4inen merkki on isokirjain ja loput merkit ovat\u2026"
+title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 ---
 
 {{< edit_this_page >}}

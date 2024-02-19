@@ -1,13 +1,14 @@
 ---
-title:                "Protokollierung"
 aliases:
 - /de/arduino/logging/
-date:                  2024-01-26T00:58:30.878939-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Protokollierung"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/logging.md"
+date: 2024-01-26 00:58:30.878939-07:00
+description: "\"Logging\" bezeichnet das Aufzeichnen von Ereignissen, Transaktionen\
+  \ oder Aktivit\xE4ten, die im Laufe der Zeit in einem System stattfinden. Programmierer\u2026"
+lastmod: 2024-02-18 23:09:05.152147
+model: gpt-4-1106-preview
+summary: "\"Logging\" bezeichnet das Aufzeichnen von Ereignissen, Transaktionen oder\
+  \ Aktivit\xE4ten, die im Laufe der Zeit in einem System stattfinden. Programmierer\u2026"
+title: Protokollierung
 ---
 
 {{< edit_this_page >}}

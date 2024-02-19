@@ -1,13 +1,14 @@
 ---
-title:                "Protokollierung"
 aliases:
 - /de/powershell/logging/
-date:                  2024-01-26T01:07:06.225155-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Protokollierung"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/logging.md"
+date: 2024-01-26 01:07:06.225155-07:00
+description: "Logging ist im Grunde das Hinterlassen einer Spur innerhalb Ihres Codes\
+  \ - es ist die Art und Weise, wie Sie verfolgen, was passiert, wenn Ihr Skript in\u2026"
+lastmod: 2024-02-18 23:09:05.108031
+model: gpt-4-1106-preview
+summary: "Logging ist im Grunde das Hinterlassen einer Spur innerhalb Ihres Codes\
+  \ - es ist die Art und Weise, wie Sie verfolgen, was passiert, wenn Ihr Skript in\u2026"
+title: Protokollierung
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,16 @@
 ---
-title:                "Substrings extraheren"
 aliases:
 - /nl/javascript/extracting-substrings/
-date:                  2024-01-28T21:59:40.419628-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Substrings extraheren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/javascript/extracting-substrings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:40.419628-07:00
+description: "Het extraheren van substrings betekent het grijpen van een stukje van\
+  \ een string. Programmeurs snijden en hakken in strings om data te isoleren, een\u2026"
+lastmod: 2024-02-18 23:09:02.263512
+model: gpt-4-0125-preview
+summary: "Het extraheren van substrings betekent het grijpen van een stukje van een\
+  \ string. Programmeurs snijden en hakken in strings om data te isoleren, een\u2026"
+title: Substrings extraheren
 ---
 
 {{< edit_this_page >}}

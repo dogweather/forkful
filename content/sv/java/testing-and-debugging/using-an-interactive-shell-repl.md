@@ -1,13 +1,14 @@
 ---
-title:                "Använda en interaktiv skal (REPL)"
 aliases:
 - /sv/java/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:15:25.843954-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Använda en interaktiv skal (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:15:25.843954-07:00
+description: "En REPL (Read-Eval-Print Loop) \xE4r ett interaktivt skal som processar\
+  \ enskilda anv\xE4ndarinmatningar, exekverar kod och returnerar resultatet. Programmerare\u2026"
+lastmod: 2024-02-18 23:08:51.670973
+model: gpt-4-0125-preview
+summary: "En REPL (Read-Eval-Print Loop) \xE4r ett interaktivt skal som processar\
+  \ enskilda anv\xE4ndarinmatningar, exekverar kod och returnerar resultatet. Programmerare\u2026"
+title: "Anv\xE4nda en interaktiv skal (REPL)"
 ---
 
 {{< edit_this_page >}}

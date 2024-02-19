@@ -1,14 +1,18 @@
 ---
-title:                "Søke og erstatte tekst"
 aliases:
 - /no/google-apps-script/searching-and-replacing-text/
-date:                  2024-02-01T22:01:12.690197-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Søke og erstatte tekst"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/google-apps-script/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:12.690197-07:00
+description: "S\xF8king og erstatning av tekst i Google Apps Script inneb\xE6rer \xE5\
+  \ programmert identifisere spesifikke strenger i et dokument, regneark eller annen\
+  \ type\u2026"
+lastmod: 2024-02-18 23:08:53.464681
+model: gpt-4-0125-preview
+summary: "S\xF8king og erstatning av tekst i Google Apps Script inneb\xE6rer \xE5\
+  \ programmert identifisere spesifikke strenger i et dokument, regneark eller annen\
+  \ type\u2026"
+title: "S\xF8ke og erstatte tekst"
 ---
 
 {{< edit_this_page >}}

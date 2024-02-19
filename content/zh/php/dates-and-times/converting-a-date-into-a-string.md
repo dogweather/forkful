@@ -1,14 +1,21 @@
 ---
-title:                "将日期转换为字符串"
 aliases:
 - /zh/php/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:13.306916-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "将日期转换为字符串"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:13.306916-07:00
+description: "\u5728PHP\u4E2D\uFF0C\u65E5\u671F\u5230\u5B57\u7B26\u4E32\u7684\u8F6C\
+  \u6362\u662F\u5C06\u65E5\u671F\u683C\u5F0F\u5316\u4E3A\u53EF\u8BFB\u5F62\u5F0F\u7684\
+  \u8FC7\u7A0B\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u5C55\u793A\
+  \u5BF9\u7528\u6237\u53CB\u597D\u7684\u65E5\u671F\u6216\u8005\u5C06\u65E5\u671F\u5B58\
+  \u50A8\u5230\u6570\u636E\u5E93\u4E2D\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.226364
+model: gpt-4-1106-preview
+summary: "\u5728PHP\u4E2D\uFF0C\u65E5\u671F\u5230\u5B57\u7B26\u4E32\u7684\u8F6C\u6362\
+  \u662F\u5C06\u65E5\u671F\u683C\u5F0F\u5316\u4E3A\u53EF\u8BFB\u5F62\u5F0F\u7684\u8FC7\
+  \u7A0B\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u5C55\u793A\u5BF9\
+  \u7528\u6237\u53CB\u597D\u7684\u65E5\u671F\u6216\u8005\u5C06\u65E5\u671F\u5B58\u50A8\
+  \u5230\u6570\u636E\u5E93\u4E2D\u3002"
+title: "\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Remaniement de code"
 aliases:
 - /fr/swift/refactoring/
-date:                  2024-01-26T03:36:51.311926-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Remaniement de code"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/refactoring.md"
+date: 2024-01-26 03:36:51.311926-07:00
+description: "La refactorisation est le processus de restructuration du code informatique\
+  \ existant sans en changer le comportement externe. Les programmeurs le font\u2026"
+lastmod: 2024-02-18 23:09:09.217849
+model: gpt-4-0125-preview
+summary: "La refactorisation est le processus de restructuration du code informatique\
+  \ existant sans en changer le comportement externe. Les programmeurs le font\u2026"
+title: Remaniement de code
 ---
 
 {{< edit_this_page >}}

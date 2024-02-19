@@ -1,13 +1,14 @@
 ---
-title:                "Reading a text file"
 aliases:
 - /en/haskell/reading-a-text-file/
-date:                  2024-01-20T17:54:23.280188-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Reading a text file"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/reading-a-text-file.md"
+date: 2024-01-20 17:54:23.280188-07:00
+description: "Reading a text file in programming lets your code absorb data, like\
+  \ pouring coffee into your brain in the morning. We do it to feed programs information\u2026"
+lastmod: 2024-02-18 23:09:11.112966
+model: gpt-4-1106-preview
+summary: "Reading a text file in programming lets your code absorb data, like pouring\
+  \ coffee into your brain in the morning. We do it to feed programs information\u2026"
+title: Reading a text file
 ---
 
 {{< edit_this_page >}}

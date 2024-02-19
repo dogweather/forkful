@@ -1,13 +1,16 @@
 ---
-title:                "Porównywanie dwóch dat"
 aliases:
 - /pl/arduino/comparing-two-dates/
-date:                  2024-01-20T17:32:29.281269-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Porównywanie dwóch dat"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/comparing-two-dates.md"
+date: 2024-01-20 17:32:29.281269-07:00
+description: "Por\xF3wnywanie dat umo\u017Cliwia ustalenie, kt\xF3ra z nich jest wcze\u015B\
+  niejsza lub p\xF3\u017Aniejsza. Programi\u015Bci robi\u0105 to, aby \u015Bledzi\u0107\
+  \ czas, zarz\u0105dza\u0107 wydarzeniami, lub\u2026"
+lastmod: 2024-02-18 23:08:49.881317
+model: gpt-4-1106-preview
+summary: "Por\xF3wnywanie dat umo\u017Cliwia ustalenie, kt\xF3ra z nich jest wcze\u015B\
+  niejsza lub p\xF3\u017Aniejsza. Programi\u015Bci robi\u0105 to, aby \u015Bledzi\u0107\
+  \ czas, zarz\u0105dza\u0107 wydarzeniami, lub\u2026"
+title: "Por\xF3wnywanie dw\xF3ch dat"
 ---
 
 {{< edit_this_page >}}

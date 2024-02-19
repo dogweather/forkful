@@ -1,12 +1,14 @@
 ---
-title:                "Working with complex numbers"
 aliases:
 - /en/go/working-with-complex-numbers/
-date:                  2024-02-03T17:50:08.701621-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Working with complex numbers"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/working-with-complex-numbers.md"
+date: 2024-02-03 17:50:08.701621-07:00
+description: "Working with complex numbers in programming involves manipulating numbers\
+  \ that have both a real and an imaginary part, typically expressed as `a + bi`.\u2026"
+lastmod: 2024-02-18 23:09:10.590345
+model: gpt-4-0125-preview
+summary: "Working with complex numbers in programming involves manipulating numbers\
+  \ that have both a real and an imaginary part, typically expressed as `a + bi`.\u2026"
+title: Working with complex numbers
 ---
 
 {{< edit_this_page >}}

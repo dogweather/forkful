@@ -1,13 +1,16 @@
 ---
-title:                "Hantera filer med CLI-engreppskommandon"
 aliases:
 - /sv/ruby/manipulating-files-with-cli-one-liners/
-date:                  2024-01-27T16:21:19.241669-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Hantera filer med CLI-engreppskommandon"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/manipulating-files-with-cli-one-liners.md"
+date: 2024-01-27 16:21:19.241669-07:00
+description: "Att manipulera filer med CLI-enradare i Ruby handlar om att utf\xF6\
+  ra vanliga filoperationer direkt fr\xE5n din terminal med anv\xE4ndning av Ruby-script.\
+  \ Det \xE4r\u2026"
+lastmod: 2024-02-18 23:08:52.290352
+model: gpt-4-0125-preview
+summary: "Att manipulera filer med CLI-enradare i Ruby handlar om att utf\xF6ra vanliga\
+  \ filoperationer direkt fr\xE5n din terminal med anv\xE4ndning av Ruby-script. Det\
+  \ \xE4r\u2026"
+title: Hantera filer med CLI-engreppskommandon
 ---
 
 {{< edit_this_page >}}

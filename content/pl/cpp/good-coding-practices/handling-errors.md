@@ -1,13 +1,16 @@
 ---
-title:                "Obsługa błędów"
 aliases:
 - /pl/cpp/handling-errors/
-date:                  2024-01-26T00:49:40.335055-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Obsługa błędów"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/handling-errors.md"
+date: 2024-01-26 00:49:40.335055-07:00
+description: "Obs\u0142uga b\u0142\u0119d\xF3w to planowanie na wypadek, gdy co\u015B\
+  \ p\xF3jdzie nie tak. Jest to kluczowe, poniewa\u017C pomaga unikn\u0105\u0107 awarii\
+  \ i sprawia, \u017Ce oprogramowanie jest\u2026"
+lastmod: 2024-02-18 23:08:49.918998
+model: gpt-4-1106-preview
+summary: "Obs\u0142uga b\u0142\u0119d\xF3w to planowanie na wypadek, gdy co\u015B\
+  \ p\xF3jdzie nie tak. Jest to kluczowe, poniewa\u017C pomaga unikn\u0105\u0107 awarii\
+  \ i sprawia, \u017Ce oprogramowanie jest\u2026"
+title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 ---
 
 {{< edit_this_page >}}

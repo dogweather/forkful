@@ -1,14 +1,18 @@
 ---
-title:                "Concatenazione di stringhe"
 aliases:
 - /it/go/concatenating-strings/
-date:                  2024-02-03T17:54:00.571325-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Concatenazione di stringhe"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/concatenating-strings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:00.571325-07:00
+description: "La concatenazione di stringhe implica l'unione di due o pi\xF9 stringhe\
+  \ da capo a fine per formare una nuova stringa. I programmatori fanno ci\xF2 per\
+  \ generare\u2026"
+lastmod: 2024-02-18 23:08:55.423746
+model: gpt-4-0125-preview
+summary: "La concatenazione di stringhe implica l'unione di due o pi\xF9 stringhe\
+  \ da capo a fine per formare una nuova stringa. I programmatori fanno ci\xF2 per\
+  \ generare\u2026"
+title: Concatenazione di stringhe
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Capitalizzare una stringa"
 aliases:
 - /it/c/capitalizing-a-string/
-date:                  2024-02-03T17:53:12.500520-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizzare una stringa"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:12.500520-07:00
+description: "Capitalizzare una stringa in C implica convertire il primo carattere\
+  \ di ogni parola in una determinata stringa in maiuscolo, se questo \xE8 una lettera\u2026"
+lastmod: 2024-02-18 23:08:56.320370
+model: gpt-4-0125-preview
+summary: "Capitalizzare una stringa in C implica convertire il primo carattere di\
+  \ ogni parola in una determinata stringa in maiuscolo, se questo \xE8 una lettera\u2026"
+title: Capitalizzare una stringa
 ---
 
 {{< edit_this_page >}}

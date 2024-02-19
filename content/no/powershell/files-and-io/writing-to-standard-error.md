@@ -1,14 +1,17 @@
 ---
-title:                "Skriving til standardfeil"
 aliases:
 - /no/powershell/writing-to-standard-error/
-date:                  2024-02-03T19:34:21.346738-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriving til standardfeil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/powershell/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:34:21.346738-07:00
+description: "\xC5 skrive til standardfeil (stderr) i PowerShell inneb\xE6rer \xE5\
+  \ sende feilmeldinger eller diagnostikk direkte til stderr-str\xF8mmen, forskjellig\
+  \ fra\u2026"
+lastmod: 2024-02-18 23:08:54.116249
+model: gpt-4-0125-preview
+summary: "\xC5 skrive til standardfeil (stderr) i PowerShell inneb\xE6rer \xE5 sende\
+  \ feilmeldinger eller diagnostikk direkte til stderr-str\xF8mmen, forskjellig fra\u2026"
+title: Skriving til standardfeil
 ---
 
 {{< edit_this_page >}}

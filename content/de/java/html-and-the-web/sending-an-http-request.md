@@ -1,13 +1,14 @@
 ---
-title:                "Einen HTTP-Request senden"
 aliases:
 - /de/java/sending-an-http-request/
-date:                  2024-01-20T18:00:07.247634-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Einen HTTP-Request senden"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/sending-an-http-request.md"
+date: 2024-01-20 18:00:07.247634-07:00
+description: "HTTP-Anfragen sind der Weg, \xFCber den Programme im Internet kommunizieren.\
+  \ Programmierer senden sie, um Daten zu holen, zu senden, zu \xE4ndern oder zu\u2026"
+lastmod: 2024-02-18 23:09:04.733660
+model: gpt-4-1106-preview
+summary: "HTTP-Anfragen sind der Weg, \xFCber den Programme im Internet kommunizieren.\
+  \ Programmierer senden sie, um Daten zu holen, zu senden, zu \xE4ndern oder zu\u2026"
+title: Einen HTTP-Request senden
 ---
 
 {{< edit_this_page >}}

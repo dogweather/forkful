@@ -1,14 +1,18 @@
 ---
-title:                "Att använda reguljära uttryck"
 aliases:
 - /sv/haskell/using-regular-expressions/
-date:                  2024-02-03T19:16:57.965311-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda reguljära uttryck"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:16:57.965311-07:00
+description: "Regulj\xE4ra uttryck i programmering \xE4r sekvenser av tecken som definierar\
+  \ ett s\xF6km\xF6nster, typiskt anv\xE4nda f\xF6r att s\xF6ka och manipulera str\xE4\
+  ngar. Haskell-\u2026"
+lastmod: 2024-02-18 23:08:51.827707
+model: gpt-4-0125-preview
+summary: "Regulj\xE4ra uttryck i programmering \xE4r sekvenser av tecken som definierar\
+  \ ett s\xF6km\xF6nster, typiskt anv\xE4nda f\xF6r att s\xF6ka och manipulera str\xE4\
+  ngar. Haskell-\u2026"
+title: "Att anv\xE4nda regulj\xE4ra uttryck"
 ---
 
 {{< edit_this_page >}}

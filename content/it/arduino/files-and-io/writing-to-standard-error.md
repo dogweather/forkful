@@ -1,14 +1,16 @@
 ---
-title:                "Scrivere sull'errore standard"
 aliases:
 - /it/arduino/writing-to-standard-error/
-date:                  2024-02-03T19:32:21.728359-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Scrivere sull'errore standard"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:21.728359-07:00
+description: "Scrivere sullo standard error (stderr) nella programmazione Arduino\
+  \ comporta indirizzare messaggi di errore e diagnostica su un canale separato,\u2026"
+lastmod: 2024-02-18 23:08:56.149026
+model: gpt-4-0125-preview
+summary: "Scrivere sullo standard error (stderr) nella programmazione Arduino comporta\
+  \ indirizzare messaggi di errore e diagnostica su un canale separato,\u2026"
+title: Scrivere sull'errore standard
 ---
 
 {{< edit_this_page >}}

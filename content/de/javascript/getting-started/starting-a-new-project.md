@@ -1,13 +1,15 @@
 ---
-title:                "Einen neuen Projekt starten"
 aliases:
 - /de/javascript/starting-a-new-project/
-date:                  2024-01-20T18:03:59.832836-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Einen neuen Projekt starten"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/starting-a-new-project.md"
+date: 2024-01-20 18:03:59.832836-07:00
+description: "Ein neues Projekt zu starten bedeutet, von Grund auf etwas Neues zu\
+  \ schaffen. Programmierer machen das, um ihre Ideen umzusetzen, Probleme zu l\xF6\
+  sen oder\u2026"
+lastmod: 2024-02-18 23:09:05.279413
+model: gpt-4-1106-preview
+summary: "Ein neues Projekt zu starten bedeutet, von Grund auf etwas Neues zu schaffen.\
+  \ Programmierer machen das, um ihre Ideen umzusetzen, Probleme zu l\xF6sen oder\u2026"
+title: Einen neuen Projekt starten
 ---
 
 {{< edit_this_page >}}

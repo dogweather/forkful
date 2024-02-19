@@ -1,13 +1,15 @@
 ---
-title:                "Einsatz eines Debuggers"
 aliases:
 - /de/haskell/using-a-debugger/
-date:                  2024-01-26T03:49:21.766038-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Einsatz eines Debuggers"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/using-a-debugger.md"
+date: 2024-01-26 03:49:21.766038-07:00
+description: "Ein Debugger wird verwendet, um tief in Ihren Code einzutauchen, mit\
+  \ Werkzeugen, die darauf ausgelegt sind, ein Programm w\xE4hrend der Ausf\xFChrung\
+  \ zu\u2026"
+lastmod: 2024-02-18 23:09:04.921746
+model: gpt-4-0125-preview
+summary: "Ein Debugger wird verwendet, um tief in Ihren Code einzutauchen, mit Werkzeugen,\
+  \ die darauf ausgelegt sind, ein Programm w\xE4hrend der Ausf\xFChrung zu\u2026"
+title: Einsatz eines Debuggers
 ---
 
 {{< edit_this_page >}}

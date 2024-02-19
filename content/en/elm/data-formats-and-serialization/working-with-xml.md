@@ -1,13 +1,14 @@
 ---
-title:                "Working with XML"
 aliases:
 - /en/elm/working-with-xml/
-date:                  2024-01-25T03:40:06.585419-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Working with XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/working-with-xml.md"
+date: 2024-01-25 03:40:06.585419-07:00
+description: "Working with XML means parsing, transforming, and generating XML documents\
+  \ in Elm. It's done to interact with many web services and legacy systems that\u2026"
+lastmod: 2024-02-18 23:09:10.995507
+model: gpt-4-1106-preview
+summary: "Working with XML means parsing, transforming, and generating XML documents\
+  \ in Elm. It's done to interact with many web services and legacy systems that\u2026"
+title: Working with XML
 ---
 
 {{< edit_this_page >}}

@@ -1,12 +1,15 @@
 ---
-title:                "Arbeiten mit YAML"
 aliases:
 - /de/elm/working-with-yaml/
-date:                  2024-01-19
-simple_title:         "Arbeiten mit YAML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/working-with-yaml.md"
+date: 2024-01-19
+description: "YAML ist ein datenorientiertes Format zum Speichern und \xDCbertragen\
+  \ von Informationen, \xE4hnlich wie JSON, aber menschenlesbarer. Programmierer verwenden\
+  \ es\u2026"
+lastmod: 2024-02-18 23:09:04.802994
+summary: "YAML ist ein datenorientiertes Format zum Speichern und \xDCbertragen von\
+  \ Informationen, \xE4hnlich wie JSON, aber menschenlesbarer. Programmierer verwenden\
+  \ es\u2026"
+title: Arbeiten mit YAML
 ---
 
 {{< edit_this_page >}}

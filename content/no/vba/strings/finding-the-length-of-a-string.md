@@ -1,14 +1,18 @@
 ---
-title:                "Finner lengden på en streng"
 aliases:
 - /no/vba/finding-the-length-of-a-string/
-date:                  2024-02-01T21:53:44.655521-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Finner lengden på en streng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/vba/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:44.655521-07:00
+description: "\xC5 finne lengden p\xE5 en streng i Visual Basic for Applications (VBA)\
+  \ inneb\xE6rer \xE5 bestemme antall tegn den inneholder. Programmerere utf\xF8rer\
+  \ ofte denne\u2026"
+lastmod: 2024-02-18 23:08:53.718416
+model: gpt-4-0125-preview
+summary: "\xC5 finne lengden p\xE5 en streng i Visual Basic for Applications (VBA)\
+  \ inneb\xE6rer \xE5 bestemme antall tegn den inneholder. Programmerere utf\xF8rer\
+  \ ofte denne\u2026"
+title: "Finner lengden p\xE5 en streng"
 ---
 
 {{< edit_this_page >}}

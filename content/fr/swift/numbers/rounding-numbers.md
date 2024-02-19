@@ -1,13 +1,16 @@
 ---
-title:                "Arrondir les nombres"
 aliases:
 - /fr/swift/rounding-numbers/
-date:                  2024-01-26T03:46:49.451668-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrondir les nombres"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/rounding-numbers.md"
+date: 2024-01-26 03:46:49.451668-07:00
+description: "Arrondir des nombres signifie approximer une valeur num\xE9rique \xE0\
+  \ une pr\xE9cision sp\xE9cifique, typiquement pour \xE9liminer les d\xE9cimales\
+  \ ind\xE9sirables. Les\u2026"
+lastmod: 2024-02-18 23:09:09.203156
+model: gpt-4-0125-preview
+summary: "Arrondir des nombres signifie approximer une valeur num\xE9rique \xE0 une\
+  \ pr\xE9cision sp\xE9cifique, typiquement pour \xE9liminer les d\xE9cimales ind\xE9\
+  sirables. Les\u2026"
+title: Arrondir les nombres
 ---
 
 {{< edit_this_page >}}

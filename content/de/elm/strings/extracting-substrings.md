@@ -1,13 +1,12 @@
 ---
-title:                "Teilstrings extrahieren"
 aliases:
 - /de/elm/extracting-substrings/
-date:                  2024-01-20T17:45:35.858143-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Teilstrings extrahieren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/extracting-substrings.md"
+date: 2024-01-20 17:45:35.858143-07:00
+description: (
+lastmod: 2024-02-18 23:09:04.770139
+model: gpt-4-1106-preview
+summary: (
+title: Teilstrings extrahieren
 ---
 
 {{< edit_this_page >}}

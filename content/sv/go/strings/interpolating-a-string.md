@@ -1,14 +1,18 @@
 ---
-title:                "Interpolera en sträng"
 aliases:
 - /sv/go/interpolating-a-string/
-date:                  2024-02-03T17:58:36.667599-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interpolera en sträng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/interpolating-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:58:36.667599-07:00
+description: "Str\xE4nginterpolering \xE4r en metod f\xF6r att konstruera str\xE4\
+  ngar som inkorporerar variabler, vilket m\xF6jligg\xF6r dynamisk skapande av str\xE4\
+  ngar. Programmerare g\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.318555
+model: gpt-4-0125-preview
+summary: "Str\xE4nginterpolering \xE4r en metod f\xF6r att konstruera str\xE4ngar\
+  \ som inkorporerar variabler, vilket m\xF6jligg\xF6r dynamisk skapande av str\xE4\
+  ngar. Programmerare g\xF6r\u2026"
+title: "Interpolera en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Använda en interaktiv skal (REPL)"
 aliases:
 - /sv/elixir/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:13:09.969061-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Använda en interaktiv skal (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:13:09.969061-07:00
+description: "En interaktiv skal, eller REPL (Read-Eval-Print Loop), l\xE5ter dig\
+  \ prova kodsnuttar i realtid. Elixir-programmerare anv\xE4nder REPL, kallad IEx\
+  \ (Interactive\u2026"
+lastmod: 2024-02-18 23:08:51.504103
+model: gpt-4-0125-preview
+summary: "En interaktiv skal, eller REPL (Read-Eval-Print Loop), l\xE5ter dig prova\
+  \ kodsnuttar i realtid. Elixir-programmerare anv\xE4nder REPL, kallad IEx (Interactive\u2026"
+title: "Anv\xE4nda en interaktiv skal (REPL)"
 ---
 
 {{< edit_this_page >}}

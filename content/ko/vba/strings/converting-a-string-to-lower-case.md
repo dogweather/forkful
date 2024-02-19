@@ -1,14 +1,26 @@
 ---
-title:                "문자열을 소문자로 변환하기"
 aliases:
 - /ko/vba/converting-a-string-to-lower-case/
-date:                  2024-02-01T21:51:08.309788-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열을 소문자로 변환하기"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/vba/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:08.309788-07:00
+description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\
+  \uB294 \uAC83\uC740 \uBB38\uC790\uC5F4\uC758 \uBAA8\uB4E0 \uB300\uBB38\uC790\uB97C\
+  \ \uC18C\uBB38\uC790\uB85C \uBC14\uAFB8\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4\
+  . \uC774 \uACFC\uC815\uC740 \uB370\uC774\uD130 \uC815\uADDC\uD654, \uB300\uC18C\uBB38\
+  \uC790 \uAD6C\uBD84 \uC5C6\uB294 \uBE44\uAD50, \uC0AC\uC6A9\uC790 \uC785\uB825\uC758\
+  \ \uC77C\uAD00\uC131 \uD5A5\uC0C1 \uB4F1 \uB2E4\uC591\uD55C \uD504\uB85C\uADF8\uB798\
+  \uBC0D \uC791\uC5C5\uC5D0 \uD544\uC218\uC801\uC785\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:05.930278
+model: gpt-4-0125-preview
+summary: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uB294\
+  \ \uAC83\uC740 \uBB38\uC790\uC5F4\uC758 \uBAA8\uB4E0 \uB300\uBB38\uC790\uB97C \uC18C\
+  \uBB38\uC790\uB85C \uBC14\uAFB8\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uC774\
+  \ \uACFC\uC815\uC740 \uB370\uC774\uD130 \uC815\uADDC\uD654, \uB300\uC18C\uBB38\uC790\
+  \ \uAD6C\uBD84 \uC5C6\uB294 \uBE44\uAD50, \uC0AC\uC6A9\uC790 \uC785\uB825\uC758\
+  \ \uC77C\uAD00\uC131 \uD5A5\uC0C1 \uB4F1 \uB2E4\uC591\uD55C \uD504\uB85C\uADF8\uB798\
+  \uBC0D \uC791\uC5C5\uC5D0 \uD544\uC218\uC801\uC785\uB2C8\uB2E4."
+title: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

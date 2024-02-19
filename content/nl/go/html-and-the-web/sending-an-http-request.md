@@ -1,14 +1,16 @@
 ---
-title:                "Een HTTP-verzoek verzenden"
 aliases:
 - /nl/go/sending-an-http-request/
-date:                  2024-02-03T18:08:42.473950-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een HTTP-verzoek verzenden"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/sending-an-http-request.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:42.473950-07:00
+description: "Het verzenden van een HTTP-verzoek houdt in dat er vanuit je Go-applicatie\
+  \ een oproep wordt gedaan naar een webserver, API of een andere op HTTP-\u2026"
+lastmod: 2024-02-18 23:09:01.334680
+model: gpt-4-0125-preview
+summary: "Het verzenden van een HTTP-verzoek houdt in dat er vanuit je Go-applicatie\
+  \ een oproep wordt gedaan naar een webserver, API of een andere op HTTP-\u2026"
+title: Een HTTP-verzoek verzenden
 ---
 
 {{< edit_this_page >}}

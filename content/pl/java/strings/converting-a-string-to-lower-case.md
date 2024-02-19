@@ -1,13 +1,16 @@
 ---
-title:                "Konwersja ciągu znaków na małe litery"
 aliases:
 - /pl/java/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:37.299020-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konwersja ciągu znaków na małe litery"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:37.299020-07:00
+description: "Konwersja stringa do ma\u0142ych liter to proces zmiany wszystkich liter\
+  \ w tek\u015Bcie na ich ma\u0142e odpowiedniki. Robimy to dla jednolito\u015Bci\
+  \ danych, \u0142atwiejszego\u2026"
+lastmod: 2024-02-18 23:08:49.465237
+model: gpt-4-1106-preview
+summary: "Konwersja stringa do ma\u0142ych liter to proces zmiany wszystkich liter\
+  \ w tek\u015Bcie na ich ma\u0142e odpowiedniki. Robimy to dla jednolito\u015Bci\
+  \ danych, \u0142atwiejszego\u2026"
+title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 ---
 
 {{< edit_this_page >}}

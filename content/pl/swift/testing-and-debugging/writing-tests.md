@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie testów"
 aliases:
 - /pl/swift/writing-tests/
-date:                  2024-02-03T19:32:05.567804-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie testów"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:05.567804-07:00
+description: "Pisanie test\xF3w w j\u0119zyku Swift polega na tworzeniu i wykonywaniu\
+  \ kodu, kt\xF3ry weryfikuje poprawno\u015B\u0107 innych jednostek kodu w aplikacji.\
+  \ Programi\u015Bci robi\u0105 to,\u2026"
+lastmod: 2024-02-18 23:08:49.956423
+model: gpt-4-0125-preview
+summary: "Pisanie test\xF3w w j\u0119zyku Swift polega na tworzeniu i wykonywaniu\
+  \ kodu, kt\xF3ry weryfikuje poprawno\u015B\u0107 innych jednostek kodu w aplikacji.\
+  \ Programi\u015Bci robi\u0105 to,\u2026"
+title: "Pisanie test\xF3w"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Dateimanipulation mit CLI-One-Linern"
 aliases:
 - /de/powershell/manipulating-files-with-cli-one-liners/
-date:                  2024-01-27T16:20:58.789056-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Dateimanipulation mit CLI-One-Linern"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/manipulating-files-with-cli-one-liners.md"
+date: 2024-01-27 16:20:58.789056-07:00
+description: "Die Manipulation von Dateien mit CLI-One-Linern in PowerShell dreht\
+  \ sich darum, schnell Dateidaten direkt \xFCber die Befehlszeile zu \xE4ndern, zu\
+  \ bewegen oder\u2026"
+lastmod: 2024-02-18 23:09:05.095739
+model: gpt-4-0125-preview
+summary: "Die Manipulation von Dateien mit CLI-One-Linern in PowerShell dreht sich\
+  \ darum, schnell Dateidaten direkt \xFCber die Befehlszeile zu \xE4ndern, zu bewegen\
+  \ oder\u2026"
+title: Dateimanipulation mit CLI-One-Linern
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Znalezienie długości ciągu znaków"
 aliases:
 - /pl/python/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:11.871397-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Znalezienie długości ciągu znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:11.871397-07:00
+description: "Zliczanie znak\xF3w w ci\u0105gu znak\xF3w to podstawa. Programi\u015B\
+  ci robi\u0105 to, by wiedzie\u0107, ile danych maj\u0105 przed sob\u0105 \u2013\
+  \ czy to waliduj\u0105c input, formatuj\u0105c tekst, czy\u2026"
+lastmod: 2024-02-18 23:08:49.213286
+model: gpt-4-1106-preview
+summary: "Zliczanie znak\xF3w w ci\u0105gu znak\xF3w to podstawa. Programi\u015Bci\
+  \ robi\u0105 to, by wiedzie\u0107, ile danych maj\u0105 przed sob\u0105 \u2013 czy\
+  \ to waliduj\u0105c input, formatuj\u0105c tekst, czy\u2026"
+title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

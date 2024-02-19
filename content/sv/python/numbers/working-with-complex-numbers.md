@@ -1,13 +1,16 @@
 ---
-title:                "Att arbeta med komplexa tal"
 aliases:
 - /sv/python/working-with-complex-numbers/
-date:                  2024-01-26T04:44:51.433838-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med komplexa tal"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/working-with-complex-numbers.md"
+date: 2024-01-26 04:44:51.433838-07:00
+description: "Komplexa tal \xE4r en m\xE4ngd tal i formen `a + bi`, d\xE4r `a` och\
+  \ `b` \xE4r reella tal, och `i` \xE4r den imagin\xE4ra enheten (`i^2 = -1`). I programmering\
+  \ anv\xE4nder vi\u2026"
+lastmod: 2024-02-18 23:08:51.416241
+model: gpt-4-0125-preview
+summary: "Komplexa tal \xE4r en m\xE4ngd tal i formen `a + bi`, d\xE4r `a` och `b`\
+  \ \xE4r reella tal, och `i` \xE4r den imagin\xE4ra enheten (`i^2 = -1`). I programmering\
+  \ anv\xE4nder vi\u2026"
+title: Att arbeta med komplexa tal
 ---
 
 {{< edit_this_page >}}

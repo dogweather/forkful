@@ -1,13 +1,15 @@
 ---
-title:                "Refactorización"
 aliases:
 - /es/python/refactoring/
-date:                  2024-01-26T03:36:43.425116-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactorización"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/refactoring.md"
+date: 2024-01-26 03:36:43.425116-07:00
+description: "Refactorizar es el proceso de reestructurar c\xF3digo computacional\
+  \ existente\u2014cambiando el factoreo\u2014sin alterar su comportamiento externo.\
+  \ Los programadores\u2026"
+lastmod: 2024-02-18 23:09:09.565572
+model: gpt-4-0125-preview
+summary: "Refactorizar es el proceso de reestructurar c\xF3digo computacional existente\u2014\
+  cambiando el factoreo\u2014sin alterar su comportamiento externo. Los programadores\u2026"
+title: "Refactorizaci\xF3n"
 ---
 
 {{< edit_this_page >}}

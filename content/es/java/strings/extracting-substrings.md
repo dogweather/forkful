@@ -1,13 +1,16 @@
 ---
-title:                "Extracción de subcadenas"
 aliases:
 - /es/java/extracting-substrings/
-date:                  2024-01-20T17:45:49.623457-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extracción de subcadenas"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/extracting-substrings.md"
+date: 2024-01-20 17:45:49.623457-07:00
+description: "Extraer subcadenas significa seleccionar partes espec\xEDficas de una\
+  \ cadena de texto. Programadores lo hacen para analizar, manipular o transformar\
+  \ datos de\u2026"
+lastmod: 2024-02-18 23:09:09.833320
+model: gpt-4-1106-preview
+summary: "Extraer subcadenas significa seleccionar partes espec\xEDficas de una cadena\
+  \ de texto. Programadores lo hacen para analizar, manipular o transformar datos\
+  \ de\u2026"
+title: "Extracci\xF3n de subcadenas"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie do standardowego błędu"
 aliases:
 - /pl/vba/writing-to-standard-error/
-date:                  2024-02-01T22:09:28.111324-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie do standardowego błędu"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/vba/writing-to-standard-error.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:09:28.111324-07:00
+description: "Pisanie do standardowego b\u0142\u0119du w Visual Basic for Applications\
+  \ (VBA) oznacza kierowanie komunikat\xF3w o b\u0142\u0119dach lub diagnostyki niezale\u017C\
+  nie od standardowego\u2026"
+lastmod: 2024-02-18 23:08:49.451918
+model: gpt-4-0125-preview
+summary: "Pisanie do standardowego b\u0142\u0119du w Visual Basic for Applications\
+  \ (VBA) oznacza kierowanie komunikat\xF3w o b\u0142\u0119dach lub diagnostyki niezale\u017C\
+  nie od standardowego\u2026"
+title: "Pisanie do standardowego b\u0142\u0119du"
 ---
 
 {{< edit_this_page >}}

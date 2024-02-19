@@ -1,13 +1,16 @@
 ---
-title:                "Generowanie liczb losowych"
 aliases:
 - /pl/java/generating-random-numbers/
-date:                  2024-01-27T20:34:07.947459-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generowanie liczb losowych"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/generating-random-numbers.md"
+date: 2024-01-27 20:34:07.947459-07:00
+description: "Generowanie losowych liczb polega na tworzeniu nieprzewidywalnych sekwencji\
+  \ lub pojedynczych warto\u015Bci w okre\u015Blonym zakresie. Programi\u015Bci u\u017C\
+  ywaj\u0105 tej\u2026"
+lastmod: 2024-02-18 23:08:49.473803
+model: gpt-4-0125-preview
+summary: "Generowanie losowych liczb polega na tworzeniu nieprzewidywalnych sekwencji\
+  \ lub pojedynczych warto\u015Bci w okre\u015Blonym zakresie. Programi\u015Bci u\u017C\
+  ywaj\u0105 tej\u2026"
+title: Generowanie liczb losowych
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Runden von Zahlen"
 aliases:
 - /de/google-apps-script/rounding-numbers/
-date:                  2024-02-01T22:02:45.565432-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Runden von Zahlen"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/google-apps-script/rounding-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:02:45.565432-07:00
+description: "Das Runden von Zahlen, ein grundlegendes Konzept in der Computerprogrammierung,\
+  \ beinhaltet die Anpassung einer Zahl auf die n\xE4chstgelegene ganze Zahl oder\u2026"
+lastmod: 2024-02-18 23:09:04.407276
+model: gpt-4-0125-preview
+summary: "Das Runden von Zahlen, ein grundlegendes Konzept in der Computerprogrammierung,\
+  \ beinhaltet die Anpassung einer Zahl auf die n\xE4chstgelegene ganze Zahl oder\u2026"
+title: Runden von Zahlen
 ---
 
 {{< edit_this_page >}}

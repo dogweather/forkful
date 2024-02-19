@@ -1,13 +1,14 @@
 ---
-title:                "Uthenting av delstrenger"
 aliases:
 - /no/clojure/extracting-substrings/
-date:                  2024-01-20T17:45:26.226975-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Uthenting av delstrenger"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/extracting-substrings.md"
+date: 2024-01-20 17:45:26.226975-07:00
+description: "Substrenger lar oss hente spesifiserte deler av en streng. Nyttig for\
+  \ \xE5 analysere tekst, hente ut data, eller formatere utdata."
+lastmod: 2024-02-18 23:08:53.554170
+model: gpt-4-1106-preview
+summary: "Substrenger lar oss hente spesifiserte deler av en streng. Nyttig for \xE5\
+  \ analysere tekst, hente ut data, eller formatere utdata."
+title: Uthenting av delstrenger
 ---
 
 {{< edit_this_page >}}

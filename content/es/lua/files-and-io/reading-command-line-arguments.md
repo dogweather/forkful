@@ -1,13 +1,16 @@
 ---
-title:                "Lectura de argumentos de línea de comandos"
 aliases:
 - /es/lua/reading-command-line-arguments/
-date:                  2024-01-20T17:56:32.611078-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lectura de argumentos de línea de comandos"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/lua/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:32.611078-07:00
+description: "Leer argumentos de la l\xEDnea de comandos permite a tu programa Lua\
+  \ recibir informaci\xF3n externa al momento de ser ejecutado, brind\xE1ndote flexibilidad.\
+  \ Los\u2026"
+lastmod: 2024-02-18 23:09:10.136218
+model: gpt-4-1106-preview
+summary: "Leer argumentos de la l\xEDnea de comandos permite a tu programa Lua recibir\
+  \ informaci\xF3n externa al momento de ser ejecutado, brind\xE1ndote flexibilidad.\
+  \ Los\u2026"
+title: "Lectura de argumentos de l\xEDnea de comandos"
 ---
 
 {{< edit_this_page >}}

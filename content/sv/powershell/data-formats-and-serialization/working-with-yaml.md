@@ -1,14 +1,18 @@
 ---
-title:                "Att Arbeta med YAML"
 aliases:
 - /sv/powershell/working-with-yaml/
-date:                  2024-02-03T19:26:16.339995-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att Arbeta med YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:26:16.339995-07:00
+description: "YAML, eller YAML Ain't Markup Language, \xE4r ett m\xE4nniskol\xE4sbart\
+  \ dataserieringsspr\xE5k. Programmerare anv\xE4nder det ofta f\xF6r konfigurationsfiler\
+  \ och\u2026"
+lastmod: 2024-02-18 23:08:52.023732
+model: gpt-4-0125-preview
+summary: "YAML, eller YAML Ain't Markup Language, \xE4r ett m\xE4nniskol\xE4sbart\
+  \ dataserieringsspr\xE5k. Programmerare anv\xE4nder det ofta f\xF6r konfigurationsfiler\
+  \ och\u2026"
+title: Att Arbeta med YAML
 ---
 
 {{< edit_this_page >}}

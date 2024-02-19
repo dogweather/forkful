@@ -1,15 +1,16 @@
 ---
-title:                "Controleren of een directory bestaat"
 aliases:
 - /nl/elm/checking-if-a-directory-exists/
-date:                  2024-01-28T21:56:15.787744-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Controleren of een directory bestaat"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elm/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:15.787744-07:00
+description: "Controleren of een directory bestaat betekent bevestigen of een specifiek\
+  \ map pad aanwezig is in het bestandssysteem. Programmeurs doen dit om fouten te\u2026"
+lastmod: 2024-02-18 23:09:01.775316
+model: gpt-4-0125-preview
+summary: "Controleren of een directory bestaat betekent bevestigen of een specifiek\
+  \ map pad aanwezig is in het bestandssysteem. Programmeurs doen dit om fouten te\u2026"
+title: Controleren of een directory bestaat
 ---
 
 {{< edit_this_page >}}

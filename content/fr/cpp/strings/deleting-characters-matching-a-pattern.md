@@ -1,13 +1,16 @@
 ---
-title:                "Suppression de caractères correspondant à un motif"
 aliases:
 - /fr/cpp/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:48.811914-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Suppression de caractères correspondant à un motif"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:48.811914-07:00
+description: "En C++, supprimer des caract\xE8res qui correspondent \xE0 un motif\
+  \ s\u2019av\xE8re utile pour nettoyer des strings, valider des entr\xE9es, ou pour\
+  \ tout traitement de\u2026"
+lastmod: 2024-02-18 23:09:09.142940
+model: gpt-4-1106-preview
+summary: "En C++, supprimer des caract\xE8res qui correspondent \xE0 un motif s\u2019\
+  av\xE8re utile pour nettoyer des strings, valider des entr\xE9es, ou pour tout traitement\
+  \ de\u2026"
+title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 ---
 
 {{< edit_this_page >}}

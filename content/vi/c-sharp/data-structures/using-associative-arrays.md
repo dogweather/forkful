@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng mảng liên kết"
 aliases:
 - /vi/c-sharp/using-associative-arrays/
-date:                  2024-01-30T19:10:26.927554-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng mảng liên kết"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:26.927554-07:00
+description: "M\u1EA3ng k\u1EBFt h\u1EE3p, hay t\u1EEB \u0111i\u1EC3n trong C#, cho\
+  \ ph\xE9p b\u1EA1n l\u01B0u tr\u1EEF v\xE0 qu\u1EA3n l\xFD c\xE1c c\u1EB7p kho\xE1\
+  \ v\xE0 gi\xE1 tr\u1ECB. Ch\xFAng l\xE0 l\u1EF1a ch\u1ECDn h\xE0ng \u0111\u1EA7\
+  u khi b\u1EA1n c\u1EA7n l\u1EA5y nhanh gi\xE1 tr\u1ECB d\u1EF1a\u2026"
+lastmod: 2024-02-18 23:08:50.690195
+model: gpt-4-0125-preview
+summary: "M\u1EA3ng k\u1EBFt h\u1EE3p, hay t\u1EEB \u0111i\u1EC3n trong C#, cho ph\xE9\
+  p b\u1EA1n l\u01B0u tr\u1EEF v\xE0 qu\u1EA3n l\xFD c\xE1c c\u1EB7p kho\xE1 v\xE0\
+  \ gi\xE1 tr\u1ECB. Ch\xFAng l\xE0 l\u1EF1a ch\u1ECDn h\xE0ng \u0111\u1EA7u khi b\u1EA1\
+  n c\u1EA7n l\u1EA5y nhanh gi\xE1 tr\u1ECB d\u1EF1a\u2026"
+title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 ---
 
 {{< edit_this_page >}}

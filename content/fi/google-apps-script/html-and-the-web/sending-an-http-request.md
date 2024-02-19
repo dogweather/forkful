@@ -1,14 +1,18 @@
 ---
-title:                "HTTP-pyynnön lähettäminen"
 aliases:
 - /fi/google-apps-script/sending-an-http-request/
-date:                  2024-02-01T22:01:19.033902-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTTP-pyynnön lähettäminen"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/sending-an-http-request.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:19.033902-07:00
+description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Google Apps Scriptill\xE4 tarkoittaa\
+  \ ohjelmallisesti kutsun tekemist\xE4 ulkoiselle verkkopalvelimelle tai API:lle.\
+  \ Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:07.131282
+model: gpt-4-0125-preview
+summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Google Apps Scriptill\xE4 tarkoittaa\
+  \ ohjelmallisesti kutsun tekemist\xE4 ulkoiselle verkkopalvelimelle tai API:lle.\
+  \ Ohjelmoijat\u2026"
+title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 ---
 
 {{< edit_this_page >}}

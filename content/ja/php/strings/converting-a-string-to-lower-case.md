@@ -1,14 +1,21 @@
 ---
-title:                "文字列を小文字に変換"
 aliases:
 - /ja/php/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:39:32.911595-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "文字列を小文字に変換"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:39:32.911595-07:00
+description: "\u5909\u6570\u5185\u306E\u6587\u5B57\u5217\u3092\u5C0F\u6587\u5B57\u306B\
+  \u5909\u63DB\u3059\u308B\u3053\u3068\u3092\u6307\u3057\u307E\u3059\u3002\u4E00\u8CAB\
+  \u6027\u306E\u3042\u308B\u30C7\u30FC\u30BF\u51E6\u7406\u3084\u5927\u6587\u5B57\u30FB\
+  \u5C0F\u6587\u5B57\u3092\u533A\u5225\u3057\u306A\u3044\u691C\u7D22\u306E\u305F\u3081\
+  \u306B\u884C\u3044\u307E\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:54.984047
+model: gpt-4-1106-preview
+summary: "\u5909\u6570\u5185\u306E\u6587\u5B57\u5217\u3092\u5C0F\u6587\u5B57\u306B\
+  \u5909\u63DB\u3059\u308B\u3053\u3068\u3092\u6307\u3057\u307E\u3059\u3002\u4E00\u8CAB\
+  \u6027\u306E\u3042\u308B\u30C7\u30FC\u30BF\u51E6\u7406\u3084\u5927\u6587\u5B57\u30FB\
+  \u5C0F\u6587\u5B57\u3092\u533A\u5225\u3057\u306A\u3044\u691C\u7D22\u306E\u305F\u3081\
+  \u306B\u884C\u3044\u307E\u3059\u3002"
+title: "\u6587\u5B57\u5217\u3092\u5C0F\u6587\u5B57\u306B\u5909\u63DB"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,17 @@
 ---
-title:                "Omtolkning av ett datum från en sträng"
 aliases:
 - /sv/c/parsing-a-date-from-a-string/
-date:                  2024-02-03T18:00:05.246922-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Omtolkning av ett datum från en sträng"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:00:05.246922-07:00
+description: "Att tolka ett datum fr\xE5n en str\xE4ng i C inneb\xE4r att konvertera\
+  \ textuella representationer av datum till ett format som program kan manipulera\
+  \ och analysera\u2026"
+lastmod: 2024-02-18 23:08:52.260557
+model: gpt-4-0125-preview
+summary: "Att tolka ett datum fr\xE5n en str\xE4ng i C inneb\xE4r att konvertera textuella\
+  \ representationer av datum till ett format som program kan manipulera och analysera\u2026"
+title: "Omtolkning av ett datum fr\xE5n en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

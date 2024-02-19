@@ -1,13 +1,16 @@
 ---
-title:                "Erstellung einer temporären Datei"
 aliases:
 - /de/haskell/creating-a-temporary-file/
-date:                  2024-01-20T17:40:32.770787-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Erstellung einer temporären Datei"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:32.770787-07:00
+description: "Tempor\xE4re Dateien sind kurzlebige Dateien f\xFCr Daten, die w\xE4\
+  hrend der Laufzeit eines Programms ben\xF6tigt, aber nicht dauerhaft gespeichert\
+  \ werden sollen.\u2026"
+lastmod: 2024-02-18 23:09:04.938083
+model: gpt-4-1106-preview
+summary: "Tempor\xE4re Dateien sind kurzlebige Dateien f\xFCr Daten, die w\xE4hrend\
+  \ der Laufzeit eines Programms ben\xF6tigt, aber nicht dauerhaft gespeichert werden\
+  \ sollen.\u2026"
+title: "Erstellung einer tempor\xE4ren Datei"
 ---
 
 {{< edit_this_page >}}

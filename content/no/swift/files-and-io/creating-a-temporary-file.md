@@ -1,13 +1,16 @@
 ---
-title:                "Opprette en midlertidig fil"
 aliases:
 - /no/swift/creating-a-temporary-file/
-date:                  2024-01-20T17:41:34.124319-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Opprette en midlertidig fil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:34.124319-07:00
+description: "Midlertidige filer er som engangsbestikk for data \u2013 de brukes litt,\
+  \ og s\xE5 forsvinner de. Programmerere bruker dem for \xE5 lagre midlertidig data\
+  \ som ikke\u2026"
+lastmod: 2024-02-18 23:08:54.287553
+model: gpt-4-1106-preview
+summary: "Midlertidige filer er som engangsbestikk for data \u2013 de brukes litt,\
+  \ og s\xE5 forsvinner de. Programmerere bruker dem for \xE5 lagre midlertidig data\
+  \ som ikke\u2026"
+title: Opprette en midlertidig fil
 ---
 
 {{< edit_this_page >}}

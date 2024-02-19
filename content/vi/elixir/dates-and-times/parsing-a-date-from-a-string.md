@@ -1,16 +1,21 @@
 ---
-title:                "Phân tích ngày từ chuỗi kí tự"
 aliases:
 - /vi/elixir/parsing-a-date-from-a-string/
-date:                  2024-01-28T22:04:23.718409-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Phân tích ngày từ chuỗi kí tự"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:04:23.718409-07:00
+description: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y th\xE1ng t\u1EEB m\u1ED9t chu\u1ED7\
+  i l\xE0 vi\u1EC7c l\u1EA5y v\u0103n b\u1EA3n, nh\u01B0 \"2023-04-05\", v\xE0 chuy\u1EC3\
+  n \u0111\u1ED5i n\xF3 sang \u0111\u1ECBnh d\u1EA1ng ng\xE0y m\xE0 ch\u01B0\u01A1\
+  ng tr\xECnh c\u1EE7a b\u1EA1n c\xF3 th\u1EC3 hi\u1EC3u\u2026"
+lastmod: 2024-02-18 23:08:50.379300
+model: gpt-4-0125-preview
+summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y th\xE1ng t\u1EEB m\u1ED9t chu\u1ED7\
+  i l\xE0 vi\u1EC7c l\u1EA5y v\u0103n b\u1EA3n, nh\u01B0 \"2023-04-05\", v\xE0 chuy\u1EC3\
+  n \u0111\u1ED5i n\xF3 sang \u0111\u1ECBnh d\u1EA1ng ng\xE0y m\xE0 ch\u01B0\u01A1\
+  ng tr\xECnh c\u1EE7a b\u1EA1n c\xF3 th\u1EC3 hi\u1EC3u\u2026"
+title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 ---
 
 {{< edit_this_page >}}

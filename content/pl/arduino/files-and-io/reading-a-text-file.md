@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
 aliases:
 - /pl/arduino/reading-a-text-file/
-date:                  2024-01-20T17:53:41.607760-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie pliku tekstowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/reading-a-text-file.md"
+date: 2024-01-20 17:53:41.607760-07:00
+description: "Czytanie pliku tekstowego to proces pobierania danych z pliku zapisanego\
+  \ na karcie SD lub pami\u0119ci systemu. Programi\u015Bci robi\u0105 to, by za\u0142\
+  adowa\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.886281
+model: gpt-4-1106-preview
+summary: "Czytanie pliku tekstowego to proces pobierania danych z pliku zapisanego\
+  \ na karcie SD lub pami\u0119ci systemu. Programi\u015Bci robi\u0105 to, by za\u0142\
+  adowa\u0107\u2026"
+title: Odczytywanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

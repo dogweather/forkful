@@ -1,14 +1,18 @@
 ---
-title:                "Merkkijonon pituuden selvittäminen"
 aliases:
 - /fi/google-apps-script/finding-the-length-of-a-string/
-date:                  2024-02-01T21:53:41.974190-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonon pituuden selvittäminen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:41.974190-07:00
+description: "Merkkijonon pituuden selvitt\xE4minen Google Apps Scriptill\xE4, joka\
+  \ on JavaScript-pohjainen pilviskriptikieli, jonka avulla voit automatisoida teht\xE4\
+  vi\xE4\u2026"
+lastmod: 2024-02-18 23:09:07.124367
+model: gpt-4-0125-preview
+summary: "Merkkijonon pituuden selvitt\xE4minen Google Apps Scriptill\xE4, joka on\
+  \ JavaScript-pohjainen pilviskriptikieli, jonka avulla voit automatisoida teht\xE4\
+  vi\xE4\u2026"
+title: "Merkkijonon pituuden selvitt\xE4minen"
 ---
 
 {{< edit_this_page >}}

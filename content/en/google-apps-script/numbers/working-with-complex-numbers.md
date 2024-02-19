@@ -1,12 +1,16 @@
 ---
-title:                "Working with complex numbers"
 aliases:
 - /en/google-apps-script/working-with-complex-numbers/
-date:                  2024-02-01T21:12:06.181398-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Working with complex numbers"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/google-apps-script/working-with-complex-numbers.md"
+date: 2024-02-01 21:12:06.181398-07:00
+description: "Complex numbers, represented as a combination of real and imaginary\
+  \ units (e.g., 3 + 4i), are fundamental in various computational problems, especially\
+  \ in\u2026"
+lastmod: 2024-02-18 23:09:10.633165
+model: gpt-4-0125-preview
+summary: "Complex numbers, represented as a combination of real and imaginary units\
+  \ (e.g., 3 + 4i), are fundamental in various computational problems, especially\
+  \ in\u2026"
+title: Working with complex numbers
 ---
 
 {{< edit_this_page >}}

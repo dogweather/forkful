@@ -1,14 +1,16 @@
 ---
-title:                "Lavorare con i numeri complessi"
 aliases:
 - /it/vba/working-with-complex-numbers/
-date:                  2024-02-01T22:07:54.250174-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con i numeri complessi"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/vba/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:07:54.250174-07:00
+description: "Lavorare con i numeri complessi implica eseguire operazioni matematiche\
+  \ su numeri che hanno sia una parte reale che una immaginaria. I programmatori si\u2026"
+lastmod: 2024-02-18 23:08:55.716207
+model: gpt-4-0125-preview
+summary: "Lavorare con i numeri complessi implica eseguire operazioni matematiche\
+  \ su numeri che hanno sia una parte reale che una immaginaria. I programmatori si\u2026"
+title: Lavorare con i numeri complessi
 ---
 
 {{< edit_this_page >}}

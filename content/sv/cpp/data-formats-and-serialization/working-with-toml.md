@@ -1,13 +1,16 @@
 ---
-title:                "Att arbeta med TOML"
 aliases:
 - /sv/cpp/working-with-toml/
-date:                  2024-01-26T04:19:54.662200-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/working-with-toml.md"
+date: 2024-01-26 04:19:54.662200-07:00
+description: "TOML (Toms Uppenbara, Minimala Spr\xE5k) \xE4r ett data-serialiseringsformat\
+  \ som \xE4r l\xE4tt att l\xE4sa p\xE5 grund av dess tydliga semantik. Programmerare\
+  \ anv\xE4nder TOML\u2026"
+lastmod: 2024-02-18 23:08:52.106494
+model: gpt-4-0125-preview
+summary: "TOML (Toms Uppenbara, Minimala Spr\xE5k) \xE4r ett data-serialiseringsformat\
+  \ som \xE4r l\xE4tt att l\xE4sa p\xE5 grund av dess tydliga semantik. Programmerare\
+  \ anv\xE4nder TOML\u2026"
+title: Att arbeta med TOML
 ---
 
 {{< edit_this_page >}}

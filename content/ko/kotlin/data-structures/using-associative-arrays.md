@@ -1,15 +1,26 @@
 ---
-title:                "연관 배열 사용하기"
 aliases:
 - /ko/kotlin/using-associative-arrays/
-date:                  2024-01-30T19:11:58.077899-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "연관 배열 사용하기"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:11:58.077899-07:00
+description: "\uCF54\uD2C0\uB9B0\uC5D0\uC11C\uC758 \uC5F0\uAD00 \uBC30\uC5F4, \uB610\
+  \uB294 \uB9F5\uC740 \uD0A4-\uAC12 \uC30D\uC744 \uC800\uC7A5\uD558\uB294 \uCEEC\uB809\
+  \uC158\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uACE0\uC720\
+  \uD55C \uD0A4\uB97C \uAE30\uBC18\uC73C\uB85C \uB370\uC774\uD130\uB97C \uD6A8\uC728\
+  \uC801\uC73C\uB85C \uAD6C\uC131\uD558\uACE0 \uAC80\uC0C9\uD558\uAE30 \uC704\uD574\
+  \ \uC774\uB97C \uC0AC\uC6A9\uD558\uC5EC \uC815\uBCF4 \uAD00\uB9AC\uAC00 \uB354 \uC26C\
+  \uC6CC\uC9D1\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.138546
+model: gpt-4-0125-preview
+summary: "\uCF54\uD2C0\uB9B0\uC5D0\uC11C\uC758 \uC5F0\uAD00 \uBC30\uC5F4, \uB610\uB294\
+  \ \uB9F5\uC740 \uD0A4-\uAC12 \uC30D\uC744 \uC800\uC7A5\uD558\uB294 \uCEEC\uB809\uC158\
+  \uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uACE0\uC720\uD55C\
+  \ \uD0A4\uB97C \uAE30\uBC18\uC73C\uB85C \uB370\uC774\uD130\uB97C \uD6A8\uC728\uC801\
+  \uC73C\uB85C \uAD6C\uC131\uD558\uACE0 \uAC80\uC0C9\uD558\uAE30 \uC704\uD574 \uC774\
+  \uB97C \uC0AC\uC6A9\uD558\uC5EC \uC815\uBCF4 \uAD00\uB9AC\uAC00 \uB354 \uC26C\uC6CC\
+  \uC9D1\uB2C8\uB2E4."
+title: "\uC5F0\uAD00 \uBC30\uC5F4 \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Bearbeiten von Dateien im Place mit CLI-Einzeilern"
 aliases:
 - /de/bash/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:21:12.913995-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bearbeiten von Dateien im Place mit CLI-Einzeilern"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:21:12.913995-07:00
+description: "Stellen Sie sich vor, Sie finden heraus, dass Sie mehreren Konfigurationsdateien\
+  \ auf Ihrem Server eine Batch-Aktualisierung durchf\xFChren m\xFCssen. Sie\u2026"
+lastmod: 2024-02-18 23:09:05.049814
+model: gpt-4-0125-preview
+summary: "Stellen Sie sich vor, Sie finden heraus, dass Sie mehreren Konfigurationsdateien\
+  \ auf Ihrem Server eine Batch-Aktualisierung durchf\xFChren m\xFCssen. Sie\u2026"
+title: Bearbeiten von Dateien im Place mit CLI-Einzeilern
 ---
 
 {{< edit_this_page >}}

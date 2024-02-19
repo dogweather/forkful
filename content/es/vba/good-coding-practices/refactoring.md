@@ -1,14 +1,16 @@
 ---
-title:                "Refactorización"
 aliases:
 - /es/vba/refactoring/
-date:                  2024-02-01T21:59:38.237453-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactorización"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/vba/refactoring.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:38.237453-07:00
+description: "El refactoring en programaci\xF3n implica modificar la estructura del\
+  \ c\xF3digo sin cambiar su comportamiento, para mejorar aspectos como la legibilidad,\u2026"
+lastmod: 2024-02-18 23:09:09.806821
+model: gpt-4-0125-preview
+summary: "El refactoring en programaci\xF3n implica modificar la estructura del c\xF3\
+  digo sin cambiar su comportamiento, para mejorar aspectos como la legibilidad,\u2026"
+title: "Refactorizaci\xF3n"
 ---
 
 {{< edit_this_page >}}

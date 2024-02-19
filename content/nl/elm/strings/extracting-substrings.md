@@ -1,15 +1,17 @@
 ---
-title:                "Substrings extraheren"
 aliases:
 - /nl/elm/extracting-substrings/
-date:                  2024-01-28T21:59:38.216806-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Substrings extraheren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elm/extracting-substrings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:38.216806-07:00
+description: "Substringen extraheren betekent specifieke delen uit een string halen.\
+  \ Programmeurs doen dit om stukken tekstgegevens te isoleren, te manipuleren of\
+  \ te\u2026"
+lastmod: 2024-02-18 23:09:01.747107
+model: gpt-4-0125-preview
+summary: "Substringen extraheren betekent specifieke delen uit een string halen. Programmeurs\
+  \ doen dit om stukken tekstgegevens te isoleren, te manipuleren of te\u2026"
+title: Substrings extraheren
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Chuyển đổi một ngày thành chuỗi"
 aliases:
 - /vi/kotlin/converting-a-date-into-a-string/
-date:                  2024-01-28T21:57:55.517660-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Chuyển đổi một ngày thành chuỗi"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/kotlin/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:57:55.517660-07:00
+description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh m\u1ED9t chu\u1ED7\
+  i c\xF3 ngh\u0129a l\xE0 bi\u1EC3u di\u1EC5n m\u1ED9t kho\u1EA3nh kh\u1EAFc c\u1EE5\
+  \ th\u1EC3 trong \u0111\u1ECBnh d\u1EA1ng d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\
+  \u1EDDi. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y\u2026"
+lastmod: 2024-02-18 23:08:50.663987
+model: gpt-4-0125-preview
+summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh m\u1ED9t chu\u1ED7i\
+  \ c\xF3 ngh\u0129a l\xE0 bi\u1EC3u di\u1EC5n m\u1ED9t kho\u1EA3nh kh\u1EAFc c\u1EE5\
+  \ th\u1EC3 trong \u0111\u1ECBnh d\u1EA1ng d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\
+  \u1EDDi. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y\u2026"
+title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 ---
 
 {{< edit_this_page >}}

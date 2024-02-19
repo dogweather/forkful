@@ -1,14 +1,18 @@
 ---
-title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 aliases:
 - /fi/vba/sending-an-http-request-with-basic-authentication/
-date:                  2024-02-01T22:02:41.981893-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:02:41.981893-07:00
+description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla Visual Basic\
+  \ for Applications (VBA) -ohjelmassa liittyy verkkoresurssien k\xE4ytt\xE4miseen,\
+  \ jotka on suojattu\u2026"
+lastmod: 2024-02-18 23:09:07.410331
+model: gpt-4-0125-preview
+summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla Visual Basic for\
+  \ Applications (VBA) -ohjelmassa liittyy verkkoresurssien k\xE4ytt\xE4miseen, jotka\
+  \ on suojattu\u2026"
+title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 ---
 
 {{< edit_this_page >}}

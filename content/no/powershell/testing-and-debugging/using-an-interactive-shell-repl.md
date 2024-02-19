@@ -1,13 +1,16 @@
 ---
-title:                "Bruke et interaktivt skall (REPL)"
 aliases:
 - /no/powershell/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:16:52.245545-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke et interaktivt skall (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/powershell/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:16:52.245545-07:00
+description: "Det interaktive skallet, eller Read-Eval-Print Loop (REPL), lar deg\
+  \ skrive PowerShell-kommandoer og f\xE5 umiddelbar tilbakemelding. Programmerere\
+  \ bruker det\u2026"
+lastmod: 2024-02-18 23:08:54.101925
+model: gpt-4-0125-preview
+summary: "Det interaktive skallet, eller Read-Eval-Print Loop (REPL), lar deg skrive\
+  \ PowerShell-kommandoer og f\xE5 umiddelbar tilbakemelding. Programmerere bruker\
+  \ det\u2026"
+title: Bruke et interaktivt skall (REPL)
 ---
 
 {{< edit_this_page >}}

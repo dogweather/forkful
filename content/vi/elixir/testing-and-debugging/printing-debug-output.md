@@ -1,15 +1,20 @@
 ---
-title:                "In ra thông tin gỡ lỗi"
 aliases:
 - /vi/elixir/printing-debug-output/
-date:                  2024-01-28T22:04:29.522030-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "In ra thông tin gỡ lỗi"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/printing-debug-output.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:04:29.522030-07:00
+description: "Vi\u1EC7c in output g\u1EE1 l\u1ED7i trong Elixir bao g\u1ED3m vi\u1EC7\
+  c hi\u1EC3n th\u1ECB k\u1EBFt qu\u1EA3 t\u1EA1m th\u1EDDi ho\u1EB7c gi\xE1 tr\u1ECB\
+  \ c\u1EE7a bi\u1EBFn trong b\u1EA3ng \u0111i\u1EC1u khi\u1EC3n. L\u1EADp tr\xEC\
+  nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 theo\u2026"
+lastmod: 2024-02-18 23:08:50.371718
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c in output g\u1EE1 l\u1ED7i trong Elixir bao g\u1ED3m vi\u1EC7\
+  c hi\u1EC3n th\u1ECB k\u1EBFt qu\u1EA3 t\u1EA1m th\u1EDDi ho\u1EB7c gi\xE1 tr\u1ECB\
+  \ c\u1EE7a bi\u1EBFn trong b\u1EA3ng \u0111i\u1EC1u khi\u1EC3n. L\u1EADp tr\xEC\
+  nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 theo\u2026"
+title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

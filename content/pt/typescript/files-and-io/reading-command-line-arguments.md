@@ -1,13 +1,15 @@
 ---
-title:                "Lendo argumentos da linha de comando"
 aliases:
 - /pt/typescript/reading-command-line-arguments/
-date:                  2024-01-20T17:57:23.736260-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lendo argumentos da linha de comando"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/reading-command-line-arguments.md"
+date: 2024-01-20 17:57:23.736260-07:00
+description: "Ler argumentos da linha de comando permite que seu programa TypeScript\
+  \ receba inputs externos ao ser executado. Programadores fazem isso para tornar\
+  \ seus\u2026"
+lastmod: 2024-02-18 23:08:57.900114
+model: gpt-4-1106-preview
+summary: "Ler argumentos da linha de comando permite que seu programa TypeScript receba\
+  \ inputs externos ao ser executado. Programadores fazem isso para tornar seus\u2026"
+title: Lendo argumentos da linha de comando
 ---
 
 {{< edit_this_page >}}

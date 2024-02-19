@@ -1,13 +1,16 @@
 ---
-title:                "Criando um arquivo temporário"
 aliases:
 - /pt/java/creating-a-temporary-file/
-date:                  2024-01-20T17:40:33.379451-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Criando um arquivo temporário"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:33.379451-07:00
+description: "Criar um arquivo tempor\xE1rio permite armazenar dados que s\xF3 s\xE3\
+  o necess\xE1rios durante a execu\xE7\xE3o de um programa. Programadores fazem isso\
+  \ para economizar\u2026"
+lastmod: 2024-02-18 23:08:58.038036
+model: gpt-4-1106-preview
+summary: "Criar um arquivo tempor\xE1rio permite armazenar dados que s\xF3 s\xE3o\
+  \ necess\xE1rios durante a execu\xE7\xE3o de um programa. Programadores fazem isso\
+  \ para economizar\u2026"
+title: "Criando um arquivo tempor\xE1rio"
 ---
 
 {{< edit_this_page >}}

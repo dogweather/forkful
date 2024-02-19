@@ -1,14 +1,26 @@
 ---
-title:                "处理CSV文件"
 aliases:
 - /zh/haskell/working-with-csv/
-date:                  2024-02-03T19:19:54.926806-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理CSV文件"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:19:54.926806-07:00
+description: "\u5904\u7406CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\uFF09\u6587\u4EF6\
+  \u6D89\u53CA\u5230\u89E3\u6790\u548C\u751F\u6210\u5B58\u50A8\u4EE5\u7B80\u5355\u6587\
+  \u672C\u683C\u5F0F\u5448\u73B0\u7684\u8868\u683C\u6570\u636E\u7684\u6587\u4EF6\u3002\
+  \u7A0B\u5E8F\u5458\u7ECF\u5E38\u8FDB\u884C\u8FD9\u4E00\u4EFB\u52A1\uFF0C\u4EE5\u9AD8\
+  \u6548\u5730\u4ECE\u7535\u5B50\u8868\u683C\u3001\u6570\u636E\u5E93\u4E2D\u5BFC\u5165\
+  \u6216\u5BFC\u51FA\u6570\u636E\uFF0C\u6216\u4FC3\u8FDB\u4E0D\u540C\u7A0B\u5E8F\u4E4B\
+  \u95F4\u7684\u6570\u636E\u4EA4\u6362\u3002"
+lastmod: 2024-02-18 23:08:59.198388
+model: gpt-4-0125-preview
+summary: "\u5904\u7406CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\uFF09\u6587\u4EF6\u6D89\
+  \u53CA\u5230\u89E3\u6790\u548C\u751F\u6210\u5B58\u50A8\u4EE5\u7B80\u5355\u6587\u672C\
+  \u683C\u5F0F\u5448\u73B0\u7684\u8868\u683C\u6570\u636E\u7684\u6587\u4EF6\u3002\u7A0B\
+  \u5E8F\u5458\u7ECF\u5E38\u8FDB\u884C\u8FD9\u4E00\u4EFB\u52A1\uFF0C\u4EE5\u9AD8\u6548\
+  \u5730\u4ECE\u7535\u5B50\u8868\u683C\u3001\u6570\u636E\u5E93\u4E2D\u5BFC\u5165\u6216\
+  \u5BFC\u51FA\u6570\u636E\uFF0C\u6216\u4FC3\u8FDB\u4E0D\u540C\u7A0B\u5E8F\u4E4B\u95F4\
+  \u7684\u6570\u636E\u4EA4\u6362\u3002"
+title: "\u5904\u7406CSV\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

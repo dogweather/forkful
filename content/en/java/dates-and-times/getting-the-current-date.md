@@ -1,12 +1,14 @@
 ---
-title:                "Getting the current date"
 aliases:
 - /en/java/getting-the-current-date/
-date:                  2024-02-03T19:03:03.288829-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Getting the current date"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/getting-the-current-date.md"
+date: 2024-02-03 19:03:03.288829-07:00
+description: "Obtaining the current date in Java is a fundamental operation that allows\
+  \ programmers to manipulate date objects for operations such as logging, date\u2026"
+lastmod: 2024-02-18 23:09:10.941037
+model: gpt-4-0125-preview
+summary: "Obtaining the current date in Java is a fundamental operation that allows\
+  \ programmers to manipulate date objects for operations such as logging, date\u2026"
+title: Getting the current date
 ---
 
 {{< edit_this_page >}}

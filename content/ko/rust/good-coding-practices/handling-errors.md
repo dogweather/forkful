@@ -1,13 +1,22 @@
 ---
-title:                "에러 처리하기"
 aliases:
 - /ko/rust/handling-errors/
-date:                  2024-01-26T00:57:24.328626-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "에러 처리하기"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/handling-errors.md"
+date: 2024-01-26 00:57:24.328626-07:00
+description: "\uC5D0\uB7EC \uCC98\uB9AC\uB294 \uBB38\uC81C\uAC00 \uBC1C\uC0DD\uD588\
+  \uC744 \uB54C \uC774\uB97C \uB2E4\uB8E8\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC740 \uC774\uB97C \uD1B5\uD574 \uC608\uC0C1\uCE58 \uBABB\
+  \uD55C \uC0C1\uD669\uC744 \uCC98\uB9AC\uD558\uACE0, Rust \uD504\uB85C\uADF8\uB7A8\
+  \uC774 \uC791\uC740 \uBB38\uC81C\uC5D0\uB3C4 \uB2F9\uD669\uD558\uC9C0 \uC54A\uACE0\
+  \ \uAC15\uB825\uD558\uAC8C \uB3D9\uC791\uD558\uB3C4\uB85D \uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:05.895724
+model: gpt-4-1106-preview
+summary: "\uC5D0\uB7EC \uCC98\uB9AC\uB294 \uBB38\uC81C\uAC00 \uBC1C\uC0DD\uD588\uC744\
+  \ \uB54C \uC774\uB97C \uB2E4\uB8E8\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC740 \uC774\uB97C \uD1B5\uD574 \uC608\uC0C1\uCE58 \uBABB\uD55C\
+  \ \uC0C1\uD669\uC744 \uCC98\uB9AC\uD558\uACE0, Rust \uD504\uB85C\uADF8\uB7A8\uC774\
+  \ \uC791\uC740 \uBB38\uC81C\uC5D0\uB3C4 \uB2F9\uD669\uD558\uC9C0 \uC54A\uACE0 \uAC15\
+  \uB825\uD558\uAC8C \uB3D9\uC791\uD558\uB3C4\uB85D \uD569\uB2C8\uB2E4."
+title: "\uC5D0\uB7EC \uCC98\uB9AC\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

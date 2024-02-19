@@ -1,15 +1,16 @@
 ---
-title:                "Substrings extraheren"
 aliases:
 - /nl/arduino/extracting-substrings/
-date:                  2024-01-28T21:59:27.892968-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Substrings extraheren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/extracting-substrings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:27.892968-07:00
+description: "Substrings extraheren betekent specifieke delen uit een string halen\
+  \ - zoals het nemen van een stuk taart. Programmeurs doen dit om gegevens te isoleren,\u2026"
+lastmod: 2024-02-18 23:09:02.126442
+model: gpt-4-0125-preview
+summary: "Substrings extraheren betekent specifieke delen uit een string halen - zoals\
+  \ het nemen van een stuk taart. Programmeurs doen dit om gegevens te isoleren,\u2026"
+title: Substrings extraheren
 ---
 
 {{< edit_this_page >}}

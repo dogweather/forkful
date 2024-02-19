@@ -1,12 +1,15 @@
 ---
-title:                "Deleting characters matching a pattern"
 aliases:
 - /en/go/deleting-characters-matching-a-pattern/
-date:                  2024-02-03T17:50:03.810142-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Deleting characters matching a pattern"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/deleting-characters-matching-a-pattern.md"
+date: 2024-02-03 17:50:03.810142-07:00
+description: "Deleting characters that match a specific pattern is about removing\
+  \ certain characters or sequences of characters from strings, based on rules defined\
+  \ by\u2026"
+lastmod: 2024-02-18 23:09:10.580629
+model: gpt-4-0125-preview
+summary: "Deleting characters that match a specific pattern is about removing certain\
+  \ characters or sequences of characters from strings, based on rules defined by\u2026"
+title: Deleting characters matching a pattern
 ---
 
 {{< edit_this_page >}}

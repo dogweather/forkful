@@ -1,13 +1,16 @@
 ---
-title:                "Modification de fichiers sur place avec des lignes de commande en une seule étape"
 aliases:
 - /fr/fish-shell/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:20:44.363202-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Modification de fichiers sur place avec des lignes de commande en une seule étape"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:20:44.363202-07:00
+description: "Modifier des fichiers sur place avec des lignes de commande est une\
+  \ pratique qui consiste \xE0 apporter des modifications directement aux fichiers\
+  \ depuis la\u2026"
+lastmod: 2024-02-18 23:09:09.301147
+model: gpt-4-0125-preview
+summary: "Modifier des fichiers sur place avec des lignes de commande est une pratique\
+  \ qui consiste \xE0 apporter des modifications directement aux fichiers depuis la\u2026"
+title: "Modification de fichiers sur place avec des lignes de commande en une seule\
+  \ \xE9tape"
 ---
 
 {{< edit_this_page >}}

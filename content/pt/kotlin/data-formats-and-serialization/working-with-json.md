@@ -1,14 +1,17 @@
 ---
-title:                "Trabalhando com JSON"
 aliases:
 - /pt/kotlin/working-with-json/
-date:                  2024-02-03T19:23:03.945968-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:03.945968-07:00
+description: "Trabalhar com JSON (JavaScript Object Notation) em Kotlin envolve a\
+  \ an\xE1lise e gera\xE7\xE3o de dados JSON. Programadores fazem isso para trocar\
+  \ dados facilmente\u2026"
+lastmod: 2024-02-18 23:08:58.137271
+model: gpt-4-0125-preview
+summary: "Trabalhar com JSON (JavaScript Object Notation) em Kotlin envolve a an\xE1\
+  lise e gera\xE7\xE3o de dados JSON. Programadores fazem isso para trocar dados facilmente\u2026"
+title: Trabalhando com JSON
 ---
 
 {{< edit_this_page >}}

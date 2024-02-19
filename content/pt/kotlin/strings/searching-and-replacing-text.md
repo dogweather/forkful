@@ -1,13 +1,16 @@
 ---
-title:                "Pesquisando e substituindo texto"
 aliases:
 - /pt/kotlin/searching-and-replacing-text/
-date:                  2024-01-20T17:58:19.172800-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Pesquisando e substituindo texto"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:19.172800-07:00
+description: "Buscar e substituir texto \xE9 mudar palavras ou sequ\xEAncias de caracteres\
+  \ espec\xEDficas por outras em uma string. Programadores fazem isso para corrigir\
+  \ erros,\u2026"
+lastmod: 2024-02-18 23:08:58.086853
+model: gpt-4-1106-preview
+summary: "Buscar e substituir texto \xE9 mudar palavras ou sequ\xEAncias de caracteres\
+  \ espec\xEDficas por outras em uma string. Programadores fazem isso para corrigir\
+  \ erros,\u2026"
+title: Pesquisando e substituindo texto
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,18 @@
 ---
-title:                "Uso de matrices asociativas"
 aliases:
 - /es/elm/using-associative-arrays/
-date:                  2024-01-30T19:11:05.451099-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Uso de matrices asociativas"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:11:05.451099-07:00
+description: "Los arreglos asociativos, o como los llama Elm, Diccionarios, mapean\
+  \ claves a valores de una manera que hace que la b\xFAsqueda, inserci\xF3n y eliminaci\xF3\
+  n de\u2026"
+lastmod: 2024-02-18 23:09:09.882844
+model: gpt-4-0125-preview
+summary: "Los arreglos asociativos, o como los llama Elm, Diccionarios, mapean claves\
+  \ a valores de una manera que hace que la b\xFAsqueda, inserci\xF3n y eliminaci\xF3\
+  n de\u2026"
+title: Uso de matrices asociativas
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,16 @@
 ---
-title:                "Een webpagina downloaden"
 aliases:
 - /nl/elm/downloading-a-web-page/
-date:                  2024-01-28T21:59:32.971871-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een webpagina downloaden"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elm/downloading-a-web-page.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:32.971871-07:00
+description: "Een webpagina downloaden betekent gegevens van het internet rechtstreeks\
+  \ in je app halen om deze weer te geven of te verwerken. Programmeurs doen dit om\u2026"
+lastmod: 2024-02-18 23:09:01.758034
+model: gpt-4-0125-preview
+summary: "Een webpagina downloaden betekent gegevens van het internet rechtstreeks\
+  \ in je app halen om deze weer te geven of te verwerken. Programmeurs doen dit om\u2026"
+title: Een webpagina downloaden
 ---
 
 {{< edit_this_page >}}

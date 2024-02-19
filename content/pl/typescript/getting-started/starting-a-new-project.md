@@ -1,13 +1,16 @@
 ---
-title:                "Rozpoczynanie nowego projektu"
 aliases:
 - /pl/typescript/starting-a-new-project/
-date:                  2024-01-20T18:04:48.263773-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rozpoczynanie nowego projektu"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/starting-a-new-project.md"
+date: 2024-01-20 18:04:48.263773-07:00
+description: "Zaczynanie nowego projektu to jak otwieranie pustej ksi\u0105\u017C\
+  ki, na kt\xF3rej stronach mo\u017Cesz napisa\u0107 dowolny kod. Programi\u015Bci\
+  \ rozpoczynaj\u0105 nowe projekty, aby\u2026"
+lastmod: 2024-02-18 23:08:49.348554
+model: gpt-4-1106-preview
+summary: "Zaczynanie nowego projektu to jak otwieranie pustej ksi\u0105\u017Cki, na\
+  \ kt\xF3rej stronach mo\u017Cesz napisa\u0107 dowolny kod. Programi\u015Bci rozpoczynaj\u0105\
+  \ nowe projekty, aby\u2026"
+title: Rozpoczynanie nowego projektu
 ---
 
 {{< edit_this_page >}}

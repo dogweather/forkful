@@ -1,14 +1,16 @@
 ---
-title:                "Scrivere sull'errore standard"
 aliases:
 - /it/vba/writing-to-standard-error/
-date:                  2024-02-01T22:09:06.023141-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Scrivere sull'errore standard"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/vba/writing-to-standard-error.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:09:06.023141-07:00
+description: "Scrivere sull'errore standard in Visual Basic for Applications (VBA)\
+  \ comporta l'indirizzare messaggi di errore o diagnosi separati dall'uscita standard,\u2026"
+lastmod: 2024-02-18 23:08:55.740403
+model: gpt-4-0125-preview
+summary: "Scrivere sull'errore standard in Visual Basic for Applications (VBA) comporta\
+  \ l'indirizzare messaggi di errore o diagnosi separati dall'uscita standard,\u2026"
+title: Scrivere sull'errore standard
 ---
 
 {{< edit_this_page >}}

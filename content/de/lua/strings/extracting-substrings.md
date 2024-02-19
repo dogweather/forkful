@@ -1,13 +1,15 @@
 ---
-title:                "Teilstrings extrahieren"
 aliases:
 - /de/lua/extracting-substrings/
-date:                  2024-01-20T17:46:13.613912-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Teilstrings extrahieren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/extracting-substrings.md"
+date: 2024-01-20 17:46:13.613912-07:00
+description: "Extrahieren von Teilstrings bedeutet, bestimmte Teile aus einem l\xE4\
+  ngeren String herauszutrennen. Programmierer nutzen das, um Daten zu manipulieren,\
+  \ zu\u2026"
+lastmod: 2024-02-18 23:09:04.995449
+model: gpt-4-1106-preview
+summary: "Extrahieren von Teilstrings bedeutet, bestimmte Teile aus einem l\xE4ngeren\
+  \ String herauszutrennen. Programmierer nutzen das, um Daten zu manipulieren, zu\u2026"
+title: Teilstrings extrahieren
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Ottenere la data corrente"
 aliases:
 - /it/rust/getting-the-current-date/
-date:                  2024-02-03T19:10:48.111940-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ottenere la data corrente"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:10:48.111940-07:00
+description: "Il recupero della data corrente in Rust \xE8 un compito comune per attivit\xE0\
+  \ come la registrazione, operazioni basate sul tempo o semplicemente per\u2026"
+lastmod: 2024-02-18 23:08:55.690424
+model: gpt-4-0125-preview
+summary: "Il recupero della data corrente in Rust \xE8 un compito comune per attivit\xE0\
+  \ come la registrazione, operazioni basate sul tempo o semplicemente per\u2026"
+title: Ottenere la data corrente
 ---
 
 {{< edit_this_page >}}

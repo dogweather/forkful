@@ -1,14 +1,18 @@
 ---
-title:                "Työskenteleminen kompleksilukujen kanssa"
 aliases:
 - /fi/go/working-with-complex-numbers/
-date:                  2024-02-03T18:14:14.145333-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskenteleminen kompleksilukujen kanssa"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:14:14.145333-07:00
+description: "Ohjelmoinnissa kompleksilukujen k\xE4sitteleminen sis\xE4lt\xE4\xE4\
+  \ lukujen manipulointia, joilla on sek\xE4 reaaliosa ett\xE4 imaginaariosa, tyypillisesti\
+  \ ilmaistuna\u2026"
+lastmod: 2024-02-18 23:09:07.077583
+model: gpt-4-0125-preview
+summary: "Ohjelmoinnissa kompleksilukujen k\xE4sitteleminen sis\xE4lt\xE4\xE4 lukujen\
+  \ manipulointia, joilla on sek\xE4 reaaliosa ett\xE4 imaginaariosa, tyypillisesti\
+  \ ilmaistuna\u2026"
+title: "Ty\xF6skenteleminen kompleksilukujen kanssa"
 ---
 
 {{< edit_this_page >}}

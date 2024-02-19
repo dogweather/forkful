@@ -1,13 +1,16 @@
 ---
-title:                "Hantering av fel"
 aliases:
 - /sv/powershell/handling-errors/
-date:                  2024-01-26T00:56:01.079417-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Hantering av fel"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/handling-errors.md"
+date: 2024-01-26 00:56:01.079417-07:00
+description: "Att hantera fel i PowerShell inneb\xE4r att f\xF6rutse miss\xF6den och\
+  \ hantera dem smidigt. Programmerare g\xF6r detta f\xF6r att f\xF6rhindra krascher\
+  \ och f\xF6rse anv\xE4ndare\u2026"
+lastmod: 2024-02-18 23:08:52.011139
+model: gpt-4-1106-preview
+summary: "Att hantera fel i PowerShell inneb\xE4r att f\xF6rutse miss\xF6den och hantera\
+  \ dem smidigt. Programmerare g\xF6r detta f\xF6r att f\xF6rhindra krascher och f\xF6\
+  rse anv\xE4ndare\u2026"
+title: Hantering av fel
 ---
 
 {{< edit_this_page >}}

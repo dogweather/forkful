@@ -1,12 +1,14 @@
 ---
-title:                "Trabalhando com JSON"
 aliases:
 - /pt/javascript/working-with-json/
-date:                  2024-01-19
-simple_title:         "Trabalhando com JSON"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/working-with-json.md"
+date: 2024-01-19
+description: "JSON, ou JavaScript Object Notation, \xE9 um formato leve de troca de\
+  \ dados. Programadores utilizam JSON para transferir e armazenar dados de maneira\
+  \ simples\u2026"
+lastmod: 2024-02-18 23:08:58.553413
+summary: "JSON, ou JavaScript Object Notation, \xE9 um formato leve de troca de dados.\
+  \ Programadores utilizam JSON para transferir e armazenar dados de maneira simples\u2026"
+title: Trabalhando com JSON
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Convertire una stringa in minuscolo"
 aliases:
 - /it/c/converting-a-string-to-lower-case/
-date:                  2024-02-03T17:54:38.253375-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Convertire una stringa in minuscolo"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:38.253375-07:00
+description: "Convertire una stringa in minuscolo in C comporta la trasformazione\
+  \ di tutte le lettere maiuscole presenti in una stringa data nelle loro equivalenti\u2026"
+lastmod: 2024-02-18 23:08:56.324717
+model: gpt-4-0125-preview
+summary: "Convertire una stringa in minuscolo in C comporta la trasformazione di tutte\
+  \ le lettere maiuscole presenti in una stringa data nelle loro equivalenti\u2026"
+title: Convertire una stringa in minuscolo
 ---
 
 {{< edit_this_page >}}

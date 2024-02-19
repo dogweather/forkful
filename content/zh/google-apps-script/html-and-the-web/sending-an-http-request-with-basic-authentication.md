@@ -1,14 +1,26 @@
 ---
-title:                "使用基本认证发送HTTP请求"
 aliases:
 - /zh/google-apps-script/sending-an-http-request-with-basic-authentication/
-date:                  2024-02-01T22:01:51.269326-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用基本认证发送HTTP请求"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/google-apps-script/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:51.269326-07:00
+description: "\u53D1\u9001\u5E26\u6709\u57FA\u672C\u8BA4\u8BC1\u7684HTTP\u8BF7\u6C42\
+  \u6D89\u53CA\u5C06\u7528\u6237\u540D\u548C\u5BC6\u7801\u7F16\u7801\u5230\u8BF7\u6C42\
+  \u5934\u4E2D\uFF0C\u4EE5\u8BBF\u95EE\u53D7\u4FDD\u62A4\u7684\u8D44\u6E90\u3002\u7A0B\
+  \u5E8F\u5458\u4F7F\u7528\u8FD9\u79CD\u65B9\u6CD5\u8FDB\u884C\u670D\u52A1\u5668\u7AEF\
+  \u8BA4\u8BC1\uFF0C\u4EE5\u96C6\u6210\u9700\u8981\u57FA\u672C\u8BA4\u8BC1\u7684API\uFF0C\
+  \u7528\u4E8E\u64CD\u4F5C\u5982\u6570\u636E\u68C0\u7D22\u6216\u53D1\u5E03\u5185\u5BB9\
+  \u7B49\u3002"
+lastmod: 2024-02-18 23:08:58.749910
+model: gpt-4-0125-preview
+summary: "\u53D1\u9001\u5E26\u6709\u57FA\u672C\u8BA4\u8BC1\u7684HTTP\u8BF7\u6C42\u6D89\
+  \u53CA\u5C06\u7528\u6237\u540D\u548C\u5BC6\u7801\u7F16\u7801\u5230\u8BF7\u6C42\u5934\
+  \u4E2D\uFF0C\u4EE5\u8BBF\u95EE\u53D7\u4FDD\u62A4\u7684\u8D44\u6E90\u3002\u7A0B\u5E8F\
+  \u5458\u4F7F\u7528\u8FD9\u79CD\u65B9\u6CD5\u8FDB\u884C\u670D\u52A1\u5668\u7AEF\u8BA4\
+  \u8BC1\uFF0C\u4EE5\u96C6\u6210\u9700\u8981\u57FA\u672C\u8BA4\u8BC1\u7684API\uFF0C\
+  \u7528\u4E8E\u64CD\u4F5C\u5982\u6570\u636E\u68C0\u7D22\u6216\u53D1\u5E03\u5185\u5BB9\
+  \u7B49\u3002"
+title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001HTTP\u8BF7\u6C42"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Creating a temporary file"
 aliases:
 - /en/javascript/creating-a-temporary-file/
-date:                  2024-01-20T17:40:25.570523-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Creating a temporary file"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:25.570523-07:00
+description: "Creating a temporary file lets your app stash data it doesn't need forever.\
+  \ It's handy for when you're dealing with large data processing, caching, or\u2026"
+lastmod: 2024-02-18 23:09:11.456940
+model: gpt-4-1106-preview
+summary: "Creating a temporary file lets your app stash data it doesn't need forever.\
+  \ It's handy for when you're dealing with large data processing, caching, or\u2026"
+title: Creating a temporary file
 ---
 
 {{< edit_this_page >}}

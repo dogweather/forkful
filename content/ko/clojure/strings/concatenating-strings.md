@@ -1,14 +1,23 @@
 ---
-title:                "문자열 연결하기"
 aliases:
 - /ko/clojure/concatenating-strings/
-date:                  2024-01-20T17:34:43.496747-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "문자열 연결하기"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/concatenating-strings.md"
+date: 2024-01-20 17:34:43.496747-07:00
+description: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uC11C\uB85C \uB2E4\uB978 \uBB38\
+  \uC790\uC5F4\uB4E4\uC744 \uBD99\uC5EC\uC11C \uD558\uB098\uC758 \uBB38\uC790\uC5F4\
+  \uB85C \uB9CC\uB4DC\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB4E4\uC740 \uB370\uC774\uD130\uB97C \uC870\uD569\uD558\uAC70\uB098 \uCD9C\uB825\
+  \ \uD615\uC2DD\uC744 \uAC1C\uC120\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\
+  \uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:05.677625
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uC11C\uB85C \uB2E4\uB978 \uBB38\uC790\
+  \uC5F4\uB4E4\uC744 \uBD99\uC5EC\uC11C \uD558\uB098\uC758 \uBB38\uC790\uC5F4\uB85C\
+  \ \uB9CC\uB4DC\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\
+  \uC740 \uB370\uC774\uD130\uB97C \uC870\uD569\uD558\uAC70\uB098 \uCD9C\uB825 \uD615\
+  \uC2DD\uC744 \uAC1C\uC120\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\uD569\
+  \uB2C8\uB2E4."
+title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

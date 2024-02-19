@@ -1,13 +1,16 @@
 ---
-title:                "Nedlasting av en nettside"
 aliases:
 - /no/cpp/downloading-a-web-page/
-date:                  2024-01-20T17:44:02.326346-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Nedlasting av en nettside"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/downloading-a-web-page.md"
+date: 2024-01-20 17:44:02.326346-07:00
+description: "\xC5 laste ned en nettside inneb\xE6rer \xE5 hente ned all HTML-koden\
+  \ som danner selve siden du ser i nettleseren. Programmere gj\xF8r dette for \xE5\
+  \ hente data, sjekke\u2026"
+lastmod: 2024-02-18 23:08:54.183547
+model: gpt-4-1106-preview
+summary: "\xC5 laste ned en nettside inneb\xE6rer \xE5 hente ned all HTML-koden som\
+  \ danner selve siden du ser i nettleseren. Programmere gj\xF8r dette for \xE5 hente\
+  \ data, sjekke\u2026"
+title: Nedlasting av en nettside
 ---
 
 {{< edit_this_page >}}

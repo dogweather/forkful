@@ -1,15 +1,20 @@
 ---
-title:                "Ghi vào lỗi chuẩn"
 aliases:
 - /vi/c-sharp/writing-to-standard-error/
-date:                  2024-01-28T22:13:28.844264-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ghi vào lỗi chuẩn"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/writing-to-standard-error.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:13:28.844264-07:00
+description: "Vi\u1EC7c g\u1EEDi c\xE1c th\xF4ng b\xE1o l\u1ED7i t\u1EDBi standard\
+  \ error (stderr) c\xF3 ngh\u0129a l\xE0 b\u1EA1n \u0111ang chuy\u1EC3n th\xF4ng\
+  \ \u0111i\u1EC7p l\u1ED7i c\u1EE7a m\xECnh ra kh\u1ECFi \u0111\u1EA7u ra th\xF4\
+  ng th\u01B0\u1EDDng (stdout). C\xE1c l\u1EADp\u2026"
+lastmod: 2024-02-18 23:08:50.716588
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c g\u1EEDi c\xE1c th\xF4ng b\xE1o l\u1ED7i t\u1EDBi standard error\
+  \ (stderr) c\xF3 ngh\u0129a l\xE0 b\u1EA1n \u0111ang chuy\u1EC3n th\xF4ng \u0111\
+  i\u1EC7p l\u1ED7i c\u1EE7a m\xECnh ra kh\u1ECFi \u0111\u1EA7u ra th\xF4ng th\u01B0\
+  \u1EDDng (stdout). C\xE1c l\u1EADp\u2026"
+title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 ---
 
 {{< edit_this_page >}}

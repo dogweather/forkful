@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với CSV"
 aliases:
 - /vi/php/working-with-csv/
-date:                  2024-01-28T22:11:30.179834-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với CSV"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/php/working-with-csv.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:30.179834-07:00
+description: "CSV, vi\u1EBFt t\u1EAFt c\u1EE7a Comma-Separated Values (Gi\xE1 tr\u1ECB\
+  \ \u0111\u01B0\u1EE3c ph\xE2n t\xE1ch b\u1EDFi d\u1EA5u ph\u1EA9y), l\xE0 m\u1ED9\
+  t \u0111\u1ECBnh d\u1EA1ng t\u1EC7p ph\u1ED5 bi\u1EBFn \u0111\u1EC3 l\u01B0u tr\u1EEF\
+  \ d\u1EEF li\u1EC7u b\u1EA3ng. L\u1EADp tr\xECnh vi\xEAn s\u1EED\u2026"
+lastmod: 2024-02-18 23:08:50.815211
+model: gpt-4-0125-preview
+summary: "CSV, vi\u1EBFt t\u1EAFt c\u1EE7a Comma-Separated Values (Gi\xE1 tr\u1ECB\
+  \ \u0111\u01B0\u1EE3c ph\xE2n t\xE1ch b\u1EDFi d\u1EA5u ph\u1EA9y), l\xE0 m\u1ED9\
+  t \u0111\u1ECBnh d\u1EA1ng t\u1EC7p ph\u1ED5 bi\u1EBFn \u0111\u1EC3 l\u01B0u tr\u1EEF\
+  \ d\u1EEF li\u1EC7u b\u1EA3ng. L\u1EADp tr\xECnh vi\xEAn s\u1EED\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 ---
 
 {{< edit_this_page >}}

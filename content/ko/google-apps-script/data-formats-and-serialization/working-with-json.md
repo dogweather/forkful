@@ -1,14 +1,24 @@
 ---
-title:                "JSON과 함께 작업하기"
 aliases:
 - /ko/google-apps-script/working-with-json/
-date:                  2024-02-01T22:18:50.124702-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "JSON과 함께 작업하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/working-with-json.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:18:50.124702-07:00
+description: "JSON, \uC989 JavaScript Object Notation\uC740 \uC11C\uBC84\uC5D0\uC11C\
+  \ \uD074\uB77C\uC774\uC5B8\uD2B8\uB85C\uC758 \uD1B5\uC2E0\uACFC \uC124\uC815 \uD30C\
+  \uC77C\uC744 \uC704\uD574 \uC774\uC0C1\uC801\uC778 \uACBD\uB7C9\uD615 \uB370\uC774\
+  \uD130 \uC800\uC7A5 \uBC0F \uC804\uC1A1 \uD3EC\uB9F7\uC785\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC740 Google Apps Script\uC5D0\uC11C Google \uC11C\uBE44\
+  \uC2A4(\uC608: Sheets, Docs,\u2026"
+lastmod: 2024-02-18 23:09:05.592957
+model: gpt-4-0125-preview
+summary: "JSON, \uC989 JavaScript Object Notation\uC740 \uC11C\uBC84\uC5D0\uC11C \uD074\
+  \uB77C\uC774\uC5B8\uD2B8\uB85C\uC758 \uD1B5\uC2E0\uACFC \uC124\uC815 \uD30C\uC77C\
+  \uC744 \uC704\uD574 \uC774\uC0C1\uC801\uC778 \uACBD\uB7C9\uD615 \uB370\uC774\uD130\
+  \ \uC800\uC7A5 \uBC0F \uC804\uC1A1 \uD3EC\uB9F7\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC740 Google Apps Script\uC5D0\uC11C Google \uC11C\uBE44\uC2A4\
+  (\uC608: Sheets, Docs,\u2026"
+title: "JSON\uACFC \uD568\uAED8 \uC791\uC5C5\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

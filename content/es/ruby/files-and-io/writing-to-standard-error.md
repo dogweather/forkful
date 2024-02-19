@@ -1,14 +1,17 @@
 ---
-title:                "Escribiendo en el error estándar"
 aliases:
 - /es/ruby/writing-to-standard-error/
-date:                  2024-02-03T19:34:11.733505-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escribiendo en el error estándar"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:34:11.733505-07:00
+description: "Escribir en el error est\xE1ndar (stderr) en Ruby trata sobre dirigir\
+  \ mensajes de error o diagn\xF3sticos a un flujo de salida separado, distinto de\
+  \ la salida\u2026"
+lastmod: 2024-02-18 23:09:10.569998
+model: gpt-4-0125-preview
+summary: "Escribir en el error est\xE1ndar (stderr) en Ruby trata sobre dirigir mensajes\
+  \ de error o diagn\xF3sticos a un flujo de salida separado, distinto de la salida\u2026"
+title: "Escribiendo en el error est\xE1ndar"
 ---
 
 {{< edit_this_page >}}

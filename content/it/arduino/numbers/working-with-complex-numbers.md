@@ -1,13 +1,14 @@
 ---
-title:                "Lavorare con i numeri complessi"
 aliases:
 - /it/arduino/working-with-complex-numbers/
-date:                  2024-01-26T04:36:58.626099-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con i numeri complessi"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/working-with-complex-numbers.md"
+date: 2024-01-26 04:36:58.626099-07:00
+description: "I numeri complessi hanno una parte reale e una immaginaria, tipicamente\
+  \ scritti come `a + bi`. Sono vitali per alcuni progetti Arduino pesanti dal punto\u2026"
+lastmod: 2024-02-18 23:08:56.128733
+model: gpt-4-0125-preview
+summary: "I numeri complessi hanno una parte reale e una immaginaria, tipicamente\
+  \ scritti come `a + bi`. Sono vitali per alcuni progetti Arduino pesanti dal punto\u2026"
+title: Lavorare con i numeri complessi
 ---
 
 {{< edit_this_page >}}

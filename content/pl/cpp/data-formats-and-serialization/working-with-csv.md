@@ -1,14 +1,16 @@
 ---
-title:                "Praca z plikami CSV"
 aliases:
 - /pl/cpp/working-with-csv/
-date:                  2024-02-03T19:19:41.119953-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z plikami CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:19:41.119953-07:00
+description: "Praca z plikami CSV (Comma Separated Values - Warto\u015Bci Oddzielone\
+  \ Przecinkami) dotyczy przetwarzania i manipulowania danymi przechowywanymi w prostym\u2026"
+lastmod: 2024-02-18 23:08:49.933853
+model: gpt-4-0125-preview
+summary: "Praca z plikami CSV (Comma Separated Values - Warto\u015Bci Oddzielone Przecinkami)\
+  \ dotyczy przetwarzania i manipulowania danymi przechowywanymi w prostym\u2026"
+title: Praca z plikami CSV
 ---
 
 {{< edit_this_page >}}

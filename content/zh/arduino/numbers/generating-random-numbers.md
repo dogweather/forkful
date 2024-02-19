@@ -1,13 +1,22 @@
 ---
-title:                "生成随机数"
 aliases:
 - /zh/arduino/generating-random-numbers/
-date:                  2024-01-27T20:32:42.906945-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "生成随机数"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/generating-random-numbers.md"
+date: 2024-01-27 20:32:42.906945-07:00
+description: "\u5728Arduino\u9879\u76EE\u4E2D\u751F\u6210\u968F\u673A\u6570\u6D89\u53CA\
+  \u5230\u8BBE\u8BA1\u65F6\u5C31\u4E0D\u53EF\u9884\u6D4B\u7684\u6570\u503C\u751F\u4EA7\
+  \uFF0C\u5BF9\u4E8E\u6E38\u620F\u3001\u6A21\u62DF\u548C\u5B89\u5168\u7CFB\u7EDF\u7B49\
+  \u5E94\u7528\u81F3\u5173\u91CD\u8981\u3002\u7A0B\u5E8F\u5458\u5229\u7528\u8FD9\u9879\
+  \u6280\u672F\u5F15\u5165\u53D8\u91CF\u6216\u505A\u51FA\u4E0D\u5E94\u8BE5\u662F\u786E\
+  \u5B9A\u6027\u7684\u51B3\u7B56\u3002"
+lastmod: 2024-02-18 23:08:59.365818
+model: gpt-4-0125-preview
+summary: "\u5728Arduino\u9879\u76EE\u4E2D\u751F\u6210\u968F\u673A\u6570\u6D89\u53CA\
+  \u5230\u8BBE\u8BA1\u65F6\u5C31\u4E0D\u53EF\u9884\u6D4B\u7684\u6570\u503C\u751F\u4EA7\
+  \uFF0C\u5BF9\u4E8E\u6E38\u620F\u3001\u6A21\u62DF\u548C\u5B89\u5168\u7CFB\u7EDF\u7B49\
+  \u5E94\u7528\u81F3\u5173\u91CD\u8981\u3002\u7A0B\u5E8F\u5458\u5229\u7528\u8FD9\u9879\
+  \u6280\u672F\u5F15\u5165\u53D8\u91CF\u6216\u505A\u51FA\u4E0D\u5E94\u8BE5\u662F\u786E\
+  \u5B9A\u6027\u7684\u51B3\u7B56\u3002"
+title: "\u751F\u6210\u968F\u673A\u6570"
 ---
 
 {{< edit_this_page >}}

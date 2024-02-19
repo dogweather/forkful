@@ -1,14 +1,26 @@
 ---
-title:                "处理复数的工作"
 aliases:
 - /zh/c/working-with-complex-numbers/
-date:                  2024-02-03T18:13:57.538429-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理复数的工作"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:13:57.538429-07:00
+description: "\u590D\u6570\u7531\u5B9E\u90E8\u548C\u865A\u90E8\u7EC4\u6210\uFF0C\u8868\
+  \u793A\u4E3A `a + bi`\uFF0C\u5176\u4E2D `i` \u662F `-1` \u7684\u5E73\u65B9\u6839\
+  \u3002\u7A0B\u5E8F\u5458\u5728\u5404\u4E2A\u9886\u57DF\uFF08\u5982\u7535\u6C14\u5DE5\
+  \u7A0B\u3001\u91CF\u5B50\u8BA1\u7B97\u548C\u6D41\u4F53\u52A8\u529B\u5B66\uFF09\u4F7F\
+  \u7528\u590D\u6570\uFF0C\u5229\u7528\u5B83\u4EEC\u7684\u72EC\u7279\u5C5E\u6027\u8FDB\
+  \u884C\u6A21\u62DF\u3001\u4FE1\u53F7\u5904\u7406\u548C\u89E3\u51B3\u7279\u5B9A\u7C7B\
+  \u578B\u7684\u6570\u5B66\u65B9\u7A0B\u3002"
+lastmod: 2024-02-18 23:08:59.553263
+model: gpt-4-0125-preview
+summary: "\u590D\u6570\u7531\u5B9E\u90E8\u548C\u865A\u90E8\u7EC4\u6210\uFF0C\u8868\
+  \u793A\u4E3A `a + bi`\uFF0C\u5176\u4E2D `i` \u662F `-1` \u7684\u5E73\u65B9\u6839\
+  \u3002\u7A0B\u5E8F\u5458\u5728\u5404\u4E2A\u9886\u57DF\uFF08\u5982\u7535\u6C14\u5DE5\
+  \u7A0B\u3001\u91CF\u5B50\u8BA1\u7B97\u548C\u6D41\u4F53\u52A8\u529B\u5B66\uFF09\u4F7F\
+  \u7528\u590D\u6570\uFF0C\u5229\u7528\u5B83\u4EEC\u7684\u72EC\u7279\u5C5E\u6027\u8FDB\
+  \u884C\u6A21\u62DF\u3001\u4FE1\u53F7\u5904\u7406\u548C\u89E3\u51B3\u7279\u5B9A\u7C7B\
+  \u578B\u7684\u6570\u5B66\u65B9\u7A0B\u3002"
+title: "\u5904\u7406\u590D\u6570\u7684\u5DE5\u4F5C"
 ---
 
 {{< edit_this_page >}}

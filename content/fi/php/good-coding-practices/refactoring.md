@@ -1,13 +1,16 @@
 ---
-title:                "Koodin refaktorointi"
 aliases:
 - /fi/php/refactoring/
-date:                  2024-01-26T01:48:02.366899-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Koodin refaktorointi"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/refactoring.md"
+date: 2024-01-26 01:48:02.366899-07:00
+description: "*Nimeksi annettu* kehitt\xE4minen on prosessi, jossa olemassa olevaa\
+  \ tietokonekoodia uudelleenj\xE4rjestet\xE4\xE4n muuttamatta sen ulkoista k\xE4\
+  ytt\xE4ytymist\xE4.\u2026"
+lastmod: 2024-02-18 23:09:07.720635
+model: gpt-4-0125-preview
+summary: "*Nimeksi annettu* kehitt\xE4minen on prosessi, jossa olemassa olevaa tietokonekoodia\
+  \ uudelleenj\xE4rjestet\xE4\xE4n muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4\
+  .\u2026"
+title: Koodin refaktorointi
 ---
 
 {{< edit_this_page >}}

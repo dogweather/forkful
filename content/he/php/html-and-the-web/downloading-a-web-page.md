@@ -1,13 +1,15 @@
 ---
-title:                "הורדת דף אינטרנט"
 aliases:
 - /he/php/downloading-a-web-page/
-date:                  2024-01-20T17:44:26.280428-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "הורדת דף אינטרנט"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/php/downloading-a-web-page.md"
+date: 2024-01-20 17:44:26.280428-07:00
+description: Downloading a web page means grabbing the HTML content from a URL. Programmers
+  do this to process, analyze or display the content in a different context.
+lastmod: 2024-02-18 23:08:52.930577
+model: gpt-4-1106-preview
+summary: Downloading a web page means grabbing the HTML content from a URL. Programmers
+  do this to process, analyze or display the content in a different context.
+title: "\u05D4\u05D5\u05E8\u05D3\u05EA \u05D3\u05E3 \u05D0\u05D9\u05E0\u05D8\u05E8\
+  \u05E0\u05D8"
 ---
 
 {{< edit_this_page >}}

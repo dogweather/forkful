@@ -1,13 +1,15 @@
 ---
-title:                "Zahlen runden"
 aliases:
 - /de/powershell/rounding-numbers/
-date:                  2024-01-26T03:46:07.469761-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zahlen runden"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/rounding-numbers.md"
+date: 2024-01-26 03:46:07.469761-07:00
+description: "Das Runden von Zahlen bedeutet, einen Wert auf die n\xE4chste ganze\
+  \ Zahl oder die angegebene Dezimalstelle zu justieren. Programmierer runden Zahlen,\
+  \ um\u2026"
+lastmod: 2024-02-18 23:09:05.093700
+model: gpt-4-0125-preview
+summary: "Das Runden von Zahlen bedeutet, einen Wert auf die n\xE4chste ganze Zahl\
+  \ oder die angegebene Dezimalstelle zu justieren. Programmierer runden Zahlen, um\u2026"
+title: Zahlen runden
 ---
 
 {{< edit_this_page >}}

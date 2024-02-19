@@ -1,14 +1,18 @@
 ---
-title:                "Extrahera delsträngar"
 aliases:
 - /sv/c/extracting-substrings/
-date:                  2024-02-03T17:56:28.662984-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Extrahera delsträngar"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/extracting-substrings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:28.662984-07:00
+description: "Att extrahera delstr\xE4ngar i C inneb\xE4r att skapa en mindre str\xE4\
+  ng (delstr\xE4ng) fr\xE5n en st\xF6rre str\xE4ng baserat p\xE5 specificerade kriterier,\
+  \ s\xE5som position och\u2026"
+lastmod: 2024-02-18 23:08:52.238518
+model: gpt-4-0125-preview
+summary: "Att extrahera delstr\xE4ngar i C inneb\xE4r att skapa en mindre str\xE4\
+  ng (delstr\xE4ng) fr\xE5n en st\xF6rre str\xE4ng baserat p\xE5 specificerade kriterier,\
+  \ s\xE5som position och\u2026"
+title: "Extrahera delstr\xE4ngar"
 ---
 
 {{< edit_this_page >}}

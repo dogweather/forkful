@@ -1,15 +1,22 @@
 ---
-title:                "Viết kiểm thử"
 aliases:
 - /vi/arduino/writing-tests/
-date:                  2024-01-28T22:12:53.850550-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Viết kiểm thử"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/writing-tests.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:53.850550-07:00
+description: "Vi\u1EBFt ki\u1EC3m th\u1EED c\xF3 ngh\u0129a l\xE0 t\u1EA1o ra m\u1ED9\
+  t t\u1EADp h\u1EE3p c\xE1c \u0111i\u1EC1u ki\u1EC7n \u0111\u1EC3 ki\u1EC3m tra xem\
+  \ m\xE3 c\u1EE7a b\u1EA1n c\xF3 ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3\
+  i hay kh\xF4ng. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
+  \u2026"
+lastmod: 2024-02-18 23:08:51.002984
+model: gpt-4-0125-preview
+summary: "Vi\u1EBFt ki\u1EC3m th\u1EED c\xF3 ngh\u0129a l\xE0 t\u1EA1o ra m\u1ED9\
+  t t\u1EADp h\u1EE3p c\xE1c \u0111i\u1EC1u ki\u1EC7n \u0111\u1EC3 ki\u1EC3m tra xem\
+  \ m\xE3 c\u1EE7a b\u1EA1n c\xF3 ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3\
+  i hay kh\xF4ng. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
+  \u2026"
+title: "Vi\u1EBFt ki\u1EC3m th\u1EED"
 ---
 
 {{< edit_this_page >}}

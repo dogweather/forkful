@@ -1,15 +1,17 @@
 ---
-title:                "Twee datums vergelijken"
 aliases:
 - /nl/elm/comparing-two-dates/
-date:                  2024-01-28T21:56:22.275534-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Twee datums vergelijken"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elm/comparing-two-dates.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:22.275534-07:00
+description: "Het vergelijken van twee datums betekent uitzoeken welke van de twee\
+  \ eerder is of hoeveel tijd er tussen hen in zit. Programmeurs doen dit om zaken\
+  \ zoals\u2026"
+lastmod: 2024-02-18 23:09:01.773130
+model: gpt-4-0125-preview
+summary: "Het vergelijken van twee datums betekent uitzoeken welke van de twee eerder\
+  \ is of hoeveel tijd er tussen hen in zit. Programmeurs doen dit om zaken zoals\u2026"
+title: Twee datums vergelijken
 ---
 
 {{< edit_this_page >}}

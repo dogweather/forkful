@@ -1,13 +1,15 @@
 ---
-title:                "Converting a date into a string"
 aliases:
 - /en/elixir/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:13.448689-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Converting a date into a string"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:13.448689-07:00
+description: "Converting a date to a string in Elixir turns the date from a struct\
+  \ into a readable series of characters for display or storage. Programmers do it\
+  \ to\u2026"
+lastmod: 2024-02-18 23:09:10.776872
+model: gpt-4-1106-preview
+summary: "Converting a date to a string in Elixir turns the date from a struct into\
+  \ a readable series of characters for display or storage. Programmers do it to\u2026"
+title: Converting a date into a string
 ---
 
 {{< edit_this_page >}}

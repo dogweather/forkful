@@ -1,14 +1,30 @@
 ---
-title:                "날짜를 문자열로 변환하기"
 aliases:
 - /ko/c/converting-a-date-into-a-string/
-date:                  2024-02-03T17:54:14.597596-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "날짜를 문자열로 변환하기"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:14.597596-07:00
+description: "C\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\
+  \uD558\uB294 \uAC83\uC740 \uB0A0\uC9DC \uAD6C\uC870\uB098 \uD0C0\uC784\uC2A4\uD0EC\
+  \uD504\uB97C \uC0AC\uB78C\uC774 \uC77D\uC744 \uC218 \uC788\uB294 \uD615\uC2DD\uC73C\
+  \uB85C \uBCC0\uD658\uD558\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC740 \uC885\uC885 \uB85C\uADF8, \uC0AC\uC6A9\uC790 \uC778\
+  \uD130\uD398\uC774\uC2A4\uC5D0 \uB0A0\uC9DC\uB97C \uD45C\uC2DC\uD558\uAC70\uB098\
+  \ JSON\uC774\uB098 CSV\uC640 \uAC19\uC740 \uD14D\uC2A4\uD2B8 \uAE30\uBC18 \uD615\
+  \uC2DD\uC73C\uB85C \uB0A0\uC9DC\uB97C \uC800\uC7A5\uD560 \uB54C \uC774 \uC791\uC5C5\
+  \uC744 \uC218\uD589\uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.972397
+model: gpt-4-0125-preview
+summary: "C\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\
+  \uB294 \uAC83\uC740 \uB0A0\uC9DC \uAD6C\uC870\uB098 \uD0C0\uC784\uC2A4\uD0EC\uD504\
+  \uB97C \uC0AC\uB78C\uC774 \uC77D\uC744 \uC218 \uC788\uB294 \uD615\uC2DD\uC73C\uB85C\
+  \ \uBCC0\uD658\uD558\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC740 \uC885\uC885 \uB85C\uADF8, \uC0AC\uC6A9\uC790 \uC778\uD130\
+  \uD398\uC774\uC2A4\uC5D0 \uB0A0\uC9DC\uB97C \uD45C\uC2DC\uD558\uAC70\uB098 JSON\uC774\
+  \uB098 CSV\uC640 \uAC19\uC740 \uD14D\uC2A4\uD2B8 \uAE30\uBC18 \uD615\uC2DD\uC73C\
+  \uB85C \uB0A0\uC9DC\uB97C \uC800\uC7A5\uD560 \uB54C \uC774 \uC791\uC5C5\uC744 \uC218\
+  \uD589\uD569\uB2C8\uB2E4."
+title: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Trovare la lunghezza di una stringa"
 aliases:
 - /it/java/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:44.852128-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Trovare la lunghezza di una stringa"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/java/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:44.852128-07:00
+description: "Determinare la lunghezza di una stringa significa scoprire quanti caratteri\
+  \ contiene. Lo facciamo per vari motivi: validazione del testo, iterazioni o\u2026"
+lastmod: 2024-02-18 23:08:55.757577
+model: gpt-4-1106-preview
+summary: "Determinare la lunghezza di una stringa significa scoprire quanti caratteri\
+  \ contiene. Lo facciamo per vari motivi: validazione del testo, iterazioni o\u2026"
+title: Trovare la lunghezza di una stringa
 ---
 
 {{< edit_this_page >}}

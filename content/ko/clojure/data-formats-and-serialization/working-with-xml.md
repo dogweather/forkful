@@ -1,13 +1,24 @@
 ---
-title:                "XML 다루기"
 aliases:
 - /ko/clojure/working-with-xml/
-date:                  2024-01-26T04:29:12.992706-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML 다루기"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/working-with-xml.md"
+date: 2024-01-26 04:29:12.992706-07:00
+description: "XML\uC740 \uBB38\uC11C\uB97C \uC778\uCF54\uB529\uD558\uAE30 \uC704\uD55C\
+  \ \uB9C8\uD06C\uC5C5 \uC5B8\uC5B4\uB85C, \uC0AC\uB78C\uACFC \uAE30\uACC4 \uBAA8\uB450\
+  \uAC00 \uC77D\uC744 \uC218 \uC788\uB294 \uBC29\uC2DD\uC785\uB2C8\uB2E4. \uC6F9 \uC11C\
+  \uBE44\uC2A4, \uAD6C\uC131 \uD30C\uC77C, \uB370\uC774\uD130 \uAD50\uD658\uC5D0\uC11C\
+  \ \uC911\uC694\uD55C \uC5ED\uD560\uC744 \uD558\uBA70, \uB370\uC774\uD130\uB97C \uAD6C\
+  \uC870\uD654\uB41C \uACC4\uCE35 \uD615\uC2DD\uC73C\uB85C \uC804\uB2EC\uD569\uB2C8\
+  \uB2E4."
+lastmod: 2024-02-18 23:09:05.727969
+model: gpt-4-0125-preview
+summary: "XML\uC740 \uBB38\uC11C\uB97C \uC778\uCF54\uB529\uD558\uAE30 \uC704\uD55C\
+  \ \uB9C8\uD06C\uC5C5 \uC5B8\uC5B4\uB85C, \uC0AC\uB78C\uACFC \uAE30\uACC4 \uBAA8\uB450\
+  \uAC00 \uC77D\uC744 \uC218 \uC788\uB294 \uBC29\uC2DD\uC785\uB2C8\uB2E4. \uC6F9 \uC11C\
+  \uBE44\uC2A4, \uAD6C\uC131 \uD30C\uC77C, \uB370\uC774\uD130 \uAD50\uD658\uC5D0\uC11C\
+  \ \uC911\uC694\uD55C \uC5ED\uD560\uC744 \uD558\uBA70, \uB370\uC774\uD130\uB97C \uAD6C\
+  \uC870\uD654\uB41C \uACC4\uCE35 \uD615\uC2DD\uC73C\uB85C \uC804\uB2EC\uD569\uB2C8\
+  \uB2E4."
+title: "XML \uB2E4\uB8E8\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,20 @@
 ---
-title:                "Sử dụng trình gỡ lỗi"
 aliases:
 - /vi/vba/using-a-debugger/
-date:                  2024-02-01T22:04:32.669741-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng trình gỡ lỗi"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/using-a-debugger.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:32.669741-07:00
+description: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i trong Visual Basic\
+  \ for Applications (VBA) bao g\u1ED3m vi\u1EC7c ch\u1EA1y m\xE3 c\u1EE7a b\u1EA1\
+  n t\u1EEBng b\u01B0\u1EDBc m\u1ED9t \u0111\u1EC3 ki\u1EC3m tra lu\u1ED3ng th\u1EF1\
+  c thi v\xE0 tr\u1EA1ng th\xE1i c\u1EE7a\u2026"
+lastmod: 2024-02-18 23:08:50.514553
+model: gpt-4-0125-preview
+summary: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i trong Visual Basic\
+  \ for Applications (VBA) bao g\u1ED3m vi\u1EC7c ch\u1EA1y m\xE3 c\u1EE7a b\u1EA1\
+  n t\u1EEBng b\u01B0\u1EDBc m\u1ED9t \u0111\u1EC3 ki\u1EC3m tra lu\u1ED3ng th\u1EF1\
+  c thi v\xE0 tr\u1EA1ng th\xE1i c\u1EE7a\u2026"
+title: "S\u1EED d\u1EE5ng tr\xECnh g\u1EE1 l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

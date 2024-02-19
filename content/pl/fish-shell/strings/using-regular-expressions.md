@@ -1,12 +1,15 @@
 ---
-title:                "Wykorzystanie wyrażeń regularnych"
 aliases:
 - /pl/fish-shell/using-regular-expressions/
-date:                  2024-01-19
-simple_title:         "Wykorzystanie wyrażeń regularnych"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/using-regular-expressions.md"
+date: 2024-01-19
+description: "Wyra\u017Cenia regularne to wzorce u\u017Cywane do wyszukiwania i manipulowania\
+  \ tekstami. Programi\u015Bci u\u017Cywaj\u0105 ich, bo pozwalaj\u0105 na zaawansowane\
+  \ przetwarzanie tekstu\u2026"
+lastmod: 2024-02-18 23:08:50.025078
+summary: "Wyra\u017Cenia regularne to wzorce u\u017Cywane do wyszukiwania i manipulowania\
+  \ tekstami. Programi\u015Bci u\u017Cywaj\u0105 ich, bo pozwalaj\u0105 na zaawansowane\
+  \ przetwarzanie tekstu\u2026"
+title: "Wykorzystanie wyra\u017Ce\u0144 regularnych"
 ---
 
 {{< edit_this_page >}}

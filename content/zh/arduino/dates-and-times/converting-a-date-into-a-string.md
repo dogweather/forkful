@@ -1,14 +1,19 @@
 ---
-title:                "将日期转换为字符串"
 aliases:
 - /zh/arduino/converting-a-date-into-a-string/
-date:                  2024-01-20T17:35:45.402097-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "将日期转换为字符串"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:35:45.402097-07:00
+description: "\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32\uFF0C\u5C31\u662F\
+  \u628A\u65E5\u671F\u683C\u5F0F\u4E13\u6210\u4E00\u4E32\u7279\u5B9A\u683C\u5F0F\u7684\
+  \u6587\u672C\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u6613\u4E8E\
+  \u663E\u793A\u3001\u5B58\u50A8\u6216\u8005\u5728\u7F51\u7EDC\u4E0A\u4F20\u8F93\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.378849
+model: gpt-4-1106-preview
+summary: "\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32\uFF0C\u5C31\u662F\
+  \u628A\u65E5\u671F\u683C\u5F0F\u4E13\u6210\u4E00\u4E32\u7279\u5B9A\u683C\u5F0F\u7684\
+  \u6587\u672C\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u6613\u4E8E\
+  \u663E\u793A\u3001\u5B58\u50A8\u6216\u8005\u5728\u7F51\u7EDC\u4E0A\u4F20\u8F93\u3002"
+title: "\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32"
 ---
 
 {{< edit_this_page >}}

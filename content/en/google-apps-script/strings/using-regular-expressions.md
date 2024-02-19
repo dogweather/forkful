@@ -1,12 +1,14 @@
 ---
-title:                "Using regular expressions"
 aliases:
 - /en/google-apps-script/using-regular-expressions/
-date:                  2024-02-01T21:12:17.926556-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using regular expressions"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/google-apps-script/using-regular-expressions.md"
+date: 2024-02-01 21:12:17.926556-07:00
+description: "Regular Expressions (regex) are patterns used to match character combinations\
+  \ in strings. Programmers utilize them for searching, editing, or manipulating\u2026"
+lastmod: 2024-02-18 23:09:10.629281
+model: gpt-4-0125-preview
+summary: "Regular Expressions (regex) are patterns used to match character combinations\
+  \ in strings. Programmers utilize them for searching, editing, or manipulating\u2026"
+title: Using regular expressions
 ---
 
 {{< edit_this_page >}}

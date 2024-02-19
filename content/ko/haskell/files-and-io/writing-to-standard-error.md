@@ -1,14 +1,28 @@
 ---
-title:                "표준 에러에 쓰기"
 aliases:
 - /ko/haskell/writing-to-standard-error/
-date:                  2024-02-03T19:33:23.426093-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "표준 에러에 쓰기"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:33:23.426093-07:00
+description: "\uD558\uC2A4\uCF08\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(stderr)\uB85C\
+  \ \uC4F0\uAE30\uB294 \uD504\uB85C\uADF8\uB7A8\uC774 \uC77C\uBC18 \uACB0\uACFC\uC640\
+  \ \uC624\uB958 \uBA54\uC2DC\uC9C0\uB97C \uAD6C\uBD84\uD560 \uC218 \uC788\uAC8C \uD569\
+  \uB2C8\uB2E4. \uC774\uB294 \uBB38\uC81C \uC2E0\uD638\uB97C \uBCF4\uB0B4\uACE0 \uB514\
+  \uBC84\uAE45\uD558\uB294 \uB370 \uC911\uC694\uD558\uBA70, \uD504\uB85C\uADF8\uB7A8\
+  \uC758 \uC8FC\uC694 \uB370\uC774\uD130\uB098 \uACB0\uACFC\uB97C \uB2F4\uC740 \uD45C\
+  \uC900 \uCD9C\uB825(stdout)\uC744 \uD63C\uC7A1\uD558\uAC8C \uD558\uC9C0 \uC54A\uC2B5\
+  \uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.312647
+model: gpt-4-0125-preview
+summary: "\uD558\uC2A4\uCF08\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(stderr)\uB85C \uC4F0\
+  \uAE30\uB294 \uD504\uB85C\uADF8\uB7A8\uC774 \uC77C\uBC18 \uACB0\uACFC\uC640 \uC624\
+  \uB958 \uBA54\uC2DC\uC9C0\uB97C \uAD6C\uBD84\uD560 \uC218 \uC788\uAC8C \uD569\uB2C8\
+  \uB2E4. \uC774\uB294 \uBB38\uC81C \uC2E0\uD638\uB97C \uBCF4\uB0B4\uACE0 \uB514\uBC84\
+  \uAE45\uD558\uB294 \uB370 \uC911\uC694\uD558\uBA70, \uD504\uB85C\uADF8\uB7A8\uC758\
+  \ \uC8FC\uC694 \uB370\uC774\uD130\uB098 \uACB0\uACFC\uB97C \uB2F4\uC740 \uD45C\uC900\
+  \ \uCD9C\uB825(stdout)\uC744 \uD63C\uC7A1\uD558\uAC8C \uD558\uC9C0 \uC54A\uC2B5\uB2C8\
+  \uB2E4."
+title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
 ---
 
 {{< edit_this_page >}}

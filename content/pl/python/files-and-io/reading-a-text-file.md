@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
 aliases:
 - /pl/python/reading-a-text-file/
-date:                  2024-01-20T17:55:15.600877-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie pliku tekstowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/reading-a-text-file.md"
+date: 2024-01-20 17:55:15.600877-07:00
+description: "Czytanie pliku tekstowego to proces wyci\u0105gania informacji z pliku\
+  \ zapisanego na dysku. Programi\u015Bci robi\u0105 to, by manipulowa\u0107 danymi,\
+  \ wy\u015Bwietla\u0107 je\u2026"
+lastmod: 2024-02-18 23:08:49.240185
+model: gpt-4-1106-preview
+summary: "Czytanie pliku tekstowego to proces wyci\u0105gania informacji z pliku zapisanego\
+  \ na dysku. Programi\u015Bci robi\u0105 to, by manipulowa\u0107 danymi, wy\u015B\
+  wietla\u0107 je\u2026"
+title: Odczytywanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

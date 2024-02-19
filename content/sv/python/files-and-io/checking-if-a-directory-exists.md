@@ -1,14 +1,18 @@
 ---
-title:                "Kontrollera om en katalog existerar"
 aliases:
 - /sv/python/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:12.733374-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kontrollera om en katalog existerar"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:12.733374-07:00
+description: "Att kontrollera om en mapp finns i Python handlar om att verifiera n\xE4\
+  rvaron av en mapp i filsystemet innan man utf\xF6r operationer som att l\xE4sa eller\
+  \ skriva\u2026"
+lastmod: 2024-02-18 23:08:51.435537
+model: gpt-4-0125-preview
+summary: "Att kontrollera om en mapp finns i Python handlar om att verifiera n\xE4\
+  rvaron av en mapp i filsystemet innan man utf\xF6r operationer som att l\xE4sa eller\
+  \ skriva\u2026"
+title: Kontrollera om en katalog existerar
 ---
 
 {{< edit_this_page >}}

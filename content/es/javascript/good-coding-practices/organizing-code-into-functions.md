@@ -1,13 +1,14 @@
 ---
-title:                "Organizando código en funciones"
 aliases:
 - /es/javascript/organizing-code-into-functions/
-date:                  2024-01-26T01:10:51.916332-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organizando código en funciones"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/organizing-code-into-functions.md"
+date: 2024-01-26 01:10:51.916332-07:00
+description: "Organizar el c\xF3digo en funciones divide las tareas en piezas reutilizables,\
+  \ lo que hace que el c\xF3digo sea m\xE1s limpio y mantenible. Hacemos esto para\u2026"
+lastmod: 2024-02-18 23:09:10.410729
+model: gpt-4-1106-preview
+summary: "Organizar el c\xF3digo en funciones divide las tareas en piezas reutilizables,\
+  \ lo que hace que el c\xF3digo sea m\xE1s limpio y mantenible. Hacemos esto para\u2026"
+title: "Organizando c\xF3digo en funciones"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Usuwanie znaków pasujących do wzorca"
 aliases:
 - /pl/google-apps-script/deleting-characters-matching-a-pattern/
-date:                  2024-02-01T21:51:55.431163-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usuwanie znaków pasujących do wzorca"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:55.431163-07:00
+description: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca to technika\
+  \ u\u017Cywana do oczyszczania lub formatowania ci\u0105g\xF3w znak\xF3w w programowaniu.\
+  \ W kontek\u015Bcie Google\u2026"
+lastmod: 2024-02-18 23:08:49.128252
+model: gpt-4-0125-preview
+summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca to technika\
+  \ u\u017Cywana do oczyszczania lub formatowania ci\u0105g\xF3w znak\xF3w w programowaniu.\
+  \ W kontek\u015Bcie Google\u2026"
+title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,21 @@
 ---
-title:                "Gửi một yêu cầu HTTP với xác thực cơ bản"
 aliases:
 - /vi/kotlin/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-28T22:08:14.522381-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gửi một yêu cầu HTTP với xác thực cơ bản"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/kotlin/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:14.522381-07:00
+description: "X\xE1c th\u1EF1c c\u01A1 b\u1EA3n \u0111\xEDnh k\xE8m m\u1ED9t t\u1ED5\
+  \ h\u1EE3p t\xEAn ng\u01B0\u1EDDi d\xF9ng:m\u1EADt kh\u1EA9u v\xE0o m\u1ED9t y\xEA\
+  u c\u1EA7u HTTP. C\xE1c nh\xE0 ph\xE1t tri\u1EC3n s\u1EED d\u1EE5ng n\xF3 nh\u01B0\
+  \ m\u1ED9t c\xE1ch nhanh ch\xF3ng v\xE0 b\u1EA9n \u0111\u1EC3 ch\u1EE9ng\u2026"
+lastmod: 2024-02-18 23:08:50.650890
+model: gpt-4-0125-preview
+summary: "X\xE1c th\u1EF1c c\u01A1 b\u1EA3n \u0111\xEDnh k\xE8m m\u1ED9t t\u1ED5 h\u1EE3\
+  p t\xEAn ng\u01B0\u1EDDi d\xF9ng:m\u1EADt kh\u1EA9u v\xE0o m\u1ED9t y\xEAu c\u1EA7\
+  u HTTP. C\xE1c nh\xE0 ph\xE1t tri\u1EC3n s\u1EED d\u1EE5ng n\xF3 nh\u01B0 m\u1ED9\
+  t c\xE1ch nhanh ch\xF3ng v\xE0 b\u1EA9n \u0111\u1EC3 ch\u1EE9ng\u2026"
+title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
+  n"
 ---
 
 {{< edit_this_page >}}

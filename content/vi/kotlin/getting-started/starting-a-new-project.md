@@ -1,15 +1,20 @@
 ---
-title:                "Bắt đầu một dự án mới"
 aliases:
 - /vi/kotlin/starting-a-new-project/
-date:                  2024-01-28T22:09:32.193236-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bắt đầu một dự án mới"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/kotlin/starting-a-new-project.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:32.193236-07:00
+description: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi c\xF3 ngh\u0129\
+  a l\xE0 thi\u1EBFt l\u1EADp c\u1EA5u tr\xFAc ban \u0111\u1EA7u v\xE0 c\xE1c t\u1EC7\
+  p tin quan tr\u1ECDng m\xE0 b\u1EA1n s\u1EBD c\u1EA7n cho \u1EE9ng d\u1EE5ng c\u1EE7\
+  a m\xECnh. L\u1EADp tr\xECnh vi\xEAn b\u1EAFt \u0111\u1EA7u d\u1EF1 \xE1n\u2026"
+lastmod: 2024-02-18 23:08:50.651976
+model: gpt-4-0125-preview
+summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi c\xF3 ngh\u0129a\
+  \ l\xE0 thi\u1EBFt l\u1EADp c\u1EA5u tr\xFAc ban \u0111\u1EA7u v\xE0 c\xE1c t\u1EC7\
+  p tin quan tr\u1ECDng m\xE0 b\u1EA1n s\u1EBD c\u1EA7n cho \u1EE9ng d\u1EE5ng c\u1EE7\
+  a m\xECnh. L\u1EADp tr\xECnh vi\xEAn b\u1EAFt \u0111\u1EA7u d\u1EF1 \xE1n\u2026"
+title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 ---
 
 {{< edit_this_page >}}

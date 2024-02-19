@@ -1,13 +1,16 @@
 ---
-title:                "Päivämäärän muuntaminen merkkijonoksi"
 aliases:
 - /fi/php/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:18.857011-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:18.857011-07:00
+description: "\"Mik\xE4 & Miksi?\" P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi\
+  \ palauttaa aika-arvon luettavassa muodossa. Ohjelmoijat tekev\xE4t t\xE4m\xE4n,\
+  \ koska se helpottaa p\xE4iv\xE4m\xE4\xE4r\xE4n\u2026"
+lastmod: 2024-02-18 23:09:07.724462
+model: gpt-4-1106-preview
+summary: "\"Mik\xE4 & Miksi?\" P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi\
+  \ palauttaa aika-arvon luettavassa muodossa. Ohjelmoijat tekev\xE4t t\xE4m\xE4n,\
+  \ koska se helpottaa p\xE4iv\xE4m\xE4\xE4r\xE4n\u2026"
+title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 ---
 
 {{< edit_this_page >}}

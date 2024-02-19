@@ -1,15 +1,17 @@
 ---
-title:                "Willekeurige getallen genereren"
 aliases:
 - /nl/rust/generating-random-numbers/
-date:                  2024-01-28T22:00:50.754124-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Willekeurige getallen genereren"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/generating-random-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:00:50.754124-07:00
+description: "Het genereren van willekeurige getallen in Rust omvat het gebruik van\
+  \ bibliotheken om onvoorspelde numerieke waarden te produceren, wat onmisbaar is\
+  \ voor\u2026"
+lastmod: 2024-02-18 23:09:01.614600
+model: gpt-4-0125-preview
+summary: "Het genereren van willekeurige getallen in Rust omvat het gebruik van bibliotheken\
+  \ om onvoorspelde numerieke waarden te produceren, wat onmisbaar is voor\u2026"
+title: Willekeurige getallen genereren
 ---
 
 {{< edit_this_page >}}

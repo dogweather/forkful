@@ -1,13 +1,22 @@
 ---
-title:                "현재 날짜 가져오기"
 aliases:
 - /ko/elm/getting-the-current-date/
-date:                  2024-01-20T15:14:03.170530-07:00
-simple_title:         "현재 날짜 가져오기"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/getting-the-current-date.md"
+date: 2024-01-20 15:14:03.170530-07:00
+description: "\uD604\uC7AC \uB0A0\uC9DC \uC54C\uC544\uB0B4\uAE30\uB780 \uB2E8\uC21C\
+  \uD788 \uC624\uB298 \uB0A0\uC9DC\uC640 \uC2DC\uAC04\uC744 \uC54C\uC544\uB0B4\uB294\
+  \ \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB85C\uAE45\
+  , \uB0A0\uC9DC \uAE30\uBC18 \uAE30\uB2A5 \uAD6C\uD604, \uC0AC\uC6A9\uC790 \uACBD\
+  \uD5D8 \uAC1C\uC120 \uB4F1 \uC5EC\uB7EC \uC774\uC720\uB85C \uC774 \uC815\uBCF4\uB97C\
+  \ \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.102186
+summary: "\uD604\uC7AC \uB0A0\uC9DC \uC54C\uC544\uB0B4\uAE30\uB780 \uB2E8\uC21C\uD788\
+  \ \uC624\uB298 \uB0A0\uC9DC\uC640 \uC2DC\uAC04\uC744 \uC54C\uC544\uB0B4\uB294 \uAC83\
+  \uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB85C\uAE45, \uB0A0\
+  \uC9DC \uAE30\uBC18 \uAE30\uB2A5 \uAD6C\uD604, \uC0AC\uC6A9\uC790 \uACBD\uD5D8 \uAC1C\
+  \uC120 \uB4F1 \uC5EC\uB7EC \uC774\uC720\uB85C \uC774 \uC815\uBCF4\uB97C \uC0AC\uC6A9\
+  \uD569\uB2C8\uB2E4."
+title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
 ---
 
 {{< edit_this_page >}}

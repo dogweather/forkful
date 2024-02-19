@@ -1,13 +1,14 @@
 ---
-title:                "Avvio di un nuovo progetto"
 aliases:
 - /it/swift/starting-a-new-project/
-date:                  2024-01-20T18:04:27.108532-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Avvio di un nuovo progetto"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/starting-a-new-project.md"
+date: 2024-01-20 18:04:27.108532-07:00
+description: "Iniziamo un nuovo progetto per dar vita alle nostre idee. Lo facciamo\
+  \ per esplorare possibilit\xE0, risolvere problemi o creare qualcosa di unico."
+lastmod: 2024-02-18 23:08:56.213119
+model: gpt-4-1106-preview
+summary: "Iniziamo un nuovo progetto per dar vita alle nostre idee. Lo facciamo per\
+  \ esplorare possibilit\xE0, risolvere problemi o creare qualcosa di unico."
+title: Avvio di un nuovo progetto
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Afdrukken van debug-uitvoer"
 aliases:
 - /nl/go/printing-debug-output/
-date:                  2024-02-03T18:05:13.766586-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Afdrukken van debug-uitvoer"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/printing-debug-output.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:13.766586-07:00
+description: "In computerprogrammering betekent \"Debug-output afdrukken\" het produceren\
+  \ van gedetailleerde informatieve berichten die ontwikkelaars helpen de\u2026"
+lastmod: 2024-02-18 23:09:01.341349
+model: gpt-4-0125-preview
+summary: "In computerprogrammering betekent \"Debug-output afdrukken\" het produceren\
+  \ van gedetailleerde informatieve berichten die ontwikkelaars helpen de\u2026"
+title: Afdrukken van debug-uitvoer
 ---
 
 {{< edit_this_page >}}

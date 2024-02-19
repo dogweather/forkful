@@ -1,12 +1,15 @@
 ---
-title:                "Obtenir la date actuelle"
 aliases:
 - /fr/elm/getting-the-current-date/
-date:                  2024-01-20T15:14:08.905113-07:00
-simple_title:         "Obtenir la date actuelle"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/getting-the-current-date.md"
+date: 2024-01-20 15:14:08.905113-07:00
+description: "En programmation, obtenir la date actuelle c'est r\xE9cup\xE9rer la\
+  \ date et l'heure pr\xE9cises \xE0 l'instant T. Les d\xE9veloppeurs en ont besoin\
+  \ pour tout : des\u2026"
+lastmod: 2024-02-18 23:09:08.746175
+summary: "En programmation, obtenir la date actuelle c'est r\xE9cup\xE9rer la date\
+  \ et l'heure pr\xE9cises \xE0 l'instant T. Les d\xE9veloppeurs en ont besoin pour\
+  \ tout : des\u2026"
+title: Obtenir la date actuelle
 ---
 
 {{< edit_this_page >}}

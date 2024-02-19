@@ -1,12 +1,15 @@
 ---
-title:                "Kontrollera om en katalog finns"
 aliases:
 - /sv/elm/checking-if-a-directory-exists/
-date:                  2024-01-20T14:56:20.679011-07:00
-simple_title:         "Kontrollera om en katalog finns"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/checking-if-a-directory-exists.md"
+date: 2024-01-20 14:56:20.679011-07:00
+description: "Att kontrollera om en katalog finns \xE4r processen att verifiera en\
+  \ s\xF6kv\xE4gs existens i filsystemet. Programmerare g\xF6r detta f\xF6r att f\xF6\
+  rs\xE4kra sig om att\u2026"
+lastmod: 2024-02-18 23:08:51.723212
+summary: "Att kontrollera om en katalog finns \xE4r processen att verifiera en s\xF6\
+  kv\xE4gs existens i filsystemet. Programmerare g\xF6r detta f\xF6r att f\xF6rs\xE4\
+  kra sig om att\u2026"
+title: Kontrollera om en katalog finns
 ---
 
 {{< edit_this_page >}}

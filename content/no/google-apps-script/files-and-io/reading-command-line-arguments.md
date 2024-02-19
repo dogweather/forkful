@@ -1,14 +1,17 @@
 ---
-title:                "Lese kommandolinje-argumenter"
 aliases:
 - /no/google-apps-script/reading-command-line-arguments/
-date:                  2024-02-01T21:59:22.623263-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lese kommandolinje-argumenter"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/google-apps-script/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:22.623263-07:00
+description: "\xC5 lese kommandolinjeargumenter i Google Apps Script er litt av en\
+  \ misvisende betegnelse fordi, i motsetning til tradisjonelle kommandolinjegrensesnitt\
+  \ i\u2026"
+lastmod: 2024-02-18 23:08:53.497775
+model: gpt-4-0125-preview
+summary: "\xC5 lese kommandolinjeargumenter i Google Apps Script er litt av en misvisende\
+  \ betegnelse fordi, i motsetning til tradisjonelle kommandolinjegrensesnitt i\u2026"
+title: Lese kommandolinje-argumenter
 ---
 
 {{< edit_this_page >}}

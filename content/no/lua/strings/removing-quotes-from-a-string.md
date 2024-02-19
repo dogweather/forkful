@@ -1,13 +1,16 @@
 ---
-title:                "Fjerne anførselstegn fra en streng"
 aliases:
 - /no/lua/removing-quotes-from-a-string/
-date:                  2024-01-26T03:40:28.062487-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Fjerne anførselstegn fra en streng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/lua/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:40:28.062487-07:00
+description: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 skrelle bort de\
+  \ doble eller enkle anf\xF8rselstegnene som omfavner teksten din. Kodingsfolk gj\xF8\
+  r dette for \xE5\u2026"
+lastmod: 2024-02-18 23:08:54.004227
+model: gpt-4-0125-preview
+summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 skrelle bort de doble\
+  \ eller enkle anf\xF8rselstegnene som omfavner teksten din. Kodingsfolk gj\xF8r\
+  \ dette for \xE5\u2026"
+title: "Fjerne anf\xF8rselstegn fra en streng"
 ---
 
 {{< edit_this_page >}}

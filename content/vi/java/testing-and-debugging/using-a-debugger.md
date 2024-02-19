@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng bộ gỡ lỗi"
 aliases:
 - /vi/java/using-a-debugger/
-date:                  2024-01-28T22:09:48.709262-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng bộ gỡ lỗi"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/java/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:48.709262-07:00
+description: "S\u1EED d\u1EE5ng debugger c\xF3 ngh\u0129a l\xE0 s\u1EED d\u1EE5ng\
+  \ m\u1ED9t c\xF4ng c\u1EE5 \u0111\u1EC3 ki\u1EC3m tra v\xE0 s\u1EEDa l\u1ED7i trong\
+  \ m\xE3 c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0\
+  y \u0111\u1EC3 hi\u1EC3u d\xF2ng ch\u1EA3y c\u1EE7a \u1EE9ng d\u1EE5ng c\u1EE7a\u2026"
+lastmod: 2024-02-18 23:08:50.562372
+model: gpt-4-0125-preview
+summary: "S\u1EED d\u1EE5ng debugger c\xF3 ngh\u0129a l\xE0 s\u1EED d\u1EE5ng m\u1ED9\
+  t c\xF4ng c\u1EE5 \u0111\u1EC3 ki\u1EC3m tra v\xE0 s\u1EEDa l\u1ED7i trong m\xE3\
+  \ c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\
+  \u1EC3 hi\u1EC3u d\xF2ng ch\u1EA3y c\u1EE7a \u1EE9ng d\u1EE5ng c\u1EE7a\u2026"
+title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

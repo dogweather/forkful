@@ -1,13 +1,16 @@
 ---
-title:                "Usando um depurador"
 aliases:
 - /pt/php/using-a-debugger/
-date:                  2024-01-26T03:50:31.380799-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando um depurador"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/using-a-debugger.md"
+date: 2024-01-26 03:50:31.380799-07:00
+description: "Um depurador \xE9 uma ferramenta que ajuda os programadores a entender\
+  \ o que seu c\xF3digo est\xE1 realmente fazendo enquanto \xE9 executado. \xC9 a\
+  \ lupa que nos permite\u2026"
+lastmod: 2024-02-18 23:08:58.245368
+model: gpt-4-0125-preview
+summary: "Um depurador \xE9 uma ferramenta que ajuda os programadores a entender o\
+  \ que seu c\xF3digo est\xE1 realmente fazendo enquanto \xE9 executado. \xC9 a lupa\
+  \ que nos permite\u2026"
+title: Usando um depurador
 ---
 
 {{< edit_this_page >}}

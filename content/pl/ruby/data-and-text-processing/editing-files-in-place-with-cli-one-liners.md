@@ -1,13 +1,16 @@
 ---
-title:                "Edytowanie plików w miejscu za pomocą jednolinijkowców CLI"
 aliases:
 - /pl/ruby/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:20:54.677391-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Edytowanie plików w miejscu za pomocą jednolinijkowców CLI"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:20:54.677391-07:00
+description: "Edycja plik\xF3w na miejscu z u\u017Cyciem jednolinijkowych polece\u0144\
+  \ CLI (Command Line Interface) w Ruby pozwala na modyfikowanie plik\xF3w bezpo\u015B\
+  rednio z terminala,\u2026"
+lastmod: 2024-02-18 23:08:50.121841
+model: gpt-4-0125-preview
+summary: "Edycja plik\xF3w na miejscu z u\u017Cyciem jednolinijkowych polece\u0144\
+  \ CLI (Command Line Interface) w Ruby pozwala na modyfikowanie plik\xF3w bezpo\u015B\
+  rednio z terminala,\u2026"
+title: "Edytowanie plik\xF3w w miejscu za pomoc\u0105 jednolinijkowc\xF3w CLI"
 ---
 
 {{< edit_this_page >}}

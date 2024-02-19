@@ -1,14 +1,17 @@
 ---
-title:                "Å konvertere en dato til en streng"
 aliases:
 - /no/google-apps-script/converting-a-date-into-a-string/
-date:                  2024-02-01T21:50:57.856992-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å konvertere en dato til en streng"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/google-apps-script/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:57.856992-07:00
+description: "Konvertering av datoer til strenger er en grunnleggende oppgave som\
+  \ gj\xF8r det mulig for programmerere \xE5 manipulere og vise datoinformasjon i\
+  \ et\u2026"
+lastmod: 2024-02-18 23:08:53.493562
+model: gpt-4-0125-preview
+summary: "Konvertering av datoer til strenger er en grunnleggende oppgave som gj\xF8\
+  r det mulig for programmerere \xE5 manipulere og vise datoinformasjon i et\u2026"
+title: "\xC5 konvertere en dato til en streng"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Xử lý lỗi"
 aliases:
 - /vi/c-sharp/handling-errors/
-date:                  2024-01-28T22:02:31.869478-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Xử lý lỗi"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/handling-errors.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:02:31.869478-07:00
+description: "X\u1EED l\xFD l\u1ED7i trong C# l\xE0 v\u1EC1 vi\u1EC7c qu\u1EA3n l\xFD\
+  \ nh\u1EEFng \u0111i\u1EC1u kh\xF4ng mong \u0111\u1EE3i - gi\u1ED1ng nh\u01B0 v\u1EA5\
+  p ph\u1EA3i d\xE2y gi\xE0y c\u1EE7a m\xECnh. Ch\u01B0\u01A1ng tr\xECnh c\xF3 th\u1EC3\
+  \ v\u1EA5p ph\u1EA3i d\u1EEF li\u1EC7u x\u1EA5u ho\u1EB7c k\u1EBFt\u2026"
+lastmod: 2024-02-18 23:08:50.706722
+model: gpt-4-0125-preview
+summary: "X\u1EED l\xFD l\u1ED7i trong C# l\xE0 v\u1EC1 vi\u1EC7c qu\u1EA3n l\xFD\
+  \ nh\u1EEFng \u0111i\u1EC1u kh\xF4ng mong \u0111\u1EE3i - gi\u1ED1ng nh\u01B0 v\u1EA5\
+  p ph\u1EA3i d\xE2y gi\xE0y c\u1EE7a m\xECnh. Ch\u01B0\u01A1ng tr\xECnh c\xF3 th\u1EC3\
+  \ v\u1EA5p ph\u1EA3i d\u1EEF li\u1EC7u x\u1EA5u ho\u1EB7c k\u1EBFt\u2026"
+title: "X\u1EED l\xFD l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

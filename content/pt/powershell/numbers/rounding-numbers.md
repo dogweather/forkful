@@ -1,13 +1,16 @@
 ---
-title:                "Arredondamento de números"
 aliases:
 - /pt/powershell/rounding-numbers/
-date:                  2024-01-26T03:46:17.864731-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arredondamento de números"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/powershell/rounding-numbers.md"
+date: 2024-01-26 03:46:17.864731-07:00
+description: "Arredondar n\xFAmeros consiste em ajustar um valor para o inteiro mais\
+  \ pr\xF3ximo ou para um ponto decimal especificado. Programadores arredondam n\xFA\
+  meros para\u2026"
+lastmod: 2024-02-18 23:08:58.361759
+model: gpt-4-0125-preview
+summary: "Arredondar n\xFAmeros consiste em ajustar um valor para o inteiro mais pr\xF3\
+  ximo ou para um ponto decimal especificado. Programadores arredondam n\xFAmeros\
+  \ para\u2026"
+title: "Arredondamento de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

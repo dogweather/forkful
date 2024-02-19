@@ -1,14 +1,18 @@
 ---
-title:                "Skriva en textfil"
 aliases:
 - /sv/vba/writing-a-text-file/
-date:                  2024-02-01T22:08:30.673710-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriva en textfil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/writing-a-text-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:08:30.673710-07:00
+description: "Att skriva en textfil i Visual Basic for Applications (VBA) inneb\xE4\
+  r att skapa, \xE4ndra eller l\xE4gga till textdata i filer, en grundl\xE4ggande\
+  \ uppgift f\xF6r att\u2026"
+lastmod: 2024-02-18 23:08:51.646085
+model: gpt-4-0125-preview
+summary: "Att skriva en textfil i Visual Basic for Applications (VBA) inneb\xE4r att\
+  \ skapa, \xE4ndra eller l\xE4gga till textdata i filer, en grundl\xE4ggande uppgift\
+  \ f\xF6r att\u2026"
+title: Skriva en textfil
 ---
 
 {{< edit_this_page >}}

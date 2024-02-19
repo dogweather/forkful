@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie argumentów linii poleceń"
 aliases:
 - /pl/elm/reading-command-line-arguments/
-date:                  2024-01-20T17:55:50.971506-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie argumentów linii poleceń"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:50.971506-07:00
+description: "Czytanie argument\xF3w z linii polece\u0144 to spos\xF3b na przekazywanie\
+  \ danych do programu podczas jego uruchamiania. Programi\u015Bci robi\u0105 to,\
+  \ by zwi\u0119kszy\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.533661
+model: gpt-4-1106-preview
+summary: "Czytanie argument\xF3w z linii polece\u0144 to spos\xF3b na przekazywanie\
+  \ danych do programu podczas jego uruchamiania. Programi\u015Bci robi\u0105 to,\
+  \ by zwi\u0119kszy\u0107\u2026"
+title: "Odczytywanie argument\xF3w linii polece\u0144"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Geração de números aleatórios"
 aliases:
 - /pt/cpp/generating-random-numbers/
-date:                  2024-01-27T20:33:01.244547-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Geração de números aleatórios"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/generating-random-numbers.md"
+date: 2024-01-27 20:33:01.244547-07:00
+description: "A gera\xE7\xE3o de n\xFAmeros aleat\xF3rios na programa\xE7\xE3o envolve\
+  \ criar sequ\xEAncias de n\xFAmeros que n\xE3o possuem uma ordem ou padr\xE3o previs\xED\
+  veis. Os programadores\u2026"
+lastmod: 2024-02-18 23:08:58.445634
+model: gpt-4-0125-preview
+summary: "A gera\xE7\xE3o de n\xFAmeros aleat\xF3rios na programa\xE7\xE3o envolve\
+  \ criar sequ\xEAncias de n\xFAmeros que n\xE3o possuem uma ordem ou padr\xE3o previs\xED\
+  veis. Os programadores\u2026"
+title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 ---
 
 {{< edit_this_page >}}

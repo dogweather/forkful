@@ -1,15 +1,16 @@
 ---
-title:                "Het gebruik van een interactieve shell (REPL)"
 aliases:
 - /nl/typescript/using-an-interactive-shell-repl/
-date:                  2024-01-28T22:09:37.619017-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Het gebruik van een interactieve shell (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/typescript/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:37.619017-07:00
+description: "Een Read-Eval-Print-Loop (REPL) is een programmeeromgeving die individuele\
+  \ gebruikersinvoeren neemt, deze uitvoert en het resultaat aan de gebruiker\u2026"
+lastmod: 2024-02-18 23:09:01.574871
+model: gpt-4-0125-preview
+summary: "Een Read-Eval-Print-Loop (REPL) is een programmeeromgeving die individuele\
+  \ gebruikersinvoeren neemt, deze uitvoert en het resultaat aan de gebruiker\u2026"
+title: Het gebruik van een interactieve shell (REPL)
 ---
 
 {{< edit_this_page >}}

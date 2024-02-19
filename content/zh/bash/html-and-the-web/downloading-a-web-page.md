@@ -1,14 +1,19 @@
 ---
-title:                "下载网页"
 aliases:
 - /zh/bash/downloading-a-web-page/
-date:                  2024-01-20T17:43:40.913947-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "下载网页"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/bash/downloading-a-web-page.md"
+date: 2024-01-20 17:43:40.913947-07:00
+description: "\u4E0B\u8F09\u4E00\u500B\u7DB2\u9801\uFF0C\u5C31\u662F\u628A\u5B83\u5F9E\
+  \u7DB2\u4E0A\u642C\u5230\u4F60\u7684\u96FB\u8166\u4E0A\u3002\u7A0B\u5E8F\u54E1\u9019\
+  \u9EBC\u505A\u4F86\u5206\u6790\u7DB2\u9801\u5167\u5BB9\u6216\u70BA\u4E86\u5099\u4EFD\
+  \u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.291437
+model: gpt-4-1106-preview
+summary: "\u4E0B\u8F09\u4E00\u500B\u7DB2\u9801\uFF0C\u5C31\u662F\u628A\u5B83\u5F9E\
+  \u7DB2\u4E0A\u642C\u5230\u4F60\u7684\u96FB\u8166\u4E0A\u3002\u7A0B\u5E8F\u54E1\u9019\
+  \u9EBC\u505A\u4F86\u5206\u6790\u7DB2\u9801\u5167\u5BB9\u6216\u70BA\u4E86\u5099\u4EFD\
+  \u3002"
+title: "\u4E0B\u8F7D\u7F51\u9875"
 ---
 
 {{< edit_this_page >}}

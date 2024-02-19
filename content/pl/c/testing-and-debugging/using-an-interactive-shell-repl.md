@@ -1,14 +1,18 @@
 ---
-title:                "Korzystanie z interaktywnej powłoki (REPL)"
 aliases:
 - /pl/c/using-an-interactive-shell-repl/
-date:                  2024-02-03T18:10:21.939712-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z interaktywnej powłoki (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:21.939712-07:00
+description: "Interaktywna pow\u0142oka, znana r\xF3wnie\u017C jako p\u0119tla czytaj-wykonaj-wypisz\
+  \ (REPL), pozwala programistom wpisywa\u0107 wyra\u017Cenia lub kod i natychmiast\
+  \ widzie\u0107 wyniki,\u2026"
+lastmod: 2024-02-18 23:08:50.081779
+model: gpt-4-0125-preview
+summary: "Interaktywna pow\u0142oka, znana r\xF3wnie\u017C jako p\u0119tla czytaj-wykonaj-wypisz\
+  \ (REPL), pozwala programistom wpisywa\u0107 wyra\u017Cenia lub kod i natychmiast\
+  \ widzie\u0107 wyniki,\u2026"
+title: "Korzystanie z interaktywnej pow\u0142oki (REPL)"
 ---
 
 {{< edit_this_page >}}

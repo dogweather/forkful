@@ -1,12 +1,14 @@
 ---
-title:                "Sending an HTTP request with basic authentication"
 aliases:
 - /en/c/sending-an-http-request-with-basic-authentication/
-date:                  2024-02-03T17:50:08.997620-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sending an HTTP request with basic authentication"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/sending-an-http-request-with-basic-authentication.md"
+date: 2024-02-03 17:50:08.997620-07:00
+description: "Sending an HTTP request with basic authentication in C involves crafting\
+  \ an HTTP request that includes an Authorization header with user credentials\u2026"
+lastmod: 2024-02-18 23:09:11.522357
+model: gpt-4-0125-preview
+summary: "Sending an HTTP request with basic authentication in C involves crafting\
+  \ an HTTP request that includes an Authorization header with user credentials\u2026"
+title: Sending an HTTP request with basic authentication
 ---
 
 {{< edit_this_page >}}

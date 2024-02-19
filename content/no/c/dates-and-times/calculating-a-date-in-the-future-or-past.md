@@ -1,14 +1,18 @@
 ---
-title:                "Beregning av en dato i fremtiden eller fortiden"
 aliases:
 - /no/c/calculating-a-date-in-the-future-or-past/
-date:                  2024-02-03T17:52:57.308394-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Beregning av en dato i fremtiden eller fortiden"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:52:57.308394-07:00
+description: "\xC5 beregne en dato i fremtiden eller fortiden inneb\xE6rer \xE5 bestemme\
+  \ en spesifikk dato ved \xE5 legge til eller trekke fra et visst antall dager, m\xE5\
+  neder eller\u2026"
+lastmod: 2024-02-18 23:08:54.408064
+model: gpt-4-0125-preview
+summary: "\xC5 beregne en dato i fremtiden eller fortiden inneb\xE6rer \xE5 bestemme\
+  \ en spesifikk dato ved \xE5 legge til eller trekke fra et visst antall dager, m\xE5\
+  neder eller\u2026"
+title: Beregning av en dato i fremtiden eller fortiden
 ---
 
 {{< edit_this_page >}}

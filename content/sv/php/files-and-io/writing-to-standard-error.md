@@ -1,14 +1,16 @@
 ---
-title:                "Skriva till standardfel"
 aliases:
 - /sv/php/writing-to-standard-error/
-date:                  2024-02-03T19:34:17.334981-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriva till standardfel"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:34:17.334981-07:00
+description: "Att skriva till standardfel (stderr) i PHP handlar om att styra felmeddelanden\
+  \ eller diagnostik separat fr\xE5n standardutdata (stdout), vilket g\xF6r det\u2026"
+lastmod: 2024-02-18 23:08:51.894038
+model: gpt-4-0125-preview
+summary: "Att skriva till standardfel (stderr) i PHP handlar om att styra felmeddelanden\
+  \ eller diagnostik separat fr\xE5n standardutdata (stdout), vilket g\xF6r det\u2026"
+title: Skriva till standardfel
 ---
 
 {{< edit_this_page >}}

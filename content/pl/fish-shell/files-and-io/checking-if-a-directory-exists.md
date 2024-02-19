@@ -1,14 +1,18 @@
 ---
-title:                "Sprawdzanie, czy katalog istnieje"
 aliases:
 - /pl/fish-shell/checking-if-a-directory-exists/
-date:                  2024-02-03T19:07:20.328046-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sprawdzanie, czy katalog istnieje"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:07:20.328046-07:00
+description: "Sprawdzanie, czy katalog istnieje w pow\u0142oce Fish, pozwala skryptom\
+  \ na podejmowanie decyzji w oparciu o obecno\u015B\u0107 lub brak struktur katalog\xF3\
+  w, umo\u017Cliwiaj\u0105c\u2026"
+lastmod: 2024-02-18 23:08:50.050767
+model: gpt-4-0125-preview
+summary: "Sprawdzanie, czy katalog istnieje w pow\u0142oce Fish, pozwala skryptom\
+  \ na podejmowanie decyzji w oparciu o obecno\u015B\u0107 lub brak struktur katalog\xF3\
+  w, umo\u017Cliwiaj\u0105c\u2026"
+title: Sprawdzanie, czy katalog istnieje
 ---
 
 {{< edit_this_page >}}

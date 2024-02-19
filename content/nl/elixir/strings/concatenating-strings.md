@@ -1,15 +1,16 @@
 ---
-title:                "Samenvoegen van strings"
 aliases:
 - /nl/elixir/concatenating-strings/
-date:                  2024-01-28T21:57:23.277385-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Samenvoegen van strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elixir/concatenating-strings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:57:23.277385-07:00
+description: "Het samenvoegen van strings gaat over het aan elkaar koppelen van twee\
+  \ of meer strings om \xE9\xE9n enkel stuk tekst te vormen. Je zou tekst moeten samenvoegen\u2026"
+lastmod: 2024-02-18 23:09:01.517266
+model: gpt-4-0125-preview
+summary: "Het samenvoegen van strings gaat over het aan elkaar koppelen van twee of\
+  \ meer strings om \xE9\xE9n enkel stuk tekst te vormen. Je zou tekst moeten samenvoegen\u2026"
+title: Samenvoegen van strings
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Extraindo substrings"
 aliases:
 - /pt/go/extracting-substrings/
-date:                  2024-02-03T17:56:27.899929-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Extraindo substrings"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/extracting-substrings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:27.899929-07:00
+description: "Extrair substrings envolve recuperar por\xE7\xF5es espec\xEDficas de\
+  \ uma string com base em suas posi\xE7\xF5es. Programadores frequentemente realizam\
+  \ essa opera\xE7\xE3o para\u2026"
+lastmod: 2024-02-18 23:08:57.656711
+model: gpt-4-0125-preview
+summary: "Extrair substrings envolve recuperar por\xE7\xF5es espec\xEDficas de uma\
+  \ string com base em suas posi\xE7\xF5es. Programadores frequentemente realizam\
+  \ essa opera\xE7\xE3o para\u2026"
+title: Extraindo substrings
 ---
 
 {{< edit_this_page >}}

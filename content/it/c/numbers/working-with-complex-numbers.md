@@ -1,14 +1,16 @@
 ---
-title:                "Lavorare con i numeri complessi"
 aliases:
 - /it/c/working-with-complex-numbers/
-date:                  2024-02-03T18:13:51.855289-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con i numeri complessi"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:13:51.855289-07:00
+description: "I numeri complessi sono costituiti da una parte reale e una immaginaria,\
+  \ rappresentati come `a + bi` dove `i` \xE8 la radice quadrata di `-1`. I\u2026"
+lastmod: 2024-02-18 23:08:56.332015
+model: gpt-4-0125-preview
+summary: "I numeri complessi sono costituiti da una parte reale e una immaginaria,\
+  \ rappresentati come `a + bi` dove `i` \xE8 la radice quadrata di `-1`. I\u2026"
+title: Lavorare con i numeri complessi
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,16 @@
 ---
-title:                "Werken met complexe getallen"
 aliases:
 - /nl/elixir/working-with-complex-numbers/
-date:                  2024-01-28T22:12:13.669953-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met complexe getallen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elixir/working-with-complex-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:13.669953-07:00
+description: "Complexe getallen hebben een re\xEBel deel en een imaginair deel (zoals\
+  \ `3 + 4i`). Ze worden gebruikt in de techniek, fysica, en bepaalde computerproblemen.\u2026"
+lastmod: 2024-02-18 23:09:01.519552
+model: gpt-4-0125-preview
+summary: "Complexe getallen hebben een re\xEBel deel en een imaginair deel (zoals\
+  \ `3 + 4i`). Ze worden gebruikt in de techniek, fysica, en bepaalde computerproblemen.\u2026"
+title: Werken met complexe getallen
 ---
 
 {{< edit_this_page >}}

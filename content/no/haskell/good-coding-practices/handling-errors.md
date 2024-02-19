@@ -1,13 +1,16 @@
 ---
-title:                "Feilhåndtering"
 aliases:
 - /no/haskell/handling-errors/
-date:                  2024-01-26T00:54:03.199861-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Feilhåndtering"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/handling-errors.md"
+date: 2024-01-26 00:54:03.199861-07:00
+description: "H\xE5ndtering av feil i programmering handler om \xE5 styre det uventede\u2014\
+  ting som kan g\xE5 galt. Programmerere gj\xF8r dette for \xE5 sikre at deres programmer\
+  \ kan\u2026"
+lastmod: 2024-02-18 23:08:53.941918
+model: gpt-4-1106-preview
+summary: "H\xE5ndtering av feil i programmering handler om \xE5 styre det uventede\u2014\
+  ting som kan g\xE5 galt. Programmerere gj\xF8r dette for \xE5 sikre at deres programmer\
+  \ kan\u2026"
+title: "Feilh\xE5ndtering"
 ---
 
 {{< edit_this_page >}}

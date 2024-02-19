@@ -1,14 +1,17 @@
 ---
-title:                "Usando um depurador"
 aliases:
 - /pt/c/using-a-debugger/
-date:                  2024-02-03T18:09:52.101052-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando um depurador"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/using-a-debugger.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:09:52.101052-07:00
+description: "Depuradores em C s\xE3o ferramentas especializadas que permitem aos\
+  \ desenvolvedores acompanhar o passo a passo do seu c\xF3digo, inspecionar vari\xE1\
+  veis e\u2026"
+lastmod: 2024-02-18 23:08:58.624268
+model: gpt-4-0125-preview
+summary: "Depuradores em C s\xE3o ferramentas especializadas que permitem aos desenvolvedores\
+  \ acompanhar o passo a passo do seu c\xF3digo, inspecionar vari\xE1veis e\u2026"
+title: Usando um depurador
 ---
 
 {{< edit_this_page >}}

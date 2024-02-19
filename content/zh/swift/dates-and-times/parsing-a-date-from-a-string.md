@@ -1,14 +1,26 @@
 ---
-title:                "从字符串解析日期"
 aliases:
 - /zh/swift/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:15:32.420070-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "从字符串解析日期"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:15:32.420070-07:00
+description: "\u4ECE\u5B57\u7B26\u4E32\u89E3\u6790\u65E5\u671F\u6D89\u53CA\u5C06\u6587\
+  \u672C\u5F62\u5F0F\u7684\u65E5\u671F\u548C\u65F6\u95F4\u8868\u793A\u8F6C\u6362\u4E3A\
+  `Date`\u5BF9\u8C61\u3002\u5F53\u5728API\u54CD\u5E94\u6216\u7528\u6237\u8F93\u5165\
+  \u7B49\u573A\u5408\u4E2D\u4EE5\u5B57\u7B26\u4E32\u5F62\u5F0F\u901A\u4FE1\u65E5\u671F\
+  \u65F6\uFF0C\u8FD9\u4E00\u8FC7\u7A0B\u975E\u5E38\u91CD\u8981\uFF0C\u56E0\u4E3A\u5B83\
+  \u5141\u8BB8\u66F4\u5BB9\u6613\u5730\u8FDB\u884C\u65E5\u671F\u64CD\u4F5C\u548C\u683C\
+  \u5F0F\u5316\u3002"
+lastmod: 2024-02-18 23:08:59.450329
+model: gpt-4-0125-preview
+summary: "\u4ECE\u5B57\u7B26\u4E32\u89E3\u6790\u65E5\u671F\u6D89\u53CA\u5C06\u6587\
+  \u672C\u5F62\u5F0F\u7684\u65E5\u671F\u548C\u65F6\u95F4\u8868\u793A\u8F6C\u6362\u4E3A\
+  `Date`\u5BF9\u8C61\u3002\u5F53\u5728API\u54CD\u5E94\u6216\u7528\u6237\u8F93\u5165\
+  \u7B49\u573A\u5408\u4E2D\u4EE5\u5B57\u7B26\u4E32\u5F62\u5F0F\u901A\u4FE1\u65E5\u671F\
+  \u65F6\uFF0C\u8FD9\u4E00\u8FC7\u7A0B\u975E\u5E38\u91CD\u8981\uFF0C\u56E0\u4E3A\u5B83\
+  \u5141\u8BB8\u66F4\u5BB9\u6613\u5730\u8FDB\u884C\u65E5\u671F\u64CD\u4F5C\u548C\u683C\
+  \u5F0F\u5316\u3002"
+title: "\u4ECE\u5B57\u7B26\u4E32\u89E3\u6790\u65E5\u671F"
 ---
 
 {{< edit_this_page >}}

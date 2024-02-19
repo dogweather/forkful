@@ -1,14 +1,18 @@
 ---
-title:                "Redondeo de números"
 aliases:
 - /es/go/rounding-numbers/
-date:                  2024-02-03T18:07:34.066458-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Redondeo de números"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/rounding-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:34.066458-07:00
+description: "Redondear n\xFAmeros consiste en ajustar el valor de un n\xFAmero al\
+  \ entero m\xE1s cercano o a un n\xFAmero espec\xEDfico de decimales. Los programadores\
+  \ hacen esto por\u2026"
+lastmod: 2024-02-18 23:09:09.448979
+model: gpt-4-0125-preview
+summary: "Redondear n\xFAmeros consiste en ajustar el valor de un n\xFAmero al entero\
+  \ m\xE1s cercano o a un n\xFAmero espec\xEDfico de decimales. Los programadores\
+  \ hacen esto por\u2026"
+title: "Redondeo de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

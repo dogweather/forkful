@@ -1,14 +1,16 @@
 ---
-title:                "Arbeider med YAML"
 aliases:
 - /no/arduino/working-with-yaml/
-date:                  2024-02-03T19:25:28.805058-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeider med YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:25:28.805058-07:00
+description: "YAML (YAML Ain't Markup Language) er en menneskelesbar standard for\
+  \ serialisering av data som kan brukes for konfigurasjonsfiler, kommunikasjon mellom\u2026"
+lastmod: 2024-02-18 23:08:54.163115
+model: gpt-4-0125-preview
+summary: "YAML (YAML Ain't Markup Language) er en menneskelesbar standard for serialisering\
+  \ av data som kan brukes for konfigurasjonsfiler, kommunikasjon mellom\u2026"
+title: Arbeider med YAML
 ---
 
 {{< edit_this_page >}}

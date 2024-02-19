@@ -1,15 +1,30 @@
 ---
-title:                "Работа с CSV"
 aliases:
 - /ru/elixir/working-with-csv/
-date:                  2024-01-29T00:03:40.658115-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Работа с CSV"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/elixir/working-with-csv.md"
 changelog:
-  - 2024-01-29, gpt-4-0125-preview, translated from English
+- 2024-01-29, gpt-4-0125-preview, translated from English
+date: 2024-01-29 00:03:40.658115-07:00
+description: "CSV (Comma-Separated Values, \u0437\u043D\u0430\u0447\u0435\u043D\u0438\
+  \u044F, \u0440\u0430\u0437\u0434\u0435\u043B\u0435\u043D\u043D\u044B\u0435 \u0437\
+  \u0430\u043F\u044F\u0442\u044B\u043C\u0438) - \u044D\u0442\u043E \u0444\u043E\u0440\
+  \u043C\u0430\u0442 \u043F\u0440\u043E\u0441\u0442\u043E\u0433\u043E \u0442\u0435\
+  \u043A\u0441\u0442\u0430 \u0434\u043B\u044F \u0442\u0430\u0431\u043B\u0438\u0447\
+  \u043D\u044B\u0445 \u0434\u0430\u043D\u043D\u044B\u0445. \u041F\u0440\u043E\u0433\
+  \u0440\u0430\u043C\u043C\u0438\u0441\u0442\u044B \u0438\u0441\u043F\u043E\u043B\u044C\
+  \u0437\u0443\u044E\u0442 CSV \u0434\u043B\u044F \u043B\u0435\u0433\u043A\u043E\u0433\
+  \u043E\u2026"
+lastmod: 2024-02-18 23:08:56.660863
+model: gpt-4-0125-preview
+summary: "CSV (Comma-Separated Values, \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u044F\
+  , \u0440\u0430\u0437\u0434\u0435\u043B\u0435\u043D\u043D\u044B\u0435 \u0437\u0430\
+  \u043F\u044F\u0442\u044B\u043C\u0438) - \u044D\u0442\u043E \u0444\u043E\u0440\u043C\
+  \u0430\u0442 \u043F\u0440\u043E\u0441\u0442\u043E\u0433\u043E \u0442\u0435\u043A\
+  \u0441\u0442\u0430 \u0434\u043B\u044F \u0442\u0430\u0431\u043B\u0438\u0447\u043D\
+  \u044B\u0445 \u0434\u0430\u043D\u043D\u044B\u0445. \u041F\u0440\u043E\u0433\u0440\
+  \u0430\u043C\u043C\u0438\u0441\u0442\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\
+  \u0443\u044E\u0442 CSV \u0434\u043B\u044F \u043B\u0435\u0433\u043A\u043E\u0433\u043E\
+  \u2026"
+title: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 CSV"
 ---
 
 {{< edit_this_page >}}

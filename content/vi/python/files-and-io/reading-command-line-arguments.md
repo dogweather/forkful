@@ -1,15 +1,20 @@
 ---
-title:                "Đọc các đối số dòng lệnh"
 aliases:
 - /vi/python/reading-command-line-arguments/
-date:                  2024-01-28T22:05:37.723176-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Đọc các đối số dòng lệnh"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/python/reading-command-line-arguments.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:05:37.723176-07:00
+description: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh cho ph\xE9\
+  p m\xE3 Python c\u1EE7a b\u1EA1n t\u01B0\u01A1ng t\xE1c t\u1ED1t v\u1EDBi c\xE1\
+  c \u0111\u1EA7u v\xE0o c\u1EE7a ng\u01B0\u1EDDi d\xF9ng t\u1EEB terminal. T\u1EA1\
+  i sao? V\xEC linh ho\u1EA1t l\xE0 ch\xECa kh\xF3a; ng\u01B0\u1EDDi\u2026"
+lastmod: 2024-02-18 23:08:50.285162
+model: gpt-4-0125-preview
+summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh cho ph\xE9\
+  p m\xE3 Python c\u1EE7a b\u1EA1n t\u01B0\u01A1ng t\xE1c t\u1ED1t v\u1EDBi c\xE1\
+  c \u0111\u1EA7u v\xE0o c\u1EE7a ng\u01B0\u1EDDi d\xF9ng t\u1EEB terminal. T\u1EA1\
+  i sao? V\xEC linh ho\u1EA1t l\xE0 ch\xECa kh\xF3a; ng\u01B0\u1EDDi\u2026"
+title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 ---
 
 {{< edit_this_page >}}

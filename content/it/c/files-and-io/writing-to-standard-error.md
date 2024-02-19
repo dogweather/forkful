@@ -1,14 +1,16 @@
 ---
-title:                "Scrittura su errore standard"
 aliases:
 - /it/c/writing-to-standard-error/
-date:                  2024-02-03T18:14:56.223281-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Scrittura su errore standard"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:14:56.223281-07:00
+description: "La scrittura su standard error in C comporta l'indirizzamento dei messaggi\
+  \ di errore e delle informazioni diagnostiche su un flusso separato rispetto\u2026"
+lastmod: 2024-02-18 23:08:56.355866
+model: gpt-4-0125-preview
+summary: "La scrittura su standard error in C comporta l'indirizzamento dei messaggi\
+  \ di errore e delle informazioni diagnostiche su un flusso separato rispetto\u2026"
+title: Scrittura su errore standard
 ---
 
 {{< edit_this_page >}}

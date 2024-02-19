@@ -1,13 +1,16 @@
 ---
-title:                "Sammanslagning av strängar"
 aliases:
 - /sv/powershell/concatenating-strings/
-date:                  2024-01-20T17:35:26.032386-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammanslagning av strängar"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/concatenating-strings.md"
+date: 2024-01-20 17:35:26.032386-07:00
+description: "Sammanslagning av str\xE4ngar inneb\xE4r att kl\xE4mma ihop tv\xE5 eller\
+  \ fler textbitar till en. Programmerare g\xF6r detta f\xF6r att bygga meningar,\
+  \ skapa dynamiska\u2026"
+lastmod: 2024-02-18 23:08:51.994053
+model: gpt-4-1106-preview
+summary: "Sammanslagning av str\xE4ngar inneb\xE4r att kl\xE4mma ihop tv\xE5 eller\
+  \ fler textbitar till en. Programmerare g\xF6r detta f\xF6r att bygga meningar,\
+  \ skapa dynamiska\u2026"
+title: "Sammanslagning av str\xE4ngar"
 ---
 
 {{< edit_this_page >}}

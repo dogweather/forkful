@@ -1,13 +1,16 @@
 ---
-title:                "Geração de números aleatórios"
 aliases:
 - /pt/javascript/generating-random-numbers/
-date:                  2024-01-27T20:34:34.615838-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Geração de números aleatórios"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/generating-random-numbers.md"
+date: 2024-01-27 20:34:34.615838-07:00
+description: "Gerar n\xFAmeros aleat\xF3rios em JavaScript \xE9 uma t\xE9cnica usada\
+  \ para criar imprevisibilidade em aplica\xE7\xF5es, desde jogos que precisam de\
+  \ comportamento aleat\xF3rio\u2026"
+lastmod: 2024-02-18 23:08:58.528097
+model: gpt-4-0125-preview
+summary: "Gerar n\xFAmeros aleat\xF3rios em JavaScript \xE9 uma t\xE9cnica usada para\
+  \ criar imprevisibilidade em aplica\xE7\xF5es, desde jogos que precisam de comportamento\
+  \ aleat\xF3rio\u2026"
+title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 ---
 
 {{< edit_this_page >}}

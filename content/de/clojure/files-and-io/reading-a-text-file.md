@@ -1,13 +1,14 @@
 ---
-title:                "Textdatei einlesen"
 aliases:
 - /de/clojure/reading-a-text-file/
-date:                  2024-01-20T17:54:00.923897-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Textdatei einlesen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/reading-a-text-file.md"
+date: 2024-01-20 17:54:00.923897-07:00
+description: Ein Textfile auszulesen bedeutet, dessen Inhalt in ein Programm zu laden.
+  Programmierer tun das, um Daten zu verarbeiten oder Konfigurationen zu laden.
+lastmod: 2024-02-18 23:09:04.525547
+model: gpt-4-1106-preview
+summary: Ein Textfile auszulesen bedeutet, dessen Inhalt in ein Programm zu laden.
+  Programmierer tun das, um Daten zu verarbeiten oder Konfigurationen zu laden.
+title: Textdatei einlesen
 ---
 
 {{< edit_this_page >}}

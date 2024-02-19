@@ -1,13 +1,15 @@
 ---
-title:                "Printing debug output"
 aliases:
 - /en/swift/printing-debug-output/
-date:                  2024-01-20T17:53:32.166307-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Printing debug output"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/printing-debug-output.md"
+date: 2024-01-20 17:53:32.166307-07:00
+description: "In Swift, printing debug output means displaying data in a debug area,\
+  \ typically within an IDE or a console, for monitoring what's happening live in\
+  \ your\u2026"
+lastmod: 2024-02-18 23:09:11.399291
+model: gpt-4-1106-preview
+summary: "In Swift, printing debug output means displaying data in a debug area, typically\
+  \ within an IDE or a console, for monitoring what's happening live in your\u2026"
+title: Printing debug output
 ---
 
 {{< edit_this_page >}}

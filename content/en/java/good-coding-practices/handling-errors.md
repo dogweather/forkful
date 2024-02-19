@@ -1,13 +1,14 @@
 ---
-title:                "Handling errors"
 aliases:
 - /en/java/handling-errors/
-date:                  2024-01-21T21:19:03.016358-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Handling errors"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/handling-errors.md"
+date: 2024-01-21 21:19:03.016358-07:00
+description: "Handling errors means writing code that anticipates and deals with things\
+  \ going wrong. Programmers do it to make software robust, preventing crashes and\u2026"
+lastmod: 2024-02-18 23:09:10.938157
+model: gpt-4-1106-preview
+summary: "Handling errors means writing code that anticipates and deals with things\
+  \ going wrong. Programmers do it to make software robust, preventing crashes and\u2026"
+title: Handling errors
 ---
 
 {{< edit_this_page >}}

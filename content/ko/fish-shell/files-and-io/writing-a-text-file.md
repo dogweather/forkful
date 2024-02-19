@@ -1,14 +1,30 @@
 ---
-title:                "텍스트 파일 쓰기"
 aliases:
 - /ko/fish-shell/writing-a-text-file/
-date:                  2024-02-03T19:27:51.915954-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "텍스트 파일 쓰기"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:51.915954-07:00
+description: "Fish Shell\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC5D0 \uAE30\uB85D\
+  \uD558\uB294 \uAC83\uC740 \uB370\uC774\uD130\uB97C \uC9C0\uC18D\uC801\uC73C\uB85C\
+  \ \uC800\uC7A5\uD560 \uC218 \uC788\uAC8C \uD574\uC8FC\uC5B4, \uB3D9\uC77C\uD55C\
+  \ Fish \uC2A4\uD06C\uB9BD\uD2B8 \uB610\uB294 \uB2E4\uB978 \uD504\uB85C\uADF8\uB7A8\
+  \uC5D0 \uC758\uD55C \uB370\uC774\uD130 \uAC80\uC0C9\uC774\uB098 \uC870\uC791\uC744\
+  \ \uC27D\uAC8C \uD560 \uC218 \uC788\uAC8C \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC740 \uC774\uB97C \uB85C\uAE45, \uC124\uC815 \uC800\uC7A5, \uB610\
+  \uB294 \uCD94\uAC00 \uCC98\uB9AC\uB97C \uC704\uD55C \uB370\uC774\uD130 \uB0B4\uBCF4\
+  \uB0B4\uAE30\u2026"
+lastmod: 2024-02-18 23:09:06.909858
+model: gpt-4-0125-preview
+summary: "Fish Shell\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC5D0 \uAE30\uB85D\
+  \uD558\uB294 \uAC83\uC740 \uB370\uC774\uD130\uB97C \uC9C0\uC18D\uC801\uC73C\uB85C\
+  \ \uC800\uC7A5\uD560 \uC218 \uC788\uAC8C \uD574\uC8FC\uC5B4, \uB3D9\uC77C\uD55C\
+  \ Fish \uC2A4\uD06C\uB9BD\uD2B8 \uB610\uB294 \uB2E4\uB978 \uD504\uB85C\uADF8\uB7A8\
+  \uC5D0 \uC758\uD55C \uB370\uC774\uD130 \uAC80\uC0C9\uC774\uB098 \uC870\uC791\uC744\
+  \ \uC27D\uAC8C \uD560 \uC218 \uC788\uAC8C \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC740 \uC774\uB97C \uB85C\uAE45, \uC124\uC815 \uC800\uC7A5, \uB610\
+  \uB294 \uCD94\uAC00 \uCC98\uB9AC\uB97C \uC704\uD55C \uB370\uC774\uD130 \uB0B4\uBCF4\
+  \uB0B4\uAE30\u2026"
+title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC4F0\uAE30"
 ---
 
 {{< edit_this_page >}}

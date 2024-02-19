@@ -1,14 +1,26 @@
 ---
-title:                "解析HTML"
 aliases:
 - /zh/rust/parsing-html/
-date:                  2024-02-03T19:12:57.137642-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "解析HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:57.137642-07:00
+description: "\u5728 Rust \u4E2D\u89E3\u6790 HTML \u610F\u5473\u7740\u4ECE HTML \u6587\
+  \u6863\u4E2D\u62BD\u53D6\u6570\u636E\uFF0C\u8FD9\u5BF9\u4E8E\u7F51\u9875\u6293\u53D6\
+  \u3001\u6570\u636E\u63D0\u53D6\u6216\u6784\u5EFA\u7F51\u9875\u722C\u866B\u81F3\u5173\
+  \u91CD\u8981\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u81EA\u52A8\
+  \u5316\u4ECE\u7F51\u7EDC\u6536\u96C6\u4FE1\u606F\u3001\u5206\u6790\u7F51\u7EDC\u5185\
+  \u5BB9\u6216\u5C06\u5185\u5BB9\u4ECE\u4E00\u4E2A\u5E73\u53F0\u8FC1\u79FB\u5230\u53E6\
+  \u4E00\u4E2A\u5E73\u53F0\u3002"
+lastmod: 2024-02-18 23:08:58.939294
+model: gpt-4-0125-preview
+summary: "\u5728 Rust \u4E2D\u89E3\u6790 HTML \u610F\u5473\u7740\u4ECE HTML \u6587\
+  \u6863\u4E2D\u62BD\u53D6\u6570\u636E\uFF0C\u8FD9\u5BF9\u4E8E\u7F51\u9875\u6293\u53D6\
+  \u3001\u6570\u636E\u63D0\u53D6\u6216\u6784\u5EFA\u7F51\u9875\u722C\u866B\u81F3\u5173\
+  \u91CD\u8981\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u81EA\u52A8\
+  \u5316\u4ECE\u7F51\u7EDC\u6536\u96C6\u4FE1\u606F\u3001\u5206\u6790\u7F51\u7EDC\u5185\
+  \u5BB9\u6216\u5C06\u5185\u5BB9\u4ECE\u4E00\u4E2A\u5E73\u53F0\u8FC1\u79FB\u5230\u53E6\
+  \u4E00\u4E2A\u5E73\u53F0\u3002"
+title: "\u89E3\u6790HTML"
 ---
 
 {{< edit_this_page >}}

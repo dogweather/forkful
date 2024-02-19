@@ -1,14 +1,21 @@
 ---
-title:                "字符串插值"
 aliases:
 - /zh/c-sharp/interpolating-a-string/
-date:                  2024-01-20T17:50:34.988572-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "字符串插值"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/interpolating-a-string.md"
+date: 2024-01-20 17:50:34.988572-07:00
+description: "\u5B57\u7B26\u4E32\u63D2\u503C\u662F\u5C06\u53D8\u91CF\u548C\u8868\u8FBE\
+  \u5F0F\u5D4C\u5165\u5230\u5B57\u7B26\u4E32\u5B57\u9762\u503C\u4E2D\u7684\u8FC7\u7A0B\
+  \u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u7B80\u5316\u5B57\u7B26\
+  \u4E32\u7684\u7EC4\u5408\u548C\u683C\u5F0F\u5316\uFF0C\u4F7F\u4EE3\u7801\u66F4\u52A0\
+  \u6E05\u6670\u6613\u8BFB\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.120472
+model: gpt-4-1106-preview
+summary: "\u5B57\u7B26\u4E32\u63D2\u503C\u662F\u5C06\u53D8\u91CF\u548C\u8868\u8FBE\
+  \u5F0F\u5D4C\u5165\u5230\u5B57\u7B26\u4E32\u5B57\u9762\u503C\u4E2D\u7684\u8FC7\u7A0B\
+  \u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u7B80\u5316\u5B57\u7B26\
+  \u4E32\u7684\u7EC4\u5408\u548C\u683C\u5F0F\u5316\uFF0C\u4F7F\u4EE3\u7801\u66F4\u52A0\
+  \u6E05\u6670\u6613\u8BFB\u3002"
+title: "\u5B57\u7B26\u4E32\u63D2\u503C"
 ---
 
 {{< edit_this_page >}}

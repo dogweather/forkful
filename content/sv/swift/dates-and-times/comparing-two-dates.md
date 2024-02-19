@@ -1,13 +1,16 @@
 ---
-title:                "Jämföra två datum"
 aliases:
 - /sv/swift/comparing-two-dates/
-date:                  2024-01-20T17:33:59.721770-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Jämföra två datum"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/comparing-two-dates.md"
+date: 2024-01-20 17:33:59.721770-07:00
+description: "J\xE4mf\xF6relse av tv\xE5 datum \xE4r processen att se vilket datum\
+  \ som kommer f\xF6rst eller om de \xE4r samma. Programmerare g\xF6r detta f\xF6\
+  r att hantera deadlines,\u2026"
+lastmod: 2024-02-18 23:08:52.136259
+model: gpt-4-1106-preview
+summary: "J\xE4mf\xF6relse av tv\xE5 datum \xE4r processen att se vilket datum som\
+  \ kommer f\xF6rst eller om de \xE4r samma. Programmerare g\xF6r detta f\xF6r att\
+  \ hantera deadlines,\u2026"
+title: "J\xE4mf\xF6ra tv\xE5 datum"
 ---
 
 {{< edit_this_page >}}

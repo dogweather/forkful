@@ -1,13 +1,15 @@
 ---
-title:                "Rounding numbers"
 aliases:
 - /en/bash/rounding-numbers/
-date:                  2024-01-25T03:00:17.162264-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rounding numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/rounding-numbers.md"
+date: 2024-01-25 03:00:17.162264-07:00
+description: "Rounding numbers means chopping off the decimals to a simpler value\
+  \ that's good enough for a given context. Programmers round numbers to simplify\
+  \ results,\u2026"
+lastmod: 2024-02-18 23:09:11.222642
+model: gpt-4-1106-preview
+summary: "Rounding numbers means chopping off the decimals to a simpler value that's\
+  \ good enough for a given context. Programmers round numbers to simplify results,\u2026"
+title: Rounding numbers
 ---
 
 {{< edit_this_page >}}

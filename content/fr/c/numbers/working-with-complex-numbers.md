@@ -1,14 +1,18 @@
 ---
-title:                "Travailler avec des nombres complexes"
 aliases:
 - /fr/c/working-with-complex-numbers/
-date:                  2024-02-03T18:14:35.759511-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Travailler avec des nombres complexes"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:14:35.759511-07:00
+description: "Les nombres complexes se composent d'une partie r\xE9elle et d'une partie\
+  \ imaginaire, repr\xE9sent\xE9es comme `a + bi` o\xF9 `i` est la racine carr\xE9\
+  e de `-1`. Les\u2026"
+lastmod: 2024-02-18 23:09:09.347971
+model: gpt-4-0125-preview
+summary: "Les nombres complexes se composent d'une partie r\xE9elle et d'une partie\
+  \ imaginaire, repr\xE9sent\xE9es comme `a + bi` o\xF9 `i` est la racine carr\xE9\
+  e de `-1`. Les\u2026"
+title: Travailler avec des nombres complexes
 ---
 
 {{< edit_this_page >}}

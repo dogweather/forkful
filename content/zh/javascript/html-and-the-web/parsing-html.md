@@ -1,16 +1,23 @@
 ---
-title:                "解析HTML"
 aliases:
 - /zh/javascript/parsing-html/
-date:                  2024-01-28T03:01:15.913826-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "解析HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/parsing-html.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 03:01:15.913826-07:00
+description: "\u89E3\u6790 HTML \u6307\u7684\u662F\u4ECE HTML \u6587\u6863\u4E2D\u63D0\
+  \u53D6\u6570\u636E\u3002\u7A0B\u5E8F\u5458\u8FDB\u884C\u8FD9\u4E00\u64CD\u4F5C\u662F\
+  \u4E3A\u4E86\u4E0E\u7F51\u9875\u5185\u5BB9\u8FDB\u884C\u4EA4\u4E92\u6216\u64CD\u63A7\
+  \u3001\u81EA\u52A8\u5316\u6570\u636E\u63D0\u53D6\uFF0C\u6216\u8005\u7528\u4E8E\u7F51\
+  \u7EDC\u6293\u53D6\u76EE\u7684\u3002"
+lastmod: 2024-02-18 23:08:59.477390
+model: gpt-4-0125-preview
+summary: "\u89E3\u6790 HTML \u6307\u7684\u662F\u4ECE HTML \u6587\u6863\u4E2D\u63D0\
+  \u53D6\u6570\u636E\u3002\u7A0B\u5E8F\u5458\u8FDB\u884C\u8FD9\u4E00\u64CD\u4F5C\u662F\
+  \u4E3A\u4E86\u4E0E\u7F51\u9875\u5185\u5BB9\u8FDB\u884C\u4EA4\u4E92\u6216\u64CD\u63A7\
+  \u3001\u81EA\u52A8\u5316\u6570\u636E\u63D0\u53D6\uFF0C\u6216\u8005\u7528\u4E8E\u7F51\
+  \u7EDC\u6293\u53D6\u76EE\u7684\u3002"
+title: "\u89E3\u6790HTML"
 ---
 
 {{< edit_this_page >}}

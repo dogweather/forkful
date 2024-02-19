@@ -1,15 +1,16 @@
 ---
-title:                "De lengte van een string vinden"
 aliases:
 - /nl/rust/finding-the-length-of-a-string/
-date:                  2024-01-28T22:00:37.664476-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "De lengte van een string vinden"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:00:37.664476-07:00
+description: "De lengte van een string vinden betekent het tellen van het aantal tekens\
+  \ dat het bevat. Programmeurs doen dit om tekstgegevens effici\xEBnt te valideren,\u2026"
+lastmod: 2024-02-18 23:09:01.609254
+model: gpt-4-0125-preview
+summary: "De lengte van een string vinden betekent het tellen van het aantal tekens\
+  \ dat het bevat. Programmeurs doen dit om tekstgegevens effici\xEBnt te valideren,\u2026"
+title: De lengte van een string vinden
 ---
 
 {{< edit_this_page >}}

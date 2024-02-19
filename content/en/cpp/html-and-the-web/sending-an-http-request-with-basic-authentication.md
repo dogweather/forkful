@@ -1,13 +1,15 @@
 ---
-title:                "Sending an HTTP request with basic authentication"
 aliases:
 - /en/cpp/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:00:56.412555-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sending an HTTP request with basic authentication"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:00:56.412555-07:00
+description: "Sending an HTTP request with basic authentication involves attaching\
+  \ a username and password to a request for access control. Programmers do it for\
+  \ simple\u2026"
+lastmod: 2024-02-18 23:09:11.355208
+model: gpt-4-1106-preview
+summary: "Sending an HTTP request with basic authentication involves attaching a username\
+  \ and password to a request for access control. Programmers do it for simple\u2026"
+title: Sending an HTTP request with basic authentication
 ---
 
 {{< edit_this_page >}}

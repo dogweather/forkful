@@ -1,13 +1,16 @@
 ---
-title:                "Organizando o código em funções"
 aliases:
 - /pt/elixir/organizing-code-into-functions/
-date:                  2024-01-26T01:09:51.725097-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organizando o código em funções"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/organizing-code-into-functions.md"
+date: 2024-01-26 01:09:51.725097-07:00
+description: "Organizar o c\xF3digo em fun\xE7\xF5es significa agrupar opera\xE7\xF5\
+  es relacionadas em blocos reutiliz\xE1veis. Fazemos isso para melhorar a legibilidade\
+  \ e\u2026"
+lastmod: 2024-02-18 23:08:57.849143
+model: gpt-4-1106-preview
+summary: "Organizar o c\xF3digo em fun\xE7\xF5es significa agrupar opera\xE7\xF5es\
+  \ relacionadas em blocos reutiliz\xE1veis. Fazemos isso para melhorar a legibilidade\
+  \ e\u2026"
+title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 ---
 
 {{< edit_this_page >}}

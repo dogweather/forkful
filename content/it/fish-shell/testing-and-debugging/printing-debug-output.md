@@ -1,13 +1,14 @@
 ---
-title:                "Stampa dell'output di debug"
 aliases:
 - /it/fish-shell/printing-debug-output/
-date:                  2024-01-20T17:52:37.467564-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Stampa dell'output di debug"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/printing-debug-output.md"
+date: 2024-01-20 17:52:37.467564-07:00
+description: "Stampare l'output di debug aiuta a tenere traccia di cosa sta succedendo\
+  \ nel tuo script. Lo fanno i programmatori per capire meglio i flussi di esecuzione\u2026"
+lastmod: 2024-02-18 23:08:56.298107
+model: gpt-4-1106-preview
+summary: "Stampare l'output di debug aiuta a tenere traccia di cosa sta succedendo\
+  \ nel tuo script. Lo fanno i programmatori per capire meglio i flussi di esecuzione\u2026"
+title: Stampa dell'output di debug
 ---
 
 {{< edit_this_page >}}

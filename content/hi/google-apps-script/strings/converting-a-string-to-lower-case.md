@@ -1,14 +1,31 @@
 ---
-title:                "स्ट्रिंग को लोअर केस में बदलना"
 aliases:
 - /hi/google-apps-script/converting-a-string-to-lower-case/
-date:                  2024-02-01T21:52:43.132849-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "स्ट्रिंग को लोअर केस में बदलना"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/google-apps-script/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:43.132849-07:00
+description: "Google Apps Script \u092E\u0947\u0902 \u0938\u094D\u091F\u094D\u0930\
+  \u093F\u0902\u0917 \u0915\u094B \u0932\u094B\u0905\u0930 \u0915\u0947\u0938 \u092E\
+  \u0947\u0902 \u092A\u0930\u093F\u0935\u0930\u094D\u0924\u093F\u0924 \u0915\u0930\
+  \u0928\u093E, Google \u0909\u0924\u094D\u092A\u093E\u0926\u094B\u0902 \u0915\u0947\
+  \ \u092D\u0930 \u092E\u0947\u0902 \u0915\u093E\u0930\u094D\u092F\u094B\u0902 \u0915\
+  \u093E \u0938\u094D\u0935\u091A\u093E\u0932\u0928 \u0915\u0930\u0928\u0947 \u0915\
+  \u0947 \u0932\u093F\u090F \u090F\u0915 \u0915\u094D\u0932\u093E\u0909\u0921-\u0906\
+  \u0927\u093E\u0930\u093F\u0924 \u0938\u094D\u0915\u094D\u0930\u093F\u092A\u094D\u091F\
+  \u093F\u0902\u0917\u2026"
+lastmod: 2024-02-18 23:09:02.542028
+model: gpt-4-0125-preview
+summary: "Google Apps Script \u092E\u0947\u0902 \u0938\u094D\u091F\u094D\u0930\u093F\
+  \u0902\u0917 \u0915\u094B \u0932\u094B\u0905\u0930 \u0915\u0947\u0938 \u092E\u0947\
+  \u0902 \u092A\u0930\u093F\u0935\u0930\u094D\u0924\u093F\u0924 \u0915\u0930\u0928\
+  \u093E, Google \u0909\u0924\u094D\u092A\u093E\u0926\u094B\u0902 \u0915\u0947 \u092D\
+  \u0930 \u092E\u0947\u0902 \u0915\u093E\u0930\u094D\u092F\u094B\u0902 \u0915\u093E\
+  \ \u0938\u094D\u0935\u091A\u093E\u0932\u0928 \u0915\u0930\u0928\u0947 \u0915\u0947\
+  \ \u0932\u093F\u090F \u090F\u0915 \u0915\u094D\u0932\u093E\u0909\u0921-\u0906\u0927\
+  \u093E\u0930\u093F\u0924 \u0938\u094D\u0915\u094D\u0930\u093F\u092A\u094D\u091F\u093F\
+  \u0902\u0917\u2026"
+title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u094B \u0932\u094B\
+  \u0905\u0930 \u0915\u0947\u0938 \u092E\u0947\u0902 \u092C\u0926\u0932\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
 aliases:
 - /de/bash/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:00:44.724934-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:00:44.724934-07:00
+description: "Beim Senden einer HTTP-Anfrage mit Basic Authentication werden Benutzername\
+  \ und Passwort kodiert und als Teil der Anfrage \xFCbermittelt. Programmierer\u2026"
+lastmod: 2024-02-18 23:09:05.054145
+model: gpt-4-1106-preview
+summary: "Beim Senden einer HTTP-Anfrage mit Basic Authentication werden Benutzername\
+  \ und Passwort kodiert und als Teil der Anfrage \xFCbermittelt. Programmierer\u2026"
+title: HTTP-Anfragen mit Basisauthentifizierung senden
 ---
 
 {{< edit_this_page >}}

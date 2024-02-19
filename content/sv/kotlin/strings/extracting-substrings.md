@@ -1,13 +1,16 @@
 ---
-title:                "Extrahera delsträngar"
 aliases:
 - /sv/kotlin/extracting-substrings/
-date:                  2024-01-20T17:46:00.372680-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extrahera delsträngar"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/extracting-substrings.md"
+date: 2024-01-20 17:46:00.372680-07:00
+description: "Extrahering av substr\xE4ngar inneb\xE4r att plocka ut specifika delar\
+  \ av en str\xE4ng. Programmerare g\xF6r detta f\xF6r att bearbeta eller analysera\
+  \ text baserat p\xE5\u2026"
+lastmod: 2024-02-18 23:08:51.739268
+model: gpt-4-1106-preview
+summary: "Extrahering av substr\xE4ngar inneb\xE4r att plocka ut specifika delar av\
+  \ en str\xE4ng. Programmerare g\xF6r detta f\xF6r att bearbeta eller analysera text\
+  \ baserat p\xE5\u2026"
+title: "Extrahera delstr\xE4ngar"
 ---
 
 {{< edit_this_page >}}

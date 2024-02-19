@@ -1,14 +1,18 @@
 ---
-title:                "Travailler avec CSV"
 aliases:
 - /fr/fish-shell/working-with-csv/
-date:                  2024-02-03T19:19:40.600164-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Travailler avec CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:19:40.600164-07:00
+description: "Travailler avec des fichiers CSV (Comma Separated Values ou Valeurs\
+  \ S\xE9par\xE9es par des Virgules) implique l'analyse, la manipulation et la g\xE9\
+  n\xE9ration de\u2026"
+lastmod: 2024-02-18 23:09:09.331223
+model: gpt-4-0125-preview
+summary: "Travailler avec des fichiers CSV (Comma Separated Values ou Valeurs S\xE9\
+  par\xE9es par des Virgules) implique l'analyse, la manipulation et la g\xE9n\xE9\
+  ration de\u2026"
+title: Travailler avec CSV
 ---
 
 {{< edit_this_page >}}

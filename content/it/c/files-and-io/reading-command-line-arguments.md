@@ -1,14 +1,16 @@
 ---
-title:                "Lettura degli argomenti da linea di comando"
 aliases:
 - /it/c/reading-command-line-arguments/
-date:                  2024-02-03T18:06:11.033995-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lettura degli argomenti da linea di comando"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:06:11.033995-07:00
+description: "Nella programmazione C, leggere gli argomenti della riga di comando\
+  \ permette ai programmi di accettare input direttamente dal terminale, migliorando\u2026"
+lastmod: 2024-02-18 23:08:56.354823
+model: gpt-4-0125-preview
+summary: "Nella programmazione C, leggere gli argomenti della riga di comando permette\
+  \ ai programmi di accettare input direttamente dal terminale, migliorando\u2026"
+title: Lettura degli argomenti da linea di comando
 ---
 
 {{< edit_this_page >}}

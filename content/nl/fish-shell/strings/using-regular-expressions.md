@@ -1,15 +1,17 @@
 ---
-title:                "Reguliere expressies gebruiken"
 aliases:
 - /nl/fish-shell/using-regular-expressions/
-date:                  2024-01-28T22:09:44.202521-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Reguliere expressies gebruiken"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/using-regular-expressions.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:44.202521-07:00
+description: "Reguliere expressies, of regex, zijn patronen die reeksen van strings\
+  \ beschrijven. Programmeurs gebruiken ze om tekst te zoeken, overeen te komen en\
+  \ te\u2026"
+lastmod: 2024-02-18 23:09:02.311861
+model: gpt-4-0125-preview
+summary: "Reguliere expressies, of regex, zijn patronen die reeksen van strings beschrijven.\
+  \ Programmeurs gebruiken ze om tekst te zoeken, overeen te komen en te\u2026"
+title: Reguliere expressies gebruiken
 ---
 
 {{< edit_this_page >}}

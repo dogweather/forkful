@@ -1,15 +1,16 @@
 ---
-title:                "Afronden van getallen"
 aliases:
 - /nl/typescript/rounding-numbers/
-date:                  2024-01-28T22:07:09.373717-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Afronden van getallen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/typescript/rounding-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:07:09.373717-07:00
+description: "Rondgetallen is het bijsnijden van een getal naar een specifieke precisie.\
+  \ Programmeurs doen dit om de numerieke uitvoer te beheersen voor leesbaarheid,\u2026"
+lastmod: 2024-02-18 23:09:01.567339
+model: gpt-4-0125-preview
+summary: "Rondgetallen is het bijsnijden van een getal naar een specifieke precisie.\
+  \ Programmeurs doen dit om de numerieke uitvoer te beheersen voor leesbaarheid,\u2026"
+title: Afronden van getallen
 ---
 
 {{< edit_this_page >}}

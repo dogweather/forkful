@@ -1,13 +1,16 @@
 ---
-title:                "Korzystanie z debugera"
 aliases:
 - /pl/elm/using-a-debugger/
-date:                  2024-01-26T03:49:16.521767-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z debugera"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/using-a-debugger.md"
+date: 2024-01-26 03:49:16.521767-07:00
+description: "Debugowanie w Elm polega na identyfikacji i usuwaniu b\u0142\u0119d\xF3\
+  w z kodu. Programi\u015Bci robi\u0105 to, aby zapewni\u0107 poprawne dzia\u0142\
+  anie swoich aplikacji i poprawi\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.523326
+model: gpt-4-0125-preview
+summary: "Debugowanie w Elm polega na identyfikacji i usuwaniu b\u0142\u0119d\xF3\
+  w z kodu. Programi\u015Bci robi\u0105 to, aby zapewni\u0107 poprawne dzia\u0142\
+  anie swoich aplikacji i poprawi\u0107\u2026"
+title: Korzystanie z debugera
 ---
 
 {{< edit_this_page >}}

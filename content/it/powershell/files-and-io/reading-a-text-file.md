@@ -1,13 +1,14 @@
 ---
-title:                "Lettura di un file di testo"
 aliases:
 - /it/powershell/reading-a-text-file/
-date:                  2024-01-20T17:54:57.815673-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lettura di un file di testo"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/reading-a-text-file.md"
+date: 2024-01-20 17:54:57.815673-07:00
+description: "Leggere un file di testo significa estrarre il suo contenuto per utilizzarlo\
+  \ in modo programmabile. I programmatori lo fanno per manipolare, analizzare\u2026"
+lastmod: 2024-02-18 23:08:56.111116
+model: gpt-4-1106-preview
+summary: "Leggere un file di testo significa estrarre il suo contenuto per utilizzarlo\
+  \ in modo programmabile. I programmatori lo fanno per manipolare, analizzare\u2026"
+title: Lettura di un file di testo
 ---
 
 {{< edit_this_page >}}

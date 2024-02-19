@@ -1,13 +1,16 @@
 ---
-title:                "Tulevan tai menneen päivämäärän laskeminen"
 aliases:
 - /fi/javascript/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:31:12.316430-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:31:12.316430-07:00
+description: "Laskemme tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4ri\xE4,\
+  \ koska sovelluksemme tarvitsevat ajankohtaisia tietoja ajanhallintaan, muistutuksiin\
+  \ tai\u2026"
+lastmod: 2024-02-18 23:09:08.050394
+model: gpt-4-1106-preview
+summary: "Laskemme tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4ri\xE4, koska\
+  \ sovelluksemme tarvitsevat ajankohtaisia tietoja ajanhallintaan, muistutuksiin\
+  \ tai\u2026"
+title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 ---
 
 {{< edit_this_page >}}

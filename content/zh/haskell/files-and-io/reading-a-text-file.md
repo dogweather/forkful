@@ -1,14 +1,13 @@
 ---
-title:                "阅读文本文件"
 aliases:
 - /zh/haskell/reading-a-text-file/
-date:                  2024-01-20T17:54:38.046429-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "阅读文本文件"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/reading-a-text-file.md"
+date: 2024-01-20 17:54:38.046429-07:00
+description: null
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.193716
+model: gpt-4-1106-preview
+summary: null
+title: "\u9605\u8BFB\u6587\u672C\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Arbeiten mit TOML"
 aliases:
 - /de/google-apps-script/working-with-toml/
-date:                  2024-02-01T22:05:56.817654-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeiten mit TOML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/google-apps-script/working-with-toml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:05:56.817654-07:00
+description: "TOML, das f\xFCr Toms Obvious, Minimal Language steht, ist ein Konfigurationsdateiformat,\
+  \ das aufgrund seiner klaren Semantik leicht zu lesen ist.\u2026"
+lastmod: 2024-02-18 23:09:04.441768
+model: gpt-4-0125-preview
+summary: "TOML, das f\xFCr Toms Obvious, Minimal Language steht, ist ein Konfigurationsdateiformat,\
+  \ das aufgrund seiner klaren Semantik leicht zu lesen ist.\u2026"
+title: Arbeiten mit TOML
 ---
 
 {{< edit_this_page >}}

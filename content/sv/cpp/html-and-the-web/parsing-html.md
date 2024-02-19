@@ -1,14 +1,18 @@
 ---
-title:                "Tolka HTML"
 aliases:
 - /sv/cpp/parsing-html/
-date:                  2024-02-03T19:11:38.647184-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tolka HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:11:38.647184-07:00
+description: "Att tolka HTML inneb\xE4r att bryta ner HTML-inneh\xE5ll till n\xE5\
+  got som ett program kan f\xF6rst\xE5 och manipulera. Programmerare g\xF6r detta\
+  \ f\xF6r att extrahera data,\u2026"
+lastmod: 2024-02-18 23:08:52.081690
+model: gpt-4-0125-preview
+summary: "Att tolka HTML inneb\xE4r att bryta ner HTML-inneh\xE5ll till n\xE5got som\
+  \ ett program kan f\xF6rst\xE5 och manipulera. Programmerare g\xF6r detta f\xF6\
+  r att extrahera data,\u2026"
+title: Tolka HTML
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Finn lengden på en streng"
 aliases:
 - /no/rust/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:09.542464-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Finn lengden på en streng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:09.542464-07:00
+description: "\xC5 finne lengden p\xE5 en streng i Rust betyr \xE5 telle antall tegn\
+  \ den inneholder. Programmerere trenger denne informasjonen for \xE5 validere inndata,\
+  \ manipulere\u2026"
+lastmod: 2024-02-18 23:08:53.676455
+model: gpt-4-1106-preview
+summary: "\xC5 finne lengden p\xE5 en streng i Rust betyr \xE5 telle antall tegn den\
+  \ inneholder. Programmerere trenger denne informasjonen for \xE5 validere inndata,\
+  \ manipulere\u2026"
+title: "Finn lengden p\xE5 en streng"
 ---
 
 {{< edit_this_page >}}

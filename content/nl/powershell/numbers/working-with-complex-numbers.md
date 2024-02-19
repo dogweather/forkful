@@ -1,15 +1,16 @@
 ---
-title:                "Werken met complexe getallen"
 aliases:
 - /nl/powershell/working-with-complex-numbers/
-date:                  2024-01-28T22:12:29.314281-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met complexe getallen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/powershell/working-with-complex-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:29.314281-07:00
+description: "Complexe getallen, die een re\xEBel deel en een imaginair deel hebben\
+  \ (zoals 3 + 4i), zijn essentieel in vakgebieden zoals techniek, natuurkunde en\u2026"
+lastmod: 2024-02-18 23:09:02.082575
+model: gpt-4-0125-preview
+summary: "Complexe getallen, die een re\xEBel deel en een imaginair deel hebben (zoals\
+  \ 3 + 4i), zijn essentieel in vakgebieden zoals techniek, natuurkunde en\u2026"
+title: Werken met complexe getallen
 ---
 
 {{< edit_this_page >}}

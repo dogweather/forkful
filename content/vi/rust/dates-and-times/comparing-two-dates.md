@@ -1,15 +1,20 @@
 ---
-title:                "So sánh hai ngày"
 aliases:
 - /vi/rust/comparing-two-dates/
-date:                  2024-01-28T21:57:15.085956-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "So sánh hai ngày"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/comparing-two-dates.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:57:15.085956-07:00
+description: "So s\xE1nh hai ng\xE0y th\xE1ng c\xF3 ngh\u0129a l\xE0 ki\u1EC3m tra\
+  \ xem ch\xFAng c\xF3 b\u1EB1ng nhau kh\xF4ng, ho\u1EB7c m\u1ED9t ng\xE0y n\xE0o\
+  \ \u0111\xF3 di\u1EC5n ra tr\u01B0\u1EDBc ho\u1EB7c sau ng\xE0y kia. L\u1EADp tr\xEC\
+  nh vi\xEAn s\u1EED d\u1EE5ng\u2026"
+lastmod: 2024-02-18 23:08:50.475787
+model: gpt-4-0125-preview
+summary: "So s\xE1nh hai ng\xE0y th\xE1ng c\xF3 ngh\u0129a l\xE0 ki\u1EC3m tra xem\
+  \ ch\xFAng c\xF3 b\u1EB1ng nhau kh\xF4ng, ho\u1EB7c m\u1ED9t ng\xE0y n\xE0o \u0111\
+  \xF3 di\u1EC5n ra tr\u01B0\u1EDBc ho\u1EB7c sau ng\xE0y kia. L\u1EADp tr\xECnh vi\xEA\
+  n s\u1EED d\u1EE5ng\u2026"
+title: "So s\xE1nh hai ng\xE0y"
 ---
 
 {{< edit_this_page >}}

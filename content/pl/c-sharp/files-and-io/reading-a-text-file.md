@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
 aliases:
 - /pl/c-sharp/reading-a-text-file/
-date:                  2024-01-20T17:54:19.969488-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie pliku tekstowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/reading-a-text-file.md"
+date: 2024-01-20 17:54:19.969488-07:00
+description: "Czytanie pliku tekstowego to \u0142adowanie jego zawarto\u015Bci do\
+  \ pami\u0119ci programu. Programi\u015Bci robi\u0105 to, by przetworzy\u0107 dane,\
+  \ wczyta\u0107 konfiguracje, lub po prostu\u2026"
+lastmod: 2024-02-18 23:08:49.627858
+model: gpt-4-1106-preview
+summary: "Czytanie pliku tekstowego to \u0142adowanie jego zawarto\u015Bci do pami\u0119\
+  ci programu. Programi\u015Bci robi\u0105 to, by przetworzy\u0107 dane, wczyta\u0107\
+  \ konfiguracje, lub po prostu\u2026"
+title: Odczytywanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

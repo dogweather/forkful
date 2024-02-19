@@ -1,14 +1,18 @@
 ---
-title:                "Znajdowanie długości łańcucha znaków"
 aliases:
 - /pl/google-apps-script/finding-the-length-of-a-string/
-date:                  2024-02-01T21:53:45.950309-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Znajdowanie długości łańcucha znaków"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:45.950309-07:00
+description: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w w Google\
+  \ Apps Script, j\u0119zyku skryptowym JavaScript dla chmury, kt\xF3ry pozwala na\
+  \ automatyzacj\u0119 zada\u0144 w produktach\u2026"
+lastmod: 2024-02-18 23:08:49.136405
+model: gpt-4-0125-preview
+summary: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w w Google Apps\
+  \ Script, j\u0119zyku skryptowym JavaScript dla chmury, kt\xF3ry pozwala na automatyzacj\u0119\
+  \ zada\u0144 w produktach\u2026"
+title: "Znajdowanie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w"
 ---
 
 {{< edit_this_page >}}

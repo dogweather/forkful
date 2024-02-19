@@ -1,14 +1,18 @@
 ---
-title:                "Korzystanie z wyrażeń regularnych"
 aliases:
 - /pl/bash/using-regular-expressions/
-date:                  2024-02-03T19:16:01.393800-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z wyrażeń regularnych"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:16:01.393800-07:00
+description: "Wyra\u017Cenia regularne (regex) w Bashu pozwalaj\u0105 na przeszukiwanie,\
+  \ manipulowanie i obs\u0142ug\u0119 ci\u0105g\xF3w znak\xF3w oraz plik\xF3w na podstawie\
+  \ okre\u015Blonych wzorc\xF3w.\u2026"
+lastmod: 2024-02-18 23:08:49.772027
+model: gpt-4-0125-preview
+summary: "Wyra\u017Cenia regularne (regex) w Bashu pozwalaj\u0105 na przeszukiwanie,\
+  \ manipulowanie i obs\u0142ug\u0119 ci\u0105g\xF3w znak\xF3w oraz plik\xF3w na podstawie\
+  \ okre\u015Blonych wzorc\xF3w.\u2026"
+title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 ---
 
 {{< edit_this_page >}}

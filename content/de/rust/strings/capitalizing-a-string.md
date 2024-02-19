@@ -1,14 +1,18 @@
 ---
-title:                "Einen String großschreiben"
 aliases:
 - /de/rust/capitalizing-a-string/
-date:                  2024-02-03T19:06:29.754150-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Einen String großschreiben"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:29.754150-07:00
+description: "Das Gro\xDFschreiben eines Strings in Rust involviert das Modifizieren\
+  \ des Strings, sodass sein erstes Zeichen ein Gro\xDFbuchstabe ist, falls es sich\
+  \ um einen\u2026"
+lastmod: 2024-02-18 23:09:04.623799
+model: gpt-4-0125-preview
+summary: "Das Gro\xDFschreiben eines Strings in Rust involviert das Modifizieren des\
+  \ Strings, sodass sein erstes Zeichen ein Gro\xDFbuchstabe ist, falls es sich um\
+  \ einen\u2026"
+title: "Einen String gro\xDFschreiben"
 ---
 
 {{< edit_this_page >}}

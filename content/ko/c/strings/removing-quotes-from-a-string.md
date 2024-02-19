@@ -1,14 +1,30 @@
 ---
-title:                "문자열에서 따옴표 제거하기"
 aliases:
 - /ko/c/removing-quotes-from-a-string/
-date:                  2024-02-03T18:07:18.917753-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열에서 따옴표 제거하기"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:18.917753-07:00
+description: "C\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C\uB97C\
+  \ \uC81C\uAC70\uD558\uB294 \uAC83\uC740 \uB2E8\uC77C(' ') \uB610\uB294 \uC774\uC911\
+  (\" \") \uB530\uC634\uD45C\uB85C \uBB36\uC778 \uD14D\uC2A4\uD2B8 \uB0B4\uC6A9\uC744\
+  \ \uCD94\uCD9C\uD558\uB294 \uACFC\uC815\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uC774 \uACFC\
+  \uC815\uC740 \uC785\uB825 \uB370\uC774\uD130\uC758 \uC815\uD654, \uD30C\uC77C \uB0B4\
+  \uC6A9 \uD30C\uC2F1 \uB610\uB294 \uB530\uC634\uD45C\uAC00 \uD544\uC694\uD558\uC9C0\
+  \ \uC54A\uAC70\uB098 \uB370\uC774\uD130 \uCC98\uB9AC\uC5D0\uC11C \uC624\uB958\uB97C\
+  \ \uC77C\uC73C\uD0AC \uC218 \uC788\uB294 \uACBD\uC6B0\uC5D0 \uBB38\uC790\uC5F4\uC744\
+  \ \uCD94\uAC00 \uCC98\uB9AC\uC5D0\u2026"
+lastmod: 2024-02-18 23:09:06.930206
+model: gpt-4-0125-preview
+summary: "C\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C\uB97C \uC81C\
+  \uAC70\uD558\uB294 \uAC83\uC740 \uB2E8\uC77C(' ') \uB610\uB294 \uC774\uC911(\" \"\
+  ) \uB530\uC634\uD45C\uB85C \uBB36\uC778 \uD14D\uC2A4\uD2B8 \uB0B4\uC6A9\uC744 \uCD94\
+  \uCD9C\uD558\uB294 \uACFC\uC815\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uC774 \uACFC\uC815\
+  \uC740 \uC785\uB825 \uB370\uC774\uD130\uC758 \uC815\uD654, \uD30C\uC77C \uB0B4\uC6A9\
+  \ \uD30C\uC2F1 \uB610\uB294 \uB530\uC634\uD45C\uAC00 \uD544\uC694\uD558\uC9C0 \uC54A\
+  \uAC70\uB098 \uB370\uC774\uD130 \uCC98\uB9AC\uC5D0\uC11C \uC624\uB958\uB97C \uC77C\
+  \uC73C\uD0AC \uC218 \uC788\uB294 \uACBD\uC6B0\uC5D0 \uBB38\uC790\uC5F4\uC744 \uCD94\
+  \uAC00 \uCC98\uB9AC\uC5D0\u2026"
+title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C \uC81C\uAC70\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

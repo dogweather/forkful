@@ -1,12 +1,14 @@
 ---
-title:                "Concatenating strings"
 aliases:
 - /en/go/concatenating-strings/
-date:                  2024-02-03T17:50:07.427683-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Concatenating strings"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/concatenating-strings.md"
+date: 2024-02-03 17:50:07.427683-07:00
+description: "Concatenating strings involves joining two or more strings end-to-end\
+  \ to form a new string. Programmers do this to dynamically generate text, such as\u2026"
+lastmod: 2024-02-18 23:09:10.588438
+model: gpt-4-0125-preview
+summary: "Concatenating strings involves joining two or more strings end-to-end to\
+  \ form a new string. Programmers do this to dynamically generate text, such as\u2026"
+title: Concatenating strings
 ---
 
 {{< edit_this_page >}}

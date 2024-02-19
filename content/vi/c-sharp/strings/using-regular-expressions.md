@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng biểu thức chính quy"
 aliases:
 - /vi/c-sharp/using-regular-expressions/
-date:                  2024-01-28T22:10:12.052119-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng biểu thức chính quy"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/using-regular-expressions.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:12.052119-07:00
+description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) l\xE0 nh\u1EEFng m\u1EABu \u0111\
+  \u01B0\u1EE3c d\xF9ng \u0111\u1EC3 kh\u1EDBp chu\u1ED7i k\xFD t\u1EF1. L\u1EADp\
+  \ tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng \u0111\u1EC3 t\xECm ki\u1EBFm, ch\u1EC9\
+  nh s\u1EEDa ho\u1EB7c x\xE1c th\u1EF1c v\u0103n b\u1EA3n. Ch\xFAng\u2026"
+lastmod: 2024-02-18 23:08:50.686791
+model: gpt-4-0125-preview
+summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) l\xE0 nh\u1EEFng m\u1EABu \u0111\
+  \u01B0\u1EE3c d\xF9ng \u0111\u1EC3 kh\u1EDBp chu\u1ED7i k\xFD t\u1EF1. L\u1EADp\
+  \ tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng \u0111\u1EC3 t\xECm ki\u1EBFm, ch\u1EC9\
+  nh s\u1EEDa ho\u1EB7c x\xE1c th\u1EF1c v\u0103n b\u1EA3n. Ch\xFAng\u2026"
+title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 ---
 
 {{< edit_this_page >}}

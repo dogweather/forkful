@@ -1,13 +1,16 @@
 ---
-title:                "Imprimiendo salida de depuración"
 aliases:
 - /es/lua/printing-debug-output/
-date:                  2024-01-20T17:53:16.389298-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Imprimiendo salida de depuración"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/lua/printing-debug-output.md"
+date: 2024-01-20 17:53:16.389298-07:00
+description: "Imprimir salida de depuraci\xF3n es mostrar informaci\xF3n \xFAtil para\
+  \ entender qu\xE9 est\xE1 pasando en tu programa. Los programadores lo hacen para\
+  \ rastrear errores\u2026"
+lastmod: 2024-02-18 23:09:10.122262
+model: gpt-4-1106-preview
+summary: "Imprimir salida de depuraci\xF3n es mostrar informaci\xF3n \xFAtil para\
+  \ entender qu\xE9 est\xE1 pasando en tu programa. Los programadores lo hacen para\
+  \ rastrear errores\u2026"
+title: "Imprimiendo salida de depuraci\xF3n"
 ---
 
 {{< edit_this_page >}}

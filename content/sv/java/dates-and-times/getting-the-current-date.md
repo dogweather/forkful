@@ -1,14 +1,18 @@
 ---
-title:                "Få det aktuella datumet"
 aliases:
 - /sv/java/getting-the-current-date/
-date:                  2024-02-03T19:09:49.328780-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Få det aktuella datumet"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:09:49.328780-07:00
+description: "Att erh\xE5lla dagens datum i Java \xE4r en grundl\xE4ggande operation\
+  \ som till\xE5ter programmerare att manipulera datumobjekt f\xF6r operationer s\xE5\
+  som loggning,\u2026"
+lastmod: 2024-02-18 23:08:51.679231
+model: gpt-4-0125-preview
+summary: "Att erh\xE5lla dagens datum i Java \xE4r en grundl\xE4ggande operation som\
+  \ till\xE5ter programmerare att manipulera datumobjekt f\xF6r operationer s\xE5\
+  som loggning,\u2026"
+title: "F\xE5 det aktuella datumet"
 ---
 
 {{< edit_this_page >}}

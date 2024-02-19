@@ -1,13 +1,16 @@
 ---
-title:                "Att använda en debugger"
 aliases:
 - /sv/typescript/using-a-debugger/
-date:                  2024-01-26T04:11:20.937214-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda en debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/using-a-debugger.md"
+date: 2024-01-26 04:11:20.937214-07:00
+description: "En debugger \xE4r ett verktyg som l\xE5ter dig unders\xF6ka och \xE4\
+  ndra det inre arbetet i din kod medan den k\xF6rs. Programmerare anv\xE4nder den\
+  \ f\xF6r att krossa buggar\u2026"
+lastmod: 2024-02-18 23:08:51.547858
+model: gpt-4-0125-preview
+summary: "En debugger \xE4r ett verktyg som l\xE5ter dig unders\xF6ka och \xE4ndra\
+  \ det inre arbetet i din kod medan den k\xF6rs. Programmerare anv\xE4nder den f\xF6\
+  r att krossa buggar\u2026"
+title: "Att anv\xE4nda en debugger"
 ---
 
 {{< edit_this_page >}}

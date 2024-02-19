@@ -1,13 +1,14 @@
 ---
-title:                "Comparing two dates"
 aliases:
 - /en/clojure/comparing-two-dates/
-date:                  2024-01-20T17:32:28.116760-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Comparing two dates"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/comparing-two-dates.md"
+date: 2024-01-20 17:32:28.116760-07:00
+description: "Comparing two dates means checking how they relate\u2014is one earlier,\
+  \ later, or the exact same as the other? Programmers do this to handle deadlines,\u2026"
+lastmod: 2024-02-18 23:09:10.736193
+model: gpt-4-1106-preview
+summary: "Comparing two dates means checking how they relate\u2014is one earlier,\
+  \ later, or the exact same as the other? Programmers do this to handle deadlines,\u2026"
+title: Comparing two dates
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,26 @@
 ---
-title:                "比较两个日期"
 aliases:
 - /zh/vba/comparing-two-dates/
-date:                  2024-02-01T21:50:03.770849-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "比较两个日期"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/comparing-two-dates.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:03.770849-07:00
+description: "\u5728Visual Basic for Applications (VBA) \u4E2D\u6BD4\u8F83\u4E24\u4E2A\
+  \u65E5\u671F\u6D89\u53CA\u786E\u5B9A\u5B83\u4EEC\u4E4B\u95F4\u7684\u65F6\u95F4\u987A\
+  \u5E8F\u5173\u7CFB\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u6267\
+  \u884C\u65F6\u95F4\u654F\u611F\u7684\u64CD\u4F5C\u3001\u9A8C\u8BC1\u6570\u636E\u8F93\
+  \u5165\u6216\u7BA1\u7406\u4E8B\u4EF6\u5E8F\u5217\uFF0C\u8FD9\u5728\u8FFD\u8E2A\u65F6\
+  \u95F4\u3001\u5B89\u6392\u4EFB\u52A1\u6216\u8BA1\u7B97\u6301\u7EED\u65F6\u95F4\u7684\
+  \u5E94\u7528\u4E2D\u662F\u4E00\u4E2A\u5173\u952E\u4EFB\u52A1\u3002"
+lastmod: 2024-02-18 23:08:58.993229
+model: gpt-4-0125-preview
+summary: "\u5728Visual Basic for Applications (VBA) \u4E2D\u6BD4\u8F83\u4E24\u4E2A\
+  \u65E5\u671F\u6D89\u53CA\u786E\u5B9A\u5B83\u4EEC\u4E4B\u95F4\u7684\u65F6\u95F4\u987A\
+  \u5E8F\u5173\u7CFB\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u6267\
+  \u884C\u65F6\u95F4\u654F\u611F\u7684\u64CD\u4F5C\u3001\u9A8C\u8BC1\u6570\u636E\u8F93\
+  \u5165\u6216\u7BA1\u7406\u4E8B\u4EF6\u5E8F\u5217\uFF0C\u8FD9\u5728\u8FFD\u8E2A\u65F6\
+  \u95F4\u3001\u5B89\u6392\u4EFB\u52A1\u6216\u8BA1\u7B97\u6301\u7EED\u65F6\u95F4\u7684\
+  \u5E94\u7528\u4E2D\u662F\u4E00\u4E2A\u5173\u952E\u4EFB\u52A1\u3002"
+title: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F"
 ---
 
 {{< edit_this_page >}}

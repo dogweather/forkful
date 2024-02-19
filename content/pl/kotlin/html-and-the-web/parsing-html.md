@@ -1,14 +1,18 @@
 ---
-title:                "Analiza składniowa HTML"
 aliases:
 - /pl/kotlin/parsing-html/
-date:                  2024-02-03T19:12:37.346264-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analiza składniowa HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:37.346264-07:00
+description: "Parsowanie HTML oznacza rozbieranie znacznik\xF3w strony internetowej\
+  \ na co\u015B, co program mo\u017Ce zrozumie\u0107 i manipulowa\u0107. Programi\u015B\
+  ci parsuj\u0105 HTML w celu\u2026"
+lastmod: 2024-02-18 23:08:49.566563
+model: gpt-4-0125-preview
+summary: "Parsowanie HTML oznacza rozbieranie znacznik\xF3w strony internetowej na\
+  \ co\u015B, co program mo\u017Ce zrozumie\u0107 i manipulowa\u0107. Programi\u015B\
+  ci parsuj\u0105 HTML w celu\u2026"
+title: "Analiza sk\u0142adniowa HTML"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Työskentely JSON:n kanssa"
 aliases:
 - /fi/c-sharp/working-with-json/
-date:                  2024-02-03T19:22:24.120150-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely JSON:n kanssa"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:22:24.120150-07:00
+description: "JSON (JavaScript Object Notation) -tiedon k\xE4sittelyyn kuuluu JSON-tiedon\
+  \ j\xE4sennys, tuottaminen ja kysely, mik\xE4 tekee siit\xE4 kriittisen taidon\u2026"
+lastmod: 2024-02-18 23:09:07.644033
+model: gpt-4-0125-preview
+summary: "JSON (JavaScript Object Notation) -tiedon k\xE4sittelyyn kuuluu JSON-tiedon\
+  \ j\xE4sennys, tuottaminen ja kysely, mik\xE4 tekee siit\xE4 kriittisen taidon\u2026"
+title: "Ty\xF6skentely JSON:n kanssa"
 ---
 
 {{< edit_this_page >}}

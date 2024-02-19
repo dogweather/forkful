@@ -1,14 +1,30 @@
 ---
-title:                "표준 에러에 쓰기"
 aliases:
 - /ko/c-sharp/writing-to-standard-error/
-date:                  2024-02-03T19:32:55.417355-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "표준 에러에 쓰기"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:55.417355-07:00
+description: "C#\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(stderr)\uB85C \uC4F0\uAE30\uB294\
+  \ \uC5D0\uB7EC \uBA54\uC2DC\uC9C0\uC640 \uC9C4\uB2E8\uC744 \uC815\uADDC \uCD9C\uB825\
+  (stdout)\uACFC \uBCC4\uB3C4\uB85C \uC9C0\uC2DC\uD558\uC5EC \uC0AC\uC6A9\uC790\uC640\
+  \ \uAC1C\uBC1C\uC790\uAC00 \uC815\uC0C1 \uD504\uB85C\uADF8\uB7A8 \uCD9C\uB825\uACFC\
+  \ \uC624\uB958 \uC54C\uB9BC\uC744 \uAD6C\uBCC4\uD560 \uC218 \uC788\uB3C4\uB85D \uD569\
+  \uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB514\uBC84\uAE45\uACFC\
+  \ \uB85C\uAE45\uC744 \uBCF4\uB2E4 \uD6A8\uC728\uC801\uC73C\uB85C \uD558\uC5EC \uC560\
+  \uD50C\uB9AC\uCF00\uC774\uC158\uC758 \uC6D0\uD65C\uD55C \uC6B4\uC601\uACFC \uC720\
+  \uC9C0\u2026"
+lastmod: 2024-02-18 23:09:06.246261
+model: gpt-4-0125-preview
+summary: "C#\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(stderr)\uB85C \uC4F0\uAE30\uB294\
+  \ \uC5D0\uB7EC \uBA54\uC2DC\uC9C0\uC640 \uC9C4\uB2E8\uC744 \uC815\uADDC \uCD9C\uB825\
+  (stdout)\uACFC \uBCC4\uB3C4\uB85C \uC9C0\uC2DC\uD558\uC5EC \uC0AC\uC6A9\uC790\uC640\
+  \ \uAC1C\uBC1C\uC790\uAC00 \uC815\uC0C1 \uD504\uB85C\uADF8\uB7A8 \uCD9C\uB825\uACFC\
+  \ \uC624\uB958 \uC54C\uB9BC\uC744 \uAD6C\uBCC4\uD560 \uC218 \uC788\uB3C4\uB85D \uD569\
+  \uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB514\uBC84\uAE45\uACFC\
+  \ \uB85C\uAE45\uC744 \uBCF4\uB2E4 \uD6A8\uC728\uC801\uC73C\uB85C \uD558\uC5EC \uC560\
+  \uD50C\uB9AC\uCF00\uC774\uC158\uC758 \uC6D0\uD65C\uD55C \uC6B4\uC601\uACFC \uC720\
+  \uC9C0\u2026"
+title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
 ---
 
 {{< edit_this_page >}}

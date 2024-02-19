@@ -1,14 +1,19 @@
 ---
-title:                "开始一个新项目"
 aliases:
 - /zh/haskell/starting-a-new-project/
-date:                  2024-01-20T18:03:43.701526-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "开始一个新项目"
-
-tag:                  "Getting Started"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/starting-a-new-project.md"
+date: 2024-01-20 18:03:43.701526-07:00
+description: "\u5F00\u59CB\u65B0\u9879\u76EE\uFF0C\u5373\u521D\u59CB\u5316\u65B0\u7A0B\
+  \u5E8F\u7ED3\u6784\u3002\u7A0B\u5E8F\u5458\u505A\u8FD9\u4E2A\u901A\u5E38\u6709\u4E24\
+  \u4E2A\u539F\u56E0\uFF1A\u6D4B\u8BD5\u65B0\u601D\u8DEF\uFF0C\u6216\u5F00\u53D1\u5177\
+  \u4F53\u5E94\u7528\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.170590
+model: gpt-4-1106-preview
+summary: "\u5F00\u59CB\u65B0\u9879\u76EE\uFF0C\u5373\u521D\u59CB\u5316\u65B0\u7A0B\
+  \u5E8F\u7ED3\u6784\u3002\u7A0B\u5E8F\u5458\u505A\u8FD9\u4E2A\u901A\u5E38\u6709\u4E24\
+  \u4E2A\u539F\u56E0\uFF1A\u6D4B\u8BD5\u65B0\u601D\u8DEF\uFF0C\u6216\u5F00\u53D1\u5177\
+  \u4F53\u5E94\u7528\u3002"
+title: "\u5F00\u59CB\u4E00\u4E2A\u65B0\u9879\u76EE"
 ---
 
 {{< edit_this_page >}}

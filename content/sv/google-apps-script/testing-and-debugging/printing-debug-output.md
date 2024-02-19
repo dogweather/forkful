@@ -1,14 +1,18 @@
 ---
-title:                "Skriva ut felsökningsdata"
 aliases:
 - /sv/google-apps-script/printing-debug-output/
-date:                  2024-02-01T21:57:57.616005-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriva ut felsökningsdata"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/google-apps-script/printing-debug-output.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:57.616005-07:00
+description: "Att skriva ut felutskrifter inneb\xE4r att strategiskt placera logguttryck\
+  \ i din kod f\xF6r att visa variabelv\xE4rden, utf\xF6randefl\xF6de eller felmeddelanden\
+  \ under\u2026"
+lastmod: 2024-02-18 23:08:51.381432
+model: gpt-4-0125-preview
+summary: "Att skriva ut felutskrifter inneb\xE4r att strategiskt placera logguttryck\
+  \ i din kod f\xF6r att visa variabelv\xE4rden, utf\xF6randefl\xF6de eller felmeddelanden\
+  \ under\u2026"
+title: "Skriva ut fels\xF6kningsdata"
 ---
 
 {{< edit_this_page >}}

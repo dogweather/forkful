@@ -1,14 +1,18 @@
 ---
-title:                "Baixando uma página da web"
 aliases:
 - /pt/go/downloading-a-web-page/
-date:                  2024-02-03T17:56:05.665932-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Baixando uma página da web"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/downloading-a-web-page.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:05.665932-07:00
+description: "Baixar uma p\xE1gina da web consiste em buscar o conte\xFAdo HTML de\
+  \ uma p\xE1gina da web via protocolo HTTP/HTTPS. Programadores frequentemente fazem\
+  \ isso para\u2026"
+lastmod: 2024-02-18 23:08:57.667077
+model: gpt-4-0125-preview
+summary: "Baixar uma p\xE1gina da web consiste em buscar o conte\xFAdo HTML de uma\
+  \ p\xE1gina da web via protocolo HTTP/HTTPS. Programadores frequentemente fazem\
+  \ isso para\u2026"
+title: "Baixando uma p\xE1gina da web"
 ---
 
 {{< edit_this_page >}}

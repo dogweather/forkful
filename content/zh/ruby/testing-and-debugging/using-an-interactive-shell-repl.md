@@ -1,13 +1,20 @@
 ---
-title:                "在编程中使用交互式Shell（REPL）"
 aliases:
 - /zh/ruby/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:17:21.557381-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "在编程中使用交互式Shell（REPL）"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:17:21.557381-07:00
+description: "\u4EA4\u4E92\u5F0Fshell\uFF0C\u6216REPL\uFF08\u8BFB\u53D6-\u6C42\u503C\
+  -\u6253\u5370 \u5FAA\u73AF\uFF09\uFF0C\u8BA9\u4F60\u80FD\u5B9E\u65F6\u6D4B\u8BD5\
+  \u4EE3\u7801\u3002\u7A0B\u5E8F\u5458\u4F7F\u7528\u5B83\u6765\u5B9E\u9A8C\u3001\u8C03\
+  \u8BD5\uFF0C\u5E76\u5728\u4E0D\u521B\u5EFA\u5B8C\u6574\u811A\u672C\u7684\u60C5\u51B5\
+  \u4E0B\u5B66\u4E60Ruby\u7684\u7EC6\u5FAE\u4E4B\u5904\u3002"
+lastmod: 2024-02-18 23:08:59.602334
+model: gpt-4-0125-preview
+summary: "\u4EA4\u4E92\u5F0Fshell\uFF0C\u6216REPL\uFF08\u8BFB\u53D6-\u6C42\u503C-\u6253\
+  \u5370 \u5FAA\u73AF\uFF09\uFF0C\u8BA9\u4F60\u80FD\u5B9E\u65F6\u6D4B\u8BD5\u4EE3\u7801\
+  \u3002\u7A0B\u5E8F\u5458\u4F7F\u7528\u5B83\u6765\u5B9E\u9A8C\u3001\u8C03\u8BD5\uFF0C\
+  \u5E76\u5728\u4E0D\u521B\u5EFA\u5B8C\u6574\u811A\u672C\u7684\u60C5\u51B5\u4E0B\u5B66\
+  \u4E60Ruby\u7684\u7EC6\u5FAE\u4E4B\u5904\u3002"
+title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uFF09"
 ---
 
 {{< edit_this_page >}}

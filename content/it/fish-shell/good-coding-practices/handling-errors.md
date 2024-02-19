@@ -1,13 +1,14 @@
 ---
-title:                "Gestione degli errori"
 aliases:
 - /it/fish-shell/handling-errors/
-date:                  2024-01-26T00:52:22.480055-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Gestione degli errori"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/handling-errors.md"
+date: 2024-01-26 00:52:22.480055-07:00
+description: "La gestione degli errori consente al tuo script di affrontare l'inaspettato\
+  \ con eleganza. Lo si fa per gestire i fallimenti senza far diventare i capelli\u2026"
+lastmod: 2024-02-18 23:08:56.302909
+model: gpt-4-1106-preview
+summary: "La gestione degli errori consente al tuo script di affrontare l'inaspettato\
+  \ con eleganza. Lo si fa per gestire i fallimenti senza far diventare i capelli\u2026"
+title: Gestione degli errori
 ---
 
 {{< edit_this_page >}}

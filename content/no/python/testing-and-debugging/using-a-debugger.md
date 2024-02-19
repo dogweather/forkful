@@ -1,13 +1,16 @@
 ---
-title:                "Å bruke en debugger"
 aliases:
 - /no/python/using-a-debugger/
-date:                  2024-01-26T04:08:56.813966-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å bruke en debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/using-a-debugger.md"
+date: 2024-01-26 04:08:56.813966-07:00
+description: "\"\xC5 bruke en feils\xF8ker\" handler om \xE5 steg-for-steg g\xE5 gjennom\
+  \ Python-koden din for \xE5 avdekke feil og forst\xE5 oppf\xF8rsel. Vi gj\xF8r det\
+  \ fordi det er mye enklere\u2026"
+lastmod: 2024-02-18 23:08:53.528735
+model: gpt-4-0125-preview
+summary: "\"\xC5 bruke en feils\xF8ker\" handler om \xE5 steg-for-steg g\xE5 gjennom\
+  \ Python-koden din for \xE5 avdekke feil og forst\xE5 oppf\xF8rsel. Vi gj\xF8r det\
+  \ fordi det er mye enklere\u2026"
+title: "\xC5 bruke en debugger"
 ---
 
 {{< edit_this_page >}}

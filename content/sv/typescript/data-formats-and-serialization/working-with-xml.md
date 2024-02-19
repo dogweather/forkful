@@ -1,13 +1,14 @@
 ---
-title:                "Att arbeta med XML"
 aliases:
 - /sv/typescript/working-with-xml/
-date:                  2024-01-26T04:36:30.238170-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/working-with-xml.md"
+date: 2024-01-26 04:36:30.238170-07:00
+description: "Att arbeta med XML inneb\xE4r att tolka, manipulera och skriva XML-data\
+  \ med programmering. Programmerare hanterar XML f\xF6r att utbyta data mellan olika\u2026"
+lastmod: 2024-02-18 23:08:51.567071
+model: gpt-4-0125-preview
+summary: "Att arbeta med XML inneb\xE4r att tolka, manipulera och skriva XML-data\
+  \ med programmering. Programmerare hanterar XML f\xF6r att utbyta data mellan olika\u2026"
+title: Att arbeta med XML
 ---
 
 {{< edit_this_page >}}

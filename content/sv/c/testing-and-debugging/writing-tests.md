@@ -1,14 +1,18 @@
 ---
-title:                "Skriva tester"
 aliases:
 - /sv/c/writing-tests/
-date:                  2024-02-03T18:14:41.076417-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriva tester"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:14:41.076417-07:00
+description: "Att skriva tester i C inneb\xE4r att skapa mindre, hj\xE4lpprogram eller\
+  \ funktioner som automatiskt verifierar din kods funktionalitet. Programmerare g\xF6\
+  r detta\u2026"
+lastmod: 2024-02-18 23:08:52.254260
+model: gpt-4-0125-preview
+summary: "Att skriva tester i C inneb\xE4r att skapa mindre, hj\xE4lpprogram eller\
+  \ funktioner som automatiskt verifierar din kods funktionalitet. Programmerare g\xF6\
+  r detta\u2026"
+title: Skriva tester
 ---
 
 {{< edit_this_page >}}

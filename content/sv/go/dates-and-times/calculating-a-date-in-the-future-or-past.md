@@ -1,14 +1,18 @@
 ---
-title:                "Beräkna ett datum i framtiden eller förflutet"
 aliases:
 - /sv/go/calculating-a-date-in-the-future-or-past/
-date:                  2024-02-03T17:53:07.804612-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Beräkna ett datum i framtiden eller förflutet"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:07.804612-07:00
+description: "Att ber\xE4kna ett datum i framtiden eller f\xF6rflutet i Go inneb\xE4\
+  r att man hanterar datum- och tidsv\xE4rden f\xF6r att best\xE4mma en specifik punkt\
+  \ relativt till ett\u2026"
+lastmod: 2024-02-18 23:08:51.347398
+model: gpt-4-0125-preview
+summary: "Att ber\xE4kna ett datum i framtiden eller f\xF6rflutet i Go inneb\xE4r\
+  \ att man hanterar datum- och tidsv\xE4rden f\xF6r att best\xE4mma en specifik punkt\
+  \ relativt till ett\u2026"
+title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutet"
 ---
 
 {{< edit_this_page >}}

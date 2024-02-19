@@ -1,13 +1,15 @@
 ---
-title:                "Sammenslåing av strenger"
 aliases:
 - /no/arduino/concatenating-strings/
-date:                  2024-01-20T17:34:09.893713-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammenslåing av strenger"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/concatenating-strings.md"
+date: 2024-01-20 17:34:09.893713-07:00
+description: "Konkatenering av strenger er prosessen med \xE5 sette sammen to eller\
+  \ flere tekststrenger. Programmerere gj\xF8r dette for \xE5 bygge meldinger, lage\
+  \ dynamiske\u2026"
+lastmod: 2024-02-18 23:08:54.134113
+model: gpt-4-1106-preview
+summary: "Konkatenering av strenger er prosessen med \xE5 sette sammen to eller flere\
+  \ tekststrenger. Programmerere gj\xF8r dette for \xE5 bygge meldinger, lage dynamiske\u2026"
+title: "Sammensl\xE5ing av strenger"
 ---
 
 {{< edit_this_page >}}

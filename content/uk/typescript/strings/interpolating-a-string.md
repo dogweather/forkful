@@ -1,13 +1,17 @@
 ---
-title:                "Інтерполяція рядків"
 aliases:
 - /uk/typescript/interpolating-a-string/
-date:                  2024-01-20T17:52:37.287113-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Інтерполяція рядків"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/typescript/interpolating-a-string.md"
+date: 2024-01-20 17:52:37.287113-07:00
+description: "(\u0429\u043E \u0456 \u0427\u043E\u043C\u0443?) String interpolation\
+  \ allows embedding expressions within string literals. Programmers use it to concatenate\
+  \ strings and expressions neatly\u2026"
+lastmod: 2024-02-18 23:08:59.915618
+model: gpt-4-1106-preview
+summary: "(\u0429\u043E \u0456 \u0427\u043E\u043C\u0443?) String interpolation allows\
+  \ embedding expressions within string literals. Programmers use it to concatenate\
+  \ strings and expressions neatly\u2026"
+title: "\u0406\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0456\u044F \u0440\
+  \u044F\u0434\u043A\u0456\u0432"
 ---
 
 {{< edit_this_page >}}

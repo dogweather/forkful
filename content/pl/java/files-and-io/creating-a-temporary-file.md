@@ -1,13 +1,16 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
 aliases:
 - /pl/java/creating-a-temporary-file/
-date:                  2024-01-20T17:40:32.604185-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tworzenie pliku tymczasowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:32.604185-07:00
+description: "Tworzenie pliku tymczasowego to proces generowania pliku, kt\xF3ry jest\
+  \ przeznaczony do kr\xF3tkotrwa\u0142ego u\u017Cycia. Programi\u015Bci robi\u0105\
+  \ to, by przeprowadza\u0107 testy,\u2026"
+lastmod: 2024-02-18 23:08:49.497049
+model: gpt-4-1106-preview
+summary: "Tworzenie pliku tymczasowego to proces generowania pliku, kt\xF3ry jest\
+  \ przeznaczony do kr\xF3tkotrwa\u0142ego u\u017Cycia. Programi\u015Bci robi\u0105\
+  \ to, by przeprowadza\u0107 testy,\u2026"
+title: Tworzenie pliku tymczasowego
 ---
 
 {{< edit_this_page >}}

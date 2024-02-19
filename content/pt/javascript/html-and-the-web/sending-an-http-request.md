@@ -1,13 +1,16 @@
 ---
-title:                "Enviando uma requisição HTTP"
 aliases:
 - /pt/javascript/sending-an-http-request/
-date:                  2024-01-20T18:00:15.021493-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando uma requisição HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/sending-an-http-request.md"
+date: 2024-01-20 18:00:15.021493-07:00
+description: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o processo de solicitar ou enviar\
+  \ dados a um servidor web. Programadores fazem isso para interagir com APIs, recuperar\
+  \ dados\u2026"
+lastmod: 2024-02-18 23:08:58.529090
+model: gpt-4-1106-preview
+summary: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o processo de solicitar ou enviar\
+  \ dados a um servidor web. Programadores fazem isso para interagir com APIs, recuperar\
+  \ dados\u2026"
+title: "Enviando uma requisi\xE7\xE3o HTTP"
 ---
 
 {{< edit_this_page >}}

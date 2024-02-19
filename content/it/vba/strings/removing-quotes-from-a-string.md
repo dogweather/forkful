@@ -1,14 +1,17 @@
 ---
-title:                "Rimuovere le virgolette da una stringa"
 aliases:
 - /it/vba/removing-quotes-from-a-string/
-date:                  2024-02-01T22:00:22.676661-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rimuovere le virgolette da una stringa"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/vba/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:22.676661-07:00
+description: "Rimuovere le virgolette da una stringa in VBA comporta l'eliminazione\
+  \ delle istanze di virgolette singole (`'`) o doppie (`\"`) che possono incapsulare\
+  \ o\u2026"
+lastmod: 2024-02-18 23:08:55.710004
+model: gpt-4-0125-preview
+summary: "Rimuovere le virgolette da una stringa in VBA comporta l'eliminazione delle\
+  \ istanze di virgolette singole (`'`) o doppie (`\"`) che possono incapsulare o\u2026"
+title: Rimuovere le virgolette da una stringa
 ---
 
 {{< edit_this_page >}}

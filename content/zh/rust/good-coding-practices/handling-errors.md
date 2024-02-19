@@ -1,13 +1,20 @@
 ---
-title:                "处理错误"
 aliases:
 - /zh/rust/handling-errors/
-date:                  2024-01-26T00:57:21.237992-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "处理错误"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/handling-errors.md"
+date: 2024-01-26 00:57:21.237992-07:00
+description: "\u9519\u8BEF\u5904\u7406\u662F\u6307\u5F53\u4E8B\u60C5\u51FA\u73B0\u95EE\
+  \u9898\u65F6\u7684\u5E94\u5BF9\u7B56\u7565\u3002\u7F16\u7A0B\u4EBA\u5458\u8FDB\u884C\
+  \u9519\u8BEF\u5904\u7406\uFF0C\u4EE5\u5E94\u5BF9\u610F\u5916\u60C5\u51B5\uFF0C\u786E\
+  \u4FDD\u4ED6\u4EEC\u7684Rust\u7A0B\u5E8F\u5728\u9047\u5230\u5C0F\u95EE\u9898\u65F6\
+  \u4E0D\u4F1A\u5D29\u6E83\u3002"
+lastmod: 2024-02-18 23:08:58.947681
+model: gpt-4-1106-preview
+summary: "\u9519\u8BEF\u5904\u7406\u662F\u6307\u5F53\u4E8B\u60C5\u51FA\u73B0\u95EE\
+  \u9898\u65F6\u7684\u5E94\u5BF9\u7B56\u7565\u3002\u7F16\u7A0B\u4EBA\u5458\u8FDB\u884C\
+  \u9519\u8BEF\u5904\u7406\uFF0C\u4EE5\u5E94\u5BF9\u610F\u5916\u60C5\u51B5\uFF0C\u786E\
+  \u4FDD\u4ED6\u4EEC\u7684Rust\u7A0B\u5E8F\u5728\u9047\u5230\u5C0F\u95EE\u9898\u65F6\
+  \u4E0D\u4F1A\u5D29\u6E83\u3002"
+title: "\u5904\u7406\u9519\u8BEF"
 ---
 
 {{< edit_this_page >}}

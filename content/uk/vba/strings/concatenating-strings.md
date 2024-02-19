@@ -1,14 +1,29 @@
 ---
-title:                "З'єднання рядків"
 aliases:
 - /uk/vba/concatenating-strings/
-date:                  2024-02-01T21:52:51.976486-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "З'єднання рядків"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/vba/concatenating-strings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:51.976486-07:00
+description: "\u041A\u043E\u043D\u043A\u0430\u0442\u0435\u043D\u0430\u0446\u0456\u044F\
+  \ \u0443 Visual Basic for Applications (VBA) \u0432\u043A\u043B\u044E\u0447\u0430\
+  \u0454 \u043E\u0431'\u0454\u0434\u043D\u0430\u043D\u043D\u044F \u0434\u0432\u043E\
+  \u0445 \u0430\u0431\u043E \u0431\u0456\u043B\u044C\u0448\u0435 \u0440\u044F\u0434\
+  \u043A\u0456\u0432 \u0443 \u0454\u0434\u0438\u043D\u0435 \u0446\u0456\u043B\u0435\
+  . \u0426\u0435 \u0444\u0443\u043D\u0434\u0430\u043C\u0435\u043D\u0442\u0430\u043B\
+  \u044C\u043D\u0435 \u0437\u0430\u0432\u0434\u0430\u043D\u043D\u044F \u0432 \u043F\
+  \u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u0456,\u2026"
+lastmod: 2024-02-18 23:09:00.028234
+model: gpt-4-0125-preview
+summary: "\u041A\u043E\u043D\u043A\u0430\u0442\u0435\u043D\u0430\u0446\u0456\u044F\
+  \ \u0443 Visual Basic for Applications (VBA) \u0432\u043A\u043B\u044E\u0447\u0430\
+  \u0454 \u043E\u0431'\u0454\u0434\u043D\u0430\u043D\u043D\u044F \u0434\u0432\u043E\
+  \u0445 \u0430\u0431\u043E \u0431\u0456\u043B\u044C\u0448\u0435 \u0440\u044F\u0434\
+  \u043A\u0456\u0432 \u0443 \u0454\u0434\u0438\u043D\u0435 \u0446\u0456\u043B\u0435\
+  . \u0426\u0435 \u0444\u0443\u043D\u0434\u0430\u043C\u0435\u043D\u0442\u0430\u043B\
+  \u044C\u043D\u0435 \u0437\u0430\u0432\u0434\u0430\u043D\u043D\u044F \u0432 \u043F\
+  \u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u0456,\u2026"
+title: "\u0417'\u0454\u0434\u043D\u0430\u043D\u043D\u044F \u0440\u044F\u0434\u043A\
+  \u0456\u0432"
 ---
 
 {{< edit_this_page >}}

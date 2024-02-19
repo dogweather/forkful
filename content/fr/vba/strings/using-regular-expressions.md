@@ -1,14 +1,16 @@
 ---
-title:                "Utilisation des expressions régulières"
 aliases:
 - /fr/vba/using-regular-expressions/
-date:                  2024-02-01T22:04:47.180514-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation des expressions régulières"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/vba/using-regular-expressions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:47.180514-07:00
+description: "Les expressions r\xE9guli\xE8res (regex) dans Visual Basic pour Applications\
+  \ (VBA) offrent un moyen puissant de rechercher, correspondre et manipuler des\u2026"
+lastmod: 2024-02-18 23:09:08.566167
+model: gpt-4-0125-preview
+summary: "Les expressions r\xE9guli\xE8res (regex) dans Visual Basic pour Applications\
+  \ (VBA) offrent un moyen puissant de rechercher, correspondre et manipuler des\u2026"
+title: "Utilisation des expressions r\xE9guli\xE8res"
 ---
 
 {{< edit_this_page >}}

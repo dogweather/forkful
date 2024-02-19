@@ -1,14 +1,17 @@
 ---
-title:                "Eine Textdatei schreiben"
 aliases:
 - /de/clojure/writing-a-text-file/
-date:                  2024-02-03T19:27:32.362097-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eine Textdatei schreiben"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:32.362097-07:00
+description: "Das Schreiben einer Textdatei in Clojure umfasst das Erstellen oder\
+  \ Modifizieren von Dateien, um Daten au\xDFerhalb Ihrer Anwendung zu speichern,\
+  \ was\u2026"
+lastmod: 2024-02-18 23:09:04.526523
+model: gpt-4-0125-preview
+summary: "Das Schreiben einer Textdatei in Clojure umfasst das Erstellen oder Modifizieren\
+  \ von Dateien, um Daten au\xDFerhalb Ihrer Anwendung zu speichern, was\u2026"
+title: Eine Textdatei schreiben
 ---
 
 {{< edit_this_page >}}

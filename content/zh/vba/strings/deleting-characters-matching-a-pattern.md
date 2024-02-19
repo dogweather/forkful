@@ -1,14 +1,28 @@
 ---
-title:                "删除匹配模式的字符"
 aliases:
 - /zh/vba/deleting-characters-matching-a-pattern/
-date:                  2024-02-01T21:52:49.904890-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "删除匹配模式的字符"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:49.904890-07:00
+description: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u5220\u9664\u4E0E\u7279\
+  \u5B9A\u6A21\u5F0F\u76F8\u5339\u914D\u7684\u5B57\u7B26\u6D89\u53CA\u8BC6\u522B\u5E76\
+  \u968F\u540E\u5220\u9664\u7B26\u5408\u7279\u5B9A\u6807\u51C6\u7684\u5B57\u7B26\u6216\
+  \u5B57\u7B26\u4E32\u3002\u8FD9\u79CD\u64CD\u4F5C\u5728\u6570\u636E\u6E05\u6D17\u548C\
+  \u683C\u5F0F\u5316\u4EFB\u52A1\u4E2D\u5F88\u5E38\u89C1\uFF0C\u5176\u4E2D\u4ECE\u5B57\
+  \u7B26\u4E32\u4E2D\u79FB\u9664\u4E0D\u5FC5\u8981\u6216\u4E0D\u60F3\u8981\u7684\u5B57\
+  \u7B26\u5BF9\u4E8E\u7EF4\u6301\u6570\u636E\u7684\u5B8C\u6574\u6027\u548C\u4FC3\u8FDB\
+  \u8FDB\u4E00\u6B65\u7684\u6570\u636E\u5904\u7406\u81F3\u5173\u91CD\u8981\u3002"
+lastmod: 2024-02-18 23:08:58.964900
+model: gpt-4-0125-preview
+summary: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u5220\u9664\u4E0E\u7279\
+  \u5B9A\u6A21\u5F0F\u76F8\u5339\u914D\u7684\u5B57\u7B26\u6D89\u53CA\u8BC6\u522B\u5E76\
+  \u968F\u540E\u5220\u9664\u7B26\u5408\u7279\u5B9A\u6807\u51C6\u7684\u5B57\u7B26\u6216\
+  \u5B57\u7B26\u4E32\u3002\u8FD9\u79CD\u64CD\u4F5C\u5728\u6570\u636E\u6E05\u6D17\u548C\
+  \u683C\u5F0F\u5316\u4EFB\u52A1\u4E2D\u5F88\u5E38\u89C1\uFF0C\u5176\u4E2D\u4ECE\u5B57\
+  \u7B26\u4E32\u4E2D\u79FB\u9664\u4E0D\u5FC5\u8981\u6216\u4E0D\u60F3\u8981\u7684\u5B57\
+  \u7B26\u5BF9\u4E8E\u7EF4\u6301\u6570\u636E\u7684\u5B8C\u6574\u6027\u548C\u4FC3\u8FDB\
+  \u8FDB\u4E00\u6B65\u7684\u6570\u636E\u5904\u7406\u81F3\u5173\u91CD\u8981\u3002"
+title: "\u5220\u9664\u5339\u914D\u6A21\u5F0F\u7684\u5B57\u7B26"
 ---
 
 {{< edit_this_page >}}

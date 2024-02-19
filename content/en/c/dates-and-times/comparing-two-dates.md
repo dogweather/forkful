@@ -1,12 +1,14 @@
 ---
-title:                "Comparing two dates"
 aliases:
 - /en/c/comparing-two-dates/
-date:                  2024-02-03T17:50:07.787303-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Comparing two dates"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/comparing-two-dates.md"
+date: 2024-02-03 17:50:07.787303-07:00
+description: "Comparing two dates in C involves determining the chronological relationship\
+  \ between them -- whether one date precedes the other or if they are the same.\u2026"
+lastmod: 2024-02-18 23:09:11.534680
+model: gpt-4-0125-preview
+summary: "Comparing two dates in C involves determining the chronological relationship\
+  \ between them -- whether one date precedes the other or if they are the same.\u2026"
+title: Comparing two dates
 ---
 
 {{< edit_this_page >}}

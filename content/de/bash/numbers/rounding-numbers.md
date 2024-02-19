@@ -1,13 +1,14 @@
 ---
-title:                "Zahlen runden"
 aliases:
 - /de/bash/rounding-numbers/
-date:                  2024-01-26T03:42:24.752922-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zahlen runden"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/rounding-numbers.md"
+date: 2024-01-26 03:42:24.752922-07:00
+description: "Zahlen zu runden bedeutet, die Dezimalstellen auf einen einfacheren\
+  \ Wert zu k\xFCrzen, der f\xFCr einen gegebenen Kontext ausreichend gut ist. Programmierer\u2026"
+lastmod: 2024-02-18 23:09:05.046471
+model: gpt-4-0125-preview
+summary: "Zahlen zu runden bedeutet, die Dezimalstellen auf einen einfacheren Wert\
+  \ zu k\xFCrzen, der f\xFCr einen gegebenen Kontext ausreichend gut ist. Programmierer\u2026"
+title: Zahlen runden
 ---
 
 {{< edit_this_page >}}

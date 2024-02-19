@@ -1,12 +1,15 @@
 ---
-title:                "Analyse av HTML"
 aliases:
 - /no/elm/parsing-html/
-date:                  2024-01-20T15:31:47.530728-07:00
-simple_title:         "Analyse av HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/parsing-html.md"
+date: 2024-01-20 15:31:47.530728-07:00
+description: "Parsing av HTML betyr \xE5 gj\xF8re om HTML-kode til noe et program\
+  \ kan forst\xE5 og bruke. Programmerere gj\xF8r dette for \xE5 manipulere, hente\
+  \ ut data eller generere\u2026"
+lastmod: 2024-02-18 23:08:53.808748
+summary: "Parsing av HTML betyr \xE5 gj\xF8re om HTML-kode til noe et program kan\
+  \ forst\xE5 og bruke. Programmerere gj\xF8r dette for \xE5 manipulere, hente ut\
+  \ data eller generere\u2026"
+title: Analyse av HTML
 ---
 
 {{< edit_this_page >}}

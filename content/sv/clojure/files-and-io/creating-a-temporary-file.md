@@ -1,13 +1,16 @@
 ---
-title:                "Skapa en temporär fil"
 aliases:
 - /sv/clojure/creating-a-temporary-file/
-date:                  2024-01-20T17:39:54.059651-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skapa en temporär fil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/creating-a-temporary-file.md"
+date: 2024-01-20 17:39:54.059651-07:00
+description: "Att skapa en tempor\xE4r fil betyder att du tillf\xE4lligt lagrar data\
+  \ p\xE5 disken. Programmerare g\xF6r detta f\xF6r att hantera data som inte beh\xF6\
+  ver vara permanent\u2026"
+lastmod: 2024-02-18 23:08:51.480617
+model: gpt-4-1106-preview
+summary: "Att skapa en tempor\xE4r fil betyder att du tillf\xE4lligt lagrar data p\xE5\
+  \ disken. Programmerare g\xF6r detta f\xF6r att hantera data som inte beh\xF6ver\
+  \ vara permanent\u2026"
+title: "Skapa en tempor\xE4r fil"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Att arbeta med XML"
 aliases:
 - /sv/php/working-with-xml/
-date:                  2024-01-26T04:34:14.448313-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/working-with-xml.md"
+date: 2024-01-26 04:34:14.448313-07:00
+description: "XML \xE4r ett m\xE4rkspr\xE5k som anv\xE4nds f\xF6r att lagra och transportera\
+  \ data. Programmerare arbetar med XML f\xF6r att m\xF6jligg\xF6ra interoperabilitet\
+  \ mellan\u2026"
+lastmod: 2024-02-18 23:08:51.901740
+model: gpt-4-0125-preview
+summary: "XML \xE4r ett m\xE4rkspr\xE5k som anv\xE4nds f\xF6r att lagra och transportera\
+  \ data. Programmerare arbetar med XML f\xF6r att m\xF6jligg\xF6ra interoperabilitet\
+  \ mellan\u2026"
+title: Att arbeta med XML
 ---
 
 {{< edit_this_page >}}

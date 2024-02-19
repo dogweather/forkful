@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với XML"
 aliases:
 - /vi/swift/working-with-xml/
-date:                  2024-01-28T22:11:29.566057-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/swift/working-with-xml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:29.566057-07:00
+description: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch\
+  \ c\xFA ph\xE1p v\xE0 t\u1EA1o ra d\u1EEF li\u1EC7u XML trong Swift. C\xE1c l\u1EAD\
+  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y cho vi\u1EC7c trao\
+  \ \u0111\u1ED5i d\u1EEF li\u1EC7u, \u0111\u1EB7c\u2026"
+lastmod: 2024-02-18 23:08:51.116665
+model: gpt-4-0125-preview
+summary: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch c\xFA\
+  \ ph\xE1p v\xE0 t\u1EA1o ra d\u1EEF li\u1EC7u XML trong Swift. C\xE1c l\u1EADp tr\xEC\
+  nh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y cho vi\u1EC7c trao \u0111\u1ED5\
+  i d\u1EEF li\u1EC7u, \u0111\u1EB7c\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 ---
 
 {{< edit_this_page >}}

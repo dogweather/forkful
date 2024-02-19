@@ -1,13 +1,16 @@
 ---
-title:                "Generering av tilfeldige tall"
 aliases:
 - /no/haskell/generating-random-numbers/
-date:                  2024-01-27T20:34:17.777838-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generering av tilfeldige tall"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/generating-random-numbers.md"
+date: 2024-01-27 20:34:17.777838-07:00
+description: "\xC5 generere tilfeldige tall i Haskell inneb\xE6rer \xE5 skape tall\
+  \ som er uforutsigbare etter menneskelige standarder. Dette er avgj\xF8rende i scenarier\
+  \ som\u2026"
+lastmod: 2024-02-18 23:08:53.930891
+model: gpt-4-0125-preview
+summary: "\xC5 generere tilfeldige tall i Haskell inneb\xE6rer \xE5 skape tall som\
+  \ er uforutsigbare etter menneskelige standarder. Dette er avgj\xF8rende i scenarier\
+  \ som\u2026"
+title: Generering av tilfeldige tall
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,26 @@
 ---
-title:                "编写测试"
 aliases:
 - /zh/powershell/writing-tests/
-date:                  2024-02-03T19:31:37.535869-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "编写测试"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:37.535869-07:00
+description: "\u7528 PowerShell \u7F16\u5199\u6D4B\u8BD5\u5305\u62EC\u521B\u5EFA\u811A\
+  \u672C\uFF0C\u8FD9\u4E9B\u811A\u672C\u81EA\u52A8\u9A8C\u8BC1\u60A8\u7684 PowerShell\
+  \ \u4EE3\u7801\u7684\u529F\u80FD\uFF0C\u786E\u4FDD\u5176\u8868\u73B0\u5982\u9884\
+  \u671F\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u5C3D\u65E9\u53D1\
+  \u73B0\u9519\u8BEF\uFF0C\u7B80\u5316\u4EE3\u7801\u7EF4\u62A4\uFF0C\u5E76\u786E\u4FDD\
+  \u4EE3\u7801\u4FEE\u6539\u4E0D\u4F1A\u65E0\u610F\u4E2D\u7834\u574F\u73B0\u6709\u529F\
+  \u80FD\u3002"
+lastmod: 2024-02-18 23:08:59.335164
+model: gpt-4-0125-preview
+summary: "\u7528 PowerShell \u7F16\u5199\u6D4B\u8BD5\u5305\u62EC\u521B\u5EFA\u811A\
+  \u672C\uFF0C\u8FD9\u4E9B\u811A\u672C\u81EA\u52A8\u9A8C\u8BC1\u60A8\u7684 PowerShell\
+  \ \u4EE3\u7801\u7684\u529F\u80FD\uFF0C\u786E\u4FDD\u5176\u8868\u73B0\u5982\u9884\
+  \u671F\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u5C3D\u65E9\u53D1\
+  \u73B0\u9519\u8BEF\uFF0C\u7B80\u5316\u4EE3\u7801\u7EF4\u62A4\uFF0C\u5E76\u786E\u4FDD\
+  \u4EE3\u7801\u4FEE\u6539\u4E0D\u4F1A\u65E0\u610F\u4E2D\u7834\u574F\u73B0\u6709\u529F\
+  \u80FD\u3002"
+title: "\u7F16\u5199\u6D4B\u8BD5"
 ---
 
 {{< edit_this_page >}}

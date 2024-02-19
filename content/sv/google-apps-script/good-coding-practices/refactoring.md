@@ -1,14 +1,17 @@
 ---
-title:                "Refaktorering"
 aliases:
 - /sv/google-apps-script/refactoring/
-date:                  2024-02-01T21:59:52.934781-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refaktorering"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/google-apps-script/refactoring.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:52.934781-07:00
+description: "Refaktorisering i programmeringslexikonet refererar till processen att\
+  \ omstrukturera befintlig kod\u2014\xE4ndra faktoriseringen utan att \xE4ndra dess\
+  \ externa\u2026"
+lastmod: 2024-02-18 23:08:51.387784
+model: gpt-4-0125-preview
+summary: "Refaktorisering i programmeringslexikonet refererar till processen att omstrukturera\
+  \ befintlig kod\u2014\xE4ndra faktoriseringen utan att \xE4ndra dess externa\u2026"
+title: Refaktorering
 ---
 
 {{< edit_this_page >}}

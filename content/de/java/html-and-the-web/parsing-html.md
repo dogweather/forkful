@@ -1,14 +1,16 @@
 ---
-title:                "HTML parsen"
 aliases:
 - /de/java/parsing-html/
-date:                  2024-02-03T19:12:20.109303-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML parsen"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:20.109303-07:00
+description: "HTML zu parsen bedeutet, sich durch die Auszeichnung zu arbeiten, um\
+  \ Daten wie Text, Links oder andere Elemente zu extrahieren. Wir tun dies, um mit\u2026"
+lastmod: 2024-02-18 23:09:04.734688
+model: gpt-4-0125-preview
+summary: "HTML zu parsen bedeutet, sich durch die Auszeichnung zu arbeiten, um Daten\
+  \ wie Text, Links oder andere Elemente zu extrahieren. Wir tun dies, um mit\u2026"
+title: HTML parsen
 ---
 
 {{< edit_this_page >}}

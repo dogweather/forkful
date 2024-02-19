@@ -1,15 +1,17 @@
 ---
-title:                "Code organiseren in functies"
 aliases:
 - /nl/rust/organizing-code-into-functions/
-date:                  2024-01-28T22:03:18.991405-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Code organiseren in functies"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/organizing-code-into-functions.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:03:18.991405-07:00
+description: "Code organiseren in functies gaat over het opsplitsen van je programma\
+  \ in herbruikbare, modulaire stukken die door een naam ge\xEFdentificeerd worden.\
+  \ We\u2026"
+lastmod: 2024-02-18 23:09:01.625400
+model: gpt-4-0125-preview
+summary: "Code organiseren in functies gaat over het opsplitsen van je programma in\
+  \ herbruikbare, modulaire stukken die door een naam ge\xEFdentificeerd worden. We\u2026"
+title: Code organiseren in functies
 ---
 
 {{< edit_this_page >}}

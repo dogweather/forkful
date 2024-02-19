@@ -1,13 +1,15 @@
 ---
-title:                "Generazione di numeri casuali"
 aliases:
 - /it/python/generating-random-numbers/
-date:                  2024-01-27T20:35:17.062028-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generazione di numeri casuali"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/python/generating-random-numbers.md"
+date: 2024-01-27 20:35:17.062028-07:00
+description: "La generazione di numeri casuali comporta la creazione di numeri che\
+  \ non possono essere previsti in modo ragionevole meglio che per caso, il che \xE8\
+  \u2026"
+lastmod: 2024-02-18 23:08:55.517375
+model: gpt-4-0125-preview
+summary: "La generazione di numeri casuali comporta la creazione di numeri che non\
+  \ possono essere previsti in modo ragionevole meglio che per caso, il che \xE8\u2026"
+title: Generazione di numeri casuali
 ---
 
 {{< edit_this_page >}}

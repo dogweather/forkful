@@ -1,14 +1,18 @@
 ---
-title:                "Håndtering av feil"
 aliases:
 - /no/c/handling-errors/
-date:                  2024-02-03T17:57:59.557022-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Håndtering av feil"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/handling-errors.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:59.557022-07:00
+description: "\xC5 h\xE5ndtere feil i C inneb\xE6rer \xE5 oppdage og respondere p\xE5\
+  \ unormale tilstander som oppst\xE5r under kj\xF8ring av programmet. Programmerere\
+  \ gj\xF8r dette for \xE5\u2026"
+lastmod: 2024-02-18 23:08:54.401944
+model: gpt-4-0125-preview
+summary: "\xC5 h\xE5ndtere feil i C inneb\xE6rer \xE5 oppdage og respondere p\xE5\
+  \ unormale tilstander som oppst\xE5r under kj\xF8ring av programmet. Programmerere\
+  \ gj\xF8r dette for \xE5\u2026"
+title: "H\xE5ndtering av feil"
 ---
 
 {{< edit_this_page >}}

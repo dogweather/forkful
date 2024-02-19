@@ -1,13 +1,15 @@
 ---
-title:                "Removendo aspas de uma string"
 aliases:
 - /pt/elm/removing-quotes-from-a-string/
-date:                  2024-01-26T03:38:50.875567-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Removendo aspas de uma string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:38:50.875567-07:00
+description: "Remover aspas de uma string significa eliminar aquelas aspas duplas\
+  \ ou simples extras que voc\xEA n\xE3o precisa no texto processado. Programadores\
+  \ fazem isso\u2026"
+lastmod: 2024-02-18 23:08:58.048876
+model: gpt-4-0125-preview
+summary: "Remover aspas de uma string significa eliminar aquelas aspas duplas ou simples\
+  \ extras que voc\xEA n\xE3o precisa no texto processado. Programadores fazem isso\u2026"
+title: Removendo aspas de uma string
 ---
 
 {{< edit_this_page >}}

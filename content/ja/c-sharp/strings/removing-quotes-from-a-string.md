@@ -1,13 +1,12 @@
 ---
-title:                "文字列から引用符を削除する"
 aliases:
 - /ja/c-sharp/removing-quotes-from-a-string/
-date:                  2024-01-26T03:38:53.176588-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "文字列から引用符を削除する"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:38:53.176588-07:00
+description: "\u2026"
+lastmod: 2024-02-18 23:08:54.906943
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u6587\u5B57\u5217\u304B\u3089\u5F15\u7528\u7B26\u3092\u524A\u9664\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

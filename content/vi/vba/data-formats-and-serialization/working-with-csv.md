@@ -1,14 +1,20 @@
 ---
-title:                "Làm việc với CSV"
 aliases:
 - /vi/vba/working-with-csv/
-date:                  2024-02-01T22:06:00.523510-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/working-with-csv.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:06:00.523510-07:00
+description: "L\xE0m vi\u1EC7c v\u1EDBi t\u1EC7p CSV (Comma Separated Values - Gi\xE1\
+  \ tr\u1ECB Ph\xE2n c\xE1ch b\u1EB1ng D\u1EA5u ph\u1EA9y) bao g\u1ED3m vi\u1EC7c\
+  \ \u0111\u1ECDc t\u1EEB ho\u1EB7c ghi v\xE0o t\u1EC7p v\u0103n b\u1EA3n thu\u1EA7\
+  n t\xFAy n\u01A1i c\xE1c tr\u01B0\u1EDDng d\u1EEF\u2026"
+lastmod: 2024-02-18 23:08:50.534851
+model: gpt-4-0125-preview
+summary: "L\xE0m vi\u1EC7c v\u1EDBi t\u1EC7p CSV (Comma Separated Values - Gi\xE1\
+  \ tr\u1ECB Ph\xE2n c\xE1ch b\u1EB1ng D\u1EA5u ph\u1EA9y) bao g\u1ED3m vi\u1EC7c\
+  \ \u0111\u1ECDc t\u1EEB ho\u1EB7c ghi v\xE0o t\u1EC7p v\u0103n b\u1EA3n thu\u1EA7\
+  n t\xFAy n\u01A1i c\xE1c tr\u01B0\u1EDDng d\u1EEF\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 ---
 
 {{< edit_this_page >}}

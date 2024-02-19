@@ -1,14 +1,17 @@
 ---
-title:                "Convirtiendo una fecha en una cadena de caracteres"
 aliases:
 - /es/google-apps-script/converting-a-date-into-a-string/
-date:                  2024-02-01T21:50:45.671748-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Convirtiendo una fecha en una cadena de caracteres"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/google-apps-script/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:45.671748-07:00
+description: "Convertir fechas en cadenas es una tarea fundamental que permite a los\
+  \ programadores manipular y mostrar informaci\xF3n de fechas en un formato legible\
+  \ por\u2026"
+lastmod: 2024-02-18 23:09:09.521257
+model: gpt-4-0125-preview
+summary: "Convertir fechas en cadenas es una tarea fundamental que permite a los programadores\
+  \ manipular y mostrar informaci\xF3n de fechas en un formato legible por\u2026"
+title: Convirtiendo una fecha en una cadena de caracteres
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Virheiden käsittely"
 aliases:
 - /fi/java/handling-errors/
-date:                  2024-01-26T00:53:27.481693-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheiden käsittely"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/handling-errors.md"
+date: 2024-01-26 00:53:27.481693-07:00
+description: "Virheiden k\xE4sittely tarkoittaa sellaisen koodin kirjoittamista, joka\
+  \ ennakoi ja k\xE4sittelee virhetilanteita. Ohjelmoijat tekev\xE4t sit\xE4 tehd\xE4\
+  kseen\u2026"
+lastmod: 2024-02-18 23:09:07.466056
+model: gpt-4-1106-preview
+summary: "Virheiden k\xE4sittely tarkoittaa sellaisen koodin kirjoittamista, joka\
+  \ ennakoi ja k\xE4sittelee virhetilanteita. Ohjelmoijat tekev\xE4t sit\xE4 tehd\xE4\
+  kseen\u2026"
+title: "Virheiden k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

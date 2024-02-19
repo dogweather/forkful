@@ -1,13 +1,16 @@
 ---
-title:                "Manipulation des nombres complexes"
 aliases:
 - /fr/cpp/working-with-complex-numbers/
-date:                  2024-01-26T04:37:47.304130-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulation des nombres complexes"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/working-with-complex-numbers.md"
+date: 2024-01-26 04:37:47.304130-07:00
+description: "Les nombres complexes \xE9tendent les nombres r\xE9els en ajoutant une\
+  \ unit\xE9 imaginaire, repr\xE9sent\xE9e par 'i', o\xF9 i^2 = -1. Les programmeurs\
+  \ les utilisent pour\u2026"
+lastmod: 2024-02-18 23:09:09.153829
+model: gpt-4-0125-preview
+summary: "Les nombres complexes \xE9tendent les nombres r\xE9els en ajoutant une unit\xE9\
+  \ imaginaire, repr\xE9sent\xE9e par 'i', o\xF9 i^2 = -1. Les programmeurs les utilisent\
+  \ pour\u2026"
+title: Manipulation des nombres complexes
 ---
 
 {{< edit_this_page >}}

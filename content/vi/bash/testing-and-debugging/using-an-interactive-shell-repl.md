@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng vỏ tương tác (REPL)"
 aliases:
 - /vi/bash/using-an-interactive-shell-repl/
-date:                  2024-01-28T22:09:14.423441-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng vỏ tương tác (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/bash/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:14.423441-07:00
+description: "REPL vi\u1EBFt t\u1EAFt c\u1EE7a Read-Eval-Print Loop, m\u1ED9t m\xF4\
+  i tr\u01B0\u1EDDng l\u1EADp tr\xECnh m\xE1y t\xEDnh \u0111\u01A1n gi\u1EA3n, t\u01B0\
+  \u01A1ng t\xE1c. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\
+  \u1EC3 nhanh ch\xF3ng vi\u1EBFt v\xE0 ki\u1EC3m\u2026"
+lastmod: 2024-02-18 23:08:50.887357
+model: gpt-4-0125-preview
+summary: "REPL vi\u1EBFt t\u1EAFt c\u1EE7a Read-Eval-Print Loop, m\u1ED9t m\xF4i tr\u01B0\
+  \u1EDDng l\u1EADp tr\xECnh m\xE1y t\xEDnh \u0111\u01A1n gi\u1EA3n, t\u01B0\u01A1\
+  ng t\xE1c. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3\
+  \ nhanh ch\xF3ng vi\u1EBFt v\xE0 ki\u1EC3m\u2026"
+title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 ---
 
 {{< edit_this_page >}}

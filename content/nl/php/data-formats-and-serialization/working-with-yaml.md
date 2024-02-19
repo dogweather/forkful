@@ -1,15 +1,16 @@
 ---
-title:                "Werken met YAML"
 aliases:
 - /nl/php/working-with-yaml/
-date:                  2024-01-28T22:12:07.694343-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met YAML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/php/working-with-yaml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:07.694343-07:00
+description: "YAML is een door mensen leesbaar gegevensserialisatieformaat. Programmeurs\
+  \ gebruiken het voor configuratiebestanden, gegevensuitwisseling en opslag\u2026"
+lastmod: 2024-02-18 23:09:01.967721
+model: gpt-4-0125-preview
+summary: "YAML is een door mensen leesbaar gegevensserialisatieformaat. Programmeurs\
+  \ gebruiken het voor configuratiebestanden, gegevensuitwisseling en opslag\u2026"
+title: Werken met YAML
 ---
 
 {{< edit_this_page >}}

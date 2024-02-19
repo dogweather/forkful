@@ -1,12 +1,15 @@
 ---
-title:                "Parsing a date from a string"
 aliases:
 - /en/vba/parsing-a-date-from-a-string/
-date:                  2024-02-01T21:30:26.750010-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Parsing a date from a string"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/vba/parsing-a-date-from-a-string.md"
+date: 2024-02-01 21:30:26.750010-07:00
+description: "Parsing a date from a string in Visual Basic for Applications (VBA)\
+  \ is about converting text that represents a date into a date data type. Programmers\
+  \ do\u2026"
+lastmod: 2024-02-18 23:09:10.899194
+model: gpt-4-0125-preview
+summary: "Parsing a date from a string in Visual Basic for Applications (VBA) is about\
+  \ converting text that represents a date into a date data type. Programmers do\u2026"
+title: Parsing a date from a string
 ---
 
 {{< edit_this_page >}}

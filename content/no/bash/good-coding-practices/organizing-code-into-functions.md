@@ -1,13 +1,14 @@
 ---
-title:                "Organisering av kode i funksjoner"
 aliases:
 - /no/bash/organizing-code-into-functions/
-date:                  2024-01-26T01:09:40.462112-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organisering av kode i funksjoner"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/organizing-code-into-functions.md"
+date: 2024-01-26 01:09:40.462112-07:00
+description: "\xC5 dele opp kode i funksjoner betyr \xE5 bryte ned skript i mindre,\
+  \ gjenbrukbare blokker som gj\xF8r spesifikke oppgaver. Det gj\xF8r koden mer oversiktlig,\u2026"
+lastmod: 2024-02-18 23:08:54.063716
+model: gpt-4-1106-preview
+summary: "\xC5 dele opp kode i funksjoner betyr \xE5 bryte ned skript i mindre, gjenbrukbare\
+  \ blokker som gj\xF8r spesifikke oppgaver. Det gj\xF8r koden mer oversiktlig,\u2026"
+title: Organisering av kode i funksjoner
 ---
 
 {{< edit_this_page >}}

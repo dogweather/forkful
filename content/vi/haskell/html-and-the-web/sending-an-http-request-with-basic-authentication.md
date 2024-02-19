@@ -1,15 +1,15 @@
 ---
-title:                "Gửi một yêu cầu HTTP với xác thực cơ bản"
 aliases:
 - /vi/haskell/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-28T22:08:20.542826-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gửi một yêu cầu HTTP với xác thực cơ bản"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/haskell/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:20.542826-07:00
+description: ''
+lastmod: 2024-02-18 23:08:50.744644
+model: gpt-4-0125-preview
+summary: ''
+title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
+  n"
 ---
 
 {{< edit_this_page >}}

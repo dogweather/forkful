@@ -1,13 +1,15 @@
 ---
-title:                "Lokitus"
 aliases:
 - /fi/swift/logging/
-date:                  2024-01-26T01:09:07.334748-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lokitus"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/logging.md"
+date: 2024-01-26 01:09:07.334748-07:00
+description: "Lokitus on sovellusten toimintaa, virheit\xE4 ja muita t\xE4rkeit\xE4\
+  \ tietoja tallentavan prosessin kirjaamista pysyv\xE4\xE4n muotoon, kuten tiedostoon\
+  \ tai\u2026"
+lastmod: 2024-02-18 23:09:07.996657
+model: gpt-4-1106-preview
+summary: "Lokitus on sovellusten toimintaa, virheit\xE4 ja muita t\xE4rkeit\xE4 tietoja\
+  \ tallentavan prosessin kirjaamista pysyv\xE4\xE4n muotoon, kuten tiedostoon tai\u2026"
+title: Lokitus
 ---
 
 {{< edit_this_page >}}

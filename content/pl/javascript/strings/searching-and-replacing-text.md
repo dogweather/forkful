@@ -1,13 +1,14 @@
 ---
-title:                "Wyszukiwanie i zamiana tekstu"
 aliases:
 - /pl/javascript/searching-and-replacing-text/
-date:                  2024-01-20T17:57:57.891942-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wyszukiwanie i zamiana tekstu"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:57.891942-07:00
+description: "Szukanie i zamiana tekstu to zmiana fragment\xF3w tekstu na inne. Programi\u015B\
+  ci robi\u0105 to dla automatyzacji, edycji danych i naprawy b\u0142\u0119d\xF3w."
+lastmod: 2024-02-18 23:08:49.979405
+model: gpt-4-1106-preview
+summary: "Szukanie i zamiana tekstu to zmiana fragment\xF3w tekstu na inne. Programi\u015B\
+  ci robi\u0105 to dla automatyzacji, edycji danych i naprawy b\u0142\u0119d\xF3w."
+title: Wyszukiwanie i zamiana tekstu
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Interaktiivisen komentotulkin (REPL) käyttö"
 aliases:
 - /fi/elixir/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:13:31.994173-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interaktiivisen komentotulkin (REPL) käyttö"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:13:31.994173-07:00
+description: "Interaktiivinen komentotulkki eli REPL (Read-Eval-Print Loop, Lue-Arviointi-Tulosta\
+  \ Silmukka) mahdollistaa koodinp\xE4tkien kokeilemisen reaaliajassa.\u2026"
+lastmod: 2024-02-18 23:09:07.275298
+model: gpt-4-0125-preview
+summary: "Interaktiivinen komentotulkki eli REPL (Read-Eval-Print Loop, Lue-Arviointi-Tulosta\
+  \ Silmukka) mahdollistaa koodinp\xE4tkien kokeilemisen reaaliajassa.\u2026"
+title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

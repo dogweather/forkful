@@ -1,14 +1,26 @@
 ---
-title:                "JSON과 함께 일하기"
 aliases:
 - /ko/vba/working-with-json/
-date:                  2024-02-01T22:05:40.408051-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "JSON과 함께 일하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/vba/working-with-json.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:05:40.408051-07:00
+description: "JSON(JavaScript Object Notation)\uC740 \uC0AC\uB78C\uC774 \uC77D\uACE0\
+  \ \uC4F0\uAE30 \uC26C\uC6B0\uBA70, \uAE30\uACC4\uAC00 \uD30C\uC2F1\uD558\uACE0 \uC0DD\
+  \uC131\uD558\uAE30\uC5D0 \uD3B8\uD55C \uACBD\uB7C9 \uB370\uC774\uD130 \uAD50\uD658\
+  \ \uD615\uC2DD\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC11C\
+  \uBC84\uC640 \uC6F9 \uC560\uD50C\uB9AC\uCF00\uC774\uC158 \uAC04\uC758 \uB370\uC774\
+  \uD130\uB97C \uC804\uC1A1\uD558\uAC70\uB098 \uB2E4\uC591\uD55C \uD504\uB85C\uADF8\
+  \uB798\uBC0D \uD658\uACBD\uC5D0\uC11C, \uC608\uB97C \uB4E4\uC5B4 Visual Basic\u2026"
+lastmod: 2024-02-18 23:09:05.988451
+model: gpt-4-0125-preview
+summary: "JSON(JavaScript Object Notation)\uC740 \uC0AC\uB78C\uC774 \uC77D\uACE0 \uC4F0\
+  \uAE30 \uC26C\uC6B0\uBA70, \uAE30\uACC4\uAC00 \uD30C\uC2F1\uD558\uACE0 \uC0DD\uC131\
+  \uD558\uAE30\uC5D0 \uD3B8\uD55C \uACBD\uB7C9 \uB370\uC774\uD130 \uAD50\uD658 \uD615\
+  \uC2DD\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC11C\uBC84\
+  \uC640 \uC6F9 \uC560\uD50C\uB9AC\uCF00\uC774\uC158 \uAC04\uC758 \uB370\uC774\uD130\
+  \uB97C \uC804\uC1A1\uD558\uAC70\uB098 \uB2E4\uC591\uD55C \uD504\uB85C\uADF8\uB798\
+  \uBC0D \uD658\uACBD\uC5D0\uC11C, \uC608\uB97C \uB4E4\uC5B4 Visual Basic\u2026"
+title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

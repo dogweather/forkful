@@ -1,14 +1,18 @@
 ---
-title:                "Nykyisen päivämäärän hankkiminen"
 aliases:
 - /fi/lua/getting-the-current-date/
-date:                  2024-02-03T19:10:15.049822-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Nykyisen päivämäärän hankkiminen"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:10:15.049822-07:00
+description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen ohjelmoinnissa on olennainen\
+  \ teht\xE4v\xE4 monille sovelluksille, mukaan lukien lokit, tapahtumien aikaleimat\
+  \ tai teht\xE4vien\u2026"
+lastmod: 2024-02-18 23:09:07.768254
+model: gpt-4-0125-preview
+summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen ohjelmoinnissa on olennainen\
+  \ teht\xE4v\xE4 monille sovelluksille, mukaan lukien lokit, tapahtumien aikaleimat\
+  \ tai teht\xE4vien\u2026"
+title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 ---
 
 {{< edit_this_page >}}

@@ -1,12 +1,15 @@
 ---
-title:                "Capitalizing a string"
 aliases:
 - /en/php/capitalizing-a-string/
-date:                  2024-02-03T19:02:32.487209-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizing a string"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/capitalizing-a-string.md"
+date: 2024-02-03 19:02:32.487209-07:00
+description: "Capitalizing a string involves modifying the first character of given\
+  \ text to uppercase, ensuring sentences, titles, or proper names start correctly\
+  \ in a\u2026"
+lastmod: 2024-02-18 23:09:11.120569
+model: gpt-4-0125-preview
+summary: "Capitalizing a string involves modifying the first character of given text\
+  \ to uppercase, ensuring sentences, titles, or proper names start correctly in a\u2026"
+title: Capitalizing a string
 ---
 
 {{< edit_this_page >}}

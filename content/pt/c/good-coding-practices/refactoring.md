@@ -1,14 +1,18 @@
 ---
-title:                "Refatoração"
 aliases:
 - /pt/c/refactoring/
-date:                  2024-02-03T18:06:43.239130-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refatoração"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/refactoring.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:06:43.239130-07:00
+description: "Refatora\xE7\xE3o em programa\xE7\xE3o envolve reestruturar o c\xF3\
+  digo existente sem alterar seu comportamento externo, visando melhorar atributos\
+  \ n\xE3o funcionais, como\u2026"
+lastmod: 2024-02-18 23:08:58.628369
+model: gpt-4-0125-preview
+summary: "Refatora\xE7\xE3o em programa\xE7\xE3o envolve reestruturar o c\xF3digo\
+  \ existente sem alterar seu comportamento externo, visando melhorar atributos n\xE3\
+  o funcionais, como\u2026"
+title: "Refatora\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

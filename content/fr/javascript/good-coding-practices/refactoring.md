@@ -1,13 +1,14 @@
 ---
-title:                "Réusinage"
 aliases:
 - /fr/javascript/refactoring/
-date:                  2024-01-26T01:40:31.201580-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Réusinage"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/refactoring.md"
+date: 2024-01-26 01:40:31.201580-07:00
+description: "Le Refactoring est le processus de restructuration du code informatique\
+  \ existant sans en changer le comportement externe. Les programmeurs le font pour\u2026"
+lastmod: 2024-02-18 23:09:09.265395
+model: gpt-4-0125-preview
+summary: "Le Refactoring est le processus de restructuration du code informatique\
+  \ existant sans en changer le comportement externe. Les programmeurs le font pour\u2026"
+title: "R\xE9usinage"
 ---
 
 {{< edit_this_page >}}

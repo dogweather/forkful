@@ -1,13 +1,14 @@
 ---
-title:                "Interpolating a string"
 aliases:
 - /en/c-sharp/interpolating-a-string/
-date:                  2024-01-20T17:50:17.096727-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolating a string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/interpolating-a-string.md"
+date: 2024-01-20 17:50:17.096727-07:00
+description: String interpolation lets you build strings using embedded expressions.
+  It makes code readable and formatting a breeze.
+lastmod: 2024-02-18 23:09:11.040649
+model: gpt-4-1106-preview
+summary: String interpolation lets you build strings using embedded expressions. It
+  makes code readable and formatting a breeze.
+title: Interpolating a string
 ---
 
 {{< edit_this_page >}}

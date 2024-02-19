@@ -1,12 +1,14 @@
 ---
-title:                "Handling errors"
 aliases:
 - /en/vba/handling-errors/
-date:                  2024-02-01T21:30:53.785212-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Handling errors"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/vba/handling-errors.md"
+date: 2024-02-01 21:30:53.785212-07:00
+description: "Error handling in Visual Basic for Applications (VBA) refers to the\
+  \ process of anticipating, detecting, and resolving programming, application, or\u2026"
+lastmod: 2024-02-18 23:09:10.897296
+model: gpt-4-0125-preview
+summary: "Error handling in Visual Basic for Applications (VBA) refers to the process\
+  \ of anticipating, detecting, and resolving programming, application, or\u2026"
+title: Handling errors
 ---
 
 {{< edit_this_page >}}

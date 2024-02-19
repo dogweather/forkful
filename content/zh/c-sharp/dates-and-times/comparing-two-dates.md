@@ -1,14 +1,23 @@
 ---
-title:                "比较两个日期"
 aliases:
 - /zh/c-sharp/comparing-two-dates/
-date:                  2024-01-20T17:32:39.789289-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "比较两个日期"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/comparing-two-dates.md"
+date: 2024-01-20 17:32:39.789289-07:00
+description: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F\u662F\u4E3A\u4E86\u786E\u5B9A\u5B83\
+  \u4EEC\u76F8\u5BF9\u7684\u987A\u5E8F\uFF08\u54EA\u4E2A\u65E9\uFF0C\u54EA\u4E2A\u665A\
+  \uFF09\u6216\u8005\u5B83\u4EEC\u4E4B\u95F4\u7684\u65F6\u95F4\u5DEE\u3002\u7A0B\u5E8F\
+  \u5458\u8FD9\u4E48\u505A\u901A\u5E38\u662F\u4E3A\u4E86\u6570\u636E\u6392\u5E8F\u3001\
+  \u6709\u6548\u671F\u68C0\u67E5\u3001\u6216\u8005\u8BA1\u7B97\u65F6\u95F4\u95F4\u9694\
+  \u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.143502
+model: gpt-4-1106-preview
+summary: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F\u662F\u4E3A\u4E86\u786E\u5B9A\u5B83\
+  \u4EEC\u76F8\u5BF9\u7684\u987A\u5E8F\uFF08\u54EA\u4E2A\u65E9\uFF0C\u54EA\u4E2A\u665A\
+  \uFF09\u6216\u8005\u5B83\u4EEC\u4E4B\u95F4\u7684\u65F6\u95F4\u5DEE\u3002\u7A0B\u5E8F\
+  \u5458\u8FD9\u4E48\u505A\u901A\u5E38\u662F\u4E3A\u4E86\u6570\u636E\u6392\u5E8F\u3001\
+  \u6709\u6548\u671F\u68C0\u67E5\u3001\u6216\u8005\u8BA1\u7B97\u65F6\u95F4\u95F4\u9694\
+  \u3002"
+title: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F"
 ---
 
 {{< edit_this_page >}}

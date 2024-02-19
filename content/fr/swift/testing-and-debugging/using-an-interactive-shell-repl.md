@@ -1,13 +1,14 @@
 ---
-title:                "Utilisation d'une console interactive (REPL)"
 aliases:
 - /fr/swift/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:17:57.607268-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation d'une console interactive (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:17:57.607268-07:00
+description: "L'utilisation d'une coquille interactive, ou d'une boucle de lecture-\xE9\
+  valuation-impression (REPL), vous permet de coder de mani\xE8re interactive. Les\u2026"
+lastmod: 2024-02-18 23:09:09.210390
+model: gpt-4-0125-preview
+summary: "L'utilisation d'une coquille interactive, ou d'une boucle de lecture-\xE9\
+  valuation-impression (REPL), vous permet de coder de mani\xE8re interactive. Les\u2026"
+title: Utilisation d'une console interactive (REPL)
 ---
 
 {{< edit_this_page >}}

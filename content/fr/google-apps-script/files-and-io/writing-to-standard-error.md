@@ -1,14 +1,18 @@
 ---
-title:                "Écrire sur l'erreur standard"
 aliases:
 - /fr/google-apps-script/writing-to-standard-error/
-date:                  2024-02-01T22:08:48.869090-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Écrire sur l'erreur standard"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/google-apps-script/writing-to-standard-error.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:08:48.869090-07:00
+description: "\xC9crire sur l'erreur standard (stderr) dans les langues de programmation\
+  \ consiste \xE0 diriger les messages d'erreur et les diagnostics vers un flux s\xE9\
+  par\xE9,\u2026"
+lastmod: 2024-02-18 23:09:08.309593
+model: gpt-4-0125-preview
+summary: "\xC9crire sur l'erreur standard (stderr) dans les langues de programmation\
+  \ consiste \xE0 diriger les messages d'erreur et les diagnostics vers un flux s\xE9\
+  par\xE9,\u2026"
+title: "\xC9crire sur l'erreur standard"
 ---
 
 {{< edit_this_page >}}

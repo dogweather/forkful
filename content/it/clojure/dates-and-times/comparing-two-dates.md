@@ -1,13 +1,14 @@
 ---
-title:                "Confronto tra due date"
 aliases:
 - /it/clojure/comparing-two-dates/
-date:                  2024-01-20T17:32:48.829064-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Confronto tra due date"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/comparing-two-dates.md"
+date: 2024-01-20 17:32:48.829064-07:00
+description: "Comparare due date significa verificare se sono uguali, quale precede\
+  \ l'altra o quanti giorni ci sono tra di loro. I programmatori fanno questo per\u2026"
+lastmod: 2024-02-18 23:08:55.572602
+model: gpt-4-1106-preview
+summary: "Comparare due date significa verificare se sono uguali, quale precede l'altra\
+  \ o quanti giorni ci sono tra di loro. I programmatori fanno questo per\u2026"
+title: Confronto tra due date
 ---
 
 {{< edit_this_page >}}

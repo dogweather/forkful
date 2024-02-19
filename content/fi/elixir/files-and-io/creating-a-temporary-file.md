@@ -1,13 +1,16 @@
 ---
-title:                "Väliaikaistiedoston luominen"
 aliases:
 - /fi/elixir/creating-a-temporary-file/
-date:                  2024-01-20T17:40:25.530357-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Väliaikaistiedoston luominen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:25.530357-07:00
+description: "V\xE4liaikaistiedostot ovat tilap\xE4isi\xE4 tiedostoja, jotka poistuvat\
+  \ usein itsest\xE4\xE4n. Niit\xE4 k\xE4ytet\xE4\xE4n esimerkiksi v\xE4liaikaiseen\
+  \ datan k\xE4sittelyyn, testaukseen\u2026"
+lastmod: 2024-02-18 23:09:07.294532
+model: gpt-4-1106-preview
+summary: "V\xE4liaikaistiedostot ovat tilap\xE4isi\xE4 tiedostoja, jotka poistuvat\
+  \ usein itsest\xE4\xE4n. Niit\xE4 k\xE4ytet\xE4\xE4n esimerkiksi v\xE4liaikaiseen\
+  \ datan k\xE4sittelyyn, testaukseen\u2026"
+title: "V\xE4liaikaistiedoston luominen"
 ---
 
 {{< edit_this_page >}}

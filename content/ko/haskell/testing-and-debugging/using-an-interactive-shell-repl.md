@@ -1,13 +1,22 @@
 ---
-title:                "인터랙티브 셸 (REPL) 사용하기"
 aliases:
 - /ko/haskell/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:14:58.600226-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "인터랙티브 셸 (REPL) 사용하기"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:14:58.600226-07:00
+description: "Haskell\uC5D0\uC11C\uC758 \uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\
+  \uB294 REPL(Read-Eval-Print Loop)\uC740 \uC2E4\uC2DC\uAC04\uC73C\uB85C \uCF54\uB4DC\
+  \ \uC870\uAC01\uC744 \uC2E4\uD589\uD560 \uC218 \uC788\uAC8C \uD574\uC90D\uB2C8\uB2E4\
+  . \uC774\uB294 \uBE60\uB978 \uD53C\uB4DC\uBC31, \uD568\uC218 \uD14C\uC2A4\uD305\
+  \ \uBC0F \uC5B8\uC5B4 \uD559\uC2B5\uC744 \uC704\uD55C \uB180\uC774\uD130\uC640 \uAC19\
+  \uC2B5\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.289153
+model: gpt-4-0125-preview
+summary: "Haskell\uC5D0\uC11C\uC758 \uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\uB294\
+  \ REPL(Read-Eval-Print Loop)\uC740 \uC2E4\uC2DC\uAC04\uC73C\uB85C \uCF54\uB4DC \uC870\
+  \uAC01\uC744 \uC2E4\uD589\uD560 \uC218 \uC788\uAC8C \uD574\uC90D\uB2C8\uB2E4. \uC774\
+  \uB294 \uBE60\uB978 \uD53C\uB4DC\uBC31, \uD568\uC218 \uD14C\uC2A4\uD305 \uBC0F \uC5B8\
+  \uC5B4 \uD559\uC2B5\uC744 \uC704\uD55C \uB180\uC774\uD130\uC640 \uAC19\uC2B5\uB2C8\
+  \uB2E4."
+title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Refaktoryzacja"
 aliases:
 - /pl/vba/refactoring/
-date:                  2024-02-01T22:00:12.995886-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refaktoryzacja"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/vba/refactoring.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:12.995886-07:00
+description: "Refaktoryzacja w programowaniu polega na modyfikowaniu struktury kodu\
+  \ bez zmiany jego zachowania, aby poprawi\u0107 aspekty takie jak czytelno\u015B\
+  \u0107, \u0142atwo\u015B\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.443071
+model: gpt-4-0125-preview
+summary: "Refaktoryzacja w programowaniu polega na modyfikowaniu struktury kodu bez\
+  \ zmiany jego zachowania, aby poprawi\u0107 aspekty takie jak czytelno\u015B\u0107\
+  , \u0142atwo\u015B\u0107\u2026"
+title: Refaktoryzacja
 ---
 
 {{< edit_this_page >}}

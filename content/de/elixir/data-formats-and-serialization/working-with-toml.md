@@ -1,13 +1,14 @@
 ---
-title:                "Arbeiten mit TOML"
 aliases:
 - /de/elixir/working-with-toml/
-date:                  2024-01-26T04:20:34.391271-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeiten mit TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/working-with-toml.md"
+date: 2024-01-26 04:20:34.391271-07:00
+description: "Mit TOML arbeiten bedeutet, TOML-Daten (Toms Obvious, Minimal Language)\
+  \ in Elixir zu parsen und zu generieren. Programmierer nutzen es, um\u2026"
+lastmod: 2024-02-18 23:09:04.576866
+model: gpt-4-0125-preview
+summary: "Mit TOML arbeiten bedeutet, TOML-Daten (Toms Obvious, Minimal Language)\
+  \ in Elixir zu parsen und zu generieren. Programmierer nutzen es, um\u2026"
+title: Arbeiten mit TOML
 ---
 
 {{< edit_this_page >}}

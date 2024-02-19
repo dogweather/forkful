@@ -1,14 +1,18 @@
 ---
-title:                "Web-sivun lataaminen"
 aliases:
 - /fi/go/downloading-a-web-page/
-date:                  2024-02-03T17:56:13.737190-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Web-sivun lataaminen"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/downloading-a-web-page.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:13.737190-07:00
+description: "Verkkosivun lataaminen tarkoittaa web-sivun HTML-sis\xE4ll\xF6n noutamista\
+  \ HTTP/HTTPS-protokollaa k\xE4ytt\xE4en. Ohjelmoijat tekev\xE4t t\xE4t\xE4 usein\
+  \ web-scrapingin, datan\u2026"
+lastmod: 2024-02-18 23:09:07.083348
+model: gpt-4-0125-preview
+summary: "Verkkosivun lataaminen tarkoittaa web-sivun HTML-sis\xE4ll\xF6n noutamista\
+  \ HTTP/HTTPS-protokollaa k\xE4ytt\xE4en. Ohjelmoijat tekev\xE4t t\xE4t\xE4 usein\
+  \ web-scrapingin, datan\u2026"
+title: Web-sivun lataaminen
 ---
 
 {{< edit_this_page >}}

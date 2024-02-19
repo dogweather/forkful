@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng bộ gỡ lỗi"
 aliases:
 - /vi/fish-shell/using-a-debugger/
-date:                  2024-01-28T22:09:39.591896-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng bộ gỡ lỗi"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:39.591896-07:00
+description: "Vi\u1EC7c s\u1EED d\u1EE5ng debugger ch\u1EE7 y\u1EBFu \u0111\u1EC3\
+  \ \"di\u1EC7t bug\" - nh\u1EEFng l\u1ED7i kh\xF3 ch\u1ECBu, h\xFAt m\u1EA5t th\u1EDD\
+  i gian trong m\xE3 c\u1EE7a b\u1EA1n. C\xE1c l\u1EADp tr\xECnh vi\xEAn debug v\xEC\
+  \ h\u1ECD mu\u1ED1n t\xECm v\xE0 s\u1EEDa c\xE1c\u2026"
+lastmod: 2024-02-18 23:08:51.190480
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c s\u1EED d\u1EE5ng debugger ch\u1EE7 y\u1EBFu \u0111\u1EC3 \"di\u1EC7\
+  t bug\" - nh\u1EEFng l\u1ED7i kh\xF3 ch\u1ECBu, h\xFAt m\u1EA5t th\u1EDDi gian trong\
+  \ m\xE3 c\u1EE7a b\u1EA1n. C\xE1c l\u1EADp tr\xECnh vi\xEAn debug v\xEC h\u1ECD\
+  \ mu\u1ED1n t\xECm v\xE0 s\u1EEDa c\xE1c\u2026"
+title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

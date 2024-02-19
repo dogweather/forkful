@@ -1,14 +1,18 @@
 ---
-title:                "Lainausmerkkien poistaminen merkkijonosta"
 aliases:
 - /fi/c/removing-quotes-from-a-string/
-date:                  2024-02-03T18:07:22.781400-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lainausmerkkien poistaminen merkkijonosta"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:22.781400-07:00
+description: "Merkkijonosta lainausmerkit poistaminen C-kieless\xE4 tarkoittaa tekstisis\xE4\
+  ll\xF6n erottamista ilman ymp\xE4r\xF6ivi\xE4 yksitt\xE4isi\xE4 (' ') tai kaksois\
+  \ (\" \")\u2026"
+lastmod: 2024-02-18 23:09:08.117914
+model: gpt-4-0125-preview
+summary: "Merkkijonosta lainausmerkit poistaminen C-kieless\xE4 tarkoittaa tekstisis\xE4\
+  ll\xF6n erottamista ilman ymp\xE4r\xF6ivi\xE4 yksitt\xE4isi\xE4 (' ') tai kaksois\
+  \ (\" \")\u2026"
+title: Lainausmerkkien poistaminen merkkijonosta
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Comparing two dates"
 aliases:
 - /en/swift/comparing-two-dates/
-date:                  2024-01-20T17:33:44.419303-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Comparing two dates"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/comparing-two-dates.md"
+date: 2024-01-20 17:33:44.419303-07:00
+description: "Comparing two dates is like asking, \"Which came first, the chicken\
+  \ or the egg?\" but with calendar dates. Programmers do it to sort events, trigger\u2026"
+lastmod: 2024-02-18 23:09:11.408812
+model: gpt-4-1106-preview
+summary: "Comparing two dates is like asking, \"Which came first, the chicken or the\
+  \ egg?\" but with calendar dates. Programmers do it to sort events, trigger\u2026"
+title: Comparing two dates
 ---
 
 {{< edit_this_page >}}

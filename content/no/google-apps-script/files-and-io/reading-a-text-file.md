@@ -1,14 +1,18 @@
 ---
-title:                "Lese en tekstfil"
 aliases:
 - /no/google-apps-script/reading-a-text-file/
-date:                  2024-02-01T21:58:29.595616-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lese en tekstfil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/google-apps-script/reading-a-text-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:29.595616-07:00
+description: "\xC5 lese en tekstfil i Google Apps Script (GAS) inneb\xE6rer \xE5 f\xE5\
+  \ tilgang til og trekke ut tekstdata fra filer lagret i Google Drive eller annen\
+  \ tilgjengelig\u2026"
+lastmod: 2024-02-18 23:08:53.499951
+model: gpt-4-0125-preview
+summary: "\xC5 lese en tekstfil i Google Apps Script (GAS) inneb\xE6rer \xE5 f\xE5\
+  \ tilgang til og trekke ut tekstdata fra filer lagret i Google Drive eller annen\
+  \ tilgjengelig\u2026"
+title: Lese en tekstfil
 ---
 
 {{< edit_this_page >}}

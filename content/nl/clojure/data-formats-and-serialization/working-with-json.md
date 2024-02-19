@@ -1,15 +1,16 @@
 ---
-title:                "Werken met JSON"
 aliases:
 - /nl/clojure/working-with-json/
-date:                  2024-01-28T22:11:06.938422-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met JSON"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/clojure/working-with-json.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:06.938422-07:00
+description: "JSON (JavaScript Object Notation) is een gegevensformaat dat wordt gebruikt\
+  \ om gegevens op te slaan en te transporteren. Programmeurs gebruiken JSON\u2026"
+lastmod: 2024-02-18 23:09:01.503223
+model: gpt-4-0125-preview
+summary: "JSON (JavaScript Object Notation) is een gegevensformaat dat wordt gebruikt\
+  \ om gegevens op te slaan en te transporteren. Programmeurs gebruiken JSON\u2026"
+title: Werken met JSON
 ---
 
 {{< edit_this_page >}}

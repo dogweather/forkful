@@ -1,13 +1,15 @@
 ---
-title:                "Reading command line arguments"
 aliases:
 - /en/ruby/reading-command-line-arguments/
-date:                  2024-01-20T17:56:37.926451-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Reading command line arguments"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:37.926451-07:00
+description: "Reading command-line arguments in Ruby allows scripts to take input\
+  \ right when they're run, like configuring options or passing data. Programmers\
+  \ use them\u2026"
+lastmod: 2024-02-18 23:09:11.581139
+model: gpt-4-1106-preview
+summary: "Reading command-line arguments in Ruby allows scripts to take input right\
+  \ when they're run, like configuring options or passing data. Programmers use them\u2026"
+title: Reading command line arguments
 ---
 
 {{< edit_this_page >}}

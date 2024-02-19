@@ -1,14 +1,18 @@
 ---
-title:                "Skriva tester"
 aliases:
 - /sv/c-sharp/writing-tests/
-date:                  2024-02-03T19:30:13.005481-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriva tester"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:30:13.005481-07:00
+description: "Att skriva tester i C# inneb\xE4r att skapa automatiserade skript f\xF6\
+  r att validera din kods funktionalitet, s\xE4kerst\xE4lla att den beter sig som\
+  \ f\xF6rv\xE4ntat.\u2026"
+lastmod: 2024-02-18 23:08:51.799185
+model: gpt-4-0125-preview
+summary: "Att skriva tester i C# inneb\xE4r att skapa automatiserade skript f\xF6\
+  r att validera din kods funktionalitet, s\xE4kerst\xE4lla att den beter sig som\
+  \ f\xF6rv\xE4ntat.\u2026"
+title: Skriva tester
 ---
 
 {{< edit_this_page >}}

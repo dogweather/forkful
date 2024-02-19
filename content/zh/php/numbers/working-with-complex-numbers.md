@@ -1,13 +1,22 @@
 ---
-title:                "处理复数"
 aliases:
 - /zh/php/working-with-complex-numbers/
-date:                  2024-01-26T04:44:42.751958-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理复数"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/working-with-complex-numbers.md"
+date: 2024-01-26 04:44:42.751958-07:00
+description: "\u590D\u6570\u6709\u5B9E\u90E8\u548C\u865A\u90E8\uFF0C\u901A\u5E38\u5199\
+  \u4F5C `a + bi`\u3002\u5B83\u4EEC\u5728\u9AD8\u7EA7\u6570\u5B66\u3001\u7269\u7406\
+  \u5B66\u3001\u5DE5\u7A0B\u5B66\u4EE5\u53CA\u67D0\u4E9B\u8BA1\u7B97\u673A\u7B97\u6CD5\
+  \u4E2D\u81F3\u5173\u91CD\u8981\u3002\u7A0B\u5E8F\u5458\u901A\u8FC7\u5B83\u4EEC\u6765\
+  \u5904\u7406\u6D89\u53CA\u8D1F\u6570\u5E73\u65B9\u6839\u548C\u632F\u8361\u51FD\u6570\
+  \u7684\u8BA1\u7B97\u3002"
+lastmod: 2024-02-18 23:08:59.210633
+model: gpt-4-0125-preview
+summary: "\u590D\u6570\u6709\u5B9E\u90E8\u548C\u865A\u90E8\uFF0C\u901A\u5E38\u5199\
+  \u4F5C `a + bi`\u3002\u5B83\u4EEC\u5728\u9AD8\u7EA7\u6570\u5B66\u3001\u7269\u7406\
+  \u5B66\u3001\u5DE5\u7A0B\u5B66\u4EE5\u53CA\u67D0\u4E9B\u8BA1\u7B97\u673A\u7B97\u6CD5\
+  \u4E2D\u81F3\u5173\u91CD\u8981\u3002\u7A0B\u5E8F\u5458\u901A\u8FC7\u5B83\u4EEC\u6765\
+  \u5904\u7406\u6D89\u53CA\u8D1F\u6570\u5E73\u65B9\u6839\u548C\u632F\u8361\u51FD\u6570\
+  \u7684\u8BA1\u7B97\u3002"
+title: "\u5904\u7406\u590D\u6570"
 ---
 
 {{< edit_this_page >}}

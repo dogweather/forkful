@@ -1,14 +1,24 @@
 ---
-title:                "从字符串中解析日期"
 aliases:
 - /zh/vba/parsing-a-date-from-a-string/
-date:                  2024-02-01T21:57:33.387067-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "从字符串中解析日期"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:33.387067-07:00
+description: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u89E3\u6790\u5B57\u7B26\
+  \u4E32\u4E2D\u7684\u65E5\u671F\u662F\u6307\u5C06\u4EE3\u8868\u65E5\u671F\u7684\u6587\
+  \u672C\u8F6C\u6362\u4E3A\u65E5\u671F\u6570\u636E\u7C7B\u578B\u3002\u7A0B\u5E8F\u5458\
+  \u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u5728\u4ED6\u4EEC\u7684\u5E94\u7528\u7A0B\u5E8F\
+  \u4E2D\u66F4\u6709\u6548\u5730\u64CD\u4F5C\u65E5\u671F\uFF0C\u4F8B\u5982\u8FDB\u884C\
+  \u6BD4\u8F83\u3001\u8BA1\u7B97\u6216\u683C\u5F0F\u5316\u3002"
+lastmod: 2024-02-18 23:08:58.990282
+model: gpt-4-0125-preview
+summary: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u89E3\u6790\u5B57\u7B26\
+  \u4E32\u4E2D\u7684\u65E5\u671F\u662F\u6307\u5C06\u4EE3\u8868\u65E5\u671F\u7684\u6587\
+  \u672C\u8F6C\u6362\u4E3A\u65E5\u671F\u6570\u636E\u7C7B\u578B\u3002\u7A0B\u5E8F\u5458\
+  \u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u5728\u4ED6\u4EEC\u7684\u5E94\u7528\u7A0B\u5E8F\
+  \u4E2D\u66F4\u6709\u6548\u5730\u64CD\u4F5C\u65E5\u671F\uFF0C\u4F8B\u5982\u8FDB\u884C\
+  \u6BD4\u8F83\u3001\u8BA1\u7B97\u6216\u683C\u5F0F\u5316\u3002"
+title: "\u4ECE\u5B57\u7B26\u4E32\u4E2D\u89E3\u6790\u65E5\u671F"
 ---
 
 {{< edit_this_page >}}

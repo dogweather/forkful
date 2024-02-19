@@ -1,13 +1,14 @@
 ---
-title:                "Redondeo de números"
 aliases:
 - /es/fish-shell/rounding-numbers/
-date:                  2024-01-26T03:43:48.869077-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Redondeo de números"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/rounding-numbers.md"
+date: 2024-01-26 03:43:48.869077-07:00
+description: "Redondear n\xFAmeros consiste en eliminar los decimales para simplificar\
+  \ tus datos o ajustarlos a formatos espec\xEDficos. Los programadores lo hacen para\u2026"
+lastmod: 2024-02-18 23:09:10.445198
+model: gpt-4-0125-preview
+summary: "Redondear n\xFAmeros consiste en eliminar los decimales para simplificar\
+  \ tus datos o ajustarlos a formatos espec\xEDficos. Los programadores lo hacen para\u2026"
+title: "Redondeo de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

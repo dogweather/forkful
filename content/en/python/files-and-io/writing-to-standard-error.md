@@ -1,12 +1,14 @@
 ---
-title:                "Writing to standard error"
 aliases:
 - /en/python/writing-to-standard-error/
-date:                  2024-02-03T19:03:41.170759-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Writing to standard error"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/writing-to-standard-error.md"
+date: 2024-02-03 19:03:41.170759-07:00
+description: "Writing to standard error in Python is about directing your program's\
+  \ error messages or diagnostics to the error stream (`stderr`), separate from the\u2026"
+lastmod: 2024-02-18 23:09:10.697843
+model: gpt-4-0125-preview
+summary: "Writing to standard error in Python is about directing your program's error\
+  \ messages or diagnostics to the error stream (`stderr`), separate from the\u2026"
+title: Writing to standard error
 ---
 
 {{< edit_this_page >}}

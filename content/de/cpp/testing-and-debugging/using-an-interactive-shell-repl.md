@@ -1,13 +1,14 @@
 ---
-title:                "Nutzung einer interaktiven Shell (REPL)"
 aliases:
 - /de/cpp/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:12:02.092219-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Nutzung einer interaktiven Shell (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:12:02.092219-07:00
+description: "Ein REPL (Read-Eval-Print-Loop) ist eine einfache, interaktive Programmierumgebung.\
+  \ Programmierer nutzen es f\xFCr Echtzeit-Sprachexperimente, schnelle\u2026"
+lastmod: 2024-02-18 23:09:05.190707
+model: gpt-4-0125-preview
+summary: "Ein REPL (Read-Eval-Print-Loop) ist eine einfache, interaktive Programmierumgebung.\
+  \ Programmierer nutzen es f\xFCr Echtzeit-Sprachexperimente, schnelle\u2026"
+title: Nutzung einer interaktiven Shell (REPL)
 ---
 
 {{< edit_this_page >}}

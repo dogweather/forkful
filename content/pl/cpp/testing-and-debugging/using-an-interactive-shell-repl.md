@@ -1,13 +1,16 @@
 ---
-title:                "Korzystanie z interaktywnego shella (REPL)"
 aliases:
 - /pl/cpp/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:12:11.188552-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z interaktywnego shella (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:12:11.188552-07:00
+description: "REPL (Read-Eval-Print-Loop, p\u0119tla czytaj-wykonuj-wypisz) to proste\
+  \ \u015Brodowisko programistyczne interaktywne. Programi\u015Bci u\u017Cywaj\u0105\
+  \ go do eksperymentowania z\u2026"
+lastmod: 2024-02-18 23:08:49.913113
+model: gpt-4-0125-preview
+summary: "REPL (Read-Eval-Print-Loop, p\u0119tla czytaj-wykonuj-wypisz) to proste\
+  \ \u015Brodowisko programistyczne interaktywne. Programi\u015Bci u\u017Cywaj\u0105\
+  \ go do eksperymentowania z\u2026"
+title: Korzystanie z interaktywnego shella (REPL)
 ---
 
 {{< edit_this_page >}}

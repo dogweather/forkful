@@ -1,13 +1,14 @@
 ---
-title:                "Ricerca e sostituzione del testo"
 aliases:
 - /it/php/searching-and-replacing-text/
-date:                  2024-01-20T17:58:16.123144-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ricerca e sostituzione del testo"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/php/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:16.123144-07:00
+description: "Nella programmazione, cercare e sostituire testo significa scansionare\
+  \ delle stringhe per trovarne frammenti e cambiare questi con nuovi contenuti. I\u2026"
+lastmod: 2024-02-18 23:08:55.956785
+model: gpt-4-1106-preview
+summary: "Nella programmazione, cercare e sostituire testo significa scansionare delle\
+  \ stringhe per trovarne frammenti e cambiare questi con nuovi contenuti. I\u2026"
+title: Ricerca e sostituzione del testo
 ---
 
 {{< edit_this_page >}}

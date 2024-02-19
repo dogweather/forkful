@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie pliku tekstowego"
 aliases:
 - /pl/c-sharp/writing-a-text-file/
-date:                  2024-02-03T19:27:39.528908-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie pliku tekstowego"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:39.528908-07:00
+description: "Pisanie pliku tekstowego w C# wi\u0105\u017Ce si\u0119 z programowym\
+  \ tworzeniem lub modyfikowaniem plik\xF3w tekstowych w systemie plik\xF3w - podstawowym\
+  \ zadaniem dla wielu\u2026"
+lastmod: 2024-02-18 23:08:49.628996
+model: gpt-4-0125-preview
+summary: "Pisanie pliku tekstowego w C# wi\u0105\u017Ce si\u0119 z programowym tworzeniem\
+  \ lub modyfikowaniem plik\xF3w tekstowych w systemie plik\xF3w - podstawowym zadaniem\
+  \ dla wielu\u2026"
+title: Pisanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

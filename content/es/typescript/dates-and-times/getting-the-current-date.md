@@ -1,14 +1,17 @@
 ---
-title:                "Obteniendo la fecha actual"
 aliases:
 - /es/typescript/getting-the-current-date/
-date:                  2024-02-03T19:10:54.323474-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Obteniendo la fecha actual"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:10:54.323474-07:00
+description: "Obtener la fecha actual en TypeScript, un lenguaje construido sobre\
+  \ JavaScript, te permite acceder y manipular la informaci\xF3n de la fecha y hora\
+  \ actuales.\u2026"
+lastmod: 2024-02-18 23:09:09.714147
+model: gpt-4-0125-preview
+summary: "Obtener la fecha actual en TypeScript, un lenguaje construido sobre JavaScript,\
+  \ te permite acceder y manipular la informaci\xF3n de la fecha y hora actuales.\u2026"
+title: Obteniendo la fecha actual
 ---
 
 {{< edit_this_page >}}

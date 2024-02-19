@@ -1,13 +1,16 @@
 ---
-title:                "Ta bort tecken som matchar ett mönster"
 aliases:
 - /sv/c-sharp/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:51.255303-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ta bort tecken som matchar ett mönster"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:51.255303-07:00
+description: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att man systematiskt\
+  \ tar bort specifika tecken eller sekvenser fr\xE5n en str\xE4ng. Programmerare\
+  \ g\xF6r detta\u2026"
+lastmod: 2024-02-18 23:08:51.779142
+model: gpt-4-1106-preview
+summary: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att man systematiskt\
+  \ tar bort specifika tecken eller sekvenser fr\xE5n en str\xE4ng. Programmerare\
+  \ g\xF6r detta\u2026"
+title: "Ta bort tecken som matchar ett m\xF6nster"
 ---
 
 {{< edit_this_page >}}

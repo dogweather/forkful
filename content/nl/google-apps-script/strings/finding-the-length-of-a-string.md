@@ -1,14 +1,16 @@
 ---
-title:                "De lengte van een string vinden"
 aliases:
 - /nl/google-apps-script/finding-the-length-of-a-string/
-date:                  2024-02-01T21:53:28.087831-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "De lengte van een string vinden"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/google-apps-script/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:28.087831-07:00
+description: "De lengte van een string vinden in Google Apps Script, een JavaScript\
+  \ cloud scriptingtaal waarmee je taken kunt automatiseren binnen Google-producten,\u2026"
+lastmod: 2024-02-18 23:09:01.375333
+model: gpt-4-0125-preview
+summary: "De lengte van een string vinden in Google Apps Script, een JavaScript cloud\
+  \ scriptingtaal waarmee je taken kunt automatiseren binnen Google-producten,\u2026"
+title: De lengte van een string vinden
 ---
 
 {{< edit_this_page >}}

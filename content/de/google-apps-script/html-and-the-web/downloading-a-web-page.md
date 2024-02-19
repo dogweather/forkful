@@ -1,14 +1,17 @@
 ---
-title:                "Herunterladen einer Webseite"
 aliases:
 - /de/google-apps-script/downloading-a-web-page/
-date:                  2024-02-01T21:52:45.024696-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Herunterladen einer Webseite"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/google-apps-script/downloading-a-web-page.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:45.024696-07:00
+description: "Das Herunterladen einer Webseite in Google Apps Script beinhaltet das\
+  \ Abrufen des Inhalts einer Webseite \xFCber HTML f\xFCr verschiedene Zwecke, wie\
+  \ zum\u2026"
+lastmod: 2024-02-18 23:09:04.411912
+model: gpt-4-0125-preview
+summary: "Das Herunterladen einer Webseite in Google Apps Script beinhaltet das Abrufen\
+  \ des Inhalts einer Webseite \xFCber HTML f\xFCr verschiedene Zwecke, wie zum\u2026"
+title: Herunterladen einer Webseite
 ---
 
 {{< edit_this_page >}}

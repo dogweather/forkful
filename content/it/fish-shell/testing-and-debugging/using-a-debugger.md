@@ -1,13 +1,16 @@
 ---
-title:                "Utilizzo di un debugger"
 aliases:
 - /it/fish-shell/using-a-debugger/
-date:                  2024-01-26T03:48:55.675291-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di un debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/using-a-debugger.md"
+date: 2024-01-26 03:48:55.675291-07:00
+description: "L'uso di un debugger riguarda lo schiacciare i bug\u2014gli errori fastidiosi\
+  \ e che consumano tempo nel tuo codice. I programmatori eseguono il debug perch\xE9\
+  \u2026"
+lastmod: 2024-02-18 23:08:56.299961
+model: gpt-4-0125-preview
+summary: "L'uso di un debugger riguarda lo schiacciare i bug\u2014gli errori fastidiosi\
+  \ e che consumano tempo nel tuo codice. I programmatori eseguono il debug perch\xE9\
+  \u2026"
+title: Utilizzo di un debugger
 ---
 
 {{< edit_this_page >}}

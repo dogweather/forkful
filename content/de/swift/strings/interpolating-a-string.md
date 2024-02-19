@@ -1,13 +1,14 @@
 ---
-title:                "Zeichenketten interpolieren"
 aliases:
 - /de/swift/interpolating-a-string/
-date:                  2024-01-20T17:51:57.174846-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Zeichenketten interpolieren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/interpolating-a-string.md"
+date: 2024-01-20 17:51:57.174846-07:00
+description: "String-Interpolation erm\xF6glicht es, Variablen, Konstanten und Ausdr\xFC\
+  cke in Strings einzubetten, indem man ihren Wert in eine Zeichenkette einbettet.\u2026"
+lastmod: 2024-02-18 23:09:05.219127
+model: gpt-4-1106-preview
+summary: "String-Interpolation erm\xF6glicht es, Variablen, Konstanten und Ausdr\xFC\
+  cke in Strings einzubetten, indem man ihren Wert in eine Zeichenkette einbettet.\u2026"
+title: Zeichenketten interpolieren
 ---
 
 {{< edit_this_page >}}

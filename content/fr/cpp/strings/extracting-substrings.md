@@ -1,13 +1,16 @@
 ---
-title:                "Extraction de sous-chaînes"
 aliases:
 - /fr/cpp/extracting-substrings/
-date:                  2024-01-20T17:45:20.998984-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extraction de sous-chaînes"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/extracting-substrings.md"
+date: 2024-01-20 17:45:20.998984-07:00
+description: "Extraire des sous-cha\xEEnes, c'est prendre une partie sp\xE9cifique\
+  \ d'une cha\xEEne de caract\xE8res. On fait \xE7a pour analyser, manipuler, ou valider\
+  \ des donn\xE9es\u2026"
+lastmod: 2024-02-18 23:09:09.148127
+model: gpt-4-1106-preview
+summary: "Extraire des sous-cha\xEEnes, c'est prendre une partie sp\xE9cifique d'une\
+  \ cha\xEEne de caract\xE8res. On fait \xE7a pour analyser, manipuler, ou valider\
+  \ des donn\xE9es\u2026"
+title: "Extraction de sous-cha\xEEnes"
 ---
 
 {{< edit_this_page >}}

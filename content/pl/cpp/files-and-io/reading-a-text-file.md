@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
 aliases:
 - /pl/cpp/reading-a-text-file/
-date:                  2024-01-20T17:53:50.873895-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie pliku tekstowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/reading-a-text-file.md"
+date: 2024-01-20 17:53:50.873895-07:00
+description: "Odczytywanie pliku tekstowego to proces wydobycia informacji zapisanych\
+  \ w pliku na dysku. Programi\u015Bci robi\u0105 to, by umo\u017Cliwi\u0107 aplikacjom\
+  \ korzystanie z\u2026"
+lastmod: 2024-02-18 23:08:49.928842
+model: gpt-4-1106-preview
+summary: "Odczytywanie pliku tekstowego to proces wydobycia informacji zapisanych\
+  \ w pliku na dysku. Programi\u015Bci robi\u0105 to, by umo\u017Cliwi\u0107 aplikacjom\
+  \ korzystanie z\u2026"
+title: Odczytywanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Utilizzo di un debugger"
 aliases:
 - /it/lua/using-a-debugger/
-date:                  2024-01-26T03:50:20.013557-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di un debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/lua/using-a-debugger.md"
+date: 2024-01-26 03:50:20.013557-07:00
+description: "Un debugger \xE8 uno strumento che consente di ispezionare e controllare\
+  \ l'esecuzione di un programma, facilitando l'identificazione dei punti in cui le\
+  \ cose\u2026"
+lastmod: 2024-02-18 23:08:56.015024
+model: gpt-4-0125-preview
+summary: "Un debugger \xE8 uno strumento che consente di ispezionare e controllare\
+  \ l'esecuzione di un programma, facilitando l'identificazione dei punti in cui le\
+  \ cose\u2026"
+title: Utilizzo di un debugger
 ---
 
 {{< edit_this_page >}}

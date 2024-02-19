@@ -1,13 +1,14 @@
 ---
-title:                "Suchen und Ersetzen von Text"
 aliases:
 - /de/fish-shell/searching-and-replacing-text/
-date:                  2024-01-20T17:57:49.820978-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Suchen und Ersetzen von Text"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:49.820978-07:00
+description: "Textsuche und -ersetzung ist das schnelle Auffinden und Austauschen\
+  \ von spezifischen Zeichenketten im Code. Programmierer nutzen das, um Fehler zu\u2026"
+lastmod: 2024-02-18 23:09:05.307864
+model: gpt-4-1106-preview
+summary: "Textsuche und -ersetzung ist das schnelle Auffinden und Austauschen von\
+  \ spezifischen Zeichenketten im Code. Programmierer nutzen das, um Fehler zu\u2026"
+title: Suchen und Ersetzen von Text
 ---
 
 {{< edit_this_page >}}

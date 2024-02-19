@@ -1,15 +1,21 @@
 ---
-title:                "Kiểm tra xem thư mục có tồn tại không"
 aliases:
 - /vi/elixir/checking-if-a-directory-exists/
-date:                  2024-01-28T21:56:17.449571-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kiểm tra xem thư mục có tồn tại không"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:17.449571-07:00
+description: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3\
+  n t\u1EA1i trong Elixir \u0111\u1EA3m b\u1EA3o b\u1EA1n \u0111ang t\u01B0\u01A1\
+  ng t\xE1c v\u1EDBi m\u1ED9t \u0111\u01B0\u1EDDng d\u1EABn t\u1EC7p h\u1EE3p l\u1EC7\
+  . L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 tr\xE1nh c\xE1\
+  c\u2026"
+lastmod: 2024-02-18 23:08:50.384921
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1\
+  i trong Elixir \u0111\u1EA3m b\u1EA3o b\u1EA1n \u0111ang t\u01B0\u01A1ng t\xE1c\
+  \ v\u1EDBi m\u1ED9t \u0111\u01B0\u1EDDng d\u1EABn t\u1EC7p h\u1EE3p l\u1EC7. L\u1EAD\
+  p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 tr\xE1nh c\xE1c\u2026"
+title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 ---
 
 {{< edit_this_page >}}

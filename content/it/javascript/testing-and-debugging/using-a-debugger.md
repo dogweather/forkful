@@ -1,13 +1,15 @@
 ---
-title:                "Utilizzo di un debugger"
 aliases:
 - /it/javascript/using-a-debugger/
-date:                  2024-01-26T03:49:52.314418-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di un debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/javascript/using-a-debugger.md"
+date: 2024-01-26 03:49:52.314418-07:00
+description: "Utilizzare un debugger significa sfruttare strumenti specializzati che\
+  \ consentono di guardare sotto il cofano del proprio codice, osservandolo passo\
+  \ dopo\u2026"
+lastmod: 2024-02-18 23:08:56.257236
+model: gpt-4-0125-preview
+summary: "Utilizzare un debugger significa sfruttare strumenti specializzati che consentono\
+  \ di guardare sotto il cofano del proprio codice, osservandolo passo dopo\u2026"
+title: Utilizzo di un debugger
 ---
 
 {{< edit_this_page >}}

@@ -1,12 +1,15 @@
 ---
-title:                "Análisis de HTML"
 aliases:
 - /es/haskell/parsing-html/
-date:                  2024-01-20T15:32:11.698577-07:00
-simple_title:         "Análisis de HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/parsing-html.md"
+date: 2024-01-20 15:32:11.698577-07:00
+description: "El an\xE1lisis de HTML (parsing HTML) significa examinar el contenido\
+  \ de una p\xE1gina web para extraer datos o informaci\xF3n estructurada. Los programadores\
+  \ lo\u2026"
+lastmod: 2024-02-18 23:09:10.025590
+summary: "El an\xE1lisis de HTML (parsing HTML) significa examinar el contenido de\
+  \ una p\xE1gina web para extraer datos o informaci\xF3n estructurada. Los programadores\
+  \ lo\u2026"
+title: "An\xE1lisis de HTML"
 ---
 
 {{< edit_this_page >}}

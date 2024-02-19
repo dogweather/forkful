@@ -1,14 +1,18 @@
 ---
-title:                "Utskrift av feilsøkingsdata"
 aliases:
 - /no/c/printing-debug-output/
-date:                  2024-02-03T18:05:15.680010-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utskrift av feilsøkingsdata"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/printing-debug-output.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:15.680010-07:00
+description: "\xC5 skrive ut feils\xF8kingsutdata handler om \xE5 generere midlertidige,\
+  \ informative loggmeldinger som kan hjelpe programmerere med \xE5 forst\xE5 programflyten\
+  \ og\u2026"
+lastmod: 2024-02-18 23:08:54.397018
+model: gpt-4-0125-preview
+summary: "\xC5 skrive ut feils\xF8kingsutdata handler om \xE5 generere midlertidige,\
+  \ informative loggmeldinger som kan hjelpe programmerere med \xE5 forst\xE5 programflyten\
+  \ og\u2026"
+title: "Utskrift av feils\xF8kingsdata"
 ---
 
 {{< edit_this_page >}}

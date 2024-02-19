@@ -1,14 +1,16 @@
 ---
-title:                "Praca z JSON"
 aliases:
 - /pl/rust/working-with-json/
-date:                  2024-02-03T19:24:13.323209-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:24:13.323209-07:00
+description: "Praca z JSON (JavaScript Object Notation) w Rust polega na parsowaniu\
+  \ danych JSON do struktur danych Rust oraz serializowaniu struktur danych Rust z\u2026"
+lastmod: 2024-02-18 23:08:49.411065
+model: gpt-4-0125-preview
+summary: "Praca z JSON (JavaScript Object Notation) w Rust polega na parsowaniu danych\
+  \ JSON do struktur danych Rust oraz serializowaniu struktur danych Rust z\u2026"
+title: Praca z JSON
 ---
 
 {{< edit_this_page >}}

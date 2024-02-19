@@ -1,12 +1,15 @@
 ---
-title:                "Parsing HTML"
 aliases:
 - /en/arduino/parsing-html/
-date:                  2024-02-03T19:02:46.168722-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Parsing HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/parsing-html.md"
+date: 2024-02-03 19:02:46.168722-07:00
+description: "Parsing HTML in Arduino projects is about extracting information from\
+  \ web pages. Programmers do this to enable their Arduino devices to interact with\
+  \ the\u2026"
+lastmod: 2024-02-18 23:09:11.313442
+model: gpt-4-0125-preview
+summary: "Parsing HTML in Arduino projects is about extracting information from web\
+  \ pages. Programmers do this to enable their Arduino devices to interact with the\u2026"
+title: Parsing HTML
 ---
 
 {{< edit_this_page >}}

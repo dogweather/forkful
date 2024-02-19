@@ -1,14 +1,20 @@
 ---
-title:                "Nội suy chuỗi ký tự"
 aliases:
 - /vi/google-apps-script/interpolating-a-string/
-date:                  2024-02-01T21:57:17.683306-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Nội suy chuỗi ký tự"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/google-apps-script/interpolating-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:17.683306-07:00
+description: "Vi\u1EC7c n\u1ED9i suy chu\u1ED7i trong Google Apps Script cho ph\xE9\
+  p nh\xFAng \u0111\u1ED9ng c\xE1c bi\u1EC3u th\u1EE9c v\xE0o trong chu\u1ED7i, gi\xFA\
+  p t\u1EA1o ra code d\u1EC5 \u0111\u1ECDc v\xE0 b\u1EA3o tr\xEC h\u01A1n. L\u1EAD\
+  p tr\xECnh vi\xEAn s\u1EED\u2026"
+lastmod: 2024-02-18 23:08:50.203276
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c n\u1ED9i suy chu\u1ED7i trong Google Apps Script cho ph\xE9p nh\xFA\
+  ng \u0111\u1ED9ng c\xE1c bi\u1EC3u th\u1EE9c v\xE0o trong chu\u1ED7i, gi\xFAp t\u1EA1\
+  o ra code d\u1EC5 \u0111\u1ECDc v\xE0 b\u1EA3o tr\xEC h\u01A1n. L\u1EADp tr\xEC\
+  nh vi\xEAn s\u1EED\u2026"
+title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 ---
 
 {{< edit_this_page >}}

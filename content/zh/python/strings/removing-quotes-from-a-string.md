@@ -1,13 +1,22 @@
 ---
-title:                "从字符串中移除引号"
 aliases:
 - /zh/python/removing-quotes-from-a-string/
-date:                  2024-01-26T03:41:50.460444-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "从字符串中移除引号"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:41:50.460444-07:00
+description: "\u4ECE\u5B57\u7B26\u4E32\u4E2D\u79FB\u9664\u5F15\u53F7\u901A\u5E38\u610F\
+  \u5473\u7740\u53BB\u9664\u989D\u5916\u7684\u53CC\u5F15\u53F7 (\") \u6216\u5355\u5F15\
+  \u53F7 (')\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u6E05\u6D01\
+  \u8F93\u5165\uFF0C\u6216\u8005\u5F53\u5F15\u53F7\u5728\u540E\u7EED\u5904\u7406\u4E2D\
+  \u4E0D\u9700\u8981\u65F6\u2014\u2014\u4F8B\u5982\u5728\u5C06\u6587\u672C\u4FDD\u5B58\
+  \u5230\u6570\u636E\u5E93\u6216\u51C6\u5907\u663E\u793A\u65F6\u3002"
+lastmod: 2024-02-18 23:08:58.780292
+model: gpt-4-0125-preview
+summary: "\u4ECE\u5B57\u7B26\u4E32\u4E2D\u79FB\u9664\u5F15\u53F7\u901A\u5E38\u610F\
+  \u5473\u7740\u53BB\u9664\u989D\u5916\u7684\u53CC\u5F15\u53F7 (\") \u6216\u5355\u5F15\
+  \u53F7 (')\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u6E05\u6D01\
+  \u8F93\u5165\uFF0C\u6216\u8005\u5F53\u5F15\u53F7\u5728\u540E\u7EED\u5904\u7406\u4E2D\
+  \u4E0D\u9700\u8981\u65F6\u2014\u2014\u4F8B\u5982\u5728\u5C06\u6587\u672C\u4FDD\u5B58\
+  \u5230\u6570\u636E\u5E93\u6216\u51C6\u5907\u663E\u793A\u65F6\u3002"
+title: "\u4ECE\u5B57\u7B26\u4E32\u4E2D\u79FB\u9664\u5F15\u53F7"
 ---
 
 {{< edit_this_page >}}

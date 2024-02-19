@@ -1,15 +1,30 @@
 ---
-title:                "Работа с JSON"
 aliases:
 - /ru/haskell/working-with-json/
-date:                  2024-01-29T00:04:01.830348-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Работа с JSON"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/haskell/working-with-json.md"
 changelog:
-  - 2024-01-29, gpt-4-0125-preview, translated from English
+- 2024-01-29, gpt-4-0125-preview, translated from English
+date: 2024-01-29 00:04:01.830348-07:00
+description: "JSON (JavaScript Object Notation) \u2014 \u044D\u0442\u043E \u0442\u0435\
+  \u043A\u0441\u0442\u043E\u0432\u044B\u0439 \u0444\u043E\u0440\u043C\u0430\u0442\
+  \ \u0434\u0430\u043D\u043D\u044B\u0445 \u0434\u043B\u044F \u0445\u0440\u0430\u043D\
+  \u0435\u043D\u0438\u044F \u0438 \u043F\u0435\u0440\u0435\u0434\u0430\u0447\u0438\
+  \ \u0434\u0430\u043D\u043D\u044B\u0445. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\
+  \u043C\u0438\u0441\u0442\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044E\
+  \u0442 \u0435\u0433\u043E, \u043F\u043E\u0442\u043E\u043C\u0443 \u0447\u0442\u043E\
+  \ \u043E\u043D \u043B\u0435\u0433\u043A\u0438\u0439, \u043B\u0435\u0433\u043A\u043E\
+  \u2026"
+lastmod: 2024-02-18 23:08:57.074646
+model: gpt-4-0125-preview
+summary: "JSON (JavaScript Object Notation) \u2014 \u044D\u0442\u043E \u0442\u0435\
+  \u043A\u0441\u0442\u043E\u0432\u044B\u0439 \u0444\u043E\u0440\u043C\u0430\u0442\
+  \ \u0434\u0430\u043D\u043D\u044B\u0445 \u0434\u043B\u044F \u0445\u0440\u0430\u043D\
+  \u0435\u043D\u0438\u044F \u0438 \u043F\u0435\u0440\u0435\u0434\u0430\u0447\u0438\
+  \ \u0434\u0430\u043D\u043D\u044B\u0445. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\
+  \u043C\u0438\u0441\u0442\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044E\
+  \u0442 \u0435\u0433\u043E, \u043F\u043E\u0442\u043E\u043C\u0443 \u0447\u0442\u043E\
+  \ \u043E\u043D \u043B\u0435\u0433\u043A\u0438\u0439, \u043B\u0435\u0433\u043A\u043E\
+  \u2026"
+title: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 JSON"
 ---
 
 {{< edit_this_page >}}

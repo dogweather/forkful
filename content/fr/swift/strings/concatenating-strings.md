@@ -1,13 +1,16 @@
 ---
-title:                "Concaténation de chaînes de caractères"
 aliases:
 - /fr/swift/concatenating-strings/
-date:                  2024-01-20T17:35:45.672979-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concaténation de chaînes de caractères"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/concatenating-strings.md"
+date: 2024-01-20 17:35:45.672979-07:00
+description: "Concat\xE9ner des cha\xEEnes, c'est les joindre bout \xE0 bout. On fait\
+  \ \xE7a pour cr\xE9er des phrases, des messages d'erreur, ou assembler des bouts\
+  \ de texte de\u2026"
+lastmod: 2024-02-18 23:09:09.199909
+model: gpt-4-1106-preview
+summary: "Concat\xE9ner des cha\xEEnes, c'est les joindre bout \xE0 bout. On fait\
+  \ \xE7a pour cr\xE9er des phrases, des messages d'erreur, ou assembler des bouts\
+  \ de texte de\u2026"
+title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

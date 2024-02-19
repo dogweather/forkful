@@ -1,15 +1,17 @@
 ---
-title:                "Usando arrays associativos"
 aliases:
 - /pt/arduino/using-associative-arrays/
-date:                  2024-01-30T19:09:58.986336-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando arrays associativos"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:09:58.986336-07:00
+description: "No mundo do Arduino, arrays associativos permitem que voc\xEA associe\
+  \ chaves a valores, algo como parear meias com seus pares. Eles s\xE3o uma escolha\
+  \ acertada\u2026"
+lastmod: 2024-02-18 23:08:58.403218
+model: gpt-4-0125-preview
+summary: "No mundo do Arduino, arrays associativos permitem que voc\xEA associe chaves\
+  \ a valores, algo como parear meias com seus pares. Eles s\xE3o uma escolha acertada\u2026"
+title: Usando arrays associativos
 ---
 
 {{< edit_this_page >}}

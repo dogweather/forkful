@@ -1,14 +1,17 @@
 ---
-title:                "Capitalizando uma string"
 aliases:
 - /pt/swift/capitalizing-a-string/
-date:                  2024-02-03T19:06:28.086100-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizando uma string"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:28.086100-07:00
+description: "Capitalizar uma string em Swift modifica a string dada de modo que seu\
+  \ primeiro caractere seja mai\xFAsculo, e os caracteres restantes sejam min\xFA\
+  sculos.\u2026"
+lastmod: 2024-02-18 23:08:58.474918
+model: gpt-4-0125-preview
+summary: "Capitalizar uma string em Swift modifica a string dada de modo que seu primeiro\
+  \ caractere seja mai\xFAsculo, e os caracteres restantes sejam min\xFAsculos.\u2026"
+title: Capitalizando uma string
 ---
 
 {{< edit_this_page >}}

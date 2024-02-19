@@ -1,13 +1,14 @@
 ---
-title:                "Extracting substrings"
 aliases:
 - /en/lua/extracting-substrings/
-date:                  2024-01-20T17:46:13.109202-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extracting substrings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/extracting-substrings.md"
+date: 2024-01-20 17:46:13.109202-07:00
+description: "Extracting substrings means pulling out a specific chunk of a string.\
+  \ Programmers do it to isolate, analyze, or manipulate specific data within a larger\u2026"
+lastmod: 2024-02-18 23:09:11.167800
+model: gpt-4-1106-preview
+summary: "Extracting substrings means pulling out a specific chunk of a string. Programmers\
+  \ do it to isolate, analyze, or manipulate specific data within a larger\u2026"
+title: Extracting substrings
 ---
 
 {{< edit_this_page >}}

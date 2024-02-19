@@ -1,14 +1,18 @@
 ---
-title:                "Sette stor bokstav i en streng"
 aliases:
 - /no/swift/capitalizing-a-string/
-date:                  2024-02-03T19:06:29.518801-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sette stor bokstav i en streng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:29.518801-07:00
+description: "\xC5 sette stor forbokstav i en streng i Swift endrer den gitte strengen\
+  \ slik at dens f\xF8rste tegn er med stor bokstav, og de gjenv\xE6rende tegnene\
+  \ er med sm\xE5\u2026"
+lastmod: 2024-02-18 23:08:54.252945
+model: gpt-4-0125-preview
+summary: "\xC5 sette stor forbokstav i en streng i Swift endrer den gitte strengen\
+  \ slik at dens f\xF8rste tegn er med stor bokstav, og de gjenv\xE6rende tegnene\
+  \ er med sm\xE5\u2026"
+title: Sette stor bokstav i en streng
 ---
 
 {{< edit_this_page >}}

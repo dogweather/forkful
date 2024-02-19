@@ -1,13 +1,15 @@
 ---
-title:                "Sammenlikning av to datoer"
 aliases:
 - /no/elixir/comparing-two-dates/
-date:                  2024-01-20T17:32:32.952034-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammenlikning av to datoer"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/comparing-two-dates.md"
+date: 2024-01-20 17:32:32.952034-07:00
+description: "Sammenligne to datoer er \xE5 vurdere deres forhold til hverandre -\
+  \ f\xF8r, etter, eller samme dag. Programmerere trenger dette for \xE5 h\xE5ndtere\
+  \ tidsavhengige\u2026"
+lastmod: 2024-02-18 23:08:53.616807
+model: gpt-4-1106-preview
+summary: "Sammenligne to datoer er \xE5 vurdere deres forhold til hverandre - f\xF8\
+  r, etter, eller samme dag. Programmerere trenger dette for \xE5 h\xE5ndtere tidsavhengige\u2026"
+title: Sammenlikning av to datoer
 ---
 
 {{< edit_this_page >}}

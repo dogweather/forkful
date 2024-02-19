@@ -1,13 +1,16 @@
 ---
-title:                "Hantering av fel"
 aliases:
 - /sv/fish-shell/handling-errors/
-date:                  2024-01-26T00:52:27.213944-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Hantering av fel"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/handling-errors.md"
+date: 2024-01-26 00:52:27.213944-07:00
+description: "Felhantering l\xE5ter ditt skript hantera det ov\xE4ntade p\xE5 ett\
+  \ smidigt s\xE4tt. Vi g\xF6r det f\xF6r att hantera fel utan att v\xE5ra anv\xE4\
+  ndares h\xE5r gr\xE5nar."
+lastmod: 2024-02-18 23:08:52.214782
+model: gpt-4-1106-preview
+summary: "Felhantering l\xE5ter ditt skript hantera det ov\xE4ntade p\xE5 ett smidigt\
+  \ s\xE4tt. Vi g\xF6r det f\xF6r att hantera fel utan att v\xE5ra anv\xE4ndares h\xE5\
+  r gr\xE5nar."
+title: Hantering av fel
 ---
 
 {{< edit_this_page >}}

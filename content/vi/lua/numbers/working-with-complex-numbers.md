@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với số phức"
 aliases:
 - /vi/lua/working-with-complex-numbers/
-date:                  2024-01-28T22:12:25.695703-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với số phức"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/lua/working-with-complex-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:25.695703-07:00
+description: "S\u1ED1 ph\u1EE9c m\u1EDF r\u1ED9ng \xFD t\u01B0\u1EDFng c\u1EE7a d\u1EA3\
+  i s\u1ED1 m\u1ED9t chi\u1EC1u th\xE0nh m\u1EB7t ph\u1EB3ng hai chi\u1EC1u b\u1EB1\
+  ng c\xE1ch bao g\u1ED3m m\u1ED9t tr\u1EE5c \u1EA3o vu\xF4ng g\xF3c. L\u1EADp tr\xEC\
+  nh vi\xEAn l\xE0m vi\u1EC7c v\u1EDBi ch\xFAng trong\u2026"
+lastmod: 2024-02-18 23:08:50.830229
+model: gpt-4-0125-preview
+summary: "S\u1ED1 ph\u1EE9c m\u1EDF r\u1ED9ng \xFD t\u01B0\u1EDFng c\u1EE7a d\u1EA3\
+  i s\u1ED1 m\u1ED9t chi\u1EC1u th\xE0nh m\u1EB7t ph\u1EB3ng hai chi\u1EC1u b\u1EB1\
+  ng c\xE1ch bao g\u1ED3m m\u1ED9t tr\u1EE5c \u1EA3o vu\xF4ng g\xF3c. L\u1EADp tr\xEC\
+  nh vi\xEAn l\xE0m vi\u1EC7c v\u1EDBi ch\xFAng trong\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 ---
 
 {{< edit_this_page >}}

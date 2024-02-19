@@ -1,12 +1,13 @@
 ---
-title:                "Getting the current date"
 aliases:
 - /en/elm/getting-the-current-date/
-date:                  2024-01-20T15:13:49.092090-07:00
-simple_title:         "Getting the current date"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/getting-the-current-date.md"
+date: 2024-01-20 15:13:49.092090-07:00
+description: "Getting the current date in Elm means fetching the current calendar\
+  \ date from the system. We do this to timestamp events, schedule tasks, or track\u2026"
+lastmod: 2024-02-18 23:09:10.982167
+summary: "Getting the current date in Elm means fetching the current calendar date\
+  \ from the system. We do this to timestamp events, schedule tasks, or track\u2026"
+title: Getting the current date
 ---
 
 {{< edit_this_page >}}

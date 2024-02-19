@@ -1,13 +1,14 @@
 ---
-title:                "Webseite herunterladen"
 aliases:
 - /de/arduino/downloading-a-web-page/
-date:                  2024-01-20T17:43:43.645851-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Webseite herunterladen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/downloading-a-web-page.md"
+date: 2024-01-20 17:43:43.645851-07:00
+description: "Herunterladen einer Webseite bedeutet, deren Inhalte \xFCber das Internet\
+  \ auf dein Ger\xE4t zu laden. Programmierer tun das, um Daten zu sammeln oder Webdienste\u2026"
+lastmod: 2024-02-18 23:09:05.144793
+model: gpt-4-1106-preview
+summary: "Herunterladen einer Webseite bedeutet, deren Inhalte \xFCber das Internet\
+  \ auf dein Ger\xE4t zu laden. Programmierer tun das, um Daten zu sammeln oder Webdienste\u2026"
+title: Webseite herunterladen
 ---
 
 {{< edit_this_page >}}

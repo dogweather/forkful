@@ -1,13 +1,14 @@
 ---
-title:                "Inviare una richiesta http"
 aliases:
 - /it/python/sending-an-http-request/
-date:                  2024-01-20T18:00:20.173494-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Inviare una richiesta http"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/python/sending-an-http-request.md"
+date: 2024-01-20 18:00:20.173494-07:00
+description: "Inviare una richiesta HTTP significa chiedere o inviare dati a un server\
+  \ web. I programmatori lo fanno per interagire con API, scaricare contenuti o\u2026"
+lastmod: 2024-02-18 23:08:55.518357
+model: gpt-4-1106-preview
+summary: "Inviare una richiesta HTTP significa chiedere o inviare dati a un server\
+  \ web. I programmatori lo fanno per interagire con API, scaricare contenuti o\u2026"
+title: Inviare una richiesta http
 ---
 
 {{< edit_this_page >}}

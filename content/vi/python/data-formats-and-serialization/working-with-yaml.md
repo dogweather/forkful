@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với YAML"
 aliases:
 - /vi/python/working-with-yaml/
-date:                  2024-01-28T22:11:59.982289-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với YAML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/python/working-with-yaml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:59.982289-07:00
+description: "L\xE0m vi\u1EC7c v\u1EDBi YAML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xED\
+  ch v\xE0 t\u1EA1o ra c\xE1c t\xE0i li\u1EC7u YAML (Yet Another Markup Language -\
+  \ Ng\xF4n Ng\u1EEF \u0110\xE1nh D\u1EA5u Kh\xE1c) trong Python. L\u1EADp tr\xEC\
+  nh vi\xEAn\u2026"
+lastmod: 2024-02-18 23:08:50.290624
+model: gpt-4-0125-preview
+summary: "L\xE0m vi\u1EC7c v\u1EDBi YAML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch v\xE0\
+  \ t\u1EA1o ra c\xE1c t\xE0i li\u1EC7u YAML (Yet Another Markup Language - Ng\xF4\
+  n Ng\u1EEF \u0110\xE1nh D\u1EA5u Kh\xE1c) trong Python. L\u1EADp tr\xECnh vi\xEA\
+  n\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 ---
 
 {{< edit_this_page >}}

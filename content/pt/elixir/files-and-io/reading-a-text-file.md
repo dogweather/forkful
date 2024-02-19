@@ -1,13 +1,16 @@
 ---
-title:                "Lendo um arquivo de texto"
 aliases:
 - /pt/elixir/reading-a-text-file/
-date:                  2024-01-20T17:54:22.931555-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lendo um arquivo de texto"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/reading-a-text-file.md"
+date: 2024-01-20 17:54:22.931555-07:00
+description: "Ler um arquivo de texto em programa\xE7\xE3o significa acessar e recuperar\
+  \ informa\xE7\xF5es de um arquivo salvo em disco. Programadores fazem isso para\
+  \ manipular\u2026"
+lastmod: 2024-02-18 23:08:57.861028
+model: gpt-4-1106-preview
+summary: "Ler um arquivo de texto em programa\xE7\xE3o significa acessar e recuperar\
+  \ informa\xE7\xF5es de um arquivo salvo em disco. Programadores fazem isso para\
+  \ manipular\u2026"
+title: Lendo um arquivo de texto
 ---
 
 {{< edit_this_page >}}

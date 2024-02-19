@@ -1,13 +1,16 @@
 ---
-title:                "Ermittlung der Zeichenkettenlänge"
 aliases:
 - /de/javascript/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:30.376083-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ermittlung der Zeichenkettenlänge"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:30.376083-07:00
+description: "Das Ermitteln der L\xE4nge eines Strings bedeutet, zu z\xE4hlen, wie\
+  \ viele Zeichen er enth\xE4lt. Programmierer tun dies, um die Verarbeitung von Textdaten\
+  \ zu\u2026"
+lastmod: 2024-02-18 23:09:05.269189
+model: gpt-4-1106-preview
+summary: "Das Ermitteln der L\xE4nge eines Strings bedeutet, zu z\xE4hlen, wie viele\
+  \ Zeichen er enth\xE4lt. Programmierer tun dies, um die Verarbeitung von Textdaten\
+  \ zu\u2026"
+title: "Ermittlung der Zeichenkettenl\xE4nge"
 ---
 
 {{< edit_this_page >}}

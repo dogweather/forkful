@@ -1,14 +1,16 @@
 ---
-title:                "テキストファイルの読み込み"
 aliases:
 - /ja/google-apps-script/reading-a-text-file/
-date:                  2024-02-01T21:58:26.082369-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "テキストファイルの読み込み"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/google-apps-script/reading-a-text-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:26.082369-07:00
+description: "Google Apps Script\uFF08GAS\uFF09\u3067\u30C6\u30AD\u30B9\u30C8\u30D5\
+  \u30A1\u30A4\u30EB\u3092\u8AAD\u307F\u8FBC\u3080\u3068\u306F\u3001Google\u2026"
+lastmod: 2024-02-18 23:08:54.540511
+model: gpt-4-0125-preview
+summary: "Google Apps Script\uFF08GAS\uFF09\u3067\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\
+  \u30A4\u30EB\u3092\u8AAD\u307F\u8FBC\u3080\u3068\u306F\u3001Google\u2026"
+title: "\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u306E\u8AAD\u307F\u8FBC\u307F"
 ---
 
 {{< edit_this_page >}}

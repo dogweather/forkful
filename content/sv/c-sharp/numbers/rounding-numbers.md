@@ -1,13 +1,16 @@
 ---
-title:                "Avrundning av tal"
 aliases:
 - /sv/c-sharp/rounding-numbers/
-date:                  2024-01-26T03:43:40.997551-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Avrundning av tal"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/rounding-numbers.md"
+date: 2024-01-26 03:43:40.997551-07:00
+description: "Att avrunda tal inneb\xE4r att justera dem till det n\xE4rmaste angivna\
+  \ platsv\xE4rdet\u2014t\xE4nk dig att du f\xF6renklar dem. Programmerare avrundar\
+  \ f\xF6r att kontrollera\u2026"
+lastmod: 2024-02-18 23:08:51.790438
+model: gpt-4-0125-preview
+summary: "Att avrunda tal inneb\xE4r att justera dem till det n\xE4rmaste angivna\
+  \ platsv\xE4rdet\u2014t\xE4nk dig att du f\xF6renklar dem. Programmerare avrundar\
+  \ f\xF6r att kontrollera\u2026"
+title: Avrundning av tal
 ---
 
 {{< edit_this_page >}}

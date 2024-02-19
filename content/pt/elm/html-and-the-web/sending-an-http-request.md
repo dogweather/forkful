@@ -1,13 +1,15 @@
 ---
-title:                "Enviando uma requisição HTTP"
 aliases:
 - /pt/elm/sending-an-http-request/
-date:                  2024-01-20T17:59:38.705437-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando uma requisição HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/sending-an-http-request.md"
+date: 2024-01-20 17:59:38.705437-07:00
+description: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o jeito de o seu programa bater\
+  \ papo com um servidor, pedindo ou enviando dados. Programadores fazem isso para\
+  \ buscar\u2026"
+lastmod: 2024-02-18 23:08:58.057520
+model: gpt-4-1106-preview
+summary: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o jeito de o seu programa bater papo\
+  \ com um servidor, pedindo ou enviando dados. Programadores fazem isso para buscar\u2026"
+title: "Enviando uma requisi\xE7\xE3o HTTP"
 ---
 
 {{< edit_this_page >}}

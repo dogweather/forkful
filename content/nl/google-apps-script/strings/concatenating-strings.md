@@ -1,14 +1,16 @@
 ---
-title:                "Strings samenvoegen"
 aliases:
 - /nl/google-apps-script/concatenating-strings/
-date:                  2024-02-01T21:50:09.482019-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Strings samenvoegen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/google-apps-script/concatenating-strings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:09.482019-07:00
+description: "Het aaneenschakelen van strings houdt in dat twee of meer strings worden\
+  \ gecombineerd tot \xE9\xE9n enkele string. Programmeurs doen dit om dynamisch berichten,\u2026"
+lastmod: 2024-02-18 23:09:01.376493
+model: gpt-4-0125-preview
+summary: "Het aaneenschakelen van strings houdt in dat twee of meer strings worden\
+  \ gecombineerd tot \xE9\xE9n enkele string. Programmeurs doen dit om dynamisch berichten,\u2026"
+title: Strings samenvoegen
 ---
 
 {{< edit_this_page >}}

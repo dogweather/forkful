@@ -1,14 +1,18 @@
 ---
-title:                "Gerenciando erros"
 aliases:
 - /pt/google-apps-script/handling-errors/
-date:                  2024-02-01T21:55:12.073586-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gerenciando erros"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/google-apps-script/handling-errors.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:12.073586-07:00
+description: "O tratamento de erros no Google Apps Script \xE9 sobre prever, capturar\
+  \ e responder a exce\xE7\xF5es ou erros que ocorrem durante a execu\xE7\xE3o do\
+  \ script. Os\u2026"
+lastmod: 2024-02-18 23:08:57.724288
+model: gpt-4-0125-preview
+summary: "O tratamento de erros no Google Apps Script \xE9 sobre prever, capturar\
+  \ e responder a exce\xE7\xF5es ou erros que ocorrem durante a execu\xE7\xE3o do\
+  \ script. Os\u2026"
+title: Gerenciando erros
 ---
 
 {{< edit_this_page >}}

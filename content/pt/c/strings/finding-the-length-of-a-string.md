@@ -1,14 +1,16 @@
 ---
-title:                "Encontrando o comprimento de uma string"
 aliases:
 - /pt/c/finding-the-length-of-a-string/
-date:                  2024-02-03T17:56:31.837424-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Encontrando o comprimento de uma string"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:31.837424-07:00
+description: "Encontrar o comprimento de uma string em C envolve determinar o n\xFA\
+  mero de caracteres antes do terminador nulo `\\0`. Os programadores fazem isso para\u2026"
+lastmod: 2024-02-18 23:08:58.609281
+model: gpt-4-0125-preview
+summary: "Encontrar o comprimento de uma string em C envolve determinar o n\xFAmero\
+  \ de caracteres antes do terminador nulo `\\0`. Os programadores fazem isso para\u2026"
+title: Encontrando o comprimento de uma string
 ---
 
 {{< edit_this_page >}}

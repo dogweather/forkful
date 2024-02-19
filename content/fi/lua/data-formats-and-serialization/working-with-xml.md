@@ -1,13 +1,16 @@
 ---
-title:                "XML:n käsittely"
 aliases:
 - /fi/lua/working-with-xml/
-date:                  2024-01-26T04:33:43.001779-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML:n käsittely"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/working-with-xml.md"
+date: 2024-01-26 04:33:43.001779-07:00
+description: "XML:n kanssa ty\xF6skentelyn yhteydess\xE4 k\xE4sitell\xE4\xE4n XML-dokumentteja\
+  \ koodin avulla. Ohjelmoijat tekev\xE4t t\xE4m\xE4n lukeakseen, kirjoittaakseen\
+  \ ja muokatakseen\u2026"
+lastmod: 2024-02-18 23:09:07.783371
+model: gpt-4-0125-preview
+summary: "XML:n kanssa ty\xF6skentelyn yhteydess\xE4 k\xE4sitell\xE4\xE4n XML-dokumentteja\
+  \ koodin avulla. Ohjelmoijat tekev\xE4t t\xE4m\xE4n lukeakseen, kirjoittaakseen\
+  \ ja muokatakseen\u2026"
+title: "XML:n k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

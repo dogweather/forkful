@@ -1,14 +1,18 @@
 ---
-title:                "Työskentely JSON:n kanssa"
 aliases:
 - /fi/haskell/working-with-json/
-date:                  2024-02-03T19:23:41.947965-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely JSON:n kanssa"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:41.947965-07:00
+description: "JSONin (JavaScript Object Notation) k\xE4sittely Haskellissa sis\xE4\
+  lt\xE4\xE4 JSON-datan j\xE4sent\xE4misen Haskell-tyypeiksi ja Haskell-tyyppien muuntamisen\
+  \ takaisin\u2026"
+lastmod: 2024-02-18 23:09:07.689321
+model: gpt-4-0125-preview
+summary: "JSONin (JavaScript Object Notation) k\xE4sittely Haskellissa sis\xE4lt\xE4\
+  \xE4 JSON-datan j\xE4sent\xE4misen Haskell-tyypeiksi ja Haskell-tyyppien muuntamisen\
+  \ takaisin\u2026"
+title: "Ty\xF6skentely JSON:n kanssa"
 ---
 
 {{< edit_this_page >}}

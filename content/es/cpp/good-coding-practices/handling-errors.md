@@ -1,13 +1,14 @@
 ---
-title:                "Manejo de errores"
 aliases:
 - /es/cpp/handling-errors/
-date:                  2024-01-26T00:49:52.602267-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Manejo de errores"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/handling-errors.md"
+date: 2024-01-26 00:49:52.602267-07:00
+description: "Manejar errores significa planificar para cuando las cosas salen mal.\
+  \ Es vital porque ayuda a evitar fallos y hace que tu software sea robusto y amigable\u2026"
+lastmod: 2024-02-18 23:09:10.318859
+model: gpt-4-1106-preview
+summary: "Manejar errores significa planificar para cuando las cosas salen mal. Es\
+  \ vital porque ayuda a evitar fallos y hace que tu software sea robusto y amigable\u2026"
+title: Manejo de errores
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Att använda reguljära uttryck"
 aliases:
 - /sv/fish-shell/using-regular-expressions/
-date:                  2024-02-03T19:16:57.465657-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda reguljära uttryck"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:16:57.465657-07:00
+description: "Regulj\xE4ra uttryck (regex) i Fish Shell g\xF6r det m\xF6jligt f\xF6\
+  r dig att s\xF6ka, matcha och manipulera str\xE4ngar baserat p\xE5 specifika m\xF6\
+  nster. Programmerare\u2026"
+lastmod: 2024-02-18 23:08:52.195909
+model: gpt-4-0125-preview
+summary: "Regulj\xE4ra uttryck (regex) i Fish Shell g\xF6r det m\xF6jligt f\xF6r dig\
+  \ att s\xF6ka, matcha och manipulera str\xE4ngar baserat p\xE5 specifika m\xF6nster.\
+  \ Programmerare\u2026"
+title: "Att anv\xE4nda regulj\xE4ra uttryck"
 ---
 
 {{< edit_this_page >}}

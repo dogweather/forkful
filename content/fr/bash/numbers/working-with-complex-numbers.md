@@ -1,13 +1,14 @@
 ---
-title:                "Manipulation des nombres complexes"
 aliases:
 - /fr/bash/working-with-complex-numbers/
-date:                  2024-01-26T04:36:39.816396-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulation des nombres complexes"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/working-with-complex-numbers.md"
+date: 2024-01-26 04:36:39.816396-07:00
+description: "Les nombres complexes se composent d'une partie r\xE9elle et d'une partie\
+  \ imaginaire. Les programmeurs les utilisent dans des domaines comme le traitement\u2026"
+lastmod: 2024-02-18 23:09:09.010043
+model: gpt-4-0125-preview
+summary: "Les nombres complexes se composent d'une partie r\xE9elle et d'une partie\
+  \ imaginaire. Les programmeurs les utilisent dans des domaines comme le traitement\u2026"
+title: Manipulation des nombres complexes
 ---
 
 {{< edit_this_page >}}

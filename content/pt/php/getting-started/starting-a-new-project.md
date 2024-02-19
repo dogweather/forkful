@@ -1,13 +1,14 @@
 ---
-title:                "Iniciando um novo projeto"
 aliases:
 - /pt/php/starting-a-new-project/
-date:                  2024-01-20T18:04:04.507321-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Iniciando um novo projeto"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/starting-a-new-project.md"
+date: 2024-01-20 18:04:04.507321-07:00
+description: "Iniciar um novo projeto de programa\xE7\xE3o \xE9 como colocar uma semente\
+  \ na terra esperando que cres\xE7a e se transforme em uma \xE1rvore robusta. Programadores\u2026"
+lastmod: 2024-02-18 23:08:58.241536
+model: gpt-4-1106-preview
+summary: "Iniciar um novo projeto de programa\xE7\xE3o \xE9 como colocar uma semente\
+  \ na terra esperando que cres\xE7a e se transforme em uma \xE1rvore robusta. Programadores\u2026"
+title: Iniciando um novo projeto
 ---
 
 {{< edit_this_page >}}

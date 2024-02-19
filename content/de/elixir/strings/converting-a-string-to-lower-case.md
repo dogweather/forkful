@@ -1,13 +1,16 @@
 ---
-title:                "Umformung eines Strings in Kleinbuchstaben"
 aliases:
 - /de/elixir/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:15.380096-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Umformung eines Strings in Kleinbuchstaben"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:15.380096-07:00
+description: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, jeden Gro\xDF\
+  buchstaben in seinem \xC4quivalent in Kleinbuchstaben zu \xE4ndern. Es wird oft\
+  \ verwendet, um\u2026"
+lastmod: 2024-02-18 23:09:04.538160
+model: gpt-4-1106-preview
+summary: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, jeden Gro\xDFbuchstaben\
+  \ in seinem \xC4quivalent in Kleinbuchstaben zu \xE4ndern. Es wird oft verwendet,\
+  \ um\u2026"
+title: Umformung eines Strings in Kleinbuchstaben
 ---
 
 {{< edit_this_page >}}

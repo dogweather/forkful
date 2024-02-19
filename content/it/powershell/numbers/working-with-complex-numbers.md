@@ -1,13 +1,14 @@
 ---
-title:                "Lavorare con i numeri complessi"
 aliases:
 - /it/powershell/working-with-complex-numbers/
-date:                  2024-01-26T04:44:11.447709-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con i numeri complessi"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/working-with-complex-numbers.md"
+date: 2024-01-26 04:44:11.447709-07:00
+description: "I numeri complessi, quelli con una parte reale e una parte immaginaria\
+  \ (come 3 + 4i), sono fondamentali in ambiti come l'ingegneria, la fisica e la\u2026"
+lastmod: 2024-02-18 23:08:56.086895
+model: gpt-4-0125-preview
+summary: "I numeri complessi, quelli con una parte reale e una parte immaginaria (come\
+  \ 3 + 4i), sono fondamentali in ambiti come l'ingegneria, la fisica e la\u2026"
+title: Lavorare con i numeri complessi
 ---
 
 {{< edit_this_page >}}

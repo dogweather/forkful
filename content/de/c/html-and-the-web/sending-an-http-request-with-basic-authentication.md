@@ -1,14 +1,16 @@
 ---
-title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
 aliases:
 - /de/c/sending-an-http-request-with-basic-authentication/
-date:                  2024-02-03T18:09:00.064764-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:09:00.064764-07:00
+description: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in C erfordert\
+  \ das Erstellen einer HTTP-Anfrage, die einen Autorisierungsheader mit in Base64\u2026"
+lastmod: 2024-02-18 23:09:05.373088
+model: gpt-4-0125-preview
+summary: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in C erfordert\
+  \ das Erstellen einer HTTP-Anfrage, die einen Autorisierungsheader mit in Base64\u2026"
+title: Eine HTTP-Anfrage mit Basisauthentifizierung senden
 ---
 
 {{< edit_this_page >}}

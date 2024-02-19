@@ -1,13 +1,16 @@
 ---
-title:                "Praca z TOML"
 aliases:
 - /pl/elm/working-with-toml/
-date:                  2024-01-26T04:21:25.921072-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/working-with-toml.md"
+date: 2024-01-26 04:21:25.921072-07:00
+description: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, to j\u0119zyk serializacji\
+  \ danych. Programi\u015Bci Elm u\u017Cywaj\u0105 go do zarz\u0105dzania danymi konfiguracyjnymi,\
+  \ poniewa\u017C\u2026"
+lastmod: 2024-02-18 23:08:49.541311
+model: gpt-4-0125-preview
+summary: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, to j\u0119zyk serializacji\
+  \ danych. Programi\u015Bci Elm u\u017Cywaj\u0105 go do zarz\u0105dzania danymi konfiguracyjnymi,\
+  \ poniewa\u017C\u2026"
+title: Praca z TOML
 ---
 
 {{< edit_this_page >}}

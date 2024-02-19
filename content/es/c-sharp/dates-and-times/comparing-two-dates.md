@@ -1,13 +1,14 @@
 ---
-title:                "Comparación de dos fechas"
 aliases:
 - /es/c-sharp/comparing-two-dates/
-date:                  2024-01-20T17:32:32.873417-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Comparación de dos fechas"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/comparing-two-dates.md"
+date: 2024-01-20 17:32:32.873417-07:00
+description: "Comparar dos fechas significa verificar si una es anterior, posterior\
+  \ o igual a la otra. Los programadores lo hacen para gestionar eventos, validar\u2026"
+lastmod: 2024-02-18 23:09:09.995428
+model: gpt-4-1106-preview
+summary: "Comparar dos fechas significa verificar si una es anterior, posterior o\
+  \ igual a la otra. Los programadores lo hacen para gestionar eventos, validar\u2026"
+title: "Comparaci\xF3n de dos fechas"
 ---
 
 {{< edit_this_page >}}

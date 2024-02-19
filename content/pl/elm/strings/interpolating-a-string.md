@@ -1,13 +1,16 @@
 ---
-title:                "Interpolacja łańcuchów znaków"
 aliases:
 - /pl/elm/interpolating-a-string/
-date:                  2024-01-20T17:50:38.903551-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolacja łańcuchów znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/interpolating-a-string.md"
+date: 2024-01-20 17:50:38.903551-07:00
+description: "Interpolacja string\xF3w pozwala nam wplata\u0107 warto\u015Bci zmiennych\
+  \ w ci\u0105gi tekstowe, u\u0142atwiaj\u0105c dynamiczne tworzenie tre\u015Bci.\
+  \ Programi\u015Bci u\u017Cywaj\u0105 interpolacji,\u2026"
+lastmod: 2024-02-18 23:08:49.505578
+model: gpt-4-1106-preview
+summary: "Interpolacja string\xF3w pozwala nam wplata\u0107 warto\u015Bci zmiennych\
+  \ w ci\u0105gi tekstowe, u\u0142atwiaj\u0105c dynamiczne tworzenie tre\u015Bci.\
+  \ Programi\u015Bci u\u017Cywaj\u0105 interpolacji,\u2026"
+title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 ---
 
 {{< edit_this_page >}}

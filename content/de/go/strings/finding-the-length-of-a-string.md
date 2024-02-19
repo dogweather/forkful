@@ -1,14 +1,18 @@
 ---
-title:                "Die Länge einer Zeichenkette ermitteln"
 aliases:
 - /de/go/finding-the-length-of-a-string/
-date:                  2024-02-03T17:56:43.657527-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Die Länge einer Zeichenkette ermitteln"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:43.657527-07:00
+description: "Die L\xE4nge eines Strings in Go zu finden, bedeutet, die Anzahl der\
+  \ Zeichen zu bestimmen, die er enth\xE4lt. Programmierer f\xFChren diese Operation\
+  \ routinem\xE4\xDFig\u2026"
+lastmod: 2024-02-18 23:09:04.352942
+model: gpt-4-0125-preview
+summary: "Die L\xE4nge eines Strings in Go zu finden, bedeutet, die Anzahl der Zeichen\
+  \ zu bestimmen, die er enth\xE4lt. Programmierer f\xFChren diese Operation routinem\xE4\
+  \xDFig\u2026"
+title: "Die L\xE4nge einer Zeichenkette ermitteln"
 ---
 
 {{< edit_this_page >}}

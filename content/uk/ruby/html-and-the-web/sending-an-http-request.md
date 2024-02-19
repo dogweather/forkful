@@ -1,13 +1,17 @@
 ---
-title:                "Надсилання HTTP-запиту"
 aliases:
 - /uk/ruby/sending-an-http-request/
-date:                  2024-01-20T18:00:30.101099-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Надсилання HTTP-запиту"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/ruby/sending-an-http-request.md"
+date: 2024-01-20 18:00:30.101099-07:00
+description: "\u0421\u0443\u0442\u044C \u0442\u0430 \u041F\u0440\u0438\u0447\u0438\
+  \u043D\u0438? Sending HTTP requests is how your Ruby program talks to the web; it's\
+  \ like asking a question and awaiting the answer. Programmers do this\u2026"
+lastmod: 2024-02-18 23:09:01.270485
+model: gpt-4-1106-preview
+summary: "\u0421\u0443\u0442\u044C \u0442\u0430 \u041F\u0440\u0438\u0447\u0438\u043D\
+  \u0438? Sending HTTP requests is how your Ruby program talks to the web; it's like\
+  \ asking a question and awaiting the answer. Programmers do this\u2026"
+title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437\u0430\
+  \u043F\u0438\u0442\u0443"
 ---
 
 {{< edit_this_page >}}

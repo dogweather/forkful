@@ -1,14 +1,16 @@
 ---
-title:                "Lainausmerkkien poistaminen merkkijonosta"
 aliases:
 - /fi/go/removing-quotes-from-a-string/
-date:                  2024-02-03T18:07:33.044836-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lainausmerkkien poistaminen merkkijonosta"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:33.044836-07:00
+description: "Merkkijonosta lainausmerkkien poistaminen Go:ssa tarkoittaa annetun\
+  \ merkkijonon alussa ja lopussa olevien lainausmerkkien (`\"` tai `'`) eliminointia.\u2026"
+lastmod: 2024-02-18 23:09:07.070708
+model: gpt-4-0125-preview
+summary: "Merkkijonosta lainausmerkkien poistaminen Go:ssa tarkoittaa annetun merkkijonon\
+  \ alussa ja lopussa olevien lainausmerkkien (`\"` tai `'`) eliminointia.\u2026"
+title: Lainausmerkkien poistaminen merkkijonosta
 ---
 
 {{< edit_this_page >}}

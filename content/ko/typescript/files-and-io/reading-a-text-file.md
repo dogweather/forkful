@@ -1,14 +1,21 @@
 ---
-title:                "텍스트 파일 읽기"
 aliases:
 - /ko/typescript/reading-a-text-file/
-date:                  2024-01-20T17:55:11.142764-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "텍스트 파일 읽기"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/reading-a-text-file.md"
+date: 2024-01-20 17:55:11.142764-07:00
+description: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30\uB294 \uD30C\uC77C\uC758\
+  \ \uB0B4\uC6A9\uC744 \uCF54\uB4DC\uB85C \uAC00\uC838\uC624\uB294 \uAC83\uC785\uB2C8\
+  \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB370\uC774\uD130\uB97C \uBD88\
+  \uB7EC\uC624\uAC70\uB098 \uC124\uC815\uC744 \uC77D\uAE30 \uC704\uD574 \uC774 \uC791\
+  \uC5C5\uC744 \uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:05.846200
+model: gpt-4-1106-preview
+summary: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30\uB294 \uD30C\uC77C\uC758 \uB0B4\
+  \uC6A9\uC744 \uCF54\uB4DC\uB85C \uAC00\uC838\uC624\uB294 \uAC83\uC785\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB370\uC774\uD130\uB97C \uBD88\uB7EC\
+  \uC624\uAC70\uB098 \uC124\uC815\uC744 \uC77D\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\
+  \uC744 \uD569\uB2C8\uB2E4."
+title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
 ---
 
 {{< edit_this_page >}}

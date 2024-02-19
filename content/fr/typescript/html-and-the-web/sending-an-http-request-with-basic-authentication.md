@@ -1,13 +1,16 @@
 ---
-title:                "Envoi d'une requête HTTP avec authentification de base"
 aliases:
 - /fr/typescript/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:47.319162-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Envoi d'une requête HTTP avec authentification de base"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:47.319162-07:00
+description: "Envoyer une requ\xEAte HTTP avec une authentification de base signifie\
+  \ inclure des informations d'identification cod\xE9es dans les en-t\xEAtes pour\
+  \ acc\xE9der \xE0 une\u2026"
+lastmod: 2024-02-18 23:09:08.481442
+model: gpt-4-1106-preview
+summary: "Envoyer une requ\xEAte HTTP avec une authentification de base signifie inclure\
+  \ des informations d'identification cod\xE9es dans les en-t\xEAtes pour acc\xE9\
+  der \xE0 une\u2026"
+title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 ---
 
 {{< edit_this_page >}}

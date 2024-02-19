@@ -1,15 +1,20 @@
 ---
-title:                "Sắp xếp mã thành các hàm"
 aliases:
 - /vi/javascript/organizing-code-into-functions/
-date:                  2024-01-28T22:03:18.389888-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sắp xếp mã thành các hàm"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/organizing-code-into-functions.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:03:18.389888-07:00
+description: "T\u1ED5 ch\u1EE9c m\xE3 l\u1EC7nh th\xE0nh c\xE1c h\xE0m chia nh\u1EEF\
+  ng nhi\u1EC7m v\u1EE5 ra th\xE0nh c\xE1c ph\u1EA7n c\xF3 th\u1EC3 t\xE1i s\u1EED\
+  \ d\u1EE5ng, l\xE0m cho m\xE3 l\u1EC7nh tr\u1EDF n\xEAn g\u1ECDn g\xE0ng v\xE0 d\u1EC5\
+  \ b\u1EA3o tr\xEC h\u01A1n. Ch\xFAng ta l\xE0m\u2026"
+lastmod: 2024-02-18 23:08:51.142192
+model: gpt-4-0125-preview
+summary: "T\u1ED5 ch\u1EE9c m\xE3 l\u1EC7nh th\xE0nh c\xE1c h\xE0m chia nh\u1EEFng\
+  \ nhi\u1EC7m v\u1EE5 ra th\xE0nh c\xE1c ph\u1EA7n c\xF3 th\u1EC3 t\xE1i s\u1EED\
+  \ d\u1EE5ng, l\xE0m cho m\xE3 l\u1EC7nh tr\u1EDF n\xEAn g\u1ECDn g\xE0ng v\xE0 d\u1EC5\
+  \ b\u1EA3o tr\xEC h\u01A1n. Ch\xFAng ta l\xE0m\u2026"
+title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 ---
 
 {{< edit_this_page >}}

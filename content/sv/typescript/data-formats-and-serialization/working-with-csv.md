@@ -1,14 +1,18 @@
 ---
-title:                "Arbeta med CSV"
 aliases:
 - /sv/typescript/working-with-csv/
-date:                  2024-02-03T19:21:28.607955-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeta med CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:21:28.607955-07:00
+description: "Att arbeta med CSV (Comma-Separated Values) inneb\xE4r att l\xE4sa fr\xE5\
+  n och skriva till CSV-filer, ett vanligt datautbytesformat som anv\xE4nds p\xE5\
+  \ grund av sin\u2026"
+lastmod: 2024-02-18 23:08:51.565178
+model: gpt-4-0125-preview
+summary: "Att arbeta med CSV (Comma-Separated Values) inneb\xE4r att l\xE4sa fr\xE5\
+  n och skriva till CSV-filer, ett vanligt datautbytesformat som anv\xE4nds p\xE5\
+  \ grund av sin\u2026"
+title: Arbeta med CSV
 ---
 
 {{< edit_this_page >}}

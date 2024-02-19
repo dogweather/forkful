@@ -1,12 +1,15 @@
 ---
-title:                "Przetwarzanie HTML"
 aliases:
 - /pl/swift/parsing-html/
-date:                  2024-01-20T15:33:59.514523-07:00
-simple_title:         "Przetwarzanie HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/parsing-html.md"
+date: 2024-01-20 15:33:59.514523-07:00
+description: "Parsing HTML oznacza proces analizowania struktury kodu HTML, aby wydoby\u0107\
+  \ z niego konkretne dane. Programi\u015Bci robi\u0105 to, by pozyska\u0107 informacje\
+  \ ze stron\u2026"
+lastmod: 2024-02-18 23:08:49.950800
+summary: "Parsing HTML oznacza proces analizowania struktury kodu HTML, aby wydoby\u0107\
+  \ z niego konkretne dane. Programi\u015Bci robi\u0105 to, by pozyska\u0107 informacje\
+  \ ze stron\u2026"
+title: Przetwarzanie HTML
 ---
 
 {{< edit_this_page >}}

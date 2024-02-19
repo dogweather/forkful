@@ -1,13 +1,16 @@
 ---
-title:                "Sammanslagning av strängar"
 aliases:
 - /sv/python/concatenating-strings/
-date:                  2024-01-20T17:35:41.330369-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammanslagning av strängar"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/concatenating-strings.md"
+date: 2024-01-20 17:35:41.330369-07:00
+description: "Sammanfogning av str\xE4ngar, eller \"concatenation\" som det ofta kallas,\
+  \ inneb\xE4r att du kopplar ihop tv\xE5 eller flera textstycken till en enda str\xE4\
+  ng.\u2026"
+lastmod: 2024-02-18 23:08:51.414267
+model: gpt-4-1106-preview
+summary: "Sammanfogning av str\xE4ngar, eller \"concatenation\" som det ofta kallas,\
+  \ inneb\xE4r att du kopplar ihop tv\xE5 eller flera textstycken till en enda str\xE4\
+  ng.\u2026"
+title: "Sammanslagning av str\xE4ngar"
 ---
 
 {{< edit_this_page >}}

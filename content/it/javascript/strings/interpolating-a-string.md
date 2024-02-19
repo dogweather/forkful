@@ -1,13 +1,15 @@
 ---
-title:                "Interpolazione di una stringa"
 aliases:
 - /it/javascript/interpolating-a-string/
-date:                  2024-01-20T17:51:00.255099-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolazione di una stringa"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/javascript/interpolating-a-string.md"
+date: 2024-01-20 17:51:00.255099-07:00
+description: "L\u2019interpolazione di stringhe in JavaScript consente di inserire\
+  \ espressioni all\u2019interno di una stringa, rendendone la composizione dinamica\
+  \ e flessibile.\u2026"
+lastmod: 2024-02-18 23:08:56.239648
+model: gpt-4-1106-preview
+summary: "L\u2019interpolazione di stringhe in JavaScript consente di inserire espressioni\
+  \ all\u2019interno di una stringa, rendendone la composizione dinamica e flessibile.\u2026"
+title: Interpolazione di una stringa
 ---
 
 {{< edit_this_page >}}

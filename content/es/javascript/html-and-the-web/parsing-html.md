@@ -1,16 +1,17 @@
 ---
-title:                "Análisis de HTML"
 aliases:
 - /es/javascript/parsing-html/
-date:                  2024-01-28T03:00:40.575760-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Análisis de HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/parsing-html.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 03:00:40.575760-07:00
+description: "Analizar HTML significa extraer datos de documentos HTML. Los programadores\
+  \ lo hacen para interactuar con o manipular contenido web, automatizar la\u2026"
+lastmod: 2024-02-18 23:09:10.402346
+model: gpt-4-0125-preview
+summary: "Analizar HTML significa extraer datos de documentos HTML. Los programadores\
+  \ lo hacen para interactuar con o manipular contenido web, automatizar la\u2026"
+title: "An\xE1lisis de HTML"
 ---
 
 {{< edit_this_page >}}

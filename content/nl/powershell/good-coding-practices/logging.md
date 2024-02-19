@@ -1,15 +1,16 @@
 ---
-title:                "Logboekregistratie"
 aliases:
 - /nl/powershell/logging/
-date:                  2024-01-28T22:02:45.905587-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Logboekregistratie"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/powershell/logging.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:02:45.905587-07:00
+description: "Loggen is in feite een broodkruimelspoor achterlaten door je code -\
+  \ het is hoe je bijhoudt wat er gebeurt wanneer je script in het wild draait.\u2026"
+lastmod: 2024-02-18 23:09:02.099092
+model: gpt-4-0125-preview
+summary: "Loggen is in feite een broodkruimelspoor achterlaten door je code - het\
+  \ is hoe je bijhoudt wat er gebeurt wanneer je script in het wild draait.\u2026"
+title: Logboekregistratie
 ---
 
 {{< edit_this_page >}}

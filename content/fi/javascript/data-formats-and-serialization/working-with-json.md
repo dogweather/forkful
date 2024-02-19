@@ -1,14 +1,18 @@
 ---
-title:                "Työskentely JSON:n kanssa"
 aliases:
 - /fi/javascript/working-with-json/
-date:                  2024-02-03T19:23:19.325133-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely JSON:n kanssa"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:19.325133-07:00
+description: "JSON (JavaScript Object Notation) on kevyt datanvaihtoformaatti, joka\
+  \ on ihmisten luettavissa ja kirjoitettavissa sek\xE4 koneiden j\xE4sent\xE4m\xE4\
+  ss\xE4 ja\u2026"
+lastmod: 2024-02-18 23:09:08.059207
+model: gpt-4-0125-preview
+summary: "JSON (JavaScript Object Notation) on kevyt datanvaihtoformaatti, joka on\
+  \ ihmisten luettavissa ja kirjoitettavissa sek\xE4 koneiden j\xE4sent\xE4m\xE4ss\xE4\
+  \ ja\u2026"
+title: "Ty\xF6skentely JSON:n kanssa"
 ---
 
 {{< edit_this_page >}}

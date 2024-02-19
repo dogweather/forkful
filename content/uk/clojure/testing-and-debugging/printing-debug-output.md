@@ -1,13 +1,16 @@
 ---
-title:                "Виведення налагоджувальної інформації"
 aliases:
 - /uk/clojure/printing-debug-output/
-date:                  2024-01-20T17:52:27.243650-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Виведення налагоджувальної інформації"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/printing-debug-output.md"
+date: 2024-01-20 17:52:27.243650-07:00
+description: "Printing debug output is about showing intermediate results or variables\
+  \ while your program is running. We do it to hunt bugs or just understand what's\u2026"
+lastmod: 2024-02-18 23:08:59.841506
+model: gpt-4-1106-preview
+summary: "Printing debug output is about showing intermediate results or variables\
+  \ while your program is running. We do it to hunt bugs or just understand what's\u2026"
+title: "\u0412\u0438\u0432\u0435\u0434\u0435\u043D\u043D\u044F \u043D\u0430\u043B\u0430\
+  \u0433\u043E\u0434\u0436\u0443\u0432\u0430\u043B\u044C\u043D\u043E\u0457 \u0456\u043D\
+  \u0444\u043E\u0440\u043C\u0430\u0446\u0456\u0457"
 ---
 
 {{< edit_this_page >}}

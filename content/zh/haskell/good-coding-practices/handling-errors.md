@@ -1,13 +1,22 @@
 ---
-title:                "处理错误"
 aliases:
 - /zh/haskell/handling-errors/
-date:                  2024-01-26T00:53:20.593032-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "处理错误"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/handling-errors.md"
+date: 2024-01-26 00:53:20.593032-07:00
+description: "\u5728\u7F16\u7A0B\u4E2D\u5904\u7406\u9519\u8BEF\u662F\u5173\u4E8E\u7BA1\
+  \u7406\u610F\u6599\u4E4B\u5916\u7684\u4E8B\u60C5\u2014\u2014\u53EF\u80FD\u51FA\u9519\
+  \u7684\u4E8B\u60C5\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u786E\
+  \u4FDD\u4ED6\u4EEC\u7684\u7A0B\u5E8F\u80FD\u591F\u4F18\u96C5\u5730\u5E94\u5BF9\u8FD9\
+  \u4E9B\u60C5\u51B5\uFF0C\u800C\u4E0D\u662F\u5D29\u6E83\u6216\u4EA7\u751F\u9519\u8BEF\
+  \u7684\u7ED3\u679C\u3002"
+lastmod: 2024-02-18 23:08:59.180688
+model: gpt-4-1106-preview
+summary: "\u5728\u7F16\u7A0B\u4E2D\u5904\u7406\u9519\u8BEF\u662F\u5173\u4E8E\u7BA1\
+  \u7406\u610F\u6599\u4E4B\u5916\u7684\u4E8B\u60C5\u2014\u2014\u53EF\u80FD\u51FA\u9519\
+  \u7684\u4E8B\u60C5\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u786E\
+  \u4FDD\u4ED6\u4EEC\u7684\u7A0B\u5E8F\u80FD\u591F\u4F18\u96C5\u5730\u5E94\u5BF9\u8FD9\
+  \u4E9B\u60C5\u51B5\uFF0C\u800C\u4E0D\u662F\u5D29\u6E83\u6216\u4EA7\u751F\u9519\u8BEF\
+  \u7684\u7ED3\u679C\u3002"
+title: "\u5904\u7406\u9519\u8BEF"
 ---
 
 {{< edit_this_page >}}

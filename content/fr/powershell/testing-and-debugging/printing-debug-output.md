@@ -1,13 +1,16 @@
 ---
-title:                "Affichage des sorties de débogage"
 aliases:
 - /fr/powershell/printing-debug-output/
-date:                  2024-01-20T17:53:25.946819-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Affichage des sorties de débogage"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/printing-debug-output.md"
+date: 2024-01-20 17:53:25.946819-07:00
+description: "L'impression de sorties de d\xE9bogage, c'est afficher les valeurs et\
+  \ les \xE9tats de votre script pendant son ex\xE9cution. On fait \xE7a pour comprendre\
+  \ ce qui se\u2026"
+lastmod: 2024-02-18 23:09:09.071054
+model: gpt-4-1106-preview
+summary: "L'impression de sorties de d\xE9bogage, c'est afficher les valeurs et les\
+  \ \xE9tats de votre script pendant son ex\xE9cution. On fait \xE7a pour comprendre\
+  \ ce qui se\u2026"
+title: "Affichage des sorties de d\xE9bogage"
 ---
 
 {{< edit_this_page >}}

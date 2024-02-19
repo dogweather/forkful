@@ -1,14 +1,29 @@
 ---
-title:                "디버그 출력 출력하기"
 aliases:
 - /ko/google-apps-script/printing-debug-output/
-date:                  2024-02-01T21:58:13.284859-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "디버그 출력 출력하기"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/printing-debug-output.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:13.284859-07:00
+description: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC744 \uCD9C\uB825\uD558\uB294 \uAC83\
+  \uC740 \uCF54\uB4DC\uC5D0 \uC804\uB7B5\uC801\uC73C\uB85C \uB85C\uADF8 \uBB38\uC744\
+  \ \uBC30\uCE58\uD558\uC5EC \uB7F0\uD0C0\uC784 \uB3D9\uC548 \uBCC0\uC218 \uAC12,\
+  \ \uC2E4\uD589 \uD750\uB984 \uB610\uB294 \uBA54\uC2DC\uC9C0 \uC624\uB958\uB97C \uD45C\
+  \uC2DC\uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC740 \uADF8\uB4E4\uC758 \uC2A4\uD06C\uB9BD\uD2B8\uC758 \uB3D9\
+  \uC791\uC744 \uCD94\uC801\uD558\uACE0 \uC9C4\uB2E8\uD558\uC5EC, \uADF8\uB4E4\uC758\
+  \ Google Apps Script \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC758 \uC815\uD655\uC131\
+  \uACFC\u2026"
+lastmod: 2024-02-18 23:09:05.560183
+model: gpt-4-0125-preview
+summary: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC744 \uCD9C\uB825\uD558\uB294 \uAC83\uC740\
+  \ \uCF54\uB4DC\uC5D0 \uC804\uB7B5\uC801\uC73C\uB85C \uB85C\uADF8 \uBB38\uC744 \uBC30\
+  \uCE58\uD558\uC5EC \uB7F0\uD0C0\uC784 \uB3D9\uC548 \uBCC0\uC218 \uAC12, \uC2E4\uD589\
+  \ \uD750\uB984 \uB610\uB294 \uBA54\uC2DC\uC9C0 \uC624\uB958\uB97C \uD45C\uC2DC\uD558\
+  \uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB4E4\uC740 \uADF8\uB4E4\uC758 \uC2A4\uD06C\uB9BD\uD2B8\uC758 \uB3D9\uC791\uC744\
+  \ \uCD94\uC801\uD558\uACE0 \uC9C4\uB2E8\uD558\uC5EC, \uADF8\uB4E4\uC758 Google Apps\
+  \ Script \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC758 \uC815\uD655\uC131\uACFC\u2026"
+title: "\uB514\uBC84\uADF8 \uCD9C\uB825 \uCD9C\uB825\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

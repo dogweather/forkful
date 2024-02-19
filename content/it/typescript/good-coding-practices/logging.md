@@ -1,13 +1,14 @@
 ---
-title:                "Registrazione delle Attività (Logging)"
 aliases:
 - /it/typescript/logging/
-date:                  2024-01-26T01:09:07.847179-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registrazione delle Attività (Logging)"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/logging.md"
+date: 2024-01-26 01:09:07.847179-07:00
+description: "Il logging \xE8 il processo di registrazione di eventi, errori e altre\
+  \ informazioni significative durante l'esecuzione di un programma su un supporto\u2026"
+lastmod: 2024-02-18 23:08:55.646374
+model: gpt-4-1106-preview
+summary: "Il logging \xE8 il processo di registrazione di eventi, errori e altre informazioni\
+  \ significative durante l'esecuzione di un programma su un supporto\u2026"
+title: "Registrazione delle Attivit\xE0 (Logging)"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Refaktorering"
 aliases:
 - /no/cpp/refactoring/
-date:                  2024-01-26T01:17:09.888660-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refaktorering"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/refactoring.md"
+date: 2024-01-26 01:17:09.888660-07:00
+description: "Refaktorisering er prosessen med \xE5 endre den interne strukturen til\
+  \ et dataprogram uten \xE5 endre dets eksterne oppf\xF8rsel. Programmerere gj\xF8\
+  r dette for \xE5\u2026"
+lastmod: 2024-02-18 23:08:54.201365
+model: gpt-4-0125-preview
+summary: "Refaktorisering er prosessen med \xE5 endre den interne strukturen til et\
+  \ dataprogram uten \xE5 endre dets eksterne oppf\xF8rsel. Programmerere gj\xF8r\
+  \ dette for \xE5\u2026"
+title: Refaktorering
 ---
 
 {{< edit_this_page >}}

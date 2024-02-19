@@ -1,13 +1,16 @@
 ---
-title:                "Modification de fichiers sur place avec des lignes de commande en une seule étape"
 aliases:
 - /fr/bash/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:21:18.345278-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Modification de fichiers sur place avec des lignes de commande en une seule étape"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:21:18.345278-07:00
+description: "Imaginez que vous venez de d\xE9couvrir que vous devez effectuer une\
+  \ mise \xE0 jour par lots sur plusieurs fichiers de configuration se trouvant sur\
+  \ votre\u2026"
+lastmod: 2024-02-18 23:09:09.014519
+model: gpt-4-0125-preview
+summary: "Imaginez que vous venez de d\xE9couvrir que vous devez effectuer une mise\
+  \ \xE0 jour par lots sur plusieurs fichiers de configuration se trouvant sur votre\u2026"
+title: "Modification de fichiers sur place avec des lignes de commande en une seule\
+  \ \xE9tape"
 ---
 
 {{< edit_this_page >}}

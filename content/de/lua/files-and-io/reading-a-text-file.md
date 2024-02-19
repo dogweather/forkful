@@ -1,13 +1,16 @@
 ---
-title:                "Textdatei einlesen"
 aliases:
 - /de/lua/reading-a-text-file/
-date:                  2024-01-20T17:54:43.621305-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Textdatei einlesen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/reading-a-text-file.md"
+date: 2024-01-20 17:54:43.621305-07:00
+description: "Lesen einer Textdatei bedeutet, den Inhalt dieser Datei in ein Programm\
+  \ zu laden. Programmierer machen das, um Daten zu manipulieren, Konfigurationen\
+  \ zu\u2026"
+lastmod: 2024-02-18 23:09:05.025631
+model: gpt-4-1106-preview
+summary: "Lesen einer Textdatei bedeutet, den Inhalt dieser Datei in ein Programm\
+  \ zu laden. Programmierer machen das, um Daten zu manipulieren, Konfigurationen\
+  \ zu\u2026"
+title: Textdatei einlesen
 ---
 
 {{< edit_this_page >}}

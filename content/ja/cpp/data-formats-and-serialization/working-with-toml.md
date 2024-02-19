@@ -1,13 +1,24 @@
 ---
-title:                "TOMLを扱う方法"
 aliases:
 - /ja/cpp/working-with-toml/
-date:                  2024-01-26T04:19:59.012426-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "TOMLを扱う方法"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/working-with-toml.md"
+date: 2024-01-26 04:19:59.012426-07:00
+description: "TOML\uFF08Tom's Obvious, Minimal Language\uFF09\u306F\u3001\u305D\u306E\
+  \u660E\u78BA\u306A\u30BB\u30DE\u30F3\u30C6\u30A3\u30AF\u30B9\u306B\u3088\u3063\u3066\
+  \u8AAD\u307F\u3084\u3059\u3044\u30C7\u30FC\u30BF\u76F4\u5217\u5316\u5F62\u5F0F\u3067\
+  \u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\u4EBA\u9593\u306E\u53EF\
+  \u8AAD\u6027\u3068\u6A5F\u68B0\u306E\u89E3\u6790\u53EF\u80FD\u6027\u306E\u9593\u306E\
+  \u30D0\u30E9\u30F3\u30B9\u3092\u53D6\u308B\u305F\u3081\u306B\u3001\u8A2D\u5B9A\u30D5\
+  \u30A1\u30A4\u30EB\u306BTOML\u3092\u4F7F\u7528\u3057\u307E\u3059\u3002"
+lastmod: 2024-02-18 23:08:55.212112
+model: gpt-4-0125-preview
+summary: "TOML\uFF08Tom's Obvious, Minimal Language\uFF09\u306F\u3001\u305D\u306E\u660E\
+  \u78BA\u306A\u30BB\u30DE\u30F3\u30C6\u30A3\u30AF\u30B9\u306B\u3088\u3063\u3066\u8AAD\
+  \u307F\u3084\u3059\u3044\u30C7\u30FC\u30BF\u76F4\u5217\u5316\u5F62\u5F0F\u3067\u3059\
+  \u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\u4EBA\u9593\u306E\u53EF\u8AAD\
+  \u6027\u3068\u6A5F\u68B0\u306E\u89E3\u6790\u53EF\u80FD\u6027\u306E\u9593\u306E\u30D0\
+  \u30E9\u30F3\u30B9\u3092\u53D6\u308B\u305F\u3081\u306B\u3001\u8A2D\u5B9A\u30D5\u30A1\
+  \u30A4\u30EB\u306BTOML\u3092\u4F7F\u7528\u3057\u307E\u3059\u3002"
+title: "TOML\u3092\u6271\u3046\u65B9\u6CD5"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Rozpoczynanie nowego projektu"
 aliases:
 - /pl/powershell/starting-a-new-project/
-date:                  2024-01-20T18:04:20.682126-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rozpoczynanie nowego projektu"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/starting-a-new-project.md"
+date: 2024-01-20 18:04:20.682126-07:00
+description: "Rozpoczynanie nowego projektu to tworzenie fundamentu pod przysz\u0142\
+  e zadania programistyczne. Programi\u015Bci robi\u0105 to, \u017Ceby zorganizowa\u0107\
+  \ kod, \u015Brodowisko pracy\u2026"
+lastmod: 2024-02-18 23:08:49.829593
+model: gpt-4-1106-preview
+summary: "Rozpoczynanie nowego projektu to tworzenie fundamentu pod przysz\u0142e\
+  \ zadania programistyczne. Programi\u015Bci robi\u0105 to, \u017Ceby zorganizowa\u0107\
+  \ kod, \u015Brodowisko pracy\u2026"
+title: Rozpoczynanie nowego projektu
 ---
 
 {{< edit_this_page >}}

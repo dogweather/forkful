@@ -1,13 +1,14 @@
 ---
-title:                "Tekstitiedoston lukeminen"
 aliases:
 - /fi/java/reading-a-text-file/
-date:                  2024-01-20T17:54:21.089500-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tekstitiedoston lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/reading-a-text-file.md"
+date: 2024-01-20 17:54:21.089500-07:00
+description: "Tekstitiedoston lukeminen tarkoittaa tiedon hakemista tiedostosta ohjelmallasi.\
+  \ Koodarit tekev\xE4t t\xE4t\xE4 datan k\xE4sittelyyn, analyysiin ja tiedonsiirtoon."
+lastmod: 2024-02-18 23:09:07.476859
+model: gpt-4-1106-preview
+summary: "Tekstitiedoston lukeminen tarkoittaa tiedon hakemista tiedostosta ohjelmallasi.\
+  \ Koodarit tekev\xE4t t\xE4t\xE4 datan k\xE4sittelyyn, analyysiin ja tiedonsiirtoon."
+title: Tekstitiedoston lukeminen
 ---
 
 {{< edit_this_page >}}

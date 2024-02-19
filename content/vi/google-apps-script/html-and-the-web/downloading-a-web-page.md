@@ -1,14 +1,19 @@
 ---
-title:                "Tải về một trang web"
 aliases:
 - /vi/google-apps-script/downloading-a-web-page/
-date:                  2024-02-01T21:53:08.040374-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tải về một trang web"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/google-apps-script/downloading-a-web-page.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:08.040374-07:00
+description: "Vi\u1EC7c t\u1EA3i m\u1ED9t trang web b\u1EB1ng Google Apps Script bao\
+  \ g\u1ED3m vi\u1EC7c l\u1EA5y n\u1ED9i dung c\u1EE7a trang web th\xF4ng qua HTML\
+  \ cho c\xE1c m\u1EE5c \u0111\xEDch kh\xE1c nhau, nh\u01B0 l\u1EA5y d\u1EEF li\u1EC7\
+  u web,\u2026"
+lastmod: 2024-02-18 23:08:50.218131
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c t\u1EA3i m\u1ED9t trang web b\u1EB1ng Google Apps Script bao g\u1ED3\
+  m vi\u1EC7c l\u1EA5y n\u1ED9i dung c\u1EE7a trang web th\xF4ng qua HTML cho c\xE1\
+  c m\u1EE5c \u0111\xEDch kh\xE1c nhau, nh\u01B0 l\u1EA5y d\u1EEF li\u1EC7u web,\u2026"
+title: "T\u1EA3i v\u1EC1 m\u1ED9t trang web"
 ---
 
 {{< edit_this_page >}}

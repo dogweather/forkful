@@ -1,14 +1,17 @@
 ---
-title:                "Sette stor bokstav i en streng"
 aliases:
 - /no/ruby/capitalizing-a-string/
-date:                  2024-02-03T19:06:11.636584-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sette stor bokstav i en streng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:11.636584-07:00
+description: "\xC5 kapitalisere en streng i programmering refererer ofte til \xE5\
+  \ konvertere det f\xF8rste tegnet i en streng til stor bokstav og resten til sm\xE5\
+  \ bokstaver.\u2026"
+lastmod: 2024-02-18 23:08:54.420744
+model: gpt-4-0125-preview
+summary: "\xC5 kapitalisere en streng i programmering refererer ofte til \xE5 konvertere\
+  \ det f\xF8rste tegnet i en streng til stor bokstav og resten til sm\xE5 bokstaver.\u2026"
+title: Sette stor bokstav i en streng
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Refactorización"
 aliases:
 - /es/google-apps-script/refactoring/
-date:                  2024-02-01T21:59:37.544557-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactorización"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/google-apps-script/refactoring.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:37.544557-07:00
+description: "Refactorizar, en el l\xE9xico de programaci\xF3n, se refiere al proceso\
+  \ de reestructurar el c\xF3digo de computadora existente\u2014cambiando la facturaci\xF3\
+  n sin cambiar\u2026"
+lastmod: 2024-02-18 23:09:09.517498
+model: gpt-4-0125-preview
+summary: "Refactorizar, en el l\xE9xico de programaci\xF3n, se refiere al proceso\
+  \ de reestructurar el c\xF3digo de computadora existente\u2014cambiando la facturaci\xF3\
+  n sin cambiar\u2026"
+title: "Refactorizaci\xF3n"
 ---
 
 {{< edit_this_page >}}

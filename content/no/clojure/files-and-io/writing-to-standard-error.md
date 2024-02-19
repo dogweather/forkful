@@ -1,14 +1,16 @@
 ---
-title:                "Skriving til standardfeil"
 aliases:
 - /no/clojure/writing-to-standard-error/
-date:                  2024-02-03T19:32:47.330594-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriving til standardfeil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:47.330594-07:00
+description: "\xC5 skrive til standardfeil (stderr) handler om \xE5 styre feilmeldinger\
+  \ og diagnostikk til stderr-str\xF8mmen, separat fra standard utgang (stdout).\u2026"
+lastmod: 2024-02-18 23:08:53.579891
+model: gpt-4-0125-preview
+summary: "\xC5 skrive til standardfeil (stderr) handler om \xE5 styre feilmeldinger\
+  \ og diagnostikk til stderr-str\xF8mmen, separat fra standard utgang (stdout).\u2026"
+title: Skriving til standardfeil
 ---
 
 {{< edit_this_page >}}

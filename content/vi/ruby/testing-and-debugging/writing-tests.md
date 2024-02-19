@@ -1,15 +1,20 @@
 ---
-title:                "Viết các bài kiểm tra"
 aliases:
 - /vi/ruby/writing-tests/
-date:                  2024-01-28T22:13:25.384906-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Viết các bài kiểm tra"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/writing-tests.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:13:25.384906-07:00
+description: "Vi\u1EBFt c\xE1c b\xE0i test ki\u1EC3m tra xem code c\xF3 ho\u1EA1t\
+  \ \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i. L\u1EADp tr\xECnh vi\xEAn th\u1EF1\
+  c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 ph\xE1t hi\u1EC7n l\u1ED7i s\u1EDBm, b\u1EA3\
+  o \u0111\u1EA3m \u0111\u1ED9 tin c\u1EADy v\xE0 d\u1EC5 d\xE0ng thay\u2026"
+lastmod: 2024-02-18 23:08:51.289358
+model: gpt-4-0125-preview
+summary: "Vi\u1EBFt c\xE1c b\xE0i test ki\u1EC3m tra xem code c\xF3 ho\u1EA1t \u0111\
+  \u1ED9ng nh\u01B0 mong \u0111\u1EE3i. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
+  n vi\u1EC7c n\xE0y \u0111\u1EC3 ph\xE1t hi\u1EC7n l\u1ED7i s\u1EDBm, b\u1EA3o \u0111\
+  \u1EA3m \u0111\u1ED9 tin c\u1EADy v\xE0 d\u1EC5 d\xE0ng thay\u2026"
+title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 ---
 
 {{< edit_this_page >}}

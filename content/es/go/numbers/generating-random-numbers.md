@@ -1,14 +1,17 @@
 ---
-title:                "Generando números aleatorios"
 aliases:
 - /es/go/generating-random-numbers/
-date:                  2024-02-03T17:57:12.289093-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generando números aleatorios"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/generating-random-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:12.289093-07:00
+description: "Generar n\xFAmeros aleatorios en programaci\xF3n se trata de crear una\
+  \ secuencia de n\xFAmeros que no se pueden predecir razonablemente mejor que por\
+  \ casualidad.\u2026"
+lastmod: 2024-02-18 23:09:09.450224
+model: gpt-4-0125-preview
+summary: "Generar n\xFAmeros aleatorios en programaci\xF3n se trata de crear una secuencia\
+  \ de n\xFAmeros que no se pueden predecir razonablemente mejor que por casualidad.\u2026"
+title: "Generando n\xFAmeros aleatorios"
 ---
 
 {{< edit_this_page >}}

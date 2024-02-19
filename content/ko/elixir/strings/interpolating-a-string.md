@@ -1,14 +1,21 @@
 ---
-title:                "문자열 보간하기"
 aliases:
 - /ko/elixir/interpolating-a-string/
-date:                  2024-01-20T17:50:32.841408-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "문자열 보간하기"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/interpolating-a-string.md"
+date: 2024-01-20 17:50:32.841408-07:00
+description: "\uBB38\uC790\uC5F4 \uB0B4\uC0BD\uC740 \uBCC0\uC218\uB098 \uD45C\uD604\
+  \uC2DD\uC758 \uAC12\uC744 \uBB38\uC790\uC5F4\uC5D0 \uC9D1\uC5B4\uB123\uB294 \uAC83\
+  \uC785\uB2C8\uB2E4. \uAC12\uC774 \uBCC0\uD560 \uB54C\uB9C8\uB2E4 \uC790\uB3D9\uC73C\
+  \uB85C \uBB38\uC790\uC5F4\uC744 \uAC31\uC2E0\uD558\uAE30 \uC704\uD574 \uC0AC\uC6A9\
+  \uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:05.733637
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4 \uB0B4\uC0BD\uC740 \uBCC0\uC218\uB098 \uD45C\uD604\uC2DD\
+  \uC758 \uAC12\uC744 \uBB38\uC790\uC5F4\uC5D0 \uC9D1\uC5B4\uB123\uB294 \uAC83\uC785\
+  \uB2C8\uB2E4. \uAC12\uC774 \uBCC0\uD560 \uB54C\uB9C8\uB2E4 \uC790\uB3D9\uC73C\uB85C\
+  \ \uBB38\uC790\uC5F4\uC744 \uAC31\uC2E0\uD558\uAE30 \uC704\uD574 \uC0AC\uC6A9\uD569\
+  \uB2C8\uB2E4."
+title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Organizing code into functions"
 aliases:
 - /en/cpp/organizing-code-into-functions/
-date:                  2024-01-25T03:00:38.019002-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organizing code into functions"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/organizing-code-into-functions.md"
+date: 2024-01-25 03:00:38.019002-07:00
+description: "Splitting code into functions means carving your code into smaller,\
+  \ reusable chunks. We do it to avoid repetition, make our code readable, and simplify\u2026"
+lastmod: 2024-02-18 23:09:11.360936
+model: gpt-4-1106-preview
+summary: "Splitting code into functions means carving your code into smaller, reusable\
+  \ chunks. We do it to avoid repetition, make our code readable, and simplify\u2026"
+title: Organizing code into functions
 ---
 
 {{< edit_this_page >}}

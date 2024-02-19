@@ -1,13 +1,16 @@
 ---
-title:                "Beregning av en dato i fremtiden eller fortiden"
 aliases:
 - /no/swift/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:32:11.584586-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Beregning av en dato i fremtiden eller fortiden"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:32:11.584586-07:00
+description: "Regne ut en fremtidig eller fortidig dato betyr \xE5 beregne en dato\
+  \ f\xF8r eller etter et bestemt startpunkt. Programmerere gj\xF8r dette for \xE5\
+  \ h\xE5ndtere\u2026"
+lastmod: 2024-02-18 23:08:54.281548
+model: gpt-4-1106-preview
+summary: "Regne ut en fremtidig eller fortidig dato betyr \xE5 beregne en dato f\xF8\
+  r eller etter et bestemt startpunkt. Programmerere gj\xF8r dette for \xE5 h\xE5\
+  ndtere\u2026"
+title: Beregning av en dato i fremtiden eller fortiden
 ---
 
 {{< edit_this_page >}}

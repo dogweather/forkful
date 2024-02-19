@@ -1,14 +1,23 @@
 ---
-title:                "文字列の長さを求める"
 aliases:
 - /ja/elm/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:18.904274-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "文字列の長さを求める"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:18.904274-07:00
+description: "\u6587\u5B57\u5217\u306E\u9577\u3055\u3063\u3066\u4F55\uFF1F\u305D\u308C\
+  \u306F\u3001\u6587\u5B57\u5217\u306B\u542B\u307E\u308C\u308B\u6587\u5B57\u306E\u6570\
+  \u3067\u3059\u3002\u306A\u305C\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3053\u308C\
+  \u3092\u884C\u3046\u306E\uFF1F\u6587\u5B57\u6570\u306F\u3001\u5165\u529B\u691C\u8A3C\
+  \u3001\u30C6\u30AD\u30B9\u30C8\u8868\u793A\u3001\u30C7\u30FC\u30BF\u51E6\u7406\u3067\
+  \u91CD\u8981\u306A\u5F79\u5272\u3092\u679C\u305F\u3057\u307E\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:54.832667
+model: gpt-4-1106-preview
+summary: "\u6587\u5B57\u5217\u306E\u9577\u3055\u3063\u3066\u4F55\uFF1F\u305D\u308C\
+  \u306F\u3001\u6587\u5B57\u5217\u306B\u542B\u307E\u308C\u308B\u6587\u5B57\u306E\u6570\
+  \u3067\u3059\u3002\u306A\u305C\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3053\u308C\
+  \u3092\u884C\u3046\u306E\uFF1F\u6587\u5B57\u6570\u306F\u3001\u5165\u529B\u691C\u8A3C\
+  \u3001\u30C6\u30AD\u30B9\u30C8\u8868\u793A\u3001\u30C7\u30FC\u30BF\u51E6\u7406\u3067\
+  \u91CD\u8981\u306A\u5F79\u5272\u3092\u679C\u305F\u3057\u307E\u3059\u3002"
+title: "\u6587\u5B57\u5217\u306E\u9577\u3055\u3092\u6C42\u3081\u308B"
 ---
 
 {{< edit_this_page >}}

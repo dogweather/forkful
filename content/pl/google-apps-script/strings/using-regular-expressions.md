@@ -1,14 +1,18 @@
 ---
-title:                "Korzystanie z wyrażeń regularnych"
 aliases:
 - /pl/google-apps-script/using-regular-expressions/
-date:                  2024-02-01T22:05:10.558506-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z wyrażeń regularnych"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/using-regular-expressions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:05:10.558506-07:00
+description: "Wyra\u017Cenia regularne (regex) s\u0105 wzorcami u\u017Cywanymi do\
+  \ dopasowywania kombinacji znak\xF3w w ci\u0105gach tekstowych. Programi\u015Bci\
+  \ wykorzystuj\u0105 je do wyszukiwania,\u2026"
+lastmod: 2024-02-18 23:08:49.135306
+model: gpt-4-0125-preview
+summary: "Wyra\u017Cenia regularne (regex) s\u0105 wzorcami u\u017Cywanymi do dopasowywania\
+  \ kombinacji znak\xF3w w ci\u0105gach tekstowych. Programi\u015Bci wykorzystuj\u0105\
+  \ je do wyszukiwania,\u2026"
+title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
 aliases:
 - /pl/elixir/reading-a-text-file/
-date:                  2024-01-20T17:54:07.059783-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie pliku tekstowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/reading-a-text-file.md"
+date: 2024-01-20 17:54:07.059783-07:00
+description: "Czytanie pliku tekstowego to po prostu wczytywanie danych z pliku na\
+  \ dysku. Programi\u015Bci to robi\u0105, by przetwarza\u0107, analizowa\u0107 dane\
+  \ i integrowa\u0107 systemy."
+lastmod: 2024-02-18 23:08:49.323570
+model: gpt-4-1106-preview
+summary: "Czytanie pliku tekstowego to po prostu wczytywanie danych z pliku na dysku.\
+  \ Programi\u015Bci to robi\u0105, by przetwarza\u0107, analizowa\u0107 dane i integrowa\u0107\
+  \ systemy."
+title: Odczytywanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

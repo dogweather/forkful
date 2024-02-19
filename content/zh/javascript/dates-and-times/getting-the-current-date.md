@@ -1,14 +1,24 @@
 ---
-title:                "获取当前日期"
 aliases:
 - /zh/javascript/getting-the-current-date/
-date:                  2024-02-03T19:09:47.787765-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "获取当前日期"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:09:47.787765-07:00
+description: "\u5728JavaScript\u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u662F\u4E00\
+  \u9879\u57FA\u672C\u4EFB\u52A1\uFF0C\u6D89\u53CA\u68C0\u7D22\u548C\u53EF\u80FD\u64CD\
+  \u7EB5\u4ECA\u5929\u7684\u65E5\u671F\u548C\u65F6\u95F4\u3002\u7A0B\u5E8F\u5458\u6267\
+  \u884C\u6B64\u64CD\u4F5C\u662F\u4E3A\u4E86\u5728\u7F51\u7AD9\u3001\u5E94\u7528\u7A0B\
+  \u5E8F\u4E2D\u663E\u793A\u65E5\u671F\uFF0C\u8DDF\u8E2A\u7528\u6237\u4E92\u52A8\uFF0C\
+  \u6216\u5904\u7406\u65F6\u95F4\u654F\u611F\u6570\u636E\u3002"
+lastmod: 2024-02-18 23:08:59.488845
+model: gpt-4-0125-preview
+summary: "\u5728JavaScript\u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u662F\u4E00\u9879\
+  \u57FA\u672C\u4EFB\u52A1\uFF0C\u6D89\u53CA\u68C0\u7D22\u548C\u53EF\u80FD\u64CD\u7EB5\
+  \u4ECA\u5929\u7684\u65E5\u671F\u548C\u65F6\u95F4\u3002\u7A0B\u5E8F\u5458\u6267\u884C\
+  \u6B64\u64CD\u4F5C\u662F\u4E3A\u4E86\u5728\u7F51\u7AD9\u3001\u5E94\u7528\u7A0B\u5E8F\
+  \u4E2D\u663E\u793A\u65E5\u671F\uFF0C\u8DDF\u8E2A\u7528\u6237\u4E92\u52A8\uFF0C\u6216\
+  \u5904\u7406\u65F6\u95F4\u654F\u611F\u6570\u636E\u3002"
+title: "\u83B7\u53D6\u5F53\u524D\u65E5\u671F"
 ---
 
 {{< edit_this_page >}}

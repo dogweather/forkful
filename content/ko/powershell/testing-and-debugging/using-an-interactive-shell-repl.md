@@ -1,13 +1,26 @@
 ---
-title:                "인터랙티브 셸 (REPL) 사용하기"
 aliases:
 - /ko/powershell/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:16:52.796677-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "인터랙티브 셸 (REPL) 사용하기"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:16:52.796677-07:00
+description: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\uB294 Read-Eval-Print\
+  \ Loop (REPL)\uC740 PowerShell \uBA85\uB839\uC5B4\uB97C \uC785\uB825\uD558\uACE0\
+  \ \uC989\uAC01\uC801\uC778 \uD53C\uB4DC\uBC31\uC744 \uBC1B\uC744 \uC218 \uC788\uAC8C\
+  \ \uD574\uC90D\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774\uB97C\
+  \ \uD1B5\uD574 \uCF54\uB4DC \uC870\uAC01\uC744 \uBE60\uB974\uAC8C \uD14C\uC2A4\uD2B8\
+  \uD558\uAC70\uB098, \uB514\uBC84\uAE45\uD558\uAC70\uB098, \uC804\uCCB4 \uC2A4\uD06C\
+  \uB9BD\uD2B8\uB97C \uC791\uC131\uD558\uC9C0 \uC54A\uACE0 \uC0C8 \uBA85\uB839\uC5B4\
+  \uB97C \uD559\uC2B5\uD560\u2026"
+lastmod: 2024-02-18 23:09:06.556885
+model: gpt-4-0125-preview
+summary: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\uB294 Read-Eval-Print Loop\
+  \ (REPL)\uC740 PowerShell \uBA85\uB839\uC5B4\uB97C \uC785\uB825\uD558\uACE0 \uC989\
+  \uAC01\uC801\uC778 \uD53C\uB4DC\uBC31\uC744 \uBC1B\uC744 \uC218 \uC788\uAC8C \uD574\
+  \uC90D\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774\uB97C \uD1B5\
+  \uD574 \uCF54\uB4DC \uC870\uAC01\uC744 \uBE60\uB974\uAC8C \uD14C\uC2A4\uD2B8\uD558\
+  \uAC70\uB098, \uB514\uBC84\uAE45\uD558\uAC70\uB098, \uC804\uCCB4 \uC2A4\uD06C\uB9BD\
+  \uD2B8\uB97C \uC791\uC131\uD558\uC9C0 \uC54A\uACE0 \uC0C8 \uBA85\uB839\uC5B4\uB97C\
+  \ \uD559\uC2B5\uD560\u2026"
+title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

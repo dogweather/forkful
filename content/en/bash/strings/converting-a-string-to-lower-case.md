@@ -1,13 +1,14 @@
 ---
-title:                "Converting a string to lower case"
 aliases:
 - /en/bash/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:37:41.148972-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Converting a string to lower case"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:37:41.148972-07:00
+description: "String lowercasing is transforming all alphabet characters in a string\
+  \ to their lower case form. Programmers lower case strings for consistency,\u2026"
+lastmod: 2024-02-18 23:09:11.214916
+model: gpt-4-1106-preview
+summary: "String lowercasing is transforming all alphabet characters in a string to\
+  \ their lower case form. Programmers lower case strings for consistency,\u2026"
+title: Converting a string to lower case
 ---
 
 {{< edit_this_page >}}

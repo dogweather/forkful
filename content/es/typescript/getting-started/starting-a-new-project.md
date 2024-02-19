@@ -1,13 +1,14 @@
 ---
-title:                "Iniciando un nuevo proyecto"
 aliases:
 - /es/typescript/starting-a-new-project/
-date:                  2024-01-20T18:04:26.627277-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Iniciando un nuevo proyecto"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/starting-a-new-project.md"
+date: 2024-01-20 18:04:26.627277-07:00
+description: "Empezar un nuevo proyecto en TypeScript es como plantar una semilla\
+  \ digital; le das los nutrientes b\xE1sicos y la ves crecer. Los programadores arrancan\u2026"
+lastmod: 2024-02-18 23:09:09.703560
+model: gpt-4-1106-preview
+summary: "Empezar un nuevo proyecto en TypeScript es como plantar una semilla digital;\
+  \ le das los nutrientes b\xE1sicos y la ves crecer. Los programadores arrancan\u2026"
+title: Iniciando un nuevo proyecto
 ---
 
 {{< edit_this_page >}}

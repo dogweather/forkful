@@ -1,14 +1,28 @@
 ---
-title:                "문자열의 길이 찾기"
 aliases:
 - /ko/vba/finding-the-length-of-a-string/
-date:                  2024-02-01T21:53:56.261188-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열의 길이 찾기"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/vba/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:56.261188-07:00
+description: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758\
+  \ \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC740 \uD574\uB2F9 \uBB38\uC790\uC5F4\uC774\
+  \ \uD3EC\uD568\uD558\uACE0 \uC788\uB294 \uBB38\uC790\uC758 \uC218\uB97C \uACB0\uC815\
+  \uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uC785\uB825\uC744 \uAC80\uC99D\uD558\uAC70\uB098, \uD14D\uC2A4\
+  \uD2B8 \uB370\uC774\uD130\uB97C \uD6A8\uC728\uC801\uC73C\uB85C \uC870\uC791\uD558\
+  \uAC70\uB098, \uBB38\uC790\uC5F4 \uB370\uC774\uD130\uB97C \uCC98\uB9AC\uD558\uB294\
+  \ \uB8E8\uD504\uB97C \uC81C\uC5B4\uD558\uC5EC\u2026"
+lastmod: 2024-02-18 23:09:05.936862
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758\
+  \ \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC740 \uD574\uB2F9 \uBB38\uC790\uC5F4\uC774\
+  \ \uD3EC\uD568\uD558\uACE0 \uC788\uB294 \uBB38\uC790\uC758 \uC218\uB97C \uACB0\uC815\
+  \uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uC785\uB825\uC744 \uAC80\uC99D\uD558\uAC70\uB098, \uD14D\uC2A4\
+  \uD2B8 \uB370\uC774\uD130\uB97C \uD6A8\uC728\uC801\uC73C\uB85C \uC870\uC791\uD558\
+  \uAC70\uB098, \uBB38\uC790\uC5F4 \uB370\uC774\uD130\uB97C \uCC98\uB9AC\uD558\uB294\
+  \ \uB8E8\uD504\uB97C \uC81C\uC5B4\uD558\uC5EC\u2026"
+title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,18 @@
 ---
-title:                "Een tijdelijk bestand aanmaken"
 aliases:
 - /nl/swift/creating-a-temporary-file/
-date:                  2024-01-28T21:58:52.706474-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tijdelijk bestand aanmaken"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/swift/creating-a-temporary-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:58:52.706474-07:00
+description: "Een tijdelijk bestand maken is het cre\xEBren van een kortstondig bestand\
+  \ om gegevens op te slaan die niet op lange termijn nodig zijn. Programmeurs doen\
+  \ dit\u2026"
+lastmod: 2024-02-18 23:09:02.250357
+model: gpt-4-0125-preview
+summary: "Een tijdelijk bestand maken is het cre\xEBren van een kortstondig bestand\
+  \ om gegevens op te slaan die niet op lange termijn nodig zijn. Programmeurs doen\
+  \ dit\u2026"
+title: Een tijdelijk bestand aanmaken
 ---
 
 {{< edit_this_page >}}

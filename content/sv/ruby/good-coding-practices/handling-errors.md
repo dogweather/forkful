@@ -1,13 +1,16 @@
 ---
-title:                "Hantering av fel"
 aliases:
 - /sv/ruby/handling-errors/
-date:                  2024-01-26T00:58:51.828169-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Hantering av fel"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/handling-errors.md"
+date: 2024-01-26 00:58:51.828169-07:00
+description: "Felhantering handlar om att f\xF6rv\xE4nta sig det ov\xE4ntade i kod\
+  \ \u2014 att hantera misstag och problem smidigt utan att krascha. Programmerare\
+  \ g\xF6r det f\xF6r att\u2026"
+lastmod: 2024-02-18 23:08:52.302303
+model: gpt-4-1106-preview
+summary: "Felhantering handlar om att f\xF6rv\xE4nta sig det ov\xE4ntade i kod \u2014\
+  \ att hantera misstag och problem smidigt utan att krascha. Programmerare g\xF6\
+  r det f\xF6r att\u2026"
+title: Hantering av fel
 ---
 
 {{< edit_this_page >}}

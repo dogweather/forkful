@@ -1,13 +1,14 @@
 ---
-title:                "Buscando y reemplazando texto"
 aliases:
 - /es/elixir/searching-and-replacing-text/
-date:                  2024-01-20T17:57:49.180559-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Buscando y reemplazando texto"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:49.180559-07:00
+description: "Buscar y reemplazar texto es sencillo: es encontrar una cadena de texto\
+  \ y cambiarla por otra. Los programadores lo hacen para actualizar datos, corregir\u2026"
+lastmod: 2024-02-18 23:09:09.632672
+model: gpt-4-1106-preview
+summary: "Buscar y reemplazar texto es sencillo: es encontrar una cadena de texto\
+  \ y cambiarla por otra. Los programadores lo hacen para actualizar datos, corregir\u2026"
+title: Buscando y reemplazando texto
 ---
 
 {{< edit_this_page >}}

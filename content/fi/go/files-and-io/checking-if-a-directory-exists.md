@@ -1,14 +1,18 @@
 ---
-title:                "Tarkistetaan, onko hakemisto olemassa"
 aliases:
 - /fi/go/checking-if-a-directory-exists/
-date:                  2024-02-03T17:52:44.875273-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tarkistetaan, onko hakemisto olemassa"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:52:44.875273-07:00
+description: "Tarkistaminen, l\xF6ytyyk\xF6 kansio Go:ssa, on kriittist\xE4 sovelluksille,\
+  \ jotka ovat vuorovaikutuksessa tiedostoj\xE4rjestelm\xE4n kanssa, jotta v\xE4ltet\xE4\
+  \xE4n virheet\u2026"
+lastmod: 2024-02-18 23:09:07.102230
+model: gpt-4-0125-preview
+summary: "Tarkistaminen, l\xF6ytyyk\xF6 kansio Go:ssa, on kriittist\xE4 sovelluksille,\
+  \ jotka ovat vuorovaikutuksessa tiedostoj\xE4rjestelm\xE4n kanssa, jotta v\xE4ltet\xE4\
+  \xE4n virheet\u2026"
+title: Tarkistetaan, onko hakemisto olemassa
 ---
 
 {{< edit_this_page >}}

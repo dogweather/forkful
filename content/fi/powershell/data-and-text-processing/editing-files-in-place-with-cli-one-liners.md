@@ -1,13 +1,16 @@
 ---
-title:                "Tiedostojen muokkaaminen paikan päällä komentorivin yhden rivin komennoilla"
 aliases:
 - /fi/powershell/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:20:56.096811-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tiedostojen muokkaaminen paikan päällä komentorivin yhden rivin komennoilla"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:20:56.096811-07:00
+description: "Tiedostojen paikan p\xE4\xE4ll\xE4 muokkaaminen CLI-yhden komentorivin\
+  \ avulla PowerShelliss\xE4 tarkoittaa suorien muutosten tekemist\xE4 tiedostoihin\
+  \ komentorivilt\xE4\u2026"
+lastmod: 2024-02-18 23:09:07.847730
+model: gpt-4-0125-preview
+summary: "Tiedostojen paikan p\xE4\xE4ll\xE4 muokkaaminen CLI-yhden komentorivin avulla\
+  \ PowerShelliss\xE4 tarkoittaa suorien muutosten tekemist\xE4 tiedostoihin komentorivilt\xE4\
+  \u2026"
+title: "Tiedostojen muokkaaminen paikan p\xE4\xE4ll\xE4 komentorivin yhden rivin komennoilla"
 ---
 
 {{< edit_this_page >}}

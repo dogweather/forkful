@@ -1,13 +1,14 @@
 ---
-title:                "Lectura de un archivo de texto"
 aliases:
 - /es/php/reading-a-text-file/
-date:                  2024-01-20T17:54:42.931208-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lectura de un archivo de texto"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/reading-a-text-file.md"
+date: 2024-01-20 17:54:42.931208-07:00
+description: "Leer un archivo de texto en PHP implica obtener su contenido para manipulaci\xF3\
+  n o an\xE1lisis. Los programadores hacen esto para importar datos,\u2026"
+lastmod: 2024-02-18 23:09:10.092896
+model: gpt-4-1106-preview
+summary: "Leer un archivo de texto en PHP implica obtener su contenido para manipulaci\xF3\
+  n o an\xE1lisis. Los programadores hacen esto para importar datos,\u2026"
+title: Lectura de un archivo de texto
 ---
 
 {{< edit_this_page >}}

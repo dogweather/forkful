@@ -1,14 +1,28 @@
 ---
-title:                "字符串大写化"
 aliases:
 - /zh/powershell/capitalizing-a-string/
-date:                  2024-02-03T19:06:02.241237-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "字符串大写化"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:02.241237-07:00
+description: "\u5728 PowerShell \u4E2D\uFF0C\u5C06\u5B57\u7B26\u4E32\u9996\u5B57\u6BCD\
+  \u5927\u5199\u6D89\u53CA\u5230\u5C06\u7ED9\u5B9A\u5B57\u7B26\u4E32\u7684\u7B2C\u4E00\
+  \u4E2A\u5B57\u7B26\u8F6C\u6362\u4E3A\u5927\u5199\uFF0C\u540C\u65F6\u4FDD\u7559\u5B57\
+  \u7B26\u4E32\u7684\u5176\u4F59\u90E8\u5206\u4E0D\u53D8\u3002\u7A0B\u5E8F\u5458\u7ECF\
+  \u5E38\u6267\u884C\u6B64\u4EFB\u52A1\u4EE5\u8FBE\u5230\u683C\u5F0F\u5316\u76EE\u7684\
+  \uFF0C\u4F8B\u5982\u4E3A\u7528\u6237\u754C\u9762\u663E\u793A\u51C6\u5907\u6587\u672C\
+  \u6216\u5728\u751F\u6210\u7684\u6587\u6863\u4E2D\u9075\u5FAA\u8BED\u6CD5\u89C4\u5219\
+  \u3002"
+lastmod: 2024-02-18 23:08:59.314858
+model: gpt-4-0125-preview
+summary: "\u5728 PowerShell \u4E2D\uFF0C\u5C06\u5B57\u7B26\u4E32\u9996\u5B57\u6BCD\
+  \u5927\u5199\u6D89\u53CA\u5230\u5C06\u7ED9\u5B9A\u5B57\u7B26\u4E32\u7684\u7B2C\u4E00\
+  \u4E2A\u5B57\u7B26\u8F6C\u6362\u4E3A\u5927\u5199\uFF0C\u540C\u65F6\u4FDD\u7559\u5B57\
+  \u7B26\u4E32\u7684\u5176\u4F59\u90E8\u5206\u4E0D\u53D8\u3002\u7A0B\u5E8F\u5458\u7ECF\
+  \u5E38\u6267\u884C\u6B64\u4EFB\u52A1\u4EE5\u8FBE\u5230\u683C\u5F0F\u5316\u76EE\u7684\
+  \uFF0C\u4F8B\u5982\u4E3A\u7528\u6237\u754C\u9762\u663E\u793A\u51C6\u5907\u6587\u672C\
+  \u6216\u5728\u751F\u6210\u7684\u6587\u6863\u4E2D\u9075\u5FAA\u8BED\u6CD5\u89C4\u5219\
+  \u3002"
+title: "\u5B57\u7B26\u4E32\u5927\u5199\u5316"
 ---
 
 {{< edit_this_page >}}

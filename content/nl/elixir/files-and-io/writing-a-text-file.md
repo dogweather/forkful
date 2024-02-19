@@ -1,15 +1,16 @@
 ---
-title:                "Een tekstbestand schrijven"
 aliases:
 - /nl/elixir/writing-a-text-file/
-date:                  2024-01-28T22:12:17.590097-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tekstbestand schrijven"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elixir/writing-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:17.590097-07:00
+description: "Het schrijven van een tekstbestand houdt in dat gegevens worden opgeslagen\
+  \ in een bestand in een door mensen leesbaar formaat. Programmeurs doen dit om\u2026"
+lastmod: 2024-02-18 23:09:01.546663
+model: gpt-4-0125-preview
+summary: "Het schrijven van een tekstbestand houdt in dat gegevens worden opgeslagen\
+  \ in een bestand in een door mensen leesbaar formaat. Programmeurs doen dit om\u2026"
+title: Een tekstbestand schrijven
 ---
 
 {{< edit_this_page >}}

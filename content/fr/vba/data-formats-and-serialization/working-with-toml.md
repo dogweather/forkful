@@ -1,14 +1,16 @@
 ---
-title:                "Travailler avec TOML"
 aliases:
 - /fr/vba/working-with-toml/
-date:                  2024-02-01T22:05:55.705180-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Travailler avec TOML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/vba/working-with-toml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:05:55.705180-07:00
+description: "TOML, qui signifie \"Tom's Obvious, Minimal Language\" (le langage minimal\
+  \ et \xE9vident de Tom), est un format de s\xE9rialisation de donn\xE9es principalement\u2026"
+lastmod: 2024-02-18 23:09:08.607325
+model: gpt-4-0125-preview
+summary: "TOML, qui signifie \"Tom's Obvious, Minimal Language\" (le langage minimal\
+  \ et \xE9vident de Tom), est un format de s\xE9rialisation de donn\xE9es principalement\u2026"
+title: Travailler avec TOML
 ---
 
 {{< edit_this_page >}}

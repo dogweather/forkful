@@ -1,13 +1,16 @@
 ---
-title:                "Debug-Ausgaben drucken"
 aliases:
 - /de/bash/printing-debug-output/
-date:                  2024-01-20T17:52:05.021967-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Debug-Ausgaben drucken"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/printing-debug-output.md"
+date: 2024-01-20 17:52:05.021967-07:00
+description: "Das Ausgeben von Debug-Informationen hilft, Probleme zu erkennen, indem\
+  \ Abl\xE4ufe im Code erkl\xE4rt werden. Programmierer nutzen dies, um Funktionen\
+  \ und ihre\u2026"
+lastmod: 2024-02-18 23:09:05.057164
+model: gpt-4-1106-preview
+summary: "Das Ausgeben von Debug-Informationen hilft, Probleme zu erkennen, indem\
+  \ Abl\xE4ufe im Code erkl\xE4rt werden. Programmierer nutzen dies, um Funktionen\
+  \ und ihre\u2026"
+title: Debug-Ausgaben drucken
 ---
 
 {{< edit_this_page >}}

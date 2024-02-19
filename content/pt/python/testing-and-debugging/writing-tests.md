@@ -1,14 +1,18 @@
 ---
-title:                "Escrevendo testes"
 aliases:
 - /pt/python/writing-tests/
-date:                  2024-02-03T19:31:31.846122-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escrevendo testes"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:31.846122-07:00
+description: "Escrever testes em Python envolve a cria\xE7\xE3o de scripts automatizados\
+  \ para validar a corre\xE7\xE3o do seu c\xF3digo. Programadores fazem isso para\
+  \ garantir que\u2026"
+lastmod: 2024-02-18 23:08:57.764684
+model: gpt-4-0125-preview
+summary: "Escrever testes em Python envolve a cria\xE7\xE3o de scripts automatizados\
+  \ para validar a corre\xE7\xE3o do seu c\xF3digo. Programadores fazem isso para\
+  \ garantir que\u2026"
+title: Escrevendo testes
 ---
 
 {{< edit_this_page >}}

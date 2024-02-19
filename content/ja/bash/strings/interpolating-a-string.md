@@ -1,14 +1,23 @@
 ---
-title:                "文字列の補間"
 aliases:
 - /ja/bash/interpolating-a-string/
-date:                  2024-01-20T17:50:18.985885-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "文字列の補間"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/interpolating-a-string.md"
+date: 2024-01-20 17:50:18.985885-07:00
+description: "\u6587\u5B57\u5217\u88DC\u9593\u3068\u306F\u5909\u6570\u3084\u5F0F\u306E\
+  \u7D50\u679C\u3092\u6587\u5B57\u5217\u306B\u57CB\u3081\u8FBC\u3080\u3053\u3068\u3067\
+  \u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u30B3\u30FC\u30C9\u306E\u53EF\
+  \u8AAD\u6027\u3092\u4E0A\u3052\u305F\u308A\u3001\u52D5\u7684\u306A\u30E1\u30C3\u30BB\
+  \u30FC\u30B8\u3092\u4F5C\u3063\u305F\u308A\u3059\u308B\u305F\u3081\u306B\u3053\u308C\
+  \u3092\u884C\u3044\u307E\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.059788
+model: gpt-4-1106-preview
+summary: "\u6587\u5B57\u5217\u88DC\u9593\u3068\u306F\u5909\u6570\u3084\u5F0F\u306E\
+  \u7D50\u679C\u3092\u6587\u5B57\u5217\u306B\u57CB\u3081\u8FBC\u3080\u3053\u3068\u3067\
+  \u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u30B3\u30FC\u30C9\u306E\u53EF\
+  \u8AAD\u6027\u3092\u4E0A\u3052\u305F\u308A\u3001\u52D5\u7684\u306A\u30E1\u30C3\u30BB\
+  \u30FC\u30B8\u3092\u4F5C\u3063\u305F\u308A\u3059\u308B\u305F\u3081\u306B\u3053\u308C\
+  \u3092\u884C\u3044\u307E\u3059\u3002"
+title: "\u6587\u5B57\u5217\u306E\u88DC\u9593"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Creazione di un file temporaneo"
 aliases:
 - /it/bash/creating-a-temporary-file/
-date:                  2024-01-20T17:39:27.124025-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Creazione di un file temporaneo"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/creating-a-temporary-file.md"
+date: 2024-01-20 17:39:27.124025-07:00
+description: "Creare un file temporaneo in Bash significa avere un luogo dove scrivere\
+  \ dati senza preoccuparsi che rimangano in giro dopo. I programmatori lo fanno per\u2026"
+lastmod: 2024-02-18 23:08:56.070886
+model: gpt-4-1106-preview
+summary: "Creare un file temporaneo in Bash significa avere un luogo dove scrivere\
+  \ dati senza preoccuparsi che rimangano in giro dopo. I programmatori lo fanno per\u2026"
+title: Creazione di un file temporaneo
 ---
 
 {{< edit_this_page >}}

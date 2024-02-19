@@ -1,15 +1,20 @@
 ---
-title:                "Đọc các đối số dòng lệnh"
 aliases:
 - /vi/swift/reading-command-line-arguments/
-date:                  2024-01-28T22:06:23.370038-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Đọc các đối số dòng lệnh"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/swift/reading-command-line-arguments.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:06:23.370038-07:00
+description: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh cho ph\xE9\
+  p ch\u01B0\u01A1ng tr\xECnh Swift c\u1EE7a b\u1EA1n nh\u1EADn th\xEAm chi ti\u1EBF\
+  t khi ng\u01B0\u1EDDi d\xF9ng ch\u1EA1y n\xF3. \u0110i\u1EC1u n\xE0y quan tr\u1ECD\
+  ng v\xEC n\xF3 th\xEAm kh\u1EA3 n\u0103ng t\xF9y ch\u1EC9nh\u2026"
+lastmod: 2024-02-18 23:08:51.106994
+model: gpt-4-0125-preview
+summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh cho ph\xE9\
+  p ch\u01B0\u01A1ng tr\xECnh Swift c\u1EE7a b\u1EA1n nh\u1EADn th\xEAm chi ti\u1EBF\
+  t khi ng\u01B0\u1EDDi d\xF9ng ch\u1EA1y n\xF3. \u0110i\u1EC1u n\xE0y quan tr\u1ECD\
+  ng v\xEC n\xF3 th\xEAm kh\u1EA3 n\u0103ng t\xF9y ch\u1EC9nh\u2026"
+title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 ---
 
 {{< edit_this_page >}}

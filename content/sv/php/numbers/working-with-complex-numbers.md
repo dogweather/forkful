@@ -1,13 +1,16 @@
 ---
-title:                "Att arbeta med komplexa tal"
 aliases:
 - /sv/php/working-with-complex-numbers/
-date:                  2024-01-26T04:44:37.522091-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med komplexa tal"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/working-with-complex-numbers.md"
+date: 2024-01-26 04:44:37.522091-07:00
+description: "Komplexa tal har en realdel och en imagin\xE4rdel, vanligtvis skrivna\
+  \ som `a + bi`. De \xE4r avg\xF6rande inom avancerad matematik, fysik, ingenj\xF6\
+  rsvetenskap och\u2026"
+lastmod: 2024-02-18 23:08:51.872441
+model: gpt-4-0125-preview
+summary: "Komplexa tal har en realdel och en imagin\xE4rdel, vanligtvis skrivna som\
+  \ `a + bi`. De \xE4r avg\xF6rande inom avancerad matematik, fysik, ingenj\xF6rsvetenskap\
+  \ och\u2026"
+title: Att arbeta med komplexa tal
 ---
 
 {{< edit_this_page >}}

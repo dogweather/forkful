@@ -1,14 +1,18 @@
 ---
-title:                "Pobieranie strony internetowej"
 aliases:
 - /pl/google-apps-script/downloading-a-web-page/
-date:                  2024-02-01T21:52:44.835765-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pobieranie strony internetowej"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/downloading-a-web-page.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:44.835765-07:00
+description: "Pobieranie strony internetowej w Google Apps Script polega na pobieraniu\
+  \ tre\u015Bci strony internetowej za pomoc\u0105 HTML do r\xF3\u017Cnych cel\xF3\
+  w, takich jak web\u2026"
+lastmod: 2024-02-18 23:08:49.145505
+model: gpt-4-0125-preview
+summary: "Pobieranie strony internetowej w Google Apps Script polega na pobieraniu\
+  \ tre\u015Bci strony internetowej za pomoc\u0105 HTML do r\xF3\u017Cnych cel\xF3\
+  w, takich jak web\u2026"
+title: Pobieranie strony internetowej
 ---
 
 {{< edit_this_page >}}

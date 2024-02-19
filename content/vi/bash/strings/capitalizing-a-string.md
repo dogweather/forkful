@@ -1,15 +1,21 @@
 ---
-title:                "Viết hoa một chuỗi"
 aliases:
 - /vi/bash/capitalizing-a-string/
-date:                  2024-01-28T21:55:45.100648-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Viết hoa một chuỗi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/bash/capitalizing-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:55:45.100648-07:00
+description: "Chuy\u1EC3n ch\u1EEF c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a m\u1ED7i\
+  \ t\u1EEB trong chu\u1ED7i th\xE0nh ch\u1EEF in hoa \u0111\u01B0\u1EE3c g\u1ECD\
+  i l\xE0 vi\u1EC7c vi\u1EBFt hoa chu\u1ED7i. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
+  i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u1ECBnh d\u1EA1ng, \u0111\u1ED3ng nh\u1EA5t,\
+  \ v\xE0\u2026"
+lastmod: 2024-02-18 23:08:50.864551
+model: gpt-4-0125-preview
+summary: "Chuy\u1EC3n ch\u1EEF c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a m\u1ED7i t\u1EEB\
+  \ trong chu\u1ED7i th\xE0nh ch\u1EEF in hoa \u0111\u01B0\u1EE3c g\u1ECDi l\xE0 vi\u1EC7\
+  c vi\u1EBFt hoa chu\u1ED7i. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0\
+  y \u0111\u1EC3 \u0111\u1ECBnh d\u1EA1ng, \u0111\u1ED3ng nh\u1EA5t, v\xE0\u2026"
+title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 ---
 
 {{< edit_this_page >}}

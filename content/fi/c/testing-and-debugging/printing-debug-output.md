@@ -1,14 +1,18 @@
 ---
-title:                "Tulostetaan virheenjäljitystietoja"
 aliases:
 - /fi/c/printing-debug-output/
-date:                  2024-02-03T18:05:24.992621-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tulostetaan virheenjäljitystietoja"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/printing-debug-output.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:24.992621-07:00
+description: "Debug-tulosteen tulostaminen tarkoittaa v\xE4liaikaisten, informatiivisten\
+  \ lokiviestien tuottamista, jotka voivat auttaa ohjelmoijia ymm\xE4rt\xE4m\xE4\xE4\
+  n ohjelman\u2026"
+lastmod: 2024-02-18 23:09:08.135600
+model: gpt-4-0125-preview
+summary: "Debug-tulosteen tulostaminen tarkoittaa v\xE4liaikaisten, informatiivisten\
+  \ lokiviestien tuottamista, jotka voivat auttaa ohjelmoijia ymm\xE4rt\xE4m\xE4\xE4\
+  n ohjelman\u2026"
+title: "Tulostetaan virheenj\xE4ljitystietoja"
 ---
 
 {{< edit_this_page >}}

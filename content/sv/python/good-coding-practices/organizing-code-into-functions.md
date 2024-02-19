@@ -1,13 +1,16 @@
 ---
-title:                "Att organisera kod i funktioner"
 aliases:
 - /sv/python/organizing-code-into-functions/
-date:                  2024-01-26T01:11:59.399504-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Att organisera kod i funktioner"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/organizing-code-into-functions.md"
+date: 2024-01-26 01:11:59.399504-07:00
+description: "Att organisera kod i funktioner handlar om att bryta ner din kod i \xE5\
+  teranv\xE4ndbara delar med specifika syften. Vi g\xF6r det f\xF6r att g\xF6ra koden\
+  \ renare,\u2026"
+lastmod: 2024-02-18 23:08:51.427084
+model: gpt-4-1106-preview
+summary: "Att organisera kod i funktioner handlar om att bryta ner din kod i \xE5\
+  teranv\xE4ndbara delar med specifika syften. Vi g\xF6r det f\xF6r att g\xF6ra koden\
+  \ renare,\u2026"
+title: Att organisera kod i funktioner
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Avvio di un nuovo progetto"
 aliases:
 - /it/ruby/starting-a-new-project/
-date:                  2024-01-20T18:04:21.464213-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Avvio di un nuovo progetto"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/starting-a-new-project.md"
+date: 2024-01-20 18:04:21.464213-07:00
+description: "Avviare un nuovo progetto in Ruby significa creare una base da cui partire\
+  \ per sviluppare la tua applicazione. I programmatori lo fanno per ordinare il\u2026"
+lastmod: 2024-02-18 23:08:56.383725
+model: gpt-4-1106-preview
+summary: "Avviare un nuovo progetto in Ruby significa creare una base da cui partire\
+  \ per sviluppare la tua applicazione. I programmatori lo fanno per ordinare il\u2026"
+title: Avvio di un nuovo progetto
 ---
 
 {{< edit_this_page >}}

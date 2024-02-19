@@ -1,13 +1,14 @@
 ---
-title:                "Generating random numbers"
 aliases:
 - /en/bash/generating-random-numbers/
-date:                  2024-01-27T20:26:11.777055-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generating random numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/generating-random-numbers.md"
+date: 2024-01-27 20:26:11.777055-07:00
+description: "Generating random numbers in Bash provides a way to introduce unpredictability\
+  \ in scripts, which is essential for tasks like generating secure passwords,\u2026"
+lastmod: 2024-02-18 23:09:11.223644
+model: gpt-4-0125-preview
+summary: "Generating random numbers in Bash provides a way to introduce unpredictability\
+  \ in scripts, which is essential for tasks like generating secure passwords,\u2026"
+title: Generating random numbers
 ---
 
 {{< edit_this_page >}}

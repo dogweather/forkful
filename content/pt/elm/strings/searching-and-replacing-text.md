@@ -1,13 +1,16 @@
 ---
-title:                "Pesquisando e substituindo texto"
 aliases:
 - /pt/elm/searching-and-replacing-text/
-date:                  2024-01-20T17:57:29.981247-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Pesquisando e substituindo texto"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:29.981247-07:00
+description: "Procurar e substituir texto \xE9 trocar uma sequ\xEAncia espec\xEDfica\
+  \ por outra em uma string. Programadores fazem isso para corrigir dados, atualizar\
+  \ informa\xE7\xF5es\u2026"
+lastmod: 2024-02-18 23:08:58.046114
+model: gpt-4-1106-preview
+summary: "Procurar e substituir texto \xE9 trocar uma sequ\xEAncia espec\xEDfica por\
+  \ outra em uma string. Programadores fazem isso para corrigir dados, atualizar informa\xE7\
+  \xF5es\u2026"
+title: Pesquisando e substituindo texto
 ---
 
 {{< edit_this_page >}}

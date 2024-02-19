@@ -1,13 +1,15 @@
 ---
-title:                "Organisering av kode i funksjoner"
 aliases:
 - /no/lua/organizing-code-into-functions/
-date:                  2024-01-26T01:10:59.078094-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organisering av kode i funksjoner"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/lua/organizing-code-into-functions.md"
+date: 2024-01-26 01:10:59.078094-07:00
+description: "\xC5 organisere kode i funksjoner handler om \xE5 bryte ned scripting\
+  \ til h\xE5ndterbare deler\u2014tenk funksjonelle LEGO-blokker. Vi gj\xF8r det for\
+  \ klarhet,\u2026"
+lastmod: 2024-02-18 23:08:54.021104
+model: gpt-4-1106-preview
+summary: "\xC5 organisere kode i funksjoner handler om \xE5 bryte ned scripting til\
+  \ h\xE5ndterbare deler\u2014tenk funksjonelle LEGO-blokker. Vi gj\xF8r det for klarhet,\u2026"
+title: Organisering av kode i funksjoner
 ---
 
 {{< edit_this_page >}}

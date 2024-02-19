@@ -1,13 +1,16 @@
 ---
-title:                "Å bruke en debugger"
 aliases:
 - /no/typescript/using-a-debugger/
-date:                  2024-01-26T04:11:26.627248-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å bruke en debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/using-a-debugger.md"
+date: 2024-01-26 04:11:26.627248-07:00
+description: "En debugger er et verkt\xF8y som lar deg unders\xF8ke og endre det indre\
+  \ arbeidet i koden din mens den kj\xF8rer. Programmerere bruker den til \xE5 knuse\
+  \ feil ved \xE5\u2026"
+lastmod: 2024-02-18 23:08:53.649425
+model: gpt-4-0125-preview
+summary: "En debugger er et verkt\xF8y som lar deg unders\xF8ke og endre det indre\
+  \ arbeidet i koden din mens den kj\xF8rer. Programmerere bruker den til \xE5 knuse\
+  \ feil ved \xE5\u2026"
+title: "\xC5 bruke en debugger"
 ---
 
 {{< edit_this_page >}}

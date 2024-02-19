@@ -1,13 +1,16 @@
 ---
-title:                "Merkkien poistaminen hakemalla osumia kaavaan"
 aliases:
 - /fi/clojure/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:00.366256-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:00.366256-07:00
+description: "Mik\xE4 ja miksi? Ohjelmoinnissa merkkien poistaminen kuvioon sopivasti\
+  \ on datan siistimist\xE4. Tehd\xE4\xE4n n\xE4timp\xE4\xE4, helpommin k\xE4sitelt\xE4\
+  v\xE4\xE4."
+lastmod: 2024-02-18 23:09:07.211897
+model: gpt-4-1106-preview
+summary: "Mik\xE4 ja miksi? Ohjelmoinnissa merkkien poistaminen kuvioon sopivasti\
+  \ on datan siistimist\xE4. Tehd\xE4\xE4n n\xE4timp\xE4\xE4, helpommin k\xE4sitelt\xE4\
+  v\xE4\xE4."
+title: Merkkien poistaminen hakemalla osumia kaavaan
 ---
 
 {{< edit_this_page >}}

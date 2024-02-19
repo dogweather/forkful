@@ -1,14 +1,18 @@
 ---
-title:                "Refaktorering"
 aliases:
 - /sv/vba/refactoring/
-date:                  2024-02-01T21:59:58.365241-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refaktorering"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/refactoring.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:58.365241-07:00
+description: "Refaktorisering inom programmering inneb\xE4r att man \xE4ndrar strukturen\
+  \ p\xE5 koden utan att \xE4ndra dess beteende, f\xF6r att f\xF6rb\xE4ttra aspekter\
+  \ som l\xE4sbarhet,\u2026"
+lastmod: 2024-02-18 23:08:51.635583
+model: gpt-4-0125-preview
+summary: "Refaktorisering inom programmering inneb\xE4r att man \xE4ndrar strukturen\
+  \ p\xE5 koden utan att \xE4ndra dess beteende, f\xF6r att f\xF6rb\xE4ttra aspekter\
+  \ som l\xE4sbarhet,\u2026"
+title: Refaktorering
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Einen HTTP-Request senden"
 aliases:
 - /de/typescript/sending-an-http-request/
-date:                  2024-01-20T18:00:34.997069-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Einen HTTP-Request senden"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/sending-an-http-request.md"
+date: 2024-01-20 18:00:34.997069-07:00
+description: "HTTP-Anfragen sind das Werkzeug, um mit Servern zu kommunizieren \u2013\
+  \ sie senden Daten und holen Antworten. Programmierer nutzen das, um Webinhalte\
+  \ dynamisch\u2026"
+lastmod: 2024-02-18 23:09:04.593324
+model: gpt-4-1106-preview
+summary: "HTTP-Anfragen sind das Werkzeug, um mit Servern zu kommunizieren \u2013\
+  \ sie senden Daten und holen Antworten. Programmierer nutzen das, um Webinhalte\
+  \ dynamisch\u2026"
+title: Einen HTTP-Request senden
 ---
 
 {{< edit_this_page >}}

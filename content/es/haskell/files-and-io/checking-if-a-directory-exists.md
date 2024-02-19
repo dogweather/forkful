@@ -1,14 +1,18 @@
 ---
-title:                "Comprobando si un directorio existe"
 aliases:
 - /es/haskell/checking-if-a-directory-exists/
-date:                  2024-02-03T19:07:18.956345-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Comprobando si un directorio existe"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:07:18.956345-07:00
+description: "Comprobar si un directorio existe es una operaci\xF3n fundamental en\
+  \ muchas tareas de programaci\xF3n, lo que permite realizar acciones condicionales\
+  \ basadas en\u2026"
+lastmod: 2024-02-18 23:09:10.043378
+model: gpt-4-0125-preview
+summary: "Comprobar si un directorio existe es una operaci\xF3n fundamental en muchas\
+  \ tareas de programaci\xF3n, lo que permite realizar acciones condicionales basadas\
+  \ en\u2026"
+title: Comprobando si un directorio existe
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Tratamento de erros"
 aliases:
 - /pt/elixir/handling-errors/
-date:                  2024-01-26T00:52:16.263525-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tratamento de erros"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/handling-errors.md"
+date: 2024-01-26 00:52:16.263525-07:00
+description: "Tratar erros significa escrever c\xF3digo que pode lidar com situa\xE7\
+  \xF5es inesperadas. Os programadores fazem isso para evitar falhas e para garantir\
+  \ que seus\u2026"
+lastmod: 2024-02-18 23:08:57.851066
+model: gpt-4-1106-preview
+summary: "Tratar erros significa escrever c\xF3digo que pode lidar com situa\xE7\xF5\
+  es inesperadas. Os programadores fazem isso para evitar falhas e para garantir que\
+  \ seus\u2026"
+title: Tratamento de erros
 ---
 
 {{< edit_this_page >}}

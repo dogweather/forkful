@@ -1,15 +1,16 @@
 ---
-title:                "Tekst zoeken en vervangen"
 aliases:
 - /nl/typescript/searching-and-replacing-text/
-date:                  2024-01-28T22:08:25.807459-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tekst zoeken en vervangen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/typescript/searching-and-replacing-text.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:25.807459-07:00
+description: "Tekst zoeken en vervangen in strings is een veelvoorkomende taak in\
+  \ programmering, vaak gebruikt om gegevens te verwerken en te manipuleren. Het is\u2026"
+lastmod: 2024-02-18 23:09:01.556406
+model: gpt-4-0125-preview
+summary: "Tekst zoeken en vervangen in strings is een veelvoorkomende taak in programmering,\
+  \ vaak gebruikt om gegevens te verwerken en te manipuleren. Het is\u2026"
+title: Tekst zoeken en vervangen
 ---
 
 {{< edit_this_page >}}

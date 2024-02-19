@@ -1,14 +1,24 @@
 ---
-title:                "使用JSON进行编程"
 aliases:
 - /zh/kotlin/working-with-json/
-date:                  2024-02-03T19:23:14.693798-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用JSON进行编程"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:14.693798-07:00
+description: "\u5728 Kotlin \u4E2D\u5904\u7406 JSON\uFF08JavaScript \u5BF9\u8C61\u8868\
+  \u793A\u6CD5\uFF09\u6D89\u53CA\u89E3\u6790\u548C\u751F\u6210 JSON \u6570\u636E\u3002\
+  \u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u65B9\u4FBF\u5730\u5728\u5E94\
+  \u7528\u7A0B\u5E8F\u7684\u4E0D\u540C\u5C42\u4E4B\u95F4\u6216\u4E0E Web \u670D\u52A1\
+  \u901A\u4FE1\u4EA4\u6362\u6570\u636E\uFF0C\u5F97\u76CA\u4E8E JSON \u7684\u8F7B\u91CF\
+  \u7EA7\u548C\u6613\u4E8E\u9605\u8BFB\u7684\u683C\u5F0F\u3002"
+lastmod: 2024-02-18 23:08:59.114119
+model: gpt-4-0125-preview
+summary: "\u5728 Kotlin \u4E2D\u5904\u7406 JSON\uFF08JavaScript \u5BF9\u8C61\u8868\
+  \u793A\u6CD5\uFF09\u6D89\u53CA\u89E3\u6790\u548C\u751F\u6210 JSON \u6570\u636E\u3002\
+  \u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u65B9\u4FBF\u5730\u5728\u5E94\
+  \u7528\u7A0B\u5E8F\u7684\u4E0D\u540C\u5C42\u4E4B\u95F4\u6216\u4E0E Web \u670D\u52A1\
+  \u901A\u4FE1\u4EA4\u6362\u6570\u636E\uFF0C\u5F97\u76CA\u4E8E JSON \u7684\u8F7B\u91CF\
+  \u7EA7\u548C\u6613\u4E8E\u9605\u8BFB\u7684\u683C\u5F0F\u3002"
+title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 ---
 
 {{< edit_this_page >}}

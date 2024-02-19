@@ -1,13 +1,16 @@
 ---
-title:                "Virheiden käsittely"
 aliases:
 - /fi/python/handling-errors/
-date:                  2024-01-26T00:56:22.955289-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheiden käsittely"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/handling-errors.md"
+date: 2024-01-26 00:56:22.955289-07:00
+description: "Virheenk\xE4sittely Pythonissa (tai miss\xE4 tahansa ohjelmointikieless\xE4\
+  ) on odottamatonta odottamista \u2013 se on taitoa hallita tilanteita sulavasti,\
+  \ kun asiat\u2026"
+lastmod: 2024-02-18 23:09:07.191599
+model: gpt-4-1106-preview
+summary: "Virheenk\xE4sittely Pythonissa (tai miss\xE4 tahansa ohjelmointikieless\xE4\
+  ) on odottamatonta odottamista \u2013 se on taitoa hallita tilanteita sulavasti,\
+  \ kun asiat\u2026"
+title: "Virheiden k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

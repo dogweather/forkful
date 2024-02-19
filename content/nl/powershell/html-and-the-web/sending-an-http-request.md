@@ -1,15 +1,16 @@
 ---
-title:                "Een HTTP-verzoek verzenden"
 aliases:
 - /nl/powershell/sending-an-http-request/
-date:                  2024-01-28T22:07:44.034481-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een HTTP-verzoek verzenden"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/powershell/sending-an-http-request.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:07:44.034481-07:00
+description: "Een HTTP-verzoek versturen is hoe je om gegevens of een reactie van\
+  \ een webdienst vraagt. Programmeurs doen dit om te communiceren met API's, website-\u2026"
+lastmod: 2024-02-18 23:09:02.088320
+model: gpt-4-0125-preview
+summary: "Een HTTP-verzoek versturen is hoe je om gegevens of een reactie van een\
+  \ webdienst vraagt. Programmeurs doen dit om te communiceren met API's, website-\u2026"
+title: Een HTTP-verzoek verzenden
 ---
 
 {{< edit_this_page >}}

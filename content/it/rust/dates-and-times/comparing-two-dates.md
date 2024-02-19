@@ -1,13 +1,14 @@
 ---
-title:                "Confronto tra due date"
 aliases:
 - /it/rust/comparing-two-dates/
-date:                  2024-01-20T17:33:55.888336-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Confronto tra due date"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/comparing-two-dates.md"
+date: 2024-01-20 17:33:55.888336-07:00
+description: "Confrontare due date significa verificare se sono uguali, quale precede\
+  \ l'altra, o calcolarne la differenza. I programmatori lo fanno per gestire eventi,\u2026"
+lastmod: 2024-02-18 23:08:55.692296
+model: gpt-4-1106-preview
+summary: "Confrontare due date significa verificare se sono uguali, quale precede\
+  \ l'altra, o calcolarne la differenza. I programmatori lo fanno per gestire eventi,\u2026"
+title: Confronto tra due date
 ---
 
 {{< edit_this_page >}}

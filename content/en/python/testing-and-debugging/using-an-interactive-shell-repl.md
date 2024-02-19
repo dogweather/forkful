@@ -1,13 +1,14 @@
 ---
-title:                "Using an interactive shell (REPL)"
 aliases:
 - /en/python/using-an-interactive-shell-repl/
-date:                  2024-01-25T03:39:28.325958-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Using an interactive shell (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/using-an-interactive-shell-repl.md"
+date: 2024-01-25 03:39:28.325958-07:00
+description: "A REPL, or Read-Eval-Print Loop, is a programming environment that takes\
+  \ single user inputs, executes them, and returns the result to the user.\u2026"
+lastmod: 2024-02-18 23:09:10.682998
+model: gpt-4-1106-preview
+summary: "A REPL, or Read-Eval-Print Loop, is a programming environment that takes\
+  \ single user inputs, executes them, and returns the result to the user.\u2026"
+title: Using an interactive shell (REPL)
 ---
 
 {{< edit_this_page >}}

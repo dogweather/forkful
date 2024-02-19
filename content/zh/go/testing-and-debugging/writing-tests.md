@@ -1,14 +1,24 @@
 ---
-title:                "编写测试"
 aliases:
 - /zh/go/writing-tests/
-date:                  2024-02-03T18:15:23.199668-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "编写测试"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:15:23.199668-07:00
+description: "\u5728 Go \u4E2D\u7F16\u5199\u6D4B\u8BD5\u6D89\u53CA\u521B\u5EFA\u5C0F\
+  \u578B\u3001\u53EF\u7BA1\u7406\u7684\u4EE3\u7801\u7247\u6BB5\uFF0C\u7528\u4E8E\u9A8C\
+  \u8BC1\u5E94\u7528\u7A0B\u5E8F\u7684\u529F\u80FD\u548C\u884C\u4E3A\u3002\u7A0B\u5E8F\
+  \u5458\u7F16\u5199\u6D4B\u8BD5\u4EE5\u786E\u4FDD\u5728\u5404\u79CD\u6761\u4EF6\u4E0B\
+  \u4ED6\u4EEC\u7684\u4EE3\u7801\u5982\u9884\u671F\u90A3\u6837\u5DE5\u4F5C\uFF0C\u4EE5\
+  \u4FBF\u4E8E\u91CD\u6784\uFF0C\u5E76\u5E2E\u52A9\u9632\u6B62\u56DE\u5F52\u3002"
+lastmod: 2024-02-18 23:08:58.711644
+model: gpt-4-0125-preview
+summary: "\u5728 Go \u4E2D\u7F16\u5199\u6D4B\u8BD5\u6D89\u53CA\u521B\u5EFA\u5C0F\u578B\
+  \u3001\u53EF\u7BA1\u7406\u7684\u4EE3\u7801\u7247\u6BB5\uFF0C\u7528\u4E8E\u9A8C\u8BC1\
+  \u5E94\u7528\u7A0B\u5E8F\u7684\u529F\u80FD\u548C\u884C\u4E3A\u3002\u7A0B\u5E8F\u5458\
+  \u7F16\u5199\u6D4B\u8BD5\u4EE5\u786E\u4FDD\u5728\u5404\u79CD\u6761\u4EF6\u4E0B\u4ED6\
+  \u4EEC\u7684\u4EE3\u7801\u5982\u9884\u671F\u90A3\u6837\u5DE5\u4F5C\uFF0C\u4EE5\u4FBF\
+  \u4E8E\u91CD\u6784\uFF0C\u5E76\u5E2E\u52A9\u9632\u6B62\u56DE\u5F52\u3002"
+title: "\u7F16\u5199\u6D4B\u8BD5"
 ---
 
 {{< edit_this_page >}}

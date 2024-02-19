@@ -1,13 +1,16 @@
 ---
-title:                "Usuwanie cudzysłowów z ciągu znaków"
 aliases:
 - /pl/elm/removing-quotes-from-a-string/
-date:                  2024-01-26T03:39:00.255315-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usuwanie cudzysłowów z ciągu znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:39:00.255315-07:00
+description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza usuni\u0119\
+  cie tych dodatkowych podw\xF3jnych lub pojedynczych znak\xF3w cytatu, kt\xF3re faktycznie\
+  \ nie s\u0105 potrzebne w\u2026"
+lastmod: 2024-02-18 23:08:49.507420
+model: gpt-4-0125-preview
+summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza usuni\u0119\
+  cie tych dodatkowych podw\xF3jnych lub pojedynczych znak\xF3w cytatu, kt\xF3re faktycznie\
+  \ nie s\u0105 potrzebne w\u2026"
+title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

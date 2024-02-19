@@ -1,14 +1,19 @@
 ---
-title:                "字符串拼接"
 aliases:
 - /zh/fish-shell/concatenating-strings/
-date:                  2024-01-20T17:34:42.867040-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "字符串拼接"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/concatenating-strings.md"
+date: 2024-01-20 17:34:42.867040-07:00
+description: "\u5B57\u7B26\u4E32\u62FC\u63A5\u5C31\u662F\u5C06\u591A\u4E2A\u5B57\u7B26\
+  \u4E32\u5408\u5E76\u6210\u4E00\u4E2A\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u4E3A\
+  \u4E86\u751F\u6210\u52A8\u6001\u5185\u5BB9\u3001\u6784\u5EFA\u8DEF\u5F84\u6216\u8005\
+  \u7EC4\u5408\u6D88\u606F\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.510151
+model: gpt-4-1106-preview
+summary: "\u5B57\u7B26\u4E32\u62FC\u63A5\u5C31\u662F\u5C06\u591A\u4E2A\u5B57\u7B26\
+  \u4E32\u5408\u5E76\u6210\u4E00\u4E2A\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u4E3A\
+  \u4E86\u751F\u6210\u52A8\u6001\u5185\u5BB9\u3001\u6784\u5EFA\u8DEF\u5F84\u6216\u8005\
+  \u7EC4\u5408\u6D88\u606F\u3002"
+title: "\u5B57\u7B26\u4E32\u62FC\u63A5"
 ---
 
 {{< edit_this_page >}}

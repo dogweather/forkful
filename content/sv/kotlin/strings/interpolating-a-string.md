@@ -1,13 +1,16 @@
 ---
-title:                "Interpolera en sträng"
 aliases:
 - /sv/kotlin/interpolating-a-string/
-date:                  2024-01-20T17:51:14.333197-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolera en sträng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/interpolating-a-string.md"
+date: 2024-01-20 17:51:14.333197-07:00
+description: "Stringinterpolering \xE4r n\xE4r du plockar in variabler eller uttryck\
+  \ direkt i en textstr\xE4ng. Det g\xF6r din kod mer l\xE4sbar och effektiv eftersom\
+  \ du slipper\u2026"
+lastmod: 2024-02-18 23:08:51.736563
+model: gpt-4-1106-preview
+summary: "Stringinterpolering \xE4r n\xE4r du plockar in variabler eller uttryck direkt\
+  \ i en textstr\xE4ng. Det g\xF6r din kod mer l\xE4sbar och effektiv eftersom du\
+  \ slipper\u2026"
+title: "Interpolera en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

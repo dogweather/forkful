@@ -1,13 +1,15 @@
 ---
-title:                "Enviando uma requisição HTTP"
 aliases:
 - /pt/elixir/sending-an-http-request/
-date:                  2024-01-20T17:59:19.422312-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando uma requisição HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/sending-an-http-request.md"
+date: 2024-01-20 17:59:19.422312-07:00
+description: "Enviar uma requisi\xE7\xE3o HTTP significa pedir informa\xE7\xE3o ou\
+  \ enviar dados para um servidor web usando o protocolo HTTP. Programadores fazem\
+  \ isso para\u2026"
+lastmod: 2024-02-18 23:08:57.840951
+model: gpt-4-1106-preview
+summary: "Enviar uma requisi\xE7\xE3o HTTP significa pedir informa\xE7\xE3o ou enviar\
+  \ dados para um servidor web usando o protocolo HTTP. Programadores fazem isso para\u2026"
+title: "Enviando uma requisi\xE7\xE3o HTTP"
 ---
 
 {{< edit_this_page >}}

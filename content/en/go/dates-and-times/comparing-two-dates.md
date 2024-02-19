@@ -1,12 +1,14 @@
 ---
-title:                "Comparing two dates"
 aliases:
 - /en/go/comparing-two-dates/
-date:                  2024-02-03T17:50:15.338186-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Comparing two dates"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/comparing-two-dates.md"
+date: 2024-02-03 17:50:15.338186-07:00
+description: "Comparing two dates in programming is a fundamental task allowing developers\
+  \ to evaluate the chronological relationship between dates. Such comparisons\u2026"
+lastmod: 2024-02-18 23:09:10.609157
+model: gpt-4-0125-preview
+summary: "Comparing two dates in programming is a fundamental task allowing developers\
+  \ to evaluate the chronological relationship between dates. Such comparisons\u2026"
+title: Comparing two dates
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,21 @@
 ---
-title:                "下载网页"
 aliases:
 - /zh/fish-shell/downloading-a-web-page/
-date:                  2024-01-20T17:44:04.098607-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "下载网页"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/downloading-a-web-page.md"
+date: 2024-01-20 17:44:04.098607-07:00
+description: "\u4E0B\u8F7D\u7F51\u9875\u610F\u5473\u7740\u4ECE\u4E92\u8054\u7F51\u4E0A\
+  \u6293\u53D6\u4E00\u6574\u4E2A\u9875\u9762\u7684\u6570\u636E\u3002\u7A0B\u5E8F\u5458\
+  \u8FD9\u4E48\u505A\u7684\u76EE\u7684\u901A\u5E38\u662F\u4E3A\u4E86\u6570\u636E\u5206\
+  \u6790\uFF0C\u5185\u5BB9\u5907\u4EFD\uFF0C\u6216\u8005\u662F\u79BB\u7EBF\u67E5\u770B\
+  \u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.518280
+model: gpt-4-1106-preview
+summary: "\u4E0B\u8F7D\u7F51\u9875\u610F\u5473\u7740\u4ECE\u4E92\u8054\u7F51\u4E0A\
+  \u6293\u53D6\u4E00\u6574\u4E2A\u9875\u9762\u7684\u6570\u636E\u3002\u7A0B\u5E8F\u5458\
+  \u8FD9\u4E48\u505A\u7684\u76EE\u7684\u901A\u5E38\u662F\u4E3A\u4E86\u6570\u636E\u5206\
+  \u6790\uFF0C\u5185\u5BB9\u5907\u4EFD\uFF0C\u6216\u8005\u662F\u79BB\u7EBF\u67E5\u770B\
+  \u3002"
+title: "\u4E0B\u8F7D\u7F51\u9875"
 ---
 
 {{< edit_this_page >}}

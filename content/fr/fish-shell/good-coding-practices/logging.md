@@ -1,13 +1,14 @@
 ---
-title:                "Journalisation"
 aliases:
 - /fr/fish-shell/logging/
-date:                  2024-01-26T01:02:48.266092-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Journalisation"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/logging.md"
+date: 2024-01-26 01:02:48.266092-07:00
+description: "Le journalisation, c'est essentiellement consigner ce que fait votre\
+  \ application - un journal intime, si vous voulez, mais pour le code. Les programmeurs\u2026"
+lastmod: 2024-02-18 23:09:09.313097
+model: gpt-4-1106-preview
+summary: "Le journalisation, c'est essentiellement consigner ce que fait votre application\
+  \ - un journal intime, si vous voulez, mais pour le code. Les programmeurs\u2026"
+title: Journalisation
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Kahden päivämäärän vertailu"
 aliases:
 - /fi/swift/comparing-two-dates/
-date:                  2024-01-20T17:34:07.465187-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Kahden päivämäärän vertailu"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/comparing-two-dates.md"
+date: 2024-01-20 17:34:07.465187-07:00
+description: "Vertaillaan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 n\xE4hd\xE4ksemme, kumpi\
+  \ on aikaisempi tai onko ne samat. T\xE4m\xE4 on t\xE4rke\xE4\xE4, jotta voimme\
+  \ j\xE4rjest\xE4\xE4 tapahtumia, tarkistaa\u2026"
+lastmod: 2024-02-18 23:09:08.003467
+model: gpt-4-1106-preview
+summary: "Vertaillaan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 n\xE4hd\xE4ksemme, kumpi\
+  \ on aikaisempi tai onko ne samat. T\xE4m\xE4 on t\xE4rke\xE4\xE4, jotta voimme\
+  \ j\xE4rjest\xE4\xE4 tapahtumia, tarkistaa\u2026"
+title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 ---
 
 {{< edit_this_page >}}

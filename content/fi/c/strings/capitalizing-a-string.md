@@ -1,14 +1,16 @@
 ---
-title:                "Merkkijonon suuraakkostaminen"
 aliases:
 - /fi/c/capitalizing-a-string/
-date:                  2024-02-03T17:53:11.308479-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonon suuraakkostaminen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:11.308479-07:00
+description: "Merkkijonon muuttaminen alkukirjaimin isoksi C-kieless\xE4 tarkoittaa\
+  \ annetun merkkijonon jokaisen sanan ensimm\xE4isen merkin muuntamista isoksi kirjaimeksi,\u2026"
+lastmod: 2024-02-18 23:09:08.111988
+model: gpt-4-0125-preview
+summary: "Merkkijonon muuttaminen alkukirjaimin isoksi C-kieless\xE4 tarkoittaa annetun\
+  \ merkkijonon jokaisen sanan ensimm\xE4isen merkin muuntamista isoksi kirjaimeksi,\u2026"
+title: Merkkijonon suuraakkostaminen
 ---
 
 {{< edit_this_page >}}

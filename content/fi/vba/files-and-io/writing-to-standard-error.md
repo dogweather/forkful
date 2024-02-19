@@ -1,14 +1,16 @@
 ---
-title:                "Kirjoittaminen vakiovirheeseen"
 aliases:
 - /fi/vba/writing-to-standard-error/
-date:                  2024-02-01T22:09:23.884760-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kirjoittaminen vakiovirheeseen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/writing-to-standard-error.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:09:23.884760-07:00
+description: "Virheiden kirjoittaminen Visual Basic for Applications (VBA) -ohjelmassa\
+  \ tarkoittaa virheilmoitusten tai diagnostiikan ohjaamista erilleen\u2026"
+lastmod: 2024-02-18 23:09:07.430103
+model: gpt-4-0125-preview
+summary: "Virheiden kirjoittaminen Visual Basic for Applications (VBA) -ohjelmassa\
+  \ tarkoittaa virheilmoitusten tai diagnostiikan ohjaamista erilleen\u2026"
+title: Kirjoittaminen vakiovirheeseen
 ---
 
 {{< edit_this_page >}}

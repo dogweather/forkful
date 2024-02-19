@@ -1,15 +1,16 @@
 ---
-title:                "Uso de matrices asociativas"
 aliases:
 - /es/clojure/using-associative-arrays/
-date:                  2024-01-30T19:10:05.523071-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Uso de matrices asociativas"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:05.523071-07:00
+description: "Los arreglos asociativos, o mapas hash, en Clojure te permiten almacenar\
+  \ y recuperar datos con pares clave-valor. Son una opci\xF3n predilecta para manejar\u2026"
+lastmod: 2024-02-18 23:09:09.595493
+model: gpt-4-0125-preview
+summary: "Los arreglos asociativos, o mapas hash, en Clojure te permiten almacenar\
+  \ y recuperar datos con pares clave-valor. Son una opci\xF3n predilecta para manejar\u2026"
+title: Uso de matrices asociativas
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Herunterladen einer Webseite"
 aliases:
 - /de/vba/downloading-a-web-page/
-date:                  2024-02-01T21:53:27.711655-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Herunterladen einer Webseite"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/vba/downloading-a-web-page.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:27.711655-07:00
+description: "Das Herunterladen einer Webseite in Visual Basic for Applications (VBA)\
+  \ beinhaltet das Abrufen des HTML-Inhalts einer Webseite aus dem Internet.\u2026"
+lastmod: 2024-02-18 23:09:04.687609
+model: gpt-4-0125-preview
+summary: "Das Herunterladen einer Webseite in Visual Basic for Applications (VBA)\
+  \ beinhaltet das Abrufen des HTML-Inhalts einer Webseite aus dem Internet.\u2026"
+title: Herunterladen einer Webseite
 ---
 
 {{< edit_this_page >}}

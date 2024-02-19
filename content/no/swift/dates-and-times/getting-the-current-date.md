@@ -1,14 +1,18 @@
 ---
-title:                "Få dagens dato"
 aliases:
 - /no/swift/getting-the-current-date/
-date:                  2024-02-03T19:11:06.986361-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Få dagens dato"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:11:06.986361-07:00
+description: "\xC5 hente den n\xE5v\xE6rende datoen i Swift inneb\xE6rer \xE5 bruke\
+  \ `Date`-klassen for \xE5 f\xE5 tilgang til datoen og tiden appen blir kj\xF8rt.\
+  \ Programmerere trenger \xE5 hente\u2026"
+lastmod: 2024-02-18 23:08:54.278819
+model: gpt-4-0125-preview
+summary: "\xC5 hente den n\xE5v\xE6rende datoen i Swift inneb\xE6rer \xE5 bruke `Date`-klassen\
+  \ for \xE5 f\xE5 tilgang til datoen og tiden appen blir kj\xF8rt. Programmerere\
+  \ trenger \xE5 hente\u2026"
+title: "F\xE5 dagens dato"
 ---
 
 {{< edit_this_page >}}

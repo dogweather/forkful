@@ -1,13 +1,14 @@
 ---
-title:                "Einsatz eines Debuggers"
 aliases:
 - /de/elm/using-a-debugger/
-date:                  2024-01-26T03:48:50.858891-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Einsatz eines Debuggers"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/using-a-debugger.md"
+date: 2024-01-26 03:48:50.858891-07:00
+description: "Das Debuggen in Elm beinhaltet das Identifizieren und Entfernen von\
+  \ Fehlern aus Ihrem Code. Programmierer machen das, um sicherzustellen, dass ihre\u2026"
+lastmod: 2024-02-18 23:09:04.786332
+model: gpt-4-0125-preview
+summary: "Das Debuggen in Elm beinhaltet das Identifizieren und Entfernen von Fehlern\
+  \ aus Ihrem Code. Programmierer machen das, um sicherzustellen, dass ihre\u2026"
+title: Einsatz eines Debuggers
 ---
 
 {{< edit_this_page >}}

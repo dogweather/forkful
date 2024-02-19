@@ -1,13 +1,14 @@
 ---
-title:                "Reading command line arguments"
 aliases:
 - /en/javascript/reading-command-line-arguments/
-date:                  2024-01-20T17:56:05.403364-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Reading command line arguments"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:05.403364-07:00
+description: "Reading command line arguments means grabbing the extras users tack\
+  \ onto commands when they run your script. Programmers do it to let users customize\u2026"
+lastmod: 2024-02-18 23:09:11.453123
+model: gpt-4-1106-preview
+summary: "Reading command line arguments means grabbing the extras users tack onto\
+  \ commands when they run your script. Programmers do it to let users customize\u2026"
+title: Reading command line arguments
 ---
 
 {{< edit_this_page >}}

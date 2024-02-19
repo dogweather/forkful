@@ -1,13 +1,16 @@
 ---
-title:                "Enviando uma requisição HTTP com autenticação básica"
 aliases:
 - /pt/elm/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:01:30.784809-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando uma requisição HTTP com autenticação básica"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:01:30.784809-07:00
+description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9\
+  \ o processo de acessar recursos protegidos em um servidor, fornecendo um nome de\
+  \ usu\xE1rio e senha.\u2026"
+lastmod: 2024-02-18 23:08:58.060223
+model: gpt-4-1106-preview
+summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9 o\
+  \ processo de acessar recursos protegidos em um servidor, fornecendo um nome de\
+  \ usu\xE1rio e senha.\u2026"
+title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie argumentów linii poleceń"
 aliases:
 - /pl/swift/reading-command-line-arguments/
-date:                  2024-01-20T17:56:59.743955-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie argumentów linii poleceń"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:59.743955-07:00
+description: "Argumenty linii polece\u0144 to parametry przekazywane do programu,\
+  \ kiedy jest on uruchamiany z terminala. Programi\u015Bci korzystaj\u0105 z nich,\
+  \ by wp\u0142ywa\u0107 na\u2026"
+lastmod: 2024-02-18 23:08:49.967863
+model: gpt-4-1106-preview
+summary: "Argumenty linii polece\u0144 to parametry przekazywane do programu, kiedy\
+  \ jest on uruchamiany z terminala. Programi\u015Bci korzystaj\u0105 z nich, by wp\u0142\
+  ywa\u0107 na\u2026"
+title: "Odczytywanie argument\xF3w linii polece\u0144"
 ---
 
 {{< edit_this_page >}}

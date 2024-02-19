@@ -1,13 +1,15 @@
 ---
-title:                "Satunnaislukujen generointi"
 aliases:
 - /fi/elixir/generating-random-numbers/
-date:                  2024-01-27T20:33:08.628593-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Satunnaislukujen generointi"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/generating-random-numbers.md"
+date: 2024-01-27 20:33:08.628593-07:00
+description: "Satunnaislukujen tuottaminen Elixir-kieless\xE4 on perustavaa laatua\
+  \ oleva ohjelmointiteht\xE4v\xE4, elint\xE4rke\xE4 sovelluksille, jotka tarvitsevat\
+  \ ennalta\u2026"
+lastmod: 2024-02-18 23:09:07.269143
+model: gpt-4-0125-preview
+summary: "Satunnaislukujen tuottaminen Elixir-kieless\xE4 on perustavaa laatua oleva\
+  \ ohjelmointiteht\xE4v\xE4, elint\xE4rke\xE4 sovelluksille, jotka tarvitsevat ennalta\u2026"
+title: Satunnaislukujen generointi
 ---
 
 {{< edit_this_page >}}

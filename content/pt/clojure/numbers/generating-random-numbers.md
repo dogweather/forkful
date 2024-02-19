@@ -1,13 +1,16 @@
 ---
-title:                "Geração de números aleatórios"
 aliases:
 - /pt/clojure/generating-random-numbers/
-date:                  2024-01-27T20:32:41.713822-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Geração de números aleatórios"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/generating-random-numbers.md"
+date: 2024-01-27 20:32:41.713822-07:00
+description: "Gerar n\xFAmeros aleat\xF3rios na programa\xE7\xE3o \xE9 sobre criar\
+  \ valores que n\xE3o podem ser previstos logicamente antes do tempo. Programadores\
+  \ fazem isso por uma\u2026"
+lastmod: 2024-02-18 23:08:57.798693
+model: gpt-4-0125-preview
+summary: "Gerar n\xFAmeros aleat\xF3rios na programa\xE7\xE3o \xE9 sobre criar valores\
+  \ que n\xE3o podem ser previstos logicamente antes do tempo. Programadores fazem\
+  \ isso por uma\u2026"
+title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 ---
 
 {{< edit_this_page >}}

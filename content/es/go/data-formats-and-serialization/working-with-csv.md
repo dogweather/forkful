@@ -1,14 +1,18 @@
 ---
-title:                "Trabajando con CSV"
 aliases:
 - /es/go/working-with-csv/
-date:                  2024-02-03T18:11:36.148989-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:11:36.148989-07:00
+description: "El formato de Valores Separados por Comas (CSV) es omnipresente para\
+  \ el intercambio de datos debido a su simplicidad y facilidad de integraci\xF3n\
+  \ con la\u2026"
+lastmod: 2024-02-18 23:09:09.481903
+model: gpt-4-0125-preview
+summary: "El formato de Valores Separados por Comas (CSV) es omnipresente para el\
+  \ intercambio de datos debido a su simplicidad y facilidad de integraci\xF3n con\
+  \ la\u2026"
+title: Trabajando con CSV
 ---
 
 {{< edit_this_page >}}

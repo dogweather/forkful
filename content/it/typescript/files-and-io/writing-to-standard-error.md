@@ -1,14 +1,16 @@
 ---
-title:                "Scrivere sull'errore standard"
 aliases:
 - /it/typescript/writing-to-standard-error/
-date:                  2024-02-03T19:34:38.838300-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Scrivere sull'errore standard"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:34:38.838300-07:00
+description: "In TypeScript, scrivere sull'errore standard (stderr) \xE8 un processo\
+  \ che invia messaggi di errore o log direttamente al flusso di uscita di errore\u2026"
+lastmod: 2024-02-18 23:08:55.655983
+model: gpt-4-0125-preview
+summary: "In TypeScript, scrivere sull'errore standard (stderr) \xE8 un processo che\
+  \ invia messaggi di errore o log direttamente al flusso di uscita di errore\u2026"
+title: Scrivere sull'errore standard
 ---
 
 {{< edit_this_page >}}

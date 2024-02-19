@@ -1,13 +1,16 @@
 ---
-title:                "Rejestrowanie zdarzeń"
 aliases:
 - /pl/php/logging/
-date:                  2024-01-26T01:07:08.374614-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rejestrowanie zdarzeń"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/logging.md"
+date: 2024-01-26 01:07:08.374614-07:00
+description: "Logowanie jest w zasadzie jak prowadzenie dziennika dla twojego kodu;\
+  \ to czynno\u015B\u0107 polegaj\u0105ca na rejestrowaniu zdarze\u0144, b\u0142\u0119\
+  d\xF3w i innych istotnych punkt\xF3w\u2026"
+lastmod: 2024-02-18 23:08:49.701959
+model: gpt-4-1106-preview
+summary: "Logowanie jest w zasadzie jak prowadzenie dziennika dla twojego kodu; to\
+  \ czynno\u015B\u0107 polegaj\u0105ca na rejestrowaniu zdarze\u0144, b\u0142\u0119\
+  d\xF3w i innych istotnych punkt\xF3w\u2026"
+title: "Rejestrowanie zdarze\u0144"
 ---
 
 {{< edit_this_page >}}

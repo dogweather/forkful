@@ -1,13 +1,14 @@
 ---
-title:                "Koodin refaktorointi"
 aliases:
 - /fi/fish-shell/refactoring/
-date:                  2024-01-26T01:18:52.162536-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Koodin refaktorointi"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/refactoring.md"
+date: 2024-01-26 01:18:52.162536-07:00
+description: "Refaktorointi on prosessi, jossa olemassa olevaa koodia uudelleenrakennetaan\
+  \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4 parantamaan ei-toiminnallisia\u2026"
+lastmod: 2024-02-18 23:09:08.093388
+model: gpt-4-0125-preview
+summary: "Refaktorointi on prosessi, jossa olemassa olevaa koodia uudelleenrakennetaan\
+  \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4 parantamaan ei-toiminnallisia\u2026"
+title: Koodin refaktorointi
 ---
 
 {{< edit_this_page >}}

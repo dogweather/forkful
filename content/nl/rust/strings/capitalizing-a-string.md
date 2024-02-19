@@ -1,15 +1,16 @@
 ---
-title:                "Een string met hoofdletters maken"
 aliases:
 - /nl/rust/capitalizing-a-string/
-date:                  2024-01-28T21:55:55.953893-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string met hoofdletters maken"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/capitalizing-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:55:55.953893-07:00
+description: "Het kapitaliseren van een string betekent dat je de eerste letter van\
+  \ elk woord in hoofdletters zet terwijl de rest in kleine letters blijft. Programmeurs\u2026"
+lastmod: 2024-02-18 23:09:01.600646
+model: gpt-4-0125-preview
+summary: "Het kapitaliseren van een string betekent dat je de eerste letter van elk\
+  \ woord in hoofdletters zet terwijl de rest in kleine letters blijft. Programmeurs\u2026"
+title: Een string met hoofdletters maken
 ---
 
 {{< edit_this_page >}}

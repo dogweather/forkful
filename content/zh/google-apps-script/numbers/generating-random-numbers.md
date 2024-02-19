@@ -1,14 +1,28 @@
 ---
-title:                "生成随机数"
 aliases:
 - /zh/google-apps-script/generating-random-numbers/
-date:                  2024-02-01T21:54:11.962863-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "生成随机数"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/google-apps-script/generating-random-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:11.962863-07:00
+description: "\u5728\u7F16\u7A0B\u4E2D\u751F\u6210\u968F\u673A\u6570\u5B57\u662F\u4E00\
+  \u9879\u57FA\u672C\u4EFB\u52A1\uFF0C\u7528\u4E8E\u4F17\u591A\u5E94\u7528\u4E2D\uFF0C\
+  \u5982\u6A21\u62DF\u3001\u6E38\u620F\u548C\u5B89\u5168\u7CFB\u7EDF\u3002\u7A0B\u5E8F\
+  \u5458\u5728 Google Apps \u811A\u672C\u4E2D\u4F7F\u7528\u8FD9\u79CD\u6280\u672F\u6765\
+  \u5F15\u5165\u53EF\u53D8\u6027\u3001\u6D4B\u8BD5\u573A\u666F\uFF0C\u5E76\u5411\u4ED6\
+  \u4EEC\u5728 Google \u751F\u6001\u7CFB\u7EDF\u5185\u7684\u5E94\u7528\u7A0B\u5E8F\
+  \uFF08\u5305\u62EC Sheets\u3001Docs \u548C Forms\uFF09\u6DFB\u52A0\u4E0D\u53EF\u9884\
+  \u6D4B\u6027\u3002"
+lastmod: 2024-02-18 23:08:58.745837
+model: gpt-4-0125-preview
+summary: "\u5728\u7F16\u7A0B\u4E2D\u751F\u6210\u968F\u673A\u6570\u5B57\u662F\u4E00\
+  \u9879\u57FA\u672C\u4EFB\u52A1\uFF0C\u7528\u4E8E\u4F17\u591A\u5E94\u7528\u4E2D\uFF0C\
+  \u5982\u6A21\u62DF\u3001\u6E38\u620F\u548C\u5B89\u5168\u7CFB\u7EDF\u3002\u7A0B\u5E8F\
+  \u5458\u5728 Google Apps \u811A\u672C\u4E2D\u4F7F\u7528\u8FD9\u79CD\u6280\u672F\u6765\
+  \u5F15\u5165\u53EF\u53D8\u6027\u3001\u6D4B\u8BD5\u573A\u666F\uFF0C\u5E76\u5411\u4ED6\
+  \u4EEC\u5728 Google \u751F\u6001\u7CFB\u7EDF\u5185\u7684\u5E94\u7528\u7A0B\u5E8F\
+  \uFF08\u5305\u62EC Sheets\u3001Docs \u548C Forms\uFF09\u6DFB\u52A0\u4E0D\u53EF\u9884\
+  \u6D4B\u6027\u3002"
+title: "\u751F\u6210\u968F\u673A\u6570"
 ---
 
 {{< edit_this_page >}}

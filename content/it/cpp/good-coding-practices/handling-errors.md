@@ -1,13 +1,16 @@
 ---
-title:                "Gestione degli errori"
 aliases:
 - /it/cpp/handling-errors/
-date:                  2024-01-26T00:49:27.909391-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Gestione degli errori"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/handling-errors.md"
+date: 2024-01-26 00:49:27.909391-07:00
+description: "Gestire gli errori significa pianificare per quando le cose vanno storte.\
+  \ \xC8 vitale perch\xE9 aiuta ad evitare crash e rende il tuo software robusto e\
+  \ facile\u2026"
+lastmod: 2024-02-18 23:08:56.179385
+model: gpt-4-1106-preview
+summary: "Gestire gli errori significa pianificare per quando le cose vanno storte.\
+  \ \xC8 vitale perch\xE9 aiuta ad evitare crash e rende il tuo software robusto e\
+  \ facile\u2026"
+title: Gestione degli errori
 ---
 
 {{< edit_this_page >}}

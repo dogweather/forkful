@@ -1,13 +1,14 @@
 ---
-title:                "Arrotondamento dei numeri"
 aliases:
 - /it/clojure/rounding-numbers/
-date:                  2024-01-26T03:43:43.275396-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrotondamento dei numeri"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/rounding-numbers.md"
+date: 2024-01-26 03:43:43.275396-07:00
+description: "Arrotondare i numeri consiste nel modificare un numero per approssimarlo\
+  \ all'intero pi\xF9 vicino, o a una certa precisione decimale. Arrotondiamo i numeri\u2026"
+lastmod: 2024-02-18 23:08:55.556205
+model: gpt-4-0125-preview
+summary: "Arrotondare i numeri consiste nel modificare un numero per approssimarlo\
+  \ all'intero pi\xF9 vicino, o a una certa precisione decimale. Arrotondiamo i numeri\u2026"
+title: Arrotondamento dei numeri
 ---
 
 {{< edit_this_page >}}

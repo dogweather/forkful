@@ -1,13 +1,16 @@
 ---
-title:                "Sammenslåing av strenger"
 aliases:
 - /no/bash/concatenating-strings/
-date:                  2024-01-20T17:34:12.647902-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammenslåing av strenger"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/concatenating-strings.md"
+date: 2024-01-20 17:34:12.647902-07:00
+description: "Sammenkjede av strenger betyr \xE5 lime sammen to eller flere tekstbitene\
+  \ ende til ende. Programmerere gj\xF8r dette for \xE5 bygge opp komplekse strenger\
+  \ fra\u2026"
+lastmod: 2024-02-18 23:08:54.048223
+model: gpt-4-1106-preview
+summary: "Sammenkjede av strenger betyr \xE5 lime sammen to eller flere tekstbitene\
+  \ ende til ende. Programmerere gj\xF8r dette for \xE5 bygge opp komplekse strenger\
+  \ fra\u2026"
+title: "Sammensl\xE5ing av strenger"
 ---
 
 {{< edit_this_page >}}

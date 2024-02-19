@@ -1,13 +1,15 @@
 ---
-title:                "הדפסת פלט לניפוי באגים"
 aliases:
 - /he/elm/printing-debug-output/
-date:                  2024-01-20T17:52:21.499427-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "הדפסת פלט לניפוי באגים"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/printing-debug-output.md"
+date: 2024-01-20 17:52:21.499427-07:00
+description: Printing debug output means showing values in your program for checking
+  what's going on. We do it to find bugs and understand behavior without guessing.
+lastmod: 2024-02-18 23:08:52.756163
+model: gpt-4-1106-preview
+summary: Printing debug output means showing values in your program for checking what's
+  going on. We do it to find bugs and understand behavior without guessing.
+title: "\u05D4\u05D3\u05E4\u05E1\u05EA \u05E4\u05DC\u05D8 \u05DC\u05E0\u05D9\u05E4\
+  \u05D5\u05D9 \u05D1\u05D0\u05D2\u05D9\u05DD"
 ---
 
 {{< edit_this_page >}}

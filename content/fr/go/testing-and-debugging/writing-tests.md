@@ -1,14 +1,18 @@
 ---
-title:                "Rédaction de tests"
 aliases:
 - /fr/go/writing-tests/
-date:                  2024-02-03T18:15:07.495181-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rédaction de tests"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:15:07.495181-07:00
+description: "\xC9crire des tests en Go consiste \xE0 cr\xE9er de petits morceaux\
+  \ de code g\xE9rables qui valident la fonctionnalit\xE9 et le comportement de votre\
+  \ application. Les\u2026"
+lastmod: 2024-02-18 23:09:08.238281
+model: gpt-4-0125-preview
+summary: "\xC9crire des tests en Go consiste \xE0 cr\xE9er de petits morceaux de code\
+  \ g\xE9rables qui valident la fonctionnalit\xE9 et le comportement de votre application.\
+  \ Les\u2026"
+title: "R\xE9daction de tests"
 ---
 
 {{< edit_this_page >}}

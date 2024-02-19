@@ -1,13 +1,22 @@
 ---
-title:                "XML 다루기"
 aliases:
 - /ko/java/working-with-xml/
-date:                  2024-01-26T04:32:47.572163-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML 다루기"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/working-with-xml.md"
+date: 2024-01-26 04:32:47.572163-07:00
+description: "Java\uB97C \uC0AC\uC6A9\uD558\uC5EC XML \uC791\uC5C5\uC740 \uD30C\uC2F1\
+  , \uCFFC\uB9AC, \uBC0F XML \uBB38\uC11C\uC758 \uC870\uC791\uC744 \uD3EC\uD568\uD569\
+  \uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uB370\uC774\uD130 \uAD50\uD658\
+  , \uC124\uC815 \uAD00\uB9AC, \uADF8\uB9AC\uACE0 \uB9CE\uC740 \uB808\uAC70\uC2DC\
+  \ \uC2DC\uC2A4\uD15C \uBC0F API\uAC00 XML\uC744 \uC0AC\uC6A9\uD558\uC5EC \uD1B5\uC2E0\
+  \uD558\uAE30 \uB54C\uBB38\uC5D0 \uC774 \uC791\uC5C5\uC744 \uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.058931
+model: gpt-4-0125-preview
+summary: "Java\uB97C \uC0AC\uC6A9\uD558\uC5EC XML \uC791\uC5C5\uC740 \uD30C\uC2F1\
+  , \uCFFC\uB9AC, \uBC0F XML \uBB38\uC11C\uC758 \uC870\uC791\uC744 \uD3EC\uD568\uD569\
+  \uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uB370\uC774\uD130 \uAD50\uD658\
+  , \uC124\uC815 \uAD00\uB9AC, \uADF8\uB9AC\uACE0 \uB9CE\uC740 \uB808\uAC70\uC2DC\
+  \ \uC2DC\uC2A4\uD15C \uBC0F API\uAC00 XML\uC744 \uC0AC\uC6A9\uD558\uC5EC \uD1B5\uC2E0\
+  \uD558\uAE30 \uB54C\uBB38\uC5D0 \uC774 \uC791\uC5C5\uC744 \uD569\uB2C8\uB2E4."
+title: "XML \uB2E4\uB8E8\uAE30"
 ---
 
 {{< edit_this_page >}}

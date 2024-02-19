@@ -1,14 +1,17 @@
 ---
-title:                "Einen String in Kleinbuchstaben umwandeln"
 aliases:
 - /de/google-apps-script/converting-a-string-to-lower-case/
-date:                  2024-02-01T21:51:09.049923-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Einen String in Kleinbuchstaben umwandeln"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/google-apps-script/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:09.049923-07:00
+description: "Die Umwandlung einer Zeichenkette in Kleinbuchstaben in Google Apps\
+  \ Script, einer cloudbasierten Skriptsprache zur Automatisierung von Aufgaben in\
+  \ Google-\u2026"
+lastmod: 2024-02-18 23:09:04.397928
+model: gpt-4-0125-preview
+summary: "Die Umwandlung einer Zeichenkette in Kleinbuchstaben in Google Apps Script,\
+  \ einer cloudbasierten Skriptsprache zur Automatisierung von Aufgaben in Google-\u2026"
+title: Einen String in Kleinbuchstaben umwandeln
 ---
 
 {{< edit_this_page >}}

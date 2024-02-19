@@ -1,14 +1,20 @@
 ---
-title:                "Viết kiểm thử"
 aliases:
 - /vi/go/writing-tests/
-date:                  2024-02-03T18:15:36.974857-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Viết kiểm thử"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:15:36.974857-07:00
+description: "Vi\u1EBFt test trong Go bao g\u1ED3m vi\u1EC7c t\u1EA1o ra nh\u1EEF\
+  ng \u0111o\u1EA1n m\xE3 nh\u1ECF, d\u1EC5 qu\u1EA3n l\xFD nh\u1EB1m x\xE1c nh\u1EAD\
+  n ch\u1EE9c n\u0103ng v\xE0 h\xE0nh vi c\u1EE7a \u1EE9ng d\u1EE5ng. L\u1EADp tr\xEC\
+  nh vi\xEAn vi\u1EBFt test \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o\u2026"
+lastmod: 2024-02-18 23:08:50.174740
+model: gpt-4-0125-preview
+summary: "Vi\u1EBFt test trong Go bao g\u1ED3m vi\u1EC7c t\u1EA1o ra nh\u1EEFng \u0111\
+  o\u1EA1n m\xE3 nh\u1ECF, d\u1EC5 qu\u1EA3n l\xFD nh\u1EB1m x\xE1c nh\u1EADn ch\u1EE9\
+  c n\u0103ng v\xE0 h\xE0nh vi c\u1EE7a \u1EE9ng d\u1EE5ng. L\u1EADp tr\xECnh vi\xEA\
+  n vi\u1EBFt test \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o\u2026"
+title: "Vi\u1EBFt ki\u1EC3m th\u1EED"
 ---
 
 {{< edit_this_page >}}

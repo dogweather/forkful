@@ -1,14 +1,18 @@
 ---
-title:                "Confrontare due date"
 aliases:
 - /it/c/comparing-two-dates/
-date:                  2024-02-03T17:53:26.182753-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Confrontare due date"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/comparing-two-dates.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:26.182753-07:00
+description: "Comparare due date in C comporta la determinazione della relazione cronologica\
+  \ tra di loro - se una data precede l'altra o se sono uguali. Questa capacit\xE0\
+  \u2026"
+lastmod: 2024-02-18 23:08:56.351596
+model: gpt-4-0125-preview
+summary: "Comparare due date in C comporta la determinazione della relazione cronologica\
+  \ tra di loro - se una data precede l'altra o se sono uguali. Questa capacit\xE0\
+  \u2026"
+title: Confrontare due date
 ---
 
 {{< edit_this_page >}}

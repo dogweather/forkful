@@ -1,14 +1,16 @@
 ---
-title:                "Capitalizzare una stringa"
 aliases:
 - /it/java/capitalizing-a-string/
-date:                  2024-02-03T19:05:41.241533-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizzare una stringa"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/java/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:41.241533-07:00
+description: "Capitalizzare una stringa implica modificare la prima lettera di ogni\
+  \ parola nella stringa in maiuscolo, assicurandosi che il resto rimanga in minuscolo.\u2026"
+lastmod: 2024-02-18 23:08:55.749915
+model: gpt-4-0125-preview
+summary: "Capitalizzare una stringa implica modificare la prima lettera di ogni parola\
+  \ nella stringa in maiuscolo, assicurandosi che il resto rimanga in minuscolo.\u2026"
+title: Capitalizzare una stringa
 ---
 
 {{< edit_this_page >}}

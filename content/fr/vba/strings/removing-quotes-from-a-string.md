@@ -1,14 +1,16 @@
 ---
-title:                "Supprimer les guillemets d'une chaîne"
 aliases:
 - /fr/vba/removing-quotes-from-a-string/
-date:                  2024-02-01T22:00:30.660223-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Supprimer les guillemets d'une chaîne"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/vba/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:30.660223-07:00
+description: "La suppression des guillemets d'une cha\xEEne dans VBA implique de retirer\
+  \ les instances de guillemets simples (`'`) ou doubles (`\"`) qui peuvent encapsuler\u2026"
+lastmod: 2024-02-18 23:09:08.563737
+model: gpt-4-0125-preview
+summary: "La suppression des guillemets d'une cha\xEEne dans VBA implique de retirer\
+  \ les instances de guillemets simples (`'`) ou doubles (`\"`) qui peuvent encapsuler\u2026"
+title: "Supprimer les guillemets d'une cha\xEEne"
 ---
 
 {{< edit_this_page >}}

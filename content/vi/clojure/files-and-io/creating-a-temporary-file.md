@@ -1,15 +1,20 @@
 ---
-title:                "Tạo một tập tin tạm thời"
 aliases:
 - /vi/clojure/creating-a-temporary-file/
-date:                  2024-01-28T21:58:27.281008-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tạo một tập tin tạm thời"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/clojure/creating-a-temporary-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:58:27.281008-07:00
+description: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi l\xE0 qu\xE1 tr\xECnh\
+  \ t\u1EA1o m\u1ED9t t\u1EC7p ng\u1EAFn h\u1EA1n cho vi\u1EC7c l\u01B0u tr\u1EEF\
+  \ d\u1EEF li\u1EC7u trung gian. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFA\
+  ng cho c\xE1c m\u1EE5c \u0111\xEDch nh\u01B0 l\u01B0u tr\u1EEF t\u1EA1m\u2026"
+lastmod: 2024-02-18 23:08:50.335991
+model: gpt-4-0125-preview
+summary: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi l\xE0 qu\xE1 tr\xECnh t\u1EA1\
+  o m\u1ED9t t\u1EC7p ng\u1EAFn h\u1EA1n cho vi\u1EC7c l\u01B0u tr\u1EEF d\u1EEF li\u1EC7\
+  u trung gian. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng cho c\xE1c m\u1EE5\
+  c \u0111\xEDch nh\u01B0 l\u01B0u tr\u1EEF t\u1EA1m\u2026"
+title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 ---
 
 {{< edit_this_page >}}

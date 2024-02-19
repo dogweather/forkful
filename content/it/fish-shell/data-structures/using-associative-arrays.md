@@ -1,15 +1,16 @@
 ---
-title:                "Utilizzo di array associativi"
 aliases:
 - /it/fish-shell/using-associative-arrays/
-date:                  2024-01-30T19:10:52.472331-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di array associativi"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:52.472331-07:00
+description: "Gli array associativi, o mappe hash, permettono di memorizzare dati\
+  \ come coppie chiave-valore, rendendo pi\xF9 semplice organizzare e recuperare informazioni\u2026"
+lastmod: 2024-02-18 23:08:56.286791
+model: gpt-4-0125-preview
+summary: "Gli array associativi, o mappe hash, permettono di memorizzare dati come\
+  \ coppie chiave-valore, rendendo pi\xF9 semplice organizzare e recuperare informazioni\u2026"
+title: Utilizzo di array associativi
 ---
 
 {{< edit_this_page >}}

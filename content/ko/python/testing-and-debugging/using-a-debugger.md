@@ -1,13 +1,24 @@
 ---
-title:                "디버거 사용하기"
 aliases:
 - /ko/python/using-a-debugger/
-date:                  2024-01-26T04:09:15.778524-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "디버거 사용하기"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/using-a-debugger.md"
+date: 2024-01-26 04:09:15.778524-07:00
+description: "\"\uB514\uBC84\uAC70 \uC0AC\uC6A9\uD558\uAE30\"\uB294 Python \uCF54\uB4DC\
+  \uB97C \uB2E8\uACC4\uBCC4\uB85C \uC9C4\uD589\uD558\uBA70 \uBC84\uADF8\uB97C \uCC3E\
+  \uACE0 \uD589\uB3D9\uC744 \uC774\uD574\uD558\uB294 \uACFC\uC815\uC785\uB2C8\uB2E4\
+  . \uCD94\uCE21\uB9CC \uD558\uBA70 \uC5B4\uB514\uC11C \uBB38\uC81C\uAC00 \uBC1C\uC0DD\
+  \uD588\uB294\uC9C0 \uCC3E\uB294 \uAC83\uBCF4\uB2E4 \uD6E8\uC52C \uC26C\uC6B0\uBA70\
+  , \uC774\uB294 \uC6B0\uB9AC\uC5D0\uAC8C \uC218\uC2DC\uAC04\uC758 print \uBB38 \uC9C0\
+  \uC625\uC5D0\uC11C \uBC97\uC5B4\uB098\uAC8C \uD574 \uC90D\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:05.631748
+model: gpt-4-0125-preview
+summary: "\"\uB514\uBC84\uAC70 \uC0AC\uC6A9\uD558\uAE30\"\uB294 Python \uCF54\uB4DC\
+  \uB97C \uB2E8\uACC4\uBCC4\uB85C \uC9C4\uD589\uD558\uBA70 \uBC84\uADF8\uB97C \uCC3E\
+  \uACE0 \uD589\uB3D9\uC744 \uC774\uD574\uD558\uB294 \uACFC\uC815\uC785\uB2C8\uB2E4\
+  . \uCD94\uCE21\uB9CC \uD558\uBA70 \uC5B4\uB514\uC11C \uBB38\uC81C\uAC00 \uBC1C\uC0DD\
+  \uD588\uB294\uC9C0 \uCC3E\uB294 \uAC83\uBCF4\uB2E4 \uD6E8\uC52C \uC26C\uC6B0\uBA70\
+  , \uC774\uB294 \uC6B0\uB9AC\uC5D0\uAC8C \uC218\uC2DC\uAC04\uC758 print \uBB38 \uC9C0\
+  \uC625\uC5D0\uC11C \uBC97\uC5B4\uB098\uAC8C \uD574 \uC90D\uB2C8\uB2E4."
+title: "\uB514\uBC84\uAC70 \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

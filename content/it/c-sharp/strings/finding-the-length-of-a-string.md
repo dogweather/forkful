@@ -1,13 +1,14 @@
 ---
-title:                "Trovare la lunghezza di una stringa"
 aliases:
 - /it/c-sharp/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:13.816632-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Trovare la lunghezza di una stringa"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:13.816632-07:00
+description: "Trova la lunghezza di una stringa per sapere quanti caratteri contiene.\
+  \ Utile per validazione input, manipolazione testi, e generazione dinamica di\u2026"
+lastmod: 2024-02-18 23:08:55.878935
+model: gpt-4-1106-preview
+summary: "Trova la lunghezza di una stringa per sapere quanti caratteri contiene.\
+  \ Utile per validazione input, manipolazione testi, e generazione dinamica di\u2026"
+title: Trovare la lunghezza di una stringa
 ---
 
 {{< edit_this_page >}}

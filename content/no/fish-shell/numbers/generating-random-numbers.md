@@ -1,13 +1,14 @@
 ---
-title:                "Generering av tilfeldige tall"
 aliases:
 - /no/fish-shell/generating-random-numbers/
-date:                  2024-01-27T20:33:33.544070-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generering av tilfeldige tall"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/generating-random-numbers.md"
+date: 2024-01-27 20:33:33.544070-07:00
+description: "\xC5 generere tilfeldige tall er en grunnleggende oppgave i programmering,\
+  \ som brukes til alt fra datautvalg til spillutvikling. I Fish Shell lar bruk av\u2026"
+lastmod: 2024-02-18 23:08:54.345445
+model: gpt-4-0125-preview
+summary: "\xC5 generere tilfeldige tall er en grunnleggende oppgave i programmering,\
+  \ som brukes til alt fra datautvalg til spillutvikling. I Fish Shell lar bruk av\u2026"
+title: Generering av tilfeldige tall
 ---
 
 {{< edit_this_page >}}

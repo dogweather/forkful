@@ -1,13 +1,14 @@
 ---
-title:                "Removendo aspas de uma string"
 aliases:
 - /pt/typescript/removing-quotes-from-a-string/
-date:                  2024-01-26T03:42:16.877069-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Removendo aspas de uma string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:42:16.877069-07:00
+description: "Remover aspas de uma string significa eliminar os caracteres de aspas\
+  \ simples (`'`) ou duplas (`\"`) que delimitam os literais de strings no c\xF3digo.\u2026"
+lastmod: 2024-02-18 23:08:57.873502
+model: gpt-4-0125-preview
+summary: "Remover aspas de uma string significa eliminar os caracteres de aspas simples\
+  \ (`'`) ou duplas (`\"`) que delimitam os literais de strings no c\xF3digo.\u2026"
+title: Removendo aspas de uma string
 ---
 
 {{< edit_this_page >}}

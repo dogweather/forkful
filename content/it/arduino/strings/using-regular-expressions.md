@@ -1,12 +1,14 @@
 ---
-title:                "Utilizzo delle espressioni regolari"
 aliases:
 - /it/arduino/using-regular-expressions/
-date:                  2024-01-19
-simple_title:         "Utilizzo delle espressioni regolari"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/using-regular-expressions.md"
+date: 2024-01-19
+description: "Le espressioni regolari consentono di analizzare le stringhe di testo\
+  \ per cercare modelli. I programmatori le utilizzano per validare l\u2019input,\
+  \ estrarre\u2026"
+lastmod: 2024-02-18 23:08:56.125141
+summary: "Le espressioni regolari consentono di analizzare le stringhe di testo per\
+  \ cercare modelli. I programmatori le utilizzano per validare l\u2019input, estrarre\u2026"
+title: Utilizzo delle espressioni regolari
 ---
 
 {{< edit_this_page >}}

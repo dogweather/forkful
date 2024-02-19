@@ -1,13 +1,16 @@
 ---
-title:                "Generación de números aleatorios"
 aliases:
 - /es/swift/generating-random-numbers/
-date:                  2024-01-27T20:35:13.338643-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generación de números aleatorios"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/generating-random-numbers.md"
+date: 2024-01-27 20:35:13.338643-07:00
+description: "Generar n\xFAmeros aleatorios en programaci\xF3n se trata de crear valores\
+  \ num\xE9ricos no deterministas o impredecibles. Los programadores utilizan n\xFA\
+  meros\u2026"
+lastmod: 2024-02-18 23:09:10.353289
+model: gpt-4-0125-preview
+summary: "Generar n\xFAmeros aleatorios en programaci\xF3n se trata de crear valores\
+  \ num\xE9ricos no deterministas o impredecibles. Los programadores utilizan n\xFA\
+  meros\u2026"
+title: "Generaci\xF3n de n\xFAmeros aleatorios"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Descobrindo o comprimento de uma string"
 aliases:
 - /pt/powershell/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:11.461181-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Descobrindo o comprimento de uma string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/powershell/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:11.461181-07:00
+description: "Encontrar o comprimento de uma string \xE9 descobrir quantos caracteres\
+  \ ela cont\xE9m. Programadores fazem isso para validar entradas, manipular textos\
+  \ ou\u2026"
+lastmod: 2024-02-18 23:08:58.358036
+model: gpt-4-1106-preview
+summary: "Encontrar o comprimento de uma string \xE9 descobrir quantos caracteres\
+  \ ela cont\xE9m. Programadores fazem isso para validar entradas, manipular textos\
+  \ ou\u2026"
+title: Descobrindo o comprimento de uma string
 ---
 
 {{< edit_this_page >}}

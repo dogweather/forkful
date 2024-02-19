@@ -1,13 +1,16 @@
 ---
-title:                "Rejestrowanie zdarzeń"
 aliases:
 - /pl/cpp/logging/
-date:                  2024-01-26T01:01:15.996001-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rejestrowanie zdarzeń"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/logging.md"
+date: 2024-01-26 01:01:15.996001-07:00
+description: "Logowanie w kontek\u015Bcie programowania to proces zapisywania zdarze\u0144\
+  , stan\xF3w i informacji do pliku lub innego medium wyj\u015Bciowego. Programi\u015B\
+  ci loguj\u0105, aby\u2026"
+lastmod: 2024-02-18 23:08:49.917993
+model: gpt-4-1106-preview
+summary: "Logowanie w kontek\u015Bcie programowania to proces zapisywania zdarze\u0144\
+  , stan\xF3w i informacji do pliku lub innego medium wyj\u015Bciowego. Programi\u015B\
+  ci loguj\u0105, aby\u2026"
+title: "Rejestrowanie zdarze\u0144"
 ---
 
 {{< edit_this_page >}}

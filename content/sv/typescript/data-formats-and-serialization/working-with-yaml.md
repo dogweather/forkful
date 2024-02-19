@@ -1,14 +1,18 @@
 ---
-title:                "Att Arbeta med YAML"
 aliases:
 - /sv/typescript/working-with-yaml/
-date:                  2024-02-03T19:26:50.748053-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att Arbeta med YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:26:50.748053-07:00
+description: "YAML, ett dataserialiseringsspr\xE5k designat f\xF6r att vara anv\xE4\
+  ndarv\xE4nligt, anv\xE4nds ofta f\xF6r konfigurationsfiler, mellanprocessmeddelanden\
+  \ och datalagring.\u2026"
+lastmod: 2024-02-18 23:08:51.563124
+model: gpt-4-0125-preview
+summary: "YAML, ett dataserialiseringsspr\xE5k designat f\xF6r att vara anv\xE4ndarv\xE4\
+  nligt, anv\xE4nds ofta f\xF6r konfigurationsfiler, mellanprocessmeddelanden och\
+  \ datalagring.\u2026"
+title: Att Arbeta med YAML
 ---
 
 {{< edit_this_page >}}

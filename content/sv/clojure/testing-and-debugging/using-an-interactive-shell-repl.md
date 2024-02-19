@@ -1,13 +1,16 @@
 ---
-title:                "Använda en interaktiv skal (REPL)"
 aliases:
 - /sv/clojure/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:12:58.950669-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Använda en interaktiv skal (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:12:58.950669-07:00
+description: "REPL, eller Read-Eval-Print Loop, \xE4r en programmeringsmilj\xF6 f\xF6\
+  r att dynamiskt testa Clojure-kod stycke f\xF6r stycke. Programmerare anv\xE4nder\
+  \ den f\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.463737
+model: gpt-4-0125-preview
+summary: "REPL, eller Read-Eval-Print Loop, \xE4r en programmeringsmilj\xF6 f\xF6\
+  r att dynamiskt testa Clojure-kod stycke f\xF6r stycke. Programmerare anv\xE4nder\
+  \ den f\xF6r\u2026"
+title: "Anv\xE4nda en interaktiv skal (REPL)"
 ---
 
 {{< edit_this_page >}}

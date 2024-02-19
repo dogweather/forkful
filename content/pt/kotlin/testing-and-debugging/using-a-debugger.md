@@ -1,13 +1,14 @@
 ---
-title:                "Usando um depurador"
 aliases:
 - /pt/kotlin/using-a-debugger/
-date:                  2024-01-26T03:50:10.781579-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando um depurador"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/using-a-debugger.md"
+date: 2024-01-26 03:50:10.781579-07:00
+description: "Mergulhar em um depurador \xE9 tudo sobre percorrer seu c\xF3digo, observar\
+  \ as engrenagens funcionando e pegar aqueles erros esquivos em flagrante. Os\u2026"
+lastmod: 2024-02-18 23:08:58.113397
+model: gpt-4-0125-preview
+summary: "Mergulhar em um depurador \xE9 tudo sobre percorrer seu c\xF3digo, observar\
+  \ as engrenagens funcionando e pegar aqueles erros esquivos em flagrante. Os\u2026"
+title: Usando um depurador
 ---
 
 {{< edit_this_page >}}

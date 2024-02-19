@@ -1,13 +1,16 @@
 ---
-title:                "Utilizzo di un debugger"
 aliases:
 - /it/python/using-a-debugger/
-date:                  2024-01-26T04:08:50.396923-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di un debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/python/using-a-debugger.md"
+date: 2024-01-26 04:08:50.396923-07:00
+description: "\"Usare un debugger\" significa esaminare passo dopo passo il proprio\
+  \ codice Python per scoprire bug e comprendere il comportamento. Lo facciamo perch\xE9\
+  \ \xE8\u2026"
+lastmod: 2024-02-18 23:08:55.525615
+model: gpt-4-0125-preview
+summary: "\"Usare un debugger\" significa esaminare passo dopo passo il proprio codice\
+  \ Python per scoprire bug e comprendere il comportamento. Lo facciamo perch\xE9\
+  \ \xE8\u2026"
+title: Utilizzo di un debugger
 ---
 
 {{< edit_this_page >}}

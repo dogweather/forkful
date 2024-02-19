@@ -1,12 +1,14 @@
 ---
-title:                "Using regular expressions"
 aliases:
 - /en/fish-shell/using-regular-expressions/
-date:                  2024-02-03T19:02:42.902269-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using regular expressions"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/using-regular-expressions.md"
+date: 2024-02-03 19:02:42.902269-07:00
+description: "Regular expressions (regex) in Fish Shell allow you to search, match,\
+  \ and manipulate strings based on specific patterns. Programmers utilize regex for\u2026"
+lastmod: 2024-02-18 23:09:11.469262
+model: gpt-4-0125-preview
+summary: "Regular expressions (regex) in Fish Shell allow you to search, match, and\
+  \ manipulate strings based on specific patterns. Programmers utilize regex for\u2026"
+title: Using regular expressions
 ---
 
 {{< edit_this_page >}}

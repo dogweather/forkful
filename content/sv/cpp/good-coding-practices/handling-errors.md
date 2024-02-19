@@ -1,13 +1,16 @@
 ---
-title:                "Hantering av fel"
 aliases:
 - /sv/cpp/handling-errors/
-date:                  2024-01-26T00:49:32.643247-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Hantering av fel"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/handling-errors.md"
+date: 2024-01-26 00:49:32.643247-07:00
+description: "Att hantera fel inneb\xE4r att man planerar f\xF6r n\xE4r saker och\
+  \ ting g\xE5r fel. Det \xE4r avg\xF6rande eftersom det hj\xE4lper till att undvika\
+  \ krascher och g\xF6r din\u2026"
+lastmod: 2024-02-18 23:08:52.090959
+model: gpt-4-1106-preview
+summary: "Att hantera fel inneb\xE4r att man planerar f\xF6r n\xE4r saker och ting\
+  \ g\xE5r fel. Det \xE4r avg\xF6rande eftersom det hj\xE4lper till att undvika krascher\
+  \ och g\xF6r din\u2026"
+title: Hantering av fel
 ---
 
 {{< edit_this_page >}}

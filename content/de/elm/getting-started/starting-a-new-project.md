@@ -1,13 +1,15 @@
 ---
-title:                "Einen neuen Projekt starten"
 aliases:
 - /de/elm/starting-a-new-project/
-date:                  2024-01-20T18:03:14.530489-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Einen neuen Projekt starten"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/starting-a-new-project.md"
+date: 2024-01-20 18:03:14.530489-07:00
+description: "Ein neues Projekt zu starten bedeutet, von Grund auf etwas Neues zu\
+  \ schaffen. Programmierer machen das, um Ideen zu verwirklichen, Probleme zu l\xF6\
+  sen oder\u2026"
+lastmod: 2024-02-18 23:09:04.782208
+model: gpt-4-1106-preview
+summary: "Ein neues Projekt zu starten bedeutet, von Grund auf etwas Neues zu schaffen.\
+  \ Programmierer machen das, um Ideen zu verwirklichen, Probleme zu l\xF6sen oder\u2026"
+title: Einen neuen Projekt starten
 ---
 
 {{< edit_this_page >}}

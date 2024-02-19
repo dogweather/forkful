@@ -1,14 +1,21 @@
 ---
-title:                "比较两个日期"
 aliases:
 - /zh/kotlin/comparing-two-dates/
-date:                  2024-01-20T17:33:28.698465-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "比较两个日期"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/comparing-two-dates.md"
+date: 2024-01-20 17:33:28.698465-07:00
+description: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F\u6307\u7684\u662F\u68C0\u67E5\u5B83\
+  \u4EEC\u662F\u76F8\u540C\uFF0C\u8FD8\u662F\u4E00\u4E2A\u65E9\u4E8E\u6216\u665A\u4E8E\
+  \u53E6\u4E00\u4E2A\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u903B\
+  \u8F91\u63A7\u5236\u3001\u6570\u636E\u6574\u7406\uFF0C\u6216\u662F\u627E\u51FA\u65F6\
+  \u95F4\u95F4\u9694\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.106118
+model: gpt-4-1106-preview
+summary: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F\u6307\u7684\u662F\u68C0\u67E5\u5B83\
+  \u4EEC\u662F\u76F8\u540C\uFF0C\u8FD8\u662F\u4E00\u4E2A\u65E9\u4E8E\u6216\u665A\u4E8E\
+  \u53E6\u4E00\u4E2A\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u903B\
+  \u8F91\u63A7\u5236\u3001\u6570\u636E\u6574\u7406\uFF0C\u6216\u662F\u627E\u51FA\u65F6\
+  \u95F4\u95F4\u9694\u3002"
+title: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F"
 ---
 
 {{< edit_this_page >}}

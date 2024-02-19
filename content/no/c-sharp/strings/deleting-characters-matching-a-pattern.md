@@ -1,13 +1,16 @@
 ---
-title:                "Slette tegn som matcher et mønster"
 aliases:
 - /no/c-sharp/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:10.892385-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Slette tegn som matcher et mønster"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:10.892385-07:00
+description: "Slette tegn som matcher et m\xF8nster betyr \xE5 finne bestemte sekvenser\
+  \ av tegn i en tekststreng og fjerne dem. Programmerere gj\xF8r dette for \xE5 rense\
+  \ data,\u2026"
+lastmod: 2024-02-18 23:08:53.878354
+model: gpt-4-1106-preview
+summary: "Slette tegn som matcher et m\xF8nster betyr \xE5 finne bestemte sekvenser\
+  \ av tegn i en tekststreng og fjerne dem. Programmerere gj\xF8r dette for \xE5 rense\
+  \ data,\u2026"
+title: "Slette tegn som matcher et m\xF8nster"
 ---
 
 {{< edit_this_page >}}

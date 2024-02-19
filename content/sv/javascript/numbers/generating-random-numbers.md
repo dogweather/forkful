@@ -1,13 +1,16 @@
 ---
-title:                "Generera slumptal"
 aliases:
 - /sv/javascript/generating-random-numbers/
-date:                  2024-01-27T20:34:46.076274-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generera slumptal"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/generating-random-numbers.md"
+date: 2024-01-27 20:34:46.076274-07:00
+description: "Att generera slumpm\xE4ssiga tal i JavaScript \xE4r en teknik som anv\xE4\
+  nds f\xF6r att skapa of\xF6ruts\xE4gbarhet i applikationer, fr\xE5n spel som beh\xF6\
+  ver slumpm\xE4ssigt\u2026"
+lastmod: 2024-02-18 23:08:52.160714
+model: gpt-4-0125-preview
+summary: "Att generera slumpm\xE4ssiga tal i JavaScript \xE4r en teknik som anv\xE4\
+  nds f\xF6r att skapa of\xF6ruts\xE4gbarhet i applikationer, fr\xE5n spel som beh\xF6\
+  ver slumpm\xE4ssigt\u2026"
+title: Generera slumptal
 ---
 
 {{< edit_this_page >}}

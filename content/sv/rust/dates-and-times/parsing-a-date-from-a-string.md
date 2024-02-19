@@ -1,14 +1,18 @@
 ---
-title:                "Analysera ett datum från en sträng"
 aliases:
 - /sv/rust/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:16:02.723870-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analysera ett datum från en sträng"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:16:02.723870-07:00
+description: "Att tolka ett datum fr\xE5n en str\xE4ng \xE4r en vanlig uppgift n\xE4\
+  r man hanterar anv\xE4ndarinput eller l\xE4ser data fr\xE5n filer, vilket inneb\xE4\
+  r att konvertera\u2026"
+lastmod: 2024-02-18 23:08:51.592825
+model: gpt-4-0125-preview
+summary: "Att tolka ett datum fr\xE5n en str\xE4ng \xE4r en vanlig uppgift n\xE4r\
+  \ man hanterar anv\xE4ndarinput eller l\xE4ser data fr\xE5n filer, vilket inneb\xE4\
+  r att konvertera\u2026"
+title: "Analysera ett datum fr\xE5n en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

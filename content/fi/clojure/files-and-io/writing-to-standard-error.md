@@ -1,14 +1,16 @@
 ---
-title:                "Kirjoittaminen standardivirheeseen"
 aliases:
 - /fi/clojure/writing-to-standard-error/
-date:                  2024-02-03T19:32:51.087978-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kirjoittaminen standardivirheeseen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:51.087978-07:00
+description: "Kirjoittaminen vakiovirheeseen (stderr) tarkoittaa virheviestien ja\
+  \ diagnostiikkatietojen ohjaamista stderr-virtaan, erotettuna vakiotulosteesta (stdout).\u2026"
+lastmod: 2024-02-18 23:09:07.246016
+model: gpt-4-0125-preview
+summary: "Kirjoittaminen vakiovirheeseen (stderr) tarkoittaa virheviestien ja diagnostiikkatietojen\
+  \ ohjaamista stderr-virtaan, erotettuna vakiotulosteesta (stdout).\u2026"
+title: Kirjoittaminen standardivirheeseen
 ---
 
 {{< edit_this_page >}}

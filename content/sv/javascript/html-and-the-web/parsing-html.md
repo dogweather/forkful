@@ -1,16 +1,18 @@
 ---
-title:                "Analysera HTML"
 aliases:
 - /sv/javascript/parsing-html/
-date:                  2024-01-28T03:01:14.207115-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analysera HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/parsing-html.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 03:01:14.207115-07:00
+description: "Att tolka HTML inneb\xE4r att extrahera data fr\xE5n HTML-dokument.\
+  \ Programmerare g\xF6r detta f\xF6r att interagera med eller manipulera webbinneh\xE5\
+  ll, automatisera\u2026"
+lastmod: 2024-02-18 23:08:52.162606
+model: gpt-4-0125-preview
+summary: "Att tolka HTML inneb\xE4r att extrahera data fr\xE5n HTML-dokument. Programmerare\
+  \ g\xF6r detta f\xF6r att interagera med eller manipulera webbinneh\xE5ll, automatisera\u2026"
+title: Analysera HTML
 ---
 
 {{< edit_this_page >}}

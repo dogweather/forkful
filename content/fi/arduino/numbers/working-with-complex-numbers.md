@@ -1,13 +1,16 @@
 ---
-title:                "Kompleksilukujen käsittely"
 aliases:
 - /fi/arduino/working-with-complex-numbers/
-date:                  2024-01-26T04:36:48.404629-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kompleksilukujen käsittely"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/working-with-complex-numbers.md"
+date: 2024-01-26 04:36:48.404629-07:00
+description: "Kompleksiluvuilla on reaaliosa ja imagin\xE4\xE4riosa, ja ne ilmaistaan\
+  \ yleens\xE4 muodossa `a + bi`. Ne ovat elint\xE4rkeit\xE4 joissakin matematiikkaa\
+  \ vaativissa\u2026"
+lastmod: 2024-02-18 23:09:07.893645
+model: gpt-4-0125-preview
+summary: "Kompleksiluvuilla on reaaliosa ja imagin\xE4\xE4riosa, ja ne ilmaistaan\
+  \ yleens\xE4 muodossa `a + bi`. Ne ovat elint\xE4rkeit\xE4 joissakin matematiikkaa\
+  \ vaativissa\u2026"
+title: "Kompleksilukujen k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

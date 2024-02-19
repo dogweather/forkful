@@ -1,14 +1,18 @@
 ---
-title:                "Analysering av HTML"
 aliases:
 - /no/vba/parsing-html/
-date:                  2024-02-01T21:57:12.801023-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analysering av HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/vba/parsing-html.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:12.801023-07:00
+description: "\xC5 analysere HTML i Visual Basic for Applications (VBA) inneb\xE6\
+  rer \xE5 trekke ut spesifikk informasjon fra et HTML-dokument. Programmerere gj\xF8\
+  r dette for \xE5\u2026"
+lastmod: 2024-02-18 23:08:53.725683
+model: gpt-4-0125-preview
+summary: "\xC5 analysere HTML i Visual Basic for Applications (VBA) inneb\xE6rer \xE5\
+  \ trekke ut spesifikk informasjon fra et HTML-dokument. Programmerere gj\xF8r dette\
+  \ for \xE5\u2026"
+title: Analysering av HTML
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,20 @@
 ---
-title:                "Ghi vào lỗi chuẩn"
 aliases:
 - /vi/c/writing-to-standard-error/
-date:                  2024-02-03T18:15:34.659571-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ghi vào lỗi chuẩn"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:15:34.659571-07:00
+description: "Vi\u1EC7c ghi v\xE0o l\u1ED7i chu\u1EA9n trong C li\xEAn quan \u0111\
+  \u1EBFn vi\u1EC7c \u0111i\u1EC1u h\u01B0\u1EDBng c\xE1c th\xF4ng b\xE1o l\u1ED7\
+  i v\xE0 th\xF4ng tin ch\u1EA9n \u0111o\xE1n sang m\u1ED9t lu\u1ED3ng ri\xEAng bi\u1EC7\
+  t kh\u1ECFi \u0111\u1EA7u ra ch\xEDnh c\u1EE7a\u2026"
+lastmod: 2024-02-18 23:08:51.253389
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c ghi v\xE0o l\u1ED7i chu\u1EA9n trong C li\xEAn quan \u0111\u1EBF\
+  n vi\u1EC7c \u0111i\u1EC1u h\u01B0\u1EDBng c\xE1c th\xF4ng b\xE1o l\u1ED7i v\xE0\
+  \ th\xF4ng tin ch\u1EA9n \u0111o\xE1n sang m\u1ED9t lu\u1ED3ng ri\xEAng bi\u1EC7\
+  t kh\u1ECFi \u0111\u1EA7u ra ch\xEDnh c\u1EE7a\u2026"
+title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 ---
 
 {{< edit_this_page >}}

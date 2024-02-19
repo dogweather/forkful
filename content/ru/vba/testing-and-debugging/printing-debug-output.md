@@ -1,14 +1,29 @@
 ---
-title:                "Печать отладочного вывода"
 aliases:
 - /ru/vba/printing-debug-output/
-date:                  2024-02-01T21:59:08.898032-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Печать отладочного вывода"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/vba/printing-debug-output.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:08.898032-07:00
+description: "\u0412\u044B\u0432\u043E\u0434 \u043E\u0442\u043B\u0430\u0434\u043E\u0447\
+  \u043D\u043E\u0439 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u0438\
+  \ \u0432 Visual Basic for Applications (VBA) \u0432\u043A\u043B\u044E\u0447\u0430\
+  \u0435\u0442 \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0447\u0435\u0441\u043A\
+  \u043E\u0435 \u0440\u0430\u0437\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u043E\
+  \u043F\u0435\u0440\u0430\u0442\u043E\u0440\u043E\u0432 \u043F\u0435\u0447\u0430\u0442\
+  \u0438 \u0432 \u0432\u0430\u0448\u0435\u043C \u043A\u043E\u0434\u0435 \u0434\u043B\
+  \u044F \u043E\u0442\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F\u2026"
+lastmod: 2024-02-18 23:08:56.790286
+model: gpt-4-0125-preview
+summary: "\u0412\u044B\u0432\u043E\u0434 \u043E\u0442\u043B\u0430\u0434\u043E\u0447\
+  \u043D\u043E\u0439 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u0438\
+  \ \u0432 Visual Basic for Applications (VBA) \u0432\u043A\u043B\u044E\u0447\u0430\
+  \u0435\u0442 \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0447\u0435\u0441\u043A\
+  \u043E\u0435 \u0440\u0430\u0437\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u043E\
+  \u043F\u0435\u0440\u0430\u0442\u043E\u0440\u043E\u0432 \u043F\u0435\u0447\u0430\u0442\
+  \u0438 \u0432 \u0432\u0430\u0448\u0435\u043C \u043A\u043E\u0434\u0435 \u0434\u043B\
+  \u044F \u043E\u0442\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F\u2026"
+title: "\u041F\u0435\u0447\u0430\u0442\u044C \u043E\u0442\u043B\u0430\u0434\u043E\u0447\
+  \u043D\u043E\u0433\u043E \u0432\u044B\u0432\u043E\u0434\u0430"
 ---
 
 {{< edit_this_page >}}

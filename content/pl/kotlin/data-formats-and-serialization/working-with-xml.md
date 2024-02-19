@@ -1,13 +1,16 @@
 ---
-title:                "Praca z XML"
 aliases:
 - /pl/kotlin/working-with-xml/
-date:                  2024-01-26T04:33:18.961514-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/working-with-xml.md"
+date: 2024-01-26 04:33:18.961514-07:00
+description: "Praca z XML obejmuje parsowanie, tworzenie i manipulowanie dokumentami\
+  \ XML - j\u0119zykiem znacznik\xF3w do przechowywania i przesy\u0142ania danych.\
+  \ Programi\u015Bci robi\u0105\u2026"
+lastmod: 2024-02-18 23:08:49.593465
+model: gpt-4-0125-preview
+summary: "Praca z XML obejmuje parsowanie, tworzenie i manipulowanie dokumentami XML\
+  \ - j\u0119zykiem znacznik\xF3w do przechowywania i przesy\u0142ania danych. Programi\u015B\
+  ci robi\u0105\u2026"
+title: Praca z XML
 ---
 
 {{< edit_this_page >}}

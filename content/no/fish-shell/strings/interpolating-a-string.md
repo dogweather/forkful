@@ -1,13 +1,15 @@
 ---
-title:                "Interpolering av en streng"
 aliases:
 - /no/fish-shell/interpolating-a-string/
-date:                  2024-01-20T17:50:37.467224-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolering av en streng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/interpolating-a-string.md"
+date: 2024-01-20 17:50:37.467224-07:00
+description: "Interpolering av strenger lar deg bake inn variabler eller uttrykk i\
+  \ en tekststreng. Det gj\xF8r koden mer fleksibel og lesbar n\xE5r du skal bygge\
+  \ dynamisk\u2026"
+lastmod: 2024-02-18 23:08:54.336406
+model: gpt-4-1106-preview
+summary: "Interpolering av strenger lar deg bake inn variabler eller uttrykk i en\
+  \ tekststreng. Det gj\xF8r koden mer fleksibel og lesbar n\xE5r du skal bygge dynamisk\u2026"
+title: Interpolering av en streng
 ---
 
 {{< edit_this_page >}}

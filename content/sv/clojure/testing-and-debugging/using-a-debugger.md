@@ -1,13 +1,16 @@
 ---
-title:                "Att använda en debugger"
 aliases:
 - /sv/clojure/using-a-debugger/
-date:                  2024-01-26T03:48:19.193934-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda en debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/using-a-debugger.md"
+date: 2024-01-26 03:48:19.193934-07:00
+description: "Att anv\xE4nda en debugger inneb\xE4r att du utrustar dig sj\xE4lv med\
+  \ ett f\xF6rstoringsglas f\xF6r att granska din kod. Programmerare g\xF6r detta\
+  \ f\xF6r att krossa buggar,\u2026"
+lastmod: 2024-02-18 23:08:51.466508
+model: gpt-4-0125-preview
+summary: "Att anv\xE4nda en debugger inneb\xE4r att du utrustar dig sj\xE4lv med ett\
+  \ f\xF6rstoringsglas f\xF6r att granska din kod. Programmerare g\xF6r detta f\xF6\
+  r att krossa buggar,\u2026"
+title: "Att anv\xE4nda en debugger"
 ---
 
 {{< edit_this_page >}}

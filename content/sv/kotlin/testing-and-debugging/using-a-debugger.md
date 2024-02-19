@@ -1,13 +1,15 @@
 ---
-title:                "Att använda en debugger"
 aliases:
 - /sv/kotlin/using-a-debugger/
-date:                  2024-01-26T03:50:00.676829-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda en debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/using-a-debugger.md"
+date: 2024-01-26 03:50:00.676829-07:00
+description: "Att dyka in i en debugger handlar allt om att stega igenom din kod,\
+  \ se kugghjulen snurra och f\xE5nga de d\xE4r el\xE4ndiga buggarna p\xE5 bar g\xE4\
+  rning. Programmerare\u2026"
+lastmod: 2024-02-18 23:08:51.754831
+model: gpt-4-0125-preview
+summary: "Att dyka in i en debugger handlar allt om att stega igenom din kod, se kugghjulen\
+  \ snurra och f\xE5nga de d\xE4r el\xE4ndiga buggarna p\xE5 bar g\xE4rning. Programmerare\u2026"
+title: "Att anv\xE4nda en debugger"
 ---
 
 {{< edit_this_page >}}

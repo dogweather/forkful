@@ -1,14 +1,18 @@
 ---
-title:                "Verkkosivun lataaminen"
 aliases:
 - /fi/google-apps-script/downloading-a-web-page/
-date:                  2024-02-01T21:53:07.454080-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verkkosivun lataaminen"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/downloading-a-web-page.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:07.454080-07:00
+description: "Web-sivun lataaminen Google Apps Scriptill\xE4 sis\xE4lt\xE4\xE4 sivun\
+  \ sis\xE4ll\xF6n noutamisen HTML:n kautta eri tarkoituksiin, kuten verkon kaavintaan\
+  \ (web scraping),\u2026"
+lastmod: 2024-02-18 23:09:07.133636
+model: gpt-4-0125-preview
+summary: "Web-sivun lataaminen Google Apps Scriptill\xE4 sis\xE4lt\xE4\xE4 sivun sis\xE4\
+  ll\xF6n noutamisen HTML:n kautta eri tarkoituksiin, kuten verkon kaavintaan (web\
+  \ scraping),\u2026"
+title: Verkkosivun lataaminen
 ---
 
 {{< edit_this_page >}}

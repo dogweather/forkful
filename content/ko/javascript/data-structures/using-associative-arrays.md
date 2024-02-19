@@ -1,15 +1,26 @@
 ---
-title:                "연관 배열 사용하기"
 aliases:
 - /ko/javascript/using-associative-arrays/
-date:                  2024-01-30T19:11:32.798122-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "연관 배열 사용하기"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:11:32.798122-07:00
+description: "\uC5F0\uAD00 \uBC30\uC5F4 \uB610\uB294 JavaScript\uC5D0\uC11C \uB354\
+  \ \uC815\uD655\uD558\uAC8C \uC54C\uB824\uC9C4 \uAC1D\uCCB4\uB97C \uC0AC\uC6A9\uD558\
+  \uBA74 \uD0A4\uC640 \uAC12\uC744 \uB9E4\uD551\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4\
+  . \uC774\uB294 \uD2B9\uC815 \uC774\uB984(\uD0A4)\uC744 \uD1B5\uD574 \uC694\uC18C\
+  \uC5D0 \uC811\uADFC\uD558\uAE38 \uC6D0\uD560 \uB54C \uC720\uC6A9\uD558\uBA70, \uC774\
+  \uB294 \uCF54\uB4DC\uB97C \uB354 \uC77D\uAE30 \uC27D\uACE0 \uC720\uC5F0\uD558\uAC8C\
+  \ \uB9CC\uB4ED\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.801979
+model: gpt-4-0125-preview
+summary: "\uC5F0\uAD00 \uBC30\uC5F4 \uB610\uB294 JavaScript\uC5D0\uC11C \uB354 \uC815\
+  \uD655\uD558\uAC8C \uC54C\uB824\uC9C4 \uAC1D\uCCB4\uB97C \uC0AC\uC6A9\uD558\uBA74\
+  \ \uD0A4\uC640 \uAC12\uC744 \uB9E4\uD551\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4.\
+  \ \uC774\uB294 \uD2B9\uC815 \uC774\uB984(\uD0A4)\uC744 \uD1B5\uD574 \uC694\uC18C\
+  \uC5D0 \uC811\uADFC\uD558\uAE38 \uC6D0\uD560 \uB54C \uC720\uC6A9\uD558\uBA70, \uC774\
+  \uB294 \uCF54\uB4DC\uB97C \uB354 \uC77D\uAE30 \uC27D\uACE0 \uC720\uC5F0\uD558\uAC8C\
+  \ \uB9CC\uB4ED\uB2C8\uB2E4."
+title: "\uC5F0\uAD00 \uBC30\uC5F4 \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

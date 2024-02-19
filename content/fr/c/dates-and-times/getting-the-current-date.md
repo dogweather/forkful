@@ -1,14 +1,18 @@
 ---
-title:                "Obtenir la date actuelle"
 aliases:
 - /fr/c/getting-the-current-date/
-date:                  2024-02-03T17:57:11.260956-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Obtenir la date actuelle"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:11.260956-07:00
+description: "Obtenir la date actuelle en C n\xE9cessite de se connecter \xE0 la biblioth\xE8\
+  que standard C pour r\xE9cup\xE9rer et formater la date et l'heure actuelles du\
+  \ syst\xE8me.\u2026"
+lastmod: 2024-02-18 23:09:09.368401
+model: gpt-4-0125-preview
+summary: "Obtenir la date actuelle en C n\xE9cessite de se connecter \xE0 la biblioth\xE8\
+  que standard C pour r\xE9cup\xE9rer et formater la date et l'heure actuelles du\
+  \ syst\xE8me.\u2026"
+title: Obtenir la date actuelle
 ---
 
 {{< edit_this_page >}}

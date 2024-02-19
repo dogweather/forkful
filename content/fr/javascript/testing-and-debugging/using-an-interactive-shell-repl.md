@@ -1,13 +1,16 @@
 ---
-title:                "Utilisation d'une console interactive (REPL)"
 aliases:
 - /fr/javascript/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:15:22.189353-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation d'une console interactive (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:15:22.189353-07:00
+description: "Les coquilles interactives, ou REPLs (Read-Eval-Print Loops, Boucles\
+  \ de Lecture-\xC9valuation-Affichage), vous permettent d'ex\xE9cuter du code \xE0\
+  \ la vol\xE9e, de\u2026"
+lastmod: 2024-02-18 23:09:09.257720
+model: gpt-4-0125-preview
+summary: "Les coquilles interactives, ou REPLs (Read-Eval-Print Loops, Boucles de\
+  \ Lecture-\xC9valuation-Affichage), vous permettent d'ex\xE9cuter du code \xE0 la\
+  \ vol\xE9e, de\u2026"
+title: Utilisation d'une console interactive (REPL)
 ---
 
 {{< edit_this_page >}}

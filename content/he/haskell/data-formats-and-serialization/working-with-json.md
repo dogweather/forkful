@@ -1,14 +1,26 @@
 ---
-title:                "עבודה עם JSON"
 aliases:
 - /he/haskell/working-with-json/
-date:                  2024-02-03T19:23:40.807856-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "עבודה עם JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:40.807856-07:00
+description: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD JSON (JavaScript Object\
+  \ Notation) \u05D1-Haskell \u05DB\u05D5\u05DC\u05DC\u05EA \u05E0\u05D9\u05EA\u05D5\
+  \u05D7 \u05E0\u05EA\u05D5\u05E0\u05D9 JSON \u05DC\u05E1\u05D5\u05D2\u05D9\u05DD\
+  \ \u05E9\u05DC Haskell \u05D5\u05D4\u05DE\u05E8\u05EA \u05E1\u05D5\u05D2\u05D9\u05DD\
+  \ \u05E9\u05DC Haskell \u05D1\u05D7\u05D6\u05E8\u05D4 \u05DC-JSON. \u05DE\u05EA\u05DB\
+  \u05E0\u05EA\u05D9\u05DD \u05E2\u05D5\u05E9\u05D9\u05DD \u05D6\u05D0\u05EA \u05DB\
+  \u05D3\u05D9\u2026"
+lastmod: 2024-02-18 23:08:52.910016
+model: gpt-4-0125-preview
+summary: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD JSON (JavaScript Object Notation)\
+  \ \u05D1-Haskell \u05DB\u05D5\u05DC\u05DC\u05EA \u05E0\u05D9\u05EA\u05D5\u05D7 \u05E0\
+  \u05EA\u05D5\u05E0\u05D9 JSON \u05DC\u05E1\u05D5\u05D2\u05D9\u05DD \u05E9\u05DC\
+  \ Haskell \u05D5\u05D4\u05DE\u05E8\u05EA \u05E1\u05D5\u05D2\u05D9\u05DD \u05E9\u05DC\
+  \ Haskell \u05D1\u05D7\u05D6\u05E8\u05D4 \u05DC-JSON. \u05DE\u05EA\u05DB\u05E0\u05EA\
+  \u05D9\u05DD \u05E2\u05D5\u05E9\u05D9\u05DD \u05D6\u05D0\u05EA \u05DB\u05D3\u05D9\
+  \u2026"
+title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD JSON"
 ---
 
 {{< edit_this_page >}}

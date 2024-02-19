@@ -1,15 +1,16 @@
 ---
-title:                "Een HTTP-verzoek verzenden"
 aliases:
 - /nl/haskell/sending-an-http-request/
-date:                  2024-01-28T22:07:22.756164-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een HTTP-verzoek verzenden"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/haskell/sending-an-http-request.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:07:22.756164-07:00
+description: "Een HTTP-verzoek versturen is de handeling van het vragen om data of\
+  \ actie aan een webserver. Programmeurs doen dit om te interacteren met API's,\u2026"
+lastmod: 2024-02-18 23:09:01.895332
+model: gpt-4-0125-preview
+summary: "Een HTTP-verzoek versturen is de handeling van het vragen om data of actie\
+  \ aan een webserver. Programmeurs doen dit om te interacteren met API's,\u2026"
+title: Een HTTP-verzoek verzenden
 ---
 
 {{< edit_this_page >}}

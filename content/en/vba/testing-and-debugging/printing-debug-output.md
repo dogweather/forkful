@@ -1,12 +1,14 @@
 ---
-title:                "Printing debug output"
 aliases:
 - /en/vba/printing-debug-output/
-date:                  2024-02-01T21:30:20.780352-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Printing debug output"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/vba/printing-debug-output.md"
+date: 2024-02-01 21:30:20.780352-07:00
+description: "Printing debug output in Visual Basic for Applications (VBA) involves\
+  \ strategically placing print statements within your code to display variable values,\u2026"
+lastmod: 2024-02-18 23:09:10.892607
+model: gpt-4-0125-preview
+summary: "Printing debug output in Visual Basic for Applications (VBA) involves strategically\
+  \ placing print statements within your code to display variable values,\u2026"
+title: Printing debug output
 ---
 
 {{< edit_this_page >}}

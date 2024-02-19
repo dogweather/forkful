@@ -1,13 +1,16 @@
 ---
-title:                "Envoi d'une requête HTTP avec authentification de base"
 aliases:
 - /fr/haskell/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:01:40.513552-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Envoi d'une requête HTTP avec authentification de base"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:01:40.513552-07:00
+description: "L\u2019envoi d\u2019une requ\xEAte HTTP avec authentification basique\
+  \ consiste \xE0 transmettre \xE0 un serveur des identifiants (nom d\u2019utilisateur\
+  \ et mot de passe) encod\xE9s\u2026"
+lastmod: 2024-02-18 23:09:08.874877
+model: gpt-4-1106-preview
+summary: "L\u2019envoi d\u2019une requ\xEAte HTTP avec authentification basique consiste\
+  \ \xE0 transmettre \xE0 un serveur des identifiants (nom d\u2019utilisateur et mot\
+  \ de passe) encod\xE9s\u2026"
+title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Conversion d'une date en chaîne de caractères"
 aliases:
 - /fr/cpp/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:21.778918-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Conversion d'une date en chaîne de caractères"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:21.778918-07:00
+description: "Convertir une date en cha\xEEne de caract\xE8res permet de l'afficher\
+  \ ou la stocker facilement. Les programmeurs utilisent cette conversion pour l'interface\u2026"
+lastmod: 2024-02-18 23:09:09.173533
+model: gpt-4-1106-preview
+summary: "Convertir une date en cha\xEEne de caract\xE8res permet de l'afficher ou\
+  \ la stocker facilement. Les programmeurs utilisent cette conversion pour l'interface\u2026"
+title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

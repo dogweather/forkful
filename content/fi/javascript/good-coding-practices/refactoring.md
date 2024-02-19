@@ -1,13 +1,16 @@
 ---
-title:                "Koodin uudelleenjärjestely"
 aliases:
 - /fi/javascript/refactoring/
-date:                  2024-01-26T01:40:55.619046-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Koodin uudelleenjärjestely"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/refactoring.md"
+date: 2024-01-26 01:40:55.619046-07:00
+description: "Refaktorointi on olemassa olevan tietokonekoodin uudelleenrakentamisen\
+  \ prosessi muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Ohjelmoijat tekev\xE4\
+  t sit\xE4\u2026"
+lastmod: 2024-02-18 23:09:08.044633
+model: gpt-4-0125-preview
+summary: "Refaktorointi on olemassa olevan tietokonekoodin uudelleenrakentamisen prosessi\
+  \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Ohjelmoijat tekev\xE4t sit\xE4\
+  \u2026"
+title: "Koodin uudelleenj\xE4rjestely"
 ---
 
 {{< edit_this_page >}}

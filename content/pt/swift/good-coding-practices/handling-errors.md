@@ -1,13 +1,16 @@
 ---
-title:                "Tratamento de erros"
 aliases:
 - /pt/swift/handling-errors/
-date:                  2024-01-26T00:57:35.390988-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tratamento de erros"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/handling-errors.md"
+date: 2024-01-26 00:57:35.390988-07:00
+description: "Tratar erros em Swift significa antecipar e responder a problemas que\
+  \ surgem quando seu c\xF3digo \xE9 executado. Fazemos isso para controlar o caos\u2014\
+  evitando\u2026"
+lastmod: 2024-02-18 23:08:58.498207
+model: gpt-4-1106-preview
+summary: "Tratar erros em Swift significa antecipar e responder a problemas que surgem\
+  \ quando seu c\xF3digo \xE9 executado. Fazemos isso para controlar o caos\u2014\
+  evitando\u2026"
+title: Tratamento de erros
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Escrevendo testes"
 aliases:
 - /pt/arduino/writing-tests/
-date:                  2024-02-03T19:29:34.681520-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escrevendo testes"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:34.681520-07:00
+description: "Escrever testes no ambiente Arduino refere-se ao processo de criar testes\
+  \ automatizados que validam a funcionalidade do seu c\xF3digo em dispositivos\u2026"
+lastmod: 2024-02-18 23:08:58.412591
+model: gpt-4-0125-preview
+summary: "Escrever testes no ambiente Arduino refere-se ao processo de criar testes\
+  \ automatizados que validam a funcionalidade do seu c\xF3digo em dispositivos\u2026"
+title: Escrevendo testes
 ---
 
 {{< edit_this_page >}}

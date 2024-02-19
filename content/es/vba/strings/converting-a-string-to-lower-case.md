@@ -1,14 +1,18 @@
 ---
-title:                "Convirtiendo una cadena de texto a minúsculas"
 aliases:
 - /es/vba/converting-a-string-to-lower-case/
-date:                  2024-02-01T21:51:13.246900-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Convirtiendo una cadena de texto a minúsculas"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/vba/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:13.246900-07:00
+description: "Convertir una cadena a min\xFAsculas implica transformar todos los caracteres\
+  \ en may\xFAsculas de una cadena a sus equivalentes en min\xFAsculas. Este proceso\
+  \ es\u2026"
+lastmod: 2024-02-18 23:09:09.781213
+model: gpt-4-0125-preview
+summary: "Convertir una cadena a min\xFAsculas implica transformar todos los caracteres\
+  \ en may\xFAsculas de una cadena a sus equivalentes en min\xFAsculas. Este proceso\
+  \ es\u2026"
+title: "Convirtiendo una cadena de texto a min\xFAsculas"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Interpolando una cadena de texto"
 aliases:
 - /es/google-apps-script/interpolating-a-string/
-date:                  2024-02-01T21:55:13.857282-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interpolando una cadena de texto"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/google-apps-script/interpolating-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:13.857282-07:00
+description: "La interpolaci\xF3n de cadenas en Google Apps Script permite la incrustaci\xF3\
+  n din\xE1mica de expresiones dentro de las cadenas, facilitando la creaci\xF3n de\
+  \ c\xF3digo\u2026"
+lastmod: 2024-02-18 23:09:09.489406
+model: gpt-4-0125-preview
+summary: "La interpolaci\xF3n de cadenas en Google Apps Script permite la incrustaci\xF3\
+  n din\xE1mica de expresiones dentro de las cadenas, facilitando la creaci\xF3n de\
+  \ c\xF3digo\u2026"
+title: Interpolando una cadena de texto
 ---
 
 {{< edit_this_page >}}

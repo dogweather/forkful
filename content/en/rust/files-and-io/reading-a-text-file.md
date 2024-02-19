@@ -1,13 +1,14 @@
 ---
-title:                "Reading a text file"
 aliases:
 - /en/rust/reading-a-text-file/
-date:                  2024-01-20T17:55:01.799033-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Reading a text file"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/reading-a-text-file.md"
+date: 2024-01-20 17:55:01.799033-07:00
+description: "Reading a text file is grabbing text content from a .txt file on your\
+  \ disk. Programmers do it to handle data like configuration, user input, or to process\u2026"
+lastmod: 2024-02-18 23:09:10.865715
+model: gpt-4-1106-preview
+summary: "Reading a text file is grabbing text content from a .txt file on your disk.\
+  \ Programmers do it to handle data like configuration, user input, or to process\u2026"
+title: Reading a text file
 ---
 
 {{< edit_this_page >}}

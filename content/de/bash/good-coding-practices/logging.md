@@ -1,13 +1,14 @@
 ---
-title:                "Protokollierung"
 aliases:
 - /de/bash/logging/
-date:                  2024-01-26T00:59:09.991592-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Protokollierung"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/logging.md"
+date: 2024-01-26 00:59:09.991592-07:00
+description: "Logging ist die Praxis, Ereignisse, Fehler und andere bedeutsame Informationen\
+  \ von laufenden Prozessen eines Programms in eine Datei oder einen\u2026"
+lastmod: 2024-02-18 23:09:05.061229
+model: gpt-4-1106-preview
+summary: "Logging ist die Praxis, Ereignisse, Fehler und andere bedeutsame Informationen\
+  \ von laufenden Prozessen eines Programms in eine Datei oder einen\u2026"
+title: Protokollierung
 ---
 
 {{< edit_this_page >}}

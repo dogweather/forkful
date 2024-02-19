@@ -1,15 +1,17 @@
 ---
-title:                "Werken met JSON"
 aliases:
 - /nl/fish-shell/working-with-json/
-date:                  2024-01-28T22:10:17.994422-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met JSON"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/working-with-json.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:17.994422-07:00
+description: "JSON (JavaScript Object Notation) is een gegevensindeling die wordt\
+  \ gebruikt voor het representeren van gestructureerde data. Programmeurs gebruiken\
+  \ JSON\u2026"
+lastmod: 2024-02-18 23:09:02.349136
+model: gpt-4-0125-preview
+summary: "JSON (JavaScript Object Notation) is een gegevensindeling die wordt gebruikt\
+  \ voor het representeren van gestructureerde data. Programmeurs gebruiken JSON\u2026"
+title: Werken met JSON
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,30 @@
 ---
-title:                "대화형 셸(REPL) 사용하기"
 aliases:
 - /ko/c/using-an-interactive-shell-repl/
-date:                  2024-02-03T18:10:27.718385-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "대화형 셸(REPL) 사용하기"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:27.718385-07:00
+description: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\uB294 \uC77D\uAE30-\uD3C9\
+  \uAC00-\uCD9C\uB825 \uB8E8\uD504(REPL)\uB85C \uC54C\uB824\uC9C4 \uC774 \uAE30\uC220\
+  \uC740 \uD504\uB85C\uADF8\uB798\uBA38\uAC00 \uD45C\uD604\uC2DD\uC774\uB098 \uCF54\
+  \uB4DC\uB97C \uC785\uB825\uD558\uACE0 \uC989\uC2DC \uACB0\uACFC\uB97C \uBCFC \uC218\
+  \ \uC788\uAC8C \uD568\uC73C\uB85C\uC368 \uD559\uC2B5\uACFC \uB514\uBC84\uAE45 \uACFC\
+  \uC815\uC744 \uD5A5\uC0C1\uC2DC\uD0B5\uB2C8\uB2E4. C\uAC00 \uC804\uD1B5\uC801\uC73C\
+  \uB85C REPL \uD658\uACBD\uC744 \uAE30\uBCF8\uC801\uC73C\uB85C \uC9C0\uC6D0\uD558\
+  \uC9C0 \uC54A\uC74C\uC5D0\uB3C4 \uBD88\uAD6C\uD558\uACE0, \uD604\uB300\uC758 \uB3C4\
+  \uAD6C\uB4E4\uC740 \uC774\uB7EC\uD55C\u2026"
+lastmod: 2024-02-18 23:09:06.955079
+model: gpt-4-0125-preview
+summary: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\uB294 \uC77D\uAE30-\uD3C9\uAC00\
+  -\uCD9C\uB825 \uB8E8\uD504(REPL)\uB85C \uC54C\uB824\uC9C4 \uC774 \uAE30\uC220\uC740\
+  \ \uD504\uB85C\uADF8\uB798\uBA38\uAC00 \uD45C\uD604\uC2DD\uC774\uB098 \uCF54\uB4DC\
+  \uB97C \uC785\uB825\uD558\uACE0 \uC989\uC2DC \uACB0\uACFC\uB97C \uBCFC \uC218 \uC788\
+  \uAC8C \uD568\uC73C\uB85C\uC368 \uD559\uC2B5\uACFC \uB514\uBC84\uAE45 \uACFC\uC815\
+  \uC744 \uD5A5\uC0C1\uC2DC\uD0B5\uB2C8\uB2E4. C\uAC00 \uC804\uD1B5\uC801\uC73C\uB85C\
+  \ REPL \uD658\uACBD\uC744 \uAE30\uBCF8\uC801\uC73C\uB85C \uC9C0\uC6D0\uD558\uC9C0\
+  \ \uC54A\uC74C\uC5D0\uB3C4 \uBD88\uAD6C\uD558\uACE0, \uD604\uB300\uC758 \uB3C4\uAD6C\
+  \uB4E4\uC740 \uC774\uB7EC\uD55C\u2026"
+title: "\uB300\uD654\uD615 \uC178(REPL) \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Mettre une chaîne en majuscules"
 aliases:
 - /fr/google-apps-script/capitalizing-a-string/
-date:                  2024-02-01T21:48:55.485052-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Mettre une chaîne en majuscules"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/google-apps-script/capitalizing-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:48:55.485052-07:00
+description: "Mettre en majuscule une cha\xEEne consiste \xE0 modifier l'entr\xE9\
+  e de mani\xE8re que le premier caract\xE8re soit en majuscule tandis que les suivants\
+  \ restent en\u2026"
+lastmod: 2024-02-18 23:09:08.266896
+model: gpt-4-0125-preview
+summary: "Mettre en majuscule une cha\xEEne consiste \xE0 modifier l'entr\xE9e de\
+  \ mani\xE8re que le premier caract\xE8re soit en majuscule tandis que les suivants\
+  \ restent en\u2026"
+title: "Mettre une cha\xEEne en majuscules"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Een datum ontleden uit een string"
 aliases:
 - /nl/go/parsing-a-date-from-a-string/
-date:                  2024-02-03T18:00:17.743137-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een datum ontleden uit een string"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:00:17.743137-07:00
+description: "Het parsen van een datum uit een string in Go houdt in dat de als tekst\
+  \ weergegeven datum wordt omgezet naar een bruikbaarder formaat (bijv. `time.Time`).\u2026"
+lastmod: 2024-02-18 23:09:01.349044
+model: gpt-4-0125-preview
+summary: "Het parsen van een datum uit een string in Go houdt in dat de als tekst\
+  \ weergegeven datum wordt omgezet naar een bruikbaarder formaat (bijv. `time.Time`).\u2026"
+title: Een datum ontleden uit een string
 ---
 
 {{< edit_this_page >}}

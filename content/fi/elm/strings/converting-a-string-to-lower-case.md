@@ -1,13 +1,15 @@
 ---
-title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 aliases:
 - /fi/elm/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:07.352035-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:07.352035-07:00
+description: "\"Mit\xE4 & Miksi?\" Muuttaa merkkijonon pieniksi kirjaimiksi. K\xE4\
+  ytet\xE4\xE4n yhdenmukaistamaan dataa, esimerkiksi vertailuun tai sy\xF6tteen k\xE4\
+  sittelyyn."
+lastmod: 2024-02-18 23:09:07.489818
+model: gpt-4-1106-preview
+summary: "\"Mit\xE4 & Miksi?\" Muuttaa merkkijonon pieniksi kirjaimiksi. K\xE4ytet\xE4\
+  \xE4n yhdenmukaistamaan dataa, esimerkiksi vertailuun tai sy\xF6tteen k\xE4sittelyyn."
+title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 ---
 
 {{< edit_this_page >}}

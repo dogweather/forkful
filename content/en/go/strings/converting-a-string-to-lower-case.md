@@ -1,12 +1,14 @@
 ---
-title:                "Converting a string to lower case"
 aliases:
 - /en/go/converting-a-string-to-lower-case/
-date:                  2024-02-03T17:50:02.015237-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Converting a string to lower case"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/converting-a-string-to-lower-case.md"
+date: 2024-02-03 17:50:02.015237-07:00
+description: "Converting a string to lowercase is a fundamental operation that enables\
+  \ uniformity and consistency in text processing, essential for tasks like case-\u2026"
+lastmod: 2024-02-18 23:09:10.583545
+model: gpt-4-0125-preview
+summary: "Converting a string to lowercase is a fundamental operation that enables\
+  \ uniformity and consistency in text processing, essential for tasks like case-\u2026"
+title: Converting a string to lower case
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Lese kommandolinjeargumenter"
 aliases:
 - /no/cpp/reading-command-line-arguments/
-date:                  2024-01-20T17:55:29.219355-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lese kommandolinjeargumenter"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:29.219355-07:00
+description: "\xC5 lese kommandolinjeargumenter betyr \xE5 fange opp data gitt direkte\
+  \ n\xE5r du kj\xF8rer programmet ditt. Programmere gj\xF8r dette for \xE5 tillate\
+  \ dynamiske\u2026"
+lastmod: 2024-02-18 23:08:54.242432
+model: gpt-4-1106-preview
+summary: "\xC5 lese kommandolinjeargumenter betyr \xE5 fange opp data gitt direkte\
+  \ n\xE5r du kj\xF8rer programmet ditt. Programmere gj\xF8r dette for \xE5 tillate\
+  \ dynamiske\u2026"
+title: Lese kommandolinjeargumenter
 ---
 
 {{< edit_this_page >}}

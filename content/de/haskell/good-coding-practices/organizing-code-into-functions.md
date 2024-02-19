@@ -1,13 +1,15 @@
 ---
-title:                "Code in Funktionen organisieren"
 aliases:
 - /de/haskell/organizing-code-into-functions/
-date:                  2024-01-26T01:10:47.613607-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Code in Funktionen organisieren"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/organizing-code-into-functions.md"
+date: 2024-01-26 01:10:47.613607-07:00
+description: "Code in Haskell in Funktionen zu organisieren bedeutet, Ihren Code in\
+  \ wiederverwendbare, benannte Bl\xF6cke aufzubrechen. Warum? Es h\xE4lt Ihren Code\
+  \ DRY\u2026"
+lastmod: 2024-02-18 23:09:04.922803
+model: gpt-4-1106-preview
+summary: "Code in Haskell in Funktionen zu organisieren bedeutet, Ihren Code in wiederverwendbare,\
+  \ benannte Bl\xF6cke aufzubrechen. Warum? Es h\xE4lt Ihren Code DRY\u2026"
+title: Code in Funktionen organisieren
 ---
 
 {{< edit_this_page >}}

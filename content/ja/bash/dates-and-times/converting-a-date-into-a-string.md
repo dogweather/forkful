@@ -1,14 +1,21 @@
 ---
-title:                "日付を文字列に変換する"
 aliases:
 - /ja/bash/converting-a-date-into-a-string/
-date:                  2024-01-20T17:35:54.654331-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "日付を文字列に変換する"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:35:54.654331-07:00
+description: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B\u3068\
+  \u306F\u3001\u4F8B\u3048\u3070\u5E74\u6708\u65E5\u3092\u30C6\u30AD\u30B9\u30C8\u5F62\
+  \u5F0F\u306B\u76F4\u3059\u3053\u3068\u3067\u3059\u3002\u30ED\u30B0\u30D5\u30A1\u30A4\
+  \u30EB\u306E\u30BF\u30A4\u30E0\u30B9\u30BF\u30F3\u30D7\u3084\u30EC\u30DD\u30FC\u30C8\
+  \u306E\u65E5\u4ED8\u8868\u793A\u306A\u3069\u306B\u4F7F\u308F\u308C\u307E\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.085056
+model: gpt-4-1106-preview
+summary: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B\u3068\
+  \u306F\u3001\u4F8B\u3048\u3070\u5E74\u6708\u65E5\u3092\u30C6\u30AD\u30B9\u30C8\u5F62\
+  \u5F0F\u306B\u76F4\u3059\u3053\u3068\u3067\u3059\u3002\u30ED\u30B0\u30D5\u30A1\u30A4\
+  \u30EB\u306E\u30BF\u30A4\u30E0\u30B9\u30BF\u30F3\u30D7\u3084\u30EC\u30DD\u30FC\u30C8\
+  \u306E\u65E5\u4ED8\u8868\u793A\u306A\u3069\u306B\u4F7F\u308F\u308C\u307E\u3059\u3002"
+title: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

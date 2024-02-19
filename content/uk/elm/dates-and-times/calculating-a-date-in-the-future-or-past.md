@@ -1,13 +1,14 @@
 ---
-title:                "Обчислення дати у майбутньому або минулому"
 aliases:
 - /uk/elm/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:31:04.186687-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Обчислення дати у майбутньому або минулому"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/elm/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:31:04.186687-07:00
+description: ''
+lastmod: 2024-02-18 23:09:00.215459
+model: gpt-4-1106-preview
+summary: ''
+title: "\u041E\u0431\u0447\u0438\u0441\u043B\u0435\u043D\u043D\u044F \u0434\u0430\u0442\
+  \u0438 \u0443 \u043C\u0430\u0439\u0431\u0443\u0442\u043D\u044C\u043E\u043C\u0443\
+  \ \u0430\u0431\u043E \u043C\u0438\u043D\u0443\u043B\u043E\u043C\u0443"
 ---
 
 {{< edit_this_page >}}

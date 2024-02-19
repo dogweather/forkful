@@ -1,13 +1,16 @@
 ---
-title:                "Jämföra två datum"
 aliases:
 - /sv/php/comparing-two-dates/
-date:                  2024-01-20T17:33:24.981729-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Jämföra två datum"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/comparing-two-dates.md"
+date: 2024-01-20 17:33:24.981729-07:00
+description: "J\xE4mf\xF6r tv\xE5 datum inneb\xE4r att avg\xF6ra tidsordningen mellan\
+  \ dem - vilket \xE4r tidigare, senare eller om de \xE4r identiska. Programmerare\
+  \ g\xF6r detta f\xF6r att\u2026"
+lastmod: 2024-02-18 23:08:51.890204
+model: gpt-4-1106-preview
+summary: "J\xE4mf\xF6r tv\xE5 datum inneb\xE4r att avg\xF6ra tidsordningen mellan\
+  \ dem - vilket \xE4r tidigare, senare eller om de \xE4r identiska. Programmerare\
+  \ g\xF6r detta f\xF6r att\u2026"
+title: "J\xE4mf\xF6ra tv\xE5 datum"
 ---
 
 {{< edit_this_page >}}

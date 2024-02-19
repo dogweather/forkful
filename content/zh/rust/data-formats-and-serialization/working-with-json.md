@@ -1,14 +1,28 @@
 ---
-title:                "使用JSON进行编程"
 aliases:
 - /zh/rust/working-with-json/
-date:                  2024-02-03T19:24:11.320885-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用JSON进行编程"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:24:11.320885-07:00
+description: "\u5728 Rust \u4E2D\u5904\u7406 JSON\uFF08JavaScript \u5BF9\u8C61\u8868\
+  \u793A\u6CD5\uFF09\u6D89\u53CA\u5230\u5C06 JSON \u6570\u636E\u89E3\u6790\u4E3A Rust\
+  \ \u6570\u636E\u7ED3\u6784\uFF0C\u4EE5\u53CA\u5C06 Rust \u6570\u636E\u7ED3\u6784\
+  \u5E8F\u5217\u5316\u56DE JSON\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\
+  \u4E86\u4E0E\u7F51\u7EDC API\u3001\u914D\u7F6E\u6587\u4EF6\u6216\u4EFB\u4F55\u4F7F\
+  \u7528 JSON \u7684\u6570\u636E\u4EA4\u6362\u683C\u5F0F\u8FDB\u884C\u4EA4\u4E92\uFF0C\
+  \u56E0\u4E3A\u5176\u8F7B\u91CF\u4E14\u6613\u4E8E\u4EBA\u7C7B\u9605\u8BFB\u7684\u683C\
+  \u5F0F\u3002"
+lastmod: 2024-02-18 23:08:58.960293
+model: gpt-4-0125-preview
+summary: "\u5728 Rust \u4E2D\u5904\u7406 JSON\uFF08JavaScript \u5BF9\u8C61\u8868\u793A\
+  \u6CD5\uFF09\u6D89\u53CA\u5230\u5C06 JSON \u6570\u636E\u89E3\u6790\u4E3A Rust \u6570\
+  \u636E\u7ED3\u6784\uFF0C\u4EE5\u53CA\u5C06 Rust \u6570\u636E\u7ED3\u6784\u5E8F\u5217\
+  \u5316\u56DE JSON\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u4E0E\
+  \u7F51\u7EDC API\u3001\u914D\u7F6E\u6587\u4EF6\u6216\u4EFB\u4F55\u4F7F\u7528 JSON\
+  \ \u7684\u6570\u636E\u4EA4\u6362\u683C\u5F0F\u8FDB\u884C\u4EA4\u4E92\uFF0C\u56E0\
+  \u4E3A\u5176\u8F7B\u91CF\u4E14\u6613\u4E8E\u4EBA\u7C7B\u9605\u8BFB\u7684\u683C\u5F0F\
+  \u3002"
+title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 ---
 
 {{< edit_this_page >}}

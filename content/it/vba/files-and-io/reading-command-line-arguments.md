@@ -1,14 +1,16 @@
 ---
-title:                "Leggere gli argomenti della riga di comando"
 aliases:
 - /it/vba/reading-command-line-arguments/
-date:                  2024-02-01T21:59:24.044188-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Leggere gli argomenti della riga di comando"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/vba/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:24.044188-07:00
+description: "Leggere gli argomenti della riga di comando in Visual Basic for Applications\
+  \ (VBA) comporta l'accesso ai parametri passati al tuo programma\u2026"
+lastmod: 2024-02-18 23:08:55.739366
+model: gpt-4-0125-preview
+summary: "Leggere gli argomenti della riga di comando in Visual Basic for Applications\
+  \ (VBA) comporta l'accesso ai parametri passati al tuo programma\u2026"
+title: Leggere gli argomenti della riga di comando
 ---
 
 {{< edit_this_page >}}

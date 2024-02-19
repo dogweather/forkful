@@ -1,13 +1,16 @@
 ---
-title:                "Avrundning av tal"
 aliases:
 - /sv/java/rounding-numbers/
-date:                  2024-01-26T03:45:27.213128-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Avrundning av tal"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/rounding-numbers.md"
+date: 2024-01-26 03:45:27.213128-07:00
+description: "Att avrunda tal inneb\xE4r att justera dem till en viss grad av noggrannhet.\
+  \ Programmerare g\xF6r det f\xF6r att f\xF6renkla tal f\xF6r l\xE4sbarhet, f\xF6\
+  r att uppfylla vissa\u2026"
+lastmod: 2024-02-18 23:08:51.664595
+model: gpt-4-0125-preview
+summary: "Att avrunda tal inneb\xE4r att justera dem till en viss grad av noggrannhet.\
+  \ Programmerare g\xF6r det f\xF6r att f\xF6renkla tal f\xF6r l\xE4sbarhet, f\xF6\
+  r att uppfylla vissa\u2026"
+title: Avrundning av tal
 ---
 
 {{< edit_this_page >}}

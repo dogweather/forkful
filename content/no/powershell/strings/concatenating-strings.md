@@ -1,13 +1,14 @@
 ---
-title:                "Sammenslåing av strenger"
 aliases:
 - /no/powershell/concatenating-strings/
-date:                  2024-01-20T17:35:40.673202-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammenslåing av strenger"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/powershell/concatenating-strings.md"
+date: 2024-01-20 17:35:40.673202-07:00
+description: "\"Concatenation\" betyr \xE5 sette sammen tekster. Programmerere bruker\
+  \ det for \xE5 bygge komplekse strenger fra mindre biter, som kan endre seg dynamisk."
+lastmod: 2024-02-18 23:08:54.091025
+model: gpt-4-1106-preview
+summary: "\"Concatenation\" betyr \xE5 sette sammen tekster. Programmerere bruker\
+  \ det for \xE5 bygge komplekse strenger fra mindre biter, som kan endre seg dynamisk."
+title: "Sammensl\xE5ing av strenger"
 ---
 
 {{< edit_this_page >}}

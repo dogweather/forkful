@@ -1,13 +1,14 @@
 ---
-title:                "Printing debug output"
 aliases:
 - /en/fish-shell/printing-debug-output/
-date:                  2024-01-20T17:52:28.158859-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Printing debug output"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/printing-debug-output.md"
+date: 2024-01-20 17:52:28.158859-07:00
+description: Printing debug output means spitting out extra info to help you understand
+  what your code's doing. Programmers do it to detect and fix bugs more easily.
+lastmod: 2024-02-18 23:09:11.483766
+model: gpt-4-1106-preview
+summary: Printing debug output means spitting out extra info to help you understand
+  what your code's doing. Programmers do it to detect and fix bugs more easily.
+title: Printing debug output
 ---
 
 {{< edit_this_page >}}

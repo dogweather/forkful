@@ -1,14 +1,21 @@
 ---
-title:                "명령줄 인수 읽기"
 aliases:
 - /ko/powershell/reading-command-line-arguments/
-date:                  2024-01-20T17:57:05.986863-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "명령줄 인수 읽기"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/reading-command-line-arguments.md"
+date: 2024-01-20 17:57:05.986863-07:00
+description: "\uBA85\uB839\uC904 \uC778\uC790(command line arguments)\uB97C \uC77D\
+  \uB294 \uAC83\uC740 \uC2A4\uD06C\uB9BD\uD2B8\uC5D0 \uC785\uB825\uC744 \uC804\uB2EC\
+  \uD558\uB294 \uBC29\uBC95\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB294\
+  \ \uC774\uB97C \uD65C\uC6A9\uD574 \uC720\uC5F0\uD558\uACE0 \uC7AC\uC0AC\uC6A9 \uAC00\
+  \uB2A5\uD55C \uCF54\uB4DC\uB97C \uC791\uC131\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.578612
+model: gpt-4-1106-preview
+summary: "\uBA85\uB839\uC904 \uC778\uC790(command line arguments)\uB97C \uC77D\uB294\
+  \ \uAC83\uC740 \uC2A4\uD06C\uB9BD\uD2B8\uC5D0 \uC785\uB825\uC744 \uC804\uB2EC\uD558\
+  \uB294 \uBC29\uBC95\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uC774\
+  \uB97C \uD65C\uC6A9\uD574 \uC720\uC5F0\uD558\uACE0 \uC7AC\uC0AC\uC6A9 \uAC00\uB2A5\
+  \uD55C \uCF54\uB4DC\uB97C \uC791\uC131\uD569\uB2C8\uB2E4."
+title: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30"
 ---
 
 {{< edit_this_page >}}

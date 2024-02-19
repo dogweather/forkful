@@ -1,14 +1,18 @@
 ---
-title:                "Slette tegn som samsvarer med et mønster"
 aliases:
 - /no/google-apps-script/deleting-characters-matching-a-pattern/
-date:                  2024-02-01T21:52:07.408735-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Slette tegn som samsvarer med et mønster"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/google-apps-script/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:07.408735-07:00
+description: "\xC5 slette tegn som samsvarer med et spesifikt m\xF8nster er en teknikk\
+  \ brukt for \xE5 rense eller formatere strenger i programmering. I konteksten til\
+  \ Google\u2026"
+lastmod: 2024-02-18 23:08:53.463600
+model: gpt-4-0125-preview
+summary: "\xC5 slette tegn som samsvarer med et spesifikt m\xF8nster er en teknikk\
+  \ brukt for \xE5 rense eller formatere strenger i programmering. I konteksten til\
+  \ Google\u2026"
+title: "Slette tegn som samsvarer med et m\xF8nster"
 ---
 
 {{< edit_this_page >}}

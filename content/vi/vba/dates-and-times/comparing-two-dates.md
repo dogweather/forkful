@@ -1,14 +1,20 @@
 ---
-title:                "So sánh hai ngày"
 aliases:
 - /vi/vba/comparing-two-dates/
-date:                  2024-02-01T21:50:33.987024-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "So sánh hai ngày"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/comparing-two-dates.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:33.987024-07:00
+description: "Vi\u1EC7c so s\xE1nh hai ng\xE0y trong Visual Basic cho \u1EE8ng d\u1EE5\
+  ng (VBA) bao g\u1ED3m vi\u1EC7c x\xE1c \u0111\u1ECBnh m\u1ED1i quan h\u1EC7 theo\
+  \ th\u1EE9 t\u1EF1 th\u1EDDi gian gi\u1EEFa ch\xFAng. C\xE1c l\u1EADp tr\xECnh vi\xEA\
+  n th\u1EF1c\u2026"
+lastmod: 2024-02-18 23:08:50.523497
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c so s\xE1nh hai ng\xE0y trong Visual Basic cho \u1EE8ng d\u1EE5\
+  ng (VBA) bao g\u1ED3m vi\u1EC7c x\xE1c \u0111\u1ECBnh m\u1ED1i quan h\u1EC7 theo\
+  \ th\u1EE9 t\u1EF1 th\u1EDDi gian gi\u1EEFa ch\xFAng. C\xE1c l\u1EADp tr\xECnh vi\xEA\
+  n th\u1EF1c\u2026"
+title: "So s\xE1nh hai ng\xE0y"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Å sende en HTTP-forespørsel"
 aliases:
 - /no/kotlin/sending-an-http-request/
-date:                  2024-01-20T18:00:15.783024-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Å sende en HTTP-forespørsel"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/sending-an-http-request.md"
+date: 2024-01-20 18:00:15.783024-07:00
+description: "\xC5 sende en HTTP-foresp\xF8rsel betyr \xE5 be om data eller handling\
+  \ fra en webserver. Programmerere gj\xF8r det for \xE5 integrere nettjenester og\
+  \ hente data dynamisk."
+lastmod: 2024-02-18 23:08:53.848891
+model: gpt-4-1106-preview
+summary: "\xC5 sende en HTTP-foresp\xF8rsel betyr \xE5 be om data eller handling fra\
+  \ en webserver. Programmerere gj\xF8r det for \xE5 integrere nettjenester og hente\
+  \ data dynamisk."
+title: "\xC5 sende en HTTP-foresp\xF8rsel"
 ---
 
 {{< edit_this_page >}}

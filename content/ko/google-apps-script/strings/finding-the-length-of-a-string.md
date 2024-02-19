@@ -1,14 +1,28 @@
 ---
-title:                "문자열의 길이 찾기"
 aliases:
 - /ko/google-apps-script/finding-the-length-of-a-string/
-date:                  2024-02-01T21:54:03.327089-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열의 길이 찾기"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:03.327089-07:00
+description: "Google Apps Script\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758 \uAE38\uC774\
+  \uB97C \uCC3E\uB294 \uAC83\uC740 JavaScript \uD074\uB77C\uC6B0\uB4DC \uC2A4\uD06C\
+  \uB9BD\uD305 \uC5B8\uC5B4\uB85C, Google \uC81C\uD488\uC5D0\uC11C \uC791\uC5C5\uC744\
+  \ \uC790\uB3D9\uD654\uD560 \uC218 \uC788\uAC8C \uD574\uC90D\uB2C8\uB2E4. \uC774\
+  \ \uC791\uC5C5\uC740 \uBB38\uC790\uC5F4\uC5D0 \uD3EC\uD568\uB41C \uBB38\uC790\uC758\
+  \ \uC218\uB97C \uACB0\uC815\uD558\uB294 \uAC83\uC5D0 \uAD00\uD55C \uAC83\uC785\uB2C8\
+  \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC785\uB825\uC744 \uAC80\uC99D\
+  \uD558\uAC70\uB098,\u2026"
+lastmod: 2024-02-18 23:09:05.539736
+model: gpt-4-0125-preview
+summary: "Google Apps Script\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C\
+  \ \uCC3E\uB294 \uAC83\uC740 JavaScript \uD074\uB77C\uC6B0\uB4DC \uC2A4\uD06C\uB9BD\
+  \uD305 \uC5B8\uC5B4\uB85C, Google \uC81C\uD488\uC5D0\uC11C \uC791\uC5C5\uC744 \uC790\
+  \uB3D9\uD654\uD560 \uC218 \uC788\uAC8C \uD574\uC90D\uB2C8\uB2E4. \uC774 \uC791\uC5C5\
+  \uC740 \uBB38\uC790\uC5F4\uC5D0 \uD3EC\uD568\uB41C \uBB38\uC790\uC758 \uC218\uB97C\
+  \ \uACB0\uC815\uD558\uB294 \uAC83\uC5D0 \uAD00\uD55C \uAC83\uC785\uB2C8\uB2E4. \uD504\
+  \uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC785\uB825\uC744 \uAC80\uC99D\uD558\uAC70\
+  \uB098,\u2026"
+title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 ---
 
 {{< edit_this_page >}}

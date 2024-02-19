@@ -1,13 +1,22 @@
 ---
-title:                "복소수 다루기"
 aliases:
 - /ko/elm/working-with-complex-numbers/
-date:                  2024-01-26T04:39:37.392387-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "복소수 다루기"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/working-with-complex-numbers.md"
+date: 2024-01-26 04:39:37.392387-07:00
+description: "\uBCF5\uC18C\uC218\uB294 \uC2E4\uC218\uC640 \uD5C8\uC218\uC758 \uC870\
+  \uD569\uC778\uB370, `a + bi` \uCC98\uB7FC `i`\uB294 -1\uC758 \uC81C\uACF1\uADFC\uC785\
+  \uB2C8\uB2E4. \uBCF5\uC18C\uC218\uB294 \uC77C\uBC18 \uC22B\uC790\uB85C \uD574\uACB0\
+  \uD560 \uC218 \uC5C6\uB294 \uBB38\uC81C\uB97C \uD574\uACB0\uD558\uAE30 \uC704\uD574\
+  \ \uACF5\uD559\uACFC \uBB3C\uB9AC\uD559 \uB4F1\uC758 \uBD84\uC57C\uC5D0\uC11C \uC911\
+  \uC694\uD55C \uC5ED\uD560\uC744 \uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.076544
+model: gpt-4-0125-preview
+summary: "\uBCF5\uC18C\uC218\uB294 \uC2E4\uC218\uC640 \uD5C8\uC218\uC758 \uC870\uD569\
+  \uC778\uB370, `a + bi` \uCC98\uB7FC `i`\uB294 -1\uC758 \uC81C\uACF1\uADFC\uC785\uB2C8\
+  \uB2E4. \uBCF5\uC18C\uC218\uB294 \uC77C\uBC18 \uC22B\uC790\uB85C \uD574\uACB0\uD560\
+  \ \uC218 \uC5C6\uB294 \uBB38\uC81C\uB97C \uD574\uACB0\uD558\uAE30 \uC704\uD574 \uACF5\
+  \uD559\uACFC \uBB3C\uB9AC\uD559 \uB4F1\uC758 \uBD84\uC57C\uC5D0\uC11C \uC911\uC694\
+  \uD55C \uC5ED\uD560\uC744 \uD569\uB2C8\uB2E4."
+title: "\uBCF5\uC18C\uC218 \uB2E4\uB8E8\uAE30"
 ---
 
 {{< edit_this_page >}}

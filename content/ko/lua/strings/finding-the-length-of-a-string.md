@@ -1,14 +1,23 @@
 ---
-title:                "문자열의 길이 찾기"
 aliases:
 - /ko/lua/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:52.317372-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "문자열의 길이 찾기"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/lua/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:52.317372-07:00
+description: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC740\
+  , \uADF8 \uBB38\uC790\uC5F4\uC774 \uBA87 \uAC1C\uC758 \uBB38\uC790\uB85C \uC774\uB8E8\
+  \uC5B4\uC838 \uC788\uB294\uC9C0 \uC54C\uC544\uB0B4\uB294 \uACFC\uC815\uC785\uB2C8\
+  \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB370\uC774\uD130 \uCC98\uB9AC\
+  , \uC785\uB825 \uAC80\uC99D, UI \uB514\uC790\uC778 \uB4F1\uC758 \uC774\uC720\uB85C\
+  \ \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.402941
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC740, \uADF8\
+  \ \uBB38\uC790\uC5F4\uC774 \uBA87 \uAC1C\uC758 \uBB38\uC790\uB85C \uC774\uB8E8\uC5B4\
+  \uC838 \uC788\uB294\uC9C0 \uC54C\uC544\uB0B4\uB294 \uACFC\uC815\uC785\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB370\uC774\uD130 \uCC98\uB9AC, \uC785\
+  \uB825 \uAC80\uC99D, UI \uB514\uC790\uC778 \uB4F1\uC758 \uC774\uC720\uB85C \uC774\
+  \uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
+title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 ---
 
 {{< edit_this_page >}}

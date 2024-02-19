@@ -1,14 +1,18 @@
 ---
-title:                "Usando arrays associativos"
 aliases:
 - /pt/vba/using-associative-arrays/
-date:                  2024-02-01T22:04:28.238931-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando arrays associativos"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/vba/using-associative-arrays.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:28.238931-07:00
+description: "Arrays associativos, frequentemente conhecidos como dicion\xE1rios no\
+  \ Visual Basic para Aplica\xE7\xF5es (VBA), permitem que programadores criem cole\xE7\
+  \xF5es de pares\u2026"
+lastmod: 2024-02-18 23:08:57.965866
+model: gpt-4-0125-preview
+summary: "Arrays associativos, frequentemente conhecidos como dicion\xE1rios no Visual\
+  \ Basic para Aplica\xE7\xF5es (VBA), permitem que programadores criem cole\xE7\xF5\
+  es de pares\u2026"
+title: Usando arrays associativos
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Søking og erstatting av tekst"
 aliases:
 - /no/haskell/searching-and-replacing-text/
-date:                  2024-01-20T17:57:52.464949-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Søking og erstatting av tekst"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:52.464949-07:00
+description: "Teksts\xF8king og -erstatning lar oss finne og bytte ut spesifikt innhold\
+  \ i strenger. Programmerere bruker dette for \xE5 manipulere data, rette feil eller\u2026"
+lastmod: 2024-02-18 23:08:53.920680
+model: gpt-4-1106-preview
+summary: "Teksts\xF8king og -erstatning lar oss finne og bytte ut spesifikt innhold\
+  \ i strenger. Programmerere bruker dette for \xE5 manipulere data, rette feil eller\u2026"
+title: "S\xF8king og erstatting av tekst"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Confronto tra due date"
 aliases:
 - /it/cpp/comparing-two-dates/
-date:                  2024-01-20T17:32:19.222161-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Confronto tra due date"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/comparing-two-dates.md"
+date: 2024-01-20 17:32:19.222161-07:00
+description: "Comparare due date permette di stabilire quale avviene prima o dopo.\
+  \ \xC8 essenziale in applicazioni come prenotazioni, scadenze e timeline di eventi."
+lastmod: 2024-02-18 23:08:56.184095
+model: gpt-4-1106-preview
+summary: "Comparare due date permette di stabilire quale avviene prima o dopo. \xC8\
+  \ essenziale in applicazioni come prenotazioni, scadenze e timeline di eventi."
+title: Confronto tra due date
 ---
 
 {{< edit_this_page >}}

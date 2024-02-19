@@ -1,14 +1,18 @@
 ---
-title:                "Analysera ett datum från en sträng"
 aliases:
 - /sv/javascript/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:14:29.993585-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analysera ett datum från en sträng"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:14:29.993585-07:00
+description: "Att tolka ett datum fr\xE5n en str\xE4ng g\xF6r det m\xF6jligt f\xF6\
+  r programmerare att konvertera textuella datumrepresentationer till JavaScript `Date`-objekt,\
+  \ vilket\u2026"
+lastmod: 2024-02-18 23:08:52.173750
+model: gpt-4-0125-preview
+summary: "Att tolka ett datum fr\xE5n en str\xE4ng g\xF6r det m\xF6jligt f\xF6r programmerare\
+  \ att konvertera textuella datumrepresentationer till JavaScript `Date`-objekt,\
+  \ vilket\u2026"
+title: "Analysera ett datum fr\xE5n en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

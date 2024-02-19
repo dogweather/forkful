@@ -1,14 +1,18 @@
 ---
-title:                "Praca z YAML"
 aliases:
 - /pl/c-sharp/working-with-yaml/
-date:                  2024-02-03T19:25:01.323280-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:25:01.323280-07:00
+description: "YAML, co oznacza \"YAML Ain't Markup Language\" (YAML nie jest j\u0119\
+  zykiem znacznik\xF3w), to format serializacji danych zrozumia\u0142y dla cz\u0142\
+  owieka. Programi\u015Bci\u2026"
+lastmod: 2024-02-18 23:08:49.631080
+model: gpt-4-0125-preview
+summary: "YAML, co oznacza \"YAML Ain't Markup Language\" (YAML nie jest j\u0119zykiem\
+  \ znacznik\xF3w), to format serializacji danych zrozumia\u0142y dla cz\u0142owieka.\
+  \ Programi\u015Bci\u2026"
+title: Praca z YAML
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Concatenando strings"
 aliases:
 - /pt/typescript/concatenating-strings/
-date:                  2024-01-20T17:35:49.632031-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenando strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/concatenating-strings.md"
+date: 2024-01-20 17:35:49.632031-07:00
+description: "Concatenar strings significa juntar duas ou mais sequ\xEAncias de caracteres\
+  \ para formar uma \xFAnica. Programadores fazem isso para manipular textos, como\u2026"
+lastmod: 2024-02-18 23:08:57.877208
+model: gpt-4-1106-preview
+summary: "Concatenar strings significa juntar duas ou mais sequ\xEAncias de caracteres\
+  \ para formar uma \xFAnica. Programadores fazem isso para manipular textos, como\u2026"
+title: Concatenando strings
 ---
 
 {{< edit_this_page >}}

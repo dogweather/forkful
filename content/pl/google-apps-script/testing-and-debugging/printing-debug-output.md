@@ -1,14 +1,18 @@
 ---
-title:                "Drukowanie informacji wyjściowych debugowania"
 aliases:
 - /pl/google-apps-script/printing-debug-output/
-date:                  2024-02-01T21:58:08.294092-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Drukowanie informacji wyjściowych debugowania"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/printing-debug-output.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:08.294092-07:00
+description: "Drukowanie wyj\u015Bcia debugowania polega na strategicznym umieszczaniu\
+  \ w kodzie instrukcji logowania w celu wy\u015Bwietlenia warto\u015Bci zmiennych,\
+  \ przep\u0142ywu\u2026"
+lastmod: 2024-02-18 23:08:49.150450
+model: gpt-4-0125-preview
+summary: "Drukowanie wyj\u015Bcia debugowania polega na strategicznym umieszczaniu\
+  \ w kodzie instrukcji logowania w celu wy\u015Bwietlenia warto\u015Bci zmiennych,\
+  \ przep\u0142ywu\u2026"
+title: "Drukowanie informacji wyj\u015Bciowych debugowania"
 ---
 
 {{< edit_this_page >}}

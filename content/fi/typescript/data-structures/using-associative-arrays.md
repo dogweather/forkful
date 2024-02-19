@@ -1,15 +1,18 @@
 ---
-title:                "Assosiatiivisten taulukoiden käyttö"
 aliases:
 - /fi/typescript/using-associative-arrays/
-date:                  2024-01-30T19:13:22.575513-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Assosiatiivisten taulukoiden käyttö"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:13:22.575513-07:00
+description: "Assosiatiiviset taulukot eli oliot TypeScriptiss\xE4 mahdollistavat\
+  \ merkkijonojen (avainten) k\xE4yt\xF6n arvoparien k\xE4sittelyss\xE4. Ohjelmoijat\
+  \ k\xE4ytt\xE4v\xE4t niit\xE4\u2026"
+lastmod: 2024-02-18 23:09:07.311059
+model: gpt-4-0125-preview
+summary: "Assosiatiiviset taulukot eli oliot TypeScriptiss\xE4 mahdollistavat merkkijonojen\
+  \ (avainten) k\xE4yt\xF6n arvoparien k\xE4sittelyss\xE4. Ohjelmoijat k\xE4ytt\xE4\
+  v\xE4t niit\xE4\u2026"
+title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

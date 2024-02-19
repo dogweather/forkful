@@ -1,14 +1,16 @@
 ---
-title:                "Escrevendo um arquivo de texto"
 aliases:
 - /pt/swift/writing-a-text-file/
-date:                  2024-02-03T19:29:35.938895-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escrevendo um arquivo de texto"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:35.938895-07:00
+description: "Escrever um arquivo de texto em Swift permite armazenar persistentemente\
+  \ dados em string no sistema de arquivos, o que \xE9 essencial para tarefas como\u2026"
+lastmod: 2024-02-18 23:08:58.508884
+model: gpt-4-0125-preview
+summary: "Escrever um arquivo de texto em Swift permite armazenar persistentemente\
+  \ dados em string no sistema de arquivos, o que \xE9 essencial para tarefas como\u2026"
+title: Escrevendo um arquivo de texto
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Nykyisen päivämäärän hankkiminen"
 aliases:
 - /fi/c-sharp/getting-the-current-date/
-date:                  2024-02-03T19:09:23.304138-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Nykyisen päivämäärän hankkiminen"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:09:23.304138-07:00
+description: "C#:ssa t\xE4m\xE4nhetkisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen tarkoittaa\
+  \ j\xE4rjestelm\xE4st\xE4 nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan tietojen noutamista.\
+  \ Ohjelmoijat tarvitsevat usein p\xE4\xE4sy\xE4\u2026"
+lastmod: 2024-02-18 23:09:07.632038
+model: gpt-4-0125-preview
+summary: "C#:ssa t\xE4m\xE4nhetkisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen tarkoittaa\
+  \ j\xE4rjestelm\xE4st\xE4 nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan tietojen noutamista.\
+  \ Ohjelmoijat tarvitsevat usein p\xE4\xE4sy\xE4\u2026"
+title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 ---
 
 {{< edit_this_page >}}

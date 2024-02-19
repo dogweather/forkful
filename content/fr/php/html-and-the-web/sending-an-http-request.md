@@ -1,13 +1,16 @@
 ---
-title:                "Envoi d'une requête HTTP"
 aliases:
 - /fr/php/sending-an-http-request/
-date:                  2024-01-20T18:00:20.366042-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Envoi d'une requête HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/php/sending-an-http-request.md"
+date: 2024-01-20 18:00:20.366042-07:00
+description: "Envoyer une requ\xEAte HTTP permet \xE0 votre application PHP de communiquer\
+  \ avec d'autres services web. On le fait pour \xE9changer des donn\xE9es, r\xE9\
+  cup\xE9rer du\u2026"
+lastmod: 2024-02-18 23:09:08.919083
+model: gpt-4-1106-preview
+summary: "Envoyer une requ\xEAte HTTP permet \xE0 votre application PHP de communiquer\
+  \ avec d'autres services web. On le fait pour \xE9changer des donn\xE9es, r\xE9\
+  cup\xE9rer du\u2026"
+title: "Envoi d'une requ\xEAte HTTP"
 ---
 
 {{< edit_this_page >}}

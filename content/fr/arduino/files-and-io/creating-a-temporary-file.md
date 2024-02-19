@@ -1,13 +1,16 @@
 ---
-title:                "Création d'un fichier temporaire"
 aliases:
 - /fr/arduino/creating-a-temporary-file/
-date:                  2024-01-20T17:39:32.190917-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Création d'un fichier temporaire"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/creating-a-temporary-file.md"
+date: 2024-01-20 17:39:32.190917-07:00
+description: "Cr\xE9er un fichier temporaire sur Arduino implique de stocker des donn\xE9\
+  es de mani\xE8re transitoire pendant l'ex\xE9cution d'un sketch. On le fait souvent\
+  \ pour\u2026"
+lastmod: 2024-02-18 23:09:09.135922
+model: gpt-4-1106-preview
+summary: "Cr\xE9er un fichier temporaire sur Arduino implique de stocker des donn\xE9\
+  es de mani\xE8re transitoire pendant l'ex\xE9cution d'un sketch. On le fait souvent\
+  \ pour\u2026"
+title: "Cr\xE9ation d'un fichier temporaire"
 ---
 
 {{< edit_this_page >}}

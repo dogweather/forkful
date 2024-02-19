@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie testów"
 aliases:
 - /pl/typescript/writing-tests/
-date:                  2024-02-03T19:32:20.514203-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie testów"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:20.514203-07:00
+description: "Pisanie test\xF3w w TypeScript polega na tworzeniu automatycznych skrypt\xF3\
+  w sprawdzaj\u0105cych funkcjonalno\u015B\u0107 i poprawno\u015B\u0107 Twojego kodu.\
+  \ Programi\u015Bci robi\u0105 to, aby\u2026"
+lastmod: 2024-02-18 23:08:49.351479
+model: gpt-4-0125-preview
+summary: "Pisanie test\xF3w w TypeScript polega na tworzeniu automatycznych skrypt\xF3\
+  w sprawdzaj\u0105cych funkcjonalno\u015B\u0107 i poprawno\u015B\u0107 Twojego kodu.\
+  \ Programi\u015Bci robi\u0105 to, aby\u2026"
+title: "Pisanie test\xF3w"
 ---
 
 {{< edit_this_page >}}

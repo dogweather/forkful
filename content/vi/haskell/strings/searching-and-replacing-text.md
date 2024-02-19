@@ -1,15 +1,20 @@
 ---
-title:                "Tìm kiếm và thay thế văn bản"
 aliases:
 - /vi/haskell/searching-and-replacing-text/
-date:                  2024-01-28T22:07:36.039508-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tìm kiếm và thay thế văn bản"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/haskell/searching-and-replacing-text.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:07:36.039508-07:00
+description: "Vi\u1EC7c t\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n gi\xFA\
+  p b\u1EA1n t\xECm c\xE1c chu\u1ED7i v\xE0 thay th\u1EBF ch\xFAng. L\u1EADp tr\xEC\
+  nh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 c\u1EADp nh\u1EADt m\xE3, tinh ch\u1EC9\
+  nh ho\u1EB7c thay \u0111\u1ED5i d\u1EEF li\u1EC7u\u2026"
+lastmod: 2024-02-18 23:08:50.728602
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c t\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n gi\xFA\
+  p b\u1EA1n t\xECm c\xE1c chu\u1ED7i v\xE0 thay th\u1EBF ch\xFAng. L\u1EADp tr\xEC\
+  nh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 c\u1EADp nh\u1EADt m\xE3, tinh ch\u1EC9\
+  nh ho\u1EB7c thay \u0111\u1ED5i d\u1EEF li\u1EC7u\u2026"
+title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 ---
 
 {{< edit_this_page >}}

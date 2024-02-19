@@ -1,13 +1,14 @@
 ---
-title:                "Recherche et remplacement de texte"
 aliases:
 - /fr/fish-shell/searching-and-replacing-text/
-date:                  2024-01-20T17:57:51.581798-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Recherche et remplacement de texte"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:51.581798-07:00
+description: "La recherche et remplacement de texte, c'est simplement trouver des\
+  \ bouts de texte et les troquer contre autre chose. Les programmeurs le font pour\u2026"
+lastmod: 2024-02-18 23:09:09.286888
+model: gpt-4-1106-preview
+summary: "La recherche et remplacement de texte, c'est simplement trouver des bouts\
+  \ de texte et les troquer contre autre chose. Les programmeurs le font pour\u2026"
+title: Recherche et remplacement de texte
 ---
 
 {{< edit_this_page >}}

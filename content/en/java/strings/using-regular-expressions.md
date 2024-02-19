@@ -1,12 +1,14 @@
 ---
-title:                "Using regular expressions"
 aliases:
 - /en/java/using-regular-expressions/
-date:                  2024-02-03T19:03:04.819670-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using regular expressions"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/using-regular-expressions.md"
+date: 2024-02-03 19:03:04.819670-07:00
+description: "Regular expressions (regex) in Java allow you to define specific patterns\
+  \ to search, manipulate, or validate strings in your code. Programmers use them\u2026"
+lastmod: 2024-02-18 23:09:10.921307
+model: gpt-4-0125-preview
+summary: "Regular expressions (regex) in Java allow you to define specific patterns\
+  \ to search, manipulate, or validate strings in your code. Programmers use them\u2026"
+title: Using regular expressions
 ---
 
 {{< edit_this_page >}}

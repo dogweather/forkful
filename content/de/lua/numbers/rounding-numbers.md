@@ -1,13 +1,15 @@
 ---
-title:                "Zahlen runden"
 aliases:
 - /de/lua/rounding-numbers/
-date:                  2024-01-26T03:45:50.354192-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zahlen runden"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/rounding-numbers.md"
+date: 2024-01-26 03:45:50.354192-07:00
+description: "Das Runden von Zahlen bedeutet, sie auf die n\xE4chstliegende ganze\
+  \ Zahl oder eine bestimmte Dezimalstelle anzupassen. Es ist ein Grundelement in\
+  \ der\u2026"
+lastmod: 2024-02-18 23:09:05.001853
+model: gpt-4-0125-preview
+summary: "Das Runden von Zahlen bedeutet, sie auf die n\xE4chstliegende ganze Zahl\
+  \ oder eine bestimmte Dezimalstelle anzupassen. Es ist ein Grundelement in der\u2026"
+title: Zahlen runden
 ---
 
 {{< edit_this_page >}}

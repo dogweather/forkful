@@ -1,15 +1,20 @@
 ---
-title:                "So sánh hai ngày"
 aliases:
 - /vi/php/comparing-two-dates/
-date:                  2024-01-28T21:56:57.082895-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "So sánh hai ngày"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/php/comparing-two-dates.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:57.082895-07:00
+description: "So s\xE1nh hai ng\xE0y ngh\u0129a l\xE0 ki\u1EC3m tra xem ch\xFAng c\xF3\
+  \ gi\u1ED1ng nhau kh\xF4ng, ho\u1EB7c t\xECm ra c\xE1i n\xE0o s\u1EDBm h\u01A1n\
+  \ ho\u1EB7c mu\u1ED9n h\u01A1n. L\u1EADp tr\xECnh vi\xEAn l\xE0m vi\u1EC7c n\xE0\
+  y \u0111\u1EC3 x\u1EED l\xFD l\u1ECBch\u2026"
+lastmod: 2024-02-18 23:08:50.804720
+model: gpt-4-0125-preview
+summary: "So s\xE1nh hai ng\xE0y ngh\u0129a l\xE0 ki\u1EC3m tra xem ch\xFAng c\xF3\
+  \ gi\u1ED1ng nhau kh\xF4ng, ho\u1EB7c t\xECm ra c\xE1i n\xE0o s\u1EDBm h\u01A1n\
+  \ ho\u1EB7c mu\u1ED9n h\u01A1n. L\u1EADp tr\xECnh vi\xEAn l\xE0m vi\u1EC7c n\xE0\
+  y \u0111\u1EC3 x\u1EED l\xFD l\u1ECBch\u2026"
+title: "So s\xE1nh hai ng\xE0y"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Phân Tích Cú Pháp HTML"
 aliases:
 - /vi/fish-shell/parsing-html/
-date:                  2024-01-28T22:03:55.009542-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Phân Tích Cú Pháp HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/parsing-html.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:03:55.009542-07:00
+description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML l\xE0 qu\xE1 tr\xECnh gi\u1EA3i m\xE3\
+  \ lingua franca c\u1EE7a web \u0111\u1EC3 l\u1ECDc d\u1EEF li\u1EC7u ho\u1EB7c thao\
+  \ t\xE1c n\u1ED9i dung. C\xE1c l\u1EADp tr\xECnh vi\xEAn ph\xE2n t\xEDch c\xFA ph\xE1\
+  p HTML \u0111\u1EC3 t\u1EF1\u2026"
+lastmod: 2024-02-18 23:08:51.182629
+model: gpt-4-0125-preview
+summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML l\xE0 qu\xE1 tr\xECnh gi\u1EA3i m\xE3\
+  \ lingua franca c\u1EE7a web \u0111\u1EC3 l\u1ECDc d\u1EEF li\u1EC7u ho\u1EB7c thao\
+  \ t\xE1c n\u1ED9i dung. C\xE1c l\u1EADp tr\xECnh vi\xEAn ph\xE2n t\xEDch c\xFA ph\xE1\
+  p HTML \u0111\u1EC3 t\u1EF1\u2026"
+title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 ---
 
 {{< edit_this_page >}}

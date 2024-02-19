@@ -1,13 +1,16 @@
 ---
-title:                "Ta bort tecken som matchar ett mönster"
 aliases:
 - /sv/typescript/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:43:22.307335-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ta bort tecken som matchar ett mönster"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:43:22.307335-07:00
+description: "Att ta bort tecken som matchar ett m\xF6nster inneb\xE4r att vi filtrerar\
+  \ en str\xE4ng f\xF6r att endast beh\xE5lla det som \xE4r relevant f\xF6r v\xE5\
+  rt specifika behov.\u2026"
+lastmod: 2024-02-18 23:08:51.528503
+model: gpt-4-1106-preview
+summary: "Att ta bort tecken som matchar ett m\xF6nster inneb\xE4r att vi filtrerar\
+  \ en str\xE4ng f\xF6r att endast beh\xE5lla det som \xE4r relevant f\xF6r v\xE5\
+  rt specifika behov.\u2026"
+title: "Ta bort tecken som matchar ett m\xF6nster"
 ---
 
 {{< edit_this_page >}}

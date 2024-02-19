@@ -1,13 +1,16 @@
 ---
-title:                "Organizando o código em funções"
 aliases:
 - /pt/bash/organizing-code-into-functions/
-date:                  2024-01-26T01:09:04.694547-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organizando o código em funções"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/organizing-code-into-functions.md"
+date: 2024-01-26 01:09:04.694547-07:00
+description: "Dividir c\xF3digo em fun\xE7\xF5es significa decompor scripts em blocos\
+  \ menores e reutiliz\xE1veis que realizam tarefas espec\xEDficas. Isso torna o c\xF3\
+  digo mais limpo,\u2026"
+lastmod: 2024-02-18 23:08:58.331012
+model: gpt-4-1106-preview
+summary: "Dividir c\xF3digo em fun\xE7\xF5es significa decompor scripts em blocos\
+  \ menores e reutiliz\xE1veis que realizam tarefas espec\xEDficas. Isso torna o c\xF3\
+  digo mais limpo,\u2026"
+title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 ---
 
 {{< edit_this_page >}}

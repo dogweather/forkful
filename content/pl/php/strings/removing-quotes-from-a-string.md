@@ -1,13 +1,16 @@
 ---
-title:                "Usuwanie cudzysłowów z ciągu znaków"
 aliases:
 - /pl/php/removing-quotes-from-a-string/
-date:                  2024-01-26T03:41:49.464968-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usuwanie cudzysłowów z ciągu znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:41:49.464968-07:00
+description: "Usuwanie cudzys\u0142ow\xF3w z \u0142a\u0144cuch\xF3w znak\xF3w w PHP\
+  \ oznacza pozbywanie si\u0119 tych irytuj\u0105cych podw\xF3jnych (`\"`) lub pojedynczych\
+  \ (`'`) znak\xF3w cudzys\u0142owu, kt\xF3re\u2026"
+lastmod: 2024-02-18 23:08:49.682348
+model: gpt-4-0125-preview
+summary: "Usuwanie cudzys\u0142ow\xF3w z \u0142a\u0144cuch\xF3w znak\xF3w w PHP oznacza\
+  \ pozbywanie si\u0119 tych irytuj\u0105cych podw\xF3jnych (`\"`) lub pojedynczych\
+  \ (`'`) znak\xF3w cudzys\u0142owu, kt\xF3re\u2026"
+title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

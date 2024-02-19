@@ -1,14 +1,17 @@
 ---
-title:                "Bruker en debugger"
 aliases:
 - /no/google-apps-script/using-a-debugger/
-date:                  2024-02-01T22:03:17.586174-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruker en debugger"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/google-apps-script/using-a-debugger.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:17.586174-07:00
+description: "Feils\xF8king i Google Apps Script (GAS) involverer prosessen med \xE5\
+  \ identifisere og fjerne feil fra skript som er ment for \xE5 automatisere Google\
+  \ Apps eller\u2026"
+lastmod: 2024-02-18 23:08:53.485810
+model: gpt-4-0125-preview
+summary: "Feils\xF8king i Google Apps Script (GAS) involverer prosessen med \xE5 identifisere\
+  \ og fjerne feil fra skript som er ment for \xE5 automatisere Google Apps eller\u2026"
+title: Bruker en debugger
 ---
 
 {{< edit_this_page >}}

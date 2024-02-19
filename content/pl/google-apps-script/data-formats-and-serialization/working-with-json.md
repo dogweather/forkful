@@ -1,14 +1,18 @@
 ---
-title:                "Praca z JSON"
 aliases:
 - /pl/google-apps-script/working-with-json/
-date:                  2024-02-01T22:05:40.676701-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/working-with-json.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:05:40.676701-07:00
+description: "JSON, czyli JavaScript Object Notation, to lekki format s\u0142u\u017C\
+  \u0105cy do przechowywania i przesy\u0142ania danych, idealny do komunikacji serwer-klient\
+  \ oraz plik\xF3w\u2026"
+lastmod: 2024-02-18 23:08:49.176167
+model: gpt-4-0125-preview
+summary: "JSON, czyli JavaScript Object Notation, to lekki format s\u0142u\u017C\u0105\
+  cy do przechowywania i przesy\u0142ania danych, idealny do komunikacji serwer-klient\
+  \ oraz plik\xF3w\u2026"
+title: Praca z JSON
 ---
 
 {{< edit_this_page >}}

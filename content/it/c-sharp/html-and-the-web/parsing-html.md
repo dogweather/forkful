@@ -1,14 +1,17 @@
 ---
-title:                "Analisi del HTML"
 aliases:
 - /it/c-sharp/parsing-html/
-date:                  2024-02-03T19:12:00.177256-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analisi del HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:00.177256-07:00
+description: "L'analisi dell'HTML nella programmazione consiste nell'analizzare la\
+  \ struttura di un documento HTML, permettendo di estrarre, manipolare e interagire\
+  \ con\u2026"
+lastmod: 2024-02-18 23:08:55.885606
+model: gpt-4-0125-preview
+summary: "L'analisi dell'HTML nella programmazione consiste nell'analizzare la struttura\
+  \ di un documento HTML, permettendo di estrarre, manipolare e interagire con\u2026"
+title: Analisi del HTML
 ---
 
 {{< edit_this_page >}}

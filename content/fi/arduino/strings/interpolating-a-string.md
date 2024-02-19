@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonon interpolointi"
 aliases:
 - /fi/arduino/interpolating-a-string/
-date:                  2024-01-20T17:49:59.839884-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon interpolointi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/interpolating-a-string.md"
+date: 2024-01-20 17:49:59.839884-07:00
+description: "Stringien interpolointi tarkoittaa muuttujien ja lausekkeiden upottamista\
+  \ suoraan merkkijonoihin. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 koodin selkeytt\xE4\
+  miseen ja\u2026"
+lastmod: 2024-02-18 23:09:07.885258
+model: gpt-4-1106-preview
+summary: "Stringien interpolointi tarkoittaa muuttujien ja lausekkeiden upottamista\
+  \ suoraan merkkijonoihin. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 koodin selkeytt\xE4\
+  miseen ja\u2026"
+title: Merkkijonon interpolointi
 ---
 
 {{< edit_this_page >}}

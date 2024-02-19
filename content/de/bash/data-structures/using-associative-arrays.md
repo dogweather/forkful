@@ -1,15 +1,16 @@
 ---
-title:                "Verwendung von assoziativen Arrays"
 aliases:
 - /de/bash/using-associative-arrays/
-date:                  2024-01-30T19:09:52.688770-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verwendung von assoziativen Arrays"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:09:52.688770-07:00
+description: "Assoziative Arrays sind wie aufgeladene Arrays, die es Ihnen erlauben,\
+  \ Strings als Indizes anstelle von nur Ganzzahlen zu verwenden. Programmierer nutzen\u2026"
+lastmod: 2024-02-18 23:09:05.044476
+model: gpt-4-0125-preview
+summary: "Assoziative Arrays sind wie aufgeladene Arrays, die es Ihnen erlauben, Strings\
+  \ als Indizes anstelle von nur Ganzzahlen zu verwenden. Programmierer nutzen\u2026"
+title: Verwendung von assoziativen Arrays
 ---
 
 {{< edit_this_page >}}

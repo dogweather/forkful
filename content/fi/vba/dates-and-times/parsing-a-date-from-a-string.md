@@ -1,14 +1,18 @@
 ---
-title:                "Päivämäärän jäsentäminen merkkijonosta"
 aliases:
 - /fi/vba/parsing-a-date-from-a-string/
-date:                  2024-02-01T21:59:07.618631-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:07.618631-07:00
+description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta Visual Basic for\
+  \ Applications (VBA) -ohjelmistossa tarkoittaa tekstin, joka esitt\xE4\xE4 p\xE4\
+  iv\xE4m\xE4\xE4r\xE4\xE4, muuntamista\u2026"
+lastmod: 2024-02-18 23:09:07.421866
+model: gpt-4-0125-preview
+summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta Visual Basic for Applications\
+  \ (VBA) -ohjelmistossa tarkoittaa tekstin, joka esitt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4\
+  r\xE4\xE4, muuntamista\u2026"
+title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta"
 ---
 
 {{< edit_this_page >}}

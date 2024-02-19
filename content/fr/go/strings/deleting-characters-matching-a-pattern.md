@@ -1,14 +1,18 @@
 ---
-title:                "Supprimer des caractères correspondant à un motif"
 aliases:
 - /fr/go/deleting-characters-matching-a-pattern/
-date:                  2024-02-03T17:55:29.056773-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Supprimer des caractères correspondant à un motif"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:29.056773-07:00
+description: "Supprimer les caract\xE8res correspondant \xE0 un mod\xE8le sp\xE9cifique\
+  \ consiste \xE0 enlever certains caract\xE8res ou s\xE9quences de caract\xE8res\
+  \ des cha\xEEnes de caract\xE8res,\u2026"
+lastmod: 2024-02-18 23:09:08.211670
+model: gpt-4-0125-preview
+summary: "Supprimer les caract\xE8res correspondant \xE0 un mod\xE8le sp\xE9cifique\
+  \ consiste \xE0 enlever certains caract\xE8res ou s\xE9quences de caract\xE8res\
+  \ des cha\xEEnes de caract\xE8res,\u2026"
+title: "Supprimer des caract\xE8res correspondant \xE0 un motif"
 ---
 
 {{< edit_this_page >}}

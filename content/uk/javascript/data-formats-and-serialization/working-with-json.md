@@ -1,14 +1,28 @@
 ---
-title:                "Робота з JSON"
 aliases:
 - /uk/javascript/working-with-json/
-date:                  2024-02-03T19:23:31.324962-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Робота з JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/javascript/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:31.324962-07:00
+description: "JSON (JavaScript Object Notation) - \u0446\u0435 \u043B\u0435\u0433\u043A\
+  \u0438\u0439 \u0444\u043E\u0440\u043C\u0430\u0442 \u043E\u0431\u043C\u0456\u043D\
+  \u0443 \u0434\u0430\u043D\u0438\u043C\u0438, \u044F\u043A\u0438\u0439 \u043B\u0435\
+  \u0433\u043A\u043E \u0447\u0438\u0442\u0430\u0454\u0442\u044C\u0441\u044F \u0456\
+  \ \u043F\u0438\u0448\u0435\u0442\u044C\u0441\u044F \u043B\u044E\u0434\u0438\u043D\
+  \u043E\u044E, \u0430 \u0442\u0430\u043A\u043E\u0436 \u043B\u0435\u0433\u043A\u043E\
+  \ \u0430\u043D\u0430\u043B\u0456\u0437\u0443\u0454\u0442\u044C\u0441\u044F \u0456\
+  \ \u0433\u0435\u043D\u0435\u0440\u0443\u0454\u0442\u044C\u0441\u044F\u2026"
+lastmod: 2024-02-18 23:09:01.072595
+model: gpt-4-0125-preview
+summary: "JSON (JavaScript Object Notation) - \u0446\u0435 \u043B\u0435\u0433\u043A\
+  \u0438\u0439 \u0444\u043E\u0440\u043C\u0430\u0442 \u043E\u0431\u043C\u0456\u043D\
+  \u0443 \u0434\u0430\u043D\u0438\u043C\u0438, \u044F\u043A\u0438\u0439 \u043B\u0435\
+  \u0433\u043A\u043E \u0447\u0438\u0442\u0430\u0454\u0442\u044C\u0441\u044F \u0456\
+  \ \u043F\u0438\u0448\u0435\u0442\u044C\u0441\u044F \u043B\u044E\u0434\u0438\u043D\
+  \u043E\u044E, \u0430 \u0442\u0430\u043A\u043E\u0436 \u043B\u0435\u0433\u043A\u043E\
+  \ \u0430\u043D\u0430\u043B\u0456\u0437\u0443\u0454\u0442\u044C\u0441\u044F \u0456\
+  \ \u0433\u0435\u043D\u0435\u0440\u0443\u0454\u0442\u044C\u0441\u044F\u2026"
+title: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 JSON"
 ---
 
 {{< edit_this_page >}}

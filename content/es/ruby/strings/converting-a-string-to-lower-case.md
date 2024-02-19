@@ -1,13 +1,14 @@
 ---
-title:                "Conversión de una cadena de texto a minúsculas"
 aliases:
 - /es/ruby/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:39:30.367191-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Conversión de una cadena de texto a minúsculas"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:39:30.367191-07:00
+description: "Convertir un texto (string) a min\xFAsculas es cambiar todas las letras\
+  \ del texto a su versi\xF3n en min\xFAscula. Esto se hace para uniformizar el texto,\u2026"
+lastmod: 2024-02-18 23:09:10.536237
+model: gpt-4-1106-preview
+summary: "Convertir un texto (string) a min\xFAsculas es cambiar todas las letras\
+  \ del texto a su versi\xF3n en min\xFAscula. Esto se hace para uniformizar el texto,\u2026"
+title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 ---
 
 {{< edit_this_page >}}

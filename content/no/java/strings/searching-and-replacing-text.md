@@ -1,13 +1,15 @@
 ---
-title:                "Søking og erstatting av tekst"
 aliases:
 - /no/java/searching-and-replacing-text/
-date:                  2024-01-20T17:58:03.591840-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Søking og erstatting av tekst"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:03.591840-07:00
+description: "S\xF8ke og erstatte tekst betyr \xE5 finne en spesifikk tekststreng\
+  \ og bytte den ut med en annen. Programmerere bruker dette for \xE5 automatisere\
+  \ koding,\u2026"
+lastmod: 2024-02-18 23:08:53.756866
+model: gpt-4-1106-preview
+summary: "S\xF8ke og erstatte tekst betyr \xE5 finne en spesifikk tekststreng og bytte\
+  \ den ut med en annen. Programmerere bruker dette for \xE5 automatisere koding,\u2026"
+title: "S\xF8king og erstatting av tekst"
 ---
 
 {{< edit_this_page >}}

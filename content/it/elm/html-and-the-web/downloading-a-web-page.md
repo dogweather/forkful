@@ -1,13 +1,14 @@
 ---
-title:                "Scaricare una pagina web"
 aliases:
 - /it/elm/downloading-a-web-page/
-date:                  2024-01-20T17:43:48.272053-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Scaricare una pagina web"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/downloading-a-web-page.md"
+date: 2024-01-20 17:43:48.272053-07:00
+description: "Scaricare una pagina web significa recuperarne i contenuti via HTTP\
+  \ per usarli in una app. I programmatori lo fanno per accedere a dati dinamici,\u2026"
+lastmod: 2024-02-18 23:08:55.804839
+model: gpt-4-1106-preview
+summary: "Scaricare una pagina web significa recuperarne i contenuti via HTTP per\
+  \ usarli in una app. I programmatori lo fanno per accedere a dati dinamici,\u2026"
+title: Scaricare una pagina web
 ---
 
 {{< edit_this_page >}}

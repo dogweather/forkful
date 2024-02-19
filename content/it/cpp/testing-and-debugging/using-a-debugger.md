@@ -1,13 +1,14 @@
 ---
-title:                "Utilizzo di un debugger"
 aliases:
 - /it/cpp/using-a-debugger/
-date:                  2024-01-26T03:47:39.587038-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di un debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/using-a-debugger.md"
+date: 2024-01-26 03:47:39.587038-07:00
+description: "Utilizzare un debugger significa avviare uno strumento che ti consente\
+  \ di guardare dentro il tuo programma in esecuzione per capire cosa sta realmente\u2026"
+lastmod: 2024-02-18 23:08:56.176623
+model: gpt-4-0125-preview
+summary: "Utilizzare un debugger significa avviare uno strumento che ti consente di\
+  \ guardare dentro il tuo programma in esecuzione per capire cosa sta realmente\u2026"
+title: Utilizzo di un debugger
 ---
 
 {{< edit_this_page >}}

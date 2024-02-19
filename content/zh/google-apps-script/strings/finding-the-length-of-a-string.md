@@ -1,14 +1,28 @@
 ---
-title:                "寻找字符串的长度"
 aliases:
 - /zh/google-apps-script/finding-the-length-of-a-string/
-date:                  2024-02-01T21:53:28.189388-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "寻找字符串的长度"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/google-apps-script/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:28.189388-07:00
+description: "\u5728 Google Apps \u811A\u672C\u4E2D\u627E\u5230\u4E00\u4E2A\u5B57\u7B26\
+  \u4E32\u7684\u957F\u5EA6\uFF0CGoogle Apps \u811A\u672C\u662F\u4E00\u79CD JavaScript\
+  \ \u4E91\u811A\u672C\u8BED\u8A00\uFF0C\u5B83\u8BA9\u60A8\u53EF\u4EE5\u81EA\u52A8\
+  \u6267\u884C\u8DE8 Google \u4EA7\u54C1\u7684\u4EFB\u52A1\uFF0C\u5176\u76EE\u7684\
+  \u662F\u786E\u5B9A\u5B57\u7B26\u4E32\u5305\u542B\u7684\u5B57\u7B26\u6570\u91CF\u3002\
+  \u7A0B\u5E8F\u5458\u7ECF\u5E38\u6267\u884C\u6B64\u64CD\u4F5C\u6765\u9A8C\u8BC1\u8F93\
+  \u5165\u3001\u904D\u5386\u5B57\u7B26\u6216\u4E3A\u5404\u79CD\u81EA\u52A8\u5316\u4EFB\
+  \u52A1\u64CD\u4F5C\u5B57\u7B26\u4E32\uFF0C\u8FD9\u4E9B\u4EFB\u52A1\u5728 Google\u2026"
+lastmod: 2024-02-18 23:08:58.740965
+model: gpt-4-0125-preview
+summary: "\u5728 Google Apps \u811A\u672C\u4E2D\u627E\u5230\u4E00\u4E2A\u5B57\u7B26\
+  \u4E32\u7684\u957F\u5EA6\uFF0CGoogle Apps \u811A\u672C\u662F\u4E00\u79CD JavaScript\
+  \ \u4E91\u811A\u672C\u8BED\u8A00\uFF0C\u5B83\u8BA9\u60A8\u53EF\u4EE5\u81EA\u52A8\
+  \u6267\u884C\u8DE8 Google \u4EA7\u54C1\u7684\u4EFB\u52A1\uFF0C\u5176\u76EE\u7684\
+  \u662F\u786E\u5B9A\u5B57\u7B26\u4E32\u5305\u542B\u7684\u5B57\u7B26\u6570\u91CF\u3002\
+  \u7A0B\u5E8F\u5458\u7ECF\u5E38\u6267\u884C\u6B64\u64CD\u4F5C\u6765\u9A8C\u8BC1\u8F93\
+  \u5165\u3001\u904D\u5386\u5B57\u7B26\u6216\u4E3A\u5404\u79CD\u81EA\u52A8\u5316\u4EFB\
+  \u52A1\u64CD\u4F5C\u5B57\u7B26\u4E32\uFF0C\u8FD9\u4E9B\u4EFB\u52A1\u5728 Google\u2026"
+title: "\u5BFB\u627E\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
 ---
 
 {{< edit_this_page >}}

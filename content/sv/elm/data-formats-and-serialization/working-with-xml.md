@@ -1,13 +1,16 @@
 ---
-title:                "Att arbeta med XML"
 aliases:
 - /sv/elm/working-with-xml/
-date:                  2024-01-26T04:30:17.078859-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/working-with-xml.md"
+date: 2024-01-26 04:30:17.078859-07:00
+description: "Att arbeta med XML inneb\xE4r att tolka, omvandla och generera XML-dokument\
+  \ i Elm. Det g\xF6rs f\xF6r att interagera med m\xE5nga webbtj\xE4nster och \xE4\
+  ldre system som\u2026"
+lastmod: 2024-02-18 23:08:51.732816
+model: gpt-4-0125-preview
+summary: "Att arbeta med XML inneb\xE4r att tolka, omvandla och generera XML-dokument\
+  \ i Elm. Det g\xF6rs f\xF6r att interagera med m\xE5nga webbtj\xE4nster och \xE4\
+  ldre system som\u2026"
+title: Att arbeta med XML
 ---
 
 {{< edit_this_page >}}

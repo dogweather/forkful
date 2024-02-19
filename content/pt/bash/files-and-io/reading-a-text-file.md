@@ -1,13 +1,14 @@
 ---
-title:                "Lendo um arquivo de texto"
 aliases:
 - /pt/bash/reading-a-text-file/
-date:                  2024-01-20T17:53:42.870686-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lendo um arquivo de texto"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/reading-a-text-file.md"
+date: 2024-01-20 17:53:42.870686-07:00
+description: "Ler um arquivo de texto significa acessar e manipular o conte\xFAdo\
+  \ armazenado num arquivo no seu sistema. Programadores fazem isso para obter dados,\u2026"
+lastmod: 2024-02-18 23:08:58.342443
+model: gpt-4-1106-preview
+summary: "Ler um arquivo de texto significa acessar e manipular o conte\xFAdo armazenado\
+  \ num arquivo no seu sistema. Programadores fazem isso para obter dados,\u2026"
+title: Lendo um arquivo de texto
 ---
 
 {{< edit_this_page >}}

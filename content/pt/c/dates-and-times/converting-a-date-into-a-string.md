@@ -1,14 +1,16 @@
 ---
-title:                "Convertendo uma data em uma string"
 aliases:
 - /pt/c/converting-a-date-into-a-string/
-date:                  2024-02-03T17:54:01.727992-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Convertendo uma data em uma string"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:01.727992-07:00
+description: "Converter uma data em uma string em C envolve traduzir uma estrutura\
+  \ de data ou carimbo de tempo para um formato leg\xEDvel por humanos. Programadores\u2026"
+lastmod: 2024-02-18 23:08:58.631531
+model: gpt-4-0125-preview
+summary: "Converter uma data em uma string em C envolve traduzir uma estrutura de\
+  \ data ou carimbo de tempo para um formato leg\xEDvel por humanos. Programadores\u2026"
+title: Convertendo uma data em uma string
 ---
 
 {{< edit_this_page >}}

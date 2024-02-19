@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với XML"
 aliases:
 - /vi/c-sharp/working-with-xml/
-date:                  2024-01-28T22:11:36.838710-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/working-with-xml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:36.838710-07:00
+description: "XML (eXtensible Markup Language) chuy\xEAn v\u1EC1 vi\u1EC7c c\u1EA5\
+  u tr\xFAc h\xF3a d\u1EEF li\u1EC7u theo m\u1ED9t \u0111\u1ECBnh d\u1EA1ng d\u1EC5\
+  \ \u0111\u1ECDc. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng XML cho c\u1EA5\
+  u h\xECnh, trao \u0111\u1ED5i d\u1EEF\u2026"
+lastmod: 2024-02-18 23:08:50.725348
+model: gpt-4-0125-preview
+summary: "XML (eXtensible Markup Language) chuy\xEAn v\u1EC1 vi\u1EC7c c\u1EA5u tr\xFA\
+  c h\xF3a d\u1EEF li\u1EC7u theo m\u1ED9t \u0111\u1ECBnh d\u1EA1ng d\u1EC5 \u0111\
+  \u1ECDc. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng XML cho c\u1EA5u h\xEC\
+  nh, trao \u0111\u1ED5i d\u1EEF\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 ---
 
 {{< edit_this_page >}}

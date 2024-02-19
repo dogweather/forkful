@@ -1,12 +1,13 @@
 ---
-title:                "Парсинг HTML"
 aliases:
 - /uk/powershell/parsing-html/
-date:                  2024-01-20T15:33:14.281024-07:00
-simple_title:         "Парсинг HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/powershell/parsing-html.md"
+date: 2024-01-20 15:33:14.281024-07:00
+description: Parsing HTML means extracting data from HTML content. Programmers do
+  it to automate data retrieval from websites, like scraping prices or headlines.
+lastmod: 2024-02-18 23:09:00.725226
+summary: Parsing HTML means extracting data from HTML content. Programmers do it to
+  automate data retrieval from websites, like scraping prices or headlines.
+title: "\u041F\u0430\u0440\u0441\u0438\u043D\u0433 HTML"
 ---
 
 {{< edit_this_page >}}

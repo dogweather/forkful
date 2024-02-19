@@ -1,14 +1,23 @@
 ---
-title:                "将日期转换为字符串"
 aliases:
 - /zh/javascript/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:01.015102-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "将日期转换为字符串"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:01.015102-07:00
+description: "\u4EC0\u4E48\u4EE5\u53CA\u4E3A\u4EC0\u4E48\uFF1F JavaScript\u4E2D\uFF0C\
+  \u5C06\u65E5\u671F\u8F6C\u6362\u6210\u5B57\u7B26\u4E32\u662F\u628ADate\u5BF9\u8C61\
+  \u8868\u793A\u4E3A\u6587\u672C\u683C\u5F0F\u3002\u8FD9\u6837\u505A\u53EF\u4EE5\u8BA9\
+  \u65E5\u671F\u66F4\u5BB9\u6613\u9605\u8BFB\u548C\u5B58\u50A8\uFF0C\u5C24\u5176\u662F\
+  \u5728\u9700\u8981\u4EE5\u7279\u5B9A\u683C\u5F0F\u5C55\u793A\u6216\u5728\u7F51\u7EDC\
+  \u4E0A\u4F20\u8F93\u65F6\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.489750
+model: gpt-4-1106-preview
+summary: "\u4EC0\u4E48\u4EE5\u53CA\u4E3A\u4EC0\u4E48\uFF1F JavaScript\u4E2D\uFF0C\u5C06\
+  \u65E5\u671F\u8F6C\u6362\u6210\u5B57\u7B26\u4E32\u662F\u628ADate\u5BF9\u8C61\u8868\
+  \u793A\u4E3A\u6587\u672C\u683C\u5F0F\u3002\u8FD9\u6837\u505A\u53EF\u4EE5\u8BA9\u65E5\
+  \u671F\u66F4\u5BB9\u6613\u9605\u8BFB\u548C\u5B58\u50A8\uFF0C\u5C24\u5176\u662F\u5728\
+  \u9700\u8981\u4EE5\u7279\u5B9A\u683C\u5F0F\u5C55\u793A\u6216\u5728\u7F51\u7EDC\u4E0A\
+  \u4F20\u8F93\u65F6\u3002"
+title: "\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Lavorare con i numeri complessi"
 aliases:
 - /it/typescript/working-with-complex-numbers/
-date:                  2024-01-26T04:46:21.085325-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con i numeri complessi"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/working-with-complex-numbers.md"
+date: 2024-01-26 04:46:21.085325-07:00
+description: "I numeri complessi, composti da una parte reale e una immaginaria (solitamente\
+  \ scritti come a + bi), rendono possibili calcoli impraticabili o impossibili\u2026"
+lastmod: 2024-02-18 23:08:55.634709
+model: gpt-4-0125-preview
+summary: "I numeri complessi, composti da una parte reale e una immaginaria (solitamente\
+  \ scritti come a + bi), rendono possibili calcoli impraticabili o impossibili\u2026"
+title: Lavorare con i numeri complessi
 ---
 
 {{< edit_this_page >}}

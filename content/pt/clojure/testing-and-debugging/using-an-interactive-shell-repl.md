@@ -1,13 +1,16 @@
 ---
-title:                "Usando um shell interativo (REPL)"
 aliases:
 - /pt/clojure/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:13:04.143132-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando um shell interativo (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:13:04.143132-07:00
+description: "REPL, ou Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3o, \xE9 um ambiente\
+  \ de programa\xE7\xE3o para testar dinamicamente c\xF3digo Clojure peda\xE7o por\
+  \ peda\xE7o. Programadores o\u2026"
+lastmod: 2024-02-18 23:08:57.804305
+model: gpt-4-0125-preview
+summary: "REPL, ou Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3o, \xE9 um ambiente\
+  \ de programa\xE7\xE3o para testar dinamicamente c\xF3digo Clojure peda\xE7o por\
+  \ peda\xE7o. Programadores o\u2026"
+title: Usando um shell interativo (REPL)
 ---
 
 {{< edit_this_page >}}

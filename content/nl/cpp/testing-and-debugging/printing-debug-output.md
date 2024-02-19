@@ -1,15 +1,16 @@
 ---
-title:                "Debug-output afdrukken"
 aliases:
 - /nl/cpp/printing-debug-output/
-date:                  2024-01-28T22:04:15.430566-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Debug-output afdrukken"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/cpp/printing-debug-output.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:04:15.430566-07:00
+description: "Debug output afdrukken is alsof je een gesprek met je code voert; je\
+  \ strooit printopdrachten in om te controleren hoe het gaat en wat het 'denkt'.\u2026"
+lastmod: 2024-02-18 23:09:02.185788
+model: gpt-4-0125-preview
+summary: "Debug output afdrukken is alsof je een gesprek met je code voert; je strooit\
+  \ printopdrachten in om te controleren hoe het gaat en wat het 'denkt'.\u2026"
+title: Debug-output afdrukken
 ---
 
 {{< edit_this_page >}}

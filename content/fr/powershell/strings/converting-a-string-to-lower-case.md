@@ -1,13 +1,16 @@
 ---
-title:                "Conversion d'une chaîne de caractères en minuscules"
 aliases:
 - /fr/powershell/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:39:04.181923-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Conversion d'une chaîne de caractères en minuscules"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:39:04.181923-07:00
+description: "Convertir une cha\xEEne en minuscules, c'est passer tous ses caract\xE8\
+  res en minuscules. Les d\xE9veloppeurs font \xE7a pour uniformiser les donn\xE9\
+  es, faciliter les\u2026"
+lastmod: 2024-02-18 23:09:09.051332
+model: gpt-4-1106-preview
+summary: "Convertir une cha\xEEne en minuscules, c'est passer tous ses caract\xE8\
+  res en minuscules. Les d\xE9veloppeurs font \xE7a pour uniformiser les donn\xE9\
+  es, faciliter les\u2026"
+title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 ---
 
 {{< edit_this_page >}}

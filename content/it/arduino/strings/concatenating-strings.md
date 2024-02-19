@@ -1,13 +1,14 @@
 ---
-title:                "Concatenazione di stringhe"
 aliases:
 - /it/arduino/concatenating-strings/
-date:                  2024-01-20T17:34:06.327422-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenazione di stringhe"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/concatenating-strings.md"
+date: 2024-01-20 17:34:06.327422-07:00
+description: "La concatenazione di stringhe \xE8 il processo di unione di due o pi\xF9\
+  \ stringhe di testo in una sola. I programmatori la usano per creare messaggi dinamici,\u2026"
+lastmod: 2024-02-18 23:08:56.126821
+model: gpt-4-1106-preview
+summary: "La concatenazione di stringhe \xE8 il processo di unione di due o pi\xF9\
+  \ stringhe di testo in una sola. I programmatori la usano per creare messaggi dinamici,\u2026"
+title: Concatenazione di stringhe
 ---
 
 {{< edit_this_page >}}

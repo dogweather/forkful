@@ -1,12 +1,14 @@
 ---
-title:                "Sending an HTTP request with basic authentication"
 aliases:
 - /en/google-apps-script/sending-an-http-request-with-basic-authentication/
-date:                  2024-02-01T21:12:38.601621-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sending an HTTP request with basic authentication"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/google-apps-script/sending-an-http-request-with-basic-authentication.md"
+date: 2024-02-01 21:12:38.601621-07:00
+description: "Sending an HTTP request with basic authentication involves encoding\
+  \ a username and password into a request header to access protected resources.\u2026"
+lastmod: 2024-02-18 23:09:10.639140
+model: gpt-4-0125-preview
+summary: "Sending an HTTP request with basic authentication involves encoding a username\
+  \ and password into a request header to access protected resources.\u2026"
+title: Sending an HTTP request with basic authentication
 ---
 
 {{< edit_this_page >}}

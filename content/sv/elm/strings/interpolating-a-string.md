@@ -1,13 +1,16 @@
 ---
-title:                "Interpolera en sträng"
 aliases:
 - /sv/elm/interpolating-a-string/
-date:                  2024-01-20T17:50:49.614551-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolera en sträng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/interpolating-a-string.md"
+date: 2024-01-20 17:50:49.614551-07:00
+description: "Interpolera en str\xE4ng inneb\xE4r att infoga variabler eller uttryck\
+  \ i en st\xE5ende textstr\xE4ng. Programmerare g\xF6r detta f\xF6r att enkelt skapa\
+  \ dynamiska\u2026"
+lastmod: 2024-02-18 23:08:51.696742
+model: gpt-4-1106-preview
+summary: "Interpolera en str\xE4ng inneb\xE4r att infoga variabler eller uttryck i\
+  \ en st\xE5ende textstr\xE4ng. Programmerare g\xF6r detta f\xF6r att enkelt skapa\
+  \ dynamiska\u2026"
+title: "Interpolera en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

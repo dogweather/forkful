@@ -1,15 +1,20 @@
 ---
-title:                "Nội suy chuỗi ký tự"
 aliases:
 - /vi/elixir/interpolating-a-string/
-date:                  2024-01-28T22:02:02.483064-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Nội suy chuỗi ký tự"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/interpolating-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:02:02.483064-07:00
+description: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n ch\xE8n bi\u1EBFn ho\u1EB7\
+  c t\xEDnh to\xE1n v\xE0o trong m\u1ED9t chu\u1ED7i. N\xF3 r\u1EA5t ti\u1EC7n l\u1EE3\
+  i \u0111\u1EC3 x\xE2y d\u1EF1ng chu\u1ED7i m\u1ED9t c\xE1ch \u0111\u1ED9ng m\xE0\
+  \ kh\xF4ng l\u1EABn l\u1ED9n v\u1EDBi vi\u1EC7c n\u1ED1i\u2026"
+lastmod: 2024-02-18 23:08:50.345605
+model: gpt-4-0125-preview
+summary: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n ch\xE8n bi\u1EBFn ho\u1EB7\
+  c t\xEDnh to\xE1n v\xE0o trong m\u1ED9t chu\u1ED7i. N\xF3 r\u1EA5t ti\u1EC7n l\u1EE3\
+  i \u0111\u1EC3 x\xE2y d\u1EF1ng chu\u1ED7i m\u1ED9t c\xE1ch \u0111\u1ED9ng m\xE0\
+  \ kh\xF4ng l\u1EABn l\u1ED9n v\u1EDBi vi\u1EC7c n\u1ED1i\u2026"
+title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 ---
 
 {{< edit_this_page >}}

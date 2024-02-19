@@ -1,14 +1,26 @@
 ---
-title:                "使用交互式Shell（REPL）"
 aliases:
 - /zh/go/using-an-interactive-shell-repl/
-date:                  2024-02-03T18:10:31.665459-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用交互式Shell（REPL）"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:31.665459-07:00
+description: "\u4EA4\u4E92\u5F0FShell\uFF0C\u6216\u8005\u8BFB\u53D6-\u6C42\u503C-\u6253\
+  \u5370\u5FAA\u73AF\uFF08REPL\uFF09\uFF0C\u8BA9\u4F60\u53EF\u4EE5\u5B9E\u65F6\u5730\
+  \u8BD5\u9A8CGo\u4EE3\u7801\uFF0C\u6267\u884C\u547D\u4EE4\u5E76\u7ACB\u5373\u5F97\
+  \u5230\u53CD\u9988\u3002\u8FD9\u79CD\u65B9\u6CD5\u5E7F\u6CDB\u7528\u4E8E\u5B66\u4E60\
+  \u3001\u8C03\u8BD5\u548C\u539F\u578B\u8BBE\u8BA1\uFF0C\u56E0\u4E3A\u5B83\u7ED5\u8FC7\
+  \u4E86\u4F20\u7EDF\u7684\u7F16\u8F91-\u7F16\u8BD1-\u8FD0\u884C\u5468\u671F\uFF0C\
+  \u4F7F\u5F97\u5F00\u53D1\u8FC7\u7A0B\u66F4\u5FEB\u901F\u548C\u76F4\u89C2\u3002"
+lastmod: 2024-02-18 23:08:58.709704
+model: gpt-4-0125-preview
+summary: "\u4EA4\u4E92\u5F0FShell\uFF0C\u6216\u8005\u8BFB\u53D6-\u6C42\u503C-\u6253\
+  \u5370\u5FAA\u73AF\uFF08REPL\uFF09\uFF0C\u8BA9\u4F60\u53EF\u4EE5\u5B9E\u65F6\u5730\
+  \u8BD5\u9A8CGo\u4EE3\u7801\uFF0C\u6267\u884C\u547D\u4EE4\u5E76\u7ACB\u5373\u5F97\
+  \u5230\u53CD\u9988\u3002\u8FD9\u79CD\u65B9\u6CD5\u5E7F\u6CDB\u7528\u4E8E\u5B66\u4E60\
+  \u3001\u8C03\u8BD5\u548C\u539F\u578B\u8BBE\u8BA1\uFF0C\u56E0\u4E3A\u5B83\u7ED5\u8FC7\
+  \u4E86\u4F20\u7EDF\u7684\u7F16\u8F91-\u7F16\u8BD1-\u8FD0\u884C\u5468\u671F\uFF0C\
+  \u4F7F\u5F97\u5F00\u53D1\u8FC7\u7A0B\u66F4\u5FEB\u901F\u548C\u76F4\u89C2\u3002"
+title: "\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uFF09"
 ---
 
 {{< edit_this_page >}}

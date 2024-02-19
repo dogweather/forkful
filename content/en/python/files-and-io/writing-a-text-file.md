@@ -1,12 +1,14 @@
 ---
-title:                "Writing a text file"
 aliases:
 - /en/python/writing-a-text-file/
-date:                  2024-02-03T19:03:28.639146-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Writing a text file"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/writing-a-text-file.md"
+date: 2024-02-03 19:03:28.639146-07:00
+description: "Writing to a text file in Python is a fundamental task that involves\
+  \ creating or opening a file and then appending or overwriting text. This functionality\u2026"
+lastmod: 2024-02-18 23:09:10.699909
+model: gpt-4-0125-preview
+summary: "Writing to a text file in Python is a fundamental task that involves creating\
+  \ or opening a file and then appending or overwriting text. This functionality\u2026"
+title: Writing a text file
 ---
 
 {{< edit_this_page >}}

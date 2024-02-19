@@ -1,13 +1,14 @@
 ---
-title:                "Concatenazione di stringhe"
 aliases:
 - /it/kotlin/concatenating-strings/
-date:                  2024-01-20T17:35:29.229748-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenazione di stringhe"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/concatenating-strings.md"
+date: 2024-01-20 17:35:29.229748-07:00
+description: "Concatenare le stringhe significa unire due o pi\xF9 testi in uno solo.\
+  \ Lo facciamo per creare messaggi dinamici o per lavorare con dati input-output."
+lastmod: 2024-02-18 23:08:55.838373
+model: gpt-4-1106-preview
+summary: "Concatenare le stringhe significa unire due o pi\xF9 testi in uno solo.\
+  \ Lo facciamo per creare messaggi dinamici o per lavorare con dati input-output."
+title: Concatenazione di stringhe
 ---
 
 {{< edit_this_page >}}

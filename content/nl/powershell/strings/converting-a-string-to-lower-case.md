@@ -1,15 +1,16 @@
 ---
-title:                "Een string omzetten naar kleine letters"
 aliases:
 - /nl/powershell/converting-a-string-to-lower-case/
-date:                  2024-01-28T21:57:49.550942-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string omzetten naar kleine letters"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/powershell/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:57:49.550942-07:00
+description: "Een string omzetten naar kleine letters betekent dat elke letter in\
+  \ de string een kleine letter wordt. Programmeurs doen dit om tekst te standaardiseren,\u2026"
+lastmod: 2024-02-18 23:09:02.074934
+model: gpt-4-0125-preview
+summary: "Een string omzetten naar kleine letters betekent dat elke letter in de string\
+  \ een kleine letter wordt. Programmeurs doen dit om tekst te standaardiseren,\u2026"
+title: Een string omzetten naar kleine letters
 ---
 
 {{< edit_this_page >}}

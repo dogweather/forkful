@@ -1,13 +1,14 @@
 ---
-title:                "Lese kommandolinjeargumenter"
 aliases:
 - /no/typescript/reading-command-line-arguments/
-date:                  2024-01-20T17:56:57.680744-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lese kommandolinjeargumenter"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:57.680744-07:00
+description: "Lesing av kommandolinjeargumenter lar programmereren hente input direkte\
+  \ fra brukerens terminal. Det er nyttig for skript og applikasjoner som krever\u2026"
+lastmod: 2024-02-18 23:08:53.659806
+model: gpt-4-1106-preview
+summary: "Lesing av kommandolinjeargumenter lar programmereren hente input direkte\
+  \ fra brukerens terminal. Det er nyttig for skript og applikasjoner som krever\u2026"
+title: Lese kommandolinjeargumenter
 ---
 
 {{< edit_this_page >}}

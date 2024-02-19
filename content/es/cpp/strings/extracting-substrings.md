@@ -1,13 +1,14 @@
 ---
-title:                "Extracción de subcadenas"
 aliases:
 - /es/cpp/extracting-substrings/
-date:                  2024-01-20T17:45:17.840882-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extracción de subcadenas"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/extracting-substrings.md"
+date: 2024-01-20 17:45:17.840882-07:00
+description: "Extraer subcadenas es tomar pedazos espec\xEDficos de una cadena de\
+  \ texto. Los programadores lo hacen para analizar datos, validar entradas o simplemente\u2026"
+lastmod: 2024-02-18 23:09:10.296748
+model: gpt-4-1106-preview
+summary: "Extraer subcadenas es tomar pedazos espec\xEDficos de una cadena de texto.\
+  \ Los programadores lo hacen para analizar datos, validar entradas o simplemente\u2026"
+title: "Extracci\xF3n de subcadenas"
 ---
 
 {{< edit_this_page >}}

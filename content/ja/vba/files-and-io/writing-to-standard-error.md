@@ -1,14 +1,14 @@
 ---
-title:                "標準エラーへの書き込み"
 aliases:
 - /ja/vba/writing-to-standard-error/
-date:                  2024-02-01T22:10:00.553250-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "標準エラーへの書き込み"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/vba/writing-to-standard-error.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:10:00.553250-07:00
+description: "Visual Basic for\u2026"
+lastmod: 2024-02-18 23:08:54.776923
+model: gpt-4-0125-preview
+summary: "Visual Basic for\u2026"
+title: "\u6A19\u6E96\u30A8\u30E9\u30FC\u3078\u306E\u66F8\u304D\u8FBC\u307F"
 ---
 
 {{< edit_this_page >}}

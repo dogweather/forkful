@@ -1,13 +1,15 @@
 ---
-title:                "Interpolation de chaînes de caractères"
 aliases:
 - /fr/kotlin/interpolating-a-string/
-date:                  2024-01-20T17:51:00.270311-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolation de chaînes de caractères"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/interpolating-a-string.md"
+date: 2024-01-20 17:51:00.270311-07:00
+description: "L'interpolation de cha\xEEnes, c'est injecter des variables dans du\
+  \ texte. On le fait pour faciliter la formation de messages dynamiques et la lecture\
+  \ du\u2026"
+lastmod: 2024-02-18 23:09:08.765606
+model: gpt-4-1106-preview
+summary: "L'interpolation de cha\xEEnes, c'est injecter des variables dans du texte.\
+  \ On le fait pour faciliter la formation de messages dynamiques et la lecture du\u2026"
+title: "Interpolation de cha\xEEnes de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

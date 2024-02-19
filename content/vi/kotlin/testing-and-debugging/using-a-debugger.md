@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng bộ gỡ lỗi"
 aliases:
 - /vi/kotlin/using-a-debugger/
-date:                  2024-01-28T22:09:13.471868-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng bộ gỡ lỗi"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/kotlin/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:13.471868-07:00
+description: "Vi\u1EC7c l\u1EB7n s\xE2u v\xE0o debugger l\xE0 \u0111\u1EC3 b\u01B0\
+  \u1EDBc qua t\u1EEBng d\xF2ng code, quan s\xE1t c\xE1ch th\u1EE9c ho\u1EA1t \u0111\
+  \u1ED9ng v\xE0 b\u1EAFt g\u1EB7p nh\u1EEFng l\u1ED7i kh\xF3 ch\u1ECBu \u0111ang\
+  \ qu\u1EADy ph\xE1. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng\u2026"
+lastmod: 2024-02-18 23:08:50.656336
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c l\u1EB7n s\xE2u v\xE0o debugger l\xE0 \u0111\u1EC3 b\u01B0\u1EDB\
+  c qua t\u1EEBng d\xF2ng code, quan s\xE1t c\xE1ch th\u1EE9c ho\u1EA1t \u0111\u1ED9\
+  ng v\xE0 b\u1EAFt g\u1EB7p nh\u1EEFng l\u1ED7i kh\xF3 ch\u1ECBu \u0111ang qu\u1EAD\
+  y ph\xE1. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng\u2026"
+title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

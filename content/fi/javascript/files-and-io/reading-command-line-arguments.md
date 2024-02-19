@@ -1,13 +1,16 @@
 ---
-title:                "Komennoriviparametrien lukeminen"
 aliases:
 - /fi/javascript/reading-command-line-arguments/
-date:                  2024-01-20T17:56:57.094075-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Komennoriviparametrien lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:57.094075-07:00
+description: "Komennorivin argumentit ovat ohjelmalle annettuja sy\xF6tteit\xE4, jotka\
+  \ m\xE4\xE4ritell\xE4\xE4n ohjelman k\xE4ynnistyksen yhteydess\xE4. Ohjelmoijat\
+  \ k\xE4ytt\xE4v\xE4t niit\xE4, jotta\u2026"
+lastmod: 2024-02-18 23:09:08.052699
+model: gpt-4-1106-preview
+summary: "Komennorivin argumentit ovat ohjelmalle annettuja sy\xF6tteit\xE4, jotka\
+  \ m\xE4\xE4ritell\xE4\xE4n ohjelman k\xE4ynnistyksen yhteydess\xE4. Ohjelmoijat\
+  \ k\xE4ytt\xE4v\xE4t niit\xE4, jotta\u2026"
+title: Komennoriviparametrien lukeminen
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Trabalhando com números complexos"
 aliases:
 - /pt/cpp/working-with-complex-numbers/
-date:                  2024-01-26T04:37:49.477082-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com números complexos"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/working-with-complex-numbers.md"
+date: 2024-01-26 04:37:49.477082-07:00
+description: "N\xFAmeros complexos estendem os n\xFAmeros reais adicionando uma unidade\
+  \ imagin\xE1ria, representada como 'i', onde i^2 = -1. Programadores os utilizam\
+  \ para\u2026"
+lastmod: 2024-02-18 23:08:58.443832
+model: gpt-4-0125-preview
+summary: "N\xFAmeros complexos estendem os n\xFAmeros reais adicionando uma unidade\
+  \ imagin\xE1ria, representada como 'i', onde i^2 = -1. Programadores os utilizam\
+  \ para\u2026"
+title: "Trabalhando com n\xFAmeros complexos"
 ---
 
 {{< edit_this_page >}}

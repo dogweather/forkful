@@ -1,14 +1,28 @@
 ---
-title:                "处理CSV文件"
 aliases:
 - /zh/arduino/working-with-csv/
-date:                  2024-02-03T19:19:22.359482-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理CSV文件"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:19:22.359482-07:00
+description: "\u5728Arduino\u4E2D\u5904\u7406CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\
+  \uFF09\u6587\u4EF6\uFF0C\u6D89\u53CA\u4ECESD\u5361\u4E0A\u901A\u5E38\u5B58\u50A8\
+  \u7684CSV\u6587\u4EF6\u4E2D\u8BFB\u53D6\u548C\u5199\u5165\uFF0C\u4F7F\u6570\u636E\
+  \u8BB0\u5F55\u3001\u914D\u7F6E\u8BBE\u7F6E\u7B49\u6210\u4E3A\u53EF\u80FD\u3002\u7A0B\
+  \u5E8F\u5458\u5E38\u5E38\u5904\u7406CSV\u7528\u4E8E\u4F20\u611F\u5668\u6570\u636E\
+  \u6536\u96C6\u3001\u914D\u7F6E\u53C2\u6570\u5B58\u50A8\uFF0C\u6216\u4E0E\u5176\u4ED6\
+  \u7CFB\u7EDF\u63A5\u53E3\uFF0C\u56E0\u4E3A\u5B83\u7684\u7B80\u5355\u6027\u4EE5\u53CA\
+  \u8DE8\u5E73\u53F0\u7684\u5E7F\u6CDB\u91C7\u7528\u3002"
+lastmod: 2024-02-18 23:08:59.388902
+model: gpt-4-0125-preview
+summary: "\u5728Arduino\u4E2D\u5904\u7406CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\uFF09\
+  \u6587\u4EF6\uFF0C\u6D89\u53CA\u4ECESD\u5361\u4E0A\u901A\u5E38\u5B58\u50A8\u7684\
+  CSV\u6587\u4EF6\u4E2D\u8BFB\u53D6\u548C\u5199\u5165\uFF0C\u4F7F\u6570\u636E\u8BB0\
+  \u5F55\u3001\u914D\u7F6E\u8BBE\u7F6E\u7B49\u6210\u4E3A\u53EF\u80FD\u3002\u7A0B\u5E8F\
+  \u5458\u5E38\u5E38\u5904\u7406CSV\u7528\u4E8E\u4F20\u611F\u5668\u6570\u636E\u6536\
+  \u96C6\u3001\u914D\u7F6E\u53C2\u6570\u5B58\u50A8\uFF0C\u6216\u4E0E\u5176\u4ED6\u7CFB\
+  \u7EDF\u63A5\u53E3\uFF0C\u56E0\u4E3A\u5B83\u7684\u7B80\u5355\u6027\u4EE5\u53CA\u8DE8\
+  \u5E73\u53F0\u7684\u5E7F\u6CDB\u91C7\u7528\u3002"
+title: "\u5904\u7406CSV\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

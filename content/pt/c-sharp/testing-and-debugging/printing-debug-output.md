@@ -1,13 +1,16 @@
 ---
-title:                "Exibindo saídas de depuração"
 aliases:
 - /pt/c-sharp/printing-debug-output/
-date:                  2024-01-20T17:52:35.339403-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Exibindo saídas de depuração"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/printing-debug-output.md"
+date: 2024-01-20 17:52:35.339403-07:00
+description: "Imprimir sa\xEDda de debug \xE9 expor o que est\xE1 acontecendo no programa\
+  \ durante a execu\xE7\xE3o. Programadores fazem isso para entender e resolver problemas\
+  \ \u2013\u2026"
+lastmod: 2024-02-18 23:08:58.160016
+model: gpt-4-1106-preview
+summary: "Imprimir sa\xEDda de debug \xE9 expor o que est\xE1 acontecendo no programa\
+  \ durante a execu\xE7\xE3o. Programadores fazem isso para entender e resolver problemas\
+  \ \u2013\u2026"
+title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

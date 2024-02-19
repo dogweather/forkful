@@ -1,13 +1,14 @@
 ---
-title:                "Kompleksilukujen käsittely"
 aliases:
 - /fi/javascript/working-with-complex-numbers/
-date:                  2024-01-26T04:42:23.900526-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kompleksilukujen käsittely"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/working-with-complex-numbers.md"
+date: 2024-01-26 04:42:23.900526-07:00
+description: "Kompleksiluvut ovat lukuja, joilla on todellinen ja imaginaarinen osa\
+  \ (kuten 3 + 4i). Ne tulevat esiin monissa ohjelmointiongelmissa, erityisesti\u2026"
+lastmod: 2024-02-18 23:09:08.029245
+model: gpt-4-0125-preview
+summary: "Kompleksiluvut ovat lukuja, joilla on todellinen ja imaginaarinen osa (kuten\
+  \ 3 + 4i). Ne tulevat esiin monissa ohjelmointiongelmissa, erityisesti\u2026"
+title: "Kompleksilukujen k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

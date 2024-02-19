@@ -1,15 +1,16 @@
 ---
-title:                "Code organiseren in functies"
 aliases:
 - /nl/cpp/organizing-code-into-functions/
-date:                  2024-01-28T22:02:55.836549-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Code organiseren in functies"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/cpp/organizing-code-into-functions.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:02:55.836549-07:00
+description: "Code opsplitsen in functies betekent het verdelen van je code in kleinere,\
+  \ herbruikbare stukken. We doen dit om herhaling te voorkomen, onze code leesbaar\u2026"
+lastmod: 2024-02-18 23:09:02.189043
+model: gpt-4-0125-preview
+summary: "Code opsplitsen in functies betekent het verdelen van je code in kleinere,\
+  \ herbruikbare stukken. We doen dit om herhaling te voorkomen, onze code leesbaar\u2026"
+title: Code organiseren in functies
 ---
 
 {{< edit_this_page >}}

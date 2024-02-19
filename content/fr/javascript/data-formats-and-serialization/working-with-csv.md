@@ -1,14 +1,18 @@
 ---
-title:                "Travailler avec CSV"
 aliases:
 - /fr/javascript/working-with-csv/
-date:                  2024-02-03T19:20:14.674985-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Travailler avec CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:20:14.674985-07:00
+description: "Travailler avec les CSV (Valeurs S\xE9par\xE9es par des Virgules) en\
+  \ JavaScript implique l'analyse ou la g\xE9n\xE9ration de fichiers CSV pour ing\xE9\
+  rer des donn\xE9es\u2026"
+lastmod: 2024-02-18 23:09:09.281090
+model: gpt-4-0125-preview
+summary: "Travailler avec les CSV (Valeurs S\xE9par\xE9es par des Virgules) en JavaScript\
+  \ implique l'analyse ou la g\xE9n\xE9ration de fichiers CSV pour ing\xE9rer des\
+  \ donn\xE9es\u2026"
+title: Travailler avec CSV
 ---
 
 {{< edit_this_page >}}

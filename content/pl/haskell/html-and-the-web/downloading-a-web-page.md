@@ -1,13 +1,16 @@
 ---
-title:                "Pobieranie strony internetowej"
 aliases:
 - /pl/haskell/downloading-a-web-page/
-date:                  2024-01-20T17:44:26.387677-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Pobieranie strony internetowej"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/downloading-a-web-page.md"
+date: 2024-01-20 17:44:26.387677-07:00
+description: "Czyli po polsku: \"Co i dlaczego?\" Pobieranie strony internetowej to\
+  \ proces, w kt\xF3rym uzyskujemy jej dane (najcz\u0119\u015Bciej w formacie HTML)\
+  \ bezpo\u015Brednio na\u2026"
+lastmod: 2024-02-18 23:08:49.652215
+model: gpt-4-1106-preview
+summary: "Czyli po polsku: \"Co i dlaczego?\" Pobieranie strony internetowej to proces,\
+  \ w kt\xF3rym uzyskujemy jej dane (najcz\u0119\u015Bciej w formacie HTML) bezpo\u015B\
+  rednio na\u2026"
+title: Pobieranie strony internetowej
 ---
 
 {{< edit_this_page >}}

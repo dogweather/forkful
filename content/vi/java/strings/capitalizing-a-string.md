@@ -1,15 +1,20 @@
 ---
-title:                "Viết hoa một chuỗi"
 aliases:
 - /vi/java/capitalizing-a-string/
-date:                  2024-01-28T21:55:45.816899-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Viết hoa một chuỗi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/java/capitalizing-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:55:45.816899-07:00
+description: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i c\xF3 ngh\u0129a l\xE0 bi\u1EBF\
+  n ch\u1EEF c\xE1i \u0111\u1EA7u ti\xEAn th\xE0nh ch\u1EEF hoa v\xE0 c\xE1c ch\u1EEF\
+  \ c\xE1i c\xF2n l\u1EA1i th\xE0nh ch\u1EEF th\u01B0\u1EDDng. C\xE1c l\u1EADp tr\xEC\
+  nh vi\xEAn s\u1EED d\u1EE5ng \u0111i\u1EC1u n\xE0y \u0111\u1EC3\u2026"
+lastmod: 2024-02-18 23:08:50.538239
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i c\xF3 ngh\u0129a l\xE0 bi\u1EBF\
+  n ch\u1EEF c\xE1i \u0111\u1EA7u ti\xEAn th\xE0nh ch\u1EEF hoa v\xE0 c\xE1c ch\u1EEF\
+  \ c\xE1i c\xF2n l\u1EA1i th\xE0nh ch\u1EEF th\u01B0\u1EDDng. C\xE1c l\u1EADp tr\xEC\
+  nh vi\xEAn s\u1EED d\u1EE5ng \u0111i\u1EC1u n\xE0y \u0111\u1EC3\u2026"
+title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 ---
 
 {{< edit_this_page >}}

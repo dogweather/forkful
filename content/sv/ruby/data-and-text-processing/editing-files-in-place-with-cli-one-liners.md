@@ -1,13 +1,16 @@
 ---
-title:                "Redigera filer på plats med kommandoradsenradare"
 aliases:
 - /sv/ruby/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:20:32.875013-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Redigera filer på plats med kommandoradsenradare"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:20:32.875013-07:00
+description: "Att redigera filer p\xE5 plats med CLI (Command Line Interface) enradskommandon\
+  \ i Ruby m\xF6jligg\xF6r att du modifierar filer direkt fr\xE5n din terminal, utan\
+  \ att\u2026"
+lastmod: 2024-02-18 23:08:52.291326
+model: gpt-4-0125-preview
+summary: "Att redigera filer p\xE5 plats med CLI (Command Line Interface) enradskommandon\
+  \ i Ruby m\xF6jligg\xF6r att du modifierar filer direkt fr\xE5n din terminal, utan\
+  \ att\u2026"
+title: "Redigera filer p\xE5 plats med kommandoradsenradare"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,18 @@
 ---
-title:                "Usando arrays associativos"
 aliases:
 - /pt/kotlin/using-associative-arrays/
-date:                  2024-01-30T19:12:02.003853-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando arrays associativos"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:02.003853-07:00
+description: "Arrays associativos, ou mapas, em Kotlin s\xE3o cole\xE7\xF5es que armazenam\
+  \ pares de chave-valor. Os programadores os usam para organizar e recuperar dados\
+  \ de\u2026"
+lastmod: 2024-02-18 23:08:58.094292
+model: gpt-4-0125-preview
+summary: "Arrays associativos, ou mapas, em Kotlin s\xE3o cole\xE7\xF5es que armazenam\
+  \ pares de chave-valor. Os programadores os usam para organizar e recuperar dados\
+  \ de\u2026"
+title: Usando arrays associativos
 ---
 
 {{< edit_this_page >}}

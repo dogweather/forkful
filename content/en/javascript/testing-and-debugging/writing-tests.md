@@ -1,12 +1,14 @@
 ---
-title:                "Writing tests"
 aliases:
 - /en/javascript/writing-tests/
-date:                  2024-02-03T19:03:37.303108-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Writing tests"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/writing-tests.md"
+date: 2024-02-03 19:03:37.303108-07:00
+description: "Writing tests in JavaScript refers to the practice of creating automated\
+  \ scripts that run your code to ensure it behaves as expected, which can\u2026"
+lastmod: 2024-02-18 23:09:11.441455
+model: gpt-4-0125-preview
+summary: "Writing tests in JavaScript refers to the practice of creating automated\
+  \ scripts that run your code to ensure it behaves as expected, which can\u2026"
+title: Writing tests
 ---
 
 {{< edit_this_page >}}

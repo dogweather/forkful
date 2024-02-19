@@ -1,14 +1,20 @@
 ---
-title:                "Tái cấu trúc mã nguồn"
 aliases:
 - /vi/google-apps-script/refactoring/
-date:                  2024-02-01T22:00:47.193775-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tái cấu trúc mã nguồn"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/google-apps-script/refactoring.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:47.193775-07:00
+description: "T\xE1i c\u1EA5u tr\xFAc trong ng\xF4n ng\u1EEF l\u1EADp tr\xECnh \u0111\
+  \u1EC1 c\u1EADp \u0111\u1EBFn qu\xE1 tr\xECnh c\u1EA3i t\u1ED5 m\xE3 m\xE1y t\xED\
+  nh hi\u1EC7n c\xF3 - thay \u0111\u1ED5i c\u1EA5u tr\xFAc m\xE0 kh\xF4ng thay \u0111\
+  \u1ED5i h\xE0nh vi b\xEAn ngo\xE0i - nh\u1EB1m c\u1EA3i\u2026"
+lastmod: 2024-02-18 23:08:50.229592
+model: gpt-4-0125-preview
+summary: "T\xE1i c\u1EA5u tr\xFAc trong ng\xF4n ng\u1EEF l\u1EADp tr\xECnh \u0111\u1EC1\
+  \ c\u1EADp \u0111\u1EBFn qu\xE1 tr\xECnh c\u1EA3i t\u1ED5 m\xE3 m\xE1y t\xEDnh hi\u1EC7\
+  n c\xF3 - thay \u0111\u1ED5i c\u1EA5u tr\xFAc m\xE0 kh\xF4ng thay \u0111\u1ED5i\
+  \ h\xE0nh vi b\xEAn ngo\xE0i - nh\u1EB1m c\u1EA3i\u2026"
+title: "T\xE1i c\u1EA5u tr\xFAc m\xE3 ngu\u1ED3n"
 ---
 
 {{< edit_this_page >}}

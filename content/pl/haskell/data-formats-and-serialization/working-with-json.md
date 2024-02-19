@@ -1,14 +1,18 @@
 ---
-title:                "Praca z JSON"
 aliases:
 - /pl/haskell/working-with-json/
-date:                  2024-02-03T19:23:47.465212-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:47.465212-07:00
+description: "Praca z JSON (JavaScript Object Notation) w Haskellu polega na parsowaniu\
+  \ danych JSON do typ\xF3w Haskell oraz konwertowaniu typ\xF3w Haskell z powrotem\
+  \ na\u2026"
+lastmod: 2024-02-18 23:08:49.673837
+model: gpt-4-0125-preview
+summary: "Praca z JSON (JavaScript Object Notation) w Haskellu polega na parsowaniu\
+  \ danych JSON do typ\xF3w Haskell oraz konwertowaniu typ\xF3w Haskell z powrotem\
+  \ na\u2026"
+title: Praca z JSON
 ---
 
 {{< edit_this_page >}}

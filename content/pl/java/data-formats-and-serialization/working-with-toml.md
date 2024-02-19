@@ -1,13 +1,14 @@
 ---
-title:                "Praca z TOML"
 aliases:
 - /pl/java/working-with-toml/
-date:                  2024-01-26T04:23:16.652484-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/working-with-toml.md"
+date: 2024-01-26 04:23:16.652484-07:00
+description: "TOML oznacza Tom's Obvious, Minimal Language (Oczywisty, Minimalny J\u0119\
+  zyk Toma). Jest to format serializacji danych u\u017Cywany w plikach konfiguracyjnych.\u2026"
+lastmod: 2024-02-18 23:08:49.500871
+model: gpt-4-0125-preview
+summary: "TOML oznacza Tom's Obvious, Minimal Language (Oczywisty, Minimalny J\u0119\
+  zyk Toma). Jest to format serializacji danych u\u017Cywany w plikach konfiguracyjnych.\u2026"
+title: Praca z TOML
 ---
 
 {{< edit_this_page >}}

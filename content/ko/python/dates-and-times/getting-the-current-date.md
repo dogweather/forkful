@@ -1,14 +1,28 @@
 ---
-title:                "현재 날짜 가져오기"
 aliases:
 - /ko/python/getting-the-current-date/
-date:                  2024-02-03T19:10:48.080246-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "현재 날짜 가져오기"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:10:48.080246-07:00
+description: "\uD30C\uC774\uC36C\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC00\
+  \uC838\uC624\uB294 \uAC83\uC740 \uB85C\uAE45, \uB370\uC774\uD130 \uBD84\uC11D, \uC2DC\
+  \uAC04 \uAE30\uBC18 \uACB0\uC815\uC744 \uC704\uD55C \uB9CE\uC740 \uC560\uD50C\uB9AC\
+  \uCF00\uC774\uC158\uC5D0\uC11C \uD544\uC218\uC801\uC778 \uC791\uC5C5\uC785\uB2C8\
+  \uB2E4. \uC774\uB294 \uC2DC\uC2A4\uD15C\uC758 \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC80\
+  \uC0C9\uD558\uB294 \uAC83\uACFC \uAD00\uB828\uC774 \uC788\uC73C\uBA70, \uC2DC\uAC04\
+  \uC801 \uB9E5\uB77D\uC5D0 \uB530\uB77C \uB2EC\uB77C\uC9C0\uB294 \uC791\uC5C5\uC5D0\
+  \uB294 \uD544\uC218\uC801\uC785\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:05.641436
+model: gpt-4-0125-preview
+summary: "\uD30C\uC774\uC36C\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC00\uC838\
+  \uC624\uB294 \uAC83\uC740 \uB85C\uAE45, \uB370\uC774\uD130 \uBD84\uC11D, \uC2DC\uAC04\
+  \ \uAE30\uBC18 \uACB0\uC815\uC744 \uC704\uD55C \uB9CE\uC740 \uC560\uD50C\uB9AC\uCF00\
+  \uC774\uC158\uC5D0\uC11C \uD544\uC218\uC801\uC778 \uC791\uC5C5\uC785\uB2C8\uB2E4\
+  . \uC774\uB294 \uC2DC\uC2A4\uD15C\uC758 \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC80\uC0C9\
+  \uD558\uB294 \uAC83\uACFC \uAD00\uB828\uC774 \uC788\uC73C\uBA70, \uC2DC\uAC04\uC801\
+  \ \uB9E5\uB77D\uC5D0 \uB530\uB77C \uB2EC\uB77C\uC9C0\uB294 \uC791\uC5C5\uC5D0\uB294\
+  \ \uD544\uC218\uC801\uC785\uB2C8\uB2E4."
+title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
 ---
 
 {{< edit_this_page >}}

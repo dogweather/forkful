@@ -1,13 +1,16 @@
 ---
-title:                "Concaténation de chaînes de caractères"
 aliases:
 - /fr/powershell/concatenating-strings/
-date:                  2024-01-20T17:35:27.607852-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concaténation de chaînes de caractères"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/concatenating-strings.md"
+date: 2024-01-20 17:35:27.607852-07:00
+description: "Concat\xE9ner des cha\xEEnes de caract\xE8res, \xE7a veut dire les coller\
+  \ bout \xE0 bout. Les devs le font tout le temps pour assembler des messages, des\
+  \ chemins de\u2026"
+lastmod: 2024-02-18 23:09:09.056912
+model: gpt-4-1106-preview
+summary: "Concat\xE9ner des cha\xEEnes de caract\xE8res, \xE7a veut dire les coller\
+  \ bout \xE0 bout. Les devs le font tout le temps pour assembler des messages, des\
+  \ chemins de\u2026"
+title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

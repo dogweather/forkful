@@ -1,13 +1,16 @@
 ---
-title:                "Numerojen pyöristäminen"
 aliases:
 - /fi/javascript/rounding-numbers/
-date:                  2024-01-26T03:46:05.694752-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Numerojen pyöristäminen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/rounding-numbers.md"
+date: 2024-01-26 03:46:05.694752-07:00
+description: "Py\xF6rist\xE4minen on ylim\xE4\xE4r\xE4isen desimaalikohinan poistoa\
+  \ luvusta tietyn pisteen j\xE4lkeen. Ohjelmoijat py\xF6rist\xE4v\xE4t hallitakseen\
+  \ tarkkuutta, hallinnoidakseen\u2026"
+lastmod: 2024-02-18 23:09:08.030273
+model: gpt-4-0125-preview
+summary: "Py\xF6rist\xE4minen on ylim\xE4\xE4r\xE4isen desimaalikohinan poistoa luvusta\
+  \ tietyn pisteen j\xE4lkeen. Ohjelmoijat py\xF6rist\xE4v\xE4t hallitakseen tarkkuutta,\
+  \ hallinnoidakseen\u2026"
+title: "Numerojen py\xF6rist\xE4minen"
 ---
 
 {{< edit_this_page >}}

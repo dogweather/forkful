@@ -1,13 +1,16 @@
 ---
-title:                "Debuggerin käyttö"
 aliases:
 - /fi/powershell/using-a-debugger/
-date:                  2024-01-26T04:09:01.050958-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Debuggerin käyttö"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/using-a-debugger.md"
+date: 2024-01-26 04:09:01.050958-07:00
+description: "Debuggerin k\xE4ytt\xF6 tarkoittaa katkaisukohtien asettamista, koodin\
+  \ l\xE4pik\xE4ynti\xE4 askel askeleelta, muuttujien tarkkailua ja ohjelman tilan\
+  \ tarkastelua sen\u2026"
+lastmod: 2024-02-18 23:09:07.858220
+model: gpt-4-0125-preview
+summary: "Debuggerin k\xE4ytt\xF6 tarkoittaa katkaisukohtien asettamista, koodin l\xE4\
+  pik\xE4ynti\xE4 askel askeleelta, muuttujien tarkkailua ja ohjelman tilan tarkastelua\
+  \ sen\u2026"
+title: "Debuggerin k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

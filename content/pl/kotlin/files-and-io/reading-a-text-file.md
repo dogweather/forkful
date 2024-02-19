@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
 aliases:
 - /pl/kotlin/reading-a-text-file/
-date:                  2024-01-20T17:54:57.380621-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie pliku tekstowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/reading-a-text-file.md"
+date: 2024-01-20 17:54:57.380621-07:00
+description: "Czytanie pliku tekstowego to pobieranie danych z pliku zapisanego na\
+  \ dysku. Programi\u015Bci to robi\u0105, aby wczyta\u0107 konfiguracje, dane wej\u015B\
+  ciowe lub po prostu\u2026"
+lastmod: 2024-02-18 23:08:49.586530
+model: gpt-4-1106-preview
+summary: "Czytanie pliku tekstowego to pobieranie danych z pliku zapisanego na dysku.\
+  \ Programi\u015Bci to robi\u0105, aby wczyta\u0107 konfiguracje, dane wej\u015B\
+  ciowe lub po prostu\u2026"
+title: Odczytywanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

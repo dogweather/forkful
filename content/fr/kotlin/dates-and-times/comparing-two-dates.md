@@ -1,13 +1,16 @@
 ---
-title:                "Comparer deux dates"
 aliases:
 - /fr/kotlin/comparing-two-dates/
-date:                  2024-01-20T17:33:21.365582-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Comparer deux dates"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/comparing-two-dates.md"
+date: 2024-01-20 17:33:21.365582-07:00
+description: "Comparer deux dates, c'est v\xE9rifier laquelle est plus t\xF4t ou plus\
+  \ tard, ou si elles sont les m\xEAmes. Les programmeurs le font pour trier les \xE9\
+  v\xE9nements,\u2026"
+lastmod: 2024-02-18 23:09:08.794644
+model: gpt-4-1106-preview
+summary: "Comparer deux dates, c'est v\xE9rifier laquelle est plus t\xF4t ou plus\
+  \ tard, ou si elles sont les m\xEAmes. Les programmeurs le font pour trier les \xE9\
+  v\xE9nements,\u2026"
+title: Comparer deux dates
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Een datum omzetten naar een string"
 aliases:
 - /nl/vba/converting-a-date-into-a-string/
-date:                  2024-02-01T21:51:05.095262-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een datum omzetten naar een string"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/vba/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:05.095262-07:00
+description: "Het omzetten van een datum naar een string in Visual Basic for Applications\
+  \ (VBA) is een proces dat wordt gebruikt om het datatypen van een datum naar een\u2026"
+lastmod: 2024-02-18 23:09:01.678464
+model: gpt-4-0125-preview
+summary: "Het omzetten van een datum naar een string in Visual Basic for Applications\
+  \ (VBA) is een proces dat wordt gebruikt om het datatypen van een datum naar een\u2026"
+title: Een datum omzetten naar een string
 ---
 
 {{< edit_this_page >}}

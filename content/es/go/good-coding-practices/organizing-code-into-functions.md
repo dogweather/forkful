@@ -1,14 +1,18 @@
 ---
-title:                "Organizando código en funciones"
 aliases:
 - /es/go/organizing-code-into-functions/
-date:                  2024-02-03T17:59:43.600412-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Organizando código en funciones"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/organizing-code-into-functions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:43.600412-07:00
+description: "Organizar el c\xF3digo en funciones en Go implica desglosar el c\xF3\
+  digo en bloques modulares reutilizables que realizan tareas espec\xEDficas. Este\
+  \ enfoque mejora\u2026"
+lastmod: 2024-02-18 23:09:09.462087
+model: gpt-4-0125-preview
+summary: "Organizar el c\xF3digo en funciones en Go implica desglosar el c\xF3digo\
+  \ en bloques modulares reutilizables que realizan tareas espec\xEDficas. Este enfoque\
+  \ mejora\u2026"
+title: "Organizando c\xF3digo en funciones"
 ---
 
 {{< edit_this_page >}}

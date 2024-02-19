@@ -1,14 +1,29 @@
 ---
-title:                "डीबग आउटपुट प्रिंट करना"
 aliases:
 - /hi/vba/printing-debug-output/
-date:                  2024-02-01T22:00:37.338649-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "डीबग आउटपुट प्रिंट करना"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/vba/printing-debug-output.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:37.338649-07:00
+description: "Visual Basic for Applications (VBA) \u092E\u0947\u0902 \u0921\u093F\u092C\
+  \u0917 \u0906\u0909\u091F\u092A\u0941\u091F \u092A\u094D\u0930\u093F\u0902\u091F\
+  \ \u0915\u0930\u0928\u093E \u0906\u092A\u0915\u0947 \u0915\u094B\u0921 \u092E\u0947\
+  \u0902 \u0930\u0923\u0928\u0940\u0924\u093F\u0915 \u0930\u0942\u092A \u0938\u0947\
+  \ \u092A\u094D\u0930\u093F\u0902\u091F \u0938\u094D\u091F\u0947\u091F\u092E\u0947\
+  \u0902\u091F\u094D\u0938 \u0915\u094B \u0930\u0916\u0928\u0947 \u0915\u0940 \u092A\
+  \u094D\u0930\u0915\u094D\u0930\u093F\u092F\u093E \u0939\u0948, \u091C\u094B \u091A\
+  \u0930 \u0915\u0947 \u092E\u0942\u0932\u094D\u092F\u094B\u0902,\u2026"
+lastmod: 2024-02-18 23:09:03.040175
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications (VBA) \u092E\u0947\u0902 \u0921\u093F\u092C\
+  \u0917 \u0906\u0909\u091F\u092A\u0941\u091F \u092A\u094D\u0930\u093F\u0902\u091F\
+  \ \u0915\u0930\u0928\u093E \u0906\u092A\u0915\u0947 \u0915\u094B\u0921 \u092E\u0947\
+  \u0902 \u0930\u0923\u0928\u0940\u0924\u093F\u0915 \u0930\u0942\u092A \u0938\u0947\
+  \ \u092A\u094D\u0930\u093F\u0902\u091F \u0938\u094D\u091F\u0947\u091F\u092E\u0947\
+  \u0902\u091F\u094D\u0938 \u0915\u094B \u0930\u0916\u0928\u0947 \u0915\u0940 \u092A\
+  \u094D\u0930\u0915\u094D\u0930\u093F\u092F\u093E \u0939\u0948, \u091C\u094B \u091A\
+  \u0930 \u0915\u0947 \u092E\u0942\u0932\u094D\u092F\u094B\u0902,\u2026"
+title: "\u0921\u0940\u092C\u0917 \u0906\u0909\u091F\u092A\u0941\u091F \u092A\u094D\
+  \u0930\u093F\u0902\u091F \u0915\u0930\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

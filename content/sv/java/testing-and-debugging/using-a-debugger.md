@@ -1,13 +1,16 @@
 ---
-title:                "Att använda en debugger"
 aliases:
 - /sv/java/using-a-debugger/
-date:                  2024-01-26T03:50:11.716359-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda en debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/using-a-debugger.md"
+date: 2024-01-26 03:50:11.716359-07:00
+description: "Att anv\xE4nda en debugger inneb\xE4r att man anv\xE4nder ett verktyg\
+  \ f\xF6r att testa och r\xE4tta till buggar i koden. Programmerare g\xF6r det f\xF6\
+  r att f\xF6rst\xE5 fl\xF6det i\u2026"
+lastmod: 2024-02-18 23:08:51.673730
+model: gpt-4-0125-preview
+summary: "Att anv\xE4nda en debugger inneb\xE4r att man anv\xE4nder ett verktyg f\xF6\
+  r att testa och r\xE4tta till buggar i koden. Programmerare g\xF6r det f\xF6r att\
+  \ f\xF6rst\xE5 fl\xF6det i\u2026"
+title: "Att anv\xE4nda en debugger"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,17 @@
 ---
-title:                "Rédaction d'un fichier texte"
 aliases:
 - /fr/google-apps-script/writing-a-text-file/
-date:                  2024-02-01T22:07:55.831980-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rédaction d'un fichier texte"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/google-apps-script/writing-a-text-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:07:55.831980-07:00
+description: "\xC9crire un fichier texte dans Google Apps Script permet aux d\xE9\
+  veloppeurs de stocker des donn\xE9es de mani\xE8re persistante, rendant ces donn\xE9\
+  es accessibles\u2026"
+lastmod: 2024-02-18 23:09:08.312050
+model: gpt-4-0125-preview
+summary: "\xC9crire un fichier texte dans Google Apps Script permet aux d\xE9veloppeurs\
+  \ de stocker des donn\xE9es de mani\xE8re persistante, rendant ces donn\xE9es accessibles\u2026"
+title: "R\xE9daction d'un fichier texte"
 ---
 
 {{< edit_this_page >}}

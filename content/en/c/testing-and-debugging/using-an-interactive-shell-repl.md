@@ -1,12 +1,14 @@
 ---
-title:                "Using an interactive shell (REPL)"
 aliases:
 - /en/c/using-an-interactive-shell-repl/
-date:                  2024-02-03T17:50:02.783417-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using an interactive shell (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/using-an-interactive-shell-repl.md"
+date: 2024-02-03 17:50:02.783417-07:00
+description: "An interactive shell, also known as a Read-Eval-Print Loop (REPL), allows\
+  \ programmers to type in expressions or code and immediately see results,\u2026"
+lastmod: 2024-02-18 23:09:11.524322
+model: gpt-4-0125-preview
+summary: "An interactive shell, also known as a Read-Eval-Print Loop (REPL), allows\
+  \ programmers to type in expressions or code and immediately see results,\u2026"
+title: Using an interactive shell (REPL)
 ---
 
 {{< edit_this_page >}}

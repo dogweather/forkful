@@ -1,13 +1,16 @@
 ---
-title:                "Virheiden käsittely"
 aliases:
 - /fi/lua/handling-errors/
-date:                  2024-01-26T00:56:09.831006-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheiden käsittely"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/handling-errors.md"
+date: 2024-01-26 00:56:09.831006-07:00
+description: "Virheiden k\xE4sittely ohjelmoinnissa on odottamattoman odottamista.\
+  \ Se on suunnittelutaidetta silt\xE4 varalta, ett\xE4 asiat menev\xE4t pieleen,\
+  \ jotta voit pit\xE4\xE4\u2026"
+lastmod: 2024-02-18 23:09:07.764954
+model: gpt-4-1106-preview
+summary: "Virheiden k\xE4sittely ohjelmoinnissa on odottamattoman odottamista. Se\
+  \ on suunnittelutaidetta silt\xE4 varalta, ett\xE4 asiat menev\xE4t pieleen, jotta\
+  \ voit pit\xE4\xE4\u2026"
+title: "Virheiden k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

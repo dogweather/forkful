@@ -1,13 +1,16 @@
 ---
-title:                "Exibindo saídas de depuração"
 aliases:
 - /pt/lua/printing-debug-output/
-date:                  2024-01-20T17:53:13.833590-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Exibindo saídas de depuração"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/lua/printing-debug-output.md"
+date: 2024-01-20 17:53:13.833590-07:00
+description: "Debug print \xE9 a pr\xE1tica de exibir informa\xE7\xF5es no console\
+  \ para entender o que est\xE1 acontecendo no c\xF3digo. Programadores usam isso\
+  \ para rastrear bugs ou\u2026"
+lastmod: 2024-02-18 23:08:58.284747
+model: gpt-4-1106-preview
+summary: "Debug print \xE9 a pr\xE1tica de exibir informa\xE7\xF5es no console para\
+  \ entender o que est\xE1 acontecendo no c\xF3digo. Programadores usam isso para\
+  \ rastrear bugs ou\u2026"
+title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

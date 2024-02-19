@@ -1,14 +1,17 @@
 ---
-title:                "Das aktuelle Datum abrufen"
 aliases:
 - /de/go/getting-the-current-date/
-date:                  2024-02-03T17:57:26.228536-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Das aktuelle Datum abrufen"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:26.228536-07:00
+description: "Das Abrufen des aktuellen Datums in Go ist eine grundlegende Aufgabe\
+  \ f\xFCr Programmierer, vergleichbar mit \"Hello, World!\" in seiner Allgegenwart.\
+  \ Es ist\u2026"
+lastmod: 2024-02-18 23:09:04.375874
+model: gpt-4-0125-preview
+summary: "Das Abrufen des aktuellen Datums in Go ist eine grundlegende Aufgabe f\xFC\
+  r Programmierer, vergleichbar mit \"Hello, World!\" in seiner Allgegenwart. Es ist\u2026"
+title: Das aktuelle Datum abrufen
 ---
 
 {{< edit_this_page >}}

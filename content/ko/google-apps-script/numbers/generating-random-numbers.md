@@ -1,14 +1,28 @@
 ---
-title:                "난수 생성하기"
 aliases:
 - /ko/google-apps-script/generating-random-numbers/
-date:                  2024-02-01T21:54:12.689194-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "난수 생성하기"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/generating-random-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:12.689194-07:00
+description: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uBB34\uC791\uC704 \uC22B\
+  \uC790\uB97C \uC0DD\uC131\uD558\uB294 \uAC83\uC740 \uC2DC\uBBAC\uB808\uC774\uC158\
+  , \uAC8C\uC784, \uBCF4\uC548 \uC2DC\uC2A4\uD15C\uACFC \uAC19\uC740 \uB2E4\uC591\uD55C\
+  \ \uC751\uC6A9 \uD504\uB85C\uADF8\uB7A8\uC5D0 \uC0AC\uC6A9\uB418\uB294 \uAE30\uBCF8\
+  \uC801\uC778 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\
+  \uC740 Google Apps Script\uC5D0\uC11C \uAD6C\uAE00 \uC0DD\uD0DC\uACC4 \uB0B4\uC758\
+  \ \uC560\uD50C\uB9AC\uCF00\uC774\uC158, \uB3D9\uC801\uC778 \uC2DC\uD2B8, \uBB38\uC11C\
+  , \uD3FC\uC5D0\uC11C \uBCC0\uB3D9\uC131\uC744 \uB3C4\uC785\uD558\uACE0,\u2026"
+lastmod: 2024-02-18 23:09:05.548092
+model: gpt-4-0125-preview
+summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uBB34\uC791\uC704 \uC22B\uC790\
+  \uB97C \uC0DD\uC131\uD558\uB294 \uAC83\uC740 \uC2DC\uBBAC\uB808\uC774\uC158, \uAC8C\
+  \uC784, \uBCF4\uC548 \uC2DC\uC2A4\uD15C\uACFC \uAC19\uC740 \uB2E4\uC591\uD55C \uC751\
+  \uC6A9 \uD504\uB85C\uADF8\uB7A8\uC5D0 \uC0AC\uC6A9\uB418\uB294 \uAE30\uBCF8\uC801\
+  \uC778 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\
+  \ Google Apps Script\uC5D0\uC11C \uAD6C\uAE00 \uC0DD\uD0DC\uACC4 \uB0B4\uC758 \uC560\
+  \uD50C\uB9AC\uCF00\uC774\uC158, \uB3D9\uC801\uC778 \uC2DC\uD2B8, \uBB38\uC11C, \uD3FC\
+  \uC5D0\uC11C \uBCC0\uB3D9\uC131\uC744 \uB3C4\uC785\uD558\uACE0,\u2026"
+title: "\uB09C\uC218 \uC0DD\uC131\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

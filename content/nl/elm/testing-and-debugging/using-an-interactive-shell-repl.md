@@ -1,15 +1,16 @@
 ---
-title:                "Het gebruik van een interactieve shell (REPL)"
 aliases:
 - /nl/elm/using-an-interactive-shell-repl/
-date:                  2024-01-28T22:08:51.853224-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Het gebruik van een interactieve shell (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elm/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:51.853224-07:00
+description: "De Read-Eval-Print Loop (REPL) is een eenvoudige, interactieve programmeeromgeving\
+  \ die individuele gebruikersinvoer neemt, deze evalueert en het resultaat\u2026"
+lastmod: 2024-02-18 23:09:01.761239
+model: gpt-4-0125-preview
+summary: "De Read-Eval-Print Loop (REPL) is een eenvoudige, interactieve programmeeromgeving\
+  \ die individuele gebruikersinvoer neemt, deze evalueert en het resultaat\u2026"
+title: Het gebruik van een interactieve shell (REPL)
 ---
 
 {{< edit_this_page >}}

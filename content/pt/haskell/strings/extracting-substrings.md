@@ -1,13 +1,16 @@
 ---
-title:                "Extraindo substrings"
 aliases:
 - /pt/haskell/extracting-substrings/
-date:                  2024-01-20T17:46:07.683145-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extraindo substrings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/extracting-substrings.md"
+date: 2024-01-20 17:46:07.683145-07:00
+description: "Extrair substrings significa pegar partes espec\xEDficas de uma string.\
+  \ Programadores fazem isso para manipular, analisar ou transformar dados baseados\
+  \ em\u2026"
+lastmod: 2024-02-18 23:08:58.188331
+model: gpt-4-1106-preview
+summary: "Extrair substrings significa pegar partes espec\xEDficas de uma string.\
+  \ Programadores fazem isso para manipular, analisar ou transformar dados baseados\
+  \ em\u2026"
+title: Extraindo substrings
 ---
 
 {{< edit_this_page >}}

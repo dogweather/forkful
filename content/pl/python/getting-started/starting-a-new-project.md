@@ -1,13 +1,16 @@
 ---
-title:                "Rozpoczynanie nowego projektu"
 aliases:
 - /pl/python/starting-a-new-project/
-date:                  2024-01-20T18:04:35.132822-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rozpoczynanie nowego projektu"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/starting-a-new-project.md"
+date: 2024-01-20 18:04:35.132822-07:00
+description: "Tworzenie nowego projektu to jak otwieranie pustego zeszytu. Programi\u015B\
+  ci robi\u0105 to, by rozwi\u0105zywa\u0107 problemy, uczy\u0107 si\u0119 i tworzy\u0107\
+  \ co\u015B nowego."
+lastmod: 2024-02-18 23:08:49.223461
+model: gpt-4-1106-preview
+summary: "Tworzenie nowego projektu to jak otwieranie pustego zeszytu. Programi\u015B\
+  ci robi\u0105 to, by rozwi\u0105zywa\u0107 problemy, uczy\u0107 si\u0119 i tworzy\u0107\
+  \ co\u015B nowego."
+title: Rozpoczynanie nowego projektu
 ---
 
 {{< edit_this_page >}}

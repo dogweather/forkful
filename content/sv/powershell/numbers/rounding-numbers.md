@@ -1,13 +1,16 @@
 ---
-title:                "Avrundning av tal"
 aliases:
 - /sv/powershell/rounding-numbers/
-date:                  2024-01-26T03:46:31.386364-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Avrundning av tal"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/rounding-numbers.md"
+date: 2024-01-26 03:46:31.386364-07:00
+description: "Att avrunda tal handlar om att justera ett v\xE4rde till n\xE4rmaste\
+  \ heltal eller angiven decimalplats. Programmerare avrundar tal f\xF6r att f\xF6\
+  renkla data,\u2026"
+lastmod: 2024-02-18 23:08:51.996839
+model: gpt-4-0125-preview
+summary: "Att avrunda tal handlar om att justera ett v\xE4rde till n\xE4rmaste heltal\
+  \ eller angiven decimalplats. Programmerare avrundar tal f\xF6r att f\xF6renkla\
+  \ data,\u2026"
+title: Avrundning av tal
 ---
 
 {{< edit_this_page >}}

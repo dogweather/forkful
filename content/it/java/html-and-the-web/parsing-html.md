@@ -1,12 +1,13 @@
 ---
-title:                "Analisi dell'HTML"
 aliases:
 - /it/java/parsing-html/
-date:                  2024-01-20T15:32:05.303264-07:00
-simple_title:         "Analisi dell'HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/java/parsing-html.md"
+date: 2024-01-20 15:32:05.303264-07:00
+description: "Il parsing di HTML consiste nell'analizzare il codice HTML per estrarne\
+  \ dati o manipolarlo. I programmatori lo fanno perch\xE9 vogliono lavorare con il\u2026"
+lastmod: 2024-02-18 23:08:55.763825
+summary: "Il parsing di HTML consiste nell'analizzare il codice HTML per estrarne\
+  \ dati o manipolarlo. I programmatori lo fanno perch\xE9 vogliono lavorare con il\u2026"
+title: Analisi dell'HTML
 ---
 
 {{< edit_this_page >}}

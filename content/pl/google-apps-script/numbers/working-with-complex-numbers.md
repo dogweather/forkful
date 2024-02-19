@@ -1,14 +1,16 @@
 ---
-title:                "Praca z liczbami zespolonymi"
 aliases:
 - /pl/google-apps-script/working-with-complex-numbers/
-date:                  2024-02-01T22:07:47.902867-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z liczbami zespolonymi"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:07:47.902867-07:00
+description: "Liczby zespolone, przedstawiane jako kombinacja jednostek rzeczywistych\
+  \ i urojonych (np. 3 + 4i), s\u0105 fundamentalne w r\xF3\u017Cnych problemach obliczeniowych,\u2026"
+lastmod: 2024-02-18 23:08:49.139811
+model: gpt-4-0125-preview
+summary: "Liczby zespolone, przedstawiane jako kombinacja jednostek rzeczywistych\
+  \ i urojonych (np. 3 + 4i), s\u0105 fundamentalne w r\xF3\u017Cnych problemach obliczeniowych,\u2026"
+title: Praca z liczbami zespolonymi
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Työskentely YAML:n kanssa"
 aliases:
 - /fi/typescript/working-with-yaml/
-date:                  2024-02-03T19:27:18.898952-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely YAML:n kanssa"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:18.898952-07:00
+description: "YAML, ihmisl\xE4heisesti suunniteltu tietojen serialisointikieli, on\
+  \ usein k\xE4yt\xF6ss\xE4 konfiguraatiotiedostoissa, prosessien v\xE4lisess\xE4\
+  \ viestinn\xE4ss\xE4 ja tietojen\u2026"
+lastmod: 2024-02-18 23:09:07.340728
+model: gpt-4-0125-preview
+summary: "YAML, ihmisl\xE4heisesti suunniteltu tietojen serialisointikieli, on usein\
+  \ k\xE4yt\xF6ss\xE4 konfiguraatiotiedostoissa, prosessien v\xE4lisess\xE4 viestinn\xE4\
+  ss\xE4 ja tietojen\u2026"
+title: "Ty\xF6skentely YAML:n kanssa"
 ---
 
 {{< edit_this_page >}}

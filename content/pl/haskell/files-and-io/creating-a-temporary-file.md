@@ -1,13 +1,16 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
 aliases:
 - /pl/haskell/creating-a-temporary-file/
-date:                  2024-01-20T17:40:24.484283-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tworzenie pliku tymczasowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:24.484283-07:00
+description: "Tworzenie tymczasowych plik\xF3w to proces generowania plik\xF3w, kt\xF3\
+  re istniej\u0105 tylko przez kr\xF3tki czas, zazwyczaj do przechowania danych mi\u0119\
+  dzyoperacyjnych.\u2026"
+lastmod: 2024-02-18 23:08:49.671818
+model: gpt-4-1106-preview
+summary: "Tworzenie tymczasowych plik\xF3w to proces generowania plik\xF3w, kt\xF3\
+  re istniej\u0105 tylko przez kr\xF3tki czas, zazwyczaj do przechowania danych mi\u0119\
+  dzyoperacyjnych.\u2026"
+title: Tworzenie pliku tymczasowego
 ---
 
 {{< edit_this_page >}}

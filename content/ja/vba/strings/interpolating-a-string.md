@@ -1,14 +1,14 @@
 ---
-title:                "文字列の補間"
 aliases:
 - /ja/vba/interpolating-a-string/
-date:                  2024-02-01T21:55:51.371803-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "文字列の補間"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/vba/interpolating-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:51.371803-07:00
+description: "Visual Basic for\u2026"
+lastmod: 2024-02-18 23:08:54.746911
+model: gpt-4-0125-preview
+summary: "Visual Basic for\u2026"
+title: "\u6587\u5B57\u5217\u306E\u88DC\u9593"
 ---
 
 {{< edit_this_page >}}

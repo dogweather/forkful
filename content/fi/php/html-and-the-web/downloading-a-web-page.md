@@ -1,13 +1,16 @@
 ---
-title:                "Verkkosivun lataaminen"
 aliases:
 - /fi/php/downloading-a-web-page/
-date:                  2024-01-20T17:44:46.068460-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Verkkosivun lataaminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/downloading-a-web-page.md"
+date: 2024-01-20 17:44:46.068460-07:00
+description: "Webbisivun lataaminen tarkoittaa sivun sis\xE4ll\xF6n noutamista internetist\xE4\
+  . Ohjelmoijat lataavat sivuja datan ker\xE4\xE4miseen, API-vasteiden tarkistamiseen\
+  \ ja\u2026"
+lastmod: 2024-02-18 23:09:07.710215
+model: gpt-4-1106-preview
+summary: "Webbisivun lataaminen tarkoittaa sivun sis\xE4ll\xF6n noutamista internetist\xE4\
+  . Ohjelmoijat lataavat sivuja datan ker\xE4\xE4miseen, API-vasteiden tarkistamiseen\
+  \ ja\u2026"
+title: Verkkosivun lataaminen
 ---
 
 {{< edit_this_page >}}

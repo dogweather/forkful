@@ -1,14 +1,16 @@
 ---
-title:                "Testien kirjoittaminen"
 aliases:
 - /fi/ruby/writing-tests/
-date:                  2024-02-03T19:32:14.156097-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Testien kirjoittaminen"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:14.156097-07:00
+description: "Testaaminen Rubylla tarkoittaa koodisi toiminnan varmistamista odotetulla\
+  \ tavalla erilaisissa olosuhteissa. Ohjelmoijat kirjoittavat testej\xE4\u2026"
+lastmod: 2024-02-18 23:09:08.186611
+model: gpt-4-0125-preview
+summary: "Testaaminen Rubylla tarkoittaa koodisi toiminnan varmistamista odotetulla\
+  \ tavalla erilaisissa olosuhteissa. Ohjelmoijat kirjoittavat testej\xE4\u2026"
+title: Testien kirjoittaminen
 ---
 
 {{< edit_this_page >}}

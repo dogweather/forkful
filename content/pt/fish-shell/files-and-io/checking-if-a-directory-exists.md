@@ -1,14 +1,18 @@
 ---
-title:                "Verificando se um diretório existe"
 aliases:
 - /pt/fish-shell/checking-if-a-directory-exists/
-date:                  2024-02-03T19:07:14.988558-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verificando se um diretório existe"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:07:14.988558-07:00
+description: "Verificar se um diret\xF3rio existe no Fish Shell permite que scripts\
+  \ tomem decis\xF5es com base na presen\xE7a ou aus\xEAncia de estruturas de diret\xF3\
+  rios,\u2026"
+lastmod: 2024-02-18 23:08:58.589886
+model: gpt-4-0125-preview
+summary: "Verificar se um diret\xF3rio existe no Fish Shell permite que scripts tomem\
+  \ decis\xF5es com base na presen\xE7a ou aus\xEAncia de estruturas de diret\xF3\
+  rios,\u2026"
+title: "Verificando se um diret\xF3rio existe"
 ---
 
 {{< edit_this_page >}}

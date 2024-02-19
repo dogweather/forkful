@@ -1,13 +1,14 @@
 ---
-title:                "Converting a date into a string"
 aliases:
 - /en/rust/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:18.587561-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Converting a date into a string"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:18.587561-07:00
+description: "Converting a date to a string in Rust lets us display dates in a human-readable\
+  \ format. We do this for UIs, logs, or any place where people need to make\u2026"
+lastmod: 2024-02-18 23:09:10.859990
+model: gpt-4-1106-preview
+summary: "Converting a date to a string in Rust lets us display dates in a human-readable\
+  \ format. We do this for UIs, logs, or any place where people need to make\u2026"
+title: Converting a date into a string
 ---
 
 {{< edit_this_page >}}

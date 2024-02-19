@@ -1,13 +1,15 @@
 ---
-title:                "Trabajando con TOML"
 aliases:
 - /es/fish-shell/working-with-toml/
-date:                  2024-01-26T04:21:19.944616-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/working-with-toml.md"
+date: 2024-01-26 04:21:19.944616-07:00
+description: "TOML es un formato de archivo de configuraci\xF3n, f\xE1cil de leer\
+  \ y escribir para los humanos, y f\xE1cil de analizar y generar para las m\xE1quinas.\
+  \ Los\u2026"
+lastmod: 2024-02-18 23:09:10.478715
+model: gpt-4-0125-preview
+summary: "TOML es un formato de archivo de configuraci\xF3n, f\xE1cil de leer y escribir\
+  \ para los humanos, y f\xE1cil de analizar y generar para las m\xE1quinas. Los\u2026"
+title: Trabajando con TOML
 ---
 
 {{< edit_this_page >}}

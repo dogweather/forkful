@@ -1,14 +1,18 @@
 ---
-title:                "Jämföra två datum"
 aliases:
 - /sv/google-apps-script/comparing-two-dates/
-date:                  2024-02-01T21:49:54.802444-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Jämföra två datum"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/google-apps-script/comparing-two-dates.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:54.802444-07:00
+description: "Att j\xE4mf\xF6ra tv\xE5 datum i Google Apps Script, en derivat av JavaScript\
+  \ anpassad f\xF6r Googles svit av appar, \xE4r en grundl\xE4ggande uppgift f\xF6\
+  r utvecklare som\u2026"
+lastmod: 2024-02-18 23:08:51.392104
+model: gpt-4-0125-preview
+summary: "Att j\xE4mf\xF6ra tv\xE5 datum i Google Apps Script, en derivat av JavaScript\
+  \ anpassad f\xF6r Googles svit av appar, \xE4r en grundl\xE4ggande uppgift f\xF6\
+  r utvecklare som\u2026"
+title: "J\xE4mf\xF6ra tv\xE5 datum"
 ---
 
 {{< edit_this_page >}}

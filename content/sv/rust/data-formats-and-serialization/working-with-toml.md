@@ -1,13 +1,16 @@
 ---
-title:                "Att arbeta med TOML"
 aliases:
 - /sv/rust/working-with-toml/
-date:                  2024-01-26T04:26:22.278021-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/working-with-toml.md"
+date: 2024-01-26 04:26:22.278021-07:00
+description: "TOML \xE4r ett m\xE4nniskol\xE4sbart data-serialiseringsspr\xE5k som\
+  \ ofta anv\xE4nds f\xF6r konfigurationsfiler. Programmerare anv\xE4nder TOML f\xF6\
+  r dess enkelhet och klarhet,\u2026"
+lastmod: 2024-02-18 23:08:51.606630
+model: gpt-4-0125-preview
+summary: "TOML \xE4r ett m\xE4nniskol\xE4sbart data-serialiseringsspr\xE5k som ofta\
+  \ anv\xE4nds f\xF6r konfigurationsfiler. Programmerare anv\xE4nder TOML f\xF6r dess\
+  \ enkelhet och klarhet,\u2026"
+title: Att arbeta med TOML
 ---
 
 {{< edit_this_page >}}

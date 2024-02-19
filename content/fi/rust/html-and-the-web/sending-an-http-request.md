@@ -1,13 +1,16 @@
 ---
-title:                "HTTP-pyynnön lähettäminen"
 aliases:
 - /fi/rust/sending-an-http-request/
-date:                  2024-01-20T18:00:43.370282-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-pyynnön lähettäminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/sending-an-http-request.md"
+date: 2024-01-20 18:00:43.370282-07:00
+description: "L\xE4het\xE4mme HTTP-pyynn\xF6n vaihtaaksemme tietoja palvelimien kanssa.\
+  \ Sit\xE4 k\xE4ytet\xE4\xE4n datan hakemiseen, l\xE4hett\xE4miseen ja web-palveluiden\
+  \ hy\xF6dynt\xE4miseen."
+lastmod: 2024-02-18 23:09:07.360442
+model: gpt-4-1106-preview
+summary: "L\xE4het\xE4mme HTTP-pyynn\xF6n vaihtaaksemme tietoja palvelimien kanssa.\
+  \ Sit\xE4 k\xE4ytet\xE4\xE4n datan hakemiseen, l\xE4hett\xE4miseen ja web-palveluiden\
+  \ hy\xF6dynt\xE4miseen."
+title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 ---
 
 {{< edit_this_page >}}

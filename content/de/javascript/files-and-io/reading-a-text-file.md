@@ -1,13 +1,16 @@
 ---
-title:                "Textdatei einlesen"
 aliases:
 - /de/javascript/reading-a-text-file/
-date:                  2024-01-20T17:54:33.006741-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Textdatei einlesen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/reading-a-text-file.md"
+date: 2024-01-20 17:54:33.006741-07:00
+description: "Das Einlesen einer Textdatei bedeutet, ihren Inhalt in deine Anwendung\
+  \ zu importieren. Programmierer machen das, um Daten zu verarbeiten, Einstellungen\
+  \ zu\u2026"
+lastmod: 2024-02-18 23:09:05.297275
+model: gpt-4-1106-preview
+summary: "Das Einlesen einer Textdatei bedeutet, ihren Inhalt in deine Anwendung zu\
+  \ importieren. Programmierer machen das, um Daten zu verarbeiten, Einstellungen\
+  \ zu\u2026"
+title: Textdatei einlesen
 ---
 
 {{< edit_this_page >}}

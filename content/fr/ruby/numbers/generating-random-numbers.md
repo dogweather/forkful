@@ -1,13 +1,16 @@
 ---
-title:                "Génération de nombres aléatoires"
 aliases:
 - /fr/ruby/generating-random-numbers/
-date:                  2024-01-27T20:34:51.392934-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Génération de nombres aléatoires"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/generating-random-numbers.md"
+date: 2024-01-27 20:34:51.392934-07:00
+description: "G\xE9n\xE9rer des nombres al\xE9atoires en Ruby implique la cr\xE9ation\
+  \ de nombres qui ne peuvent pas \xEAtre pr\xE9dits logiquement, essentiel pour des\
+  \ sc\xE9narios tels que\u2026"
+lastmod: 2024-02-18 23:09:09.400433
+model: gpt-4-0125-preview
+summary: "G\xE9n\xE9rer des nombres al\xE9atoires en Ruby implique la cr\xE9ation\
+  \ de nombres qui ne peuvent pas \xEAtre pr\xE9dits logiquement, essentiel pour des\
+  \ sc\xE9narios tels que\u2026"
+title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 ---
 
 {{< edit_this_page >}}

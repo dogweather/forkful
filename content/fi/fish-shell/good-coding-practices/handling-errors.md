@@ -1,13 +1,15 @@
 ---
-title:                "Virheiden käsittely"
 aliases:
 - /fi/fish-shell/handling-errors/
-date:                  2024-01-26T00:52:39.955148-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheiden käsittely"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/handling-errors.md"
+date: 2024-01-26 00:52:39.955148-07:00
+description: "Virheenk\xE4sittely antaa skriptillesi mahdollisuuden k\xE4sitell\xE4\
+  \ odottamattomia tilanteita sulavasti. Teemme sen hallitaksemme ep\xE4onnistumisia\
+  \ aiheuttamatta\u2026"
+lastmod: 2024-02-18 23:09:08.092441
+model: gpt-4-1106-preview
+summary: "Virheenk\xE4sittely antaa skriptillesi mahdollisuuden k\xE4sitell\xE4 odottamattomia\
+  \ tilanteita sulavasti. Teemme sen hallitaksemme ep\xE4onnistumisia aiheuttamatta\u2026"
+title: "Virheiden k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

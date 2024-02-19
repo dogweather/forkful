@@ -1,13 +1,16 @@
 ---
-title:                "Usuwanie znaków pasujących do wzorca"
 aliases:
 - /pl/elixir/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:13.604867-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Usuwanie znaków pasujących do wzorca"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:13.604867-07:00
+description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces filtracji tekstu\
+  \ - wybierasz, kt\xF3re znaki \"przetrwaj\u0105\", a kt\xF3re zostan\u0105 usuni\u0119\
+  te. Programi\u015Bci robi\u0105 to, by\u2026"
+lastmod: 2024-02-18 23:08:49.290618
+model: gpt-4-1106-preview
+summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces filtracji tekstu\
+  \ - wybierasz, kt\xF3re znaki \"przetrwaj\u0105\", a kt\xF3re zostan\u0105 usuni\u0119\
+  te. Programi\u015Bci robi\u0105 to, by\u2026"
+title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 ---
 
 {{< edit_this_page >}}

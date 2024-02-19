@@ -1,15 +1,20 @@
 ---
-title:                "Trích xuất chuỗi con"
 aliases:
 - /vi/elixir/extracting-substrings/
-date:                  2024-01-28T22:00:30.181918-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trích xuất chuỗi con"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/extracting-substrings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:00:30.181918-07:00
+description: "Tr\xEDch xu\u1EA5t chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5y ra\
+  \ c\xE1c ph\u1EA7n c\u1EE5 th\u1EC3 t\u1EEB m\u1ED9t chu\u1ED7i. L\u1EADp tr\xEC\
+  nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 thao t\xE1c v\xE0 ph\xE2n t\xED\
+  ch d\u1EEF li\u1EC7u v\u0103n b\u1EA3n, ho\u1EB7c \u0111\u01A1n gi\u1EA3n\u2026"
+lastmod: 2024-02-18 23:08:50.350739
+model: gpt-4-0125-preview
+summary: "Tr\xEDch xu\u1EA5t chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5y ra c\xE1\
+  c ph\u1EA7n c\u1EE5 th\u1EC3 t\u1EEB m\u1ED9t chu\u1ED7i. L\u1EADp tr\xECnh vi\xEA\
+  n l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 thao t\xE1c v\xE0 ph\xE2n t\xEDch d\u1EEF\
+  \ li\u1EC7u v\u0103n b\u1EA3n, ho\u1EB7c \u0111\u01A1n gi\u1EA3n\u2026"
+title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,16 @@
 ---
-title:                "Een tekstbestand lezen"
 aliases:
 - /nl/javascript/reading-a-text-file/
-date:                  2024-01-28T22:05:26.355589-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tekstbestand lezen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/javascript/reading-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:05:26.355589-07:00
+description: "Een tekstbestand lezen is informatie uit een .txt-document in je programma\
+  \ halen. Programmeurs doen dit om toegang te krijgen tot en data te manipuleren:\u2026"
+lastmod: 2024-02-18 23:09:02.295761
+model: gpt-4-0125-preview
+summary: "Een tekstbestand lezen is informatie uit een .txt-document in je programma\
+  \ halen. Programmeurs doen dit om toegang te krijgen tot en data te manipuleren:\u2026"
+title: Een tekstbestand lezen
 ---
 
 {{< edit_this_page >}}

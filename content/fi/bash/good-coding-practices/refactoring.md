@@ -1,13 +1,16 @@
 ---
-title:                "Koodin refaktorointi"
 aliases:
 - /fi/bash/refactoring/
-date:                  2024-01-26T01:16:48.865245-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Koodin refaktorointi"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/refactoring.md"
+date: 2024-01-26 01:16:48.865245-07:00
+description: "Uudelleenj\xE4rjestely on olemassa olevan tietokonekoodin rakenteen\
+  \ muuttamisen prosessi muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Se on elint\xE4\
+  rke\xE4 k\xE4yt\xE4nt\xF6\u2026"
+lastmod: 2024-02-18 23:09:07.813394
+model: gpt-4-0125-preview
+summary: "Uudelleenj\xE4rjestely on olemassa olevan tietokonekoodin rakenteen muuttamisen\
+  \ prosessi muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Se on elint\xE4rke\xE4\
+  \ k\xE4yt\xE4nt\xF6\u2026"
+title: Koodin refaktorointi
 ---
 
 {{< edit_this_page >}}

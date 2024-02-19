@@ -1,14 +1,27 @@
 ---
-title:                "YAML로 작업하기"
 aliases:
 - /ko/fish-shell/working-with-yaml/
-date:                  2024-02-03T19:25:28.021229-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "YAML로 작업하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:25:28.021229-07:00
+description: "Fish Shell\uC5D0\uC11C YAML\uC744 \uB2E4\uB8E8\uB294 \uC77C\uC740 YAML\
+  \ (YAML Ain't Markup Language) \uD30C\uC77C, \uAD6C\uC131 \uD30C\uC77C\uC5D0 \uC0AC\
+  \uC6A9\uB418\uB294 \uB370\uC774\uD130 \uC9C1\uB82C\uD654 \uD615\uC2DD\uC744 \uD30C\
+  \uC2F1\uD558\uACE0 \uC870\uC791\uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\
+  \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC258 \uD658\uACBD\uC758 \uB9E5\
+  \uB77D\uC5D0\uC11C \uC5B4\uD50C\uB9AC\uCF00\uC774\uC158\uC774\uB098 \uC11C\uBE44\
+  \uC2A4\uB97C \uC790\uB3D9\uD654\uD558\uACE0 \uAD6C\uC131\uD558\uB294 \uAC83\uC744\
+  \u2026"
+lastmod: 2024-02-18 23:09:06.912868
+model: gpt-4-0125-preview
+summary: "Fish Shell\uC5D0\uC11C YAML\uC744 \uB2E4\uB8E8\uB294 \uC77C\uC740 YAML (YAML\
+  \ Ain't Markup Language) \uD30C\uC77C, \uAD6C\uC131 \uD30C\uC77C\uC5D0 \uC0AC\uC6A9\
+  \uB418\uB294 \uB370\uC774\uD130 \uC9C1\uB82C\uD654 \uD615\uC2DD\uC744 \uD30C\uC2F1\
+  \uD558\uACE0 \uC870\uC791\uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC258 \uD658\uACBD\uC758 \uB9E5\uB77D\
+  \uC5D0\uC11C \uC5B4\uD50C\uB9AC\uCF00\uC774\uC158\uC774\uB098 \uC11C\uBE44\uC2A4\
+  \uB97C \uC790\uB3D9\uD654\uD558\uACE0 \uAD6C\uC131\uD558\uB294 \uAC83\uC744\u2026"
+title: "YAML\uB85C \uC791\uC5C5\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

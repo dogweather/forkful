@@ -1,13 +1,14 @@
 ---
-title:                "Sending an HTTP request"
 aliases:
 - /en/elm/sending-an-http-request/
-date:                  2024-01-20T17:59:24.222044-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sending an HTTP request"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/sending-an-http-request.md"
+date: 2024-01-20 17:59:24.222044-07:00
+description: "In Elm, sending an HTTP request is how your app talks to other web services\
+  \ to exchange data. Programmers do this to fetch or send info to servers,\u2026"
+lastmod: 2024-02-18 23:09:10.968705
+model: gpt-4-1106-preview
+summary: "In Elm, sending an HTTP request is how your app talks to other web services\
+  \ to exchange data. Programmers do this to fetch or send info to servers,\u2026"
+title: Sending an HTTP request
 ---
 
 {{< edit_this_page >}}

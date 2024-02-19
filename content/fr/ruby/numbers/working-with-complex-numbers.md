@@ -1,13 +1,14 @@
 ---
-title:                "Manipulation des nombres complexes"
 aliases:
 - /fr/ruby/working-with-complex-numbers/
-date:                  2024-01-26T04:45:03.225027-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulation des nombres complexes"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/working-with-complex-numbers.md"
+date: 2024-01-26 04:45:03.225027-07:00
+description: "Les nombres complexes, compos\xE9s d'une partie r\xE9elle et d'une partie\
+  \ imaginaire (comme 3+4i), sont un pilier dans l'ing\xE9nierie et la physique. Les\u2026"
+lastmod: 2024-02-18 23:09:09.398295
+model: gpt-4-0125-preview
+summary: "Les nombres complexes, compos\xE9s d'une partie r\xE9elle et d'une partie\
+  \ imaginaire (comme 3+4i), sont un pilier dans l'ing\xE9nierie et la physique. Les\u2026"
+title: Manipulation des nombres complexes
 ---
 
 {{< edit_this_page >}}

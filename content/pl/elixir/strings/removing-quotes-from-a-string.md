@@ -1,13 +1,16 @@
 ---
-title:                "Usuwanie cudzysłowów z ciągu znaków"
 aliases:
 - /pl/elixir/removing-quotes-from-a-string/
-date:                  2024-01-26T03:39:32.856242-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usuwanie cudzysłowów z ciągu znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:39:32.856242-07:00
+description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza pozbycie\
+  \ si\u0119 tych dodatkowych wrapper\xF3w, aby uzyska\u0107 czysty tekst wewn\u0105\
+  trz. Programi\u015Bci robi\u0105 to, aby oczy\u015Bci\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.294199
+model: gpt-4-0125-preview
+summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza pozbycie si\u0119\
+  \ tych dodatkowych wrapper\xF3w, aby uzyska\u0107 czysty tekst wewn\u0105trz. Programi\u015B\
+  ci robi\u0105 to, aby oczy\u015Bci\u0107\u2026"
+title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

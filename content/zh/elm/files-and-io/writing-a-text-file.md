@@ -1,14 +1,14 @@
 ---
-title:                "编写文本文件"
 aliases:
 - /zh/elm/writing-a-text-file/
-date:                  2024-02-03T19:27:58.437653-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "编写文本文件"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:58.437653-07:00
+description: "\u2026"
+lastmod: 2024-02-18 23:08:59.074423
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u7F16\u5199\u6587\u672C\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

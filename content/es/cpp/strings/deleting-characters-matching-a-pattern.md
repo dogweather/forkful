@@ -1,13 +1,16 @@
 ---
-title:                "Eliminando caracteres que coinciden con un patrón"
 aliases:
 - /es/cpp/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:42.671248-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Eliminando caracteres que coinciden con un patrón"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:42.671248-07:00
+description: "Eliminar caracteres que coinciden con un patr\xF3n es sencillamente\
+  \ quitar ciertos caracteres de una cadena de texto bas\xE1ndose en reglas espec\xED\
+  ficas o\u2026"
+lastmod: 2024-02-18 23:09:10.291118
+model: gpt-4-1106-preview
+summary: "Eliminar caracteres que coinciden con un patr\xF3n es sencillamente quitar\
+  \ ciertos caracteres de una cadena de texto bas\xE1ndose en reglas espec\xEDficas\
+  \ o\u2026"
+title: "Eliminando caracteres que coinciden con un patr\xF3n"
 ---
 
 {{< edit_this_page >}}

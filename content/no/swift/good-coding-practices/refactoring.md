@@ -1,13 +1,16 @@
 ---
-title:                "Refaktorering"
 aliases:
 - /no/swift/refactoring/
-date:                  2024-01-26T03:37:17.071093-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refaktorering"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/refactoring.md"
+date: 2024-01-26 03:37:17.071093-07:00
+description: "Refaktorisering er prosessen med \xE5 restrukturere eksisterende dataprogramkode\
+  \ uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere gj\xF8r dette for \xE5\
+  \ rydde\u2026"
+lastmod: 2024-02-18 23:08:54.276818
+model: gpt-4-0125-preview
+summary: "Refaktorisering er prosessen med \xE5 restrukturere eksisterende dataprogramkode\
+  \ uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere gj\xF8r dette for \xE5\
+  \ rydde\u2026"
+title: Refaktorering
 ---
 
 {{< edit_this_page >}}

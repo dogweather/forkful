@@ -1,14 +1,16 @@
 ---
-title:                "Capitalizzare una stringa"
 aliases:
 - /it/haskell/capitalizing-a-string/
-date:                  2024-02-03T19:05:20.190125-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizzare una stringa"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:20.190125-07:00
+description: "Trasformare la prima lettera di una stringa in maiuscolo, garantendo\
+  \ che il resto delle lettere rimanga in minuscolo, \xE8 ci\xF2 che viene definito\u2026"
+lastmod: 2024-02-18 23:08:55.913608
+model: gpt-4-0125-preview
+summary: "Trasformare la prima lettera di una stringa in maiuscolo, garantendo che\
+  \ il resto delle lettere rimanga in minuscolo, \xE8 ci\xF2 che viene definito\u2026"
+title: Capitalizzare una stringa
 ---
 
 {{< edit_this_page >}}

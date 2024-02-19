@@ -1,15 +1,22 @@
 ---
-title:                "Bắt đầu một dự án mới"
 aliases:
 - /vi/elixir/starting-a-new-project/
-date:                  2024-01-28T22:08:33.536831-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bắt đầu một dự án mới"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/starting-a-new-project.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:33.536831-07:00
+description: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi v\u1EDBi Elixir\
+  \ c\xF3 ngh\u0129a l\xE0 thi\u1EBFt l\u1EADp m\u1ED9t c\u1EA5u tr\xFAc d\u1EF1 \xE1\
+  n Mix m\u1EDBi t\u1EEB \u0111\u1EA7u. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
+  i\u1EC1u n\xE0y \u0111\u1EC3 kh\u1EDFi \u0111\u1ED9ng m\u1ECDi th\u1EE9 v\u1EDB\
+  i m\xE3\u2026"
+lastmod: 2024-02-18 23:08:50.369507
+model: gpt-4-0125-preview
+summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi v\u1EDBi Elixir c\xF3\
+  \ ngh\u0129a l\xE0 thi\u1EBFt l\u1EADp m\u1ED9t c\u1EA5u tr\xFAc d\u1EF1 \xE1n Mix\
+  \ m\u1EDBi t\u1EEB \u0111\u1EA7u. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
+  i\u1EC1u n\xE0y \u0111\u1EC3 kh\u1EDFi \u0111\u1ED9ng m\u1ECDi th\u1EE9 v\u1EDB\
+  i m\xE3\u2026"
+title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,17 @@
 ---
-title:                "Strings verketten"
 aliases:
 - /de/vba/concatenating-strings/
-date:                  2024-02-01T21:52:00.847827-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Strings verketten"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/vba/concatenating-strings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:00.847827-07:00
+description: "Die Verkettung in Visual Basic for Applications (VBA) beinhaltet das\
+  \ Zusammenf\xFCgen von zwei oder mehr Zeichenketten zu einer einzigen Einheit. Dies\
+  \ ist\u2026"
+lastmod: 2024-02-18 23:09:04.679343
+model: gpt-4-0125-preview
+summary: "Die Verkettung in Visual Basic for Applications (VBA) beinhaltet das Zusammenf\xFC\
+  gen von zwei oder mehr Zeichenketten zu einer einzigen Einheit. Dies ist\u2026"
+title: Strings verketten
 ---
 
 {{< edit_this_page >}}

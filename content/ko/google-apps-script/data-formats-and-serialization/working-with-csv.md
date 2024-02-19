@@ -1,14 +1,26 @@
 ---
-title:                "CSV 파일로 작업하기"
 aliases:
 - /ko/google-apps-script/working-with-csv/
-date:                  2024-02-01T22:05:45.264145-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "CSV 파일로 작업하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/working-with-csv.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:05:45.264145-07:00
+description: "Google Apps Script\uC5D0\uC11C CSV(Comma-Separated Values, \uC27C\uD45C\
+  \uB85C \uBD84\uB9AC\uB41C \uAC12) \uD30C\uC77C\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740\
+  \ \uAC01 \uC904\uC774 \uC27C\uD45C\uB85C \uAD6C\uBD84\uB41C \uAC12\uC744 \uAC00\uC9C4\
+  \ \uB370\uC774\uD130 \uB808\uCF54\uB4DC\uB97C \uB098\uD0C0\uB0B4\uB294 \uC77C\uBC18\
+  \ \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC77D\uACE0, \uC218\uC815\uD558\uACE0,\
+  \ \uC791\uC131\uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC740 CSV\uAC00\u2026"
+lastmod: 2024-02-18 23:09:05.594531
+model: gpt-4-0125-preview
+summary: "Google Apps Script\uC5D0\uC11C CSV(Comma-Separated Values, \uC27C\uD45C\uB85C\
+  \ \uBD84\uB9AC\uB41C \uAC12) \uD30C\uC77C\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740\
+  \ \uAC01 \uC904\uC774 \uC27C\uD45C\uB85C \uAD6C\uBD84\uB41C \uAC12\uC744 \uAC00\uC9C4\
+  \ \uB370\uC774\uD130 \uB808\uCF54\uB4DC\uB97C \uB098\uD0C0\uB0B4\uB294 \uC77C\uBC18\
+  \ \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC77D\uACE0, \uC218\uC815\uD558\uACE0,\
+  \ \uC791\uC131\uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC740 CSV\uAC00\u2026"
+title: "CSV \uD30C\uC77C\uB85C \uC791\uC5C5\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

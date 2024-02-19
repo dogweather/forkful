@@ -1,14 +1,18 @@
 ---
-title:                "Refatoração"
 aliases:
 - /pt/google-apps-script/refactoring/
-date:                  2024-02-01T21:59:38.585469-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refatoração"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/google-apps-script/refactoring.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:38.585469-07:00
+description: "Refatora\xE7\xE3o, no l\xE9xico de programa\xE7\xE3o, refere-se ao processo\
+  \ de reestruturar c\xF3digo de computador j\xE1 existente \u2014 mudando a fatora\xE7\
+  \xE3o sem alterar seu\u2026"
+lastmod: 2024-02-18 23:08:57.725317
+model: gpt-4-0125-preview
+summary: "Refatora\xE7\xE3o, no l\xE9xico de programa\xE7\xE3o, refere-se ao processo\
+  \ de reestruturar c\xF3digo de computador j\xE1 existente \u2014 mudando a fatora\xE7\
+  \xE3o sem alterar seu\u2026"
+title: "Refatora\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

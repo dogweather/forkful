@@ -1,16 +1,17 @@
 ---
-title:                "Analisi sintattica HTML"
 aliases:
 - /it/javascript/parsing-html/
-date:                  2024-01-28T03:00:42.922727-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analisi sintattica HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/javascript/parsing-html.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 03:00:42.922727-07:00
+description: "L'analisi dell'HTML consiste nell'estrazione di dati dai documenti HTML.\
+  \ I programmatori lo fanno per interagire o manipolare il contenuto web,\u2026"
+lastmod: 2024-02-18 23:08:56.250656
+model: gpt-4-0125-preview
+summary: "L'analisi dell'HTML consiste nell'estrazione di dati dai documenti HTML.\
+  \ I programmatori lo fanno per interagire o manipolare il contenuto web,\u2026"
+title: Analisi sintattica HTML
 ---
 
 {{< edit_this_page >}}

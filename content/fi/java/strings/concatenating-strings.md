@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonojen yhdistäminen"
 aliases:
 - /fi/java/concatenating-strings/
-date:                  2024-01-20T17:34:54.818501-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonojen yhdistäminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/concatenating-strings.md"
+date: 2024-01-20 17:34:54.818501-07:00
+description: "Stringin yhdist\xE4minen eli konkatenointi tarkoittaa useampien tekstip\xE4\
+  tkien yhdist\xE4mist\xE4 yhdeksi. Sit\xE4 k\xE4ytet\xE4\xE4n, koska halutaan rakentaa\
+  \ dynaamisia\u2026"
+lastmod: 2024-02-18 23:09:07.449563
+model: gpt-4-1106-preview
+summary: "Stringin yhdist\xE4minen eli konkatenointi tarkoittaa useampien tekstip\xE4\
+  tkien yhdist\xE4mist\xE4 yhdeksi. Sit\xE4 k\xE4ytet\xE4\xE4n, koska halutaan rakentaa\
+  \ dynaamisia\u2026"
+title: "Merkkijonojen yhdist\xE4minen"
 ---
 
 {{< edit_this_page >}}

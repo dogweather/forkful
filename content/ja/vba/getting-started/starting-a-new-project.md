@@ -1,14 +1,26 @@
 ---
-title:                "新プロジェクトの開始"
 aliases:
 - /ja/vba/starting-a-new-project/
-date:                  2024-02-01T22:03:02.997580-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "新プロジェクトの開始"
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/vba/starting-a-new-project.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:02.997580-07:00
+description: "Visual Basic for Applications\uFF08VBA\uFF09\u3067\u65B0\u3057\u3044\
+  \u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u59CB\u3081\u308B\u306B\u306F\u3001Excel\u306A\
+  \u3069\u306E\u30DB\u30B9\u30C8\u30A2\u30D7\u30EA\u30B1\u30FC\u30B7\u30E7\u30F3\u5185\
+  \u3067\u74B0\u5883\u3092\u8A2D\u5B9A\u3057\u3001\u30BF\u30B9\u30AF\u3092\u81EA\u52D5\
+  \u5316\u3059\u308B\u304B\u6A5F\u80FD\u3092\u62E1\u5F35\u3059\u308B\u3053\u3068\u304C\
+  \u542B\u307E\u308C\u307E\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\
+  Microsoft\u2026"
+lastmod: 2024-02-18 23:08:54.761332
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications\uFF08VBA\uFF09\u3067\u65B0\u3057\u3044\u30D7\
+  \u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u59CB\u3081\u308B\u306B\u306F\u3001Excel\u306A\
+  \u3069\u306E\u30DB\u30B9\u30C8\u30A2\u30D7\u30EA\u30B1\u30FC\u30B7\u30E7\u30F3\u5185\
+  \u3067\u74B0\u5883\u3092\u8A2D\u5B9A\u3057\u3001\u30BF\u30B9\u30AF\u3092\u81EA\u52D5\
+  \u5316\u3059\u308B\u304B\u6A5F\u80FD\u3092\u62E1\u5F35\u3059\u308B\u3053\u3068\u304C\
+  \u542B\u307E\u308C\u307E\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\
+  Microsoft\u2026"
+title: "\u65B0\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u306E\u958B\u59CB"
 ---
 
 {{< edit_this_page >}}

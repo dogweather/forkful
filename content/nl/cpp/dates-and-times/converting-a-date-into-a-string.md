@@ -1,15 +1,17 @@
 ---
-title:                "Een datum converteren naar een string"
 aliases:
 - /nl/cpp/converting-a-date-into-a-string/
-date:                  2024-01-28T21:57:15.395587-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een datum converteren naar een string"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/cpp/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:57:15.395587-07:00
+description: "Het omzetten van een datum naar een tekstreeks in C++ verandert een\
+  \ datumobject in een leesbaar tekstformaat. Het is essentieel voor het weergeven\
+  \ van\u2026"
+lastmod: 2024-02-18 23:09:02.195356
+model: gpt-4-0125-preview
+summary: "Het omzetten van een datum naar een tekstreeks in C++ verandert een datumobject\
+  \ in een leesbaar tekstformaat. Het is essentieel voor het weergeven van\u2026"
+title: Een datum converteren naar een string
 ---
 
 {{< edit_this_page >}}

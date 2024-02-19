@@ -1,15 +1,17 @@
 ---
-title:                "Werken met complexe getallen"
 aliases:
 - /nl/javascript/working-with-complex-numbers/
-date:                  2024-01-28T22:12:14.187683-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met complexe getallen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/javascript/working-with-complex-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:14.187683-07:00
+description: "Complexe getallen zijn getallen met een re\xEBel en een imaginair deel\
+  \ (zoals 3 + 4i). Ze komen voor in verschillende programmeerproblemen, met name\
+  \ in\u2026"
+lastmod: 2024-02-18 23:09:02.268914
+model: gpt-4-0125-preview
+summary: "Complexe getallen zijn getallen met een re\xEBel en een imaginair deel (zoals\
+  \ 3 + 4i). Ze komen voor in verschillende programmeerproblemen, met name in\u2026"
+title: Werken met complexe getallen
 ---
 
 {{< edit_this_page >}}

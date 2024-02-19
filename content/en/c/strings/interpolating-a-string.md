@@ -1,12 +1,14 @@
 ---
-title:                "Interpolating a string"
 aliases:
 - /en/c/interpolating-a-string/
-date:                  2024-02-03T17:50:04.452212-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interpolating a string"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/interpolating-a-string.md"
+date: 2024-02-03 17:50:04.452212-07:00
+description: "String interpolation, in programming, involves the construction of strings\
+  \ by embedding expressions within literal strings. Programmers do this to create\u2026"
+lastmod: 2024-02-18 23:09:11.508816
+model: gpt-4-0125-preview
+summary: "String interpolation, in programming, involves the construction of strings\
+  \ by embedding expressions within literal strings. Programmers do this to create\u2026"
+title: Interpolating a string
 ---
 
 {{< edit_this_page >}}

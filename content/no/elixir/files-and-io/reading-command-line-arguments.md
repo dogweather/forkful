@@ -1,13 +1,16 @@
 ---
-title:                "Lese kommandolinjeargumenter"
 aliases:
 - /no/elixir/reading-command-line-arguments/
-date:                  2024-01-20T17:56:07.895007-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lese kommandolinjeargumenter"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:07.895007-07:00
+description: "\xC5 lese kommandolinjeargumenter handler om \xE5 hente data som brukeren\
+  \ gir n\xE5r de kj\xF8rer programmet ditt. Vi gj\xF8r det for \xE5 gj\xF8re programmer\
+  \ fleksible \u2013 slik\u2026"
+lastmod: 2024-02-18 23:08:53.619693
+model: gpt-4-1106-preview
+summary: "\xC5 lese kommandolinjeargumenter handler om \xE5 hente data som brukeren\
+  \ gir n\xE5r de kj\xF8rer programmet ditt. Vi gj\xF8r det for \xE5 gj\xF8re programmer\
+  \ fleksible \u2013 slik\u2026"
+title: Lese kommandolinjeargumenter
 ---
 
 {{< edit_this_page >}}

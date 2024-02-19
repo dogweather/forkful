@@ -1,13 +1,14 @@
 ---
-title:                "Merkkijonosta lainausmerkkien poistaminen"
 aliases:
 - /fi/php/removing-quotes-from-a-string/
-date:                  2024-01-26T03:40:53.425198-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonosta lainausmerkkien poistaminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:40:53.425198-07:00
+description: "Merkkijonosta lainausmerkkien poistaminen PHP:ss\xE4 tarkoittaa niiden\
+  \ kiusallisten kaksinkertaisten (`\"`) tai yksinkertaisten (`'`) lainausmerkkien\u2026"
+lastmod: 2024-02-18 23:09:07.698664
+model: gpt-4-0125-preview
+summary: "Merkkijonosta lainausmerkkien poistaminen PHP:ss\xE4 tarkoittaa niiden kiusallisten\
+  \ kaksinkertaisten (`\"`) tai yksinkertaisten (`'`) lainausmerkkien\u2026"
+title: Merkkijonosta lainausmerkkien poistaminen
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Lancement d'un nouveau projet"
 aliases:
 - /fr/elixir/starting-a-new-project/
-date:                  2024-01-20T18:03:15.779659-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lancement d'un nouveau projet"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/starting-a-new-project.md"
+date: 2024-01-20 18:03:15.779659-07:00
+description: "Le d\xE9marrage d'un nouveau projet, c'est un peu aller \xE0 l'aventure\
+  \ avec Elixir : on commence avec une id\xE9e et des outils pour cr\xE9er quelque\
+  \ chose d'utile\u2026"
+lastmod: 2024-02-18 23:09:08.435106
+model: gpt-4-1106-preview
+summary: "Le d\xE9marrage d'un nouveau projet, c'est un peu aller \xE0 l'aventure\
+  \ avec Elixir : on commence avec une id\xE9e et des outils pour cr\xE9er quelque\
+  \ chose d'utile\u2026"
+title: Lancement d'un nouveau projet
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,29 @@
 ---
-title:                "Интерполяция строки"
 aliases:
 - /ru/vba/interpolating-a-string/
-date:                  2024-02-01T21:55:42.787603-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Интерполяция строки"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/vba/interpolating-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:42.787603-07:00
+description: "\u0418\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0438\u044F\
+  \ \u0441\u0442\u0440\u043E\u043A \u0432 Visual Basic for Applications (VBA) \u043E\
+  \u0442\u043D\u043E\u0441\u0438\u0442\u0441\u044F \u043A \u043F\u0440\u043E\u0446\
+  \u0435\u0441\u0441\u0443 \u0432\u0441\u0442\u0440\u0430\u0438\u0432\u0430\u043D\u0438\
+  \u044F \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0445 \u0438\u043B\
+  \u0438 \u0432\u044B\u0440\u0430\u0436\u0435\u043D\u0438\u0439 \u0432 \u0441\u0442\
+  \u0440\u043E\u043A\u043E\u0432\u044B\u0439 \u043B\u0438\u0442\u0435\u0440\u0430\u043B\
+  , \u0447\u0442\u043E \u043F\u043E\u0437\u0432\u043E\u043B\u044F\u0435\u0442\u2026"
+lastmod: 2024-02-18 23:08:56.769755
+model: gpt-4-0125-preview
+summary: "\u0418\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0438\u044F\
+  \ \u0441\u0442\u0440\u043E\u043A \u0432 Visual Basic for Applications (VBA) \u043E\
+  \u0442\u043D\u043E\u0441\u0438\u0442\u0441\u044F \u043A \u043F\u0440\u043E\u0446\
+  \u0435\u0441\u0441\u0443 \u0432\u0441\u0442\u0440\u0430\u0438\u0432\u0430\u043D\u0438\
+  \u044F \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0445 \u0438\u043B\
+  \u0438 \u0432\u044B\u0440\u0430\u0436\u0435\u043D\u0438\u0439 \u0432 \u0441\u0442\
+  \u0440\u043E\u043A\u043E\u0432\u044B\u0439 \u043B\u0438\u0442\u0435\u0440\u0430\u043B\
+  , \u0447\u0442\u043E \u043F\u043E\u0437\u0432\u043E\u043B\u044F\u0435\u0442\u2026"
+title: "\u0418\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0438\u044F \u0441\
+  \u0442\u0440\u043E\u043A\u0438"
 ---
 
 {{< edit_this_page >}}

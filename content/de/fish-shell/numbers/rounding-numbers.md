@@ -1,13 +1,15 @@
 ---
-title:                "Zahlen runden"
 aliases:
 - /de/fish-shell/rounding-numbers/
-date:                  2024-01-26T03:43:56.513453-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zahlen runden"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/rounding-numbers.md"
+date: 2024-01-26 03:43:56.513453-07:00
+description: "Das Runden von Zahlen besteht darin, Dezimalstellen abzuschneiden, um\
+  \ Ihre Daten zu vereinfachen oder spezifischen Formaten anzupassen. Programmierer\
+  \ tun\u2026"
+lastmod: 2024-02-18 23:09:05.318407
+model: gpt-4-0125-preview
+summary: "Das Runden von Zahlen besteht darin, Dezimalstellen abzuschneiden, um Ihre\
+  \ Daten zu vereinfachen oder spezifischen Formaten anzupassen. Programmierer tun\u2026"
+title: Zahlen runden
 ---
 
 {{< edit_this_page >}}

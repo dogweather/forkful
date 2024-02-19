@@ -1,13 +1,14 @@
 ---
-title:                "Utilizzo di un interprete interattivo (REPL)"
 aliases:
 - /it/ruby/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:17:19.044288-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di un interprete interattivo (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:17:19.044288-07:00
+description: "Una shell interattiva, o REPL (Read-Eval-Print Loop, Ciclo Leggi-Valuta-Stampa),\
+  \ permette di testare il codice in tempo reale. I programmatori la usano\u2026"
+lastmod: 2024-02-18 23:08:56.384643
+model: gpt-4-0125-preview
+summary: "Una shell interattiva, o REPL (Read-Eval-Print Loop, Ciclo Leggi-Valuta-Stampa),\
+  \ permette di testare il codice in tempo reale. I programmatori la usano\u2026"
+title: Utilizzo di un interprete interattivo (REPL)
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,31 @@
 ---
-title:                "기본 인증을 사용하여 HTTP 요청 보내기"
 aliases:
 - /ko/google-apps-script/sending-an-http-request-with-basic-authentication/
-date:                  2024-02-01T22:02:40.606693-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "기본 인증을 사용하여 HTTP 요청 보내기"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:02:40.606693-07:00
+description: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD558\uC5EC HTTP \uC694\
+  \uCCAD\uC744 \uBCF4\uB0B4\uB294 \uAC83\uC740 \uC0AC\uC6A9\uC790 \uC774\uB984\uACFC\
+  \ \uBE44\uBC00\uBC88\uD638\uB97C \uC694\uCCAD \uD5E4\uB354\uC5D0 \uC778\uCF54\uB529\
+  \uD558\uC5EC \uBCF4\uD638\uB41C \uB9AC\uC18C\uC2A4\uC5D0 \uC561\uC138\uC2A4\uD558\
+  \uB294 \uACFC\uC815\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uC11C\uBC84 \uCE21 \uC778\uC99D\uC744 \uC704\uD574, \uB610\uB294\
+  \ \uB370\uC774\uD130 \uAC80\uC0C9\uC774\uB098 \uCF58\uD150\uCE20 \uAC8C\uC2DC\uC640\
+  \ \uAC19\uC740 \uAE30\uBCF8 \uC778\uC99D\uC744 \uC694\uAD6C\uD558\uB294 API\uC640\
+  \ \uD1B5\uD569\uD558\uAE30 \uC704\uD574 \uC774\u2026"
+lastmod: 2024-02-18 23:09:05.555028
+model: gpt-4-0125-preview
+summary: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD558\uC5EC HTTP \uC694\uCCAD\
+  \uC744 \uBCF4\uB0B4\uB294 \uAC83\uC740 \uC0AC\uC6A9\uC790 \uC774\uB984\uACFC \uBE44\
+  \uBC00\uBC88\uD638\uB97C \uC694\uCCAD \uD5E4\uB354\uC5D0 \uC778\uCF54\uB529\uD558\
+  \uC5EC \uBCF4\uD638\uB41C \uB9AC\uC18C\uC2A4\uC5D0 \uC561\uC138\uC2A4\uD558\uB294\
+  \ \uACFC\uC815\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB4E4\uC740 \uC11C\uBC84 \uCE21 \uC778\uC99D\uC744 \uC704\uD574, \uB610\uB294 \uB370\
+  \uC774\uD130 \uAC80\uC0C9\uC774\uB098 \uCF58\uD150\uCE20 \uAC8C\uC2DC\uC640 \uAC19\
+  \uC740 \uAE30\uBCF8 \uC778\uC99D\uC744 \uC694\uAD6C\uD558\uB294 API\uC640 \uD1B5\
+  \uD569\uD558\uAE30 \uC704\uD574 \uC774\u2026"
+title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD558\uC5EC HTTP \uC694\uCCAD\
+  \ \uBCF4\uB0B4\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với JSON"
 aliases:
 - /vi/python/working-with-json/
-date:                  2024-01-28T22:10:40.622214-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với JSON"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/python/working-with-json.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:40.622214-07:00
+description: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
+  ng trao \u0111\u1ED5i d\u1EEF li\u1EC7u ph\u1ED5 bi\u1EBFn tr\xEAn web. L\u1EAD\
+  p tr\xECnh vi\xEAn s\u1EED d\u1EE5ng JSON \u0111\u1EC3 d\u1EC5 d\xE0ng truy\u1EC1\
+  n d\u1EEF li\u1EC7u gi\u1EEFa m\xE1y ch\u1EE7\u2026"
+lastmod: 2024-02-18 23:08:50.291687
+model: gpt-4-0125-preview
+summary: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
+  ng trao \u0111\u1ED5i d\u1EEF li\u1EC7u ph\u1ED5 bi\u1EBFn tr\xEAn web. L\u1EAD\
+  p tr\xECnh vi\xEAn s\u1EED d\u1EE5ng JSON \u0111\u1EC3 d\u1EC5 d\xE0ng truy\u1EC1\
+  n d\u1EEF li\u1EC7u gi\u1EEFa m\xE1y ch\u1EE7\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 ---
 
 {{< edit_this_page >}}

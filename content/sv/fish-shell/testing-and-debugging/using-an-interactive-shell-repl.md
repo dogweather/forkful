@@ -1,13 +1,14 @@
 ---
-title:                "Använda en interaktiv skal (REPL)"
 aliases:
 - /sv/fish-shell/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:14:06.185524-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Använda en interaktiv skal (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:14:06.185524-07:00
+description: "REPL, eller Read-Eval-Print Loop, \xE4r en interaktiv programmeringsmilj\xF6\
+  \ som tar enskilda anv\xE4ndarinmatningar, exekverar dem och returnerar resultatet.\u2026"
+lastmod: 2024-02-18 23:08:52.209110
+model: gpt-4-0125-preview
+summary: "REPL, eller Read-Eval-Print Loop, \xE4r en interaktiv programmeringsmilj\xF6\
+  \ som tar enskilda anv\xE4ndarinmatningar, exekverar dem och returnerar resultatet.\u2026"
+title: "Anv\xE4nda en interaktiv skal (REPL)"
 ---
 
 {{< edit_this_page >}}

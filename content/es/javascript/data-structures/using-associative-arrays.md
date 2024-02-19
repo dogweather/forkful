@@ -1,15 +1,16 @@
 ---
-title:                "Uso de matrices asociativas"
 aliases:
 - /es/javascript/using-associative-arrays/
-date:                  2024-01-30T19:11:39.547055-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Uso de matrices asociativas"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:11:39.547055-07:00
+description: "Los arreglos asociativos, o como se conocen m\xE1s precisamente en JavaScript,\
+  \ objetos, te permiten mapear claves a valores. Esto es extremadamente \xFAtil\u2026"
+lastmod: 2024-02-18 23:09:10.396913
+model: gpt-4-0125-preview
+summary: "Los arreglos asociativos, o como se conocen m\xE1s precisamente en JavaScript,\
+  \ objetos, te permiten mapear claves a valores. Esto es extremadamente \xFAtil\u2026"
+title: Uso de matrices asociativas
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với YAML"
 aliases:
 - /vi/elixir/working-with-yaml/
-date:                  2024-01-28T22:11:44.337175-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với YAML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/working-with-yaml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:44.337175-07:00
+description: "L\xE0m vi\u1EC7c v\u1EDBi YAML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xED\
+  ch v\xE0 t\u1EA1o ra d\u1EEF li\u1EC7u \u0111\u1ECBnh d\u1EA1ng YAML, m\u1ED9t chu\u1EA9\
+  n h\xF3a d\u1EEF li\u1EC7u \u0111\u1ECDc \u0111\u01B0\u1EE3c cho con ng\u01B0\u1EDD\
+  i. L\u1EADp tr\xECnh vi\xEAn l\xE0m vi\u1EC7c n\xE0y cho\u2026"
+lastmod: 2024-02-18 23:08:50.391368
+model: gpt-4-0125-preview
+summary: "L\xE0m vi\u1EC7c v\u1EDBi YAML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch v\xE0\
+  \ t\u1EA1o ra d\u1EEF li\u1EC7u \u0111\u1ECBnh d\u1EA1ng YAML, m\u1ED9t chu\u1EA9\
+  n h\xF3a d\u1EEF li\u1EC7u \u0111\u1ECDc \u0111\u01B0\u1EE3c cho con ng\u01B0\u1EDD\
+  i. L\u1EADp tr\xECnh vi\xEAn l\xE0m vi\u1EC7c n\xE0y cho\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 ---
 
 {{< edit_this_page >}}

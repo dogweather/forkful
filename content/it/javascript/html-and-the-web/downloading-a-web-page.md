@@ -1,13 +1,14 @@
 ---
-title:                "Scaricare una pagina web"
 aliases:
 - /it/javascript/downloading-a-web-page/
-date:                  2024-01-20T17:44:27.408580-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Scaricare una pagina web"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/javascript/downloading-a-web-page.md"
+date: 2024-01-20 17:44:27.408580-07:00
+description: "Scaricare una pagina web significa prelevare il suo contenuto HTML,\
+  \ CSS e JavaScript dal server a locale. Si fa per elaborare dati, fare test o archiviare\u2026"
+lastmod: 2024-02-18 23:08:56.251554
+model: gpt-4-1106-preview
+summary: "Scaricare una pagina web significa prelevare il suo contenuto HTML, CSS\
+  \ e JavaScript dal server a locale. Si fa per elaborare dati, fare test o archiviare\u2026"
+title: Scaricare una pagina web
 ---
 
 {{< edit_this_page >}}

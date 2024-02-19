@@ -1,13 +1,14 @@
 ---
-title:                "Removendo aspas de uma string"
 aliases:
 - /pt/elixir/removing-quotes-from-a-string/
-date:                  2024-01-26T03:38:34.822289-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Removendo aspas de uma string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:38:34.822289-07:00
+description: "Remover aspas de uma string significa descartar aquelas embalagens extras\
+  \ para obter o texto limpo por dentro. Os programadores fazem isso para higienizar\u2026"
+lastmod: 2024-02-18 23:08:57.832451
+model: gpt-4-0125-preview
+summary: "Remover aspas de uma string significa descartar aquelas embalagens extras\
+  \ para obter o texto limpo por dentro. Os programadores fazem isso para higienizar\u2026"
+title: Removendo aspas de uma string
 ---
 
 {{< edit_this_page >}}

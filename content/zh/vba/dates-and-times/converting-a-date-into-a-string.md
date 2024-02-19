@@ -1,14 +1,28 @@
 ---
-title:                "将日期转换为字符串"
 aliases:
 - /zh/vba/converting-a-date-into-a-string/
-date:                  2024-02-01T21:51:09.803682-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "将日期转换为字符串"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:09.803682-07:00
+description: "\u5728Visual Basic for Applications (VBA) \u4E2D\u5C06\u65E5\u671F\u8F6C\
+  \u6362\u4E3A\u5B57\u7B26\u4E32\u662F\u4E00\u79CD\u7528\u4E8E\u5C06\u65E5\u671F\u7684\
+  \u6570\u636E\u7C7B\u578B\u66F4\u6539\u4E3A\u5B57\u7B26\u4E32\u683C\u5F0F\u7684\u8FC7\
+  \u7A0B\u3002\u7A0B\u5E8F\u5458\u7ECF\u5E38\u8FDB\u884C\u6B64\u8F6C\u6362\uFF0C\u4EE5\
+  \u4FBF\u4EE5\u7528\u6237\u53CB\u597D\u7684\u683C\u5F0F\u64CD\u4F5C\u6216\u663E\u793A\
+  \u65E5\u671F\u3001\u4E0E\u672C\u5730\u5316\u65E5\u671F\u683C\u5F0F\u5BF9\u9F50\uFF0C\
+  \u6216\u51C6\u5907\u6570\u636E\u4EE5\u5B58\u50A8\u5728\u9700\u8981\u6587\u672C\u8868\
+  \u793A\u7684\u6570\u636E\u5E93\u6216\u6587\u4EF6\u4E2D\u3002"
+lastmod: 2024-02-18 23:08:58.992212
+model: gpt-4-0125-preview
+summary: "\u5728Visual Basic for Applications (VBA) \u4E2D\u5C06\u65E5\u671F\u8F6C\
+  \u6362\u4E3A\u5B57\u7B26\u4E32\u662F\u4E00\u79CD\u7528\u4E8E\u5C06\u65E5\u671F\u7684\
+  \u6570\u636E\u7C7B\u578B\u66F4\u6539\u4E3A\u5B57\u7B26\u4E32\u683C\u5F0F\u7684\u8FC7\
+  \u7A0B\u3002\u7A0B\u5E8F\u5458\u7ECF\u5E38\u8FDB\u884C\u6B64\u8F6C\u6362\uFF0C\u4EE5\
+  \u4FBF\u4EE5\u7528\u6237\u53CB\u597D\u7684\u683C\u5F0F\u64CD\u4F5C\u6216\u663E\u793A\
+  \u65E5\u671F\u3001\u4E0E\u672C\u5730\u5316\u65E5\u671F\u683C\u5F0F\u5BF9\u9F50\uFF0C\
+  \u6216\u51C6\u5907\u6570\u636E\u4EE5\u5B58\u50A8\u5728\u9700\u8981\u6587\u672C\u8868\
+  \u793A\u7684\u6570\u636E\u5E93\u6216\u6587\u4EF6\u4E2D\u3002"
+title: "\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32"
 ---
 
 {{< edit_this_page >}}

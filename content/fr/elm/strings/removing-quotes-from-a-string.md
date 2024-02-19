@@ -1,13 +1,16 @@
 ---
-title:                "Retirer les guillemets d'une chaîne"
 aliases:
 - /fr/elm/removing-quotes-from-a-string/
-date:                  2024-01-26T03:38:45.356800-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Retirer les guillemets d'une chaîne"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:38:45.356800-07:00
+description: "Enlever les guillemets d'une cha\xEEne signifie supprimer ces marques\
+  \ de citations doubles ou simples suppl\xE9mentaires dont vous n'avez pas r\xE9\
+  ellement besoin\u2026"
+lastmod: 2024-02-18 23:09:08.719384
+model: gpt-4-0125-preview
+summary: "Enlever les guillemets d'une cha\xEEne signifie supprimer ces marques de\
+  \ citations doubles ou simples suppl\xE9mentaires dont vous n'avez pas r\xE9ellement\
+  \ besoin\u2026"
+title: "Retirer les guillemets d'une cha\xEEne"
 ---
 
 {{< edit_this_page >}}

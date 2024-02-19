@@ -1,15 +1,20 @@
 ---
-title:                "Tạo một tập tin tạm thời"
 aliases:
 - /vi/arduino/creating-a-temporary-file/
-date:                  2024-01-28T21:59:24.773603-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tạo một tập tin tạm thời"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/creating-a-temporary-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:24.773603-07:00
+description: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi c\xF3 ngh\u0129a l\xE0\
+  \ t\u1EA1o m\u1ED9t t\u1EC7p ch\u1EC9 c\u1EA7n trong m\u1ED9t kho\u1EA3ng th\u1EDD\
+  i gian ng\u1EAFn ho\u1EB7c cho phi\xEAn l\xE0m vi\u1EC7c hi\u1EC7n t\u1EA1i. L\u1EAD\
+  p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 l\u01B0u\u2026"
+lastmod: 2024-02-18 23:08:51.020613
+model: gpt-4-0125-preview
+summary: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi c\xF3 ngh\u0129a l\xE0 t\u1EA1\
+  o m\u1ED9t t\u1EC7p ch\u1EC9 c\u1EA7n trong m\u1ED9t kho\u1EA3ng th\u1EDDi gian\
+  \ ng\u1EAFn ho\u1EB7c cho phi\xEAn l\xE0m vi\u1EC7c hi\u1EC7n t\u1EA1i. L\u1EAD\
+  p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 l\u01B0u\u2026"
+title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 ---
 
 {{< edit_this_page >}}

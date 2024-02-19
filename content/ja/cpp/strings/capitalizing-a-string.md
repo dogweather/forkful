@@ -1,14 +1,14 @@
 ---
-title:                "文字列を大文字にする"
 aliases:
 - /ja/cpp/capitalizing-a-string/
-date:                  2024-02-03T19:05:21.629398-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "文字列を大文字にする"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:21.629398-07:00
+description: "\u2026"
+lastmod: 2024-02-18 23:08:55.174698
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u6587\u5B57\u5217\u3092\u5927\u6587\u5B57\u306B\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

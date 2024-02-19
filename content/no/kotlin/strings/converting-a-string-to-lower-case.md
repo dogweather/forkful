@@ -1,13 +1,15 @@
 ---
-title:                "Konvertere en streng til små bokstaver"
 aliases:
 - /no/kotlin/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:55.159656-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konvertere en streng til små bokstaver"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:55.159656-07:00
+description: "Omgj\xF8ring av tekst til sm\xE5 bokstaver betyr \xE5 konvertere alle\
+  \ bokstavene i en streng til deres sm\xE5 bokstaver. Programmerere gj\xF8r dette\
+  \ for \xE5 standardisere\u2026"
+lastmod: 2024-02-18 23:08:53.838958
+model: gpt-4-1106-preview
+summary: "Omgj\xF8ring av tekst til sm\xE5 bokstaver betyr \xE5 konvertere alle bokstavene\
+  \ i en streng til deres sm\xE5 bokstaver. Programmerere gj\xF8r dette for \xE5 standardisere\u2026"
+title: "Konvertere en streng til sm\xE5 bokstaver"
 ---
 
 {{< edit_this_page >}}

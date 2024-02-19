@@ -1,14 +1,20 @@
 ---
-title:                "Làm việc với YAML"
 aliases:
 - /vi/go/working-with-yaml/
-date:                  2024-02-03T18:14:10.007732-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:14:10.007732-07:00
+description: "L\xE0m vi\u1EC7c v\u1EDBi YAML trong Go bao g\u1ED3m vi\u1EC7c ph\xE2\
+  n t\xEDch t\u1EC7p YAML (YAML Ain't Markup Language) - m\u1ED9t chu\u1EA9n h\xF3\
+  a xu\u1EA5t nh\u1EADp li\u1EC7u th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi,\
+  \ th\xE0nh c\xE1c\u2026"
+lastmod: 2024-02-18 23:08:50.194107
+model: gpt-4-0125-preview
+summary: "L\xE0m vi\u1EC7c v\u1EDBi YAML trong Go bao g\u1ED3m vi\u1EC7c ph\xE2n t\xED\
+  ch t\u1EC7p YAML (YAML Ain't Markup Language) - m\u1ED9t chu\u1EA9n h\xF3a xu\u1EA5\
+  t nh\u1EADp li\u1EC7u th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi, th\xE0nh\
+  \ c\xE1c\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 ---
 
 {{< edit_this_page >}}

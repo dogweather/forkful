@@ -1,13 +1,14 @@
 ---
-title:                "Lesen von Kommandozeilenargumenten"
 aliases:
 - /de/swift/reading-command-line-arguments/
-date:                  2024-01-20T17:57:04.755367-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lesen von Kommandozeilenargumenten"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/reading-command-line-arguments.md"
+date: 2024-01-20 17:57:04.755367-07:00
+description: "Das Lesen von Kommandozeilenargumenten erm\xF6glicht es deinen Swift-Programmen,\
+  \ beim Start Input zu erhalten \u2013 praktisch f\xFCr flexible Tools und\u2026"
+lastmod: 2024-02-18 23:09:05.250628
+model: gpt-4-1106-preview
+summary: "Das Lesen von Kommandozeilenargumenten erm\xF6glicht es deinen Swift-Programmen,\
+  \ beim Start Input zu erhalten \u2013 praktisch f\xFCr flexible Tools und\u2026"
+title: Lesen von Kommandozeilenargumenten
 ---
 
 {{< edit_this_page >}}

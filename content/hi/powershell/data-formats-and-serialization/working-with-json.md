@@ -1,14 +1,27 @@
 ---
-title:                "JSON के साथ काम करना"
 aliases:
 - /hi/powershell/working-with-json/
-date:                  2024-02-03T19:24:04.883165-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "JSON के साथ काम करना"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/powershell/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:24:04.883165-07:00
+description: "PowerShell \u0915\u093E JSON (JavaScript Object Notation) \u0915\u0947\
+  \ \u0938\u093E\u0925 \u090F\u0915\u0940\u0915\u0930\u0923 \u092A\u093E\u0930\u094D\
+  \u0938\u093F\u0902\u0917 (\u092A\u0922\u093C\u0928\u093E) \u0914\u0930 \u091C\u0947\
+  \u0928\u0930\u0947\u091F\u093F\u0902\u0917 (\u0932\u093F\u0916\u0928\u093E) JSON\
+  \ \u0921\u0947\u091F\u093E \u0915\u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902\
+  \ \u0939\u0948, \u091C\u094B \u0935\u0947\u092C \u092A\u0930 \u0921\u0947\u091F\u093E\
+  \ \u0935\u093F\u0928\u093F\u092E\u092F \u0915\u0947 \u0932\u093F\u090F\u2026"
+lastmod: 2024-02-18 23:09:03.777289
+model: gpt-4-0125-preview
+summary: "PowerShell \u0915\u093E JSON (JavaScript Object Notation) \u0915\u0947 \u0938\
+  \u093E\u0925 \u090F\u0915\u0940\u0915\u0930\u0923 \u092A\u093E\u0930\u094D\u0938\
+  \u093F\u0902\u0917 (\u092A\u0922\u093C\u0928\u093E) \u0914\u0930 \u091C\u0947\u0928\
+  \u0930\u0947\u091F\u093F\u0902\u0917 (\u0932\u093F\u0916\u0928\u093E) JSON \u0921\
+  \u0947\u091F\u093E \u0915\u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902 \u0939\
+  \u0948, \u091C\u094B \u0935\u0947\u092C \u092A\u0930 \u0921\u0947\u091F\u093E \u0935\
+  \u093F\u0928\u093F\u092E\u092F \u0915\u0947 \u0932\u093F\u090F\u2026"
+title: "JSON \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\
+  \u093E"
 ---
 
 {{< edit_this_page >}}

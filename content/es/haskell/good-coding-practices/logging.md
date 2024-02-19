@@ -1,13 +1,14 @@
 ---
-title:                "Registro de Actividades en Programación"
 aliases:
 - /es/haskell/logging/
-date:                  2024-01-26T01:04:16.348341-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registro de Actividades en Programación"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/logging.md"
+date: 2024-01-26 01:04:16.348341-07:00
+description: "El registro (logging) en programaci\xF3n es esencialmente dejar un rastro\
+  \ de migajas de pan en forma de eventos o mensajes registrados, los cuales se pueden\u2026"
+lastmod: 2024-02-18 23:09:10.034873
+model: gpt-4-1106-preview
+summary: "El registro (logging) en programaci\xF3n es esencialmente dejar un rastro\
+  \ de migajas de pan en forma de eventos o mensajes registrados, los cuales se pueden\u2026"
+title: "Registro de Actividades en Programaci\xF3n"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Überprüfung, ob ein Verzeichnis existiert"
 aliases:
 - /de/swift/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:47.374857-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:47.374857-07:00
+description: "Es ist unerl\xE4sslich zu \xFCberpr\xFCfen, ob ein Verzeichnis im Dateisystem\
+  \ existiert, um Dateistrukturen innerhalb Ihrer Swift-Anwendungen zu verwalten.\
+  \ Diese\u2026"
+lastmod: 2024-02-18 23:09:05.249524
+model: gpt-4-0125-preview
+summary: "Es ist unerl\xE4sslich zu \xFCberpr\xFCfen, ob ein Verzeichnis im Dateisystem\
+  \ existiert, um Dateistrukturen innerhalb Ihrer Swift-Anwendungen zu verwalten.\
+  \ Diese\u2026"
+title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 ---
 
 {{< edit_this_page >}}

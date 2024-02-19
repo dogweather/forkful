@@ -1,13 +1,16 @@
 ---
-title:                "Praca z TOML"
 aliases:
 - /pl/javascript/working-with-toml/
-date:                  2024-01-26T04:23:45.329890-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/working-with-toml.md"
+date: 2024-01-26 04:23:45.329890-07:00
+description: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, okre\u015Bla, jak\
+  \ strukturowa\u0107 pliki konfiguracyjne. Programi\u015Bci korzystaj\u0105 z TOML,\
+  \ poniewa\u017C jest \u0142atwy do\u2026"
+lastmod: 2024-02-18 23:08:50.016734
+model: gpt-4-0125-preview
+summary: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, okre\u015Bla, jak strukturowa\u0107\
+  \ pliki konfiguracyjne. Programi\u015Bci korzystaj\u0105 z TOML, poniewa\u017C jest\
+  \ \u0142atwy do\u2026"
+title: Praca z TOML
 ---
 
 {{< edit_this_page >}}

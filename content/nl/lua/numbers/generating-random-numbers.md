@@ -1,15 +1,17 @@
 ---
-title:                "Willekeurige getallen genereren"
 aliases:
 - /nl/lua/generating-random-numbers/
-date:                  2024-01-28T22:01:01.330893-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Willekeurige getallen genereren"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/generating-random-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:01.330893-07:00
+description: "Het genereren van willekeurige getallen in programmeren gaat over het\
+  \ produceren van onvoorspelbare numerieke waarden die gebruikt kunnen worden voor\
+  \ een\u2026"
+lastmod: 2024-02-18 23:09:01.986808
+model: gpt-4-0125-preview
+summary: "Het genereren van willekeurige getallen in programmeren gaat over het produceren\
+  \ van onvoorspelbare numerieke waarden die gebruikt kunnen worden voor een\u2026"
+title: Willekeurige getallen genereren
 ---
 
 {{< edit_this_page >}}

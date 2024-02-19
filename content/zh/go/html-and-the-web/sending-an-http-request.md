@@ -1,14 +1,25 @@
 ---
-title:                "发送HTTP请求"
 aliases:
 - /zh/go/sending-an-http-request/
-date:                  2024-02-03T18:08:51.431521-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "发送HTTP请求"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/sending-an-http-request.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:51.431521-07:00
+description: "\u53D1\u9001 HTTP \u8BF7\u6C42\u6D89\u53CA\u4ECE\u4F60\u7684 Go \u5E94\
+  \u7528\u7A0B\u5E8F\u5411\u7F51\u7AD9\u670D\u52A1\u5668\u3001API \u6216\u4EFB\u4F55\
+  \u5176\u4ED6\u57FA\u4E8E HTTP \u7684\u670D\u52A1\u53D1\u8D77\u8C03\u7528\u3002\u7A0B\
+  \u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u4E0E\u7F51\u7EDC\u8D44\u6E90\u8FDB\
+  \u884C\u4EA4\u4E92\u3001\u83B7\u53D6\u6570\u636E\u3001\u63D0\u4EA4\u8868\u5355\u6216\
+  \u901A\u8FC7\u4E92\u8054\u7F51\u4E0E\u5176\u4ED6\u670D\u52A1\u8FDB\u884C\u901A\u4FE1\
+  \u3002"
+lastmod: 2024-02-18 23:08:58.704587
+model: gpt-4-0125-preview
+summary: "\u53D1\u9001 HTTP \u8BF7\u6C42\u6D89\u53CA\u4ECE\u4F60\u7684 Go \u5E94\u7528\
+  \u7A0B\u5E8F\u5411\u7F51\u7AD9\u670D\u52A1\u5668\u3001API \u6216\u4EFB\u4F55\u5176\
+  \u4ED6\u57FA\u4E8E HTTP \u7684\u670D\u52A1\u53D1\u8D77\u8C03\u7528\u3002\u7A0B\u5E8F\
+  \u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u4E0E\u7F51\u7EDC\u8D44\u6E90\u8FDB\u884C\
+  \u4EA4\u4E92\u3001\u83B7\u53D6\u6570\u636E\u3001\u63D0\u4EA4\u8868\u5355\u6216\u901A\
+  \u8FC7\u4E92\u8054\u7F51\u4E0E\u5176\u4ED6\u670D\u52A1\u8FDB\u884C\u901A\u4FE1\u3002"
+title: "\u53D1\u9001HTTP\u8BF7\u6C42"
 ---
 
 {{< edit_this_page >}}

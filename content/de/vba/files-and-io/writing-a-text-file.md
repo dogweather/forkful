@@ -1,14 +1,17 @@
 ---
-title:                "Eine Textdatei schreiben"
 aliases:
 - /de/vba/writing-a-text-file/
-date:                  2024-02-01T22:08:45.987220-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eine Textdatei schreiben"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/vba/writing-a-text-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:08:45.987220-07:00
+description: "Das Schreiben einer Textdatei in Visual Basic for Applications (VBA)\
+  \ umfasst das Erstellen, Modifizieren oder Anh\xE4ngen von Textdaten an Dateien,\
+  \ eine\u2026"
+lastmod: 2024-02-18 23:09:04.710646
+model: gpt-4-0125-preview
+summary: "Das Schreiben einer Textdatei in Visual Basic for Applications (VBA) umfasst\
+  \ das Erstellen, Modifizieren oder Anh\xE4ngen von Textdaten an Dateien, eine\u2026"
+title: Eine Textdatei schreiben
 ---
 
 {{< edit_this_page >}}

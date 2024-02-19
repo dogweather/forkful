@@ -1,14 +1,18 @@
 ---
-title:                "Arredondando números"
 aliases:
 - /pt/go/rounding-numbers/
-date:                  2024-02-03T18:07:40.210715-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arredondando números"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/rounding-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:40.210715-07:00
+description: "Arredondar n\xFAmeros \xE9 ajustar o valor de um n\xFAmero para o inteiro\
+  \ mais pr\xF3ximo ou para um n\xFAmero espec\xEDfico de casas decimais. Programadores\
+  \ fazem isso por\u2026"
+lastmod: 2024-02-18 23:08:57.662888
+model: gpt-4-0125-preview
+summary: "Arredondar n\xFAmeros \xE9 ajustar o valor de um n\xFAmero para o inteiro\
+  \ mais pr\xF3ximo ou para um n\xFAmero espec\xEDfico de casas decimais. Programadores\
+  \ fazem isso por\u2026"
+title: "Arredondando n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

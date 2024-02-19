@@ -1,13 +1,16 @@
 ---
-title:                "Omvandla ett datum till en sträng"
 aliases:
 - /sv/cpp/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:34.895498-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Omvandla ett datum till en sträng"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:34.895498-07:00
+description: "Konvertering av datum till str\xE4ng inneb\xE4r att omforma ett datumobjekt\
+  \ till en textrepresentation. Programmerare g\xF6r detta f\xF6r att datumen ska\
+  \ vara\u2026"
+lastmod: 2024-02-18 23:08:52.094823
+model: gpt-4-1106-preview
+summary: "Konvertering av datum till str\xE4ng inneb\xE4r att omforma ett datumobjekt\
+  \ till en textrepresentation. Programmerare g\xF6r detta f\xF6r att datumen ska\
+  \ vara\u2026"
+title: "Omvandla ett datum till en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

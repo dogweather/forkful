@@ -1,14 +1,18 @@
 ---
-title:                "Lavorare con JSON"
 aliases:
 - /it/elm/working-with-json/
-date:                  2024-02-03T19:22:44.281865-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:22:44.281865-07:00
+description: "Lavorare con JSON in Elm riguarda la decodifica dei dati JSON in tipi\
+  \ Elm e la codifica di valori Elm di nuovo in JSON. Questo processo \xE8 cruciale\
+  \ per le\u2026"
+lastmod: 2024-02-18 23:08:55.826486
+model: gpt-4-0125-preview
+summary: "Lavorare con JSON in Elm riguarda la decodifica dei dati JSON in tipi Elm\
+  \ e la codifica di valori Elm di nuovo in JSON. Questo processo \xE8 cruciale per\
+  \ le\u2026"
+title: Lavorare con JSON
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Korzystanie z wyrażeń regularnych"
 aliases:
 - /pl/typescript/using-regular-expressions/
-date:                  2024-02-03T19:18:43.028180-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z wyrażeń regularnych"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:18:43.028180-07:00
+description: "Wyra\u017Cenia regularne, zwane r\xF3wnie\u017C regex, to pot\u0119\u017C\
+  ne narz\u0119dzie do dopasowywania wzorc\xF3w i wyszukiwania w programowaniu. Programi\u015B\
+  ci u\u017Cywaj\u0105 wyra\u017Ce\u0144\u2026"
+lastmod: 2024-02-18 23:08:49.338316
+model: gpt-4-0125-preview
+summary: "Wyra\u017Cenia regularne, zwane r\xF3wnie\u017C regex, to pot\u0119\u017C\
+  ne narz\u0119dzie do dopasowywania wzorc\xF3w i wyszukiwania w programowaniu. Programi\u015B\
+  ci u\u017Cywaj\u0105 wyra\u017Ce\u0144\u2026"
+title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 ---
 
 {{< edit_this_page >}}

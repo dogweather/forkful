@@ -1,14 +1,18 @@
 ---
-title:                "Enviando una solicitud HTTP con autenticación básica"
 aliases:
 - /es/vba/sending-an-http-request-with-basic-authentication/
-date:                  2024-02-01T22:02:25.346022-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Enviando una solicitud HTTP con autenticación básica"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/vba/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:02:25.346022-07:00
+description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en Visual Basic\
+  \ para Aplicaciones (VBA) se trata de acceder a recursos web que est\xE1n protegidos\
+  \ por\u2026"
+lastmod: 2024-02-18 23:09:09.796333
+model: gpt-4-0125-preview
+summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en Visual Basic\
+  \ para Aplicaciones (VBA) se trata de acceder a recursos web que est\xE1n protegidos\
+  \ por\u2026"
+title: "Enviando una solicitud HTTP con autenticaci\xF3n b\xE1sica"
 ---
 
 {{< edit_this_page >}}

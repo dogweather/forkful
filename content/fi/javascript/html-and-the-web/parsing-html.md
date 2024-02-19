@@ -1,16 +1,19 @@
 ---
-title:                "HTML:n jäsentäminen"
 aliases:
 - /fi/javascript/parsing-html/
-date:                  2024-01-28T03:00:49.630402-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML:n jäsentäminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/parsing-html.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 03:00:49.630402-07:00
+description: "HTML:n j\xE4sennys tarkoittaa tietojen purkamista HTML-dokumenteista.\
+  \ Ohjelmoijat tekev\xE4t sit\xE4 voidakseen vuorovaikuttaa tai manipuloida web-sis\xE4\
+  lt\xF6\xE4,\u2026"
+lastmod: 2024-02-18 23:09:08.033405
+model: gpt-4-0125-preview
+summary: "HTML:n j\xE4sennys tarkoittaa tietojen purkamista HTML-dokumenteista. Ohjelmoijat\
+  \ tekev\xE4t sit\xE4 voidakseen vuorovaikuttaa tai manipuloida web-sis\xE4lt\xF6\
+  \xE4,\u2026"
+title: "HTML:n j\xE4sent\xE4minen"
 ---
 
 {{< edit_this_page >}}

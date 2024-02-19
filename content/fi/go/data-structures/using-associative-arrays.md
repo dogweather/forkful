@@ -1,14 +1,16 @@
 ---
-title:                "Assosiatiivisten taulukoiden käyttö"
 aliases:
 - /fi/go/using-associative-arrays/
-date:                  2024-02-03T18:11:02.869709-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Assosiatiivisten taulukoiden käyttö"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/using-associative-arrays.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:11:02.869709-07:00
+description: "Assosiatiiviset taulukot, tunnetaan Go:ssa nimell\xE4 mapit, mahdollistavat\
+  \ avain-arvo parien tallentamisen, miss\xE4 jokainen uniikki avain mappautuu arvoon.\u2026"
+lastmod: 2024-02-18 23:09:07.076447
+model: gpt-4-0125-preview
+summary: "Assosiatiiviset taulukot, tunnetaan Go:ssa nimell\xE4 mapit, mahdollistavat\
+  \ avain-arvo parien tallentamisen, miss\xE4 jokainen uniikki avain mappautuu arvoon.\u2026"
+title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

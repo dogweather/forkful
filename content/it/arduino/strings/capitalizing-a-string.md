@@ -1,14 +1,16 @@
 ---
-title:                "Capitalizzare una stringa"
 aliases:
 - /it/arduino/capitalizing-a-string/
-date:                  2024-02-03T19:04:56.378902-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizzare una stringa"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:04:56.378902-07:00
+description: "Capitalizzare una stringa implica convertire il primo carattere di ogni\
+  \ parola in una stringa in maiuscolo, assicurando che il resto rimanga in minuscolo.\u2026"
+lastmod: 2024-02-18 23:08:56.119042
+model: gpt-4-0125-preview
+summary: "Capitalizzare una stringa implica convertire il primo carattere di ogni\
+  \ parola in una stringa in maiuscolo, assicurando che il resto rimanga in minuscolo.\u2026"
+title: Capitalizzare una stringa
 ---
 
 {{< edit_this_page >}}

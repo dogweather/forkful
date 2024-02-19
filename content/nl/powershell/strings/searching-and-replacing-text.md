@@ -1,15 +1,16 @@
 ---
-title:                "Tekst zoeken en vervangen"
 aliases:
 - /nl/powershell/searching-and-replacing-text/
-date:                  2024-01-28T22:07:14.191039-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tekst zoeken en vervangen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/powershell/searching-and-replacing-text.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:07:14.191039-07:00
+description: "Zoeken en vervangen van tekst in bestanden: het is het verwisselen van\
+  \ woorden of zinsdelen door anderen. Programmeurs gebruiken het om code bij te\u2026"
+lastmod: 2024-02-18 23:09:02.072769
+model: gpt-4-0125-preview
+summary: "Zoeken en vervangen van tekst in bestanden: het is het verwisselen van woorden\
+  \ of zinsdelen door anderen. Programmeurs gebruiken het om code bij te\u2026"
+title: Tekst zoeken en vervangen
 ---
 
 {{< edit_this_page >}}

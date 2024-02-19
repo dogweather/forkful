@@ -1,13 +1,16 @@
 ---
-title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
 aliases:
 - /fi/c-sharp/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:28:32.773700-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:28:32.773700-07:00
+description: "Laskemalla tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4\
+  , tarkoitetaan p\xE4iv\xE4m\xE4\xE4r\xE4n m\xE4\xE4ritt\xE4mist\xE4 suhteessa nykyhetkeen.\
+  \ Ohjelmoijat tekev\xE4t t\xE4m\xE4n esimerkiksi\u2026"
+lastmod: 2024-02-18 23:09:07.635292
+model: gpt-4-1106-preview
+summary: "Laskemalla tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4, tarkoitetaan\
+  \ p\xE4iv\xE4m\xE4\xE4r\xE4n m\xE4\xE4ritt\xE4mist\xE4 suhteessa nykyhetkeen. Ohjelmoijat\
+  \ tekev\xE4t t\xE4m\xE4n esimerkiksi\u2026"
+title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 ---
 
 {{< edit_this_page >}}

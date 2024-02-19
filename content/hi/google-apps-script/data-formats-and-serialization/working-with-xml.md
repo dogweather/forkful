@@ -1,14 +1,28 @@
 ---
-title:                "XML के साथ काम करना"
 aliases:
 - /hi/google-apps-script/working-with-xml/
-date:                  2024-02-01T22:07:40.255042-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML के साथ काम करना"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/google-apps-script/working-with-xml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:07:40.255042-07:00
+description: "Google Apps Script \u092E\u0947\u0902 XML \u0915\u0947 \u0938\u093E\u0925\
+  \ \u0915\u093E\u092E \u0915\u0930\u0928\u0947 \u0938\u0947 \u092A\u094D\u0930\u094B\
+  \u0917\u094D\u0930\u093E\u092E\u0930\u094D\u0938 XML \u0921\u0947\u091F\u093E \u0915\
+  \u094B \u092A\u093E\u0930\u094D\u0938, \u0938\u0902\u0936\u094B\u0927\u093F\u0924\
+  , \u0914\u0930 \u091C\u0928\u0930\u0947\u091F \u0915\u0930 \u0938\u0915\u0924\u0947\
+  \ \u0939\u0948\u0902, \u091C\u094B \u0915\u093F \u0935\u0947\u092C \u0938\u0930\u094D\
+  \u0935\u093F\u0938\u0947\u091C \u0914\u0930 \u0915\u0949\u0928\u094D\u092B\u093F\
+  \u0917\u0930\u0947\u0936\u0928\u094D\u0938 \u0915\u0947 \u0932\u093F\u090F\u2026"
+lastmod: 2024-02-18 23:09:02.614750
+model: gpt-4-0125-preview
+summary: "Google Apps Script \u092E\u0947\u0902 XML \u0915\u0947 \u0938\u093E\u0925\
+  \ \u0915\u093E\u092E \u0915\u0930\u0928\u0947 \u0938\u0947 \u092A\u094D\u0930\u094B\
+  \u0917\u094D\u0930\u093E\u092E\u0930\u094D\u0938 XML \u0921\u0947\u091F\u093E \u0915\
+  \u094B \u092A\u093E\u0930\u094D\u0938, \u0938\u0902\u0936\u094B\u0927\u093F\u0924\
+  , \u0914\u0930 \u091C\u0928\u0930\u0947\u091F \u0915\u0930 \u0938\u0915\u0924\u0947\
+  \ \u0939\u0948\u0902, \u091C\u094B \u0915\u093F \u0935\u0947\u092C \u0938\u0930\u094D\
+  \u0935\u093F\u0938\u0947\u091C \u0914\u0930 \u0915\u0949\u0928\u094D\u092B\u093F\
+  \u0917\u0930\u0947\u0936\u0928\u094D\u0938 \u0915\u0947 \u0932\u093F\u090F\u2026"
+title: "XML \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,17 @@
 ---
-title:                "Søking og erstatting av tekst"
 aliases:
 - /no/go/searching-and-replacing-text/
-date:                  2024-02-03T18:08:14.746064-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Søking og erstatting av tekst"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:14.746064-07:00
+description: "\xC5 s\xF8ke og erstatte tekst i programmering letter modifikasjon og\
+  \ h\xE5ndtering av tekststrenger, som er en grunnleggende oppgave i databehandling\
+  \ og\u2026"
+lastmod: 2024-02-18 23:08:53.420174
+model: gpt-4-0125-preview
+summary: "\xC5 s\xF8ke og erstatte tekst i programmering letter modifikasjon og h\xE5\
+  ndtering av tekststrenger, som er en grunnleggende oppgave i databehandling og\u2026"
+title: "S\xF8king og erstatting av tekst"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Rédiger un fichier texte"
 aliases:
 - /fr/ruby/writing-a-text-file/
-date:                  2024-02-03T19:29:04.067481-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rédiger un fichier texte"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:04.067481-07:00
+description: "\xC9crire dans un fichier texte en Ruby est une op\xE9ration fondamentale\
+  \ qui vous permet de stocker des sorties et des donn\xE9es de mani\xE8re persistante,\u2026"
+lastmod: 2024-02-18 23:09:09.427348
+model: gpt-4-0125-preview
+summary: "\xC9crire dans un fichier texte en Ruby est une op\xE9ration fondamentale\
+  \ qui vous permet de stocker des sorties et des donn\xE9es de mani\xE8re persistante,\u2026"
+title: "R\xE9diger un fichier texte"
 ---
 
 {{< edit_this_page >}}

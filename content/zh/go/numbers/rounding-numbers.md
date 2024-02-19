@@ -1,14 +1,22 @@
 ---
-title:                "四舍五入数字"
 aliases:
 - /zh/go/rounding-numbers/
-date:                  2024-02-03T18:07:53.627529-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "四舍五入数字"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/rounding-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:53.627529-07:00
+description: "\u6570\u5B57\u56DB\u820D\u4E94\u5165\u662F\u6307\u5C06\u6570\u5B57\u7684\
+  \u503C\u8C03\u6574\u5230\u6700\u8FD1\u7684\u6574\u6570\u6216\u7279\u5B9A\u5C0F\u6570\
+  \u4F4D\u6570\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u51FA\u4E8E\u5404\u79CD\
+  \u539F\u56E0\uFF0C\u5982\u63D0\u9AD8\u53EF\u8BFB\u6027\u3001\u7B80\u5316\u8BA1\u7B97\
+  \u6216\u6EE1\u8DB3\u7279\u5B9A\u9886\u57DF\u7684\u7CBE\u51C6\u5EA6\u8981\u6C42\u3002"
+lastmod: 2024-02-18 23:08:58.702721
+model: gpt-4-0125-preview
+summary: "\u6570\u5B57\u56DB\u820D\u4E94\u5165\u662F\u6307\u5C06\u6570\u5B57\u7684\
+  \u503C\u8C03\u6574\u5230\u6700\u8FD1\u7684\u6574\u6570\u6216\u7279\u5B9A\u5C0F\u6570\
+  \u4F4D\u6570\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u51FA\u4E8E\u5404\u79CD\
+  \u539F\u56E0\uFF0C\u5982\u63D0\u9AD8\u53EF\u8BFB\u6027\u3001\u7B80\u5316\u8BA1\u7B97\
+  \u6216\u6EE1\u8DB3\u7279\u5B9A\u9886\u57DF\u7684\u7CBE\u51C6\u5EA6\u8981\u6C42\u3002"
+title: "\u56DB\u820D\u4E94\u5165\u6570\u5B57"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,21 @@
 ---
-title:                "HTTP 요청 보내기"
 aliases:
 - /ko/clojure/sending-an-http-request/
-date:                  2024-01-20T17:59:13.807782-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP 요청 보내기"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/sending-an-http-request.md"
+date: 2024-01-20 17:59:13.807782-07:00
+description: "HTTP \uC694\uCCAD\uC740 \uC6F9 \uC11C\uBC84\uC640 \uC815\uBCF4\uB97C\
+  \ \uAD50\uD658\uD558\uAE30 \uC704\uD55C \uBC29\uBC95\uC774\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB294 \uB370\uC774\uD130\uB97C \uAC00\uC838\uC624\uAC70\uB098 \uC6F9\
+  \ \uC11C\uBE44\uC2A4\uC5D0 \uC791\uC5C5\uC744 \uC694\uCCAD\uD558\uAE30 \uC704\uD574\
+  \ \uC774\uB97C \uC0AC\uC6A9\uD55C\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:05.685003
+model: gpt-4-1106-preview
+summary: "HTTP \uC694\uCCAD\uC740 \uC6F9 \uC11C\uBC84\uC640 \uC815\uBCF4\uB97C \uAD50\
+  \uD658\uD558\uAE30 \uC704\uD55C \uBC29\uBC95\uC774\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB294 \uB370\uC774\uD130\uB97C \uAC00\uC838\uC624\uAC70\uB098 \uC6F9 \uC11C\
+  \uBE44\uC2A4\uC5D0 \uC791\uC5C5\uC744 \uC694\uCCAD\uD558\uAE30 \uC704\uD574 \uC774\
+  \uB97C \uC0AC\uC6A9\uD55C\uB2E4."
+title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
 ---
 
 {{< edit_this_page >}}

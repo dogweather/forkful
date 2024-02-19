@@ -1,14 +1,30 @@
 ---
-title:                "문자열 대문자화"
 aliases:
 - /ko/bash/capitalizing-a-string/
-date:                  2024-02-03T19:04:56.157338-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열 대문자화"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:04:56.157338-07:00
+description: "Bash\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758 \uCCAB \uAE00\uC790\uB97C\
+  \ \uB300\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uBA74\uC11C \uB098\uBA38\uC9C0 \uBB38\
+  \uC790\uC5F4\uC740 \uBCC0\uACBD\uD558\uC9C0 \uC54A\uB294 \uAC83\uC744 \uC758\uBBF8\
+  \uD569\uB2C8\uB2E4. \uC774 \uAE30\uC220\uC740 \uCD9C\uB825 \uD3EC\uB9F7\uC744 \uC9C0\
+  \uC815\uD558\uAC70\uB098, \uC77C\uBD80 \uBB38\uC790\uC5F4\uC774 \uAC00\uB3C5\uC131\
+  \uC774\uB098 \uC2A4\uD0C0\uC77C \uCDE8\uD5A5\uC744 \uC704\uD574 \uB300\uBB38\uC790\
+  \uB85C \uC2DC\uC791\uD574\uC57C \uD558\uB294 \uCF54\uB529 \uAD00\uB840\uB97C \uC900\
+  \uC218\uD558\uB294 \uB370 \uC77C\uBC18\uC801\uC73C\uB85C \uC0AC\uC6A9\uB429\uB2C8\
+  \uB2E4."
+lastmod: 2024-02-18 23:09:06.456114
+model: gpt-4-0125-preview
+summary: "Bash\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758 \uCCAB \uAE00\uC790\uB97C \uB300\
+  \uBB38\uC790\uB85C \uBCC0\uD658\uD558\uBA74\uC11C \uB098\uBA38\uC9C0 \uBB38\uC790\
+  \uC5F4\uC740 \uBCC0\uACBD\uD558\uC9C0 \uC54A\uB294 \uAC83\uC744 \uC758\uBBF8\uD569\
+  \uB2C8\uB2E4. \uC774 \uAE30\uC220\uC740 \uCD9C\uB825 \uD3EC\uB9F7\uC744 \uC9C0\uC815\
+  \uD558\uAC70\uB098, \uC77C\uBD80 \uBB38\uC790\uC5F4\uC774 \uAC00\uB3C5\uC131\uC774\
+  \uB098 \uC2A4\uD0C0\uC77C \uCDE8\uD5A5\uC744 \uC704\uD574 \uB300\uBB38\uC790\uB85C\
+  \ \uC2DC\uC791\uD574\uC57C \uD558\uB294 \uCF54\uB529 \uAD00\uB840\uB97C \uC900\uC218\
+  \uD558\uB294 \uB370 \uC77C\uBC18\uC801\uC73C\uB85C \uC0AC\uC6A9\uB429\uB2C8\uB2E4\
+  ."
+title: "\uBB38\uC790\uC5F4 \uB300\uBB38\uC790\uD654"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng mảng liên kết"
 aliases:
 - /vi/javascript/using-associative-arrays/
-date:                  2024-01-30T19:12:23.491554-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng mảng liên kết"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:23.491554-07:00
+description: "M\u1EA3ng k\u1EBFt h\u1EE3p, ho\u1EB7c nh\u01B0 ch\xFAng \u0111\u01B0\
+  \u1EE3c bi\u1EBFt \u0111\u1EBFn ch\xEDnh x\xE1c h\u01A1n trong JavaScript, l\xE0\
+  \ \u0111\u1ED1i t\u01B0\u1EE3ng (objects), cho ph\xE9p b\u1EA1n \xE1nh x\u1EA1 c\xE1\
+  c kh\xF3a v\u1EDBi gi\xE1 tr\u1ECB. \u0110i\u1EC1u n\xE0y r\u1EA5t\u2026"
+lastmod: 2024-02-18 23:08:51.128207
+model: gpt-4-0125-preview
+summary: "M\u1EA3ng k\u1EBFt h\u1EE3p, ho\u1EB7c nh\u01B0 ch\xFAng \u0111\u01B0\u1EE3\
+  c bi\u1EBFt \u0111\u1EBFn ch\xEDnh x\xE1c h\u01A1n trong JavaScript, l\xE0 \u0111\
+  \u1ED1i t\u01B0\u1EE3ng (objects), cho ph\xE9p b\u1EA1n \xE1nh x\u1EA1 c\xE1c kh\xF3\
+  a v\u1EDBi gi\xE1 tr\u1ECB. \u0110i\u1EC1u n\xE0y r\u1EA5t\u2026"
+title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 ---
 
 {{< edit_this_page >}}

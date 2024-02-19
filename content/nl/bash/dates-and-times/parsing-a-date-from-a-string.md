@@ -1,15 +1,16 @@
 ---
-title:                "Een datum uit een string parsen"
 aliases:
 - /nl/bash/parsing-a-date-from-a-string/
-date:                  2024-01-28T22:03:46.618527-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een datum uit een string parsen"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:03:46.618527-07:00
+description: "Een datum uit een string halen betekent het extraheren van de datumcomponenten\u2014\
+  zoals dag, maand en jaar\u2014uit tekst. Programmeurs doen dit om datums in\u2026"
+lastmod: 2024-02-18 23:09:02.051225
+model: gpt-4-0125-preview
+summary: "Een datum uit een string halen betekent het extraheren van de datumcomponenten\u2014\
+  zoals dag, maand en jaar\u2014uit tekst. Programmeurs doen dit om datums in\u2026"
+title: Een datum uit een string parsen
 ---
 
 {{< edit_this_page >}}

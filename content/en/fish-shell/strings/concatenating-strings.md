@@ -1,13 +1,14 @@
 ---
-title:                "Concatenating strings"
 aliases:
 - /en/fish-shell/concatenating-strings/
-date:                  2024-01-20T17:34:46.244068-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenating strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/concatenating-strings.md"
+date: 2024-01-20 17:34:46.244068-07:00
+description: "Concatenating strings means sticking them together end-to-end. Programmers\
+  \ do it to combine text, like building a full sentence from words or creating\u2026"
+lastmod: 2024-02-18 23:09:11.471126
+model: gpt-4-1106-preview
+summary: "Concatenating strings means sticking them together end-to-end. Programmers\
+  \ do it to combine text, like building a full sentence from words or creating\u2026"
+title: Concatenating strings
 ---
 
 {{< edit_this_page >}}

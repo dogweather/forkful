@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
 aliases:
 - /pl/bash/reading-a-text-file/
-date:                  2024-01-20T17:53:47.529705-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie pliku tekstowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/reading-a-text-file.md"
+date: 2024-01-20 17:53:47.529705-07:00
+description: "Przeczytanie pliku tekstowego w Bashu to po prostu wy\u015Bwietlenie\
+  \ jego zawarto\u015Bci w terminalu. Programi\u015Bci robi\u0105 to do analizy danych,\
+  \ debugowania i\u2026"
+lastmod: 2024-02-18 23:08:49.802429
+model: gpt-4-1106-preview
+summary: "Przeczytanie pliku tekstowego w Bashu to po prostu wy\u015Bwietlenie jego\
+  \ zawarto\u015Bci w terminalu. Programi\u015Bci robi\u0105 to do analizy danych,\
+  \ debugowania i\u2026"
+title: Odczytywanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

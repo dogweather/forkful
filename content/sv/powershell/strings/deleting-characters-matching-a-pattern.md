@@ -1,13 +1,16 @@
 ---
-title:                "Ta bort tecken som matchar ett mönster"
 aliases:
 - /sv/powershell/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:43:09.322480-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ta bort tecken som matchar ett mönster"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:43:09.322480-07:00
+description: "Att ta bort tecken som matchar ett m\xF6nster \xE4r ett s\xE4tt att\
+  \ filtrera text genom att eliminera o\xF6nskade tecken eller textstr\xE4ngar. Programmerare\
+  \ g\xF6r detta\u2026"
+lastmod: 2024-02-18 23:08:51.986790
+model: gpt-4-1106-preview
+summary: "Att ta bort tecken som matchar ett m\xF6nster \xE4r ett s\xE4tt att filtrera\
+  \ text genom att eliminera o\xF6nskade tecken eller textstr\xE4ngar. Programmerare\
+  \ g\xF6r detta\u2026"
+title: "Ta bort tecken som matchar ett m\xF6nster"
 ---
 
 {{< edit_this_page >}}

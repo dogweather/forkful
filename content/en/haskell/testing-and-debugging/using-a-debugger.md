@@ -1,13 +1,14 @@
 ---
-title:                "Using a debugger"
 aliases:
 - /en/haskell/using-a-debugger/
-date:                  2024-01-25T20:50:03.292712-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Using a debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/using-a-debugger.md"
+date: 2024-01-25 20:50:03.292712-07:00
+description: "Using a debugger means diving into your code with tools designed to\
+  \ inspect, pause, and manipulate a program mid-execution. Programmers do it to chase\u2026"
+lastmod: 2024-02-18 23:09:11.100635
+model: gpt-4-1106-preview
+summary: "Using a debugger means diving into your code with tools designed to inspect,\
+  \ pause, and manipulate a program mid-execution. Programmers do it to chase\u2026"
+title: Using a debugger
 ---
 
 {{< edit_this_page >}}

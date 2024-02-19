@@ -1,14 +1,18 @@
 ---
-title:                "Trabajando con YAML"
 aliases:
 - /es/c/working-with-yaml/
-date:                  2024-02-03T18:13:08.509909-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:13:08.509909-07:00
+description: "YAML, que significa \"YAML Ain't Markup Language\" (YAML No es un Lenguaje\
+  \ de Marcado), es un est\xE1ndar de serializaci\xF3n de datos legible por humanos\
+  \ que se\u2026"
+lastmod: 2024-02-18 23:09:10.525908
+model: gpt-4-0125-preview
+summary: "YAML, que significa \"YAML Ain't Markup Language\" (YAML No es un Lenguaje\
+  \ de Marcado), es un est\xE1ndar de serializaci\xF3n de datos legible por humanos\
+  \ que se\u2026"
+title: Trabajando con YAML
 ---
 
 {{< edit_this_page >}}

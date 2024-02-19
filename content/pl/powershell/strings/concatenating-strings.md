@@ -1,13 +1,16 @@
 ---
-title:                "Łączenie łańcuchów znaków"
 aliases:
 - /pl/powershell/concatenating-strings/
-date:                  2024-01-20T17:35:17.521422-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Łączenie łańcuchów znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/concatenating-strings.md"
+date: 2024-01-20 17:35:17.521422-07:00
+description: "Concatenation to \u0142\u0105czenie kilku string\xF3w w jeden. Programi\u015B\
+  ci robi\u0105 to, by sk\u0142ada\u0107 tekst z r\xF3\u017Cnych cz\u0119\u015Bci,\
+  \ np. tworz\u0105c wiadomo\u015Bci czy dynamiczne tre\u015Bci."
+lastmod: 2024-02-18 23:08:49.819002
+model: gpt-4-1106-preview
+summary: "Concatenation to \u0142\u0105czenie kilku string\xF3w w jeden. Programi\u015B\
+  ci robi\u0105 to, by sk\u0142ada\u0107 tekst z r\xF3\u017Cnych cz\u0119\u015Bci,\
+  \ np. tworz\u0105c wiadomo\u015Bci czy dynamiczne tre\u015Bci."
+title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 ---
 
 {{< edit_this_page >}}

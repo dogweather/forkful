@@ -1,14 +1,26 @@
 ---
-title:                "임시 파일 생성하기"
 aliases:
 - /ko/bash/creating-a-temporary-file/
-date:                  2024-01-20T17:39:59.526794-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "임시 파일 생성하기"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/creating-a-temporary-file.md"
+date: 2024-01-20 17:39:59.526794-07:00
+description: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uC740 \uBB34\uC5C7\uC77C\uAE4C\
+  \uC694? \uD504\uB85C\uADF8\uB7A8\uC774 \uB370\uC774\uD130\uB97C \uC784\uC2DC\uC801\
+  \uC73C\uB85C \uCC98\uB9AC\uD558\uAC70\uB098 \uC800\uC7A5\uD558\uAE30 \uC704\uD574\
+  \ \uC0AC\uC6A9\uB418\uB294 \uD30C\uC77C\uC785\uB2C8\uB2E4. \uC65C \uD544\uC694\uD560\
+  \uAE4C\uC694? \uD504\uB85C\uADF8\uB7A8 \uC791\uB3D9 \uC911 \uB0A8\uAE30\uACE0 \uC2F6\
+  \uC9C0 \uC54A\uC740 \uB370\uC774\uD130\uB97C \uB2E4\uB8E8\uAC70\uB098, \uCDA9\uB3CC\
+  \ \uBC29\uC9C0\uC640 \uB370\uC774\uD130 \uBCF4\uD638\uB97C \uC704\uD574\uC11C\uC8E0\
+  ."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.515636
+model: gpt-4-1106-preview
+summary: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uC740 \uBB34\uC5C7\uC77C\uAE4C\uC694\
+  ? \uD504\uB85C\uADF8\uB7A8\uC774 \uB370\uC774\uD130\uB97C \uC784\uC2DC\uC801\uC73C\
+  \uB85C \uCC98\uB9AC\uD558\uAC70\uB098 \uC800\uC7A5\uD558\uAE30 \uC704\uD574 \uC0AC\
+  \uC6A9\uB418\uB294 \uD30C\uC77C\uC785\uB2C8\uB2E4. \uC65C \uD544\uC694\uD560\uAE4C\
+  \uC694? \uD504\uB85C\uADF8\uB7A8 \uC791\uB3D9 \uC911 \uB0A8\uAE30\uACE0 \uC2F6\uC9C0\
+  \ \uC54A\uC740 \uB370\uC774\uD130\uB97C \uB2E4\uB8E8\uAC70\uB098, \uCDA9\uB3CC \uBC29\
+  \uC9C0\uC640 \uB370\uC774\uD130 \uBCF4\uD638\uB97C \uC704\uD574\uC11C\uC8E0."
+title: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

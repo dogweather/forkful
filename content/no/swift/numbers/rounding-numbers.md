@@ -1,13 +1,16 @@
 ---
-title:                "Avrunding av tall"
 aliases:
 - /no/swift/rounding-numbers/
-date:                  2024-01-26T03:46:38.331734-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Avrunding av tall"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/rounding-numbers.md"
+date: 2024-01-26 03:46:38.331734-07:00
+description: "\xC5 avrunde tall betyr \xE5 tiln\xE6rme en numerisk verdi til en spesifikk\
+  \ presisjon, typisk for \xE5 fjerne u\xF8nskede desimaler. Programmerere avrunder\
+  \ for \xE5\u2026"
+lastmod: 2024-02-18 23:08:54.264334
+model: gpt-4-0125-preview
+summary: "\xC5 avrunde tall betyr \xE5 tiln\xE6rme en numerisk verdi til en spesifikk\
+  \ presisjon, typisk for \xE5 fjerne u\xF8nskede desimaler. Programmerere avrunder\
+  \ for \xE5\u2026"
+title: Avrunding av tall
 ---
 
 {{< edit_this_page >}}

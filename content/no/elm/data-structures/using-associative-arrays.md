@@ -1,15 +1,18 @@
 ---
-title:                "Bruke associative tabeller"
 aliases:
 - /no/elm/using-associative-arrays/
-date:                  2024-01-30T19:10:52.532928-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke associative tabeller"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:52.532928-07:00
+description: "Assosiative tabeller, eller som Elm kaller dem, Ordb\xF8ker, kobler\
+  \ n\xF8kler til verdier p\xE5 en m\xE5te som gj\xF8r oppslag, innsetting og sletting\
+  \ av verdier super\u2026"
+lastmod: 2024-02-18 23:08:53.804179
+model: gpt-4-0125-preview
+summary: "Assosiative tabeller, eller som Elm kaller dem, Ordb\xF8ker, kobler n\xF8\
+  kler til verdier p\xE5 en m\xE5te som gj\xF8r oppslag, innsetting og sletting av\
+  \ verdier super\u2026"
+title: Bruke associative tabeller
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
 aliases:
 - /pl/powershell/reading-a-text-file/
-date:                  2024-01-20T17:54:56.114422-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie pliku tekstowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/reading-a-text-file.md"
+date: 2024-01-20 17:54:56.114422-07:00
+description: "Czytanie pliku tekstowego to pobieranie jego zawarto\u015Bci do pami\u0119\
+  ci dla dalszej obr\xF3bki. Programi\u015Bci robi\u0105 to codziennie, by np. wczytywa\u0107\
+  \ konfiguracje,\u2026"
+lastmod: 2024-02-18 23:08:49.845887
+model: gpt-4-1106-preview
+summary: "Czytanie pliku tekstowego to pobieranie jego zawarto\u015Bci do pami\u0119\
+  ci dla dalszej obr\xF3bki. Programi\u015Bci robi\u0105 to codziennie, by np. wczytywa\u0107\
+  \ konfiguracje,\u2026"
+title: Odczytywanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

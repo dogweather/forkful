@@ -1,13 +1,16 @@
 ---
-title:                "Lese kommandolinjeargumenter"
 aliases:
 - /no/c-sharp/reading-command-line-arguments/
-date:                  2024-01-20T17:55:42.021560-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lese kommandolinjeargumenter"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:42.021560-07:00
+description: "Kommandolinjeargumenter lar oss sende informasjon til et program n\xE5\
+  r vi starter det. Vi gj\xF8r dette for \xE5 gi fleksibel kontroll over programmets\
+  \ oppf\xF8rsel\u2026"
+lastmod: 2024-02-18 23:08:53.908723
+model: gpt-4-1106-preview
+summary: "Kommandolinjeargumenter lar oss sende informasjon til et program n\xE5r\
+  \ vi starter det. Vi gj\xF8r dette for \xE5 gi fleksibel kontroll over programmets\
+  \ oppf\xF8rsel\u2026"
+title: Lese kommandolinjeargumenter
 ---
 
 {{< edit_this_page >}}

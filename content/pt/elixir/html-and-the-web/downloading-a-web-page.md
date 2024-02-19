@@ -1,13 +1,16 @@
 ---
-title:                "Baixando uma página da web"
 aliases:
 - /pt/elixir/downloading-a-web-page/
-date:                  2024-01-20T17:43:57.594816-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Baixando uma página da web"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/downloading-a-web-page.md"
+date: 2024-01-20 17:43:57.594816-07:00
+description: "Baixar uma p\xE1gina da web significa fazer o download do seu conte\xFA\
+  do em HTML. Programadores fazem isso para processar informa\xE7\xF5es, extrair dados\
+  \ ou\u2026"
+lastmod: 2024-02-18 23:08:57.842712
+model: gpt-4-1106-preview
+summary: "Baixar uma p\xE1gina da web significa fazer o download do seu conte\xFA\
+  do em HTML. Programadores fazem isso para processar informa\xE7\xF5es, extrair dados\
+  \ ou\u2026"
+title: "Baixando uma p\xE1gina da web"
 ---
 
 {{< edit_this_page >}}

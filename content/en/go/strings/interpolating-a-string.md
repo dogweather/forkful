@@ -1,12 +1,14 @@
 ---
-title:                "Interpolating a string"
 aliases:
 - /en/go/interpolating-a-string/
-date:                  2024-02-03T17:50:05.456347-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interpolating a string"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/interpolating-a-string.md"
+date: 2024-02-03 17:50:05.456347-07:00
+description: "String interpolation is a method to construct strings that incorporate\
+  \ variables, enabling dynamic string creation. Programmers do this to customize\u2026"
+lastmod: 2024-02-18 23:09:10.582553
+model: gpt-4-0125-preview
+summary: "String interpolation is a method to construct strings that incorporate variables,\
+  \ enabling dynamic string creation. Programmers do this to customize\u2026"
+title: Interpolating a string
 ---
 
 {{< edit_this_page >}}

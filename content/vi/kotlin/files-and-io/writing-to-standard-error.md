@@ -1,15 +1,20 @@
 ---
-title:                "Ghi vào lỗi chuẩn"
 aliases:
 - /vi/kotlin/writing-to-standard-error/
-date:                  2024-01-28T22:13:45.354191-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ghi vào lỗi chuẩn"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/kotlin/writing-to-standard-error.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:13:45.354191-07:00
+description: "L\u1ED7i ti\xEAu chu\u1EA9n (stderr) l\xE0 m\u1ED9t lu\u1ED3ng n\u01A1\
+  i m\xE0 ch\u01B0\u01A1ng tr\xECnh vi\u1EBFt c\xE1c th\xF4ng b\xE1o l\u1ED7i c\u1EE7\
+  a m\xECnh. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 t\xE1\
+  ch bi\u1EC7t nh\u1EADt k\xFD l\u1ED7i kh\u1ECFi \u0111\u1EA7u ra\u2026"
+lastmod: 2024-02-18 23:08:50.669426
+model: gpt-4-0125-preview
+summary: "L\u1ED7i ti\xEAu chu\u1EA9n (stderr) l\xE0 m\u1ED9t lu\u1ED3ng n\u01A1i\
+  \ m\xE0 ch\u01B0\u01A1ng tr\xECnh vi\u1EBFt c\xE1c th\xF4ng b\xE1o l\u1ED7i c\u1EE7\
+  a m\xECnh. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 t\xE1\
+  ch bi\u1EC7t nh\u1EADt k\xFD l\u1ED7i kh\u1ECFi \u0111\u1EA7u ra\u2026"
+title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 ---
 
 {{< edit_this_page >}}

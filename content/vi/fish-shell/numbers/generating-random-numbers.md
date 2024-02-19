@@ -1,15 +1,20 @@
 ---
-title:                "Sinh số ngẫu nhiên"
 aliases:
 - /vi/fish-shell/generating-random-numbers/
-date:                  2024-01-28T22:01:26.517713-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sinh số ngẫu nhiên"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/generating-random-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:26.517713-07:00
+description: "Vi\u1EC7c sinh s\u1ED1 ng\u1EABu nhi\xEAn l\xE0 m\u1ED9t nhi\u1EC7m\
+  \ v\u1EE5 c\u01A1 b\u1EA3n trong l\u1EADp tr\xECnh, \u0111\u01B0\u1EE3c s\u1EED\
+  \ d\u1EE5ng cho m\u1ECDi th\u1EE9 t\u1EEB vi\u1EC7c l\u1EA5y m\u1EABu d\u1EEF li\u1EC7\
+  u \u0111\u1EBFn ph\xE1t tri\u1EC3n tr\xF2 ch\u01A1i. Trong Fish\u2026"
+lastmod: 2024-02-18 23:08:51.177890
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c sinh s\u1ED1 ng\u1EABu nhi\xEAn l\xE0 m\u1ED9t nhi\u1EC7m v\u1EE5\
+  \ c\u01A1 b\u1EA3n trong l\u1EADp tr\xECnh, \u0111\u01B0\u1EE3c s\u1EED d\u1EE5\
+  ng cho m\u1ECDi th\u1EE9 t\u1EEB vi\u1EC7c l\u1EA5y m\u1EABu d\u1EEF li\u1EC7u \u0111\
+  \u1EBFn ph\xE1t tri\u1EC3n tr\xF2 ch\u01A1i. Trong Fish\u2026"
+title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 ---
 
 {{< edit_this_page >}}

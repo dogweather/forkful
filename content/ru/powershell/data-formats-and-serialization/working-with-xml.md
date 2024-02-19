@@ -1,15 +1,28 @@
 ---
-title:                "Работа с XML"
 aliases:
 - /ru/powershell/working-with-xml/
-date:                  2024-01-29T00:05:18.829737-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Работа с XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/powershell/working-with-xml.md"
 changelog:
-  - 2024-01-29, gpt-4-0125-preview, translated from English
+- 2024-01-29, gpt-4-0125-preview, translated from English
+date: 2024-01-29 00:05:18.829737-07:00
+description: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 XML \u0432\u043A\u043B\u044E\
+  \u0447\u0430\u0435\u0442 \u0432 \u0441\u0435\u0431\u044F \u043C\u0430\u043D\u0438\
+  \u043F\u0443\u043B\u044F\u0446\u0438\u044E \u0438 \u0434\u043E\u0441\u0442\u0443\
+  \u043F \u043A \u0434\u0430\u043D\u043D\u044B\u043C, \u0441\u0442\u0440\u0443\u043A\
+  \u0442\u0443\u0440\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u043C \u043D\u0430\
+  \ \u044F\u0437\u044B\u043A\u0435 eXtensible Markup Language. \u041F\u0440\u043E\u0433\
+  \u0440\u0430\u043C\u043C\u0438\u0441\u0442\u044B \u0440\u0430\u0431\u043E\u0442\u0430\
+  \u044E\u0442 \u0441 XML \u0434\u043B\u044F\u2026"
+lastmod: 2024-02-18 23:08:57.287142
+model: gpt-4-0125-preview
+summary: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 XML \u0432\u043A\u043B\u044E\
+  \u0447\u0430\u0435\u0442 \u0432 \u0441\u0435\u0431\u044F \u043C\u0430\u043D\u0438\
+  \u043F\u0443\u043B\u044F\u0446\u0438\u044E \u0438 \u0434\u043E\u0441\u0442\u0443\
+  \u043F \u043A \u0434\u0430\u043D\u043D\u044B\u043C, \u0441\u0442\u0440\u0443\u043A\
+  \u0442\u0443\u0440\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u043C \u043D\u0430\
+  \ \u044F\u0437\u044B\u043A\u0435 eXtensible Markup Language. \u041F\u0440\u043E\u0433\
+  \u0440\u0430\u043C\u043C\u0438\u0441\u0442\u044B \u0440\u0430\u0431\u043E\u0442\u0430\
+  \u044E\u0442 \u0441 XML \u0434\u043B\u044F\u2026"
+title: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 XML"
 ---
 
 {{< edit_this_page >}}

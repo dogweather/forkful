@@ -1,13 +1,14 @@
 ---
-title:                "Registrazione Eventi (Logging)"
 aliases:
 - /it/cpp/logging/
-date:                  2024-01-26T01:01:01.036047-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registrazione Eventi (Logging)"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/logging.md"
+date: 2024-01-26 01:01:01.036047-07:00
+description: "Nel contesto della programmazione, il logging \xE8 il processo di registrazione\
+  \ di eventi, stati e informazioni in un file o in un altro mezzo di output. I\u2026"
+lastmod: 2024-02-18 23:08:56.178466
+model: gpt-4-1106-preview
+summary: "Nel contesto della programmazione, il logging \xE8 il processo di registrazione\
+  \ di eventi, stati e informazioni in un file o in un altro mezzo di output. I\u2026"
+title: Registrazione Eventi (Logging)
 ---
 
 {{< edit_this_page >}}

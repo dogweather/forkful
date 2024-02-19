@@ -1,14 +1,18 @@
 ---
-title:                "Utilisation des expressions régulières"
 aliases:
 - /fr/c-sharp/using-regular-expressions/
-date:                  2024-02-03T19:16:20.962435-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation des expressions régulières"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:16:20.962435-07:00
+description: "Les expressions r\xE9guli\xE8res (regex) en C# sont un outil puissant\
+  \ pour la correspondance de motifs au sein des cha\xEEnes de caract\xE8res, permettant\
+  \ aux\u2026"
+lastmod: 2024-02-18 23:09:08.816452
+model: gpt-4-0125-preview
+summary: "Les expressions r\xE9guli\xE8res (regex) en C# sont un outil puissant pour\
+  \ la correspondance de motifs au sein des cha\xEEnes de caract\xE8res, permettant\
+  \ aux\u2026"
+title: "Utilisation des expressions r\xE9guli\xE8res"
 ---
 
 {{< edit_this_page >}}

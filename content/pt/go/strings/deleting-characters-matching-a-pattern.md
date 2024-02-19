@@ -1,14 +1,18 @@
 ---
-title:                "Deletando caracteres que correspondem a um padrão"
 aliases:
 - /pt/go/deleting-characters-matching-a-pattern/
-date:                  2024-02-03T17:55:36.220955-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Deletando caracteres que correspondem a um padrão"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:36.220955-07:00
+description: "Deletar caracteres que correspondem a um padr\xE3o espec\xEDfico \xE9\
+  \ sobre remover certos caracteres ou sequ\xEAncias de caracteres de strings, com\
+  \ base em regras\u2026"
+lastmod: 2024-02-18 23:08:57.651391
+model: gpt-4-0125-preview
+summary: "Deletar caracteres que correspondem a um padr\xE3o espec\xEDfico \xE9 sobre\
+  \ remover certos caracteres ou sequ\xEAncias de caracteres de strings, com base\
+  \ em regras\u2026"
+title: "Deletando caracteres que correspondem a um padr\xE3o"
 ---
 
 {{< edit_this_page >}}

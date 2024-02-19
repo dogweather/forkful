@@ -1,13 +1,15 @@
 ---
-title:                "Trabajando con números complejos"
 aliases:
 - /es/php/working-with-complex-numbers/
-date:                  2024-01-26T04:43:24.939807-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con números complejos"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/working-with-complex-numbers.md"
+date: 2024-01-26 04:43:24.939807-07:00
+description: "Los n\xFAmeros complejos tienen una parte real y una parte imaginaria,\
+  \ usualmente escritos como `a + bi`. Son cruciales en matem\xE1ticas avanzadas,\
+  \ f\xEDsica,\u2026"
+lastmod: 2024-02-18 23:09:10.067292
+model: gpt-4-0125-preview
+summary: "Los n\xFAmeros complejos tienen una parte real y una parte imaginaria, usualmente\
+  \ escritos como `a + bi`. Son cruciales en matem\xE1ticas avanzadas, f\xEDsica,\u2026"
+title: "Trabajando con n\xFAmeros complejos"
 ---
 
 {{< edit_this_page >}}

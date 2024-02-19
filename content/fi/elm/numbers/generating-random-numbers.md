@@ -1,13 +1,16 @@
 ---
-title:                "Satunnaislukujen generointi"
 aliases:
 - /fi/elm/generating-random-numbers/
-date:                  2024-01-27T20:34:14.735389-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Satunnaislukujen generointi"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/generating-random-numbers.md"
+date: 2024-01-27 20:34:14.735389-07:00
+description: "Satunnaislukujen tuottaminen Elm-kieless\xE4 tarkoittaa ennustamattomien\
+  \ numeeristen arvojen luomista, jotka ovat olennaisia sovelluksissa, kuten peleiss\xE4\
+  ,\u2026"
+lastmod: 2024-02-18 23:09:07.499104
+model: gpt-4-0125-preview
+summary: "Satunnaislukujen tuottaminen Elm-kieless\xE4 tarkoittaa ennustamattomien\
+  \ numeeristen arvojen luomista, jotka ovat olennaisia sovelluksissa, kuten peleiss\xE4\
+  ,\u2026"
+title: Satunnaislukujen generointi
 ---
 
 {{< edit_this_page >}}

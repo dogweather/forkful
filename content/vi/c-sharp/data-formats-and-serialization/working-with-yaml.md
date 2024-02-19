@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với YAML"
 aliases:
 - /vi/c-sharp/working-with-yaml/
-date:                  2024-01-28T22:11:55.728932-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với YAML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/working-with-yaml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:55.728932-07:00
+description: "YAML l\xE0 m\u1ED9t ti\xEAu chu\u1EA9n serial h\xF3a d\u1EEF li\u1EC7\
+  u th\xE2n thi\u1EC7n v\u1EDBi ng\u01B0\u1EDDi d\xF9ng \u0111\u01B0\u1EE3c s\u1EED\
+  \ d\u1EE5ng trong l\u1EADp tr\xECnh cho c\xE1c t\u1EC7p c\u1EA5u h\xECnh, l\u01B0\
+  u tr\u1EEF d\u1EEF li\u1EC7u v\xE0 h\u01A1n th\u1EBF n\u1EEFa. L\u1EADp\u2026"
+lastmod: 2024-02-18 23:08:50.720991
+model: gpt-4-0125-preview
+summary: "YAML l\xE0 m\u1ED9t ti\xEAu chu\u1EA9n serial h\xF3a d\u1EEF li\u1EC7u th\xE2\
+  n thi\u1EC7n v\u1EDBi ng\u01B0\u1EDDi d\xF9ng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5\
+  ng trong l\u1EADp tr\xECnh cho c\xE1c t\u1EC7p c\u1EA5u h\xECnh, l\u01B0u tr\u1EEF\
+  \ d\u1EEF li\u1EC7u v\xE0 h\u01A1n th\u1EBF n\u1EEFa. L\u1EADp\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 ---
 
 {{< edit_this_page >}}

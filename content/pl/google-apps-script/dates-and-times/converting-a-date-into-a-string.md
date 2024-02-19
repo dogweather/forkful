@@ -1,14 +1,18 @@
 ---
-title:                "Konwersja daty na ciąg znaków"
 aliases:
 - /pl/google-apps-script/converting-a-date-into-a-string/
-date:                  2024-02-01T21:51:32.599167-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Konwersja daty na ciąg znaków"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:32.599167-07:00
+description: "Konwersja dat na ci\u0105gi znak\xF3w to podstawowe zadanie, kt\xF3\
+  re umo\u017Cliwia programistom manipulowanie informacjami o dacie i wy\u015Bwietlanie\
+  \ ich w formacie\u2026"
+lastmod: 2024-02-18 23:08:49.161039
+model: gpt-4-0125-preview
+summary: "Konwersja dat na ci\u0105gi znak\xF3w to podstawowe zadanie, kt\xF3re umo\u017C\
+  liwia programistom manipulowanie informacjami o dacie i wy\u015Bwietlanie ich w\
+  \ formacie\u2026"
+title: "Konwersja daty na ci\u0105g znak\xF3w"
 ---
 
 {{< edit_this_page >}}

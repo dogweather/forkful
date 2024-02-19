@@ -1,13 +1,16 @@
 ---
-title:                "Zaokrąglanie liczb"
 aliases:
 - /pl/javascript/rounding-numbers/
-date:                  2024-01-26T03:45:32.564069-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zaokrąglanie liczb"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/rounding-numbers.md"
+date: 2024-01-26 03:45:32.564069-07:00
+description: "Zaokr\u0105glanie polega na odci\u0119ciu nadmiaru po okre\u015Blonym\
+  \ miejscu w liczbie. Programi\u015Bci zaokr\u0105glaj\u0105 w celu kontrolowania\
+  \ dok\u0142adno\u015Bci, zarz\u0105dzania pami\u0119ci\u0105\u2026"
+lastmod: 2024-02-18 23:08:49.988817
+model: gpt-4-0125-preview
+summary: "Zaokr\u0105glanie polega na odci\u0119ciu nadmiaru po okre\u015Blonym miejscu\
+  \ w liczbie. Programi\u015Bci zaokr\u0105glaj\u0105 w celu kontrolowania dok\u0142\
+  adno\u015Bci, zarz\u0105dzania pami\u0119ci\u0105\u2026"
+title: "Zaokr\u0105glanie liczb"
 ---
 
 {{< edit_this_page >}}

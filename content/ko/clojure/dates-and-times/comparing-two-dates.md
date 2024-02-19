@@ -1,14 +1,27 @@
 ---
-title:                "두 날짜 비교하기"
 aliases:
 - /ko/clojure/comparing-two-dates/
-date:                  2024-01-20T17:33:00.488558-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "두 날짜 비교하기"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/comparing-two-dates.md"
+date: 2024-01-20 17:33:00.488558-07:00
+description: "\uB0A0\uC9DC\uB97C \uBE44\uAD50\uD558\uB294 \uAC83\uC740 \uB450 \uB0A0\
+  \uC9DC\uAC00 \uC11C\uB85C \uC5B4\uB5A4 \uAD00\uACC4\uC5D0 \uC788\uB294\uC9C0, \uC989\
+  \ \uB3D9\uC77C\uD55C\uC9C0, \uC774\uC804\uC774\uB098 \uC774\uD6C4\uC778\uC9C0\uB97C\
+  \ \uC54C\uC544\uB0B4\uB294 \uACFC\uC815\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uC720\uD6A8\uC131 \uAC80\uC0AC, \uB0A0\uC9DC \uBC94\uC704 \uD544\
+  \uD130\uB9C1, \uC774\uBCA4\uD2B8 \uC2A4\uCF00\uC904\uB9C1\uACFC \uAC19\uC740 \uAE30\
+  \uB2A5\uC744 \uC2E4\uD589\uD558\uAE30 \uC704\uD574 \uB0A0\uC9DC\uB97C \uBE44\uAD50\
+  \uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:05.709547
+model: gpt-4-1106-preview
+summary: "\uB0A0\uC9DC\uB97C \uBE44\uAD50\uD558\uB294 \uAC83\uC740 \uB450 \uB0A0\uC9DC\
+  \uAC00 \uC11C\uB85C \uC5B4\uB5A4 \uAD00\uACC4\uC5D0 \uC788\uB294\uC9C0, \uC989 \uB3D9\
+  \uC77C\uD55C\uC9C0, \uC774\uC804\uC774\uB098 \uC774\uD6C4\uC778\uC9C0\uB97C \uC54C\
+  \uC544\uB0B4\uB294 \uACFC\uC815\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB4E4\uC740 \uC720\uD6A8\uC131 \uAC80\uC0AC, \uB0A0\uC9DC \uBC94\uC704 \uD544\uD130\
+  \uB9C1, \uC774\uBCA4\uD2B8 \uC2A4\uCF00\uC904\uB9C1\uACFC \uAC19\uC740 \uAE30\uB2A5\
+  \uC744 \uC2E4\uD589\uD558\uAE30 \uC704\uD574 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD569\
+  \uB2C8\uB2E4."
+title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

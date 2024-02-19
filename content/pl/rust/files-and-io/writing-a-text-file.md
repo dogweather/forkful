@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie pliku tekstowego"
 aliases:
 - /pl/rust/writing-a-text-file/
-date:                  2024-02-03T19:29:19.767781-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie pliku tekstowego"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:19.767781-07:00
+description: "Pisanie plik\xF3w tekstowych w Rust polega na tworzeniu, zapisywaniu\
+  \ i potencjalnie dodawaniu danych do pliku w systemie plik\xF3w. Programi\u015B\
+  ci wykonuj\u0105 t\u0119\u2026"
+lastmod: 2024-02-18 23:08:49.408008
+model: gpt-4-0125-preview
+summary: "Pisanie plik\xF3w tekstowych w Rust polega na tworzeniu, zapisywaniu i potencjalnie\
+  \ dodawaniu danych do pliku w systemie plik\xF3w. Programi\u015Bci wykonuj\u0105\
+  \ t\u0119\u2026"
+title: Pisanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

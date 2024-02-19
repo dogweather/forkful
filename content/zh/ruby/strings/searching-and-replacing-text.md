@@ -1,14 +1,21 @@
 ---
-title:                "搜索和替换文本"
 aliases:
 - /zh/ruby/searching-and-replacing-text/
-date:                  2024-01-20T17:58:41.822330-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "搜索和替换文本"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:41.822330-07:00
+description: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C\u662F\u7F16\u7A0B\u4E2D\u4FEE\
+  \u6539\u5B57\u7B26\u4E32\u5185\u5BB9\u7684\u64CD\u4F5C\u3002\u7A0B\u5E8F\u5458\u8FD9\
+  \u4E48\u505A\u591A\u534A\u662F\u4E3A\u4E86\u81EA\u52A8\u5316\u5730\u4FEE\u6B63\u9519\
+  \u8BEF\u3001\u66F4\u65B0\u4FE1\u606F\u6216\u8005\u6539\u53D8\u6570\u636E\u683C\u5F0F\
+  \u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.586257
+model: gpt-4-1106-preview
+summary: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C\u662F\u7F16\u7A0B\u4E2D\u4FEE\
+  \u6539\u5B57\u7B26\u4E32\u5185\u5BB9\u7684\u64CD\u4F5C\u3002\u7A0B\u5E8F\u5458\u8FD9\
+  \u4E48\u505A\u591A\u534A\u662F\u4E3A\u4E86\u81EA\u52A8\u5316\u5730\u4FEE\u6B63\u9519\
+  \u8BEF\u3001\u66F4\u65B0\u4FE1\u606F\u6216\u8005\u6539\u53D8\u6570\u636E\u683C\u5F0F\
+  \u3002"
+title: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C"
 ---
 
 {{< edit_this_page >}}

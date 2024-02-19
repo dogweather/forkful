@@ -1,14 +1,18 @@
 ---
-title:                "Å gjøre om en streng til store bokstaver"
 aliases:
 - /no/vba/capitalizing-a-string/
-date:                  2024-02-01T21:49:14.572989-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å gjøre om en streng til store bokstaver"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/vba/capitalizing-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:14.572989-07:00
+description: "\xC5 sette stor bokstav i en streng i Visual Basic for Applications\
+  \ (VBA) inneb\xE6rer \xE5 konvertere den f\xF8rste bokstaven i hvert ord i en streng\
+  \ til stor\u2026"
+lastmod: 2024-02-18 23:08:53.709935
+model: gpt-4-0125-preview
+summary: "\xC5 sette stor bokstav i en streng i Visual Basic for Applications (VBA)\
+  \ inneb\xE6rer \xE5 konvertere den f\xF8rste bokstaven i hvert ord i en streng til\
+  \ stor\u2026"
+title: "\xC5 gj\xF8re om en streng til store bokstaver"
 ---
 
 {{< edit_this_page >}}

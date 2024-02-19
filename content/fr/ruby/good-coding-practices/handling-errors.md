@@ -1,13 +1,16 @@
 ---
-title:                "Gestion des erreurs"
 aliases:
 - /fr/ruby/handling-errors/
-date:                  2024-01-26T00:56:54.478607-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Gestion des erreurs"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/handling-errors.md"
+date: 2024-01-26 00:56:54.478607-07:00
+description: "La gestion des erreurs consiste \xE0 anticiper l'inattendu dans le code\
+  \ \u2014 \xE0 g\xE9rer les erreurs et les probl\xE8mes avec \xE9l\xE9gance sans\
+  \ faire planter le programme.\u2026"
+lastmod: 2024-02-18 23:09:09.415365
+model: gpt-4-1106-preview
+summary: "La gestion des erreurs consiste \xE0 anticiper l'inattendu dans le code\
+  \ \u2014 \xE0 g\xE9rer les erreurs et les probl\xE8mes avec \xE9l\xE9gance sans\
+  \ faire planter le programme.\u2026"
+title: Gestion des erreurs
 ---
 
 {{< edit_this_page >}}

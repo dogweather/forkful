@@ -1,14 +1,18 @@
 ---
-title:                "Analyse Syntaxique de HTML"
 aliases:
 - /fr/google-apps-script/parsing-html/
-date:                  2024-02-01T21:56:48.597374-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analyse Syntaxique de HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/google-apps-script/parsing-html.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:56:48.597374-07:00
+description: "L'analyse HTML dans Google Apps Script consiste \xE0 extraire des donn\xE9\
+  es de contenu HTML, ce qui est particuli\xE8rement utile lors de l'interaction avec\
+  \ des\u2026"
+lastmod: 2024-02-18 23:09:08.285596
+model: gpt-4-0125-preview
+summary: "L'analyse HTML dans Google Apps Script consiste \xE0 extraire des donn\xE9\
+  es de contenu HTML, ce qui est particuli\xE8rement utile lors de l'interaction avec\
+  \ des\u2026"
+title: Analyse Syntaxique de HTML
 ---
 
 {{< edit_this_page >}}

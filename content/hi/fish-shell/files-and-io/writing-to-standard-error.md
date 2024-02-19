@@ -1,14 +1,31 @@
 ---
-title:                "मानक त्रुटि के लिए लिखना"
 aliases:
 - /hi/fish-shell/writing-to-standard-error/
-date:                  2024-02-03T19:33:55.216457-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "मानक त्रुटि के लिए लिखना"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/fish-shell/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:33:55.216457-07:00
+description: "Fish Shell \u092E\u0947\u0902 \u0938\u094D\u091F\u0948\u0902\u0921\u0930\
+  \u094D\u0921 \u090F\u0930\u0930 (stderr) \u092E\u0947\u0902 \u0932\u093F\u0916\u0928\
+  \u0947 \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 \u0917\u0932\u0924\u0940\
+  \ \u0938\u0902\u0926\u0947\u0936\u094B\u0902 \u092F\u093E \u0928\u093F\u0926\u093E\
+  \u0928 \u0915\u094B \u0938\u094D\u091F\u0948\u0902\u0921\u0930\u094D\u0921 \u0906\
+  \u0909\u091F\u092A\u0941\u091F (stdout) \u0938\u0947 \u0905\u0932\u0917 \u0928\u093F\
+  \u0930\u094D\u0926\u0947\u0936\u093F\u0924 \u0915\u0930\u0928\u093E\u0964 \u092A\
+  \u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u0930\u094D\u0938 \u0907\u0938\u0947\
+  \u2026"
+lastmod: 2024-02-18 23:09:04.159719
+model: gpt-4-0125-preview
+summary: "Fish Shell \u092E\u0947\u0902 \u0938\u094D\u091F\u0948\u0902\u0921\u0930\
+  \u094D\u0921 \u090F\u0930\u0930 (stderr) \u092E\u0947\u0902 \u0932\u093F\u0916\u0928\
+  \u0947 \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 \u0917\u0932\u0924\u0940\
+  \ \u0938\u0902\u0926\u0947\u0936\u094B\u0902 \u092F\u093E \u0928\u093F\u0926\u093E\
+  \u0928 \u0915\u094B \u0938\u094D\u091F\u0948\u0902\u0921\u0930\u094D\u0921 \u0906\
+  \u0909\u091F\u092A\u0941\u091F (stdout) \u0938\u0947 \u0905\u0932\u0917 \u0928\u093F\
+  \u0930\u094D\u0926\u0947\u0936\u093F\u0924 \u0915\u0930\u0928\u093E\u0964 \u092A\
+  \u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u0930\u094D\u0938 \u0907\u0938\u0947\
+  \u2026"
+title: "\u092E\u093E\u0928\u0915 \u0924\u094D\u0930\u0941\u091F\u093F \u0915\u0947\
+  \ \u0932\u093F\u090F \u0932\u093F\u0916\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

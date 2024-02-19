@@ -1,14 +1,18 @@
 ---
-title:                "Avrunding av tall"
 aliases:
 - /no/vba/rounding-numbers/
-date:                  2024-02-01T22:01:10.278545-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Avrunding av tall"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/vba/rounding-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:10.278545-07:00
+description: "Avrunding av tall i programmering handler om \xE5 tiln\xE6rme et tall\
+  \ til n\xE6rmeste hele tall eller til et bestemt antall desimalplasser. Programmerere\
+  \ runder av\u2026"
+lastmod: 2024-02-18 23:08:53.722539
+model: gpt-4-0125-preview
+summary: "Avrunding av tall i programmering handler om \xE5 tiln\xE6rme et tall til\
+  \ n\xE6rmeste hele tall eller til et bestemt antall desimalplasser. Programmerere\
+  \ runder av\u2026"
+title: Avrunding av tall
 ---
 
 {{< edit_this_page >}}

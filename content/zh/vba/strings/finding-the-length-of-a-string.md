@@ -1,14 +1,24 @@
 ---
-title:                "寻找字符串的长度"
 aliases:
 - /zh/vba/finding-the-length-of-a-string/
-date:                  2024-02-01T21:53:55.852148-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "寻找字符串的长度"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:55.852148-07:00
+description: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u67E5\u627E\u5B57\u7B26\
+  \u4E32\u7684\u957F\u5EA6\u6D89\u53CA\u786E\u5B9A\u5176\u5305\u542B\u7684\u5B57\u7B26\
+  \u6570\u91CF\u3002\u7A0B\u5E8F\u5458\u9891\u7E41\u6267\u884C\u8FD9\u9879\u4EFB\u52A1\
+  \uFF0C\u4EE5\u9A8C\u8BC1\u8F93\u5165\u3001\u9AD8\u6548\u5730\u64CD\u4F5C\u6587\u672C\
+  \u6570\u636E\u6216\u63A7\u5236\u5904\u7406\u5B57\u7B26\u4E32\u6570\u636E\u7684\u5FAA\
+  \u73AF\uFF0C\u786E\u4FDD\u4EE3\u7801\u5065\u58EE\u4E14\u65E0\u8BEF\u3002"
+lastmod: 2024-02-18 23:08:58.971724
+model: gpt-4-0125-preview
+summary: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u67E5\u627E\u5B57\u7B26\
+  \u4E32\u7684\u957F\u5EA6\u6D89\u53CA\u786E\u5B9A\u5176\u5305\u542B\u7684\u5B57\u7B26\
+  \u6570\u91CF\u3002\u7A0B\u5E8F\u5458\u9891\u7E41\u6267\u884C\u8FD9\u9879\u4EFB\u52A1\
+  \uFF0C\u4EE5\u9A8C\u8BC1\u8F93\u5165\u3001\u9AD8\u6548\u5730\u64CD\u4F5C\u6587\u672C\
+  \u6570\u636E\u6216\u63A7\u5236\u5904\u7406\u5B57\u7B26\u4E32\u6570\u636E\u7684\u5FAA\
+  \u73AF\uFF0C\u786E\u4FDD\u4EE3\u7801\u5065\u58EE\u4E14\u65E0\u8BEF\u3002"
+title: "\u5BFB\u627E\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
 ---
 
 {{< edit_this_page >}}

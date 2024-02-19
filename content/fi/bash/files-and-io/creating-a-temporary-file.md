@@ -1,13 +1,16 @@
 ---
-title:                "Väliaikaistiedoston luominen"
 aliases:
 - /fi/bash/creating-a-temporary-file/
-date:                  2024-01-20T17:39:30.395676-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Väliaikaistiedoston luominen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/creating-a-temporary-file.md"
+date: 2024-01-20 17:39:30.395676-07:00
+description: "Luodaan tilap\xE4isi\xE4 tiedostoja v\xE4liaikaisen datan s\xE4ilytt\xE4\
+  miseen ja sen varmistamiseen, ett\xE4 sovelluksen k\xE4ytt\xE4m\xE4 ymp\xE4rist\xF6\
+  \ pysyy siistin\xE4. Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:07.825562
+model: gpt-4-1106-preview
+summary: "Luodaan tilap\xE4isi\xE4 tiedostoja v\xE4liaikaisen datan s\xE4ilytt\xE4\
+  miseen ja sen varmistamiseen, ett\xE4 sovelluksen k\xE4ytt\xE4m\xE4 ymp\xE4rist\xF6\
+  \ pysyy siistin\xE4. Ohjelmoijat\u2026"
+title: "V\xE4liaikaistiedoston luominen"
 ---
 
 {{< edit_this_page >}}

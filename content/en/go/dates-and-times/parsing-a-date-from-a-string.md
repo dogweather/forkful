@@ -1,12 +1,14 @@
 ---
-title:                "Parsing a date from a string"
 aliases:
 - /en/go/parsing-a-date-from-a-string/
-date:                  2024-02-03T17:50:07.310824-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Parsing a date from a string"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/parsing-a-date-from-a-string.md"
+date: 2024-02-03 17:50:07.310824-07:00
+description: "Parsing a date from a string in Go involves converting the date represented\
+  \ as text into a more usable format (e.g., `time.Time`). Programmers perform\u2026"
+lastmod: 2024-02-18 23:09:10.606198
+model: gpt-4-0125-preview
+summary: "Parsing a date from a string in Go involves converting the date represented\
+  \ as text into a more usable format (e.g., `time.Time`). Programmers perform\u2026"
+title: Parsing a date from a string
 ---
 
 {{< edit_this_page >}}

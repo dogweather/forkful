@@ -1,14 +1,17 @@
 ---
-title:                "Écrire un fichier texte"
 aliases:
 - /fr/c/writing-a-text-file/
-date:                  2024-02-03T18:14:21.928942-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Écrire un fichier texte"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:14:21.928942-07:00
+description: "\xC9crire un fichier texte en C implique de cr\xE9er ou d'ouvrir un\
+  \ fichier en mode \xE9criture, puis d'utiliser les fonctions d'E/S de fichier de\
+  \ C pour\u2026"
+lastmod: 2024-02-18 23:09:09.377877
+model: gpt-4-0125-preview
+summary: "\xC9crire un fichier texte en C implique de cr\xE9er ou d'ouvrir un fichier\
+  \ en mode \xE9criture, puis d'utiliser les fonctions d'E/S de fichier de C pour\u2026"
+title: "\xC9crire un fichier texte"
 ---
 
 {{< edit_this_page >}}

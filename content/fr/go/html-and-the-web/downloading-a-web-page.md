@@ -1,14 +1,18 @@
 ---
-title:                "Téléchargement d'une page web"
 aliases:
 - /fr/go/downloading-a-web-page/
-date:                  2024-02-03T17:56:12.557861-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Téléchargement d'une page web"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/downloading-a-web-page.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:12.557861-07:00
+description: "T\xE9l\xE9charger une page web consiste \xE0 r\xE9cup\xE9rer le contenu\
+  \ HTML d'une page web via le protocole HTTP/HTTPS. Les programmeurs font souvent\
+  \ cela pour le\u2026"
+lastmod: 2024-02-18 23:09:08.231680
+model: gpt-4-0125-preview
+summary: "T\xE9l\xE9charger une page web consiste \xE0 r\xE9cup\xE9rer le contenu\
+  \ HTML d'une page web via le protocole HTTP/HTTPS. Les programmeurs font souvent\
+  \ cela pour le\u2026"
+title: "T\xE9l\xE9chargement d'une page web"
 ---
 
 {{< edit_this_page >}}

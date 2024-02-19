@@ -1,13 +1,14 @@
 ---
-title:                "Merkkijonon interpolointi"
 aliases:
 - /fi/lua/interpolating-a-string/
-date:                  2024-01-20T17:51:29.330391-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon interpolointi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/interpolating-a-string.md"
+date: 2024-01-20 17:51:29.330391-07:00
+description: "Merkkijonojen interpolaatio tarkoittaa muuttujien tai lausekkeiden arvojen\
+  \ \"upottamista\" merkkijonoihin. Koodaajat k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisten\u2026"
+lastmod: 2024-02-18 23:09:07.742487
+model: gpt-4-1106-preview
+summary: "Merkkijonojen interpolaatio tarkoittaa muuttujien tai lausekkeiden arvojen\
+  \ \"upottamista\" merkkijonoihin. Koodaajat k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisten\u2026"
+title: Merkkijonon interpolointi
 ---
 
 {{< edit_this_page >}}

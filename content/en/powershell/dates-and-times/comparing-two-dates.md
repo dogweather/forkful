@@ -1,13 +1,14 @@
 ---
-title:                "Comparing two dates"
 aliases:
 - /en/powershell/comparing-two-dates/
-date:                  2024-01-20T17:33:40.084046-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Comparing two dates"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/powershell/comparing-two-dates.md"
+date: 2024-01-20 17:33:40.084046-07:00
+description: "Comparing two dates in PowerShell means figuring out if one is earlier,\
+  \ the same, or later than the other. Programmers often do this to manage events,\u2026"
+lastmod: 2024-02-18 23:09:11.286470
+model: gpt-4-1106-preview
+summary: "Comparing two dates in PowerShell means figuring out if one is earlier,\
+  \ the same, or later than the other. Programmers often do this to manage events,\u2026"
+title: Comparing two dates
 ---
 
 {{< edit_this_page >}}

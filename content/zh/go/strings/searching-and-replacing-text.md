@@ -1,14 +1,24 @@
 ---
-title:                "搜索和替换文本"
 aliases:
 - /zh/go/searching-and-replacing-text/
-date:                  2024-02-03T18:08:12.597993-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "搜索和替换文本"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:12.597993-07:00
+description: "\u5728\u7F16\u7A0B\u4E2D\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C\u6709\
+  \u52A9\u4E8E\u5B57\u7B26\u4E32\u7684\u4FEE\u6539\u548C\u7BA1\u7406\uFF0C\u8FD9\u662F\
+  \u6570\u636E\u64CD\u4F5C\u548C\u8F6F\u4EF6\u5F00\u53D1\u4E2D\u7684\u4E00\u4E2A\u57FA\
+  \u672C\u4EFB\u52A1\u3002\u7A0B\u5E8F\u5458\u6267\u884C\u8FD9\u4E9B\u64CD\u4F5C\u4EE5\
+  \u6709\u6548\u5730\u66F4\u65B0\u3001\u6E05\u7406\u6216\u8F6C\u6362\u6587\u672C\u6570\
+  \u636E\u3002"
+lastmod: 2024-02-18 23:08:58.693336
+model: gpt-4-0125-preview
+summary: "\u5728\u7F16\u7A0B\u4E2D\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C\u6709\
+  \u52A9\u4E8E\u5B57\u7B26\u4E32\u7684\u4FEE\u6539\u548C\u7BA1\u7406\uFF0C\u8FD9\u662F\
+  \u6570\u636E\u64CD\u4F5C\u548C\u8F6F\u4EF6\u5F00\u53D1\u4E2D\u7684\u4E00\u4E2A\u57FA\
+  \u672C\u4EFB\u52A1\u3002\u7A0B\u5E8F\u5458\u6267\u884C\u8FD9\u4E9B\u64CD\u4F5C\u4EE5\
+  \u6709\u6548\u5730\u66F4\u65B0\u3001\u6E05\u7406\u6216\u8F6C\u6362\u6587\u672C\u6570\
+  \u636E\u3002"
+title: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C"
 ---
 
 {{< edit_this_page >}}

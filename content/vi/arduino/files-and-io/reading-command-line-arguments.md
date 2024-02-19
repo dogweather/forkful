@@ -1,15 +1,22 @@
 ---
-title:                "Đọc các đối số dòng lệnh"
 aliases:
 - /vi/arduino/reading-command-line-arguments/
-date:                  2024-01-28T22:06:21.080939-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Đọc các đối số dòng lệnh"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/reading-command-line-arguments.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:06:21.080939-07:00
+description: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh c\xF3 ngh\u0129\
+  a l\xE0 l\u1EA5y d\u1EEF li\u1EC7u \u0111\u01B0\u1EE3c truy\u1EC1n \u0111\u1EBF\
+  n m\u1ED9t ch\u01B0\u01A1ng tr\xECnh khi b\u1EA1n kh\u1EDFi \u0111\u1ED9ng n\xF3\
+  \ t\u1EEB terminal ho\u1EB7c d\u1EA5u nh\u1EAFc l\u1EC7nh. C\xE1c l\u1EADp tr\xEC\
+  nh vi\xEAn\u2026"
+lastmod: 2024-02-18 23:08:51.016194
+model: gpt-4-0125-preview
+summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh c\xF3 ngh\u0129\
+  a l\xE0 l\u1EA5y d\u1EEF li\u1EC7u \u0111\u01B0\u1EE3c truy\u1EC1n \u0111\u1EBF\
+  n m\u1ED9t ch\u01B0\u01A1ng tr\xECnh khi b\u1EA1n kh\u1EDFi \u0111\u1ED9ng n\xF3\
+  \ t\u1EEB terminal ho\u1EB7c d\u1EA5u nh\u1EAFc l\u1EC7nh. C\xE1c l\u1EADp tr\xEC\
+  nh vi\xEAn\u2026"
+title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 ---
 
 {{< edit_this_page >}}

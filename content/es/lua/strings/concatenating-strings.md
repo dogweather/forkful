@@ -1,13 +1,16 @@
 ---
-title:                "Concatenación de cadenas de texto"
 aliases:
 - /es/lua/concatenating-strings/
-date:                  2024-01-20T17:35:09.347259-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenación de cadenas de texto"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/lua/concatenating-strings.md"
+date: 2024-01-20 17:35:09.347259-07:00
+description: "La concatenaci\xF3n de cadenas es simplemente pegar una cadena de texto\
+  \ al final de otra. Los programadores lo hacen para construir mensajes, combinar\
+  \ datos\u2026"
+lastmod: 2024-02-18 23:09:10.110779
+model: gpt-4-1106-preview
+summary: "La concatenaci\xF3n de cadenas es simplemente pegar una cadena de texto\
+  \ al final de otra. Los programadores lo hacen para construir mensajes, combinar\
+  \ datos\u2026"
+title: "Concatenaci\xF3n de cadenas de texto"
 ---
 
 {{< edit_this_page >}}

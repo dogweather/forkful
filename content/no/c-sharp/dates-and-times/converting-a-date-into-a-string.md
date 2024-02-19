@@ -1,13 +1,14 @@
 ---
-title:                "Konvertere en dato til en streng"
 aliases:
 - /no/c-sharp/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:12.163406-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konvertere en dato til en streng"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:12.163406-07:00
+description: "Konvertering av dato til streng gj\xF8r datoen lesbar for mennesker.\
+  \ Dette er nyttig for visning, logging eller formatert utveksling mellom systemer."
+lastmod: 2024-02-18 23:08:53.904835
+model: gpt-4-1106-preview
+summary: "Konvertering av dato til streng gj\xF8r datoen lesbar for mennesker. Dette\
+  \ er nyttig for visning, logging eller formatert utveksling mellom systemer."
+title: Konvertere en dato til en streng
 ---
 
 {{< edit_this_page >}}

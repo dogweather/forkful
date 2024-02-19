@@ -1,14 +1,18 @@
 ---
-title:                "Kirjoittaminen standardivirheeseen"
 aliases:
 - /fi/go/writing-to-standard-error/
-date:                  2024-02-03T18:15:31.206573-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kirjoittaminen standardivirheeseen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:15:31.206573-07:00
+description: "Virhetulostuksen (stderr) kirjoittaminen Go:ssa tarkoittaa virheviestien\
+  \ tai diagnostiikkojen ohjaamista pois p\xE4\xE4ulostulovirrasta. Ohjelmoijat k\xE4\
+  ytt\xE4v\xE4t\u2026"
+lastmod: 2024-02-18 23:09:07.104479
+model: gpt-4-0125-preview
+summary: "Virhetulostuksen (stderr) kirjoittaminen Go:ssa tarkoittaa virheviestien\
+  \ tai diagnostiikkojen ohjaamista pois p\xE4\xE4ulostulovirrasta. Ohjelmoijat k\xE4\
+  ytt\xE4v\xE4t\u2026"
+title: Kirjoittaminen standardivirheeseen
 ---
 
 {{< edit_this_page >}}

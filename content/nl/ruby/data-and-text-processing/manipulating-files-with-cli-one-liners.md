@@ -1,15 +1,16 @@
 ---
-title:                "Bestanden manipuleren met CLI one-liners"
 aliases:
 - /nl/ruby/manipulating-files-with-cli-one-liners/
-date:                  2024-01-28T22:03:28.313919-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bestanden manipuleren met CLI one-liners"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/manipulating-files-with-cli-one-liners.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:03:28.313919-07:00
+description: "Bestanden manipuleren met CLI-one-liners in Ruby gaat over het uitvoeren\
+  \ van algemene bestandsoperaties rechtstreeks vanuit je terminal met behulp van\u2026"
+lastmod: 2024-02-18 23:09:02.416713
+model: gpt-4-0125-preview
+summary: "Bestanden manipuleren met CLI-one-liners in Ruby gaat over het uitvoeren\
+  \ van algemene bestandsoperaties rechtstreeks vanuit je terminal met behulp van\u2026"
+title: Bestanden manipuleren met CLI one-liners
 ---
 
 {{< edit_this_page >}}

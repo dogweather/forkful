@@ -1,13 +1,22 @@
 ---
-title:                "处理复数"
 aliases:
 - /zh/clojure/working-with-complex-numbers/
-date:                  2024-01-26T04:38:59.303053-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理复数"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/working-with-complex-numbers.md"
+date: 2024-01-26 04:38:59.303053-07:00
+description: "\u590D\u6570\u901A\u8FC7\u4E00\u4E2A\u989D\u5916\u7684\u90E8\u5206\uFF0C\
+  \u5373\u865A\u6570\u5355\u4F4D 'i' \uFF0C\u6269\u5C55\u4E86\u5B9E\u6570\u3002\u7A0B\
+  \u5E8F\u5458\u5728\u5404\u79CD\u9886\u57DF\u4F7F\u7528\u5B83\u4EEC\uFF0C\u5305\u62EC\
+  \u4FE1\u53F7\u5904\u7406\u3001\u7535\u78C1\u7406\u8BBA\u548C\u5206\u5F62\u51E0\u4F55\
+  \uFF0C\u5176\u4E2D\u6D89\u53CA\u8D1F\u6570\u5E73\u65B9\u6839\u7684\u8BA1\u7B97\u662F\
+  \u5E38\u89C4\u64CD\u4F5C\u3002"
+lastmod: 2024-02-18 23:08:58.823041
+model: gpt-4-0125-preview
+summary: "\u590D\u6570\u901A\u8FC7\u4E00\u4E2A\u989D\u5916\u7684\u90E8\u5206\uFF0C\
+  \u5373\u865A\u6570\u5355\u4F4D 'i' \uFF0C\u6269\u5C55\u4E86\u5B9E\u6570\u3002\u7A0B\
+  \u5E8F\u5458\u5728\u5404\u79CD\u9886\u57DF\u4F7F\u7528\u5B83\u4EEC\uFF0C\u5305\u62EC\
+  \u4FE1\u53F7\u5904\u7406\u3001\u7535\u78C1\u7406\u8BBA\u548C\u5206\u5F62\u51E0\u4F55\
+  \uFF0C\u5176\u4E2D\u6D89\u53CA\u8D1F\u6570\u5E73\u65B9\u6839\u7684\u8BA1\u7B97\u662F\
+  \u5E38\u89C4\u64CD\u4F5C\u3002"
+title: "\u5904\u7406\u590D\u6570"
 ---
 
 {{< edit_this_page >}}

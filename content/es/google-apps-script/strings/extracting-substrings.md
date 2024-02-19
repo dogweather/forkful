@@ -1,14 +1,16 @@
 ---
-title:                "Extracción de subcadenas"
 aliases:
 - /es/google-apps-script/extracting-substrings/
-date:                  2024-02-01T21:52:46.081604-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Extracción de subcadenas"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/google-apps-script/extracting-substrings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:46.081604-07:00
+description: "La extracci\xF3n de subcadenas implica tomar una porci\xF3n de una cadena,\
+  \ esencialmente creando una nueva cadena a partir de una existente. Los programadores\u2026"
+lastmod: 2024-02-18 23:09:09.493130
+model: gpt-4-0125-preview
+summary: "La extracci\xF3n de subcadenas implica tomar una porci\xF3n de una cadena,\
+  \ esencialmente creando una nueva cadena a partir de una existente. Los programadores\u2026"
+title: "Extracci\xF3n de subcadenas"
 ---
 
 {{< edit_this_page >}}

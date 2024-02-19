@@ -1,13 +1,14 @@
 ---
-title:                "Concatenazione di stringhe"
 aliases:
 - /it/typescript/concatenating-strings/
-date:                  2024-01-20T17:35:52.736175-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenazione di stringhe"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/concatenating-strings.md"
+date: 2024-01-20 17:35:52.736175-07:00
+description: "Concatenare stringhe significa unire due o pi\xF9 sequenze di caratteri\
+  \ in una sola. I programmatori lo fanno per costruire messaggi dinamici, combinare\u2026"
+lastmod: 2024-02-18 23:08:55.632806
+model: gpt-4-1106-preview
+summary: "Concatenare stringhe significa unire due o pi\xF9 sequenze di caratteri\
+  \ in una sola. I programmatori lo fanno per costruire messaggi dinamici, combinare\u2026"
+title: Concatenazione di stringhe
 ---
 
 {{< edit_this_page >}}

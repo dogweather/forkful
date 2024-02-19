@@ -1,14 +1,18 @@
 ---
-title:                "Usando expressões regulares"
 aliases:
 - /pt/google-apps-script/using-regular-expressions/
-date:                  2024-02-01T22:04:49.504421-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando expressões regulares"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/google-apps-script/using-regular-expressions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:49.504421-07:00
+description: "Express\xF5es Regulares (regex) s\xE3o padr\xF5es utilizados para combinar\
+  \ sequ\xEAncias de caracteres em strings. Os programadores as utilizam para buscar,\
+  \ editar ou\u2026"
+lastmod: 2024-02-18 23:08:57.704469
+model: gpt-4-0125-preview
+summary: "Express\xF5es Regulares (regex) s\xE3o padr\xF5es utilizados para combinar\
+  \ sequ\xEAncias de caracteres em strings. Os programadores as utilizam para buscar,\
+  \ editar ou\u2026"
+title: "Usando express\xF5es regulares"
 ---
 
 {{< edit_this_page >}}

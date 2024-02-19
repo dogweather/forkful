@@ -1,14 +1,16 @@
 ---
-title:                "Werken met YAML"
 aliases:
 - /nl/go/working-with-yaml/
-date:                  2024-02-03T18:13:50.244135-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:13:50.244135-07:00
+description: "Werken met YAML in Go houdt in dat je YAML-bestanden (YAML Ain't Markup\
+  \ Language), een gebruikersvriendelijke gegevensserialisatiestandaard, analyseert\u2026"
+lastmod: 2024-02-18 23:09:01.361153
+model: gpt-4-0125-preview
+summary: "Werken met YAML in Go houdt in dat je YAML-bestanden (YAML Ain't Markup\
+  \ Language), een gebruikersvriendelijke gegevensserialisatiestandaard, analyseert\u2026"
+title: Werken met YAML
 ---
 
 {{< edit_this_page >}}

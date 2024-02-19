@@ -1,13 +1,16 @@
 ---
-title:                "Wysyłanie zapytania http z podstawową autoryzacją"
 aliases:
 - /pl/python/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:40.849360-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wysyłanie zapytania http z podstawową autoryzacją"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:40.849360-07:00
+description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autentykacj\u0105\
+  \ to proces, gdzie klient HTTP przesy\u0142a swoj\u0105 nazw\u0119 u\u017Cytkownika\
+  \ i has\u0142o w celu uzyskania dost\u0119pu do zasob\xF3w\u2026"
+lastmod: 2024-02-18 23:08:49.222423
+model: gpt-4-1106-preview
+summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autentykacj\u0105\
+  \ to proces, gdzie klient HTTP przesy\u0142a swoj\u0105 nazw\u0119 u\u017Cytkownika\
+  \ i has\u0142o w celu uzyskania dost\u0119pu do zasob\xF3w\u2026"
+title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 ---
 
 {{< edit_this_page >}}

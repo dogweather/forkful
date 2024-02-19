@@ -1,15 +1,20 @@
 ---
-title:                "Ghi log"
 aliases:
 - /vi/kotlin/logging/
-date:                  2024-01-28T22:04:10.689371-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ghi log"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/kotlin/logging.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:04:10.689371-07:00
+description: "Logging, v\u1EC1 b\u1EA3n ch\u1EA5t, l\xE0 vi\u1EC7c ghi l\u1EA1i c\xE1\
+  c s\u1EF1 ki\u1EC7n v\xE0 d\u1EEF li\u1EC7u t\u1EEB m\u1ED9t \u1EE9ng d\u1EE5ng\
+  \ ph\u1EA7n m\u1EC1m v\xE0o m\u1ED9t \u0111\u1EA7u ra ngo\u1EA1i vi, nh\u01B0 m\u1ED9\
+  t t\u1EC7p ho\u1EB7c console. C\xE1c l\u1EADp tr\xECnh\u2026"
+lastmod: 2024-02-18 23:08:50.658540
+model: gpt-4-0125-preview
+summary: "Logging, v\u1EC1 b\u1EA3n ch\u1EA5t, l\xE0 vi\u1EC7c ghi l\u1EA1i c\xE1\
+  c s\u1EF1 ki\u1EC7n v\xE0 d\u1EEF li\u1EC7u t\u1EEB m\u1ED9t \u1EE9ng d\u1EE5ng\
+  \ ph\u1EA7n m\u1EC1m v\xE0o m\u1ED9t \u0111\u1EA7u ra ngo\u1EA1i vi, nh\u01B0 m\u1ED9\
+  t t\u1EC7p ho\u1EB7c console. C\xE1c l\u1EADp tr\xECnh\u2026"
+title: Ghi log
 ---
 
 {{< edit_this_page >}}

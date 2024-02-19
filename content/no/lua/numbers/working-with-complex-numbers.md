@@ -1,13 +1,14 @@
 ---
-title:                "Å jobbe med komplekse tall"
 aliases:
 - /no/lua/working-with-complex-numbers/
-date:                  2024-01-26T04:43:09.880899-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å jobbe med komplekse tall"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/lua/working-with-complex-numbers.md"
+date: 2024-01-26 04:43:09.880899-07:00
+description: "Komplekse tall utvider ideen om den \xE9ndimensjonale tallinjen til\
+  \ det todimensjonale planet ved \xE5 inkludere en vinkelrett imagin\xE6r akse. Programmerere\u2026"
+lastmod: 2024-02-18 23:08:54.009773
+model: gpt-4-0125-preview
+summary: "Komplekse tall utvider ideen om den \xE9ndimensjonale tallinjen til det\
+  \ todimensjonale planet ved \xE5 inkludere en vinkelrett imagin\xE6r akse. Programmerere\u2026"
+title: "\xC5 jobbe med komplekse tall"
 ---
 
 {{< edit_this_page >}}

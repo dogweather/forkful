@@ -1,14 +1,26 @@
 ---
-title:                "使用YAML工作"
 aliases:
 - /zh/php/working-with-yaml/
-date:                  2024-02-03T19:26:19.131684-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用YAML工作"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:26:19.131684-07:00
+description: "YAML\uFF0C\u5373\u201CYAML Ain't Markup Language\u201D\uFF08YAML\u4E0D\
+  \u662F\u6807\u8BB0\u8BED\u8A00\uFF09\uFF0C\u662F\u4E00\u79CD\u4EBA\u7C7B\u53EF\u8BFB\
+  \u7684\u6570\u636E\u5E8F\u5217\u5316\u683C\u5F0F\uFF0C\u5E38\u7528\u4E8E\u914D\u7F6E\
+  \u6587\u4EF6\u3002\u7A0B\u5E8F\u5458\u9009\u62E9\u4F7F\u7528YAML\u662F\u56E0\u4E3A\
+  \u5B83\u7B80\u5355\u6613\u8BFB\uFF0C\u975E\u5E38\u9002\u5408\u4EE5\u6613\u4E8E\u7BA1\
+  \u7406\u7684\u5F62\u5F0F\u5B58\u50A8\u8BBE\u7F6E\u3001\u53C2\u6570\u4E43\u81F3\u590D\
+  \u6742\u7684\u6570\u636E\u7ED3\u6784\u3002"
+lastmod: 2024-02-18 23:08:59.234285
+model: gpt-4-0125-preview
+summary: "YAML\uFF0C\u5373\u201CYAML Ain't Markup Language\u201D\uFF08YAML\u4E0D\u662F\
+  \u6807\u8BB0\u8BED\u8A00\uFF09\uFF0C\u662F\u4E00\u79CD\u4EBA\u7C7B\u53EF\u8BFB\u7684\
+  \u6570\u636E\u5E8F\u5217\u5316\u683C\u5F0F\uFF0C\u5E38\u7528\u4E8E\u914D\u7F6E\u6587\
+  \u4EF6\u3002\u7A0B\u5E8F\u5458\u9009\u62E9\u4F7F\u7528YAML\u662F\u56E0\u4E3A\u5B83\
+  \u7B80\u5355\u6613\u8BFB\uFF0C\u975E\u5E38\u9002\u5408\u4EE5\u6613\u4E8E\u7BA1\u7406\
+  \u7684\u5F62\u5F0F\u5B58\u50A8\u8BBE\u7F6E\u3001\u53C2\u6570\u4E43\u81F3\u590D\u6742\
+  \u7684\u6570\u636E\u7ED3\u6784\u3002"
+title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 ---
 
 {{< edit_this_page >}}

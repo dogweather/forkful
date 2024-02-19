@@ -1,14 +1,18 @@
 ---
-title:                "Extraction de sous-chaînes"
 aliases:
 - /fr/vba/extracting-substrings/
-date:                  2024-02-01T21:53:07.442590-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Extraction de sous-chaînes"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/vba/extracting-substrings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:07.442590-07:00
+description: "Extraire des sous-cha\xEEnes dans Visual Basic pour Applications (VBA)\
+  \ consiste \xE0 isoler des parties sp\xE9cifiques d'une cha\xEEne en fonction de\
+  \ crit\xE8res donn\xE9s.\u2026"
+lastmod: 2024-02-18 23:09:08.565012
+model: gpt-4-0125-preview
+summary: "Extraire des sous-cha\xEEnes dans Visual Basic pour Applications (VBA) consiste\
+  \ \xE0 isoler des parties sp\xE9cifiques d'une cha\xEEne en fonction de crit\xE8\
+  res donn\xE9s.\u2026"
+title: "Extraction de sous-cha\xEEnes"
 ---
 
 {{< edit_this_page >}}

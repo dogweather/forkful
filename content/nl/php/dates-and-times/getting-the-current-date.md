@@ -1,15 +1,17 @@
 ---
-title:                "Het huidige datum ophalen"
 aliases:
 - /nl/php/getting-the-current-date/
-date:                  2024-01-28T22:01:06.215032-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Het huidige datum ophalen"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/php/getting-the-current-date.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:06.215032-07:00
+description: "De huidige datum in PHP verkrijgen draait allemaal om het plukken van\
+  \ de datum en tijd van vandaag direct vanaf de server. Programmeurs doen dit om\
+  \ de\u2026"
+lastmod: 2024-02-18 23:09:01.957074
+model: gpt-4-0125-preview
+summary: "De huidige datum in PHP verkrijgen draait allemaal om het plukken van de\
+  \ datum en tijd van vandaag direct vanaf de server. Programmeurs doen dit om de\u2026"
+title: Het huidige datum ophalen
 ---
 
 {{< edit_this_page >}}

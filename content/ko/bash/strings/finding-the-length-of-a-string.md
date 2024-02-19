@@ -1,14 +1,22 @@
 ---
-title:                "문자열의 길이 찾기"
 aliases:
 - /ko/bash/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:10.729335-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "문자열의 길이 찾기"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:10.729335-07:00
+description: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCC3E\uAE30\uB780 \uBB38\uC790\uC5F4\
+  \uC5D0 \uD3EC\uD568\uB41C \uBB38\uC790 \uC218\uB97C \uC138\uB294 \uC791\uC5C5\uC785\
+  \uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uB370\uC774\uD130 \uAC80\uC99D\
+  , \uBB38\uC790 \uCC98\uB9AC, \uD639\uC740 \uAE30\uD0C0 \uC81C\uC57D \uC870\uAC74\
+  \uC744 \uCDA9\uC871\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\uB2C8\
+  \uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.467598
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCC3E\uAE30\uB780 \uBB38\uC790\uC5F4\uC5D0\
+  \ \uD3EC\uD568\uB41C \uBB38\uC790 \uC218\uB97C \uC138\uB294 \uC791\uC5C5\uC785\uB2C8\
+  \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uB370\uC774\uD130 \uAC80\uC99D, \uBB38\
+  \uC790 \uCC98\uB9AC, \uD639\uC740 \uAE30\uD0C0 \uC81C\uC57D \uC870\uAC74\uC744 \uCDA9\
+  \uC871\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
+title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 ---
 
 {{< edit_this_page >}}

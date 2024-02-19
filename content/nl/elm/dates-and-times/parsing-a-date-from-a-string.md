@@ -1,15 +1,16 @@
 ---
-title:                "Een datum uit een string parsen"
 aliases:
 - /nl/elm/parsing-a-date-from-a-string/
-date:                  2024-01-28T22:03:54.300166-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een datum uit een string parsen"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elm/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:03:54.300166-07:00
+description: "Het parseren van een datum uit een tekenreeks betekent het converteren\
+  \ van tekst die een datum voorstelt naar een formaat waarmee een programma kan\u2026"
+lastmod: 2024-02-18 23:09:01.769874
+model: gpt-4-0125-preview
+summary: "Het parseren van een datum uit een tekenreeks betekent het converteren van\
+  \ tekst die een datum voorstelt naar een formaat waarmee een programma kan\u2026"
+title: Een datum uit een string parsen
 ---
 
 {{< edit_this_page >}}

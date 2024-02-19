@@ -1,12 +1,16 @@
 ---
-title:                "Creating a temporary file"
 aliases:
 - /en/c/creating-a-temporary-file/
-date:                  2024-02-03T17:50:22.461341-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Creating a temporary file"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/creating-a-temporary-file.md"
+date: 2024-02-03 17:50:22.461341-07:00
+description: "Creating a temporary file in C involves generating a file that is meant\
+  \ to be used for a short duration, usually as scratch space for data processing\
+  \ or\u2026"
+lastmod: 2024-02-18 23:09:11.541476
+model: gpt-4-0125-preview
+summary: "Creating a temporary file in C involves generating a file that is meant\
+  \ to be used for a short duration, usually as scratch space for data processing\
+  \ or\u2026"
+title: Creating a temporary file
 ---
 
 {{< edit_this_page >}}

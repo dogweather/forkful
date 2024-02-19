@@ -1,14 +1,17 @@
 ---
-title:                "Registro degli Eventi"
 aliases:
 - /it/c/logging/
-date:                  2024-02-03T17:59:23.868581-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Registro degli Eventi"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/logging.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:23.868581-07:00
+description: "Il logging in C comporta la registrazione del flusso e degli eventi\
+  \ notevoli di un programma durante il suo runtime, fornendo una revisione tangibile\
+  \ del\u2026"
+lastmod: 2024-02-18 23:08:56.345394
+model: gpt-4-0125-preview
+summary: "Il logging in C comporta la registrazione del flusso e degli eventi notevoli\
+  \ di un programma durante il suo runtime, fornendo una revisione tangibile del\u2026"
+title: Registro degli Eventi
 ---
 
 {{< edit_this_page >}}

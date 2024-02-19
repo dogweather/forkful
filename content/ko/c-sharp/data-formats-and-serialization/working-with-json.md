@@ -1,14 +1,26 @@
 ---
-title:                "JSON과 함께 일하기"
 aliases:
 - /ko/c-sharp/working-with-json/
-date:                  2024-02-03T19:22:19.765966-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "JSON과 함께 일하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:22:19.765966-07:00
+description: "JSON(JavaScript Object Notation)\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740\
+  \ JSON \uB370\uC774\uD130\uB97C \uD30C\uC2F1, \uC0DD\uC131 \uBC0F \uCFFC\uB9AC\uD558\
+  \uB294 \uAC83\uC744 \uD3EC\uD568\uD558\uC5EC \uD604\uB300 \uD504\uB85C\uADF8\uB798\
+  \uBC0D\uC5D0 \uC788\uC5B4 \uD544\uC218\uC801\uC778 \uAE30\uC220\uC785\uB2C8\uB2E4\
+  . \uC774 \uB370\uC774\uD130 \uAD50\uD658 \uD615\uC2DD\uC740 \uC77D\uAE30 \uC27D\uACE0\
+  \ \uC5B8\uC5B4 \uB3C5\uB9BD\uC131\uC774 \uC788\uC5B4 \uC6F9 \uC11C\uBE44\uC2A4 \uBC0F\
+  \ API\uC5D0\uC11C \uAD11\uBC94\uC704\uD558\uAC8C \uC0AC\uC6A9\uB418\uACE0\u2026"
+lastmod: 2024-02-18 23:09:06.254240
+model: gpt-4-0125-preview
+summary: "JSON(JavaScript Object Notation)\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740 JSON\
+  \ \uB370\uC774\uD130\uB97C \uD30C\uC2F1, \uC0DD\uC131 \uBC0F \uCFFC\uB9AC\uD558\uB294\
+  \ \uAC83\uC744 \uD3EC\uD568\uD558\uC5EC \uD604\uB300 \uD504\uB85C\uADF8\uB798\uBC0D\
+  \uC5D0 \uC788\uC5B4 \uD544\uC218\uC801\uC778 \uAE30\uC220\uC785\uB2C8\uB2E4. \uC774\
+  \ \uB370\uC774\uD130 \uAD50\uD658 \uD615\uC2DD\uC740 \uC77D\uAE30 \uC27D\uACE0 \uC5B8\
+  \uC5B4 \uB3C5\uB9BD\uC131\uC774 \uC788\uC5B4 \uC6F9 \uC11C\uBE44\uC2A4 \uBC0F API\uC5D0\
+  \uC11C \uAD11\uBC94\uC704\uD558\uAC8C \uC0AC\uC6A9\uB418\uACE0\u2026"
+title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

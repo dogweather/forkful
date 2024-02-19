@@ -1,12 +1,16 @@
 ---
-title:                "Refactoring"
 aliases:
 - /en/c/refactoring/
-date:                  2024-02-03T17:50:13.202592-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactoring"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/refactoring.md"
+date: 2024-02-03 17:50:13.202592-07:00
+description: "Refactoring in programming involves restructuring existing code without\
+  \ changing its external behavior, aiming to improve nonfunctional attributes such\
+  \ as\u2026"
+lastmod: 2024-02-18 23:09:11.530865
+model: gpt-4-0125-preview
+summary: "Refactoring in programming involves restructuring existing code without\
+  \ changing its external behavior, aiming to improve nonfunctional attributes such\
+  \ as\u2026"
+title: Refactoring
 ---
 
 {{< edit_this_page >}}

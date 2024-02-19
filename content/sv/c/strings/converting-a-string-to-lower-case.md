@@ -1,14 +1,18 @@
 ---
-title:                "Omvandla en sträng till gemener"
 aliases:
 - /sv/c/converting-a-string-to-lower-case/
-date:                  2024-02-03T17:54:37.956688-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Omvandla en sträng till gemener"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:37.956688-07:00
+description: "Att konvertera en str\xE4ng till gemener i C inneb\xE4r att omvandla\
+  \ alla versaler i en given str\xE4ng till motsvarande gemener. Programmerare utf\xF6\
+  r ofta denna\u2026"
+lastmod: 2024-02-18 23:08:52.236458
+model: gpt-4-0125-preview
+summary: "Att konvertera en str\xE4ng till gemener i C inneb\xE4r att omvandla alla\
+  \ versaler i en given str\xE4ng till motsvarande gemener. Programmerare utf\xF6\
+  r ofta denna\u2026"
+title: "Omvandla en str\xE4ng till gemener"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Praca z liczbami zespolonymi"
 aliases:
 - /pl/java/working-with-complex-numbers/
-date:                  2024-01-26T04:42:32.151190-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z liczbami zespolonymi"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/working-with-complex-numbers.md"
+date: 2024-01-26 04:42:32.151190-07:00
+description: "Liczby zespolone rozszerzaj\u0105 lini\u0119 liczb rzeczywistych przez\
+  \ dodanie jednostki urojonej, `i`, gdzie `i^2 = -1`. S\u0105 one kluczowe w takich\
+  \ dziedzinach jak\u2026"
+lastmod: 2024-02-18 23:08:49.471913
+model: gpt-4-0125-preview
+summary: "Liczby zespolone rozszerzaj\u0105 lini\u0119 liczb rzeczywistych przez dodanie\
+  \ jednostki urojonej, `i`, gdzie `i^2 = -1`. S\u0105 one kluczowe w takich dziedzinach\
+  \ jak\u2026"
+title: Praca z liczbami zespolonymi
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Travailler avec XML"
 aliases:
 - /fr/lua/working-with-xml/
-date:                  2024-01-26T04:33:30.133890-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Travailler avec XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/lua/working-with-xml.md"
+date: 2024-01-26 04:33:30.133890-07:00
+description: "Travailler avec XML implique l'analyse et la manipulation de documents\
+  \ XML \xE0 l'aide de code. Les programmeurs font cela pour lire, \xE9crire et modifier\
+  \ des\u2026"
+lastmod: 2024-02-18 23:09:08.997057
+model: gpt-4-0125-preview
+summary: "Travailler avec XML implique l'analyse et la manipulation de documents XML\
+  \ \xE0 l'aide de code. Les programmeurs font cela pour lire, \xE9crire et modifier\
+  \ des\u2026"
+title: Travailler avec XML
 ---
 
 {{< edit_this_page >}}

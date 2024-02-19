@@ -1,14 +1,16 @@
 ---
-title:                "Lavorare con YAML"
 aliases:
 - /it/vba/working-with-yaml/
-date:                  2024-02-01T22:07:30.675722-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/vba/working-with-yaml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:07:30.675722-07:00
+description: "YAML, che sta per \"YAML Ain't Markup Language\" (YAML non \xE8 un linguaggio\
+  \ di markup), \xE8 un linguaggio di serializzazione dati leggibile dall'uomo\u2026"
+lastmod: 2024-02-18 23:08:55.744555
+model: gpt-4-0125-preview
+summary: "YAML, che sta per \"YAML Ain't Markup Language\" (YAML non \xE8 un linguaggio\
+  \ di markup), \xE8 un linguaggio di serializzazione dati leggibile dall'uomo\u2026"
+title: Lavorare con YAML
 ---
 
 {{< edit_this_page >}}

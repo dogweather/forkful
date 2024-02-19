@@ -1,13 +1,16 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
 aliases:
 - /pl/php/creating-a-temporary-file/
-date:                  2024-01-20T17:41:21.884177-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tworzenie pliku tymczasowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:21.884177-07:00
+description: "Tworzymy pliki tymczasowe, gdy musimy przechowa\u0107 dane tymczasowo,\
+  \ zanim uko\u0144czymy z nimi co\u015B konkretnego. Programi\u015Bci robi\u0105\
+  \ to, by zarz\u0105dza\u0107 danymi\u2026"
+lastmod: 2024-02-18 23:08:49.716005
+model: gpt-4-1106-preview
+summary: "Tworzymy pliki tymczasowe, gdy musimy przechowa\u0107 dane tymczasowo, zanim\
+  \ uko\u0144czymy z nimi co\u015B konkretnego. Programi\u015Bci robi\u0105 to, by\
+  \ zarz\u0105dza\u0107 danymi\u2026"
+title: Tworzenie pliku tymczasowego
 ---
 
 {{< edit_this_page >}}

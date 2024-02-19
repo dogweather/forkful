@@ -1,14 +1,23 @@
 ---
-title:                "ウェブページのダウンロード"
 aliases:
 - /ja/arduino/downloading-a-web-page/
-date:                  2024-01-20T17:43:43.384524-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "ウェブページのダウンロード"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/downloading-a-web-page.md"
+date: 2024-01-20 17:43:43.384524-07:00
+description: "Web\u30DA\u30FC\u30B8\u3092\u30C0\u30A6\u30F3\u30ED\u30FC\u30C9\u3059\
+  \u308B\u3063\u3066\uFF1FWeb\u4E0A\u306E\u60C5\u5831\u3092\u624B\u5143\u306E\u30C7\
+  \u30D0\u30A4\u30B9\u306B\u53D6\u308A\u8FBC\u3080\u3053\u3068\u3055\u3002\u306A\u305C\
+  \u3084\u308B\u306E\u304B\uFF1F\u30C7\u30FC\u30BF\u3092\u5206\u6790\u3057\u305F\u308A\
+  \u3001\u30EA\u30A2\u30EB\u30BF\u30A4\u30E0\u306E\u60C5\u5831\u3092\u6D3B\u7528\u3059\
+  \u308B\u305F\u3081\u3060\u3088\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.152497
+model: gpt-4-1106-preview
+summary: "Web\u30DA\u30FC\u30B8\u3092\u30C0\u30A6\u30F3\u30ED\u30FC\u30C9\u3059\u308B\
+  \u3063\u3066\uFF1FWeb\u4E0A\u306E\u60C5\u5831\u3092\u624B\u5143\u306E\u30C7\u30D0\
+  \u30A4\u30B9\u306B\u53D6\u308A\u8FBC\u3080\u3053\u3068\u3055\u3002\u306A\u305C\u3084\
+  \u308B\u306E\u304B\uFF1F\u30C7\u30FC\u30BF\u3092\u5206\u6790\u3057\u305F\u308A\u3001\
+  \u30EA\u30A2\u30EB\u30BF\u30A4\u30E0\u306E\u60C5\u5831\u3092\u6D3B\u7528\u3059\u308B\
+  \u305F\u3081\u3060\u3088\u3002"
+title: "\u30A6\u30A7\u30D6\u30DA\u30FC\u30B8\u306E\u30C0\u30A6\u30F3\u30ED\u30FC\u30C9"
 ---
 
 {{< edit_this_page >}}

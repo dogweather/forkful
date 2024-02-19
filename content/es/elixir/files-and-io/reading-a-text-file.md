@@ -1,13 +1,16 @@
 ---
-title:                "Lectura de un archivo de texto"
 aliases:
 - /es/elixir/reading-a-text-file/
-date:                  2024-01-20T17:54:11.094975-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lectura de un archivo de texto"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/reading-a-text-file.md"
+date: 2024-01-20 17:54:11.094975-07:00
+description: "Leer un archivo de texto significa acceder y obtener el contenido almacenado\
+  \ en \xE9l. Programadores realizamos esto para procesar datos, configuraciones,\
+  \ o\u2026"
+lastmod: 2024-02-18 23:09:09.675803
+model: gpt-4-1106-preview
+summary: "Leer un archivo de texto significa acceder y obtener el contenido almacenado\
+  \ en \xE9l. Programadores realizamos esto para procesar datos, configuraciones,\
+  \ o\u2026"
+title: Lectura de un archivo de texto
 ---
 
 {{< edit_this_page >}}

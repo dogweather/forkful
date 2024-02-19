@@ -1,13 +1,16 @@
 ---
-title:                "Att påbörja ett nytt projekt"
 aliases:
 - /sv/elixir/starting-a-new-project/
-date:                  2024-01-20T18:03:33.467600-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Att påbörja ett nytt projekt"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/starting-a-new-project.md"
+date: 2024-01-20 18:03:33.467600-07:00
+description: "Att starta ett nytt projekt i Elixir inneb\xE4r att skapa en ren arbetsyta\
+  \ f\xF6r din kod. Programmerare g\xF6r det f\xF6r att f\xE5 en strukturerad b\xF6\
+  rjan och\u2026"
+lastmod: 2024-02-18 23:08:51.503217
+model: gpt-4-1106-preview
+summary: "Att starta ett nytt projekt i Elixir inneb\xE4r att skapa en ren arbetsyta\
+  \ f\xF6r din kod. Programmerare g\xF6r det f\xF6r att f\xE5 en strukturerad b\xF6\
+  rjan och\u2026"
+title: "Att p\xE5b\xF6rja ett nytt projekt"
 ---
 
 {{< edit_this_page >}}

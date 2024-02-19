@@ -1,13 +1,16 @@
 ---
-title:                "Registro de Logs"
 aliases:
 - /pt/elixir/logging/
-date:                  2024-01-26T01:02:31.826093-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registro de Logs"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/logging.md"
+date: 2024-01-26 01:02:31.826093-07:00
+description: "Registros (logging) no desenvolvimento de software \xE9 a t\xE9cnica\
+  \ de registrar eventos que ocorrem enquanto um programa est\xE1 em execu\xE7\xE3\
+  o, tipicamente em um\u2026"
+lastmod: 2024-02-18 23:08:57.850068
+model: gpt-4-1106-preview
+summary: "Registros (logging) no desenvolvimento de software \xE9 a t\xE9cnica de\
+  \ registrar eventos que ocorrem enquanto um programa est\xE1 em execu\xE7\xE3o,\
+  \ tipicamente em um\u2026"
+title: Registro de Logs
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với CSV"
 aliases:
 - /vi/elixir/working-with-csv/
-date:                  2024-01-28T22:10:25.364256-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với CSV"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/working-with-csv.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:25.364256-07:00
+description: "CSV (Comma-Separated Values - Gi\xE1 tr\u1ECB t\xE1ch bi\u1EC7t b\u1EB1\
+  ng d\u1EA5u ph\u1EA9y) l\xE0 \u0111\u1ECBnh d\u1EA1ng v\u0103n b\u1EA3n \u0111\u01A1\
+  n gi\u1EA3n cho d\u1EEF li\u1EC7u d\u1EA1ng b\u1EA3ng. C\xE1c l\u1EADp tr\xECnh\
+  \ vi\xEAn s\u1EED d\u1EE5ng CSV \u0111\u1EC3 d\u1EC5\u2026"
+lastmod: 2024-02-18 23:08:50.393495
+model: gpt-4-0125-preview
+summary: "CSV (Comma-Separated Values - Gi\xE1 tr\u1ECB t\xE1ch bi\u1EC7t b\u1EB1\
+  ng d\u1EA5u ph\u1EA9y) l\xE0 \u0111\u1ECBnh d\u1EA1ng v\u0103n b\u1EA3n \u0111\u01A1\
+  n gi\u1EA3n cho d\u1EEF li\u1EC7u d\u1EA1ng b\u1EA3ng. C\xE1c l\u1EADp tr\xECnh\
+  \ vi\xEAn s\u1EED d\u1EE5ng CSV \u0111\u1EC3 d\u1EC5\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 ---
 
 {{< edit_this_page >}}

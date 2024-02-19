@@ -1,13 +1,16 @@
 ---
-title:                "HTTP-pyynnön lähettäminen"
 aliases:
 - /fi/javascript/sending-an-http-request/
-date:                  2024-01-20T18:00:11.937066-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-pyynnön lähettäminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/sending-an-http-request.md"
+date: 2024-01-20 18:00:11.937066-07:00
+description: "HTTP-pyynt\xF6 on web-palvelimen kanssa kommunikoinnin tavallinen tapa.\
+  \ Koodarit l\xE4hett\xE4v\xE4t HTTP-pyynt\xF6j\xE4 vaihtaakseen dataa palvelinten\
+  \ ja front-end\u2026"
+lastmod: 2024-02-18 23:09:08.032345
+model: gpt-4-1106-preview
+summary: "HTTP-pyynt\xF6 on web-palvelimen kanssa kommunikoinnin tavallinen tapa.\
+  \ Koodarit l\xE4hett\xE4v\xE4t HTTP-pyynt\xF6j\xE4 vaihtaakseen dataa palvelinten\
+  \ ja front-end\u2026"
+title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 ---
 
 {{< edit_this_page >}}

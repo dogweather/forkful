@@ -1,14 +1,16 @@
 ---
-title:                "De lengte van een string vinden"
 aliases:
 - /nl/vba/finding-the-length-of-a-string/
-date:                  2024-02-01T21:53:39.524966-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "De lengte van een string vinden"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/vba/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:39.524966-07:00
+description: "Het vinden van de lengte van een string in Visual Basic for Applications\
+  \ (VBA) houdt in dat je bepaalt hoeveel karakters deze bevat. Programmeurs voeren\u2026"
+lastmod: 2024-02-18 23:09:01.655545
+model: gpt-4-0125-preview
+summary: "Het vinden van de lengte van een string in Visual Basic for Applications\
+  \ (VBA) houdt in dat je bepaalt hoeveel karakters deze bevat. Programmeurs voeren\u2026"
+title: De lengte van een string vinden
 ---
 
 {{< edit_this_page >}}

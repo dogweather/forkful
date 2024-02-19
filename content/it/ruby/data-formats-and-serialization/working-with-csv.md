@@ -1,14 +1,16 @@
 ---
-title:                "Lavorare con i CSV"
 aliases:
 - /it/ruby/working-with-csv/
-date:                  2024-02-03T19:21:07.381128-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con i CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:21:07.381128-07:00
+description: "Lavorare con i file CSV in Ruby offre un approccio diretto per gestire\
+  \ i dati tabellari. I programmatori spesso si dedicano a questa pratica per il\u2026"
+lastmod: 2024-02-18 23:08:56.404626
+model: gpt-4-0125-preview
+summary: "Lavorare con i file CSV in Ruby offre un approccio diretto per gestire i\
+  \ dati tabellari. I programmatori spesso si dedicano a questa pratica per il\u2026"
+title: Lavorare con i CSV
 ---
 
 {{< edit_this_page >}}

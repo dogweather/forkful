@@ -1,13 +1,15 @@
 ---
-title:                "Manipolazione di file con one-liner da CLI"
 aliases:
 - /it/powershell/manipulating-files-with-cli-one-liners/
-date:                  2024-01-27T16:20:52.568059-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipolazione di file con one-liner da CLI"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/manipulating-files-with-cli-one-liners.md"
+date: 2024-01-27 16:20:52.568059-07:00
+description: "La manipolazione di file con one-liner CLI in PowerShell riguarda la\
+  \ modifica, lo spostamento o l'ottenimento di dati di file direttamente dalla riga\
+  \ di\u2026"
+lastmod: 2024-02-18 23:08:56.089625
+model: gpt-4-0125-preview
+summary: "La manipolazione di file con one-liner CLI in PowerShell riguarda la modifica,\
+  \ lo spostamento o l'ottenimento di dati di file direttamente dalla riga di\u2026"
+title: Manipolazione di file con one-liner da CLI
 ---
 
 {{< edit_this_page >}}

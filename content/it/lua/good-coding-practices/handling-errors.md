@@ -1,13 +1,15 @@
 ---
-title:                "Gestione degli errori"
 aliases:
 - /it/lua/handling-errors/
-date:                  2024-01-26T00:55:28.746706-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Gestione degli errori"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/lua/handling-errors.md"
+date: 2024-01-26 00:55:28.746706-07:00
+description: "La gestione degli errori nella programmazione riguarda l'anticipare\
+  \ l'inaspettato. \xC8 l'arte di pianificare per quando le cose non vanno come previsto\
+  \ cos\xEC\u2026"
+lastmod: 2024-02-18 23:08:56.017955
+model: gpt-4-1106-preview
+summary: "La gestione degli errori nella programmazione riguarda l'anticipare l'inaspettato.\
+  \ \xC8 l'arte di pianificare per quando le cose non vanno come previsto cos\xEC\u2026"
+title: Gestione degli errori
 ---
 
 {{< edit_this_page >}}

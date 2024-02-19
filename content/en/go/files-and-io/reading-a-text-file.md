@@ -1,12 +1,15 @@
 ---
-title:                "Reading a text file"
 aliases:
 - /en/go/reading-a-text-file/
-date:                  2024-02-03T17:50:07.560349-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Reading a text file"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/reading-a-text-file.md"
+date: 2024-02-03 17:50:07.560349-07:00
+description: "Reading a text file in Go involves accessing and retrieving content\
+  \ from a file stored on disk for processing or analysis. Programmers frequently\
+  \ perform\u2026"
+lastmod: 2024-02-18 23:09:10.614009
+model: gpt-4-0125-preview
+summary: "Reading a text file in Go involves accessing and retrieving content from\
+  \ a file stored on disk for processing or analysis. Programmers frequently perform\u2026"
+title: Reading a text file
 ---
 
 {{< edit_this_page >}}

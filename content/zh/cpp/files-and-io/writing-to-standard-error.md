@@ -1,14 +1,26 @@
 ---
-title:                "写入标准错误"
 aliases:
 - /zh/cpp/writing-to-standard-error/
-date:                  2024-02-03T19:32:43.915678-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "写入标准错误"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:43.915678-07:00
+description: "\u5728 C++ \u4E2D\u5199\u5165\u6807\u51C6\u9519\u8BEF\uFF08`stderr`\uFF09\
+  \u6D89\u53CA\u8F93\u51FA\u4E0E\u4E3B\u7A0B\u5E8F\u8F93\u51FA\u5206\u5F00\u7684\u9519\
+  \u8BEF\u6D88\u606F\u6216\u8BCA\u65AD\u4FE1\u606F\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\
+  \u505A\u662F\u4E3A\u4E86\u5C06\u9519\u8BEF\u5F15\u5BFC\u81F3\u4E0D\u540C\u7684\u6D41\
+  \uFF0C\u901A\u8FC7\u533A\u5206\u6B63\u5E38\u8F93\u51FA\u548C\u9519\u8BEF\u6D88\u606F\
+  \uFF0C\u4F7F\u5F97\u8C03\u8BD5\u548C\u9519\u8BEF\u5904\u7406\u66F4\u52A0\u5BB9\u6613\
+  \u3002"
+lastmod: 2024-02-18 23:08:59.419709
+model: gpt-4-0125-preview
+summary: "\u5728 C++ \u4E2D\u5199\u5165\u6807\u51C6\u9519\u8BEF\uFF08`stderr`\uFF09\
+  \u6D89\u53CA\u8F93\u51FA\u4E0E\u4E3B\u7A0B\u5E8F\u8F93\u51FA\u5206\u5F00\u7684\u9519\
+  \u8BEF\u6D88\u606F\u6216\u8BCA\u65AD\u4FE1\u606F\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\
+  \u505A\u662F\u4E3A\u4E86\u5C06\u9519\u8BEF\u5F15\u5BFC\u81F3\u4E0D\u540C\u7684\u6D41\
+  \uFF0C\u901A\u8FC7\u533A\u5206\u6B63\u5E38\u8F93\u51FA\u548C\u9519\u8BEF\u6D88\u606F\
+  \uFF0C\u4F7F\u5F97\u8C03\u8BD5\u548C\u9519\u8BEF\u5904\u7406\u66F4\u52A0\u5BB9\u6613\
+  \u3002"
+title: "\u5199\u5165\u6807\u51C6\u9519\u8BEF"
 ---
 
 {{< edit_this_page >}}

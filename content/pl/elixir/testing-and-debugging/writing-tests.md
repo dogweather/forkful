@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie testów"
 aliases:
 - /pl/elixir/writing-tests/
-date:                  2024-02-03T19:30:31.347116-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie testów"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:30:31.347116-07:00
+description: "Pisanie test\xF3w w Elixirze polega na tworzeniu zautomatyzowanych skrypt\xF3\
+  w w celu weryfikacji zachowania Twojego kodu. Programi\u015Bci robi\u0105 to, aby\
+  \ zapewni\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.309412
+model: gpt-4-0125-preview
+summary: "Pisanie test\xF3w w Elixirze polega na tworzeniu zautomatyzowanych skrypt\xF3\
+  w w celu weryfikacji zachowania Twojego kodu. Programi\u015Bci robi\u0105 to, aby\
+  \ zapewni\u0107\u2026"
+title: "Pisanie test\xF3w"
 ---
 
 {{< edit_this_page >}}

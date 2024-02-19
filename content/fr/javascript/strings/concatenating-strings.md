@@ -1,13 +1,16 @@
 ---
-title:                "Concaténation de chaînes de caractères"
 aliases:
 - /fr/javascript/concatenating-strings/
-date:                  2024-01-20T17:35:24.579938-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concaténation de chaînes de caractères"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/concatenating-strings.md"
+date: 2024-01-20 17:35:24.579938-07:00
+description: "La concat\xE9nation de cha\xEEnes est le processus de raccordement de\
+  \ deux cha\xEEnes de texte ou plus en une seule. Les programmeurs le font pour construire\
+  \ des\u2026"
+lastmod: 2024-02-18 23:09:09.246817
+model: gpt-4-1106-preview
+summary: "La concat\xE9nation de cha\xEEnes est le processus de raccordement de deux\
+  \ cha\xEEnes de texte ou plus en une seule. Les programmeurs le font pour construire\
+  \ des\u2026"
+title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

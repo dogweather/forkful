@@ -1,13 +1,14 @@
 ---
-title:                "Enviando una solicitud http"
 aliases:
 - /es/python/sending-an-http-request/
-date:                  2024-01-20T18:00:13.264394-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando una solicitud http"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/sending-an-http-request.md"
+date: 2024-01-20 18:00:13.264394-07:00
+description: "Enviar una solicitud HTTP significa pedirle algo a un servidor web.\
+  \ Programadores hacen esto para interactuar con APIs, descargar archivos o comunicarse\u2026"
+lastmod: 2024-02-18 23:09:09.552779
+model: gpt-4-1106-preview
+summary: "Enviar una solicitud HTTP significa pedirle algo a un servidor web. Programadores\
+  \ hacen esto para interactuar con APIs, descargar archivos o comunicarse\u2026"
+title: Enviando una solicitud http
 ---
 
 {{< edit_this_page >}}

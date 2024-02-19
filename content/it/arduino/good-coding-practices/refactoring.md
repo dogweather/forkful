@@ -1,13 +1,15 @@
 ---
-title:                "Rifattorizzazione"
 aliases:
 - /it/arduino/refactoring/
-date:                  2024-01-26T01:16:42.936876-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rifattorizzazione"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/refactoring.md"
+date: 2024-01-26 01:16:42.936876-07:00
+description: "Il refactoring \xE8 il processo di rielaborazione del tuo codice per\
+  \ migliorarne la struttura e la leggibilit\xE0 senza alterare il comportamento esterno\
+  \ o la\u2026"
+lastmod: 2024-02-18 23:08:56.141230
+model: gpt-4-0125-preview
+summary: "Il refactoring \xE8 il processo di rielaborazione del tuo codice per migliorarne\
+  \ la struttura e la leggibilit\xE0 senza alterare il comportamento esterno o la\u2026"
+title: Rifattorizzazione
 ---
 
 {{< edit_this_page >}}

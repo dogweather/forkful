@@ -1,13 +1,16 @@
 ---
-title:                "Zeichenketten verketten"
 aliases:
 - /de/elixir/concatenating-strings/
-date:                  2024-01-27T10:42:51.247593-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zeichenketten verketten"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/concatenating-strings.md"
+date: 2024-01-27 10:42:51.247593-07:00
+description: "Das Verketten von Zeichenketten bedeutet, zwei oder mehr Strings zu\
+  \ einem einzigen Textst\xFCck zusammenzuf\xFChren. Du m\xF6chtest eventuell Texte\
+  \ zusammenf\xFChren,\u2026"
+lastmod: 2024-02-18 23:09:04.543250
+model: gpt-4-0125-preview
+summary: "Das Verketten von Zeichenketten bedeutet, zwei oder mehr Strings zu einem\
+  \ einzigen Textst\xFCck zusammenzuf\xFChren. Du m\xF6chtest eventuell Texte zusammenf\xFC\
+  hren,\u2026"
+title: Zeichenketten verketten
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,30 @@
 ---
-title:                "문자열에서 날짜 분석하기"
 aliases:
 - /ko/clojure/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:13:57.430297-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열에서 날짜 분석하기"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:13:57.430297-07:00
+description: "\uD074\uB85C\uC800\uC5D0\uC11C \uBB38\uC790\uC5F4\uB85C\uBD80\uD130\
+  \ \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD558\uB294 \uAC83\uC740 \uB0A0\uC9DC\uC640 \uC2DC\
+  \uAC04\uC758 \uD14D\uC2A4\uD2B8 \uD45C\uD604\uC744 \uB354 \uC0AC\uC6A9\uD558\uAE30\
+  \ \uC88B\uC740 \uD615\uD0DC(\uC608: \uD074\uB85C\uC800\uC758 DateTime \uAC1D\uCCB4\
+  )\uB85C \uBCC0\uD658\uD558\uB294 \uAC83\uC5D0 \uB300\uD55C \uAC83\uC785\uB2C8\uB2E4\
+  . \uC774 \uACFC\uC815\uC740 \uB370\uC774\uD130 \uCC98\uB9AC, \uB85C\uAE45 \uB610\
+  \uB294 \uC2DC\uAC04 \uB370\uC774\uD130\uB97C \uC870\uC791\uD558\uB294 \uBAA8\uB4E0\
+  \ \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC5D0 \uC788\uC5B4 \uAE30\uBCF8\uC801\uC774\
+  \uBA70, \uD504\uB85C\uADF8\uB798\uBA38\uAC00\u2026"
+lastmod: 2024-02-18 23:09:05.705026
+model: gpt-4-0125-preview
+summary: "\uD074\uB85C\uC800\uC5D0\uC11C \uBB38\uC790\uC5F4\uB85C\uBD80\uD130 \uB0A0\
+  \uC9DC\uB97C \uD30C\uC2F1\uD558\uB294 \uAC83\uC740 \uB0A0\uC9DC\uC640 \uC2DC\uAC04\
+  \uC758 \uD14D\uC2A4\uD2B8 \uD45C\uD604\uC744 \uB354 \uC0AC\uC6A9\uD558\uAE30 \uC88B\
+  \uC740 \uD615\uD0DC(\uC608: \uD074\uB85C\uC800\uC758 DateTime \uAC1D\uCCB4)\uB85C\
+  \ \uBCC0\uD658\uD558\uB294 \uAC83\uC5D0 \uB300\uD55C \uAC83\uC785\uB2C8\uB2E4. \uC774\
+  \ \uACFC\uC815\uC740 \uB370\uC774\uD130 \uCC98\uB9AC, \uB85C\uAE45 \uB610\uB294\
+  \ \uC2DC\uAC04 \uB370\uC774\uD130\uB97C \uC870\uC791\uD558\uB294 \uBAA8\uB4E0 \uC560\
+  \uD50C\uB9AC\uCF00\uC774\uC158\uC5D0 \uC788\uC5B4 \uAE30\uBCF8\uC801\uC774\uBA70\
+  , \uD504\uB85C\uADF8\uB798\uBA38\uAC00\u2026"
+title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uBD84\uC11D\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

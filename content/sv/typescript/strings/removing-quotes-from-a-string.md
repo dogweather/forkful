@@ -1,13 +1,16 @@
 ---
-title:                "Ta bort citattecken från en sträng"
 aliases:
 - /sv/typescript/removing-quotes-from-a-string/
-date:                  2024-01-26T03:42:30.128781-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ta bort citattecken från en sträng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:42:30.128781-07:00
+description: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man tar\
+  \ bort de omgivande enkla (`'`) eller dubbla (`\"`) citattecknen som definierar\
+  \ str\xE4nglitteraler i\u2026"
+lastmod: 2024-02-18 23:08:51.532102
+model: gpt-4-0125-preview
+summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man tar bort\
+  \ de omgivande enkla (`'`) eller dubbla (`\"`) citattecknen som definierar str\xE4\
+  nglitteraler i\u2026"
+title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

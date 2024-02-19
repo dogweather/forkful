@@ -1,14 +1,18 @@
 ---
-title:                "Rechercher et remplacer du texte"
 aliases:
 - /fr/c/searching-and-replacing-text/
-date:                  2024-02-03T18:08:11.461639-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rechercher et remplacer du texte"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:11.461639-07:00
+description: "La recherche et le remplacement de texte en C consiste \xE0 identifier\
+  \ des sous-cha\xEEnes sp\xE9cifiques au sein d'une cha\xEEne plus grande et \xE0\
+  \ les substituer par\u2026"
+lastmod: 2024-02-18 23:09:09.337029
+model: gpt-4-0125-preview
+summary: "La recherche et le remplacement de texte en C consiste \xE0 identifier des\
+  \ sous-cha\xEEnes sp\xE9cifiques au sein d'une cha\xEEne plus grande et \xE0 les\
+  \ substituer par\u2026"
+title: Rechercher et remplacer du texte
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Concaténation de chaînes"
 aliases:
 - /fr/go/concatenating-strings/
-date:                  2024-02-03T17:53:55.306351-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Concaténation de chaînes"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/concatenating-strings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:55.306351-07:00
+description: "La concat\xE9nation de cha\xEEnes implique de joindre deux cha\xEEnes\
+  \ ou plus bout \xE0 bout pour former une nouvelle cha\xEEne. Les programmeurs font\
+  \ cela pour g\xE9n\xE9rer\u2026"
+lastmod: 2024-02-18 23:09:08.222185
+model: gpt-4-0125-preview
+summary: "La concat\xE9nation de cha\xEEnes implique de joindre deux cha\xEEnes ou\
+  \ plus bout \xE0 bout pour former une nouvelle cha\xEEne. Les programmeurs font\
+  \ cela pour g\xE9n\xE9rer\u2026"
+title: "Concat\xE9nation de cha\xEEnes"
 ---
 
 {{< edit_this_page >}}

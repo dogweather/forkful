@@ -1,14 +1,18 @@
 ---
-title:                "Skrive en tekstfil"
 aliases:
 - /no/c/writing-a-text-file/
-date:                  2024-02-03T18:14:30.887939-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skrive en tekstfil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:14:30.887939-07:00
+description: "\xC5 skrive en tekstfil i C inneb\xE6rer \xE5 opprette eller \xE5pne\
+  \ en fil i skrivemodus og deretter bruke Cs fil-I/O-funksjoner for \xE5 lagre tekstdata\
+  \ i den.\u2026"
+lastmod: 2024-02-18 23:08:54.413239
+model: gpt-4-0125-preview
+summary: "\xC5 skrive en tekstfil i C inneb\xE6rer \xE5 opprette eller \xE5pne en\
+  \ fil i skrivemodus og deretter bruke Cs fil-I/O-funksjoner for \xE5 lagre tekstdata\
+  \ i den.\u2026"
+title: Skrive en tekstfil
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,22 @@
 ---
-title:                "解析HTML"
 aliases:
 - /zh/elm/parsing-html/
-date:                  2024-02-03T19:12:04.831794-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "解析HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:04.831794-07:00
+description: "\u5728Elm\u4E2D\u89E3\u6790HTML\u6D89\u53CA\u4ECEHTML\u6587\u6863\u4E2D\
+  \u63D0\u53D6\u4FE1\u606F\u3002\u7A0B\u5E8F\u5458\u4E4B\u6240\u4EE5\u8FD9\u4E48\u505A\
+  \uFF0C\u662F\u4E3A\u4E86\u4E0E\u8FD4\u56DEHTML\u7684\u7F51\u7EDC\u5185\u5BB9\u6216\
+  API\u63A5\u53E3\u8FDB\u884C\u4EA4\u4E92\uFF0C\u4ECE\u800C\u521B\u9020\u51FA\u66F4\
+  \u52A0\u4E92\u52A8\u548C\u52A8\u6001\u7684\u7F51\u7EDC\u5E94\u7528\u7A0B\u5E8F\u3002"
+lastmod: 2024-02-18 23:08:59.056556
+model: gpt-4-0125-preview
+summary: "\u5728Elm\u4E2D\u89E3\u6790HTML\u6D89\u53CA\u4ECEHTML\u6587\u6863\u4E2D\u63D0\
+  \u53D6\u4FE1\u606F\u3002\u7A0B\u5E8F\u5458\u4E4B\u6240\u4EE5\u8FD9\u4E48\u505A\uFF0C\
+  \u662F\u4E3A\u4E86\u4E0E\u8FD4\u56DEHTML\u7684\u7F51\u7EDC\u5185\u5BB9\u6216API\u63A5\
+  \u53E3\u8FDB\u884C\u4EA4\u4E92\uFF0C\u4ECE\u800C\u521B\u9020\u51FA\u66F4\u52A0\u4E92\
+  \u52A8\u548C\u52A8\u6001\u7684\u7F51\u7EDC\u5E94\u7528\u7A0B\u5E8F\u3002"
+title: "\u89E3\u6790HTML"
 ---
 
 {{< edit_this_page >}}

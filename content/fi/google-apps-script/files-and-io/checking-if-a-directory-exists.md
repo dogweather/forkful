@@ -1,14 +1,18 @@
 ---
-title:                "Tarkistetaan, onko hakemisto olemassa"
 aliases:
 - /fi/google-apps-script/checking-if-a-directory-exists/
-date:                  2024-02-01T21:48:53.557304-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tarkistetaan, onko hakemisto olemassa"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:48:53.557304-07:00
+description: "Hakemiston olemassaolon tarkistaminen Google Apps Scriptill\xE4 tarkoittaa\
+  \ kansion olemassaolon varmistamista Google Drivess\xE4. Ohjelmoijat suorittavat\
+  \ usein\u2026"
+lastmod: 2024-02-18 23:09:07.152963
+model: gpt-4-0125-preview
+summary: "Hakemiston olemassaolon tarkistaminen Google Apps Scriptill\xE4 tarkoittaa\
+  \ kansion olemassaolon varmistamista Google Drivess\xE4. Ohjelmoijat suorittavat\
+  \ usein\u2026"
+title: Tarkistetaan, onko hakemisto olemassa
 ---
 
 {{< edit_this_page >}}

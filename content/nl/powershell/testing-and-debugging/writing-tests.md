@@ -1,15 +1,17 @@
 ---
-title:                "Tests Schrijven"
 aliases:
 - /nl/powershell/writing-tests/
-date:                  2024-01-28T22:13:26.716334-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tests Schrijven"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/powershell/writing-tests.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:13:26.716334-07:00
+description: "Het schrijven van tests in programmeren betekent het maken van scripts\
+  \ die controleren of je code correct werkt. Programmeurs doen dit om bugs vroeg\
+  \ op te\u2026"
+lastmod: 2024-02-18 23:09:02.095884
+model: gpt-4-0125-preview
+summary: "Het schrijven van tests in programmeren betekent het maken van scripts die\
+  \ controleren of je code correct werkt. Programmeurs doen dit om bugs vroeg op te\u2026"
+title: Tests Schrijven
 ---
 
 {{< edit_this_page >}}

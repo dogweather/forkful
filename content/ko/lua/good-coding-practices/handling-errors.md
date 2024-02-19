@@ -1,13 +1,20 @@
 ---
-title:                "에러 처리하기"
 aliases:
 - /ko/lua/handling-errors/
-date:                  2024-01-26T00:55:38.490123-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "에러 처리하기"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/lua/handling-errors.md"
+date: 2024-01-26 00:55:38.490123-07:00
+description: "\uCF54\uB529 \uC911 \uC624\uB958 \uCC98\uB9AC\uB294 \uC608\uAE30\uCE58\
+  \ \uBABB\uD55C \uC0C1\uD669\uC744 \uC608\uC0C1\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4\
+  . \uC774\uB294 \uD504\uB85C\uADF8\uB7A8\uC774 \uC6D0\uD65C\uD558\uAC8C \uC2E4\uD589\
+  \uB420 \uC218 \uC788\uB3C4\uB85D \uC77C\uC774 \uC798\uBABB\uB418\uC5C8\uC744 \uB54C\
+  \uB97C \uACC4\uD68D\uD558\uB294 \uC608\uC220\uC785\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.427849
+model: gpt-4-1106-preview
+summary: "\uCF54\uB529 \uC911 \uC624\uB958 \uCC98\uB9AC\uB294 \uC608\uAE30\uCE58 \uBABB\
+  \uD55C \uC0C1\uD669\uC744 \uC608\uC0C1\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uC774\
+  \uB294 \uD504\uB85C\uADF8\uB7A8\uC774 \uC6D0\uD65C\uD558\uAC8C \uC2E4\uD589\uB420\
+  \ \uC218 \uC788\uB3C4\uB85D \uC77C\uC774 \uC798\uBABB\uB418\uC5C8\uC744 \uB54C\uB97C\
+  \ \uACC4\uD68D\uD558\uB294 \uC608\uC220\uC785\uB2C8\uB2E4."
+title: "\uC5D0\uB7EC \uCC98\uB9AC\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

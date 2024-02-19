@@ -1,13 +1,15 @@
 ---
-title:                "Trabalhando com números complexos"
 aliases:
 - /pt/bash/working-with-complex-numbers/
-date:                  2024-01-26T04:36:59.125319-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com números complexos"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/working-with-complex-numbers.md"
+date: 2024-01-26 04:36:59.125319-07:00
+description: "N\xFAmeros complexos consistem de uma parte real e uma imagin\xE1ria.\
+  \ Programadores os utilizam em campos como processamento de sinal, mec\xE2nica qu\xE2\
+  ntica, e\u2026"
+lastmod: 2024-02-18 23:08:58.317510
+model: gpt-4-0125-preview
+summary: "N\xFAmeros complexos consistem de uma parte real e uma imagin\xE1ria. Programadores\
+  \ os utilizam em campos como processamento de sinal, mec\xE2nica qu\xE2ntica, e\u2026"
+title: "Trabalhando com n\xFAmeros complexos"
 ---
 
 {{< edit_this_page >}}

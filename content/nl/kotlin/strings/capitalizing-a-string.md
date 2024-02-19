@@ -1,15 +1,18 @@
 ---
-title:                "Een string met hoofdletters maken"
 aliases:
 - /nl/kotlin/capitalizing-a-string/
-date:                  2024-01-28T21:56:24.574599-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string met hoofdletters maken"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/kotlin/capitalizing-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:24.574599-07:00
+description: "Een string met een hoofdletter laten beginnen betekent dat je de eerste\
+  \ letter van elk woord omzet naar een hoofdletter. Programmeurs doen dit om tekst\
+  \ te\u2026"
+lastmod: 2024-02-18 23:09:01.786899
+model: gpt-4-0125-preview
+summary: "Een string met een hoofdletter laten beginnen betekent dat je de eerste\
+  \ letter van elk woord omzet naar een hoofdletter. Programmeurs doen dit om tekst\
+  \ te\u2026"
+title: Een string met hoofdletters maken
 ---
 
 {{< edit_this_page >}}

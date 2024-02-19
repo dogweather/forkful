@@ -1,15 +1,16 @@
 ---
-title:                "Werken met CSV"
 aliases:
 - /nl/kotlin/working-with-csv/
-date:                  2024-01-28T22:10:08.224727-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met CSV"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/kotlin/working-with-csv.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:08.224727-07:00
+description: "Werken met CSV (Comma-Separated Values oftewel door komma's gescheiden\
+  \ waarden) betreft het lezen en schrijven van gegevens in een tekstformaat waarbij\u2026"
+lastmod: 2024-02-18 23:09:01.830386
+model: gpt-4-0125-preview
+summary: "Werken met CSV (Comma-Separated Values oftewel door komma's gescheiden waarden)\
+  \ betreft het lezen en schrijven van gegevens in een tekstformaat waarbij\u2026"
+title: Werken met CSV
 ---
 
 {{< edit_this_page >}}

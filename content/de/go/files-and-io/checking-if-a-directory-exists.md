@@ -1,14 +1,18 @@
 ---
-title:                "Überprüfen, ob ein Verzeichnis existiert"
 aliases:
 - /de/go/checking-if-a-directory-exists/
-date:                  2024-02-03T17:52:35.244611-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:52:35.244611-07:00
+description: "Die \xDCberpr\xFCfung, ob ein Verzeichnis in Go existiert, ist kritisch\
+  \ f\xFCr Anwendungen, die mit dem Dateisystem interagieren, um Fehler beim Versuch\
+  \ des\u2026"
+lastmod: 2024-02-18 23:09:04.380432
+model: gpt-4-0125-preview
+summary: "Die \xDCberpr\xFCfung, ob ein Verzeichnis in Go existiert, ist kritisch\
+  \ f\xFCr Anwendungen, die mit dem Dateisystem interagieren, um Fehler beim Versuch\
+  \ des\u2026"
+title: "\xDCberpr\xFCfen, ob ein Verzeichnis existiert"
 ---
 
 {{< edit_this_page >}}

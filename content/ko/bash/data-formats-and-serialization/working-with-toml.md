@@ -1,13 +1,24 @@
 ---
-title:                "프로그래머를 위한 TOML 다루기"
 aliases:
 - /ko/bash/working-with-toml/
-date:                  2024-01-26T04:19:20.101511-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "프로그래머를 위한 TOML 다루기"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/working-with-toml.md"
+date: 2024-01-26 04:19:20.101511-07:00
+description: "TOML\uC740 Tom's Obvious, Minimal Language\uC758 \uC57D\uC790\uB85C\
+  , \uB370\uC774\uD130 \uC9C1\uB82C\uD654 \uD615\uC2DD\uC785\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC740 \uADF8\uAC83\uC758 \uB2E8\uC21C\uD568\uACFC \uAC00\
+  \uB3C5\uC131 \uB54C\uBB38\uC5D0 \uC120\uD638\uD558\uB294\uB370; \uC124\uC815 \uD30C\
+  \uC77C\uC5D0 \uC544\uC8FC \uC801\uD569\uD558\uBA70, YAML\uACFC \uBE44\uC2B7\uD55C\
+  \ \uB290\uB08C\uC774\uC9C0\uB9CC \uC0AC\uB78C\uC774 \uBCF4\uAE30\uC5D0\uB294 JSON\uBCF4\
+  \uB2E4 \uB35C \uBC88\uAC70\uB86D\uC2B5\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.522241
+model: gpt-4-0125-preview
+summary: "TOML\uC740 Tom's Obvious, Minimal Language\uC758 \uC57D\uC790\uB85C, \uB370\
+  \uC774\uD130 \uC9C1\uB82C\uD654 \uD615\uC2DD\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC740 \uADF8\uAC83\uC758 \uB2E8\uC21C\uD568\uACFC \uAC00\uB3C5\
+  \uC131 \uB54C\uBB38\uC5D0 \uC120\uD638\uD558\uB294\uB370; \uC124\uC815 \uD30C\uC77C\
+  \uC5D0 \uC544\uC8FC \uC801\uD569\uD558\uBA70, YAML\uACFC \uBE44\uC2B7\uD55C \uB290\
+  \uB08C\uC774\uC9C0\uB9CC \uC0AC\uB78C\uC774 \uBCF4\uAE30\uC5D0\uB294 JSON\uBCF4\uB2E4\
+  \ \uB35C \uBC88\uAC70\uB86D\uC2B5\uB2C8\uB2E4."
+title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE30"
 ---
 
 {{< edit_this_page >}}

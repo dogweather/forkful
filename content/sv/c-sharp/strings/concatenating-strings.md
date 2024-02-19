@@ -1,13 +1,16 @@
 ---
-title:                "Sammanslagning av strängar"
 aliases:
 - /sv/c-sharp/concatenating-strings/
-date:                  2024-01-20T17:34:47.036014-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammanslagning av strängar"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/concatenating-strings.md"
+date: 2024-01-20 17:34:47.036014-07:00
+description: "Str\xE4ngsammanslagning i C# inneb\xE4r att sl\xE5 ihop tv\xE5 eller\
+  \ flera textstr\xE4ngar till en. Programmerare g\xF6r detta f\xF6r att bygga dynamiska\
+  \ meddelanden, skapa\u2026"
+lastmod: 2024-02-18 23:08:51.787383
+model: gpt-4-1106-preview
+summary: "Str\xE4ngsammanslagning i C# inneb\xE4r att sl\xE5 ihop tv\xE5 eller flera\
+  \ textstr\xE4ngar till en. Programmerare g\xF6r detta f\xF6r att bygga dynamiska\
+  \ meddelanden, skapa\u2026"
+title: "Sammanslagning av str\xE4ngar"
 ---
 
 {{< edit_this_page >}}

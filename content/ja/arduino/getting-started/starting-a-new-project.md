@@ -1,14 +1,23 @@
 ---
-title:                "新しいプロジェクトを始める"
 aliases:
 - /ja/arduino/starting-a-new-project/
-date:                  2024-01-20T18:02:41.124500-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "新しいプロジェクトを始める"
-
-tag:                  "Getting Started"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/starting-a-new-project.md"
+date: 2024-01-20 18:02:41.124500-07:00
+description: "\u65B0\u3057\u3044\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u59CB\u3081\
+  \u308B\u3063\u3066\u306E\u306F\u3001\u7A7A\u306E\u30B9\u30B1\u30C3\u30C1\u304B\u3089\
+  \u65B0\u3057\u3044\u30A2\u30A4\u30C7\u30A2\u3092\u73FE\u5B9F\u306B\u3059\u308B\u3053\
+  \u3068\u3060\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\u30AA\u30EA\u30B8\
+  \u30CA\u30EA\u30C6\u30A3\u3092\u767A\u63EE\u3057\u3001\u554F\u984C\u3092\u89E3\u6C7A\
+  \u3059\u308B\u305F\u3081\u306B\u3053\u308C\u3092\u884C\u3046\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.154372
+model: gpt-4-1106-preview
+summary: "\u65B0\u3057\u3044\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u59CB\u3081\
+  \u308B\u3063\u3066\u306E\u306F\u3001\u7A7A\u306E\u30B9\u30B1\u30C3\u30C1\u304B\u3089\
+  \u65B0\u3057\u3044\u30A2\u30A4\u30C7\u30A2\u3092\u73FE\u5B9F\u306B\u3059\u308B\u3053\
+  \u3068\u3060\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\u30AA\u30EA\u30B8\
+  \u30CA\u30EA\u30C6\u30A3\u3092\u767A\u63EE\u3057\u3001\u554F\u984C\u3092\u89E3\u6C7A\
+  \u3059\u308B\u305F\u3081\u306B\u3053\u308C\u3092\u884C\u3046\u3002"
+title: "\u65B0\u3057\u3044\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u59CB\u3081\u308B"
 ---
 
 {{< edit_this_page >}}

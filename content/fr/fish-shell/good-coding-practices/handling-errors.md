@@ -1,13 +1,16 @@
 ---
-title:                "Gestion des erreurs"
 aliases:
 - /fr/fish-shell/handling-errors/
-date:                  2024-01-26T00:52:14.006850-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Gestion des erreurs"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/handling-errors.md"
+date: 2024-01-26 00:52:14.006850-07:00
+description: "La gestion des erreurs permet \xE0 votre script de faire face de mani\xE8\
+  re \xE9l\xE9gante \xE0 l'inattendu. Nous le faisons pour g\xE9rer les \xE9checs\
+  \ sans donner des\u2026"
+lastmod: 2024-02-18 23:09:09.314164
+model: gpt-4-1106-preview
+summary: "La gestion des erreurs permet \xE0 votre script de faire face de mani\xE8\
+  re \xE9l\xE9gante \xE0 l'inattendu. Nous le faisons pour g\xE9rer les \xE9checs\
+  \ sans donner des\u2026"
+title: Gestion des erreurs
 ---
 
 {{< edit_this_page >}}

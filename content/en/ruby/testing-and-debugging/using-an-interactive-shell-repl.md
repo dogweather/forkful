@@ -1,13 +1,14 @@
 ---
-title:                "Using an interactive shell (REPL)"
 aliases:
 - /en/ruby/using-an-interactive-shell-repl/
-date:                  2024-01-25T03:39:37.470710-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Using an interactive shell (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/using-an-interactive-shell-repl.md"
+date: 2024-01-25 03:39:37.470710-07:00
+description: "An interactive shell, or REPL (Read-Eval-Print Loop), lets you test\
+  \ code in real time. Programmers use it to experiment, debug, and learn Ruby's nuances\u2026"
+lastmod: 2024-02-18 23:09:11.567553
+model: gpt-4-1106-preview
+summary: "An interactive shell, or REPL (Read-Eval-Print Loop), lets you test code\
+  \ in real time. Programmers use it to experiment, debug, and learn Ruby's nuances\u2026"
+title: Using an interactive shell (REPL)
 ---
 
 {{< edit_this_page >}}

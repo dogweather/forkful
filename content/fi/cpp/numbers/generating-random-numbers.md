@@ -1,13 +1,14 @@
 ---
-title:                "Satunnaislukujen generointi"
 aliases:
 - /fi/cpp/generating-random-numbers/
-date:                  2024-01-27T20:32:46.578452-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Satunnaislukujen generointi"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/generating-random-numbers.md"
+date: 2024-01-27 20:32:46.578452-07:00
+description: "Satunnaislukujen tuottaminen ohjelmoinnissa tarkoittaa numerosekvenssien\
+  \ luomista, joissa ei ole ennustettavaa j\xE4rjestyst\xE4 tai kaavaa. Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:07.939351
+model: gpt-4-0125-preview
+summary: "Satunnaislukujen tuottaminen ohjelmoinnissa tarkoittaa numerosekvenssien\
+  \ luomista, joissa ei ole ennustettavaa j\xE4rjestyst\xE4 tai kaavaa. Ohjelmoijat\u2026"
+title: Satunnaislukujen generointi
 ---
 
 {{< edit_this_page >}}

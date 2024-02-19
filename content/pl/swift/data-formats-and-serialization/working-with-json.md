@@ -1,12 +1,15 @@
 ---
-title:                "Praca z JSON"
 aliases:
 - /pl/swift/working-with-json/
-date:                  2024-01-19
-simple_title:         "Praca z JSON"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/working-with-json.md"
+date: 2024-01-19
+description: "Praca z JSON (JavaScript Object Notation) to podstawa dla wymiany danych\
+  \ w aplikacjach. Programi\u015Bci u\u017Cywaj\u0105 go, \u017Ceby \u0142atwo serwisy\
+  \ mog\u0142y si\u0119 \"dogadywa\u0107\" z\u2026"
+lastmod: 2024-02-18 23:08:49.973669
+summary: "Praca z JSON (JavaScript Object Notation) to podstawa dla wymiany danych\
+  \ w aplikacjach. Programi\u015Bci u\u017Cywaj\u0105 go, \u017Ceby \u0142atwo serwisy\
+  \ mog\u0142y si\u0119 \"dogadywa\u0107\" z\u2026"
+title: Praca z JSON
 ---
 
 {{< edit_this_page >}}

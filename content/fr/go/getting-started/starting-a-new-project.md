@@ -1,14 +1,17 @@
 ---
-title:                "Démarrer un nouveau projet"
 aliases:
 - /fr/go/starting-a-new-project/
-date:                  2024-02-03T18:09:25.888371-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Démarrer un nouveau projet"
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/starting-a-new-project.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:09:25.888371-07:00
+description: "Commencer un nouveau projet en Go implique de configurer un espace de\
+  \ travail et de l'initialiser avec les modules Go n\xE9cessaires. Les programmeurs\
+  \ font\u2026"
+lastmod: 2024-02-18 23:09:08.234541
+model: gpt-4-0125-preview
+summary: "Commencer un nouveau projet en Go implique de configurer un espace de travail\
+  \ et de l'initialiser avec les modules Go n\xE9cessaires. Les programmeurs font\u2026"
+title: "D\xE9marrer un nouveau projet"
 ---
 
 {{< edit_this_page >}}

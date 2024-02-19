@@ -1,15 +1,17 @@
 ---
-title:                "Uso de matrices asociativas"
 aliases:
 - /es/arduino/using-associative-arrays/
-date:                  2024-01-30T19:09:46.506280-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Uso de matrices asociativas"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:09:46.506280-07:00
+description: "En el mundo de Arduino, los arrays asociativos te permiten emparejar\
+  \ claves con valores, algo as\xED como emparejar\xEDas calcetines con sus pares.\
+  \ Son una\u2026"
+lastmod: 2024-02-18 23:09:10.253998
+model: gpt-4-0125-preview
+summary: "En el mundo de Arduino, los arrays asociativos te permiten emparejar claves\
+  \ con valores, algo as\xED como emparejar\xEDas calcetines con sus pares. Son una\u2026"
+title: Uso de matrices asociativas
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Merkkien poistaminen hakemalla osumia kaavaan"
 aliases:
 - /fi/arduino/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:35.654283-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:35.654283-07:00
+description: "Kun puhumme merkkien poistamisesta kuvioon pohjautuen, tarkoitamme tietynlaisen\
+  \ datan siivoamista sy\xF6tteest\xE4. Ohjelmoijat tekev\xE4t t\xE4t\xE4 datan\u2026"
+lastmod: 2024-02-18 23:09:07.883136
+model: gpt-4-1106-preview
+summary: "Kun puhumme merkkien poistamisesta kuvioon pohjautuen, tarkoitamme tietynlaisen\
+  \ datan siivoamista sy\xF6tteest\xE4. Ohjelmoijat tekev\xE4t t\xE4t\xE4 datan\u2026"
+title: Merkkien poistaminen hakemalla osumia kaavaan
 ---
 
 {{< edit_this_page >}}

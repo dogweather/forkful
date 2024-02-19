@@ -1,15 +1,16 @@
 ---
-title:                "Een debugger gebruiken"
 aliases:
 - /nl/kotlin/using-a-debugger/
-date:                  2024-01-28T22:08:37.222256-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een debugger gebruiken"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/kotlin/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:37.222256-07:00
+description: "Duiken in een debugger gaat helemaal over het doorlopen van je code,\
+  \ het bekijken van de draaiende radertjes en het op heterdaad betrappen van die\u2026"
+lastmod: 2024-02-18 23:09:01.810628
+model: gpt-4-0125-preview
+summary: "Duiken in een debugger gaat helemaal over het doorlopen van je code, het\
+  \ bekijken van de draaiende radertjes en het op heterdaad betrappen van die\u2026"
+title: Een debugger gebruiken
 ---
 
 {{< edit_this_page >}}

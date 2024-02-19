@@ -1,13 +1,14 @@
 ---
-title:                "Registro de Actividades en Programación"
 aliases:
 - /es/c-sharp/logging/
-date:                  2024-01-26T01:00:24.457971-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registro de Actividades en Programación"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/logging.md"
+date: 2024-01-26 01:00:24.457971-07:00
+description: "El registro (logging) es el proceso de grabar eventos de aplicaciones\
+  \ y salida de datos durante el tiempo de ejecuci\xF3n. Los programadores realizan\u2026"
+lastmod: 2024-02-18 23:09:09.989047
+model: gpt-4-1106-preview
+summary: "El registro (logging) es el proceso de grabar eventos de aplicaciones y\
+  \ salida de datos durante el tiempo de ejecuci\xF3n. Los programadores realizan\u2026"
+title: "Registro de Actividades en Programaci\xF3n"
 ---
 
 {{< edit_this_page >}}

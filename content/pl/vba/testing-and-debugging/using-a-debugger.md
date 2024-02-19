@@ -1,14 +1,16 @@
 ---
-title:                "Korzystanie z debuggera"
 aliases:
 - /pl/vba/using-a-debugger/
-date:                  2024-02-01T22:03:30.504801-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z debuggera"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/vba/using-a-debugger.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:30.504801-07:00
+description: "U\u017Cycie debugera w Visual Basic dla Aplikacji (VBA) polega na krokowym\
+  \ uruchamianiu kodu w celu inspekcji jego przep\u0142ywu wykonania i stan\xF3w zmiennych.\u2026"
+lastmod: 2024-02-18 23:08:49.438967
+model: gpt-4-0125-preview
+summary: "U\u017Cycie debugera w Visual Basic dla Aplikacji (VBA) polega na krokowym\
+  \ uruchamianiu kodu w celu inspekcji jego przep\u0142ywu wykonania i stan\xF3w zmiennych.\u2026"
+title: Korzystanie z debuggera
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Convertendo uma data em uma string"
 aliases:
 - /pt/python/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:22.990171-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Convertendo uma data em uma string"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:22.990171-07:00
+description: "Converter uma data para uma string significa transformar um objeto que\
+  \ representa datas e hor\xE1rios em texto leg\xEDvel por humanos. Programadores\
+  \ fazem isso\u2026"
+lastmod: 2024-02-18 23:08:57.772386
+model: gpt-4-1106-preview
+summary: "Converter uma data para uma string significa transformar um objeto que representa\
+  \ datas e hor\xE1rios em texto leg\xEDvel por humanos. Programadores fazem isso\u2026"
+title: Convertendo uma data em uma string
 ---
 
 {{< edit_this_page >}}

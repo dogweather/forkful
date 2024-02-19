@@ -1,13 +1,18 @@
 ---
-title:                "处理XML"
 aliases:
 - /zh/elm/working-with-xml/
-date:                  2024-01-26T04:30:55.749216-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/working-with-xml.md"
+date: 2024-01-26 04:30:55.749216-07:00
+description: "\u5904\u7406 XML \u610F\u5473\u7740\u5728 Elm \u4E2D\u89E3\u6790\u3001\
+  \u8F6C\u6362\u548C\u751F\u6210 XML \u6587\u6863\u3002\u8FD9\u6837\u505A\u662F\u4E3A\
+  \u4E86\u4E0E\u8BB8\u591A\u4F7F\u7528 XML \u4F5C\u4E3A\u6570\u636E\u683C\u5F0F\u7684\
+  \u7F51\u7EDC\u670D\u52A1\u548C\u9057\u7559\u7CFB\u7EDF\u8FDB\u884C\u4EA4\u4E92\u3002"
+lastmod: 2024-02-18 23:08:59.079446
+model: gpt-4-0125-preview
+summary: "\u5904\u7406 XML \u610F\u5473\u7740\u5728 Elm \u4E2D\u89E3\u6790\u3001\u8F6C\
+  \u6362\u548C\u751F\u6210 XML \u6587\u6863\u3002\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\
+  \u4E0E\u8BB8\u591A\u4F7F\u7528 XML \u4F5C\u4E3A\u6570\u636E\u683C\u5F0F\u7684\u7F51\
+  \u7EDC\u670D\u52A1\u548C\u9057\u7559\u7CFB\u7EDF\u8FDB\u884C\u4EA4\u4E92\u3002"
+title: "\u5904\u7406XML"
 ---
 
 {{< edit_this_page >}}

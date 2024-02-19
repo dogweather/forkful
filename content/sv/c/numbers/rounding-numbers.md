@@ -1,14 +1,18 @@
 ---
-title:                "Avrundning av nummer"
 aliases:
 - /sv/c/rounding-numbers/
-date:                  2024-02-03T18:07:52.650120-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Avrundning av nummer"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/rounding-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:52.650120-07:00
+description: "Avrundning av tal \xE4r processen att justera siffrorna i ett tal f\xF6\
+  r att minska dess precision enligt vissa regler, antingen mot det n\xE4rmaste hela\
+  \ talet\u2026"
+lastmod: 2024-02-18 23:08:52.244706
+model: gpt-4-0125-preview
+summary: "Avrundning av tal \xE4r processen att justera siffrorna i ett tal f\xF6\
+  r att minska dess precision enligt vissa regler, antingen mot det n\xE4rmaste hela\
+  \ talet\u2026"
+title: Avrundning av nummer
 ---
 
 {{< edit_this_page >}}

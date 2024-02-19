@@ -1,13 +1,16 @@
 ---
-title:                "Wysyłanie żądania HTTP"
 aliases:
 - /pl/rust/sending-an-http-request/
-date:                  2024-01-20T18:00:26.799250-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wysyłanie żądania HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/sending-an-http-request.md"
+date: 2024-01-20 18:00:26.799250-07:00
+description: "Wysy\u0142anie \u017C\u0105dania HTTP to po prostu pytanie, kt\xF3re\
+  \ komputer zadaje serwerowi w sieci. Programi\u015Bci robi\u0105 to, by pobra\u0107\
+  \ dane, wys\u0142a\u0107 informacje lub\u2026"
+lastmod: 2024-02-18 23:08:49.386957
+model: gpt-4-1106-preview
+summary: "Wysy\u0142anie \u017C\u0105dania HTTP to po prostu pytanie, kt\xF3re komputer\
+  \ zadaje serwerowi w sieci. Programi\u015Bci robi\u0105 to, by pobra\u0107 dane,\
+  \ wys\u0142a\u0107 informacje lub\u2026"
+title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 ---
 
 {{< edit_this_page >}}

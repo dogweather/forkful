@@ -1,13 +1,16 @@
 ---
-title:                "Lavorare con TOML"
 aliases:
 - /it/php/working-with-toml/
-date:                  2024-01-26T04:24:37.474126-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/php/working-with-toml.md"
+date: 2024-01-26 04:24:37.474126-07:00
+description: "TOML, abbreviazione di Tom's Obvious, Minimal Language, \xE8 un formato\
+  \ di dati simile a JSON o YAML, ma pi\xF9 facile da leggere per gli esseri umani.\
+  \ I\u2026"
+lastmod: 2024-02-18 23:08:55.993578
+model: gpt-4-0125-preview
+summary: "TOML, abbreviazione di Tom's Obvious, Minimal Language, \xE8 un formato\
+  \ di dati simile a JSON o YAML, ma pi\xF9 facile da leggere per gli esseri umani.\
+  \ I\u2026"
+title: Lavorare con TOML
 ---
 
 {{< edit_this_page >}}

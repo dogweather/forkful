@@ -1,13 +1,16 @@
 ---
-title:                "Använda en interaktiv skal (REPL)"
 aliases:
 - /sv/lua/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:16:25.460610-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Använda en interaktiv skal (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/lua/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:16:25.460610-07:00
+description: "REPL st\xE5r f\xF6r Read-Eval-Print Loop, en interaktiv milj\xF6 d\xE4\
+  r du snabbt kan testa kod. Programmerare anv\xE4nder den f\xF6r att experimentera,\
+  \ fels\xF6ka och l\xE4ra\u2026"
+lastmod: 2024-02-18 23:08:51.920169
+model: gpt-4-0125-preview
+summary: "REPL st\xE5r f\xF6r Read-Eval-Print Loop, en interaktiv milj\xF6 d\xE4r\
+  \ du snabbt kan testa kod. Programmerare anv\xE4nder den f\xF6r att experimentera,\
+  \ fels\xF6ka och l\xE4ra\u2026"
+title: "Anv\xE4nda en interaktiv skal (REPL)"
 ---
 
 {{< edit_this_page >}}

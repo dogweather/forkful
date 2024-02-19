@@ -1,14 +1,16 @@
 ---
-title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 aliases:
 - /fi/rust/capitalizing-a-string/
-date:                  2024-02-03T19:06:33.208382-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:33.208382-07:00
+description: "Merkkijonon ensimm\xE4isen kirjaimen muuttaminen suuraakkoseksi Rustissa\
+  \ tarkoittaa merkkijonon muokkaamista siten, ett\xE4 sen ensimm\xE4inen merkki muutetaan\u2026"
+lastmod: 2024-02-18 23:09:07.346151
+model: gpt-4-0125-preview
+summary: "Merkkijonon ensimm\xE4isen kirjaimen muuttaminen suuraakkoseksi Rustissa\
+  \ tarkoittaa merkkijonon muokkaamista siten, ett\xE4 sen ensimm\xE4inen merkki muutetaan\u2026"
+title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 ---
 
 {{< edit_this_page >}}

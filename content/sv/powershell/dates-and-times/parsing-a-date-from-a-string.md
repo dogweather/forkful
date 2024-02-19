@@ -1,14 +1,18 @@
 ---
-title:                "Analysera ett datum från en sträng"
 aliases:
 - /sv/powershell/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:15:05.334291-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analysera ett datum från en sträng"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:15:05.334291-07:00
+description: "Att tolka ett datum fr\xE5n en str\xE4ng handlar om att k\xE4nna igen\
+  \ och konvertera skrivna datum i textform till en datatyp som PowerShell kan f\xF6\
+  rst\xE5 och arbeta\u2026"
+lastmod: 2024-02-18 23:08:52.013006
+model: gpt-4-0125-preview
+summary: "Att tolka ett datum fr\xE5n en str\xE4ng handlar om att k\xE4nna igen och\
+  \ konvertera skrivna datum i textform till en datatyp som PowerShell kan f\xF6rst\xE5\
+  \ och arbeta\u2026"
+title: "Analysera ett datum fr\xE5n en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

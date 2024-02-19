@@ -1,13 +1,16 @@
 ---
-title:                "Att arbeta med XML"
 aliases:
 - /sv/lua/working-with-xml/
-date:                  2024-01-26T04:33:30.810392-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/lua/working-with-xml.md"
+date: 2024-01-26 04:33:30.810392-07:00
+description: "Att arbeta med XML inneb\xE4r att tolka och manipulera XML-dokument\
+  \ med hj\xE4lp av kod. Programmerare g\xF6r detta f\xF6r att l\xE4sa, skriva och\
+  \ \xE4ndra data i ett\u2026"
+lastmod: 2024-02-18 23:08:51.942133
+model: gpt-4-0125-preview
+summary: "Att arbeta med XML inneb\xE4r att tolka och manipulera XML-dokument med\
+  \ hj\xE4lp av kod. Programmerare g\xF6r detta f\xF6r att l\xE4sa, skriva och \xE4\
+  ndra data i ett\u2026"
+title: Att arbeta med XML
 ---
 
 {{< edit_this_page >}}

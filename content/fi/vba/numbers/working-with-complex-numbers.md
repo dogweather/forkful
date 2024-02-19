@@ -1,14 +1,18 @@
 ---
-title:                "Työskentely kompleksilukujen kanssa"
 aliases:
 - /fi/vba/working-with-complex-numbers/
-date:                  2024-02-01T22:08:07.871410-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely kompleksilukujen kanssa"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:08:07.871410-07:00
+description: "Kompleksilukujen k\xE4sittelyyn sis\xE4ltyy matemaattisten toimenpiteiden\
+  \ suorittaminen lukuihin, joilla on sek\xE4 reaaliosa ett\xE4 imagin\xE4\xE4riosa.\
+  \ Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:07.403491
+model: gpt-4-0125-preview
+summary: "Kompleksilukujen k\xE4sittelyyn sis\xE4ltyy matemaattisten toimenpiteiden\
+  \ suorittaminen lukuihin, joilla on sek\xE4 reaaliosa ett\xE4 imagin\xE4\xE4riosa.\
+  \ Ohjelmoijat\u2026"
+title: "Ty\xF6skentely kompleksilukujen kanssa"
 ---
 
 {{< edit_this_page >}}

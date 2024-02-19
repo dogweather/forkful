@@ -1,14 +1,18 @@
 ---
-title:                "Skriva till standardfel"
 aliases:
 - /sv/python/writing-to-standard-error/
-date:                  2024-02-03T19:34:24.297928-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriva till standardfel"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:34:24.297928-07:00
+description: "Att skriva till standardfel i Python handlar om att rikta ditt programs\
+  \ felmeddelanden eller diagnostik till felstr\xF6mmen (`stderr`), separat fr\xE5\
+  n\u2026"
+lastmod: 2024-02-18 23:08:51.437446
+model: gpt-4-0125-preview
+summary: "Att skriva till standardfel i Python handlar om att rikta ditt programs\
+  \ felmeddelanden eller diagnostik till felstr\xF6mmen (`stderr`), separat fr\xE5\
+  n\u2026"
+title: Skriva till standardfel
 ---
 
 {{< edit_this_page >}}

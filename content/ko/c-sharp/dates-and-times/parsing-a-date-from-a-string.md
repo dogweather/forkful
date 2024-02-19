@@ -1,14 +1,30 @@
 ---
-title:                "문자열에서 날짜 분석하기"
 aliases:
 - /ko/c-sharp/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:13:53.367889-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열에서 날짜 분석하기"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:13:53.367889-07:00
+description: "C#\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\
+  \uC2F1\uD558\uB294 \uAC83\uC740 \uB0A0\uC9DC\uC640 \uC2DC\uAC04\uC758 \uD14D\uC2A4\
+  \uD2B8 \uD45C\uD604\uC744 `DateTime` \uAC1D\uCCB4\uB85C \uBCC0\uD658\uD558\uB294\
+  \ \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uC774\uB294 \uB2E4\uC591\uD55C \uD615\
+  \uC2DD\uC73C\uB85C \uB0A0\uC9DC\uC640 \uC2DC\uAC04\uC744 \uC870\uC791, \uC800\uC7A5\
+  \ \uB610\uB294 \uD45C\uC2DC\uD574\uC57C \uD558\uB294 \uC560\uD50C\uB9AC\uCF00\uC774\
+  \uC158\uC5D0 \uD544\uC218\uC801\uC785\uB2C8\uB2E4. \uC608\uB97C \uB4E4\uC5B4 \uC2A4\
+  \uCF00\uC904\uB9C1 \uC571, \uB85C\uADF8 \uD504\uB85C\uC138\uC11C, \uC0AC\uC6A9\uC790\
+  \ \uB610\uB294\u2026"
+lastmod: 2024-02-18 23:09:06.234972
+model: gpt-4-0125-preview
+summary: "C#\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\
+  \uD558\uB294 \uAC83\uC740 \uB0A0\uC9DC\uC640 \uC2DC\uAC04\uC758 \uD14D\uC2A4\uD2B8\
+  \ \uD45C\uD604\uC744 `DateTime` \uAC1D\uCCB4\uB85C \uBCC0\uD658\uD558\uB294 \uAC83\
+  \uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uC774\uB294 \uB2E4\uC591\uD55C \uD615\uC2DD\
+  \uC73C\uB85C \uB0A0\uC9DC\uC640 \uC2DC\uAC04\uC744 \uC870\uC791, \uC800\uC7A5 \uB610\
+  \uB294 \uD45C\uC2DC\uD574\uC57C \uD558\uB294 \uC560\uD50C\uB9AC\uCF00\uC774\uC158\
+  \uC5D0 \uD544\uC218\uC801\uC785\uB2C8\uB2E4. \uC608\uB97C \uB4E4\uC5B4 \uC2A4\uCF00\
+  \uC904\uB9C1 \uC571, \uB85C\uADF8 \uD504\uB85C\uC138\uC11C, \uC0AC\uC6A9\uC790 \uB610\
+  \uB294\u2026"
+title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uBD84\uC11D\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

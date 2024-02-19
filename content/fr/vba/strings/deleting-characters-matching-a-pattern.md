@@ -1,14 +1,18 @@
 ---
-title:                "Suppression de caractères correspondant à un motif"
 aliases:
 - /fr/vba/deleting-characters-matching-a-pattern/
-date:                  2024-02-01T21:52:20.131109-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Suppression de caractères correspondant à un motif"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/vba/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:20.131109-07:00
+description: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
+  \ dans Visual Basic pour Applications (VBA) implique d'identifier et de supprimer\
+  \ ensuite\u2026"
+lastmod: 2024-02-18 23:09:08.558885
+model: gpt-4-0125-preview
+summary: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
+  \ dans Visual Basic pour Applications (VBA) implique d'identifier et de supprimer\
+  \ ensuite\u2026"
+title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Comparing two dates"
 aliases:
 - /en/elixir/comparing-two-dates/
-date:                  2024-01-20T17:32:29.550791-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Comparing two dates"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/comparing-two-dates.md"
+date: 2024-01-20 17:32:29.550791-07:00
+description: "Comparing two dates means checking if they're the same or determining\
+  \ which comes first or last. Programmers do this to handle events, schedule tasks,\u2026"
+lastmod: 2024-02-18 23:09:10.777830
+model: gpt-4-1106-preview
+summary: "Comparing two dates means checking if they're the same or determining which\
+  \ comes first or last. Programmers do this to handle events, schedule tasks,\u2026"
+title: Comparing two dates
 ---
 
 {{< edit_this_page >}}

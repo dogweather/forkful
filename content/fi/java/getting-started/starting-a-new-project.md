@@ -1,13 +1,15 @@
 ---
-title:                "Uuden projektin aloittaminen"
 aliases:
 - /fi/java/starting-a-new-project/
-date:                  2024-01-20T18:04:00.724342-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Uuden projektin aloittaminen"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/starting-a-new-project.md"
+date: 2024-01-20 18:04:00.724342-07:00
+description: "Aloittaa uuden projektin Java-ohjelmoinnissa tarkoittaa tyhj\xE4st\xE4\
+  \ aloittamista; uutta koodikantaa, uusia ideoita, uutta energiaa. Koodarit aloittavat\
+  \ uusia\u2026"
+lastmod: 2024-02-18 23:09:07.458876
+model: gpt-4-1106-preview
+summary: "Aloittaa uuden projektin Java-ohjelmoinnissa tarkoittaa tyhj\xE4st\xE4 aloittamista;\
+  \ uutta koodikantaa, uusia ideoita, uutta energiaa. Koodarit aloittavat uusia\u2026"
+title: Uuden projektin aloittaminen
 ---
 
 {{< edit_this_page >}}

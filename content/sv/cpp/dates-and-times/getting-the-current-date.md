@@ -1,14 +1,18 @@
 ---
-title:                "Få det aktuella datumet"
 aliases:
 - /sv/cpp/getting-the-current-date/
-date:                  2024-02-03T19:09:22.057613-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Få det aktuella datumet"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:09:22.057613-07:00
+description: "Att h\xE4mta det aktuella datumet i C++ \xE4r en grundl\xE4ggande uppgift\
+  \ f\xF6r program som beh\xF6ver bearbeta eller visa datum baserat p\xE5 systemets\
+  \ klocka. Det \xE4r\u2026"
+lastmod: 2024-02-18 23:08:52.093850
+model: gpt-4-0125-preview
+summary: "Att h\xE4mta det aktuella datumet i C++ \xE4r en grundl\xE4ggande uppgift\
+  \ f\xF6r program som beh\xF6ver bearbeta eller visa datum baserat p\xE5 systemets\
+  \ klocka. Det \xE4r\u2026"
+title: "F\xE5 det aktuella datumet"
 ---
 
 {{< edit_this_page >}}

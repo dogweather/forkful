@@ -1,14 +1,29 @@
 ---
-title:                "YAML के साथ काम करना"
 aliases:
 - /hi/rust/working-with-yaml/
-date:                  2024-02-03T19:27:36.081364-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "YAML के साथ काम करना"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/rust/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:36.081364-07:00
+description: "Rust \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902\
+  \u0917 \u092E\u0947\u0902, YAML (YAML Ain't Markup Language) \u0915\u0947 \u0938\
+  \u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\u093E YAML \u092A\u094D\u0930\
+  \u093E\u0930\u0942\u092A \u092E\u0947\u0902 \u0921\u0947\u091F\u093E \u092A\u093E\
+  \u0930\u094D\u0938\u093F\u0902\u0917 \u0914\u0930 \u091C\u0928\u0930\u0947\u091F\
+  \u093F\u0902\u0917 \u0915\u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902 \u0939\
+  \u0948, \u091C\u094B \u090F\u0915 \u092E\u093E\u0928\u0935-\u0905\u0928\u0941\u0915\
+  \u0942\u0932 \u0921\u0947\u091F\u093E\u2026"
+lastmod: 2024-02-18 23:09:02.994072
+model: gpt-4-0125-preview
+summary: "Rust \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902\u0917\
+  \ \u092E\u0947\u0902, YAML (YAML Ain't Markup Language) \u0915\u0947 \u0938\u093E\
+  \u0925 \u0915\u093E\u092E \u0915\u0930\u0928\u093E YAML \u092A\u094D\u0930\u093E\
+  \u0930\u0942\u092A \u092E\u0947\u0902 \u0921\u0947\u091F\u093E \u092A\u093E\u0930\
+  \u094D\u0938\u093F\u0902\u0917 \u0914\u0930 \u091C\u0928\u0930\u0947\u091F\u093F\
+  \u0902\u0917 \u0915\u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902 \u0939\u0948\
+  , \u091C\u094B \u090F\u0915 \u092E\u093E\u0928\u0935-\u0905\u0928\u0941\u0915\u0942\
+  \u0932 \u0921\u0947\u091F\u093E\u2026"
+title: "YAML \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\
+  \u093E"
 ---
 
 {{< edit_this_page >}}

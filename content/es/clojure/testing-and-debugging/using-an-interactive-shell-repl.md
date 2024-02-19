@@ -1,13 +1,16 @@
 ---
-title:                "Usando una shell interactiva (REPL)"
 aliases:
 - /es/clojure/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:12:44.751038-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando una shell interactiva (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:12:44.751038-07:00
+description: "REPL, o Bucle Leer-Evaluar-Imprimir, es un entorno de programaci\xF3\
+  n para probar din\xE1micamente c\xF3digo Clojure pieza por pieza. Los programadores\
+  \ lo utilizan\u2026"
+lastmod: 2024-02-18 23:09:09.604795
+model: gpt-4-0125-preview
+summary: "REPL, o Bucle Leer-Evaluar-Imprimir, es un entorno de programaci\xF3n para\
+  \ probar din\xE1micamente c\xF3digo Clojure pieza por pieza. Los programadores lo\
+  \ utilizan\u2026"
+title: Usando una shell interactiva (REPL)
 ---
 
 {{< edit_this_page >}}

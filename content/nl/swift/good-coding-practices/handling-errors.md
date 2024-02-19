@@ -1,15 +1,17 @@
 ---
-title:                "Fouten afhandelen"
 aliases:
 - /nl/swift/handling-errors/
-date:                  2024-01-28T22:01:46.196692-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Fouten afhandelen"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/swift/handling-errors.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:46.196692-07:00
+description: "Foutafhandeling in Swift betekent dat je anticipeert op en reageert\
+  \ op problemen die opduiken wanneer je code wordt uitgevoerd. We doen dit om de\
+  \ chaos te\u2026"
+lastmod: 2024-02-18 23:09:02.237548
+model: gpt-4-0125-preview
+summary: "Foutafhandeling in Swift betekent dat je anticipeert op en reageert op problemen\
+  \ die opduiken wanneer je code wordt uitgevoerd. We doen dit om de chaos te\u2026"
+title: Fouten afhandelen
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Descobrindo o comprimento de uma string"
 aliases:
 - /pt/clojure/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:17.968040-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Descobrindo o comprimento de uma string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:17.968040-07:00
+description: "Encontrar o comprimento de uma string significa descobrir quantos caracteres\
+  \ ela possui. Programadores fazem isso para validar entradas, manipular texto e\u2026"
+lastmod: 2024-02-18 23:08:57.793893
+model: gpt-4-1106-preview
+summary: "Encontrar o comprimento de uma string significa descobrir quantos caracteres\
+  \ ela possui. Programadores fazem isso para validar entradas, manipular texto e\u2026"
+title: Descobrindo o comprimento de uma string
 ---
 
 {{< edit_this_page >}}

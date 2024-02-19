@@ -1,13 +1,16 @@
 ---
-title:                "Lecture d'un fichier texte"
 aliases:
 - /fr/arduino/reading-a-text-file/
-date:                  2024-01-20T17:53:40.510256-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lecture d'un fichier texte"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/reading-a-text-file.md"
+date: 2024-01-20 17:53:40.510256-07:00
+description: "Lire un fichier texte, c'est r\xE9cup\xE9rer son contenu pour l'utiliser\
+  \ dans votre programme. Les programmeurs font \xE7a pour acc\xE9der aux donn\xE9\
+  es, configurer des\u2026"
+lastmod: 2024-02-18 23:09:09.133709
+model: gpt-4-1106-preview
+summary: "Lire un fichier texte, c'est r\xE9cup\xE9rer son contenu pour l'utiliser\
+  \ dans votre programme. Les programmeurs font \xE7a pour acc\xE9der aux donn\xE9\
+  es, configurer des\u2026"
+title: Lecture d'un fichier texte
 ---
 
 {{< edit_this_page >}}

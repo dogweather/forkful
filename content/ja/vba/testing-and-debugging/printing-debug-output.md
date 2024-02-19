@@ -1,14 +1,22 @@
 ---
-title:                "デバッグ出力の印刷"
 aliases:
 - /ja/vba/printing-debug-output/
-date:                  2024-02-01T21:58:49.619789-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "デバッグ出力の印刷"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/vba/printing-debug-output.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:49.619789-07:00
+description: "Visual Basic for Applications (VBA) \u3067\u30C7\u30D0\u30C3\u30B0\u51FA\
+  \u529B\u3092\u884C\u3046\u3068\u306F\u3001\u5909\u6570\u306E\u5024\u3001\u5B9F\u884C\
+  \u30D5\u30ED\u30FC\u3001\u307E\u305F\u306F\u30AB\u30B9\u30BF\u30E0\u30C7\u30D0\u30C3\
+  \u30B0\u30E1\u30C3\u30BB\u30FC\u30B8\u3092\u8868\u793A\u3059\u308B\u305F\u3081\u306B\
+  \u30B3\u30FC\u30C9\u5185\u306E\u6226\u7565\u7684\u306A\u4F4D\u7F6E\u306B print\u2026"
+lastmod: 2024-02-18 23:08:54.763295
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications (VBA) \u3067\u30C7\u30D0\u30C3\u30B0\u51FA\
+  \u529B\u3092\u884C\u3046\u3068\u306F\u3001\u5909\u6570\u306E\u5024\u3001\u5B9F\u884C\
+  \u30D5\u30ED\u30FC\u3001\u307E\u305F\u306F\u30AB\u30B9\u30BF\u30E0\u30C7\u30D0\u30C3\
+  \u30B0\u30E1\u30C3\u30BB\u30FC\u30B8\u3092\u8868\u793A\u3059\u308B\u305F\u3081\u306B\
+  \u30B3\u30FC\u30C9\u5185\u306E\u6226\u7565\u7684\u306A\u4F4D\u7F6E\u306B print\u2026"
+title: "\u30C7\u30D0\u30C3\u30B0\u51FA\u529B\u306E\u5370\u5237"
 ---
 
 {{< edit_this_page >}}

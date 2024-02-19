@@ -1,16 +1,18 @@
 ---
-title:                "Fouten afhandelen"
 aliases:
 - /nl/ruby/handling-errors/
-date:                  2024-01-28T22:01:36.860258-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Fouten afhandelen"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/handling-errors.md"
 changelog:
-  - 2024-01-21, dogweather, Reviewed for accuracy
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-21, dogweather, Reviewed for accuracy
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:36.860258-07:00
+description: "Foutafhandeling gaat over het verwachten van het onverwachte in code\
+  \ - fouten en problemen gracieus beheren zonder te crashen. Programmeurs doen dit\
+  \ om de\u2026"
+lastmod: 2024-02-18 23:09:02.430662
+model: gpt-4-0125-preview
+summary: "Foutafhandeling gaat over het verwachten van het onverwachte in code - fouten\
+  \ en problemen gracieus beheren zonder te crashen. Programmeurs doen dit om de\u2026"
+title: Fouten afhandelen
 ---
 
 {{< edit_this_page >}}

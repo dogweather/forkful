@@ -1,13 +1,12 @@
 ---
-title:                "Komennoriviparametrien lukeminen"
 aliases:
 - /fi/php/reading-command-line-arguments/
-date:                  2024-01-20T17:56:27.568862-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Komennoriviparametrien lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:27.568862-07:00
+description: '`'
+lastmod: 2024-02-18 23:09:07.728690
+model: gpt-4-1106-preview
+summary: '`'
+title: Komennoriviparametrien lukeminen
 ---
 
 {{< edit_this_page >}}

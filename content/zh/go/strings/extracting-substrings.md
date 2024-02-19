@@ -1,14 +1,22 @@
 ---
-title:                "提取子字符串"
 aliases:
 - /zh/go/extracting-substrings/
-date:                  2024-02-03T17:56:29.216353-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "提取子字符串"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/extracting-substrings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:29.216353-07:00
+description: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32\u6D89\u53CA\u57FA\u4E8E\u4F4D\u7F6E\
+  \u68C0\u7D22\u5B57\u7B26\u4E32\u7684\u7279\u5B9A\u90E8\u5206\u3002\u7A0B\u5E8F\u5458\
+  \u7ECF\u5E38\u6267\u884C\u6B64\u64CD\u4F5C\u4EE5\u9AD8\u6548\u5904\u7406\u6216\u64CD\
+  \u4F5C\u6587\u672C\u6570\u636E\uFF0C\u4F8B\u5982\u89E3\u6790\u8F93\u5165\u3001\u9A8C\
+  \u8BC1\u683C\u5F0F\u6216\u51C6\u5907\u8F93\u51FA\u3002"
+lastmod: 2024-02-18 23:08:58.697125
+model: gpt-4-0125-preview
+summary: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32\u6D89\u53CA\u57FA\u4E8E\u4F4D\u7F6E\
+  \u68C0\u7D22\u5B57\u7B26\u4E32\u7684\u7279\u5B9A\u90E8\u5206\u3002\u7A0B\u5E8F\u5458\
+  \u7ECF\u5E38\u6267\u884C\u6B64\u64CD\u4F5C\u4EE5\u9AD8\u6548\u5904\u7406\u6216\u64CD\
+  \u4F5C\u6587\u672C\u6570\u636E\uFF0C\u4F8B\u5982\u89E3\u6790\u8F93\u5165\u3001\u9A8C\
+  \u8BC1\u683C\u5F0F\u6216\u51C6\u5907\u8F93\u51FA\u3002"
+title: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32"
 ---
 
 {{< edit_this_page >}}

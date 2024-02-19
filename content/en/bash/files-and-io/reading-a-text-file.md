@@ -1,13 +1,14 @@
 ---
-title:                "Reading a text file"
 aliases:
 - /en/bash/reading-a-text-file/
-date:                  2024-01-20T17:53:45.419439-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Reading a text file"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/reading-a-text-file.md"
+date: 2024-01-20 17:53:45.419439-07:00
+description: "Reading a text file means getting the content from a file into your\
+  \ script. Programmers do it to work with data, configuration, or to automate systems\u2026"
+lastmod: 2024-02-18 23:09:11.247195
+model: gpt-4-1106-preview
+summary: "Reading a text file means getting the content from a file into your script.\
+  \ Programmers do it to work with data, configuration, or to automate systems\u2026"
+title: Reading a text file
 ---
 
 {{< edit_this_page >}}

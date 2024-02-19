@@ -1,14 +1,18 @@
 ---
-title:                "Skrive en tekstfil"
 aliases:
 - /no/powershell/writing-a-text-file/
-date:                  2024-02-03T19:29:32.331990-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skrive en tekstfil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/powershell/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:32.331990-07:00
+description: "\xC5 skrive en tekstfil i PowerShell inneb\xE6rer \xE5 opprette og manipulere\
+  \ tekstbaserte filer, som er en grunnleggende operasjon for logging, datalagring\
+  \ og\u2026"
+lastmod: 2024-02-18 23:08:54.118239
+model: gpt-4-0125-preview
+summary: "\xC5 skrive en tekstfil i PowerShell inneb\xE6rer \xE5 opprette og manipulere\
+  \ tekstbaserte filer, som er en grunnleggende operasjon for logging, datalagring\
+  \ og\u2026"
+title: Skrive en tekstfil
 ---
 
 {{< edit_this_page >}}

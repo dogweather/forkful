@@ -1,16 +1,27 @@
 ---
-title:                "HTMLのパース"
 aliases:
 - /ja/javascript/parsing-html/
-date:                  2024-01-28T03:00:57.304411-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTMLのパース"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/parsing-html.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 03:00:57.304411-07:00
+description: "HTML\u306E\u89E3\u6790\u3068\u306F\u3001HTML\u30C9\u30AD\u30E5\u30E1\
+  \u30F3\u30C8\u304B\u3089\u30C7\u30FC\u30BF\u3092\u62BD\u51FA\u3059\u308B\u3053\u3068\
+  \u3092\u610F\u5473\u3057\u307E\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\
+  \u3001\u30A6\u30A7\u30D6\u30B3\u30F3\u30C6\u30F3\u30C4\u3068\u306E\u5BFE\u8A71\u3084\
+  \u64CD\u4F5C\u3001\u30C7\u30FC\u30BF\u62BD\u51FA\u306E\u81EA\u52D5\u5316\u3001\u307E\
+  \u305F\u306F\u30A6\u30A7\u30D6\u30B9\u30AF\u30EC\u30A4\u30D4\u30F3\u30B0\u76EE\u7684\
+  \u3067\u3053\u308C\u3092\u884C\u3044\u307E\u3059\u3002"
+lastmod: 2024-02-18 23:08:55.267178
+model: gpt-4-0125-preview
+summary: "HTML\u306E\u89E3\u6790\u3068\u306F\u3001HTML\u30C9\u30AD\u30E5\u30E1\u30F3\
+  \u30C8\u304B\u3089\u30C7\u30FC\u30BF\u3092\u62BD\u51FA\u3059\u308B\u3053\u3068\u3092\
+  \u610F\u5473\u3057\u307E\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\
+  \u30A6\u30A7\u30D6\u30B3\u30F3\u30C6\u30F3\u30C4\u3068\u306E\u5BFE\u8A71\u3084\u64CD\
+  \u4F5C\u3001\u30C7\u30FC\u30BF\u62BD\u51FA\u306E\u81EA\u52D5\u5316\u3001\u307E\u305F\
+  \u306F\u30A6\u30A7\u30D6\u30B9\u30AF\u30EC\u30A4\u30D4\u30F3\u30B0\u76EE\u7684\u3067\
+  \u3053\u308C\u3092\u884C\u3044\u307E\u3059\u3002"
+title: "HTML\u306E\u30D1\u30FC\u30B9"
 ---
 
 {{< edit_this_page >}}

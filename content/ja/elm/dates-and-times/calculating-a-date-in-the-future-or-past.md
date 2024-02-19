@@ -1,14 +1,14 @@
 ---
-title:                "将来または過去の日付を計算する"
 aliases:
 - /ja/elm/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:31:11.728636-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "将来または過去の日付を計算する"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:31:11.728636-07:00
+description: ''
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:54.853393
+model: gpt-4-1106-preview
+summary: ''
+title: "\u5C06\u6765\u307E\u305F\u306F\u904E\u53BB\u306E\u65E5\u4ED8\u3092\u8A08\u7B97\
+  \u3059\u308B"
 ---
 
 {{< edit_this_page >}}

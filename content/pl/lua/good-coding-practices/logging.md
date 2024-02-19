@@ -1,13 +1,16 @@
 ---
-title:                "Rejestrowanie zdarzeń"
 aliases:
 - /pl/lua/logging/
-date:                  2024-01-26T01:06:42.766879-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rejestrowanie zdarzeń"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/logging.md"
+date: 2024-01-26 01:06:42.766879-07:00
+description: "Rejestrowanie (logging) to praktyka zapisywania zdarze\u0144, b\u0142\
+  \u0119d\xF3w i innych istotnych punkt\xF3w danych, kt\xF3re wyst\u0119puj\u0105\
+  \ w cyklu \u017Cycia aplikacji oprogramowania.\u2026"
+lastmod: 2024-02-18 23:08:49.746285
+model: gpt-4-1106-preview
+summary: "Rejestrowanie (logging) to praktyka zapisywania zdarze\u0144, b\u0142\u0119\
+  d\xF3w i innych istotnych punkt\xF3w danych, kt\xF3re wyst\u0119puj\u0105 w cyklu\
+  \ \u017Cycia aplikacji oprogramowania.\u2026"
+title: "Rejestrowanie zdarze\u0144"
 ---
 
 {{< edit_this_page >}}

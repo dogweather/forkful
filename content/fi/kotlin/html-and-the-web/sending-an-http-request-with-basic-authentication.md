@@ -1,13 +1,16 @@
 ---
-title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 aliases:
 - /fi/kotlin/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:01:51.988751-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:01:51.988751-07:00
+description: "HTTP-pyynt\xF6 perusautentikoinnilla sis\xE4lt\xE4\xE4 k\xE4ytt\xE4\
+  j\xE4nimen ja salasanan, joka l\xE4hetet\xE4\xE4n palvelimelle koodattuna. Ohjelmoijat\
+  \ k\xE4ytt\xE4v\xE4t t\xE4t\xE4 autentikoimaan\u2026"
+lastmod: 2024-02-18 23:09:07.574575
+model: gpt-4-1106-preview
+summary: "HTTP-pyynt\xF6 perusautentikoinnilla sis\xE4lt\xE4\xE4 k\xE4ytt\xE4j\xE4\
+  nimen ja salasanan, joka l\xE4hetet\xE4\xE4n palvelimelle koodattuna. Ohjelmoijat\
+  \ k\xE4ytt\xE4v\xE4t t\xE4t\xE4 autentikoimaan\u2026"
+title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 ---
 
 {{< edit_this_page >}}

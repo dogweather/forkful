@@ -1,13 +1,14 @@
 ---
-title:                "Concatenazione di stringhe"
 aliases:
 - /it/javascript/concatenating-strings/
-date:                  2024-01-20T17:35:18.132221-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenazione di stringhe"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/javascript/concatenating-strings.md"
+date: 2024-01-20 17:35:18.132221-07:00
+description: "La concatenazione di stringhe \xE8 la pratica di unire due o pi\xF9\
+  \ stringhe di testo in una sola. I programmatori la utilizzano per costruire messaggi,\u2026"
+lastmod: 2024-02-18 23:08:56.245027
+model: gpt-4-1106-preview
+summary: "La concatenazione di stringhe \xE8 la pratica di unire due o pi\xF9 stringhe\
+  \ di testo in una sola. I programmatori la utilizzano per costruire messaggi,\u2026"
+title: Concatenazione di stringhe
 ---
 
 {{< edit_this_page >}}

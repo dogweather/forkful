@@ -1,13 +1,14 @@
 ---
-title:                "Generazione di numeri casuali"
 aliases:
 - /it/cpp/generating-random-numbers/
-date:                  2024-01-27T20:33:27.611396-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generazione di numeri casuali"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/generating-random-numbers.md"
+date: 2024-01-27 20:33:27.611396-07:00
+description: "La generazione di numeri casuali nella programmazione comporta la creazione\
+  \ di sequenze di numeri che non presentano un ordine o un modello prevedibile. I\u2026"
+lastmod: 2024-02-18 23:08:56.168600
+model: gpt-4-0125-preview
+summary: "La generazione di numeri casuali nella programmazione comporta la creazione\
+  \ di sequenze di numeri che non presentano un ordine o un modello prevedibile. I\u2026"
+title: Generazione di numeri casuali
 ---
 
 {{< edit_this_page >}}

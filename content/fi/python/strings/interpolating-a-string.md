@@ -1,16 +1,19 @@
 ---
-title:                "Merkkijonon interpolointi"
 aliases:
 - /fi/python/interpolating-a-string/
-date:                  2024-01-28T21:24:07.519332-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonon interpolointi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/interpolating-a-string.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:24:07.519332-07:00
+description: "Merkkijonon interpolaatio on menetelm\xE4, jossa lausekkeita sis\xE4\
+  llytet\xE4\xE4n osaksi merkkijonoliteraaleja. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\
+  \ dynaamisesti arvojen\u2026"
+lastmod: 2024-02-18 23:09:07.168948
+model: gpt-4-0125-preview
+summary: "Merkkijonon interpolaatio on menetelm\xE4, jossa lausekkeita sis\xE4llytet\xE4\
+  \xE4n osaksi merkkijonoliteraaleja. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisesti\
+  \ arvojen\u2026"
+title: Merkkijonon interpolointi
 ---
 
 {{< edit_this_page >}}

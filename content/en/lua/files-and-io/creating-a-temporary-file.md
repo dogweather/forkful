@@ -1,13 +1,15 @@
 ---
-title:                "Creating a temporary file"
 aliases:
 - /en/lua/creating-a-temporary-file/
-date:                  2024-01-20T17:40:39.397491-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Creating a temporary file"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:39.397491-07:00
+description: "Creating a temporary file is the process of making a short-lived file\
+  \ to store data that's only needed during the execution of a program. Programmers\
+  \ do\u2026"
+lastmod: 2024-02-18 23:09:11.197517
+model: gpt-4-1106-preview
+summary: "Creating a temporary file is the process of making a short-lived file to\
+  \ store data that's only needed during the execution of a program. Programmers do\u2026"
+title: Creating a temporary file
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Conversione di una data in una stringa"
 aliases:
 - /it/java/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:02.938633-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Conversione di una data in una stringa"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/java/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:02.938633-07:00
+description: "Convertire una data in una stringa significa trasformare l'oggetto `Date`\
+  \ che rappresenta un momento preciso nel tempo in una sequenza di caratteri\u2026"
+lastmod: 2024-02-18 23:08:55.776563
+model: gpt-4-1106-preview
+summary: "Convertire una data in una stringa significa trasformare l'oggetto `Date`\
+  \ che rappresenta un momento preciso nel tempo in una sequenza di caratteri\u2026"
+title: Conversione di una data in una stringa
 ---
 
 {{< edit_this_page >}}

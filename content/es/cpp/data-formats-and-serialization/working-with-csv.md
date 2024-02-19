@@ -1,14 +1,18 @@
 ---
-title:                "Trabajando con CSV"
 aliases:
 - /es/cpp/working-with-csv/
-date:                  2024-02-03T19:19:00.274319-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:19:00.274319-07:00
+description: "Trabajar con archivos CSV (Valores Separados por Comas) se trata de\
+  \ procesar y manipular datos almacenados en un formato de texto simple, donde cada\
+  \ l\xEDnea\u2026"
+lastmod: 2024-02-18 23:09:10.336397
+model: gpt-4-0125-preview
+summary: "Trabajar con archivos CSV (Valores Separados por Comas) se trata de procesar\
+  \ y manipular datos almacenados en un formato de texto simple, donde cada l\xED\
+  nea\u2026"
+title: Trabajando con CSV
 ---
 
 {{< edit_this_page >}}

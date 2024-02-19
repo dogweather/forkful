@@ -1,13 +1,15 @@
 ---
-title:                "Convertendo uma data em uma string"
 aliases:
 - /pt/clojure/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:33.977152-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Convertendo uma data em uma string"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:33.977152-07:00
+description: "Converter uma data em uma string permite que voc\xEA a formate para\
+  \ visualiza\xE7\xE3o ou armazenamento. Os programadores frequentemente fazem isso\
+  \ para padronizar\u2026"
+lastmod: 2024-02-18 23:08:57.813988
+model: gpt-4-1106-preview
+summary: "Converter uma data em uma string permite que voc\xEA a formate para visualiza\xE7\
+  \xE3o ou armazenamento. Os programadores frequentemente fazem isso para padronizar\u2026"
+title: Convertendo uma data em uma string
 ---
 
 {{< edit_this_page >}}

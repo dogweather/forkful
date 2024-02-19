@@ -1,13 +1,14 @@
 ---
-title:                "Generazione di numeri casuali"
 aliases:
 - /it/bash/generating-random-numbers/
-date:                  2024-01-27T20:32:47.358841-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generazione di numeri casuali"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/generating-random-numbers.md"
+date: 2024-01-27 20:32:47.358841-07:00
+description: "Generare numeri casuali in Bash offre un modo per introdurre imprevedibilit\xE0\
+  \ negli script, fondamentale per compiti come generare password sicure,\u2026"
+lastmod: 2024-02-18 23:08:56.046531
+model: gpt-4-0125-preview
+summary: "Generare numeri casuali in Bash offre un modo per introdurre imprevedibilit\xE0\
+  \ negli script, fondamentale per compiti come generare password sicure,\u2026"
+title: Generazione di numeri casuali
 ---
 
 {{< edit_this_page >}}

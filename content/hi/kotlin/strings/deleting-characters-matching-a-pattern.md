@@ -1,13 +1,16 @@
 ---
-title:                "पैटर्न से मेल खाते अक्षरों को हटाना"
 aliases:
 - /hi/kotlin/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:30.709007-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "पैटर्न से मेल खाते अक्षरों को हटाना"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:30.709007-07:00
+description: "Pattern matching se hum kisi string mein se khas characters ya shabdon\
+  \ ko dhundhkar unhe hata sakte hain. Programmers iska use karte hain data ko saf\u2026"
+lastmod: 2024-02-18 23:09:03.239726
+model: gpt-4-1106-preview
+summary: "Pattern matching se hum kisi string mein se khas characters ya shabdon ko\
+  \ dhundhkar unhe hata sakte hain. Programmers iska use karte hain data ko saf\u2026"
+title: "\u092A\u0948\u091F\u0930\u094D\u0928 \u0938\u0947 \u092E\u0947\u0932 \u0916\
+  \u093E\u0924\u0947 \u0905\u0915\u094D\u0937\u0930\u094B\u0902 \u0915\u094B \u0939\
+  \u091F\u093E\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

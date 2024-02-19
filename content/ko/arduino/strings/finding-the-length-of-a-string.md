@@ -1,14 +1,27 @@
 ---
-title:                "문자열의 길이 찾기"
 aliases:
 - /ko/arduino/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:04.049974-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "문자열의 길이 찾기"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:04.049974-07:00
+description: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCC3E\uAE30\uB294 \uBB34\uC5C7\uC774\
+  \uACE0, \uC65C \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC774 \uC774\uAC83\uC744 \uD560\
+  \uAE4C? \uBB38\uC790\uC5F4 \uAE38\uC774 \uCC3E\uAE30\uB780, \uBB38\uC790\uB4E4\uC758\
+  \ \uC22B\uC790\uB97C \uC138\uB294 \uACFC\uC815\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC740 \uB370\uC774\uD130 \uCC98\uB9AC, \uC720\uD6A8\uC131 \uAC80\
+  \uC0AC, \uD639\uC740 \uD654\uBA74\uC5D0 \uD45C\uC2DC\uD558\uAE30 \uC804\uC5D0 \uBB38\
+  \uC790\uC5F4\uC758 \uD06C\uAE30\uB97C \uC54C\uC544\uC57C \uD560 \uB54C \uC774\uB97C\
+  \ \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.606144
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCC3E\uAE30\uB294 \uBB34\uC5C7\uC774\uACE0\
+  , \uC65C \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC774 \uC774\uAC83\uC744 \uD560\uAE4C\
+  ? \uBB38\uC790\uC5F4 \uAE38\uC774 \uCC3E\uAE30\uB780, \uBB38\uC790\uB4E4\uC758 \uC22B\
+  \uC790\uB97C \uC138\uB294 \uACFC\uC815\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uB370\uC774\uD130 \uCC98\uB9AC, \uC720\uD6A8\uC131 \uAC80\uC0AC\
+  , \uD639\uC740 \uD654\uBA74\uC5D0 \uD45C\uC2DC\uD558\uAE30 \uC804\uC5D0 \uBB38\uC790\
+  \uC5F4\uC758 \uD06C\uAE30\uB97C \uC54C\uC544\uC57C \uD560 \uB54C \uC774\uB97C \uC0AC\
+  \uC6A9\uD569\uB2C8\uB2E4."
+title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 ---
 
 {{< edit_this_page >}}

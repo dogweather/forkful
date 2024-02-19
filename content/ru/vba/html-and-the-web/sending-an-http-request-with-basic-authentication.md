@@ -1,14 +1,30 @@
 ---
-title:                "Отправка HTTP-запроса с базовой аутентификацией"
 aliases:
 - /ru/vba/sending-an-http-request-with-basic-authentication/
-date:                  2024-02-01T22:02:23.838871-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Отправка HTTP-запроса с базовой аутентификацией"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/vba/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:02:23.838871-07:00
+description: "\u041E\u0442\u043F\u0440\u0430\u0432\u043A\u0430 HTTP-\u0437\u0430\u043F\
+  \u0440\u043E\u0441\u0430 \u0441 \u0431\u0430\u0437\u043E\u0432\u043E\u0439 \u0430\
+  \u0443\u0442\u0435\u043D\u0442\u0438\u0444\u0438\u043A\u0430\u0446\u0438\u0435\u0439\
+  \ \u0432 Visual Basic for Applications (VBA) \u0441\u0432\u044F\u0437\u0430\u043D\
+  \u0430 \u0441 \u0434\u043E\u0441\u0442\u0443\u043F\u043E\u043C \u043A \u0432\u0435\
+  \u0431-\u0440\u0435\u0441\u0443\u0440\u0441\u0430\u043C, \u0437\u0430\u0449\u0438\
+  \u0449\u0435\u043D\u043D\u044B\u043C \u0441 \u043F\u043E\u043C\u043E\u0449\u044C\
+  \u044E \u0443\u0447\u0435\u0442\u043D\u044B\u0445\u2026"
+lastmod: 2024-02-18 23:08:56.786563
+model: gpt-4-0125-preview
+summary: "\u041E\u0442\u043F\u0440\u0430\u0432\u043A\u0430 HTTP-\u0437\u0430\u043F\
+  \u0440\u043E\u0441\u0430 \u0441 \u0431\u0430\u0437\u043E\u0432\u043E\u0439 \u0430\
+  \u0443\u0442\u0435\u043D\u0442\u0438\u0444\u0438\u043A\u0430\u0446\u0438\u0435\u0439\
+  \ \u0432 Visual Basic for Applications (VBA) \u0441\u0432\u044F\u0437\u0430\u043D\
+  \u0430 \u0441 \u0434\u043E\u0441\u0442\u0443\u043F\u043E\u043C \u043A \u0432\u0435\
+  \u0431-\u0440\u0435\u0441\u0443\u0440\u0441\u0430\u043C, \u0437\u0430\u0449\u0438\
+  \u0449\u0435\u043D\u043D\u044B\u043C \u0441 \u043F\u043E\u043C\u043E\u0449\u044C\
+  \u044E \u0443\u0447\u0435\u0442\u043D\u044B\u0445\u2026"
+title: "\u041E\u0442\u043F\u0440\u0430\u0432\u043A\u0430 HTTP-\u0437\u0430\u043F\u0440\
+  \u043E\u0441\u0430 \u0441 \u0431\u0430\u0437\u043E\u0432\u043E\u0439 \u0430\u0443\
+  \u0442\u0435\u043D\u0442\u0438\u0444\u0438\u043A\u0430\u0446\u0438\u0435\u0439"
 ---
 
 {{< edit_this_page >}}

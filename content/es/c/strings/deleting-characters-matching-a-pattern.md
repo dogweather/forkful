@@ -1,14 +1,18 @@
 ---
-title:                "Eliminando caracteres que coinciden con un patrón"
 aliases:
 - /es/c/deleting-characters-matching-a-pattern/
-date:                  2024-02-03T17:55:08.046152-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eliminando caracteres que coinciden con un patrón"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:08.046152-07:00
+description: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico de\
+  \ cadenas en C se trata de remover todas las instancias de ciertos caracteres que\
+  \ cumplen con\u2026"
+lastmod: 2024-02-18 23:09:10.482043
+model: gpt-4-0125-preview
+summary: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico de cadenas\
+  \ en C se trata de remover todas las instancias de ciertos caracteres que cumplen\
+  \ con\u2026"
+title: "Eliminando caracteres que coinciden con un patr\xF3n"
 ---
 
 {{< edit_this_page >}}

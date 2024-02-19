@@ -1,13 +1,16 @@
 ---
-title:                "Ta bort citattecken från en sträng"
 aliases:
 - /sv/haskell/removing-quotes-from-a-string/
-date:                  2024-01-26T03:39:54.534616-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ta bort citattecken från en sträng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:39:54.534616-07:00
+description: "Att ta bort citationstecken fr\xE5n en str\xE4ng inneb\xE4r att strippa\
+  \ bort alla citattecken\u2014enkla (' ') eller dubbla (\" \")\u2014som \xE4r en\
+  \ del av str\xE4ngdatan.\u2026"
+lastmod: 2024-02-18 23:08:51.825805
+model: gpt-4-0125-preview
+summary: "Att ta bort citationstecken fr\xE5n en str\xE4ng inneb\xE4r att strippa\
+  \ bort alla citattecken\u2014enkla (' ') eller dubbla (\" \")\u2014som \xE4r en\
+  \ del av str\xE4ngdatan.\u2026"
+title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Praca z TOML"
 aliases:
 - /pl/c/working-with-toml/
-date:                  2024-02-03T18:12:45.775556-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z TOML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/working-with-toml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:12:45.775556-07:00
+description: "TOML (Tom's Obvious, Minimal Language) to format pliku konfiguracyjnego,\
+  \ kt\xF3ry jest \u0142atwy do odczytania dzi\u0119ki swojej jasnej semantyce. Programi\u015B\
+  ci\u2026"
+lastmod: 2024-02-18 23:08:50.105245
+model: gpt-4-0125-preview
+summary: "TOML (Tom's Obvious, Minimal Language) to format pliku konfiguracyjnego,\
+  \ kt\xF3ry jest \u0142atwy do odczytania dzi\u0119ki swojej jasnej semantyce. Programi\u015B\
+  ci\u2026"
+title: Praca z TOML
 ---
 
 {{< edit_this_page >}}

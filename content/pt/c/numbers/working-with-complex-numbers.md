@@ -1,14 +1,16 @@
 ---
-title:                "Trabalhando com Números Complexos"
 aliases:
 - /pt/c/working-with-complex-numbers/
-date:                  2024-02-03T18:13:53.740793-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com Números Complexos"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:13:53.740793-07:00
+description: "N\xFAmeros complexos consistem em uma parte real e uma parte imagin\xE1\
+  ria, representados como `a + bi`, onde `i` \xE9 a raiz quadrada de `-1`. Programadores\u2026"
+lastmod: 2024-02-18 23:08:58.612394
+model: gpt-4-0125-preview
+summary: "N\xFAmeros complexos consistem em uma parte real e uma parte imagin\xE1\
+  ria, representados como `a + bi`, onde `i` \xE9 a raiz quadrada de `-1`. Programadores\u2026"
+title: "Trabalhando com N\xFAmeros Complexos"
 ---
 
 {{< edit_this_page >}}

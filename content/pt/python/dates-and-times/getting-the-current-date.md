@@ -1,14 +1,18 @@
 ---
-title:                "Obtendo a data atual"
 aliases:
 - /pt/python/getting-the-current-date/
-date:                  2024-02-03T19:10:27.091886-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Obtendo a data atual"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:10:27.091886-07:00
+description: "Buscar a data atual em Python \xE9 uma opera\xE7\xE3o fundamental para\
+  \ muitas aplica\xE7\xF5es, como registros (logging), an\xE1lise de dados e tomada\
+  \ de decis\xF5es baseadas\u2026"
+lastmod: 2024-02-18 23:08:57.771422
+model: gpt-4-0125-preview
+summary: "Buscar a data atual em Python \xE9 uma opera\xE7\xE3o fundamental para muitas\
+  \ aplica\xE7\xF5es, como registros (logging), an\xE1lise de dados e tomada de decis\xF5\
+  es baseadas\u2026"
+title: Obtendo a data atual
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Loggning"
 aliases:
 - /sv/elm/logging/
-date:                  2024-01-26T01:02:39.024845-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Loggning"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/logging.md"
+date: 2024-01-26 01:02:39.024845-07:00
+description: "Loggning \xE4r i grund och botten processen att spela in h\xE4ndelser\
+  \ och datautg\xE5ngar fr\xE5n en mjukvara n\xE4r den k\xF6rs, t\xE4nk p\xE5 det\
+  \ som mjukvarans dagbok.\u2026"
+lastmod: 2024-02-18 23:08:51.715718
+model: gpt-4-1106-preview
+summary: "Loggning \xE4r i grund och botten processen att spela in h\xE4ndelser och\
+  \ datautg\xE5ngar fr\xE5n en mjukvara n\xE4r den k\xF6rs, t\xE4nk p\xE5 det som\
+  \ mjukvarans dagbok.\u2026"
+title: Loggning
 ---
 
 {{< edit_this_page >}}

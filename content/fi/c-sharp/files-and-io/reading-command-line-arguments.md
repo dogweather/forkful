@@ -1,13 +1,16 @@
 ---
-title:                "Komennoriviparametrien lukeminen"
 aliases:
 - /fi/c-sharp/reading-command-line-arguments/
-date:                  2024-01-20T17:55:50.198939-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Komennoriviparametrien lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:50.198939-07:00
+description: "Komennoriviparametrien lukeminen on prosessi, jossa ohjelma ottaa sy\xF6\
+  tteen\xE4 argumentteja, jotka on annettu ohjelman k\xE4ynnistyksen yhteydess\xE4\
+  . Syy miksi\u2026"
+lastmod: 2024-02-18 23:09:07.637469
+model: gpt-4-1106-preview
+summary: "Komennoriviparametrien lukeminen on prosessi, jossa ohjelma ottaa sy\xF6\
+  tteen\xE4 argumentteja, jotka on annettu ohjelman k\xE4ynnistyksen yhteydess\xE4\
+  . Syy miksi\u2026"
+title: Komennoriviparametrien lukeminen
 ---
 
 {{< edit_this_page >}}

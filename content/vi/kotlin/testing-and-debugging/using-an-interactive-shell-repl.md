@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng vỏ tương tác (REPL)"
 aliases:
 - /vi/kotlin/using-an-interactive-shell-repl/
-date:                  2024-01-28T22:09:28.330461-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng vỏ tương tác (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/kotlin/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:28.330461-07:00
+description: "REPL (Read-Eval-Print Loop) l\xE0 m\xF4i tr\u01B0\u1EDDng l\u1EADp tr\xEC\
+  nh m\xE1y t\xEDnh t\u01B0\u01A1ng t\xE1c, \u0111\u01A1n gi\u1EA3n. C\xE1c l\u1EAD\
+  p tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 th\u1EED nghi\u1EC7m m\xE3\
+  \ nhanh ch\xF3ng, ki\u1EC3m tra\u2026"
+lastmod: 2024-02-18 23:08:50.653127
+model: gpt-4-0125-preview
+summary: "REPL (Read-Eval-Print Loop) l\xE0 m\xF4i tr\u01B0\u1EDDng l\u1EADp tr\xEC\
+  nh m\xE1y t\xEDnh t\u01B0\u01A1ng t\xE1c, \u0111\u01A1n gi\u1EA3n. C\xE1c l\u1EAD\
+  p tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 th\u1EED nghi\u1EC7m m\xE3\
+  \ nhanh ch\xF3ng, ki\u1EC3m tra\u2026"
+title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 ---
 
 {{< edit_this_page >}}

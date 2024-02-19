@@ -1,13 +1,16 @@
 ---
-title:                "Interpolación de cadenas de texto"
 aliases:
 - /es/powershell/interpolating-a-string/
-date:                  2024-01-20T17:51:22.012873-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolación de cadenas de texto"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/powershell/interpolating-a-string.md"
+date: 2024-01-20 17:51:22.012873-07:00
+description: "Interpolar una cadena es insertar variables o expresiones dentro de\
+  \ una cadena de texto. Los programadores lo hacen para construir mensajes din\xE1\
+  micos sin\u2026"
+lastmod: 2024-02-18 23:09:10.198405
+model: gpt-4-1106-preview
+summary: "Interpolar una cadena es insertar variables o expresiones dentro de una\
+  \ cadena de texto. Los programadores lo hacen para construir mensajes din\xE1micos\
+  \ sin\u2026"
+title: "Interpolaci\xF3n de cadenas de texto"
 ---
 
 {{< edit_this_page >}}

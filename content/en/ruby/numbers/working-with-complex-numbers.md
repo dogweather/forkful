@@ -1,13 +1,14 @@
 ---
-title:                "Working with complex numbers"
 aliases:
 - /en/ruby/working-with-complex-numbers/
-date:                  2024-01-25T02:59:41.349298-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Working with complex numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/working-with-complex-numbers.md"
+date: 2024-01-25 02:59:41.349298-07:00
+description: "Complex numbers, comprised of a real and an imaginary part (like 3+4i),\
+  \ are a staple in engineering and physics. Programmers work with them in\u2026"
+lastmod: 2024-02-18 23:09:11.557763
+model: gpt-4-1106-preview
+summary: "Complex numbers, comprised of a real and an imaginary part (like 3+4i),\
+  \ are a staple in engineering and physics. Programmers work with them in\u2026"
+title: Working with complex numbers
 ---
 
 {{< edit_this_page >}}

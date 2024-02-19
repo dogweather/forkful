@@ -1,14 +1,18 @@
 ---
-title:                "Analisando HTML"
 aliases:
 - /pt/java/parsing-html/
-date:                  2024-02-03T19:12:22.695390-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analisando HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:22.695390-07:00
+description: "Analisar HTML significa vasculhar a marca\xE7\xE3o para extrair dados\
+  \ como texto, links ou outros elementos. Fazemos isso para interagir com ou raspar\
+  \ conte\xFAdo\u2026"
+lastmod: 2024-02-18 23:08:58.016446
+model: gpt-4-0125-preview
+summary: "Analisar HTML significa vasculhar a marca\xE7\xE3o para extrair dados como\
+  \ texto, links ou outros elementos. Fazemos isso para interagir com ou raspar conte\xFA\
+  do\u2026"
+title: Analisando HTML
 ---
 
 {{< edit_this_page >}}

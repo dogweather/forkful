@@ -1,12 +1,15 @@
 ---
-title:                "Analyse av HTML"
 aliases:
 - /no/swift/parsing-html/
-date:                  2024-01-20T15:34:06.387643-07:00
-simple_title:         "Analyse av HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/parsing-html.md"
+date: 2024-01-20 15:34:06.387643-07:00
+description: "Hva er HTML-parsing, og hvorfor driver vi med det? Parsing av HTML betyr\
+  \ \xE5 trekke ut data fra en webside sin kode. Programmerere gj\xF8r det for \xE5\
+  \ kunne\u2026"
+lastmod: 2024-02-18 23:08:54.267010
+summary: "Hva er HTML-parsing, og hvorfor driver vi med det? Parsing av HTML betyr\
+  \ \xE5 trekke ut data fra en webside sin kode. Programmerere gj\xF8r det for \xE5\
+  \ kunne\u2026"
+title: Analyse av HTML
 ---
 
 {{< edit_this_page >}}

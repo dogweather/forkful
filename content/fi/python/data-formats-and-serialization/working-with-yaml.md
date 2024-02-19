@@ -1,14 +1,16 @@
 ---
-title:                "Työskentely YAML:n kanssa"
 aliases:
 - /fi/python/working-with-yaml/
-date:                  2024-02-03T19:26:37.492190-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely YAML:n kanssa"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:26:37.492190-07:00
+description: "YAML, joka tulee sanoista YAML Ain't Markup Language, on ihmisen luettavissa\
+  \ oleva tiedon sarjallistamismuoto. Ohjelmoijat k\xE4ytt\xE4v\xE4t YAMLia\u2026"
+lastmod: 2024-02-18 23:09:07.205520
+model: gpt-4-0125-preview
+summary: "YAML, joka tulee sanoista YAML Ain't Markup Language, on ihmisen luettavissa\
+  \ oleva tiedon sarjallistamismuoto. Ohjelmoijat k\xE4ytt\xE4v\xE4t YAMLia\u2026"
+title: "Ty\xF6skentely YAML:n kanssa"
 ---
 
 {{< edit_this_page >}}

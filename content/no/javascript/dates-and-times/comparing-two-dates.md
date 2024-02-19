@@ -1,13 +1,15 @@
 ---
-title:                "Sammenlikning av to datoer"
 aliases:
 - /no/javascript/comparing-two-dates/
-date:                  2024-01-20T17:33:25.243945-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammenlikning av to datoer"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/comparing-two-dates.md"
+date: 2024-01-20 17:33:25.243945-07:00
+description: "\xC5 sammenligne to datoer betyr enkelt og greit \xE5 finne ut hvilken\
+  \ som er tidligst, senest eller om de er like. Det gj\xF8r programmerere for \xE5\
+  \ kontrollere\u2026"
+lastmod: 2024-02-18 23:08:54.320693
+model: gpt-4-1106-preview
+summary: "\xC5 sammenligne to datoer betyr enkelt og greit \xE5 finne ut hvilken som\
+  \ er tidligst, senest eller om de er like. Det gj\xF8r programmerere for \xE5 kontrollere\u2026"
+title: Sammenlikning av to datoer
 ---
 
 {{< edit_this_page >}}

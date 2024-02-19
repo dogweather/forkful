@@ -1,13 +1,16 @@
 ---
-title:                "Å starte et nytt prosjekt"
 aliases:
 - /no/javascript/starting-a-new-project/
-date:                  2024-01-20T18:03:52.139592-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Å starte et nytt prosjekt"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/starting-a-new-project.md"
+date: 2024-01-20 18:03:52.139592-07:00
+description: "Starte et nytt prosjekt betyr \xE5 sette opp grunnlaget for en ny kodebase.\
+  \ Programmerere gj\xF8r det for \xE5 skape nye applikasjoner, l\xF8se problemer\
+  \ eller\u2026"
+lastmod: 2024-02-18 23:08:54.309582
+model: gpt-4-1106-preview
+summary: "Starte et nytt prosjekt betyr \xE5 sette opp grunnlaget for en ny kodebase.\
+  \ Programmerere gj\xF8r det for \xE5 skape nye applikasjoner, l\xF8se problemer\
+  \ eller\u2026"
+title: "\xC5 starte et nytt prosjekt"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie testów"
 aliases:
 - /pl/java/writing-tests/
-date:                  2024-02-03T19:31:00.434714-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie testów"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:00.434714-07:00
+description: "Pisanie test\xF3w w Java ma na celu weryfikacj\u0119, czy Tw\xF3j kod\
+  \ zachowuje si\u0119 zgodnie z oczekiwaniami w r\xF3\u017Cnych warunkach. Programi\u015B\
+  ci pisz\u0105 testy, aby\u2026"
+lastmod: 2024-02-18 23:08:49.481405
+model: gpt-4-0125-preview
+summary: "Pisanie test\xF3w w Java ma na celu weryfikacj\u0119, czy Tw\xF3j kod zachowuje\
+  \ si\u0119 zgodnie z oczekiwaniami w r\xF3\u017Cnych warunkach. Programi\u015Bci\
+  \ pisz\u0105 testy, aby\u2026"
+title: "Pisanie test\xF3w"
 ---
 
 {{< edit_this_page >}}

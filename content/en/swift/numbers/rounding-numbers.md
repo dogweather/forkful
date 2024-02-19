@@ -1,13 +1,15 @@
 ---
-title:                "Rounding numbers"
 aliases:
 - /en/swift/rounding-numbers/
-date:                  2024-01-25T02:59:55.932693-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rounding numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/rounding-numbers.md"
+date: 2024-01-25 02:59:55.932693-07:00
+description: "Rounding numbers means approximating a numerical value to a specific\
+  \ precision, typically to remove unwanted decimals. Programmers round to manage\
+  \ memory,\u2026"
+lastmod: 2024-02-18 23:09:11.391687
+model: gpt-4-1106-preview
+summary: "Rounding numbers means approximating a numerical value to a specific precision,\
+  \ typically to remove unwanted decimals. Programmers round to manage memory,\u2026"
+title: Rounding numbers
 ---
 
 {{< edit_this_page >}}

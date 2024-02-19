@@ -1,14 +1,18 @@
 ---
-title:                "Att använda reguljära uttryck"
 aliases:
 - /sv/cpp/using-regular-expressions/
-date:                  2024-02-03T19:16:10.945573-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda reguljära uttryck"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:16:10.945573-07:00
+description: "Regulj\xE4ra uttryck i C++ \xE4r teckenf\xF6ljder som definierar ett\
+  \ s\xF6km\xF6nster, anv\xE4nt f\xF6r att matcha eller manipulera str\xE4ngar. Programmerare\
+  \ anv\xE4nder dem f\xF6r\u2026"
+lastmod: 2024-02-18 23:08:52.074248
+model: gpt-4-0125-preview
+summary: "Regulj\xE4ra uttryck i C++ \xE4r teckenf\xF6ljder som definierar ett s\xF6\
+  km\xF6nster, anv\xE4nt f\xF6r att matcha eller manipulera str\xE4ngar. Programmerare\
+  \ anv\xE4nder dem f\xF6r\u2026"
+title: "Att anv\xE4nda regulj\xE4ra uttryck"
 ---
 
 {{< edit_this_page >}}

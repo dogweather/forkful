@@ -1,15 +1,20 @@
 ---
-title:                "Viết các bài kiểm tra"
 aliases:
 - /vi/c-sharp/writing-tests/
-date:                  2024-01-28T22:13:09.838901-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Viết các bài kiểm tra"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/writing-tests.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:13:09.838901-07:00
+description: "Vi\u1EBFt test trong l\u1EADp tr\xECnh ngh\u0129a l\xE0 t\u1EA1o ra\
+  \ c\xE1c mini-ch\u01B0\u01A1ng tr\xECnh \u0111\u1EC3 ki\u1EC3m tra xem m\xE3 c\u1EE7\
+  a b\u1EA1n c\xF3 ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i hay kh\xF4\
+  ng. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u\u2026"
+lastmod: 2024-02-18 23:08:50.702470
+model: gpt-4-0125-preview
+summary: "Vi\u1EBFt test trong l\u1EADp tr\xECnh ngh\u0129a l\xE0 t\u1EA1o ra c\xE1\
+  c mini-ch\u01B0\u01A1ng tr\xECnh \u0111\u1EC3 ki\u1EC3m tra xem m\xE3 c\u1EE7a b\u1EA1\
+  n c\xF3 ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i hay kh\xF4ng. L\u1EAD\
+  p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u\u2026"
+title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 ---
 
 {{< edit_this_page >}}

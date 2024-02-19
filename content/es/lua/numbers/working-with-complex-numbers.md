@@ -1,13 +1,15 @@
 ---
-title:                "Trabajando con números complejos"
 aliases:
 - /es/lua/working-with-complex-numbers/
-date:                  2024-01-26T04:43:19.175257-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con números complejos"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/lua/working-with-complex-numbers.md"
+date: 2024-01-26 04:43:19.175257-07:00
+description: "Los n\xFAmeros complejos extienden la idea de la l\xEDnea num\xE9rica\
+  \ unidimensional al plano bidimensional incluyendo un eje imaginario perpendicular.\
+  \ Los\u2026"
+lastmod: 2024-02-18 23:09:10.112920
+model: gpt-4-0125-preview
+summary: "Los n\xFAmeros complejos extienden la idea de la l\xEDnea num\xE9rica unidimensional\
+  \ al plano bidimensional incluyendo un eje imaginario perpendicular. Los\u2026"
+title: "Trabajando con n\xFAmeros complejos"
 ---
 
 {{< edit_this_page >}}

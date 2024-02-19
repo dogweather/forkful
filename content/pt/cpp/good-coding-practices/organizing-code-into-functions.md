@@ -1,13 +1,16 @@
 ---
-title:                "Organizando o código em funções"
 aliases:
 - /pt/cpp/organizing-code-into-functions/
-date:                  2024-01-26T01:09:39.810653-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organizando o código em funções"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/organizing-code-into-functions.md"
+date: 2024-01-26 01:09:39.810653-07:00
+description: "Dividir o c\xF3digo em fun\xE7\xF5es significa esculpir seu c\xF3digo\
+  \ em blocos menores e reutiliz\xE1veis. Fazemos isso para evitar repeti\xE7\xE3\
+  o, tornar nosso c\xF3digo\u2026"
+lastmod: 2024-02-18 23:08:58.455145
+model: gpt-4-1106-preview
+summary: "Dividir o c\xF3digo em fun\xE7\xF5es significa esculpir seu c\xF3digo em\
+  \ blocos menores e reutiliz\xE1veis. Fazemos isso para evitar repeti\xE7\xE3o, tornar\
+  \ nosso c\xF3digo\u2026"
+title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Att påbörja ett nytt projekt"
 aliases:
 - /sv/cpp/starting-a-new-project/
-date:                  2024-01-20T18:03:03.368814-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Att påbörja ett nytt projekt"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/starting-a-new-project.md"
+date: 2024-01-20 18:03:03.368814-07:00
+description: "Starta ett nytt projekt betyder att kicka ig\xE5ng en helt fr\xE4sch\
+  \ kodkodbas fr\xE5n nollpunkt. Programmerare g\xF6r detta f\xF6r att f\xF6rverkliga\
+  \ nya id\xE9er, l\xF6sa unika\u2026"
+lastmod: 2024-02-18 23:08:52.084529
+model: gpt-4-1106-preview
+summary: "Starta ett nytt projekt betyder att kicka ig\xE5ng en helt fr\xE4sch kodkodbas\
+  \ fr\xE5n nollpunkt. Programmerare g\xF6r detta f\xF6r att f\xF6rverkliga nya id\xE9\
+  er, l\xF6sa unika\u2026"
+title: "Att p\xE5b\xF6rja ett nytt projekt"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Tratamento de erros"
 aliases:
 - /pt/python/handling-errors/
-date:                  2024-01-26T00:56:28.520353-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tratamento de erros"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/handling-errors.md"
+date: 2024-01-26 00:56:28.520353-07:00
+description: "Tratar erros em Python (ou em qualquer linguagem de programa\xE7\xE3\
+  o) \xE9 prever o inesperado \u2013 \xE9 a arte de gerenciar com eleg\xE2ncia quando\
+  \ as coisas d\xE3o errado\u2026"
+lastmod: 2024-02-18 23:08:57.768385
+model: gpt-4-1106-preview
+summary: "Tratar erros em Python (ou em qualquer linguagem de programa\xE7\xE3o) \xE9\
+  \ prever o inesperado \u2013 \xE9 a arte de gerenciar com eleg\xE2ncia quando as\
+  \ coisas d\xE3o errado\u2026"
+title: Tratamento de erros
 ---
 
 {{< edit_this_page >}}

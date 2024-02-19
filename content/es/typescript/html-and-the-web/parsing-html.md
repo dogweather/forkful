@@ -1,12 +1,14 @@
 ---
-title:                "Análisis de HTML"
 aliases:
 - /es/typescript/parsing-html/
-date:                  2024-01-20T15:34:10.927158-07:00
-simple_title:         "Análisis de HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/parsing-html.md"
+date: 2024-01-20 15:34:10.927158-07:00
+description: "Parsear HTML es el proceso de convertir texto HTML en una estructura\
+  \ de datos comprensible y manipulable por programas. Los programadores lo hacen\
+  \ para\u2026"
+lastmod: 2024-02-18 23:09:09.700501
+summary: "Parsear HTML es el proceso de convertir texto HTML en una estructura de\
+  \ datos comprensible y manipulable por programas. Los programadores lo hacen para\u2026"
+title: "An\xE1lisis de HTML"
 ---
 
 {{< edit_this_page >}}

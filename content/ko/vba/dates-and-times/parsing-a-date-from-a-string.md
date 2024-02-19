@@ -1,14 +1,28 @@
 ---
-title:                "문자열에서 날짜 분석하기"
 aliases:
 - /ko/vba/parsing-a-date-from-a-string/
-date:                  2024-02-01T21:57:45.909122-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열에서 날짜 분석하기"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/vba/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:45.909122-07:00
+description: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\
+  \uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD558\uB294 \uAC83\uC740 \uB0A0\uC9DC\uB97C\
+  \ \uB098\uD0C0\uB0B4\uB294 \uD14D\uC2A4\uD2B8\uB97C \uB0A0\uC9DC \uB370\uC774\uD130\
+  \ \uC720\uD615\uC73C\uB85C \uBCC0\uD658\uD558\uB294 \uAC83\uC5D0 \uAD00\uD55C \uAC83\
+  \uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uBE44\uAD50, \uACC4\
+  \uC0B0 \uB610\uB294 \uD615\uC2DD \uC9C0\uC815 \uB4F1\uC758 \uBAA9\uC801\uC73C\uB85C\
+  \ \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uBCF4\uB2E4\
+  \ \uD6A8\uACFC\uC801\uC73C\uB85C\u2026"
+lastmod: 2024-02-18 23:09:05.968447
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C\
+  \ \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD558\uB294 \uAC83\uC740 \uB0A0\uC9DC\uB97C \uB098\
+  \uD0C0\uB0B4\uB294 \uD14D\uC2A4\uD2B8\uB97C \uB0A0\uC9DC \uB370\uC774\uD130 \uC720\
+  \uD615\uC73C\uB85C \uBCC0\uD658\uD558\uB294 \uAC83\uC5D0 \uAD00\uD55C \uAC83\uC785\
+  \uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uBE44\uAD50, \uACC4\uC0B0\
+  \ \uB610\uB294 \uD615\uC2DD \uC9C0\uC815 \uB4F1\uC758 \uBAA9\uC801\uC73C\uB85C \uC560\
+  \uD50C\uB9AC\uCF00\uC774\uC158\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uBCF4\uB2E4 \uD6A8\
+  \uACFC\uC801\uC73C\uB85C\u2026"
+title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uBD84\uC11D\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

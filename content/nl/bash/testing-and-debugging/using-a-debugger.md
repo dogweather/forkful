@@ -1,15 +1,17 @@
 ---
-title:                "Een debugger gebruiken"
 aliases:
 - /nl/bash/using-a-debugger/
-date:                  2024-01-28T22:08:39.681061-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een debugger gebruiken"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:39.681061-07:00
+description: "Een debugger in Bash gebruiken betekent het inzetten van tools om te\
+  \ testen en problemen in je scripts te vinden, zoals het vangen van bugs die je\
+  \ code\u2026"
+lastmod: 2024-02-18 23:09:02.045653
+model: gpt-4-0125-preview
+summary: "Een debugger in Bash gebruiken betekent het inzetten van tools om te testen\
+  \ en problemen in je scripts te vinden, zoals het vangen van bugs die je code\u2026"
+title: Een debugger gebruiken
 ---
 
 {{< edit_this_page >}}

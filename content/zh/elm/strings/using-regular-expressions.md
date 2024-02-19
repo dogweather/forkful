@@ -1,14 +1,26 @@
 ---
-title:                "使用正则表达式"
 aliases:
 - /zh/elm/using-regular-expressions/
-date:                  2024-02-03T19:16:39.603882-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用正则表达式"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:16:39.603882-07:00
+description: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u7684\u6B63\u5219\u8868\u8FBE\u5F0F\
+  \uFF08regex\uFF09\u662F\u7528\u4E8E\u5339\u914D\u5B57\u7B26\u4E32\u4E2D\u5B57\u7B26\
+  \u7EC4\u5408\u7684\u6A21\u5F0F\u3002\u5728Elm\u4E2D\uFF0C\u5C31\u50CF\u5728\u5176\
+  \u4ED6\u8BED\u8A00\u4E2D\u4E00\u6837\uFF0C\u7A0B\u5E8F\u5458\u4F7F\u7528regex\u6765\
+  \u6267\u884C\u4EFB\u52A1\uFF0C\u6BD4\u5982\u9A8C\u8BC1\u8F93\u5165\u3001\u641C\u7D22\
+  \u548C\u66FF\u6362\u5B57\u7B26\u4E32\u4E2D\u7684\u6587\u672C\uFF0C\u8FD9\u5F52\u529F\
+  \u4E8E\u5B83\u4EEC\u7684\u7075\u6D3B\u6027\u548C\u6548\u7387\u3002"
+lastmod: 2024-02-18 23:08:59.049731
+model: gpt-4-0125-preview
+summary: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u7684\u6B63\u5219\u8868\u8FBE\u5F0F\
+  \uFF08regex\uFF09\u662F\u7528\u4E8E\u5339\u914D\u5B57\u7B26\u4E32\u4E2D\u5B57\u7B26\
+  \u7EC4\u5408\u7684\u6A21\u5F0F\u3002\u5728Elm\u4E2D\uFF0C\u5C31\u50CF\u5728\u5176\
+  \u4ED6\u8BED\u8A00\u4E2D\u4E00\u6837\uFF0C\u7A0B\u5E8F\u5458\u4F7F\u7528regex\u6765\
+  \u6267\u884C\u4EFB\u52A1\uFF0C\u6BD4\u5982\u9A8C\u8BC1\u8F93\u5165\u3001\u641C\u7D22\
+  \u548C\u66FF\u6362\u5B57\u7B26\u4E32\u4E2D\u7684\u6587\u672C\uFF0C\u8FD9\u5F52\u529F\
+  \u4E8E\u5B83\u4EEC\u7684\u7075\u6D3B\u6027\u548C\u6548\u7387\u3002"
+title: "\u4F7F\u7528\u6B63\u5219\u8868\u8FBE\u5F0F"
 ---
 
 {{< edit_this_page >}}

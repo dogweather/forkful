@@ -1,14 +1,28 @@
 ---
-title:                "Робота з TOML"
 aliases:
 - /uk/c/working-with-toml/
-date:                  2024-02-03T18:12:50.619452-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Робота з TOML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c/working-with-toml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:12:50.619452-07:00
+description: "TOML (Tom's Obvious, Minimal Language - \u041E\u0447\u0435\u0432\u0438\
+  \u0434\u043D\u0430, \u041C\u0456\u043D\u0456\u043C\u0430\u043B\u0456\u0441\u0442\
+  \u0438\u0447\u043D\u0430 \u041C\u043E\u0432\u0430 \u0422\u043E\u043C\u0430) - \u0446\
+  \u0435 \u0444\u043E\u0440\u043C\u0430\u0442 \u0444\u0430\u0439\u043B\u0443 \u043A\
+  \u043E\u043D\u0444\u0456\u0433\u0443\u0440\u0430\u0446\u0456\u0457, \u044F\u043A\
+  \u0438\u0439 \u043B\u0435\u0433\u043A\u043E \u0447\u0438\u0442\u0430\u0442\u0438\
+  \ \u0437\u0430\u0432\u0434\u044F\u043A\u0438 \u0441\u0432\u043E\u0457\u0439 \u0447\
+  \u0456\u0442\u043A\u0456\u0439\u2026"
+lastmod: 2024-02-18 23:09:01.238530
+model: gpt-4-0125-preview
+summary: "TOML (Tom's Obvious, Minimal Language - \u041E\u0447\u0435\u0432\u0438\u0434\
+  \u043D\u0430, \u041C\u0456\u043D\u0456\u043C\u0430\u043B\u0456\u0441\u0442\u0438\
+  \u0447\u043D\u0430 \u041C\u043E\u0432\u0430 \u0422\u043E\u043C\u0430) - \u0446\u0435\
+  \ \u0444\u043E\u0440\u043C\u0430\u0442 \u0444\u0430\u0439\u043B\u0443 \u043A\u043E\
+  \u043D\u0444\u0456\u0433\u0443\u0440\u0430\u0446\u0456\u0457, \u044F\u043A\u0438\
+  \u0439 \u043B\u0435\u0433\u043A\u043E \u0447\u0438\u0442\u0430\u0442\u0438 \u0437\
+  \u0430\u0432\u0434\u044F\u043A\u0438 \u0441\u0432\u043E\u0457\u0439 \u0447\u0456\
+  \u0442\u043A\u0456\u0439\u2026"
+title: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 TOML"
 ---
 
 {{< edit_this_page >}}

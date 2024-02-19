@@ -1,15 +1,20 @@
 ---
-title:                "Xóa các ký tự phù hợp với một mẫu"
 aliases:
 - /vi/typescript/deleting-characters-matching-a-pattern/
-date:                  2024-01-28T21:59:19.939418-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Xóa các ký tự phù hợp với một mẫu"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/typescript/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:19.939418-07:00
+description: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu bao\
+  \ g\u1ED3m vi\u1EC7c t\xECm ki\u1EBFm trong m\u1ED9t chu\u1ED7i cho m\u1ED9t d\xE3\
+  y k\xFD t\u1EF1 c\u1EE5 th\u1EC3 (m\u1EABu) v\xE0 lo\u1EA1i b\u1ECF ch\xFAng. C\xE1\
+  c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u\u2026"
+lastmod: 2024-02-18 23:08:50.397504
+model: gpt-4-0125-preview
+summary: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu bao g\u1ED3\
+  m vi\u1EC7c t\xECm ki\u1EBFm trong m\u1ED9t chu\u1ED7i cho m\u1ED9t d\xE3y k\xFD\
+  \ t\u1EF1 c\u1EE5 th\u1EC3 (m\u1EABu) v\xE0 lo\u1EA1i b\u1ECF ch\xFAng. C\xE1c l\u1EAD\
+  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u\u2026"
+title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 ---
 
 {{< edit_this_page >}}

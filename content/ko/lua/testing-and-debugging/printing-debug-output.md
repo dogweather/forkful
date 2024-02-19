@@ -1,14 +1,21 @@
 ---
-title:                "디버그 출력을 찍어보기"
 aliases:
 - /ko/lua/printing-debug-output/
-date:                  2024-01-20T17:53:05.269028-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "디버그 출력을 찍어보기"
-
-tag:                  "Testing and Debugging"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/lua/printing-debug-output.md"
+date: 2024-01-20 17:53:05.269028-07:00
+description: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC \uC2E4\uD589 \uC911\
+  \ \uC815\uBCF4\uB97C \uCF58\uC194\uC5D0 \uD45C\uC2DC\uD569\uB2C8\uB2E4. \uC774\uB97C\
+  \ \uD1B5\uD574 \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uCF54\uB4DC\uAC00 \uC5B4\uB5BB\
+  \uAC8C \uB3D9\uC791\uD558\uB294\uC9C0 \uD655\uC778\uD558\uACE0 \uBB38\uC81C\uB97C\
+  \ \uC870\uAE30\uC5D0 \uBC1C\uACAC\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.420138
+model: gpt-4-1106-preview
+summary: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC \uC2E4\uD589 \uC911 \uC815\
+  \uBCF4\uB97C \uCF58\uC194\uC5D0 \uD45C\uC2DC\uD569\uB2C8\uB2E4. \uC774\uB97C \uD1B5\
+  \uD574 \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uCF54\uB4DC\uAC00 \uC5B4\uB5BB\uAC8C\
+  \ \uB3D9\uC791\uD558\uB294\uC9C0 \uD655\uC778\uD558\uACE0 \uBB38\uC81C\uB97C \uC870\
+  \uAE30\uC5D0 \uBC1C\uACAC\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+title: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC744 \uCC0D\uC5B4\uBCF4\uAE30"
 ---
 
 {{< edit_this_page >}}

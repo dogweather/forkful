@@ -1,13 +1,16 @@
 ---
-title:                "Zaokrąglanie liczb"
 aliases:
 - /pl/java/rounding-numbers/
-date:                  2024-01-26T03:46:12.526973-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zaokrąglanie liczb"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/rounding-numbers.md"
+date: 2024-01-26 03:46:12.526973-07:00
+description: "Zaokr\u0105glanie liczb oznacza dostosowanie ich do okre\u015Blonego\
+  \ stopnia precyzji. Programi\u015Bci robi\u0105 to, aby upro\u015Bci\u0107 liczby\
+  \ dla czytelno\u015Bci, spe\u0142ni\u0107 okre\u015Blone\u2026"
+lastmod: 2024-02-18 23:08:49.472835
+model: gpt-4-0125-preview
+summary: "Zaokr\u0105glanie liczb oznacza dostosowanie ich do okre\u015Blonego stopnia\
+  \ precyzji. Programi\u015Bci robi\u0105 to, aby upro\u015Bci\u0107 liczby dla czytelno\u015B\
+  ci, spe\u0142ni\u0107 okre\u015Blone\u2026"
+title: "Zaokr\u0105glanie liczb"
 ---
 
 {{< edit_this_page >}}

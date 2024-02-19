@@ -1,14 +1,16 @@
 ---
-title:                "Eine Textdatei schreiben"
 aliases:
 - /de/c/writing-a-text-file/
-date:                  2024-02-03T18:14:17.849098-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eine Textdatei schreiben"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:14:17.849098-07:00
+description: "Das Schreiben einer Textdatei in C beinhaltet das Erstellen oder \xD6\
+  ffnen einer Datei im Schreibmodus und dann die Verwendung von Cs Datei-I/O-Funktionen,\u2026"
+lastmod: 2024-02-18 23:09:05.395112
+model: gpt-4-0125-preview
+summary: "Das Schreiben einer Textdatei in C beinhaltet das Erstellen oder \xD6ffnen\
+  \ einer Datei im Schreibmodus und dann die Verwendung von Cs Datei-I/O-Funktionen,\u2026"
+title: Eine Textdatei schreiben
 ---
 
 {{< edit_this_page >}}

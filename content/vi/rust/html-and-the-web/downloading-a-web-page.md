@@ -1,15 +1,20 @@
 ---
-title:                "Tải trang web"
 aliases:
 - /vi/rust/downloading-a-web-page/
-date:                  2024-01-28T21:59:44.279322-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tải trang web"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/downloading-a-web-page.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:44.279322-07:00
+description: "T\u1EA3i xu\u1ED1ng m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 l\u1EA5\
+  y d\u1EEF li\u1EC7u m\xE0 n\xF3 ch\u1EE9a. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
+  i\u1EC1u n\xE0y \u0111\u1EC3 l\u1EA5y th\xF4ng tin, t\u1EF1 \u0111\u1ED9ng h\xF3\
+  a c\xE1c b\xE0i test, c\xE0o d\u1EEF li\u1EC7u, ho\u1EB7c ki\u1EC3m\u2026"
+lastmod: 2024-02-18 23:08:50.460551
+model: gpt-4-0125-preview
+summary: "T\u1EA3i xu\u1ED1ng m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 l\u1EA5y d\u1EEF\
+  \ li\u1EC7u m\xE0 n\xF3 ch\u1EE9a. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1\
+  u n\xE0y \u0111\u1EC3 l\u1EA5y th\xF4ng tin, t\u1EF1 \u0111\u1ED9ng h\xF3a c\xE1\
+  c b\xE0i test, c\xE0o d\u1EEF li\u1EC7u, ho\u1EB7c ki\u1EC3m\u2026"
+title: "T\u1EA3i trang web"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Läser in kommandoradsargument"
 aliases:
 - /sv/go/reading-command-line-arguments/
-date:                  2024-02-03T18:06:33.526259-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Läser in kommandoradsargument"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:06:33.526259-07:00
+description: "Att l\xE4sa kommandoradsargument i Go inneb\xE4r att extrahera argumenten\
+  \ som tillhandah\xE5lls till ett program vid dess anrop fr\xE5n terminalen eller\u2026"
+lastmod: 2024-02-18 23:08:51.349564
+model: gpt-4-0125-preview
+summary: "Att l\xE4sa kommandoradsargument i Go inneb\xE4r att extrahera argumenten\
+  \ som tillhandah\xE5lls till ett program vid dess anrop fr\xE5n terminalen eller\u2026"
+title: "L\xE4ser in kommandoradsargument"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,30 @@
 ---
-title:                "대화형 쉘(REPL) 사용하기"
 aliases:
 - /ko/go/using-an-interactive-shell-repl/
-date:                  2024-02-03T18:10:28.085096-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "대화형 쉘(REPL) 사용하기"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:28.085096-07:00
+description: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\uB294 \uC77D\uAE30-\uD3C9\
+  \uAC00-\uCD9C\uB825 \uB8E8\uD504(REPL)\uB294 Go \uCF54\uB4DC\uB97C \uC2E4\uC2DC\uAC04\
+  \uC73C\uB85C \uC2E4\uD5D8\uD558\uBA74\uC11C \uBA85\uB839\uC744 \uC2E4\uD589\uD558\
+  \uACE0 \uC989\uC2DC \uD53C\uB4DC\uBC31\uC744 \uC5BB\uC744 \uC218 \uC788\uAC8C \uD569\
+  \uB2C8\uB2E4. \uC774 \uC811\uADFC\uBC95\uC740 \uD559\uC2B5, \uB514\uBC84\uAE45,\
+  \ \uD504\uB85C\uD1A0\uD0C0\uC774\uD551\uC5D0 \uB110\uB9AC \uC0AC\uC6A9\uB418\uBA70\
+  , \uC804\uD1B5\uC801\uC778 \uD3B8\uC9D1-\uCEF4\uD30C\uC77C-\uC2E4\uD589 \uC8FC\uAE30\
+  \uB97C \uC6B0\uD68C\uD568\uC73C\uB85C\uC368 \uAC1C\uBC1C \uD504\uB85C\uC138\uC2A4\
+  \uB97C \uB354 \uBE60\uB974\uACE0\u2026"
+lastmod: 2024-02-18 23:09:05.484146
+model: gpt-4-0125-preview
+summary: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\uB294 \uC77D\uAE30-\uD3C9\uAC00\
+  -\uCD9C\uB825 \uB8E8\uD504(REPL)\uB294 Go \uCF54\uB4DC\uB97C \uC2E4\uC2DC\uAC04\uC73C\
+  \uB85C \uC2E4\uD5D8\uD558\uBA74\uC11C \uBA85\uB839\uC744 \uC2E4\uD589\uD558\uACE0\
+  \ \uC989\uC2DC \uD53C\uB4DC\uBC31\uC744 \uC5BB\uC744 \uC218 \uC788\uAC8C \uD569\uB2C8\
+  \uB2E4. \uC774 \uC811\uADFC\uBC95\uC740 \uD559\uC2B5, \uB514\uBC84\uAE45, \uD504\
+  \uB85C\uD1A0\uD0C0\uC774\uD551\uC5D0 \uB110\uB9AC \uC0AC\uC6A9\uB418\uBA70, \uC804\
+  \uD1B5\uC801\uC778 \uD3B8\uC9D1-\uCEF4\uD30C\uC77C-\uC2E4\uD589 \uC8FC\uAE30\uB97C\
+  \ \uC6B0\uD68C\uD568\uC73C\uB85C\uC368 \uAC1C\uBC1C \uD504\uB85C\uC138\uC2A4\uB97C\
+  \ \uB354 \uBE60\uB974\uACE0\u2026"
+title: "\uB300\uD654\uD615 \uC258(REPL) \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

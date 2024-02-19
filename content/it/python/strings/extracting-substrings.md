@@ -1,13 +1,15 @@
 ---
-title:                "Estrazione di sottostringhe"
 aliases:
 - /it/python/extracting-substrings/
-date:                  2024-01-20T17:46:25.768488-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Estrazione di sottostringhe"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/python/extracting-substrings.md"
+date: 2024-01-20 17:46:25.768488-07:00
+description: "Estraendo sottostringhe si prelevano parti specifiche di una stringa.\
+  \ Programmatori fanno ci\xF2 per analizzare testi, pulire dati, o semplicemente\
+  \ isolare\u2026"
+lastmod: 2024-02-18 23:08:55.510905
+model: gpt-4-1106-preview
+summary: "Estraendo sottostringhe si prelevano parti specifiche di una stringa. Programmatori\
+  \ fanno ci\xF2 per analizzare testi, pulire dati, o semplicemente isolare\u2026"
+title: Estrazione di sottostringhe
 ---
 
 {{< edit_this_page >}}

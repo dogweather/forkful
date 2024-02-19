@@ -1,14 +1,18 @@
 ---
-title:                "Trovare la lunghezza di una stringa"
 aliases:
 - /it/google-apps-script/finding-the-length-of-a-string/
-date:                  2024-02-01T21:53:26.978596-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trovare la lunghezza di una stringa"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/google-apps-script/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:26.978596-07:00
+description: "Trovare la lunghezza di una stringa in Google Apps Script, un linguaggio\
+  \ di scripting cloud JavaScript che consente di automatizzare le attivit\xE0 per\
+  \ i\u2026"
+lastmod: 2024-02-18 23:08:55.467877
+model: gpt-4-0125-preview
+summary: "Trovare la lunghezza di una stringa in Google Apps Script, un linguaggio\
+  \ di scripting cloud JavaScript che consente di automatizzare le attivit\xE0 per\
+  \ i\u2026"
+title: Trovare la lunghezza di una stringa
 ---
 
 {{< edit_this_page >}}

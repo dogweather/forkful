@@ -1,13 +1,16 @@
 ---
-title:                "Génération de nombres aléatoires"
 aliases:
 - /fr/fish-shell/generating-random-numbers/
-date:                  2024-01-27T20:33:22.214806-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Génération de nombres aléatoires"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/generating-random-numbers.md"
+date: 2024-01-27 20:33:22.214806-07:00
+description: "La g\xE9n\xE9ration de nombres al\xE9atoires est une t\xE2che fondamentale\
+  \ en programmation, utilis\xE9e pour tout, de l'\xE9chantillonnage de donn\xE9es\
+  \ au d\xE9veloppement de\u2026"
+lastmod: 2024-02-18 23:09:09.298826
+model: gpt-4-0125-preview
+summary: "La g\xE9n\xE9ration de nombres al\xE9atoires est une t\xE2che fondamentale\
+  \ en programmation, utilis\xE9e pour tout, de l'\xE9chantillonnage de donn\xE9es\
+  \ au d\xE9veloppement de\u2026"
+title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 ---
 
 {{< edit_this_page >}}

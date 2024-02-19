@@ -1,14 +1,26 @@
 ---
-title:                "打印调试输出"
 aliases:
 - /zh/c/printing-debug-output/
-date:                  2024-02-03T18:05:08.284922-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "打印调试输出"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/printing-debug-output.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:08.284922-07:00
+description: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA\u662F\u6307\u751F\u6210\u4E34\u65F6\
+  \u7684\u3001\u4FE1\u606F\u6027\u7684\u65E5\u5FD7\u6D88\u606F\uFF0C\u8FD9\u4E9B\u6D88\
+  \u606F\u53EF\u4EE5\u5E2E\u52A9\u7A0B\u5E8F\u5458\u5728\u7A0B\u5E8F\u6267\u884C\u8FC7\
+  \u7A0B\u4E2D\u7406\u89E3\u7A0B\u5E8F\u7684\u6D41\u7A0B\u548C\u72B6\u6001\u3002\u7A0B\
+  \u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u8BC6\u522B\u548C\u8BCA\u65AD\u8F6F\
+  \u4EF6\u7684\u9519\u8BEF\u6216\u7A0B\u5E8F\u903B\u8F91\u4E2D\u7684\u610F\u5916\u884C\
+  \u4E3A\u3002"
+lastmod: 2024-02-18 23:08:59.562001
+model: gpt-4-0125-preview
+summary: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA\u662F\u6307\u751F\u6210\u4E34\u65F6\
+  \u7684\u3001\u4FE1\u606F\u6027\u7684\u65E5\u5FD7\u6D88\u606F\uFF0C\u8FD9\u4E9B\u6D88\
+  \u606F\u53EF\u4EE5\u5E2E\u52A9\u7A0B\u5E8F\u5458\u5728\u7A0B\u5E8F\u6267\u884C\u8FC7\
+  \u7A0B\u4E2D\u7406\u89E3\u7A0B\u5E8F\u7684\u6D41\u7A0B\u548C\u72B6\u6001\u3002\u7A0B\
+  \u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u8BC6\u522B\u548C\u8BCA\u65AD\u8F6F\
+  \u4EF6\u7684\u9519\u8BEF\u6216\u7A0B\u5E8F\u903B\u8F91\u4E2D\u7684\u610F\u5916\u884C\
+  \u4E3A\u3002"
+title: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA"
 ---
 
 {{< edit_this_page >}}

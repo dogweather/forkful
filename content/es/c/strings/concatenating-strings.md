@@ -1,14 +1,18 @@
 ---
-title:                "Concatenando cadenas de texto"
 aliases:
 - /es/c/concatenating-strings/
-date:                  2024-02-03T17:53:44.813933-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Concatenando cadenas de texto"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/concatenating-strings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:44.813933-07:00
+description: "La concatenaci\xF3n de cadenas en C involucra unir dos o m\xE1s cadenas\
+  \ de extremo a extremo para formar una nueva cadena. Los programadores realizan\
+  \ esta\u2026"
+lastmod: 2024-02-18 23:09:10.491600
+model: gpt-4-0125-preview
+summary: "La concatenaci\xF3n de cadenas en C involucra unir dos o m\xE1s cadenas\
+  \ de extremo a extremo para formar una nueva cadena. Los programadores realizan\
+  \ esta\u2026"
+title: Concatenando cadenas de texto
 ---
 
 {{< edit_this_page >}}

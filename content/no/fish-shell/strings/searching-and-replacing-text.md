@@ -1,13 +1,15 @@
 ---
-title:                "Søking og erstatting av tekst"
 aliases:
 - /no/fish-shell/searching-and-replacing-text/
-date:                  2024-01-20T17:58:09.049121-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Søking og erstatting av tekst"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:09.049121-07:00
+description: "S\xF8k og erstatt lar deg finne tekststrenger og bytte dem ut med noe\
+  \ annet. Programmere gj\xF8r dette for \xE5 effektivisere kodingen, fikse feil,\
+  \ eller endre\u2026"
+lastmod: 2024-02-18 23:08:54.335546
+model: gpt-4-1106-preview
+summary: "S\xF8k og erstatt lar deg finne tekststrenger og bytte dem ut med noe annet.\
+  \ Programmere gj\xF8r dette for \xE5 effektivisere kodingen, fikse feil, eller endre\u2026"
+title: "S\xF8king og erstatting av tekst"
 ---
 
 {{< edit_this_page >}}

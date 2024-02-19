@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng vỏ tương tác (REPL)"
 aliases:
 - /vi/typescript/using-an-interactive-shell-repl/
-date:                  2024-01-28T22:09:23.678470-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng vỏ tương tác (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/typescript/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:23.678470-07:00
+description: "M\u1ED9t V\xF2ng L\u1EB7p \u0110\u1ECDc-\u0110\xE1nh Gi\xE1-In (REPL)\
+  \ l\xE0 m\xF4i tr\u01B0\u1EDDng l\u1EADp tr\xECnh nh\u1EADn c\xE1c m\xE3 nh\u1EAD\
+  p t\u1EEB ng\u01B0\u1EDDi d\xF9ng, th\u1EF1c thi ch\xFAng v\xE0 tr\u1EA3 k\u1EBF\
+  t qu\u1EA3 v\u1EC1 cho ng\u01B0\u1EDDi d\xF9ng. L\u1EADp tr\xECnh\u2026"
+lastmod: 2024-02-18 23:08:50.417050
+model: gpt-4-0125-preview
+summary: "M\u1ED9t V\xF2ng L\u1EB7p \u0110\u1ECDc-\u0110\xE1nh Gi\xE1-In (REPL) l\xE0\
+  \ m\xF4i tr\u01B0\u1EDDng l\u1EADp tr\xECnh nh\u1EADn c\xE1c m\xE3 nh\u1EADp t\u1EEB\
+  \ ng\u01B0\u1EDDi d\xF9ng, th\u1EF1c thi ch\xFAng v\xE0 tr\u1EA3 k\u1EBFt qu\u1EA3\
+  \ v\u1EC1 cho ng\u01B0\u1EDDi d\xF9ng. L\u1EADp tr\xECnh\u2026"
+title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 ---
 
 {{< edit_this_page >}}

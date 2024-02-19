@@ -1,14 +1,24 @@
 ---
-title:                "获取当前日期"
 aliases:
 - /zh/haskell/getting-the-current-date/
-date:                  2024-02-03T19:09:46.537403-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "获取当前日期"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:09:46.537403-07:00
+description: "\u5728 Haskell \u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u6D89\u53CA\
+  \u83B7\u53D6\u7CFB\u7EDF\u7684\u5F53\u524D\u65F6\u95F4\uFF0C\u5E76\u5C06\u5176\u8F6C\
+  \u6362\u4E3A\u53EF\u8BFB\u7684\u65E5\u671F\u683C\u5F0F\u3002\u7A0B\u5E8F\u5458\u8FD9\
+  \u6837\u505A\u662F\u4E3A\u4E86\u57FA\u4E8E\u65E5\u671F\u6267\u884C\u64CD\u4F5C\uFF0C\
+  \u4F8B\u5982\u65E5\u5FD7\u8BB0\u5F55\u3001\u8C03\u5EA6\u4EFB\u52A1\u6216\u5728\u5E94\
+  \u7528\u7A0B\u5E8F\u4E2D\u7ED9\u4E8B\u4EF6\u52A0\u65F6\u95F4\u6233\u3002"
+lastmod: 2024-02-18 23:08:59.187415
+model: gpt-4-0125-preview
+summary: "\u5728 Haskell \u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u6D89\u53CA\u83B7\
+  \u53D6\u7CFB\u7EDF\u7684\u5F53\u524D\u65F6\u95F4\uFF0C\u5E76\u5C06\u5176\u8F6C\u6362\
+  \u4E3A\u53EF\u8BFB\u7684\u65E5\u671F\u683C\u5F0F\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\
+  \u505A\u662F\u4E3A\u4E86\u57FA\u4E8E\u65E5\u671F\u6267\u884C\u64CD\u4F5C\uFF0C\u4F8B\
+  \u5982\u65E5\u5FD7\u8BB0\u5F55\u3001\u8C03\u5EA6\u4EFB\u52A1\u6216\u5728\u5E94\u7528\
+  \u7A0B\u5E8F\u4E2D\u7ED9\u4E8B\u4EF6\u52A0\u65F6\u95F4\u6233\u3002"
+title: "\u83B7\u53D6\u5F53\u524D\u65E5\u671F"
 ---
 
 {{< edit_this_page >}}

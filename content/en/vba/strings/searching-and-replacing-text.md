@@ -1,12 +1,15 @@
 ---
-title:                "Searching and replacing text"
 aliases:
 - /en/vba/searching-and-replacing-text/
-date:                  2024-02-01T21:30:21.117478-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Searching and replacing text"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/vba/searching-and-replacing-text.md"
+date: 2024-02-01 21:30:21.117478-07:00
+description: "Searching and replacing text in Visual Basic for Applications (VBA)\
+  \ is essential for editing documents, spreadsheets, and databases programmatically.\
+  \ This\u2026"
+lastmod: 2024-02-18 23:09:10.875205
+model: gpt-4-0125-preview
+summary: "Searching and replacing text in Visual Basic for Applications (VBA) is essential\
+  \ for editing documents, spreadsheets, and databases programmatically. This\u2026"
+title: Searching and replacing text
 ---
 
 {{< edit_this_page >}}

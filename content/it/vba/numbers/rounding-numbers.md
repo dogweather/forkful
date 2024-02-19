@@ -1,14 +1,16 @@
 ---
-title:                "Arrotondamento dei numeri"
 aliases:
 - /it/vba/rounding-numbers/
-date:                  2024-02-01T22:00:59.927772-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrotondamento dei numeri"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/vba/rounding-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:59.927772-07:00
+description: "Nella programmazione, l'arrotondamento dei numeri riguarda l'approssimazione\
+  \ di un numero al suo intero pi\xF9 vicino o a un certo numero di cifre decimali.\u2026"
+lastmod: 2024-02-18 23:08:55.717263
+model: gpt-4-0125-preview
+summary: "Nella programmazione, l'arrotondamento dei numeri riguarda l'approssimazione\
+  \ di un numero al suo intero pi\xF9 vicino o a un certo numero di cifre decimali.\u2026"
+title: Arrotondamento dei numeri
 ---
 
 {{< edit_this_page >}}

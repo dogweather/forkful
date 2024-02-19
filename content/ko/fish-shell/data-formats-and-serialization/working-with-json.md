@@ -1,14 +1,28 @@
 ---
-title:                "JSON과 함께 일하기"
 aliases:
 - /ko/fish-shell/working-with-json/
-date:                  2024-02-03T19:22:50.956016-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "JSON과 함께 일하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:22:50.956016-07:00
+description: "Fish Shell\uC5D0\uC11C JSON\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740 JSON\
+  \ \uB370\uC774\uD130\uB97C \uD30C\uC2F1\uD558\uACE0 \uC0DD\uC131\uD558\uB294 \uAC83\
+  \uC744 \uD3EC\uD568\uD558\uBA70, \uC560\uD50C\uB9AC\uCF00\uC774\uC158 \uAD6C\uC131\
+  , API \uC0C1\uD638\uC791\uC6A9, \uADF8\uB9AC\uACE0 \uCEE4\uB9E8\uB4DC \uB77C\uC778\
+  \ \uC6CC\uD06C\uD50C\uB85C\uC6B0\uB97C \uAC04\uC18C\uD654\uD558\uB294 \uB370 \uC790\
+  \uC8FC \uC0AC\uC6A9\uB418\uB294 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uC6F9\uACFC \uC5B4\
+  \uD50C\uB9AC\uCF00\uC774\uC158 \uAC1C\uBC1C\uC5D0\uC11C JSON\uC758 \uB9CC\uC5F0\uD568\
+  \uC744 \uACE0\uB824\uD560 \uB54C, \uC258\uC5D0\uC11C\u2026"
+lastmod: 2024-02-18 23:09:06.914550
+model: gpt-4-0125-preview
+summary: "Fish Shell\uC5D0\uC11C JSON\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740 JSON \uB370\
+  \uC774\uD130\uB97C \uD30C\uC2F1\uD558\uACE0 \uC0DD\uC131\uD558\uB294 \uAC83\uC744\
+  \ \uD3EC\uD568\uD558\uBA70, \uC560\uD50C\uB9AC\uCF00\uC774\uC158 \uAD6C\uC131, API\
+  \ \uC0C1\uD638\uC791\uC6A9, \uADF8\uB9AC\uACE0 \uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC6CC\
+  \uD06C\uD50C\uB85C\uC6B0\uB97C \uAC04\uC18C\uD654\uD558\uB294 \uB370 \uC790\uC8FC\
+  \ \uC0AC\uC6A9\uB418\uB294 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uC6F9\uACFC \uC5B4\uD50C\
+  \uB9AC\uCF00\uC774\uC158 \uAC1C\uBC1C\uC5D0\uC11C JSON\uC758 \uB9CC\uC5F0\uD568\uC744\
+  \ \uACE0\uB824\uD560 \uB54C, \uC258\uC5D0\uC11C\u2026"
+title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

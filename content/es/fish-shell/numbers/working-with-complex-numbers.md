@@ -1,13 +1,16 @@
 ---
-title:                "Trabajando con números complejos"
 aliases:
 - /es/fish-shell/working-with-complex-numbers/
-date:                  2024-01-26T04:39:44.886565-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con números complejos"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/working-with-complex-numbers.md"
+date: 2024-01-26 04:39:44.886565-07:00
+description: "Los n\xFAmeros complejos ampl\xEDan la idea de las l\xEDneas num\xE9\
+  ricas unidimensionales a un plano complejo bidimensional. Los programadores los\
+  \ utilizan en campos\u2026"
+lastmod: 2024-02-18 23:09:10.444192
+model: gpt-4-0125-preview
+summary: "Los n\xFAmeros complejos ampl\xEDan la idea de las l\xEDneas num\xE9ricas\
+  \ unidimensionales a un plano complejo bidimensional. Los programadores los utilizan\
+  \ en campos\u2026"
+title: "Trabajando con n\xFAmeros complejos"
 ---
 
 {{< edit_this_page >}}

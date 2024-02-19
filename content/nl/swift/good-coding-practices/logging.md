@@ -1,15 +1,16 @@
 ---
-title:                "Logboekregistratie"
 aliases:
 - /nl/swift/logging/
-date:                  2024-01-28T22:02:56.051492-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Logboekregistratie"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/swift/logging.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:02:56.051492-07:00
+description: "Loggen is het proces van het vastleggen van applicatiegedragingen, fouten\
+  \ en andere belangrijke informatie in een blijvend medium, zoals een bestand of\u2026"
+lastmod: 2024-02-18 23:09:02.236484
+model: gpt-4-0125-preview
+summary: "Loggen is het proces van het vastleggen van applicatiegedragingen, fouten\
+  \ en andere belangrijke informatie in een blijvend medium, zoals een bestand of\u2026"
+title: Logboekregistratie
 ---
 
 {{< edit_this_page >}}

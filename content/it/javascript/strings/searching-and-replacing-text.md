@@ -1,13 +1,15 @@
 ---
-title:                "Ricerca e sostituzione del testo"
 aliases:
 - /it/javascript/searching-and-replacing-text/
-date:                  2024-01-20T17:58:21.451993-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ricerca e sostituzione del testo"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/javascript/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:21.451993-07:00
+description: "Cercare e sostituire testo in JavaScript \xE8 fondamentale. Serve per\
+  \ modifica dati dinamici, pulire input, e manipolare stringhe. E' utile in ogni\
+  \ scenario\u2026"
+lastmod: 2024-02-18 23:08:56.238774
+model: gpt-4-1106-preview
+summary: "Cercare e sostituire testo in JavaScript \xE8 fondamentale. Serve per modifica\
+  \ dati dinamici, pulire input, e manipolare stringhe. E' utile in ogni scenario\u2026"
+title: Ricerca e sostituzione del testo
 ---
 
 {{< edit_this_page >}}

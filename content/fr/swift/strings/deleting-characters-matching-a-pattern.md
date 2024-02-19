@@ -1,13 +1,14 @@
 ---
-title:                "Suppression de caractères correspondant à un motif"
 aliases:
 - /fr/swift/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:43:19.399530-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Suppression de caractères correspondant à un motif"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:43:19.399530-07:00
+description: "(Suppression de caract\xE8res correspondant \xE0 un motif) Dans la programmation,\
+  \ lorsque nous parlons de supprimer des caract\xE8res selon un motif, on fait\u2026"
+lastmod: 2024-02-18 23:09:09.190931
+model: gpt-4-1106-preview
+summary: "(Suppression de caract\xE8res correspondant \xE0 un motif) Dans la programmation,\
+  \ lorsque nous parlons de supprimer des caract\xE8res selon un motif, on fait\u2026"
+title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 ---
 
 {{< edit_this_page >}}

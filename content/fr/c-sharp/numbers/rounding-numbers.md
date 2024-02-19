@@ -1,13 +1,16 @@
 ---
-title:                "Arrondir les nombres"
 aliases:
 - /fr/c-sharp/rounding-numbers/
-date:                  2024-01-26T03:43:36.676943-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrondir les nombres"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/rounding-numbers.md"
+date: 2024-01-26 03:43:36.676943-07:00
+description: "Arrondir les nombres signifie les ajuster \xE0 la valeur de place la\
+  \ plus proche\u2014pensez \xE0 les simplifier. Les programmeurs arrondissent pour\
+  \ contr\xF4ler la\u2026"
+lastmod: 2024-02-18 23:09:08.822084
+model: gpt-4-0125-preview
+summary: "Arrondir les nombres signifie les ajuster \xE0 la valeur de place la plus\
+  \ proche\u2014pensez \xE0 les simplifier. Les programmeurs arrondissent pour contr\xF4\
+  ler la\u2026"
+title: Arrondir les nombres
 ---
 
 {{< edit_this_page >}}

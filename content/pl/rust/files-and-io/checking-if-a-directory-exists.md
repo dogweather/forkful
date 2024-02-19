@@ -1,14 +1,18 @@
 ---
-title:                "Sprawdzanie, czy katalog istnieje"
 aliases:
 - /pl/rust/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:47.976522-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sprawdzanie, czy katalog istnieje"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:47.976522-07:00
+description: "W rozwoju oprogramowania cz\u0119sto potrzebne jest sprawdzenie, czy\
+  \ katalog istnieje, aby unika\u0107 b\u0142\u0119d\xF3w podczas pr\xF3b dost\u0119\
+  pu, odczytu lub zapisu plik\xF3w. Rust,\u2026"
+lastmod: 2024-02-18 23:08:49.404126
+model: gpt-4-0125-preview
+summary: "W rozwoju oprogramowania cz\u0119sto potrzebne jest sprawdzenie, czy katalog\
+  \ istnieje, aby unika\u0107 b\u0142\u0119d\xF3w podczas pr\xF3b dost\u0119pu, odczytu\
+  \ lub zapisu plik\xF3w. Rust,\u2026"
+title: Sprawdzanie, czy katalog istnieje
 ---
 
 {{< edit_this_page >}}

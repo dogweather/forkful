@@ -1,14 +1,24 @@
 ---
-title:                "搜索和替换文本"
 aliases:
 - /zh/vba/searching-and-replacing-text/
-date:                  2024-02-01T22:01:18.746397-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "搜索和替换文本"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:18.746397-07:00
+description: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u641C\u7D22\u548C\u66FF\
+  \u6362\u6587\u672C\u5BF9\u4E8E\u7A0B\u5E8F\u5316\u7F16\u8F91\u6587\u6863\u3001\u7535\
+  \u5B50\u8868\u683C\u548C\u6570\u636E\u5E93\u81F3\u5173\u91CD\u8981\u3002\u8FD9\u79CD\
+  \u529F\u80FD\u5141\u8BB8\u7A0B\u5E8F\u5458\u81EA\u52A8\u5316\u6279\u91CF\u7F16\u8F91\
+  \uFF0C\u66F4\u6B63\u9519\u8BEF\u6216\u5728\u5E9E\u5927\u7684\u6570\u636E\u96C6\u4E2D\
+  \u66F4\u65B0\u4FE1\u606F\uFF0C\u65E0\u9700\u624B\u52A8\u5E72\u9884\u3002"
+lastmod: 2024-02-18 23:08:58.965940
+model: gpt-4-0125-preview
+summary: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u641C\u7D22\u548C\u66FF\
+  \u6362\u6587\u672C\u5BF9\u4E8E\u7A0B\u5E8F\u5316\u7F16\u8F91\u6587\u6863\u3001\u7535\
+  \u5B50\u8868\u683C\u548C\u6570\u636E\u5E93\u81F3\u5173\u91CD\u8981\u3002\u8FD9\u79CD\
+  \u529F\u80FD\u5141\u8BB8\u7A0B\u5E8F\u5458\u81EA\u52A8\u5316\u6279\u91CF\u7F16\u8F91\
+  \uFF0C\u66F4\u6B63\u9519\u8BEF\u6216\u5728\u5E9E\u5927\u7684\u6570\u636E\u96C6\u4E2D\
+  \u66F4\u65B0\u4FE1\u606F\uFF0C\u65E0\u9700\u624B\u52A8\u5E72\u9884\u3002"
+title: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C"
 ---
 
 {{< edit_this_page >}}

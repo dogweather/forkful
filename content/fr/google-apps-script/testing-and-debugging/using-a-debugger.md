@@ -1,14 +1,16 @@
 ---
-title:                "Utiliser un débogueur"
 aliases:
 - /fr/google-apps-script/using-a-debugger/
-date:                  2024-02-01T22:03:28.331482-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utiliser un débogueur"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/google-apps-script/using-a-debugger.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:28.331482-07:00
+description: "Le d\xE9bogage dans Google Apps Script (GAS) implique le processus d'identification\
+  \ et de suppression des erreurs des scripts destin\xE9s \xE0 automatiser les\u2026"
+lastmod: 2024-02-18 23:09:08.294361
+model: gpt-4-0125-preview
+summary: "Le d\xE9bogage dans Google Apps Script (GAS) implique le processus d'identification\
+  \ et de suppression des erreurs des scripts destin\xE9s \xE0 automatiser les\u2026"
+title: "Utiliser un d\xE9bogueur"
 ---
 
 {{< edit_this_page >}}

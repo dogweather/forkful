@@ -1,13 +1,16 @@
 ---
-title:                "Hantering av fel"
 aliases:
 - /sv/c-sharp/handling-errors/
-date:                  2024-01-26T00:50:43.965968-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Hantering av fel"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/handling-errors.md"
+date: 2024-01-26 00:50:43.965968-07:00
+description: "Att hantera fel i C# handlar om att hantera det ov\xE4ntade\u2014som\
+  \ att snubbla p\xE5 sina egna skosn\xF6ren. Program kan snubbla p\xE5 d\xE5liga\
+  \ data eller ostadiga\u2026"
+lastmod: 2024-02-18 23:08:51.803063
+model: gpt-4-1106-preview
+summary: "Att hantera fel i C# handlar om att hantera det ov\xE4ntade\u2014som att\
+  \ snubbla p\xE5 sina egna skosn\xF6ren. Program kan snubbla p\xE5 d\xE5liga data\
+  \ eller ostadiga\u2026"
+title: Hantering av fel
 ---
 
 {{< edit_this_page >}}

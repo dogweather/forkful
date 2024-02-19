@@ -1,14 +1,16 @@
 ---
-title:                "Rifattorizzazione"
 aliases:
 - /it/google-apps-script/refactoring/
-date:                  2024-02-01T21:59:33.361706-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rifattorizzazione"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/google-apps-script/refactoring.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:33.361706-07:00
+description: "Il refactoring nel lessico della programmazione si riferisce al processo\
+  \ di ristrutturazione del codice informatico esistente\u2014modificando la\u2026"
+lastmod: 2024-02-18 23:08:55.487027
+model: gpt-4-0125-preview
+summary: "Il refactoring nel lessico della programmazione si riferisce al processo\
+  \ di ristrutturazione del codice informatico esistente\u2014modificando la\u2026"
+title: Rifattorizzazione
 ---
 
 {{< edit_this_page >}}

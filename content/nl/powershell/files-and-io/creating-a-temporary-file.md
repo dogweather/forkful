@@ -1,15 +1,16 @@
 ---
-title:                "Een tijdelijk bestand aanmaken"
 aliases:
 - /nl/powershell/creating-a-temporary-file/
-date:                  2024-01-28T21:58:20.963329-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tijdelijk bestand aanmaken"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/powershell/creating-a-temporary-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:58:20.963329-07:00
+description: "Het maken van een tijdelijk bestand betekent het cre\xEBren van een\
+  \ bestand voor kortdurend gebruik, vaak om gegevens tijdens een sessie op te slaan.\u2026"
+lastmod: 2024-02-18 23:09:02.113115
+model: gpt-4-0125-preview
+summary: "Het maken van een tijdelijk bestand betekent het cre\xEBren van een bestand\
+  \ voor kortdurend gebruik, vaak om gegevens tijdens een sessie op te slaan.\u2026"
+title: Een tijdelijk bestand aanmaken
 ---
 
 {{< edit_this_page >}}

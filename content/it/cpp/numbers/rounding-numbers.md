@@ -1,13 +1,14 @@
 ---
-title:                "Arrotondamento dei numeri"
 aliases:
 - /it/cpp/rounding-numbers/
-date:                  2024-01-26T03:44:15.371988-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrotondamento dei numeri"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/rounding-numbers.md"
+date: 2024-01-26 03:44:15.371988-07:00
+description: "Arrotondare i numeri significa aggiustare un valore alla sua interezza\
+  \ pi\xF9 vicina o alla precisione specificata. Gli sviluppatori lo fanno per\u2026"
+lastmod: 2024-02-18 23:08:56.167706
+model: gpt-4-0125-preview
+summary: "Arrotondare i numeri significa aggiustare un valore alla sua interezza pi\xF9\
+  \ vicina o alla precisione specificata. Gli sviluppatori lo fanno per\u2026"
+title: Arrotondamento dei numeri
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Rifattorizzazione"
 aliases:
 - /it/java/refactoring/
-date:                  2024-01-26T01:18:50.344627-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rifattorizzazione"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/java/refactoring.md"
+date: 2024-01-26 01:18:50.344627-07:00
+description: "Il Refactoring \xE8 il processo di ristrutturazione del codice informatico\
+  \ esistente\u2014cambiando il factoring\u2014senza alterarne il comportamento esterno.\
+  \ I\u2026"
+lastmod: 2024-02-18 23:08:55.773542
+model: gpt-4-0125-preview
+summary: "Il Refactoring \xE8 il processo di ristrutturazione del codice informatico\
+  \ esistente\u2014cambiando il factoring\u2014senza alterarne il comportamento esterno.\
+  \ I\u2026"
+title: Rifattorizzazione
 ---
 
 {{< edit_this_page >}}

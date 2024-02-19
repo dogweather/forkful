@@ -1,13 +1,16 @@
 ---
-title:                "Trabalhando com números complexos"
 aliases:
 - /pt/elixir/working-with-complex-numbers/
-date:                  2024-01-26T04:39:14.856685-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com números complexos"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/working-with-complex-numbers.md"
+date: 2024-01-26 04:39:14.856685-07:00
+description: "N\xFAmeros complexos t\xEAm uma parte real e uma parte imagin\xE1ria\
+  \ (como `3 + 4i`). Eles s\xE3o usados em engenharia, f\xEDsica e certos problemas\
+  \ de computa\xE7\xE3o.\u2026"
+lastmod: 2024-02-18 23:08:57.838167
+model: gpt-4-0125-preview
+summary: "N\xFAmeros complexos t\xEAm uma parte real e uma parte imagin\xE1ria (como\
+  \ `3 + 4i`). Eles s\xE3o usados em engenharia, f\xEDsica e certos problemas de computa\xE7\
+  \xE3o.\u2026"
+title: "Trabalhando com n\xFAmeros complexos"
 ---
 
 {{< edit_this_page >}}

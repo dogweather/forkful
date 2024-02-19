@@ -1,14 +1,25 @@
 ---
-title:                "문자열의 길이 찾기"
 aliases:
 - /ko/elixir/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:57.324377-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "문자열의 길이 찾기"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:57.324377-07:00
+description: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC740\
+  \ \uBB38\uC790\uC5F4\uC5D0 \uD3EC\uD568\uB41C \uBB38\uC790\uC758 \uC218\uB97C \uC138\
+  \uB294 \uACFC\uC815\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\
+  \ \uB370\uC774\uD130\uB97C \uAC80\uC99D\uD558\uAC70\uB098, UI\uB97C \uC870\uC815\
+  \uD558\uAC70\uB098, \uD2B9\uC815 \uC870\uAC74\uC744 \uAE30\uBC18\uC73C\uB85C \uB85C\
+  \uC9C1\uC744 \uC2E4\uD589\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\
+  \uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:05.741050
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC740 \uBB38\
+  \uC790\uC5F4\uC5D0 \uD3EC\uD568\uB41C \uBB38\uC790\uC758 \uC218\uB97C \uC138\uB294\
+  \ \uACFC\uC815\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB370\
+  \uC774\uD130\uB97C \uAC80\uC99D\uD558\uAC70\uB098, UI\uB97C \uC870\uC815\uD558\uAC70\
+  \uB098, \uD2B9\uC815 \uC870\uAC74\uC744 \uAE30\uBC18\uC73C\uB85C \uB85C\uC9C1\uC744\
+  \ \uC2E4\uD589\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4\
+  ."
+title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Karakters Verwijderen die Overeenkomen met een Patroon"
 aliases:
 - /nl/vba/deleting-characters-matching-a-pattern/
-date:                  2024-02-01T21:52:39.277239-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Karakters Verwijderen die Overeenkomen met een Patroon"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/vba/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:39.277239-07:00
+description: "Tekens verwijderen die overeenkomen met een specifiek patroon in Visual\
+  \ Basic for Applications (VBA) omvat het identificeren en vervolgens verwijderen\
+  \ van\u2026"
+lastmod: 2024-02-18 23:09:01.647768
+model: gpt-4-0125-preview
+summary: "Tekens verwijderen die overeenkomen met een specifiek patroon in Visual\
+  \ Basic for Applications (VBA) omvat het identificeren en vervolgens verwijderen\
+  \ van\u2026"
+title: Karakters Verwijderen die Overeenkomen met een Patroon
 ---
 
 {{< edit_this_page >}}

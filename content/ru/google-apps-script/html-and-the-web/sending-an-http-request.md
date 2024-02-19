@@ -1,14 +1,31 @@
 ---
-title:                "Отправка HTTP-запроса"
 aliases:
 - /ru/google-apps-script/sending-an-http-request/
-date:                  2024-02-01T22:01:56.414139-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Отправка HTTP-запроса"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/google-apps-script/sending-an-http-request.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:56.414139-07:00
+description: "\u041E\u0442\u043F\u0440\u0430\u0432\u043A\u0430 HTTP-\u0437\u0430\u043F\
+  \u0440\u043E\u0441\u0430 \u0432 Google Apps Script \u0437\u0430\u043A\u043B\u044E\
+  \u0447\u0430\u0435\u0442\u0441\u044F \u0432 \u043F\u0440\u043E\u0433\u0440\u0430\
+  \u043C\u043C\u043D\u043E\u043C \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u0438\
+  \ \u0432\u044B\u0437\u043E\u0432\u0430 \u043A \u0432\u043D\u0435\u0448\u043D\u0435\
+  \u043C\u0443 \u0432\u0435\u0431-\u0441\u0435\u0440\u0432\u0435\u0440\u0443 \u0438\
+  \u043B\u0438 API. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442\
+  \u044B \u0434\u0435\u043B\u0430\u044E\u0442 \u044D\u0442\u043E \u0434\u043B\u044F\
+  \ \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u044F\u2026"
+lastmod: 2024-02-18 23:08:56.477095
+model: gpt-4-0125-preview
+summary: "\u041E\u0442\u043F\u0440\u0430\u0432\u043A\u0430 HTTP-\u0437\u0430\u043F\
+  \u0440\u043E\u0441\u0430 \u0432 Google Apps Script \u0437\u0430\u043A\u043B\u044E\
+  \u0447\u0430\u0435\u0442\u0441\u044F \u0432 \u043F\u0440\u043E\u0433\u0440\u0430\
+  \u043C\u043C\u043D\u043E\u043C \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u0438\
+  \ \u0432\u044B\u0437\u043E\u0432\u0430 \u043A \u0432\u043D\u0435\u0448\u043D\u0435\
+  \u043C\u0443 \u0432\u0435\u0431-\u0441\u0435\u0440\u0432\u0435\u0440\u0443 \u0438\
+  \u043B\u0438 API. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442\
+  \u044B \u0434\u0435\u043B\u0430\u044E\u0442 \u044D\u0442\u043E \u0434\u043B\u044F\
+  \ \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u044F\u2026"
+title: "\u041E\u0442\u043F\u0440\u0430\u0432\u043A\u0430 HTTP-\u0437\u0430\u043F\u0440\
+  \u043E\u0441\u0430"
 ---
 
 {{< edit_this_page >}}

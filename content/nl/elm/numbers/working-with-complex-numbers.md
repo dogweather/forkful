@@ -1,15 +1,16 @@
 ---
-title:                "Werken met complexe getallen"
 aliases:
 - /nl/elm/working-with-complex-numbers/
-date:                  2024-01-28T22:11:57.320260-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met complexe getallen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elm/working-with-complex-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:57.320260-07:00
+description: "Complexe getallen zijn een combinatie van re\xEBle en imaginaire getallen,\
+  \ zoals `a + bi` waarbij `i` de vierkantswortel van -1 is. Ze zijn cruciaal in\u2026"
+lastmod: 2024-02-18 23:09:01.752661
+model: gpt-4-0125-preview
+summary: "Complexe getallen zijn een combinatie van re\xEBle en imaginaire getallen,\
+  \ zoals `a + bi` waarbij `i` de vierkantswortel van -1 is. Ze zijn cruciaal in\u2026"
+title: Werken met complexe getallen
 ---
 
 {{< edit_this_page >}}

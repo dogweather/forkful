@@ -1,15 +1,20 @@
 ---
-title:                "Tái cấu trúc mã"
 aliases:
 - /vi/elm/refactoring/
-date:                  2024-01-28T22:06:18.485189-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tái cấu trúc mã"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elm/refactoring.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:06:18.485189-07:00
+description: "T\xE1i c\u1EA5u tr\xFAc m\xE3 essentially l\xE0 vi\u1EC7c d\u1ECDn d\u1EB9\
+  p m\xE3 ngu\u1ED3n nh\u01B0 l\xE0m s\u1EA1ch m\xF9a xu\xE2n - n\xF3 l\xE0 v\u1EC1\
+  \ vi\u1EC7c c\u1EA5u tr\xFAc l\u1EA1i m\xE3 hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay\
+  \ \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0i c\u1EE7a\u2026"
+lastmod: 2024-02-18 23:08:50.613436
+model: gpt-4-0125-preview
+summary: "T\xE1i c\u1EA5u tr\xFAc m\xE3 essentially l\xE0 vi\u1EC7c d\u1ECDn d\u1EB9\
+  p m\xE3 ngu\u1ED3n nh\u01B0 l\xE0m s\u1EA1ch m\xF9a xu\xE2n - n\xF3 l\xE0 v\u1EC1\
+  \ vi\u1EC7c c\u1EA5u tr\xFAc l\u1EA1i m\xE3 hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay\
+  \ \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0i c\u1EE7a\u2026"
+title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Conversione di una stringa in minuscolo"
 aliases:
 - /it/clojure/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:01.315140-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Conversione di una stringa in minuscolo"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:01.315140-07:00
+description: "Convertire una stringa in minuscolo \xE8 il processo di trasformazione\
+  \ di tutti i caratteri di una stringa in lettere minuscole. Si fa per uniformit\xE0\
+  , per\u2026"
+lastmod: 2024-02-18 23:08:55.549072
+model: gpt-4-1106-preview
+summary: "Convertire una stringa in minuscolo \xE8 il processo di trasformazione di\
+  \ tutti i caratteri di una stringa in lettere minuscole. Si fa per uniformit\xE0\
+  , per\u2026"
+title: Conversione di una stringa in minuscolo
 ---
 
 {{< edit_this_page >}}

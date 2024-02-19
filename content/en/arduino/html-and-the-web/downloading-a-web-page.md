@@ -1,13 +1,15 @@
 ---
-title:                "Downloading a web page"
 aliases:
 - /en/arduino/downloading-a-web-page/
-date:                  2024-01-20T17:43:19.940917-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Downloading a web page"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/downloading-a-web-page.md"
+date: 2024-01-20 17:43:19.940917-07:00
+description: "Downloading a web page means fetching the HTML content from the URL\
+  \ you're looking at. Programmers do this to pull data, update their gadgets, or\
+  \ simply\u2026"
+lastmod: 2024-02-18 23:09:11.314411
+model: gpt-4-1106-preview
+summary: "Downloading a web page means fetching the HTML content from the URL you're\
+  \ looking at. Programmers do this to pull data, update their gadgets, or simply\u2026"
+title: Downloading a web page
 ---
 
 {{< edit_this_page >}}

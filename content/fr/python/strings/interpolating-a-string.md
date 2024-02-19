@@ -1,16 +1,19 @@
 ---
-title:                "Interpolation d'une chaîne de caractères"
 aliases:
 - /fr/python/interpolating-a-string/
-date:                  2024-01-28T21:23:54.078755-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interpolation d'une chaîne de caractères"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/interpolating-a-string.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:23:54.078755-07:00
+description: "L'interpolation de cha\xEEnes est la m\xE9thode permettant d'ins\xE9\
+  rer des expressions au sein de litt\xE9raux de cha\xEEne de caract\xE8res. Les programmeurs\
+  \ l'utilisent\u2026"
+lastmod: 2024-02-18 23:09:08.324548
+model: gpt-4-0125-preview
+summary: "L'interpolation de cha\xEEnes est la m\xE9thode permettant d'ins\xE9rer\
+  \ des expressions au sein de litt\xE9raux de cha\xEEne de caract\xE8res. Les programmeurs\
+  \ l'utilisent\u2026"
+title: "Interpolation d'une cha\xEEne de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

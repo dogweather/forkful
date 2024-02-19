@@ -1,14 +1,16 @@
 ---
-title:                "Afronden van getallen"
 aliases:
 - /nl/c/rounding-numbers/
-date:                  2024-02-03T18:07:38.470018-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Afronden van getallen"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/rounding-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:38.470018-07:00
+description: "Getallen afronden is het proces waarbij de cijfers van een nummer worden\
+  \ aangepast om de precisie volgens bepaalde regels te verminderen, hetzij naar het\u2026"
+lastmod: 2024-02-18 23:09:02.366955
+model: gpt-4-0125-preview
+summary: "Getallen afronden is het proces waarbij de cijfers van een nummer worden\
+  \ aangepast om de precisie volgens bepaalde regels te verminderen, hetzij naar het\u2026"
+title: Afronden van getallen
 ---
 
 {{< edit_this_page >}}

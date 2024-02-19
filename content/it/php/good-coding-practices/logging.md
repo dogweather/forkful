@@ -1,13 +1,15 @@
 ---
-title:                "Registrazione delle Attività (Logging)"
 aliases:
 - /it/php/logging/
-date:                  2024-01-26T01:06:31.626052-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registrazione delle Attività (Logging)"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/php/logging.md"
+date: 2024-01-26 01:06:31.626052-07:00
+description: "Il logging \xE8 sostanzialmente paragonabile al mantenere un diario\
+  \ per il proprio codice; \xE8 l'atto di registrare eventi, errori e altri punti\
+  \ dati\u2026"
+lastmod: 2024-02-18 23:08:55.976870
+model: gpt-4-1106-preview
+summary: "Il logging \xE8 sostanzialmente paragonabile al mantenere un diario per\
+  \ il proprio codice; \xE8 l'atto di registrare eventi, errori e altri punti dati\u2026"
+title: "Registrazione delle Attivit\xE0 (Logging)"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,30 @@
 ---
-title:                "표준 에러에 쓰기"
 aliases:
 - /ko/swift/writing-to-standard-error/
-date:                  2024-02-03T19:34:58.507486-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "표준 에러에 쓰기"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/swift/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:34:58.507486-07:00
+description: "\uD45C\uC900 \uC624\uB958(stderr) \uC4F0\uAE30\uB294 \uD504\uB85C\uADF8\
+  \uB7A8\uC758 \uC624\uB958 \uBA54\uC2DC\uC9C0\uB098 \uC9C4\uB2E8 \uCD9C\uB825\uC744\
+  \ \uD45C\uC900 \uCD9C\uB825(stdout)\uACFC \uAD6C\uBCC4\uB418\uB294 \uBCC4\uB3C4\uC758\
+  \ \uC2A4\uD2B8\uB9BC\uC73C\uB85C \uC804\uB2EC\uD558\uB294 \uAC83\uC5D0 \uAD00\uD55C\
+  \ \uAC83\uC785\uB2C8\uB2E4. \uC774\uB294 \uD45C\uC900 \uCD9C\uB825\uC744 \uD63C\uC7A1\
+  \uD558\uAC8C \uB9CC\uB4E4\uC9C0 \uC54A\uACE0 \uB514\uBC84\uAE45\uACFC \uC624\uB958\
+  \ \uB85C\uAE45\uC744 \uC6A9\uC774\uD558\uAC8C \uD568\uC73C\uB85C\uC368 \uAC1C\uBC1C\
+  \uC790\uC640 \uC0AC\uC6A9\uC790 \uBAA8\uB450\uAC00 \uD504\uB85C\uADF8\uB7A8\uC758\
+  \ \uC0C1\uD0DC\uC640\u2026"
+lastmod: 2024-02-18 23:09:06.773619
+model: gpt-4-0125-preview
+summary: "\uD45C\uC900 \uC624\uB958(stderr) \uC4F0\uAE30\uB294 \uD504\uB85C\uADF8\uB7A8\
+  \uC758 \uC624\uB958 \uBA54\uC2DC\uC9C0\uB098 \uC9C4\uB2E8 \uCD9C\uB825\uC744 \uD45C\
+  \uC900 \uCD9C\uB825(stdout)\uACFC \uAD6C\uBCC4\uB418\uB294 \uBCC4\uB3C4\uC758 \uC2A4\
+  \uD2B8\uB9BC\uC73C\uB85C \uC804\uB2EC\uD558\uB294 \uAC83\uC5D0 \uAD00\uD55C \uAC83\
+  \uC785\uB2C8\uB2E4. \uC774\uB294 \uD45C\uC900 \uCD9C\uB825\uC744 \uD63C\uC7A1\uD558\
+  \uAC8C \uB9CC\uB4E4\uC9C0 \uC54A\uACE0 \uB514\uBC84\uAE45\uACFC \uC624\uB958 \uB85C\
+  \uAE45\uC744 \uC6A9\uC774\uD558\uAC8C \uD568\uC73C\uB85C\uC368 \uAC1C\uBC1C\uC790\
+  \uC640 \uC0AC\uC6A9\uC790 \uBAA8\uB450\uAC00 \uD504\uB85C\uADF8\uB7A8\uC758 \uC0C1\
+  \uD0DC\uC640\u2026"
+title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
 ---
 
 {{< edit_this_page >}}

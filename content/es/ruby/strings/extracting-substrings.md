@@ -1,13 +1,14 @@
 ---
-title:                "Extracción de subcadenas"
 aliases:
 - /es/ruby/extracting-substrings/
-date:                  2024-01-20T17:46:29.967487-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extracción de subcadenas"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/extracting-substrings.md"
+date: 2024-01-20 17:46:29.967487-07:00
+description: "Extraer substrings significa sacar partes espec\xEDficas de un string.\
+  \ Lo hacemos para manipular, analizar o modificar datos de manera m\xE1s precisa."
+lastmod: 2024-02-18 23:09:10.538318
+model: gpt-4-1106-preview
+summary: "Extraer substrings significa sacar partes espec\xEDficas de un string. Lo\
+  \ hacemos para manipular, analizar o modificar datos de manera m\xE1s precisa."
+title: "Extracci\xF3n de subcadenas"
 ---
 
 {{< edit_this_page >}}

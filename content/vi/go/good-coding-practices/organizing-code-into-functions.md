@@ -1,14 +1,20 @@
 ---
-title:                "Sắp xếp mã lập trình vào trong hàm"
 aliases:
 - /vi/go/organizing-code-into-functions/
-date:                  2024-02-03T18:00:06.999144-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sắp xếp mã lập trình vào trong hàm"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/organizing-code-into-functions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:00:06.999144-07:00
+description: "Vi\u1EC7c t\u1ED5 ch\u1EE9c code th\xE0nh c\xE1c h\xE0m trong Go bao\
+  \ g\u1ED3m vi\u1EC7c chia nh\u1ECF code th\xE0nh c\xE1c kh\u1ED1i c\xF3 th\u1EC3\
+  \ t\xE1i s\u1EED d\u1EE5ng, m\xF4-\u0111un th\u1EF1c hi\u1EC7n c\xE1c nhi\u1EC7\
+  m v\u1EE5 c\u1EE5 th\u1EC3. Ph\u01B0\u01A1ng ph\xE1p\u2026"
+lastmod: 2024-02-18 23:08:50.176985
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c t\u1ED5 ch\u1EE9c code th\xE0nh c\xE1c h\xE0m trong Go bao g\u1ED3\
+  m vi\u1EC7c chia nh\u1ECF code th\xE0nh c\xE1c kh\u1ED1i c\xF3 th\u1EC3 t\xE1i s\u1EED\
+  \ d\u1EE5ng, m\xF4-\u0111un th\u1EF1c hi\u1EC7n c\xE1c nhi\u1EC7m v\u1EE5 c\u1EE5\
+  \ th\u1EC3. Ph\u01B0\u01A1ng ph\xE1p\u2026"
+title: "S\u1EAFp x\u1EBFp m\xE3 l\u1EADp tr\xECnh v\xE0o trong h\xE0m"
 ---
 
 {{< edit_this_page >}}

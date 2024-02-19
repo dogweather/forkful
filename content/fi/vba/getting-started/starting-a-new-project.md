@@ -1,14 +1,18 @@
 ---
-title:                "Uuden projektin aloittaminen"
 aliases:
 - /fi/vba/starting-a-new-project/
-date:                  2024-02-01T22:03:19.327658-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Uuden projektin aloittaminen"
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/starting-a-new-project.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:19.327658-07:00
+description: "Uuden projektin aloittaminen Visual Basic for Applications (VBA) -ohjelmassa\
+  \ sis\xE4lt\xE4\xE4 ymp\xE4rist\xF6n pystytt\xE4misen is\xE4nt\xE4sovelluksen, kuten\
+  \ Excelin, sis\xE4ll\xE4\u2026"
+lastmod: 2024-02-18 23:09:07.411553
+model: gpt-4-0125-preview
+summary: "Uuden projektin aloittaminen Visual Basic for Applications (VBA) -ohjelmassa\
+  \ sis\xE4lt\xE4\xE4 ymp\xE4rist\xF6n pystytt\xE4misen is\xE4nt\xE4sovelluksen, kuten\
+  \ Excelin, sis\xE4ll\xE4\u2026"
+title: Uuden projektin aloittaminen
 ---
 
 {{< edit_this_page >}}

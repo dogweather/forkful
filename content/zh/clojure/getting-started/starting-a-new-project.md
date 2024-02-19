@@ -1,14 +1,19 @@
 ---
-title:                "开始一个新项目"
 aliases:
 - /zh/clojure/starting-a-new-project/
-date:                  2024-01-20T18:03:21.902387-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "开始一个新项目"
-
-tag:                  "Getting Started"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/starting-a-new-project.md"
+date: 2024-01-20 18:03:21.902387-07:00
+description: "\u521B\u5EFA\u65B0\u9879\u76EE\u662F\u6784\u5EFA\u5168\u65B0\u8F6F\u4EF6\
+  \u7A0B\u5E8F\u7684\u8D77\u70B9\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\
+  \u4E86\u89E3\u51B3\u95EE\u9898\u3001\u5B9E\u9A8C\u65B0\u60F3\u6CD5\u6216\u5F00\u53D1\
+  \u521B\u65B0\u7684\u5DE5\u5177\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:58.828999
+model: gpt-4-1106-preview
+summary: "\u521B\u5EFA\u65B0\u9879\u76EE\u662F\u6784\u5EFA\u5168\u65B0\u8F6F\u4EF6\
+  \u7A0B\u5E8F\u7684\u8D77\u70B9\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\
+  \u4E86\u89E3\u51B3\u95EE\u9898\u3001\u5B9E\u9A8C\u65B0\u60F3\u6CD5\u6216\u5F00\u53D1\
+  \u521B\u65B0\u7684\u5DE5\u5177\u3002"
+title: "\u5F00\u59CB\u4E00\u4E2A\u65B0\u9879\u76EE"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Gestion des erreurs"
 aliases:
 - /fr/php/handling-errors/
-date:                  2024-01-26T00:55:14.503733-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Gestion des erreurs"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/php/handling-errors.md"
+date: 2024-01-26 00:55:14.503733-07:00
+description: "La gestion des erreurs en PHP consiste \xE0 g\xE9rer et r\xE9pondre\
+  \ \xE0 des conditions qui perturbent le d\xE9roulement normal d\u2019un programme,\
+  \ telles que des fichiers\u2026"
+lastmod: 2024-02-18 23:09:08.930864
+model: gpt-4-1106-preview
+summary: "La gestion des erreurs en PHP consiste \xE0 g\xE9rer et r\xE9pondre \xE0\
+  \ des conditions qui perturbent le d\xE9roulement normal d\u2019un programme, telles\
+  \ que des fichiers\u2026"
+title: Gestion des erreurs
 ---
 
 {{< edit_this_page >}}

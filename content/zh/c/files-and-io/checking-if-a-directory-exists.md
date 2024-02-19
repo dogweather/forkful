@@ -1,14 +1,26 @@
 ---
-title:                "检查目录是否存在"
 aliases:
 - /zh/c/checking-if-a-directory-exists/
-date:                  2024-02-03T17:52:33.404737-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "检查目录是否存在"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:52:33.404737-07:00
+description: "\u5728C\u8BED\u8A00\u4E2D\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728\
+  \u6D89\u53CA\u67E5\u8BE2\u6587\u4EF6\u7CFB\u7EDF\uFF0C\u4EE5\u9A8C\u8BC1\u7279\u5B9A\
+  \u8DEF\u5F84\u662F\u5426\u6307\u5411\u76EE\u5F55\u3002\u7A0B\u5E8F\u5458\u7ECF\u5E38\
+  \u6267\u884C\u6B64\u64CD\u4F5C\uFF0C\u4EE5\u786E\u4FDD\u6587\u4EF6\u64CD\u4F5C\uFF08\
+  \u5982\u8BFB\u53D6\u6216\u5199\u5165\u6587\u4EF6\uFF09\u9488\u5BF9\u6709\u6548\u8DEF\
+  \u5F84\uFF0C\u9632\u6B62\u9519\u8BEF\u5E76\u63D0\u9AD8\u8F6F\u4EF6\u53EF\u9760\u6027\
+  \u3002"
+lastmod: 2024-02-18 23:08:59.573547
+model: gpt-4-0125-preview
+summary: "\u5728C\u8BED\u8A00\u4E2D\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728\
+  \u6D89\u53CA\u67E5\u8BE2\u6587\u4EF6\u7CFB\u7EDF\uFF0C\u4EE5\u9A8C\u8BC1\u7279\u5B9A\
+  \u8DEF\u5F84\u662F\u5426\u6307\u5411\u76EE\u5F55\u3002\u7A0B\u5E8F\u5458\u7ECF\u5E38\
+  \u6267\u884C\u6B64\u64CD\u4F5C\uFF0C\u4EE5\u786E\u4FDD\u6587\u4EF6\u64CD\u4F5C\uFF08\
+  \u5982\u8BFB\u53D6\u6216\u5199\u5165\u6587\u4EF6\uFF09\u9488\u5BF9\u6709\u6548\u8DEF\
+  \u5F84\uFF0C\u9632\u6B62\u9519\u8BEF\u5E76\u63D0\u9AD8\u8F6F\u4EF6\u53EF\u9760\u6027\
+  \u3002"
+title: "\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Rifattorizzazione"
 aliases:
 - /it/kotlin/refactoring/
-date:                  2024-01-26T01:43:58.849283-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rifattorizzazione"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/refactoring.md"
+date: 2024-01-26 01:43:58.849283-07:00
+description: "Il refactoring \xE8 il processo di modificare il codice esistente per\
+  \ migliorarne la struttura, la leggibilit\xE0 e le prestazioni senza cambiarne il\u2026"
+lastmod: 2024-02-18 23:08:55.854103
+model: gpt-4-0125-preview
+summary: "Il refactoring \xE8 il processo di modificare il codice esistente per migliorarne\
+  \ la struttura, la leggibilit\xE0 e le prestazioni senza cambiarne il\u2026"
+title: Rifattorizzazione
 ---
 
 {{< edit_this_page >}}

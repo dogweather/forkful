@@ -1,14 +1,18 @@
 ---
-title:                "Att arbeta med komplexa tal"
 aliases:
 - /sv/c/working-with-complex-numbers/
-date:                  2024-02-03T18:13:53.173733-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med komplexa tal"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:13:53.173733-07:00
+description: "Komplexa tal best\xE5r av en reell del och en imagin\xE4r del, representerade\
+  \ som `a + bi` d\xE4r `i` \xE4r kvadratroten av `-1`. Programmerare arbetar med\
+  \ komplexa\u2026"
+lastmod: 2024-02-18 23:08:52.243670
+model: gpt-4-0125-preview
+summary: "Komplexa tal best\xE5r av en reell del och en imagin\xE4r del, representerade\
+  \ som `a + bi` d\xE4r `i` \xE4r kvadratroten av `-1`. Programmerare arbetar med\
+  \ komplexa\u2026"
+title: Att arbeta med komplexa tal
 ---
 
 {{< edit_this_page >}}

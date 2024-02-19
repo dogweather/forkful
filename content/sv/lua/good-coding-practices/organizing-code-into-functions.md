@@ -1,13 +1,14 @@
 ---
-title:                "Att organisera kod i funktioner"
 aliases:
 - /sv/lua/organizing-code-into-functions/
-date:                  2024-01-26T01:11:46.286566-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Att organisera kod i funktioner"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/lua/organizing-code-into-functions.md"
+date: 2024-01-26 01:11:46.286566-07:00
+description: "Att organisera kod i funktioner handlar om att dela upp ditt skriptande\
+  \ i mindre bitar\u2014t\xE4nk funktionella LEGO-block. Vi g\xF6r det f\xF6r tydlighet,\u2026"
+lastmod: 2024-02-18 23:08:51.923808
+model: gpt-4-1106-preview
+summary: "Att organisera kod i funktioner handlar om att dela upp ditt skriptande\
+  \ i mindre bitar\u2014t\xE4nk funktionella LEGO-block. Vi g\xF6r det f\xF6r tydlighet,\u2026"
+title: Att organisera kod i funktioner
 ---
 
 {{< edit_this_page >}}

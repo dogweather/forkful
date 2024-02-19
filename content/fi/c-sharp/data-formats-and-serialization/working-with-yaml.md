@@ -1,14 +1,16 @@
 ---
-title:                "Työskentely YAML:n kanssa"
 aliases:
 - /fi/c-sharp/working-with-yaml/
-date:                  2024-02-03T19:25:01.705830-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely YAML:n kanssa"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:25:01.705830-07:00
+description: "YAML, joka tarkoittaa YAML Ain't Markup Language, on ihmisen luettavissa\
+  \ oleva datan sarjallistamisformaatti. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 usein\u2026"
+lastmod: 2024-02-18 23:09:07.642917
+model: gpt-4-0125-preview
+summary: "YAML, joka tarkoittaa YAML Ain't Markup Language, on ihmisen luettavissa\
+  \ oleva datan sarjallistamisformaatti. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 usein\u2026"
+title: "Ty\xF6skentely YAML:n kanssa"
 ---
 
 {{< edit_this_page >}}

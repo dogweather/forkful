@@ -1,14 +1,16 @@
 ---
-title:                "Verificando se um diretório existe"
 aliases:
 - /pt/elixir/checking-if-a-directory-exists/
-date:                  2024-02-03T19:07:03.601750-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verificando se um diretório existe"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:07:03.601750-07:00
+description: "Verificar se um diret\xF3rio existe em Elixir trata de confirmar a presen\xE7\
+  a de um diret\xF3rio em um caminho especificado no sistema de arquivos. Programadores\u2026"
+lastmod: 2024-02-18 23:08:57.858080
+model: gpt-4-0125-preview
+summary: "Verificar se um diret\xF3rio existe em Elixir trata de confirmar a presen\xE7\
+  a de um diret\xF3rio em um caminho especificado no sistema de arquivos. Programadores\u2026"
+title: "Verificando se um diret\xF3rio existe"
 ---
 
 {{< edit_this_page >}}

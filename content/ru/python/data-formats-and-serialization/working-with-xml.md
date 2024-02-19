@@ -1,15 +1,29 @@
 ---
-title:                "Работа с XML"
 aliases:
 - /ru/python/working-with-xml/
-date:                  2024-01-29T00:05:15.528440-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Работа с XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/python/working-with-xml.md"
 changelog:
-  - 2024-01-29, gpt-4-0125-preview, translated from English
+- 2024-01-29, gpt-4-0125-preview, translated from English
+date: 2024-01-29 00:05:15.528440-07:00
+description: "\"\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 XML\" \u043E\u0442\u043D\
+  \u043E\u0441\u0438\u0442\u0441\u044F \u043A \u043F\u0440\u043E\u0446\u0435\u0441\
+  \u0441\u0443 \u0447\u0442\u0435\u043D\u0438\u044F, \u0441\u043E\u0437\u0434\u0430\
+  \u043D\u0438\u044F \u0438 \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u044F\
+  \ \u0444\u0430\u0439\u043B\u043E\u0432 XML (eXtensible Markup Language) \u0441 \u0438\
+  \u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435\u043C \u043F\
+  \u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\
+  \u044F. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442\u044B\
+  \u2026"
+lastmod: 2024-02-18 23:08:56.561829
+model: gpt-4-0125-preview
+summary: "\"\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 XML\" \u043E\u0442\u043D\u043E\
+  \u0441\u0438\u0442\u0441\u044F \u043A \u043F\u0440\u043E\u0446\u0435\u0441\u0441\
+  \u0443 \u0447\u0442\u0435\u043D\u0438\u044F, \u0441\u043E\u0437\u0434\u0430\u043D\
+  \u0438\u044F \u0438 \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u044F \u0444\
+  \u0430\u0439\u043B\u043E\u0432 XML (eXtensible Markup Language) \u0441 \u0438\u0441\
+  \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435\u043C \u043F\u0440\
+  \u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u044F\
+  . \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442\u044B\u2026"
+title: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 XML"
 ---
 
 {{< edit_this_page >}}

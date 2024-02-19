@@ -1,14 +1,16 @@
 ---
-title:                "Ricerca e sostituzione del testo"
 aliases:
 - /it/go/searching-and-replacing-text/
-date:                  2024-02-03T18:08:20.336144-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ricerca e sostituzione del testo"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:20.336144-07:00
+description: "La ricerca e la sostituzione di testo nella programmazione facilitano\
+  \ la modifica e la gestione delle stringhe, che sono compiti fondamentali nella\u2026"
+lastmod: 2024-02-18 23:08:55.416701
+model: gpt-4-0125-preview
+summary: "La ricerca e la sostituzione di testo nella programmazione facilitano la\
+  \ modifica e la gestione delle stringhe, che sono compiti fondamentali nella\u2026"
+title: Ricerca e sostituzione del testo
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Confronto tra due date"
 aliases:
 - /it/fish-shell/comparing-two-dates/
-date:                  2024-01-20T17:32:43.568367-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Confronto tra due date"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/comparing-two-dates.md"
+date: 2024-01-20 17:32:43.568367-07:00
+description: "Confrontare due date significa verificare se una precede, segue o coincide\
+  \ con l'altra. I programmatori lo fanno per gestire eventi, scadenze, o per\u2026"
+lastmod: 2024-02-18 23:08:56.307619
+model: gpt-4-1106-preview
+summary: "Confrontare due date significa verificare se una precede, segue o coincide\
+  \ con l'altra. I programmatori lo fanno per gestire eventi, scadenze, o per\u2026"
+title: Confronto tra due date
 ---
 
 {{< edit_this_page >}}

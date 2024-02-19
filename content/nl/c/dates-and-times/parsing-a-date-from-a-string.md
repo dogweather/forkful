@@ -1,14 +1,16 @@
 ---
-title:                "Een datum ontleden uit een string"
 aliases:
 - /nl/c/parsing-a-date-from-a-string/
-date:                  2024-02-03T18:00:13.097833-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een datum ontleden uit een string"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:00:13.097833-07:00
+description: "Het ontleden van een datum uit een string in C betreft het omzetten\
+  \ van tekstuele voorstellingen van data naar een formaat dat programma's effectiever\u2026"
+lastmod: 2024-02-18 23:09:02.383428
+model: gpt-4-0125-preview
+summary: "Het ontleden van een datum uit een string in C betreft het omzetten van\
+  \ tekstuele voorstellingen van data naar een formaat dat programma's effectiever\u2026"
+title: Een datum ontleden uit een string
 ---
 
 {{< edit_this_page >}}

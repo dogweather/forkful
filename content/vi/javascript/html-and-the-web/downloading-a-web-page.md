@@ -1,15 +1,20 @@
 ---
-title:                "Tải trang web"
 aliases:
 - /vi/javascript/downloading-a-web-page/
-date:                  2024-01-28T21:59:13.690397-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tải trang web"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/downloading-a-web-page.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:13.690397-07:00
+description: "T\u1EA3i xu\u1ED1ng m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 l\u1EA5\
+  y HTML, CSS, JavaScript, v\xE0 b\u1EA5t k\u1EF3 d\u1EEF li\u1EC7u n\xE0o kh\xE1\
+  c t\u1EA1o n\xEAn trang t\u1EEB m\xE1y ch\u1EE7. L\u1EADp tr\xECnh vi\xEAn th\u1EF1\
+  c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3\u2026"
+lastmod: 2024-02-18 23:08:51.134700
+model: gpt-4-0125-preview
+summary: "T\u1EA3i xu\u1ED1ng m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 l\u1EA5y HTML,\
+  \ CSS, JavaScript, v\xE0 b\u1EA5t k\u1EF3 d\u1EEF li\u1EC7u n\xE0o kh\xE1c t\u1EA1\
+  o n\xEAn trang t\u1EEB m\xE1y ch\u1EE7. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
+  n vi\u1EC7c n\xE0y \u0111\u1EC3\u2026"
+title: "T\u1EA3i trang web"
 ---
 
 {{< edit_this_page >}}

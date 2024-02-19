@@ -1,14 +1,25 @@
 ---
-title:                "미래나 과거의 날짜 계산하기"
 aliases:
 - /ko/ruby/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:32:15.713091-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "미래나 과거의 날짜 계산하기"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:32:15.713091-07:00
+description: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uD2B9\uC815 \uB0A0\uC9DC\uB97C\
+  \ \uACC4\uC0B0\uD55C\uB2E4\uB294 \uAC83\uC740 \uB0A0\uC9DC\uC5D0 \uC77C\uC815 \uAE30\
+  \uAC04\uC744 \uB354\uD558\uAC70\uB098 \uBE7C\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\
+  \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uC608\uC57D \uC2DC\uC2A4\uD15C, \uAE30\
+  \uD55C \uC124\uC815, \uB0A0\uC9DC \uAE30\uBC18 \uB9AC\uB9C8\uC778\uB354\uC640 \uAC19\
+  \uC740 \uAE30\uB2A5\uC744 \uAD6C\uD604\uD560 \uB54C \uC774\uB97C \uD65C\uC6A9\uD569\
+  \uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:07.046691
+model: gpt-4-1106-preview
+summary: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uD2B9\uC815 \uB0A0\uC9DC\uB97C \uACC4\
+  \uC0B0\uD55C\uB2E4\uB294 \uAC83\uC740 \uB0A0\uC9DC\uC5D0 \uC77C\uC815 \uAE30\uAC04\
+  \uC744 \uB354\uD558\uAC70\uB098 \uBE7C\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uC608\uC57D \uC2DC\uC2A4\uD15C, \uAE30\uD55C\
+  \ \uC124\uC815, \uB0A0\uC9DC \uAE30\uBC18 \uB9AC\uB9C8\uC778\uB354\uC640 \uAC19\uC740\
+  \ \uAE30\uB2A5\uC744 \uAD6C\uD604\uD560 \uB54C \uC774\uB97C \uD65C\uC6A9\uD569\uB2C8\
+  \uB2E4."
+title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

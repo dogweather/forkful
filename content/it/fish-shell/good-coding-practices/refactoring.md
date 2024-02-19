@@ -1,13 +1,16 @@
 ---
-title:                "Rifattorizzazione"
 aliases:
 - /it/fish-shell/refactoring/
-date:                  2024-01-26T01:17:59.406526-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rifattorizzazione"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/refactoring.md"
+date: 2024-01-26 01:17:59.406526-07:00
+description: "Il refactoring \xE8 il processo di ristrutturazione del codice esistente\
+  \ senza cambiarne il comportamento esterno per migliorare attributi non funzionali.\
+  \ I\u2026"
+lastmod: 2024-02-18 23:08:56.303727
+model: gpt-4-0125-preview
+summary: "Il refactoring \xE8 il processo di ristrutturazione del codice esistente\
+  \ senza cambiarne il comportamento esterno per migliorare attributi non funzionali.\
+  \ I\u2026"
+title: Rifattorizzazione
 ---
 
 {{< edit_this_page >}}

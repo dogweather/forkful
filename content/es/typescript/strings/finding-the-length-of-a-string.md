@@ -1,13 +1,14 @@
 ---
-title:                "Calculando la longitud de una cadena"
 aliases:
 - /es/typescript/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:15.930001-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Calculando la longitud de una cadena"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:15.930001-07:00
+description: "En TypeScript, hallar la longitud de una cadena implica contar la cantidad\
+  \ de caracteres que contiene. Saber esto es clave cuando manipulamos texto: para\u2026"
+lastmod: 2024-02-18 23:09:09.693126
+model: gpt-4-1106-preview
+summary: "En TypeScript, hallar la longitud de una cadena implica contar la cantidad\
+  \ de caracteres que contiene. Saber esto es clave cuando manipulamos texto: para\u2026"
+title: Calculando la longitud de una cadena
 ---
 
 {{< edit_this_page >}}

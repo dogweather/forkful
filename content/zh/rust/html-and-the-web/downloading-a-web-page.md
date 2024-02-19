@@ -1,14 +1,19 @@
 ---
-title:                "下载网页"
 aliases:
 - /zh/rust/downloading-a-web-page/
-date:                  2024-01-20T17:44:46.835751-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "下载网页"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/downloading-a-web-page.md"
+date: 2024-01-20 17:44:46.835751-07:00
+description: "\u4E0B\u8F7D\u7F51\u9875\u5C31\u662F\u4ECE\u4E92\u8054\u7F51\u4E0A\u83B7\
+  \u53D6\u7F51\u9875\u5185\u5BB9\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u53EF\u4EE5\
+  \u5904\u7406\u3001\u5206\u6790\u7F51\u9875\u6570\u636E\u6216\u8005\u505A\u7F51\u9875\
+  \u5907\u4EFD\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:58.940208
+model: gpt-4-1106-preview
+summary: "\u4E0B\u8F7D\u7F51\u9875\u5C31\u662F\u4ECE\u4E92\u8054\u7F51\u4E0A\u83B7\
+  \u53D6\u7F51\u9875\u5185\u5BB9\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u53EF\u4EE5\
+  \u5904\u7406\u3001\u5206\u6790\u7F51\u9875\u6570\u636E\u6216\u8005\u505A\u7F51\u9875\
+  \u5907\u4EFD\u3002"
+title: "\u4E0B\u8F7D\u7F51\u9875"
 ---
 
 {{< edit_this_page >}}

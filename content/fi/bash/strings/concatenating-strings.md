@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonojen yhdistäminen"
 aliases:
 - /fi/bash/concatenating-strings/
-date:                  2024-01-20T17:34:01.597668-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonojen yhdistäminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/concatenating-strings.md"
+date: 2024-01-20 17:34:01.597668-07:00
+description: "Yksinkertaistettuna, merkkijonojen yhdist\xE4minen on tapa liitt\xE4\
+  \xE4 tekstej\xE4 yhteen. Ohjelmoijat tekev\xE4t t\xE4t\xE4, koska tarvitsevat usein\
+  \ luoda dynaamisia\u2026"
+lastmod: 2024-02-18 23:09:07.793634
+model: gpt-4-1106-preview
+summary: "Yksinkertaistettuna, merkkijonojen yhdist\xE4minen on tapa liitt\xE4\xE4\
+  \ tekstej\xE4 yhteen. Ohjelmoijat tekev\xE4t t\xE4t\xE4, koska tarvitsevat usein\
+  \ luoda dynaamisia\u2026"
+title: "Merkkijonojen yhdist\xE4minen"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Inviare una richiesta http con autenticazione di base"
 aliases:
 - /it/swift/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:48.404022-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Inviare una richiesta http con autenticazione di base"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:48.404022-07:00
+description: "Le richieste HTTP con autenticazione di base sono una modalit\xE0 standard\
+  \ per accedere a risorse protette da username e password. I programmatori le usano\u2026"
+lastmod: 2024-02-18 23:08:56.212208
+model: gpt-4-1106-preview
+summary: "Le richieste HTTP con autenticazione di base sono una modalit\xE0 standard\
+  \ per accedere a risorse protette da username e password. I programmatori le usano\u2026"
+title: Inviare una richiesta http con autenticazione di base
 ---
 
 {{< edit_this_page >}}

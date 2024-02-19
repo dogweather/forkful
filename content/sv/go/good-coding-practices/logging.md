@@ -1,14 +1,16 @@
 ---
-title:                "Loggning"
 aliases:
 - /sv/go/logging/
-date:                  2024-02-03T17:59:54.991907-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Loggning"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/logging.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:54.991907-07:00
+description: "Loggning inom programutveckling \xE4r processen att registrera information\
+  \ om ett programs utf\xF6rande, avsedd att sp\xE5ra dess beteende och diagnostisera\u2026"
+lastmod: 2024-02-18 23:08:51.340221
+model: gpt-4-0125-preview
+summary: "Loggning inom programutveckling \xE4r processen att registrera information\
+  \ om ett programs utf\xF6rande, avsedd att sp\xE5ra dess beteende och diagnostisera\u2026"
+title: Loggning
 ---
 
 {{< edit_this_page >}}

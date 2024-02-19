@@ -1,14 +1,28 @@
 ---
-title:                "रेगुलर एक्सप्रेशन्स का उपयोग करना"
 aliases:
 - /hi/vba/using-regular-expressions/
-date:                  2024-02-01T22:06:12.924680-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "रेगुलर एक्सप्रेशन्स का उपयोग करना"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/vba/using-regular-expressions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:06:12.924680-07:00
+description: "Visual Basic for Applications (VBA) \u092E\u0947\u0902 \u0928\u093F\u092F\
+  \u092E\u093F\u0924 \u0905\u092D\u093F\u0935\u094D\u092F\u0915\u094D\u0924\u093F\u092F\
+  \u093E\u0901 (regex) \u0936\u092C\u094D\u0926\u094B\u0902 \u0915\u0940 \u0916\u094B\
+  \u091C, \u092E\u093F\u0932\u093E\u0928, \u0914\u0930 \u0939\u0947\u0930\u092B\u0947\
+  \u0930 \u0915\u0930\u0928\u0947 \u0915\u093E \u090F\u0915 \u0936\u0915\u094D\u0924\
+  \u093F\u0936\u093E\u0932\u0940 \u0924\u0930\u0940\u0915\u093E \u092A\u094D\u0930\
+  \u0926\u093E\u0928 \u0915\u0930\u0924\u0940 \u0939\u0948\u0902\u0964\u2026"
+lastmod: 2024-02-18 23:09:03.015650
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications (VBA) \u092E\u0947\u0902 \u0928\u093F\u092F\
+  \u092E\u093F\u0924 \u0905\u092D\u093F\u0935\u094D\u092F\u0915\u094D\u0924\u093F\u092F\
+  \u093E\u0901 (regex) \u0936\u092C\u094D\u0926\u094B\u0902 \u0915\u0940 \u0916\u094B\
+  \u091C, \u092E\u093F\u0932\u093E\u0928, \u0914\u0930 \u0939\u0947\u0930\u092B\u0947\
+  \u0930 \u0915\u0930\u0928\u0947 \u0915\u093E \u090F\u0915 \u0936\u0915\u094D\u0924\
+  \u093F\u0936\u093E\u0932\u0940 \u0924\u0930\u0940\u0915\u093E \u092A\u094D\u0930\
+  \u0926\u093E\u0928 \u0915\u0930\u0924\u0940 \u0939\u0948\u0902\u0964\u2026"
+title: "\u0930\u0947\u0917\u0941\u0932\u0930 \u090F\u0915\u094D\u0938\u092A\u094D\u0930\
+  \u0947\u0936\u0928\u094D\u0938 \u0915\u093E \u0909\u092A\u092F\u094B\u0917 \u0915\
+  \u0930\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

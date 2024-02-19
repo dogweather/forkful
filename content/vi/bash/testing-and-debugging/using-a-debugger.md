@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng bộ gỡ lỗi"
 aliases:
 - /vi/bash/using-a-debugger/
-date:                  2024-01-28T22:08:45.057558-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng bộ gỡ lỗi"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/bash/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:45.057558-07:00
+description: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i trong Bash c\xF3\
+  \ ngh\u0129a l\xE0 s\u1EED d\u1EE5ng c\xE1c c\xF4ng c\u1EE5 \u0111\u1EC3 ki\u1EC3\
+  m tra v\xE0 t\xECm l\u1ED7i trong c\xE1c script c\u1EE7a b\u1EA1n, ch\u1EB3ng h\u1EA1\
+  n nh\u01B0 b\u1EAFt l\u1ED7i l\xE0m s\u1EADp m\xE3 c\u1EE7a\u2026"
+lastmod: 2024-02-18 23:08:50.890507
+model: gpt-4-0125-preview
+summary: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i trong Bash c\xF3 ngh\u0129\
+  a l\xE0 s\u1EED d\u1EE5ng c\xE1c c\xF4ng c\u1EE5 \u0111\u1EC3 ki\u1EC3m tra v\xE0\
+  \ t\xECm l\u1ED7i trong c\xE1c script c\u1EE7a b\u1EA1n, ch\u1EB3ng h\u1EA1n nh\u01B0\
+  \ b\u1EAFt l\u1ED7i l\xE0m s\u1EADp m\xE3 c\u1EE7a\u2026"
+title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

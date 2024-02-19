@@ -1,13 +1,16 @@
 ---
-title:                "Korzystanie z interaktywnego shella (REPL)"
 aliases:
 - /pl/fish-shell/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:14:04.961096-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z interaktywnego shella (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:14:04.961096-07:00
+description: "REPL, czyli Read-Eval-Print Loop (P\u0119tla Czytaj-Wykonaj-Wydrukuj),\
+  \ to interaktywne \u015Brodowisko programistyczne, kt\xF3re przyjmuje pojedyncze\
+  \ wej\u015Bcia\u2026"
+lastmod: 2024-02-18 23:08:50.038290
+model: gpt-4-0125-preview
+summary: "REPL, czyli Read-Eval-Print Loop (P\u0119tla Czytaj-Wykonaj-Wydrukuj), to\
+  \ interaktywne \u015Brodowisko programistyczne, kt\xF3re przyjmuje pojedyncze wej\u015B\
+  cia\u2026"
+title: Korzystanie z interaktywnego shella (REPL)
 ---
 
 {{< edit_this_page >}}

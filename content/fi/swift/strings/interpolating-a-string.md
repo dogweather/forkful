@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonon interpolointi"
 aliases:
 - /fi/swift/interpolating-a-string/
-date:                  2024-01-20T17:51:53.236357-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon interpolointi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/interpolating-a-string.md"
+date: 2024-01-20 17:51:53.236357-07:00
+description: "Merkkijonon interpolointi tarkoittaa muuttujien, konstanttien ja lausekkeiden\
+  \ yhdist\xE4mist\xE4 merkkijonoon. Sit\xE4 k\xE4ytet\xE4\xE4n dynaamisten viestien\
+  \ luomiseen ja\u2026"
+lastmod: 2024-02-18 23:09:07.974720
+model: gpt-4-1106-preview
+summary: "Merkkijonon interpolointi tarkoittaa muuttujien, konstanttien ja lausekkeiden\
+  \ yhdist\xE4mist\xE4 merkkijonoon. Sit\xE4 k\xE4ytet\xE4\xE4n dynaamisten viestien\
+  \ luomiseen ja\u2026"
+title: Merkkijonon interpolointi
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,12 @@
 ---
-title:                "ロギング"
 aliases:
 - /ja/elixir/logging/
-date:                  2024-01-26T01:03:05.725338-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "ロギング"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/logging.md"
+date: 2024-01-26 01:03:05.725338-07:00
+description: "\u2026"
+lastmod: 2024-02-18 23:08:54.649193
+model: gpt-4-1106-preview
+summary: "\u2026"
+title: "\u30ED\u30AE\u30F3\u30B0"
 ---
 
 {{< edit_this_page >}}

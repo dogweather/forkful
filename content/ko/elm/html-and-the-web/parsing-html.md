@@ -1,14 +1,27 @@
 ---
-title:                "HTML 파싱"
 aliases:
 - /ko/elm/parsing-html/
-date:                  2024-02-03T19:12:12.425325-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML 파싱"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:12.425325-07:00
+description: "Elm\uC5D0\uC11C HTML \uD30C\uC2F1\uC740 HTML \uBB38\uC11C\uB85C\uBD80\
+  \uD130 \uC815\uBCF4\uB97C \uCD94\uCD9C\uD558\uB294 \uAC83\uC744 \uC758\uBBF8\uD569\
+  \uB2C8\uB2E4. \uC6F9 \uCF58\uD150\uCE20\uB098 HTML\uC744 \uBC18\uD658\uD558\uB294\
+  \ API\uC640 \uC778\uD130\uD398\uC774\uC2A4\uD558\uAE30 \uC704\uD574 \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC774 \uC774 \uC791\uC5C5\uC744 \uC218\uD589\uD558\uBA74\
+  , \uB354 \uC0C1\uD638\uC791\uC6A9\uC801\uC774\uACE0 \uB3D9\uC801\uC778 \uC6F9 \uC560\
+  \uD50C\uB9AC\uCF00\uC774\uC158\uC744 \uB9CC\uB4E4 \uC218 \uC788\uC2B5\uB2C8\uB2E4\
+  ."
+lastmod: 2024-02-18 23:09:06.082469
+model: gpt-4-0125-preview
+summary: "Elm\uC5D0\uC11C HTML \uD30C\uC2F1\uC740 HTML \uBB38\uC11C\uB85C\uBD80\uD130\
+  \ \uC815\uBCF4\uB97C \uCD94\uCD9C\uD558\uB294 \uAC83\uC744 \uC758\uBBF8\uD569\uB2C8\
+  \uB2E4. \uC6F9 \uCF58\uD150\uCE20\uB098 HTML\uC744 \uBC18\uD658\uD558\uB294 API\uC640\
+  \ \uC778\uD130\uD398\uC774\uC2A4\uD558\uAE30 \uC704\uD574 \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC774 \uC774 \uC791\uC5C5\uC744 \uC218\uD589\uD558\uBA74, \uB354 \uC0C1\
+  \uD638\uC791\uC6A9\uC801\uC774\uACE0 \uB3D9\uC801\uC778 \uC6F9 \uC560\uD50C\uB9AC\
+  \uCF00\uC774\uC158\uC744 \uB9CC\uB4E4 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+title: "HTML \uD30C\uC2F1"
 ---
 
 {{< edit_this_page >}}

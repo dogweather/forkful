@@ -1,15 +1,16 @@
 ---
-title:                "Commandoregelargumenten lezen"
 aliases:
 - /nl/lua/reading-command-line-arguments/
-date:                  2024-01-28T22:05:11.817112-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Commandoregelargumenten lezen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/reading-command-line-arguments.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:05:11.817112-07:00
+description: "Commandoregelargumenten lezen betekent het oppakken van de extra stukjes\
+  \ die je na de naam van je script in de console typt. Programmeurs doen dit om het\u2026"
+lastmod: 2024-02-18 23:09:02.008170
+model: gpt-4-0125-preview
+summary: "Commandoregelargumenten lezen betekent het oppakken van de extra stukjes\
+  \ die je na de naam van je script in de console typt. Programmeurs doen dit om het\u2026"
+title: Commandoregelargumenten lezen
 ---
 
 {{< edit_this_page >}}

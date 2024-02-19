@@ -1,13 +1,22 @@
 ---
-title:                "在编程中使用交互式Shell（REPL）"
 aliases:
 - /zh/php/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:16:24.411725-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "在编程中使用交互式Shell（REPL）"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:16:24.411725-07:00
+description: "\u4EA4\u4E92\u5F0Fshell\uFF0C\u6216\u79F0\u4E3AREPL\uFF08\u8BFB\u53D6\
+  -\u6C42\u503C-\u6253\u5370\u5FAA\u73AF\uFF09\uFF0C\u5141\u8BB8\u60A8\u5373\u65F6\
+  \u7F16\u5199\u548C\u8FD0\u884CPHP\u4EE3\u7801\u3002\u8FD9\u5BF9\u4E8E\u5B9E\u9A8C\
+  \u3001\u8C03\u8BD5\u6216\u5B66\u4E60\u6765\u8BF4\u662F\u7406\u60F3\u7684\uFF0C\u56E0\
+  \u4E3A\u60A8\u53EF\u4EE5\u6D4B\u8BD5\u4EE3\u7801\u7247\u6BB5\u800C\u65E0\u9700\u521B\
+  \u5EFA\u5B8C\u6574\u811A\u672C\u7684\u5F00\u9500\u3002"
+lastmod: 2024-02-18 23:08:59.217376
+model: gpt-4-0125-preview
+summary: "\u4EA4\u4E92\u5F0Fshell\uFF0C\u6216\u79F0\u4E3AREPL\uFF08\u8BFB\u53D6-\u6C42\
+  \u503C-\u6253\u5370\u5FAA\u73AF\uFF09\uFF0C\u5141\u8BB8\u60A8\u5373\u65F6\u7F16\u5199\
+  \u548C\u8FD0\u884CPHP\u4EE3\u7801\u3002\u8FD9\u5BF9\u4E8E\u5B9E\u9A8C\u3001\u8C03\
+  \u8BD5\u6216\u5B66\u4E60\u6765\u8BF4\u662F\u7406\u60F3\u7684\uFF0C\u56E0\u4E3A\u60A8\
+  \u53EF\u4EE5\u6D4B\u8BD5\u4EE3\u7801\u7247\u6BB5\u800C\u65E0\u9700\u521B\u5EFA\u5B8C\
+  \u6574\u811A\u672C\u7684\u5F00\u9500\u3002"
+title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uFF09"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 aliases:
 - /fi/bash/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:37:54.363733-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:37:54.363733-07:00
+description: "Muuttaa kirjaimet pieniksi tekstiss\xE4. Auttaa vertailemaan sis\xE4\
+  lt\xF6\xE4 huomiottaen kirjainkoon."
+lastmod: 2024-02-18 23:09:07.788557
+model: gpt-4-1106-preview
+summary: "Muuttaa kirjaimet pieniksi tekstiss\xE4. Auttaa vertailemaan sis\xE4lt\xF6\
+  \xE4 huomiottaen kirjainkoon."
+title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 ---
 
 {{< edit_this_page >}}

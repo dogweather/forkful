@@ -1,14 +1,18 @@
 ---
-title:                "Mallin mukaisten merkkien poistaminen"
 aliases:
 - /fi/google-apps-script/deleting-characters-matching-a-pattern/
-date:                  2024-02-01T21:52:09.013346-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Mallin mukaisten merkkien poistaminen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:09.013346-07:00
+description: "Merkkien poistaminen, jotka vastaavat tietty\xE4 mallia, on tekniikka,\
+  \ jota k\xE4ytet\xE4\xE4n merkkijonojen puhdistamiseen tai muotoiluun ohjelmoinnissa.\
+  \ Google Apps\u2026"
+lastmod: 2024-02-18 23:09:07.115981
+model: gpt-4-0125-preview
+summary: "Merkkien poistaminen, jotka vastaavat tietty\xE4 mallia, on tekniikka, jota\
+  \ k\xE4ytet\xE4\xE4n merkkijonojen puhdistamiseen tai muotoiluun ohjelmoinnissa.\
+  \ Google Apps\u2026"
+title: Mallin mukaisten merkkien poistaminen
 ---
 
 {{< edit_this_page >}}

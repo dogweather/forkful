@@ -1,14 +1,20 @@
 ---
-title:                "Sử dụng trình gỡ lỗi"
 aliases:
 - /vi/c/using-a-debugger/
-date:                  2024-02-03T18:10:25.896433-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng trình gỡ lỗi"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/using-a-debugger.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:25.896433-07:00
+description: "Debuggers trong C l\xE0 nh\u1EEFng c\xF4ng c\u1EE5 chuy\xEAn bi\u1EC7\
+  t cho ph\xE9p c\xE1c nh\xE0 ph\xE1t tri\u1EC3n \u0111i qua t\u1EEBng d\xF2ng code\
+  \ c\u1EE7a h\u1ECD, ki\u1EC3m tra c\xE1c bi\u1EBFn v\xE0 theo d\xF5i lu\u1ED3ng\
+  \ th\u1EF1c thi. Qu\xE1\u2026"
+lastmod: 2024-02-18 23:08:51.239641
+model: gpt-4-0125-preview
+summary: "Debuggers trong C l\xE0 nh\u1EEFng c\xF4ng c\u1EE5 chuy\xEAn bi\u1EC7t cho\
+  \ ph\xE9p c\xE1c nh\xE0 ph\xE1t tri\u1EC3n \u0111i qua t\u1EEBng d\xF2ng code c\u1EE7\
+  a h\u1ECD, ki\u1EC3m tra c\xE1c bi\u1EBFn v\xE0 theo d\xF5i lu\u1ED3ng th\u1EF1\
+  c thi. Qu\xE1\u2026"
+title: "S\u1EED d\u1EE5ng tr\xECnh g\u1EE1 l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

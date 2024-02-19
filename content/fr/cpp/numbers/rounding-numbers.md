@@ -1,13 +1,16 @@
 ---
-title:                "Arrondir les nombres"
 aliases:
 - /fr/cpp/rounding-numbers/
-date:                  2024-01-26T03:43:24.560143-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrondir les nombres"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/rounding-numbers.md"
+date: 2024-01-26 03:43:24.560143-07:00
+description: "Arrondir des nombres signifie ajuster une valeur \xE0 son entier le\
+  \ plus proche ou \xE0 la pr\xE9cision sp\xE9cifi\xE9e. Les d\xE9veloppeurs le font\
+  \ pour simplifier, se\u2026"
+lastmod: 2024-02-18 23:09:09.154875
+model: gpt-4-0125-preview
+summary: "Arrondir des nombres signifie ajuster une valeur \xE0 son entier le plus\
+  \ proche ou \xE0 la pr\xE9cision sp\xE9cifi\xE9e. Les d\xE9veloppeurs le font pour\
+  \ simplifier, se\u2026"
+title: Arrondir les nombres
 ---
 
 {{< edit_this_page >}}

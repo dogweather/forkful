@@ -1,13 +1,16 @@
 ---
-title:                "Att arbeta med TOML"
 aliases:
 - /sv/powershell/working-with-toml/
-date:                  2024-01-26T04:25:04.496779-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/working-with-toml.md"
+date: 2024-01-26 04:25:04.496779-07:00
+description: "TOML, en f\xF6rkortning f\xF6r Toms Uppenbara, Minimala Spr\xE5k, \xE4\
+  r ett data-serialiseringsformat som \xE4r l\xE4tt att l\xE4sa tack vare dess klara\
+  \ semantik.\u2026"
+lastmod: 2024-02-18 23:08:52.026798
+model: gpt-4-0125-preview
+summary: "TOML, en f\xF6rkortning f\xF6r Toms Uppenbara, Minimala Spr\xE5k, \xE4r\
+  \ ett data-serialiseringsformat som \xE4r l\xE4tt att l\xE4sa tack vare dess klara\
+  \ semantik.\u2026"
+title: Att arbeta med TOML
 ---
 
 {{< edit_this_page >}}

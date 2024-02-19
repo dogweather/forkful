@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonosta lainausmerkkien poistaminen"
 aliases:
 - /fi/rust/removing-quotes-from-a-string/
-date:                  2024-01-26T03:42:37.794706-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonosta lainausmerkkien poistaminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:42:37.794706-07:00
+description: "Merkkijonosta lainausmerkkien poistaminen Rustilla tarkoittaa tarpeettomien\
+  \ ylim\xE4\xE4r\xE4isten lainausmerkkien poistamista tekstiaineistosi ymp\xE4rilt\xE4\
+  .\u2026"
+lastmod: 2024-02-18 23:09:07.351133
+model: gpt-4-0125-preview
+summary: "Merkkijonosta lainausmerkkien poistaminen Rustilla tarkoittaa tarpeettomien\
+  \ ylim\xE4\xE4r\xE4isten lainausmerkkien poistamista tekstiaineistosi ymp\xE4rilt\xE4\
+  .\u2026"
+title: Merkkijonosta lainausmerkkien poistaminen
 ---
 
 {{< edit_this_page >}}

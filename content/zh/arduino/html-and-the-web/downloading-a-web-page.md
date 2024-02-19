@@ -1,14 +1,21 @@
 ---
-title:                "下载网页"
 aliases:
 - /zh/arduino/downloading-a-web-page/
-date:                  2024-01-20T17:43:31.174335-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "下载网页"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/downloading-a-web-page.md"
+date: 2024-01-20 17:43:31.174335-07:00
+description: "\u4E0B\u8F7D\u7F51\u9875\u610F\u5473\u7740\u4ECE\u4E92\u8054\u7F51\u4E0A\
+  \u83B7\u53D6\u4E00\u4E2A\u7F51\u9875\u7684\u5185\u5BB9\u3002\u7A0B\u5E8F\u5458\u8FD9\
+  \u6837\u505A\u662F\u4E3A\u4E86\u5904\u7406\u6216\u5206\u6790\u8FD9\u4E9B\u6570\u636E\
+  \uFF0C\u6BD4\u5982\u83B7\u53D6\u5929\u6C14\u66F4\u65B0\u6216\u793E\u4EA4\u5A92\u4F53\
+  \u901A\u77E5\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.368389
+model: gpt-4-1106-preview
+summary: "\u4E0B\u8F7D\u7F51\u9875\u610F\u5473\u7740\u4ECE\u4E92\u8054\u7F51\u4E0A\
+  \u83B7\u53D6\u4E00\u4E2A\u7F51\u9875\u7684\u5185\u5BB9\u3002\u7A0B\u5E8F\u5458\u8FD9\
+  \u6837\u505A\u662F\u4E3A\u4E86\u5904\u7406\u6216\u5206\u6790\u8FD9\u4E9B\u6570\u636E\
+  \uFF0C\u6BD4\u5982\u83B7\u53D6\u5929\u6C14\u66F4\u65B0\u6216\u793E\u4EA4\u5A92\u4F53\
+  \u901A\u77E5\u3002"
+title: "\u4E0B\u8F7D\u7F51\u9875"
 ---
 
 {{< edit_this_page >}}

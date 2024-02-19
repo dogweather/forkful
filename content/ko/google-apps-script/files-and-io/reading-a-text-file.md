@@ -1,14 +1,28 @@
 ---
-title:                "텍스트 파일 읽기"
 aliases:
 - /ko/google-apps-script/reading-a-text-file/
-date:                  2024-02-01T21:58:37.040517-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "텍스트 파일 읽기"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/reading-a-text-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:37.040517-07:00
+description: "Google Apps Script(GAS)\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744\
+  \ \uC77D\uB294 \uAC83\uC740 Google \uB4DC\uB77C\uC774\uBE0C \uB610\uB294 \uB2E4\uB978\
+  \ \uC811\uADFC \uAC00\uB2A5\uD55C \uD074\uB77C\uC6B0\uB4DC \uAE30\uBC18 \uC800\uC7A5\
+  \uC18C\uC5D0 \uC800\uC7A5\uB41C \uD30C\uC77C\uB85C\uBD80\uD130 \uD14D\uC2A4\uD2B8\
+  \ \uB370\uC774\uD130\uB97C \uC811\uADFC\uD558\uACE0 \uCD94\uCD9C\uD558\uB294 \uAC83\
+  \uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\
+  \ \uC885\uC885 \uC774\uB7EC\uD55C \uD30C\uC77C\uB4E4\uC744 \uC77D\uC5B4\uC11C GAS\
+  \ \uD504\uB85C\uC81D\uD2B8 \uB0B4\uC5D0\uC11C\u2026"
+lastmod: 2024-02-18 23:09:05.586362
+model: gpt-4-0125-preview
+summary: "Google Apps Script(GAS)\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744\
+  \ \uC77D\uB294 \uAC83\uC740 Google \uB4DC\uB77C\uC774\uBE0C \uB610\uB294 \uB2E4\uB978\
+  \ \uC811\uADFC \uAC00\uB2A5\uD55C \uD074\uB77C\uC6B0\uB4DC \uAE30\uBC18 \uC800\uC7A5\
+  \uC18C\uC5D0 \uC800\uC7A5\uB41C \uD30C\uC77C\uB85C\uBD80\uD130 \uD14D\uC2A4\uD2B8\
+  \ \uB370\uC774\uD130\uB97C \uC811\uADFC\uD558\uACE0 \uCD94\uCD9C\uD558\uB294 \uAC83\
+  \uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\
+  \ \uC885\uC885 \uC774\uB7EC\uD55C \uD30C\uC77C\uB4E4\uC744 \uC77D\uC5B4\uC11C GAS\
+  \ \uD504\uB85C\uC81D\uD2B8 \uB0B4\uC5D0\uC11C\u2026"
+title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Xử lý lỗi"
 aliases:
 - /vi/rust/handling-errors/
-date:                  2024-01-28T22:02:22.327505-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Xử lý lỗi"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/handling-errors.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:02:22.327505-07:00
+description: "X\u1EED l\xFD l\u1ED7i l\xE0 vi\u1EC7c gi\u1EA3i quy\u1EBFt c\xE1c v\u1EA5\
+  n \u0111\u1EC1 khi ch\xFAng x\u1EA3y ra ngo\xE0i \xFD mu\u1ED1n. L\u1EADp tr\xEC\
+  nh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 x\u1EED l\xFD nh\u1EEF\
+  ng t\xECnh hu\u1ED1ng kh\xF4ng mong \u0111\u1EE3i, \u0111\u1EA3m b\u1EA3o\u2026"
+lastmod: 2024-02-18 23:08:50.470360
+model: gpt-4-0125-preview
+summary: "X\u1EED l\xFD l\u1ED7i l\xE0 vi\u1EC7c gi\u1EA3i quy\u1EBFt c\xE1c v\u1EA5\
+  n \u0111\u1EC1 khi ch\xFAng x\u1EA3y ra ngo\xE0i \xFD mu\u1ED1n. L\u1EADp tr\xEC\
+  nh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 x\u1EED l\xFD nh\u1EEF\
+  ng t\xECnh hu\u1ED1ng kh\xF4ng mong \u0111\u1EE3i, \u0111\u1EA3m b\u1EA3o\u2026"
+title: "X\u1EED l\xFD l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

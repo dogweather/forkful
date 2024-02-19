@@ -1,14 +1,29 @@
 ---
-title:                "패턴에 일치하는 문자 삭제하기"
 aliases:
 - /ko/vba/deleting-characters-matching-a-pattern/
-date:                  2024-02-01T21:52:58.452294-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "패턴에 일치하는 문자 삭제하기"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/vba/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:58.452294-07:00
+description: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uD2B9\uC815 \uD328\uD134\
+  \uACFC \uC77C\uCE58\uD558\uB294 \uBB38\uC790\uB97C \uC0AD\uC81C\uD558\uB294 \uAC83\
+  \uC740 \uD2B9\uC815 \uAE30\uC900\uC744 \uCDA9\uC871\uD558\uB294 \uBB38\uC790\uB098\
+  \ \uBB38\uC790\uC5F4\uC744 \uC2DD\uBCC4\uD558\uACE0 \uC774\uD6C4\uC5D0 \uC81C\uAC70\
+  \uD558\uB294 \uC791\uC5C5\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uC774 \uC791\uC5C5\
+  \uC740 \uB370\uC774\uD130 \uC815\uC81C \uBC0F \uD615\uC2DD \uC9C0\uC815 \uC791\uC5C5\
+  \uC5D0\uC11C \uD754\uD788 \uBC1C\uC0DD\uD558\uBA70, \uBB38\uC790\uC5F4\uC5D0\uC11C\
+  \ \uBD88\uD544\uC694\uD558\uAC70\uB098\u2026"
+lastmod: 2024-02-18 23:09:05.925322
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uD2B9\uC815 \uD328\uD134\
+  \uACFC \uC77C\uCE58\uD558\uB294 \uBB38\uC790\uB97C \uC0AD\uC81C\uD558\uB294 \uAC83\
+  \uC740 \uD2B9\uC815 \uAE30\uC900\uC744 \uCDA9\uC871\uD558\uB294 \uBB38\uC790\uB098\
+  \ \uBB38\uC790\uC5F4\uC744 \uC2DD\uBCC4\uD558\uACE0 \uC774\uD6C4\uC5D0 \uC81C\uAC70\
+  \uD558\uB294 \uC791\uC5C5\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uC774 \uC791\uC5C5\
+  \uC740 \uB370\uC774\uD130 \uC815\uC81C \uBC0F \uD615\uC2DD \uC9C0\uC815 \uC791\uC5C5\
+  \uC5D0\uC11C \uD754\uD788 \uBC1C\uC0DD\uD558\uBA70, \uBB38\uC790\uC5F4\uC5D0\uC11C\
+  \ \uBD88\uD544\uC694\uD558\uAC70\uB098\u2026"
+title: "\uD328\uD134\uC5D0 \uC77C\uCE58\uD558\uB294 \uBB38\uC790 \uC0AD\uC81C\uD558\
+  \uAE30"
 ---
 
 {{< edit_this_page >}}

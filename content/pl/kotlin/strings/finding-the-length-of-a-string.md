@@ -1,13 +1,16 @@
 ---
-title:                "Znalezienie długości ciągu znaków"
 aliases:
 - /pl/kotlin/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:51.321877-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Znalezienie długości ciągu znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:51.321877-07:00
+description: "D\u0142ugo\u015B\u0107 ci\u0105gu znak\xF3w to liczba znak\xF3w w danym\
+  \ tek\u015Bcie. Programi\u015Bci musz\u0105 to wiedzie\u0107, aby np. weryfikowa\u0107\
+  \ czy dane wprowadzone przez u\u017Cytkownika pasuj\u0105 do\u2026"
+lastmod: 2024-02-18 23:08:49.550846
+model: gpt-4-1106-preview
+summary: "D\u0142ugo\u015B\u0107 ci\u0105gu znak\xF3w to liczba znak\xF3w w danym\
+  \ tek\u015Bcie. Programi\u015Bci musz\u0105 to wiedzie\u0107, aby np. weryfikowa\u0107\
+  \ czy dane wprowadzone przez u\u017Cytkownika pasuj\u0105 do\u2026"
+title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,27 @@
 ---
-title:                "インタラクティブシェル（REPL）の使用"
 aliases:
 - /ja/elixir/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:13:12.301743-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "インタラクティブシェル（REPL）の使用"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:13:12.301743-07:00
+description: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\u3001\
+  \u307E\u305F\u306FREPL\uFF08Read-Eval-Print Loop\uFF09\u3092\u5229\u7528\u3059\u308B\
+  \u3068\u3001\u30EA\u30A2\u30EB\u30BF\u30A4\u30E0\u3067\u30B3\u30FC\u30C9\u30B9\u30CB\
+  \u30DA\u30C3\u30C8\u3092\u8A66\u3059\u3053\u3068\u304C\u3067\u304D\u307E\u3059\u3002\
+  Elixir\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001IEx\uFF08Interactive Elixir\uFF09\
+  \u3068\u547C\u3070\u308C\u308BREPL\u3092\u5B9F\u9A13\u3001\u30C7\u30D0\u30C3\u30B0\
+  \u3001\u305D\u3057\u3066\u8A00\u8A9E\u5B66\u7FD2\u306E\u305F\u3081\u306B\u4F7F\u7528\
+  \u3057\u307E\u3059\u3002"
+lastmod: 2024-02-18 23:08:54.644622
+model: gpt-4-0125-preview
+summary: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\u3001\
+  \u307E\u305F\u306FREPL\uFF08Read-Eval-Print Loop\uFF09\u3092\u5229\u7528\u3059\u308B\
+  \u3068\u3001\u30EA\u30A2\u30EB\u30BF\u30A4\u30E0\u3067\u30B3\u30FC\u30C9\u30B9\u30CB\
+  \u30DA\u30C3\u30C8\u3092\u8A66\u3059\u3053\u3068\u304C\u3067\u304D\u307E\u3059\u3002\
+  Elixir\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001IEx\uFF08Interactive Elixir\uFF09\
+  \u3068\u547C\u3070\u308C\u308BREPL\u3092\u5B9F\u9A13\u3001\u30C7\u30D0\u30C3\u30B0\
+  \u3001\u305D\u3057\u3066\u8A00\u8A9E\u5B66\u7FD2\u306E\u305F\u3081\u306B\u4F7F\u7528\
+  \u3057\u307E\u3059\u3002"
+title: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\uFF08REPL\uFF09\
+  \u306E\u4F7F\u7528"
 ---
 
 {{< edit_this_page >}}

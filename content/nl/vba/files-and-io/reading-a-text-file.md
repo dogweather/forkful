@@ -1,14 +1,16 @@
 ---
-title:                "Een tekstbestand lezen"
 aliases:
 - /nl/vba/reading-a-text-file/
-date:                  2024-02-01T21:58:38.268810-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tekstbestand lezen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/vba/reading-a-text-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:38.268810-07:00
+description: "Een tekstbestand lezen in Visual Basic for Applications (VBA) betekent\
+  \ programmatisch toegang krijgen tot en het extraheren van de inhoud van een\u2026"
+lastmod: 2024-02-18 23:09:01.685317
+model: gpt-4-0125-preview
+summary: "Een tekstbestand lezen in Visual Basic for Applications (VBA) betekent programmatisch\
+  \ toegang krijgen tot en het extraheren van de inhoud van een\u2026"
+title: Een tekstbestand lezen
 ---
 
 {{< edit_this_page >}}

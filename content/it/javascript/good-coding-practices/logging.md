@@ -1,13 +1,14 @@
 ---
-title:                "Registrazione delle Attività (Logging)"
 aliases:
 - /it/javascript/logging/
-date:                  2024-01-26T01:07:18.275264-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registrazione delle Attività (Logging)"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/javascript/logging.md"
+date: 2024-01-26 01:07:18.275264-07:00
+description: "Il logging, in poche parole, \xE8 come tenere un diario per la tua applicazione:\
+  \ registra eventi, errori e altre azioni significative che avvengono mentre il\u2026"
+lastmod: 2024-02-18 23:08:56.259088
+model: gpt-4-1106-preview
+summary: "Il logging, in poche parole, \xE8 come tenere un diario per la tua applicazione:\
+  \ registra eventi, errori e altre azioni significative che avvengono mentre il\u2026"
+title: "Registrazione delle Attivit\xE0 (Logging)"
 ---
 
 {{< edit_this_page >}}

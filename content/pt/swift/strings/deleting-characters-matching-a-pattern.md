@@ -1,13 +1,16 @@
 ---
-title:                "Excluindo caracteres que correspondem a um padrão"
 aliases:
 - /pt/swift/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:43:12.882087-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Excluindo caracteres que correspondem a um padrão"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:43:12.882087-07:00
+description: "Apagar caracteres que correspondem a um padr\xE3o \xE9 filtrar o que\
+  \ n\xE3o queremos em uma string. Programadores fazem isso para limpar dados, validar\
+  \ entradas ou\u2026"
+lastmod: 2024-02-18 23:08:58.475948
+model: gpt-4-1106-preview
+summary: "Apagar caracteres que correspondem a um padr\xE3o \xE9 filtrar o que n\xE3\
+  o queremos em uma string. Programadores fazem isso para limpar dados, validar entradas\
+  \ ou\u2026"
+title: "Excluindo caracteres que correspondem a um padr\xE3o"
 ---
 
 {{< edit_this_page >}}

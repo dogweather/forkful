@@ -1,13 +1,14 @@
 ---
-title:                "Calcolo di una data futura o passata"
 aliases:
 - /it/kotlin/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:31:30.183884-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Calcolo di una data futura o passata"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:31:30.183884-07:00
+description: "Calcolare una data nel futuro o nel passato significa semplicemente\
+  \ aggiungere o togliere giorni, mesi o anni dalla data corrente. Questo \xE8 fondamentale\u2026"
+lastmod: 2024-02-18 23:08:55.858894
+model: gpt-4-1106-preview
+summary: "Calcolare una data nel futuro o nel passato significa semplicemente aggiungere\
+  \ o togliere giorni, mesi o anni dalla data corrente. Questo \xE8 fondamentale\u2026"
+title: Calcolo di una data futura o passata
 ---
 
 {{< edit_this_page >}}

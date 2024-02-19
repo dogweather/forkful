@@ -1,13 +1,22 @@
 ---
-title:                "重构代码"
 aliases:
 - /zh/php/refactoring/
-date:                  2024-01-26T01:57:55.872748-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "重构代码"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/refactoring.md"
+date: 2024-01-26 01:57:55.872748-07:00
+description: "\u91CD\u6784\u662F\u5BF9\u73B0\u6709\u8BA1\u7B97\u673A\u4EE3\u7801\u7684\
+  \u7ED3\u6784\u8FDB\u884C\u91CD\u65B0\u8C03\u6574\u800C\u4E0D\u6539\u53D8\u5176\u5916\
+  \u90E8\u884C\u4E3A\u7684\u8FC7\u7A0B\u3002\u7A0B\u5E8F\u5458\u8FDB\u884C\u91CD\u6784\
+  \u4EE5\u6539\u5584\u8F6F\u4EF6\u7684\u975E\u529F\u80FD\u5C5E\u6027\uFF0C\u4F7F\u4EE3\
+  \u7801\u66F4\u6E05\u6670\u3001\u66F4\u9AD8\u6548\uFF0C\u4E14\u66F4\u6613\u4E8E\u7EF4\
+  \u62A4\u3002"
+lastmod: 2024-02-18 23:08:59.223324
+model: gpt-4-0125-preview
+summary: "\u91CD\u6784\u662F\u5BF9\u73B0\u6709\u8BA1\u7B97\u673A\u4EE3\u7801\u7684\
+  \u7ED3\u6784\u8FDB\u884C\u91CD\u65B0\u8C03\u6574\u800C\u4E0D\u6539\u53D8\u5176\u5916\
+  \u90E8\u884C\u4E3A\u7684\u8FC7\u7A0B\u3002\u7A0B\u5E8F\u5458\u8FDB\u884C\u91CD\u6784\
+  \u4EE5\u6539\u5584\u8F6F\u4EF6\u7684\u975E\u529F\u80FD\u5C5E\u6027\uFF0C\u4F7F\u4EE3\
+  \u7801\u66F4\u6E05\u6670\u3001\u66F4\u9AD8\u6548\uFF0C\u4E14\u66F4\u6613\u4E8E\u7EF4\
+  \u62A4\u3002"
+title: "\u91CD\u6784\u4EE3\u7801"
 ---
 
 {{< edit_this_page >}}

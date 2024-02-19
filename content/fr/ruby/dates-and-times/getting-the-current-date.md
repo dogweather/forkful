@@ -1,14 +1,18 @@
 ---
-title:                "Obtenir la date actuelle"
 aliases:
 - /fr/ruby/getting-the-current-date/
-date:                  2024-02-03T19:10:30.876893-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Obtenir la date actuelle"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:10:30.876893-07:00
+description: "R\xE9cup\xE9rer la date actuelle est une t\xE2che essentielle dans presque\
+  \ tous les projets de programmation, que ce soit pour consigner des activit\xE9\
+  s dans une\u2026"
+lastmod: 2024-02-18 23:09:09.418793
+model: gpt-4-0125-preview
+summary: "R\xE9cup\xE9rer la date actuelle est une t\xE2che essentielle dans presque\
+  \ tous les projets de programmation, que ce soit pour consigner des activit\xE9\
+  s dans une\u2026"
+title: Obtenir la date actuelle
 ---
 
 {{< edit_this_page >}}

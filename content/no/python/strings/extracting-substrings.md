@@ -1,13 +1,16 @@
 ---
-title:                "Uthenting av delstrenger"
 aliases:
 - /no/python/extracting-substrings/
-date:                  2024-01-20T17:46:12.556831-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Uthenting av delstrenger"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/extracting-substrings.md"
+date: 2024-01-20 17:46:12.556831-07:00
+description: "Utdrag av delstrenger er \xE5 ta ut spesifikke deler av en tekststreng.\
+  \ Vi gj\xF8r dette for \xE5 analysere, transformere, eller bruke deler av dataene\
+  \ uten \xE5\u2026"
+lastmod: 2024-02-18 23:08:53.513934
+model: gpt-4-1106-preview
+summary: "Utdrag av delstrenger er \xE5 ta ut spesifikke deler av en tekststreng.\
+  \ Vi gj\xF8r dette for \xE5 analysere, transformere, eller bruke deler av dataene\
+  \ uten \xE5\u2026"
+title: Uthenting av delstrenger
 ---
 
 {{< edit_this_page >}}

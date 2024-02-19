@@ -1,14 +1,18 @@
 ---
-title:                "Skriva till standardfel"
 aliases:
 - /sv/c-sharp/writing-to-standard-error/
-date:                  2024-02-03T19:32:50.859456-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriva till standardfel"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:50.859456-07:00
+description: "Att skriva till standardfel (stderr) i C# inneb\xE4r att rikta felmeddelanden\
+  \ och diagnostik separat fr\xE5n regulj\xE4r utdata (stdout) f\xF6r att hj\xE4lpa\
+  \ anv\xE4ndare\u2026"
+lastmod: 2024-02-18 23:08:51.811908
+model: gpt-4-0125-preview
+summary: "Att skriva till standardfel (stderr) i C# inneb\xE4r att rikta felmeddelanden\
+  \ och diagnostik separat fr\xE5n regulj\xE4r utdata (stdout) f\xF6r att hj\xE4lpa\
+  \ anv\xE4ndare\u2026"
+title: Skriva till standardfel
 ---
 
 {{< edit_this_page >}}

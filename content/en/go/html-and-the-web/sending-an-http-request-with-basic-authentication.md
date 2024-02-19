@@ -1,12 +1,16 @@
 ---
-title:                "Sending an HTTP request with basic authentication"
 aliases:
 - /en/go/sending-an-http-request-with-basic-authentication/
-date:                  2024-02-03T17:50:05.379308-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sending an HTTP request with basic authentication"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/sending-an-http-request-with-basic-authentication.md"
+date: 2024-02-03 17:50:05.379308-07:00
+description: "Sending an HTTP request with basic authentication in Go involves adding\
+  \ an authorization header to your request that includes a username and password\
+  \ in\u2026"
+lastmod: 2024-02-18 23:09:10.596285
+model: gpt-4-0125-preview
+summary: "Sending an HTTP request with basic authentication in Go involves adding\
+  \ an authorization header to your request that includes a username and password\
+  \ in\u2026"
+title: Sending an HTTP request with basic authentication
 ---
 
 {{< edit_this_page >}}

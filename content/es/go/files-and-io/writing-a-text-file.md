@@ -1,14 +1,17 @@
 ---
-title:                "Escribiendo un archivo de texto"
 aliases:
 - /es/go/writing-a-text-file/
-date:                  2024-02-03T18:14:37.192585-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escribiendo un archivo de texto"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:14:37.192585-07:00
+description: "Escribir un archivo de texto en Go implica crear y escribir cadenas\
+  \ de datos en un archivo de texto nuevo o existente. Los programadores hacen esto\
+  \ para\u2026"
+lastmod: 2024-02-18 23:09:09.477177
+model: gpt-4-0125-preview
+summary: "Escribir un archivo de texto en Go implica crear y escribir cadenas de datos\
+  \ en un archivo de texto nuevo o existente. Los programadores hacen esto para\u2026"
+title: Escribiendo un archivo de texto
 ---
 
 {{< edit_this_page >}}

@@ -1,16 +1,19 @@
 ---
-title:                "Een nieuw project starten"
 aliases:
 - /nl/haskell/starting-a-new-project/
-date:                  2024-01-28T22:08:15.634438-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een nieuw project starten"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/haskell/starting-a-new-project.md"
 changelog:
-  - 2024-01-21, dogweather, Reviewed for accuracy
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-21, dogweather, Reviewed for accuracy
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:15.634438-07:00
+description: "Elk project begint met een eerste stap. Voor programmeurs betekent dat\
+  \ het opzetten van de initi\xEBle structuur en het schrijven van startcode. We doen\
+  \ dit\u2026"
+lastmod: 2024-02-18 23:09:01.899596
+model: gpt-4-0125-preview
+summary: "Elk project begint met een eerste stap. Voor programmeurs betekent dat het\
+  \ opzetten van de initi\xEBle structuur en het schrijven van startcode. We doen\
+  \ dit\u2026"
+title: Een nieuw project starten
 ---
 
 {{< edit_this_page >}}

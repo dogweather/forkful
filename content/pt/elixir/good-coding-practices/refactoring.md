@@ -1,13 +1,16 @@
 ---
-title:                "Refatoração"
 aliases:
 - /pt/elixir/refactoring/
-date:                  2024-01-26T01:17:51.773148-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refatoração"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/refactoring.md"
+date: 2024-01-26 01:17:51.773148-07:00
+description: "Refatora\xE7\xE3o \xE9 o processo de reestrutura\xE7\xE3o do c\xF3digo\
+  \ existente sem alterar seu comportamento externo, visando melhorar atributos n\xE3\
+  o funcionais como\u2026"
+lastmod: 2024-02-18 23:08:57.851967
+model: gpt-4-0125-preview
+summary: "Refatora\xE7\xE3o \xE9 o processo de reestrutura\xE7\xE3o do c\xF3digo existente\
+  \ sem alterar seu comportamento externo, visando melhorar atributos n\xE3o funcionais\
+  \ como\u2026"
+title: "Refatora\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

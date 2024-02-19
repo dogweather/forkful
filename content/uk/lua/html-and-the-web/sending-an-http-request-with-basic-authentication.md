@@ -1,13 +1,16 @@
 ---
-title:                "Надсилання HTTP-запиту з базовою автентифікацією"
 aliases:
 - /uk/lua/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:10.161830-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/lua/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:10.161830-07:00
+description: "Sending an HTTP request with basic authentication involves attaching\
+  \ a username and password to the request header. Programmers use it to access resources\u2026"
+lastmod: 2024-02-18 23:09:00.567395
+model: gpt-4-1106-preview
+summary: "Sending an HTTP request with basic authentication involves attaching a username\
+  \ and password to the request header. Programmers use it to access resources\u2026"
+title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437\u0430\
+  \u043F\u0438\u0442\u0443 \u0437 \u0431\u0430\u0437\u043E\u0432\u043E\u044E \u0430\
+  \u0432\u0442\u0435\u043D\u0442\u0438\u0444\u0456\u043A\u0430\u0446\u0456\u0454\u044E"
 ---
 
 {{< edit_this_page >}}

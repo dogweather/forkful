@@ -1,14 +1,17 @@
 ---
-title:                "Capitalizando uma String"
 aliases:
 - /pt/vba/capitalizing-a-string/
-date:                  2024-02-01T21:48:58.350388-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizando uma String"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/vba/capitalizing-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:48:58.350388-07:00
+description: "Capitalizar uma string no Visual Basic for Applications (VBA) envolve\
+  \ converter o primeiro caractere de cada palavra em uma string para mai\xFAscula\
+  \ enquanto\u2026"
+lastmod: 2024-02-18 23:08:57.954672
+model: gpt-4-0125-preview
+summary: "Capitalizar uma string no Visual Basic for Applications (VBA) envolve converter\
+  \ o primeiro caractere de cada palavra em uma string para mai\xFAscula enquanto\u2026"
+title: Capitalizando uma String
 ---
 
 {{< edit_this_page >}}

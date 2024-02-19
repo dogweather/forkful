@@ -1,14 +1,17 @@
 ---
-title:                "Arrotondamento dei numeri"
 aliases:
 - /it/google-apps-script/rounding-numbers/
-date:                  2024-02-01T22:00:37.058308-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrotondamento dei numeri"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/google-apps-script/rounding-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:37.058308-07:00
+description: "Arrotondare i numeri, un concetto fondamentale nella programmazione\
+  \ informatica, implica l'aggiustamento di un numero al suo intero pi\xF9 vicino\
+  \ o a un\u2026"
+lastmod: 2024-02-18 23:08:55.472058
+model: gpt-4-0125-preview
+summary: "Arrotondare i numeri, un concetto fondamentale nella programmazione informatica,\
+  \ implica l'aggiustamento di un numero al suo intero pi\xF9 vicino o a un\u2026"
+title: Arrotondamento dei numeri
 ---
 
 {{< edit_this_page >}}

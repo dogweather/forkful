@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với TOML"
 aliases:
 - /vi/typescript/working-with-toml/
-date:                  2024-01-28T22:11:29.738232-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/typescript/working-with-toml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:29.738232-07:00
+description: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language, l\xE0\
+  \ m\u1ED9t \u0111\u1ECBnh d\u1EA1ng h\xF3a d\u1EEF li\u1EC7u gi\u1ED1ng nh\u01B0\
+  \ JSON ho\u1EB7c YAML. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 v\xEC t\xED\
+  nh d\u1EC5 \u0111\u1ECDc v\xE0 \xE1nh\u2026"
+lastmod: 2024-02-18 23:08:50.440902
+model: gpt-4-0125-preview
+summary: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language, l\xE0\
+  \ m\u1ED9t \u0111\u1ECBnh d\u1EA1ng h\xF3a d\u1EEF li\u1EC7u gi\u1ED1ng nh\u01B0\
+  \ JSON ho\u1EB7c YAML. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 v\xEC t\xED\
+  nh d\u1EC5 \u0111\u1ECDc v\xE0 \xE1nh\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 ---
 
 {{< edit_this_page >}}

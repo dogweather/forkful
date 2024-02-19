@@ -1,15 +1,16 @@
 ---
-title:                "Een tekstbestand schrijven"
 aliases:
 - /nl/haskell/writing-a-text-file/
-date:                  2024-01-28T22:12:53.692433-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tekstbestand schrijven"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/haskell/writing-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:53.692433-07:00
+description: "In Haskell is het schrijven naar een tekstbestand alles over het opslaan\
+  \ van data in een bestand. Programmeurs doen dit om data tussen sessies te bewaren,\u2026"
+lastmod: 2024-02-18 23:09:01.919197
+model: gpt-4-0125-preview
+summary: "In Haskell is het schrijven naar een tekstbestand alles over het opslaan\
+  \ van data in een bestand. Programmeurs doen dit om data tussen sessies te bewaren,\u2026"
+title: Een tekstbestand schrijven
 ---
 
 {{< edit_this_page >}}

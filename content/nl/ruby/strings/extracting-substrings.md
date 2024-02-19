@@ -1,15 +1,17 @@
 ---
-title:                "Substrings extraheren"
 aliases:
 - /nl/ruby/extracting-substrings/
-date:                  2024-01-28T22:00:05.193051-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Substrings extraheren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/extracting-substrings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:00:05.193051-07:00
+description: "Substringen extraheren gaat over het uithalen van specifieke stukken\
+  \ tekst uit een string. Programmeurs doen dit om delen van data te manipuleren en\
+  \ te\u2026"
+lastmod: 2024-02-18 23:09:02.407883
+model: gpt-4-0125-preview
+summary: "Substringen extraheren gaat over het uithalen van specifieke stukken tekst\
+  \ uit een string. Programmeurs doen dit om delen van data te manipuleren en te\u2026"
+title: Substrings extraheren
 ---
 
 {{< edit_this_page >}}

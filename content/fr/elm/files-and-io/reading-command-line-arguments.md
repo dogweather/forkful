@@ -1,13 +1,15 @@
 ---
-title:                "Lecture des arguments de ligne de commande"
 aliases:
 - /fr/elm/reading-command-line-arguments/
-date:                  2024-01-20T17:55:46.536761-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lecture des arguments de ligne de commande"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:46.536761-07:00
+description: "Lire les arguments de la ligne de commande, c'est r\xE9cup\xE9rer les\
+  \ infos que l'utilisateur passe \xE0 notre programme lorsqu'il le d\xE9marre. Les\
+  \ programmeurs\u2026"
+lastmod: 2024-02-18 23:09:08.751374
+model: gpt-4-1106-preview
+summary: "Lire les arguments de la ligne de commande, c'est r\xE9cup\xE9rer les infos\
+  \ que l'utilisateur passe \xE0 notre programme lorsqu'il le d\xE9marre. Les programmeurs\u2026"
+title: Lecture des arguments de ligne de commande
 ---
 
 {{< edit_this_page >}}

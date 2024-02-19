@@ -1,13 +1,15 @@
 ---
-title:                "Redigera filer på plats med kommandoradsenradare"
 aliases:
 - /sv/fish-shell/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:20:42.495855-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Redigera filer på plats med kommandoradsenradare"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:20:42.495855-07:00
+description: "Att redigera filer direkt med CLI-engreppsrader handlar om att g\xF6\
+  ra \xE4ndringar direkt i filer fr\xE5n kommandoraden, utan att \xF6ppna dem i en\
+  \ textredigerare.\u2026"
+lastmod: 2024-02-18 23:08:52.203553
+model: gpt-4-0125-preview
+summary: "Att redigera filer direkt med CLI-engreppsrader handlar om att g\xF6ra \xE4\
+  ndringar direkt i filer fr\xE5n kommandoraden, utan att \xF6ppna dem i en textredigerare.\u2026"
+title: "Redigera filer p\xE5 plats med kommandoradsenradare"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Nykyisen päivämäärän hankkiminen"
 aliases:
 - /fi/go/getting-the-current-date/
-date:                  2024-02-03T17:57:47.832364-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Nykyisen päivämäärän hankkiminen"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:47.832364-07:00
+description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen Go-kieless\xE4 on ohjelmoijille\
+  \ perusteht\xE4v\xE4, joka on moninaisuudessaan verrattavissa \"Hello, World!\"\
+  \ -esimerkkiin. Se on\u2026"
+lastmod: 2024-02-18 23:09:07.097468
+model: gpt-4-0125-preview
+summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen Go-kieless\xE4 on ohjelmoijille\
+  \ perusteht\xE4v\xE4, joka on moninaisuudessaan verrattavissa \"Hello, World!\"\
+  \ -esimerkkiin. Se on\u2026"
+title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 ---
 
 {{< edit_this_page >}}

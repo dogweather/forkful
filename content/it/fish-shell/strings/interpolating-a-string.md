@@ -1,13 +1,14 @@
 ---
-title:                "Interpolazione di una stringa"
 aliases:
 - /it/fish-shell/interpolating-a-string/
-date:                  2024-01-20T17:51:13.626791-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolazione di una stringa"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/interpolating-a-string.md"
+date: 2024-01-20 17:51:13.626791-07:00
+description: "L'interpolazione di stringhe permette di inserire variabili o espressioni\
+  \ all'interno di una stringa di testo. Lo facciamo per costruire dinamicamente\u2026"
+lastmod: 2024-02-18 23:08:56.280346
+model: gpt-4-1106-preview
+summary: "L'interpolazione di stringhe permette di inserire variabili o espressioni\
+  \ all'interno di una stringa di testo. Lo facciamo per costruire dinamicamente\u2026"
+title: Interpolazione di una stringa
 ---
 
 {{< edit_this_page >}}

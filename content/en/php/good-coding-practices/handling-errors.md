@@ -1,13 +1,14 @@
 ---
-title:                "Handling errors"
 aliases:
 - /en/php/handling-errors/
-date:                  2024-01-25T02:51:32.393618-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Handling errors"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/handling-errors.md"
+date: 2024-01-25 02:51:32.393618-07:00
+description: "Error handling in PHP is about managing and responding to conditions\
+  \ that disrupt the normal flow of a program, like missing files or bad data input.\u2026"
+lastmod: 2024-02-18 23:09:11.144507
+model: gpt-4-1106-preview
+summary: "Error handling in PHP is about managing and responding to conditions that\
+  \ disrupt the normal flow of a program, like missing files or bad data input.\u2026"
+title: Handling errors
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Slette tegn som matcher et mønster"
 aliases:
 - /no/go/deleting-characters-matching-a-pattern/
-date:                  2024-02-03T17:55:30.041936-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Slette tegn som matcher et mønster"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:30.041936-07:00
+description: "\xC5 slette tegn som matcher et spesifikt m\xF8nster handler om \xE5\
+  \ fjerne visse tegn eller sekvenser av tegn fra strenger, basert p\xE5 regler definert\
+  \ av et\u2026"
+lastmod: 2024-02-18 23:08:53.419077
+model: gpt-4-0125-preview
+summary: "\xC5 slette tegn som matcher et spesifikt m\xF8nster handler om \xE5 fjerne\
+  \ visse tegn eller sekvenser av tegn fra strenger, basert p\xE5 regler definert\
+  \ av et\u2026"
+title: "Slette tegn som matcher et m\xF8nster"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Logowanie"
 aliases:
 - /pl/go/logging/
-date:                  2024-02-03T17:59:15.984431-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Logowanie"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/logging.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:15.984431-07:00
+description: "Logowanie w rozwoju oprogramowania to proces rejestrowania informacji\
+  \ o wykonaniu programu, zaprojektowany w celu \u015Bledzenia jego zachowania i\u2026"
+lastmod: 2024-02-18 23:08:49.105474
+model: gpt-4-0125-preview
+summary: "Logowanie w rozwoju oprogramowania to proces rejestrowania informacji o\
+  \ wykonaniu programu, zaprojektowany w celu \u015Bledzenia jego zachowania i\u2026"
+title: Logowanie
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,16 @@
 ---
-title:                "Uso de matrices asociativas"
 aliases:
 - /es/java/using-associative-arrays/
-date:                  2024-01-30T19:12:04.156050-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Uso de matrices asociativas"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:04.156050-07:00
+description: "En Java, los arreglos asociativos, o mapas, te permiten almacenar pares\
+  \ de clave-valor para una b\xFAsqueda y manipulaci\xF3n de datos eficiente. Los\u2026"
+lastmod: 2024-02-18 23:09:09.837452
+model: gpt-4-0125-preview
+summary: "En Java, los arreglos asociativos, o mapas, te permiten almacenar pares\
+  \ de clave-valor para una b\xFAsqueda y manipulaci\xF3n de datos eficiente. Los\u2026"
+title: Uso de matrices asociativas
 ---
 
 {{< edit_this_page >}}

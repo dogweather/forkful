@@ -1,13 +1,14 @@
 ---
-title:                "Registrazione Eventi (Logging)"
 aliases:
 - /it/bash/logging/
-date:                  2024-01-26T00:59:27.816909-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registrazione Eventi (Logging)"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/logging.md"
+date: 2024-01-26 00:59:27.816909-07:00
+description: "Il logging \xE8 la pratica di registrare eventi, errori e altre informazioni\
+  \ significative dai processi in esecuzione di un programma su un file o uno stream\u2026"
+lastmod: 2024-02-18 23:08:56.058618
+model: gpt-4-1106-preview
+summary: "Il logging \xE8 la pratica di registrare eventi, errori e altre informazioni\
+  \ significative dai processi in esecuzione di un programma su un file o uno stream\u2026"
+title: Registrazione Eventi (Logging)
 ---
 
 {{< edit_this_page >}}

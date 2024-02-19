@@ -1,14 +1,21 @@
 ---
-title:                "获取字符串的长度"
 aliases:
 - /zh/clojure/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:07.676994-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "获取字符串的长度"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:07.676994-07:00
+description: "\u4EC0\u4E48\u548C\u4E3A\u4EC0\u4E48\uFF1F \u8BA1\u7B97\u5B57\u7B26\u4E32\
+  \u957F\u5EA6\u662F\u6307\u786E\u5B9A\u5B57\u7B26\u4E32\u4E2D\u5B57\u7B26\u7684\u6570\
+  \u91CF\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u9A8C\u8BC1\u6570\
+  \u636E\u3001\u9650\u5236\u8F93\u5165\u6216\u8005\u5728\u5904\u7406\u6587\u672C\u65F6\
+  \u8FDB\u884C\u5176\u4ED6\u64CD\u4F5C\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:58.820265
+model: gpt-4-1106-preview
+summary: "\u4EC0\u4E48\u548C\u4E3A\u4EC0\u4E48\uFF1F \u8BA1\u7B97\u5B57\u7B26\u4E32\
+  \u957F\u5EA6\u662F\u6307\u786E\u5B9A\u5B57\u7B26\u4E32\u4E2D\u5B57\u7B26\u7684\u6570\
+  \u91CF\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u9A8C\u8BC1\u6570\
+  \u636E\u3001\u9650\u5236\u8F93\u5165\u6216\u8005\u5728\u5904\u7406\u6587\u672C\u65F6\
+  \u8FDB\u884C\u5176\u4ED6\u64CD\u4F5C\u3002"
+title: "\u83B7\u53D6\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
 ---
 
 {{< edit_this_page >}}

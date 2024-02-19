@@ -1,15 +1,17 @@
 ---
-title:                "Assosiatiivisten taulukoiden käyttö"
 aliases:
 - /fi/fish-shell/using-associative-arrays/
-date:                  2024-01-30T19:11:11.133810-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Assosiatiivisten taulukoiden käyttö"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:11:11.133810-07:00
+description: "Assosiatiiviset taulukot eli hajautustaulut mahdollistavat tietojen\
+  \ tallentamisen avain-arvo -pareina, mik\xE4 tekee tiedon j\xE4rjest\xE4misest\xE4\
+  \ ja hakemisesta\u2026"
+lastmod: 2024-02-18 23:09:08.074085
+model: gpt-4-0125-preview
+summary: "Assosiatiiviset taulukot eli hajautustaulut mahdollistavat tietojen tallentamisen\
+  \ avain-arvo -pareina, mik\xE4 tekee tiedon j\xE4rjest\xE4misest\xE4 ja hakemisesta\u2026"
+title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Koodin järjestäminen funktioihin"
 aliases:
 - /fi/go/organizing-code-into-functions/
-date:                  2024-02-03T17:59:52.642342-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Koodin järjestäminen funktioihin"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/organizing-code-into-functions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:52.642342-07:00
+description: "Koodin j\xE4rjest\xE4minen funktioihin Go:ssa tarkoittaa koodin jakamista\
+  \ uudelleenk\xE4ytett\xE4viksi, modulaarisiksi lohkoiksi, jotka suorittavat tiettyj\xE4\
+  \ teht\xE4vi\xE4.\u2026"
+lastmod: 2024-02-18 23:09:07.091671
+model: gpt-4-0125-preview
+summary: "Koodin j\xE4rjest\xE4minen funktioihin Go:ssa tarkoittaa koodin jakamista\
+  \ uudelleenk\xE4ytett\xE4viksi, modulaarisiksi lohkoiksi, jotka suorittavat tiettyj\xE4\
+  \ teht\xE4vi\xE4.\u2026"
+title: "Koodin j\xE4rjest\xE4minen funktioihin"
 ---
 
 {{< edit_this_page >}}

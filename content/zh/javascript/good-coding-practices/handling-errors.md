@@ -1,13 +1,22 @@
 ---
-title:                "处理错误"
 aliases:
 - /zh/javascript/handling-errors/
-date:                  2024-01-26T00:54:42.799525-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "处理错误"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/handling-errors.md"
+date: 2024-01-26 00:54:42.799525-07:00
+description: "\u9519\u8BEF\u5904\u7406\u662F\u6307\u5728\u4EE3\u7801\u6267\u884C\u4E0D\
+  \u6B63\u5E38\u65F6\u60A8\u7BA1\u7406\u8FD9\u4E9B\u95EE\u9898\u7684\u65B9\u5F0F\u3002\
+  \u5B83\u975E\u5E38\u5173\u952E\uFF0C\u56E0\u4E3A\u9519\u8BEF\u5904\u7406\u5E2E\u52A9\
+  \u60A8\u7684\u7A0B\u5E8F\u4F18\u96C5\u5730\u5931\u8D25\u5E76\u6E05\u6670\u5730\u6307\
+  \u5BFC\u7528\u6237\uFF0C\u800C\u4E0D\u662F\u7B80\u5355\u5730\u5D29\u6E83\u548C\u71C3\
+  \u70E7\u3002"
+lastmod: 2024-02-18 23:08:59.486118
+model: gpt-4-1106-preview
+summary: "\u9519\u8BEF\u5904\u7406\u662F\u6307\u5728\u4EE3\u7801\u6267\u884C\u4E0D\
+  \u6B63\u5E38\u65F6\u60A8\u7BA1\u7406\u8FD9\u4E9B\u95EE\u9898\u7684\u65B9\u5F0F\u3002\
+  \u5B83\u975E\u5E38\u5173\u952E\uFF0C\u56E0\u4E3A\u9519\u8BEF\u5904\u7406\u5E2E\u52A9\
+  \u60A8\u7684\u7A0B\u5E8F\u4F18\u96C5\u5730\u5931\u8D25\u5E76\u6E05\u6670\u5730\u6307\
+  \u5BFC\u7528\u6237\uFF0C\u800C\u4E0D\u662F\u7B80\u5355\u5730\u5D29\u6E83\u548C\u71C3\
+  \u70E7\u3002"
+title: "\u5904\u7406\u9519\u8BEF"
 ---
 
 {{< edit_this_page >}}

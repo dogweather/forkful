@@ -1,14 +1,28 @@
 ---
-title:                "获取当前日期"
 aliases:
 - /zh/powershell/getting-the-current-date/
-date:                  2024-02-03T19:10:24.034460-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "获取当前日期"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:10:24.034460-07:00
+description: "\u5728 PowerShell \u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u662F\u6307\
+  \u63D0\u53D6\u7CFB\u7EDF\u5F53\u524D\u7684\u65E5\u671F\u548C\u65F6\u95F4\u3002\u8FD9\
+  \u4E00\u64CD\u4F5C\u5BF9\u4E8E\u8BB0\u5F55\u65E5\u5FD7\u3001\u5B9A\u65F6\u64CD\u4F5C\
+  \u6216\u57FA\u4E8E\u65E5\u671F\u505A\u51B3\u5B9A\u7B49\u4EFB\u52A1\u81F3\u5173\u91CD\
+  \u8981\u3002\u7A0B\u5E8F\u5458\u5229\u7528\u8FD9\u4E00\u80FD\u529B\u6765\u8FFD\u8E2A\
+  \u4E8B\u4EF6\u3001\u5B89\u6392\u4EFB\u52A1\u4EE5\u53CA\u5728\u811A\u672C\u548C\u5E94\
+  \u7528\u7A0B\u5E8F\u4E2D\u5904\u7406\u4E0E\u65E5\u671F\u76F8\u5173\u7684\u903B\u8F91\
+  \u3002"
+lastmod: 2024-02-18 23:08:59.341213
+model: gpt-4-0125-preview
+summary: "\u5728 PowerShell \u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u662F\u6307\
+  \u63D0\u53D6\u7CFB\u7EDF\u5F53\u524D\u7684\u65E5\u671F\u548C\u65F6\u95F4\u3002\u8FD9\
+  \u4E00\u64CD\u4F5C\u5BF9\u4E8E\u8BB0\u5F55\u65E5\u5FD7\u3001\u5B9A\u65F6\u64CD\u4F5C\
+  \u6216\u57FA\u4E8E\u65E5\u671F\u505A\u51B3\u5B9A\u7B49\u4EFB\u52A1\u81F3\u5173\u91CD\
+  \u8981\u3002\u7A0B\u5E8F\u5458\u5229\u7528\u8FD9\u4E00\u80FD\u529B\u6765\u8FFD\u8E2A\
+  \u4E8B\u4EF6\u3001\u5B89\u6392\u4EFB\u52A1\u4EE5\u53CA\u5728\u811A\u672C\u548C\u5E94\
+  \u7528\u7A0B\u5E8F\u4E2D\u5904\u7406\u4E0E\u65E5\u671F\u76F8\u5173\u7684\u903B\u8F91\
+  \u3002"
+title: "\u83B7\u53D6\u5F53\u524D\u65E5\u671F"
 ---
 
 {{< edit_this_page >}}

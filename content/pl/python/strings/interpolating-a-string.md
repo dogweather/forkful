@@ -1,16 +1,19 @@
 ---
-title:                "Interpolacja łańcucha znaków"
 aliases:
 - /pl/python/interpolating-a-string/
-date:                  2024-01-28T21:23:59.921095-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interpolacja łańcucha znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/interpolating-a-string.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:23:59.921095-07:00
+description: "Interpolacja ci\u0105g\xF3w znak\xF3w to metoda osadzania wyra\u017C\
+  e\u0144 wewn\u0105trz litera\u0142\xF3w napis\xF3w. Programi\u015Bci u\u017Cywaj\u0105\
+  \ jej do dynamicznego wstawiania warto\u015Bci do ci\u0105g\xF3w\u2026"
+lastmod: 2024-02-18 23:08:49.198227
+model: gpt-4-0125-preview
+summary: "Interpolacja ci\u0105g\xF3w znak\xF3w to metoda osadzania wyra\u017Ce\u0144\
+  \ wewn\u0105trz litera\u0142\xF3w napis\xF3w. Programi\u015Bci u\u017Cywaj\u0105\
+  \ jej do dynamicznego wstawiania warto\u015Bci do ci\u0105g\xF3w\u2026"
+title: "Interpolacja \u0142a\u0144cucha znak\xF3w"
 ---
 
 {{< edit_this_page >}}

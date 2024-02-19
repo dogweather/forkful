@@ -1,13 +1,16 @@
 ---
-title:                "HTTP-pyynnön lähettäminen"
 aliases:
 - /fi/clojure/sending-an-http-request/
-date:                  2024-01-20T17:59:28.885700-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-pyynnön lähettäminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/sending-an-http-request.md"
+date: 2024-01-20 17:59:28.885700-07:00
+description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen on tapa saada tai l\xE4hett\xE4\xE4\
+  \ tietoa verkossa toimivien palvelimien v\xE4lill\xE4. Ohjelmoijat k\xE4ytt\xE4\
+  v\xE4t sit\xE4 dataa vaihtaakseen, API:hin\u2026"
+lastmod: 2024-02-18 23:09:07.225283
+model: gpt-4-1106-preview
+summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen on tapa saada tai l\xE4hett\xE4\xE4 tietoa\
+  \ verkossa toimivien palvelimien v\xE4lill\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\
+  \ dataa vaihtaakseen, API:hin\u2026"
+title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 ---
 
 {{< edit_this_page >}}

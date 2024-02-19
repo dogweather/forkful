@@ -1,13 +1,14 @@
 ---
-title:                "Journalisation"
 aliases:
 - /fr/ruby/logging/
-date:                  2024-01-26T01:08:25.572424-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Journalisation"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/logging.md"
+date: 2024-01-26 01:08:25.572424-07:00
+description: "La journalisation dans la programmation, c'est comme tenir un journal\
+  \ intime pour votre application. Il s'agit de l'enregistrement syst\xE9matique\u2026"
+lastmod: 2024-02-18 23:09:09.414238
+model: gpt-4-1106-preview
+summary: "La journalisation dans la programmation, c'est comme tenir un journal intime\
+  \ pour votre application. Il s'agit de l'enregistrement syst\xE9matique\u2026"
+title: Journalisation
 ---
 
 {{< edit_this_page >}}

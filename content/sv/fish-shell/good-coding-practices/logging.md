@@ -1,13 +1,16 @@
 ---
-title:                "Loggning"
 aliases:
 - /sv/fish-shell/logging/
-date:                  2024-01-26T01:04:27.357626-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Loggning"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/logging.md"
+date: 2024-01-26 01:04:27.357626-07:00
+description: "Att logga \xE4r i grund och botten att skriva ned vad din applikation\
+  \ h\xE5ller p\xE5 med \u2013 som en dagbok, om du s\xE5 vill, men f\xF6r kod. Programmerare\
+  \ g\xF6r det f\xF6r\u2026"
+lastmod: 2024-02-18 23:08:52.213874
+model: gpt-4-1106-preview
+summary: "Att logga \xE4r i grund och botten att skriva ned vad din applikation h\xE5\
+  ller p\xE5 med \u2013 som en dagbok, om du s\xE5 vill, men f\xF6r kod. Programmerare\
+  \ g\xF6r det f\xF6r\u2026"
+title: Loggning
 ---
 
 {{< edit_this_page >}}

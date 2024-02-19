@@ -1,13 +1,15 @@
 ---
-title:                "Einen HTTP-Request senden"
 aliases:
 - /de/lua/sending-an-http-request/
-date:                  2024-01-20T18:00:22.875044-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Einen HTTP-Request senden"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/sending-an-http-request.md"
+date: 2024-01-20 18:00:22.875044-07:00
+description: "HTTP-Anfragen sind der Weg, wie Programme auf das Web zugreifen; sie\
+  \ holen oder senden Daten an Server. Programmierer nutzen diese, um mit Web-Diensten\
+  \ zu\u2026"
+lastmod: 2024-02-18 23:09:05.003934
+model: gpt-4-1106-preview
+summary: "HTTP-Anfragen sind der Weg, wie Programme auf das Web zugreifen; sie holen\
+  \ oder senden Daten an Server. Programmierer nutzen diese, um mit Web-Diensten zu\u2026"
+title: Einen HTTP-Request senden
 ---
 
 {{< edit_this_page >}}

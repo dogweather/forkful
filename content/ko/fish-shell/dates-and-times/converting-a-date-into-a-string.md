@@ -1,14 +1,23 @@
 ---
-title:                "날짜를 문자열로 변환하기"
 aliases:
 - /ko/fish-shell/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:41.924981-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "날짜를 문자열로 변환하기"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:41.924981-07:00
+description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD55C\uB2E4\
+  \uB294 \uAC74 \uD2B9\uC815 \uB0A0\uC9DC\uB97C \uD14D\uC2A4\uD2B8 \uD615\uC2DD\uC73C\
+  \uB85C \uBC14\uAFB8\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB4E4\uC740 \uBA85\uD655\uD55C \uAE30\uB85D, \uC0AC\uC6A9\uC790 \uCE5C\uD654\uC801\
+  \ \uD45C\uC2DC, \uB370\uC774\uD130 \uD3EC\uB9F7 \uC870\uC815 \uB4F1\uC744 \uC704\
+  \uD574 \uC774 \uC791\uC5C5\uC744 \uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.899715
+model: gpt-4-1106-preview
+summary: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD55C\uB2E4\uB294\
+  \ \uAC74 \uD2B9\uC815 \uB0A0\uC9DC\uB97C \uD14D\uC2A4\uD2B8 \uD615\uC2DD\uC73C\uB85C\
+  \ \uBC14\uAFB8\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\
+  \uC740 \uBA85\uD655\uD55C \uAE30\uB85D, \uC0AC\uC6A9\uC790 \uCE5C\uD654\uC801 \uD45C\
+  \uC2DC, \uB370\uC774\uD130 \uD3EC\uB9F7 \uC870\uC815 \uB4F1\uC744 \uC704\uD574 \uC774\
+  \ \uC791\uC5C5\uC744 \uD569\uB2C8\uB2E4."
+title: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Analysering av HTML"
 aliases:
 - /no/go/parsing-html/
-date:                  2024-02-03T17:59:57.885317-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analysering av HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:57.885317-07:00
+description: "Parsing av HTML i Go inneb\xE6rer \xE5 analysere innholdet i HTML-filer\
+  \ for \xE5 ekstrahere data, manipulere strukturen, eller for \xE5 konvertere HTML\
+  \ til andre\u2026"
+lastmod: 2024-02-18 23:08:53.433490
+model: gpt-4-0125-preview
+summary: "Parsing av HTML i Go inneb\xE6rer \xE5 analysere innholdet i HTML-filer\
+  \ for \xE5 ekstrahere data, manipulere strukturen, eller for \xE5 konvertere HTML\
+  \ til andre\u2026"
+title: Analysering av HTML
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,22 @@
 ---
-title:                "日志记录"
 aliases:
 - /zh/c-sharp/logging/
-date:                  2024-01-26T01:01:18.098872-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "日志记录"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/logging.md"
+date: 2024-01-26 01:01:18.098872-07:00
+description: "\u65E5\u5FD7\u8BB0\u5F55\u662F\u5728\u8FD0\u884C\u65F6\u8BB0\u5F55\u5E94\
+  \u7528\u7A0B\u5E8F\u4E8B\u4EF6\u548C\u6570\u636E\u8F93\u51FA\u7684\u8FC7\u7A0B\u3002\
+  \u7A0B\u5E8F\u5458\u901A\u8FC7\u65E5\u5FD7\u8BB0\u5F55\u6765\u8BCA\u65ADbug\u3001\
+  \u76D1\u63A7\u8F6F\u4EF6\u6027\u80FD\u3001\u8FFD\u8E2A\u7528\u6237\u64CD\u4F5C\uFF0C\
+  \u5E76\u7EF4\u62A4\u4E0E\u5B89\u5168\u548C\u4E1A\u52A1\u6807\u51C6\u7684\u7B26\u5408\
+  \u6027\u3002"
+lastmod: 2024-02-18 23:08:59.138310
+model: gpt-4-1106-preview
+summary: "\u65E5\u5FD7\u8BB0\u5F55\u662F\u5728\u8FD0\u884C\u65F6\u8BB0\u5F55\u5E94\
+  \u7528\u7A0B\u5E8F\u4E8B\u4EF6\u548C\u6570\u636E\u8F93\u51FA\u7684\u8FC7\u7A0B\u3002\
+  \u7A0B\u5E8F\u5458\u901A\u8FC7\u65E5\u5FD7\u8BB0\u5F55\u6765\u8BCA\u65ADbug\u3001\
+  \u76D1\u63A7\u8F6F\u4EF6\u6027\u80FD\u3001\u8FFD\u8E2A\u7528\u6237\u64CD\u4F5C\uFF0C\
+  \u5E76\u7EF4\u62A4\u4E0E\u5B89\u5168\u548C\u4E1A\u52A1\u6807\u51C6\u7684\u7B26\u5408\
+  \u6027\u3002"
+title: "\u65E5\u5FD7\u8BB0\u5F55"
 ---
 
 {{< edit_this_page >}}

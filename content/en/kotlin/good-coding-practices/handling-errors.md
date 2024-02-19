@@ -1,13 +1,16 @@
 ---
-title:                "Handling errors"
 aliases:
 - /en/kotlin/handling-errors/
-date:                  2024-01-21T21:19:08.961743-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Handling errors"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/handling-errors.md"
+date: 2024-01-21 21:19:08.961743-07:00
+description: "Handling errors is how your code deals with problems that pop up during\
+  \ execution\u2014like handling a curveball without dropping it. Programmers do it\
+  \ to\u2026"
+lastmod: 2024-02-18 23:09:11.020568
+model: gpt-4-1106-preview
+summary: "Handling errors is how your code deals with problems that pop up during\
+  \ execution\u2014like handling a curveball without dropping it. Programmers do it\
+  \ to\u2026"
+title: Handling errors
 ---
 
 {{< edit_this_page >}}

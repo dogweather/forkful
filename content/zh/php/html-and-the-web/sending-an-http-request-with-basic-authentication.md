@@ -1,14 +1,21 @@
 ---
-title:                "使用基本认证发送 HTTP 请求"
 aliases:
 - /zh/php/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:11.484220-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "使用基本认证发送 HTTP 请求"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:11.484220-07:00
+description: "\u5728PHP\u4E2D\u53D1\u9001\u5E26\u6709\u57FA\u672C\u8BA4\u8BC1\u7684\
+  HTTP\u8BF7\u6C42\uFF0C\u5C31\u662F\u5BA2\u6237\u7AEF\u63D0\u4F9B\u7528\u6237\u540D\
+  \u548C\u5BC6\u7801\u4EE5\u83B7\u53D6\u8D44\u6E90\u3002\u8FD9\u79CD\u65B9\u6CD5\u5E38\
+  \u7528\u4E8E\u6570\u636E\u7684\u7B80\u5355\u4FDD\u62A4\u3001API\u7684\u4F7F\u7528\
+  \uFF0C\u6216\u8005\u9700\u8981\u9A8C\u8BC1\u6743\u9650\u7684\u573A\u666F\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.215684
+model: gpt-4-1106-preview
+summary: "\u5728PHP\u4E2D\u53D1\u9001\u5E26\u6709\u57FA\u672C\u8BA4\u8BC1\u7684HTTP\u8BF7\
+  \u6C42\uFF0C\u5C31\u662F\u5BA2\u6237\u7AEF\u63D0\u4F9B\u7528\u6237\u540D\u548C\u5BC6\
+  \u7801\u4EE5\u83B7\u53D6\u8D44\u6E90\u3002\u8FD9\u79CD\u65B9\u6CD5\u5E38\u7528\u4E8E\
+  \u6570\u636E\u7684\u7B80\u5355\u4FDD\u62A4\u3001API\u7684\u4F7F\u7528\uFF0C\u6216\
+  \u8005\u9700\u8981\u9A8C\u8BC1\u6743\u9650\u7684\u573A\u666F\u3002"
+title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
 ---
 
 {{< edit_this_page >}}

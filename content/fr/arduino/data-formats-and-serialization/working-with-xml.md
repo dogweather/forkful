@@ -1,13 +1,14 @@
 ---
-title:                "Travailler avec XML"
 aliases:
 - /fr/arduino/working-with-xml/
-date:                  2024-01-26T04:27:30.551953-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Travailler avec XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/working-with-xml.md"
+date: 2024-01-26 04:27:30.551953-07:00
+description: "Travailler avec le XML sur Arduino implique l'analyse et la manipulation\
+  \ des donn\xE9es XML, g\xE9n\xE9ralement issues d'API web ou de fichiers de configuration.\u2026"
+lastmod: 2024-02-18 23:09:09.140616
+model: gpt-4-0125-preview
+summary: "Travailler avec le XML sur Arduino implique l'analyse et la manipulation\
+  \ des donn\xE9es XML, g\xE9n\xE9ralement issues d'API web ou de fichiers de configuration.\u2026"
+title: Travailler avec XML
 ---
 
 {{< edit_this_page >}}

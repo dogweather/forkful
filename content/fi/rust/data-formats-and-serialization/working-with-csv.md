@@ -1,14 +1,16 @@
 ---
-title:                "Työskentely CSV:n kanssa"
 aliases:
 - /fi/rust/working-with-csv/
-date:                  2024-02-03T19:21:27.176692-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely CSV:n kanssa"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:21:27.176692-07:00
+description: "CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely tarkoittaa tabulaarisen\
+  \ datan tallentavien yksinkertaistettujen tekstitiedostojen lukemista ja\u2026"
+lastmod: 2024-02-18 23:09:07.387970
+model: gpt-4-0125-preview
+summary: "CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely tarkoittaa tabulaarisen\
+  \ datan tallentavien yksinkertaistettujen tekstitiedostojen lukemista ja\u2026"
+title: "Ty\xF6skentely CSV:n kanssa"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,17 @@
 ---
-title:                "Rédaction de tests"
 aliases:
 - /fr/fish-shell/writing-tests/
-date:                  2024-02-03T19:30:42.807366-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rédaction de tests"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:30:42.807366-07:00
+description: "\xC9crire des tests en Fish Shell implique de cr\xE9er des scripts qui\
+  \ ex\xE9cutent automatiquement votre code pour valider son comportement par rapport\
+  \ aux\u2026"
+lastmod: 2024-02-18 23:09:09.309746
+model: gpt-4-0125-preview
+summary: "\xC9crire des tests en Fish Shell implique de cr\xE9er des scripts qui ex\xE9\
+  cutent automatiquement votre code pour valider son comportement par rapport aux\u2026"
+title: "R\xE9daction de tests"
 ---
 
 {{< edit_this_page >}}

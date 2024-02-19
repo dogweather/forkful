@@ -1,15 +1,16 @@
 ---
-title:                "Het huidige datum ophalen"
 aliases:
 - /nl/elixir/getting-the-current-date/
-date:                  2024-01-28T22:01:03.421014-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Het huidige datum ophalen"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elixir/getting-the-current-date.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:03.421014-07:00
+description: "De huidige datum opvragen in een programma is alsof je vraagt: \"H\xE9\
+  , wat is de datum van vandaag?\" We doen dit om gebeurtenissen te tijdstempelen,\u2026"
+lastmod: 2024-02-18 23:09:01.538091
+model: gpt-4-0125-preview
+summary: "De huidige datum opvragen in een programma is alsof je vraagt: \"H\xE9,\
+  \ wat is de datum van vandaag?\" We doen dit om gebeurtenissen te tijdstempelen,\u2026"
+title: Het huidige datum ophalen
 ---
 
 {{< edit_this_page >}}

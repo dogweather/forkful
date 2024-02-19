@@ -1,13 +1,14 @@
 ---
-title:                "Iniciando um novo projeto"
 aliases:
 - /pt/elm/starting-a-new-project/
-date:                  2024-01-20T18:03:21.775298-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Iniciando um novo projeto"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/starting-a-new-project.md"
+date: 2024-01-20 18:03:21.775298-07:00
+description: "Come\xE7ar um novo projeto em Elm \xE9 inicializar um ambiente de desenvolvimento\
+  \ do zero, configurando tudo o que voc\xEA precisa para escrever seu c\xF3digo Elm.\u2026"
+lastmod: 2024-02-18 23:08:58.061140
+model: gpt-4-1106-preview
+summary: "Come\xE7ar um novo projeto em Elm \xE9 inicializar um ambiente de desenvolvimento\
+  \ do zero, configurando tudo o que voc\xEA precisa para escrever seu c\xF3digo Elm.\u2026"
+title: Iniciando um novo projeto
 ---
 
 {{< edit_this_page >}}

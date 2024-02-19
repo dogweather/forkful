@@ -1,14 +1,25 @@
 ---
-title:                "JSON과 함께 일하기"
 aliases:
 - /ko/rust/working-with-json/
-date:                  2024-02-03T19:24:25.556036-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "JSON과 함께 일하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:24:25.556036-07:00
+description: "Rust\uC5D0\uC11C JSON(JavaScript Object Notation)\uC744 \uB2E4\uB8E8\
+  \uB294 \uAC83\uC740 JSON \uB370\uC774\uD130\uB97C Rust \uB370\uC774\uD130 \uAD6C\
+  \uC870\uB85C \uD30C\uC2F1\uD558\uACE0, Rust \uB370\uC774\uD130 \uAD6C\uC870\uB97C\
+  \ \uB2E4\uC2DC JSON\uC73C\uB85C \uC9C1\uB82C\uD654\uD558\uB294 \uAC83\uC744 \uB9D0\
+  \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC6F9 API, \uC124\
+  \uC815 \uD30C\uC77C \uB610\uB294 JSON\uC774 \uC0AC\uC6A9\uB418\uB294 \uBAA8\uB4E0\
+  \u2026"
+lastmod: 2024-02-18 23:09:05.917585
+model: gpt-4-0125-preview
+summary: "Rust\uC5D0\uC11C JSON(JavaScript Object Notation)\uC744 \uB2E4\uB8E8\uB294\
+  \ \uAC83\uC740 JSON \uB370\uC774\uD130\uB97C Rust \uB370\uC774\uD130 \uAD6C\uC870\
+  \uB85C \uD30C\uC2F1\uD558\uACE0, Rust \uB370\uC774\uD130 \uAD6C\uC870\uB97C \uB2E4\
+  \uC2DC JSON\uC73C\uB85C \uC9C1\uB82C\uD654\uD558\uB294 \uAC83\uC744 \uB9D0\uD569\
+  \uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC6F9 API, \uC124\uC815\
+  \ \uD30C\uC77C \uB610\uB294 JSON\uC774 \uC0AC\uC6A9\uB418\uB294 \uBAA8\uB4E0\u2026"
+title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

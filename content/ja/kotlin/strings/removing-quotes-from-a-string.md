@@ -1,13 +1,18 @@
 ---
-title:                "文字列から引用符を削除する"
 aliases:
 - /ja/kotlin/removing-quotes-from-a-string/
-date:                  2024-01-26T03:40:48.513682-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "文字列から引用符を削除する"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:40:48.513682-07:00
+description: "\u6587\u5B57\u5217\u304B\u3089\u5F15\u7528\u7B26\u3092\u524A\u9664\u3059\
+  \u308B\u3068\u306F\u3001\u3042\u306A\u305F\u304C\u6271\u3063\u3066\u3044\u308B\u30C6\
+  \u30AD\u30B9\u30C8\u30C7\u30FC\u30BF\u304B\u3089\u3001\u5358\u4E00\uFF08' '\uFF09\
+  \u307E\u305F\u306F\u4E8C\u91CD\uFF08\"\u2026"
+lastmod: 2024-02-18 23:08:54.868253
+model: gpt-4-0125-preview
+summary: "\u6587\u5B57\u5217\u304B\u3089\u5F15\u7528\u7B26\u3092\u524A\u9664\u3059\
+  \u308B\u3068\u306F\u3001\u3042\u306A\u305F\u304C\u6271\u3063\u3066\u3044\u308B\u30C6\
+  \u30AD\u30B9\u30C8\u30C7\u30FC\u30BF\u304B\u3089\u3001\u5358\u4E00\uFF08' '\uFF09\
+  \u307E\u305F\u306F\u4E8C\u91CD\uFF08\"\u2026"
+title: "\u6587\u5B57\u5217\u304B\u3089\u5F15\u7528\u7B26\u3092\u524A\u9664\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

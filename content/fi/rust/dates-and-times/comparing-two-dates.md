@@ -1,13 +1,16 @@
 ---
-title:                "Kahden päivämäärän vertailu"
 aliases:
 - /fi/rust/comparing-two-dates/
-date:                  2024-01-20T17:33:42.845353-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Kahden päivämäärän vertailu"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/comparing-two-dates.md"
+date: 2024-01-20 17:33:42.845353-07:00
+description: "\"Miten & Miksi?\" Tietojen vertailu on ydintoiminto ohjelmoinnissa.\
+  \ Kaksi p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 vertaamalla selvitet\xE4\xE4n niiden v\xE4\
+  linen suhde, esimerkiksi tapahtumien\u2026"
+lastmod: 2024-02-18 23:09:07.377197
+model: gpt-4-1106-preview
+summary: "\"Miten & Miksi?\" Tietojen vertailu on ydintoiminto ohjelmoinnissa. Kaksi\
+  \ p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 vertaamalla selvitet\xE4\xE4n niiden v\xE4linen\
+  \ suhde, esimerkiksi tapahtumien\u2026"
+title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 ---
 
 {{< edit_this_page >}}

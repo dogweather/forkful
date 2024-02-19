@@ -1,13 +1,16 @@
 ---
-title:                "Ta bort tecken som matchar ett mönster"
 aliases:
 - /sv/ruby/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:43:08.134217-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ta bort tecken som matchar ett mönster"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:43:08.134217-07:00
+description: "I Ruby kan du rensa str\xE4ngar fr\xE5n o\xF6nskade tecken genom att\
+  \ matcha dem mot ett m\xF6nster. Programmerare g\xF6r detta f\xF6r att st\xE4da\
+  \ data, validera input eller\u2026"
+lastmod: 2024-02-18 23:08:52.278314
+model: gpt-4-1106-preview
+summary: "I Ruby kan du rensa str\xE4ngar fr\xE5n o\xF6nskade tecken genom att matcha\
+  \ dem mot ett m\xF6nster. Programmerare g\xF6r detta f\xF6r att st\xE4da data, validera\
+  \ input eller\u2026"
+title: "Ta bort tecken som matchar ett m\xF6nster"
 ---
 
 {{< edit_this_page >}}

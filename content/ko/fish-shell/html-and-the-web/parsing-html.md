@@ -1,14 +1,30 @@
 ---
-title:                "HTML 파싱"
 aliases:
 - /ko/fish-shell/parsing-html/
-date:                  2024-02-03T19:12:17.170813-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML 파싱"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:17.170813-07:00
+description: "HTML \uD30C\uC2F1\uC740 HTML \uCEE8\uD150\uCE20\uC5D0\uC11C \uB370\uC774\
+  \uD130\uB098 \uC815\uBCF4\uB97C \uCD94\uCD9C\uD558\uB294 \uAC83\uC744 \uB9D0\uD558\
+  \uBA70, \uC6F9 \uB370\uC774\uD130\uB97C \uB2E4\uB8F0 \uB54C \uD754\uD55C \uC791\uC5C5\
+  \uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC6F9 \uC0AC\uC774\
+  \uD2B8\uC5D0\uC11C \uC815\uBCF4\uB97C \uC790\uB3D9\uC73C\uB85C \uCD94\uCD9C\uD558\
+  \uAE30 \uC704\uD55C \uC791\uC5C5, \uC608\uB97C \uB4E4\uBA74 \uC6F9 \uC2A4\uD06C\uB798\
+  \uD551, \uB370\uC774\uD130 \uB9C8\uC774\uB2DD, \uC790\uB3D9\uD654\uB41C \uD14C\uC2A4\
+  \uD305 \uB4F1\uC744 \uC218\uD589\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\uD589\
+  \uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.877775
+model: gpt-4-0125-preview
+summary: "HTML \uD30C\uC2F1\uC740 HTML \uCEE8\uD150\uCE20\uC5D0\uC11C \uB370\uC774\
+  \uD130\uB098 \uC815\uBCF4\uB97C \uCD94\uCD9C\uD558\uB294 \uAC83\uC744 \uB9D0\uD558\
+  \uBA70, \uC6F9 \uB370\uC774\uD130\uB97C \uB2E4\uB8F0 \uB54C \uD754\uD55C \uC791\uC5C5\
+  \uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC6F9 \uC0AC\uC774\
+  \uD2B8\uC5D0\uC11C \uC815\uBCF4\uB97C \uC790\uB3D9\uC73C\uB85C \uCD94\uCD9C\uD558\
+  \uAE30 \uC704\uD55C \uC791\uC5C5, \uC608\uB97C \uB4E4\uBA74 \uC6F9 \uC2A4\uD06C\uB798\
+  \uD551, \uB370\uC774\uD130 \uB9C8\uC774\uB2DD, \uC790\uB3D9\uD654\uB41C \uD14C\uC2A4\
+  \uD305 \uB4F1\uC744 \uC218\uD589\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\uD589\
+  \uD569\uB2C8\uB2E4."
+title: "HTML \uD30C\uC2F1"
 ---
 
 {{< edit_this_page >}}

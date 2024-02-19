@@ -1,13 +1,14 @@
 ---
-title:                "Confronto tra due date"
 aliases:
 - /it/elm/comparing-two-dates/
-date:                  2024-01-20T17:32:54.394997-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Confronto tra due date"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/comparing-two-dates.md"
+date: 2024-01-20 17:32:54.394997-07:00
+description: "Comparare due date significa verificare se sono uguali, quale precede\
+  \ l'altra o calcolare la differenza tra di loro. I programmatori lo fanno per\u2026"
+lastmod: 2024-02-18 23:08:55.817676
+model: gpt-4-1106-preview
+summary: "Comparare due date significa verificare se sono uguali, quale precede l'altra\
+  \ o calcolare la differenza tra di loro. I programmatori lo fanno per\u2026"
+title: Confronto tra due date
 ---
 
 {{< edit_this_page >}}

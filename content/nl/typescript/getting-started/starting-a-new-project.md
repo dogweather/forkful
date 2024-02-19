@@ -1,15 +1,16 @@
 ---
-title:                "Een nieuw project starten"
 aliases:
 - /nl/typescript/starting-a-new-project/
-date:                  2024-01-28T22:08:53.221031-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een nieuw project starten"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/typescript/starting-a-new-project.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:53.221031-07:00
+description: "Het starten van een nieuw project in TypeScript draait allemaal om het\
+  \ opzetten van een solide basis om op te coderen. Programmeurs starten nieuwe\u2026"
+lastmod: 2024-02-18 23:09:01.573785
+model: gpt-4-0125-preview
+summary: "Het starten van een nieuw project in TypeScript draait allemaal om het opzetten\
+  \ van een solide basis om op te coderen. Programmeurs starten nieuwe\u2026"
+title: Een nieuw project starten
 ---
 
 {{< edit_this_page >}}

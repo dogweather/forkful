@@ -1,14 +1,16 @@
 ---
-title:                "Lecture des arguments de ligne de commande"
 aliases:
 - /fr/google-apps-script/reading-command-line-arguments/
-date:                  2024-02-01T21:58:52.008390-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lecture des arguments de ligne de commande"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/google-apps-script/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:52.008390-07:00
+description: "Lire les arguments de ligne de commande dans Google Apps Script est\
+  \ un peu un abus de langage, car contrairement aux interfaces de ligne de commande\u2026"
+lastmod: 2024-02-18 23:09:08.308248
+model: gpt-4-0125-preview
+summary: "Lire les arguments de ligne de commande dans Google Apps Script est un peu\
+  \ un abus de langage, car contrairement aux interfaces de ligne de commande\u2026"
+title: Lecture des arguments de ligne de commande
 ---
 
 {{< edit_this_page >}}

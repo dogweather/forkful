@@ -1,13 +1,16 @@
 ---
-title:                "Usuwanie znaków pasujących do wzorca"
 aliases:
 - /pl/arduino/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:32.040173-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Usuwanie znaków pasujących do wzorca"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:32.040173-07:00
+description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to odfiltrowywanie okre\u015B\
+  lonych znak\xF3w z tekstu. Programi\u015Bci robi\u0105 to, \u017Ceby oczy\u015B\
+  ci\u0107 dane, poprawia\u0107 format lub\u2026"
+lastmod: 2024-02-18 23:08:49.854861
+model: gpt-4-1106-preview
+summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to odfiltrowywanie okre\u015B\
+  lonych znak\xF3w z tekstu. Programi\u015Bci robi\u0105 to, \u017Ceby oczy\u015B\
+  ci\u0107 dane, poprawia\u0107 format lub\u2026"
+title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 ---
 
 {{< edit_this_page >}}

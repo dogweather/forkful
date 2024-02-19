@@ -1,14 +1,29 @@
 ---
-title:                "JSON के साथ काम करना"
 aliases:
 - /hi/python/working-with-json/
-date:                  2024-02-03T19:24:54.833440-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "JSON के साथ काम करना"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/python/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:24:54.833440-07:00
+description: "JSON (JavaScript Object Notation) \u0915\u0947 \u0938\u093E\u0925 \u0915\
+  \u093E\u092E \u0915\u0930\u0928\u093E \u092A\u093E\u092F\u0925\u0928 \u0911\u092C\
+  \u094D\u091C\u0947\u0915\u094D\u091F\u094D\u0938 \u092E\u0947\u0902 JSON \u092B\u0949\
+  \u0930\u094D\u092E\u0947\u091F\u0947\u0921 \u0938\u094D\u091F\u094D\u0930\u093F\u0902\
+  \u0917\u094D\u0938 \u0915\u094B \u092A\u093E\u0930\u094D\u0938 \u0915\u0930\u0928\
+  \u0947 \u0914\u0930 \u0907\u0938\u0915\u0947 \u0935\u093F\u092A\u0930\u0940\u0924\
+  \ \u0915\u094B \u0936\u093E\u092E\u093F\u0932 \u0915\u0930\u0924\u093E \u0939\u0948\
+  \u0964 \u092F\u0939 \u0935\u0947\u092C \u0914\u0930\u2026"
+lastmod: 2024-02-18 23:09:02.686388
+model: gpt-4-0125-preview
+summary: "JSON (JavaScript Object Notation) \u0915\u0947 \u0938\u093E\u0925 \u0915\
+  \u093E\u092E \u0915\u0930\u0928\u093E \u092A\u093E\u092F\u0925\u0928 \u0911\u092C\
+  \u094D\u091C\u0947\u0915\u094D\u091F\u094D\u0938 \u092E\u0947\u0902 JSON \u092B\u0949\
+  \u0930\u094D\u092E\u0947\u091F\u0947\u0921 \u0938\u094D\u091F\u094D\u0930\u093F\u0902\
+  \u0917\u094D\u0938 \u0915\u094B \u092A\u093E\u0930\u094D\u0938 \u0915\u0930\u0928\
+  \u0947 \u0914\u0930 \u0907\u0938\u0915\u0947 \u0935\u093F\u092A\u0930\u0940\u0924\
+  \ \u0915\u094B \u0936\u093E\u092E\u093F\u0932 \u0915\u0930\u0924\u093E \u0939\u0948\
+  \u0964 \u092F\u0939 \u0935\u0947\u092C \u0914\u0930\u2026"
+title: "JSON \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\
+  \u093E"
 ---
 
 {{< edit_this_page >}}

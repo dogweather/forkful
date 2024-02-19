@@ -1,13 +1,16 @@
 ---
-title:                "Remaniement de code"
 aliases:
 - /fr/python/refactoring/
-date:                  2024-01-26T03:38:04.966916-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Remaniement de code"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/refactoring.md"
+date: 2024-01-26 03:38:04.966916-07:00
+description: "Le remaniement est le processus de restructuration du code informatique\
+  \ existant\u2014changer le factoring\u2014sans modifier son comportement externe.\
+  \ Les\u2026"
+lastmod: 2024-02-18 23:09:08.349302
+model: gpt-4-0125-preview
+summary: "Le remaniement est le processus de restructuration du code informatique\
+  \ existant\u2014changer le factoring\u2014sans modifier son comportement externe.\
+  \ Les\u2026"
+title: Remaniement de code
 ---
 
 {{< edit_this_page >}}

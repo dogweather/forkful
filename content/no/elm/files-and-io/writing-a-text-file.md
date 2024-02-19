@@ -1,12 +1,15 @@
 ---
-title:                "Skriving av en tekstfil"
 aliases:
 - /no/elm/writing-a-text-file/
-date:                  2024-01-19
-simple_title:         "Skriving av en tekstfil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/writing-a-text-file.md"
+date: 2024-01-19
+description: "\xC5 skrive en tekstfil er \xE5 lagre tekstdata til en fil p\xE5 disken.\
+  \ Programmerere gj\xF8r dette for \xE5 lagre data som app-innstillinger, logger\
+  \ eller \xE5 eksportere\u2026"
+lastmod: 2024-02-18 23:08:53.828548
+summary: "\xC5 skrive en tekstfil er \xE5 lagre tekstdata til en fil p\xE5 disken.\
+  \ Programmerere gj\xF8r dette for \xE5 lagre data som app-innstillinger, logger\
+  \ eller \xE5 eksportere\u2026"
+title: Skriving av en tekstfil
 ---
 
 {{< edit_this_page >}}

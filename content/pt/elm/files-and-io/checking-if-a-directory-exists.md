@@ -1,12 +1,15 @@
 ---
-title:                "Verificando se um diretório existe"
 aliases:
 - /pt/elm/checking-if-a-directory-exists/
-date:                  2024-01-20T14:56:14.068274-07:00
-simple_title:         "Verificando se um diretório existe"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/checking-if-a-directory-exists.md"
+date: 2024-01-20 14:56:14.068274-07:00
+description: "Checar se um diret\xF3rio existe \xE9 o processo de verificar se um\
+  \ caminho espec\xEDfico refere-se a um diret\xF3rio no sistema de arquivos. Programadores\
+  \ fazem isso\u2026"
+lastmod: 2024-02-18 23:08:58.074265
+summary: "Checar se um diret\xF3rio existe \xE9 o processo de verificar se um caminho\
+  \ espec\xEDfico refere-se a um diret\xF3rio no sistema de arquivos. Programadores\
+  \ fazem isso\u2026"
+title: "Verificando se um diret\xF3rio existe"
 ---
 
 {{< edit_this_page >}}

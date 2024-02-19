@@ -1,14 +1,16 @@
 ---
-title:                "Werken met YAML"
 aliases:
 - /nl/google-apps-script/working-with-yaml/
-date:                  2024-02-01T22:06:51.382058-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/google-apps-script/working-with-yaml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:06:51.382058-07:00
+description: "YAML, dat staat voor \"YAML Ain't Markup Language\", is een voor mensen\
+  \ leesbare gegevensserialisatiestandaard die vaak wordt gebruikt voor\u2026"
+lastmod: 2024-02-18 23:09:01.408940
+model: gpt-4-0125-preview
+summary: "YAML, dat staat voor \"YAML Ain't Markup Language\", is een voor mensen\
+  \ leesbare gegevensserialisatiestandaard die vaak wordt gebruikt voor\u2026"
+title: Werken met YAML
 ---
 
 {{< edit_this_page >}}

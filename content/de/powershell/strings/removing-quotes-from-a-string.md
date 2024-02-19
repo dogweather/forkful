@@ -1,13 +1,15 @@
 ---
-title:                "Anführungszeichen aus einem String entfernen"
 aliases:
 - /de/powershell/removing-quotes-from-a-string/
-date:                  2024-01-26T03:41:26.273726-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Anführungszeichen aus einem String entfernen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:41:26.273726-07:00
+description: "Das Entfernen von Anf\xFChrungszeichen aus einem String in PowerShell\
+  \ entfernt einzelne (`'`) oder doppelte (`\"`) Anf\xFChrungszeichen, die Ihren Text\
+  \ umgeben.\u2026"
+lastmod: 2024-02-18 23:09:05.086382
+model: gpt-4-0125-preview
+summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String in PowerShell entfernt\
+  \ einzelne (`'`) oder doppelte (`\"`) Anf\xFChrungszeichen, die Ihren Text umgeben.\u2026"
+title: "Anf\xFChrungszeichen aus einem String entfernen"
 ---
 
 {{< edit_this_page >}}

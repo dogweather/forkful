@@ -1,14 +1,22 @@
 ---
-title:                "字符串拼接"
 aliases:
 - /zh/google-apps-script/concatenating-strings/
-date:                  2024-02-01T21:50:18.849415-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "字符串拼接"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/google-apps-script/concatenating-strings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:18.849415-07:00
+description: "\u5B57\u7B26\u4E32\u8FDE\u63A5\u6D89\u53CA\u5C06\u4E24\u4E2A\u6216\u591A\
+  \u4E2A\u5B57\u7B26\u4E32\u5408\u5E76\u6210\u4E00\u4E2A\u5B57\u7B26\u4E32\u3002\u7A0B\
+  \u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u52A8\u6001\u5730\u6784\u5EFA\u6D88\
+  \u606F\u3001URL\u6216\u4EFB\u4F55\u9700\u8981\u9759\u6001\u548C\u53EF\u53D8\u5185\
+  \u5BB9\u6DF7\u5408\u7684\u6587\u672C\u5F62\u5F0F\u3002"
+lastmod: 2024-02-18 23:08:58.742019
+model: gpt-4-0125-preview
+summary: "\u5B57\u7B26\u4E32\u8FDE\u63A5\u6D89\u53CA\u5C06\u4E24\u4E2A\u6216\u591A\
+  \u4E2A\u5B57\u7B26\u4E32\u5408\u5E76\u6210\u4E00\u4E2A\u5B57\u7B26\u4E32\u3002\u7A0B\
+  \u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u52A8\u6001\u5730\u6784\u5EFA\u6D88\
+  \u606F\u3001URL\u6216\u4EFB\u4F55\u9700\u8981\u9759\u6001\u548C\u53EF\u53D8\u5185\
+  \u5BB9\u6DF7\u5408\u7684\u6587\u672C\u5F62\u5F0F\u3002"
+title: "\u5B57\u7B26\u4E32\u62FC\u63A5"
 ---
 
 {{< edit_this_page >}}

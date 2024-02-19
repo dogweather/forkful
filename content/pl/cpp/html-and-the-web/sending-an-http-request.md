@@ -1,13 +1,16 @@
 ---
-title:                "Wysyłanie żądania HTTP"
 aliases:
 - /pl/cpp/sending-an-http-request/
-date:                  2024-01-20T17:59:04.760061-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wysyłanie żądania HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/sending-an-http-request.md"
+date: 2024-01-20 17:59:04.760061-07:00
+description: "Wysy\u0142anie \u017C\u0105dania HTTP polega na poproszeniu serwera\
+  \ o dane lub zasoby. Programi\u015Bci robi\u0105 to, aby komunikowa\u0107 si\u0119\
+  \ z aplikacjami internetowymi, pobiera\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.908172
+model: gpt-4-1106-preview
+summary: "Wysy\u0142anie \u017C\u0105dania HTTP polega na poproszeniu serwera o dane\
+  \ lub zasoby. Programi\u015Bci robi\u0105 to, aby komunikowa\u0107 si\u0119 z aplikacjami\
+  \ internetowymi, pobiera\u0107\u2026"
+title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 ---
 
 {{< edit_this_page >}}

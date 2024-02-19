@@ -1,14 +1,16 @@
 ---
-title:                "Zufallszahlen generieren"
 aliases:
 - /de/c/generating-random-numbers/
-date:                  2024-02-03T17:57:01.406776-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zufallszahlen generieren"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/generating-random-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:01.406776-07:00
+description: "Die Generierung von Zufallszahlen in C umfasst das Erstellen von Werten,\
+  \ die unvorhersehbar sind und einer spezifischen Verteilung folgen, wie zum\u2026"
+lastmod: 2024-02-18 23:09:05.368503
+model: gpt-4-0125-preview
+summary: "Die Generierung von Zufallszahlen in C umfasst das Erstellen von Werten,\
+  \ die unvorhersehbar sind und einer spezifischen Verteilung folgen, wie zum\u2026"
+title: Zufallszahlen generieren
 ---
 
 {{< edit_this_page >}}

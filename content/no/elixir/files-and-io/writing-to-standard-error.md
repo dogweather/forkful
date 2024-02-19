@@ -1,14 +1,16 @@
 ---
-title:                "Skriving til standardfeil"
 aliases:
 - /no/elixir/writing-to-standard-error/
-date:                  2024-02-03T19:32:58.225684-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriving til standardfeil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:58.225684-07:00
+description: "\xC5 skrive til standardfeil (stderr) i Elixir er en metode for \xE5\
+  \ dirigere feilmeldinger og diagnostikk separat fra hovedutdataen (stdout). Programmerere\u2026"
+lastmod: 2024-02-18 23:08:53.620663
+model: gpt-4-0125-preview
+summary: "\xC5 skrive til standardfeil (stderr) i Elixir er en metode for \xE5 dirigere\
+  \ feilmeldinger og diagnostikk separat fra hovedutdataen (stdout). Programmerere\u2026"
+title: Skriving til standardfeil
 ---
 
 {{< edit_this_page >}}

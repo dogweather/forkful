@@ -1,14 +1,18 @@
 ---
-title:                "Lese en tekstfil"
 aliases:
 - /no/vba/reading-a-text-file/
-date:                  2024-02-01T21:59:35.103944-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lese en tekstfil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/vba/reading-a-text-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:35.103944-07:00
+description: "\xC5 lese en tekstfil i Visual Basic for Applications (VBA) inneb\xE6\
+  rer \xE5 programmere tilgang og ekstrahering av innholdet i en tekstfil fra innenfor\
+  \ en\u2026"
+lastmod: 2024-02-18 23:08:53.746508
+model: gpt-4-0125-preview
+summary: "\xC5 lese en tekstfil i Visual Basic for Applications (VBA) inneb\xE6rer\
+  \ \xE5 programmere tilgang og ekstrahering av innholdet i en tekstfil fra innenfor\
+  \ en\u2026"
+title: Lese en tekstfil
 ---
 
 {{< edit_this_page >}}

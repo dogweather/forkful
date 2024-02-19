@@ -1,13 +1,16 @@
 ---
-title:                "Å starte et nytt prosjekt"
 aliases:
 - /no/lua/starting-a-new-project/
-date:                  2024-01-20T18:03:54.090705-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Å starte et nytt prosjekt"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/lua/starting-a-new-project.md"
+date: 2024-01-20 18:03:54.090705-07:00
+description: "\xC5 starte et nytt prosjekt er som \xE5 lage en bl\xE5kopi fra scratch\
+  \ \u2013 det legger grunnlaget for hva som skal bygges. Programmerere gj\xF8r dette\
+  \ for \xE5 bringe nye\u2026"
+lastmod: 2024-02-18 23:08:54.016448
+model: gpt-4-1106-preview
+summary: "\xC5 starte et nytt prosjekt er som \xE5 lage en bl\xE5kopi fra scratch\
+  \ \u2013 det legger grunnlaget for hva som skal bygges. Programmerere gj\xF8r dette\
+  \ for \xE5 bringe nye\u2026"
+title: "\xC5 starte et nytt prosjekt"
 ---
 
 {{< edit_this_page >}}

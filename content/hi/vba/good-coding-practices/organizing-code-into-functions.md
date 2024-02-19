@@ -1,14 +1,30 @@
 ---
-title:                "कोड को फ़ंक्शन्स में व्यवस्थित करना"
 aliases:
 - /hi/vba/organizing-code-into-functions/
-date:                  2024-02-01T21:58:41.854783-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "कोड को फ़ंक्शन्स में व्यवस्थित करना"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/vba/organizing-code-into-functions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:41.854783-07:00
+description: "Visual Basic for Applications (VBA) \u092E\u0947\u0902 \u0915\u094B\u0921\
+  \ \u0915\u094B \u092B\u093C\u0902\u0915\u094D\u0936\u0928\u094D\u0938 \u092E\u0947\
+  \u0902 \u0935\u094D\u092F\u0935\u0938\u094D\u0925\u093F\u0924 \u0915\u0930\u0928\
+  \u093E \u0915\u093E\u0930\u094D\u092F\u0915\u094D\u0930\u092E \u0915\u094B \u091B\
+  \u094B\u091F\u0947, \u092A\u094D\u0930\u092C\u0902\u0927\u0928\u0940\u092F \u0916\
+  \u0902\u0921\u094B\u0902, \u091C\u093F\u0928\u094D\u0939\u0947\u0902 \u092B\u093C\
+  \u0902\u0915\u094D\u0936\u0928\u094D\u0938 \u0915\u0939\u093E \u091C\u093E\u0924\
+  \u093E \u0939\u0948, \u092E\u0947\u0902 \u0924\u094B\u0921\u093C\u0928\u0947\u2026"
+lastmod: 2024-02-18 23:09:03.045950
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications (VBA) \u092E\u0947\u0902 \u0915\u094B\u0921\
+  \ \u0915\u094B \u092B\u093C\u0902\u0915\u094D\u0936\u0928\u094D\u0938 \u092E\u0947\
+  \u0902 \u0935\u094D\u092F\u0935\u0938\u094D\u0925\u093F\u0924 \u0915\u0930\u0928\
+  \u093E \u0915\u093E\u0930\u094D\u092F\u0915\u094D\u0930\u092E \u0915\u094B \u091B\
+  \u094B\u091F\u0947, \u092A\u094D\u0930\u092C\u0902\u0927\u0928\u0940\u092F \u0916\
+  \u0902\u0921\u094B\u0902, \u091C\u093F\u0928\u094D\u0939\u0947\u0902 \u092B\u093C\
+  \u0902\u0915\u094D\u0936\u0928\u094D\u0938 \u0915\u0939\u093E \u091C\u093E\u0924\
+  \u093E \u0939\u0948, \u092E\u0947\u0902 \u0924\u094B\u0921\u093C\u0928\u0947\u2026"
+title: "\u0915\u094B\u0921 \u0915\u094B \u092B\u093C\u0902\u0915\u094D\u0936\u0928\
+  \u094D\u0938 \u092E\u0947\u0902 \u0935\u094D\u092F\u0935\u0938\u094D\u0925\u093F\
+  \u0924 \u0915\u0930\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

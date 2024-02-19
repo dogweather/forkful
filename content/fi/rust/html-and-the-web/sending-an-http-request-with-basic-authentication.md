@@ -1,13 +1,16 @@
 ---
-title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 aliases:
 - /fi/rust/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:34.966925-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:34.966925-07:00
+description: "Mik\xE4 ja miksi? HTTP-pyynt\xF6 perusautentikaatiolla tarkoittaa palvelimelle\
+  \ l\xE4hetett\xE4v\xE4\xE4 pyynt\xF6\xE4, jossa k\xE4ytt\xE4j\xE4nimi ja salasana\
+  \ ovat mukana. Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:07.363536
+model: gpt-4-1106-preview
+summary: "Mik\xE4 ja miksi? HTTP-pyynt\xF6 perusautentikaatiolla tarkoittaa palvelimelle\
+  \ l\xE4hetett\xE4v\xE4\xE4 pyynt\xF6\xE4, jossa k\xE4ytt\xE4j\xE4nimi ja salasana\
+  \ ovat mukana. Ohjelmoijat\u2026"
+title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 ---
 
 {{< edit_this_page >}}

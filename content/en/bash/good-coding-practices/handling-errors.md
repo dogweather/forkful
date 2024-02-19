@@ -1,13 +1,14 @@
 ---
-title:                "Handling errors"
 aliases:
 - /en/bash/handling-errors/
-date:                  2024-01-21T21:19:09.389800-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Handling errors"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/handling-errors.md"
+date: 2024-01-21 21:19:09.389800-07:00
+description: "Handling errors in Bash scripting is about anticipating where things\
+  \ might go sideways and dealing with it gracefully. Why? Well, it keeps your script\u2026"
+lastmod: 2024-02-18 23:09:11.237478
+model: gpt-4-1106-preview
+summary: "Handling errors in Bash scripting is about anticipating where things might\
+  \ go sideways and dealing with it gracefully. Why? Well, it keeps your script\u2026"
+title: Handling errors
 ---
 
 {{< edit_this_page >}}

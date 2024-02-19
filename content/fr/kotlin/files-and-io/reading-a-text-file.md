@@ -1,13 +1,16 @@
 ---
-title:                "Lecture d'un fichier texte"
 aliases:
 - /fr/kotlin/reading-a-text-file/
-date:                  2024-01-20T17:54:38.362988-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lecture d'un fichier texte"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/reading-a-text-file.md"
+date: 2024-01-20 17:54:38.362988-07:00
+description: "Lire un fichier texte, c'est extraire son contenu pour l'utiliser dans\
+  \ notre code. C'est crucial pour g\xE9rer les donn\xE9es configurables, les sauvegardes\
+  \ ou\u2026"
+lastmod: 2024-02-18 23:09:08.800092
+model: gpt-4-1106-preview
+summary: "Lire un fichier texte, c'est extraire son contenu pour l'utiliser dans notre\
+  \ code. C'est crucial pour g\xE9rer les donn\xE9es configurables, les sauvegardes\
+  \ ou\u2026"
+title: Lecture d'un fichier texte
 ---
 
 {{< edit_this_page >}}

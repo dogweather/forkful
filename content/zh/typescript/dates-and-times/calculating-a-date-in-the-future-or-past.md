@@ -1,14 +1,21 @@
 ---
-title:                "计算未来或过去的日期"
 aliases:
 - /zh/typescript/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:32:17.471700-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "计算未来或过去的日期"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:32:17.471700-07:00
+description: "\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u65E5\u671F\u662F\u5173\
+  \u4E8E\u786E\u5B9A\u57FA\u4E8E\u5F53\u524D\u65E5\u671F\u4E4B\u524D\u6216\u4E4B\u540E\
+  \u7684\u5177\u4F53\u65E5\u671F\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\
+  \u4E86\u5904\u7406\u9884\u5B9A\u4E8B\u4EF6\u3001\u8FFD\u8E2A\u65F6\u95F4\u95F4\u9694\
+  \uFF0C\u6216\u8005\u662F\u521B\u5EFA\u65E5\u5FD7\u548C\u6709\u6548\u671F\u9650\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:58.915714
+model: gpt-4-1106-preview
+summary: "\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u65E5\u671F\u662F\u5173\
+  \u4E8E\u786E\u5B9A\u57FA\u4E8E\u5F53\u524D\u65E5\u671F\u4E4B\u524D\u6216\u4E4B\u540E\
+  \u7684\u5177\u4F53\u65E5\u671F\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\
+  \u4E86\u5904\u7406\u9884\u5B9A\u4E8B\u4EF6\u3001\u8FFD\u8E2A\u65F6\u95F4\u95F4\u9694\
+  \uFF0C\u6216\u8005\u662F\u521B\u5EFA\u65E5\u5FD7\u548C\u6709\u6548\u671F\u9650\u3002"
+title: "\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u65E5\u671F"
 ---
 
 {{< edit_this_page >}}

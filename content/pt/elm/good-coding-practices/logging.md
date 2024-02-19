@@ -1,13 +1,16 @@
 ---
-title:                "Registro de Logs"
 aliases:
 - /pt/elm/logging/
-date:                  2024-01-26T01:03:15.155397-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registro de Logs"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/logging.md"
+date: 2024-01-26 01:03:15.155397-07:00
+description: "Registrar (logging) \xE9 essencialmente o processo de grava\xE7\xE3\
+  o de eventos e sa\xEDdas de dados de um software enquanto ele est\xE1 em execu\xE7\
+  \xE3o, pense nisso como o\u2026"
+lastmod: 2024-02-18 23:08:58.066873
+model: gpt-4-1106-preview
+summary: "Registrar (logging) \xE9 essencialmente o processo de grava\xE7\xE3o de\
+  \ eventos e sa\xEDdas de dados de um software enquanto ele est\xE1 em execu\xE7\xE3\
+  o, pense nisso como o\u2026"
+title: Registro de Logs
 ---
 
 {{< edit_this_page >}}

@@ -1,12 +1,14 @@
 ---
-title:                "Finding the length of a string"
 aliases:
 - /en/google-apps-script/finding-the-length-of-a-string/
-date:                  2024-02-01T21:12:03.230953-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Finding the length of a string"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/google-apps-script/finding-the-length-of-a-string.md"
+date: 2024-02-01 21:12:03.230953-07:00
+description: "Finding the length of a string in Google Apps Script, a JavaScript cloud\
+  \ scripting language that lets you automate tasks across Google products, is about\u2026"
+lastmod: 2024-02-18 23:09:10.630253
+model: gpt-4-0125-preview
+summary: "Finding the length of a string in Google Apps Script, a JavaScript cloud\
+  \ scripting language that lets you automate tasks across Google products, is about\u2026"
+title: Finding the length of a string
 ---
 
 {{< edit_this_page >}}

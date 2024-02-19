@@ -1,13 +1,16 @@
 ---
-title:                "Väliaikaistiedoston luominen"
 aliases:
 - /fi/arduino/creating-a-temporary-file/
-date:                  2024-01-20T17:39:47.594551-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Väliaikaistiedoston luominen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/creating-a-temporary-file.md"
+date: 2024-01-20 17:39:47.594551-07:00
+description: "V\xE4liaikaistiedoston luominen on prosessi, jossa tiedosto luodaan\
+  \ tilap\xE4ist\xE4 k\xE4ytt\xF6\xE4 varten. Koodarit k\xE4ytt\xE4v\xE4t v\xE4liaikaistiedostoja\
+  \ datan tilap\xE4iseen\u2026"
+lastmod: 2024-02-18 23:09:07.920219
+model: gpt-4-1106-preview
+summary: "V\xE4liaikaistiedoston luominen on prosessi, jossa tiedosto luodaan tilap\xE4\
+  ist\xE4 k\xE4ytt\xF6\xE4 varten. Koodarit k\xE4ytt\xE4v\xE4t v\xE4liaikaistiedostoja\
+  \ datan tilap\xE4iseen\u2026"
+title: "V\xE4liaikaistiedoston luominen"
 ---
 
 {{< edit_this_page >}}

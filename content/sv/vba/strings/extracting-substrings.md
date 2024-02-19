@@ -1,14 +1,16 @@
 ---
-title:                "Extrahera delsträngar"
 aliases:
 - /sv/vba/extracting-substrings/
-date:                  2024-02-01T21:53:14.834838-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Extrahera delsträngar"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/extracting-substrings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:14.834838-07:00
+description: "Att extrahera delstr\xE4ngar i Visual Basic for Applications (VBA) inneb\xE4\
+  r att isolera specifika delar av en str\xE4ng baserat p\xE5 givna kriterier. Programmerare\u2026"
+lastmod: 2024-02-18 23:08:51.614754
+model: gpt-4-0125-preview
+summary: "Att extrahera delstr\xE4ngar i Visual Basic for Applications (VBA) inneb\xE4\
+  r att isolera specifika delar av en str\xE4ng baserat p\xE5 givna kriterier. Programmerare\u2026"
+title: "Extrahera delstr\xE4ngar"
 ---
 
 {{< edit_this_page >}}

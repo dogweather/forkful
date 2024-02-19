@@ -1,14 +1,16 @@
 ---
-title:                "Utilisation d'un interpréteur de commandes interactif (REPL)"
 aliases:
 - /fr/c/using-an-interactive-shell-repl/
-date:                  2024-02-03T18:10:03.556129-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation d'un interpréteur de commandes interactif (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:03.556129-07:00
+description: "Une coquille interactive, \xE9galement connue sous le nom de boucle\
+  \ de lecture-\xE9valuation-affichage (REPL, pour Read-Eval-Print Loop), permet aux\u2026"
+lastmod: 2024-02-18 23:09:09.357743
+model: gpt-4-0125-preview
+summary: "Une coquille interactive, \xE9galement connue sous le nom de boucle de lecture-\xE9\
+  valuation-affichage (REPL, pour Read-Eval-Print Loop), permet aux\u2026"
+title: "Utilisation d'un interpr\xE9teur de commandes interactif (REPL)"
 ---
 
 {{< edit_this_page >}}

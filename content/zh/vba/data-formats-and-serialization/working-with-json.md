@@ -1,14 +1,28 @@
 ---
-title:                "使用JSON工作"
 aliases:
 - /zh/vba/working-with-json/
-date:                  2024-02-01T22:06:04.105193-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用JSON工作"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/working-with-json.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:06:04.105193-07:00
+description: "JSON\uFF08JavaScript \u5BF9\u8C61\u8868\u793A\u6CD5\uFF09\u662F\u4E00\
+  \u79CD\u8F7B\u91CF\u7EA7\u7684\u6570\u636E\u4EA4\u6362\u683C\u5F0F\uFF0C\u4EBA\u7C7B\
+  \u6613\u4E8E\u8BFB\u5199\uFF0C\u673A\u5668\u4E5F\u5BB9\u6613\u89E3\u6790\u548C\u751F\
+  \u6210\u3002\u7A0B\u5E8F\u5458\u4F7F\u7528 JSON \u5728\u670D\u52A1\u5668\u4E0EWeb\u5E94\
+  \u7528\u7A0B\u5E8F\u4E4B\u95F4\u4F20\u8F93\u6570\u636E\uFF0C\u6216\u8005\u5728\u5404\
+  \u79CD\u7F16\u7A0B\u73AF\u5883\u4E2D\uFF08\u5305\u62ECVisual Basic for Applications\uFF08\
+  VBA\uFF09\uFF09\u4EE5\u7ED3\u6784\u5316\u3001\u53EF\u8BBF\u95EE\u7684\u65B9\u5F0F\
+  \u5B58\u50A8\u4FE1\u606F\u3002"
+lastmod: 2024-02-18 23:08:59.002103
+model: gpt-4-0125-preview
+summary: "JSON\uFF08JavaScript \u5BF9\u8C61\u8868\u793A\u6CD5\uFF09\u662F\u4E00\u79CD\
+  \u8F7B\u91CF\u7EA7\u7684\u6570\u636E\u4EA4\u6362\u683C\u5F0F\uFF0C\u4EBA\u7C7B\u6613\
+  \u4E8E\u8BFB\u5199\uFF0C\u673A\u5668\u4E5F\u5BB9\u6613\u89E3\u6790\u548C\u751F\u6210\
+  \u3002\u7A0B\u5E8F\u5458\u4F7F\u7528 JSON \u5728\u670D\u52A1\u5668\u4E0EWeb\u5E94\
+  \u7528\u7A0B\u5E8F\u4E4B\u95F4\u4F20\u8F93\u6570\u636E\uFF0C\u6216\u8005\u5728\u5404\
+  \u79CD\u7F16\u7A0B\u73AF\u5883\u4E2D\uFF08\u5305\u62ECVisual Basic for Applications\uFF08\
+  VBA\uFF09\uFF09\u4EE5\u7ED3\u6784\u5316\u3001\u53EF\u8BBF\u95EE\u7684\u65B9\u5F0F\
+  \u5B58\u50A8\u4FE1\u606F\u3002"
+title: "\u4F7F\u7528JSON\u5DE5\u4F5C"
 ---
 
 {{< edit_this_page >}}

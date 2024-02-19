@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonojen yhdistäminen"
 aliases:
 - /fi/fish-shell/concatenating-strings/
-date:                  2024-01-20T17:34:45.631617-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonojen yhdistäminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/concatenating-strings.md"
+date: 2024-01-20 17:34:45.631617-07:00
+description: "Mik\xE4 & Miksi? Yhdistelemme merkkijonoja - eli \"concatenate\" - kun\
+  \ haluamme liitt\xE4\xE4 erilliset tekstip\xE4tk\xE4t yhteen. Ohjelmoijat tekev\xE4\
+  t t\xE4m\xE4n usein\u2026"
+lastmod: 2024-02-18 23:09:08.073011
+model: gpt-4-1106-preview
+summary: "Mik\xE4 & Miksi? Yhdistelemme merkkijonoja - eli \"concatenate\" - kun haluamme\
+  \ liitt\xE4\xE4 erilliset tekstip\xE4tk\xE4t yhteen. Ohjelmoijat tekev\xE4t t\xE4\
+  m\xE4n usein\u2026"
+title: "Merkkijonojen yhdist\xE4minen"
 ---
 
 {{< edit_this_page >}}

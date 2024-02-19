@@ -1,14 +1,21 @@
 ---
-title:                "发出 HTTP 请求"
 aliases:
 - /zh/java/sending-an-http-request/
-date:                  2024-01-20T18:00:02.910583-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "发出 HTTP 请求"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/sending-an-http-request.md"
+date: 2024-01-20 18:00:02.910583-07:00
+description: "\u53D1\u9001HTTP\u8BF7\u6C42\u5C31\u662F\u8BA9\u7A0B\u5E8F\u901A\u8FC7\
+  \u7F51\u7EDC\u5411\u670D\u52A1\u5668\u8BF7\u6C42\u6570\u636E\u6216\u53D1\u9001\u6570\
+  \u636E\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u56E0\u4E3A\u8FD9\u6837\u53EF\
+  \u4EE5\u4ECEWeb\u670D\u52A1\u83B7\u53D6\u4FE1\u606F\uFF0C\u6267\u884C\u64CD\u4F5C\
+  \uFF0C\u6216\u4E0E\u5176\u4ED6\u7CFB\u7EDF\u8FDB\u884C\u4EA4\u4E92\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.018274
+model: gpt-4-1106-preview
+summary: "\u53D1\u9001HTTP\u8BF7\u6C42\u5C31\u662F\u8BA9\u7A0B\u5E8F\u901A\u8FC7\u7F51\
+  \u7EDC\u5411\u670D\u52A1\u5668\u8BF7\u6C42\u6570\u636E\u6216\u53D1\u9001\u6570\u636E\
+  \u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u56E0\u4E3A\u8FD9\u6837\u53EF\u4EE5\
+  \u4ECEWeb\u670D\u52A1\u83B7\u53D6\u4FE1\u606F\uFF0C\u6267\u884C\u64CD\u4F5C\uFF0C\
+  \u6216\u4E0E\u5176\u4ED6\u7CFB\u7EDF\u8FDB\u884C\u4EA4\u4E92\u3002"
+title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 ---
 
 {{< edit_this_page >}}

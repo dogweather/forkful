@@ -1,13 +1,15 @@
 ---
-title:                "Utilisation d'une console interactive (REPL)"
 aliases:
 - /fr/cpp/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:12:07.822909-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation d'une console interactive (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:12:07.822909-07:00
+description: "Un REPL (Read-Eval-Print-Loop, ou Boucle de Lecture, \xC9valuation et\
+  \ Impression en Fran\xE7ais) est un environnement de programmation simple et interactif.\
+  \ Les\u2026"
+lastmod: 2024-02-18 23:09:09.162504
+model: gpt-4-0125-preview
+summary: "Un REPL (Read-Eval-Print-Loop, ou Boucle de Lecture, \xC9valuation et Impression\
+  \ en Fran\xE7ais) est un environnement de programmation simple et interactif. Les\u2026"
+title: Utilisation d'une console interactive (REPL)
 ---
 
 {{< edit_this_page >}}

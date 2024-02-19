@@ -1,14 +1,19 @@
 ---
-title:                "开始一个新项目"
 aliases:
 - /zh/java/starting-a-new-project/
-date:                  2024-01-20T18:04:07.953599-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "开始一个新项目"
-
-tag:                  "Getting Started"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/starting-a-new-project.md"
+date: 2024-01-20 18:04:07.953599-07:00
+description: "\u5F00\u59CB\u65B0\u9879\u76EE\u5C31\u662F\u521B\u5EFA\u4E00\u4E2A\u5168\
+  \u65B0\u7684\u4EE3\u7801\u57FA\u7840\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\
+  \u4E3A\u4E86\u89E3\u51B3\u65B0\u95EE\u9898\uFF0C\u5B9E\u73B0\u60F3\u6CD5\uFF0C\u6216\
+  \u8005\u5B66\u4E60\u65B0\u6280\u80FD\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.021798
+model: gpt-4-1106-preview
+summary: "\u5F00\u59CB\u65B0\u9879\u76EE\u5C31\u662F\u521B\u5EFA\u4E00\u4E2A\u5168\
+  \u65B0\u7684\u4EE3\u7801\u57FA\u7840\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\
+  \u4E3A\u4E86\u89E3\u51B3\u65B0\u95EE\u9898\uFF0C\u5B9E\u73B0\u60F3\u6CD5\uFF0C\u6216\
+  \u8005\u5B66\u4E60\u65B0\u6280\u80FD\u3002"
+title: "\u5F00\u59CB\u4E00\u4E2A\u65B0\u9879\u76EE"
 ---
 
 {{< edit_this_page >}}

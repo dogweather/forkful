@@ -1,13 +1,16 @@
 ---
-title:                "Lettura degli argomenti della riga di comando"
 aliases:
 - /it/bash/reading-command-line-arguments/
-date:                  2024-01-20T17:55:24.572257-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lettura degli argomenti della riga di comando"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:24.572257-07:00
+description: "Leggere gli argomenti della riga di comando consente agli script Bash\
+  \ di ricevere parametri esterni, rendendoli pi\xF9 flessibili. I programmatori fanno\
+  \ ci\xF2\u2026"
+lastmod: 2024-02-18 23:08:56.067120
+model: gpt-4-1106-preview
+summary: "Leggere gli argomenti della riga di comando consente agli script Bash di\
+  \ ricevere parametri esterni, rendendoli pi\xF9 flessibili. I programmatori fanno\
+  \ ci\xF2\u2026"
+title: Lettura degli argomenti della riga di comando
 ---
 
 {{< edit_this_page >}}

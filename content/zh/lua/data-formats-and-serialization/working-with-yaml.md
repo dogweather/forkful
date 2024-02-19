@@ -1,14 +1,28 @@
 ---
-title:                "使用YAML工作"
 aliases:
 - /zh/lua/working-with-yaml/
-date:                  2024-02-03T19:26:01.104232-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用YAML工作"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/lua/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:26:01.104232-07:00
+description: "YAML\uFF0C\"YAML Ain't Markup Language\"\u7684\u7F29\u5199\uFF0C\u662F\
+  \u4E00\u79CD\u6613\u4E8E\u4EBA\u7C7B\u9605\u8BFB\u7684\u6570\u636E\u5E8F\u5217\u5316\
+  \u6807\u51C6\uFF0C\u901A\u5E38\u7528\u4E8E\u914D\u7F6E\u6587\u4EF6\u548C\u8BED\u8A00\
+  \u4E4B\u95F4\u7684\u6570\u636E\u4EA4\u6362\u3002\u7A0B\u5E8F\u5458\u4E4B\u6240\u4EE5\
+  \u5229\u7528YAML\uFF0C\u662F\u56E0\u4E3A\u5B83\u7684\u7B80\u5355\u6027\u548C\u53EF\
+  \u8BFB\u6027\uFF0C\u4F7F\u5176\u6210\u4E3A\u8BBE\u7F6E\u3001\u591A\u6837\u5316\u5E94\
+  \u7528\u914D\u7F6E\u6216\u5E94\u8BE5\u7531\u975E\u7A0B\u5E8F\u5458\u7F16\u8F91\u7684\
+  \u5185\u5BB9\u7684\u9996\u9009\u3002"
+lastmod: 2024-02-18 23:08:59.271428
+model: gpt-4-0125-preview
+summary: "YAML\uFF0C\"YAML Ain't Markup Language\"\u7684\u7F29\u5199\uFF0C\u662F\u4E00\
+  \u79CD\u6613\u4E8E\u4EBA\u7C7B\u9605\u8BFB\u7684\u6570\u636E\u5E8F\u5217\u5316\u6807\
+  \u51C6\uFF0C\u901A\u5E38\u7528\u4E8E\u914D\u7F6E\u6587\u4EF6\u548C\u8BED\u8A00\u4E4B\
+  \u95F4\u7684\u6570\u636E\u4EA4\u6362\u3002\u7A0B\u5E8F\u5458\u4E4B\u6240\u4EE5\u5229\
+  \u7528YAML\uFF0C\u662F\u56E0\u4E3A\u5B83\u7684\u7B80\u5355\u6027\u548C\u53EF\u8BFB\
+  \u6027\uFF0C\u4F7F\u5176\u6210\u4E3A\u8BBE\u7F6E\u3001\u591A\u6837\u5316\u5E94\u7528\
+  \u914D\u7F6E\u6216\u5E94\u8BE5\u7531\u975E\u7A0B\u5E8F\u5458\u7F16\u8F91\u7684\u5185\
+  \u5BB9\u7684\u9996\u9009\u3002"
+title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 ---
 
 {{< edit_this_page >}}

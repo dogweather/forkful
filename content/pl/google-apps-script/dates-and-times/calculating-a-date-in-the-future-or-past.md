@@ -1,14 +1,18 @@
 ---
-title:                "Obliczanie daty w przyszłości lub przeszłości"
 aliases:
 - /pl/google-apps-script/calculating-a-date-in-the-future-or-past/
-date:                  2024-02-01T21:49:02.011325-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:02.011325-07:00
+description: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci polega\
+  \ na manipulowaniu obiektami daty, aby znale\u017A\u0107 daty poza obecn\u0105 dat\u0105\
+  \ lub przed ni\u0105, odpowiednio.\u2026"
+lastmod: 2024-02-18 23:08:49.163434
+model: gpt-4-0125-preview
+summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci polega\
+  \ na manipulowaniu obiektami daty, aby znale\u017A\u0107 daty poza obecn\u0105 dat\u0105\
+  \ lub przed ni\u0105, odpowiednio.\u2026"
+title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 ---
 
 {{< edit_this_page >}}

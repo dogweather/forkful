@@ -1,13 +1,14 @@
 ---
-title:                "Generazione di numeri casuali"
 aliases:
 - /it/javascript/generating-random-numbers/
-date:                  2024-01-27T20:34:33.525945-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generazione di numeri casuali"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/javascript/generating-random-numbers.md"
+date: 2024-01-27 20:34:33.525945-07:00
+description: "Generare numeri casuali in JavaScript \xE8 una tecnica usata per creare\
+  \ imprevedibilit\xE0 nelle applicazioni, dai giochi che richiedono un comportamento\u2026"
+lastmod: 2024-02-18 23:08:56.248722
+model: gpt-4-0125-preview
+summary: "Generare numeri casuali in JavaScript \xE8 una tecnica usata per creare\
+  \ imprevedibilit\xE0 nelle applicazioni, dai giochi che richiedono un comportamento\u2026"
+title: Generazione di numeri casuali
 ---
 
 {{< edit_this_page >}}

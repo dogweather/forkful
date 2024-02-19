@@ -1,13 +1,16 @@
 ---
-title:                "Registrazione delle Attività (Logging)"
 aliases:
 - /it/powershell/logging/
-date:                  2024-01-26T01:07:45.000812-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registrazione delle Attività (Logging)"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/logging.md"
+date: 2024-01-26 01:07:45.000812-07:00
+description: "Il logging \xE8 sostanzialmente lasciare una traccia all'interno del\
+  \ proprio codice - \xE8 il modo in cui si tiene traccia di ci\xF2 che sta accadendo\
+  \ quando lo\u2026"
+lastmod: 2024-02-18 23:08:56.100634
+model: gpt-4-1106-preview
+summary: "Il logging \xE8 sostanzialmente lasciare una traccia all'interno del proprio\
+  \ codice - \xE8 il modo in cui si tiene traccia di ci\xF2 che sta accadendo quando\
+  \ lo\u2026"
+title: "Registrazione delle Attivit\xE0 (Logging)"
 ---
 
 {{< edit_this_page >}}

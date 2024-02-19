@@ -1,13 +1,16 @@
 ---
-title:                "Korzystanie z debugera"
 aliases:
 - /pl/rust/using-a-debugger/
-date:                  2024-01-26T04:10:21.316599-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z debugera"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/using-a-debugger.md"
+date: 2024-01-26 04:10:21.316599-07:00
+description: "U\u017Cycie debugera to jak przyznanie sobie rentgenowskiego wzroku,\
+  \ aby zajrze\u0107 do wykonania twojego kodu. Programi\u015Bci robi\u0105 to, aby\
+  \ wykry\u0107 b\u0142\u0119dy, zrozumie\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.394474
+model: gpt-4-0125-preview
+summary: "U\u017Cycie debugera to jak przyznanie sobie rentgenowskiego wzroku, aby\
+  \ zajrze\u0107 do wykonania twojego kodu. Programi\u015Bci robi\u0105 to, aby wykry\u0107\
+  \ b\u0142\u0119dy, zrozumie\u0107\u2026"
+title: Korzystanie z debugera
 ---
 
 {{< edit_this_page >}}

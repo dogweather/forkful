@@ -1,12 +1,15 @@
 ---
-title:                "Analyse av HTML"
 aliases:
 - /no/powershell/parsing-html/
-date:                  2024-01-20T15:33:10.166240-07:00
-simple_title:         "Analyse av HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/powershell/parsing-html.md"
+date: 2024-01-20 15:33:10.166240-07:00
+description: "Parsing av HTML handler om \xE5 tolke og trekke ut data fra HTML-koder.\
+  \ Programmerere gj\xF8r dette for \xE5 automatisere prosesser, h\xF8ste data eller\
+  \ integrere\u2026"
+lastmod: 2024-02-18 23:08:54.098359
+summary: "Parsing av HTML handler om \xE5 tolke og trekke ut data fra HTML-koder.\
+  \ Programmerere gj\xF8r dette for \xE5 automatisere prosesser, h\xF8ste data eller\
+  \ integrere\u2026"
+title: Analyse av HTML
 ---
 
 {{< edit_this_page >}}

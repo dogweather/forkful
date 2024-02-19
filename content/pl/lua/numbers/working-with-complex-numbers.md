@@ -1,13 +1,16 @@
 ---
-title:                "Praca z liczbami zespolonymi"
 aliases:
 - /pl/lua/working-with-complex-numbers/
-date:                  2024-01-26T04:43:35.455821-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z liczbami zespolonymi"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/working-with-complex-numbers.md"
+date: 2024-01-26 04:43:35.455821-07:00
+description: "Liczby zespolone rozszerzaj\u0105 ide\u0119 jednowymiarowej linii liczbowej\
+  \ na dwuwymiarow\u0105 p\u0142aszczyzn\u0119, poprzez w\u0142\u0105czenie prostopad\u0142\
+  ej osi urojonej. Programi\u015Bci\u2026"
+lastmod: 2024-02-18 23:08:49.733738
+model: gpt-4-0125-preview
+summary: "Liczby zespolone rozszerzaj\u0105 ide\u0119 jednowymiarowej linii liczbowej\
+  \ na dwuwymiarow\u0105 p\u0142aszczyzn\u0119, poprzez w\u0142\u0105czenie prostopad\u0142\
+  ej osi urojonej. Programi\u015Bci\u2026"
+title: Praca z liczbami zespolonymi
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Sammenlikning av to datoer"
 aliases:
 - /no/typescript/comparing-two-dates/
-date:                  2024-01-20T17:34:16.164284-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammenlikning av to datoer"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/comparing-two-dates.md"
+date: 2024-01-20 17:34:16.164284-07:00
+description: "Sammenligning av to datoer handler om \xE5 finne ut hvilken som kommer\
+  \ f\xF8r eller etter, eller om de er like. Programmerere gj\xF8r det for \xE5 h\xE5\
+  ndtere\u2026"
+lastmod: 2024-02-18 23:08:53.656949
+model: gpt-4-1106-preview
+summary: "Sammenligning av to datoer handler om \xE5 finne ut hvilken som kommer f\xF8\
+  r eller etter, eller om de er like. Programmerere gj\xF8r det for \xE5 h\xE5ndtere\u2026"
+title: Sammenlikning av to datoer
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Creazione di un file temporaneo"
 aliases:
 - /it/powershell/creating-a-temporary-file/
-date:                  2024-01-20T17:41:29.791737-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Creazione di un file temporaneo"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:29.791737-07:00
+description: "Creare un file temporaneo significa realizzare un file destinato a essere\
+  \ usato per un breve periodo o per una sessione specifica. I programmatori lo\u2026"
+lastmod: 2024-02-18 23:08:56.112985
+model: gpt-4-1106-preview
+summary: "Creare un file temporaneo significa realizzare un file destinato a essere\
+  \ usato per un breve periodo o per una sessione specifica. I programmatori lo\u2026"
+title: Creazione di un file temporaneo
 ---
 
 {{< edit_this_page >}}

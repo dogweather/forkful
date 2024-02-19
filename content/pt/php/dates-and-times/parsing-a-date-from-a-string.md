@@ -1,14 +1,16 @@
 ---
-title:                "Analisando uma data a partir de uma string"
 aliases:
 - /pt/php/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:14:51.193404-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analisando uma data a partir de uma string"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:14:51.193404-07:00
+description: "Analisar uma data a partir de uma string em PHP envolve converter um\
+  \ texto que representa uma data e/ou hora em um objeto `DateTime` do PHP ou outros\u2026"
+lastmod: 2024-02-18 23:08:58.250219
+model: gpt-4-0125-preview
+summary: "Analisar uma data a partir de uma string em PHP envolve converter um texto\
+  \ que representa uma data e/ou hora em um objeto `DateTime` do PHP ou outros\u2026"
+title: Analisando uma data a partir de uma string
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Komennoriviparametrien lukeminen"
 aliases:
 - /fi/arduino/reading-command-line-arguments/
-date:                  2024-01-20T17:55:53.843687-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Komennoriviparametrien lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:53.843687-07:00
+description: "Komennon riviargumentit mahdollistavat erilaisten arvojen sy\xF6tt\xE4\
+  misen ohjelmallesi sen k\xE4ynnistyess\xE4. T\xE4m\xE4 auttaa tekem\xE4\xE4n ohjelmasta\
+  \ joustavamman, sill\xE4\u2026"
+lastmod: 2024-02-18 23:09:07.915927
+model: gpt-4-1106-preview
+summary: "Komennon riviargumentit mahdollistavat erilaisten arvojen sy\xF6tt\xE4misen\
+  \ ohjelmallesi sen k\xE4ynnistyess\xE4. T\xE4m\xE4 auttaa tekem\xE4\xE4n ohjelmasta\
+  \ joustavamman, sill\xE4\u2026"
+title: Komennoriviparametrien lukeminen
 ---
 
 {{< edit_this_page >}}

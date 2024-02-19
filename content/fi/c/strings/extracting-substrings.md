@@ -1,14 +1,16 @@
 ---
-title:                "Alimerkkijonojen erottaminen"
 aliases:
 - /fi/c/extracting-substrings/
-date:                  2024-02-03T17:56:50.273069-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Alimerkkijonojen erottaminen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/extracting-substrings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:50.273069-07:00
+description: "Merkkijonojen osien erottaminen C:ss\xE4 tarkoittaa pienen merkkijono-osan\
+  \ (substring) luomista suuremmasta merkkijonosta tietyin kriteerein, kuten sijainnin\u2026"
+lastmod: 2024-02-18 23:09:08.119141
+model: gpt-4-0125-preview
+summary: "Merkkijonojen osien erottaminen C:ss\xE4 tarkoittaa pienen merkkijono-osan\
+  \ (substring) luomista suuremmasta merkkijonosta tietyin kriteerein, kuten sijainnin\u2026"
+title: Alimerkkijonojen erottaminen
 ---
 
 {{< edit_this_page >}}

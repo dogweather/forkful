@@ -1,14 +1,18 @@
 ---
-title:                "Laste ned en nettside"
 aliases:
 - /no/c/downloading-a-web-page/
-date:                  2024-02-03T17:56:01.166716-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Laste ned en nettside"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/downloading-a-web-page.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:01.166716-07:00
+description: "\xC5 laste ned en nettside i C inneb\xE6rer \xE5 programmert f\xE5 tilgang\
+  \ til innholdet p\xE5 en nettside over internett og lagre det lokalt for behandling\
+  \ eller\u2026"
+lastmod: 2024-02-18 23:08:54.392824
+model: gpt-4-0125-preview
+summary: "\xC5 laste ned en nettside i C inneb\xE6rer \xE5 programmert f\xE5 tilgang\
+  \ til innholdet p\xE5 en nettside over internett og lagre det lokalt for behandling\
+  \ eller\u2026"
+title: Laste ned en nettside
 ---
 
 {{< edit_this_page >}}

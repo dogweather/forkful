@@ -1,14 +1,16 @@
 ---
-title:                "Arbeiten mit YAML"
 aliases:
 - /de/powershell/working-with-yaml/
-date:                  2024-02-03T19:26:08.915677-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeiten mit YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:26:08.915677-07:00
+description: "YAML, oder \"YAML Ain't Markup Language\", ist eine f\xFCr Menschen\
+  \ lesbare Datenserialisierungssprache. Programmierer verwenden sie oft f\xFCr\u2026"
+lastmod: 2024-02-18 23:09:05.123007
+model: gpt-4-0125-preview
+summary: "YAML, oder \"YAML Ain't Markup Language\", ist eine f\xFCr Menschen lesbare\
+  \ Datenserialisierungssprache. Programmierer verwenden sie oft f\xFCr\u2026"
+title: Arbeiten mit YAML
 ---
 
 {{< edit_this_page >}}

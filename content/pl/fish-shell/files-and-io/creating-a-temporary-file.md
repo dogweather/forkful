@@ -1,13 +1,16 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
 aliases:
 - /pl/fish-shell/creating-a-temporary-file/
-date:                  2024-01-20T17:40:12.918048-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tworzenie pliku tymczasowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:12.918048-07:00
+description: "Tworzenie pliku tymczasowego to spos\xF3b na chwilowe przechowanie danych\
+  \ bez za\u015Bmiecania systemu. Programi\u015Bci robi\u0105 to, kiedy potrzebuj\u0105\
+  \ szybkiego,\u2026"
+lastmod: 2024-02-18 23:08:50.055685
+model: gpt-4-1106-preview
+summary: "Tworzenie pliku tymczasowego to spos\xF3b na chwilowe przechowanie danych\
+  \ bez za\u015Bmiecania systemu. Programi\u015Bci robi\u0105 to, kiedy potrzebuj\u0105\
+  \ szybkiego,\u2026"
+title: Tworzenie pliku tymczasowego
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,18 @@
 ---
-title:                "Korzystanie z tablic asocjacyjnych"
 aliases:
 - /pl/clojure/using-associative-arrays/
-date:                  2024-01-30T19:11:10.213793-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z tablic asocjacyjnych"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:11:10.213793-07:00
+description: "Tablice asocjacyjne, znane tak\u017Ce jako mapy haszuj\u0105ce, w Clojure\
+  \ pozwalaj\u0105 przechowywa\u0107 i pobiera\u0107 dane za pomoc\u0105 par klucz-warto\u015B\
+  \u0107. S\u0105 one ch\u0119tnie\u2026"
+lastmod: 2024-02-18 23:08:49.257955
+model: gpt-4-0125-preview
+summary: "Tablice asocjacyjne, znane tak\u017Ce jako mapy haszuj\u0105ce, w Clojure\
+  \ pozwalaj\u0105 przechowywa\u0107 i pobiera\u0107 dane za pomoc\u0105 par klucz-warto\u015B\
+  \u0107. S\u0105 one ch\u0119tnie\u2026"
+title: Korzystanie z tablic asocjacyjnych
 ---
 
 {{< edit_this_page >}}

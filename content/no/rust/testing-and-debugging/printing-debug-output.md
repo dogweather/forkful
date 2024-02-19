@@ -1,13 +1,16 @@
 ---
-title:                "Skrive ut feilsøkingsdata"
 aliases:
 - /no/rust/printing-debug-output/
-date:                  2024-01-20T17:53:16.537521-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skrive ut feilsøkingsdata"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/printing-debug-output.md"
+date: 2024-01-20 17:53:16.537521-07:00
+description: "Utskriving av feils\xF8kingsdata i Rust lar deg se hva som foreg\xE5\
+  r under panseret i koden din. Programmere gj\xF8r dette for \xE5 spore flyten og\
+  \ oppdage bugs."
+lastmod: 2024-02-18 23:08:53.687597
+model: gpt-4-1106-preview
+summary: "Utskriving av feils\xF8kingsdata i Rust lar deg se hva som foreg\xE5r under\
+  \ panseret i koden din. Programmere gj\xF8r dette for \xE5 spore flyten og oppdage\
+  \ bugs."
+title: "Skrive ut feils\xF8kingsdata"
 ---
 
 {{< edit_this_page >}}

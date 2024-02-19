@@ -1,13 +1,14 @@
 ---
-title:                "Using an interactive shell (REPL)"
 aliases:
 - /en/fish-shell/using-an-interactive-shell-repl/
-date:                  2024-01-25T03:39:45.710623-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Using an interactive shell (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/using-an-interactive-shell-repl.md"
+date: 2024-01-25 03:39:45.710623-07:00
+description: "REPL, or Read-Eval-Print Loop, is an interactive programming environment\
+  \ that takes single user inputs, executes them, and returns the result. Programmers\u2026"
+lastmod: 2024-02-18 23:09:11.482761
+model: gpt-4-1106-preview
+summary: "REPL, or Read-Eval-Print Loop, is an interactive programming environment\
+  \ that takes single user inputs, executes them, and returns the result. Programmers\u2026"
+title: Using an interactive shell (REPL)
 ---
 
 {{< edit_this_page >}}

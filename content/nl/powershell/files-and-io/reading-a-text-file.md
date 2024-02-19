@@ -1,15 +1,16 @@
 ---
-title:                "Een tekstbestand lezen"
 aliases:
 - /nl/powershell/reading-a-text-file/
-date:                  2024-01-28T22:04:56.663855-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tekstbestand lezen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/powershell/reading-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:04:56.663855-07:00
+description: "Een tekstbestand lezen betekent de inhoud ervan ophalen in een vorm\
+  \ waar je programma mee kan werken. Programmeurs doen dit voor gegevensverwerking,\u2026"
+lastmod: 2024-02-18 23:09:02.110991
+model: gpt-4-0125-preview
+summary: "Een tekstbestand lezen betekent de inhoud ervan ophalen in een vorm waar\
+  \ je programma mee kan werken. Programmeurs doen dit voor gegevensverwerking,\u2026"
+title: Een tekstbestand lezen
 ---
 
 {{< edit_this_page >}}

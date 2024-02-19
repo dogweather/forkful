@@ -1,14 +1,17 @@
 ---
-title:                "Tekstin etsiminen ja korvaaminen"
 aliases:
 - /fi/c/searching-and-replacing-text/
-date:                  2024-02-03T18:09:00.512782-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tekstin etsiminen ja korvaaminen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:09:00.512782-07:00
+description: "Tekstin etsiminen ja korvaaminen C-kieless\xE4 tarkoittaa tiettyjen\
+  \ alimerkkijonojen tunnistamista suuremmasta merkkijonosta ja niiden korvaamista\
+  \ eri\u2026"
+lastmod: 2024-02-18 23:09:08.114342
+model: gpt-4-0125-preview
+summary: "Tekstin etsiminen ja korvaaminen C-kieless\xE4 tarkoittaa tiettyjen alimerkkijonojen\
+  \ tunnistamista suuremmasta merkkijonosta ja niiden korvaamista eri\u2026"
+title: Tekstin etsiminen ja korvaaminen
 ---
 
 {{< edit_this_page >}}

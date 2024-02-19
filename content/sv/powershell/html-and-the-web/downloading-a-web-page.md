@@ -1,13 +1,15 @@
 ---
-title:                "Hämta en webbsida"
 aliases:
 - /sv/powershell/downloading-a-web-page/
-date:                  2024-01-20T17:44:41.231167-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Hämta en webbsida"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/downloading-a-web-page.md"
+date: 2024-01-20 17:44:41.231167-07:00
+description: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta dess inneh\xE5ll,\
+  \ som HTML, CSS och bilder, till din dator. Programmerare g\xF6r det f\xF6r att\
+  \ automatisera\u2026"
+lastmod: 2024-02-18 23:08:52.002789
+model: gpt-4-1106-preview
+summary: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta dess inneh\xE5ll, som\
+  \ HTML, CSS och bilder, till din dator. Programmerare g\xF6r det f\xF6r att automatisera\u2026"
+title: "H\xE4mta en webbsida"
 ---
 
 {{< edit_this_page >}}

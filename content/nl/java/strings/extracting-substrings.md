@@ -1,15 +1,16 @@
 ---
-title:                "Substrings extraheren"
 aliases:
 - /nl/java/extracting-substrings/
-date:                  2024-01-28T21:59:57.082121-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Substrings extraheren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/java/extracting-substrings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:57.082121-07:00
+description: "Het extraheren van substrings betekent het uithalen van een specifiek\
+  \ deel van een string \u2013 een reeks tekens binnen een grotere string. Programmeurs\u2026"
+lastmod: 2024-02-18 23:09:01.700673
+model: gpt-4-0125-preview
+summary: "Het extraheren van substrings betekent het uithalen van een specifiek deel\
+  \ van een string \u2013 een reeks tekens binnen een grotere string. Programmeurs\u2026"
+title: Substrings extraheren
 ---
 
 {{< edit_this_page >}}

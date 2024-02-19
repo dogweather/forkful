@@ -1,12 +1,15 @@
 ---
-title:                "Trabalhando com JSON"
 aliases:
 - /pt/swift/working-with-json/
-date:                  2024-01-19
-simple_title:         "Trabalhando com JSON"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/working-with-json.md"
+date: 2024-01-19
+description: "Trabalhar com JSON (JavaScript Object Notation) significa manipular\
+  \ dados no formato leve de interc\xE2mbio que \xE9 f\xE1cil de ler para humanos\
+  \ e simples para\u2026"
+lastmod: 2024-02-18 23:08:58.511877
+summary: "Trabalhar com JSON (JavaScript Object Notation) significa manipular dados\
+  \ no formato leve de interc\xE2mbio que \xE9 f\xE1cil de ler para humanos e simples\
+  \ para\u2026"
+title: Trabalhando com JSON
 ---
 
 {{< edit_this_page >}}

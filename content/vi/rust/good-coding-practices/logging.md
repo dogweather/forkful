@@ -1,15 +1,20 @@
 ---
-title:                "Ghi log"
 aliases:
 - /vi/rust/logging/
-date:                  2024-01-28T22:03:55.496197-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ghi log"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/logging.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:03:55.496197-07:00
+description: "Ghi log gi\u1ED1ng nh\u01B0 vi\u1EC7c gi\u1EEF m\u1ED9t nh\u1EADt k\xFD\
+  \ cho \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n; \u0111\xF3 l\xE0 th\u1EF1c h\xE0nh ghi\
+  \ l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n, l\u1ED7i v\xE0 c\xE1c d\u1EEF li\u1EC7u li\xEA\
+  n quan kh\xE1c trong qu\xE1 tr\xECnh ch\u1EA1y.\u2026"
+lastmod: 2024-02-18 23:08:50.469275
+model: gpt-4-0125-preview
+summary: "Ghi log gi\u1ED1ng nh\u01B0 vi\u1EC7c gi\u1EEF m\u1ED9t nh\u1EADt k\xFD\
+  \ cho \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n; \u0111\xF3 l\xE0 th\u1EF1c h\xE0nh ghi\
+  \ l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n, l\u1ED7i v\xE0 c\xE1c d\u1EEF li\u1EC7u li\xEA\
+  n quan kh\xE1c trong qu\xE1 tr\xECnh ch\u1EA1y.\u2026"
+title: Ghi log
 ---
 
 {{< edit_this_page >}}

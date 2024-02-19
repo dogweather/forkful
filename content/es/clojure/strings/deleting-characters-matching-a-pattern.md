@@ -1,13 +1,16 @@
 ---
-title:                "Eliminando caracteres que coinciden con un patrón"
 aliases:
 - /es/clojure/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:46.947632-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Eliminando caracteres que coinciden con un patrón"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:46.947632-07:00
+description: "Eliminar caracteres seg\xFAn un patr\xF3n es filtrar ciertos caracteres\
+  \ de una cadena de texto, dejando solo los que necesitamos. Los programadores lo\
+  \ hacen\u2026"
+lastmod: 2024-02-18 23:09:09.586349
+model: gpt-4-1106-preview
+summary: "Eliminar caracteres seg\xFAn un patr\xF3n es filtrar ciertos caracteres\
+  \ de una cadena de texto, dejando solo los que necesitamos. Los programadores lo\
+  \ hacen\u2026"
+title: "Eliminando caracteres que coinciden con un patr\xF3n"
 ---
 
 {{< edit_this_page >}}

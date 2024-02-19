@@ -1,14 +1,18 @@
 ---
-title:                "Rédiger un fichier texte"
 aliases:
 - /fr/haskell/writing-a-text-file/
-date:                  2024-02-03T19:28:01.040249-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rédiger un fichier texte"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:28:01.040249-07:00
+description: "\xC9crire dans un fichier texte en Haskell consiste \xE0 cr\xE9er ou\
+  \ mettre \xE0 jour des fichiers avec du contenu textuel de mani\xE8re programmatique.\
+  \ Les programmeurs\u2026"
+lastmod: 2024-02-18 23:09:08.895671
+model: gpt-4-0125-preview
+summary: "\xC9crire dans un fichier texte en Haskell consiste \xE0 cr\xE9er ou mettre\
+  \ \xE0 jour des fichiers avec du contenu textuel de mani\xE8re programmatique. Les\
+  \ programmeurs\u2026"
+title: "R\xE9diger un fichier texte"
 ---
 
 {{< edit_this_page >}}

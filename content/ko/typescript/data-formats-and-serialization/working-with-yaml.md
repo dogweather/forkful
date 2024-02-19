@@ -1,14 +1,28 @@
 ---
-title:                "YAML로 작업하기"
 aliases:
 - /ko/typescript/working-with-yaml/
-date:                  2024-02-03T19:27:12.661125-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "YAML로 작업하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:12.661125-07:00
+description: "YAML\uC740 \uC0AC\uB78C \uCE5C\uD654\uC801\uC73C\uB85C \uC124\uACC4\uB41C\
+  \ \uB370\uC774\uD130 \uC9C1\uB82C\uD654 \uC5B8\uC5B4\uB85C, \uC124\uC815 \uD30C\uC77C\
+  , \uD504\uB85C\uC138\uC2A4 \uAC04 \uBA54\uC2DC\uC9D5 \uBC0F \uB370\uC774\uD130 \uC800\
+  \uC7A5\uC5D0 \uC790\uC8FC \uC0AC\uC6A9\uB429\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uBCF5\uC7A1\uD55C \uAD6C\uC870\uD654\uB41C \uB370\uC774\uD130\
+  \uB97C \uB2E4\uB8F0 \uB54C YAML\uC758 \uAC00\uB3C5\uC131\uACFC \uC0AC\uC6A9\uC758\
+  \ \uC6A9\uC774\uC131 \uB54C\uBB38\uC5D0 YAML\uC5D0 \uC758\uC874\uD558\uB294 \uACBD\
+  \uD5A5\uC774 \uC788\uC73C\uBA70, \uC774\uB294 TypeScript\uB85C\u2026"
+lastmod: 2024-02-18 23:09:05.850910
+model: gpt-4-0125-preview
+summary: "YAML\uC740 \uC0AC\uB78C \uCE5C\uD654\uC801\uC73C\uB85C \uC124\uACC4\uB41C\
+  \ \uB370\uC774\uD130 \uC9C1\uB82C\uD654 \uC5B8\uC5B4\uB85C, \uC124\uC815 \uD30C\uC77C\
+  , \uD504\uB85C\uC138\uC2A4 \uAC04 \uBA54\uC2DC\uC9D5 \uBC0F \uB370\uC774\uD130 \uC800\
+  \uC7A5\uC5D0 \uC790\uC8FC \uC0AC\uC6A9\uB429\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uBCF5\uC7A1\uD55C \uAD6C\uC870\uD654\uB41C \uB370\uC774\uD130\
+  \uB97C \uB2E4\uB8F0 \uB54C YAML\uC758 \uAC00\uB3C5\uC131\uACFC \uC0AC\uC6A9\uC758\
+  \ \uC6A9\uC774\uC131 \uB54C\uBB38\uC5D0 YAML\uC5D0 \uC758\uC874\uD558\uB294 \uACBD\
+  \uD5A5\uC774 \uC788\uC73C\uBA70, \uC774\uB294 TypeScript\uB85C\u2026"
+title: "YAML\uB85C \uC791\uC5C5\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

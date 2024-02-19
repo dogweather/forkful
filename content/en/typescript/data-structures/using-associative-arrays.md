@@ -1,13 +1,14 @@
 ---
-title:                "Using associative arrays"
 aliases:
 - /en/typescript/using-associative-arrays/
-date:                  2024-01-30T18:57:12.418860-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using associative arrays"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/using-associative-arrays.md"
+date: 2024-01-30 18:57:12.418860-07:00
+description: "Associative arrays, or objects in TypeScript, let you use strings (or\
+  \ keys) to access value pairs. Programmers use them for more dynamic data access\u2026"
+lastmod: 2024-02-18 23:09:10.800345
+model: gpt-4-0125-preview
+summary: "Associative arrays, or objects in TypeScript, let you use strings (or keys)\
+  \ to access value pairs. Programmers use them for more dynamic data access\u2026"
+title: Using associative arrays
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Sökning och ersättning av text"
 aliases:
 - /sv/c/searching-and-replacing-text/
-date:                  2024-02-03T18:08:24.282963-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sökning och ersättning av text"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:24.282963-07:00
+description: "Att s\xF6ka och ers\xE4tta text i C inneb\xE4r att identifiera specifika\
+  \ delstr\xE4ngar inom en st\xF6rre str\xE4ng och byta ut dem mot olika delstr\xE4\
+  ngar. Programmerare\u2026"
+lastmod: 2024-02-18 23:08:52.234380
+model: gpt-4-0125-preview
+summary: "Att s\xF6ka och ers\xE4tta text i C inneb\xE4r att identifiera specifika\
+  \ delstr\xE4ngar inom en st\xF6rre str\xE4ng och byta ut dem mot olika delstr\xE4\
+  ngar. Programmerare\u2026"
+title: "S\xF6kning och ers\xE4ttning av text"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Analiza Składniowa HTML"
 aliases:
 - /pl/google-apps-script/parsing-html/
-date:                  2024-02-01T21:57:26.651028-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analiza Składniowa HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/parsing-html.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:26.651028-07:00
+description: "Parsowanie HTML w Google Apps Script polega na ekstrakcji danych z tre\u015B\
+  ci HTML, co jest szczeg\xF3lnie przydatne podczas interakcji ze stronami internetowymi\u2026"
+lastmod: 2024-02-18 23:08:49.144356
+model: gpt-4-0125-preview
+summary: "Parsowanie HTML w Google Apps Script polega na ekstrakcji danych z tre\u015B\
+  ci HTML, co jest szczeg\xF3lnie przydatne podczas interakcji ze stronami internetowymi\u2026"
+title: "Analiza Sk\u0142adniowa HTML"
 ---
 
 {{< edit_this_page >}}

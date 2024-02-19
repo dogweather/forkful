@@ -1,14 +1,31 @@
 ---
-title:                "मानक त्रुटि के लिए लिखना"
 aliases:
 - /hi/c-sharp/writing-to-standard-error/
-date:                  2024-02-03T19:34:04.021672-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "मानक त्रुटि के लिए लिखना"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:34:04.021672-07:00
+description: "C# \u092E\u0947\u0902 \u0938\u094D\u091F\u0948\u0902\u0921\u0930\u094D\
+  \u0921 \u090F\u0930\u0930 (stderr) \u092E\u0947\u0902 \u0932\u093F\u0916\u0928\u093E\
+  \ \u092F\u0939 \u0938\u0941\u0928\u093F\u0936\u094D\u091A\u093F\u0924 \u0915\u0930\
+  \u0924\u093E \u0939\u0948 \u0915\u093F \u0924\u094D\u0930\u0941\u091F\u093F \u0938\
+  \u0902\u0926\u0947\u0936 \u0914\u0930 \u0928\u093F\u0926\u093E\u0928\u094B\u0902\
+  \ \u0915\u094B \u0938\u093E\u092E\u093E\u0928\u094D\u092F \u0906\u0909\u091F\u092A\
+  \u0941\u091F (stdout) \u0938\u0947 \u0905\u0932\u0917 \u0928\u093F\u0930\u094D\u0926\
+  \u0947\u0936\u093F\u0924 \u0915\u093F\u092F\u093E \u091C\u093E \u0938\u0915\u0947\
+  \ \u0924\u093E\u0915\u093F\u2026"
+lastmod: 2024-02-18 23:09:03.376156
+model: gpt-4-0125-preview
+summary: "C# \u092E\u0947\u0902 \u0938\u094D\u091F\u0948\u0902\u0921\u0930\u094D\u0921\
+  \ \u090F\u0930\u0930 (stderr) \u092E\u0947\u0902 \u0932\u093F\u0916\u0928\u093E\
+  \ \u092F\u0939 \u0938\u0941\u0928\u093F\u0936\u094D\u091A\u093F\u0924 \u0915\u0930\
+  \u0924\u093E \u0939\u0948 \u0915\u093F \u0924\u094D\u0930\u0941\u091F\u093F \u0938\
+  \u0902\u0926\u0947\u0936 \u0914\u0930 \u0928\u093F\u0926\u093E\u0928\u094B\u0902\
+  \ \u0915\u094B \u0938\u093E\u092E\u093E\u0928\u094D\u092F \u0906\u0909\u091F\u092A\
+  \u0941\u091F (stdout) \u0938\u0947 \u0905\u0932\u0917 \u0928\u093F\u0930\u094D\u0926\
+  \u0947\u0936\u093F\u0924 \u0915\u093F\u092F\u093E \u091C\u093E \u0938\u0915\u0947\
+  \ \u0924\u093E\u0915\u093F\u2026"
+title: "\u092E\u093E\u0928\u0915 \u0924\u094D\u0930\u0941\u091F\u093F \u0915\u0947\
+  \ \u0932\u093F\u090F \u0932\u093F\u0916\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

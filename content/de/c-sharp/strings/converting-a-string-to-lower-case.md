@@ -1,13 +1,14 @@
 ---
-title:                "Umformung eines Strings in Kleinbuchstaben"
 aliases:
 - /de/c-sharp/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:37:51.458605-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Umformung eines Strings in Kleinbuchstaben"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:37:51.458605-07:00
+description: "Das Umwandeln eines Strings in Kleinbuchstaben macht alle Buchstaben\
+  \ klein. Das ist wichtig f\xFCr einheitliche Datenverarbeitung, beispielsweise beim\u2026"
+lastmod: 2024-02-18 23:09:04.857711
+model: gpt-4-1106-preview
+summary: "Das Umwandeln eines Strings in Kleinbuchstaben macht alle Buchstaben klein.\
+  \ Das ist wichtig f\xFCr einheitliche Datenverarbeitung, beispielsweise beim\u2026"
+title: Umformung eines Strings in Kleinbuchstaben
 ---
 
 {{< edit_this_page >}}

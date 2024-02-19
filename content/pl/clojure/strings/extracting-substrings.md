@@ -1,13 +1,16 @@
 ---
-title:                "Wycinanie podłańcuchów"
 aliases:
 - /pl/clojure/extracting-substrings/
-date:                  2024-01-20T17:45:16.514698-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wycinanie podłańcuchów"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/extracting-substrings.md"
+date: 2024-01-20 17:45:16.514698-07:00
+description: "Wyci\u0105ganie pod\u0142a\u0144cuch\xF3w to jak wybieranie najlepszych\
+  \ kawa\u0142k\xF3w ciasta - bierzesz tylko to, co potrzebujesz. Programi\u015Bci\
+  \ to robi\u0105, aby operowa\u0107 na\u2026"
+lastmod: 2024-02-18 23:08:49.254008
+model: gpt-4-1106-preview
+summary: "Wyci\u0105ganie pod\u0142a\u0144cuch\xF3w to jak wybieranie najlepszych\
+  \ kawa\u0142k\xF3w ciasta - bierzesz tylko to, co potrzebujesz. Programi\u015Bci\
+  \ to robi\u0105, aby operowa\u0107 na\u2026"
+title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 ---
 
 {{< edit_this_page >}}

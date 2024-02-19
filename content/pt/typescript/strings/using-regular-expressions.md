@@ -1,14 +1,18 @@
 ---
-title:                "Usando expressões regulares"
 aliases:
 - /pt/typescript/using-regular-expressions/
-date:                  2024-02-03T19:18:35.633087-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando expressões regulares"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:18:35.633087-07:00
+description: "Express\xF5es regulares, ou regex, s\xE3o uma ferramenta poderosa de\
+  \ correspond\xEAncia de padr\xF5es e busca na programa\xE7\xE3o. Os programadores\
+  \ utilizam regex para\u2026"
+lastmod: 2024-02-18 23:08:57.875366
+model: gpt-4-0125-preview
+summary: "Express\xF5es regulares, ou regex, s\xE3o uma ferramenta poderosa de correspond\xEA\
+  ncia de padr\xF5es e busca na programa\xE7\xE3o. Os programadores utilizam regex\
+  \ para\u2026"
+title: "Usando express\xF5es regulares"
 ---
 
 {{< edit_this_page >}}

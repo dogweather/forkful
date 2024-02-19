@@ -1,14 +1,16 @@
 ---
-title:                "Tekstin etsiminen ja korvaaminen"
 aliases:
 - /fi/vba/searching-and-replacing-text/
-date:                  2024-02-01T22:02:09.212114-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tekstin etsiminen ja korvaaminen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:02:09.212114-07:00
+description: "Tekstin etsiminen ja korvaaminen Visual Basic for Applications (VBA)\
+  \ -ymp\xE4rist\xF6ss\xE4 on olennaista dokumenttien, taulukoiden ja tietokantojen\u2026"
+lastmod: 2024-02-18 23:09:07.393364
+model: gpt-4-0125-preview
+summary: "Tekstin etsiminen ja korvaaminen Visual Basic for Applications (VBA) -ymp\xE4\
+  rist\xF6ss\xE4 on olennaista dokumenttien, taulukoiden ja tietokantojen\u2026"
+title: Tekstin etsiminen ja korvaaminen
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Skapa en temporär fil"
 aliases:
 - /sv/haskell/creating-a-temporary-file/
-date:                  2024-01-20T17:40:21.783453-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skapa en temporär fil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:21.783453-07:00
+description: "Att skapa en tempor\xE4r fil inneb\xE4r att vi tillf\xE4lligt lagrar\
+  \ data under programmets k\xF6rning. Programmerare g\xF6r detta f\xF6r att hantera\
+  \ data som inte beh\xF6ver\u2026"
+lastmod: 2024-02-18 23:08:51.856015
+model: gpt-4-1106-preview
+summary: "Att skapa en tempor\xE4r fil inneb\xE4r att vi tillf\xE4lligt lagrar data\
+  \ under programmets k\xF6rning. Programmerare g\xF6r detta f\xF6r att hantera data\
+  \ som inte beh\xF6ver\u2026"
+title: "Skapa en tempor\xE4r fil"
 ---
 
 {{< edit_this_page >}}

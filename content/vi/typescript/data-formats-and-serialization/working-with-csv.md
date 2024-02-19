@@ -1,15 +1,22 @@
 ---
-title:                "Làm việc với CSV"
 aliases:
 - /vi/typescript/working-with-csv/
-date:                  2024-01-28T22:11:38.942403-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với CSV"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/typescript/working-with-csv.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:38.942403-07:00
+description: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Gi\xE1 tr\u1ECB \u0110\u01B0\u1EE3c Ph\xE2\
+  n C\xE1ch b\u1EDFi D\u1EA5u ph\u1EA9y) c\xF3 ngh\u0129a l\xE0 \u0111\u1ECDc v\xE0\
+  \ vi\u1EBFt d\u1EEF li\u1EC7u d\u01B0\u1EDBi d\u1EA1ng v\u0103n b\u1EA3n, trong\
+  \ \u0111\xF3 m\u1ED7i d\xF2ng l\xE0 m\u1ED9t b\u1EA3n ghi d\u1EEF li\u1EC7u v\xE0\
+  \ d\u1EA5u\u2026"
+lastmod: 2024-02-18 23:08:50.439821
+model: gpt-4-0125-preview
+summary: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Gi\xE1 tr\u1ECB \u0110\u01B0\u1EE3c Ph\xE2\
+  n C\xE1ch b\u1EDFi D\u1EA5u ph\u1EA9y) c\xF3 ngh\u0129a l\xE0 \u0111\u1ECDc v\xE0\
+  \ vi\u1EBFt d\u1EEF li\u1EC7u d\u01B0\u1EDBi d\u1EA1ng v\u0103n b\u1EA3n, trong\
+  \ \u0111\xF3 m\u1ED7i d\xF2ng l\xE0 m\u1ED9t b\u1EA3n ghi d\u1EEF li\u1EC7u v\xE0\
+  \ d\u1EA5u\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Å jobbe med TOML"
 aliases:
 - /no/c/working-with-toml/
-date:                  2024-02-03T18:12:28.515710-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å jobbe med TOML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/working-with-toml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:12:28.515710-07:00
+description: "TOML (Toms Opplagte, Minimale Spr\xE5k) er et konfigurasjonsfilformat\
+  \ som er lett \xE5 lese p\xE5 grunn av sine klare semantikk. Programmerere bruker\
+  \ det for\u2026"
+lastmod: 2024-02-18 23:08:54.418634
+model: gpt-4-0125-preview
+summary: "TOML (Toms Opplagte, Minimale Spr\xE5k) er et konfigurasjonsfilformat som\
+  \ er lett \xE5 lese p\xE5 grunn av sine klare semantikk. Programmerere bruker det\
+  \ for\u2026"
+title: "\xC5 jobbe med TOML"
 ---
 
 {{< edit_this_page >}}

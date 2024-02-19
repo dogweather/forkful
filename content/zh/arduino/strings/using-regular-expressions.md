@@ -1,14 +1,26 @@
 ---
-title:                "使用正则表达式"
 aliases:
 - /zh/arduino/using-regular-expressions/
-date:                  2024-02-03T19:15:55.461296-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用正则表达式"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:15:55.461296-07:00
+description: "\u6B63\u5219\u8868\u8FBE\u5F0F\uFF08regex\uFF09\u662F\u5B9A\u4E49\u641C\
+  \u7D22\u6A21\u5F0F\u7684\u5B57\u7B26\u5E8F\u5217\uFF0C\u4E3B\u8981\u7528\u4E8E\u5B57\
+  \u7B26\u4E32\u5339\u914D\u548C\u64CD\u4F5C\u3002\u7A0B\u5E8F\u5458\u5728Arduino\u9879\
+  \u76EE\u4E2D\u5229\u7528regex\u6765\u89E3\u6790\u4E32\u884C\u8F93\u5165\u3001\u9A8C\
+  \u8BC1\u7528\u6237\u8F93\u5165\u6216\u4ECE\u5B57\u7B26\u4E32\u4E2D\u63D0\u53D6\u6570\
+  \u636E\uFF0C\u63D0\u9AD8\u6570\u636E\u5904\u7406\u7684\u6548\u7387\u548C\u7075\u6D3B\
+  \u6027\u3002"
+lastmod: 2024-02-18 23:08:59.360733
+model: gpt-4-0125-preview
+summary: "\u6B63\u5219\u8868\u8FBE\u5F0F\uFF08regex\uFF09\u662F\u5B9A\u4E49\u641C\u7D22\
+  \u6A21\u5F0F\u7684\u5B57\u7B26\u5E8F\u5217\uFF0C\u4E3B\u8981\u7528\u4E8E\u5B57\u7B26\
+  \u4E32\u5339\u914D\u548C\u64CD\u4F5C\u3002\u7A0B\u5E8F\u5458\u5728Arduino\u9879\u76EE\
+  \u4E2D\u5229\u7528regex\u6765\u89E3\u6790\u4E32\u884C\u8F93\u5165\u3001\u9A8C\u8BC1\
+  \u7528\u6237\u8F93\u5165\u6216\u4ECE\u5B57\u7B26\u4E32\u4E2D\u63D0\u53D6\u6570\u636E\
+  \uFF0C\u63D0\u9AD8\u6570\u636E\u5904\u7406\u7684\u6548\u7387\u548C\u7075\u6D3B\u6027\
+  \u3002"
+title: "\u4F7F\u7528\u6B63\u5219\u8868\u8FBE\u5F0F"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Beregning av en dato i fremtiden eller fortiden"
 aliases:
 - /no/cpp/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:28:34.860545-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Beregning av en dato i fremtiden eller fortiden"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:28:34.860545-07:00
+description: "\xC5 beregne en dato i fremtiden eller fortiden betyr \xE5 finne ut\
+  \ n\xF8yaktig hvilken dato det vil v\xE6re etter eller f\xF8r et visst tidsintervall.\
+  \ Programmerere\u2026"
+lastmod: 2024-02-18 23:08:54.240203
+model: gpt-4-1106-preview
+summary: "\xC5 beregne en dato i fremtiden eller fortiden betyr \xE5 finne ut n\xF8\
+  yaktig hvilken dato det vil v\xE6re etter eller f\xF8r et visst tidsintervall. Programmerere\u2026"
+title: Beregning av en dato i fremtiden eller fortiden
 ---
 
 {{< edit_this_page >}}

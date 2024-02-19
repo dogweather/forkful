@@ -1,14 +1,17 @@
 ---
-title:                "Praca z plikami CSV"
 aliases:
 - /pl/elixir/working-with-csv/
-date:                  2024-02-03T19:19:47.684348-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z plikami CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:19:47.684348-07:00
+description: "Praca z plikami CSV (Comma-Separated Values - warto\u015Bci oddzielone\
+  \ przecinkami) polega na odczycie z tych plik\xF3w i zapisywaniu danych do nich,\
+  \ co jest\u2026"
+lastmod: 2024-02-18 23:08:49.328735
+model: gpt-4-0125-preview
+summary: "Praca z plikami CSV (Comma-Separated Values - warto\u015Bci oddzielone przecinkami)\
+  \ polega na odczycie z tych plik\xF3w i zapisywaniu danych do nich, co jest\u2026"
+title: Praca z plikami CSV
 ---
 
 {{< edit_this_page >}}

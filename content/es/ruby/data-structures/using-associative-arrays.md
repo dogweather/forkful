@@ -1,15 +1,18 @@
 ---
-title:                "Uso de matrices asociativas"
 aliases:
 - /es/ruby/using-associative-arrays/
-date:                  2024-01-30T19:12:26.302449-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Uso de matrices asociativas"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:26.302449-07:00
+description: "Los arreglos asociativos, m\xE1s conocidos como hashes en Ruby, permiten\
+  \ emparejar claves \xFAnicas con valores. Son indispensables cuando necesitas llevar\
+  \ un\u2026"
+lastmod: 2024-02-18 23:09:10.542460
+model: gpt-4-0125-preview
+summary: "Los arreglos asociativos, m\xE1s conocidos como hashes en Ruby, permiten\
+  \ emparejar claves \xFAnicas con valores. Son indispensables cuando necesitas llevar\
+  \ un\u2026"
+title: Uso de matrices asociativas
 ---
 
 {{< edit_this_page >}}

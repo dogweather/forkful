@@ -1,13 +1,16 @@
 ---
-title:                "Arrondir les nombres"
 aliases:
 - /fr/elm/rounding-numbers/
-date:                  2024-01-26T03:43:56.218890-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrondir les nombres"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/rounding-numbers.md"
+date: 2024-01-26 03:43:56.218890-07:00
+description: "Arrondir les nombres consiste \xE0 ajuster un d\xE9cimal \xE0 sa valeur\
+  \ enti\xE8re la plus proche ou \xE0 un nombre sp\xE9cifi\xE9 de chiffres fractionnaires.\
+  \ Les programmeurs\u2026"
+lastmod: 2024-02-18 23:09:08.728147
+model: gpt-4-0125-preview
+summary: "Arrondir les nombres consiste \xE0 ajuster un d\xE9cimal \xE0 sa valeur\
+  \ enti\xE8re la plus proche ou \xE0 un nombre sp\xE9cifi\xE9 de chiffres fractionnaires.\
+  \ Les programmeurs\u2026"
+title: Arrondir les nombres
 ---
 
 {{< edit_this_page >}}

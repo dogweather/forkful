@@ -1,14 +1,21 @@
 ---
-title:                "텍스트 파일 읽기"
 aliases:
 - /ko/java/reading-a-text-file/
-date:                  2024-01-20T17:54:29.515652-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "텍스트 파일 읽기"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/reading-a-text-file.md"
+date: 2024-01-20 17:54:29.515652-07:00
+description: "\uD30C\uC77C\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uC77D\uAE30\uB294 \uC800\
+  \uC7A5\uB41C \uB370\uC774\uD130\uB97C \uC77D\uC5B4\uC11C \uD504\uB85C\uADF8\uB7A8\
+  \uC5D0\uC11C \uC0AC\uC6A9\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uAC00 \uB370\uC774\uD130 \uCC98\uB9AC, \uC124\uC815 \uB85C\uB4DC, \uB85C\
+  \uADF8 \uBD84\uC11D \uB4F1\uC744 \uC704\uD574 \uD544\uC694\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.047622
+model: gpt-4-1106-preview
+summary: "\uD30C\uC77C\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uC77D\uAE30\uB294 \uC800\uC7A5\
+  \uB41C \uB370\uC774\uD130\uB97C \uC77D\uC5B4\uC11C \uD504\uB85C\uADF8\uB7A8\uC5D0\
+  \uC11C \uC0AC\uC6A9\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uAC00 \uB370\uC774\uD130 \uCC98\uB9AC, \uC124\uC815 \uB85C\uB4DC, \uB85C\uADF8\
+  \ \uBD84\uC11D \uB4F1\uC744 \uC704\uD574 \uD544\uC694\uD569\uB2C8\uB2E4."
+title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Stampa dell'output di debug"
 aliases:
 - /it/rust/printing-debug-output/
-date:                  2024-01-20T17:53:09.331161-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Stampa dell'output di debug"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/printing-debug-output.md"
+date: 2024-01-20 17:53:09.331161-07:00
+description: "Il debug consiste nel stampare informazioni di output per controllare\
+  \ lo stato del tuo programma. Programmatori fanno ci\xF2 per diagnosticare e sistemare\
+  \ i\u2026"
+lastmod: 2024-02-18 23:08:55.682717
+model: gpt-4-1106-preview
+summary: "Il debug consiste nel stampare informazioni di output per controllare lo\
+  \ stato del tuo programma. Programmatori fanno ci\xF2 per diagnosticare e sistemare\
+  \ i\u2026"
+title: Stampa dell'output di debug
 ---
 
 {{< edit_this_page >}}

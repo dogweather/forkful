@@ -1,14 +1,16 @@
 ---
-title:                "Scrivere un file di testo"
 aliases:
 - /it/kotlin/writing-a-text-file/
-date:                  2024-02-03T19:28:19.563271-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Scrivere un file di testo"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:28:19.563271-07:00
+description: "Scrivere un file di testo in Kotlin comporta la creazione di un file\
+  \ e l'inserimento di contenuto testuale in esso, un compito comune per l'archiviazione\u2026"
+lastmod: 2024-02-18 23:08:55.863699
+model: gpt-4-0125-preview
+summary: "Scrivere un file di testo in Kotlin comporta la creazione di un file e l'inserimento\
+  \ di contenuto testuale in esso, un compito comune per l'archiviazione\u2026"
+title: Scrivere un file di testo
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Debug-Ausgabe drucken"
 aliases:
 - /de/google-apps-script/printing-debug-output/
-date:                  2024-02-01T21:58:17.600768-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Debug-Ausgabe drucken"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/google-apps-script/printing-debug-output.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:17.600768-07:00
+description: "Das Drucken von Debug-Ausgaben beinhaltet das strategische Platzieren\
+  \ von Protokollaussagen in Ihrem Code, um Variablenwerte, Ausf\xFChrungsfluss oder\u2026"
+lastmod: 2024-02-18 23:09:04.416785
+model: gpt-4-0125-preview
+summary: "Das Drucken von Debug-Ausgaben beinhaltet das strategische Platzieren von\
+  \ Protokollaussagen in Ihrem Code, um Variablenwerte, Ausf\xFChrungsfluss oder\u2026"
+title: Debug-Ausgabe drucken
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,28 @@
 ---
-title:                "使用YAML工作"
 aliases:
 - /zh/ruby/working-with-yaml/
-date:                  2024-02-03T19:26:24.373039-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用YAML工作"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:26:24.373039-07:00
+description: "YAML\uFF0C\u5373 YAML \u4E0D\u662F\u6807\u8BB0\u8BED\u8A00 (YAML Ain't\
+  \ Markup Language)\uFF0C\u56E0\u5176\u53EF\u8BFB\u6027\u5F3A\uFF0C\u5728 Ruby \u4E2D\
+  \u5E7F\u6CDB\u7528\u4E8E\u914D\u7F6E\u6587\u4EF6\u548C\u6570\u636E\u5E8F\u5217\u5316\
+  \u3002\u5F53\u7A0B\u5E8F\u5458\u9700\u8981\u4EE5\u53EF\u8BFB\u4F46\u7ED3\u6784\u5316\
+  \u7684\u65B9\u5F0F\u5B58\u50A8\u6216\u4F20\u8F93\u6570\u636E\u5BF9\u8C61\u65F6\uFF0C\
+  \u4ED6\u4EEC\u503E\u5411\u4E8E\u4F7F\u7528 YAML\uFF0C\u8FD9\u7B80\u5316\u4E86\u914D\
+  \u7F6E\u7BA1\u7406\u3001\u6570\u636E\u5B58\u50A8\u548C\u8DE8\u8BED\u8A00\u6570\u636E\
+  \u5171\u4EAB\u7B49\u4EFB\u52A1\u3002"
+lastmod: 2024-02-18 23:08:59.653552
+model: gpt-4-0125-preview
+summary: "YAML\uFF0C\u5373 YAML \u4E0D\u662F\u6807\u8BB0\u8BED\u8A00 (YAML Ain't Markup\
+  \ Language)\uFF0C\u56E0\u5176\u53EF\u8BFB\u6027\u5F3A\uFF0C\u5728 Ruby \u4E2D\u5E7F\
+  \u6CDB\u7528\u4E8E\u914D\u7F6E\u6587\u4EF6\u548C\u6570\u636E\u5E8F\u5217\u5316\u3002\
+  \u5F53\u7A0B\u5E8F\u5458\u9700\u8981\u4EE5\u53EF\u8BFB\u4F46\u7ED3\u6784\u5316\u7684\
+  \u65B9\u5F0F\u5B58\u50A8\u6216\u4F20\u8F93\u6570\u636E\u5BF9\u8C61\u65F6\uFF0C\u4ED6\
+  \u4EEC\u503E\u5411\u4E8E\u4F7F\u7528 YAML\uFF0C\u8FD9\u7B80\u5316\u4E86\u914D\u7F6E\
+  \u7BA1\u7406\u3001\u6570\u636E\u5B58\u50A8\u548C\u8DE8\u8BED\u8A00\u6570\u636E\u5171\
+  \u4EAB\u7B49\u4EFB\u52A1\u3002"
+title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 ---
 
 {{< edit_this_page >}}

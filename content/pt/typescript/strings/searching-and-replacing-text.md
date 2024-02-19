@@ -1,13 +1,15 @@
 ---
-title:                "Pesquisando e substituindo texto"
 aliases:
 - /pt/typescript/searching-and-replacing-text/
-date:                  2024-01-20T17:58:49.278091-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Pesquisando e substituindo texto"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:49.278091-07:00
+description: "Buscar e substituir texto \xE9 o processo de encontrar sequ\xEAncias\
+  \ de caracteres e troc\xE1-las por outras. Programadores fazem isso para corrigir\
+  \ erros,\u2026"
+lastmod: 2024-02-18 23:08:57.870815
+model: gpt-4-1106-preview
+summary: "Buscar e substituir texto \xE9 o processo de encontrar sequ\xEAncias de\
+  \ caracteres e troc\xE1-las por outras. Programadores fazem isso para corrigir erros,\u2026"
+title: Pesquisando e substituindo texto
 ---
 
 {{< edit_this_page >}}

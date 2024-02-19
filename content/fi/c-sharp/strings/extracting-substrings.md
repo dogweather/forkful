@@ -1,13 +1,14 @@
 ---
-title:                "Merkkijonojen osien poimiminen"
 aliases:
 - /fi/c-sharp/extracting-substrings/
-date:                  2024-01-20T17:45:32.722945-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonojen osien poimiminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/extracting-substrings.md"
+date: 2024-01-20 17:45:32.722945-07:00
+description: "Substringit ovat jonoista poimittuja osia. K\xE4ytt\xE4m\xE4ll\xE4 niit\xE4\
+  , voidaan prosessoida, analysoida tai muokata tekstidataa tarpeen mukaan."
+lastmod: 2024-02-18 23:09:07.608613
+model: gpt-4-1106-preview
+summary: "Substringit ovat jonoista poimittuja osia. K\xE4ytt\xE4m\xE4ll\xE4 niit\xE4\
+  , voidaan prosessoida, analysoida tai muokata tekstidataa tarpeen mukaan."
+title: Merkkijonojen osien poimiminen
 ---
 
 {{< edit_this_page >}}

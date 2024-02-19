@@ -1,13 +1,15 @@
 ---
-title:                "Convertendo uma string para minúsculas"
 aliases:
 - /pt/elixir/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:32.968740-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Convertendo uma string para minúsculas"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:32.968740-07:00
+description: "Converter uma string para min\xFAsculas \xE9 o processo de transformar\
+  \ todos os caracteres alfab\xE9ticos de uma string para sua forma min\xFAscula.\
+  \ Programadores\u2026"
+lastmod: 2024-02-18 23:08:57.831529
+model: gpt-4-1106-preview
+summary: "Converter uma string para min\xFAsculas \xE9 o processo de transformar todos\
+  \ os caracteres alfab\xE9ticos de uma string para sua forma min\xFAscula. Programadores\u2026"
+title: "Convertendo uma string para min\xFAsculas"
 ---
 
 {{< edit_this_page >}}

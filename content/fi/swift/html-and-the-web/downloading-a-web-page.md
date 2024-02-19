@@ -1,13 +1,14 @@
 ---
-title:                "Verkkosivun lataaminen"
 aliases:
 - /fi/swift/downloading-a-web-page/
-date:                  2024-01-20T17:44:57.283863-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Verkkosivun lataaminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/downloading-a-web-page.md"
+date: 2024-01-20 17:44:57.283863-07:00
+description: "Ladataan nettisivua ohjelmassa, eli haetaan sen sis\xE4lt\xF6\xE4 koodilla.\
+  \ Se on hy\xF6dyllist\xE4, kun tarvitaan automaattista tiedonkeruuta tai halutaan\u2026"
+lastmod: 2024-02-18 23:09:07.988426
+model: gpt-4-1106-preview
+summary: "Ladataan nettisivua ohjelmassa, eli haetaan sen sis\xE4lt\xF6\xE4 koodilla.\
+  \ Se on hy\xF6dyllist\xE4, kun tarvitaan automaattista tiedonkeruuta tai halutaan\u2026"
+title: Verkkosivun lataaminen
 ---
 
 {{< edit_this_page >}}

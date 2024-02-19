@@ -1,13 +1,16 @@
 ---
-title:                "Drukowanie komunikatów debugowania"
 aliases:
 - /pl/kotlin/printing-debug-output/
-date:                  2024-01-20T17:52:57.652041-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Drukowanie komunikatów debugowania"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/printing-debug-output.md"
+date: 2024-01-20 17:52:57.652041-07:00
+description: "Drukowanie danych debugowania to jak rozmowa z programem: \"Co robisz?\"\
+  . Programi\u015Bci u\u017Cywaj\u0105 tego do \u015Bledzenia warto\u015Bci i zachowania\
+  \ aplikacji podczas\u2026"
+lastmod: 2024-02-18 23:08:49.571626
+model: gpt-4-1106-preview
+summary: "Drukowanie danych debugowania to jak rozmowa z programem: \"Co robisz?\"\
+  . Programi\u015Bci u\u017Cywaj\u0105 tego do \u015Bledzenia warto\u015Bci i zachowania\
+  \ aplikacji podczas\u2026"
+title: "Drukowanie komunikat\xF3w debugowania"
 ---
 
 {{< edit_this_page >}}

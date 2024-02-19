@@ -1,13 +1,14 @@
 ---
-title:                "Arrotondamento dei numeri"
 aliases:
 - /it/arduino/rounding-numbers/
-date:                  2024-01-26T03:42:36.246438-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrotondamento dei numeri"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/rounding-numbers.md"
+date: 2024-01-26 03:42:36.246438-07:00
+description: "Arrotondare i numeri significa tagliare un decimale al suo valore intero\
+  \ pi\xF9 vicino o a un numero impostato di cifre decimali. I programmatori arrotondano\u2026"
+lastmod: 2024-02-18 23:08:56.129585
+model: gpt-4-0125-preview
+summary: "Arrotondare i numeri significa tagliare un decimale al suo valore intero\
+  \ pi\xF9 vicino o a un numero impostato di cifre decimali. I programmatori arrotondano\u2026"
+title: Arrotondamento dei numeri
 ---
 
 {{< edit_this_page >}}

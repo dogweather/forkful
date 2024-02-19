@@ -1,14 +1,29 @@
 ---
-title:                "Загрузка веб-страницы"
 aliases:
 - /ru/vba/downloading-a-web-page/
-date:                  2024-02-01T21:52:56.803269-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Загрузка веб-страницы"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/vba/downloading-a-web-page.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:56.803269-07:00
+description: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430 \u0432\u0435\u0431\
+  -\u0441\u0442\u0440\u0430\u043D\u0438\u0446\u044B \u0432 Visual Basic for Applications\
+  \ (VBA) \u0432\u043A\u043B\u044E\u0447\u0430\u0435\u0442 \u043F\u043E\u043B\u0443\
+  \u0447\u0435\u043D\u0438\u0435 HTML-\u0441\u043E\u0434\u0435\u0440\u0436\u0438\u043C\
+  \u043E\u0433\u043E \u0432\u0435\u0431-\u0441\u0442\u0440\u0430\u043D\u0438\u0446\
+  \u044B \u0438\u0437 \u0418\u043D\u0442\u0435\u0440\u043D\u0435\u0442\u0430. \u041F\
+  \u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442\u044B \u0447\u0430\u0441\
+  \u0442\u043E \u0432\u044B\u043F\u043E\u043B\u043D\u044F\u044E\u0442\u2026"
+lastmod: 2024-02-18 23:08:56.785323
+model: gpt-4-0125-preview
+summary: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430 \u0432\u0435\u0431-\u0441\
+  \u0442\u0440\u0430\u043D\u0438\u0446\u044B \u0432 Visual Basic for Applications\
+  \ (VBA) \u0432\u043A\u043B\u044E\u0447\u0430\u0435\u0442 \u043F\u043E\u043B\u0443\
+  \u0447\u0435\u043D\u0438\u0435 HTML-\u0441\u043E\u0434\u0435\u0440\u0436\u0438\u043C\
+  \u043E\u0433\u043E \u0432\u0435\u0431-\u0441\u0442\u0440\u0430\u043D\u0438\u0446\
+  \u044B \u0438\u0437 \u0418\u043D\u0442\u0435\u0440\u043D\u0435\u0442\u0430. \u041F\
+  \u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442\u044B \u0447\u0430\u0441\
+  \u0442\u043E \u0432\u044B\u043F\u043E\u043B\u043D\u044F\u044E\u0442\u2026"
+title: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430 \u0432\u0435\u0431-\u0441\
+  \u0442\u0440\u0430\u043D\u0438\u0446\u044B"
 ---
 
 {{< edit_this_page >}}

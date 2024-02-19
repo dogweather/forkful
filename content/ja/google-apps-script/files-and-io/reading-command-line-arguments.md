@@ -1,14 +1,27 @@
 ---
-title:                "コマンドライン引数の読み込み"
 aliases:
 - /ja/google-apps-script/reading-command-line-arguments/
-date:                  2024-02-01T21:59:47.171699-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "コマンドライン引数の読み込み"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/google-apps-script/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:47.171699-07:00
+description: "Google Apps Script\u3067\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u5F15\
+  \u6570\u3092\u8AAD\u307F\u53D6\u308B\u3053\u3068\u306F\u3001Python\u3084Node.js\u306A\
+  \u3069\u306E\u4F1D\u7D71\u7684\u306A\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u30A4\
+  \u30F3\u30BF\u30FC\u30D5\u30A7\u30FC\u30B9\u3092\u6301\u3064\u30D7\u30ED\u30B0\u30E9\
+  \u30DF\u30F3\u30B0\u8A00\u8A9E\u3068\u306F\u7570\u306A\u308A\u3001\u5C11\u3057\u8AA4\
+  \u89E3\u3092\u62DB\u304F\u540D\u524D\u3067\u3059\u3002\u306A\u305C\u306A\u3089\u3001\
+  Google Apps\u2026"
+lastmod: 2024-02-18 23:08:54.538369
+model: gpt-4-0125-preview
+summary: "Google Apps Script\u3067\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u5F15\
+  \u6570\u3092\u8AAD\u307F\u53D6\u308B\u3053\u3068\u306F\u3001Python\u3084Node.js\u306A\
+  \u3069\u306E\u4F1D\u7D71\u7684\u306A\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u30A4\
+  \u30F3\u30BF\u30FC\u30D5\u30A7\u30FC\u30B9\u3092\u6301\u3064\u30D7\u30ED\u30B0\u30E9\
+  \u30DF\u30F3\u30B0\u8A00\u8A9E\u3068\u306F\u7570\u306A\u308A\u3001\u5C11\u3057\u8AA4\
+  \u89E3\u3092\u62DB\u304F\u540D\u524D\u3067\u3059\u3002\u306A\u305C\u306A\u3089\u3001\
+  Google Apps\u2026"
+title: "\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u5F15\u6570\u306E\u8AAD\u307F\u8FBC\
+  \u307F"
 ---
 
 {{< edit_this_page >}}

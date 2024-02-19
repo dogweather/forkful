@@ -1,13 +1,16 @@
 ---
-title:                "Registro de Logs"
 aliases:
 - /pt/ruby/logging/
-date:                  2024-01-26T01:07:49.007916-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registro de Logs"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/logging.md"
+date: 2024-01-26 01:07:49.007916-07:00
+description: "Registrar eventos em programa\xE7\xE3o \xE9 como manter um di\xE1rio\
+  \ para a sua aplica\xE7\xE3o. \xC9 o registro sistem\xE1tico de eventos, mensagens\
+  \ e pontos de dados que lhe\u2026"
+lastmod: 2024-02-18 23:08:58.672045
+model: gpt-4-1106-preview
+summary: "Registrar eventos em programa\xE7\xE3o \xE9 como manter um di\xE1rio para\
+  \ a sua aplica\xE7\xE3o. \xC9 o registro sistem\xE1tico de eventos, mensagens e\
+  \ pontos de dados que lhe\u2026"
+title: Registro de Logs
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Att påbörja ett nytt projekt"
 aliases:
 - /sv/elm/starting-a-new-project/
-date:                  2024-01-20T18:03:33.723292-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Att påbörja ett nytt projekt"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/starting-a-new-project.md"
+date: 2024-01-20 18:03:33.723292-07:00
+description: "Starta ett nytt projekt inneb\xE4r, rent tekniskt, att du skapar en\
+  \ struktur f\xF6r att bygga din applikation fr\xE5n grunden. Programutvecklare g\xF6\
+  r detta f\xF6r att\u2026"
+lastmod: 2024-02-18 23:08:51.710227
+model: gpt-4-1106-preview
+summary: "Starta ett nytt projekt inneb\xE4r, rent tekniskt, att du skapar en struktur\
+  \ f\xF6r att bygga din applikation fr\xE5n grunden. Programutvecklare g\xF6r detta\
+  \ f\xF6r att\u2026"
+title: "Att p\xE5b\xF6rja ett nytt projekt"
 ---
 
 {{< edit_this_page >}}

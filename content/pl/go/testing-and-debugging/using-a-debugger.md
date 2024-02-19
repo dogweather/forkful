@@ -1,14 +1,18 @@
 ---
-title:                "Korzystanie z debugera"
 aliases:
 - /pl/go/using-a-debugger/
-date:                  2024-02-03T18:10:44.647749-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z debugera"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/using-a-debugger.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:44.647749-07:00
+description: "U\u017Cywanie debugera w programowaniu w Go polega na wykorzystaniu\
+  \ narz\u0119dzi lub funkcji do inspekcji i modyfikacji stanu dzia\u0142aj\u0105\
+  cego programu w celu\u2026"
+lastmod: 2024-02-18 23:08:49.103245
+model: gpt-4-0125-preview
+summary: "U\u017Cywanie debugera w programowaniu w Go polega na wykorzystaniu narz\u0119\
+  dzi lub funkcji do inspekcji i modyfikacji stanu dzia\u0142aj\u0105cego programu\
+  \ w celu\u2026"
+title: Korzystanie z debugera
 ---
 
 {{< edit_this_page >}}

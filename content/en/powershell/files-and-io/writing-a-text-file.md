@@ -1,12 +1,14 @@
 ---
-title:                "Writing a text file"
 aliases:
 - /en/powershell/writing-a-text-file/
-date:                  2024-02-03T19:03:27.350892-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Writing a text file"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/powershell/writing-a-text-file.md"
+date: 2024-02-03 19:03:27.350892-07:00
+description: "Writing a text file in PowerShell involves creating and manipulating\
+  \ text-based files which is a fundamental operation for logging, data storage, and\u2026"
+lastmod: 2024-02-18 23:09:11.292403
+model: gpt-4-0125-preview
+summary: "Writing a text file in PowerShell involves creating and manipulating text-based\
+  \ files which is a fundamental operation for logging, data storage, and\u2026"
+title: Writing a text file
 ---
 
 {{< edit_this_page >}}

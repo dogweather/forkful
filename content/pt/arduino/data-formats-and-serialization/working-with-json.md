@@ -1,14 +1,18 @@
 ---
-title:                "Trabalhando com JSON"
 aliases:
 - /pt/arduino/working-with-json/
-date:                  2024-02-03T19:21:32.072301-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:21:32.072301-07:00
+description: "JSON, ou Nota\xE7\xE3o de Objeto JavaScript, \xE9 um formato leve de\
+  \ troca de dados, tornando-o perfeito para armazenamento de dados ou arquivos de\
+  \ configura\xE7\xE3o em\u2026"
+lastmod: 2024-02-18 23:08:58.430399
+model: gpt-4-0125-preview
+summary: "JSON, ou Nota\xE7\xE3o de Objeto JavaScript, \xE9 um formato leve de troca\
+  \ de dados, tornando-o perfeito para armazenamento de dados ou arquivos de configura\xE7\
+  \xE3o em\u2026"
+title: Trabalhando com JSON
 ---
 
 {{< edit_this_page >}}

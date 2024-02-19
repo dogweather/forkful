@@ -1,13 +1,16 @@
 ---
-title:                "Erstellung einer temporären Datei"
 aliases:
 - /de/elixir/creating-a-temporary-file/
-date:                  2024-01-20T17:39:59.006585-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Erstellung einer temporären Datei"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/creating-a-temporary-file.md"
+date: 2024-01-20 17:39:59.006585-07:00
+description: "Ein tempor\xE4res File ist eine kurzlebige Datei, die w\xE4hrend der\
+  \ Ausf\xFChrung eines Programms erstellt wird. Programmierer nutzen tempor\xE4re\
+  \ Dateien f\xFCr\u2026"
+lastmod: 2024-02-18 23:09:04.572439
+model: gpt-4-1106-preview
+summary: "Ein tempor\xE4res File ist eine kurzlebige Datei, die w\xE4hrend der Ausf\xFC\
+  hrung eines Programms erstellt wird. Programmierer nutzen tempor\xE4re Dateien f\xFC\
+  r\u2026"
+title: "Erstellung einer tempor\xE4ren Datei"
 ---
 
 {{< edit_this_page >}}

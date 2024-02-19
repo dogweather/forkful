@@ -1,13 +1,16 @@
 ---
-title:                "XML:n käsittely"
 aliases:
 - /fi/elixir/working-with-xml/
-date:                  2024-01-26T04:29:53.369643-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML:n käsittely"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/working-with-xml.md"
+date: 2024-01-26 04:29:53.369643-07:00
+description: "XML:n k\xE4sittely Elixiriss\xE4 tarkoittaa XML-tietojen j\xE4sent\xE4\
+  mist\xE4, luomista ja manipulointia. Ohjelmoijat k\xE4sittelev\xE4t XML:\xE4\xE4\
+  , koska se on laajalti k\xE4yt\xF6ss\xE4\u2026"
+lastmod: 2024-02-18 23:09:07.299934
+model: gpt-4-0125-preview
+summary: "XML:n k\xE4sittely Elixiriss\xE4 tarkoittaa XML-tietojen j\xE4sent\xE4mist\xE4\
+  , luomista ja manipulointia. Ohjelmoijat k\xE4sittelev\xE4t XML:\xE4\xE4, koska\
+  \ se on laajalti k\xE4yt\xF6ss\xE4\u2026"
+title: "XML:n k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

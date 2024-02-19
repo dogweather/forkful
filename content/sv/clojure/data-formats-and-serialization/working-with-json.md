@@ -1,14 +1,18 @@
 ---
-title:                "Arbeta med JSON"
 aliases:
 - /sv/clojure/working-with-json/
-date:                  2024-02-03T19:22:15.504959-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeta med JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:22:15.504959-07:00
+description: "Att arbeta med JSON (JavaScript Object Notation) i Clojure inneb\xE4\
+  r att tolka JSON-str\xE4ngar till Clojure-datastrukturer (kartor, vektorer) och\
+  \ tv\xE4rtom.\u2026"
+lastmod: 2024-02-18 23:08:51.482643
+model: gpt-4-0125-preview
+summary: "Att arbeta med JSON (JavaScript Object Notation) i Clojure inneb\xE4r att\
+  \ tolka JSON-str\xE4ngar till Clojure-datastrukturer (kartor, vektorer) och tv\xE4\
+  rtom.\u2026"
+title: Arbeta med JSON
 ---
 
 {{< edit_this_page >}}

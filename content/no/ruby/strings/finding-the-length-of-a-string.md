@@ -1,13 +1,15 @@
 ---
-title:                "Finn lengden på en streng"
 aliases:
 - /no/ruby/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:59.338866-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Finn lengden på en streng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:59.338866-07:00
+description: "Finne lengden til en streng er \xE5 telle antall tegn den inneholder.\
+  \ Programmerere gj\xF8r dette for validering, formatering eller andre logiske form\xE5\
+  l i kode."
+lastmod: 2024-02-18 23:08:54.428148
+model: gpt-4-1106-preview
+summary: "Finne lengden til en streng er \xE5 telle antall tegn den inneholder. Programmerere\
+  \ gj\xF8r dette for validering, formatering eller andre logiske form\xE5l i kode."
+title: "Finn lengden p\xE5 en streng"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Tìm kiếm và thay thế văn bản"
 aliases:
 - /vi/elixir/searching-and-replacing-text/
-date:                  2024-01-28T22:07:43.885298-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tìm kiếm và thay thế văn bản"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/searching-and-replacing-text.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:07:43.885298-07:00
+description: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n l\xE0 c\u01A1\
+  \ b\u1EA3n c\u1EE7a l\u1EADp tr\xECnh; ch\xFAng ch\u1EE7 y\u1EBFu l\xE0 t\xECm c\xE1\
+  c chu\u1ED7i v\xE0 thay th\u1EBF ch\xFAng. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
+  n vi\u1EC7c n\xE0y m\u1ECDi l\xFAc cho c\xE1c\u2026"
+lastmod: 2024-02-18 23:08:50.344546
+model: gpt-4-0125-preview
+summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n l\xE0 c\u01A1 b\u1EA3\
+  n c\u1EE7a l\u1EADp tr\xECnh; ch\xFAng ch\u1EE7 y\u1EBFu l\xE0 t\xECm c\xE1c chu\u1ED7\
+  i v\xE0 thay th\u1EBF ch\xFAng. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7\
+  c n\xE0y m\u1ECDi l\xFAc cho c\xE1c\u2026"
+title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 ---
 
 {{< edit_this_page >}}

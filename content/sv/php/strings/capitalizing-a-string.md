@@ -1,14 +1,18 @@
 ---
-title:                "Gör om en sträng till versaler"
 aliases:
 - /sv/php/capitalizing-a-string/
-date:                  2024-02-03T19:06:01.968609-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gör om en sträng till versaler"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:01.968609-07:00
+description: "Att versalisera en str\xE4ng inneb\xE4r att \xE4ndra det f\xF6rsta tecknet\
+  \ i given text till versal, och s\xE4kerst\xE4ller att meningar, titlar eller egennamn\
+  \ b\xF6rjar\u2026"
+lastmod: 2024-02-18 23:08:51.862025
+model: gpt-4-0125-preview
+summary: "Att versalisera en str\xE4ng inneb\xE4r att \xE4ndra det f\xF6rsta tecknet\
+  \ i given text till versal, och s\xE4kerst\xE4ller att meningar, titlar eller egennamn\
+  \ b\xF6rjar\u2026"
+title: "G\xF6r om en str\xE4ng till versaler"
 ---
 
 {{< edit_this_page >}}

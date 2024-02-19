@@ -1,14 +1,18 @@
 ---
-title:                "Verificando se um diretório existe"
 aliases:
 - /pt/php/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:15.413836-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verificando se um diretório existe"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:15.413836-07:00
+description: "Verificar se um diret\xF3rio existe \xE9 uma tarefa fundamental na programa\xE7\
+  \xE3o PHP, pois permite que voc\xEA verifique a presen\xE7a de um diret\xF3rio antes\
+  \ de realizar\u2026"
+lastmod: 2024-02-18 23:08:58.255173
+model: gpt-4-0125-preview
+summary: "Verificar se um diret\xF3rio existe \xE9 uma tarefa fundamental na programa\xE7\
+  \xE3o PHP, pois permite que voc\xEA verifique a presen\xE7a de um diret\xF3rio antes\
+  \ de realizar\u2026"
+title: "Verificando se um diret\xF3rio existe"
 ---
 
 {{< edit_this_page >}}

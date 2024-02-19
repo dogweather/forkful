@@ -1,14 +1,17 @@
 ---
-title:                "Konvertering av en streng til små bokstaver"
 aliases:
 - /no/c/converting-a-string-to-lower-case/
-date:                  2024-02-03T17:54:53.218856-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Konvertering av en streng til små bokstaver"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:53.218856-07:00
+description: "\xC5 konvertere en streng til sm\xE5 bokstaver i C inneb\xE6rer \xE5\
+  \ transformere alle store bokstaver i en gitt streng til deres tilsvarende sm\xE5\
+  \ bokstaver.\u2026"
+lastmod: 2024-02-18 23:08:54.380425
+model: gpt-4-0125-preview
+summary: "\xC5 konvertere en streng til sm\xE5 bokstaver i C inneb\xE6rer \xE5 transformere\
+  \ alle store bokstaver i en gitt streng til deres tilsvarende sm\xE5 bokstaver.\u2026"
+title: "Konvertering av en streng til sm\xE5 bokstaver"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,19 @@
 ---
-title:                "将日期转换为字符串"
 aliases:
 - /zh/elm/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:46.839232-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "将日期转换为字符串"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:46.839232-07:00
+description: "\u65E5\u671F\u8F6C\u6362\u6210\u5B57\u7B26\u4E32\u662F\u628A\u65E5\u671F\
+  \u6570\u636E\u8F6C\u5316\u4E3A\u53EF\u8BFB\u6587\u672C\u683C\u5F0F\u7684\u8FC7\u7A0B\
+  \u3002\u7F16\u7A0B\u65F6\u8FD9\u6837\u505A\u65B9\u4FBF\u663E\u793A\u548C\u5B58\u50A8\
+  \u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.068599
+model: gpt-4-1106-preview
+summary: "\u65E5\u671F\u8F6C\u6362\u6210\u5B57\u7B26\u4E32\u662F\u628A\u65E5\u671F\
+  \u6570\u636E\u8F6C\u5316\u4E3A\u53EF\u8BFB\u6587\u672C\u683C\u5F0F\u7684\u8FC7\u7A0B\
+  \u3002\u7F16\u7A0B\u65F6\u8FD9\u6837\u505A\u65B9\u4FBF\u663E\u793A\u548C\u5B58\u50A8\
+  \u3002"
+title: "\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32"
 ---
 
 {{< edit_this_page >}}

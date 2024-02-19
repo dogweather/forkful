@@ -1,15 +1,30 @@
 ---
-title:                "연관 배열 사용하기"
 aliases:
 - /ko/elm/using-associative-arrays/
-date:                  2024-01-30T19:11:01.974127-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "연관 배열 사용하기"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:11:01.974127-07:00
+description: "\uC5F0\uAD00 \uBC30\uC5F4, \uB610\uB294 Elm\uC5D0\uC11C \uBD80\uB974\
+  \uB294 \uB300\uB85C, \uC0AC\uC804\uC740 \uD0A4\uC640 \uAC12 \uC0AC\uC774\uC758 \uB9E4\
+  \uD551\uC744 \uC81C\uACF5\uD558\uC5EC \uAC12\uC744 \uCC3E\uC544\uBCF4\uACE0, \uC0BD\
+  \uC785\uD558\uACE0, \uC0AD\uC81C\uD558\uB294 \uAC83\uC744 \uB9E4\uC6B0 \uBE60\uB974\
+  \uAC8C \uB9CC\uB4E4\uC5B4\uC90D\uB2C8\uB2E4. \uC0AC\uC6A9\uC790 \uC124\uC815\uC774\
+  \uB098 \uC778\uBCA4\uD1A0\uB9AC \uBAA9\uB85D\uACFC \uAC19\uC774 \uC5C4\uACA9\uD55C\
+  \ \uC21C\uC11C\uB97C \uC694\uAD6C\uD558\uC9C0 \uC54A\uB294 \uAC83\uB4E4\uC744 \uCD94\
+  \uC801\uD574\uC57C \uD560 \uB54C \uC0AC\uC6A9\uD558\uBA74 \uC88B\uC2B5\uB2C8\uB2E4\
+  ."
+lastmod: 2024-02-18 23:09:06.075099
+model: gpt-4-0125-preview
+summary: "\uC5F0\uAD00 \uBC30\uC5F4, \uB610\uB294 Elm\uC5D0\uC11C \uBD80\uB974\uB294\
+  \ \uB300\uB85C, \uC0AC\uC804\uC740 \uD0A4\uC640 \uAC12 \uC0AC\uC774\uC758 \uB9E4\
+  \uD551\uC744 \uC81C\uACF5\uD558\uC5EC \uAC12\uC744 \uCC3E\uC544\uBCF4\uACE0, \uC0BD\
+  \uC785\uD558\uACE0, \uC0AD\uC81C\uD558\uB294 \uAC83\uC744 \uB9E4\uC6B0 \uBE60\uB974\
+  \uAC8C \uB9CC\uB4E4\uC5B4\uC90D\uB2C8\uB2E4. \uC0AC\uC6A9\uC790 \uC124\uC815\uC774\
+  \uB098 \uC778\uBCA4\uD1A0\uB9AC \uBAA9\uB85D\uACFC \uAC19\uC774 \uC5C4\uACA9\uD55C\
+  \ \uC21C\uC11C\uB97C \uC694\uAD6C\uD558\uC9C0 \uC54A\uB294 \uAC83\uB4E4\uC744 \uCD94\
+  \uC801\uD574\uC57C \uD560 \uB54C \uC0AC\uC6A9\uD558\uBA74 \uC88B\uC2B5\uB2C8\uB2E4\
+  ."
+title: "\uC5F0\uAD00 \uBC30\uC5F4 \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

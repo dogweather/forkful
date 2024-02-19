@@ -1,14 +1,18 @@
 ---
-title:                "Supprimer les guillemets d'une chaîne"
 aliases:
 - /fr/google-apps-script/removing-quotes-from-a-string/
-date:                  2024-02-01T22:00:09.933986-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Supprimer les guillemets d'une chaîne"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/google-apps-script/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:09.933986-07:00
+description: "Supprimer les guillemets d'une cha\xEEne dans Google Apps Script consiste\
+  \ \xE0 \xE9liminer les guillemets inutiles qui peuvent entourer vos donn\xE9es de\
+  \ cha\xEEne,\u2026"
+lastmod: 2024-02-18 23:09:08.273172
+model: gpt-4-0125-preview
+summary: "Supprimer les guillemets d'une cha\xEEne dans Google Apps Script consiste\
+  \ \xE0 \xE9liminer les guillemets inutiles qui peuvent entourer vos donn\xE9es de\
+  \ cha\xEEne,\u2026"
+title: "Supprimer les guillemets d'une cha\xEEne"
 ---
 
 {{< edit_this_page >}}

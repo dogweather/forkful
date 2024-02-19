@@ -1,14 +1,16 @@
 ---
-title:                "Lese kommandolinjeargumenter"
 aliases:
 - /no/c/reading-command-line-arguments/
-date:                  2024-02-03T18:06:17.883044-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lese kommandolinjeargumenter"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:06:17.883044-07:00
+description: "I C-programmering gj\xF8r det mulig \xE5 lese kommandolinjeargumenter\
+  \ at programmer kan akseptere inndata direkte fra terminalen, noe som \xF8ker fleksibiliteten\u2026"
+lastmod: 2024-02-18 23:08:54.410209
+model: gpt-4-0125-preview
+summary: "I C-programmering gj\xF8r det mulig \xE5 lese kommandolinjeargumenter at\
+  \ programmer kan akseptere inndata direkte fra terminalen, noe som \xF8ker fleksibiliteten\u2026"
+title: Lese kommandolinjeargumenter
 ---
 
 {{< edit_this_page >}}

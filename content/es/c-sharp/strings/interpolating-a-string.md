@@ -1,13 +1,14 @@
 ---
-title:                "Interpolación de cadenas de texto"
 aliases:
 - /es/c-sharp/interpolating-a-string/
-date:                  2024-01-20T17:50:42.503816-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolación de cadenas de texto"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/interpolating-a-string.md"
+date: 2024-01-20 17:50:42.503816-07:00
+description: "Interpolar una cadena en C# significa incrustar expresiones dentro de\
+  \ una cuerda literal. Lo hacemos para construir din\xE1micamente cadenas de texto,\u2026"
+lastmod: 2024-02-18 23:09:09.967133
+model: gpt-4-1106-preview
+summary: "Interpolar una cadena en C# significa incrustar expresiones dentro de una\
+  \ cuerda literal. Lo hacemos para construir din\xE1micamente cadenas de texto,\u2026"
+title: "Interpolaci\xF3n de cadenas de texto"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,20 @@
 ---
-title:                "Gửi yêu cầu HTTP với xác thực cơ bản"
 aliases:
 - /vi/vba/sending-an-http-request-with-basic-authentication/
-date:                  2024-02-01T22:03:28.600677-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gửi yêu cầu HTTP với xác thực cơ bản"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:28.600677-07:00
+description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1\
+  \ b\u1EA3n trong Visual Basic for Applications (VBA) l\xE0 truy c\u1EADp v\xE0o\
+  \ c\xE1c ngu\u1ED3n web \u0111\u01B0\u1EE3c b\u1EA3o v\u1EC7 b\u1EDFi t\xEAn ng\u01B0\
+  \u1EDDi d\xF9ng v\xE0 m\u1EADt\u2026"
+lastmod: 2024-02-18 23:08:50.508903
+model: gpt-4-0125-preview
+summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1\
+  \ b\u1EA3n trong Visual Basic for Applications (VBA) l\xE0 truy c\u1EADp v\xE0o\
+  \ c\xE1c ngu\u1ED3n web \u0111\u01B0\u1EE3c b\u1EA3o v\u1EC7 b\u1EDFi t\xEAn ng\u01B0\
+  \u1EDDi d\xF9ng v\xE0 m\u1EADt\u2026"
+title: "G\u1EEDi y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3n"
 ---
 
 {{< edit_this_page >}}

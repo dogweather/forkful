@@ -1,14 +1,20 @@
 ---
-title:                "Sinh số ngẫu nhiên"
 aliases:
 - /vi/vba/generating-random-numbers/
-date:                  2024-02-01T21:54:44.695399-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sinh số ngẫu nhiên"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/generating-random-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:44.695399-07:00
+description: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn trong Visual\
+  \ Basic for Applications (VBA) cho ph\xE9p c\xE1c ch\u01B0\u01A1ng tr\xECnh m\xF4\
+  \ ph\u1ECFng c\xE1c quy tr\xECnh v\u1EDBi c\xE1c y\u1EBFu t\u1ED1 may r\u1EE7i ho\u1EB7\
+  c bi\u1EBFn\u2026"
+lastmod: 2024-02-18 23:08:50.504444
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn trong Visual Basic\
+  \ for Applications (VBA) cho ph\xE9p c\xE1c ch\u01B0\u01A1ng tr\xECnh m\xF4 ph\u1ECF\
+  ng c\xE1c quy tr\xECnh v\u1EDBi c\xE1c y\u1EBFu t\u1ED1 may r\u1EE7i ho\u1EB7c bi\u1EBF\
+  n\u2026"
+title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 ---
 
 {{< edit_this_page >}}

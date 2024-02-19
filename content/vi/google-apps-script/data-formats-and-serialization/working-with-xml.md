@@ -1,14 +1,20 @@
 ---
-title:                "Làm việc với XML"
 aliases:
 - /vi/google-apps-script/working-with-xml/
-date:                  2024-02-01T22:07:01.552507-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với XML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/google-apps-script/working-with-xml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:07:01.552507-07:00
+description: "Vi\u1EC7c l\xE0m vi\u1EC7c v\u1EDBi XML trong Google Apps Script cho\
+  \ ph\xE9p l\u1EADp tr\xECnh vi\xEAn ph\xE2n t\xEDch c\xFA ph\xE1p, ch\u1EC9nh s\u1EED\
+  a, v\xE0 t\u1EA1o d\u1EEF li\u1EC7u XML, \u0111\xE2y l\xE0 \u0111i\u1EC1u c\u1EA7\
+  n thi\u1EBFt cho c\xE1c\u2026"
+lastmod: 2024-02-18 23:08:50.248012
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c l\xE0m vi\u1EC7c v\u1EDBi XML trong Google Apps Script cho ph\xE9\
+  p l\u1EADp tr\xECnh vi\xEAn ph\xE2n t\xEDch c\xFA ph\xE1p, ch\u1EC9nh s\u1EEDa,\
+  \ v\xE0 t\u1EA1o d\u1EEF li\u1EC7u XML, \u0111\xE2y l\xE0 \u0111i\u1EC1u c\u1EA7\
+  n thi\u1EBFt cho c\xE1c\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 ---
 
 {{< edit_this_page >}}

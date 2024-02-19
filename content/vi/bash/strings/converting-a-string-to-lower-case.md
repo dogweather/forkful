@@ -1,15 +1,14 @@
 ---
-title:                "Chuyển đổi chuỗi thành chữ thường"
 aliases:
 - /vi/bash/converting-a-string-to-lower-case/
-date:                  2024-01-28T21:58:17.682458-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Chuyển đổi chuỗi thành chữ thường"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/bash/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:58:17.682458-07:00
+description: '#'
+lastmod: 2024-02-18 23:08:50.868801
+model: gpt-4-0125-preview
+summary: '#'
+title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 ---
 
 {{< edit_this_page >}}

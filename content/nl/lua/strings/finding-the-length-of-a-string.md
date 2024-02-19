@@ -1,15 +1,16 @@
 ---
-title:                "De lengte van een string vinden"
 aliases:
 - /nl/lua/finding-the-length-of-a-string/
-date:                  2024-01-28T22:00:18.919233-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "De lengte van een string vinden"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:00:18.919233-07:00
+description: "De lengte van een tekst vinden betekent uitzoeken hoeveel tekens deze\
+  \ bevat. Programmeurs doen dit om invoer te valideren, tekst te manipuleren of\u2026"
+lastmod: 2024-02-18 23:09:01.981336
+model: gpt-4-0125-preview
+summary: "De lengte van een tekst vinden betekent uitzoeken hoeveel tekens deze bevat.\
+  \ Programmeurs doen dit om invoer te valideren, tekst te manipuleren of\u2026"
+title: De lengte van een string vinden
 ---
 
 {{< edit_this_page >}}

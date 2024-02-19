@@ -1,14 +1,18 @@
 ---
-title:                "Obteniendo la fecha actual"
 aliases:
 - /es/python/getting-the-current-date/
-date:                  2024-02-03T19:10:24.024513-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Obteniendo la fecha actual"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:10:24.024513-07:00
+description: "Obtener la fecha actual en Python es una operaci\xF3n b\xE1sica para\
+  \ muchas aplicaciones, tales como el registro de actividades, an\xE1lisis de datos\
+  \ y la toma de\u2026"
+lastmod: 2024-02-18 23:09:09.567913
+model: gpt-4-0125-preview
+summary: "Obtener la fecha actual en Python es una operaci\xF3n b\xE1sica para muchas\
+  \ aplicaciones, tales como el registro de actividades, an\xE1lisis de datos y la\
+  \ toma de\u2026"
+title: Obteniendo la fecha actual
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Comparando duas datas"
 aliases:
 - /pt/cpp/comparing-two-dates/
-date:                  2024-01-20T17:32:45.133861-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Comparando duas datas"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/comparing-two-dates.md"
+date: 2024-01-20 17:32:45.133861-07:00
+description: "Comparar datas \xE9 verificar a rela\xE7\xE3o temporal entre elas -\
+  \ qual \xE9 mais cedo ou mais tarde. Programadores fazem isso para ordenar eventos,\
+  \ validar\u2026"
+lastmod: 2024-02-18 23:08:58.461837
+model: gpt-4-1106-preview
+summary: "Comparar datas \xE9 verificar a rela\xE7\xE3o temporal entre elas - qual\
+  \ \xE9 mais cedo ou mais tarde. Programadores fazem isso para ordenar eventos, validar\u2026"
+title: Comparando duas datas
 ---
 
 {{< edit_this_page >}}

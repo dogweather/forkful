@@ -1,13 +1,14 @@
 ---
-title:                "Converting a date into a string"
 aliases:
 - /en/ruby/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:32.172940-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Converting a date into a string"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:32.172940-07:00
+description: "Converting a date to a string takes the date object and turns it into\
+  \ text we can read and use. Programmers do this to display dates in a human-friendly\u2026"
+lastmod: 2024-02-18 23:09:11.577315
+model: gpt-4-1106-preview
+summary: "Converting a date to a string takes the date object and turns it into text\
+  \ we can read and use. Programmers do this to display dates in a human-friendly\u2026"
+title: Converting a date into a string
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Loggning"
 aliases:
 - /sv/elixir/logging/
-date:                  2024-01-26T01:02:50.015063-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Loggning"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/logging.md"
+date: 2024-01-26 01:02:50.015063-07:00
+description: "Loggning inom mjukvaruutveckling \xE4r tekniken att registrera h\xE4\
+  ndelser som intr\xE4ffar n\xE4r ett program k\xF6rs, vanligtvis till en fil eller\
+  \ externt system.\u2026"
+lastmod: 2024-02-18 23:08:51.508577
+model: gpt-4-1106-preview
+summary: "Loggning inom mjukvaruutveckling \xE4r tekniken att registrera h\xE4ndelser\
+  \ som intr\xE4ffar n\xE4r ett program k\xF6rs, vanligtvis till en fil eller externt\
+  \ system.\u2026"
+title: Loggning
 ---
 
 {{< edit_this_page >}}

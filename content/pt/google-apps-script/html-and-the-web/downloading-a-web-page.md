@@ -1,14 +1,18 @@
 ---
-title:                "Baixando uma página da web"
 aliases:
 - /pt/google-apps-script/downloading-a-web-page/
-date:                  2024-02-01T21:52:35.159926-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Baixando uma página da web"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/google-apps-script/downloading-a-web-page.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:35.159926-07:00
+description: "Baixar uma p\xE1gina web no Google Apps Script envolve buscar o conte\xFA\
+  do de uma p\xE1gina web via HTML para v\xE1rios prop\xF3sitos, como web scraping,\
+  \ extra\xE7\xE3o de\u2026"
+lastmod: 2024-02-18 23:08:57.714207
+model: gpt-4-0125-preview
+summary: "Baixar uma p\xE1gina web no Google Apps Script envolve buscar o conte\xFA\
+  do de uma p\xE1gina web via HTML para v\xE1rios prop\xF3sitos, como web scraping,\
+  \ extra\xE7\xE3o de\u2026"
+title: "Baixando uma p\xE1gina da web"
 ---
 
 {{< edit_this_page >}}

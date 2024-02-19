@@ -1,12 +1,14 @@
 ---
-title:                "Working with JSON"
 aliases:
 - /en/c-sharp/working-with-json/
-date:                  2024-02-03T19:03:12.550269-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Working with JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/working-with-json.md"
+date: 2024-02-03 19:03:12.550269-07:00
+description: "Working with JSON (JavaScript Object Notation) involves parsing, generating,\
+  \ and querying JSON data, making it a critical skill for modern programming.\u2026"
+lastmod: 2024-02-18 23:09:11.075544
+model: gpt-4-0125-preview
+summary: "Working with JSON (JavaScript Object Notation) involves parsing, generating,\
+  \ and querying JSON data, making it a critical skill for modern programming.\u2026"
+title: Working with JSON
 ---
 
 {{< edit_this_page >}}

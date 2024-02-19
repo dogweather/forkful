@@ -1,15 +1,20 @@
 ---
-title:                "Nội suy chuỗi ký tự"
 aliases:
 - /vi/rust/interpolating-a-string/
-date:                  2024-01-28T22:02:15.721104-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Nội suy chuỗi ký tự"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/interpolating-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:02:15.721104-07:00
+description: "N\u1ED9i suy chu\u1ED7i (String interpolation) ch\xE8n c\xE1c bi\u1EBF\
+  n tr\u1EF1c ti\u1EBFp v\xE0o trong chu\u1ED7i. N\xF3 l\xE0m cho vi\u1EC7c x\xE2\
+  y d\u1EF1ng chu\u1ED7i tr\u1EDF n\xEAn m\u01B0\u1EE3t m\xE0 v\xE0 d\u1EC5 \u0111\
+  \u1ECDc, tr\xE1nh \u0111\u01B0\u1EE3c vi\u1EC7c\u2026"
+lastmod: 2024-02-18 23:08:50.446283
+model: gpt-4-0125-preview
+summary: "N\u1ED9i suy chu\u1ED7i (String interpolation) ch\xE8n c\xE1c bi\u1EBFn\
+  \ tr\u1EF1c ti\u1EBFp v\xE0o trong chu\u1ED7i. N\xF3 l\xE0m cho vi\u1EC7c x\xE2\
+  y d\u1EF1ng chu\u1ED7i tr\u1EDF n\xEAn m\u01B0\u1EE3t m\xE0 v\xE0 d\u1EC5 \u0111\
+  \u1ECDc, tr\xE1nh \u0111\u01B0\u1EE3c vi\u1EC7c\u2026"
+title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 ---
 
 {{< edit_this_page >}}

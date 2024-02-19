@@ -1,14 +1,16 @@
 ---
-title:                "Commandoregelargumenten lezen"
 aliases:
 - /nl/vba/reading-command-line-arguments/
-date:                  2024-02-01T21:59:25.990569-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Commandoregelargumenten lezen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/vba/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:25.990569-07:00
+description: "Het lezen van commandoregelargumenten in Visual Basic for Applications\
+  \ (VBA) houdt in dat je toegang krijgt tot parameters die aan je programma worden\u2026"
+lastmod: 2024-02-18 23:09:01.682951
+model: gpt-4-0125-preview
+summary: "Het lezen van commandoregelargumenten in Visual Basic for Applications (VBA)\
+  \ houdt in dat je toegang krijgt tot parameters die aan je programma worden\u2026"
+title: Commandoregelargumenten lezen
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Ermittlung der Zeichenkettenlänge"
 aliases:
 - /de/kotlin/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:35.832577-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ermittlung der Zeichenkettenlänge"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:35.832577-07:00
+description: "Die L\xE4nge eines Strings zu finden, hei\xDFt, zu bestimmen, wie viele\
+  \ Zeichen er enth\xE4lt. Wir brauchen das, um Textdaten zu validieren, zu schneiden\
+  \ oder\u2026"
+lastmod: 2024-02-18 23:09:04.816682
+model: gpt-4-1106-preview
+summary: "Die L\xE4nge eines Strings zu finden, hei\xDFt, zu bestimmen, wie viele\
+  \ Zeichen er enth\xE4lt. Wir brauchen das, um Textdaten zu validieren, zu schneiden\
+  \ oder\u2026"
+title: "Ermittlung der Zeichenkettenl\xE4nge"
 ---
 
 {{< edit_this_page >}}

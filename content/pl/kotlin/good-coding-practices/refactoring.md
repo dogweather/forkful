@@ -1,13 +1,16 @@
 ---
-title:                "Refaktoryzacja"
 aliases:
 - /pl/kotlin/refactoring/
-date:                  2024-01-26T01:44:13.455403-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refaktoryzacja"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/refactoring.md"
+date: 2024-01-26 01:44:13.455403-07:00
+description: "Refaktoryzacja to proces modyfikacji istniej\u0105cego kodu w celu polepszenia\
+  \ jego struktury, czytelno\u015Bci i wydajno\u015Bci, bez zmiany jego zewn\u0119\
+  trznego\u2026"
+lastmod: 2024-02-18 23:08:49.577408
+model: gpt-4-0125-preview
+summary: "Refaktoryzacja to proces modyfikacji istniej\u0105cego kodu w celu polepszenia\
+  \ jego struktury, czytelno\u015Bci i wydajno\u015Bci, bez zmiany jego zewn\u0119\
+  trznego\u2026"
+title: Refaktoryzacja
 ---
 
 {{< edit_this_page >}}

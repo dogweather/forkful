@@ -1,13 +1,16 @@
 ---
-title:                "Calcolo di una data futura o passata"
 aliases:
 - /it/ruby/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:31:55.207269-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Calcolo di una data futura o passata"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:31:55.207269-07:00
+description: "Calcolare una data futura o passata significa semplicemente scoprire\
+  \ che giorno sar\xE0 o \xE8 stato dopo o prima di un certo periodo. I programmatori\
+  \ lo fanno\u2026"
+lastmod: 2024-02-18 23:08:56.395810
+model: gpt-4-1106-preview
+summary: "Calcolare una data futura o passata significa semplicemente scoprire che\
+  \ giorno sar\xE0 o \xE8 stato dopo o prima di un certo periodo. I programmatori\
+  \ lo fanno\u2026"
+title: Calcolo di una data futura o passata
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng vỏ tương tác (REPL)"
 aliases:
 - /vi/ruby/using-an-interactive-shell-repl/
-date:                  2024-01-28T22:09:22.020106-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng vỏ tương tác (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:22.020106-07:00
+description: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c, hay REPL (Read-Eval-Print Loop),\
+  \ cho ph\xE9p b\u1EA1n th\u1EED nghi\u1EC7m m\xE3 l\u1EC7nh theo th\u1EDDi gian\
+  \ th\u1EF1c. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3\
+  \ th\xED nghi\u1EC7m, g\u1EE1\u2026"
+lastmod: 2024-02-18 23:08:51.287172
+model: gpt-4-0125-preview
+summary: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c, hay REPL (Read-Eval-Print Loop),\
+  \ cho ph\xE9p b\u1EA1n th\u1EED nghi\u1EC7m m\xE3 l\u1EC7nh theo th\u1EDDi gian\
+  \ th\u1EF1c. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3\
+  \ th\xED nghi\u1EC7m, g\u1EE1\u2026"
+title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 ---
 
 {{< edit_this_page >}}

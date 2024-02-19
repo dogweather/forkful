@@ -1,13 +1,16 @@
 ---
-title:                "Rejestrowanie zdarzeń"
 aliases:
 - /pl/ruby/logging/
-date:                  2024-01-26T01:07:59.699207-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rejestrowanie zdarzeń"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/logging.md"
+date: 2024-01-26 01:07:59.699207-07:00
+description: "Logowanie w programowaniu jest jak prowadzenie dziennika dla Twojej\
+  \ aplikacji. Jest to systematyczne rejestrowanie zdarze\u0144, komunikat\xF3w i\
+  \ punkt\xF3w danych,\u2026"
+lastmod: 2024-02-18 23:08:50.131886
+model: gpt-4-1106-preview
+summary: "Logowanie w programowaniu jest jak prowadzenie dziennika dla Twojej aplikacji.\
+  \ Jest to systematyczne rejestrowanie zdarze\u0144, komunikat\xF3w i punkt\xF3w\
+  \ danych,\u2026"
+title: "Rejestrowanie zdarze\u0144"
 ---
 
 {{< edit_this_page >}}

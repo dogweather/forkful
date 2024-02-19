@@ -1,13 +1,16 @@
 ---
-title:                "Praca z liczbami zespolonymi"
 aliases:
 - /pl/python/working-with-complex-numbers/
-date:                  2024-01-26T04:44:58.769828-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z liczbami zespolonymi"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/working-with-complex-numbers.md"
+date: 2024-01-26 04:44:58.769828-07:00
+description: "Liczby z\u0142o\u017Cone to zbi\xF3r liczb postaci `a + bi`, gdzie `a`\
+  \ i `b` s\u0105 liczbami rzeczywistymi, a `i` jest jednostk\u0105 urojon\u0105 (`i^2\
+  \ = -1`). W programowaniu\u2026"
+lastmod: 2024-02-18 23:08:49.216376
+model: gpt-4-0125-preview
+summary: "Liczby z\u0142o\u017Cone to zbi\xF3r liczb postaci `a + bi`, gdzie `a` i\
+  \ `b` s\u0105 liczbami rzeczywistymi, a `i` jest jednostk\u0105 urojon\u0105 (`i^2\
+  \ = -1`). W programowaniu\u2026"
+title: Praca z liczbami zespolonymi
 ---
 
 {{< edit_this_page >}}

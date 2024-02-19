@@ -1,13 +1,16 @@
 ---
-title:                "Wysyłanie żądania HTTP"
 aliases:
 - /pl/typescript/sending-an-http-request/
-date:                  2024-01-20T18:00:46.493299-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wysyłanie żądania HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/sending-an-http-request.md"
+date: 2024-01-20 18:00:46.493299-07:00
+description: "Wysy\u0142anie zapytania HTTP pozwala naszej aplikacji porozumiewa\u0107\
+  \ si\u0119 z serwerem, wymieniaj\u0105c dane. Programi\u015Bci robi\u0105 to, by\
+  \ pobra\u0107, stworzy\u0107, aktualizowa\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.345004
+model: gpt-4-1106-preview
+summary: "Wysy\u0142anie zapytania HTTP pozwala naszej aplikacji porozumiewa\u0107\
+  \ si\u0119 z serwerem, wymieniaj\u0105c dane. Programi\u015Bci robi\u0105 to, by\
+  \ pobra\u0107, stworzy\u0107, aktualizowa\u0107\u2026"
+title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 ---
 
 {{< edit_this_page >}}

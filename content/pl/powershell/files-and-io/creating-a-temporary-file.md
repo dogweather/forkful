@@ -1,13 +1,16 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
 aliases:
 - /pl/powershell/creating-a-temporary-file/
-date:                  2024-01-20T17:41:13.845892-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tworzenie pliku tymczasowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:13.845892-07:00
+description: "Tworzenie pliku tymczasowego to proces generowania tymczasowego miejsca\
+  \ do przechowywania danych. Programi\u015Bci robi\u0105 to, aby przechowa\u0107\
+  \ informacje, kt\xF3re\u2026"
+lastmod: 2024-02-18 23:08:49.847786
+model: gpt-4-1106-preview
+summary: "Tworzenie pliku tymczasowego to proces generowania tymczasowego miejsca\
+  \ do przechowywania danych. Programi\u015Bci robi\u0105 to, aby przechowa\u0107\
+  \ informacje, kt\xF3re\u2026"
+title: Tworzenie pliku tymczasowego
 ---
 
 {{< edit_this_page >}}

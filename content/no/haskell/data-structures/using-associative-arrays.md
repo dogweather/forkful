@@ -1,16 +1,17 @@
 ---
-title:                "Bruke associative tabeller"
 aliases:
 - /no/haskell/using-associative-arrays/
-date:                  2024-01-30T19:11:38.135493-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke associative tabeller"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, dogweather, reviewed
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, dogweather, reviewed
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:11:38.135493-07:00
+description: "Assosiative tabeller, eller ordb\xF8ker, i Haskell handler om \xE5 kartlegge\
+  \ n\xF8kler til verdier for rask oppslag og effektiv datah\xE5ndtering. Programmerere\u2026"
+lastmod: 2024-02-18 23:08:53.928127
+model: gpt-4-0125-preview
+summary: "Assosiative tabeller, eller ordb\xF8ker, i Haskell handler om \xE5 kartlegge\
+  \ n\xF8kler til verdier for rask oppslag og effektiv datah\xE5ndtering. Programmerere\u2026"
+title: Bruke associative tabeller
 ---
 
 {{< edit_this_page >}}

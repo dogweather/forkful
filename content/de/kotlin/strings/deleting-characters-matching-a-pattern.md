@@ -1,13 +1,15 @@
 ---
-title:                "Löschen von Zeichen, die einem Muster entsprechen"
 aliases:
 - /de/kotlin/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:50.472676-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:50.472676-07:00
+description: "In der Programmierung bedeutet das L\xF6schen von Zeichen, die einem\
+  \ Muster entsprechen, dass wir bestimmte Zeichen aus einem Text entfernen - zum\
+  \ Beispiel\u2026"
+lastmod: 2024-02-18 23:09:04.809356
+model: gpt-4-1106-preview
+summary: "In der Programmierung bedeutet das L\xF6schen von Zeichen, die einem Muster\
+  \ entsprechen, dass wir bestimmte Zeichen aus einem Text entfernen - zum Beispiel\u2026"
+title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 ---
 
 {{< edit_this_page >}}

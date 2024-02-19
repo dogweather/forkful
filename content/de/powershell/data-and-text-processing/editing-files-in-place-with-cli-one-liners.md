@@ -1,13 +1,14 @@
 ---
-title:                "Bearbeiten von Dateien im Place mit CLI-Einzeilern"
 aliases:
 - /de/powershell/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:20:41.969806-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bearbeiten von Dateien im Place mit CLI-Einzeilern"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:20:41.969806-07:00
+description: "Dateien direkt \xFCber die CLI (Command Line Interface) mit Einzeilern\
+  \ in PowerShell zu bearbeiten, bedeutet, direkte \xC4nderungen an Dateien von der\u2026"
+lastmod: 2024-02-18 23:09:05.096827
+model: gpt-4-0125-preview
+summary: "Dateien direkt \xFCber die CLI (Command Line Interface) mit Einzeilern in\
+  \ PowerShell zu bearbeiten, bedeutet, direkte \xC4nderungen an Dateien von der\u2026"
+title: Bearbeiten von Dateien im Place mit CLI-Einzeilern
 ---
 
 {{< edit_this_page >}}

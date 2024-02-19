@@ -1,13 +1,16 @@
 ---
-title:                "Uthenting av delstrenger"
 aliases:
 - /no/elixir/extracting-substrings/
-date:                  2024-01-20T17:45:38.055700-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Uthenting av delstrenger"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/extracting-substrings.md"
+date: 2024-01-20 17:45:38.055700-07:00
+description: "I Elixir kan uttrekking av delstrenger hjelpe deg \xE5 f\xE5 ut spesifikk\
+  \ info fra tekststr\xF8mmer. Du gj\xF8r det fordi du kanskje trenger \xE5 bearbeide\
+  \ eller\u2026"
+lastmod: 2024-02-18 23:08:53.594222
+model: gpt-4-1106-preview
+summary: "I Elixir kan uttrekking av delstrenger hjelpe deg \xE5 f\xE5 ut spesifikk\
+  \ info fra tekststr\xF8mmer. Du gj\xF8r det fordi du kanskje trenger \xE5 bearbeide\
+  \ eller\u2026"
+title: Uthenting av delstrenger
 ---
 
 {{< edit_this_page >}}

@@ -1,16 +1,19 @@
 ---
-title:                "Päivämäärän jäsentäminen merkkijonosta"
 aliases:
 - /fi/elixir/parsing-a-date-from-a-string/
-date:                  2024-01-28T02:05:14.592460-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 02:05:14.592460-07:00
+description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta tarkoittaa tekstin,\
+  \ kuten \"2023-04-05\", muuntamista p\xE4iv\xE4m\xE4\xE4r\xE4muotoon, jonka ohjelmasi\
+  \ voi ymm\xE4rt\xE4\xE4 ja k\xE4sitell\xE4.\u2026"
+lastmod: 2024-02-18 23:09:07.283703
+model: gpt-4-0125-preview
+summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta tarkoittaa tekstin,\
+  \ kuten \"2023-04-05\", muuntamista p\xE4iv\xE4m\xE4\xE4r\xE4muotoon, jonka ohjelmasi\
+  \ voi ymm\xE4rt\xE4\xE4 ja k\xE4sitell\xE4.\u2026"
+title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta"
 ---
 
 {{< edit_this_page >}}

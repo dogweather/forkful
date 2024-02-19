@@ -1,14 +1,18 @@
 ---
-title:                "Usuwanie cudzysłowów z ciągu znaków"
 aliases:
 - /pl/vba/removing-quotes-from-a-string/
-date:                  2024-02-01T22:00:30.638725-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usuwanie cudzysłowów z ciągu znaków"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/vba/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:30.638725-07:00
+description: "Usuwanie cudzys\u0142ow\xF3w ze stringa w VBA polega na eliminacji wyst\u0105\
+  pie\u0144 pojedynczych (`'`) lub podw\xF3jnych (`\"`) znak\xF3w cudzys\u0142owu,\
+  \ kt\xF3re mog\u0105 znajdowa\u0107 si\u0119\u2026"
+lastmod: 2024-02-18 23:08:49.420827
+model: gpt-4-0125-preview
+summary: "Usuwanie cudzys\u0142ow\xF3w ze stringa w VBA polega na eliminacji wyst\u0105\
+  pie\u0144 pojedynczych (`'`) lub podw\xF3jnych (`\"`) znak\xF3w cudzys\u0142owu,\
+  \ kt\xF3re mog\u0105 znajdowa\u0107 si\u0119\u2026"
+title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

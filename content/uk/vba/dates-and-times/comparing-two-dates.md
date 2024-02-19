@@ -1,14 +1,29 @@
 ---
-title:                "Порівняння двох дат"
 aliases:
 - /uk/vba/comparing-two-dates/
-date:                  2024-02-01T21:50:42.418617-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Порівняння двох дат"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/vba/comparing-two-dates.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:42.418617-07:00
+description: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u0432\
+  \u043E\u0445 \u0434\u0430\u0442 \u0443 Visual Basic for Applications (VBA) \u043F\
+  \u043E\u043B\u044F\u0433\u0430\u0454 \u0443 \u0432\u0438\u0437\u043D\u0430\u0447\
+  \u0435\u043D\u043D\u0456 \u0457\u0445 \u0445\u0440\u043E\u043D\u043E\u043B\u043E\
+  \u0433\u0456\u0447\u043D\u0438\u0445 \u0432\u0456\u0434\u043D\u043E\u0441\u0438\u043D\
+  \ \u043E\u0434\u043D\u0430 \u0434\u043E \u043E\u0434\u043D\u043E\u0457. \u041F\u0440\
+  \u043E\u0433\u0440\u0430\u043C\u0456\u0441\u0442\u0438 \u0440\u043E\u0431\u043B\u044F\
+  \u0442\u044C \u0446\u0435 \u0434\u043B\u044F\u2026"
+lastmod: 2024-02-18 23:09:00.067419
+model: gpt-4-0125-preview
+summary: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u0432\
+  \u043E\u0445 \u0434\u0430\u0442 \u0443 Visual Basic for Applications (VBA) \u043F\
+  \u043E\u043B\u044F\u0433\u0430\u0454 \u0443 \u0432\u0438\u0437\u043D\u0430\u0447\
+  \u0435\u043D\u043D\u0456 \u0457\u0445 \u0445\u0440\u043E\u043D\u043E\u043B\u043E\
+  \u0433\u0456\u0447\u043D\u0438\u0445 \u0432\u0456\u0434\u043D\u043E\u0441\u0438\u043D\
+  \ \u043E\u0434\u043D\u0430 \u0434\u043E \u043E\u0434\u043D\u043E\u0457. \u041F\u0440\
+  \u043E\u0433\u0440\u0430\u043C\u0456\u0441\u0442\u0438 \u0440\u043E\u0431\u043B\u044F\
+  \u0442\u044C \u0446\u0435 \u0434\u043B\u044F\u2026"
+title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u0432\u043E\
+  \u0445 \u0434\u0430\u0442"
 ---
 
 {{< edit_this_page >}}

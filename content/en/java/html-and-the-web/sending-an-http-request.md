@@ -1,13 +1,14 @@
 ---
-title:                "Sending an HTTP request"
 aliases:
 - /en/java/sending-an-http-request/
-date:                  2024-01-20T17:59:42.892380-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sending an HTTP request"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/sending-an-http-request.md"
+date: 2024-01-20 17:59:42.892380-07:00
+description: "Sending an HTTP request means asking a server for data or action, like\
+  \ pulling up a webpage or sending a form. Programmers do it to interact with web\u2026"
+lastmod: 2024-02-18 23:09:10.927944
+model: gpt-4-1106-preview
+summary: "Sending an HTTP request means asking a server for data or action, like pulling\
+  \ up a webpage or sending a form. Programmers do it to interact with web\u2026"
+title: Sending an HTTP request
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Generazione di numeri casuali"
 aliases:
 - /it/elixir/generating-random-numbers/
-date:                  2024-01-27T20:32:56.030379-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generazione di numeri casuali"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/generating-random-numbers.md"
+date: 2024-01-27 20:32:56.030379-07:00
+description: "La generazione di numeri casuali in Elixir \xE8 un compito di programmazione\
+  \ fondamentale, vitale per applicazioni che necessitano di risultati imprevedibili\u2026"
+lastmod: 2024-02-18 23:08:55.596998
+model: gpt-4-0125-preview
+summary: "La generazione di numeri casuali in Elixir \xE8 un compito di programmazione\
+  \ fondamentale, vitale per applicazioni che necessitano di risultati imprevedibili\u2026"
+title: Generazione di numeri casuali
 ---
 
 {{< edit_this_page >}}

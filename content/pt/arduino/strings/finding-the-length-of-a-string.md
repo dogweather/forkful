@@ -1,13 +1,15 @@
 ---
-title:                "Descobrindo o comprimento de uma string"
 aliases:
 - /pt/arduino/finding-the-length-of-a-string/
-date:                  2024-01-20T17:46:48.145401-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Descobrindo o comprimento de uma string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:46:48.145401-07:00
+description: "Descobrir o tamanho de uma string significa saber quantos caracteres\
+  \ ela possui. Programadores fazem isso para manipular texto de forma eficiente,\
+  \ validar\u2026"
+lastmod: 2024-02-18 23:08:58.401435
+model: gpt-4-1106-preview
+summary: "Descobrir o tamanho de uma string significa saber quantos caracteres ela\
+  \ possui. Programadores fazem isso para manipular texto de forma eficiente, validar\u2026"
+title: Descobrindo o comprimento de uma string
 ---
 
 {{< edit_this_page >}}

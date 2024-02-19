@@ -1,14 +1,18 @@
 ---
-title:                "Tolka HTML"
 aliases:
 - /sv/kotlin/parsing-html/
-date:                  2024-02-03T19:12:28.459562-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tolka HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:28.459562-07:00
+description: "Att tolka HTML inneb\xE4r att dissekera en webbsidas m\xE4rkspr\xE5\
+  k till n\xE5got som ett program kan f\xF6rst\xE5 och manipulera. Programmerare tolkar\
+  \ HTML f\xF6r att\u2026"
+lastmod: 2024-02-18 23:08:51.747612
+model: gpt-4-0125-preview
+summary: "Att tolka HTML inneb\xE4r att dissekera en webbsidas m\xE4rkspr\xE5k till\
+  \ n\xE5got som ett program kan f\xF6rst\xE5 och manipulera. Programmerare tolkar\
+  \ HTML f\xF6r att\u2026"
+title: Tolka HTML
 ---
 
 {{< edit_this_page >}}

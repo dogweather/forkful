@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với TOML"
 aliases:
 - /vi/elixir/working-with-toml/
-date:                  2024-01-28T22:10:59.309568-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/working-with-toml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:59.309568-07:00
+description: "L\xE0m vi\u1EC7c v\u1EDBi TOML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xED\
+  ch v\xE0 t\u1EA1o d\u1EEF li\u1EC7u TOML (Tom's Obvious, Minimal Language - Ng\xF4\
+  n ng\u1EEF T\u1ED1i gi\u1EA3n, Hi\u1EC3n nhi\xEAn c\u1EE7a Tom) b\u1EB1ng Elixir.\
+  \ L\u1EADp\u2026"
+lastmod: 2024-02-18 23:08:50.394550
+model: gpt-4-0125-preview
+summary: "L\xE0m vi\u1EC7c v\u1EDBi TOML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch v\xE0\
+  \ t\u1EA1o d\u1EEF li\u1EC7u TOML (Tom's Obvious, Minimal Language - Ng\xF4n ng\u1EEF\
+  \ T\u1ED1i gi\u1EA3n, Hi\u1EC3n nhi\xEAn c\u1EE7a Tom) b\u1EB1ng Elixir. L\u1EAD\
+  p\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 ---
 
 {{< edit_this_page >}}

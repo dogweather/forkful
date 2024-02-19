@@ -1,13 +1,16 @@
 ---
-title:                "Feilhåndtering"
 aliases:
 - /no/cpp/handling-errors/
-date:                  2024-01-26T00:49:58.215725-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Feilhåndtering"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/handling-errors.md"
+date: 2024-01-26 00:49:58.215725-07:00
+description: "Feilh\xE5ndtering betyr \xE5 planlegge for n\xE5r ting g\xE5r galt.\
+  \ Det er avgj\xF8rende fordi det hjelper med \xE5 unng\xE5 krasjer og gj\xF8r programvaren\
+  \ din robust og\u2026"
+lastmod: 2024-02-18 23:08:54.199801
+model: gpt-4-1106-preview
+summary: "Feilh\xE5ndtering betyr \xE5 planlegge for n\xE5r ting g\xE5r galt. Det\
+  \ er avgj\xF8rende fordi det hjelper med \xE5 unng\xE5 krasjer og gj\xF8r programvaren\
+  \ din robust og\u2026"
+title: "Feilh\xE5ndtering"
 ---
 
 {{< edit_this_page >}}

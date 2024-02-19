@@ -1,14 +1,19 @@
 ---
-title:                "부분 문자열 추출"
 aliases:
 - /ko/typescript/extracting-substrings/
-date:                  2024-01-20T17:46:31.157352-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "부분 문자열 추출"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/extracting-substrings.md"
+date: 2024-01-20 17:46:31.157352-07:00
+description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uBD80\uBD84\uC744 \uCD94\
+  \uCD9C\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uB370\uC774\uD130 \uAC00\uACF5\uC774\
+  \uB098 \uD2B9\uC815 \uC815\uBCF4\uB97C \uC5BB\uAE30 \uC704\uD574\uC11C \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC774 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:05.803325
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uBD80\uBD84\uC744 \uCD94\uCD9C\
+  \uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uB370\uC774\uD130 \uAC00\uACF5\uC774\uB098\
+  \ \uD2B9\uC815 \uC815\uBCF4\uB97C \uC5BB\uAE30 \uC704\uD574\uC11C \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC774 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C"
 ---
 
 {{< edit_this_page >}}

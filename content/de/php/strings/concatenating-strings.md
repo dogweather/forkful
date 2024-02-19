@@ -1,13 +1,14 @@
 ---
-title:                "Zeichenketten verknüpfen"
 aliases:
 - /de/php/concatenating-strings/
-date:                  2024-01-20T17:35:10.623643-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Zeichenketten verknüpfen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/concatenating-strings.md"
+date: 2024-01-20 17:35:10.623643-07:00
+description: "String-Konkatenation verbindet einfach zwei oder mehr Strings zu einem.\
+  \ Programmierer nutzen das, um dynamische Textausgaben zu erzeugen oder Daten aus\u2026"
+lastmod: 2024-02-18 23:09:04.953674
+model: gpt-4-1106-preview
+summary: "String-Konkatenation verbindet einfach zwei oder mehr Strings zu einem.\
+  \ Programmierer nutzen das, um dynamische Textausgaben zu erzeugen oder Daten aus\u2026"
+title: "Zeichenketten verkn\xFCpfen"
 ---
 
 {{< edit_this_page >}}

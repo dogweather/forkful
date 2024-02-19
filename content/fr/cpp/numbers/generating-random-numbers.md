@@ -1,13 +1,16 @@
 ---
-title:                "Génération de nombres aléatoires"
 aliases:
 - /fr/cpp/generating-random-numbers/
-date:                  2024-01-27T20:32:47.162565-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Génération de nombres aléatoires"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/generating-random-numbers.md"
+date: 2024-01-27 20:32:47.162565-07:00
+description: "La g\xE9n\xE9ration de nombres al\xE9atoires en programmation consiste\
+  \ \xE0 cr\xE9er des s\xE9quences de nombres qui ne pr\xE9sentent aucun ordre ou\
+  \ motif pr\xE9visible. Les\u2026"
+lastmod: 2024-02-18 23:09:09.155915
+model: gpt-4-0125-preview
+summary: "La g\xE9n\xE9ration de nombres al\xE9atoires en programmation consiste \xE0\
+  \ cr\xE9er des s\xE9quences de nombres qui ne pr\xE9sentent aucun ordre ou motif\
+  \ pr\xE9visible. Les\u2026"
+title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 ---
 
 {{< edit_this_page >}}

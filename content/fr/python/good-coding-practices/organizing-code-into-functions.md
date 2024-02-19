@@ -1,13 +1,16 @@
 ---
-title:                "Organisation du code en fonctions"
 aliases:
 - /fr/python/organizing-code-into-functions/
-date:                  2024-01-26T01:11:46.748012-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organisation du code en fonctions"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/organizing-code-into-functions.md"
+date: 2024-01-26 01:11:46.748012-07:00
+description: "Organiser le code en fonctions consiste \xE0 d\xE9composer votre code\
+  \ en morceaux r\xE9utilisables ayant des objectifs sp\xE9cifiques. Nous le faisons\
+  \ pour rendre le\u2026"
+lastmod: 2024-02-18 23:09:08.346121
+model: gpt-4-1106-preview
+summary: "Organiser le code en fonctions consiste \xE0 d\xE9composer votre code en\
+  \ morceaux r\xE9utilisables ayant des objectifs sp\xE9cifiques. Nous le faisons\
+  \ pour rendre le\u2026"
+title: Organisation du code en fonctions
 ---
 
 {{< edit_this_page >}}

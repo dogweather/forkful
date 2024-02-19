@@ -1,13 +1,16 @@
 ---
-title:                "Wycinanie podłańcuchów"
 aliases:
 - /pl/ruby/extracting-substrings/
-date:                  2024-01-20T17:46:23.755713-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wycinanie podłańcuchów"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/extracting-substrings.md"
+date: 2024-01-20 17:46:23.755713-07:00
+description: "Wyci\u0105ganie podci\u0105g\xF3w (substring extraction) polega na wyodr\u0119\
+  bnieniu okre\u015Blonej cz\u0119\u015Bci tekstu ze stringa. Programi\u015Bci robi\u0105\
+  \ to, by manipulowa\u0107 i analizowa\u0107\u2026"
+lastmod: 2024-02-18 23:08:50.112909
+model: gpt-4-1106-preview
+summary: "Wyci\u0105ganie podci\u0105g\xF3w (substring extraction) polega na wyodr\u0119\
+  bnieniu okre\u015Blonej cz\u0119\u015Bci tekstu ze stringa. Programi\u015Bci robi\u0105\
+  \ to, by manipulowa\u0107 i analizowa\u0107\u2026"
+title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 ---
 
 {{< edit_this_page >}}

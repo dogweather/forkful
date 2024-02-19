@@ -1,14 +1,18 @@
 ---
-title:                "Trabalhando com CSV"
 aliases:
 - /pt/powershell/working-with-csv/
-date:                  2024-02-03T19:20:42.682287-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/powershell/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:20:42.682287-07:00
+description: "Trabalhar com arquivos CSV (Comma-Separated Values ou Valores Separados\
+  \ por V\xEDrgula) \xE9 uma tarefa comum para o gerenciamento e manipula\xE7\xE3\
+  o de dados de uma\u2026"
+lastmod: 2024-02-18 23:08:58.391084
+model: gpt-4-0125-preview
+summary: "Trabalhar com arquivos CSV (Comma-Separated Values ou Valores Separados\
+  \ por V\xEDrgula) \xE9 uma tarefa comum para o gerenciamento e manipula\xE7\xE3\
+  o de dados de uma\u2026"
+title: Trabalhando com CSV
 ---
 
 {{< edit_this_page >}}

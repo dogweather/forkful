@@ -1,13 +1,14 @@
 ---
-title:                "Affichage des sorties de débogage"
 aliases:
 - /fr/cpp/printing-debug-output/
-date:                  2024-01-20T17:52:19.719039-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Affichage des sorties de débogage"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/printing-debug-output.md"
+date: 2024-01-20 17:52:19.719039-07:00
+description: "L'impression de sortie de d\xE9bogage consiste \xE0 afficher des informations\
+  \ \xE0 des fins de diagnostic lors de l'ex\xE9cution d'un programme. Les programmeurs\u2026"
+lastmod: 2024-02-18 23:09:09.163601
+model: gpt-4-1106-preview
+summary: "L'impression de sortie de d\xE9bogage consiste \xE0 afficher des informations\
+  \ \xE0 des fins de diagnostic lors de l'ex\xE9cution d'un programme. Les programmeurs\u2026"
+title: "Affichage des sorties de d\xE9bogage"
 ---
 
 {{< edit_this_page >}}

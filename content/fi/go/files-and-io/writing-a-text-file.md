@@ -1,14 +1,18 @@
 ---
-title:                "Tekstitiedoston kirjoittaminen"
 aliases:
 - /fi/go/writing-a-text-file/
-date:                  2024-02-03T18:15:00.254739-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tekstitiedoston kirjoittaminen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:15:00.254739-07:00
+description: "Tekstitiedoston kirjoittaminen Go:lla tarkoittaa tietorivien luomista\
+  \ ja kirjoittamista uuteen tai olemassa olevaan tekstitiedostoon. Ohjelmoijat tekev\xE4\
+  t\u2026"
+lastmod: 2024-02-18 23:09:07.106703
+model: gpt-4-0125-preview
+summary: "Tekstitiedoston kirjoittaminen Go:lla tarkoittaa tietorivien luomista ja\
+  \ kirjoittamista uuteen tai olemassa olevaan tekstitiedostoon. Ohjelmoijat tekev\xE4\
+  t\u2026"
+title: Tekstitiedoston kirjoittaminen
 ---
 
 {{< edit_this_page >}}

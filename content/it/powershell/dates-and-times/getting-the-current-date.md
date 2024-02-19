@@ -1,14 +1,18 @@
 ---
-title:                "Ottenere la data corrente"
 aliases:
 - /it/powershell/getting-the-current-date/
-date:                  2024-02-03T19:10:37.226709-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ottenere la data corrente"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:10:37.226709-07:00
+description: "Ottenere la data corrente in PowerShell riguarda il recupero della data\
+  \ e dell'ora attuali del sistema. Quest'operazione \xE8 fondamentale per compiti\
+  \ come\u2026"
+lastmod: 2024-02-18 23:08:56.104511
+model: gpt-4-0125-preview
+summary: "Ottenere la data corrente in PowerShell riguarda il recupero della data\
+  \ e dell'ora attuali del sistema. Quest'operazione \xE8 fondamentale per compiti\
+  \ come\u2026"
+title: Ottenere la data corrente
 ---
 
 {{< edit_this_page >}}

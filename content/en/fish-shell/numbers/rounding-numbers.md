@@ -1,13 +1,14 @@
 ---
-title:                "Rounding numbers"
 aliases:
 - /en/fish-shell/rounding-numbers/
-date:                  2024-01-25T02:59:33.441599-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rounding numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/rounding-numbers.md"
+date: 2024-01-25 02:59:33.441599-07:00
+description: "Rounding numbers is about chopping off decimal places to simplify your\
+  \ data or fit specific formats. Programmers do it for user-friendly display,\u2026"
+lastmod: 2024-02-18 23:09:11.473938
+model: gpt-4-1106-preview
+summary: "Rounding numbers is about chopping off decimal places to simplify your data\
+  \ or fit specific formats. Programmers do it for user-friendly display,\u2026"
+title: Rounding numbers
 ---
 
 {{< edit_this_page >}}

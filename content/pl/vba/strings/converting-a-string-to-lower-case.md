@@ -1,14 +1,18 @@
 ---
-title:                "Konwersja łańcucha znaków na małe litery"
 aliases:
 - /pl/vba/converting-a-string-to-lower-case/
-date:                  2024-02-01T21:51:10.472439-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Konwersja łańcucha znaków na małe litery"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/vba/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:10.472439-07:00
+description: "Konwertowanie ci\u0105gu znak\xF3w na ma\u0142e litery polega na przekszta\u0142\
+  ceniu wszystkich wielkich liter w ci\u0105gu na ich ma\u0142e odpowiedniki. Proces\
+  \ ten jest niezb\u0119dny\u2026"
+lastmod: 2024-02-18 23:08:49.419730
+model: gpt-4-0125-preview
+summary: "Konwertowanie ci\u0105gu znak\xF3w na ma\u0142e litery polega na przekszta\u0142\
+  ceniu wszystkich wielkich liter w ci\u0105gu na ich ma\u0142e odpowiedniki. Proces\
+  \ ten jest niezb\u0119dny\u2026"
+title: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Conversion d'une chaîne de caractères en minuscules"
 aliases:
 - /fr/cpp/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:37:51.443419-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Conversion d'une chaîne de caractères en minuscules"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:37:51.443419-07:00
+description: "Convertir une cha\xEEne en minuscules, c'est transformer tous ses caract\xE8\
+  res en leur \xE9quivalent minuscule. On le fait pour unifier les donn\xE9es avant\u2026"
+lastmod: 2024-02-18 23:09:09.146054
+model: gpt-4-1106-preview
+summary: "Convertir une cha\xEEne en minuscules, c'est transformer tous ses caract\xE8\
+  res en leur \xE9quivalent minuscule. On le fait pour unifier les donn\xE9es avant\u2026"
+title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 ---
 
 {{< edit_this_page >}}

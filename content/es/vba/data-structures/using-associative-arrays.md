@@ -1,14 +1,18 @@
 ---
-title:                "Utilizando arreglos asociativos"
 aliases:
 - /es/vba/using-associative-arrays/
-date:                  2024-02-01T22:04:20.649805-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizando arreglos asociativos"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/vba/using-associative-arrays.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:20.649805-07:00
+description: "Los arreglos asociativos, a menudo conocidos como diccionarios en Visual\
+  \ Basic para Aplicaciones (VBA), permiten a los programadores crear colecciones\
+  \ de\u2026"
+lastmod: 2024-02-18 23:09:09.788177
+model: gpt-4-0125-preview
+summary: "Los arreglos asociativos, a menudo conocidos como diccionarios en Visual\
+  \ Basic para Aplicaciones (VBA), permiten a los programadores crear colecciones\
+  \ de\u2026"
+title: Utilizando arreglos asociativos
 ---
 
 {{< edit_this_page >}}

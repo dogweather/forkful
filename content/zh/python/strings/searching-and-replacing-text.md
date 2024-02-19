@@ -1,14 +1,19 @@
 ---
-title:                "搜索和替换文本"
 aliases:
 - /zh/python/searching-and-replacing-text/
-date:                  2024-01-20T17:58:24.719137-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "搜索和替换文本"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:24.719137-07:00
+description: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C\u5C31\u662F\u627E\u7279\u5B9A\
+  \u5B57\u7B26\u6216\u5B57\u7B26\u4E32\uFF0C\u7136\u540E\u7528\u5176\u4ED6\u7684\u5185\
+  \u5BB9\u66FF\u6362\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u6279\
+  \u91CF\u4FEE\u6539\u4EE3\u7801\u6216\u6570\u636E\uFF0C\u63D0\u9AD8\u6548\u7387\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:58.777736
+model: gpt-4-1106-preview
+summary: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C\u5C31\u662F\u627E\u7279\u5B9A\
+  \u5B57\u7B26\u6216\u5B57\u7B26\u4E32\uFF0C\u7136\u540E\u7528\u5176\u4ED6\u7684\u5185\
+  \u5BB9\u66FF\u6362\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u6279\
+  \u91CF\u4FEE\u6539\u4EE3\u7801\u6216\u6570\u636E\uFF0C\u63D0\u9AD8\u6548\u7387\u3002"
+title: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C"
 ---
 
 {{< edit_this_page >}}

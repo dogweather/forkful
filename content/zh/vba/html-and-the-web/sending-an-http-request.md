@@ -1,14 +1,26 @@
 ---
-title:                "发送HTTP请求"
 aliases:
 - /zh/vba/sending-an-http-request/
-date:                  2024-02-01T22:01:45.459013-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "发送HTTP请求"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/sending-an-http-request.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:45.459013-07:00
+description: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u53D1\u9001 HTTP \u8BF7\
+  \u6C42\u6D89\u53CA\u901A\u8FC7 HTTP \u8BF7\u6C42\u4EE5\u7F16\u7A0B\u65B9\u5F0F\u8BBF\
+  \u95EE\u7F51\u7EDC\u8D44\u6E90\u6216\u7F51\u7EDC\u670D\u52A1\u3002\u7A0B\u5E8F\u5458\
+  \u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u4ECE\u4ED6\u4EEC\u7684 VBA \u652F\u6301\u7684\
+  \u5E94\u7528\u7A0B\u5E8F\uFF08\u5982 Excel\u3001Access \u6216\u5B9A\u5236\u7684\
+  \ VBA \u89E3\u51B3\u65B9\u6848\uFF09\u4E2D\u6293\u53D6\u6570\u636E\u3001\u4E0E\u5728\
+  \u7EBF API\u2026"
+lastmod: 2024-02-18 23:08:58.977424
+model: gpt-4-0125-preview
+summary: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u53D1\u9001 HTTP \u8BF7\
+  \u6C42\u6D89\u53CA\u901A\u8FC7 HTTP \u8BF7\u6C42\u4EE5\u7F16\u7A0B\u65B9\u5F0F\u8BBF\
+  \u95EE\u7F51\u7EDC\u8D44\u6E90\u6216\u7F51\u7EDC\u670D\u52A1\u3002\u7A0B\u5E8F\u5458\
+  \u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u4ECE\u4ED6\u4EEC\u7684 VBA \u652F\u6301\u7684\
+  \u5E94\u7528\u7A0B\u5E8F\uFF08\u5982 Excel\u3001Access \u6216\u5B9A\u5236\u7684\
+  \ VBA \u89E3\u51B3\u65B9\u6848\uFF09\u4E2D\u6293\u53D6\u6570\u636E\u3001\u4E0E\u5728\
+  \u7EBF API\u2026"
+title: "\u53D1\u9001HTTP\u8BF7\u6C42"
 ---
 
 {{< edit_this_page >}}

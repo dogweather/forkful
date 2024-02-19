@@ -1,13 +1,16 @@
 ---
-title:                "Tulevan tai menneen päivämäärän laskeminen"
 aliases:
 - /fi/ruby/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:31:50.173067-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:31:50.173067-07:00
+description: "\"Mik\xE4 & Miksi?\" Ajan laskeminen tulevaisuuteen tai menneisyyteen\
+  \ tarkoittaa p\xE4iv\xE4m\xE4\xE4r\xE4n laskemista n p\xE4iv\xE4\xE4, viikkoa, kuukautta\
+  \ tai vuotta ennen tai\u2026"
+lastmod: 2024-02-18 23:09:08.197527
+model: gpt-4-1106-preview
+summary: "\"Mik\xE4 & Miksi?\" Ajan laskeminen tulevaisuuteen tai menneisyyteen tarkoittaa\
+  \ p\xE4iv\xE4m\xE4\xE4r\xE4n laskemista n p\xE4iv\xE4\xE4, viikkoa, kuukautta tai\
+  \ vuotta ennen tai\u2026"
+title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 ---
 
 {{< edit_this_page >}}

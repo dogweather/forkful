@@ -1,14 +1,21 @@
 ---
-title:                "读取命令行参数"
 aliases:
 - /zh/php/reading-command-line-arguments/
-date:                  2024-01-20T17:56:27.052362-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "读取命令行参数"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:27.052362-07:00
+description: "\u5728 PHP \u4E2D\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570\u4F7F\u6211\
+  \u4EEC\u80FD\u5728\u811A\u672C\u6267\u884C\u65F6\u63A5\u53D7\u7528\u6237\u8F93\u5165\
+  \u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u63D0\u9AD8\u7075\u6D3B\
+  \u6027\u548C\u4EA4\u4E92\u6027\uFF0C\u8BA9\u7A0B\u5E8F\u53EF\u4EE5\u66F4\u5177\u6709\
+  \u9002\u5E94\u6027\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.229864
+model: gpt-4-1106-preview
+summary: "\u5728 PHP \u4E2D\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570\u4F7F\u6211\u4EEC\
+  \u80FD\u5728\u811A\u672C\u6267\u884C\u65F6\u63A5\u53D7\u7528\u6237\u8F93\u5165\u3002\
+  \u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u63D0\u9AD8\u7075\u6D3B\u6027\
+  \u548C\u4EA4\u4E92\u6027\uFF0C\u8BA9\u7A0B\u5E8F\u53EF\u4EE5\u66F4\u5177\u6709\u9002\
+  \u5E94\u6027\u3002"
+title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
 ---
 
 {{< edit_this_page >}}

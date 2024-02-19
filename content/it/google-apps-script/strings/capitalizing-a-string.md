@@ -1,14 +1,16 @@
 ---
-title:                "Mettere in Maiuscolo una Stringa"
 aliases:
 - /it/google-apps-script/capitalizing-a-string/
-date:                  2024-02-01T21:48:53.844534-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Mettere in Maiuscolo una Stringa"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/google-apps-script/capitalizing-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:48:53.844534-07:00
+description: "Capitalizzare una stringa comporta la modifica dell'input in modo che\
+  \ il primo carattere sia maiuscolo mentre il resto rimanga in minuscolo, comunemente\u2026"
+lastmod: 2024-02-18 23:08:55.459333
+model: gpt-4-0125-preview
+summary: "Capitalizzare una stringa comporta la modifica dell'input in modo che il\
+  \ primo carattere sia maiuscolo mentre il resto rimanga in minuscolo, comunemente\u2026"
+title: Mettere in Maiuscolo una Stringa
 ---
 
 {{< edit_this_page >}}

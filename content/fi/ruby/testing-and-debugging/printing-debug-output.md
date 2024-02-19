@@ -1,13 +1,16 @@
 ---
-title:                "Virheenjäljitystulosteiden tulostaminen"
 aliases:
 - /fi/ruby/printing-debug-output/
-date:                  2024-01-20T17:53:33.494522-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheenjäljitystulosteiden tulostaminen"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/printing-debug-output.md"
+date: 2024-01-20 17:53:33.494522-07:00
+description: "Debug-tulostus on koodissa olevien `puts` tai `p` -komentojen k\xE4\
+  ytt\xF6\xE4 v\xE4liaikaisten viestien n\xE4ytt\xE4miseen, jotta n\xE4hd\xE4\xE4\
+  n mit\xE4 ohjelmassa tapahtuu. Se\u2026"
+lastmod: 2024-02-18 23:09:08.185515
+model: gpt-4-1106-preview
+summary: "Debug-tulostus on koodissa olevien `puts` tai `p` -komentojen k\xE4ytt\xF6\
+  \xE4 v\xE4liaikaisten viestien n\xE4ytt\xE4miseen, jotta n\xE4hd\xE4\xE4n mit\xE4\
+  \ ohjelmassa tapahtuu. Se\u2026"
+title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 ---
 
 {{< edit_this_page >}}

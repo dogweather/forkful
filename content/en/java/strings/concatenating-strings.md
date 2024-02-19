@@ -1,13 +1,14 @@
 ---
-title:                "Concatenating strings"
 aliases:
 - /en/java/concatenating-strings/
-date:                  2024-01-20T17:34:55.675076-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenating strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/concatenating-strings.md"
+date: 2024-01-20 17:34:55.675076-07:00
+description: "Concatenating strings means sticking them together end-to-end to make\
+  \ a new string. It's handy for creating custom messages, building up text for output,\u2026"
+lastmod: 2024-02-18 23:09:10.923192
+model: gpt-4-1106-preview
+summary: "Concatenating strings means sticking them together end-to-end to make a\
+  \ new string. It's handy for creating custom messages, building up text for output,\u2026"
+title: Concatenating strings
 ---
 
 {{< edit_this_page >}}

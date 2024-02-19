@@ -1,14 +1,18 @@
 ---
-title:                "Tests Schreiben"
 aliases:
 - /de/typescript/writing-tests/
-date:                  2024-02-03T19:32:08.777954-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tests Schreiben"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:08.777954-07:00
+description: "Das Schreiben von Tests in TypeScript umfasst das Erstellen automatisierter\
+  \ Skripte, um die Funktionalit\xE4t und Richtigkeit Ihres Codes zu \xFCberpr\xFC\
+  fen.\u2026"
+lastmod: 2024-02-18 23:09:04.600483
+model: gpt-4-0125-preview
+summary: "Das Schreiben von Tests in TypeScript umfasst das Erstellen automatisierter\
+  \ Skripte, um die Funktionalit\xE4t und Richtigkeit Ihres Codes zu \xFCberpr\xFC\
+  fen.\u2026"
+title: Tests Schreiben
 ---
 
 {{< edit_this_page >}}

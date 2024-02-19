@@ -1,14 +1,29 @@
 ---
-title:                "JSON के साथ काम करना"
 aliases:
 - /hi/c-sharp/working-with-json/
-date:                  2024-02-03T19:23:11.342820-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "JSON के साथ काम करना"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:11.342820-07:00
+description: "JSON (JavaScript Object Notation) \u0915\u0947 \u0938\u093E\u0925 \u0915\
+  \u093E\u092E \u0915\u0930\u0928\u093E JSON \u0921\u0947\u091F\u093E \u0915\u094B\
+  \ \u092A\u093E\u0930\u094D\u0938 \u0915\u0930\u0928\u093E, \u0909\u0924\u094D\u092A\
+  \u0928\u094D\u0928 \u0915\u0930\u0928\u093E \u0914\u0930 \u092A\u0942\u091B\u0924\
+  \u093E\u091B \u0915\u0930\u0928\u093E \u0936\u093E\u092E\u093F\u0932 \u0939\u0948\
+  , \u091C\u094B \u0906\u0927\u0941\u0928\u093F\u0915 \u092A\u094D\u0930\u094B\u0917\
+  \u094D\u0930\u093E\u092E\u093F\u0902\u0917 \u0915\u0947 \u0932\u093F\u090F \u090F\
+  \u0915\u2026"
+lastmod: 2024-02-18 23:09:03.385148
+model: gpt-4-0125-preview
+summary: "JSON (JavaScript Object Notation) \u0915\u0947 \u0938\u093E\u0925 \u0915\
+  \u093E\u092E \u0915\u0930\u0928\u093E JSON \u0921\u0947\u091F\u093E \u0915\u094B\
+  \ \u092A\u093E\u0930\u094D\u0938 \u0915\u0930\u0928\u093E, \u0909\u0924\u094D\u092A\
+  \u0928\u094D\u0928 \u0915\u0930\u0928\u093E \u0914\u0930 \u092A\u0942\u091B\u0924\
+  \u093E\u091B \u0915\u0930\u0928\u093E \u0936\u093E\u092E\u093F\u0932 \u0939\u0948\
+  , \u091C\u094B \u0906\u0927\u0941\u0928\u093F\u0915 \u092A\u094D\u0930\u094B\u0917\
+  \u094D\u0930\u093E\u092E\u093F\u0902\u0917 \u0915\u0947 \u0932\u093F\u090F \u090F\
+  \u0915\u2026"
+title: "JSON \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\
+  \u093E"
 ---
 
 {{< edit_this_page >}}

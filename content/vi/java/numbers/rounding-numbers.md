@@ -1,15 +1,22 @@
 ---
-title:                "Làm tròn số"
 aliases:
 - /vi/java/rounding-numbers/
-date:                  2024-01-28T22:06:53.206409-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm tròn số"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/java/rounding-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:06:53.206409-07:00
+description: "L\xE0m tr\xF2n s\u1ED1 c\xF3 ngh\u0129a l\xE0 \u0111i\u1EC1u ch\u1EC9\
+  nh ch\xFAng \u0111\u1EC3 \u0111\u1EA1t m\u1ED9t \u0111\u1ED9 ch\xEDnh x\xE1c ch\u1EC9\
+  \ \u0111\u1ECBnh. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0\
+  y \u0111\u1EC3 \u0111\u01A1n gi\u1EA3n h\xF3a s\u1ED1 li\u1EC7u cho d\u1EC5 \u0111\
+  \u1ECDc, \u0111\u1EC3 \u0111\xE1p\u2026"
+lastmod: 2024-02-18 23:08:50.551314
+model: gpt-4-0125-preview
+summary: "L\xE0m tr\xF2n s\u1ED1 c\xF3 ngh\u0129a l\xE0 \u0111i\u1EC1u ch\u1EC9nh\
+  \ ch\xFAng \u0111\u1EC3 \u0111\u1EA1t m\u1ED9t \u0111\u1ED9 ch\xEDnh x\xE1c ch\u1EC9\
+  \ \u0111\u1ECBnh. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0\
+  y \u0111\u1EC3 \u0111\u01A1n gi\u1EA3n h\xF3a s\u1ED1 li\u1EC7u cho d\u1EC5 \u0111\
+  \u1ECDc, \u0111\u1EC3 \u0111\xE1p\u2026"
+title: "L\xE0m tr\xF2n s\u1ED1"
 ---
 
 {{< edit_this_page >}}

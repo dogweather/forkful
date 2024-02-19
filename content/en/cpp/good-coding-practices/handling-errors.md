@@ -1,13 +1,14 @@
 ---
-title:                "Handling errors"
 aliases:
 - /en/cpp/handling-errors/
-date:                  2024-01-21T21:19:24.347489-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Handling errors"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/handling-errors.md"
+date: 2024-01-21 21:19:24.347489-07:00
+description: Handling errors means planning for when things go wrong. It's vital because
+  it helps avoid crashes and makes your software robust and user-friendly.
+lastmod: 2024-02-18 23:09:11.362818
+model: gpt-4-1106-preview
+summary: Handling errors means planning for when things go wrong. It's vital because
+  it helps avoid crashes and makes your software robust and user-friendly.
+title: Handling errors
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Kahden päivämäärän vertailu"
 aliases:
 - /fi/powershell/comparing-two-dates/
-date:                  2024-01-20T17:33:36.252319-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Kahden päivämäärän vertailu"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/comparing-two-dates.md"
+date: 2024-01-20 17:33:36.252319-07:00
+description: "Vertaamme kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 n\xE4hd\xE4ksemme niiden\
+  \ ajallisen j\xE4rjestyksen tai aikaeron. Ohjelmoijat tekev\xE4t t\xE4t\xE4 aikataulujen\
+  \ hallinnassa, m\xE4\xE4r\xE4aikojen\u2026"
+lastmod: 2024-02-18 23:09:07.867419
+model: gpt-4-1106-preview
+summary: "Vertaamme kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 n\xE4hd\xE4ksemme niiden ajallisen\
+  \ j\xE4rjestyksen tai aikaeron. Ohjelmoijat tekev\xE4t t\xE4t\xE4 aikataulujen hallinnassa,\
+  \ m\xE4\xE4r\xE4aikojen\u2026"
+title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 ---
 
 {{< edit_this_page >}}

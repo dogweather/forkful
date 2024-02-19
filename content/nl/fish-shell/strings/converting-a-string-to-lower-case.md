@@ -1,15 +1,16 @@
 ---
-title:                "Een string omzetten naar kleine letters"
 aliases:
 - /nl/fish-shell/converting-a-string-to-lower-case/
-date:                  2024-01-28T21:57:30.622145-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string omzetten naar kleine letters"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:57:30.622145-07:00
+description: "Het omzetten van een string naar kleine letters verandert alle letters\
+  \ in die string naar hun kleine lettervorm. Programmeurs doen dit voor consistentie,\u2026"
+lastmod: 2024-02-18 23:09:02.308685
+model: gpt-4-0125-preview
+summary: "Het omzetten van een string naar kleine letters verandert alle letters in\
+  \ die string naar hun kleine lettervorm. Programmeurs doen dit voor consistentie,\u2026"
+title: Een string omzetten naar kleine letters
 ---
 
 {{< edit_this_page >}}

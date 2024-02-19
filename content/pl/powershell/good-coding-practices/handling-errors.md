@@ -1,13 +1,16 @@
 ---
-title:                "Obsługa błędów"
 aliases:
 - /pl/powershell/handling-errors/
-date:                  2024-01-26T00:56:36.064244-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Obsługa błędów"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/handling-errors.md"
+date: 2024-01-26 00:56:36.064244-07:00
+description: "Obs\u0142uga b\u0142\u0119d\xF3w w PowerShell polega na przewidywaniu\
+  \ nieprzewidzianych sytuacji i zarz\u0105dzaniu nimi w spos\xF3b p\u0142ynny. Programi\u015B\
+  ci robi\u0105 to, aby zapobiec\u2026"
+lastmod: 2024-02-18 23:08:49.836317
+model: gpt-4-1106-preview
+summary: "Obs\u0142uga b\u0142\u0119d\xF3w w PowerShell polega na przewidywaniu nieprzewidzianych\
+  \ sytuacji i zarz\u0105dzaniu nimi w spos\xF3b p\u0142ynny. Programi\u015Bci robi\u0105\
+  \ to, aby zapobiec\u2026"
+title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 ---
 
 {{< edit_this_page >}}

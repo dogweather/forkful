@@ -1,13 +1,16 @@
 ---
-title:                "Affichage des sorties de débogage"
 aliases:
 - /fr/arduino/printing-debug-output/
-date:                  2024-01-20T17:51:50.012697-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Affichage des sorties de débogage"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/printing-debug-output.md"
+date: 2024-01-20 17:51:50.012697-07:00
+description: "Imprimer un d\xE9bogage, c'est \xE9crire dans la console pour suivre\
+  \ ce que fait votre programme. On le fait pour rep\xE9rer les bugs et comprendre\
+  \ le flux\u2026"
+lastmod: 2024-02-18 23:09:09.117068
+model: gpt-4-1106-preview
+summary: "Imprimer un d\xE9bogage, c'est \xE9crire dans la console pour suivre ce\
+  \ que fait votre programme. On le fait pour rep\xE9rer les bugs et comprendre le\
+  \ flux\u2026"
+title: "Affichage des sorties de d\xE9bogage"
 ---
 
 {{< edit_this_page >}}

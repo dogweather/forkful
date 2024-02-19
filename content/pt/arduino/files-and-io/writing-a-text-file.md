@@ -1,14 +1,18 @@
 ---
-title:                "Escrevendo um arquivo de texto"
 aliases:
 - /pt/arduino/writing-a-text-file/
-date:                  2024-02-03T19:27:51.275753-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escrevendo um arquivo de texto"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:51.275753-07:00
+description: "Escrever um arquivo de texto no Arduino envolve salvar dados em um arquivo\
+  \ em um cart\xE3o SD ou m\xF3dulo de armazenamento semelhante, muitas vezes para\
+  \ fins\u2026"
+lastmod: 2024-02-18 23:08:58.427324
+model: gpt-4-0125-preview
+summary: "Escrever um arquivo de texto no Arduino envolve salvar dados em um arquivo\
+  \ em um cart\xE3o SD ou m\xF3dulo de armazenamento semelhante, muitas vezes para\
+  \ fins\u2026"
+title: Escrevendo um arquivo de texto
 ---
 
 {{< edit_this_page >}}

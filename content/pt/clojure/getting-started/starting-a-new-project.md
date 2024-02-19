@@ -1,13 +1,15 @@
 ---
-title:                "Iniciando um novo projeto"
 aliases:
 - /pt/clojure/starting-a-new-project/
-date:                  2024-01-20T18:03:32.289010-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Iniciando um novo projeto"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/starting-a-new-project.md"
+date: 2024-01-20 18:03:32.289010-07:00
+description: "Come\xE7ar um novo projeto \xE9 o processo de criar a base para seu\
+  \ c\xF3digo em Clojure - \xE9 como preparar o terreno antes de construir uma casa.\
+  \ Programadores\u2026"
+lastmod: 2024-02-18 23:08:57.803358
+model: gpt-4-1106-preview
+summary: "Come\xE7ar um novo projeto \xE9 o processo de criar a base para seu c\xF3\
+  digo em Clojure - \xE9 como preparar o terreno antes de construir uma casa. Programadores\u2026"
+title: Iniciando um novo projeto
 ---
 
 {{< edit_this_page >}}

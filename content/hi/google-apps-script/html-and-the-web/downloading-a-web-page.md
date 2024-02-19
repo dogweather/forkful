@@ -1,14 +1,31 @@
 ---
-title:                "वेब पेज डाउनलोड करना"
 aliases:
 - /hi/google-apps-script/downloading-a-web-page/
-date:                  2024-02-01T21:54:24.785577-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "वेब पेज डाउनलोड करना"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/google-apps-script/downloading-a-web-page.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:24.785577-07:00
+description: "Google Apps Script \u092E\u0947\u0902 \u090F\u0915 \u0935\u0947\u092C\
+  \ \u092A\u0947\u091C \u0915\u094B \u0921\u093E\u0909\u0928\u0932\u094B\u0921 \u0915\
+  \u0930\u0928\u093E \u0935\u093F\u092D\u093F\u0928\u094D\u0928 \u092A\u094D\u0930\
+  \u092F\u094B\u091C\u0928\u094B\u0902 \u091C\u0948\u0938\u0947 \u0915\u093F \u0935\
+  \u0947\u092C \u0938\u094D\u0915\u094D\u0930\u0947\u092A\u093F\u0902\u0917, \u0921\
+  \u093E\u091F\u093E \u0928\u093F\u0937\u094D\u0915\u0930\u094D\u0937\u0923, \u092F\
+  \u093E \u092A\u0930\u093F\u0935\u0930\u094D\u0924\u0928\u094B\u0902 \u0915\u0940\
+  \ \u0928\u093F\u0917\u0930\u093E\u0928\u0940 \u0915\u0947 \u0932\u093F\u090F HTML\
+  \ \u0915\u0947 \u092E\u093E\u0927\u094D\u092F\u092E\u2026"
+lastmod: 2024-02-18 23:09:02.565070
+model: gpt-4-0125-preview
+summary: "Google Apps Script \u092E\u0947\u0902 \u090F\u0915 \u0935\u0947\u092C \u092A\
+  \u0947\u091C \u0915\u094B \u0921\u093E\u0909\u0928\u0932\u094B\u0921 \u0915\u0930\
+  \u0928\u093E \u0935\u093F\u092D\u093F\u0928\u094D\u0928 \u092A\u094D\u0930\u092F\
+  \u094B\u091C\u0928\u094B\u0902 \u091C\u0948\u0938\u0947 \u0915\u093F \u0935\u0947\
+  \u092C \u0938\u094D\u0915\u094D\u0930\u0947\u092A\u093F\u0902\u0917, \u0921\u093E\
+  \u091F\u093E \u0928\u093F\u0937\u094D\u0915\u0930\u094D\u0937\u0923, \u092F\u093E\
+  \ \u092A\u0930\u093F\u0935\u0930\u094D\u0924\u0928\u094B\u0902 \u0915\u0940 \u0928\
+  \u093F\u0917\u0930\u093E\u0928\u0940 \u0915\u0947 \u0932\u093F\u090F HTML \u0915\
+  \u0947 \u092E\u093E\u0927\u094D\u092F\u092E\u2026"
+title: "\u0935\u0947\u092C \u092A\u0947\u091C \u0921\u093E\u0909\u0928\u0932\u094B\
+  \u0921 \u0915\u0930\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

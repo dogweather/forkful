@@ -1,13 +1,14 @@
 ---
-title:                "Organizing code into functions"
 aliases:
 - /en/elixir/organizing-code-into-functions/
-date:                  2024-01-25T03:00:07.632904-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organizing code into functions"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/organizing-code-into-functions.md"
+date: 2024-01-25 03:00:07.632904-07:00
+description: "Organizing code into functions means chunking related operations into\
+  \ reusable blocks. We do it to improve readability and maintainability, reduce\u2026"
+lastmod: 2024-02-18 23:09:10.771044
+model: gpt-4-1106-preview
+summary: "Organizing code into functions means chunking related operations into reusable\
+  \ blocks. We do it to improve readability and maintainability, reduce\u2026"
+title: Organizing code into functions
 ---
 
 {{< edit_this_page >}}

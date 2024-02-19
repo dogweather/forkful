@@ -1,12 +1,15 @@
 ---
-title:                "Analyse av HTML"
 aliases:
 - /no/java/parsing-html/
-date:                  2024-01-20T15:32:52.025900-07:00
-simple_title:         "Analyse av HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/parsing-html.md"
+date: 2024-01-20 15:32:52.025900-07:00
+description: "Parsing av HTML betyr \xE5 tolke og organisere HTML-kode slik at data\
+  \ kan leses og h\xE5ndteres av et program. Programm\xF8rer parser HTML for \xE5\
+  \ hente ut\u2026"
+lastmod: 2024-02-18 23:08:53.768755
+summary: "Parsing av HTML betyr \xE5 tolke og organisere HTML-kode slik at data kan\
+  \ leses og h\xE5ndteres av et program. Programm\xF8rer parser HTML for \xE5 hente\
+  \ ut\u2026"
+title: Analyse av HTML
 ---
 
 {{< edit_this_page >}}

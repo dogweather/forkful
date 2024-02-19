@@ -1,14 +1,28 @@
 ---
-title:                "문자열 연결하기"
 aliases:
 - /ko/vba/concatenating-strings/
-date:                  2024-02-01T21:50:49.453870-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열 연결하기"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/vba/concatenating-strings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:49.453870-07:00
+description: "Visual Basic for Applications(VBA)\uC5D0\uC11C\uC758 \uC5F0\uACB0 \uC791\
+  \uC5C5\uC740 \uB450 \uAC1C \uC774\uC0C1\uC758 \uBB38\uC790\uC5F4\uC744 \uB2E8\uC77C\
+  \ \uC5D4\uD130\uD2F0\uB85C \uACB0\uD569\uD558\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\
+  \uB2E4. \uC774\uB294 \uC0AC\uC6A9\uC790 \uBA54\uC2DC\uC9C0 \uC0DD\uC131, SQL \uCFFC\
+  \uB9AC \uC0DD\uC131 \uB4F1\uC744 \uC704\uD574 \uD544\uC218\uC801\uC778 \uD504\uB85C\
+  \uADF8\uB798\uBC0D\uC758 \uAE30\uBCF8 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uC65C\uB0D0\
+  \uD558\uBA74, \uC774\uB97C \uD1B5\uD574 \uBB38\uC790\uC5F4 \uB370\uC774\uD130\uC758\
+  \u2026"
+lastmod: 2024-02-18 23:09:05.938495
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C\uC758 \uC5F0\uACB0 \uC791\
+  \uC5C5\uC740 \uB450 \uAC1C \uC774\uC0C1\uC758 \uBB38\uC790\uC5F4\uC744 \uB2E8\uC77C\
+  \ \uC5D4\uD130\uD2F0\uB85C \uACB0\uD569\uD558\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\
+  \uB2E4. \uC774\uB294 \uC0AC\uC6A9\uC790 \uBA54\uC2DC\uC9C0 \uC0DD\uC131, SQL \uCFFC\
+  \uB9AC \uC0DD\uC131 \uB4F1\uC744 \uC704\uD574 \uD544\uC218\uC801\uC778 \uD504\uB85C\
+  \uADF8\uB798\uBC0D\uC758 \uAE30\uBCF8 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uC65C\uB0D0\
+  \uD558\uBA74, \uC774\uB97C \uD1B5\uD574 \uBB38\uC790\uC5F4 \uB370\uC774\uD130\uC758\
+  \u2026"
+title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,14 @@
 ---
-title:                "正規表現の使用"
 aliases:
 - /ja/php/using-regular-expressions/
-date:                  2024-02-03T19:17:55.001320-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "正規表現の使用"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:17:55.001320-07:00
+description: "\u2026"
+lastmod: 2024-02-18 23:08:54.986542
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u6B63\u898F\u8868\u73FE\u306E\u4F7F\u7528"
 ---
 
 {{< edit_this_page >}}

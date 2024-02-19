@@ -1,13 +1,16 @@
 ---
-title:                "Calcular una fecha en el futuro o pasado"
 aliases:
 - /es/elixir/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:30:42.877933-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Calcular una fecha en el futuro o pasado"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:30:42.877933-07:00
+description: "Calcular una fecha futura o pasada es simplemente determinar qu\xE9\
+  \ d\xEDa ser\xE1 o fue despu\xE9s o antes de un tiempo espec\xEDfico. Los programadores\
+  \ lo hacen para\u2026"
+lastmod: 2024-02-18 23:09:09.671407
+model: gpt-4-1106-preview
+summary: "Calcular una fecha futura o pasada es simplemente determinar qu\xE9 d\xED\
+  a ser\xE1 o fue despu\xE9s o antes de un tiempo espec\xEDfico. Los programadores\
+  \ lo hacen para\u2026"
+title: Calcular una fecha en el futuro o pasado
 ---
 
 {{< edit_this_page >}}

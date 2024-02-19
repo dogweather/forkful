@@ -1,13 +1,14 @@
 ---
-title:                "Arbeiten mit XML"
 aliases:
 - /de/c-sharp/working-with-xml/
-date:                  2024-01-26T04:28:42.748220-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeiten mit XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/working-with-xml.md"
+date: 2024-01-26 04:28:42.748220-07:00
+description: "XML (eXtensible Markup Language) dreht sich um das Strukturieren von\
+  \ Daten in einem lesbaren Format. Programmierer jonglieren mit XML f\xFCr Konfigurationen,\u2026"
+lastmod: 2024-02-18 23:09:04.897884
+model: gpt-4-0125-preview
+summary: "XML (eXtensible Markup Language) dreht sich um das Strukturieren von Daten\
+  \ in einem lesbaren Format. Programmierer jonglieren mit XML f\xFCr Konfigurationen,\u2026"
+title: Arbeiten mit XML
 ---
 
 {{< edit_this_page >}}

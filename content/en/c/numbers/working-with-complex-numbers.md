@@ -1,12 +1,14 @@
 ---
-title:                "Working with complex numbers"
 aliases:
 - /en/c/working-with-complex-numbers/
-date:                  2024-02-03T17:50:22.789970-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Working with complex numbers"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/working-with-complex-numbers.md"
+date: 2024-02-03 17:50:22.789970-07:00
+description: "Complex numbers consist of a real part and an imaginary part, represented\
+  \ as `a + bi` where `i` is the square root of `-1`. Programmers work with complex\u2026"
+lastmod: 2024-02-18 23:09:11.516501
+model: gpt-4-0125-preview
+summary: "Complex numbers consist of a real part and an imaginary part, represented\
+  \ as `a + bi` where `i` is the square root of `-1`. Programmers work with complex\u2026"
+title: Working with complex numbers
 ---
 
 {{< edit_this_page >}}

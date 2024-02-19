@@ -1,14 +1,30 @@
 ---
-title:                "오류 처리하기"
 aliases:
 - /ko/google-apps-script/handling-errors/
-date:                  2024-02-01T21:55:06.000072-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "오류 처리하기"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/handling-errors.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:06.000072-07:00
+description: "Google Apps Script\uC5D0\uC11C\uC758 \uC624\uB958 \uCC98\uB9AC\uB294\
+  \ \uC2A4\uD06C\uB9BD\uD2B8 \uC2E4\uD589 \uC911\uC5D0 \uBC1C\uC0DD\uD560 \uC218 \uC788\
+  \uB294 \uC608\uC678\uB098 \uC624\uB958\uB97C \uC608\uCE21\uD558\uACE0, \uCE90\uCE58\
+  \uD558\uBA70, \uB300\uC751\uD558\uB294 \uAC83\uC5D0 \uAD00\uD55C \uAC83\uC785\uB2C8\
+  \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC2A4\uD06C\uB9BD\uD2B8\uAC00\
+  \ \uC608\uC0C1\uCE58 \uBABB\uD55C \uC2E4\uD328\uB85C\uBD80\uD130 \uBCF4\uD638\uB418\
+  \uB3C4\uB85D \uD558\uC5EC, \uB354\uC6B1 \uBD80\uB4DC\uB7FD\uACE0 \uC0AC\uC6A9\uC790\
+  \ \uCE5C\uD654\uC801\uC778 \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC744 \uBCF4\uC7A5\
+  \uD558\uACE0,\u2026"
+lastmod: 2024-02-18 23:09:05.568918
+model: gpt-4-0125-preview
+summary: "Google Apps Script\uC5D0\uC11C\uC758 \uC624\uB958 \uCC98\uB9AC\uB294 \uC2A4\
+  \uD06C\uB9BD\uD2B8 \uC2E4\uD589 \uC911\uC5D0 \uBC1C\uC0DD\uD560 \uC218 \uC788\uB294\
+  \ \uC608\uC678\uB098 \uC624\uB958\uB97C \uC608\uCE21\uD558\uACE0, \uCE90\uCE58\uD558\
+  \uBA70, \uB300\uC751\uD558\uB294 \uAC83\uC5D0 \uAD00\uD55C \uAC83\uC785\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC2A4\uD06C\uB9BD\uD2B8\uAC00 \uC608\
+  \uC0C1\uCE58 \uBABB\uD55C \uC2E4\uD328\uB85C\uBD80\uD130 \uBCF4\uD638\uB418\uB3C4\
+  \uB85D \uD558\uC5EC, \uB354\uC6B1 \uBD80\uB4DC\uB7FD\uACE0 \uC0AC\uC6A9\uC790 \uCE5C\
+  \uD654\uC801\uC778 \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC744 \uBCF4\uC7A5\uD558\
+  \uACE0,\u2026"
+title: "\uC624\uB958 \uCC98\uB9AC\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

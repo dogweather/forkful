@@ -1,15 +1,22 @@
 ---
-title:                "Đọc một tệp văn bản"
 aliases:
 - /vi/python/reading-a-text-file/
-date:                  2024-01-28T22:05:14.586805-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Đọc một tệp văn bản"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/python/reading-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:05:14.586805-07:00
+description: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Python l\xE0\
+  \ vi\u1EC7c l\u1EA5y d\u1EEF li\u1EC7u t\u1EEB m\u1ED9t t\u1EC7p c\xF3 s\u1EB5n\
+  \ tr\xEAn \u0111\u0129a c\u1EE7a b\u1EA1n ho\u1EB7c qua m\u1EA1ng. C\xE1c l\u1EAD\
+  p tr\xECnh vi\xEAn \u0111\u1ECDc t\u1EC7p \u0111\u1EC3 s\u1EED d\u1EE5ng d\u1EEF\
+  \ li\u1EC7u l\u01B0u\u2026"
+lastmod: 2024-02-18 23:08:50.287400
+model: gpt-4-0125-preview
+summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Python l\xE0 vi\u1EC7\
+  c l\u1EA5y d\u1EEF li\u1EC7u t\u1EEB m\u1ED9t t\u1EC7p c\xF3 s\u1EB5n tr\xEAn \u0111\
+  \u0129a c\u1EE7a b\u1EA1n ho\u1EB7c qua m\u1EA1ng. C\xE1c l\u1EADp tr\xECnh vi\xEA\
+  n \u0111\u1ECDc t\u1EC7p \u0111\u1EC3 s\u1EED d\u1EE5ng d\u1EEF li\u1EC7u l\u01B0\
+  u\u2026"
+title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 ---
 
 {{< edit_this_page >}}

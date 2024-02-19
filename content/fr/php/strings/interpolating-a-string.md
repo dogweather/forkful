@@ -1,13 +1,16 @@
 ---
-title:                "Interpolation de chaînes de caractères"
 aliases:
 - /fr/php/interpolating-a-string/
-date:                  2024-01-20T17:51:12.090083-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolation de chaînes de caractères"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/php/interpolating-a-string.md"
+date: 2024-01-20 17:51:12.090083-07:00
+description: "Interpoler une cha\xEEne de caract\xE8res, c'est y ins\xE9rer des variables\
+  \ directement. On le fait pour simplifier la concat\xE9nation et rendre le code\
+  \ plus lisible."
+lastmod: 2024-02-18 23:09:08.906795
+model: gpt-4-1106-preview
+summary: "Interpoler une cha\xEEne de caract\xE8res, c'est y ins\xE9rer des variables\
+  \ directement. On le fait pour simplifier la concat\xE9nation et rendre le code\
+  \ plus lisible."
+title: "Interpolation de cha\xEEnes de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

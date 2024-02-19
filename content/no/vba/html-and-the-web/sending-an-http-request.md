@@ -1,14 +1,18 @@
 ---
-title:                "Sende en HTTP-forespørsel"
 aliases:
 - /no/vba/sending-an-http-request/
-date:                  2024-02-01T22:02:06.340247-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sende en HTTP-forespørsel"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/vba/sending-an-http-request.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:02:06.340247-07:00
+description: "\xC5 sende en HTTP-foresp\xF8rsel i Visual Basic for Applications (VBA)\
+  \ inneb\xE6rer programmatisk tilgang til webressurser eller webtjenester ved \xE5\
+  \ gj\xF8re\u2026"
+lastmod: 2024-02-18 23:08:53.724613
+model: gpt-4-0125-preview
+summary: "\xC5 sende en HTTP-foresp\xF8rsel i Visual Basic for Applications (VBA)\
+  \ inneb\xE6rer programmatisk tilgang til webressurser eller webtjenester ved \xE5\
+  \ gj\xF8re\u2026"
+title: "Sende en HTTP-foresp\xF8rsel"
 ---
 
 {{< edit_this_page >}}

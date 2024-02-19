@@ -1,13 +1,16 @@
 ---
-title:                "Sammenlikning av to datoer"
 aliases:
 - /no/rust/comparing-two-dates/
-date:                  2024-01-20T17:34:04.892679-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammenlikning av to datoer"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/comparing-two-dates.md"
+date: 2024-01-20 17:34:04.892679-07:00
+description: "Sammenligning av to datoer ser p\xE5 forskjellen mellom dem \u2014 enten\
+  \ i tid, rekkef\xF8lge, eller begge deler. Programmerere bruker dette til \xE5 h\xE5\
+  ndtere frister,\u2026"
+lastmod: 2024-02-18 23:08:53.697311
+model: gpt-4-1106-preview
+summary: "Sammenligning av to datoer ser p\xE5 forskjellen mellom dem \u2014 enten\
+  \ i tid, rekkef\xF8lge, eller begge deler. Programmerere bruker dette til \xE5 h\xE5\
+  ndtere frister,\u2026"
+title: Sammenlikning av to datoer
 ---
 
 {{< edit_this_page >}}

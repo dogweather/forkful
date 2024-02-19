@@ -1,13 +1,16 @@
 ---
-title:                "Interpolando uma string"
 aliases:
 - /pt/c-sharp/interpolating-a-string/
-date:                  2024-01-20T17:50:28.260077-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolando uma string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/interpolating-a-string.md"
+date: 2024-01-20 17:50:28.260077-07:00
+description: "Interpola\xE7\xE3o de strings no C# permite injetar valores de vari\xE1\
+  veis dentro de uma string literal, melhorando a legibilidade e a manuten\xE7\xE3\
+  o do c\xF3digo.\u2026"
+lastmod: 2024-02-18 23:08:58.143937
+model: gpt-4-1106-preview
+summary: "Interpola\xE7\xE3o de strings no C# permite injetar valores de vari\xE1\
+  veis dentro de uma string literal, melhorando a legibilidade e a manuten\xE7\xE3\
+  o do c\xF3digo.\u2026"
+title: Interpolando uma string
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Korzystanie z interaktywnego shella (REPL)"
 aliases:
 - /pl/c-sharp/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:12:26.437455-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z interaktywnego shella (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:12:26.437455-07:00
+description: "REPL, czyli p\u0119tla Czytaj-Wykonaj-Wypisz, pozwala wpisywa\u0107\
+  \ i interaktywnie uruchamia\u0107 kod w C#. Programi\u015Bci u\u017Cywaj\u0105 go\
+  \ do szybkich eksperyment\xF3w,\u2026"
+lastmod: 2024-02-18 23:08:49.612249
+model: gpt-4-0125-preview
+summary: "REPL, czyli p\u0119tla Czytaj-Wykonaj-Wypisz, pozwala wpisywa\u0107 i interaktywnie\
+  \ uruchamia\u0107 kod w C#. Programi\u015Bci u\u017Cywaj\u0105 go do szybkich eksperyment\xF3\
+  w,\u2026"
+title: Korzystanie z interaktywnego shella (REPL)
 ---
 
 {{< edit_this_page >}}

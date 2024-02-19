@@ -1,13 +1,16 @@
 ---
-title:                "Å bruke en feilsøker"
 aliases:
 - /no/c-sharp/using-a-debugger/
-date:                  2024-01-26T03:48:24.443494-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å bruke en feilsøker"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/using-a-debugger.md"
+date: 2024-01-26 03:48:24.443494-07:00
+description: "\xC5 bruke en feils\xF8ker betyr \xE5 ta i bruk spesialiserte verkt\xF8\
+  y for \xE5 teste og diagnostisere kode. Programutviklere gj\xF8r det for \xE5 knuse\
+  \ feil, forst\xE5\u2026"
+lastmod: 2024-02-18 23:08:53.898222
+model: gpt-4-0125-preview
+summary: "\xC5 bruke en feils\xF8ker betyr \xE5 ta i bruk spesialiserte verkt\xF8\
+  y for \xE5 teste og diagnostisere kode. Programutviklere gj\xF8r det for \xE5 knuse\
+  \ feil, forst\xE5\u2026"
+title: "\xC5 bruke en feils\xF8ker"
 ---
 
 {{< edit_this_page >}}

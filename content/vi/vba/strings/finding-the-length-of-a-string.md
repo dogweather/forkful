@@ -1,14 +1,20 @@
 ---
-title:                "Tìm độ dài của chuỗi"
 aliases:
 - /vi/vba/finding-the-length-of-a-string/
-date:                  2024-02-01T21:54:25.245050-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tìm độ dài của chuỗi"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:25.245050-07:00
+description: "Vi\u1EC7c t\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i trong\
+  \ Visual Basic for Applications (VBA) li\xEAn quan \u0111\u1EBFn vi\u1EC7c x\xE1\
+  c \u0111\u1ECBnh s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1 m\xE0 n\xF3 ch\u1EE9a. C\xE1\
+  c l\u1EADp tr\xECnh vi\xEAn\u2026"
+lastmod: 2024-02-18 23:08:50.498964
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c t\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i trong Visual\
+  \ Basic for Applications (VBA) li\xEAn quan \u0111\u1EBFn vi\u1EC7c x\xE1c \u0111\
+  \u1ECBnh s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1 m\xE0 n\xF3 ch\u1EE9a. C\xE1c l\u1EAD\
+  p tr\xECnh vi\xEAn\u2026"
+title: "T\xECm \u0111\u1ED9 d\xE0i c\u1EE7a chu\u1ED7i"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Zaokrąglanie liczb"
 aliases:
 - /pl/go/rounding-numbers/
-date:                  2024-02-03T18:08:15.745047-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zaokrąglanie liczb"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/rounding-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:15.745047-07:00
+description: "Zaokr\u0105glanie liczb polega na dostosowaniu warto\u015Bci liczby\
+  \ do jej najbli\u017Cszej liczby ca\u0142kowitej lub do okre\u015Blonej liczby miejsc\
+  \ po przecinku. Programi\u015Bci\u2026"
+lastmod: 2024-02-18 23:08:49.091483
+model: gpt-4-0125-preview
+summary: "Zaokr\u0105glanie liczb polega na dostosowaniu warto\u015Bci liczby do jej\
+  \ najbli\u017Cszej liczby ca\u0142kowitej lub do okre\u015Blonej liczby miejsc po\
+  \ przecinku. Programi\u015Bci\u2026"
+title: "Zaokr\u0105glanie liczb"
 ---
 
 {{< edit_this_page >}}

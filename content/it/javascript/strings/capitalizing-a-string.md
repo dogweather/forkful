@@ -1,14 +1,16 @@
 ---
-title:                "Capitalizzare una stringa"
 aliases:
 - /it/javascript/capitalizing-a-string/
-date:                  2024-02-03T19:05:43.024366-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizzare una stringa"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/javascript/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:43.024366-07:00
+description: "Capitalizzare una stringa significa convertire il primo carattere della\
+  \ stringa in maiuscolo, mantenendo invariati i caratteri rimanenti. Questa\u2026"
+lastmod: 2024-02-18 23:08:56.236913
+model: gpt-4-0125-preview
+summary: "Capitalizzare una stringa significa convertire il primo carattere della\
+  \ stringa in maiuscolo, mantenendo invariati i caratteri rimanenti. Questa\u2026"
+title: Capitalizzare una stringa
 ---
 
 {{< edit_this_page >}}

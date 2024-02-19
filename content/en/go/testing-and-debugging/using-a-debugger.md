@@ -1,12 +1,16 @@
 ---
-title:                "Using a debugger"
 aliases:
 - /en/go/using-a-debugger/
-date:                  2024-02-03T17:50:19.237896-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using a debugger"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/using-a-debugger.md"
+date: 2024-02-03 17:50:19.237896-07:00
+description: "Using a debugger in Go programming involves employing tools or features\
+  \ to inspect and modify the state of a running program to understand its behavior\
+  \ or\u2026"
+lastmod: 2024-02-18 23:09:10.601271
+model: gpt-4-0125-preview
+summary: "Using a debugger in Go programming involves employing tools or features\
+  \ to inspect and modify the state of a running program to understand its behavior\
+  \ or\u2026"
+title: Using a debugger
 ---
 
 {{< edit_this_page >}}

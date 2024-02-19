@@ -1,13 +1,14 @@
 ---
-title:                "Ricerca e sostituzione del testo"
 aliases:
 - /it/java/searching-and-replacing-text/
-date:                  2024-01-20T17:58:07.932921-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ricerca e sostituzione del testo"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/java/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:07.932921-07:00
+description: "Cercare e sostituire testo nel mondo della programmazione \xE8 fondamentale\
+  \ per modificare dati o correggere errori in modo efficiente. I programmatori lo\u2026"
+lastmod: 2024-02-18 23:08:55.752050
+model: gpt-4-1106-preview
+summary: "Cercare e sostituire testo nel mondo della programmazione \xE8 fondamentale\
+  \ per modificare dati o correggere errori in modo efficiente. I programmatori lo\u2026"
+title: Ricerca e sostituzione del testo
 ---
 
 {{< edit_this_page >}}

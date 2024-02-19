@@ -1,14 +1,18 @@
 ---
-title:                "Rédaction de tests"
 aliases:
 - /fr/kotlin/writing-tests/
-date:                  2024-02-03T19:30:57.393761-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rédaction de tests"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:30:57.393761-07:00
+description: "\xC9crire des tests en Kotlin consiste \xE0 cr\xE9er des extraits de\
+  \ code qui valident automatiquement la correction fonctionnelle de vos modules logiciels,\
+  \ en\u2026"
+lastmod: 2024-02-18 23:09:08.784763
+model: gpt-4-0125-preview
+summary: "\xC9crire des tests en Kotlin consiste \xE0 cr\xE9er des extraits de code\
+  \ qui valident automatiquement la correction fonctionnelle de vos modules logiciels,\
+  \ en\u2026"
+title: "R\xE9daction de tests"
 ---
 
 {{< edit_this_page >}}

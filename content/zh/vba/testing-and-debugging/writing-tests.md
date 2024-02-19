@@ -1,14 +1,26 @@
 ---
-title:                "编写测试"
 aliases:
 - /zh/vba/writing-tests/
-date:                  2024-02-01T22:08:42.824955-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "编写测试"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/writing-tests.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:08:42.824955-07:00
+description: "\u5728\u7F16\u7A0B\u4E2D\u7F16\u5199\u6D4B\u8BD5\u5305\u62EC\u521B\u5EFA\
+  \u7279\u5B9A\u7A0B\u5E8F\u6765\u9A8C\u8BC1\u4EE3\u7801\u6BB5\u7684\u529F\u80FD\u548C\
+  \u6027\u80FD\uFF0C\u786E\u4FDD\u5B83\u4EEC\u5728\u5404\u79CD\u6761\u4EF6\u4E0B\u6309\
+  \u9884\u671F\u5DE5\u4F5C\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\
+  \u5C3D\u65E9\u53D1\u73B0\u9519\u8BEF\uFF0C\u63D0\u9AD8\u4EE3\u7801\u8D28\u91CF\uFF0C\
+  \u4EE5\u53CA\u4FBF\u4E8E\u672A\u6765\u7684\u4EE3\u7801\u7EF4\u62A4\u548C\u589E\u5F3A\
+  \u3002"
+lastmod: 2024-02-18 23:08:58.984619
+model: gpt-4-0125-preview
+summary: "\u5728\u7F16\u7A0B\u4E2D\u7F16\u5199\u6D4B\u8BD5\u5305\u62EC\u521B\u5EFA\
+  \u7279\u5B9A\u7A0B\u5E8F\u6765\u9A8C\u8BC1\u4EE3\u7801\u6BB5\u7684\u529F\u80FD\u548C\
+  \u6027\u80FD\uFF0C\u786E\u4FDD\u5B83\u4EEC\u5728\u5404\u79CD\u6761\u4EF6\u4E0B\u6309\
+  \u9884\u671F\u5DE5\u4F5C\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\
+  \u5C3D\u65E9\u53D1\u73B0\u9519\u8BEF\uFF0C\u63D0\u9AD8\u4EE3\u7801\u8D28\u91CF\uFF0C\
+  \u4EE5\u53CA\u4FBF\u4E8E\u672A\u6765\u7684\u4EE3\u7801\u7EF4\u62A4\u548C\u589E\u5F3A\
+  \u3002"
+title: "\u7F16\u5199\u6D4B\u8BD5"
 ---
 
 {{< edit_this_page >}}

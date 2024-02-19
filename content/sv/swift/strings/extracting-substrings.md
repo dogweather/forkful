@@ -1,13 +1,16 @@
 ---
-title:                "Extrahera delsträngar"
 aliases:
 - /sv/swift/extracting-substrings/
-date:                  2024-01-20T17:46:44.439511-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extrahera delsträngar"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/extracting-substrings.md"
+date: 2024-01-20 17:46:44.439511-07:00
+description: "Extrahering av substr\xE4ngar involverar att plocka specifika delar\
+  \ ur en str\xE4ng, n\xE5got som ofta nyttjas f\xF6r att bearbeta textdata efter\
+  \ behov. Det sparas\u2026"
+lastmod: 2024-02-18 23:08:52.113825
+model: gpt-4-1106-preview
+summary: "Extrahering av substr\xE4ngar involverar att plocka specifika delar ur en\
+  \ str\xE4ng, n\xE5got som ofta nyttjas f\xF6r att bearbeta textdata efter behov.\
+  \ Det sparas\u2026"
+title: "Extrahera delstr\xE4ngar"
 ---
 
 {{< edit_this_page >}}

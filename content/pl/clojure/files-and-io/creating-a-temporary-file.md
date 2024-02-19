@@ -1,13 +1,16 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
 aliases:
 - /pl/clojure/creating-a-temporary-file/
-date:                  2024-01-20T17:40:10.029389-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tworzenie pliku tymczasowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:10.029389-07:00
+description: "Tworzenie tymczasowego pliku to proces generowania pliku, kt\xF3ry zostanie\
+  \ u\u017Cyty kr\xF3tkotrwale, a potem usuni\u0119ty. Programi\u015Bci tworz\u0105\
+  \ je do przechowywania\u2026"
+lastmod: 2024-02-18 23:08:49.283631
+model: gpt-4-1106-preview
+summary: "Tworzenie tymczasowego pliku to proces generowania pliku, kt\xF3ry zostanie\
+  \ u\u017Cyty kr\xF3tkotrwale, a potem usuni\u0119ty. Programi\u015Bci tworz\u0105\
+  \ je do przechowywania\u2026"
+title: Tworzenie pliku tymczasowego
 ---
 
 {{< edit_this_page >}}

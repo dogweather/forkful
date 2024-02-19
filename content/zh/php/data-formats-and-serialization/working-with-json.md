@@ -1,14 +1,28 @@
 ---
-title:                "使用JSON进行编程"
 aliases:
 - /zh/php/working-with-json/
-date:                  2024-02-03T19:23:36.055373-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用JSON进行编程"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:36.055373-07:00
+description: "JSON\uFF0C\u5373JavaScript\u5BF9\u8C61\u8868\u793A\u6CD5\uFF0C\u662F\
+  \u4E00\u79CD\u8F7B\u91CF\u7EA7\u7684\u6570\u636E\u4EA4\u6362\u683C\u5F0F\uFF0C\u5B83\
+  \u5BF9\u4EBA\u7C7B\u6765\u8BF4\u6613\u4E8E\u8BFB\u5199\uFF0C\u5BF9\u673A\u5668\u6765\
+  \u8BF4\u6613\u4E8E\u89E3\u6790\u548C\u751F\u6210\u3002\u7A0B\u5E8F\u5458\u5E38\u5E38\
+  \u4F7F\u7528JSON\u5728\u670D\u52A1\u5668\u548CWeb\u5E94\u7528\u7A0B\u5E8F\u4E4B\u95F4\
+  \u4EA4\u6362\u6570\u636E\uFF0C\u56E0\u4E3A\u5B83\u7684\u7B80\u5355\u6027\u548C\u8BED\
+  \u8A00\u65E0\u5173\u6027\uFF0C\u4F7F\u5F97\u5B83\u6210\u4E3A\u73B0\u4EE3Web\u5F00\
+  \u53D1\u548CAPIs\u4E2D\u7684\u57FA\u77F3\u3002"
+lastmod: 2024-02-18 23:08:59.235271
+model: gpt-4-0125-preview
+summary: "JSON\uFF0C\u5373JavaScript\u5BF9\u8C61\u8868\u793A\u6CD5\uFF0C\u662F\u4E00\
+  \u79CD\u8F7B\u91CF\u7EA7\u7684\u6570\u636E\u4EA4\u6362\u683C\u5F0F\uFF0C\u5B83\u5BF9\
+  \u4EBA\u7C7B\u6765\u8BF4\u6613\u4E8E\u8BFB\u5199\uFF0C\u5BF9\u673A\u5668\u6765\u8BF4\
+  \u6613\u4E8E\u89E3\u6790\u548C\u751F\u6210\u3002\u7A0B\u5E8F\u5458\u5E38\u5E38\u4F7F\
+  \u7528JSON\u5728\u670D\u52A1\u5668\u548CWeb\u5E94\u7528\u7A0B\u5E8F\u4E4B\u95F4\u4EA4\
+  \u6362\u6570\u636E\uFF0C\u56E0\u4E3A\u5B83\u7684\u7B80\u5355\u6027\u548C\u8BED\u8A00\
+  \u65E0\u5173\u6027\uFF0C\u4F7F\u5F97\u5B83\u6210\u4E3A\u73B0\u4EE3Web\u5F00\u53D1\
+  \u548CAPIs\u4E2D\u7684\u57FA\u77F3\u3002"
+title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 ---
 
 {{< edit_this_page >}}

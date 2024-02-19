@@ -1,16 +1,29 @@
 ---
-title:                "获取当前日期"
 aliases:
 - /zh/elixir/getting-the-current-date/
-date:                  2024-02-03T19:09:39.059709-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "获取当前日期"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
-  - 2024-02-05, dogweather, reviewed and corrected
-lastmod:              2024-02-05
+- 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-05, dogweather, reviewed and corrected
+date: 2024-02-03 19:09:39.059709-07:00
+description: "\u5728 Elixir \u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u6D89\u53CA\
+  \u8BBF\u95EE\u7CFB\u7EDF\u7684\u65E5\u671F\u548C\u65F6\u95F4\u4FE1\u606F\uFF0C\u8FD9\
+  \u662F\u8BB0\u5F55\u3001\u6570\u636E\u6807\u8BB0\u6216\u4EFB\u4F55\u9700\u8981\u4E86\
+  \u89E3\u5F53\u524D\u65E5\u671F\u7684\u529F\u80FD\u7684\u5E38\u89C1\u4EFB\u52A1\u3002\
+  \u8FD9\u4E00\u64CD\u4F5C\u5BF9\u4E8E\u521B\u5EFA\u65F6\u95F4\u611F\u77E5\u7684\u5E94\
+  \u7528\u7A0B\u5E8F\u4EE5\u53CA\u751F\u6210\u62A5\u544A\u6216\u5728 Web \u5E94\u7528\
+  \u7A0B\u5E8F\u4E2D\u751F\u6210\u65F6\u95F4\u6233\u7B49\u4EFB\u52A1\u81F3\u5173\u91CD\
+  \u8981\u3002"
+lastmod: 2024-02-18 23:08:58.875092
+model: gpt-4-0125-preview
+summary: "\u5728 Elixir \u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u6D89\u53CA\u8BBF\
+  \u95EE\u7CFB\u7EDF\u7684\u65E5\u671F\u548C\u65F6\u95F4\u4FE1\u606F\uFF0C\u8FD9\u662F\
+  \u8BB0\u5F55\u3001\u6570\u636E\u6807\u8BB0\u6216\u4EFB\u4F55\u9700\u8981\u4E86\u89E3\
+  \u5F53\u524D\u65E5\u671F\u7684\u529F\u80FD\u7684\u5E38\u89C1\u4EFB\u52A1\u3002\u8FD9\
+  \u4E00\u64CD\u4F5C\u5BF9\u4E8E\u521B\u5EFA\u65F6\u95F4\u611F\u77E5\u7684\u5E94\u7528\
+  \u7A0B\u5E8F\u4EE5\u53CA\u751F\u6210\u62A5\u544A\u6216\u5728 Web \u5E94\u7528\u7A0B\
+  \u5E8F\u4E2D\u751F\u6210\u65F6\u95F4\u6233\u7B49\u4EFB\u52A1\u81F3\u5173\u91CD\u8981\
+  \u3002"
+title: "\u83B7\u53D6\u5F53\u524D\u65E5\u671F"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Verificando se um diretório existe"
 aliases:
 - /pt/vba/checking-if-a-directory-exists/
-date:                  2024-02-01T21:49:28.785297-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verificando se um diretório existe"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/vba/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:28.785297-07:00
+description: "Verificar se um diret\xF3rio existe no Visual Basic for Applications\
+  \ (VBA) trata de confirmar a presen\xE7a de uma pasta dentro do sistema de arquivos\
+  \ antes de\u2026"
+lastmod: 2024-02-18 23:08:57.990110
+model: gpt-4-0125-preview
+summary: "Verificar se um diret\xF3rio existe no Visual Basic for Applications (VBA)\
+  \ trata de confirmar a presen\xE7a de uma pasta dentro do sistema de arquivos antes\
+  \ de\u2026"
+title: "Verificando se um diret\xF3rio existe"
 ---
 
 {{< edit_this_page >}}

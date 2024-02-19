@@ -1,13 +1,16 @@
 ---
-title:                "Arrondir les nombres"
 aliases:
 - /fr/typescript/rounding-numbers/
-date:                  2024-01-26T03:47:17.114965-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrondir les nombres"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/rounding-numbers.md"
+date: 2024-01-26 03:47:17.114965-07:00
+description: "Arrondir les nombres consiste \xE0 r\xE9duire un chiffre \xE0 une pr\xE9\
+  cision sp\xE9cifique. Les programmeurs le font pour contr\xF4ler la sortie num\xE9\
+  rique afin\u2026"
+lastmod: 2024-02-18 23:09:08.476063
+model: gpt-4-0125-preview
+summary: "Arrondir les nombres consiste \xE0 r\xE9duire un chiffre \xE0 une pr\xE9\
+  cision sp\xE9cifique. Les programmeurs le font pour contr\xF4ler la sortie num\xE9\
+  rique afin\u2026"
+title: Arrondir les nombres
 ---
 
 {{< edit_this_page >}}

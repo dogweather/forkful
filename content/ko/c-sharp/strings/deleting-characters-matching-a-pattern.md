@@ -1,14 +1,25 @@
 ---
-title:                "패턴에 일치하는 문자 삭제"
 aliases:
 - /ko/c-sharp/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:02.375680-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "패턴에 일치하는 문자 삭제"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:02.375680-07:00
+description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uD328\uD134\uC5D0 \uB9DE\
+  \uB294 \uBB38\uC790\uB97C \uC0AD\uC81C\uD558\uB294 \uAC83\uC740, \uC6B0\uB9AC\uAC00\
+  \ \uC6D0\uD558\uC9C0 \uC54A\uB294 \uBB38\uC790\uB97C \uC81C\uAC70\uD558\uAC70\uB098\
+  \ \uB370\uC774\uD130\uB97C \uC815\uC81C\uD558\uB294 \uACFC\uC815\uC785\uB2C8\uB2E4\
+  . \uC774\uB294 \uC785\uB825 \uC720\uD6A8\uC131 \uAC80\uC0AC\uB098 \uB370\uC774\uD130\
+  \ \uD615\uC2DD\uC744 \uC77C\uAD00\uB418\uAC8C \uB9DE\uCD94\uB294 \uB4F1\uC758 \uC791\
+  \uC5C5\uC744 \uC704\uD574 \uD544\uC694\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.195299
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uD328\uD134\uC5D0 \uB9DE\uB294\
+  \ \uBB38\uC790\uB97C \uC0AD\uC81C\uD558\uB294 \uAC83\uC740, \uC6B0\uB9AC\uAC00 \uC6D0\
+  \uD558\uC9C0 \uC54A\uB294 \uBB38\uC790\uB97C \uC81C\uAC70\uD558\uAC70\uB098 \uB370\
+  \uC774\uD130\uB97C \uC815\uC81C\uD558\uB294 \uACFC\uC815\uC785\uB2C8\uB2E4. \uC774\
+  \uB294 \uC785\uB825 \uC720\uD6A8\uC131 \uAC80\uC0AC\uB098 \uB370\uC774\uD130 \uD615\
+  \uC2DD\uC744 \uC77C\uAD00\uB418\uAC8C \uB9DE\uCD94\uB294 \uB4F1\uC758 \uC791\uC5C5\
+  \uC744 \uC704\uD574 \uD544\uC694\uD569\uB2C8\uB2E4."
+title: "\uD328\uD134\uC5D0 \uC77C\uCE58\uD558\uB294 \uBB38\uC790 \uC0AD\uC81C"
 ---
 
 {{< edit_this_page >}}

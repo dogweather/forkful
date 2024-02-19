@@ -1,15 +1,26 @@
 ---
-title:                "使用关联数组"
 aliases:
 - /zh/java/using-associative-arrays/
-date:                  2024-01-30T19:12:24.706825-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用关联数组"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:24.706825-07:00
+description: "\u5728 Java \u4E2D\uFF0C\u5173\u8054\u6570\u7EC4\uFF08\u6216\u79F0\u6620\
+  \u5C04\uFF09\u8BA9\u4F60\u80FD\u591F\u4EE5\u952E\u503C\u5BF9\u7684\u5F62\u5F0F\u5B58\
+  \u50A8\u6570\u636E\uFF0C\u4EE5\u5B9E\u73B0\u9AD8\u6548\u7684\u6570\u636E\u67E5\u627E\
+  \u548C\u64CD\u4F5C\u3002\u7A0B\u5E8F\u5458\u4F7F\u7528\u5B83\u4EEC\u6765\u6267\u884C\
+  \u4EFB\u52A1\uFF0C\u4F8B\u5982\u8BA1\u6570\u9879\u76EE\u7684\u51FA\u73B0\u6B21\u6570\
+  \u6216\u5C06\u7528\u6237\u6620\u5C04\u5230\u4ED6\u4EEC\u7684\u6743\u9650\uFF0C\u56E0\
+  \u4E3A\u5B83\u4EEC\u63D0\u4F9B\u5FEB\u901F\u8BBF\u95EE\u548C\u66F4\u65B0\u3002"
+lastmod: 2024-02-18 23:08:59.014612
+model: gpt-4-0125-preview
+summary: "\u5728 Java \u4E2D\uFF0C\u5173\u8054\u6570\u7EC4\uFF08\u6216\u79F0\u6620\
+  \u5C04\uFF09\u8BA9\u4F60\u80FD\u591F\u4EE5\u952E\u503C\u5BF9\u7684\u5F62\u5F0F\u5B58\
+  \u50A8\u6570\u636E\uFF0C\u4EE5\u5B9E\u73B0\u9AD8\u6548\u7684\u6570\u636E\u67E5\u627E\
+  \u548C\u64CD\u4F5C\u3002\u7A0B\u5E8F\u5458\u4F7F\u7528\u5B83\u4EEC\u6765\u6267\u884C\
+  \u4EFB\u52A1\uFF0C\u4F8B\u5982\u8BA1\u6570\u9879\u76EE\u7684\u51FA\u73B0\u6B21\u6570\
+  \u6216\u5C06\u7528\u6237\u6620\u5C04\u5230\u4ED6\u4EEC\u7684\u6743\u9650\uFF0C\u56E0\
+  \u4E3A\u5B83\u4EEC\u63D0\u4F9B\u5FEB\u901F\u8BBF\u95EE\u548C\u66F4\u65B0\u3002"
+title: "\u4F7F\u7528\u5173\u8054\u6570\u7EC4"
 ---
 
 {{< edit_this_page >}}

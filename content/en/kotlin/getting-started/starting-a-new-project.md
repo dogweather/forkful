@@ -1,13 +1,16 @@
 ---
-title:                "Starting a new project"
 aliases:
 - /en/kotlin/starting-a-new-project/
-date:                  2024-01-20T18:03:50.401549-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Starting a new project"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/starting-a-new-project.md"
+date: 2024-01-20 18:03:50.401549-07:00
+description: "Starting a new project means setting up the initial structure and vital\
+  \ files you\u2019ll need for your application. Programmers initiate new projects\
+  \ to kick\u2026"
+lastmod: 2024-02-18 23:09:11.013442
+model: gpt-4-1106-preview
+summary: "Starting a new project means setting up the initial structure and vital\
+  \ files you\u2019ll need for your application. Programmers initiate new projects\
+  \ to kick\u2026"
+title: Starting a new project
 ---
 
 {{< edit_this_page >}}

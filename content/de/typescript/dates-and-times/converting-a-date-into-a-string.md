@@ -1,13 +1,15 @@
 ---
-title:                "Datum in einen String umwandeln"
 aliases:
 - /de/typescript/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:46.458283-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Datum in einen String umwandeln"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:46.458283-07:00
+description: "Das Umwandeln eines Datums in einen String ist der Prozess, bei dem\
+  \ ein Datum als lesbare Zeichenkette dargestellt wird. Programmierer nutzen dies,\
+  \ um\u2026"
+lastmod: 2024-02-18 23:09:04.608850
+model: gpt-4-1106-preview
+summary: "Das Umwandeln eines Datums in einen String ist der Prozess, bei dem ein\
+  \ Datum als lesbare Zeichenkette dargestellt wird. Programmierer nutzen dies, um\u2026"
+title: Datum in einen String umwandeln
 ---
 
 {{< edit_this_page >}}

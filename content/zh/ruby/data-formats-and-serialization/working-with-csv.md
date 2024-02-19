@@ -1,14 +1,24 @@
 ---
-title:                "处理CSV文件"
 aliases:
 - /zh/ruby/working-with-csv/
-date:                  2024-02-03T19:21:11.580180-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理CSV文件"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:21:11.580180-07:00
+description: "\u5728 Ruby \u4E2D\u5904\u7406 CSV \u6587\u4EF6\u63D0\u4F9B\u4E86\u4E00\
+  \u79CD\u76F4\u63A5\u5904\u7406\u8868\u683C\u6570\u636E\u7684\u65B9\u6CD5\u3002\u7A0B\
+  \u5E8F\u5458\u7ECF\u5E38\u4ECE\u4E8B\u8FD9\u9879\u5B9E\u8DF5\uFF0C\u7528\u4E8E\u6570\
+  \u636E\u89E3\u6790\u3001\u63D0\u53D6\u3001\u8F6C\u6362\u548C\u5B58\u50A8\uFF0C\u4F7F\
+  \u5176\u6210\u4E3A\u6D89\u53CA\u6570\u636E\u64CD\u7EB5\u6216\u5206\u6790\u4EFB\u52A1\
+  \u7684\u5173\u952E\u6280\u80FD\u3002"
+lastmod: 2024-02-18 23:08:59.658544
+model: gpt-4-0125-preview
+summary: "\u5728 Ruby \u4E2D\u5904\u7406 CSV \u6587\u4EF6\u63D0\u4F9B\u4E86\u4E00\u79CD\
+  \u76F4\u63A5\u5904\u7406\u8868\u683C\u6570\u636E\u7684\u65B9\u6CD5\u3002\u7A0B\u5E8F\
+  \u5458\u7ECF\u5E38\u4ECE\u4E8B\u8FD9\u9879\u5B9E\u8DF5\uFF0C\u7528\u4E8E\u6570\u636E\
+  \u89E3\u6790\u3001\u63D0\u53D6\u3001\u8F6C\u6362\u548C\u5B58\u50A8\uFF0C\u4F7F\u5176\
+  \u6210\u4E3A\u6D89\u53CA\u6570\u636E\u64CD\u7EB5\u6216\u5206\u6790\u4EFB\u52A1\u7684\
+  \u5173\u952E\u6280\u80FD\u3002"
+title: "\u5904\u7406CSV\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

@@ -1,12 +1,14 @@
 ---
-title:                "Rounding numbers"
 aliases:
 - /en/google-apps-script/rounding-numbers/
-date:                  2024-02-01T21:12:07.080129-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rounding numbers"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/google-apps-script/rounding-numbers.md"
+date: 2024-02-01 21:12:07.080129-07:00
+description: "Rounding numbers, a fundamental concept in computer programming, involves\
+  \ adjusting a number to its closest integer or to a specified number of decimal\u2026"
+lastmod: 2024-02-18 23:09:10.634143
+model: gpt-4-0125-preview
+summary: "Rounding numbers, a fundamental concept in computer programming, involves\
+  \ adjusting a number to its closest integer or to a specified number of decimal\u2026"
+title: Rounding numbers
 ---
 
 {{< edit_this_page >}}

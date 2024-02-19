@@ -1,14 +1,18 @@
 ---
-title:                "Porównywanie dwóch dat"
 aliases:
 - /pl/c/comparing-two-dates/
-date:                  2024-02-03T17:53:37.521180-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Porównywanie dwóch dat"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/comparing-two-dates.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:37.521180-07:00
+description: "Por\xF3wnywanie dw\xF3ch dat w j\u0119zyku C polega na ustaleniu, kt\xF3\
+  ra z nich jest wcze\u015Bniejsza, a kt\xF3ra p\xF3\u017Aniejsza, lub czy s\u0105\
+  \ takie same. Mo\u017Cliwo\u015B\u0107 ta jest\u2026"
+lastmod: 2024-02-18 23:08:50.093369
+model: gpt-4-0125-preview
+summary: "Por\xF3wnywanie dw\xF3ch dat w j\u0119zyku C polega na ustaleniu, kt\xF3\
+  ra z nich jest wcze\u015Bniejsza, a kt\xF3ra p\xF3\u017Aniejsza, lub czy s\u0105\
+  \ takie same. Mo\u017Cliwo\u015B\u0107 ta jest\u2026"
+title: "Por\xF3wnywanie dw\xF3ch dat"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,30 @@
 ---
-title:                "CSV와 함께 작업하기"
 aliases:
 - /ko/kotlin/working-with-csv/
-date:                  2024-02-03T19:20:36.213215-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "CSV와 함께 작업하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:20:36.213215-07:00
+description: "CSV(\uCF64\uB9C8\uB85C \uAD6C\uBD84\uB41C \uAC12) \uC791\uC5C5\uC740\
+  \ \uC77C\uBC18 \uD14D\uC2A4\uD2B8\uB85C \uC800\uC7A5\uB41C \uD14C\uC774\uBE14 \uB370\
+  \uC774\uD130\uB97C \uC704\uD55C \uACF5\uD1B5 \uD615\uC2DD\uC778 CSV \uD30C\uC77C\
+  \uC5D0\uC11C \uB370\uC774\uD130\uB97C \uC77D\uACE0 \uC4F0\uB294 \uC791\uC5C5\uC744\
+  \ \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB2E4\
+  \uC591\uD55C \uC560\uD50C\uB9AC\uCF00\uC774\uC158, \uB370\uC774\uD130\uBCA0\uC774\
+  \uC2A4 \uAC04 \uB370\uC774\uD130\uB97C \uC27D\uAC8C \uAD50\uD658\uD558\uAC70\uB098\
+  \ \uB370\uC774\uD130 \uCC98\uB9AC \uBC0F \uBD84\uC11D \uC791\uC5C5\uC744 \uC6A9\uC774\
+  \uD558\uAC8C \uD558\uAE30 \uC704\uD574 CSV\u2026"
+lastmod: 2024-02-18 23:09:06.187906
+model: gpt-4-0125-preview
+summary: "CSV(\uCF64\uB9C8\uB85C \uAD6C\uBD84\uB41C \uAC12) \uC791\uC5C5\uC740 \uC77C\
+  \uBC18 \uD14D\uC2A4\uD2B8\uB85C \uC800\uC7A5\uB41C \uD14C\uC774\uBE14 \uB370\uC774\
+  \uD130\uB97C \uC704\uD55C \uACF5\uD1B5 \uD615\uC2DD\uC778 CSV \uD30C\uC77C\uC5D0\
+  \uC11C \uB370\uC774\uD130\uB97C \uC77D\uACE0 \uC4F0\uB294 \uC791\uC5C5\uC744 \uD3EC\
+  \uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB2E4\uC591\
+  \uD55C \uC560\uD50C\uB9AC\uCF00\uC774\uC158, \uB370\uC774\uD130\uBCA0\uC774\uC2A4\
+  \ \uAC04 \uB370\uC774\uD130\uB97C \uC27D\uAC8C \uAD50\uD658\uD558\uAC70\uB098 \uB370\
+  \uC774\uD130 \uCC98\uB9AC \uBC0F \uBD84\uC11D \uC791\uC5C5\uC744 \uC6A9\uC774\uD558\
+  \uAC8C \uD558\uAE30 \uC704\uD574 CSV\u2026"
+title: "CSV\uC640 \uD568\uAED8 \uC791\uC5C5\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

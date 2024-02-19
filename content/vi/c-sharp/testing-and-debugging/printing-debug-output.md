@@ -1,15 +1,20 @@
 ---
-title:                "In ra thông tin gỡ lỗi"
 aliases:
 - /vi/c-sharp/printing-debug-output/
-date:                  2024-01-28T22:05:42.511386-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "In ra thông tin gỡ lỗi"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/printing-debug-output.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:05:42.511386-07:00
+description: "In th\xF4ng tin g\u1EE1 l\u1ED7i l\xE0 v\u1EC1 vi\u1EC7c xu\u1EA5t th\xF4\
+  ng tin quan tr\u1ECDng \u0111\u1EC3 hi\u1EC3u \u0111\u01B0\u1EE3c nh\u1EEFng g\xEC\
+  \ \u0111ang di\u1EC5n ra b\xEAn d\u01B0\u1EDBi c\u1EE7a m\xE3 l\u1EC7nh. C\xE1c\
+  \ l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 theo\u2026"
+lastmod: 2024-02-18 23:08:50.701350
+model: gpt-4-0125-preview
+summary: "In th\xF4ng tin g\u1EE1 l\u1ED7i l\xE0 v\u1EC1 vi\u1EC7c xu\u1EA5t th\xF4\
+  ng tin quan tr\u1ECDng \u0111\u1EC3 hi\u1EC3u \u0111\u01B0\u1EE3c nh\u1EEFng g\xEC\
+  \ \u0111ang di\u1EC5n ra b\xEAn d\u01B0\u1EDBi c\u1EE7a m\xE3 l\u1EC7nh. C\xE1c\
+  \ l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 theo\u2026"
+title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

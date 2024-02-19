@@ -1,14 +1,18 @@
 ---
-title:                "Eliminando caracteres que coinciden con un patrón"
 aliases:
 - /es/google-apps-script/deleting-characters-matching-a-pattern/
-date:                  2024-02-01T21:51:57.250511-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eliminando caracteres que coinciden con un patrón"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/google-apps-script/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:57.250511-07:00
+description: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico es\
+  \ una t\xE9cnica utilizada para limpiar o formatear cadenas en programaci\xF3n.\
+  \ En el contexto de\u2026"
+lastmod: 2024-02-18 23:09:09.486733
+model: gpt-4-0125-preview
+summary: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico es una\
+  \ t\xE9cnica utilizada para limpiar o formatear cadenas en programaci\xF3n. En el\
+  \ contexto de\u2026"
+title: "Eliminando caracteres que coinciden con un patr\xF3n"
 ---
 
 {{< edit_this_page >}}

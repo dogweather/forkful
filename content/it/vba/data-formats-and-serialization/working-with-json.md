@@ -1,14 +1,17 @@
 ---
-title:                "Lavorare con JSON"
 aliases:
 - /it/vba/working-with-json/
-date:                  2024-02-01T22:05:43.521867-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/vba/working-with-json.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:05:43.521867-07:00
+description: "JSON (JavaScript Object Notation) \xE8 un formato di interscambio dati\
+  \ leggero che \xE8 facile da leggere e scrivere per gli esseri umani e per le macchine\
+  \ da\u2026"
+lastmod: 2024-02-18 23:08:55.745651
+model: gpt-4-0125-preview
+summary: "JSON (JavaScript Object Notation) \xE8 un formato di interscambio dati leggero\
+  \ che \xE8 facile da leggere e scrivere per gli esseri umani e per le macchine da\u2026"
+title: Lavorare con JSON
 ---
 
 {{< edit_this_page >}}

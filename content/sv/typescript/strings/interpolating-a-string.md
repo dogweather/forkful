@@ -1,13 +1,16 @@
 ---
-title:                "Interpolera en sträng"
 aliases:
 - /sv/typescript/interpolating-a-string/
-date:                  2024-01-20T17:51:40.946194-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolera en sträng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/interpolating-a-string.md"
+date: 2024-01-20 17:51:40.946194-07:00
+description: "Stringinterpolering \xE4r att smidigt b\xE4dda in variabler eller uttryck\
+  \ i str\xE4ngar. Vi g\xF6r det f\xF6r att bygga dynamiska texter enklare och f\xF6\
+  r att koden ska\u2026"
+lastmod: 2024-02-18 23:08:51.530296
+model: gpt-4-1106-preview
+summary: "Stringinterpolering \xE4r att smidigt b\xE4dda in variabler eller uttryck\
+  \ i str\xE4ngar. Vi g\xF6r det f\xF6r att bygga dynamiska texter enklare och f\xF6\
+  r att koden ska\u2026"
+title: "Interpolera en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

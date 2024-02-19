@@ -1,14 +1,23 @@
 ---
-title:                "发出 HTTP 请求"
 aliases:
 - /zh/rust/sending-an-http-request/
-date:                  2024-01-20T18:00:27.162829-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "发出 HTTP 请求"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/sending-an-http-request.md"
+date: 2024-01-20 18:00:27.162829-07:00
+description: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u53D1\u9001HTTP\u8BF7\u6C42\u662F\u4E0E\
+  Web\u670D\u52A1\u8FDB\u884C\u4EA4\u4E92\u7684\u65B9\u5F0F\u3002\uFF081\uFF09\u8FD9\
+  \u80FD\u8BA9\u4F60\u7684\u5E94\u7528\u83B7\u53D6\u6570\u636E\u3001\u53D1\u9001\u6570\
+  \u636E\uFF0C\u6216\u4E0E\u8FDC\u7A0B\u670D\u52A1\u5668\u901A\u4FE1\u3002\uFF082\uFF09\
+  \u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u8BA9\u5E94\u7528\u80FD\u4E0E\
+  \u4E92\u8054\u7F51\u4E0A\u7684\u5176\u4ED6\u670D\u52A1\u96C6\u6210\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:58.938390
+model: gpt-4-1106-preview
+summary: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u53D1\u9001HTTP\u8BF7\u6C42\u662F\u4E0EWeb\u670D\
+  \u52A1\u8FDB\u884C\u4EA4\u4E92\u7684\u65B9\u5F0F\u3002\uFF081\uFF09\u8FD9\u80FD\u8BA9\
+  \u4F60\u7684\u5E94\u7528\u83B7\u53D6\u6570\u636E\u3001\u53D1\u9001\u6570\u636E\uFF0C\
+  \u6216\u4E0E\u8FDC\u7A0B\u670D\u52A1\u5668\u901A\u4FE1\u3002\uFF082\uFF09\u7A0B\u5E8F\
+  \u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u8BA9\u5E94\u7528\u80FD\u4E0E\u4E92\u8054\
+  \u7F51\u4E0A\u7684\u5176\u4ED6\u670D\u52A1\u96C6\u6210\u3002"
+title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 ---
 
 {{< edit_this_page >}}

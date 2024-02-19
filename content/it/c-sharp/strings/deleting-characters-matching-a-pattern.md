@@ -1,13 +1,14 @@
 ---
-title:                "Eliminazione di caratteri che corrispondono a un pattern"
 aliases:
 - /it/c-sharp/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:52.334260-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Eliminazione di caratteri che corrispondono a un pattern"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:52.334260-07:00
+description: "In C# eliminare caratteri che corrispondono a un pattern significa usare\
+  \ algoritmi per rimuovere sequenze specifiche di caratteri da una stringa. I\u2026"
+lastmod: 2024-02-18 23:08:55.872036
+model: gpt-4-1106-preview
+summary: "In C# eliminare caratteri che corrispondono a un pattern significa usare\
+  \ algoritmi per rimuovere sequenze specifiche di caratteri da una stringa. I\u2026"
+title: Eliminazione di caratteri che corrispondono a un pattern
 ---
 
 {{< edit_this_page >}}

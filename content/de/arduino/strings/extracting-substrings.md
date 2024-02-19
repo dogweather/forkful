@@ -1,13 +1,15 @@
 ---
-title:                "Teilstrings extrahieren"
 aliases:
 - /de/arduino/extracting-substrings/
-date:                  2024-01-20T17:44:58.321543-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Teilstrings extrahieren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/extracting-substrings.md"
+date: 2024-01-20 17:44:58.321543-07:00
+description: "Das Herausfiltern von Teilstrings, also Substrings, ist der Prozess\
+  \ des Isolierens eines bestimmten Teils eines Strings. Programmierer nutzen das,\
+  \ um\u2026"
+lastmod: 2024-02-18 23:09:05.134481
+model: gpt-4-1106-preview
+summary: "Das Herausfiltern von Teilstrings, also Substrings, ist der Prozess des\
+  \ Isolierens eines bestimmten Teils eines Strings. Programmierer nutzen das, um\u2026"
+title: Teilstrings extrahieren
 ---
 
 {{< edit_this_page >}}

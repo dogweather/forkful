@@ -1,14 +1,18 @@
 ---
-title:                "Capitalizando una cadena de texto"
 aliases:
 - /es/javascript/capitalizing-a-string/
-date:                  2024-02-03T19:05:34.329362-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizando una cadena de texto"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:34.329362-07:00
+description: "Capitalizar una cadena significa convertir el primer car\xE1cter de\
+  \ la cadena a may\xFAsculas mientras se mantienen los caracteres restantes tal como\
+  \ est\xE1n.\u2026"
+lastmod: 2024-02-18 23:09:10.386207
+model: gpt-4-0125-preview
+summary: "Capitalizar una cadena significa convertir el primer car\xE1cter de la cadena\
+  \ a may\xFAsculas mientras se mantienen los caracteres restantes tal como est\xE1\
+  n.\u2026"
+title: Capitalizando una cadena de texto
 ---
 
 {{< edit_this_page >}}

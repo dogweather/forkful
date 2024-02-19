@@ -1,14 +1,14 @@
 ---
-title:                "現在の日付の取得"
 aliases:
 - /ja/google-apps-script/getting-the-current-date/
-date:                  2024-02-01T21:55:09.340930-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "現在の日付の取得"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/google-apps-script/getting-the-current-date.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:09.340930-07:00
+description: "Google Apps\u2026"
+lastmod: 2024-02-18 23:08:54.533356
+model: gpt-4-0125-preview
+summary: "Google Apps\u2026"
+title: "\u73FE\u5728\u306E\u65E5\u4ED8\u306E\u53D6\u5F97"
 ---
 
 {{< edit_this_page >}}

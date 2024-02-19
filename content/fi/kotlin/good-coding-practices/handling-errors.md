@@ -1,13 +1,16 @@
 ---
-title:                "Virheiden käsittely"
 aliases:
 - /fi/kotlin/handling-errors/
-date:                  2024-01-26T00:55:09.012855-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheiden käsittely"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/handling-errors.md"
+date: 2024-01-26 00:55:09.012855-07:00
+description: "Virheiden k\xE4sittely on tapa, jolla koodisi k\xE4sittelee ongelmia,\
+  \ jotka ilmenev\xE4t suorituksen aikana - kuin ottaisi vastaan \xE4killisen sy\xF6\
+  t\xF6n pudottamatta\u2026"
+lastmod: 2024-02-18 23:09:07.582868
+model: gpt-4-1106-preview
+summary: "Virheiden k\xE4sittely on tapa, jolla koodisi k\xE4sittelee ongelmia, jotka\
+  \ ilmenev\xE4t suorituksen aikana - kuin ottaisi vastaan \xE4killisen sy\xF6t\xF6\
+  n pudottamatta\u2026"
+title: "Virheiden k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

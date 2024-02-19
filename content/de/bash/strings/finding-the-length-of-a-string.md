@@ -1,13 +1,16 @@
 ---
-title:                "Ermittlung der Zeichenkettenlänge"
 aliases:
 - /de/bash/finding-the-length-of-a-string/
-date:                  2024-01-20T17:46:44.611603-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ermittlung der Zeichenkettenlänge"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:46:44.611603-07:00
+description: "L\xE4nge eines Strings messen hei\xDFt, zu z\xE4hlen, wie viele Zeichen\
+  \ er enth\xE4lt. Das brauchen Programmierer, um Eingaben zu validieren, Textdaten\
+  \ zu verarbeiten\u2026"
+lastmod: 2024-02-18 23:09:05.042499
+model: gpt-4-1106-preview
+summary: "L\xE4nge eines Strings messen hei\xDFt, zu z\xE4hlen, wie viele Zeichen\
+  \ er enth\xE4lt. Das brauchen Programmierer, um Eingaben zu validieren, Textdaten\
+  \ zu verarbeiten\u2026"
+title: "Ermittlung der Zeichenkettenl\xE4nge"
 ---
 
 {{< edit_this_page >}}

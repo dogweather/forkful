@@ -1,12 +1,15 @@
 ---
-title:                "Zapisywanie pliku tekstowego"
 aliases:
 - /pl/haskell/writing-a-text-file/
-date:                  2024-01-19
-simple_title:         "Zapisywanie pliku tekstowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/writing-a-text-file.md"
+date: 2024-01-19
+description: "(\"Co i Dlaczego?\") Zapisywanie pliku tekstowego to spos\xF3b trwa\u0142\
+  ego przechowywania danych. Programi\u015Bci robi\u0105 to, by zapisywa\u0107 ustawienia,\
+  \ dane u\u017Cytkownika,\u2026"
+lastmod: 2024-02-18 23:08:49.670970
+summary: "(\"Co i Dlaczego?\") Zapisywanie pliku tekstowego to spos\xF3b trwa\u0142\
+  ego przechowywania danych. Programi\u015Bci robi\u0105 to, by zapisywa\u0107 ustawienia,\
+  \ dane u\u017Cytkownika,\u2026"
+title: Zapisywanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

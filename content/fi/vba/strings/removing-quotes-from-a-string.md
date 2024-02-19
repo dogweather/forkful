@@ -1,14 +1,18 @@
 ---
-title:                "Merkkijonosta lainausmerkkien poistaminen"
 aliases:
 - /fi/vba/removing-quotes-from-a-string/
-date:                  2024-02-01T22:00:24.640678-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonosta lainausmerkkien poistaminen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:24.640678-07:00
+description: "Lainausmerkkien poistaminen merkkijonosta VBA:ssa tarkoittaa yksitt\xE4\
+  isten (`'`) tai kaksinkertaisten (`\"`) lainausmerkkien poistamista, jotka voivat\
+  \ olla\u2026"
+lastmod: 2024-02-18 23:09:07.396658
+model: gpt-4-0125-preview
+summary: "Lainausmerkkien poistaminen merkkijonosta VBA:ssa tarkoittaa yksitt\xE4\
+  isten (`'`) tai kaksinkertaisten (`\"`) lainausmerkkien poistamista, jotka voivat\
+  \ olla\u2026"
+title: Merkkijonosta lainausmerkkien poistaminen
 ---
 
 {{< edit_this_page >}}

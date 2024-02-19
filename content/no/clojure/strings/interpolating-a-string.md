@@ -1,13 +1,16 @@
 ---
-title:                "Interpolering av en streng"
 aliases:
 - /no/clojure/interpolating-a-string/
-date:                  2024-01-20T17:50:38.780409-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolering av en streng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/interpolating-a-string.md"
+date: 2024-01-20 17:50:38.780409-07:00
+description: "Interpolering av en streng lar deg putte variabler eller uttrykk direkte\
+  \ inn i en streng. Programmerere gj\xF8r dette for \xE5 dynamisk bygge strenger,\
+  \ som gj\xF8r\u2026"
+lastmod: 2024-02-18 23:08:53.551392
+model: gpt-4-1106-preview
+summary: "Interpolering av en streng lar deg putte variabler eller uttrykk direkte\
+  \ inn i en streng. Programmerere gj\xF8r dette for \xE5 dynamisk bygge strenger,\
+  \ som gj\xF8r\u2026"
+title: Interpolering av en streng
 ---
 
 {{< edit_this_page >}}

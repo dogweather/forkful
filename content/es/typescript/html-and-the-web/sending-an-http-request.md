@@ -1,13 +1,14 @@
 ---
-title:                "Enviando una solicitud http"
 aliases:
 - /es/typescript/sending-an-http-request/
-date:                  2024-01-20T18:00:33.811078-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando una solicitud http"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/sending-an-http-request.md"
+date: 2024-01-20 18:00:33.811078-07:00
+description: "Mandar una solicitud HTTP es el proceso de pedir o enviar datos a un\
+  \ servidor web. Lo hacemos para interactuar con APIs, obtener recursos, enviar\u2026"
+lastmod: 2024-02-18 23:09:09.699555
+model: gpt-4-1106-preview
+summary: "Mandar una solicitud HTTP es el proceso de pedir o enviar datos a un servidor\
+  \ web. Lo hacemos para interactuar con APIs, obtener recursos, enviar\u2026"
+title: Enviando una solicitud http
 ---
 
 {{< edit_this_page >}}

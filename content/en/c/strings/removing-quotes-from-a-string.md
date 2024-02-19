@@ -1,12 +1,16 @@
 ---
-title:                "Removing quotes from a string"
 aliases:
 - /en/c/removing-quotes-from-a-string/
-date:                  2024-02-03T17:50:08.196568-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Removing quotes from a string"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/removing-quotes-from-a-string.md"
+date: 2024-02-03 17:50:08.196568-07:00
+description: "Removing quotes from a string in C involves extracting the textual content\
+  \ without the encapsulating single (' ') or double (\" \") quotes. This process\
+  \ is\u2026"
+lastmod: 2024-02-18 23:09:11.510730
+model: gpt-4-0125-preview
+summary: "Removing quotes from a string in C involves extracting the textual content\
+  \ without the encapsulating single (' ') or double (\" \") quotes. This process\
+  \ is\u2026"
+title: Removing quotes from a string
 ---
 
 {{< edit_this_page >}}

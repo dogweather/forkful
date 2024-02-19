@@ -1,15 +1,20 @@
 ---
-title:                "Sinh số ngẫu nhiên"
 aliases:
 - /vi/elm/generating-random-numbers/
-date:                  2024-01-28T22:01:41.739583-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sinh số ngẫu nhiên"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elm/generating-random-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:41.739583-07:00
+description: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong Elm bao g\u1ED3\
+  m vi\u1EC7c t\u1EA1o ra nh\u1EEFng gi\xE1 tr\u1ECB s\u1ED1 kh\xF4ng th\u1EC3 \u0111\
+  o\xE1n tr\u01B0\u1EDBc \u0111\u01B0\u1EE3c, \u0111\xF3 l\xE0 \u0111i\u1EC1u thi\u1EBF\
+  t y\u1EBFu cho c\xE1c \u1EE9ng d\u1EE5ng nh\u01B0 tr\xF2 ch\u01A1i, m\xF4\u2026"
+lastmod: 2024-02-18 23:08:50.598864
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong Elm bao g\u1ED3m vi\u1EC7\
+  c t\u1EA1o ra nh\u1EEFng gi\xE1 tr\u1ECB s\u1ED1 kh\xF4ng th\u1EC3 \u0111o\xE1n\
+  \ tr\u01B0\u1EDBc \u0111\u01B0\u1EE3c, \u0111\xF3 l\xE0 \u0111i\u1EC1u thi\u1EBF\
+  t y\u1EBFu cho c\xE1c \u1EE9ng d\u1EE5ng nh\u01B0 tr\xF2 ch\u01A1i, m\xF4\u2026"
+title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 ---
 
 {{< edit_this_page >}}

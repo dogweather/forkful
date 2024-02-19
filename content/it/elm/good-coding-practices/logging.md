@@ -1,13 +1,15 @@
 ---
-title:                "Registrazione Eventi (Logging)"
 aliases:
 - /it/elm/logging/
-date:                  2024-01-26T01:02:12.853815-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registrazione Eventi (Logging)"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/logging.md"
+date: 2024-01-26 01:02:12.853815-07:00
+description: "Il logging \xE8 essenzialmente il processo di registrazione di eventi\
+  \ e output di dati da un software durante il suo funzionamento, pensalo come il\
+  \ diario\u2026"
+lastmod: 2024-02-18 23:08:55.812084
+model: gpt-4-1106-preview
+summary: "Il logging \xE8 essenzialmente il processo di registrazione di eventi e\
+  \ output di dati da un software durante il suo funzionamento, pensalo come il diario\u2026"
+title: Registrazione Eventi (Logging)
 ---
 
 {{< edit_this_page >}}

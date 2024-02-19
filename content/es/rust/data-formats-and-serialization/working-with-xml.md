@@ -1,13 +1,14 @@
 ---
-title:                "Trabajando con XML"
 aliases:
 - /es/rust/working-with-xml/
-date:                  2024-01-26T04:35:21.116154-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/working-with-xml.md"
+date: 2024-01-26 04:35:21.116154-07:00
+description: "XML, siglas de eXtensible Markup Language (Lenguaje de Marcado Extensible),\
+  \ es como el primo verborr\xE1gico de JSON. Luchar\xE1s con XML al tratar con sistemas\u2026"
+lastmod: 2024-02-18 23:09:09.775435
+model: gpt-4-0125-preview
+summary: "XML, siglas de eXtensible Markup Language (Lenguaje de Marcado Extensible),\
+  \ es como el primo verborr\xE1gico de JSON. Luchar\xE1s con XML al tratar con sistemas\u2026"
+title: Trabajando con XML
 ---
 
 {{< edit_this_page >}}

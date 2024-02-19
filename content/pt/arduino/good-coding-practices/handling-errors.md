@@ -1,13 +1,16 @@
 ---
-title:                "Tratamento de Erros"
 aliases:
 - /pt/arduino/handling-errors/
-date:                  2024-01-26T00:37:06.996309-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tratamento de Erros"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/handling-errors.md"
+date: 2024-01-26 00:37:06.996309-07:00
+description: "O tratamento de erros em seus programas captura as coisas imprevistas\
+  \ que tentar\xE3o te atrapalhar. Voc\xEA faz isso para evitar que seu Arduino entre\
+  \ em\u2026"
+lastmod: 2024-02-18 23:08:58.416411
+model: gpt-4-1106-preview
+summary: "O tratamento de erros em seus programas captura as coisas imprevistas que\
+  \ tentar\xE3o te atrapalhar. Voc\xEA faz isso para evitar que seu Arduino entre\
+  \ em\u2026"
+title: Tratamento de Erros
 ---
 
 {{< edit_this_page >}}

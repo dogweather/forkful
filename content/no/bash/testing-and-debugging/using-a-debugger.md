@@ -1,13 +1,16 @@
 ---
-title:                "Å bruke en feilsøker"
 aliases:
 - /no/bash/using-a-debugger/
-date:                  2024-01-26T03:47:46.011422-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å bruke en feilsøker"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/using-a-debugger.md"
+date: 2024-01-26 03:47:46.011422-07:00
+description: "\xC5 bruke en feils\xF8ker i Bash betyr \xE5 utnytte verkt\xF8y for\
+  \ \xE5 teste og finne problemer i skriptene dine, som \xE5 fange feil som f\xE5\
+  r koden din til \xE5 krasje eller\u2026"
+lastmod: 2024-02-18 23:08:54.062775
+model: gpt-4-0125-preview
+summary: "\xC5 bruke en feils\xF8ker i Bash betyr \xE5 utnytte verkt\xF8y for \xE5\
+  \ teste og finne problemer i skriptene dine, som \xE5 fange feil som f\xE5r koden\
+  \ din til \xE5 krasje eller\u2026"
+title: "\xC5 bruke en feils\xF8ker"
 ---
 
 {{< edit_this_page >}}

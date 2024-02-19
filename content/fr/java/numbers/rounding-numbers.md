@@ -1,13 +1,16 @@
 ---
-title:                "Arrondir les nombres"
 aliases:
 - /fr/java/rounding-numbers/
-date:                  2024-01-26T03:45:08.849215-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrondir les nombres"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/rounding-numbers.md"
+date: 2024-01-26 03:45:08.849215-07:00
+description: "Arrondir les nombres signifie les ajuster \xE0 un degr\xE9 de pr\xE9\
+  cision sp\xE9cifi\xE9. Les programmeurs le font pour simplifier les nombres pour\
+  \ une meilleure\u2026"
+lastmod: 2024-02-18 23:09:08.622813
+model: gpt-4-0125-preview
+summary: "Arrondir les nombres signifie les ajuster \xE0 un degr\xE9 de pr\xE9cision\
+  \ sp\xE9cifi\xE9. Les programmeurs le font pour simplifier les nombres pour une\
+  \ meilleure\u2026"
+title: Arrondir les nombres
 ---
 
 {{< edit_this_page >}}

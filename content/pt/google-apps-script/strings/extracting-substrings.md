@@ -1,14 +1,16 @@
 ---
-title:                "Extraindo substrings"
 aliases:
 - /pt/google-apps-script/extracting-substrings/
-date:                  2024-02-01T21:52:56.422363-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Extraindo substrings"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/google-apps-script/extracting-substrings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:56.422363-07:00
+description: "A extra\xE7\xE3o de substrings envolve pegar uma por\xE7\xE3o de uma\
+  \ string - essencialmente, criar uma nova string a partir de uma parte de uma existente.\u2026"
+lastmod: 2024-02-18 23:08:57.703348
+model: gpt-4-0125-preview
+summary: "A extra\xE7\xE3o de substrings envolve pegar uma por\xE7\xE3o de uma string\
+  \ - essencialmente, criar uma nova string a partir de uma parte de uma existente.\u2026"
+title: Extraindo substrings
 ---
 
 {{< edit_this_page >}}

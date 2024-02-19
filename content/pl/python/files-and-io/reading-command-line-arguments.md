@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie argumentów linii poleceń"
 aliases:
 - /pl/python/reading-command-line-arguments/
-date:                  2024-01-20T17:57:00.657515-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie argumentów linii poleceń"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/reading-command-line-arguments.md"
+date: 2024-01-20 17:57:00.657515-07:00
+description: "Czytanie argument\xF3w linii polece\u0144 pozwala twojemu skryptowi\
+  \ Python na przyjmowanie danych z zewn\u0105trz, kiedy jest uruchamiany. Robimy\
+  \ to, gdy chcemy, aby\u2026"
+lastmod: 2024-02-18 23:08:49.238166
+model: gpt-4-1106-preview
+summary: "Czytanie argument\xF3w linii polece\u0144 pozwala twojemu skryptowi Python\
+  \ na przyjmowanie danych z zewn\u0105trz, kiedy jest uruchamiany. Robimy to, gdy\
+  \ chcemy, aby\u2026"
+title: "Odczytywanie argument\xF3w linii polece\u0144"
 ---
 
 {{< edit_this_page >}}

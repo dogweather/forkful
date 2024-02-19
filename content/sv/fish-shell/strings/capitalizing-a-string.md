@@ -1,14 +1,18 @@
 ---
-title:                "Gör om en sträng till versaler"
 aliases:
 - /sv/fish-shell/capitalizing-a-string/
-date:                  2024-02-03T19:05:24.459065-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gör om en sträng till versaler"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:24.459065-07:00
+description: "Att skriva med stor bokstav inneb\xE4r att man \xE4ndrar den s\xE5 att\
+  \ den f\xF6rsta bokstaven \xE4r versal och resten av str\xE4ngen \xE4r gemener.\
+  \ Detta \xE4r en vanlig uppgift\u2026"
+lastmod: 2024-02-18 23:08:52.189355
+model: gpt-4-0125-preview
+summary: "Att skriva med stor bokstav inneb\xE4r att man \xE4ndrar den s\xE5 att den\
+  \ f\xF6rsta bokstaven \xE4r versal och resten av str\xE4ngen \xE4r gemener. Detta\
+  \ \xE4r en vanlig uppgift\u2026"
+title: "G\xF6r om en str\xE4ng till versaler"
 ---
 
 {{< edit_this_page >}}

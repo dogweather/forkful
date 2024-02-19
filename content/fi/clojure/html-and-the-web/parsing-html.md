@@ -1,12 +1,15 @@
 ---
-title:                "HTML:n jäsentäminen"
 aliases:
 - /fi/clojure/parsing-html/
-date:                  2024-01-20T15:30:45.707879-07:00
-simple_title:         "HTML:n jäsentäminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/parsing-html.md"
+date: 2024-01-20 15:30:45.707879-07:00
+description: "(Mit\xE4 & Miksi?) HTML:n j\xE4sent\xE4minen tarkoittaa HTML-koodin\
+  \ rakenteen lukemista ja sen sis\xE4ll\xF6n muuntamista k\xE4sitelt\xE4v\xE4ksi\
+  \ tietorakenteeksi. Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:07.226249
+summary: "(Mit\xE4 & Miksi?) HTML:n j\xE4sent\xE4minen tarkoittaa HTML-koodin rakenteen\
+  \ lukemista ja sen sis\xE4ll\xF6n muuntamista k\xE4sitelt\xE4v\xE4ksi tietorakenteeksi.\
+  \ Ohjelmoijat\u2026"
+title: "HTML:n j\xE4sent\xE4minen"
 ---
 
 {{< edit_this_page >}}

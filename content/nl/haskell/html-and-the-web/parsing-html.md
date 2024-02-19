@@ -1,15 +1,17 @@
 ---
-title:                "HTML Parsen"
 aliases:
 - /nl/haskell/parsing-html/
-date:                  2024-01-28T22:03:40.394195-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML Parsen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/haskell/parsing-html.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:03:40.394195-07:00
+description: "HTML parsen betekent gegevens uit HTML-documenten extraheren - HTML\
+  \ is tenslotte de steiger van het web. Programmeurs parsen HTML om gegevensschrapen\
+  \ te\u2026"
+lastmod: 2024-02-18 23:09:01.896361
+model: gpt-4-0125-preview
+summary: "HTML parsen betekent gegevens uit HTML-documenten extraheren - HTML is tenslotte\
+  \ de steiger van het web. Programmeurs parsen HTML om gegevensschrapen te\u2026"
+title: HTML Parsen
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,14 @@
 ---
-title:                "文字列からの日付の解析"
 aliases:
 - /ja/c/parsing-a-date-from-a-string/
-date:                  2024-02-03T18:06:16.616425-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "文字列からの日付の解析"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:06:16.616425-07:00
+description: "\u2026"
+lastmod: 2024-02-18 23:08:55.359043
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u6587\u5B57\u5217\u304B\u3089\u306E\u65E5\u4ED8\u306E\u89E3\u6790"
 ---
 
 {{< edit_this_page >}}

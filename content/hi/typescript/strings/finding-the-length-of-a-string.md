@@ -1,13 +1,15 @@
 ---
-title:                "स्ट्रिंग की लंबाई ज्ञात करना"
 aliases:
 - /hi/typescript/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:33.976788-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "स्ट्रिंग की लंबाई ज्ञात करना"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:33.976788-07:00
+description: "String ki length jaanna matlab ye pata karna ki string me kitne characters\
+  \ hain. Programmers isse isliye karte hain taaki text data ko process ya validate\u2026"
+lastmod: 2024-02-18 23:09:02.863339
+model: gpt-4-1106-preview
+summary: "String ki length jaanna matlab ye pata karna ki string me kitne characters\
+  \ hain. Programmers isse isliye karte hain taaki text data ko process ya validate\u2026"
+title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u0940 \u0932\u0902\
+  \u092C\u093E\u0908 \u091C\u094D\u091E\u093E\u0924 \u0915\u0930\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

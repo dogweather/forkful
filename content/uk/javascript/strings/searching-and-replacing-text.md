@@ -1,13 +1,13 @@
 ---
-title:                "Пошук та заміна тексту"
 aliases:
 - /uk/javascript/searching-and-replacing-text/
-date:                  2024-01-20T17:58:25.147824-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Пошук та заміна тексту"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/javascript/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:25.147824-07:00
+description: (
+lastmod: 2024-02-18 23:09:01.008583
+model: gpt-4-1106-preview
+summary: (
+title: "\u041F\u043E\u0448\u0443\u043A \u0442\u0430 \u0437\u0430\u043C\u0456\u043D\
+  \u0430 \u0442\u0435\u043A\u0441\u0442\u0443"
 ---
 
 {{< edit_this_page >}}

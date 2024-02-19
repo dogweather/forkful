@@ -1,13 +1,14 @@
 ---
-title:                "Merkkijonon interpolointi"
 aliases:
 - /fi/java/interpolating-a-string/
-date:                  2024-01-20T17:51:10.398125-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon interpolointi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/interpolating-a-string.md"
+date: 2024-01-20 17:51:10.398125-07:00
+description: "Merkkijonon interpolointi tarkoittaa muuttujien, lausekkeiden tai arvojen\
+  \ upottamista merkkijonoon. Se tekee koodista siistimp\xE4\xE4 ja helpottaa dynaamisten\u2026"
+lastmod: 2024-02-18 23:09:07.443492
+model: gpt-4-1106-preview
+summary: "Merkkijonon interpolointi tarkoittaa muuttujien, lausekkeiden tai arvojen\
+  \ upottamista merkkijonoon. Se tekee koodista siistimp\xE4\xE4 ja helpottaa dynaamisten\u2026"
+title: Merkkijonon interpolointi
 ---
 
 {{< edit_this_page >}}

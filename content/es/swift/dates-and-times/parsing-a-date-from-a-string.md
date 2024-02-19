@@ -1,14 +1,16 @@
 ---
-title:                "Analizando una fecha a partir de una cadena de texto"
 aliases:
 - /es/swift/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:15:24.759831-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analizando una fecha a partir de una cadena de texto"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:15:24.759831-07:00
+description: "Analizar una fecha a partir de una cadena implica convertir representaciones\
+  \ textuales de fecha y hora en un objeto `Date`. Este proceso es esencial en\u2026"
+lastmod: 2024-02-18 23:09:10.368346
+model: gpt-4-0125-preview
+summary: "Analizar una fecha a partir de una cadena implica convertir representaciones\
+  \ textuales de fecha y hora en un objeto `Date`. Este proceso es esencial en\u2026"
+title: Analizando una fecha a partir de una cadena de texto
 ---
 
 {{< edit_this_page >}}

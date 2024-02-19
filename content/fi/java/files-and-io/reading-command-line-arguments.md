@@ -1,13 +1,16 @@
 ---
-title:                "Komennoriviparametrien lukeminen"
 aliases:
 - /fi/java/reading-command-line-arguments/
-date:                  2024-01-20T17:56:07.402580-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Komennoriviparametrien lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:07.402580-07:00
+description: "\"Mit\xE4 & Miksi?\" Komennonriviargumentit ovat ohjelmaan ulkoa sy\xF6\
+  tett\xE4vi\xE4 parametreja. Niit\xE4 k\xE4ytet\xE4\xE4n ohjelman toiminnan muokkaamiseen\
+  \ lennossa, ilman\u2026"
+lastmod: 2024-02-18 23:09:07.474846
+model: gpt-4-1106-preview
+summary: "\"Mit\xE4 & Miksi?\" Komennonriviargumentit ovat ohjelmaan ulkoa sy\xF6\
+  tett\xE4vi\xE4 parametreja. Niit\xE4 k\xE4ytet\xE4\xE4n ohjelman toiminnan muokkaamiseen\
+  \ lennossa, ilman\u2026"
+title: Komennoriviparametrien lukeminen
 ---
 
 {{< edit_this_page >}}

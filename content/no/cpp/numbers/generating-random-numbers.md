@@ -1,13 +1,16 @@
 ---
-title:                "Generering av tilfeldige tall"
 aliases:
 - /no/cpp/generating-random-numbers/
-date:                  2024-01-27T20:32:42.252909-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generering av tilfeldige tall"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/generating-random-numbers.md"
+date: 2024-01-27 20:32:42.252909-07:00
+description: "Generering av tilfeldige tall i programmering inneb\xE6rer \xE5 skape\
+  \ sekvenser av tall som mangler forutsigbar rekkef\xF8lge eller m\xF8nster. Programmerere\
+  \ bruker\u2026"
+lastmod: 2024-02-18 23:08:54.180473
+model: gpt-4-0125-preview
+summary: "Generering av tilfeldige tall i programmering inneb\xE6rer \xE5 skape sekvenser\
+  \ av tall som mangler forutsigbar rekkef\xF8lge eller m\xF8nster. Programmerere\
+  \ bruker\u2026"
+title: Generering av tilfeldige tall
 ---
 
 {{< edit_this_page >}}

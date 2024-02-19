@@ -1,13 +1,16 @@
 ---
-title:                "Hantera filer med CLI-engreppskommandon"
 aliases:
 - /sv/powershell/manipulating-files-with-cli-one-liners/
-date:                  2024-01-27T16:21:22.811186-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Hantera filer med CLI-engreppskommandon"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/manipulating-files-with-cli-one-liners.md"
+date: 2024-01-27 16:21:22.811186-07:00
+description: "Att manipulera filer med CLI-enradare i PowerShell handlar om att snabbt\
+  \ \xE4ndra, flytta eller erh\xE5lla fildata direkt fr\xE5n kommandoraden. Programmerare\
+  \ g\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.998807
+model: gpt-4-0125-preview
+summary: "Att manipulera filer med CLI-enradare i PowerShell handlar om att snabbt\
+  \ \xE4ndra, flytta eller erh\xE5lla fildata direkt fr\xE5n kommandoraden. Programmerare\
+  \ g\xF6r\u2026"
+title: Hantera filer med CLI-engreppskommandon
 ---
 
 {{< edit_this_page >}}

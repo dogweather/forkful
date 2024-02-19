@@ -1,13 +1,14 @@
 ---
-title:                "Arbeiten mit XML"
 aliases:
 - /de/java/working-with-xml/
-date:                  2024-01-26T04:32:21.203411-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeiten mit XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/working-with-xml.md"
+date: 2024-01-26 04:32:21.203411-07:00
+description: "Die Arbeit mit XML umfasst das Parsen, Abfragen und Manipulieren von\
+  \ XML-Dokumenten mit Java. Programmierer tun dies f\xFCr den Datenaustausch, die\u2026"
+lastmod: 2024-02-18 23:09:04.763143
+model: gpt-4-0125-preview
+summary: "Die Arbeit mit XML umfasst das Parsen, Abfragen und Manipulieren von XML-Dokumenten\
+  \ mit Java. Programmierer tun dies f\xFCr den Datenaustausch, die\u2026"
+title: Arbeiten mit XML
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Skriva ut felsökningsdata"
 aliases:
 - /sv/rust/printing-debug-output/
-date:                  2024-01-20T17:53:18.311526-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skriva ut felsökningsdata"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/printing-debug-output.md"
+date: 2024-01-20 17:53:18.311526-07:00
+description: "Utskrift f\xF6r fels\xF6kning hj\xE4lper programmerare att f\xF6rst\xE5\
+  \ vad deras kod g\xF6r under k\xF6rning. Det g\xF6r att vi kan sp\xE5ra v\xE4rden\
+  \ och programfl\xF6de f\xF6r att hitta\u2026"
+lastmod: 2024-02-18 23:08:51.586348
+model: gpt-4-1106-preview
+summary: "Utskrift f\xF6r fels\xF6kning hj\xE4lper programmerare att f\xF6rst\xE5\
+  \ vad deras kod g\xF6r under k\xF6rning. Det g\xF6r att vi kan sp\xE5ra v\xE4rden\
+  \ och programfl\xF6de f\xF6r att hitta\u2026"
+title: "Skriva ut fels\xF6kningsdata"
 ---
 
 {{< edit_this_page >}}

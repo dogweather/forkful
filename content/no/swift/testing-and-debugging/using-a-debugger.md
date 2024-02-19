@@ -1,13 +1,16 @@
 ---
-title:                "Å bruke en debugger"
 aliases:
 - /no/swift/using-a-debugger/
-date:                  2024-01-26T04:10:55.172891-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å bruke en debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/using-a-debugger.md"
+date: 2024-01-26 04:10:55.172891-07:00
+description: "\xC5 bruke en feils\xF8ker betyr \xE5 utnytte spesialiserte verkt\xF8\
+  y for \xE5 teste og inspisere koden din mens den kj\xF8rer. Det er en stor sak fordi\
+  \ det lar deg se hva\u2026"
+lastmod: 2024-02-18 23:08:54.273329
+model: gpt-4-0125-preview
+summary: "\xC5 bruke en feils\xF8ker betyr \xE5 utnytte spesialiserte verkt\xF8y for\
+  \ \xE5 teste og inspisere koden din mens den kj\xF8rer. Det er en stor sak fordi\
+  \ det lar deg se hva\u2026"
+title: "\xC5 bruke en debugger"
 ---
 
 {{< edit_this_page >}}

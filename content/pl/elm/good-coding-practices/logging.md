@@ -1,13 +1,16 @@
 ---
-title:                "Rejestrowanie zdarzeń"
 aliases:
 - /pl/elm/logging/
-date:                  2024-01-26T01:02:26.774028-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rejestrowanie zdarzeń"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/logging.md"
+date: 2024-01-26 01:02:26.774028-07:00
+description: "Logowanie to w zasadzie proces rejestrowania zdarze\u0144 i danych wyj\u015B\
+  ciowych z dzia\u0142aj\u0105cego oprogramowania, mo\u017Cna to potraktowa\u0107\
+  \ jako dziennik\u2026"
+lastmod: 2024-02-18 23:08:49.525211
+model: gpt-4-1106-preview
+summary: "Logowanie to w zasadzie proces rejestrowania zdarze\u0144 i danych wyj\u015B\
+  ciowych z dzia\u0142aj\u0105cego oprogramowania, mo\u017Cna to potraktowa\u0107\
+  \ jako dziennik\u2026"
+title: "Rejestrowanie zdarze\u0144"
 ---
 
 {{< edit_this_page >}}

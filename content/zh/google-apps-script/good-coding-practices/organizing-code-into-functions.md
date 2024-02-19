@@ -1,14 +1,28 @@
 ---
-title:                "将代码组织成函数"
 aliases:
 - /zh/google-apps-script/organizing-code-into-functions/
-date:                  2024-02-01T21:56:30.705237-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "将代码组织成函数"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/google-apps-script/organizing-code-into-functions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:56:30.705237-07:00
+description: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\u51FD\u6570\uFF0C\u662F\u6307\u901A\
+  \u8FC7\u5C06\u60A8\u7684Google Apps Script\u4EE3\u7801\u5206\u5272\u6210\u72EC\u7ACB\
+  \u7684\u903B\u8F91\u6BB5\u843D\uFF0C\u6BCF\u4E2A\u6BB5\u843D\u6267\u884C\u4E00\u4E2A\
+  \u7279\u5B9A\u4EFB\u52A1\uFF0C\u4ECE\u800C\u5BF9\u4EE3\u7801\u8FDB\u884C\u7ED3\u6784\
+  \u5316\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u63D0\u9AD8\u4EE3\
+  \u7801\u7684\u53EF\u8BFB\u6027\u3001\u53EF\u7EF4\u62A4\u6027\u548C\u53EF\u91CD\u7528\
+  \u6027\uFF0C\u786E\u4FDD\u590D\u6742\u7684\u811A\u672C\u66F4\u5BB9\u6613\u7406\u89E3\
+  \u548C\u8C03\u8BD5\u3002"
+lastmod: 2024-02-18 23:08:58.755980
+model: gpt-4-0125-preview
+summary: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\u51FD\u6570\uFF0C\u662F\u6307\u901A\
+  \u8FC7\u5C06\u60A8\u7684Google Apps Script\u4EE3\u7801\u5206\u5272\u6210\u72EC\u7ACB\
+  \u7684\u903B\u8F91\u6BB5\u843D\uFF0C\u6BCF\u4E2A\u6BB5\u843D\u6267\u884C\u4E00\u4E2A\
+  \u7279\u5B9A\u4EFB\u52A1\uFF0C\u4ECE\u800C\u5BF9\u4EE3\u7801\u8FDB\u884C\u7ED3\u6784\
+  \u5316\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u63D0\u9AD8\u4EE3\
+  \u7801\u7684\u53EF\u8BFB\u6027\u3001\u53EF\u7EF4\u62A4\u6027\u548C\u53EF\u91CD\u7528\
+  \u6027\uFF0C\u786E\u4FDD\u590D\u6742\u7684\u811A\u672C\u66F4\u5BB9\u6613\u7406\u89E3\
+  \u548C\u8C03\u8BD5\u3002"
+title: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\u51FD\u6570"
 ---
 
 {{< edit_this_page >}}

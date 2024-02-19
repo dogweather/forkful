@@ -1,13 +1,15 @@
 ---
-title:                "Interpolazione di una stringa"
 aliases:
 - /it/haskell/interpolating-a-string/
-date:                  2024-01-20T17:51:06.457994-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolazione di una stringa"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/interpolating-a-string.md"
+date: 2024-01-20 17:51:06.457994-07:00
+description: "Interpolare una stringa significa inserire dinamicamente espressioni\
+  \ o variabili direttamente all'interno di una stringa di testo. I programmatori\
+  \ lo\u2026"
+lastmod: 2024-02-18 23:08:55.916524
+model: gpt-4-1106-preview
+summary: "Interpolare una stringa significa inserire dinamicamente espressioni o variabili\
+  \ direttamente all'interno di una stringa di testo. I programmatori lo\u2026"
+title: Interpolazione di una stringa
 ---
 
 {{< edit_this_page >}}

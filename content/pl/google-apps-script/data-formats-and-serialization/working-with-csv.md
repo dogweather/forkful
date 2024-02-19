@@ -1,14 +1,16 @@
 ---
-title:                "Praca z formatem CSV"
 aliases:
 - /pl/google-apps-script/working-with-csv/
-date:                  2024-02-01T22:06:11.168082-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z formatem CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/working-with-csv.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:06:11.168082-07:00
+description: "Praca z plikami CSV (Comma-Separated Values, warto\u015Bci rozdzielone\
+  \ przecinkami) w Google Apps Script polega na odczytywaniu, modyfikowaniu i zapisywaniu\u2026"
+lastmod: 2024-02-18 23:08:49.177348
+model: gpt-4-0125-preview
+summary: "Praca z plikami CSV (Comma-Separated Values, warto\u015Bci rozdzielone przecinkami)\
+  \ w Google Apps Script polega na odczytywaniu, modyfikowaniu i zapisywaniu\u2026"
+title: Praca z formatem CSV
 ---
 
 {{< edit_this_page >}}

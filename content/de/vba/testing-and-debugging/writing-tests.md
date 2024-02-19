@@ -1,14 +1,16 @@
 ---
-title:                "Tests schreiben"
 aliases:
 - /de/vba/writing-tests/
-date:                  2024-02-01T22:08:36.886492-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tests schreiben"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/vba/writing-tests.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:08:36.886492-07:00
+description: "Tests in der Programmierung zu schreiben bedeutet, spezifische Verfahren\
+  \ zu erstellen, um die Funktionalit\xE4t und Leistung Ihrer Codeabschnitte zu\u2026"
+lastmod: 2024-02-18 23:09:04.693452
+model: gpt-4-0125-preview
+summary: "Tests in der Programmierung zu schreiben bedeutet, spezifische Verfahren\
+  \ zu erstellen, um die Funktionalit\xE4t und Leistung Ihrer Codeabschnitte zu\u2026"
+title: Tests schreiben
 ---
 
 {{< edit_this_page >}}

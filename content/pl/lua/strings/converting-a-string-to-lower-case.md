@@ -1,13 +1,16 @@
 ---
-title:                "Konwersja ciągu znaków na małe litery"
 aliases:
 - /pl/lua/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:43.646081-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konwersja ciągu znaków na małe litery"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:43.646081-07:00
+description: "Zamiana \u0142a\u0144cucha na ma\u0142e litery oznacza, \u017Ce ka\u017C\
+  da du\u017Ca litera w tek\u015Bcie zostaje przekszta\u0142cona na swoj\u0105 ma\u0142\
+  \u0105 wersj\u0119. Programi\u015Bci robi\u0105 to, aby u\u0142atwi\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.726741
+model: gpt-4-1106-preview
+summary: "Zamiana \u0142a\u0144cucha na ma\u0142e litery oznacza, \u017Ce ka\u017C\
+  da du\u017Ca litera w tek\u015Bcie zostaje przekszta\u0142cona na swoj\u0105 ma\u0142\
+  \u0105 wersj\u0119. Programi\u015Bci robi\u0105 to, aby u\u0142atwi\u0107\u2026"
+title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 ---
 
 {{< edit_this_page >}}

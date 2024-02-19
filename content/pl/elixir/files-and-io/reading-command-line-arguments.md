@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie argumentów linii poleceń"
 aliases:
 - /pl/elixir/reading-command-line-arguments/
-date:                  2024-01-20T17:55:48.556948-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie argumentów linii poleceń"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:48.556948-07:00
+description: "Czytanie argument\xF3w linii polece\u0144 pozwala na interakcj\u0119\
+  \ z twoim programem podczas jego uruchamiania. Programi\u015Bci u\u017Cywaj\u0105\
+  \ tego, by uczyni\u0107 aplikacje\u2026"
+lastmod: 2024-02-18 23:08:49.321603
+model: gpt-4-1106-preview
+summary: "Czytanie argument\xF3w linii polece\u0144 pozwala na interakcj\u0119 z twoim\
+  \ programem podczas jego uruchamiania. Programi\u015Bci u\u017Cywaj\u0105 tego,\
+  \ by uczyni\u0107 aplikacje\u2026"
+title: "Odczytywanie argument\xF3w linii polece\u0144"
 ---
 
 {{< edit_this_page >}}

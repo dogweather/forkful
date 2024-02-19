@@ -1,14 +1,16 @@
 ---
-title:                "Trabajando con YAML"
 aliases:
 - /es/elm/working-with-yaml/
-date:                  2024-02-03T19:25:19.013433-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:25:19.013433-07:00
+description: "Elm no tiene soporte incorporado para YAML, un formato de serializaci\xF3\
+  n de datos a menudo utilizado para archivos de configuraci\xF3n o compartir datos,\u2026"
+lastmod: 2024-02-18 23:09:09.912303
+model: gpt-4-0125-preview
+summary: "Elm no tiene soporte incorporado para YAML, un formato de serializaci\xF3\
+  n de datos a menudo utilizado para archivos de configuraci\xF3n o compartir datos,\u2026"
+title: Trabajando con YAML
 ---
 
 {{< edit_this_page >}}

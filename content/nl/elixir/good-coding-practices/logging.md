@@ -1,15 +1,17 @@
 ---
-title:                "Logboekregistratie"
 aliases:
 - /nl/elixir/logging/
-date:                  2024-01-28T22:02:57.639297-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Logboekregistratie"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elixir/logging.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:02:57.639297-07:00
+description: "Loggen in softwareontwikkeling is de techniek van het vastleggen van\
+  \ gebeurtenissen die plaatsvinden terwijl een programma wordt uitgevoerd, meestal\
+  \ naar\u2026"
+lastmod: 2024-02-18 23:09:01.533692
+model: gpt-4-0125-preview
+summary: "Loggen in softwareontwikkeling is de techniek van het vastleggen van gebeurtenissen\
+  \ die plaatsvinden terwijl een programma wordt uitgevoerd, meestal naar\u2026"
+title: Logboekregistratie
 ---
 
 {{< edit_this_page >}}

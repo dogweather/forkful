@@ -1,14 +1,16 @@
 ---
-title:                "Verkkosivun lataaminen"
 aliases:
 - /fi/vba/downloading-a-web-page/
-date:                  2024-02-01T21:53:18.475025-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verkkosivun lataaminen"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/downloading-a-web-page.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:18.475025-07:00
+description: "Web-sivun lataaminen Visual Basic for Applications (VBA) -ohjelmoinnilla\
+  \ tarkoittaa web-sivun HTML-sis\xE4ll\xF6n noutamista Internetist\xE4. Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:07.409207
+model: gpt-4-0125-preview
+summary: "Web-sivun lataaminen Visual Basic for Applications (VBA) -ohjelmoinnilla\
+  \ tarkoittaa web-sivun HTML-sis\xE4ll\xF6n noutamista Internetist\xE4. Ohjelmoijat\u2026"
+title: Verkkosivun lataaminen
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,14 @@
 ---
-title:                "現在の日付の取得"
 aliases:
 - /ja/rust/getting-the-current-date/
-date:                  2024-02-03T19:10:58.526675-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "現在の日付の取得"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:10:58.526675-07:00
+description: "\u2026"
+lastmod: 2024-02-18 23:08:54.730935
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u73FE\u5728\u306E\u65E5\u4ED8\u306E\u53D6\u5F97"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,17 @@
 ---
-title:                "Het huidige datum ophalen"
 aliases:
 - /nl/java/getting-the-current-date/
-date:                  2024-01-28T22:01:14.737043-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Het huidige datum ophalen"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/java/getting-the-current-date.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:14.737043-07:00
+description: "De huidige datum in Java verkrijgen is een fluitje van een cent \u2013\
+  \ het draait allemaal om het gebruiken van de juiste klasse om de huidige dag uit\
+  \ de\u2026"
+lastmod: 2024-02-18 23:09:01.724678
+model: gpt-4-0125-preview
+summary: "De huidige datum in Java verkrijgen is een fluitje van een cent \u2013 het\
+  \ draait allemaal om het gebruiken van de juiste klasse om de huidige dag uit de\u2026"
+title: Het huidige datum ophalen
 ---
 
 {{< edit_this_page >}}

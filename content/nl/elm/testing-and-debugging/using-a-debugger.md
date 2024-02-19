@@ -1,15 +1,18 @@
 ---
-title:                "Een debugger gebruiken"
 aliases:
 - /nl/elm/using-a-debugger/
-date:                  2024-01-28T22:09:08.461977-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een debugger gebruiken"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elm/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:08.461977-07:00
+description: "Debuggen in Elm betreft het identificeren en verwijderen van fouten\
+  \ uit je code. Programmeurs doen dit om te zorgen dat hun applicaties correct werken\
+  \ en\u2026"
+lastmod: 2024-02-18 23:09:01.764476
+model: gpt-4-0125-preview
+summary: "Debuggen in Elm betreft het identificeren en verwijderen van fouten uit\
+  \ je code. Programmeurs doen dit om te zorgen dat hun applicaties correct werken\
+  \ en\u2026"
+title: Een debugger gebruiken
 ---
 
 {{< edit_this_page >}}

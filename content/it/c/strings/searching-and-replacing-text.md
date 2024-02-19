@@ -1,14 +1,16 @@
 ---
-title:                "Ricerca e sostituzione del testo"
 aliases:
 - /it/c/searching-and-replacing-text/
-date:                  2024-02-03T18:08:13.873478-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ricerca e sostituzione del testo"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:13.873478-07:00
+description: "La ricerca e la sostituzione di testo in C prevedono l'identificazione\
+  \ di specifiche sottostringhe all'interno di una stringa pi\xF9 grande e la loro\u2026"
+lastmod: 2024-02-18 23:08:56.322575
+model: gpt-4-0125-preview
+summary: "La ricerca e la sostituzione di testo in C prevedono l'identificazione di\
+  \ specifiche sottostringhe all'interno di una stringa pi\xF9 grande e la loro\u2026"
+title: Ricerca e sostituzione del testo
 ---
 
 {{< edit_this_page >}}

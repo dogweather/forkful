@@ -1,14 +1,18 @@
 ---
-title:                "Tarkistetaan, onko hakemisto olemassa"
 aliases:
 - /fi/swift/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:45.200620-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tarkistetaan, onko hakemisto olemassa"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:45.200620-07:00
+description: "Hakemiston olemassaolon tarkistaminen tiedostoj\xE4rjestelm\xE4ss\xE4\
+  \ on oleellista, kun hallinnoit tiedostorakenteita Swift-sovelluksistasi k\xE4sin.\
+  \ T\xE4m\xE4 teht\xE4v\xE4\u2026"
+lastmod: 2024-02-18 23:09:08.005555
+model: gpt-4-0125-preview
+summary: "Hakemiston olemassaolon tarkistaminen tiedostoj\xE4rjestelm\xE4ss\xE4 on\
+  \ oleellista, kun hallinnoit tiedostorakenteita Swift-sovelluksistasi k\xE4sin.\
+  \ T\xE4m\xE4 teht\xE4v\xE4\u2026"
+title: Tarkistetaan, onko hakemisto olemassa
 ---
 
 {{< edit_this_page >}}

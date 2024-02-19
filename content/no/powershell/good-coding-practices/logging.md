@@ -1,13 +1,14 @@
 ---
-title:                "Loggføring"
 aliases:
 - /no/powershell/logging/
-date:                  2024-01-26T01:07:18.264099-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Loggføring"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/powershell/logging.md"
+date: 2024-01-26 01:07:18.264099-07:00
+description: "Logging er i bunn og grunn \xE5 etterlate et spor av br\xF8dsmuler gjennom\
+  \ koden din - det er hvordan du holder oversikten over hva som skjer n\xE5r skriptet\u2026"
+lastmod: 2024-02-18 23:08:54.106345
+model: gpt-4-1106-preview
+summary: "Logging er i bunn og grunn \xE5 etterlate et spor av br\xF8dsmuler gjennom\
+  \ koden din - det er hvordan du holder oversikten over hva som skjer n\xE5r skriptet\u2026"
+title: "Loggf\xF8ring"
 ---
 
 {{< edit_this_page >}}

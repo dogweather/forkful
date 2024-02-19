@@ -1,13 +1,16 @@
 ---
-title:                "Praca z XML"
 aliases:
 - /pl/ruby/working-with-xml/
-date:                  2024-01-26T04:35:22.920382-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/working-with-xml.md"
+date: 2024-01-26 04:35:22.920382-07:00
+description: "Praca z XML oznacza parsowanie, generowanie i manipulowanie dokumentami\
+  \ XML (eXtensible Markup Language) za pomoc\u0105 kodu. Programi\u015Bci robi\u0105\
+  \ to, aby\u2026"
+lastmod: 2024-02-18 23:08:50.149677
+model: gpt-4-0125-preview
+summary: "Praca z XML oznacza parsowanie, generowanie i manipulowanie dokumentami\
+  \ XML (eXtensible Markup Language) za pomoc\u0105 kodu. Programi\u015Bci robi\u0105\
+  \ to, aby\u2026"
+title: Praca z XML
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,24 @@
 ---
-title:                "텍스트 파일 읽기"
 aliases:
 - /ko/arduino/reading-a-text-file/
-date:                  2024-01-20T17:53:30.875202-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "텍스트 파일 읽기"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/reading-a-text-file.md"
+date: 2024-01-20 17:53:30.875202-07:00
+description: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30\uB780, \uAE00\uC790\uAC00\
+  \ \uC4F0\uC5EC\uC9C4 \uD30C\uC77C\uC744 \uAC00\uC838\uC640 \uD504\uB85C\uADF8\uB7A8\
+  \uC5D0\uC11C \uC0AC\uC6A9\uD560 \uC218 \uC788\uB294 \uB370\uC774\uD130\uB85C \uB9CC\
+  \uB4DC\uB294 \uACFC\uC815\uC774\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\
+  \ \uC124\uC815, \uB370\uC774\uD130 \uCC98\uB9AC, \uD639\uC740 \uC18C\uD504\uD2B8\
+  \uC6E8\uC5B4 \uAC04 \uD1B5\uC2E0\uC744 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uD55C\
+  \uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.646101
+model: gpt-4-1106-preview
+summary: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30\uB780, \uAE00\uC790\uAC00 \uC4F0\
+  \uC5EC\uC9C4 \uD30C\uC77C\uC744 \uAC00\uC838\uC640 \uD504\uB85C\uADF8\uB7A8\uC5D0\
+  \uC11C \uC0AC\uC6A9\uD560 \uC218 \uC788\uB294 \uB370\uC774\uD130\uB85C \uB9CC\uB4DC\
+  \uB294 \uACFC\uC815\uC774\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC124\
+  \uC815, \uB370\uC774\uD130 \uCC98\uB9AC, \uD639\uC740 \uC18C\uD504\uD2B8\uC6E8\uC5B4\
+  \ \uAC04 \uD1B5\uC2E0\uC744 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uD55C\uB2E4."
+title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "XML:n käsittely"
 aliases:
 - /fi/powershell/working-with-xml/
-date:                  2024-01-26T04:34:24.945957-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML:n käsittely"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/working-with-xml.md"
+date: 2024-01-26 04:34:24.945957-07:00
+description: "XML:n (eXtensible Markup Language) kanssa ty\xF6skentely sis\xE4lt\xE4\
+  \xE4 tietojen manipuloinnin ja k\xE4ytt\xE4misen, jotka on j\xE4rjestetty Laajennettavassa\u2026"
+lastmod: 2024-02-18 23:09:07.880889
+model: gpt-4-0125-preview
+summary: "XML:n (eXtensible Markup Language) kanssa ty\xF6skentely sis\xE4lt\xE4\xE4\
+  \ tietojen manipuloinnin ja k\xE4ytt\xE4misen, jotka on j\xE4rjestetty Laajennettavassa\u2026"
+title: "XML:n k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

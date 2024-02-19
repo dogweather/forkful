@@ -1,13 +1,16 @@
 ---
-title:                "Arbeiten mit XML"
 aliases:
 - /de/php/working-with-xml/
-date:                  2024-01-26T04:33:36.498239-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeiten mit XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/working-with-xml.md"
+date: 2024-01-26 04:33:36.498239-07:00
+description: "XML ist eine Auszeichnungssprache, die zum Speichern und Transportieren\
+  \ von Daten verwendet wird. Programmierer arbeiten mit XML, um die Interoperabilit\xE4\
+  t\u2026"
+lastmod: 2024-02-18 23:09:04.988394
+model: gpt-4-0125-preview
+summary: "XML ist eine Auszeichnungssprache, die zum Speichern und Transportieren\
+  \ von Daten verwendet wird. Programmierer arbeiten mit XML, um die Interoperabilit\xE4\
+  t\u2026"
+title: Arbeiten mit XML
 ---
 
 {{< edit_this_page >}}

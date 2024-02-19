@@ -1,14 +1,24 @@
 ---
-title:                "コマンドライン引数の読み取り"
 aliases:
 - /ja/rust/reading-command-line-arguments/
-date:                  2024-01-20T17:56:57.351311-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "コマンドライン引数の読み取り"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:57.351311-07:00
+description: "\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u5F15\u6570\u8AAD\u307F\u53D6\
+  \u308A\u306F\u3001\u30D7\u30ED\u30B0\u30E9\u30E0\u5B9F\u884C\u6642\u306B\u30E6\u30FC\
+  \u30B6\u30FC\u304B\u3089\u306E\u5165\u529B\u3092\u53D7\u3051\u53D6\u308B\u65B9\u6CD5\
+  \u3067\u3059\u3002\u3053\u308C\u306B\u3088\u308A\u3001\u6C4E\u7528\u6027\u304C\u9AD8\
+  \u307E\u308A\u3001\u3055\u307E\u3056\u307E\u306A\u72B6\u6CC1\u3084\u30BF\u30B9\u30AF\
+  \u306B\u67D4\u8EDF\u306B\u5BFE\u5FDC\u3067\u304D\u307E\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:54.735218
+model: gpt-4-1106-preview
+summary: "\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u5F15\u6570\u8AAD\u307F\u53D6\
+  \u308A\u306F\u3001\u30D7\u30ED\u30B0\u30E9\u30E0\u5B9F\u884C\u6642\u306B\u30E6\u30FC\
+  \u30B6\u30FC\u304B\u3089\u306E\u5165\u529B\u3092\u53D7\u3051\u53D6\u308B\u65B9\u6CD5\
+  \u3067\u3059\u3002\u3053\u308C\u306B\u3088\u308A\u3001\u6C4E\u7528\u6027\u304C\u9AD8\
+  \u307E\u308A\u3001\u3055\u307E\u3056\u307E\u306A\u72B6\u6CC1\u3084\u30BF\u30B9\u30AF\
+  \u306B\u67D4\u8EDF\u306B\u5BFE\u5FDC\u3067\u304D\u307E\u3059\u3002"
+title: "\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u5F15\u6570\u306E\u8AAD\u307F\u53D6\
+  \u308A"
 ---
 
 {{< edit_this_page >}}

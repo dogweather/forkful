@@ -1,13 +1,16 @@
 ---
-title:                "Organizando o código em funções"
 aliases:
 - /pt/elm/organizing-code-into-functions/
-date:                  2024-01-26T01:10:34.654351-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organizando o código em funções"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/organizing-code-into-functions.md"
+date: 2024-01-26 01:10:34.654351-07:00
+description: "Jogar todo o seu c\xF3digo em uma grande pilha? M\xE1 ideia. Dividi-lo\
+  \ em fun\xE7\xF5es? Boa ideia. Isso mant\xE9m o seu c\xF3digo em Elm limpo, reutiliz\xE1\
+  vel e mais f\xE1cil\u2026"
+lastmod: 2024-02-18 23:08:58.065943
+model: gpt-4-1106-preview
+summary: "Jogar todo o seu c\xF3digo em uma grande pilha? M\xE1 ideia. Dividi-lo em\
+  \ fun\xE7\xF5es? Boa ideia. Isso mant\xE9m o seu c\xF3digo em Elm limpo, reutiliz\xE1\
+  vel e mais f\xE1cil\u2026"
+title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 ---
 
 {{< edit_this_page >}}

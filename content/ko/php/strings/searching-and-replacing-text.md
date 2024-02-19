@@ -1,14 +1,23 @@
 ---
-title:                "텍스트 검색 및 교체"
 aliases:
 - /ko/php/searching-and-replacing-text/
-date:                  2024-01-20T17:58:20.543234-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "텍스트 검색 및 교체"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:20.543234-07:00
+description: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9\uACFC \uAD50\uCCB4\uB294 \uBB38\uC790\
+  \uC5F4\uC5D0\uC11C \uD2B9\uC815 \uD14D\uC2A4\uD2B8\uB97C \uCC3E\uC544 \uB2E4\uB978\
+  \ \uD14D\uC2A4\uD2B8\uB85C \uBC14\uAFB8\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC740 \uB370\uC774\uD130 \uC815\uC81C, \uD615\uC2DD \uC870\
+  \uC815, \uC790\uB3D9\uD654 \uB4F1\uC744 \uC704\uD574 \uC774 \uAE30\uB2A5\uC744 \uC0AC\
+  \uC6A9\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.330052
+model: gpt-4-1106-preview
+summary: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9\uACFC \uAD50\uCCB4\uB294 \uBB38\uC790\uC5F4\
+  \uC5D0\uC11C \uD2B9\uC815 \uD14D\uC2A4\uD2B8\uB97C \uCC3E\uC544 \uB2E4\uB978 \uD14D\
+  \uC2A4\uD2B8\uB85C \uBC14\uAFB8\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC740 \uB370\uC774\uD130 \uC815\uC81C, \uD615\uC2DD \uC870\uC815\
+  , \uC790\uB3D9\uD654 \uB4F1\uC744 \uC704\uD574 \uC774 \uAE30\uB2A5\uC744 \uC0AC\uC6A9\
+  \uD569\uB2C8\uB2E4."
+title: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4"
 ---
 
 {{< edit_this_page >}}

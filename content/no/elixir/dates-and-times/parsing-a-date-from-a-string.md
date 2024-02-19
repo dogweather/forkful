@@ -1,16 +1,18 @@
 ---
-title:                "Analysering av en dato fra en streng"
 aliases:
 - /no/elixir/parsing-a-date-from-a-string/
-date:                  2024-01-28T02:05:06.262105-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analysering av en dato fra en streng"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 02:05:06.262105-07:00
+description: "\xC5 analysere en dato fra en streng handler om \xE5 ta tekst, som \"\
+  2023-04-05\", og konvertere det til et datoformat programmet ditt kan forst\xE5\
+  \ og jobbe med.\u2026"
+lastmod: 2024-02-18 23:08:53.613781
+model: gpt-4-0125-preview
+summary: "\xC5 analysere en dato fra en streng handler om \xE5 ta tekst, som \"2023-04-05\"\
+  , og konvertere det til et datoformat programmet ditt kan forst\xE5 og jobbe med.\u2026"
+title: Analysering av en dato fra en streng
 ---
 
 {{< edit_this_page >}}

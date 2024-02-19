@@ -1,13 +1,16 @@
 ---
-title:                "Läsa en textfil"
 aliases:
 - /sv/rust/reading-a-text-file/
-date:                  2024-01-20T17:55:02.716920-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Läsa en textfil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/reading-a-text-file.md"
+date: 2024-01-20 17:55:02.716920-07:00
+description: "Att l\xE4sa en textfil inneb\xE4r att inh\xE4mta textdata fr\xE5n en\
+  \ fil p\xE5 din h\xE5rddisk. Programmerare g\xF6r det f\xF6r att behandla och anv\xE4\
+  nda data, som\u2026"
+lastmod: 2024-02-18 23:08:51.600691
+model: gpt-4-1106-preview
+summary: "Att l\xE4sa en textfil inneb\xE4r att inh\xE4mta textdata fr\xE5n en fil\
+  \ p\xE5 din h\xE5rddisk. Programmerare g\xF6r det f\xF6r att behandla och anv\xE4\
+  nda data, som\u2026"
+title: "L\xE4sa en textfil"
 ---
 
 {{< edit_this_page >}}

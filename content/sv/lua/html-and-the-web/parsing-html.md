@@ -1,14 +1,16 @@
 ---
-title:                "Tolka HTML"
 aliases:
 - /sv/lua/parsing-html/
-date:                  2024-02-03T19:12:39.391548-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tolka HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/lua/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:39.391548-07:00
+description: "Att tolka HTML inneb\xE4r att extrahera data och information fr\xE5\
+  n HTML-dokument, vilket \xE4r avg\xF6rande f\xF6r webskrapning, dataanalys och\u2026"
+lastmod: 2024-02-18 23:08:51.916438
+model: gpt-4-0125-preview
+summary: "Att tolka HTML inneb\xE4r att extrahera data och information fr\xE5n HTML-dokument,\
+  \ vilket \xE4r avg\xF6rande f\xF6r webskrapning, dataanalys och\u2026"
+title: Tolka HTML
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Een tekstbestand schrijven"
 aliases:
 - /nl/google-apps-script/writing-a-text-file/
-date:                  2024-02-01T22:08:18.769653-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tekstbestand schrijven"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/google-apps-script/writing-a-text-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:08:18.769653-07:00
+description: "Het schrijven van een tekstbestand in Google Apps Script stelt ontwikkelaars\
+  \ in staat om gegevens blijvend op te slaan, waardoor deze toegankelijk zijn\u2026"
+lastmod: 2024-02-18 23:09:01.406717
+model: gpt-4-0125-preview
+summary: "Het schrijven van een tekstbestand in Google Apps Script stelt ontwikkelaars\
+  \ in staat om gegevens blijvend op te slaan, waardoor deze toegankelijk zijn\u2026"
+title: Een tekstbestand schrijven
 ---
 
 {{< edit_this_page >}}

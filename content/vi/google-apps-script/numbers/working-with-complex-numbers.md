@@ -1,14 +1,22 @@
 ---
-title:                "Làm việc với số phức"
 aliases:
 - /vi/google-apps-script/working-with-complex-numbers/
-date:                  2024-02-01T22:07:41.835603-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với số phức"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/google-apps-script/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:07:41.835603-07:00
+description: "S\u1ED1 ph\u1EE9c, \u0111\u01B0\u1EE3c bi\u1EC3u di\u1EC5n nh\u01B0\
+  \ l\xE0 s\u1EF1 k\u1EBFt h\u1EE3p c\u1EE7a ph\u1EA7n th\u1EF1c v\xE0 ph\u1EA7n \u1EA3\
+  o (v\xED d\u1EE5, 3 + 4i), l\xE0 c\u01A1 b\u1EA3n trong nhi\u1EC1u v\u1EA5n \u0111\
+  \u1EC1 t\xEDnh to\xE1n, \u0111\u1EB7c bi\u1EC7t trong k\u1EF9 thu\u1EADt, v\u1EAD\
+  t\u2026"
+lastmod: 2024-02-18 23:08:50.212403
+model: gpt-4-0125-preview
+summary: "S\u1ED1 ph\u1EE9c, \u0111\u01B0\u1EE3c bi\u1EC3u di\u1EC5n nh\u01B0 l\xE0\
+  \ s\u1EF1 k\u1EBFt h\u1EE3p c\u1EE7a ph\u1EA7n th\u1EF1c v\xE0 ph\u1EA7n \u1EA3\
+  o (v\xED d\u1EE5, 3 + 4i), l\xE0 c\u01A1 b\u1EA3n trong nhi\u1EC1u v\u1EA5n \u0111\
+  \u1EC1 t\xEDnh to\xE1n, \u0111\u1EB7c bi\u1EC7t trong k\u1EF9 thu\u1EADt, v\u1EAD\
+  t\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 ---
 
 {{< edit_this_page >}}

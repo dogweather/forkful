@@ -1,14 +1,14 @@
 ---
-title:                "基本認証を使用したHTTPリクエストの送信"
 aliases:
 - /ja/clojure/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:01:22.689767-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "基本認証を使用したHTTPリクエストの送信"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:01:22.689767-07:00
+description: ''
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:54.603698
+model: gpt-4-1106-preview
+summary: ''
+title: "\u57FA\u672C\u8A8D\u8A3C\u3092\u4F7F\u7528\u3057\u305FHTTP\u30EA\u30AF\u30A8\
+  \u30B9\u30C8\u306E\u9001\u4FE1"
 ---
 
 {{< edit_this_page >}}

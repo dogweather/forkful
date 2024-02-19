@@ -1,13 +1,16 @@
 ---
-title:                "Arrondir les nombres"
 aliases:
 - /fr/javascript/rounding-numbers/
-date:                  2024-01-26T03:45:22.383256-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrondir les nombres"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/rounding-numbers.md"
+date: 2024-01-26 03:45:22.383256-07:00
+description: "L'arrondi consiste \xE0 couper le bruit apr\xE8s un certain point dans\
+  \ un nombre. Les programmeurs arrondissent pour contr\xF4ler la pr\xE9cision, g\xE9\
+  rer la m\xE9moire,\u2026"
+lastmod: 2024-02-18 23:09:09.250158
+model: gpt-4-0125-preview
+summary: "L'arrondi consiste \xE0 couper le bruit apr\xE8s un certain point dans un\
+  \ nombre. Les programmeurs arrondissent pour contr\xF4ler la pr\xE9cision, g\xE9\
+  rer la m\xE9moire,\u2026"
+title: Arrondir les nombres
 ---
 
 {{< edit_this_page >}}

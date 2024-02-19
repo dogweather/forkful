@@ -1,14 +1,28 @@
 ---
-title:                "解析HTML"
 aliases:
 - /zh/haskell/parsing-html/
-date:                  2024-02-03T19:12:20.469295-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "解析HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:20.469295-07:00
+description: "\u5728 Haskell \u4E2D\u89E3\u6790 HTML \u5141\u8BB8\u4F60\u63D0\u53D6\
+  \u6570\u636E\u3001\u64CD\u4F5C HTML \u5185\u5BB9\u6216\u4EE5\u7F16\u7A0B\u65B9\u5F0F\
+  \u4E0E\u7F51\u9875\u4EA4\u4E92\u3002\u8FD9\u79CD\u64CD\u4F5C\u5BF9\u4E8E\u7F51\u7EDC\
+  \u722C\u866B\u3001\u81EA\u52A8\u5316\u6D4B\u8BD5\u7F51\u9875\u5E94\u7528\u3001\u4EE5\
+  \u53CA\u4ECE\u7F51\u7AD9\u6316\u6398\u6570\u636E\u7B49\u4EFB\u52A1\u81F3\u5173\u91CD\
+  \u8981 - \u5229\u7528 Haskell \u5F3A\u5927\u7684\u7C7B\u578B\u7CFB\u7EDF\u548C\u51FD\
+  \u6570\u5F0F\u7F16\u7A0B\u8303\u4F8B\u6765\u786E\u4FDD\u4EE3\u7801\u7684\u5065\u58EE\
+  \u6027\u548C\u7B80\u6D01\u6027\u3002"
+lastmod: 2024-02-18 23:08:59.167952
+model: gpt-4-0125-preview
+summary: "\u5728 Haskell \u4E2D\u89E3\u6790 HTML \u5141\u8BB8\u4F60\u63D0\u53D6\u6570\
+  \u636E\u3001\u64CD\u4F5C HTML \u5185\u5BB9\u6216\u4EE5\u7F16\u7A0B\u65B9\u5F0F\u4E0E\
+  \u7F51\u9875\u4EA4\u4E92\u3002\u8FD9\u79CD\u64CD\u4F5C\u5BF9\u4E8E\u7F51\u7EDC\u722C\
+  \u866B\u3001\u81EA\u52A8\u5316\u6D4B\u8BD5\u7F51\u9875\u5E94\u7528\u3001\u4EE5\u53CA\
+  \u4ECE\u7F51\u7AD9\u6316\u6398\u6570\u636E\u7B49\u4EFB\u52A1\u81F3\u5173\u91CD\u8981\
+  \ - \u5229\u7528 Haskell \u5F3A\u5927\u7684\u7C7B\u578B\u7CFB\u7EDF\u548C\u51FD\u6570\
+  \u5F0F\u7F16\u7A0B\u8303\u4F8B\u6765\u786E\u4FDD\u4EE3\u7801\u7684\u5065\u58EE\u6027\
+  \u548C\u7B80\u6D01\u6027\u3002"
+title: "\u89E3\u6790HTML"
 ---
 
 {{< edit_this_page >}}

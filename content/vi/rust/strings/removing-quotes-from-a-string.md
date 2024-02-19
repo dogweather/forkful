@@ -1,15 +1,20 @@
 ---
-title:                "Loại bỏ dấu ngoặc kép khỏi chuỗi"
 aliases:
 - /vi/rust/removing-quotes-from-a-string/
-date:                  2024-01-28T22:06:35.067033-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Loại bỏ dấu ngoặc kép khỏi chuỗi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:06:35.067033-07:00
+description: "Vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7\
+  i trong Rust li\xEAn quan \u0111\u1EBFn vi\u1EC7c lo\u1EA1i b\u1ECF c\xE1c k\xFD\
+  \ t\u1EF1 d\u1EA5u ngo\u1EB7c kh\xF4ng c\u1EA7n thi\u1EBFt c\xF3 th\u1EC3 \u0111\
+  \u01B0\u1EE3c bao quanh d\u1EEF li\u1EC7u v\u0103n b\u1EA3n c\u1EE7a\u2026"
+lastmod: 2024-02-18 23:08:50.448381
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7\
+  i trong Rust li\xEAn quan \u0111\u1EBFn vi\u1EC7c lo\u1EA1i b\u1ECF c\xE1c k\xFD\
+  \ t\u1EF1 d\u1EA5u ngo\u1EB7c kh\xF4ng c\u1EA7n thi\u1EBFt c\xF3 th\u1EC3 \u0111\
+  \u01B0\u1EE3c bao quanh d\u1EEF li\u1EC7u v\u0103n b\u1EA3n c\u1EE7a\u2026"
+title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 ---
 
 {{< edit_this_page >}}

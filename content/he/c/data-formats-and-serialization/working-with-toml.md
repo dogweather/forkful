@@ -1,14 +1,28 @@
 ---
-title:                "עובדים עם TOML"
 aliases:
 - /he/c/working-with-toml/
-date:                  2024-02-03T18:13:13.079711-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "עובדים עם TOML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c/working-with-toml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:13:13.079711-07:00
+description: "TOML (Tom's Obvious, Minimal Language - \u05E9\u05E4\u05EA \u05D4\u05EA\
+  \u05E6\u05D5\u05E8\u05D4 \u05D4\u05DE\u05D9\u05E0\u05D9\u05DE\u05DC\u05D9\u05EA\
+  \ \u05D5\u05D4\u05D1\u05E8\u05D5\u05E8\u05D4 \u05E9\u05DC \u05D8\u05D5\u05DD) \u05D4\
+  \u05D9\u05D0 \u05E4\u05D5\u05E8\u05DE\u05D8 \u05E7\u05D5\u05D1\u05E5 \u05EA\u05E6\
+  \u05D5\u05E8\u05D4 \u05E9\u05E7\u05DC \u05DC\u05E7\u05E8\u05D5\u05D0 \u05D1\u05E2\
+  \u05E7\u05D1\u05D5\u05EA \u05D4\u05E1\u05DE\u05E0\u05D8\u05D9\u05E7\u05D4 \u05D4\
+  \u05D1\u05E8\u05D5\u05E8\u05D4 \u05E9\u05DC\u05D5. \u05DE\u05EA\u05DB\u05E0\u05EA\
+  \u05D9\u05DD \u05DE\u05E9\u05EA\u05DE\u05E9\u05D9\u05DD \u05D1\u05D5\u2026"
+lastmod: 2024-02-18 23:08:53.369407
+model: gpt-4-0125-preview
+summary: "TOML (Tom's Obvious, Minimal Language - \u05E9\u05E4\u05EA \u05D4\u05EA\u05E6\
+  \u05D5\u05E8\u05D4 \u05D4\u05DE\u05D9\u05E0\u05D9\u05DE\u05DC\u05D9\u05EA \u05D5\
+  \u05D4\u05D1\u05E8\u05D5\u05E8\u05D4 \u05E9\u05DC \u05D8\u05D5\u05DD) \u05D4\u05D9\
+  \u05D0 \u05E4\u05D5\u05E8\u05DE\u05D8 \u05E7\u05D5\u05D1\u05E5 \u05EA\u05E6\u05D5\
+  \u05E8\u05D4 \u05E9\u05E7\u05DC \u05DC\u05E7\u05E8\u05D5\u05D0 \u05D1\u05E2\u05E7\
+  \u05D1\u05D5\u05EA \u05D4\u05E1\u05DE\u05E0\u05D8\u05D9\u05E7\u05D4 \u05D4\u05D1\
+  \u05E8\u05D5\u05E8\u05D4 \u05E9\u05DC\u05D5. \u05DE\u05EA\u05DB\u05E0\u05EA\u05D9\
+  \u05DD \u05DE\u05E9\u05EA\u05DE\u05E9\u05D9\u05DD \u05D1\u05D5\u2026"
+title: "\u05E2\u05D5\u05D1\u05D3\u05D9\u05DD \u05E2\u05DD TOML"
 ---
 
 {{< edit_this_page >}}

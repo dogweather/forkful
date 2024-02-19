@@ -1,13 +1,14 @@
 ---
-title:                "Manipulando archivos con comandos de línea de una sola línea"
 aliases:
 - /es/bash/manipulating-files-with-cli-one-liners/
-date:                  2024-01-27T16:20:37.987173-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulando archivos con comandos de línea de una sola línea"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/manipulating-files-with-cli-one-liners.md"
+date: 2024-01-27 16:20:37.987173-07:00
+description: "Manipular archivos con one-liners de CLI (Interfaz de L\xEDnea de Comando)\
+  \ implica el uso de scripts o comandos Bash para realizar acciones sobre archivos,\u2026"
+lastmod: 2024-02-18 23:09:10.161713
+model: gpt-4-0125-preview
+summary: "Manipular archivos con one-liners de CLI (Interfaz de L\xEDnea de Comando)\
+  \ implica el uso de scripts o comandos Bash para realizar acciones sobre archivos,\u2026"
+title: "Manipulando archivos con comandos de l\xEDnea de una sola l\xEDnea"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,16 @@
 ---
-title:                "Werken met JSON"
 aliases:
 - /nl/kotlin/working-with-json/
-date:                  2024-01-28T22:10:33.279339-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met JSON"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/kotlin/working-with-json.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:33.279339-07:00
+description: "JSON (JavaScript Object Notation) is een formaat voor het structureren\
+  \ van gegevens, gebruikt voor opslag en overdracht. Programmeurs gebruiken het omdat\u2026"
+lastmod: 2024-02-18 23:09:01.829352
+model: gpt-4-0125-preview
+summary: "JSON (JavaScript Object Notation) is een formaat voor het structureren van\
+  \ gegevens, gebruikt voor opslag en overdracht. Programmeurs gebruiken het omdat\u2026"
+title: Werken met JSON
 ---
 
 {{< edit_this_page >}}

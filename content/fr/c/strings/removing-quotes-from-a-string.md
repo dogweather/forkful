@@ -1,14 +1,16 @@
 ---
-title:                "Supprimer les guillemets d'une chaîne de caractères"
 aliases:
 - /fr/c/removing-quotes-from-a-string/
-date:                  2024-02-03T18:07:15.329838-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Supprimer les guillemets d'une chaîne de caractères"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:15.329838-07:00
+description: "Enlever les guillemets d'une cha\xEEne en C implique d'extraire le contenu\
+  \ textuel sans les guillemets simples (' ') ou doubles (\" \"). Ce processus est\u2026"
+lastmod: 2024-02-18 23:09:09.340683
+model: gpt-4-0125-preview
+summary: "Enlever les guillemets d'une cha\xEEne en C implique d'extraire le contenu\
+  \ textuel sans les guillemets simples (' ') ou doubles (\" \"). Ce processus est\u2026"
+title: "Supprimer les guillemets d'une cha\xEEne de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

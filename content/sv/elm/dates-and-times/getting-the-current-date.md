@@ -1,12 +1,15 @@
 ---
-title:                "Att hämta aktuellt datum"
 aliases:
 - /sv/elm/getting-the-current-date/
-date:                  2024-01-20T15:14:10.019563-07:00
-simple_title:         "Att hämta aktuellt datum"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/getting-the-current-date.md"
+date: 2024-01-20 15:14:10.019563-07:00
+description: "Att f\xE5 tag p\xE5 det aktuella datumet inneb\xE4r att vi hittar dagens\
+  \ datum i realtid. Programmerare g\xF6r detta f\xF6r funktioner som loggar, tidsst\xE4\
+  mplar och\u2026"
+lastmod: 2024-02-18 23:08:51.719578
+summary: "Att f\xE5 tag p\xE5 det aktuella datumet inneb\xE4r att vi hittar dagens\
+  \ datum i realtid. Programmerare g\xF6r detta f\xF6r funktioner som loggar, tidsst\xE4\
+  mplar och\u2026"
+title: "Att h\xE4mta aktuellt datum"
 ---
 
 {{< edit_this_page >}}

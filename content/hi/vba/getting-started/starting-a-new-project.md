@@ -1,14 +1,29 @@
 ---
-title:                "नया प्रोजेक्ट शुरू करना"
 aliases:
 - /hi/vba/starting-a-new-project/
-date:                  2024-02-01T22:04:07.491470-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "नया प्रोजेक्ट शुरू करना"
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/vba/starting-a-new-project.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:07.491470-07:00
+description: "Visual Basic for Applications (VBA) \u092E\u0947\u0902 \u090F\u0915\
+  \ \u0928\u0908 \u092A\u0930\u093F\u092F\u094B\u091C\u0928\u093E \u0936\u0941\u0930\
+  \u0942 \u0915\u0930\u0928\u093E \u092F\u0939 \u0936\u093E\u092E\u093F\u0932 \u0915\
+  \u0930\u0924\u093E \u0939\u0948 \u0915\u093F Excel \u091C\u0948\u0938\u0947 \u0939\
+  \u094B\u0938\u094D\u091F \u090F\u092A\u094D\u0932\u093F\u0915\u0947\u0936\u0928\
+  \ \u0915\u0947 \u092D\u0940\u0924\u0930 \u090F\u0915 \u0935\u093E\u0924\u093E\u0935\
+  \u0930\u0923 \u0938\u0947\u091F\u0905\u092A \u0915\u093F\u092F\u093E \u091C\u093E\
+  \u090F, \u091C\u093F\u0938\u0938\u0947\u2026"
+lastmod: 2024-02-18 23:09:03.036314
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications (VBA) \u092E\u0947\u0902 \u090F\u0915 \u0928\
+  \u0908 \u092A\u0930\u093F\u092F\u094B\u091C\u0928\u093E \u0936\u0941\u0930\u0942\
+  \ \u0915\u0930\u0928\u093E \u092F\u0939 \u0936\u093E\u092E\u093F\u0932 \u0915\u0930\
+  \u0924\u093E \u0939\u0948 \u0915\u093F Excel \u091C\u0948\u0938\u0947 \u0939\u094B\
+  \u0938\u094D\u091F \u090F\u092A\u094D\u0932\u093F\u0915\u0947\u0936\u0928 \u0915\
+  \u0947 \u092D\u0940\u0924\u0930 \u090F\u0915 \u0935\u093E\u0924\u093E\u0935\u0930\
+  \u0923 \u0938\u0947\u091F\u0905\u092A \u0915\u093F\u092F\u093E \u091C\u093E\u090F\
+  , \u091C\u093F\u0938\u0938\u0947\u2026"
+title: "\u0928\u092F\u093E \u092A\u094D\u0930\u094B\u091C\u0947\u0915\u094D\u091F\
+  \ \u0936\u0941\u0930\u0942 \u0915\u0930\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

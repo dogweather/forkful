@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 aliases:
 - /fi/ruby/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:39:01.554231-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:39:01.554231-07:00
+description: "Muutetaan merkkijonot pieniksi kirjaimiksi. T\xE4m\xE4 on hy\xF6dyllist\xE4\
+  \ kun haluamme vertailla tekstej\xE4 riippumatta kirjainkoosta tai yhdenmukaistaa\
+  \ tietoja."
+lastmod: 2024-02-18 23:09:08.166444
+model: gpt-4-1106-preview
+summary: "Muutetaan merkkijonot pieniksi kirjaimiksi. T\xE4m\xE4 on hy\xF6dyllist\xE4\
+  \ kun haluamme vertailla tekstej\xE4 riippumatta kirjainkoosta tai yhdenmukaistaa\
+  \ tietoja."
+title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 ---
 
 {{< edit_this_page >}}

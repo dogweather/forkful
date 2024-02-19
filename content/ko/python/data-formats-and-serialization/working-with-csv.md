@@ -1,14 +1,30 @@
 ---
-title:                "CSV와 함께 작업하기"
 aliases:
 - /ko/python/working-with-csv/
-date:                  2024-02-03T19:21:07.526194-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "CSV와 함께 작업하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:21:07.526194-07:00
+description: "CSV(\uC27C\uD45C\uB85C \uAD6C\uBD84\uB41C \uAC12)\uB97C \uB2E4\uB8E8\
+  \uB294 \uAC83\uC740 CSV \uD30C\uC77C\uC5D0\uC11C \uB370\uC774\uD130\uB97C \uC77D\
+  \uACE0 \uC4F0\uB294 \uC791\uC5C5\uC744 \uD3EC\uD568\uD558\uBA70, \uC774\uB294 \uD45C\
+  \ \uB370\uC774\uD130\uB97C \uC800\uC7A5\uD558\uAE30 \uC704\uD55C \uC77C\uBC18\uC801\
+  \uC778 \uD615\uC2DD\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\
+  \ \uB2E4\uC591\uD55C \uD50C\uB7AB\uD3FC\uACFC \uC5B8\uC5B4\uC5D0\uC11C \uB110\uB9AC\
+  \ \uC9C0\uC6D0\uB418\uB294 \uAC04\uB2E8\uD55C \uD14D\uC2A4\uD2B8 \uAE30\uBC18 \uD615\
+  \uC2DD\uC73C\uB85C \uB370\uC774\uD130\uB97C \uC27D\uAC8C \uAD50\uD658\uD558\uACE0\
+  \ \uC800\uC7A5\uD558\uAE30 \uC704\uD574 \uC774\u2026"
+lastmod: 2024-02-18 23:09:05.659813
+model: gpt-4-0125-preview
+summary: "CSV(\uC27C\uD45C\uB85C \uAD6C\uBD84\uB41C \uAC12)\uB97C \uB2E4\uB8E8\uB294\
+  \ \uAC83\uC740 CSV \uD30C\uC77C\uC5D0\uC11C \uB370\uC774\uD130\uB97C \uC77D\uACE0\
+  \ \uC4F0\uB294 \uC791\uC5C5\uC744 \uD3EC\uD568\uD558\uBA70, \uC774\uB294 \uD45C\
+  \ \uB370\uC774\uD130\uB97C \uC800\uC7A5\uD558\uAE30 \uC704\uD55C \uC77C\uBC18\uC801\
+  \uC778 \uD615\uC2DD\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\
+  \ \uB2E4\uC591\uD55C \uD50C\uB7AB\uD3FC\uACFC \uC5B8\uC5B4\uC5D0\uC11C \uB110\uB9AC\
+  \ \uC9C0\uC6D0\uB418\uB294 \uAC04\uB2E8\uD55C \uD14D\uC2A4\uD2B8 \uAE30\uBC18 \uD615\
+  \uC2DD\uC73C\uB85C \uB370\uC774\uD130\uB97C \uC27D\uAC8C \uAD50\uD658\uD558\uACE0\
+  \ \uC800\uC7A5\uD558\uAE30 \uC704\uD574 \uC774\u2026"
+title: "CSV\uC640 \uD568\uAED8 \uC791\uC5C5\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

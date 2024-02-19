@@ -1,15 +1,18 @@
 ---
-title:                "Att använda associativa arrayer"
 aliases:
 - /sv/lua/using-associative-arrays/
-date:                  2024-01-30T19:12:23.113379-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda associativa arrayer"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/lua/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:23.113379-07:00
+description: "Associerade arrayer \xE4r som hemliga handslag f\xF6r data i Lua\u2014\
+  ist\xE4llet f\xF6r bara siffror som lydigt st\xE4ller upp efter index, kan dina\
+  \ nycklar vara vad du\u2026"
+lastmod: 2024-02-18 23:08:51.911803
+model: gpt-4-0125-preview
+summary: "Associerade arrayer \xE4r som hemliga handslag f\xF6r data i Lua\u2014ist\xE4\
+  llet f\xF6r bara siffror som lydigt st\xE4ller upp efter index, kan dina nycklar\
+  \ vara vad du\u2026"
+title: "Att anv\xE4nda associativa arrayer"
 ---
 
 {{< edit_this_page >}}

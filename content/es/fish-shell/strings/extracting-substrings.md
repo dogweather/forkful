@@ -1,13 +1,15 @@
 ---
-title:                "Extracción de subcadenas"
 aliases:
 - /es/fish-shell/extracting-substrings/
-date:                  2024-01-20T17:45:47.010937-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extracción de subcadenas"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/extracting-substrings.md"
+date: 2024-01-20 17:45:47.010937-07:00
+description: "Extraer subcadenas significa tomar una porci\xF3n espec\xEDfica de una\
+  \ cadena de texto. Es esencial para manipular datos, limpiar entradas y preparar\
+  \ strings\u2026"
+lastmod: 2024-02-18 23:09:10.438957
+model: gpt-4-1106-preview
+summary: "Extraer subcadenas significa tomar una porci\xF3n espec\xEDfica de una cadena\
+  \ de texto. Es esencial para manipular datos, limpiar entradas y preparar strings\u2026"
+title: "Extracci\xF3n de subcadenas"
 ---
 
 {{< edit_this_page >}}

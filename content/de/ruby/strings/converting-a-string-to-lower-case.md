@@ -1,13 +1,16 @@
 ---
-title:                "Umformung eines Strings in Kleinbuchstaben"
 aliases:
 - /de/ruby/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:39:12.090187-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Umformung eines Strings in Kleinbuchstaben"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:39:12.090187-07:00
+description: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, jeden Gro\xDF\
+  buchstaben in seiner kleinen Form darzustellen. Programmierer nutzen das, um die\
+  \ Gro\xDF-\u2026"
+lastmod: 2024-02-18 23:09:05.407278
+model: gpt-4-1106-preview
+summary: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, jeden Gro\xDFbuchstaben\
+  \ in seiner kleinen Form darzustellen. Programmierer nutzen das, um die Gro\xDF\
+  -\u2026"
+title: Umformung eines Strings in Kleinbuchstaben
 ---
 
 {{< edit_this_page >}}

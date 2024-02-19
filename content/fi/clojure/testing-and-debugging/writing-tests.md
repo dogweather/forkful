@@ -1,14 +1,18 @@
 ---
-title:                "Testien kirjoittaminen"
 aliases:
 - /fi/clojure/writing-tests/
-date:                  2024-02-03T19:30:09.011324-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Testien kirjoittaminen"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:30:09.011324-07:00
+description: "Testien kirjoittaminen Clojurella, kuten muillakin ohjelmointikielill\xE4\
+  , sis\xE4lt\xE4\xE4 omistautuneen koodin luomisen p\xE4\xE4koodikannan toimivuuden\
+  \ varmistamiseksi.\u2026"
+lastmod: 2024-02-18 23:09:07.232265
+model: gpt-4-0125-preview
+summary: "Testien kirjoittaminen Clojurella, kuten muillakin ohjelmointikielill\xE4\
+  , sis\xE4lt\xE4\xE4 omistautuneen koodin luomisen p\xE4\xE4koodikannan toimivuuden\
+  \ varmistamiseksi.\u2026"
+title: Testien kirjoittaminen
 ---
 
 {{< edit_this_page >}}

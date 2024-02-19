@@ -1,14 +1,21 @@
 ---
-title:                "将字符串转换为小写"
 aliases:
 - /zh/php/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:39:13.941580-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "将字符串转换为小写"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:39:13.941580-07:00
+description: "\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\u5199\u610F\u5473\u7740\
+  \u628A\u6240\u6709\u5927\u5199\u5B57\u6BCD\u6539\u4E3A\u5C0F\u5199\u5F62\u5F0F\u3002\
+  \u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u6765\u7EDF\u4E00\u6570\u636E\u683C\u5F0F\u3001\
+  \u63D0\u9AD8\u6BD4\u8F83\u6570\u636E\u65F6\u7684\u51C6\u786E\u6027\uFF0C\u6216\u662F\
+  \u6EE1\u8DB3\u7279\u5B9A\u7F16\u7A0B\u8981\u6C42\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.204376
+model: gpt-4-1106-preview
+summary: "\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\u5199\u610F\u5473\u7740\
+  \u628A\u6240\u6709\u5927\u5199\u5B57\u6BCD\u6539\u4E3A\u5C0F\u5199\u5F62\u5F0F\u3002\
+  \u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u6765\u7EDF\u4E00\u6570\u636E\u683C\u5F0F\u3001\
+  \u63D0\u9AD8\u6BD4\u8F83\u6570\u636E\u65F6\u7684\u51C6\u786E\u6027\uFF0C\u6216\u662F\
+  \u6EE1\u8DB3\u7279\u5B9A\u7F16\u7A0B\u8981\u6C42\u3002"
+title: "\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\u5199"
 ---
 
 {{< edit_this_page >}}

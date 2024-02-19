@@ -1,13 +1,16 @@
 ---
-title:                "Lancement d'un nouveau projet"
 aliases:
 - /fr/php/starting-a-new-project/
-date:                  2024-01-20T18:04:07.151129-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lancement d'un nouveau projet"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/php/starting-a-new-project.md"
+date: 2024-01-20 18:04:07.151129-07:00
+description: "Commencer un nouveau projet PHP, c'est partir sur une feuille blanche,\
+  \ coder quelque chose d'unique. Les programmeurs le font pour r\xE9soudre des probl\xE8\
+  mes,\u2026"
+lastmod: 2024-02-18 23:09:08.923344
+model: gpt-4-1106-preview
+summary: "Commencer un nouveau projet PHP, c'est partir sur une feuille blanche, coder\
+  \ quelque chose d'unique. Les programmeurs le font pour r\xE9soudre des probl\xE8\
+  mes,\u2026"
+title: Lancement d'un nouveau projet
 ---
 
 {{< edit_this_page >}}

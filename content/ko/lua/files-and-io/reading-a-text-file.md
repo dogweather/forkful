@@ -1,14 +1,23 @@
 ---
-title:                "텍스트 파일 읽기"
 aliases:
 - /ko/lua/reading-a-text-file/
-date:                  2024-01-20T18:04:52.121074-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "텍스트 파일 읽기"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/lua/reading-a-text-file.md"
+date: 2024-01-20 18:04:52.121074-07:00
+description: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC77D\uB294\uB2E4\uB294 \uAC83\
+  \uC740 \uD30C\uC77C\uC758 \uB0B4\uC6A9\uC744 \uC77D\uC5B4 \uB4E4\uC5EC \uB370\uC774\
+  \uD130\uB97C \uC0AC\uC6A9\uD560 \uC218 \uC788\uAC8C \uD568\uC744 \uC758\uBBF8\uD569\
+  \uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC124\uC815, \uB370\uC774\
+  \uD130 \uAD50\uD658, \uB85C\uADF8 \uBD84\uC11D \uB4F1\uC744 \uC704\uD574 \uC774\
+  \ \uC791\uC5C5\uC744 \uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.443471
+model: gpt-4-1106-preview
+summary: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC77D\uB294\uB2E4\uB294 \uAC83\uC740\
+  \ \uD30C\uC77C\uC758 \uB0B4\uC6A9\uC744 \uC77D\uC5B4 \uB4E4\uC5EC \uB370\uC774\uD130\
+  \uB97C \uC0AC\uC6A9\uD560 \uC218 \uC788\uAC8C \uD568\uC744 \uC758\uBBF8\uD569\uB2C8\
+  \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC124\uC815, \uB370\uC774\uD130\
+  \ \uAD50\uD658, \uB85C\uADF8 \uBD84\uC11D \uB4F1\uC744 \uC704\uD574 \uC774 \uC791\
+  \uC5C5\uC744 \uD569\uB2C8\uB2E4."
+title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
 ---
 
 {{< edit_this_page >}}

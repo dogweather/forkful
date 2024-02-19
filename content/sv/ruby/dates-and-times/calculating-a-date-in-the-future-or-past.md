@@ -1,13 +1,16 @@
 ---
-title:                "Beräkna ett datum i framtiden eller förflutenheten"
 aliases:
 - /sv/ruby/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:31:44.821523-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Beräkna ett datum i framtiden eller förflutenheten"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:31:44.821523-07:00
+description: "Att r\xE4kna ut ett framtida eller f\xF6rflutet datum inneb\xE4r att\
+  \ l\xE4gga till eller dra ifr\xE5n dagar till en given dag. Programmerare g\xF6\
+  r detta f\xF6r att hantera\u2026"
+lastmod: 2024-02-18 23:08:52.307939
+model: gpt-4-1106-preview
+summary: "Att r\xE4kna ut ett framtida eller f\xF6rflutet datum inneb\xE4r att l\xE4\
+  gga till eller dra ifr\xE5n dagar till en given dag. Programmerare g\xF6r detta\
+  \ f\xF6r att hantera\u2026"
+title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 ---
 
 {{< edit_this_page >}}

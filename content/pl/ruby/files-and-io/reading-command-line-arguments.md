@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie argumentów linii poleceń"
 aliases:
 - /pl/ruby/reading-command-line-arguments/
-date:                  2024-01-20T17:56:41.522154-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie argumentów linii poleceń"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:41.522154-07:00
+description: "W Ruby, czytanie argument\xF3w linii polece\u0144 pozwala twojemu skryptowi\
+  \ przyjmowa\u0107 dane wej\u015Bciowe z konsoli. Programi\u015Bci u\u017Cywaj\u0105\
+  \ tej techniki, by uczyni\u0107\u2026"
+lastmod: 2024-02-18 23:08:50.140927
+model: gpt-4-1106-preview
+summary: "W Ruby, czytanie argument\xF3w linii polece\u0144 pozwala twojemu skryptowi\
+  \ przyjmowa\u0107 dane wej\u015Bciowe z konsoli. Programi\u015Bci u\u017Cywaj\u0105\
+  \ tej techniki, by uczyni\u0107\u2026"
+title: "Odczytywanie argument\xF3w linii polece\u0144"
 ---
 
 {{< edit_this_page >}}

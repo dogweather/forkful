@@ -1,13 +1,14 @@
 ---
-title:                "Concatenating strings"
 aliases:
 - /en/powershell/concatenating-strings/
-date:                  2024-01-20T17:35:42.391730-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenating strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/powershell/concatenating-strings.md"
+date: 2024-01-20 17:35:42.391730-07:00
+description: "Combining strings, or concatenation, is like making a train of words.\
+  \ We do it to stitch together text values, creating phrases, sentences, or anything\u2026"
+lastmod: 2024-02-18 23:09:11.263863
+model: gpt-4-1106-preview
+summary: "Combining strings, or concatenation, is like making a train of words. We\
+  \ do it to stitch together text values, creating phrases, sentences, or anything\u2026"
+title: Concatenating strings
 ---
 
 {{< edit_this_page >}}

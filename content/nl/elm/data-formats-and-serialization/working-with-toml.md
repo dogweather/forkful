@@ -1,15 +1,16 @@
 ---
-title:                "Werken met TOML"
 aliases:
 - /nl/elm/working-with-toml/
-date:                  2024-01-28T22:10:52.566746-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elm/working-with-toml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:52.566746-07:00
+description: "TOML, afkorting voor Tom's Obvious, Minimal Language, is een taal voor\
+  \ data-serialisatie. Elm-programmeurs gebruiken het om configuratiegegevens te\u2026"
+lastmod: 2024-02-18 23:09:01.784715
+model: gpt-4-0125-preview
+summary: "TOML, afkorting voor Tom's Obvious, Minimal Language, is een taal voor data-serialisatie.\
+  \ Elm-programmeurs gebruiken het om configuratiegegevens te\u2026"
+title: Werken met TOML
 ---
 
 {{< edit_this_page >}}

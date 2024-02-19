@@ -1,14 +1,16 @@
 ---
-title:                "Gebruik van associatieve arrays"
 aliases:
 - /nl/google-apps-script/using-associative-arrays/
-date:                  2024-02-01T22:04:03.148817-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gebruik van associatieve arrays"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/google-apps-script/using-associative-arrays.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:03.148817-07:00
+description: "Associatieve arrays, bekend als objecten in Google Apps Script (een\
+  \ variant van JavaScript), stellen programmeurs in staat om verzamelingen van sleutel-\u2026"
+lastmod: 2024-02-18 23:09:01.377591
+model: gpt-4-0125-preview
+summary: "Associatieve arrays, bekend als objecten in Google Apps Script (een variant\
+  \ van JavaScript), stellen programmeurs in staat om verzamelingen van sleutel-\u2026"
+title: Gebruik van associatieve arrays
 ---
 
 {{< edit_this_page >}}

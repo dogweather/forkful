@@ -1,14 +1,20 @@
 ---
-title:                "Chuyển đổi một ngày thành chuỗi"
 aliases:
 - /vi/vba/converting-a-date-into-a-string/
-date:                  2024-02-01T21:51:34.775866-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Chuyển đổi một ngày thành chuỗi"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:34.775866-07:00
+description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i trong\
+  \ Visual Basic for Applications (VBA) l\xE0 qu\xE1 tr\xECnh \u0111\u01B0\u1EE3c\
+  \ s\u1EED d\u1EE5ng \u0111\u1EC3 thay \u0111\u1ED5i ki\u1EC3u d\u1EEF li\u1EC7u\
+  \ c\u1EE7a m\u1ED9t ng\xE0y sang \u0111\u1ECBnh d\u1EA1ng\u2026"
+lastmod: 2024-02-18 23:08:50.522335
+model: gpt-4-0125-preview
+summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i trong Visual\
+  \ Basic for Applications (VBA) l\xE0 qu\xE1 tr\xECnh \u0111\u01B0\u1EE3c s\u1EED\
+  \ d\u1EE5ng \u0111\u1EC3 thay \u0111\u1ED5i ki\u1EC3u d\u1EEF li\u1EC7u c\u1EE7\
+  a m\u1ED9t ng\xE0y sang \u0111\u1ECBnh d\u1EA1ng\u2026"
+title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 ---
 
 {{< edit_this_page >}}

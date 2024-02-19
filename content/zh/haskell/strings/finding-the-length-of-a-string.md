@@ -1,14 +1,21 @@
 ---
-title:                "获取字符串的长度"
 aliases:
 - /zh/haskell/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:27.996698-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "获取字符串的长度"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:27.996698-07:00
+description: "\u5728\u7F16\u7A0B\u4E2D\u627E\u51FA\u5B57\u7B26\u4E32\u7684\u957F\u5EA6\
+  \u7684\u8FC7\u7A0B\u5C31\u662F\u8BA1\u7B97\u5176\u4E2D\u5B57\u7B26\u7684\u6570\u91CF\
+  \u3002\u7A0B\u5E8F\u5458\u5E38\u5E38\u9700\u8981\u77E5\u9053\u8FD9\u4E2A\u4FE1\u606F\
+  \u6765\u5904\u7406\u6587\u672C\u6570\u636E\uFF0C\u9A8C\u8BC1\u8F93\u5165\uFF0C\u6216\
+  \u8005\u63A7\u5236\u5FAA\u73AF\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.162110
+model: gpt-4-1106-preview
+summary: "\u5728\u7F16\u7A0B\u4E2D\u627E\u51FA\u5B57\u7B26\u4E32\u7684\u957F\u5EA6\
+  \u7684\u8FC7\u7A0B\u5C31\u662F\u8BA1\u7B97\u5176\u4E2D\u5B57\u7B26\u7684\u6570\u91CF\
+  \u3002\u7A0B\u5E8F\u5458\u5E38\u5E38\u9700\u8981\u77E5\u9053\u8FD9\u4E2A\u4FE1\u606F\
+  \u6765\u5904\u7406\u6587\u672C\u6570\u636E\uFF0C\u9A8C\u8BC1\u8F93\u5165\uFF0C\u6216\
+  \u8005\u63A7\u5236\u5FAA\u73AF\u3002"
+title: "\u83B7\u53D6\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Väliaikaistiedoston luominen"
 aliases:
 - /fi/java/creating-a-temporary-file/
-date:                  2024-01-20T17:40:41.887926-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Väliaikaistiedoston luominen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:41.887926-07:00
+description: "Luodaan v\xE4liaikainen tiedosto \u2013 se on tiedosto, joka poistuu\
+  \ automaattisesti, kun sit\xE4 ei en\xE4\xE4 tarvita. Ohjelmoijat tekev\xE4t n\xE4\
+  in tilap\xE4isen tallennustilan\u2026"
+lastmod: 2024-02-18 23:09:07.478937
+model: gpt-4-1106-preview
+summary: "Luodaan v\xE4liaikainen tiedosto \u2013 se on tiedosto, joka poistuu automaattisesti,\
+  \ kun sit\xE4 ei en\xE4\xE4 tarvita. Ohjelmoijat tekev\xE4t n\xE4in tilap\xE4isen\
+  \ tallennustilan\u2026"
+title: "V\xE4liaikaistiedoston luominen"
 ---
 
 {{< edit_this_page >}}

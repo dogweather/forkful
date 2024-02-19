@@ -1,12 +1,14 @@
 ---
-title:                "Printing debug output"
 aliases:
 - /en/google-apps-script/printing-debug-output/
-date:                  2024-02-01T21:12:05.342598-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Printing debug output"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/google-apps-script/printing-debug-output.md"
+date: 2024-02-01 21:12:05.342598-07:00
+description: "Printing debug output involves strategically placing log statements\
+  \ in your code to display variable values, execution flow, or message errors during\u2026"
+lastmod: 2024-02-18 23:09:10.642085
+model: gpt-4-0125-preview
+summary: "Printing debug output involves strategically placing log statements in your\
+  \ code to display variable values, execution flow, or message errors during\u2026"
+title: Printing debug output
 ---
 
 {{< edit_this_page >}}

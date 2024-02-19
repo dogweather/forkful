@@ -1,15 +1,18 @@
 ---
-title:                "Uso de matrices asociativas"
 aliases:
 - /es/cpp/using-associative-arrays/
-date:                  2024-01-30T19:10:17.968607-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Uso de matrices asociativas"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:17.968607-07:00
+description: "Los arreglos asociativos, conocidos como `std::map` o `std::unordered_map`\
+  \ en C++, llenan el vac\xEDo entre los \xEDndices de los arreglos y los datos del\
+  \ mundo\u2026"
+lastmod: 2024-02-18 23:09:10.301632
+model: gpt-4-0125-preview
+summary: "Los arreglos asociativos, conocidos como `std::map` o `std::unordered_map`\
+  \ en C++, llenan el vac\xEDo entre los \xEDndices de los arreglos y los datos del\
+  \ mundo\u2026"
+title: Uso de matrices asociativas
 ---
 
 {{< edit_this_page >}}

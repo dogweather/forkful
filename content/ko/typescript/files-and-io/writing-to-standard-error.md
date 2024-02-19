@@ -1,14 +1,28 @@
 ---
-title:                "표준 에러에 쓰기"
 aliases:
 - /ko/typescript/writing-to-standard-error/
-date:                  2024-02-03T19:34:38.830702-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "표준 에러에 쓰기"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:34:38.830702-07:00
+description: "TypeScript\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(stderr)\uC5D0 \uC4F0\
+  \uAE30\uB294 \uD658\uACBD\uC758 \uC624\uB958 \uCD9C\uB825 \uC2A4\uD2B8\uB9BC(\uC608\
+  : node.js \uB610\uB294 \uC6F9 \uBE0C\uB77C\uC6B0\uC800\uC758 \uCF58\uC194)\uC73C\
+  \uB85C \uC9C1\uC811 \uC624\uB958 \uBA54\uC2DC\uC9C0\uB098 \uB85C\uADF8\uB97C \uBCF4\
+  \uB0B4\uB294 \uACFC\uC815\uC785\uB2C8\uB2E4. \uC774\uB294 \uD504\uB85C\uADF8\uB7A8\
+  \ \uB370\uC774\uD130\uC5D0 \uC77C\uBC18\uC801\uC73C\uB85C \uC0AC\uC6A9\uB418\uB294\
+  \ \uD45C\uC900 \uCD9C\uB825(stdout)\uACFC \uAC04\uC12D\uD558\uC9C0 \uC54A\uACE0\
+  \ \uBB38\uC81C\uB97C\u2026"
+lastmod: 2024-02-18 23:09:05.844857
+model: gpt-4-0125-preview
+summary: "TypeScript\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(stderr)\uC5D0 \uC4F0\uAE30\
+  \uB294 \uD658\uACBD\uC758 \uC624\uB958 \uCD9C\uB825 \uC2A4\uD2B8\uB9BC(\uC608: node.js\
+  \ \uB610\uB294 \uC6F9 \uBE0C\uB77C\uC6B0\uC800\uC758 \uCF58\uC194)\uC73C\uB85C \uC9C1\
+  \uC811 \uC624\uB958 \uBA54\uC2DC\uC9C0\uB098 \uB85C\uADF8\uB97C \uBCF4\uB0B4\uB294\
+  \ \uACFC\uC815\uC785\uB2C8\uB2E4. \uC774\uB294 \uD504\uB85C\uADF8\uB7A8 \uB370\uC774\
+  \uD130\uC5D0 \uC77C\uBC18\uC801\uC73C\uB85C \uC0AC\uC6A9\uB418\uB294 \uD45C\uC900\
+  \ \uCD9C\uB825(stdout)\uACFC \uAC04\uC12D\uD558\uC9C0 \uC54A\uACE0 \uBB38\uC81C\uB97C\
+  \u2026"
+title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
 ---
 
 {{< edit_this_page >}}

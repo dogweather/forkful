@@ -1,13 +1,16 @@
 ---
-title:                "Organisering av kode i funksjoner"
 aliases:
 - /no/elm/organizing-code-into-functions/
-date:                  2024-01-26T01:10:43.320879-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organisering av kode i funksjoner"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/organizing-code-into-functions.md"
+date: 2024-01-26 01:10:43.320879-07:00
+description: "\xC5 dumpe all koden din i en stor haug? D\xE5rlig id\xE9. \xC5 dele\
+  \ den opp i funksjoner? God ide. Det holder din Elm-kode ren, gjenbrukbar og lettere\
+  \ \xE5 teste. Ved \xE5\u2026"
+lastmod: 2024-02-18 23:08:53.816761
+model: gpt-4-1106-preview
+summary: "\xC5 dumpe all koden din i en stor haug? D\xE5rlig id\xE9. \xC5 dele den\
+  \ opp i funksjoner? God ide. Det holder din Elm-kode ren, gjenbrukbar og lettere\
+  \ \xE5 teste. Ved \xE5\u2026"
+title: Organisering av kode i funksjoner
 ---
 
 {{< edit_this_page >}}

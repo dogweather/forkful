@@ -1,13 +1,16 @@
 ---
-title:                "Obsługa błędów"
 aliases:
 - /pl/java/handling-errors/
-date:                  2024-01-26T00:54:44.500120-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Obsługa błędów"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/handling-errors.md"
+date: 2024-01-26 00:54:44.500120-07:00
+description: "Obs\u0142uga b\u0142\u0119d\xF3w polega na pisaniu kodu, kt\xF3ry przewiduje\
+  \ b\u0142\u0119dne sytuacje i radzi sobie z nimi. Programi\u015Bci robi\u0105 to,\
+  \ aby oprogramowanie by\u0142o bardziej\u2026"
+lastmod: 2024-02-18 23:08:49.485299
+model: gpt-4-1106-preview
+summary: "Obs\u0142uga b\u0142\u0119d\xF3w polega na pisaniu kodu, kt\xF3ry przewiduje\
+  \ b\u0142\u0119dne sytuacje i radzi sobie z nimi. Programi\u015Bci robi\u0105 to,\
+  \ aby oprogramowanie by\u0142o bardziej\u2026"
+title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 ---
 
 {{< edit_this_page >}}

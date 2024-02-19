@@ -1,13 +1,16 @@
 ---
-title:                "Hantering av fel"
 aliases:
 - /sv/rust/handling-errors/
-date:                  2024-01-26T00:59:08.160488-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Hantering av fel"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/handling-errors.md"
+date: 2024-01-26 00:59:08.160488-07:00
+description: "Felhantering handlar om att hantera saker n\xE4r de inte g\xE5r som\
+  \ planerat. Programmerare g\xF6r det f\xF6r att hantera det ov\xE4ntade och s\xE4\
+  kerst\xE4lla att deras Rust-\u2026"
+lastmod: 2024-02-18 23:08:51.590936
+model: gpt-4-1106-preview
+summary: "Felhantering handlar om att hantera saker n\xE4r de inte g\xE5r som planerat.\
+  \ Programmerare g\xF6r det f\xF6r att hantera det ov\xE4ntade och s\xE4kerst\xE4\
+  lla att deras Rust-\u2026"
+title: Hantering av fel
 ---
 
 {{< edit_this_page >}}

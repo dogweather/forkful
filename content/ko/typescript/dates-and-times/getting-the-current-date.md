@@ -1,14 +1,28 @@
 ---
-title:                "현재 날짜 가져오기"
 aliases:
 - /ko/typescript/getting-the-current-date/
-date:                  2024-02-03T19:11:15.212221-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "현재 날짜 가져오기"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:11:15.212221-07:00
+description: "TypeScript\uC5D0\uC11C, JavaScript \uC704\uC5D0 \uAD6C\uCD95\uB41C \uC5B8\
+  \uC5B4\uC5D0\uC11C, \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC00\uC838\uC624\uB294 \uAC83\
+  \uC740 \uD604\uC7AC \uB0A0\uC9DC\uC640 \uC2DC\uAC04 \uC815\uBCF4\uC5D0 \uC811\uADFC\
+  \uD558\uC5EC \uC870\uC791\uD560 \uC218 \uC788\uAC8C \uD569\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC740 \uC885\uC885 \uC560\uD50C\uB9AC\uCF00\uC774\uC158\
+  \uC5D0\uC11C \uD0C0\uC784\uC2A4\uD0EC\uD504 \uC0DD\uC131, \uC2A4\uCF00\uC904\uB9C1\
+  , \uADF8 \uBC16\uC758 \uC2DC\uAC04\uC5D0 \uBBFC\uAC10\uD55C \uAE30\uB2A5\uC744 \uB9CC\
+  \uB4E4\uAE30 \uC704\uD574 \uC774 \uAE30\uB2A5\uC744\u2026"
+lastmod: 2024-02-18 23:09:05.836250
+model: gpt-4-0125-preview
+summary: "TypeScript\uC5D0\uC11C, JavaScript \uC704\uC5D0 \uAD6C\uCD95\uB41C \uC5B8\
+  \uC5B4\uC5D0\uC11C, \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC00\uC838\uC624\uB294 \uAC83\
+  \uC740 \uD604\uC7AC \uB0A0\uC9DC\uC640 \uC2DC\uAC04 \uC815\uBCF4\uC5D0 \uC811\uADFC\
+  \uD558\uC5EC \uC870\uC791\uD560 \uC218 \uC788\uAC8C \uD569\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC740 \uC885\uC885 \uC560\uD50C\uB9AC\uCF00\uC774\uC158\
+  \uC5D0\uC11C \uD0C0\uC784\uC2A4\uD0EC\uD504 \uC0DD\uC131, \uC2A4\uCF00\uC904\uB9C1\
+  , \uADF8 \uBC16\uC758 \uC2DC\uAC04\uC5D0 \uBBFC\uAC10\uD55C \uAE30\uB2A5\uC744 \uB9CC\
+  \uB4E4\uAE30 \uC704\uD574 \uC774 \uAE30\uB2A5\uC744\u2026"
+title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
 ---
 
 {{< edit_this_page >}}

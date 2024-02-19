@@ -1,14 +1,17 @@
 ---
-title:                "Scrivere test"
 aliases:
 - /it/vba/writing-tests/
-date:                  2024-02-01T22:09:07.632262-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Scrivere test"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/vba/writing-tests.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:09:07.632262-07:00
+description: "Scrivere test nella programmazione comporta la creazione di procedure\
+  \ specifiche per validare la funzionalit\xE0 e le prestazioni dei tuoi segmenti\
+  \ di\u2026"
+lastmod: 2024-02-18 23:08:55.726949
+model: gpt-4-0125-preview
+summary: "Scrivere test nella programmazione comporta la creazione di procedure specifiche\
+  \ per validare la funzionalit\xE0 e le prestazioni dei tuoi segmenti di\u2026"
+title: Scrivere test
 ---
 
 {{< edit_this_page >}}

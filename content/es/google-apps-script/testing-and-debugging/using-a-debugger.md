@@ -1,14 +1,18 @@
 ---
-title:                "Usando un depurador"
 aliases:
 - /es/google-apps-script/using-a-debugger/
-date:                  2024-02-01T22:03:03.581800-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando un depurador"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/google-apps-script/using-a-debugger.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:03.581800-07:00
+description: "Depurar en Google Apps Script (GAS) implica el proceso de identificaci\xF3\
+  n y eliminaci\xF3n de errores de los scripts destinados a automatizar Google Apps\
+  \ o\u2026"
+lastmod: 2024-02-18 23:09:09.512637
+model: gpt-4-0125-preview
+summary: "Depurar en Google Apps Script (GAS) implica el proceso de identificaci\xF3\
+  n y eliminaci\xF3n de errores de los scripts destinados a automatizar Google Apps\
+  \ o\u2026"
+title: Usando un depurador
 ---
 
 {{< edit_this_page >}}

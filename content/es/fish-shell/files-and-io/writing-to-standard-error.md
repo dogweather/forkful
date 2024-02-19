@@ -1,14 +1,17 @@
 ---
-title:                "Escribiendo en el error estándar"
 aliases:
 - /es/fish-shell/writing-to-standard-error/
-date:                  2024-02-03T19:33:05.247384-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escribiendo en el error estándar"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:33:05.247384-07:00
+description: "Escribir en el error est\xE1ndar (stderr) en Fish Shell se trata de\
+  \ dirigir mensajes de error o diagn\xF3sticos de forma separada de la salida est\xE1\
+  ndar\u2026"
+lastmod: 2024-02-18 23:09:10.470967
+model: gpt-4-0125-preview
+summary: "Escribir en el error est\xE1ndar (stderr) en Fish Shell se trata de dirigir\
+  \ mensajes de error o diagn\xF3sticos de forma separada de la salida est\xE1ndar\u2026"
+title: "Escribiendo en el error est\xE1ndar"
 ---
 
 {{< edit_this_page >}}

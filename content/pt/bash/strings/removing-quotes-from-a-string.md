@@ -1,13 +1,14 @@
 ---
-title:                "Removendo aspas de uma string"
 aliases:
 - /pt/bash/removing-quotes-from-a-string/
-date:                  2024-01-26T03:37:33.780622-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Removendo aspas de uma string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:37:33.780622-07:00
+description: "Remover aspas de uma string envolve retirar as marcas de aspas que envolvem\
+  \ a string. Programadores frequentemente querem fazer isso para sanear dados de\u2026"
+lastmod: 2024-02-18 23:08:58.311794
+model: gpt-4-0125-preview
+summary: "Remover aspas de uma string envolve retirar as marcas de aspas que envolvem\
+  \ a string. Programadores frequentemente querem fazer isso para sanear dados de\u2026"
+title: Removendo aspas de uma string
 ---
 
 {{< edit_this_page >}}

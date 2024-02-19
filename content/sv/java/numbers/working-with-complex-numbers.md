@@ -1,13 +1,16 @@
 ---
-title:                "Att arbeta med komplexa tal"
 aliases:
 - /sv/java/working-with-complex-numbers/
-date:                  2024-01-26T04:42:08.732969-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med komplexa tal"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/working-with-complex-numbers.md"
+date: 2024-01-26 04:42:08.732969-07:00
+description: "Komplexa tal utvidgar den reella talaxeln genom till\xE4gget av en imagin\xE4\
+  r enhet, `i`, d\xE4r `i^2 = -1`. De \xE4r avg\xF6rande inom omr\xE5den som ingenj\xF6\
+  rsvetenskap,\u2026"
+lastmod: 2024-02-18 23:08:51.663697
+model: gpt-4-0125-preview
+summary: "Komplexa tal utvidgar den reella talaxeln genom till\xE4gget av en imagin\xE4\
+  r enhet, `i`, d\xE4r `i^2 = -1`. De \xE4r avg\xF6rande inom omr\xE5den som ingenj\xF6\
+  rsvetenskap,\u2026"
+title: Att arbeta med komplexa tal
 ---
 
 {{< edit_this_page >}}

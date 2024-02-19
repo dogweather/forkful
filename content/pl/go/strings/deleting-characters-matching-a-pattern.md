@@ -1,14 +1,18 @@
 ---
-title:                "Usuwanie znaków pasujących do wzorca"
 aliases:
 - /pl/go/deleting-characters-matching-a-pattern/
-date:                  2024-02-03T17:55:40.153644-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usuwanie znaków pasujących do wzorca"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:40.153644-07:00
+description: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca polega\
+  \ na usuni\u0119ciu pewnych znak\xF3w lub sekwencji znak\xF3w ze \u0142a\u0144cuch\xF3\
+  w tekstowych, na podstawie regu\u0142\u2026"
+lastmod: 2024-02-18 23:08:49.078598
+model: gpt-4-0125-preview
+summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca polega na\
+  \ usuni\u0119ciu pewnych znak\xF3w lub sekwencji znak\xF3w ze \u0142a\u0144cuch\xF3\
+  w tekstowych, na podstawie regu\u0142\u2026"
+title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 ---
 
 {{< edit_this_page >}}

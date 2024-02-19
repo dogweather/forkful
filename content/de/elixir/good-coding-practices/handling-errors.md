@@ -1,13 +1,16 @@
 ---
-title:                "Fehlerbehandlung"
 aliases:
 - /de/elixir/handling-errors/
-date:                  2024-01-26T00:51:04.460534-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Fehlerbehandlung"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/handling-errors.md"
+date: 2024-01-26 00:51:04.460534-07:00
+description: "Fehler zu behandeln bedeutet, Code zu schreiben, der damit umgehen kann,\
+  \ wenn etwas schiefgeht. Programmierer tun das, um Abst\xFCrze zu verhindern und\
+  \ um\u2026"
+lastmod: 2024-02-18 23:09:04.559646
+model: gpt-4-1106-preview
+summary: "Fehler zu behandeln bedeutet, Code zu schreiben, der damit umgehen kann,\
+  \ wenn etwas schiefgeht. Programmierer tun das, um Abst\xFCrze zu verhindern und\
+  \ um\u2026"
+title: Fehlerbehandlung
 ---
 
 {{< edit_this_page >}}

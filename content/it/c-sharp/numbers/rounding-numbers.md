@@ -1,13 +1,14 @@
 ---
-title:                "Arrotondamento dei numeri"
 aliases:
 - /it/c-sharp/rounding-numbers/
-date:                  2024-01-26T03:43:43.425978-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrotondamento dei numeri"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/rounding-numbers.md"
+date: 2024-01-26 03:43:43.425978-07:00
+description: "Arrotondare i numeri significa adeguarli al valore posizionale specificato\
+  \ pi\xF9 vicino\u2014pensateli come semplificati. I programmatori arrotondano per\u2026"
+lastmod: 2024-02-18 23:08:55.882535
+model: gpt-4-0125-preview
+summary: "Arrotondare i numeri significa adeguarli al valore posizionale specificato\
+  \ pi\xF9 vicino\u2014pensateli come semplificati. I programmatori arrotondano per\u2026"
+title: Arrotondamento dei numeri
 ---
 
 {{< edit_this_page >}}

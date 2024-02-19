@@ -1,14 +1,17 @@
 ---
-title:                "Verificando si un directorio existe"
 aliases:
 - /es/c/checking-if-a-directory-exists/
-date:                  2024-02-03T17:52:31.753821-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verificando si un directorio existe"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:52:31.753821-07:00
+description: "Verificar si un directorio existe en C implica consultar el sistema\
+  \ de archivos para verificar si una ruta espec\xEDfica conduce a un directorio.\
+  \ Los\u2026"
+lastmod: 2024-02-18 23:09:10.518715
+model: gpt-4-0125-preview
+summary: "Verificar si un directorio existe en C implica consultar el sistema de archivos\
+  \ para verificar si una ruta espec\xEDfica conduce a un directorio. Los\u2026"
+title: Verificando si un directorio existe
 ---
 
 {{< edit_this_page >}}

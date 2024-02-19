@@ -1,14 +1,24 @@
 ---
-title:                "编写测试"
 aliases:
 - /zh/clojure/writing-tests/
-date:                  2024-02-03T19:30:05.967597-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "编写测试"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:30:05.967597-07:00
+description: "\u5728 Clojure \u4E2D\u7F16\u5199\u6D4B\u8BD5\uFF0C\u5982\u540C\u5728\
+  \u5176\u4ED6\u7F16\u7A0B\u8BED\u8A00\u4E2D\u4E00\u6837\uFF0C\u6D89\u53CA\u521B\u5EFA\
+  \u4E13\u95E8\u7684\u4EE3\u7801\u6765\u9A8C\u8BC1\u4F60\u7684\u4E3B\u4EE3\u7801\u5E93\
+  \u662F\u5426\u6309\u9884\u671F\u5DE5\u4F5C\u3002\u5B83\u6709\u52A9\u4E8E\u786E\u4FDD\
+  \u4EE3\u7801\u7684\u6B63\u786E\u6027\uFF0C\u6709\u5229\u4E8E\u91CD\u6784\uFF0C\u4EE5\
+  \u53CA\u589E\u5F3A\u4EE3\u7801\u7684\u7A33\u5B9A\u6027\u3002"
+lastmod: 2024-02-18 23:08:58.831553
+model: gpt-4-0125-preview
+summary: "\u5728 Clojure \u4E2D\u7F16\u5199\u6D4B\u8BD5\uFF0C\u5982\u540C\u5728\u5176\
+  \u4ED6\u7F16\u7A0B\u8BED\u8A00\u4E2D\u4E00\u6837\uFF0C\u6D89\u53CA\u521B\u5EFA\u4E13\
+  \u95E8\u7684\u4EE3\u7801\u6765\u9A8C\u8BC1\u4F60\u7684\u4E3B\u4EE3\u7801\u5E93\u662F\
+  \u5426\u6309\u9884\u671F\u5DE5\u4F5C\u3002\u5B83\u6709\u52A9\u4E8E\u786E\u4FDD\u4EE3\
+  \u7801\u7684\u6B63\u786E\u6027\uFF0C\u6709\u5229\u4E8E\u91CD\u6784\uFF0C\u4EE5\u53CA\
+  \u589E\u5F3A\u4EE3\u7801\u7684\u7A33\u5B9A\u6027\u3002"
+title: "\u7F16\u5199\u6D4B\u8BD5"
 ---
 
 {{< edit_this_page >}}

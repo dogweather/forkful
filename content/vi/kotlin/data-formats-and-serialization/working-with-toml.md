@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với TOML"
 aliases:
 - /vi/kotlin/working-with-toml/
-date:                  2024-01-28T22:11:25.270391-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/kotlin/working-with-toml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:25.270391-07:00
+description: "TOML l\xE0 vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language.\
+  \ Ng\xF4n ng\u1EEF n\xE0y \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng cho c\xE1c t\u1EAD\
+  p tin c\u1EA5u h\xECnh v\xEC n\xF3 d\u1EC5 \u0111\u1ECDc v\xE0 vi\u1EBFt \u0111\u1ED1\
+  i v\u1EDBi con ng\u01B0\u1EDDi, \u0111\u1ED3ng th\u1EDDi\u2026"
+lastmod: 2024-02-18 23:08:50.676850
+model: gpt-4-0125-preview
+summary: "TOML l\xE0 vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language.\
+  \ Ng\xF4n ng\u1EEF n\xE0y \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng cho c\xE1c t\u1EAD\
+  p tin c\u1EA5u h\xECnh v\xEC n\xF3 d\u1EC5 \u0111\u1ECDc v\xE0 vi\u1EBFt \u0111\u1ED1\
+  i v\u1EDBi con ng\u01B0\u1EDDi, \u0111\u1ED3ng th\u1EDDi\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Å Arbeide med YAML"
 aliases:
 - /no/c/working-with-yaml/
-date:                  2024-02-03T18:13:36.850625-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å Arbeide med YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:13:36.850625-07:00
+description: "YAML, som st\xE5r for \"YAML Ain't Markup Language,\" er en menneskelesbar\
+  \ standard for data-serialisering som kan brukes til alle slags applikasjoner, fra\u2026"
+lastmod: 2024-02-18 23:08:54.415339
+model: gpt-4-0125-preview
+summary: "YAML, som st\xE5r for \"YAML Ain't Markup Language,\" er en menneskelesbar\
+  \ standard for data-serialisering som kan brukes til alle slags applikasjoner, fra\u2026"
+title: "\xC5 Arbeide med YAML"
 ---
 
 {{< edit_this_page >}}

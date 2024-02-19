@@ -1,15 +1,18 @@
 ---
-title:                "Verwendung von assoziativen Arrays"
 aliases:
 - /de/elm/using-associative-arrays/
-date:                  2024-01-30T19:10:49.601580-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verwendung von assoziativen Arrays"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:49.601580-07:00
+description: "Assoziative Arrays, oder wie sie in Elm genannt werden, Dictionaries,\
+  \ ordnen Schl\xFCsseln Werte zu, was das Suchen, Einf\xFCgen und L\xF6schen von\
+  \ Werten super\u2026"
+lastmod: 2024-02-18 23:09:04.774106
+model: gpt-4-0125-preview
+summary: "Assoziative Arrays, oder wie sie in Elm genannt werden, Dictionaries, ordnen\
+  \ Schl\xFCsseln Werte zu, was das Suchen, Einf\xFCgen und L\xF6schen von Werten\
+  \ super\u2026"
+title: Verwendung von assoziativen Arrays
 ---
 
 {{< edit_this_page >}}

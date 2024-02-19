@@ -1,15 +1,20 @@
 ---
-title:                "Lấy ngày hiện tại"
 aliases:
 - /vi/haskell/getting-the-current-date/
-date:                  2024-01-28T22:00:58.275029-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lấy ngày hiện tại"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/haskell/getting-the-current-date.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:00:58.275029-07:00
+description: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1\
+  n gi\xFAp b\u1EA1n ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n ngay khi ch\xFAng x\u1EA3\
+  y ra. \u0110i\u1EC1u n\xE0y r\u1EA5t quan tr\u1ECDng cho vi\u1EC7c ghi nh\u1EAD\
+  t k\xFD, theo d\xF5i d\u1EEF li\u1EC7u\u2026"
+lastmod: 2024-02-18 23:08:50.756408
+model: gpt-4-0125-preview
+summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1\
+  n gi\xFAp b\u1EA1n ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n ngay khi ch\xFAng x\u1EA3\
+  y ra. \u0110i\u1EC1u n\xE0y r\u1EA5t quan tr\u1ECDng cho vi\u1EC7c ghi nh\u1EAD\
+  t k\xFD, theo d\xF5i d\u1EEF li\u1EC7u\u2026"
+title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Gestion des erreurs"
 aliases:
 - /fr/typescript/handling-errors/
-date:                  2024-01-26T00:57:59.710834-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Gestion des erreurs"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/handling-errors.md"
+date: 2024-01-26 00:57:59.710834-07:00
+description: "G\xE9rer les erreurs consiste \xE0 anticiper l'inattendu ; c'est la\
+  \ fa\xE7on dont nous r\xE9agissons lorsque les choses tournent mal dans notre code.\
+  \ Nous le faisons\u2026"
+lastmod: 2024-02-18 23:09:08.490107
+model: gpt-4-1106-preview
+summary: "G\xE9rer les erreurs consiste \xE0 anticiper l'inattendu ; c'est la fa\xE7\
+  on dont nous r\xE9agissons lorsque les choses tournent mal dans notre code. Nous\
+  \ le faisons\u2026"
+title: Gestion des erreurs
 ---
 
 {{< edit_this_page >}}

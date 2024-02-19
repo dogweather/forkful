@@ -1,14 +1,18 @@
 ---
-title:                "Mettre en majuscule une chaîne"
 aliases:
 - /fr/haskell/capitalizing-a-string/
-date:                  2024-02-03T19:05:20.716714-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Mettre en majuscule une chaîne"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:20.716714-07:00
+description: "Mettre une cha\xEEne en capitale implique de transformer la premi\xE8\
+  re lettre d'une cha\xEEne donn\xE9e en majuscule tout en s'assurant que les autres\
+  \ lettres\u2026"
+lastmod: 2024-02-18 23:09:08.856432
+model: gpt-4-0125-preview
+summary: "Mettre une cha\xEEne en capitale implique de transformer la premi\xE8re\
+  \ lettre d'une cha\xEEne donn\xE9e en majuscule tout en s'assurant que les autres\
+  \ lettres\u2026"
+title: "Mettre en majuscule une cha\xEEne"
 ---
 
 {{< edit_this_page >}}

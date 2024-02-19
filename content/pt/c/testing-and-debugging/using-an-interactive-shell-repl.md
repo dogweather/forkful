@@ -1,14 +1,18 @@
 ---
-title:                "Usando um shell interativo (REPL)"
 aliases:
 - /pt/c/using-an-interactive-shell-repl/
-date:                  2024-02-03T18:10:10.618692-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando um shell interativo (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:10.618692-07:00
+description: "Um shell interativo, tamb\xE9m conhecido como Loop de Leitura-Avalia\xE7\
+  \xE3o-Impress\xE3o (REPL, na sigla em ingl\xEAs), permite que programadores digitem\
+  \ express\xF5es ou\u2026"
+lastmod: 2024-02-18 23:08:58.621079
+model: gpt-4-0125-preview
+summary: "Um shell interativo, tamb\xE9m conhecido como Loop de Leitura-Avalia\xE7\
+  \xE3o-Impress\xE3o (REPL, na sigla em ingl\xEAs), permite que programadores digitem\
+  \ express\xF5es ou\u2026"
+title: Usando um shell interativo (REPL)
 ---
 
 {{< edit_this_page >}}

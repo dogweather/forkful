@@ -1,13 +1,16 @@
 ---
-title:                "Interpolando uma string"
 aliases:
 - /pt/java/interpolating-a-string/
-date:                  2024-01-20T17:51:28.010121-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolando uma string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/interpolating-a-string.md"
+date: 2024-01-20 17:51:28.010121-07:00
+description: "Interpola\xE7\xE3o de strings \xE9 o processo de inserir valores de\
+  \ vari\xE1veis dentro de uma string. Programadores utilizam isso para facilitar\
+  \ a constru\xE7\xE3o de\u2026"
+lastmod: 2024-02-18 23:08:58.005082
+model: gpt-4-1106-preview
+summary: "Interpola\xE7\xE3o de strings \xE9 o processo de inserir valores de vari\xE1\
+  veis dentro de uma string. Programadores utilizam isso para facilitar a constru\xE7\
+  \xE3o de\u2026"
+title: Interpolando uma string
 ---
 
 {{< edit_this_page >}}

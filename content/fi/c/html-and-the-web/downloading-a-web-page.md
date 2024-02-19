@@ -1,14 +1,18 @@
 ---
-title:                "Web-sivun lataaminen"
 aliases:
 - /fi/c/downloading-a-web-page/
-date:                  2024-02-03T17:56:00.601234-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Web-sivun lataaminen"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/downloading-a-web-page.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:00.601234-07:00
+description: "Web-sivun lataaminen C-kielell\xE4 sis\xE4lt\xE4\xE4 ohjelmallisesti\
+  \ internetsivun sis\xE4ll\xF6n k\xE4sittelemisen ja paikallisesti tallentamisen\
+  \ k\xE4sittely\xE4 tai offline-\u2026"
+lastmod: 2024-02-18 23:09:08.130960
+model: gpt-4-0125-preview
+summary: "Web-sivun lataaminen C-kielell\xE4 sis\xE4lt\xE4\xE4 ohjelmallisesti internetsivun\
+  \ sis\xE4ll\xF6n k\xE4sittelemisen ja paikallisesti tallentamisen k\xE4sittely\xE4\
+  \ tai offline-\u2026"
+title: Web-sivun lataaminen
 ---
 
 {{< edit_this_page >}}

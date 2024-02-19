@@ -1,14 +1,16 @@
 ---
-title:                "Een webpagina downloaden"
 aliases:
 - /nl/google-apps-script/downloading-a-web-page/
-date:                  2024-02-01T21:52:58.917491-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een webpagina downloaden"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/google-apps-script/downloading-a-web-page.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:58.917491-07:00
+description: "Het downloaden van een webpagina in Google Apps Script houdt in dat\
+  \ de inhoud van een webpagina via HTML wordt opgehaald voor verschillende doeleinden,\u2026"
+lastmod: 2024-02-18 23:09:01.384276
+model: gpt-4-0125-preview
+summary: "Het downloaden van een webpagina in Google Apps Script houdt in dat de inhoud\
+  \ van een webpagina via HTML wordt opgehaald voor verschillende doeleinden,\u2026"
+title: Een webpagina downloaden
 ---
 
 {{< edit_this_page >}}

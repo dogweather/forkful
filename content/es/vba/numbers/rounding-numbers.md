@@ -1,14 +1,18 @@
 ---
-title:                "Redondeo de números"
 aliases:
 - /es/vba/rounding-numbers/
-date:                  2024-02-01T22:00:57.673812-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Redondeo de números"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/vba/rounding-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:57.673812-07:00
+description: "Redondear n\xFAmeros en la programaci\xF3n se refiere a aproximar un\
+  \ n\xFAmero a su n\xFAmero entero m\xE1s cercano o a un cierto n\xFAmero de lugares\
+  \ decimales. Los\u2026"
+lastmod: 2024-02-18 23:09:09.790514
+model: gpt-4-0125-preview
+summary: "Redondear n\xFAmeros en la programaci\xF3n se refiere a aproximar un n\xFA\
+  mero a su n\xFAmero entero m\xE1s cercano o a un cierto n\xFAmero de lugares decimales.\
+  \ Los\u2026"
+title: "Redondeo de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

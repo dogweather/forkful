@@ -1,13 +1,16 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
 aliases:
 - /pl/javascript/creating-a-temporary-file/
-date:                  2024-01-20T17:40:53.662578-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tworzenie pliku tymczasowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:53.662578-07:00
+description: "Tworzenie pliku tymczasowego pozwala na przechowywanie danych, kt\xF3\
+  rych nie potrzebujemy d\u0142ugo. Programi\u015Bci u\u017Cywaj\u0105 ich do przechowywania\
+  \ danych\u2026"
+lastmod: 2024-02-18 23:08:50.012648
+model: gpt-4-1106-preview
+summary: "Tworzenie pliku tymczasowego pozwala na przechowywanie danych, kt\xF3rych\
+  \ nie potrzebujemy d\u0142ugo. Programi\u015Bci u\u017Cywaj\u0105 ich do przechowywania\
+  \ danych\u2026"
+title: Tworzenie pliku tymczasowego
 ---
 
 {{< edit_this_page >}}

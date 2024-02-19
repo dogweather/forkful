@@ -1,13 +1,15 @@
 ---
-title:                "Reading command line arguments"
 aliases:
 - /en/elixir/reading-command-line-arguments/
-date:                  2024-01-20T17:55:46.387430-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Reading command line arguments"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:46.387430-07:00
+description: "Reading command line arguments lets a program grab data right from the\
+  \ terminal\u2014stuff like settings or file names. Programmers do it to customize\
+  \ a\u2026"
+lastmod: 2024-02-18 23:09:10.780793
+model: gpt-4-1106-preview
+summary: "Reading command line arguments lets a program grab data right from the terminal\u2014\
+  stuff like settings or file names. Programmers do it to customize a\u2026"
+title: Reading command line arguments
 ---
 
 {{< edit_this_page >}}

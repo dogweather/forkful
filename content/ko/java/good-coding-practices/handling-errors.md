@@ -1,13 +1,24 @@
 ---
-title:                "에러 처리하기"
 aliases:
 - /ko/java/handling-errors/
-date:                  2024-01-26T00:54:04.528182-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "에러 처리하기"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/handling-errors.md"
+date: 2024-01-26 00:54:04.528182-07:00
+description: "\uC624\uB958 \uCC98\uB9AC\uB780 \uC608\uC0C1\uCE58 \uBABB\uD55C \uBB38\
+  \uC81C\uAC00 \uBC1C\uC0DD\uD560 \uACBD\uC6B0\uB97C \uB300\uBE44\uD558\uC5EC \uCF54\
+  \uB4DC\uB97C \uC791\uC131\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC740 \uC18C\uD504\uD2B8\uC6E8\uC5B4\uB97C \uAC15\uAC74\uD558\
+  \uAC8C \uB9CC\uB4E4\uC5B4 \uCDA9\uB3CC\uC774\uB098 \uC774\uC0C1\uD55C \uD589\uB3D9\
+  \uC744 \uBC29\uC9C0\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\uB2C8\
+  \uB2E4."
+lastmod: 2024-02-18 23:09:06.032370
+model: gpt-4-1106-preview
+summary: "\uC624\uB958 \uCC98\uB9AC\uB780 \uC608\uC0C1\uCE58 \uBABB\uD55C \uBB38\uC81C\
+  \uAC00 \uBC1C\uC0DD\uD560 \uACBD\uC6B0\uB97C \uB300\uBE44\uD558\uC5EC \uCF54\uB4DC\
+  \uB97C \uC791\uC131\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uC18C\uD504\uD2B8\uC6E8\uC5B4\uB97C \uAC15\uAC74\uD558\uAC8C\
+  \ \uB9CC\uB4E4\uC5B4 \uCDA9\uB3CC\uC774\uB098 \uC774\uC0C1\uD55C \uD589\uB3D9\uC744\
+  \ \uBC29\uC9C0\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4\
+  ."
+title: "\uC5D0\uB7EC \uCC98\uB9AC\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

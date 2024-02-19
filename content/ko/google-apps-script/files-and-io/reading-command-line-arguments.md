@@ -1,14 +1,26 @@
 ---
-title:                "명령 줄 인수 읽기"
 aliases:
 - /ko/google-apps-script/reading-command-line-arguments/
-date:                  2024-02-01T22:02:06.079514-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "명령 줄 인수 읽기"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:02:06.079514-07:00
+description: "Google Apps Script\uC5D0\uC11C \uBA85\uB839\uC904 \uC778\uC218\uB97C\
+  \ \uC77D\uB294 \uAC83\uC740 Python\uC774\uB098 Node.js\uC640 \uAC19\uC740 \uD504\
+  \uB85C\uADF8\uB798\uBC0D \uC5B8\uC5B4\uC5D0\uC11C\uC758 \uC804\uD1B5\uC801\uC778\
+  \ \uBA85\uB839\uC904 \uC778\uD130\uD398\uC774\uC2A4\uC640 \uB2EC\uB9AC, Google Apps\
+  \ Script\uAC00 \uBCF8\uC9C8\uC801\uC73C\uB85C \uBA85\uB839\uC904 \uC2E4\uD589\uC774\
+  \uB098 \uC778\uC218 \uD30C\uC2F1\uC744 \uC9C0\uC6D0\uD558\uC9C0 \uC54A\uAE30 \uB54C\
+  \uBB38\uC5D0 \uC57D\uAC04\uC758 \uC798\uBABB\uB41C \uBA85\uBA85\uC77C\u2026"
+lastmod: 2024-02-18 23:09:05.582835
+model: gpt-4-0125-preview
+summary: "Google Apps Script\uC5D0\uC11C \uBA85\uB839\uC904 \uC778\uC218\uB97C \uC77D\
+  \uB294 \uAC83\uC740 Python\uC774\uB098 Node.js\uC640 \uAC19\uC740 \uD504\uB85C\uADF8\
+  \uB798\uBC0D \uC5B8\uC5B4\uC5D0\uC11C\uC758 \uC804\uD1B5\uC801\uC778 \uBA85\uB839\
+  \uC904 \uC778\uD130\uD398\uC774\uC2A4\uC640 \uB2EC\uB9AC, Google Apps Script\uAC00\
+  \ \uBCF8\uC9C8\uC801\uC73C\uB85C \uBA85\uB839\uC904 \uC2E4\uD589\uC774\uB098 \uC778\
+  \uC218 \uD30C\uC2F1\uC744 \uC9C0\uC6D0\uD558\uC9C0 \uC54A\uAE30 \uB54C\uBB38\uC5D0\
+  \ \uC57D\uAC04\uC758 \uC798\uBABB\uB41C \uBA85\uBA85\uC77C\u2026"
+title: "\uBA85\uB839 \uC904 \uC778\uC218 \uC77D\uAE30"
 ---
 
 {{< edit_this_page >}}

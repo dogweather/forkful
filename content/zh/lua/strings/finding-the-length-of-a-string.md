@@ -1,14 +1,21 @@
 ---
-title:                "获取字符串的长度"
 aliases:
 - /zh/lua/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:41.646089-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "获取字符串的长度"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/lua/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:41.646089-07:00
+description: "\u5728Lua\u4E2D\uFF0C\u4E86\u89E3\u5B57\u7B26\u4E32\u7684\u957F\u5EA6\
+  \u5C31\u662F\u77E5\u9053\u5B83\u5305\u542B\u591A\u5C11\u4E2A\u5B57\u7B26\u3002\u8FD9\
+  \u6837\u505A\u53EF\u4EE5\u5E2E\u6211\u4EEC\u5904\u7406\u6587\u672C\u6570\u636E\uFF0C\
+  \u6BD4\u5982\u5224\u65AD\u8F93\u5165\u7684\u5408\u6CD5\u6027\u6216\u8005\u8FDB\u884C\
+  \u5B57\u7B26\u4E32\u64CD\u4F5C\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.245724
+model: gpt-4-1106-preview
+summary: "\u5728Lua\u4E2D\uFF0C\u4E86\u89E3\u5B57\u7B26\u4E32\u7684\u957F\u5EA6\u5C31\
+  \u662F\u77E5\u9053\u5B83\u5305\u542B\u591A\u5C11\u4E2A\u5B57\u7B26\u3002\u8FD9\u6837\
+  \u505A\u53EF\u4EE5\u5E2E\u6211\u4EEC\u5904\u7406\u6587\u672C\u6570\u636E\uFF0C\u6BD4\
+  \u5982\u5224\u65AD\u8F93\u5165\u7684\u5408\u6CD5\u6027\u6216\u8005\u8FDB\u884C\u5B57\
+  \u7B26\u4E32\u64CD\u4F5C\u3002"
+title: "\u83B7\u53D6\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
 ---
 
 {{< edit_this_page >}}

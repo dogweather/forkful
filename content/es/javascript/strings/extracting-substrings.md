@@ -1,13 +1,16 @@
 ---
-title:                "Extracción de subcadenas"
 aliases:
 - /es/javascript/extracting-substrings/
-date:                  2024-01-20T17:46:11.614329-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extracción de subcadenas"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/extracting-substrings.md"
+date: 2024-01-20 17:46:11.614329-07:00
+description: "Extraer subcadenas es tomar trozos espec\xEDficos de una cadena de texto.\
+  \ Los programadores lo hacen para analizar y manipular datos, como mostrar solo\
+  \ un\u2026"
+lastmod: 2024-02-18 23:09:10.392425
+model: gpt-4-1106-preview
+summary: "Extraer subcadenas es tomar trozos espec\xEDficos de una cadena de texto.\
+  \ Los programadores lo hacen para analizar y manipular datos, como mostrar solo\
+  \ un\u2026"
+title: "Extracci\xF3n de subcadenas"
 ---
 
 {{< edit_this_page >}}

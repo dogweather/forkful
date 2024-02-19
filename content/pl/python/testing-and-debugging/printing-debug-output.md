@@ -1,13 +1,16 @@
 ---
-title:                "Drukowanie komunikatów debugowania"
 aliases:
 - /pl/python/printing-debug-output/
-date:                  2024-01-20T17:53:31.370053-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Drukowanie komunikatów debugowania"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/printing-debug-output.md"
+date: 2024-01-20 17:53:31.370053-07:00
+description: "Drukowanie wynik\xF3w debugowania to pokazywanie warto\u015Bci zmiennych,\
+  \ stanu aplikacji, czy akcji w konsoli. Programi\u015Bci robi\u0105 to, aby szybko\
+  \ diagnozowa\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.225314
+model: gpt-4-1106-preview
+summary: "Drukowanie wynik\xF3w debugowania to pokazywanie warto\u015Bci zmiennych,\
+  \ stanu aplikacji, czy akcji w konsoli. Programi\u015Bci robi\u0105 to, aby szybko\
+  \ diagnozowa\u0107\u2026"
+title: "Drukowanie komunikat\xF3w debugowania"
 ---
 
 {{< edit_this_page >}}

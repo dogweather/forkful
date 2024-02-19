@@ -1,14 +1,16 @@
 ---
-title:                "Extracción de subcadenas"
 aliases:
 - /es/vba/extracting-substrings/
-date:                  2024-02-01T21:53:20.790562-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Extracción de subcadenas"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/vba/extracting-substrings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:20.790562-07:00
+description: "Extraer subcadenas en Visual Basic para Aplicaciones (VBA) implica aislar\
+  \ partes espec\xEDficas de una cadena basadas en criterios dados. Los programadores\u2026"
+lastmod: 2024-02-18 23:09:09.783613
+model: gpt-4-0125-preview
+summary: "Extraer subcadenas en Visual Basic para Aplicaciones (VBA) implica aislar\
+  \ partes espec\xEDficas de una cadena basadas en criterios dados. Los programadores\u2026"
+title: "Extracci\xF3n de subcadenas"
 ---
 
 {{< edit_this_page >}}

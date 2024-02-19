@@ -1,13 +1,14 @@
 ---
-title:                "Enviando una solicitud http"
 aliases:
 - /es/elixir/sending-an-http-request/
-date:                  2024-01-20T17:59:21.389005-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando una solicitud http"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/sending-an-http-request.md"
+date: 2024-01-20 17:59:21.389005-07:00
+description: "Enviar una solicitud HTTP es el proceso de pedirle al servidor que responda\
+  \ con datos o recursos. Los programadores lo hacemos para interactuar con APIs,\u2026"
+lastmod: 2024-02-18 23:09:09.645093
+model: gpt-4-1106-preview
+summary: "Enviar una solicitud HTTP es el proceso de pedirle al servidor que responda\
+  \ con datos o recursos. Los programadores lo hacemos para interactuar con APIs,\u2026"
+title: Enviando una solicitud http
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Å finne lengden på en streng"
 aliases:
 - /no/go/finding-the-length-of-a-string/
-date:                  2024-02-03T17:56:50.780530-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å finne lengden på en streng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:50.780530-07:00
+description: "\xC5 finne lengden p\xE5 en streng i Go handler om \xE5 bestemme antall\
+  \ tegn den inneholder. Programmerere utf\xF8rer rutinemessig denne operasjonen for\
+  \ \xE5 manipulere\u2026"
+lastmod: 2024-02-18 23:08:53.426403
+model: gpt-4-0125-preview
+summary: "\xC5 finne lengden p\xE5 en streng i Go handler om \xE5 bestemme antall\
+  \ tegn den inneholder. Programmerere utf\xF8rer rutinemessig denne operasjonen for\
+  \ \xE5 manipulere\u2026"
+title: "\xC5 finne lengden p\xE5 en streng"
 ---
 
 {{< edit_this_page >}}

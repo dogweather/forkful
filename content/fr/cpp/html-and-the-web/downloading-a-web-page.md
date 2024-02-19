@@ -1,13 +1,15 @@
 ---
-title:                "Téléchargement d'une page web"
 aliases:
 - /fr/cpp/downloading-a-web-page/
-date:                  2024-01-20T17:43:34.454595-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Téléchargement d'une page web"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/downloading-a-web-page.md"
+date: 2024-01-20 17:43:34.454595-07:00
+description: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via\
+  \ internet. Les programmeurs le font pour automatiser la collecte d'informations,\
+  \ tester la\u2026"
+lastmod: 2024-02-18 23:09:09.159093
+model: gpt-4-1106-preview
+summary: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via internet.\
+  \ Les programmeurs le font pour automatiser la collecte d'informations, tester la\u2026"
+title: "T\xE9l\xE9chargement d'une page web"
 ---
 
 {{< edit_this_page >}}

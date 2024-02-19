@@ -1,14 +1,18 @@
 ---
-title:                "Zeichen, die einem Muster entsprechen, löschen"
 aliases:
 - /de/vba/deleting-characters-matching-a-pattern/
-date:                  2024-02-01T21:52:13.045554-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zeichen, die einem Muster entsprechen, löschen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/vba/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:13.045554-07:00
+description: "Das L\xF6schen von Zeichen, die einem bestimmten Muster in Visual Basic\
+  \ for Applications (VBA) entsprechen, umfasst das Identifizieren und anschlie\xDF\
+  ende\u2026"
+lastmod: 2024-02-18 23:09:04.670000
+model: gpt-4-0125-preview
+summary: "Das L\xF6schen von Zeichen, die einem bestimmten Muster in Visual Basic\
+  \ for Applications (VBA) entsprechen, umfasst das Identifizieren und anschlie\xDF\
+  ende\u2026"
+title: "Zeichen, die einem Muster entsprechen, l\xF6schen"
 ---
 
 {{< edit_this_page >}}

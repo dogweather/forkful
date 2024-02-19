@@ -1,13 +1,16 @@
 ---
-title:                "Tekstitiedoston lukeminen"
 aliases:
 - /fi/typescript/reading-a-text-file/
-date:                  2024-01-20T17:55:22.953079-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tekstitiedoston lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/reading-a-text-file.md"
+date: 2024-01-20 17:55:22.953079-07:00
+description: "Tekstitiedoston lukeminen tarkoittaa tekstin kutsumista tiedostosta\
+  \ ohjelman k\xE4ytett\xE4v\xE4ksi. Ohjelmoijat tekev\xE4t t\xE4m\xE4n, jotta he\
+  \ voivat k\xE4sitell\xE4 tai\u2026"
+lastmod: 2024-02-18 23:09:07.337577
+model: gpt-4-1106-preview
+summary: "Tekstitiedoston lukeminen tarkoittaa tekstin kutsumista tiedostosta ohjelman\
+  \ k\xE4ytett\xE4v\xE4ksi. Ohjelmoijat tekev\xE4t t\xE4m\xE4n, jotta he voivat k\xE4\
+  sitell\xE4 tai\u2026"
+title: Tekstitiedoston lukeminen
 ---
 
 {{< edit_this_page >}}

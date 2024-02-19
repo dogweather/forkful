@@ -1,14 +1,18 @@
 ---
-title:                "Bruke regulære uttrykk"
 aliases:
 - /no/go/using-regular-expressions/
-date:                  2024-02-03T18:11:09.999162-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke regulære uttrykk"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:11:09.999162-07:00
+description: "Regul\xE6re uttrykk (regex) i programmering brukes til \xE5 s\xF8ke,\
+  \ matche og manipulere tekststrenger basert p\xE5 spesifikke m\xF8nstre. Programmerere\
+  \ bruker dem til\u2026"
+lastmod: 2024-02-18 23:08:53.425368
+model: gpt-4-0125-preview
+summary: "Regul\xE6re uttrykk (regex) i programmering brukes til \xE5 s\xF8ke, matche\
+  \ og manipulere tekststrenger basert p\xE5 spesifikke m\xF8nstre. Programmerere\
+  \ bruker dem til\u2026"
+title: "Bruke regul\xE6re uttrykk"
 ---
 
 {{< edit_this_page >}}

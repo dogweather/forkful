@@ -1,13 +1,16 @@
 ---
-title:                "Debuggerin käyttö"
 aliases:
 - /fi/arduino/using-a-debugger/
-date:                  2024-01-26T03:47:17.513292-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Debuggerin käyttö"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/using-a-debugger.md"
+date: 2024-01-26 03:47:17.513292-07:00
+description: "Debugger on ty\xF6kalu, joka auttaa sinua murskaamaan bugeja koodissasi\
+  \ antamalla sinun pys\xE4ytt\xE4\xE4, tutkia ymp\xE4rillesi ja selvitt\xE4\xE4,\
+  \ mit\xE4 todella tapahtuu\u2026"
+lastmod: 2024-02-18 23:09:07.903944
+model: gpt-4-0125-preview
+summary: "Debugger on ty\xF6kalu, joka auttaa sinua murskaamaan bugeja koodissasi\
+  \ antamalla sinun pys\xE4ytt\xE4\xE4, tutkia ymp\xE4rillesi ja selvitt\xE4\xE4,\
+  \ mit\xE4 todella tapahtuu\u2026"
+title: "Debuggerin k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Zamiana liter na wielkie w łańcuchu znaków"
 aliases:
 - /pl/javascript/capitalizing-a-string/
-date:                  2024-02-03T19:05:48.151744-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zamiana liter na wielkie w łańcuchu znaków"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:48.151744-07:00
+description: "Wielk\u0105 liter\u0105 na pocz\u0105tku ci\u0105gu znak\xF3w (ang.\
+  \ capitalizing a string) rozumiemy zamian\u0119 pierwszej litery ci\u0105gu na du\u017C\
+  \u0105, pozostawiaj\u0105c pozosta\u0142e znaki bez\u2026"
+lastmod: 2024-02-18 23:08:49.977481
+model: gpt-4-0125-preview
+summary: "Wielk\u0105 liter\u0105 na pocz\u0105tku ci\u0105gu znak\xF3w (ang. capitalizing\
+  \ a string) rozumiemy zamian\u0119 pierwszej litery ci\u0105gu na du\u017C\u0105\
+  , pozostawiaj\u0105c pozosta\u0142e znaki bez\u2026"
+title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

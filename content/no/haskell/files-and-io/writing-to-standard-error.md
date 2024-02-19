@@ -1,14 +1,18 @@
 ---
-title:                "Skriving til standardfeil"
 aliases:
 - /no/haskell/writing-to-standard-error/
-date:                  2024-02-03T19:33:15.981345-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriving til standardfeil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:33:15.981345-07:00
+description: "\xC5 skrive til standard error (stderr) i Haskell lar programmer skille\
+  \ utdataene sine mellom vanlige resultater og feilmeldinger. Dette er avgj\xF8rende\
+  \ for \xE5\u2026"
+lastmod: 2024-02-18 23:08:53.950529
+model: gpt-4-0125-preview
+summary: "\xC5 skrive til standard error (stderr) i Haskell lar programmer skille\
+  \ utdataene sine mellom vanlige resultater og feilmeldinger. Dette er avgj\xF8rende\
+  \ for \xE5\u2026"
+title: Skriving til standardfeil
 ---
 
 {{< edit_this_page >}}

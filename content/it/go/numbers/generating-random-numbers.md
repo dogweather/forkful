@@ -1,14 +1,17 @@
 ---
-title:                "Generazione di numeri casuali"
 aliases:
 - /it/go/generating-random-numbers/
-date:                  2024-02-03T17:57:21.411954-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generazione di numeri casuali"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/generating-random-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:21.411954-07:00
+description: "Generare numeri casuali nella programmazione riguarda la creazione di\
+  \ una sequenza di numeri che non pu\xF2 essere prevista ragionevolmente meglio che\
+  \ a\u2026"
+lastmod: 2024-02-18 23:08:55.427833
+model: gpt-4-0125-preview
+summary: "Generare numeri casuali nella programmazione riguarda la creazione di una\
+  \ sequenza di numeri che non pu\xF2 essere prevista ragionevolmente meglio che a\u2026"
+title: Generazione di numeri casuali
 ---
 
 {{< edit_this_page >}}

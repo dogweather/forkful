@@ -1,13 +1,14 @@
 ---
-title:                "Kompleksilukujen käsittely"
 aliases:
 - /fi/php/working-with-complex-numbers/
-date:                  2024-01-26T04:43:38.562956-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kompleksilukujen käsittely"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/working-with-complex-numbers.md"
+date: 2024-01-26 04:43:38.562956-07:00
+description: "Kompleksiluvuilla on reaaliosa ja imaginaariosa, jotka yleens\xE4 kirjoitetaan\
+  \ muodossa `a + bi`. Ne ovat keskeisi\xE4 edistyneess\xE4 matematiikassa, fysiikassa,\u2026"
+lastmod: 2024-02-18 23:09:07.705019
+model: gpt-4-0125-preview
+summary: "Kompleksiluvuilla on reaaliosa ja imaginaariosa, jotka yleens\xE4 kirjoitetaan\
+  \ muodossa `a + bi`. Ne ovat keskeisi\xE4 edistyneess\xE4 matematiikassa, fysiikassa,\u2026"
+title: "Kompleksilukujen k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

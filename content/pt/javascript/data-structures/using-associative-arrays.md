@@ -1,15 +1,17 @@
 ---
-title:                "Usando arrays associativos"
 aliases:
 - /pt/javascript/using-associative-arrays/
-date:                  2024-01-30T19:11:50.092811-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando arrays associativos"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:11:50.092811-07:00
+description: "Arrays associativos, ou como s\xE3o mais precisamente conhecidos em\
+  \ JavaScript, objetos, permitem mapear chaves a valores. Isso \xE9 extremamente\
+  \ \xFAtil quando\u2026"
+lastmod: 2024-02-18 23:08:58.525260
+model: gpt-4-0125-preview
+summary: "Arrays associativos, ou como s\xE3o mais precisamente conhecidos em JavaScript,\
+  \ objetos, permitem mapear chaves a valores. Isso \xE9 extremamente \xFAtil quando\u2026"
+title: Usando arrays associativos
 ---
 
 {{< edit_this_page >}}

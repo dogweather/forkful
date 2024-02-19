@@ -1,13 +1,14 @@
 ---
-title:                "Merkkien poistaminen hakemalla osumia kaavaan"
 aliases:
 - /fi/ruby/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:43:12.150351-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:43:12.150351-07:00
+description: "Mik\xE4 & Miksi? Kun puhutaan merkkien poistamisesta kuvion mukaan Rubyss\xE4\
+  , tarkoitamme prosessia, jossa etsit\xE4\xE4n ja poistetaan merkkej\xE4 merkkijonosta\u2026"
+lastmod: 2024-02-18 23:09:08.163388
+model: gpt-4-1106-preview
+summary: "Mik\xE4 & Miksi? Kun puhutaan merkkien poistamisesta kuvion mukaan Rubyss\xE4\
+  , tarkoitamme prosessia, jossa etsit\xE4\xE4n ja poistetaan merkkej\xE4 merkkijonosta\u2026"
+title: Merkkien poistaminen hakemalla osumia kaavaan
 ---
 
 {{< edit_this_page >}}

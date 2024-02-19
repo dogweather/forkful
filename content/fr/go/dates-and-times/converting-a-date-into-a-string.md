@@ -1,14 +1,16 @@
 ---
-title:                "Convertir une date en chaîne de caractères"
 aliases:
 - /fr/go/converting-a-date-into-a-string/
-date:                  2024-02-03T17:54:19.228175-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Convertir une date en chaîne de caractères"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:19.228175-07:00
+description: "Convertir une date en cha\xEEne de caract\xE8res en Go implique de transformer\
+  \ un objet `time.Time` en un format de cha\xEEne lisible. Les programmeurs effectuent\u2026"
+lastmod: 2024-02-18 23:09:08.248770
+model: gpt-4-0125-preview
+summary: "Convertir une date en cha\xEEne de caract\xE8res en Go implique de transformer\
+  \ un objet `time.Time` en un format de cha\xEEne lisible. Les programmeurs effectuent\u2026"
+title: "Convertir une date en cha\xEEne de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

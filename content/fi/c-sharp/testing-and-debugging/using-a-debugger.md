@@ -1,13 +1,16 @@
 ---
-title:                "Debuggerin käyttö"
 aliases:
 - /fi/c-sharp/using-a-debugger/
-date:                  2024-01-26T03:47:59.489645-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Debuggerin käyttö"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/using-a-debugger.md"
+date: 2024-01-26 03:47:59.489645-07:00
+description: "Debuggerin k\xE4ytt\xE4minen tarkoittaa erikoisty\xF6kalujen k\xE4ytt\xF6\
+  \xE4 koodin testaamiseen ja diagnostiikkaan. Ohjelmoijat tekev\xE4t niin virheiden\
+  \ l\xF6yt\xE4miseksi,\u2026"
+lastmod: 2024-02-18 23:09:07.625620
+model: gpt-4-0125-preview
+summary: "Debuggerin k\xE4ytt\xE4minen tarkoittaa erikoisty\xF6kalujen k\xE4ytt\xF6\
+  \xE4 koodin testaamiseen ja diagnostiikkaan. Ohjelmoijat tekev\xE4t niin virheiden\
+  \ l\xF6yt\xE4miseksi,\u2026"
+title: "Debuggerin k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

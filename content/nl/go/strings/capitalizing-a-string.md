@@ -1,14 +1,16 @@
 ---
-title:                "Een string kapitaliseren"
 aliases:
 - /nl/go/capitalizing-a-string/
-date:                  2024-02-03T17:52:46.309129-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string kapitaliseren"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:52:46.309129-07:00
+description: "Het kapitaliseren van een tekenreeks houdt in dat het eerste karakter\
+  \ van een gegeven string naar een hoofdletter wordt getransformeerd als het in kleine\u2026"
+lastmod: 2024-02-18 23:09:01.319001
+model: gpt-4-0125-preview
+summary: "Het kapitaliseren van een tekenreeks houdt in dat het eerste karakter van\
+  \ een gegeven string naar een hoofdletter wordt getransformeerd als het in kleine\u2026"
+title: Een string kapitaliseren
 ---
 
 {{< edit_this_page >}}

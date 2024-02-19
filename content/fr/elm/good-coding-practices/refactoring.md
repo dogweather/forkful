@@ -1,13 +1,16 @@
 ---
-title:                "Refactoring"
 aliases:
 - /fr/elm/refactoring/
-date:                  2024-01-26T01:17:55.425347-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactoring"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/refactoring.md"
+date: 2024-01-26 01:17:55.425347-07:00
+description: "Le remaniement (ou refactoring) est essentiellement le grand m\xE9nage\
+  \ de votre base de code - il s'agit de restructurer le code existant sans en changer\
+  \ le\u2026"
+lastmod: 2024-02-18 23:09:08.743889
+model: gpt-4-0125-preview
+summary: "Le remaniement (ou refactoring) est essentiellement le grand m\xE9nage de\
+  \ votre base de code - il s'agit de restructurer le code existant sans en changer\
+  \ le\u2026"
+title: Refactoring
 ---
 
 {{< edit_this_page >}}

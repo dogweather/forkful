@@ -1,12 +1,14 @@
 ---
-title:                "Generating random numbers"
 aliases:
 - /en/c/generating-random-numbers/
-date:                  2024-02-03T17:50:18.648341-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generating random numbers"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/generating-random-numbers.md"
+date: 2024-02-03 17:50:18.648341-07:00
+description: "Generating random numbers in C involves creating values that are unpredictable\
+  \ and follow a specific distribution, such as uniform or normal. This\u2026"
+lastmod: 2024-02-18 23:09:11.518495
+model: gpt-4-0125-preview
+summary: "Generating random numbers in C involves creating values that are unpredictable\
+  \ and follow a specific distribution, such as uniform or normal. This\u2026"
+title: Generating random numbers
 ---
 
 {{< edit_this_page >}}

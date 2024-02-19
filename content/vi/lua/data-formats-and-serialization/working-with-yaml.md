@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với YAML"
 aliases:
 - /vi/lua/working-with-yaml/
-date:                  2024-01-28T22:11:59.574866-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với YAML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/lua/working-with-yaml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:59.574866-07:00
+description: "YAML l\xE0 \u0111\u1ECBnh d\u1EA1ng h\xF3a d\u1EEF li\u1EC7u d\u1EC5\
+  \ \u0111\u1ECDc v\xE0 vi\u1EBFt cho con ng\u01B0\u1EDDi. L\u1EADp tr\xECnh vi\xEA\
+  n s\u1EED d\u1EE5ng n\xF3 cho c\xE1c file c\u1EA5u h\xECnh, trao \u0111\u1ED5i d\u1EEF\
+  \ li\u1EC7u gi\u1EEFa c\xE1c ng\xF4n ng\u1EEF, v\xE0 l\u01B0u\u2026"
+lastmod: 2024-02-18 23:08:50.859300
+model: gpt-4-0125-preview
+summary: "YAML l\xE0 \u0111\u1ECBnh d\u1EA1ng h\xF3a d\u1EEF li\u1EC7u d\u1EC5 \u0111\
+  \u1ECDc v\xE0 vi\u1EBFt cho con ng\u01B0\u1EDDi. L\u1EADp tr\xECnh vi\xEAn s\u1EED\
+  \ d\u1EE5ng n\xF3 cho c\xE1c file c\u1EA5u h\xECnh, trao \u0111\u1ED5i d\u1EEF li\u1EC7\
+  u gi\u1EEFa c\xE1c ng\xF4n ng\u1EEF, v\xE0 l\u01B0u\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 ---
 
 {{< edit_this_page >}}

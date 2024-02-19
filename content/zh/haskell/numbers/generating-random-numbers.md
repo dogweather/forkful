@@ -1,13 +1,21 @@
 ---
-title:                "生成随机数"
 aliases:
 - /zh/haskell/generating-random-numbers/
-date:                  2024-01-27T20:34:15.268069-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "生成随机数"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/generating-random-numbers.md"
+date: 2024-01-27 20:34:15.268069-07:00
+description: "\u5728 Haskell \u4E2D\u751F\u6210\u968F\u673A\u6570\u610F\u5473\u7740\
+  \u521B\u5EFA\u51FA\u6309\u4EBA\u7C7B\u6807\u51C6\u65E0\u6CD5\u9884\u6D4B\u7684\u6570\
+  \u503C\u3002\u8FD9\u5728\u4ECE\u5BC6\u7801\u5B66\u5E94\u7528\u5230\u9700\u8981\u51C6\
+  \u786E\u6A21\u62DF\u771F\u5B9E\u4E16\u754C\u73B0\u8C61\u7684\u6A21\u62DF\u4E2D\uFF0C\
+  \u5305\u542B\u673A\u9047\u5143\u7D20\u7684\u573A\u666F\u4E2D\u81F3\u5173\u91CD\u8981\
+  \u3002"
+lastmod: 2024-02-18 23:08:59.166226
+model: gpt-4-0125-preview
+summary: "\u5728 Haskell \u4E2D\u751F\u6210\u968F\u673A\u6570\u610F\u5473\u7740\u521B\
+  \u5EFA\u51FA\u6309\u4EBA\u7C7B\u6807\u51C6\u65E0\u6CD5\u9884\u6D4B\u7684\u6570\u503C\
+  \u3002\u8FD9\u5728\u4ECE\u5BC6\u7801\u5B66\u5E94\u7528\u5230\u9700\u8981\u51C6\u786E\
+  \u6A21\u62DF\u771F\u5B9E\u4E16\u754C\u73B0\u8C61\u7684\u6A21\u62DF\u4E2D\uFF0C\u5305\
+  \u542B\u673A\u9047\u5143\u7D20\u7684\u573A\u666F\u4E2D\u81F3\u5173\u91CD\u8981\u3002"
+title: "\u751F\u6210\u968F\u673A\u6570"
 ---
 
 {{< edit_this_page >}}

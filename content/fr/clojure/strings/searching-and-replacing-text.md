@@ -1,13 +1,15 @@
 ---
-title:                "Recherche et remplacement de texte"
 aliases:
 - /fr/clojure/searching-and-replacing-text/
-date:                  2024-01-20T17:57:46.519593-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Recherche et remplacement de texte"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:46.519593-07:00
+description: "Rechercher et remplacer du texte, c'est comme jouer \xE0 cache-cache\
+  \ avec des mots pour les troquer contre d'autres. Les programmeurs le font pour\
+  \ corriger\u2026"
+lastmod: 2024-02-18 23:09:08.370519
+model: gpt-4-1106-preview
+summary: "Rechercher et remplacer du texte, c'est comme jouer \xE0 cache-cache avec\
+  \ des mots pour les troquer contre d'autres. Les programmeurs le font pour corriger\u2026"
+title: Recherche et remplacement de texte
 ---
 
 {{< edit_this_page >}}

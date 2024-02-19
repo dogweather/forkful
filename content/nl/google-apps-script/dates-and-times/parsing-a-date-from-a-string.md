@@ -1,14 +1,16 @@
 ---
-title:                "Een datum ontleden uit een string"
 aliases:
 - /nl/google-apps-script/parsing-a-date-from-a-string/
-date:                  2024-02-01T21:57:18.625988-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een datum ontleden uit een string"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/google-apps-script/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:18.625988-07:00
+description: "Een datum uit een string parsen houdt in dat tekst die een datum vertegenwoordigt\
+  \ wordt omgezet in een datumobject, waardoor programmeurs\u2026"
+lastmod: 2024-02-18 23:09:01.396416
+model: gpt-4-0125-preview
+summary: "Een datum uit een string parsen houdt in dat tekst die een datum vertegenwoordigt\
+  \ wordt omgezet in een datumobject, waardoor programmeurs\u2026"
+title: Een datum ontleden uit een string
 ---
 
 {{< edit_this_page >}}

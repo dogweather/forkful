@@ -1,13 +1,16 @@
 ---
-title:                "Drukowanie komunikatów debugowania"
 aliases:
 - /pl/cpp/printing-debug-output/
-date:                  2024-01-20T17:51:57.399643-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Drukowanie komunikatów debugowania"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/printing-debug-output.md"
+date: 2024-01-20 17:51:57.399643-07:00
+description: "Drukowanie informacji debug jest jak dziennik programisty. Pomaga \u015B\
+  ledzi\u0107 co si\u0119 dzieje w kodzie \u2014 kiedy, gdzie i dlaczego. Programi\u015B\
+  ci u\u017Cywaj\u0105 tej\u2026"
+lastmod: 2024-02-18 23:08:49.914056
+model: gpt-4-1106-preview
+summary: "Drukowanie informacji debug jest jak dziennik programisty. Pomaga \u015B\
+  ledzi\u0107 co si\u0119 dzieje w kodzie \u2014 kiedy, gdzie i dlaczego. Programi\u015B\
+  ci u\u017Cywaj\u0105 tej\u2026"
+title: "Drukowanie komunikat\xF3w debugowania"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Pisanie pliku tekstowego"
 aliases:
 - /pl/cpp/writing-a-text-file/
-date:                  2024-02-03T19:27:23.974570-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie pliku tekstowego"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:23.974570-07:00
+description: "Zapis do pliku tekstowego w C++ polega na tworzeniu lub otwieraniu pliku,\
+  \ a nast\u0119pnie zapisywaniu w nim danych, co stanowi podstawowe zadanie dla\u2026"
+lastmod: 2024-02-18 23:08:49.929800
+model: gpt-4-0125-preview
+summary: "Zapis do pliku tekstowego w C++ polega na tworzeniu lub otwieraniu pliku,\
+  \ a nast\u0119pnie zapisywaniu w nim danych, co stanowi podstawowe zadanie dla\u2026"
+title: Pisanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Usando un depurador"
 aliases:
 - /es/java/using-a-debugger/
-date:                  2024-01-26T03:49:31.983594-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando un depurador"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/using-a-debugger.md"
+date: 2024-01-26 03:49:31.983594-07:00
+description: "Usar un depurador significa emplear una herramienta para probar y corregir\
+  \ errores en tu c\xF3digo. Los programadores lo hacen para entender el flujo de\
+  \ sus\u2026"
+lastmod: 2024-02-18 23:09:09.849876
+model: gpt-4-0125-preview
+summary: "Usar un depurador significa emplear una herramienta para probar y corregir\
+  \ errores en tu c\xF3digo. Los programadores lo hacen para entender el flujo de\
+  \ sus\u2026"
+title: Usando un depurador
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,28 @@
 ---
-title:                "현재 날짜 얻기"
 aliases:
 - /ko/c/getting-the-current-date/
-date:                  2024-02-03T17:57:51.710127-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "현재 날짜 얻기"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:51.710127-07:00
+description: "C\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC00\uC838\uC624\uB294\
+  \ \uAC83\uC740 \uD45C\uC900 C \uB77C\uC774\uBE0C\uB7EC\uB9AC\uB97C \uC0AC\uC6A9\uD558\
+  \uC5EC \uC2DC\uC2A4\uD15C\uC758 \uD604\uC7AC \uB0A0\uC9DC\uC640 \uC2DC\uAC04\uC744\
+  \ \uAC00\uC838\uC624\uACE0 \uD615\uC2DD\uD654\uD558\uB294 \uAC83\uC744 \uD3EC\uD568\
+  \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC790\uC8FC \uC774\
+  \ \uAE30\uB2A5\uC774 \uB85C\uAE45, \uC2DC\uAC04 \uC2A4\uD0EC\uD551 \uB610\uB294\
+  \ \uC560\uD50C\uB9AC\uCF00\uC774\uC158 \uB0B4\uC758 \uC77C\uC815 \uC608\uC57D \uAE30\
+  \uB2A5\uC744 \uC704\uD574 \uD544\uC694\uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.970671
+model: gpt-4-0125-preview
+summary: "C\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC00\uC838\uC624\uB294 \uAC83\
+  \uC740 \uD45C\uC900 C \uB77C\uC774\uBE0C\uB7EC\uB9AC\uB97C \uC0AC\uC6A9\uD558\uC5EC\
+  \ \uC2DC\uC2A4\uD15C\uC758 \uD604\uC7AC \uB0A0\uC9DC\uC640 \uC2DC\uAC04\uC744 \uAC00\
+  \uC838\uC624\uACE0 \uD615\uC2DD\uD654\uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD569\
+  \uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC790\uC8FC \uC774 \uAE30\
+  \uB2A5\uC774 \uB85C\uAE45, \uC2DC\uAC04 \uC2A4\uD0EC\uD551 \uB610\uB294 \uC560\uD50C\
+  \uB9AC\uCF00\uC774\uC158 \uB0B4\uC758 \uC77C\uC815 \uC608\uC57D \uAE30\uB2A5\uC744\
+  \ \uC704\uD574 \uD544\uC694\uD569\uB2C8\uB2E4."
+title: "\uD604\uC7AC \uB0A0\uC9DC \uC5BB\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Using a debugger"
 aliases:
 - /en/kotlin/using-a-debugger/
-date:                  2024-01-25T20:50:19.224696-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Using a debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/using-a-debugger.md"
+date: 2024-01-25 20:50:19.224696-07:00
+description: "Diving into a debugger is all about stepping through your code, watching\
+  \ the gears turn and catching those pesky bugs red-handed. Programmers use\u2026"
+lastmod: 2024-02-18 23:09:11.017516
+model: gpt-4-1106-preview
+summary: "Diving into a debugger is all about stepping through your code, watching\
+  \ the gears turn and catching those pesky bugs red-handed. Programmers use\u2026"
+title: Using a debugger
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,20 @@
 ---
-title:                "Kiểm tra xem thư mục có tồn tại không"
 aliases:
 - /vi/go/checking-if-a-directory-exists/
-date:                  2024-02-03T17:53:28.198582-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kiểm tra xem thư mục có tồn tại không"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:28.198582-07:00
+description: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3\
+  n t\u1EA1i trong Go l\xE0 r\u1EA5t quan tr\u1ECDng \u0111\u1ED1i v\u1EDBi c\xE1\
+  c \u1EE9ng d\u1EE5ng t\u01B0\u01A1ng t\xE1c v\u1EDBi h\u1EC7 th\u1ED1ng t\u1EAD\
+  p tin, nh\u1EB1m tr\xE1nh l\u1ED7i khi c\u1ED1 g\u1EAFng truy\u2026"
+lastmod: 2024-02-18 23:08:50.187238
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1\
+  i trong Go l\xE0 r\u1EA5t quan tr\u1ECDng \u0111\u1ED1i v\u1EDBi c\xE1c \u1EE9ng\
+  \ d\u1EE5ng t\u01B0\u01A1ng t\xE1c v\u1EDBi h\u1EC7 th\u1ED1ng t\u1EADp tin, nh\u1EB1\
+  m tr\xE1nh l\u1ED7i khi c\u1ED1 g\u1EAFng truy\u2026"
+title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 ---
 
 {{< edit_this_page >}}

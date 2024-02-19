@@ -1,13 +1,16 @@
 ---
-title:                "Löschen von Zeichen, die einem Muster entsprechen"
 aliases:
 - /de/ruby/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:43:02.508790-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:43:02.508790-07:00
+description: "Mit Ruby kannst du leicht Zeichen, die einem bestimmten Muster entsprechen,\
+  \ aus einem String entfernen. Wir machen das, um unerw\xFCnschte Daten zu s\xE4\
+  ubern\u2026"
+lastmod: 2024-02-18 23:09:05.404395
+model: gpt-4-1106-preview
+summary: "Mit Ruby kannst du leicht Zeichen, die einem bestimmten Muster entsprechen,\
+  \ aus einem String entfernen. Wir machen das, um unerw\xFCnschte Daten zu s\xE4\
+  ubern\u2026"
+title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 ---
 
 {{< edit_this_page >}}

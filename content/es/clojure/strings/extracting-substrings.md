@@ -1,13 +1,15 @@
 ---
-title:                "Extracción de subcadenas"
 aliases:
 - /es/clojure/extracting-substrings/
-date:                  2024-01-20T17:45:25.032817-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extracción de subcadenas"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/extracting-substrings.md"
+date: 2024-01-20 17:45:25.032817-07:00
+description: "Extraer subcadenas significa sacar partes espec\xEDficas de una cadena\
+  \ de texto. Los programadores lo hacen para manipular y procesar informaci\xF3n,\
+  \ como\u2026"
+lastmod: 2024-02-18 23:09:09.591341
+model: gpt-4-1106-preview
+summary: "Extraer subcadenas significa sacar partes espec\xEDficas de una cadena de\
+  \ texto. Los programadores lo hacen para manipular y procesar informaci\xF3n, como\u2026"
+title: "Extracci\xF3n de subcadenas"
 ---
 
 {{< edit_this_page >}}

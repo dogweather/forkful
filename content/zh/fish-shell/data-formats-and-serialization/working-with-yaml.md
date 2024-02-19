@@ -1,14 +1,28 @@
 ---
-title:                "使用YAML工作"
 aliases:
 - /zh/fish-shell/working-with-yaml/
-date:                  2024-02-03T19:25:24.324500-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用YAML工作"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:25:24.324500-07:00
+description: "\u901A\u8FC7Fish Shell\u64CD\u4F5CYAML\u6D89\u53CA\u5230\u89E3\u6790\
+  \u548C\u64CD\u7EB5YAML\uFF08YAML Ain't Markup Language\uFF0CYAML\u4E0D\u662F\u6807\
+  \u8BB0\u8BED\u8A00\uFF09\u6587\u4EF6\uFF0C\u4E00\u79CD\u7528\u4E8E\u914D\u7F6E\u6587\
+  \u4EF6\u7684\u6570\u636E\u5E8F\u5217\u5316\u683C\u5F0F\u3002\u7A0B\u5E8F\u5458\u8FD9\
+  \u6837\u505A\u662F\u4E3A\u4E86\u5728shell\u73AF\u5883\u7684\u80CC\u666F\u4E0B\u6709\
+  \u6548\u5730\u81EA\u52A8\u5316\u548C\u914D\u7F6E\u5E94\u7528\u7A0B\u5E8F\u6216\u670D\
+  \u52A1\uFF0C\u4FBF\u4E8E\u6267\u884C\u914D\u7F6E\u7BA1\u7406\u548C\u8D44\u6E90\u914D\
+  \u7F6E\u7B49\u4EFB\u52A1\u3002"
+lastmod: 2024-02-18 23:08:59.537839
+model: gpt-4-0125-preview
+summary: "\u901A\u8FC7Fish Shell\u64CD\u4F5CYAML\u6D89\u53CA\u5230\u89E3\u6790\u548C\
+  \u64CD\u7EB5YAML\uFF08YAML Ain't Markup Language\uFF0CYAML\u4E0D\u662F\u6807\u8BB0\
+  \u8BED\u8A00\uFF09\u6587\u4EF6\uFF0C\u4E00\u79CD\u7528\u4E8E\u914D\u7F6E\u6587\u4EF6\
+  \u7684\u6570\u636E\u5E8F\u5217\u5316\u683C\u5F0F\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\
+  \u505A\u662F\u4E3A\u4E86\u5728shell\u73AF\u5883\u7684\u80CC\u666F\u4E0B\u6709\u6548\
+  \u5730\u81EA\u52A8\u5316\u548C\u914D\u7F6E\u5E94\u7528\u7A0B\u5E8F\u6216\u670D\u52A1\
+  \uFF0C\u4FBF\u4E8E\u6267\u884C\u914D\u7F6E\u7BA1\u7406\u548C\u8D44\u6E90\u914D\u7F6E\
+  \u7B49\u4EFB\u52A1\u3002"
+title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 ---
 
 {{< edit_this_page >}}

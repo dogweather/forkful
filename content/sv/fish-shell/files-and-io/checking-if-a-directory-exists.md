@@ -1,14 +1,18 @@
 ---
-title:                "Kontrollera om en katalog existerar"
 aliases:
 - /sv/fish-shell/checking-if-a-directory-exists/
-date:                  2024-02-03T19:07:16.544687-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kontrollera om en katalog existerar"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:07:16.544687-07:00
+description: "Att kontrollera om en katalog finns i Fish Shell g\xF6r att skript kan\
+  \ ta beslut baserade p\xE5 n\xE4rvaron eller fr\xE5nvaron av katalogstrukturer,\
+  \ vilket m\xF6jligg\xF6r\u2026"
+lastmod: 2024-02-18 23:08:52.221585
+model: gpt-4-0125-preview
+summary: "Att kontrollera om en katalog finns i Fish Shell g\xF6r att skript kan ta\
+  \ beslut baserade p\xE5 n\xE4rvaron eller fr\xE5nvaron av katalogstrukturer, vilket\
+  \ m\xF6jligg\xF6r\u2026"
+title: Kontrollera om en katalog existerar
 ---
 
 {{< edit_this_page >}}

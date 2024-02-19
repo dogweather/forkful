@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonojen osien poimiminen"
 aliases:
 - /fi/powershell/extracting-substrings/
-date:                  2024-01-20T17:46:32.838555-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonojen osien poimiminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/extracting-substrings.md"
+date: 2024-01-20 17:46:32.838555-07:00
+description: "Substringien poiminta on prosessi, jolla valikoidaan ja otetaan tietty\
+  \ osa merkkijonosta. Ohjelmoijat tekev\xE4t t\xE4t\xE4, koska usein tarvitaan vain\
+  \ pala dataa\u2026"
+lastmod: 2024-02-18 23:09:07.838174
+model: gpt-4-1106-preview
+summary: "Substringien poiminta on prosessi, jolla valikoidaan ja otetaan tietty osa\
+  \ merkkijonosta. Ohjelmoijat tekev\xE4t t\xE4t\xE4, koska usein tarvitaan vain pala\
+  \ dataa\u2026"
+title: Merkkijonojen osien poimiminen
 ---
 
 {{< edit_this_page >}}

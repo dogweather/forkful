@@ -1,13 +1,16 @@
 ---
-title:                "Eliminando comillas de una cadena"
 aliases:
 - /es/javascript/removing-quotes-from-a-string/
-date:                  2024-01-26T03:40:05.021513-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eliminando comillas de una cadena"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:40:05.021513-07:00
+description: "Eliminar las comillas de una cadena significa deshacerse de esas molestas\
+  \ comillas que pueden interferir con tu c\xF3digo, especialmente cuando est\xE1\
+  s\u2026"
+lastmod: 2024-02-18 23:09:10.391397
+model: gpt-4-0125-preview
+summary: "Eliminar las comillas de una cadena significa deshacerse de esas molestas\
+  \ comillas que pueden interferir con tu c\xF3digo, especialmente cuando est\xE1\
+  s\u2026"
+title: Eliminando comillas de una cadena
 ---
 
 {{< edit_this_page >}}

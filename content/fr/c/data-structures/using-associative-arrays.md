@@ -1,14 +1,18 @@
 ---
-title:                "Utilisation des tableaux associatifs"
 aliases:
 - /fr/c/using-associative-arrays/
-date:                  2024-02-03T18:10:43.132448-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation des tableaux associatifs"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/using-associative-arrays.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:43.132448-07:00
+description: "Les tableaux associatifs, connus dans d'autres langues sous le nom de\
+  \ cartes ou dictionnaires, sont des paires cl\xE9-valeur utilis\xE9es pour la recherche\
+  \ et\u2026"
+lastmod: 2024-02-18 23:09:09.346742
+model: gpt-4-0125-preview
+summary: "Les tableaux associatifs, connus dans d'autres langues sous le nom de cartes\
+  \ ou dictionnaires, sont des paires cl\xE9-valeur utilis\xE9es pour la recherche\
+  \ et\u2026"
+title: Utilisation des tableaux associatifs
 ---
 
 {{< edit_this_page >}}

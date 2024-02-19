@@ -1,13 +1,14 @@
 ---
-title:                "Eliminazione di caratteri che corrispondono a un pattern"
 aliases:
 - /it/arduino/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:19.599089-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Eliminazione di caratteri che corrispondono a un pattern"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:19.599089-07:00
+description: "Eliminare caratteri che corrispondono a un certo schema significa rimuovere\
+  \ specifici elementi da una stringa, per pulirla o per estrarre dati essenziali.\u2026"
+lastmod: 2024-02-18 23:08:56.120043
+model: gpt-4-1106-preview
+summary: "Eliminare caratteri che corrispondono a un certo schema significa rimuovere\
+  \ specifici elementi da una stringa, per pulirla o per estrarre dati essenziali.\u2026"
+title: Eliminazione di caratteri che corrispondono a un pattern
 ---
 
 {{< edit_this_page >}}

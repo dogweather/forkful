@@ -1,13 +1,16 @@
 ---
-title:                "Generowanie liczb losowych"
 aliases:
 - /pl/haskell/generating-random-numbers/
-date:                  2024-01-27T20:34:09.917010-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generowanie liczb losowych"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/generating-random-numbers.md"
+date: 2024-01-27 20:34:09.917010-07:00
+description: "Generowanie liczb losowych w Haskellu polega na tworzeniu liczb, kt\xF3\
+  re s\u0105 nieprzewidywalne wed\u0142ug ludzkich standard\xF3w. Jest to kluczowe\
+  \ w scenariuszach\u2026"
+lastmod: 2024-02-18 23:08:49.649245
+model: gpt-4-0125-preview
+summary: "Generowanie liczb losowych w Haskellu polega na tworzeniu liczb, kt\xF3\
+  re s\u0105 nieprzewidywalne wed\u0142ug ludzkich standard\xF3w. Jest to kluczowe\
+  \ w scenariuszach\u2026"
+title: Generowanie liczb losowych
 ---
 
 {{< edit_this_page >}}

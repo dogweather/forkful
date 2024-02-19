@@ -1,13 +1,14 @@
 ---
-title:                "Cálculo de una fecha en el futuro o el pasado"
 aliases:
 - /es/bash/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:28:31.866937-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Cálculo de una fecha en el futuro o el pasado"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:28:31.866937-07:00
+description: "Calcular una fecha en el futuro o pasado en Bash es el proceso de a\xF1\
+  adir o sustraer d\xEDas a una fecha actual. Los programadores hacen esto para automatizar\u2026"
+lastmod: 2024-02-18 23:09:10.181667
+model: gpt-4-1106-preview
+summary: "Calcular una fecha en el futuro o pasado en Bash es el proceso de a\xF1\
+  adir o sustraer d\xEDas a una fecha actual. Los programadores hacen esto para automatizar\u2026"
+title: "C\xE1lculo de una fecha en el futuro o el pasado"
 ---
 
 {{< edit_this_page >}}

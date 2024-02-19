@@ -1,13 +1,26 @@
 ---
-title:                "CLI 명령어로 파일 다루기"
 aliases:
 - /ko/bash/manipulating-files-with-cli-one-liners/
-date:                  2024-01-27T16:20:49.525493-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "CLI 명령어로 파일 다루기"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/manipulating-files-with-cli-one-liners.md"
+date: 2024-01-27 16:20:49.525493-07:00
+description: "CLI(Command Line Interface)\uB97C \uC0AC\uC6A9\uD55C \uD30C\uC77C \uC870\
+  \uC791\uC740 Bash \uC2A4\uD06C\uB9BD\uD2B8\uB098 \uBA85\uB839\uC5B4\uB97C \uC0AC\
+  \uC6A9\uD558\uC5EC \uD130\uBBF8\uB110\uC5D0\uC11C \uD30C\uC77C\uC744 \uC0DD\uC131\
+  , \uC77D\uAE30, \uC5C5\uB370\uC774\uD2B8, \uC0AD\uC81C\uD558\uB294 \uB4F1\uC758\
+  \ \uC791\uC5C5\uC744 \uC218\uD589\uD558\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774\uB97C \uCC98\uB9AC \uC18D\uB3C4\
+  , \uC790\uB3D9\uD654 \uBC0F \uD2B9\uD788 \uADF8\uB798\uD53D \uC778\uD130\uD398\uC774\
+  \uC2A4\uAC00 \uC5C6\uB294\u2026"
+lastmod: 2024-02-18 23:09:06.476609
+model: gpt-4-0125-preview
+summary: "CLI(Command Line Interface)\uB97C \uC0AC\uC6A9\uD55C \uD30C\uC77C \uC870\
+  \uC791\uC740 Bash \uC2A4\uD06C\uB9BD\uD2B8\uB098 \uBA85\uB839\uC5B4\uB97C \uC0AC\
+  \uC6A9\uD558\uC5EC \uD130\uBBF8\uB110\uC5D0\uC11C \uD30C\uC77C\uC744 \uC0DD\uC131\
+  , \uC77D\uAE30, \uC5C5\uB370\uC774\uD2B8, \uC0AD\uC81C\uD558\uB294 \uB4F1\uC758\
+  \ \uC791\uC5C5\uC744 \uC218\uD589\uD558\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774\uB97C \uCC98\uB9AC \uC18D\uB3C4\
+  , \uC790\uB3D9\uD654 \uBC0F \uD2B9\uD788 \uADF8\uB798\uD53D \uC778\uD130\uD398\uC774\
+  \uC2A4\uAC00 \uC5C6\uB294\u2026"
+title: "CLI \uBA85\uB839\uC5B4\uB85C \uD30C\uC77C \uB2E4\uB8E8\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Använda en interaktiv skal (REPL)"
 aliases:
 - /sv/vba/using-an-interactive-shell-repl/
-date:                  2024-02-01T22:04:18.172077-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Använda en interaktiv skal (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:18.172077-07:00
+description: "En interaktiv skal, eller Read-Eval-Print Loop (REPL), till\xE5ter anv\xE4\
+  ndare att mata in kommandon, exekvera dem och se resultaten i realtid. Programmerare\u2026"
+lastmod: 2024-02-18 23:08:51.628479
+model: gpt-4-0125-preview
+summary: "En interaktiv skal, eller Read-Eval-Print Loop (REPL), till\xE5ter anv\xE4\
+  ndare att mata in kommandon, exekvera dem och se resultaten i realtid. Programmerare\u2026"
+title: "Anv\xE4nda en interaktiv skal (REPL)"
 ---
 
 {{< edit_this_page >}}

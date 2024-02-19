@@ -1,12 +1,13 @@
 ---
-title:                "Arbeiten mit JSON"
 aliases:
 - /de/swift/working-with-json/
-date:                  2024-01-19
-simple_title:         "Arbeiten mit JSON"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/working-with-json.md"
+date: 2024-01-19
+description: "JSON (JavaScript Object Notation) ist ein Datenformat zum Austausch\
+  \ von Datenobjekten. Programmierer nutzen es, weil es leichtgewichtig, textbasiert,\u2026"
+lastmod: 2024-02-18 23:09:05.256932
+summary: "JSON (JavaScript Object Notation) ist ein Datenformat zum Austausch von\
+  \ Datenobjekten. Programmierer nutzen es, weil es leichtgewichtig, textbasiert,\u2026"
+title: Arbeiten mit JSON
 ---
 
 {{< edit_this_page >}}

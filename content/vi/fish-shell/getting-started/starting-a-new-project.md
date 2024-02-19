@@ -1,15 +1,22 @@
 ---
-title:                "Bắt đầu một dự án mới"
 aliases:
 - /vi/fish-shell/starting-a-new-project/
-date:                  2024-01-28T22:08:37.705860-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bắt đầu một dự án mới"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/starting-a-new-project.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:37.705860-07:00
+description: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi c\xF3 ngh\u0129\
+  a l\xE0 kh\u1EDFi t\u1EA1o m\u1ED9t th\u01B0 m\u1EE5c m\u1EDBi ho\xE0n to\xE0n v\u1EDB\
+  i m\u1ECDi th\u1EE9 b\u1EA1n c\u1EA7n \u0111\u1EC3 b\u1EAFt \u0111\u1EA7u vi\u1EBF\
+  t code. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
+  \ kh\u1EDFi \u0111\u1EA7u\u2026"
+lastmod: 2024-02-18 23:08:51.186125
+model: gpt-4-0125-preview
+summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi c\xF3 ngh\u0129a\
+  \ l\xE0 kh\u1EDFi t\u1EA1o m\u1ED9t th\u01B0 m\u1EE5c m\u1EDBi ho\xE0n to\xE0n v\u1EDB\
+  i m\u1ECDi th\u1EE9 b\u1EA1n c\u1EA7n \u0111\u1EC3 b\u1EAFt \u0111\u1EA7u vi\u1EBF\
+  t code. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
+  \ kh\u1EDFi \u0111\u1EA7u\u2026"
+title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 ---
 
 {{< edit_this_page >}}

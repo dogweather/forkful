@@ -1,14 +1,18 @@
 ---
-title:                "Analyse Syntaxique du HTML"
 aliases:
 - /fr/fish-shell/parsing-html/
-date:                  2024-02-03T19:12:13.587974-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analyse Syntaxique du HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:13.587974-07:00
+description: "L'analyse du HTML consiste \xE0 extraire des donn\xE9es ou des informations\
+  \ \xE0 partir de contenus HTML, une t\xE2che courante lorsqu'on traite des donn\xE9\
+  es web. Les\u2026"
+lastmod: 2024-02-18 23:09:09.303387
+model: gpt-4-0125-preview
+summary: "L'analyse du HTML consiste \xE0 extraire des donn\xE9es ou des informations\
+  \ \xE0 partir de contenus HTML, une t\xE2che courante lorsqu'on traite des donn\xE9\
+  es web. Les\u2026"
+title: Analyse Syntaxique du HTML
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,26 @@
 ---
-title:                "比较两个日期"
 aliases:
 - /zh/go/comparing-two-dates/
-date:                  2024-02-03T17:53:47.676299-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "比较两个日期"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/comparing-two-dates.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:47.676299-07:00
+description: "\u5728\u7F16\u7A0B\u4E2D\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F\u662F\u4E00\
+  \u4E2A\u57FA\u672C\u4EFB\u52A1\uFF0C\u5141\u8BB8\u5F00\u53D1\u8005\u8BC4\u4F30\u65E5\
+  \u671F\u4E4B\u95F4\u7684\u65F6\u95F4\u5173\u7CFB\u3002\u8FD9\u6837\u7684\u6BD4\u8F83\
+  \u662F\u786E\u5B9A\u6301\u7EED\u65F6\u95F4\u3001\u5B89\u6392\u4EFB\u52A1\u548C\u9A8C\
+  \u8BC1\u65E5\u671F\u8303\u56F4\u7B49\u529F\u80FD\u7684\u57FA\u7840\uFF0C\u5BF9\u4E8E\
+  \u4F9D\u8D56\u65F6\u95F4\u903B\u8F91\u7684\u5E94\u7528\u7A0B\u5E8F\u81F3\u5173\u91CD\
+  \u8981\u3002"
+lastmod: 2024-02-18 23:08:58.720301
+model: gpt-4-0125-preview
+summary: "\u5728\u7F16\u7A0B\u4E2D\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F\u662F\u4E00\
+  \u4E2A\u57FA\u672C\u4EFB\u52A1\uFF0C\u5141\u8BB8\u5F00\u53D1\u8005\u8BC4\u4F30\u65E5\
+  \u671F\u4E4B\u95F4\u7684\u65F6\u95F4\u5173\u7CFB\u3002\u8FD9\u6837\u7684\u6BD4\u8F83\
+  \u662F\u786E\u5B9A\u6301\u7EED\u65F6\u95F4\u3001\u5B89\u6392\u4EFB\u52A1\u548C\u9A8C\
+  \u8BC1\u65E5\u671F\u8303\u56F4\u7B49\u529F\u80FD\u7684\u57FA\u7840\uFF0C\u5BF9\u4E8E\
+  \u4F9D\u8D56\u65F6\u95F4\u903B\u8F91\u7684\u5E94\u7528\u7A0B\u5E8F\u81F3\u5173\u91CD\
+  \u8981\u3002"
+title: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F"
 ---
 
 {{< edit_this_page >}}

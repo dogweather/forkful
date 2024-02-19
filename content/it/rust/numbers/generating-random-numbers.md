@@ -1,13 +1,14 @@
 ---
-title:                "Generazione di numeri casuali"
 aliases:
 - /it/rust/generating-random-numbers/
-date:                  2024-01-27T20:35:34.052385-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generazione di numeri casuali"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/generating-random-numbers.md"
+date: 2024-01-27 20:35:34.052385-07:00
+description: "Generare numeri casuali in Rust comporta l'utilizzo di librerie per\
+  \ produrre valori numerici imprevedibili, cosa indispensabile per compiti che vanno\u2026"
+lastmod: 2024-02-18 23:08:55.676424
+model: gpt-4-0125-preview
+summary: "Generare numeri casuali in Rust comporta l'utilizzo di librerie per produrre\
+  \ valori numerici imprevedibili, cosa indispensabile per compiti che vanno\u2026"
+title: Generazione di numeri casuali
 ---
 
 {{< edit_this_page >}}

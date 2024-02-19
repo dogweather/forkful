@@ -1,15 +1,22 @@
 ---
-title:                "Bắt đầu một dự án mới"
 aliases:
 - /vi/php/starting-a-new-project/
-date:                  2024-01-28T22:08:43.450253-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bắt đầu một dự án mới"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/php/starting-a-new-project.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:43.450253-07:00
+description: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n PHP m\u1EDBi c\xF3 ngh\u0129\
+  a l\xE0 thi\u1EBFt l\u1EADp m\u1ED9t n\u1EC1n m\xF3ng \u0111\u1EC3 x\xE2y d\u1EF1\
+  ng \u1EE9ng d\u1EE5ng web ho\u1EB7c script c\u1EE7a b\u1EA1n. Ch\xFAng ta l\xE0\
+  m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 b\u1EAFt \u0111\u1EA7u t\u1EEB \u0111\u1EA7\
+  u, c\u1EA5u\u2026"
+lastmod: 2024-02-18 23:08:50.791803
+model: gpt-4-0125-preview
+summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n PHP m\u1EDBi c\xF3 ngh\u0129\
+  a l\xE0 thi\u1EBFt l\u1EADp m\u1ED9t n\u1EC1n m\xF3ng \u0111\u1EC3 x\xE2y d\u1EF1\
+  ng \u1EE9ng d\u1EE5ng web ho\u1EB7c script c\u1EE7a b\u1EA1n. Ch\xFAng ta l\xE0\
+  m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 b\u1EAFt \u0111\u1EA7u t\u1EEB \u0111\u1EA7\
+  u, c\u1EA5u\u2026"
+title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 ---
 
 {{< edit_this_page >}}

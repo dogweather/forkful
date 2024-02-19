@@ -1,13 +1,16 @@
 ---
-title:                "Obsługa błędów"
 aliases:
 - /pl/kotlin/handling-errors/
-date:                  2024-01-26T00:54:55.941128-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Obsługa błędów"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/handling-errors.md"
+date: 2024-01-26 00:54:55.941128-07:00
+description: "Obs\u0142uga b\u0142\u0119d\xF3w to spos\xF3b, w jaki Tw\xF3j kod radzi\
+  \ sobie z problemami, kt\xF3re pojawiaj\u0105 si\u0119 podczas wykonywania - jak\
+  \ z\u0142apanie krzywej pi\u0142ki bez upuszczenia\u2026"
+lastmod: 2024-02-18 23:08:49.576501
+model: gpt-4-1106-preview
+summary: "Obs\u0142uga b\u0142\u0119d\xF3w to spos\xF3b, w jaki Tw\xF3j kod radzi\
+  \ sobie z problemami, kt\xF3re pojawiaj\u0105 si\u0119 podczas wykonywania - jak\
+  \ z\u0142apanie krzywej pi\u0142ki bez upuszczenia\u2026"
+title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 ---
 
 {{< edit_this_page >}}

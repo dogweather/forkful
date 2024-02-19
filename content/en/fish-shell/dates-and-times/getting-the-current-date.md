@@ -1,12 +1,14 @@
 ---
-title:                "Getting the current date"
 aliases:
 - /en/fish-shell/getting-the-current-date/
-date:                  2024-02-03T19:02:33.004483-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Getting the current date"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/getting-the-current-date.md"
+date: 2024-02-03 19:02:33.004483-07:00
+description: "Getting the current date in programming is a fundamental task that allows\
+  \ you to retrieve and manipulate the system's date and time data. In scripting and\u2026"
+lastmod: 2024-02-18 23:09:11.491550
+model: gpt-4-0125-preview
+summary: "Getting the current date in programming is a fundamental task that allows\
+  \ you to retrieve and manipulate the system's date and time data. In scripting and\u2026"
+title: Getting the current date
 ---
 
 {{< edit_this_page >}}

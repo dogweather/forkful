@@ -1,15 +1,18 @@
 ---
-title:                "Assosiatiivisten taulukoiden käyttö"
 aliases:
 - /fi/elixir/using-associative-arrays/
-date:                  2024-01-30T19:10:47.401780-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Assosiatiivisten taulukoiden käyttö"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:47.401780-07:00
+description: "Elixiriss\xE4 assosiatiiviset taulukot, kutsuttuina karttoina (Maps),\
+  \ ovat avain-arvo-pareista koostuvia kokoelmia, joissa uniikki avain osoittaa arvoon.\
+  \ Ne\u2026"
+lastmod: 2024-02-18 23:09:07.266025
+model: gpt-4-0125-preview
+summary: "Elixiriss\xE4 assosiatiiviset taulukot, kutsuttuina karttoina (Maps), ovat\
+  \ avain-arvo-pareista koostuvia kokoelmia, joissa uniikki avain osoittaa arvoon.\
+  \ Ne\u2026"
+title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Obteniendo la fecha actual"
 aliases:
 - /es/vba/getting-the-current-date/
-date:                  2024-02-01T21:54:36.505375-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Obteniendo la fecha actual"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/vba/getting-the-current-date.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:36.505375-07:00
+description: "En Visual Basic para Aplicaciones (VBA), recuperar la fecha actual es\
+  \ una tarea com\xFAn que permite a los programadores trabajar din\xE1micamente con\
+  \ fechas en\u2026"
+lastmod: 2024-02-18 23:09:09.809156
+model: gpt-4-0125-preview
+summary: "En Visual Basic para Aplicaciones (VBA), recuperar la fecha actual es una\
+  \ tarea com\xFAn que permite a los programadores trabajar din\xE1micamente con fechas\
+  \ en\u2026"
+title: Obteniendo la fecha actual
 ---
 
 {{< edit_this_page >}}

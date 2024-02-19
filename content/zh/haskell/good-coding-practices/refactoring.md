@@ -1,13 +1,22 @@
 ---
-title:                "重构代码"
 aliases:
 - /zh/haskell/refactoring/
-date:                  2024-01-26T01:38:10.191009-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "重构代码"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/refactoring.md"
+date: 2024-01-26 01:38:10.191009-07:00
+description: "\u91CD\u6784\u662F\u6307\u5728\u4E0D\u6539\u53D8\u4EE3\u7801\u5916\u90E8\
+  \u884C\u4E3A\u7684\u60C5\u51B5\u4E0B\u8C03\u6574\u4EE3\u7801\u7684\u8FC7\u7A0B\u3002\
+  \u5B83\u5B8C\u5168\u662F\u4E3A\u4E86\u6E05\u7406\u548C\u7EC4\u7EC7\u4EE3\u7801\uFF0C\
+  \u4F7F\u4EE3\u7801\u66F4\u6613\u4E8E\u9605\u8BFB\u3001\u7EF4\u62A4\u548C\u6269\u5C55\
+  \u3002\u5B83\u8FD8\u53EF\u4EE5\u5E2E\u52A9\u6D88\u9664\u9519\u8BEF\u5E76\u63D0\u9AD8\
+  \u6027\u80FD\u3002"
+lastmod: 2024-02-18 23:08:59.181507
+model: gpt-4-0125-preview
+summary: "\u91CD\u6784\u662F\u6307\u5728\u4E0D\u6539\u53D8\u4EE3\u7801\u5916\u90E8\
+  \u884C\u4E3A\u7684\u60C5\u51B5\u4E0B\u8C03\u6574\u4EE3\u7801\u7684\u8FC7\u7A0B\u3002\
+  \u5B83\u5B8C\u5168\u662F\u4E3A\u4E86\u6E05\u7406\u548C\u7EC4\u7EC7\u4EE3\u7801\uFF0C\
+  \u4F7F\u4EE3\u7801\u66F4\u6613\u4E8E\u9605\u8BFB\u3001\u7EF4\u62A4\u548C\u6269\u5C55\
+  \u3002\u5B83\u8FD8\u53EF\u4EE5\u5E2E\u52A9\u6D88\u9664\u9519\u8BEF\u5E76\u63D0\u9AD8\
+  \u6027\u80FD\u3002"
+title: "\u91CD\u6784\u4EE3\u7801"
 ---
 
 {{< edit_this_page >}}

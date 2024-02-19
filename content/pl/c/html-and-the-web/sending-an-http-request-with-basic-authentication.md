@@ -1,14 +1,18 @@
 ---
-title:                "Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem"
 aliases:
 - /pl/c/sending-an-http-request-with-basic-authentication/
-date:                  2024-02-03T18:09:53.920973-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:09:53.920973-07:00
+description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem\
+  \ w j\u0119zyku C polega na przygotowaniu \u017C\u0105dania HTTP, kt\xF3re zawiera\
+  \ nag\u0142\xF3wek Authorization z\u2026"
+lastmod: 2024-02-18 23:08:50.079690
+model: gpt-4-0125-preview
+summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem w\
+  \ j\u0119zyku C polega na przygotowaniu \u017C\u0105dania HTTP, kt\xF3re zawiera\
+  \ nag\u0142\xF3wek Authorization z\u2026"
+title: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnianiem"
 ---
 
 {{< edit_this_page >}}

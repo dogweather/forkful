@@ -1,14 +1,18 @@
 ---
-title:                "Arredondamento de números"
 aliases:
 - /pt/c/rounding-numbers/
-date:                  2024-02-03T18:07:39.600736-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arredondamento de números"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/rounding-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:39.600736-07:00
+description: "Arredondar n\xFAmeros \xE9 o processo de ajustar os d\xEDgitos de um\
+  \ n\xFAmero para reduzir sua precis\xE3o de acordo com certas regras, seja em dire\xE7\
+  \xE3o ao n\xFAmero\u2026"
+lastmod: 2024-02-18 23:08:58.613452
+model: gpt-4-0125-preview
+summary: "Arredondar n\xFAmeros \xE9 o processo de ajustar os d\xEDgitos de um n\xFA\
+  mero para reduzir sua precis\xE3o de acordo com certas regras, seja em dire\xE7\xE3\
+  o ao n\xFAmero\u2026"
+title: "Arredondamento de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

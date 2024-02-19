@@ -1,14 +1,19 @@
 ---
-title:                "テキストファイルの読み込み"
 aliases:
 - /ja/elixir/reading-a-text-file/
-date:                  2024-01-20T17:54:11.107931-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "テキストファイルの読み込み"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/reading-a-text-file.md"
+date: 2024-01-20 17:54:11.107931-07:00
+description: "\u30D5\u30A1\u30A4\u30EB\u304B\u3089\u30C6\u30AD\u30B9\u30C8\u3092\u8AAD\
+  \u3080\u306E\u306F\u30C7\u30FC\u30BF\u306E\u62BD\u51FA\u3084\u51E6\u7406\u306B\u5FC5\
+  \u9808\u3067\u3059\u3002Elixir\u3067\u306F\u7C21\u5358\u3067\u30A8\u30EC\u30AC\u30F3\
+  \u30C8\u306B\u884C\u3048\u307E\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:54.659378
+model: gpt-4-1106-preview
+summary: "\u30D5\u30A1\u30A4\u30EB\u304B\u3089\u30C6\u30AD\u30B9\u30C8\u3092\u8AAD\
+  \u3080\u306E\u306F\u30C7\u30FC\u30BF\u306E\u62BD\u51FA\u3084\u51E6\u7406\u306B\u5FC5\
+  \u9808\u3067\u3059\u3002Elixir\u3067\u306F\u7C21\u5358\u3067\u30A8\u30EC\u30AC\u30F3\
+  \u30C8\u306B\u884C\u3048\u307E\u3059\u3002"
+title: "\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u306E\u8AAD\u307F\u8FBC\u307F"
 ---
 
 {{< edit_this_page >}}

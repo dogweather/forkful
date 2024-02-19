@@ -1,15 +1,20 @@
 ---
-title:                "Gửi một yêu cầu HTTP"
 aliases:
 - /vi/javascript/sending-an-http-request/
-date:                  2024-01-28T22:08:00.157698-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gửi một yêu cầu HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/sending-an-http-request.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:00.157698-07:00
+description: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 c\xE1ch m\xE3\
+  \ JavaScript c\u1EE7a b\u1EA1n giao ti\u1EBFp v\u1EDBi m\xE1y ch\u1EE7. Vi\u1EC7\
+  c n\xE0y \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n \u0111\u1EC3 trao \u0111\u1ED5\
+  i d\u1EEF li\u1EC7u, t\u1EA3i ngu\u1ED3n, ho\u1EB7c g\u1EEDi d\u1EEF li\u1EC7u\u2026"
+lastmod: 2024-02-18 23:08:51.132591
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 c\xE1ch m\xE3 JavaScript\
+  \ c\u1EE7a b\u1EA1n giao ti\u1EBFp v\u1EDBi m\xE1y ch\u1EE7. Vi\u1EC7c n\xE0y \u0111\
+  \u01B0\u1EE3c th\u1EF1c hi\u1EC7n \u0111\u1EC3 trao \u0111\u1ED5i d\u1EEF li\u1EC7\
+  u, t\u1EA3i ngu\u1ED3n, ho\u1EB7c g\u1EEDi d\u1EEF li\u1EC7u\u2026"
+title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 ---
 
 {{< edit_this_page >}}

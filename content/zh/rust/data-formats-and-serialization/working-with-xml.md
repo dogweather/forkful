@@ -1,13 +1,22 @@
 ---
-title:                "处理XML"
 aliases:
 - /zh/rust/working-with-xml/
-date:                  2024-01-26T04:36:09.565903-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/working-with-xml.md"
+date: 2024-01-26 04:36:09.565903-07:00
+description: "XML\uFF0C\u5373\u53EF\u6269\u5C55\u6807\u8BB0\u8BED\u8A00\uFF08eXtensible\
+  \ Markup Language\uFF09\uFF0C\u5C31\u50CF\u662FJSON\u90A3\u4E2A\u5197\u957F\u7684\
+  \u5802\u5144\u3002\u5F53\u5904\u7406\u9057\u7559\u7CFB\u7EDF\u3001\u4F01\u4E1A\u8F6F\
+  \u4EF6\u6216\u672A\u8DDF\u968FJSON\u6F6E\u6D41\u7684API\u65F6\uFF0C\u4F60\u5C06\u4E0D\
+  \u5F97\u4E0D\u4E0EXML\u6253\u4EA4\u9053\u3002\u5728\u9700\u8981\u6570\u636E\u4EA4\
+  \u6362\u7684\u5730\u65B9\uFF0CXML\u4F9D\u7136\u7A33\u56FA\u5730\u7AD9\u7740\u3002"
+lastmod: 2024-02-18 23:08:58.962984
+model: gpt-4-0125-preview
+summary: "XML\uFF0C\u5373\u53EF\u6269\u5C55\u6807\u8BB0\u8BED\u8A00\uFF08eXtensible\
+  \ Markup Language\uFF09\uFF0C\u5C31\u50CF\u662FJSON\u90A3\u4E2A\u5197\u957F\u7684\
+  \u5802\u5144\u3002\u5F53\u5904\u7406\u9057\u7559\u7CFB\u7EDF\u3001\u4F01\u4E1A\u8F6F\
+  \u4EF6\u6216\u672A\u8DDF\u968FJSON\u6F6E\u6D41\u7684API\u65F6\uFF0C\u4F60\u5C06\u4E0D\
+  \u5F97\u4E0D\u4E0EXML\u6253\u4EA4\u9053\u3002\u5728\u9700\u8981\u6570\u636E\u4EA4\
+  \u6362\u7684\u5730\u65B9\uFF0CXML\u4F9D\u7136\u7A33\u56FA\u5730\u7AD9\u7740\u3002"
+title: "\u5904\u7406XML"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,28 @@
 ---
-title:                "복잡한 숫자를 다루기"
 aliases:
 - /ko/vba/working-with-complex-numbers/
-date:                  2024-02-01T22:08:02.485306-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "복잡한 숫자를 다루기"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/vba/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:08:02.485306-07:00
+description: "\uBCF5\uC18C\uC218\uB97C \uB2E4\uB8E8\uB294 \uC791\uC5C5\uC740 \uC2E4\
+  \uC218 \uBD80\uBD84\uACFC \uD5C8\uC218 \uBD80\uBD84\uC744 \uBAA8\uB450 \uAC00\uC9C4\
+  \ \uC22B\uC790\uC5D0 \uB300\uD55C \uC218\uD559\uC801 \uC5F0\uC0B0\uC744 \uC218\uD589\
+  \uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uACF5\uD559, \uBB3C\uB9AC\uD559, \uADF8\uB9AC\uACE0 \uC2E4\uC218\
+  \uB9CC\uC73C\uB85C\uB294 \uD574\uACB0\uD560 \uC218 \uC5C6\uB294 \uBC29\uC815\uC2DD\
+  \uC744 \uD480\uC5B4\uC57C \uD558\uB294 \uBAA8\uB4E0 \uC601\uC5ED\uC5D0\uC11C \uBCF5\
+  \uC18C\uC218\uC640 \uC885\uC885 \uC811\uD558\uAC8C \uB429\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:05.941833
+model: gpt-4-0125-preview
+summary: "\uBCF5\uC18C\uC218\uB97C \uB2E4\uB8E8\uB294 \uC791\uC5C5\uC740 \uC2E4\uC218\
+  \ \uBD80\uBD84\uACFC \uD5C8\uC218 \uBD80\uBD84\uC744 \uBAA8\uB450 \uAC00\uC9C4 \uC22B\
+  \uC790\uC5D0 \uB300\uD55C \uC218\uD559\uC801 \uC5F0\uC0B0\uC744 \uC218\uD589\uD558\
+  \uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB4E4\uC740 \uACF5\uD559, \uBB3C\uB9AC\uD559, \uADF8\uB9AC\uACE0 \uC2E4\uC218\uB9CC\
+  \uC73C\uB85C\uB294 \uD574\uACB0\uD560 \uC218 \uC5C6\uB294 \uBC29\uC815\uC2DD\uC744\
+  \ \uD480\uC5B4\uC57C \uD558\uB294 \uBAA8\uB4E0 \uC601\uC5ED\uC5D0\uC11C \uBCF5\uC18C\
+  \uC218\uC640 \uC885\uC885 \uC811\uD558\uAC8C \uB429\uB2C8\uB2E4."
+title: "\uBCF5\uC7A1\uD55C \uC22B\uC790\uB97C \uB2E4\uB8E8\uAE30"
 ---
 
 {{< edit_this_page >}}

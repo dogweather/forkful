@@ -1,14 +1,24 @@
 ---
-title:                "写入标准错误"
 aliases:
 - /zh/clojure/writing-to-standard-error/
-date:                  2024-02-03T19:32:44.638636-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "写入标准错误"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:44.638636-07:00
+description: "\u5C06\u9519\u8BEF\u6D88\u606F\u548C\u8BCA\u65AD\u4FE1\u606F\u5199\u5165\
+  \u6807\u51C6\u9519\u8BEF\uFF08stderr\uFF09\u662F\u6307\u5C06\u8FD9\u4E9B\u4FE1\u606F\
+  \u5B9A\u5411\u5230stderr\u6D41\uFF0C\u4E0E\u6807\u51C6\u8F93\u51FA\uFF08stdout\uFF09\
+  \u5206\u5F00\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u533A\u5206\
+  \u5E38\u89C4\u7A0B\u5E8F\u8F93\u51FA\u548C\u9519\u8BEF\u6D88\u606F\uFF0C\u4ECE\u800C\
+  \u5B9E\u73B0\u66F4\u6709\u6548\u7684\u8C03\u8BD5\u548C\u8BB0\u5F55\u3002"
+lastmod: 2024-02-18 23:08:58.842773
+model: gpt-4-0125-preview
+summary: "\u5C06\u9519\u8BEF\u6D88\u606F\u548C\u8BCA\u65AD\u4FE1\u606F\u5199\u5165\
+  \u6807\u51C6\u9519\u8BEF\uFF08stderr\uFF09\u662F\u6307\u5C06\u8FD9\u4E9B\u4FE1\u606F\
+  \u5B9A\u5411\u5230stderr\u6D41\uFF0C\u4E0E\u6807\u51C6\u8F93\u51FA\uFF08stdout\uFF09\
+  \u5206\u5F00\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u533A\u5206\
+  \u5E38\u89C4\u7A0B\u5E8F\u8F93\u51FA\u548C\u9519\u8BEF\u6D88\u606F\uFF0C\u4ECE\u800C\
+  \u5B9E\u73B0\u66F4\u6709\u6548\u7684\u8C03\u8BD5\u548C\u8BB0\u5F55\u3002"
+title: "\u5199\u5165\u6807\u51C6\u9519\u8BEF"
 ---
 
 {{< edit_this_page >}}

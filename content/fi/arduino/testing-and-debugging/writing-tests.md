@@ -1,14 +1,16 @@
 ---
-title:                "Testien kirjoittaminen"
 aliases:
 - /fi/arduino/writing-tests/
-date:                  2024-02-03T19:29:40.752498-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Testien kirjoittaminen"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:40.752498-07:00
+description: "Testien kirjoittaminen Arduino-ymp\xE4rist\xF6ss\xE4 tarkoittaa automatisoitujen\
+  \ testien luomista, jotka varmistavat koodisi toimivuuden Arduino-laitteissa.\u2026"
+lastmod: 2024-02-18 23:09:07.902845
+model: gpt-4-0125-preview
+summary: "Testien kirjoittaminen Arduino-ymp\xE4rist\xF6ss\xE4 tarkoittaa automatisoitujen\
+  \ testien luomista, jotka varmistavat koodisi toimivuuden Arduino-laitteissa.\u2026"
+title: Testien kirjoittaminen
 ---
 
 {{< edit_this_page >}}

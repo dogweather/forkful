@@ -1,14 +1,17 @@
 ---
-title:                "Pobieranie aktualnej daty"
 aliases:
 - /pl/powershell/getting-the-current-date/
-date:                  2024-02-03T19:10:31.214149-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pobieranie aktualnej daty"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:10:31.214149-07:00
+description: "Pobieranie bie\u017C\u0105cej daty w PowerShell polega na uzyskiwaniu\
+  \ aktualnej daty i godziny systemu. Ta operacja jest fundamentalna dla zada\u0144\
+  \ takich jak\u2026"
+lastmod: 2024-02-18 23:08:49.839306
+model: gpt-4-0125-preview
+summary: "Pobieranie bie\u017C\u0105cej daty w PowerShell polega na uzyskiwaniu aktualnej\
+  \ daty i godziny systemu. Ta operacja jest fundamentalna dla zada\u0144 takich jak\u2026"
+title: Pobieranie aktualnej daty
 ---
 
 {{< edit_this_page >}}

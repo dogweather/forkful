@@ -1,14 +1,18 @@
 ---
-title:                "Päivämäärän muuttaminen merkkijonoksi"
 aliases:
 - /fi/go/converting-a-date-into-a-string/
-date:                  2024-02-03T17:54:29.060091-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:29.060091-07:00
+description: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Go:ssa k\xE4sitt\xE4\
+  \xE4 `time.Time` -oliomuunnoksen luettavaan merkkijonomuotoon. Ohjelmoijat suorittavat\
+  \ usein t\xE4m\xE4n\u2026"
+lastmod: 2024-02-18 23:09:07.098633
+model: gpt-4-0125-preview
+summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Go:ssa k\xE4sitt\xE4\
+  \xE4 `time.Time` -oliomuunnoksen luettavaan merkkijonomuotoon. Ohjelmoijat suorittavat\
+  \ usein t\xE4m\xE4n\u2026"
+title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuttaminen merkkijonoksi"
 ---
 
 {{< edit_this_page >}}

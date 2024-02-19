@@ -1,14 +1,28 @@
 ---
-title:                "处理CSV文件"
 aliases:
 - /zh/python/working-with-csv/
-date:                  2024-02-03T19:21:04.501287-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理CSV文件"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:21:04.501287-07:00
+description: "\u4F7F\u7528 CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\uFF09\u6D89\u53CA\
+  \u4ECE CSV \u6587\u4EF6\u8BFB\u53D6\u6570\u636E\u548C\u5411 CSV \u6587\u4EF6\u5199\
+  \u5165\u6570\u636E\uFF0C\u8FD9\u662F\u4E00\u79CD\u5E38\u89C1\u7684\u5B58\u50A8\u8868\
+  \u683C\u6570\u636E\u7684\u683C\u5F0F\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\
+  \u4E3A\u4E86\u8F7B\u677E\u5730\u5728\u4E0D\u540C\u5E73\u53F0\u548C\u8BED\u8A00\u4E4B\
+  \u95F4\u4EA4\u6362\u548C\u5B58\u50A8\u6570\u636E\uFF0C\u4F7F\u7528\u4E00\u79CD\u7B80\
+  \u5355\u7684\u57FA\u4E8E\u6587\u672C\u7684\u683C\u5F0F\uFF0C\u5F97\u5230\u4E86\u5E7F\
+  \u6CDB\u652F\u6301\u3002"
+lastmod: 2024-02-18 23:08:58.810676
+model: gpt-4-0125-preview
+summary: "\u4F7F\u7528 CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\uFF09\u6D89\u53CA\u4ECE\
+  \ CSV \u6587\u4EF6\u8BFB\u53D6\u6570\u636E\u548C\u5411 CSV \u6587\u4EF6\u5199\u5165\
+  \u6570\u636E\uFF0C\u8FD9\u662F\u4E00\u79CD\u5E38\u89C1\u7684\u5B58\u50A8\u8868\u683C\
+  \u6570\u636E\u7684\u683C\u5F0F\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\
+  \u4E86\u8F7B\u677E\u5730\u5728\u4E0D\u540C\u5E73\u53F0\u548C\u8BED\u8A00\u4E4B\u95F4\
+  \u4EA4\u6362\u548C\u5B58\u50A8\u6570\u636E\uFF0C\u4F7F\u7528\u4E00\u79CD\u7B80\u5355\
+  \u7684\u57FA\u4E8E\u6587\u672C\u7684\u683C\u5F0F\uFF0C\u5F97\u5230\u4E86\u5E7F\u6CDB\
+  \u652F\u6301\u3002"
+title: "\u5904\u7406CSV\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,17 @@
 ---
-title:                "Utilisation des expressions régulières"
 aliases:
 - /fr/javascript/using-regular-expressions/
-date:                  2024-02-03T19:17:50.128733-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation des expressions régulières"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:17:50.128733-07:00
+description: "Les expressions r\xE9guli\xE8res (regex) en JavaScript sont des motifs\
+  \ utilis\xE9s pour correspondre \xE0 des combinaisons de caract\xE8res dans des\
+  \ cha\xEEnes de\u2026"
+lastmod: 2024-02-18 23:09:09.244654
+model: gpt-4-0125-preview
+summary: "Les expressions r\xE9guli\xE8res (regex) en JavaScript sont des motifs utilis\xE9\
+  s pour correspondre \xE0 des combinaisons de caract\xE8res dans des cha\xEEnes de\u2026"
+title: "Utilisation des expressions r\xE9guli\xE8res"
 ---
 
 {{< edit_this_page >}}

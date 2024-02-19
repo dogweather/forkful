@@ -1,13 +1,16 @@
 ---
-title:                "Jobbe med TOML"
 aliases:
 - /no/clojure/working-with-toml/
-date:                  2024-01-26T04:20:37.681644-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Jobbe med TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/working-with-toml.md"
+date: 2024-01-26 04:20:37.681644-07:00
+description: "\xC5 jobbe med TOML betyr at du h\xE5ndterer data i et minimalt format\
+  \ kalt \"Tom's Obvious, Minimal Language\", som er popul\xE6rt for konfigurasjonsfiler\
+  \ p\xE5 grunn\u2026"
+lastmod: 2024-02-18 23:08:53.586925
+model: gpt-4-0125-preview
+summary: "\xC5 jobbe med TOML betyr at du h\xE5ndterer data i et minimalt format kalt\
+  \ \"Tom's Obvious, Minimal Language\", som er popul\xE6rt for konfigurasjonsfiler\
+  \ p\xE5 grunn\u2026"
+title: Jobbe med TOML
 ---
 
 {{< edit_this_page >}}

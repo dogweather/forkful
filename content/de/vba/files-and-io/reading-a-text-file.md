@@ -1,14 +1,16 @@
 ---
-title:                "Eine Textdatei lesen"
 aliases:
 - /de/vba/reading-a-text-file/
-date:                  2024-02-01T21:58:35.848341-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eine Textdatei lesen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/vba/reading-a-text-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:35.848341-07:00
+description: "Das Lesen einer Textdatei in Visual Basic f\xFCr Anwendungen (VBA) beinhaltet\
+  \ den programmatischen Zugriff auf und das Extrahieren des Inhalts einer\u2026"
+lastmod: 2024-02-18 23:09:04.709511
+model: gpt-4-0125-preview
+summary: "Das Lesen einer Textdatei in Visual Basic f\xFCr Anwendungen (VBA) beinhaltet\
+  \ den programmatischen Zugriff auf und das Extrahieren des Inhalts einer\u2026"
+title: Eine Textdatei lesen
 ---
 
 {{< edit_this_page >}}

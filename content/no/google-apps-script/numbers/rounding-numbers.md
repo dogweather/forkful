@@ -1,14 +1,17 @@
 ---
-title:                "Avrunding av tall"
 aliases:
 - /no/google-apps-script/rounding-numbers/
-date:                  2024-02-01T22:00:42.422121-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Avrunding av tall"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/google-apps-script/rounding-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:42.422121-07:00
+description: "Avrunding av tall, et grunnleggende konsept innen dataprogrammering,\
+  \ inneb\xE6rer \xE5 justere et tall til n\xE6rmeste heltall eller til et spesifisert\
+  \ antall\u2026"
+lastmod: 2024-02-18 23:08:53.475172
+model: gpt-4-0125-preview
+summary: "Avrunding av tall, et grunnleggende konsept innen dataprogrammering, inneb\xE6\
+  rer \xE5 justere et tall til n\xE6rmeste heltall eller til et spesifisert antall\u2026"
+title: Avrunding av tall
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,16 @@
 ---
-title:                "Twee datums vergelijken"
 aliases:
 - /nl/cpp/comparing-two-dates/
-date:                  2024-01-28T21:56:30.610924-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Twee datums vergelijken"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/cpp/comparing-two-dates.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:30.610924-07:00
+description: "Het vergelijken van data gaat over het uitvogelen welke van twee data\
+  \ vroeger, later is, of dat ze hetzelfde zijn. Programmeurs doen dit voor het\u2026"
+lastmod: 2024-02-18 23:09:02.196404
+model: gpt-4-0125-preview
+summary: "Het vergelijken van data gaat over het uitvogelen welke van twee data vroeger,\
+  \ later is, of dat ze hetzelfde zijn. Programmeurs doen dit voor het\u2026"
+title: Twee datums vergelijken
 ---
 
 {{< edit_this_page >}}

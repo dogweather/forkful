@@ -1,14 +1,18 @@
 ---
-title:                "Tarkistetaan, onko hakemisto olemassa"
 aliases:
 - /fi/elm/checking-if-a-directory-exists/
-date:                  2024-02-03T19:07:52.504653-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tarkistetaan, onko hakemisto olemassa"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:07:52.504653-07:00
+description: "Tarkistaminen, l\xF6ytyyk\xF6 hakemisto, tarkoittaa vahvistamista, onko\
+  \ tietty kansiov\xE4yl\xE4 olemassa tiedostoj\xE4rjestelm\xE4ss\xE4. Ohjelmoijat\
+  \ tekev\xE4t niin\u2026"
+lastmod: 2024-02-18 23:09:07.544449
+model: gpt-4-0125-preview
+summary: "Tarkistaminen, l\xF6ytyyk\xF6 hakemisto, tarkoittaa vahvistamista, onko\
+  \ tietty kansiov\xE4yl\xE4 olemassa tiedostoj\xE4rjestelm\xE4ss\xE4. Ohjelmoijat\
+  \ tekev\xE4t niin\u2026"
+title: Tarkistetaan, onko hakemisto olemassa
 ---
 
 {{< edit_this_page >}}

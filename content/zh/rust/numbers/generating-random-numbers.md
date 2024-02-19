@@ -1,13 +1,18 @@
 ---
-title:                "生成随机数"
 aliases:
 - /zh/rust/generating-random-numbers/
-date:                  2024-01-27T20:35:17.534438-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "生成随机数"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/generating-random-numbers.md"
+date: 2024-01-27 20:35:17.534438-07:00
+description: "\u5728 Rust \u4E2D\u751F\u6210\u968F\u673A\u6570\u6D89\u53CA\u4F7F\u7528\
+  \u5E93\u6765\u4EA7\u751F\u4E0D\u53EF\u9884\u6D4B\u7684\u6570\u503C\uFF0C\u8FD9\u5BF9\
+  \u4E8E\u4ECE\u5BC6\u7801\u5B66\u548C\u6A21\u62DF\u5230\u6E38\u620F\u548C\u968F\u673A\
+  \u5316\u7B97\u6CD5\u7684\u4EFB\u52A1\u81F3\u5173\u91CD\u8981\u3002"
+lastmod: 2024-02-18 23:08:58.937579
+model: gpt-4-0125-preview
+summary: "\u5728 Rust \u4E2D\u751F\u6210\u968F\u673A\u6570\u6D89\u53CA\u4F7F\u7528\
+  \u5E93\u6765\u4EA7\u751F\u4E0D\u53EF\u9884\u6D4B\u7684\u6570\u503C\uFF0C\u8FD9\u5BF9\
+  \u4E8E\u4ECE\u5BC6\u7801\u5B66\u548C\u6A21\u62DF\u5230\u6E38\u620F\u548C\u968F\u673A\
+  \u5316\u7B97\u6CD5\u7684\u4EFB\u52A1\u81F3\u5173\u91CD\u8981\u3002"
+title: "\u751F\u6210\u968F\u673A\u6570"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Suchen und Ersetzen von Text"
 aliases:
 - /de/rust/searching-and-replacing-text/
-date:                  2024-01-20T17:58:50.479445-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Suchen und Ersetzen von Text"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:50.479445-07:00
+description: "Suchen und Ersetzen von Text erm\xF6glicht es, spezifische Zeichenkombinationen\
+  \ in einem Datenstrom zu finden und durch neue Inhalte zu ersetzen. Es ist ein\u2026"
+lastmod: 2024-02-18 23:09:04.625904
+model: gpt-4-1106-preview
+summary: "Suchen und Ersetzen von Text erm\xF6glicht es, spezifische Zeichenkombinationen\
+  \ in einem Datenstrom zu finden und durch neue Inhalte zu ersetzen. Es ist ein\u2026"
+title: Suchen und Ersetzen von Text
 ---
 
 {{< edit_this_page >}}

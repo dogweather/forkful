@@ -1,13 +1,14 @@
 ---
-title:                "Manipulation de fichiers avec des commandes en une ligne en CLI"
 aliases:
 - /fr/powershell/manipulating-files-with-cli-one-liners/
-date:                  2024-01-27T16:20:55.315479-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulation de fichiers avec des commandes en une ligne en CLI"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/manipulating-files-with-cli-one-liners.md"
+date: 2024-01-27 16:20:55.315479-07:00
+description: "Manipuler des fichiers avec des commandes d'une ligne CLI dans PowerShell,\
+  \ c'est modifier, d\xE9placer ou obtenir rapidement les donn\xE9es d'un fichier\u2026"
+lastmod: 2024-02-18 23:09:09.062366
+model: gpt-4-0125-preview
+summary: "Manipuler des fichiers avec des commandes d'une ligne CLI dans PowerShell,\
+  \ c'est modifier, d\xE9placer ou obtenir rapidement les donn\xE9es d'un fichier\u2026"
+title: Manipulation de fichiers avec des commandes en une ligne en CLI
 ---
 
 {{< edit_this_page >}}

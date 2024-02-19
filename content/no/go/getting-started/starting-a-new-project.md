@@ -1,14 +1,18 @@
 ---
-title:                "Starter et nytt prosjekt"
 aliases:
 - /no/go/starting-a-new-project/
-date:                  2024-02-03T18:09:29.983848-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Starter et nytt prosjekt"
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/starting-a-new-project.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:09:29.983848-07:00
+description: "\xC5 starte et nytt prosjekt i Go inneb\xE6rer \xE5 sette opp et arbeidsomr\xE5\
+  de og initialisere det med de n\xF8dvendige Go-modulene. Programmerere gj\xF8r dette\
+  \ for \xE5\u2026"
+lastmod: 2024-02-18 23:08:53.436604
+model: gpt-4-0125-preview
+summary: "\xC5 starte et nytt prosjekt i Go inneb\xE6rer \xE5 sette opp et arbeidsomr\xE5\
+  de og initialisere det med de n\xF8dvendige Go-modulene. Programmerere gj\xF8r dette\
+  \ for \xE5\u2026"
+title: Starter et nytt prosjekt
 ---
 
 {{< edit_this_page >}}

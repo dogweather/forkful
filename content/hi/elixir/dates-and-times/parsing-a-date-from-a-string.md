@@ -1,16 +1,32 @@
 ---
-title:                "स्ट्रिंग से दिनांक पार्स करना"
 aliases:
 - /hi/elixir/parsing-a-date-from-a-string/
-date:                  2024-01-28T02:06:08.275477-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elixir/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 02:06:08.275477-07:00
+description: "\u090F\u0915 \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0938\
+  \u0947 \u0921\u0947\u091F \u092A\u093E\u0930\u094D\u0938 \u0915\u0930\u0928\u093E\
+  , \u092F\u0939 \u090F\u0915 \u092A\u093E\u0920 \u0915\u094B \u0932\u0947\u0928\u0947\
+  \ \u0915\u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902 \u0939\u0948, \u091C\u0948\
+  \u0938\u0947 \"2023-04-05\", \u0914\u0930 \u0907\u0938\u0947 \u090F\u0915 \u0921\
+  \u0947\u091F \u092B\u0949\u0930\u094D\u092E\u0947\u091F \u092E\u0947\u0902 \u092A\
+  \u0930\u093F\u0935\u0930\u094D\u0924\u093F\u0924 \u0915\u0930\u0928\u093E \u091C\
+  \u093F\u0938\u0947 \u0906\u092A\u0915\u093E \u092A\u094D\u0930\u094B\u0917\u094D\
+  \u0930\u093E\u092E \u0938\u092E\u091D \u0938\u0915\u0924\u093E\u2026"
+lastmod: 2024-02-18 23:09:02.820524
+model: gpt-4-0125-preview
+summary: "\u090F\u0915 \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0938\u0947\
+  \ \u0921\u0947\u091F \u092A\u093E\u0930\u094D\u0938 \u0915\u0930\u0928\u093E, \u092F\
+  \u0939 \u090F\u0915 \u092A\u093E\u0920 \u0915\u094B \u0932\u0947\u0928\u0947 \u0915\
+  \u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902 \u0939\u0948, \u091C\u0948\u0938\
+  \u0947 \"2023-04-05\", \u0914\u0930 \u0907\u0938\u0947 \u090F\u0915 \u0921\u0947\
+  \u091F \u092B\u0949\u0930\u094D\u092E\u0947\u091F \u092E\u0947\u0902 \u092A\u0930\
+  \u093F\u0935\u0930\u094D\u0924\u093F\u0924 \u0915\u0930\u0928\u093E \u091C\u093F\
+  \u0938\u0947 \u0906\u092A\u0915\u093E \u092A\u094D\u0930\u094B\u0917\u094D\u0930\
+  \u093E\u092E \u0938\u092E\u091D \u0938\u0915\u0924\u093E\u2026"
+title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0938\u0947 \u0926\u093F\
+  \u0928\u093E\u0902\u0915 \u092A\u093E\u0930\u094D\u0938 \u0915\u0930\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

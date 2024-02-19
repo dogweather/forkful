@@ -1,14 +1,18 @@
 ---
-title:                "Generare numeri casuali"
 aliases:
 - /it/vba/generating-random-numbers/
-date:                  2024-02-01T21:54:04.562309-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generare numeri casuali"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/vba/generating-random-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:04.562309-07:00
+description: "Generare numeri casuali in Visual Basic for Applications (VBA) consente\
+  \ ai programmi di simulare processi con elementi di casualit\xE0 o variabilit\xE0\
+  , come il\u2026"
+lastmod: 2024-02-18 23:08:55.718447
+model: gpt-4-0125-preview
+summary: "Generare numeri casuali in Visual Basic for Applications (VBA) consente\
+  \ ai programmi di simulare processi con elementi di casualit\xE0 o variabilit\xE0\
+  , come il\u2026"
+title: Generare numeri casuali
 ---
 
 {{< edit_this_page >}}

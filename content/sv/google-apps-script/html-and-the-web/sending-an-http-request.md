@@ -1,14 +1,17 @@
 ---
-title:                "Skicka en HTTP-förfrågan"
 aliases:
 - /sv/google-apps-script/sending-an-http-request/
-date:                  2024-02-01T22:01:30.864722-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skicka en HTTP-förfrågan"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/google-apps-script/sending-an-http-request.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:30.864722-07:00
+description: "Att skicka en HTTP-f\xF6rfr\xE5gan i Google Apps Script handlar om att\
+  \ programmatiskt g\xF6ra ett anrop till en extern webbserver eller API. Programmerare\
+  \ g\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.374983
+model: gpt-4-0125-preview
+summary: "Att skicka en HTTP-f\xF6rfr\xE5gan i Google Apps Script handlar om att programmatiskt\
+  \ g\xF6ra ett anrop till en extern webbserver eller API. Programmerare g\xF6r\u2026"
+title: "Skicka en HTTP-f\xF6rfr\xE5gan"
 ---
 
 {{< edit_this_page >}}

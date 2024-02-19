@@ -1,14 +1,17 @@
 ---
-title:                "Trabajando con YAML"
 aliases:
 - /es/elixir/working-with-yaml/
-date:                  2024-02-03T19:25:05.543201-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:25:05.543201-07:00
+description: "YAML, abreviatura de YAML Ain't Markup Language, es un est\xE1ndar de\
+  \ serializaci\xF3n de datos legible por humanos com\xFAnmente utilizado para archivos\
+  \ de\u2026"
+lastmod: 2024-02-18 23:09:09.679058
+model: gpt-4-0125-preview
+summary: "YAML, abreviatura de YAML Ain't Markup Language, es un est\xE1ndar de serializaci\xF3\
+  n de datos legible por humanos com\xFAnmente utilizado para archivos de\u2026"
+title: Trabajando con YAML
 ---
 
 {{< edit_this_page >}}

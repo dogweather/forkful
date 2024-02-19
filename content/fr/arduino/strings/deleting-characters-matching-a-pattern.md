@@ -1,13 +1,16 @@
 ---
-title:                "Suppression de caractères correspondant à un motif"
 aliases:
 - /fr/arduino/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:30.560349-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Suppression de caractères correspondant à un motif"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:30.560349-07:00
+description: "Supprimer des caract\xE8res selon un motif, c'est retirer des \xE9l\xE9\
+  ments de vos cha\xEEnes de texte qui correspondent \xE0 un crit\xE8re pr\xE9cis.\
+  \ On le fait pour\u2026"
+lastmod: 2024-02-18 23:09:09.097901
+model: gpt-4-1106-preview
+summary: "Supprimer des caract\xE8res selon un motif, c'est retirer des \xE9l\xE9\
+  ments de vos cha\xEEnes de texte qui correspondent \xE0 un crit\xE8re pr\xE9cis.\
+  \ On le fait pour\u2026"
+title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 ---
 
 {{< edit_this_page >}}

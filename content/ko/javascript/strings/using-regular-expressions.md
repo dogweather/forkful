@@ -1,14 +1,26 @@
 ---
-title:                "정규 표현식 사용하기"
 aliases:
 - /ko/javascript/using-regular-expressions/
-date:                  2024-02-03T19:17:23.505515-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "정규 표현식 사용하기"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:17:23.505515-07:00
+description: "\uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8\uC5D0\uC11C \uC815\uADDC\uD45C\uD604\
+  \uC2DD(regex)\uC740 \uBB38\uC790\uC5F4 \uB0B4\uC5D0\uC11C \uBB38\uC790 \uC870\uD569\
+  \uC744 \uC77C\uCE58\uC2DC\uD0A4\uAE30 \uC704\uD574 \uC0AC\uC6A9\uB418\uB294 \uD328\
+  \uD134\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uC774\uB97C \uAC80\
+  \uC0C9, \uCD94\uCD9C, \uD14D\uC2A4\uD2B8 \uC870\uC791\uC5D0 \uC0AC\uC6A9\uD558\uC5EC\
+  \ \uAC04\uACB0\uD55C \uCF54\uB4DC\uB85C \uAC15\uB825\uD55C \uBB38\uC790\uC5F4 \uCC98\
+  \uB9AC \uC791\uC5C5\uC744 \uC218\uD589\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.797910
+model: gpt-4-0125-preview
+summary: "\uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8\uC5D0\uC11C \uC815\uADDC\uD45C\uD604\
+  \uC2DD(regex)\uC740 \uBB38\uC790\uC5F4 \uB0B4\uC5D0\uC11C \uBB38\uC790 \uC870\uD569\
+  \uC744 \uC77C\uCE58\uC2DC\uD0A4\uAE30 \uC704\uD574 \uC0AC\uC6A9\uB418\uB294 \uD328\
+  \uD134\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uC774\uB97C \uAC80\
+  \uC0C9, \uCD94\uCD9C, \uD14D\uC2A4\uD2B8 \uC870\uC791\uC5D0 \uC0AC\uC6A9\uD558\uC5EC\
+  \ \uAC04\uACB0\uD55C \uCF54\uB4DC\uB85C \uAC15\uB825\uD55C \uBB38\uC790\uC5F4 \uCC98\
+  \uB9AC \uC791\uC5C5\uC744 \uC218\uD589\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+title: "\uC815\uADDC \uD45C\uD604\uC2DD \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

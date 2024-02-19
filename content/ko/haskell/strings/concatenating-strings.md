@@ -1,14 +1,23 @@
 ---
-title:                "문자열 연결하기"
 aliases:
 - /ko/haskell/concatenating-strings/
-date:                  2024-01-20T17:34:53.629060-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "문자열 연결하기"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/concatenating-strings.md"
+date: 2024-01-20 17:34:53.629060-07:00
+description: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uC5EC\uB7EC \uAC1C\uC758 \uBB38\
+  \uC790\uC5F4\uC744 \uD558\uB098\uB85C \uC774\uC5B4 \uBD99\uC774\uB294 \uAC83\uC785\
+  \uB2C8\uB2E4. \uB370\uC774\uD130\uB97C \uC720\uC5F0\uD558\uAC8C \uC870\uC791\uD558\
+  \uACE0, \uC0AC\uC6A9\uC790\uC5D0\uAC8C \uBA54\uC2DC\uC9C0\uB97C \uC81C\uACF5\uD558\
+  \uBA70, \uD30C\uC77C \uACBD\uB85C\uB97C \uAD6C\uC131\uD558\uB294 \uB4F1 \uD504\uB85C\
+  \uADF8\uB798\uBA38\uC5D0\uAC8C \uD544\uC218\uC801\uC785\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.273871
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uC5EC\uB7EC \uAC1C\uC758 \uBB38\uC790\
+  \uC5F4\uC744 \uD558\uB098\uB85C \uC774\uC5B4 \uBD99\uC774\uB294 \uAC83\uC785\uB2C8\
+  \uB2E4. \uB370\uC774\uD130\uB97C \uC720\uC5F0\uD558\uAC8C \uC870\uC791\uD558\uACE0\
+  , \uC0AC\uC6A9\uC790\uC5D0\uAC8C \uBA54\uC2DC\uC9C0\uB97C \uC81C\uACF5\uD558\uBA70\
+  , \uD30C\uC77C \uACBD\uB85C\uB97C \uAD6C\uC131\uD558\uB294 \uB4F1 \uD504\uB85C\uADF8\
+  \uB798\uBA38\uC5D0\uAC8C \uD544\uC218\uC801\uC785\uB2C8\uB2E4."
+title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

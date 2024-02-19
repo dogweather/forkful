@@ -1,14 +1,18 @@
 ---
-title:                "Sammanfoga strängar"
 aliases:
 - /sv/c/concatenating-strings/
-date:                  2024-02-03T17:53:53.673816-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sammanfoga strängar"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/concatenating-strings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:53.673816-07:00
+description: "Str\xE4ngkonkatenering i C inneb\xE4r att s\xE4tta ihop tv\xE5 eller\
+  \ flera str\xE4ngar slut-i-slut f\xF6r att bilda en ny str\xE4ng. Programmerare\
+  \ utf\xF6r denna operation f\xF6r\u2026"
+lastmod: 2024-02-18 23:08:52.241602
+model: gpt-4-0125-preview
+summary: "Str\xE4ngkonkatenering i C inneb\xE4r att s\xE4tta ihop tv\xE5 eller flera\
+  \ str\xE4ngar slut-i-slut f\xF6r att bilda en ny str\xE4ng. Programmerare utf\xF6\
+  r denna operation f\xF6r\u2026"
+title: "Sammanfoga str\xE4ngar"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,24 @@
 ---
-title:                "编写测试"
 aliases:
 - /zh/java/writing-tests/
-date:                  2024-02-03T19:31:01.754928-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "编写测试"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:01.754928-07:00
+description: "\u5728 Java \u4E2D\u7F16\u5199\u6D4B\u8BD5\u7684\u76EE\u7684\u662F\u4E3A\
+  \u4E86\u9A8C\u8BC1\u4F60\u7684\u4EE3\u7801\u5728\u5404\u79CD\u6761\u4EF6\u4E0B\u7684\
+  \u884C\u4E3A\u662F\u5426\u7B26\u5408\u9884\u671F\u3002\u7A0B\u5E8F\u5458\u7F16\u5199\
+  \u6D4B\u8BD5\u6765\u9632\u6B62 bug\uFF0C\u786E\u4FDD\u5728\u66F4\u6539\u540E\u529F\
+  \u80FD\u4ECD\u7136\u6B63\u786E\uFF0C\u5E76\u4FC3\u8FDB\u826F\u597D\u7684\u8F6F\u4EF6\
+  \u8BBE\u8BA1\u539F\u5219\u3002"
+lastmod: 2024-02-18 23:08:59.024329
+model: gpt-4-0125-preview
+summary: "\u5728 Java \u4E2D\u7F16\u5199\u6D4B\u8BD5\u7684\u76EE\u7684\u662F\u4E3A\
+  \u4E86\u9A8C\u8BC1\u4F60\u7684\u4EE3\u7801\u5728\u5404\u79CD\u6761\u4EF6\u4E0B\u7684\
+  \u884C\u4E3A\u662F\u5426\u7B26\u5408\u9884\u671F\u3002\u7A0B\u5E8F\u5458\u7F16\u5199\
+  \u6D4B\u8BD5\u6765\u9632\u6B62 bug\uFF0C\u786E\u4FDD\u5728\u66F4\u6539\u540E\u529F\
+  \u80FD\u4ECD\u7136\u6B63\u786E\uFF0C\u5E76\u4FC3\u8FDB\u826F\u597D\u7684\u8F6F\u4EF6\
+  \u8BBE\u8BA1\u539F\u5219\u3002"
+title: "\u7F16\u5199\u6D4B\u8BD5"
 ---
 
 {{< edit_this_page >}}

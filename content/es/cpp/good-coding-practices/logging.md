@@ -1,13 +1,16 @@
 ---
-title:                "Registro de Actividades en Programación"
 aliases:
 - /es/cpp/logging/
-date:                  2024-01-26T01:00:34.141394-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registro de Actividades en Programación"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/logging.md"
+date: 2024-01-26 01:00:34.141394-07:00
+description: "El registro (logging) en el contexto de la programaci\xF3n es el proceso\
+  \ de grabar eventos, estados e informaci\xF3n en un archivo u otro medio de salida.\
+  \ Los\u2026"
+lastmod: 2024-02-18 23:09:10.317769
+model: gpt-4-1106-preview
+summary: "El registro (logging) en el contexto de la programaci\xF3n es el proceso\
+  \ de grabar eventos, estados e informaci\xF3n en un archivo u otro medio de salida.\
+  \ Los\u2026"
+title: "Registro de Actividades en Programaci\xF3n"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Lavorare con YAML"
 aliases:
 - /it/google-apps-script/working-with-yaml/
-date:                  2024-02-01T22:06:57.274625-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/google-apps-script/working-with-yaml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:06:57.274625-07:00
+description: "YAML, acronimo di \"YAML Ain't Markup Language\" (YAML Non \xE8 un Linguaggio\
+  \ di Markup), \xE8 uno standard di serializzazione dei dati leggibile dall'uomo\u2026"
+lastmod: 2024-02-18 23:08:55.500026
+model: gpt-4-0125-preview
+summary: "YAML, acronimo di \"YAML Ain't Markup Language\" (YAML Non \xE8 un Linguaggio\
+  \ di Markup), \xE8 uno standard di serializzazione dei dati leggibile dall'uomo\u2026"
+title: Lavorare con YAML
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,18 @@
 ---
-title:                "Een HTTP-verzoek verzenden met basisauthenticatie"
 aliases:
 - /nl/kotlin/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-28T22:08:06.885023-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een HTTP-verzoek verzenden met basisauthenticatie"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/kotlin/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:06.885023-07:00
+description: "Basisauthenticatie slingert een gebruikersnaam:wachtwoord combinatie\
+  \ op een HTTP-verzoek. Ontwikkelaars gebruiken het als een snelle en vuile manier\
+  \ om te\u2026"
+lastmod: 2024-02-18 23:09:01.805261
+model: gpt-4-0125-preview
+summary: "Basisauthenticatie slingert een gebruikersnaam:wachtwoord combinatie op\
+  \ een HTTP-verzoek. Ontwikkelaars gebruiken het als een snelle en vuile manier om\
+  \ te\u2026"
+title: Een HTTP-verzoek verzenden met basisauthenticatie
 ---
 
 {{< edit_this_page >}}

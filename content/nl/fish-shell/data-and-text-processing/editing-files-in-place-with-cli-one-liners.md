@@ -1,15 +1,16 @@
 ---
-title:                "Bestanden ter plekke bewerken met CLI one-liners"
 aliases:
 - /nl/fish-shell/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-28T21:59:49.211927-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bestanden ter plekke bewerken met CLI one-liners"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/editing-files-in-place-with-cli-one-liners.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:49.211927-07:00
+description: "Bestanden in-place bewerken met CLI one-liners gaat over het direct\
+  \ aanbrengen van wijzigingen in bestanden vanaf de opdrachtregel, zonder ze in een\u2026"
+lastmod: 2024-02-18 23:09:02.320826
+model: gpt-4-0125-preview
+summary: "Bestanden in-place bewerken met CLI one-liners gaat over het direct aanbrengen\
+  \ van wijzigingen in bestanden vanaf de opdrachtregel, zonder ze in een\u2026"
+title: Bestanden ter plekke bewerken met CLI one-liners
 ---
 
 {{< edit_this_page >}}

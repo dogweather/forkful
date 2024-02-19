@@ -1,14 +1,18 @@
 ---
-title:                "Zamiana liter na wielkie w łańcuchu znaków"
 aliases:
 - /pl/php/capitalizing-a-string/
-date:                  2024-02-03T19:06:00.346637-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zamiana liter na wielkie w łańcuchu znaków"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:00.346637-07:00
+description: "Du\u017Ca litera na pocz\u0105tku ci\u0105gu znak\xF3w polega na zmodyfikowaniu\
+  \ pierwszego znaku danego tekstu na wielk\u0105 liter\u0119, zapewniaj\u0105c, \u017C\
+  e zdania, tytu\u0142y lub nazwy\u2026"
+lastmod: 2024-02-18 23:08:49.677728
+model: gpt-4-0125-preview
+summary: "Du\u017Ca litera na pocz\u0105tku ci\u0105gu znak\xF3w polega na zmodyfikowaniu\
+  \ pierwszego znaku danego tekstu na wielk\u0105 liter\u0119, zapewniaj\u0105c, \u017C\
+  e zdania, tytu\u0142y lub nazwy\u2026"
+title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

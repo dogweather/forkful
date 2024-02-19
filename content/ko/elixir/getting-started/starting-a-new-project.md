@@ -1,14 +1,25 @@
 ---
-title:                "새 프로젝트 시작하기"
 aliases:
 - /ko/elixir/starting-a-new-project/
-date:                  2024-01-20T18:03:36.548197-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "새 프로젝트 시작하기"
-
-tag:                  "Getting Started"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/starting-a-new-project.md"
+date: 2024-01-20 18:03:36.548197-07:00
+description: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uB294 \uAC74 \uB9D0\
+  \ \uADF8\uB300\uB85C \u2018\uBE48 \uC885\uC774\u2019\uC5D0\uC11C \uC0C8\uB85C\uC6B4\
+  \ \uAC83\uC744 \uB9CC\uB4E4\uC5B4\uB0B4\uB294 \uACFC\uC815\uC774\uC5D0\uC694. \uD504\
+  \uB85C\uADF8\uB798\uBA38\uB4E4\uC774 \uC774\uAC78 \uD558\uB294 \uAC74 \uC0C8\uB85C\
+  \uC6B4 \uAE30\uB2A5\uC744 \uCC3D\uC870\uD558\uAC70\uB098, \uC544\uC774\uB514\uC5B4\
+  \uB97C \uC2E4\uD604\uD558\uACE0, \uBB38\uC81C\uB97C \uD574\uACB0\uD558\uAE30 \uC704\
+  \uD574\uC11C\uC8E0."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:05.756157
+model: gpt-4-1106-preview
+summary: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uB294 \uAC74 \uB9D0 \uADF8\
+  \uB300\uB85C \u2018\uBE48 \uC885\uC774\u2019\uC5D0\uC11C \uC0C8\uB85C\uC6B4 \uAC83\
+  \uC744 \uB9CC\uB4E4\uC5B4\uB0B4\uB294 \uACFC\uC815\uC774\uC5D0\uC694. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC774 \uC774\uAC78 \uD558\uB294 \uAC74 \uC0C8\uB85C\uC6B4\
+  \ \uAE30\uB2A5\uC744 \uCC3D\uC870\uD558\uAC70\uB098, \uC544\uC774\uB514\uC5B4\uB97C\
+  \ \uC2E4\uD604\uD558\uACE0, \uBB38\uC81C\uB97C \uD574\uACB0\uD558\uAE30 \uC704\uD574\
+  \uC11C\uC8E0."
+title: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

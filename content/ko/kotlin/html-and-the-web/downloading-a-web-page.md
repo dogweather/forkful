@@ -1,14 +1,23 @@
 ---
-title:                "웹 페이지 다운로드하기"
 aliases:
 - /ko/kotlin/downloading-a-web-page/
-date:                  2024-01-20T17:44:24.989998-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "웹 페이지 다운로드하기"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/downloading-a-web-page.md"
+date: 2024-01-20 17:44:24.989998-07:00
+description: "\uC6F9 \uD398\uC774\uC9C0\uB97C \uB2E4\uC6B4\uB85C\uB4DC\uD558\uB294\
+  \ \uAC83\uC740 \uC6F9 \uCF58\uD150\uCE20\uB97C \uB85C\uCEEC \uCEF4\uD4E8\uD130\uB85C\
+  \ \uAC00\uC838\uC624\uB294 \uACFC\uC815\uC774\uB2E4. \uC774\uB97C \uD1B5\uD574 \uD504\
+  \uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB370\uC774\uD130 \uBD84\uC11D, \uC6F9 \uD06C\
+  \uB864\uB9C1, \uC624\uD504\uB77C\uC778 \uC0AC\uC6A9 \uB4F1 \uC5EC\uB7EC \uBAA9\uC801\
+  \uC73C\uB85C \uC815\uBCF4\uC5D0 \uC811\uADFC\uD560 \uC218 \uC788\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.147627
+model: gpt-4-1106-preview
+summary: "\uC6F9 \uD398\uC774\uC9C0\uB97C \uB2E4\uC6B4\uB85C\uB4DC\uD558\uB294 \uAC83\
+  \uC740 \uC6F9 \uCF58\uD150\uCE20\uB97C \uB85C\uCEEC \uCEF4\uD4E8\uD130\uB85C \uAC00\
+  \uC838\uC624\uB294 \uACFC\uC815\uC774\uB2E4. \uC774\uB97C \uD1B5\uD574 \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC740 \uB370\uC774\uD130 \uBD84\uC11D, \uC6F9 \uD06C\uB864\
+  \uB9C1, \uC624\uD504\uB77C\uC778 \uC0AC\uC6A9 \uB4F1 \uC5EC\uB7EC \uBAA9\uC801\uC73C\
+  \uB85C \uC815\uBCF4\uC5D0 \uC811\uADFC\uD560 \uC218 \uC788\uB2E4."
+title: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Analysera ett datum från en sträng"
 aliases:
 - /sv/go/parsing-a-date-from-a-string/
-date:                  2024-02-03T18:05:06.229345-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analysera ett datum från en sträng"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:06.229345-07:00
+description: "Att tolka ett datum fr\xE5n en str\xE4ng i Go inneb\xE4r att konvertera\
+  \ datumet, som representeras som text, till ett mer anv\xE4ndbart format (t.ex.\
+  \ `time.Time`).\u2026"
+lastmod: 2024-02-18 23:08:51.343272
+model: gpt-4-0125-preview
+summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Go inneb\xE4r att konvertera\
+  \ datumet, som representeras som text, till ett mer anv\xE4ndbart format (t.ex.\
+  \ `time.Time`).\u2026"
+title: "Analysera ett datum fr\xE5n en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

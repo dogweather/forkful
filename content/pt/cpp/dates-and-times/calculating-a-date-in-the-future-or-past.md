@@ -1,13 +1,15 @@
 ---
-title:                "Calculando uma data no futuro ou passado"
 aliases:
 - /pt/cpp/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:30:54.641149-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Calculando uma data no futuro ou passado"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:30:54.641149-07:00
+description: "Calcular uma data no futuro ou passado significa manipular datas para\
+  \ encontrar dias espec\xEDficos antes ou depois de um ponto no tempo. Programadores\
+  \ fazem\u2026"
+lastmod: 2024-02-18 23:08:58.462733
+model: gpt-4-1106-preview
+summary: "Calcular uma data no futuro ou passado significa manipular datas para encontrar\
+  \ dias espec\xEDficos antes ou depois de um ponto no tempo. Programadores fazem\u2026"
+title: Calculando uma data no futuro ou passado
 ---
 
 {{< edit_this_page >}}

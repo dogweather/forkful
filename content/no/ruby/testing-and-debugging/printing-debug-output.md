@@ -1,13 +1,16 @@
 ---
-title:                "Skrive ut feilsøkingsdata"
 aliases:
 - /no/ruby/printing-debug-output/
-date:                  2024-01-20T17:53:25.874914-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skrive ut feilsøkingsdata"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/printing-debug-output.md"
+date: 2024-01-20 17:53:25.874914-07:00
+description: "Utskrift for feils\xF8king lar deg vise data og programflyt i konsollen\
+  \ for \xE5 forst\xE5 hva programmet ditt faktisk gj\xF8r. Programmerere bruker dette\
+  \ til \xE5 spore\u2026"
+lastmod: 2024-02-18 23:08:54.440914
+model: gpt-4-1106-preview
+summary: "Utskrift for feils\xF8king lar deg vise data og programflyt i konsollen\
+  \ for \xE5 forst\xE5 hva programmet ditt faktisk gj\xF8r. Programmerere bruker dette\
+  \ til \xE5 spore\u2026"
+title: "Skrive ut feils\xF8kingsdata"
 ---
 
 {{< edit_this_page >}}

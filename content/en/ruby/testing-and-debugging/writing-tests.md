@@ -1,12 +1,14 @@
 ---
-title:                "Writing tests"
 aliases:
 - /en/ruby/writing-tests/
-date:                  2024-02-03T19:03:40.371358-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Writing tests"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/writing-tests.md"
+date: 2024-02-03 19:03:40.371358-07:00
+description: "Testing in Ruby is about verifying that your code behaves as expected\
+  \ under various conditions. Programmers write tests to ensure correctness, prevent\u2026"
+lastmod: 2024-02-18 23:09:11.569480
+model: gpt-4-0125-preview
+summary: "Testing in Ruby is about verifying that your code behaves as expected under\
+  \ various conditions. Programmers write tests to ensure correctness, prevent\u2026"
+title: Writing tests
 ---
 
 {{< edit_this_page >}}

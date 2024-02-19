@@ -1,14 +1,15 @@
 ---
-title:                "テキストの検索と置換"
 aliases:
 - /ja/python/searching-and-replacing-text/
-date:                  2024-01-20T17:58:29.177150-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "テキストの検索と置換"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:29.177150-07:00
+description: "Searching and replacing text in Python means finding strings and swapping\
+  \ them with something else. Programmers do this for editing code, processing data,\u2026"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:54.549934
+model: gpt-4-1106-preview
+summary: "Searching and replacing text in Python means finding strings and swapping\
+  \ them with something else. Programmers do this for editing code, processing data,\u2026"
+title: "\u30C6\u30AD\u30B9\u30C8\u306E\u691C\u7D22\u3068\u7F6E\u63DB"
 ---
 
 {{< edit_this_page >}}

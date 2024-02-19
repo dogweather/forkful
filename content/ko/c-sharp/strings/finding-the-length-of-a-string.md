@@ -1,14 +1,19 @@
 ---
-title:                "문자열의 길이 찾기"
 aliases:
 - /ko/c-sharp/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:02.942464-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "문자열의 길이 찾기"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:02.942464-07:00
+description: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCC3E\uAE30\uB294 \uAE00\uC790 \uC218\
+  \uB97C \uC138\uB294 \uAC83\uC785\uB2C8\uB2E4. \uB370\uC774\uD130 \uC720\uD6A8\uC131\
+  \ \uAC80\uC0AC, \uC785\uB825 \uCC98\uB9AC, \uB8E8\uD504 \uC81C\uC5B4\uC5D0\uC11C\
+  \ \uD544\uC218\uC801\uC73C\uB85C \uC0AC\uC6A9\uB429\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.205403
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCC3E\uAE30\uB294 \uAE00\uC790 \uC218\uB97C\
+  \ \uC138\uB294 \uAC83\uC785\uB2C8\uB2E4. \uB370\uC774\uD130 \uC720\uD6A8\uC131 \uAC80\
+  \uC0AC, \uC785\uB825 \uCC98\uB9AC, \uB8E8\uD504 \uC81C\uC5B4\uC5D0\uC11C \uD544\uC218\
+  \uC801\uC73C\uB85C \uC0AC\uC6A9\uB429\uB2C8\uB2E4."
+title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 ---
 
 {{< edit_this_page >}}

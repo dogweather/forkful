@@ -1,13 +1,16 @@
 ---
-title:                "Att arbeta med XML"
 aliases:
 - /sv/clojure/working-with-xml/
-date:                  2024-01-26T04:29:18.403170-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/working-with-xml.md"
+date: 2024-01-26 04:29:18.403170-07:00
+description: "XML \xE4r ett m\xE4rkspr\xE5k f\xF6r att koda dokument p\xE5 ett s\xE4\
+  tt som \xE4r l\xE4sbart b\xE5de f\xF6r m\xE4nniskor och maskiner. Det \xE4r viktigt\
+  \ inom webbtj\xE4nster,\u2026"
+lastmod: 2024-02-18 23:08:51.485671
+model: gpt-4-0125-preview
+summary: "XML \xE4r ett m\xE4rkspr\xE5k f\xF6r att koda dokument p\xE5 ett s\xE4tt\
+  \ som \xE4r l\xE4sbart b\xE5de f\xF6r m\xE4nniskor och maskiner. Det \xE4r viktigt\
+  \ inom webbtj\xE4nster,\u2026"
+title: Att arbeta med XML
 ---
 
 {{< edit_this_page >}}

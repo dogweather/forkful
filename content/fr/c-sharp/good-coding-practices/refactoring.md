@@ -1,13 +1,14 @@
 ---
-title:                "Refactoring"
 aliases:
 - /fr/c-sharp/refactoring/
-date:                  2024-01-26T01:17:08.223293-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactoring"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/refactoring.md"
+date: 2024-01-26 01:17:08.223293-07:00
+description: "Le remaniement est le processus de restructuration du code informatique\
+  \ existant sans changer son comportement externe. Les programmeurs le font pour\u2026"
+lastmod: 2024-02-18 23:09:08.837083
+model: gpt-4-0125-preview
+summary: "Le remaniement est le processus de restructuration du code informatique\
+  \ existant sans changer son comportement externe. Les programmeurs le font pour\u2026"
+title: Refactoring
 ---
 
 {{< edit_this_page >}}

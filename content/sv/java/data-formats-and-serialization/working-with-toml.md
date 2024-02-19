@@ -1,13 +1,15 @@
 ---
-title:                "Att arbeta med TOML"
 aliases:
 - /sv/java/working-with-toml/
-date:                  2024-01-26T04:23:21.874473-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/working-with-toml.md"
+date: 2024-01-26 04:23:21.874473-07:00
+description: "TOML st\xE5r f\xF6r Toms Uppebara, Minimala Spr\xE5k. Det \xE4r ett\
+  \ data-serialiseringsformat som anv\xE4nds f\xF6r konfigurationsfiler. Programmerare\
+  \ anv\xE4nder det eftersom\u2026"
+lastmod: 2024-02-18 23:08:51.691947
+model: gpt-4-0125-preview
+summary: "TOML st\xE5r f\xF6r Toms Uppebara, Minimala Spr\xE5k. Det \xE4r ett data-serialiseringsformat\
+  \ som anv\xE4nds f\xF6r konfigurationsfiler. Programmerare anv\xE4nder det eftersom\u2026"
+title: Att arbeta med TOML
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Створення тимчасового файлу"
 aliases:
 - /uk/ruby/creating-a-temporary-file/
-date:                  2024-01-20T17:41:11.103703-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Створення тимчасового файлу"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/ruby/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:11.103703-07:00
+description: "Temporary files are files created to hold data temporarily while a program\
+  \ is running. Programmers use them for tasks like managing large data that won't\u2026"
+lastmod: 2024-02-18 23:09:01.309287
+model: gpt-4-1106-preview
+summary: "Temporary files are files created to hold data temporarily while a program\
+  \ is running. Programmers use them for tasks like managing large data that won't\u2026"
+title: "\u0421\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F \u0442\u0438\u043C\u0447\
+  \u0430\u0441\u043E\u0432\u043E\u0433\u043E \u0444\u0430\u0439\u043B\u0443"
 ---
 
 {{< edit_this_page >}}

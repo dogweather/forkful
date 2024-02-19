@@ -1,14 +1,16 @@
 ---
-title:                "Lendo um arquivo de texto"
 aliases:
 - /pt/go/reading-a-text-file/
-date:                  2024-02-03T18:05:51.657593-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lendo um arquivo de texto"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/reading-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:51.657593-07:00
+description: "Ler um arquivo de texto em Go envolve acessar e recuperar conte\xFA\
+  do de um arquivo armazenado no disco para processamento ou an\xE1lise. Programadores\u2026"
+lastmod: 2024-02-18 23:08:57.687379
+model: gpt-4-0125-preview
+summary: "Ler um arquivo de texto em Go envolve acessar e recuperar conte\xFAdo de\
+  \ um arquivo armazenado no disco para processamento ou an\xE1lise. Programadores\u2026"
+title: Lendo um arquivo de texto
 ---
 
 {{< edit_this_page >}}

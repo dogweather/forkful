@@ -1,13 +1,14 @@
 ---
-title:                "Eliminando comillas de una cadena"
 aliases:
 - /es/java/removing-quotes-from-a-string/
-date:                  2024-01-26T03:39:58.200112-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eliminando comillas de una cadena"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:39:58.200112-07:00
+description: "Eliminar comillas de una cadena significa quitar cualquier tipo de comillas\u2014\
+  simples (' '), dobles (\" \") o ambas\u2014de los datos de texto. Los programadores\u2026"
+lastmod: 2024-02-18 23:09:09.832283
+model: gpt-4-0125-preview
+summary: "Eliminar comillas de una cadena significa quitar cualquier tipo de comillas\u2014\
+  simples (' '), dobles (\" \") o ambas\u2014de los datos de texto. Los programadores\u2026"
+title: Eliminando comillas de una cadena
 ---
 
 {{< edit_this_page >}}

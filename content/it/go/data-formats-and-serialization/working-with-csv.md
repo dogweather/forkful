@@ -1,14 +1,17 @@
 ---
-title:                "Lavorare con CSV"
 aliases:
 - /it/go/working-with-csv/
-date:                  2024-02-03T18:11:43.003009-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:11:43.003009-07:00
+description: "Il formato Valori Separati da Virgola (CSV) \xE8 ubiquitario per lo\
+  \ scambio di dati a causa della sua semplicit\xE0 e facilit\xE0 di integrazione\
+  \ con la maggior\u2026"
+lastmod: 2024-02-18 23:08:55.456044
+model: gpt-4-0125-preview
+summary: "Il formato Valori Separati da Virgola (CSV) \xE8 ubiquitario per lo scambio\
+  \ di dati a causa della sua semplicit\xE0 e facilit\xE0 di integrazione con la maggior\u2026"
+title: Lavorare con CSV
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,17 @@
 ---
-title:                "Ottenere la data corrente"
 aliases:
 - /it/lua/getting-the-current-date/
-date:                  2024-02-03T19:10:10.154747-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ottenere la data corrente"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/lua/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:10:10.154747-07:00
+description: "Il recupero della data corrente nella programmazione \xE8 un compito\
+  \ cruciale per una moltitudine di applicazioni, inclusi i registri degli eventi,\
+  \ la\u2026"
+lastmod: 2024-02-18 23:08:56.020995
+model: gpt-4-0125-preview
+summary: "Il recupero della data corrente nella programmazione \xE8 un compito cruciale\
+  \ per una moltitudine di applicazioni, inclusi i registri degli eventi, la\u2026"
+title: Ottenere la data corrente
 ---
 
 {{< edit_this_page >}}

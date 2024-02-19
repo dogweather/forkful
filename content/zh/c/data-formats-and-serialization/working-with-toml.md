@@ -1,14 +1,26 @@
 ---
-title:                "使用TOML进行工作"
 aliases:
 - /zh/c/working-with-toml/
-date:                  2024-02-03T18:12:32.717937-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用TOML进行工作"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/working-with-toml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:12:32.717937-07:00
+description: "TOML\uFF08Tom's Obvious, Minimal Language\uFF0C\u6C64\u59C6\u7684\u660E\
+  \u663E\u3001\u6700\u5C0F\u5316\u8BED\u8A00\uFF09\u662F\u4E00\u79CD\u914D\u7F6E\u6587\
+  \u4EF6\u683C\u5F0F\uFF0C\u56E0\u4E3A\u5176\u6E05\u6670\u7684\u8BED\u4E49\u800C\u6613\
+  \u4E8E\u9605\u8BFB\u3002\u7A0B\u5E8F\u5458\u5728\u5E94\u7528\u7A0B\u5E8F\u7684\u914D\
+  \u7F6E\u6587\u4EF6\u4E2D\u4F7F\u7528\u5B83\uFF0C\u56E0\u4E3A\u5176\u7B80\u5355\u6027\
+  \u548C\u6613\u8BFB\u6027\u4F7F\u5176\u5728\u67D0\u4E9B\u60C5\u5883\u4E2D\u6210\u4E3A\
+  \u6BD4XML\u6216JSON\u7B49\u683C\u5F0F\u66F4\u4F18\u7684\u9009\u62E9\u3002"
+lastmod: 2024-02-18 23:08:59.582288
+model: gpt-4-0125-preview
+summary: "TOML\uFF08Tom's Obvious, Minimal Language\uFF0C\u6C64\u59C6\u7684\u660E\u663E\
+  \u3001\u6700\u5C0F\u5316\u8BED\u8A00\uFF09\u662F\u4E00\u79CD\u914D\u7F6E\u6587\u4EF6\
+  \u683C\u5F0F\uFF0C\u56E0\u4E3A\u5176\u6E05\u6670\u7684\u8BED\u4E49\u800C\u6613\u4E8E\
+  \u9605\u8BFB\u3002\u7A0B\u5E8F\u5458\u5728\u5E94\u7528\u7A0B\u5E8F\u7684\u914D\u7F6E\
+  \u6587\u4EF6\u4E2D\u4F7F\u7528\u5B83\uFF0C\u56E0\u4E3A\u5176\u7B80\u5355\u6027\u548C\
+  \u6613\u8BFB\u6027\u4F7F\u5176\u5728\u67D0\u4E9B\u60C5\u5883\u4E2D\u6210\u4E3A\u6BD4\
+  XML\u6216JSON\u7B49\u683C\u5F0F\u66F4\u4F18\u7684\u9009\u62E9\u3002"
+title: "\u4F7F\u7528TOML\u8FDB\u884C\u5DE5\u4F5C"
 ---
 
 {{< edit_this_page >}}

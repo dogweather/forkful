@@ -1,13 +1,16 @@
 ---
-title:                "Tekstitiedoston lukeminen"
 aliases:
 - /fi/c-sharp/reading-a-text-file/
-date:                  2024-01-20T17:53:58.254534-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tekstitiedoston lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/reading-a-text-file.md"
+date: 2024-01-20 17:53:58.254534-07:00
+description: "Lukemalla tekstitiedoston C#:ssa voit hakea dataa tiedostoista ohjelmasi\
+  \ k\xE4ytt\xF6\xF6n. T\xE4m\xE4 on v\xE4ltt\xE4m\xE4t\xF6n taito tiedon k\xE4sittely\xE4\
+  , s\xE4ilytyst\xE4 ja analysointia\u2026"
+lastmod: 2024-02-18 23:09:07.639668
+model: gpt-4-1106-preview
+summary: "Lukemalla tekstitiedoston C#:ssa voit hakea dataa tiedostoista ohjelmasi\
+  \ k\xE4ytt\xF6\xF6n. T\xE4m\xE4 on v\xE4ltt\xE4m\xE4t\xF6n taito tiedon k\xE4sittely\xE4\
+  , s\xE4ilytyst\xE4 ja analysointia\u2026"
+title: Tekstitiedoston lukeminen
 ---
 
 {{< edit_this_page >}}

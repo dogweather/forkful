@@ -1,15 +1,16 @@
 ---
-title:                "Een string met hoofdletters maken"
 aliases:
 - /nl/java/capitalizing-a-string/
-date:                  2024-01-28T21:56:16.578357-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string met hoofdletters maken"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/java/capitalizing-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:16.578357-07:00
+description: "Een string met hoofdletters maken betekent de eerste letter in hoofdletters\
+  \ zetten en de rest van de letters in kleine letters. Programmeurs gebruiken dit\u2026"
+lastmod: 2024-02-18 23:09:01.694284
+model: gpt-4-0125-preview
+summary: "Een string met hoofdletters maken betekent de eerste letter in hoofdletters\
+  \ zetten en de rest van de letters in kleine letters. Programmeurs gebruiken dit\u2026"
+title: Een string met hoofdletters maken
 ---
 
 {{< edit_this_page >}}

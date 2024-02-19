@@ -1,14 +1,18 @@
 ---
-title:                "Praca z liczbami zespolonymi"
 aliases:
 - /pl/go/working-with-complex-numbers/
-date:                  2024-02-03T18:14:26.133187-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z liczbami zespolonymi"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:14:26.133187-07:00
+description: "Praca z liczbami zespolonymi w programowaniu polega na manipulowaniu\
+  \ liczbami, kt\xF3re maj\u0105 zar\xF3wno cz\u0119\u015B\u0107 rzeczywist\u0105\
+  , jak i urojon\u0105, zwykle wyra\u017Cane jako\u2026"
+lastmod: 2024-02-18 23:08:49.090317
+model: gpt-4-0125-preview
+summary: "Praca z liczbami zespolonymi w programowaniu polega na manipulowaniu liczbami,\
+  \ kt\xF3re maj\u0105 zar\xF3wno cz\u0119\u015B\u0107 rzeczywist\u0105, jak i urojon\u0105\
+  , zwykle wyra\u017Cane jako\u2026"
+title: Praca z liczbami zespolonymi
 ---
 
 {{< edit_this_page >}}

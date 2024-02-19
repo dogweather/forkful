@@ -1,14 +1,18 @@
 ---
-title:                "Arbeta med CSV"
 aliases:
 - /sv/elixir/working-with-csv/
-date:                  2024-02-03T19:19:31.379839-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeta med CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:19:31.379839-07:00
+description: "Att arbeta med CSV (Comma-Separated Values)-filer inneb\xE4r att l\xE4\
+  sa fr\xE5n och skriva data till dessa filer, vilket \xE4r ett vanligt behov f\xF6\
+  r uppgifter som\u2026"
+lastmod: 2024-02-18 23:08:51.524643
+model: gpt-4-0125-preview
+summary: "Att arbeta med CSV (Comma-Separated Values)-filer inneb\xE4r att l\xE4sa\
+  \ fr\xE5n och skriva data till dessa filer, vilket \xE4r ett vanligt behov f\xF6\
+  r uppgifter som\u2026"
+title: Arbeta med CSV
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,26 @@
 ---
-title:                "使用正则表达式"
 aliases:
 - /zh/vba/using-regular-expressions/
-date:                  2024-02-01T22:05:13.574788-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用正则表达式"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/using-regular-expressions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:05:13.574788-07:00
+description: "Visual Basic for Applications (VBA) \u4E2D\u7684\u6B63\u5219\u8868\u8FBE\
+  \u5F0F\uFF08regex\uFF09\u63D0\u4F9B\u4E86\u4E00\u79CD\u5F3A\u5927\u7684\u65B9\u5F0F\
+  \u6765\u641C\u7D22\u3001\u5339\u914D\u548C\u64CD\u4F5C\u5B57\u7B26\u4E32\u3002\u7A0B\
+  \u5E8F\u5458\u4F7F\u7528\u5B83\u4EEC\u6765\u6267\u884C\u6570\u636E\u9A8C\u8BC1\u3001\
+  \u89E3\u6790\u548C\u8F6C\u6362\u7B49\u4EFB\u52A1\uFF0C\u56E0\u4E3A\u5B83\u4EEC\u5728\
+  \u5904\u7406\u590D\u6742\u7684\u5B57\u7B26\u4E32\u6A21\u5F0F\u65F6\u5177\u6709\u7075\
+  \u6D3B\u6027\u548C\u6548\u7387\u3002"
+lastmod: 2024-02-18 23:08:58.970764
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications (VBA) \u4E2D\u7684\u6B63\u5219\u8868\u8FBE\
+  \u5F0F\uFF08regex\uFF09\u63D0\u4F9B\u4E86\u4E00\u79CD\u5F3A\u5927\u7684\u65B9\u5F0F\
+  \u6765\u641C\u7D22\u3001\u5339\u914D\u548C\u64CD\u4F5C\u5B57\u7B26\u4E32\u3002\u7A0B\
+  \u5E8F\u5458\u4F7F\u7528\u5B83\u4EEC\u6765\u6267\u884C\u6570\u636E\u9A8C\u8BC1\u3001\
+  \u89E3\u6790\u548C\u8F6C\u6362\u7B49\u4EFB\u52A1\uFF0C\u56E0\u4E3A\u5B83\u4EEC\u5728\
+  \u5904\u7406\u590D\u6742\u7684\u5B57\u7B26\u4E32\u6A21\u5F0F\u65F6\u5177\u6709\u7075\
+  \u6D3B\u6027\u548C\u6548\u7387\u3002"
+title: "\u4F7F\u7528\u6B63\u5219\u8868\u8FBE\u5F0F"
 ---
 
 {{< edit_this_page >}}

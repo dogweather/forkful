@@ -1,14 +1,18 @@
 ---
-title:                "Calculer une date dans le futur ou le passé"
 aliases:
 - /fr/c/calculating-a-date-in-the-future-or-past/
-date:                  2024-02-03T17:53:06.434955-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Calculer une date dans le futur ou le passé"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:06.434955-07:00
+description: "Calculer une date dans le futur ou le pass\xE9 consiste \xE0 d\xE9terminer\
+  \ une date sp\xE9cifique en ajoutant ou en soustrayant un certain nombre de jours,\
+  \ de mois ou\u2026"
+lastmod: 2024-02-18 23:09:09.371921
+model: gpt-4-0125-preview
+summary: "Calculer une date dans le futur ou le pass\xE9 consiste \xE0 d\xE9terminer\
+  \ une date sp\xE9cifique en ajoutant ou en soustrayant un certain nombre de jours,\
+  \ de mois ou\u2026"
+title: "Calculer une date dans le futur ou le pass\xE9"
 ---
 
 {{< edit_this_page >}}

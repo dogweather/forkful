@@ -1,13 +1,15 @@
 ---
-title:                "Lavorare con i numeri complessi"
 aliases:
 - /it/c-sharp/working-with-complex-numbers/
-date:                  2024-01-26T04:38:17.387910-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con i numeri complessi"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/working-with-complex-numbers.md"
+date: 2024-01-26 04:38:17.387910-07:00
+description: "I numeri complessi ampliano il nostro sistema numerico includendo i\
+  \ numeri immaginari, permettendoci di risolvere equazioni che non hanno soluzioni\
+  \ reali.\u2026"
+lastmod: 2024-02-18 23:08:55.881632
+model: gpt-4-0125-preview
+summary: "I numeri complessi ampliano il nostro sistema numerico includendo i numeri\
+  \ immaginari, permettendoci di risolvere equazioni che non hanno soluzioni reali.\u2026"
+title: Lavorare con i numeri complessi
 ---
 
 {{< edit_this_page >}}

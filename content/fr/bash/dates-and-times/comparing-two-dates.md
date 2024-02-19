@@ -1,13 +1,16 @@
 ---
-title:                "Comparer deux dates"
 aliases:
 - /fr/bash/comparing-two-dates/
-date:                  2024-01-20T17:32:07.796866-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Comparer deux dates"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/comparing-two-dates.md"
+date: 2024-01-20 17:32:07.796866-07:00
+description: "Comparer deux dates, c'est v\xE9rifier si elles sont \xE9gales, savoir\
+  \ laquelle est ant\xE9rieure ou post\xE9rieure. On le fait souvent pour g\xE9rer\
+  \ des \xE9ch\xE9ances,\u2026"
+lastmod: 2024-02-18 23:09:09.032613
+model: gpt-4-1106-preview
+summary: "Comparer deux dates, c'est v\xE9rifier si elles sont \xE9gales, savoir laquelle\
+  \ est ant\xE9rieure ou post\xE9rieure. On le fait souvent pour g\xE9rer des \xE9\
+  ch\xE9ances,\u2026"
+title: Comparer deux dates
 ---
 
 {{< edit_this_page >}}

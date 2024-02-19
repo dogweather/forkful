@@ -1,13 +1,14 @@
 ---
-title:                "Bruke et interaktivt skall (REPL)"
 aliases:
 - /no/elixir/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:13:25.883401-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke et interaktivt skall (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:13:25.883401-07:00
+description: "En interaktiv skall, eller REPL (Read-Eval-Print Loop), lar deg pr\xF8\
+  ve ut kodebiter i sanntid. Elixir-programmerere bruker REPL, kalt IEx (Interaktiv\u2026"
+lastmod: 2024-02-18 23:08:53.606486
+model: gpt-4-0125-preview
+summary: "En interaktiv skall, eller REPL (Read-Eval-Print Loop), lar deg pr\xF8ve\
+  \ ut kodebiter i sanntid. Elixir-programmerere bruker REPL, kalt IEx (Interaktiv\u2026"
+title: Bruke et interaktivt skall (REPL)
 ---
 
 {{< edit_this_page >}}

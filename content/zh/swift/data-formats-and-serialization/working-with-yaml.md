@@ -1,14 +1,28 @@
 ---
-title:                "使用YAML工作"
 aliases:
 - /zh/swift/working-with-yaml/
-date:                  2024-02-03T19:27:05.344267-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用YAML工作"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:05.344267-07:00
+description: "YAML\uFF0C\u5168\u79F0\u662FYAML Ain't Markup Language\uFF08YAML\u4E0D\
+  \u662F\u6807\u8BB0\u8BED\u8A00\uFF09\uFF0C\u662F\u4E00\u4E2A\u5BF9\u6240\u6709\u7F16\
+  \u7A0B\u8BED\u8A00\u90FD\u53CB\u597D\u7684\u6570\u636E\u5E8F\u5217\u5316\u6807\u51C6\
+  \u3002\u7A0B\u5E8F\u5458\u4F7F\u7528\u5B83\u8FDB\u884C\u914D\u7F6E\u6587\u4EF6\u7F16\
+  \u5199\u3001\u8FDB\u7A0B\u95F4\u6D88\u606F\u4F20\u9012\u4EE5\u53CA\u6570\u636E\u5B58\
+  \u50A8\uFF0C\u56E0\u4E3A\u5176\u53EF\u8BFB\u6027\u4E0E\u666E\u901A\u82F1\u8BED\u76F8\
+  \u6BD4\u66F4\u63A5\u8FD1\uFF0C\u4E0E\u5176\u4ED6\u6570\u636E\u683C\u5F0F\u5982XML\u6216\
+  JSON\u76F8\u6BD4\uFF0C\u5B83\u66F4\u7B80\u5355\u6613\u61C2\u548C\u7F16\u5199\u3002"
+lastmod: 2024-02-18 23:08:59.460095
+model: gpt-4-0125-preview
+summary: "YAML\uFF0C\u5168\u79F0\u662FYAML Ain't Markup Language\uFF08YAML\u4E0D\u662F\
+  \u6807\u8BB0\u8BED\u8A00\uFF09\uFF0C\u662F\u4E00\u4E2A\u5BF9\u6240\u6709\u7F16\u7A0B\
+  \u8BED\u8A00\u90FD\u53CB\u597D\u7684\u6570\u636E\u5E8F\u5217\u5316\u6807\u51C6\u3002\
+  \u7A0B\u5E8F\u5458\u4F7F\u7528\u5B83\u8FDB\u884C\u914D\u7F6E\u6587\u4EF6\u7F16\u5199\
+  \u3001\u8FDB\u7A0B\u95F4\u6D88\u606F\u4F20\u9012\u4EE5\u53CA\u6570\u636E\u5B58\u50A8\
+  \uFF0C\u56E0\u4E3A\u5176\u53EF\u8BFB\u6027\u4E0E\u666E\u901A\u82F1\u8BED\u76F8\u6BD4\
+  \u66F4\u63A5\u8FD1\uFF0C\u4E0E\u5176\u4ED6\u6570\u636E\u683C\u5F0F\u5982XML\u6216\
+  JSON\u76F8\u6BD4\uFF0C\u5B83\u66F4\u7B80\u5355\u6613\u61C2\u548C\u7F16\u5199\u3002"
+title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 ---
 
 {{< edit_this_page >}}

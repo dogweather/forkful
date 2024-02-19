@@ -1,13 +1,16 @@
 ---
-title:                "Descargando una página web"
 aliases:
 - /es/ruby/downloading-a-web-page/
-date:                  2024-01-20T17:44:57.074608-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Descargando una página web"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/downloading-a-web-page.md"
+date: 2024-01-20 17:44:57.074608-07:00
+description: "Descargar una p\xE1gina web significa traer su contenido a tu equipo\
+  \ local. Programadores hacen esto para analizar la informaci\xF3n, probar la conectividad\
+  \ o\u2026"
+lastmod: 2024-02-18 23:09:10.551141
+model: gpt-4-1106-preview
+summary: "Descargar una p\xE1gina web significa traer su contenido a tu equipo local.\
+  \ Programadores hacen esto para analizar la informaci\xF3n, probar la conectividad\
+  \ o\u2026"
+title: "Descargando una p\xE1gina web"
 ---
 
 {{< edit_this_page >}}

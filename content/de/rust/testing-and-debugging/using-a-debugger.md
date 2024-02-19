@@ -1,13 +1,16 @@
 ---
-title:                "Einsatz eines Debuggers"
 aliases:
 - /de/rust/using-a-debugger/
-date:                  2024-01-26T04:10:03.292124-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Einsatz eines Debuggers"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/using-a-debugger.md"
+date: 2024-01-26 04:10:03.292124-07:00
+description: "Ein Debugger zu verwenden ist, als w\xFCrde man sich selbst R\xF6ntgenblick\
+  \ geben, um einen Blick in die Ausf\xFChrung seines Codes zu werfen. Programmierer\
+  \ tun\u2026"
+lastmod: 2024-02-18 23:09:04.646236
+model: gpt-4-0125-preview
+summary: "Ein Debugger zu verwenden ist, als w\xFCrde man sich selbst R\xF6ntgenblick\
+  \ geben, um einen Blick in die Ausf\xFChrung seines Codes zu werfen. Programmierer\
+  \ tun\u2026"
+title: Einsatz eines Debuggers
 ---
 
 {{< edit_this_page >}}

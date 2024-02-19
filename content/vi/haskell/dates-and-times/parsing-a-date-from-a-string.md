@@ -1,15 +1,20 @@
 ---
-title:                "Phân tích ngày từ chuỗi kí tự"
 aliases:
 - /vi/haskell/parsing-a-date-from-a-string/
-date:                  2024-01-28T22:04:47.039160-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Phân tích ngày từ chuỗi kí tự"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/haskell/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:04:47.039160-07:00
+description: "Ph\xE2n t\xEDch c\xFA ph\xE1p m\u1ED9t ng\xE0y th\xE1ng t\u1EEB chu\u1ED7\
+  i ngh\u0129a l\xE0 bi\u1EBFn \u0111\u1ED5i v\u0103n b\u1EA3n th\xE0nh lo\u1EA1i\
+  \ d\u1EEF li\u1EC7u ng\xE0y th\xE1ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDD\
+  ng c\u1EA7n chuy\u1EC3n \u0111\u1ED5i \u0111\u1EA7u v\xE0o c\u1EE7a\u2026"
+lastmod: 2024-02-18 23:08:50.755346
+model: gpt-4-0125-preview
+summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p m\u1ED9t ng\xE0y th\xE1ng t\u1EEB chu\u1ED7\
+  i ngh\u0129a l\xE0 bi\u1EBFn \u0111\u1ED5i v\u0103n b\u1EA3n th\xE0nh lo\u1EA1i\
+  \ d\u1EEF li\u1EC7u ng\xE0y th\xE1ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDD\
+  ng c\u1EA7n chuy\u1EC3n \u0111\u1ED5i \u0111\u1EA7u v\xE0o c\u1EE7a\u2026"
+title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 ---
 
 {{< edit_this_page >}}

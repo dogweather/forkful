@@ -1,14 +1,17 @@
 ---
-title:                "Arbeiten mit CSV"
 aliases:
 - /de/elixir/working-with-csv/
-date:                  2024-02-03T19:19:34.227193-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeiten mit CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:19:34.227193-07:00
+description: "Die Arbeit mit CSV-Dateien (Comma-Separated Values, dt. kommagetrennte\
+  \ Werte) umfasst das Lesen von und das Schreiben in diese Dateien, was eine h\xE4\
+  ufige\u2026"
+lastmod: 2024-02-18 23:09:04.575787
+model: gpt-4-0125-preview
+summary: "Die Arbeit mit CSV-Dateien (Comma-Separated Values, dt. kommagetrennte Werte)\
+  \ umfasst das Lesen von und das Schreiben in diese Dateien, was eine h\xE4ufige\u2026"
+title: Arbeiten mit CSV
 ---
 
 {{< edit_this_page >}}

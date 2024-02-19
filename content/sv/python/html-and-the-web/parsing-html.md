@@ -1,12 +1,15 @@
 ---
-title:                "Tolka HTML"
 aliases:
 - /sv/python/parsing-html/
-date:                  2024-01-20T15:33:14.375537-07:00
-simple_title:         "Tolka HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/parsing-html.md"
+date: 2024-01-20 15:33:14.375537-07:00
+description: "Parsing HTML inneb\xE4r att omvandla HTML-kod till en struktur som ett\
+  \ program eller skript kan f\xF6rst\xE5 och manipulera. Programmerare g\xF6r detta\
+  \ f\xF6r att\u2026"
+lastmod: 2024-02-18 23:08:51.419800
+summary: "Parsing HTML inneb\xE4r att omvandla HTML-kod till en struktur som ett program\
+  \ eller skript kan f\xF6rst\xE5 och manipulera. Programmerare g\xF6r detta f\xF6\
+  r att\u2026"
+title: Tolka HTML
 ---
 
 {{< edit_this_page >}}

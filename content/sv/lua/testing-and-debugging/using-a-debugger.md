@@ -1,13 +1,16 @@
 ---
-title:                "Att använda en debugger"
 aliases:
 - /sv/lua/using-a-debugger/
-date:                  2024-01-26T03:50:18.449356-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda en debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/lua/using-a-debugger.md"
+date: 2024-01-26 03:50:18.449356-07:00
+description: "En debugger \xE4r ett verktyg som l\xE5ter dig inspektera och kontrollera\
+  \ utf\xF6randet av ett program, vilket g\xF6r det enkelt att identifiera var saker\
+  \ g\xE5r fel.\u2026"
+lastmod: 2024-02-18 23:08:51.922887
+model: gpt-4-0125-preview
+summary: "En debugger \xE4r ett verktyg som l\xE5ter dig inspektera och kontrollera\
+  \ utf\xF6randet av ett program, vilket g\xF6r det enkelt att identifiera var saker\
+  \ g\xE5r fel.\u2026"
+title: "Att anv\xE4nda en debugger"
 ---
 
 {{< edit_this_page >}}

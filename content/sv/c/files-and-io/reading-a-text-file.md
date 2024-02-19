@@ -1,14 +1,18 @@
 ---
-title:                "Läsa en textfil"
 aliases:
 - /sv/c/reading-a-text-file/
-date:                  2024-02-03T18:05:13.567896-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Läsa en textfil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/reading-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:13.567896-07:00
+description: "Att l\xE4sa en textfil i C inneb\xE4r att \xF6ppna en fil p\xE5 ditt\
+  \ system f\xF6r att extrahera information och manipulera eller visa den som det\
+  \ beh\xF6vs. Programmerare\u2026"
+lastmod: 2024-02-18 23:08:52.268998
+model: gpt-4-0125-preview
+summary: "Att l\xE4sa en textfil i C inneb\xE4r att \xF6ppna en fil p\xE5 ditt system\
+  \ f\xF6r att extrahera information och manipulera eller visa den som det beh\xF6\
+  vs. Programmerare\u2026"
+title: "L\xE4sa en textfil"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Fehlerbehandlung"
 aliases:
 - /de/go/handling-errors/
-date:                  2024-02-03T17:58:04.181688-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Fehlerbehandlung"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/handling-errors.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:58:04.181688-07:00
+description: "Die Fehlerbehandlung in Go umfasst das Erkennen und Reagieren auf Fehlerbedingungen\
+  \ in Ihrem Programm. Programmierer betreiben Fehlerbehandlung, um\u2026"
+lastmod: 2024-02-18 23:09:04.372465
+model: gpt-4-0125-preview
+summary: "Die Fehlerbehandlung in Go umfasst das Erkennen und Reagieren auf Fehlerbedingungen\
+  \ in Ihrem Programm. Programmierer betreiben Fehlerbehandlung, um\u2026"
+title: Fehlerbehandlung
 ---
 
 {{< edit_this_page >}}

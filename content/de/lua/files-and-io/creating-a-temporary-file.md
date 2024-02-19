@@ -1,13 +1,14 @@
 ---
-title:                "Erstellung einer temporären Datei"
 aliases:
 - /de/lua/creating-a-temporary-file/
-date:                  2024-01-20T17:40:46.544865-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Erstellung einer temporären Datei"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:46.544865-07:00
+description: "Das Erstellen einer tempor\xE4ren Datei erm\xF6glicht es einem Programm,\
+  \ Daten kurzzeitig zu speichern, ohne langfristige Spuren im Dateisystem zu hinterlassen.\u2026"
+lastmod: 2024-02-18 23:09:05.027698
+model: gpt-4-1106-preview
+summary: "Das Erstellen einer tempor\xE4ren Datei erm\xF6glicht es einem Programm,\
+  \ Daten kurzzeitig zu speichern, ohne langfristige Spuren im Dateisystem zu hinterlassen.\u2026"
+title: "Erstellung einer tempor\xE4ren Datei"
 ---
 
 {{< edit_this_page >}}

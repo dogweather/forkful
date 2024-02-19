@@ -1,14 +1,18 @@
 ---
-title:                "Zufallszahlen generieren"
 aliases:
 - /de/vba/generating-random-numbers/
-date:                  2024-02-01T21:53:53.716924-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zufallszahlen generieren"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/vba/generating-random-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:53.716924-07:00
+description: "Das Generieren von Zufallszahlen in Visual Basic for Applications (VBA)\
+  \ erm\xF6glicht es Programmen, Prozesse mit Elementen des Zufalls oder der Variabilit\xE4\
+  t\u2026"
+lastmod: 2024-02-18 23:09:04.684071
+model: gpt-4-0125-preview
+summary: "Das Generieren von Zufallszahlen in Visual Basic for Applications (VBA)\
+  \ erm\xF6glicht es Programmen, Prozesse mit Elementen des Zufalls oder der Variabilit\xE4\
+  t\u2026"
+title: Zufallszahlen generieren
 ---
 
 {{< edit_this_page >}}

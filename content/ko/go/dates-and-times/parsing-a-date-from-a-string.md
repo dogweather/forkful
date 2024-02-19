@@ -1,14 +1,28 @@
 ---
-title:                "문자열에서 날짜 분석하기"
 aliases:
 - /ko/go/parsing-a-date-from-a-string/
-date:                  2024-02-03T18:05:26.747265-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열에서 날짜 분석하기"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:26.747265-07:00
+description: "Go\uC5D0\uC11C \uBB38\uC790\uC5F4\uB85C\uBD80\uD130 \uB0A0\uC9DC\uB97C\
+  \ \uD30C\uC2F1\uD558\uB294 \uAC83\uC740 \uD14D\uC2A4\uD2B8\uB85C \uD45C\uD604\uB41C\
+  \ \uB0A0\uC9DC\uB97C \uB354 \uC0AC\uC6A9\uD558\uAE30 \uC88B\uC740 \uD615\uC2DD(\uC608\
+  : `time.Time`)\uC73C\uB85C \uBCC0\uD658\uD558\uB294 \uC791\uC5C5\uC744 \uB9D0\uD569\
+  \uB2C8\uB2E4. \uAC1C\uBC1C\uC790\uB4E4\uC774 \uC774 \uC791\uC5C5\uC744 \uC218\uD589\
+  \uD558\uB294 \uAC83\uC740 \uD2B9\uD788 \uC0AC\uC6A9\uC790 \uC785\uB825, API, \uB610\
+  \uB294 \uB0A0\uC9DC\uAC00 \uC885\uC885 \uBB38\uC790\uC5F4\uB85C \uD45C\uD604\uB418\
+  \uB294 \uC800\uC7A5 \uC2DC\uC2A4\uD15C\uACFC \uAC19\uC740 \uACF3\uC5D0\uC11C\u2026"
+lastmod: 2024-02-18 23:09:05.498558
+model: gpt-4-0125-preview
+summary: "Go\uC5D0\uC11C \uBB38\uC790\uC5F4\uB85C\uBD80\uD130 \uB0A0\uC9DC\uB97C \uD30C\
+  \uC2F1\uD558\uB294 \uAC83\uC740 \uD14D\uC2A4\uD2B8\uB85C \uD45C\uD604\uB41C \uB0A0\
+  \uC9DC\uB97C \uB354 \uC0AC\uC6A9\uD558\uAE30 \uC88B\uC740 \uD615\uC2DD(\uC608: `time.Time`)\uC73C\
+  \uB85C \uBCC0\uD658\uD558\uB294 \uC791\uC5C5\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uAC1C\
+  \uBC1C\uC790\uB4E4\uC774 \uC774 \uC791\uC5C5\uC744 \uC218\uD589\uD558\uB294 \uAC83\
+  \uC740 \uD2B9\uD788 \uC0AC\uC6A9\uC790 \uC785\uB825, API, \uB610\uB294 \uB0A0\uC9DC\
+  \uAC00 \uC885\uC885 \uBB38\uC790\uC5F4\uB85C \uD45C\uD604\uB418\uB294 \uC800\uC7A5\
+  \ \uC2DC\uC2A4\uD15C\uACFC \uAC19\uC740 \uACF3\uC5D0\uC11C\u2026"
+title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uBD84\uC11D\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

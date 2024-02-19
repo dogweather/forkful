@@ -1,14 +1,20 @@
 ---
-title:                "Viết hoa một chuỗi"
 aliases:
 - /vi/vba/capitalizing-a-string/
-date:                  2024-02-01T21:49:37.494948-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Viết hoa một chuỗi"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/capitalizing-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:37.494948-07:00
+description: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i trong Visual Basic for Applications\
+  \ (VBA) bao g\u1ED3m vi\u1EC7c chuy\u1EC3n k\xFD t\u1EF1 \u0111\u1EA7u ti\xEAn c\u1EE7\
+  a m\u1ED7i t\u1EEB trong m\u1ED9t chu\u1ED7i sang ch\u1EEF hoa v\xE0 \u0111\u1EA3\
+  m b\u1EA3o\u2026"
+lastmod: 2024-02-18 23:08:50.489904
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i trong Visual Basic for Applications\
+  \ (VBA) bao g\u1ED3m vi\u1EC7c chuy\u1EC3n k\xFD t\u1EF1 \u0111\u1EA7u ti\xEAn c\u1EE7\
+  a m\u1ED7i t\u1EEB trong m\u1ED9t chu\u1ED7i sang ch\u1EEF hoa v\xE0 \u0111\u1EA3\
+  m b\u1EA3o\u2026"
+title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 ---
 
 {{< edit_this_page >}}

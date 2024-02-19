@@ -1,13 +1,14 @@
 ---
-title:                "Handling errors"
 aliases:
 - /en/lua/handling-errors/
-date:                  2024-01-21T21:19:09.020887-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Handling errors"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/handling-errors.md"
+date: 2024-01-21 21:19:09.020887-07:00
+description: "Handling errors in coding is about expecting the unexpected. It's the\
+  \ art of planning for when things go sideways so you can keep your program running\u2026"
+lastmod: 2024-02-18 23:09:11.186026
+model: gpt-4-1106-preview
+summary: "Handling errors in coding is about expecting the unexpected. It's the art\
+  \ of planning for when things go sideways so you can keep your program running\u2026"
+title: Handling errors
 ---
 
 {{< edit_this_page >}}

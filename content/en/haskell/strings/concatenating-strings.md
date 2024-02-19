@@ -1,13 +1,14 @@
 ---
-title:                "Concatenating strings"
 aliases:
 - /en/haskell/concatenating-strings/
-date:                  2024-01-20T17:35:03.400584-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenating strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/concatenating-strings.md"
+date: 2024-01-20 17:35:03.400584-07:00
+description: "Concatenating strings means smushing them together end to end. Programmers\
+  \ do it when they need to stitch together bits of text to form a new string, like\u2026"
+lastmod: 2024-02-18 23:09:11.088173
+model: gpt-4-1106-preview
+summary: "Concatenating strings means smushing them together end to end. Programmers\
+  \ do it when they need to stitch together bits of text to form a new string, like\u2026"
+title: Concatenating strings
 ---
 
 {{< edit_this_page >}}

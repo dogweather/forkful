@@ -1,14 +1,16 @@
 ---
-title:                "Utilizzo delle espressioni regolari"
 aliases:
 - /it/powershell/using-regular-expressions/
-date:                  2024-02-03T19:17:42.769200-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo delle espressioni regolari"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:17:42.769200-07:00
+description: "Le espressioni regolari (regex) sono sequenze di caratteri che formano\
+  \ un modello di ricerca, utilizzato principalmente per la ricerca e la manipolazione\u2026"
+lastmod: 2024-02-18 23:08:56.082907
+model: gpt-4-0125-preview
+summary: "Le espressioni regolari (regex) sono sequenze di caratteri che formano un\
+  \ modello di ricerca, utilizzato principalmente per la ricerca e la manipolazione\u2026"
+title: Utilizzo delle espressioni regolari
 ---
 
 {{< edit_this_page >}}

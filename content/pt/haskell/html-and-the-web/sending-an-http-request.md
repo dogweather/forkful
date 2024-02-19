@@ -1,13 +1,14 @@
 ---
-title:                "Enviando uma requisição HTTP"
 aliases:
 - /pt/haskell/sending-an-http-request/
-date:                  2024-01-20T18:00:01.697981-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando uma requisição HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/sending-an-http-request.md"
+date: 2024-01-20 18:00:01.697981-07:00
+description: "Enviar um pedido HTTP \xE9 basicamente pedir para um servidor web fazer\
+  \ algo ou dar algo. Programadores fazem isso para interagir com APIs, pegar dados,\u2026"
+lastmod: 2024-02-18 23:08:58.195998
+model: gpt-4-1106-preview
+summary: "Enviar um pedido HTTP \xE9 basicamente pedir para um servidor web fazer\
+  \ algo ou dar algo. Programadores fazem isso para interagir com APIs, pegar dados,\u2026"
+title: "Enviando uma requisi\xE7\xE3o HTTP"
 ---
 
 {{< edit_this_page >}}

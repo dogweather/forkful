@@ -1,13 +1,14 @@
 ---
-title:                "Lavorare con i numeri complessi"
 aliases:
 - /it/bash/working-with-complex-numbers/
-date:                  2024-01-26T04:37:02.945670-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con i numeri complessi"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/working-with-complex-numbers.md"
+date: 2024-01-26 04:37:02.945670-07:00
+description: "I numeri complessi sono costituiti da una parte reale e una immaginaria.\
+  \ I programmatori li utilizzano in campi come l'elaborazione dei segnali, la\u2026"
+lastmod: 2024-02-18 23:08:56.044705
+model: gpt-4-0125-preview
+summary: "I numeri complessi sono costituiti da una parte reale e una immaginaria.\
+  \ I programmatori li utilizzano in campi come l'elaborazione dei segnali, la\u2026"
+title: Lavorare con i numeri complessi
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Working with complex numbers"
 aliases:
 - /en/php/working-with-complex-numbers/
-date:                  2024-01-25T03:00:04.836795-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Working with complex numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/working-with-complex-numbers.md"
+date: 2024-01-25 03:00:04.836795-07:00
+description: "Complex numbers have a real part and an imaginary part, usually written\
+  \ as `a + bi`. They're crucial in advanced math, physics, engineering, and certain\u2026"
+lastmod: 2024-02-18 23:09:11.130999
+model: gpt-4-1106-preview
+summary: "Complex numbers have a real part and an imaginary part, usually written\
+  \ as `a + bi`. They're crucial in advanced math, physics, engineering, and certain\u2026"
+title: Working with complex numbers
 ---
 
 {{< edit_this_page >}}

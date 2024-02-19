@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng vỏ tương tác (REPL)"
 aliases:
 - /vi/python/using-an-interactive-shell-repl/
-date:                  2024-01-28T22:10:16.763799-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng vỏ tương tác (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/python/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:16.763799-07:00
+description: "REPL, vi\u1EBFt t\u1EAFt c\u1EE7a Read-Eval-Print Loop (V\xF2ng l\u1EB7\
+  p \u0110\u1ECDc-T\xEDnh to\xE1n-In), l\xE0 m\u1ED9t m\xF4i tr\u01B0\u1EDDng l\u1EAD\
+  p tr\xECnh l\u1EA5y \u0111\u1EA7u v\xE0o \u0111\u01A1n l\u1EBB t\u1EEB ng\u01B0\u1EDD\
+  i d\xF9ng, th\u1EF1c thi ch\xFAng v\xE0 tr\u1EA3\u2026"
+lastmod: 2024-02-18 23:08:50.269912
+model: gpt-4-0125-preview
+summary: "REPL, vi\u1EBFt t\u1EAFt c\u1EE7a Read-Eval-Print Loop (V\xF2ng l\u1EB7\
+  p \u0110\u1ECDc-T\xEDnh to\xE1n-In), l\xE0 m\u1ED9t m\xF4i tr\u01B0\u1EDDng l\u1EAD\
+  p tr\xECnh l\u1EA5y \u0111\u1EA7u v\xE0o \u0111\u01A1n l\u1EBB t\u1EEB ng\u01B0\u1EDD\
+  i d\xF9ng, th\u1EF1c thi ch\xFAng v\xE0 tr\u1EA3\u2026"
+title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,18 @@
 ---
-title:                "Usando arrays associativos"
 aliases:
 - /pt/bash/using-associative-arrays/
-date:                  2024-01-30T19:09:58.147811-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando arrays associativos"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:09:58.147811-07:00
+description: "Arrays associativos s\xE3o como arrays superpotentes que permitem o\
+  \ uso de strings como \xEDndices, ao inv\xE9s de apenas inteiros. Programadores\
+  \ os utilizam para\u2026"
+lastmod: 2024-02-18 23:08:58.316449
+model: gpt-4-0125-preview
+summary: "Arrays associativos s\xE3o como arrays superpotentes que permitem o uso\
+  \ de strings como \xEDndices, ao inv\xE9s de apenas inteiros. Programadores os utilizam\
+  \ para\u2026"
+title: Usando arrays associativos
 ---
 
 {{< edit_this_page >}}

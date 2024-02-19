@@ -1,14 +1,21 @@
 ---
-title:                "문자열 보간하기"
 aliases:
 - /ko/kotlin/interpolating-a-string/
-date:                  2024-01-20T17:51:06.554746-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "문자열 보간하기"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/interpolating-a-string.md"
+date: 2024-01-20 17:51:06.554746-07:00
+description: "\uBB38\uC790\uC5F4 \uBCF4\uAC04(string interpolation)\uC740 \uBCC0\uC218\
+  \uB098 \uD45C\uD604\uC2DD\uC744 \uBB38\uC790\uC5F4 \uC548\uC5D0 \uB07C\uC6CC\uB123\
+  \uB294 \uAC83\uC785\uB2C8\uB2E4. \uB370\uC774\uD130\uB97C \uB3D9\uC801\uC73C\uB85C\
+  \ \uBB38\uC790\uC5F4\uACFC \uD569\uCCD0\uC11C \uC77D\uAE30 \uC26C\uC6B4 \uACB0\uACFC\
+  \uB97C \uB9CC\uB4E4\uAE30 \uC704\uD574 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.128435
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4 \uBCF4\uAC04(string interpolation)\uC740 \uBCC0\uC218\
+  \uB098 \uD45C\uD604\uC2DD\uC744 \uBB38\uC790\uC5F4 \uC548\uC5D0 \uB07C\uC6CC\uB123\
+  \uB294 \uAC83\uC785\uB2C8\uB2E4. \uB370\uC774\uD130\uB97C \uB3D9\uC801\uC73C\uB85C\
+  \ \uBB38\uC790\uC5F4\uACFC \uD569\uCCD0\uC11C \uC77D\uAE30 \uC26C\uC6B4 \uACB0\uACFC\
+  \uB97C \uB9CC\uB4E4\uAE30 \uC704\uD574 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Työskentely TOML:n kanssa"
 aliases:
 - /fi/clojure/working-with-toml/
-date:                  2024-01-26T04:20:32.032181-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely TOML:n kanssa"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/working-with-toml.md"
+date: 2024-01-26 04:20:32.032181-07:00
+description: "Ty\xF6skentely TOML:n kanssa tarkoittaa, ett\xE4 k\xE4sittelet dataa\
+  \ Minimaalisessa \"Tom's Obvious, Minimal Language\" -formaatissa, mik\xE4 on suosittua\u2026"
+lastmod: 2024-02-18 23:09:07.253662
+model: gpt-4-0125-preview
+summary: "Ty\xF6skentely TOML:n kanssa tarkoittaa, ett\xE4 k\xE4sittelet dataa Minimaalisessa\
+  \ \"Tom's Obvious, Minimal Language\" -formaatissa, mik\xE4 on suosittua\u2026"
+title: "Ty\xF6skentely TOML:n kanssa"
 ---
 
 {{< edit_this_page >}}

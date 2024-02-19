@@ -1,14 +1,28 @@
 ---
-title:                "使用JSON进行编程"
 aliases:
 - /zh/ruby/working-with-json/
-date:                  2024-02-03T19:23:59.259296-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用JSON进行编程"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:59.259296-07:00
+description: "JSON\uFF08JavaScript\u5BF9\u8C61\u8868\u793A\u6CD5\uFF09\u662F\u4E00\
+  \u79CD\u8F7B\u91CF\u7EA7\u7684\u6570\u636E\u4EA4\u6362\u683C\u5F0F\uFF0C\u5728\u5BA2\
+  \u6237\u7AEF\u548C\u670D\u52A1\u5668\u4E4B\u95F4\u7684\u6570\u636E\u4EA4\u6362\u7684\
+  web\u5E94\u7528\u7A0B\u5E8F\u4E2D\u975E\u5E38\u666E\u904D\u3002\u7A0B\u5E8F\u5458\
+  \u4F7F\u7528Ruby\u5904\u7406JSON\uFF0C\u4EE5\u89E3\u6790\u6765\u81EA\u5916\u90E8\
+  \u6765\u6E90\u7684\u6570\u636E\u6216\u683C\u5F0F\u5316\u6570\u636E\u4EE5\u4F9BAPI\u54CD\
+  \u5E94\uFF0C\u5229\u7528\u5176\u6613\u4E8E\u9605\u8BFB\u7684\u7ED3\u6784\u6765\u8F7B\
+  \u677E\u5730\u8FDB\u884C\u6570\u636E\u64CD\u4F5C\u548C\u5B58\u50A8\u3002"
+lastmod: 2024-02-18 23:08:59.656522
+model: gpt-4-0125-preview
+summary: "JSON\uFF08JavaScript\u5BF9\u8C61\u8868\u793A\u6CD5\uFF09\u662F\u4E00\u79CD\
+  \u8F7B\u91CF\u7EA7\u7684\u6570\u636E\u4EA4\u6362\u683C\u5F0F\uFF0C\u5728\u5BA2\u6237\
+  \u7AEF\u548C\u670D\u52A1\u5668\u4E4B\u95F4\u7684\u6570\u636E\u4EA4\u6362\u7684web\u5E94\
+  \u7528\u7A0B\u5E8F\u4E2D\u975E\u5E38\u666E\u904D\u3002\u7A0B\u5E8F\u5458\u4F7F\u7528\
+  Ruby\u5904\u7406JSON\uFF0C\u4EE5\u89E3\u6790\u6765\u81EA\u5916\u90E8\u6765\u6E90\
+  \u7684\u6570\u636E\u6216\u683C\u5F0F\u5316\u6570\u636E\u4EE5\u4F9BAPI\u54CD\u5E94\
+  \uFF0C\u5229\u7528\u5176\u6613\u4E8E\u9605\u8BFB\u7684\u7ED3\u6784\u6765\u8F7B\u677E\
+  \u5730\u8FDB\u884C\u6570\u636E\u64CD\u4F5C\u548C\u5B58\u50A8\u3002"
+title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 ---
 
 {{< edit_this_page >}}

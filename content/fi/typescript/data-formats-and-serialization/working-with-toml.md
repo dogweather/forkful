@@ -1,13 +1,14 @@
 ---
-title:                "Työskentely TOML:n kanssa"
 aliases:
 - /fi/typescript/working-with-toml/
-date:                  2024-01-26T04:27:02.978089-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely TOML:n kanssa"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/working-with-toml.md"
+date: 2024-01-26 04:27:02.978089-07:00
+description: "TOML, lyhenne sanoista Tom's Obvious, Minimal Language, on datan serialisointiformaatti,\
+  \ joka on samankaltainen kuin JSON tai YAML. Ohjelmoijat k\xE4ytt\xE4v\xE4t\u2026"
+lastmod: 2024-02-18 23:09:07.344074
+model: gpt-4-0125-preview
+summary: "TOML, lyhenne sanoista Tom's Obvious, Minimal Language, on datan serialisointiformaatti,\
+  \ joka on samankaltainen kuin JSON tai YAML. Ohjelmoijat k\xE4ytt\xE4v\xE4t\u2026"
+title: "Ty\xF6skentely TOML:n kanssa"
 ---
 
 {{< edit_this_page >}}

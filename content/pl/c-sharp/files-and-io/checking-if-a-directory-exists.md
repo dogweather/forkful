@@ -1,14 +1,18 @@
 ---
-title:                "Sprawdzanie, czy katalog istnieje"
 aliases:
 - /pl/c-sharp/checking-if-a-directory-exists/
-date:                  2024-02-03T19:07:08.298215-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sprawdzanie, czy katalog istnieje"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:07:08.298215-07:00
+description: "Sprawdzanie, czy katalog istnieje w C#, polega na weryfikowaniu obecno\u015B\
+  ci folderu w okre\u015Blonej \u015Bcie\u017Cce w systemie plik\xF3w. Programi\u015B\
+  ci robi\u0105 to, aby\u2026"
+lastmod: 2024-02-18 23:08:49.624814
+model: gpt-4-0125-preview
+summary: "Sprawdzanie, czy katalog istnieje w C#, polega na weryfikowaniu obecno\u015B\
+  ci folderu w okre\u015Blonej \u015Bcie\u017Cce w systemie plik\xF3w. Programi\u015B\
+  ci robi\u0105 to, aby\u2026"
+title: Sprawdzanie, czy katalog istnieje
 ---
 
 {{< edit_this_page >}}

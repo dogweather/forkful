@@ -1,14 +1,29 @@
 ---
-title:                "디렉토리가 존재하는지 확인하기"
 aliases:
 - /ko/google-apps-script/checking-if-a-directory-exists/
-date:                  2024-02-01T21:49:11.151885-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "디렉토리가 존재하는지 확인하기"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:11.151885-07:00
+description: "Google Apps Script\uC5D0\uC11C \uB514\uB809\uD130\uB9AC\uC758 \uC874\
+  \uC7AC \uC5EC\uBD80\uB97C \uD655\uC778\uD558\uB294 \uAC83\uC740 Google \uB4DC\uB77C\
+  \uC774\uBE0C \uB0B4\uC758 \uD3F4\uB354 \uC874\uC7AC\uB97C \uAC80\uC99D\uD558\uB294\
+  \ \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\
+  \uC740 \uC885\uC885 \uD30C\uC77C \uBC0F \uB514\uB809\uD130\uB9AC\uB97C \uD504\uB85C\
+  \uADF8\uB798\uBC0D\uC801\uC73C\uB85C \uAD00\uB9AC\uD560 \uB54C \uC624\uB958 \uB610\
+  \uB294 \uC911\uBCF5 \uD3F4\uB354 \uC0DD\uC131\uC744 \uD53C\uD558\uAE30 \uC704\uD574\
+  \ \uC774\uB7EC\uD55C \uAC80\uC0AC\uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:05.581144
+model: gpt-4-0125-preview
+summary: "Google Apps Script\uC5D0\uC11C \uB514\uB809\uD130\uB9AC\uC758 \uC874\uC7AC\
+  \ \uC5EC\uBD80\uB97C \uD655\uC778\uD558\uB294 \uAC83\uC740 Google \uB4DC\uB77C\uC774\
+  \uBE0C \uB0B4\uC758 \uD3F4\uB354 \uC874\uC7AC\uB97C \uAC80\uC99D\uD558\uB294 \uAC83\
+  \uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\
+  \ \uC885\uC885 \uD30C\uC77C \uBC0F \uB514\uB809\uD130\uB9AC\uB97C \uD504\uB85C\uADF8\
+  \uB798\uBC0D\uC801\uC73C\uB85C \uAD00\uB9AC\uD560 \uB54C \uC624\uB958 \uB610\uB294\
+  \ \uC911\uBCF5 \uD3F4\uB354 \uC0DD\uC131\uC744 \uD53C\uD558\uAE30 \uC704\uD574 \uC774\
+  \uB7EC\uD55C \uAC80\uC0AC\uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
+title: "\uB514\uB809\uD1A0\uB9AC\uAC00 \uC874\uC7AC\uD558\uB294\uC9C0 \uD655\uC778\
+  \uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

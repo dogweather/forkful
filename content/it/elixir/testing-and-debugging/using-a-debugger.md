@@ -1,13 +1,15 @@
 ---
-title:                "Utilizzo di un debugger"
 aliases:
 - /it/elixir/using-a-debugger/
-date:                  2024-01-26T03:48:21.142169-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di un debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/using-a-debugger.md"
+date: 2024-01-26 03:48:21.142169-07:00
+description: "L'uso di un debugger in Elixir comporta l'esecuzione passo passo del\
+  \ codice, l'ispezione delle variabili e il tracciamento dei flussi per eliminare\
+  \ gli\u2026"
+lastmod: 2024-02-18 23:08:55.604888
+model: gpt-4-0125-preview
+summary: "L'uso di un debugger in Elixir comporta l'esecuzione passo passo del codice,\
+  \ l'ispezione delle variabili e il tracciamento dei flussi per eliminare gli\u2026"
+title: Utilizzo di un debugger
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Skrive tester"
 aliases:
 - /no/swift/writing-tests/
-date:                  2024-02-03T19:32:01.333725-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skrive tester"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:01.333725-07:00
+description: "\xC5 skrive tester i Swift inneb\xE6rer \xE5 lage og utf\xF8re kode\
+  \ som verifiserer korrektheten av andre kodeenheter i applikasjonen din. Programmerere\
+  \ gj\xF8r dette\u2026"
+lastmod: 2024-02-18 23:08:54.272374
+model: gpt-4-0125-preview
+summary: "\xC5 skrive tester i Swift inneb\xE6rer \xE5 lage og utf\xF8re kode som\
+  \ verifiserer korrektheten av andre kodeenheter i applikasjonen din. Programmerere\
+  \ gj\xF8r dette\u2026"
+title: Skrive tester
 ---
 
 {{< edit_this_page >}}

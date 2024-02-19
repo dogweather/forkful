@@ -1,14 +1,16 @@
 ---
-title:                "Verificando se um diretório existe"
 aliases:
 - /pt/powershell/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:12.700449-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verificando se um diretório existe"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/powershell/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:12.700449-07:00
+description: "No PowerShell, verificar se um diret\xF3rio existe \xE9 uma tarefa comum\
+  \ que ajuda os scripts a tomarem decis\xF5es baseadas na estrutura do sistema de\u2026"
+lastmod: 2024-02-18 23:08:58.382991
+model: gpt-4-0125-preview
+summary: "No PowerShell, verificar se um diret\xF3rio existe \xE9 uma tarefa comum\
+  \ que ajuda os scripts a tomarem decis\xF5es baseadas na estrutura do sistema de\u2026"
+title: "Verificando se um diret\xF3rio existe"
 ---
 
 {{< edit_this_page >}}

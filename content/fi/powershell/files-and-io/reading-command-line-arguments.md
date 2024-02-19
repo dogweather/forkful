@@ -1,13 +1,16 @@
 ---
-title:                "Komennoriviparametrien lukeminen"
 aliases:
 - /fi/powershell/reading-command-line-arguments/
-date:                  2024-01-20T17:56:52.640255-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Komennoriviparametrien lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:52.640255-07:00
+description: "PowerShell-skripteiss\xE4 komentoriviparametrien lukeminen mahdollistaa\
+  \ argumenttien vastaanottamisen suoraan k\xE4ytt\xE4j\xE4lt\xE4. T\xE4t\xE4 tehd\xE4\
+  \xE4n sovelluksen\u2026"
+lastmod: 2024-02-18 23:09:07.870643
+model: gpt-4-1106-preview
+summary: "PowerShell-skripteiss\xE4 komentoriviparametrien lukeminen mahdollistaa\
+  \ argumenttien vastaanottamisen suoraan k\xE4ytt\xE4j\xE4lt\xE4. T\xE4t\xE4 tehd\xE4\
+  \xE4n sovelluksen\u2026"
+title: Komennoriviparametrien lukeminen
 ---
 
 {{< edit_this_page >}}

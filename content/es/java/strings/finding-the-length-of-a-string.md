@@ -1,13 +1,14 @@
 ---
-title:                "Calculando la longitud de una cadena"
 aliases:
 - /es/java/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:51.574191-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Calculando la longitud de una cadena"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:51.574191-07:00
+description: "Encontrar la longitud de una cadena significa saber cu\xE1ntos caracteres\
+  \ contiene. Programadores lo hacen para validar textos, limitar entradas, iterar\u2026"
+lastmod: 2024-02-18 23:09:09.835421
+model: gpt-4-1106-preview
+summary: "Encontrar la longitud de una cadena significa saber cu\xE1ntos caracteres\
+  \ contiene. Programadores lo hacen para validar textos, limitar entradas, iterar\u2026"
+title: Calculando la longitud de una cadena
 ---
 
 {{< edit_this_page >}}

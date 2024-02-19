@@ -1,14 +1,16 @@
 ---
-title:                "Trabalhando com JSON"
 aliases:
 - /pt/c/working-with-json/
-date:                  2024-02-03T18:11:54.503022-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:11:54.503022-07:00
+description: "Trabalhar com JSON (JavaScript Object Notation) em C envolve analisar,\
+  \ gerar e manipular estruturas de dados JSON. Programadores fazem isso para\u2026"
+lastmod: 2024-02-18 23:08:58.642270
+model: gpt-4-0125-preview
+summary: "Trabalhar com JSON (JavaScript Object Notation) em C envolve analisar, gerar\
+  \ e manipular estruturas de dados JSON. Programadores fazem isso para\u2026"
+title: Trabalhando com JSON
 ---
 
 {{< edit_this_page >}}

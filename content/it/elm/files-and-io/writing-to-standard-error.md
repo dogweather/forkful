@@ -1,14 +1,17 @@
 ---
-title:                "Scrivere sull'errore standard"
 aliases:
 - /it/elm/writing-to-standard-error/
-date:                  2024-02-03T19:33:04.526793-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Scrivere sull'errore standard"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:33:04.526793-07:00
+description: "Scrivere su standard error (stderr) riguarda il reindirizzamento di\
+  \ messaggi di errore e diagnostica separati dall'output principale del programma,\
+  \ che va\u2026"
+lastmod: 2024-02-18 23:08:55.821521
+model: gpt-4-0125-preview
+summary: "Scrivere su standard error (stderr) riguarda il reindirizzamento di messaggi\
+  \ di errore e diagnostica separati dall'output principale del programma, che va\u2026"
+title: Scrivere sull'errore standard
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Comparando duas datas"
 aliases:
 - /pt/c/comparing-two-dates/
-date:                  2024-02-03T17:53:41.619340-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Comparando duas datas"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/comparing-two-dates.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:41.619340-07:00
+description: "Comparar duas datas em C envolve determinar a rela\xE7\xE3o cronol\xF3\
+  gica entre elas -- se uma data precede a outra ou se s\xE3o iguais. Essa capacidade\
+  \ \xE9 crucial em\u2026"
+lastmod: 2024-02-18 23:08:58.632552
+model: gpt-4-0125-preview
+summary: "Comparar duas datas em C envolve determinar a rela\xE7\xE3o cronol\xF3gica\
+  \ entre elas -- se uma data precede a outra ou se s\xE3o iguais. Essa capacidade\
+  \ \xE9 crucial em\u2026"
+title: Comparando duas datas
 ---
 
 {{< edit_this_page >}}

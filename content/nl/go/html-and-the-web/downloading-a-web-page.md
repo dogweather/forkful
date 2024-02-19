@@ -1,14 +1,16 @@
 ---
-title:                "Een webpagina downloaden"
 aliases:
 - /nl/go/downloading-a-web-page/
-date:                  2024-02-03T17:56:02.832114-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een webpagina downloaden"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/downloading-a-web-page.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:02.832114-07:00
+description: "Het downloaden van een webpagina gaat over het ophalen van de HTML-inhoud\
+  \ van een webpagina via het HTTP/HTTPS-protocol. Programmeurs doen dit vaak voor\u2026"
+lastmod: 2024-02-18 23:09:01.336880
+model: gpt-4-0125-preview
+summary: "Het downloaden van een webpagina gaat over het ophalen van de HTML-inhoud\
+  \ van een webpagina via het HTTP/HTTPS-protocol. Programmeurs doen dit vaak voor\u2026"
+title: Een webpagina downloaden
 ---
 
 {{< edit_this_page >}}

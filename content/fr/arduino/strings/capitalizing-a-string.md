@@ -1,14 +1,18 @@
 ---
-title:                "Mettre en majuscule une chaîne"
 aliases:
 - /fr/arduino/capitalizing-a-string/
-date:                  2024-02-03T19:04:59.300172-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Mettre en majuscule une chaîne"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:04:59.300172-07:00
+description: "Mettre en majuscule une cha\xEEne de caract\xE8res consiste \xE0 convertir\
+  \ le premier caract\xE8re de chaque mot en majuscule, tout en s'assurant que les\
+  \ autres\u2026"
+lastmod: 2024-02-18 23:09:09.096761
+model: gpt-4-0125-preview
+summary: "Mettre en majuscule une cha\xEEne de caract\xE8res consiste \xE0 convertir\
+  \ le premier caract\xE8re de chaque mot en majuscule, tout en s'assurant que les\
+  \ autres\u2026"
+title: "Mettre en majuscule une cha\xEEne"
 ---
 
 {{< edit_this_page >}}

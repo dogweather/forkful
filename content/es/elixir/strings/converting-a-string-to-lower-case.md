@@ -1,13 +1,14 @@
 ---
-title:                "Conversión de una cadena de texto a minúsculas"
 aliases:
 - /es/elixir/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:27.051091-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Conversión de una cadena de texto a minúsculas"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:27.051091-07:00
+description: "Convertir una cadena a min\xFAsculas significa cambiar todos los caracteres\
+  \ de la cadena a su versi\xF3n en min\xFAscula. Los programadores hacen esto para\u2026"
+lastmod: 2024-02-18 23:09:09.634671
+model: gpt-4-1106-preview
+summary: "Convertir una cadena a min\xFAsculas significa cambiar todos los caracteres\
+  \ de la cadena a su versi\xF3n en min\xFAscula. Los programadores hacen esto para\u2026"
+title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 ---
 
 {{< edit_this_page >}}

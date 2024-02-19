@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie testów"
 aliases:
 - /pl/clojure/writing-tests/
-date:                  2024-02-03T19:30:02.336315-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie testów"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:30:02.336315-07:00
+description: "Pisanie test\xF3w w Clojure, podobnie jak w innych j\u0119zykach programowania,\
+  \ polega na tworzeniu dedykowanego kodu, kt\xF3ry weryfikuje, czy g\u0142\xF3wna\
+  \ baza kodu\u2026"
+lastmod: 2024-02-18 23:08:49.268258
+model: gpt-4-0125-preview
+summary: "Pisanie test\xF3w w Clojure, podobnie jak w innych j\u0119zykach programowania,\
+  \ polega na tworzeniu dedykowanego kodu, kt\xF3ry weryfikuje, czy g\u0142\xF3wna\
+  \ baza kodu\u2026"
+title: "Pisanie test\xF3w"
 ---
 
 {{< edit_this_page >}}

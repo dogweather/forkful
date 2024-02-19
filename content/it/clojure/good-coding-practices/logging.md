@@ -1,13 +1,15 @@
 ---
-title:                "Registrazione Eventi (Logging)"
 aliases:
 - /it/clojure/logging/
-date:                  2024-01-26T01:01:11.287933-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registrazione Eventi (Logging)"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/logging.md"
+date: 2024-01-26 01:01:11.287933-07:00
+description: "Il logging \xE8 essenzialmente l'equivalente software di un registro\
+  \ di bordo di una nave; \xE8 un modo per registrare gli eventi che si verificano\
+  \ mentre\u2026"
+lastmod: 2024-02-18 23:08:55.566923
+model: gpt-4-1106-preview
+summary: "Il logging \xE8 essenzialmente l'equivalente software di un registro di\
+  \ bordo di una nave; \xE8 un modo per registrare gli eventi che si verificano mentre\u2026"
+title: Registrazione Eventi (Logging)
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,17 @@
 ---
-title:                "Werken met YAML"
 aliases:
 - /nl/cpp/working-with-yaml/
-date:                  2024-01-28T22:11:58.687308-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met YAML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/cpp/working-with-yaml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:58.687308-07:00
+description: "Werken met YAML houdt in dat je gegevens parseert en genereert in de\
+  \ voor mensen vriendelijke YAML Ain't Markup Language. Programmeurs gebruiken het\
+  \ voor\u2026"
+lastmod: 2024-02-18 23:09:02.205086
+model: gpt-4-0125-preview
+summary: "Werken met YAML houdt in dat je gegevens parseert en genereert in de voor\
+  \ mensen vriendelijke YAML Ain't Markup Language. Programmeurs gebruiken het voor\u2026"
+title: Werken met YAML
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Scrivere un file di testo"
 aliases:
 - /it/powershell/writing-a-text-file/
-date:                  2024-02-03T19:29:17.299738-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Scrivere un file di testo"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:17.299738-07:00
+description: "Scrivere un file di testo in PowerShell comporta la creazione e la manipolazione\
+  \ di file basati su testo, che \xE8 un'operazione fondamentale per la\u2026"
+lastmod: 2024-02-18 23:08:56.112006
+model: gpt-4-0125-preview
+summary: "Scrivere un file di testo in PowerShell comporta la creazione e la manipolazione\
+  \ di file basati su testo, che \xE8 un'operazione fondamentale per la\u2026"
+title: Scrivere un file di testo
 ---
 
 {{< edit_this_page >}}

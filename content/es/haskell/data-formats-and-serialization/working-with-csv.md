@@ -1,14 +1,16 @@
 ---
-title:                "Trabajando con CSV"
 aliases:
 - /es/haskell/working-with-csv/
-date:                  2024-02-03T19:19:48.921006-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:19:48.921006-07:00
+description: "Trabajar con CSVs (Valores Separados por Comas) implica analizar y generar\
+  \ archivos que almacenan datos tabulares en un formato de texto simple. Los\u2026"
+lastmod: 2024-02-18 23:09:10.052392
+model: gpt-4-0125-preview
+summary: "Trabajar con CSVs (Valores Separados por Comas) implica analizar y generar\
+  \ archivos que almacenan datos tabulares en un formato de texto simple. Los\u2026"
+title: Trabajando con CSV
 ---
 
 {{< edit_this_page >}}

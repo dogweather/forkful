@@ -1,14 +1,28 @@
 ---
-title:                "웹 페이지 다운로드하기"
 aliases:
 - /ko/google-apps-script/downloading-a-web-page/
-date:                  2024-02-01T21:52:43.738351-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "웹 페이지 다운로드하기"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/downloading-a-web-page.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:43.738351-07:00
+description: "Google Apps Script\uC5D0\uC11C \uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\
+  \uB85C\uB4DC\uB294 HTML\uC744 \uD1B5\uD574 \uC6F9 \uD398\uC774\uC9C0\uC758 \uB0B4\
+  \uC6A9\uC744 \uAC00\uC838\uC624\uB294 \uC791\uC5C5\uC73C\uB85C, \uC6F9 \uC2A4\uD06C\
+  \uB798\uD551, \uB370\uC774\uD130 \uCD94\uCD9C, \uBCC0\uACBD \uC0AC\uD56D \uAC10\uC2DC\
+  \ \uB4F1 \uB2E4\uC591\uD55C \uBAA9\uC801\uC744 \uC704\uD574 \uC0AC\uC6A9\uB429\uB2C8\
+  \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774 \uC791\uC5C5\uC744 \uC790\
+  \uB3D9\uD654\uD558\uC5EC \uB370\uC774\uD130 \uC218\uC9D1\uC774\uB098 \uD1B5\uD569\
+  \ \uC791\uC5C5\uC744 \uCD5C\uC18C\uD654\uD558\uACE0 \uC2E4\uC2DC\uAC04\u2026"
+lastmod: 2024-02-18 23:09:05.553227
+model: gpt-4-0125-preview
+summary: "Google Apps Script\uC5D0\uC11C \uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\
+  \uB4DC\uB294 HTML\uC744 \uD1B5\uD574 \uC6F9 \uD398\uC774\uC9C0\uC758 \uB0B4\uC6A9\
+  \uC744 \uAC00\uC838\uC624\uB294 \uC791\uC5C5\uC73C\uB85C, \uC6F9 \uC2A4\uD06C\uB798\
+  \uD551, \uB370\uC774\uD130 \uCD94\uCD9C, \uBCC0\uACBD \uC0AC\uD56D \uAC10\uC2DC\
+  \ \uB4F1 \uB2E4\uC591\uD55C \uBAA9\uC801\uC744 \uC704\uD574 \uC0AC\uC6A9\uB429\uB2C8\
+  \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774 \uC791\uC5C5\uC744 \uC790\
+  \uB3D9\uD654\uD558\uC5EC \uB370\uC774\uD130 \uC218\uC9D1\uC774\uB098 \uD1B5\uD569\
+  \ \uC791\uC5C5\uC744 \uCD5C\uC18C\uD654\uD558\uACE0 \uC2E4\uC2DC\uAC04\u2026"
+title: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

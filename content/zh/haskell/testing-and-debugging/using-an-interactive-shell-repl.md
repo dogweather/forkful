@@ -1,13 +1,20 @@
 ---
-title:                "在编程中使用交互式Shell（REPL）"
 aliases:
 - /zh/haskell/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:14:58.485518-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "在编程中使用交互式Shell（REPL）"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:14:58.485518-07:00
+description: "Haskell\u4E2D\u7684\u4EA4\u4E92\u5F0Fshell\uFF0C\u6216\u8005\u79F0\u4E3A\
+  REPL\uFF08\u8BFB\u53D6-\u6C42\u503C-\u6253\u5370\u5FAA\u73AF\uFF09\uFF0C\u8BA9\u4F60\
+  \u80FD\u591F\u5B9E\u65F6\u8FD0\u884C\u4EE3\u7801\u7247\u6BB5\u3002\u5B83\u662F\u4E00\
+  \u4E2A\u7528\u4E8E\u5FEB\u901F\u53CD\u9988\u3001\u6D4B\u8BD5\u51FD\u6570\u548C\u5B66\
+  \u4E60\u8BED\u8A00\u7684\u6E38\u4E50\u573A\u3002"
+lastmod: 2024-02-18 23:08:59.171365
+model: gpt-4-0125-preview
+summary: "Haskell\u4E2D\u7684\u4EA4\u4E92\u5F0Fshell\uFF0C\u6216\u8005\u79F0\u4E3A\
+  REPL\uFF08\u8BFB\u53D6-\u6C42\u503C-\u6253\u5370\u5FAA\u73AF\uFF09\uFF0C\u8BA9\u4F60\
+  \u80FD\u591F\u5B9E\u65F6\u8FD0\u884C\u4EE3\u7801\u7247\u6BB5\u3002\u5B83\u662F\u4E00\
+  \u4E2A\u7528\u4E8E\u5FEB\u901F\u53CD\u9988\u3001\u6D4B\u8BD5\u51FD\u6570\u548C\u5B66\
+  \u4E60\u8BED\u8A00\u7684\u6E38\u4E50\u573A\u3002"
+title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uFF09"
 ---
 
 {{< edit_this_page >}}

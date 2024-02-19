@@ -1,13 +1,14 @@
 ---
-title:                "Registrazione delle Attività (Logging)"
 aliases:
 - /it/swift/logging/
-date:                  2024-01-26T01:09:02.639766-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registrazione delle Attività (Logging)"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/logging.md"
+date: 2024-01-26 01:09:02.639766-07:00
+description: "Il logging \xE8 il processo di registrazione dei comportamenti delle\
+  \ applicazioni, degli errori e di altre informazioni importanti su un supporto\u2026"
+lastmod: 2024-02-18 23:08:56.218589
+model: gpt-4-1106-preview
+summary: "Il logging \xE8 il processo di registrazione dei comportamenti delle applicazioni,\
+  \ degli errori e di altre informazioni importanti su un supporto\u2026"
+title: "Registrazione delle Attivit\xE0 (Logging)"
 ---
 
 {{< edit_this_page >}}

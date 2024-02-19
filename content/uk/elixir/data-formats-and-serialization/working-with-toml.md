@@ -1,13 +1,26 @@
 ---
-title:                "Робота з TOML"
 aliases:
 - /uk/elixir/working-with-toml/
-date:                  2024-01-26T04:21:18.105676-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Робота з TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/elixir/working-with-toml.md"
+date: 2024-01-26 04:21:18.105676-07:00
+description: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 TOML \u043E\u0437\u043D\u0430\
+  \u0447\u0430\u0454 \u043F\u0430\u0440\u0441\u0438\u043D\u0433 \u0456 \u0433\u0435\
+  \u043D\u0435\u0440\u0430\u0446\u0456\u044E \u0434\u0430\u043D\u0438\u0445 TOML (Tom's\
+  \ Obvious, Minimal Language) \u0437\u0430 \u0434\u043E\u043F\u043E\u043C\u043E\u0433\
+  \u043E\u044E Elixir. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0456\u0441\u0442\
+  \u0438 \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u043E\u0432\u0443\u044E\u0442\
+  \u044C \u0439\u043E\u0433\u043E \u0434\u043B\u044F \u0440\u043E\u0431\u043E\u0442\
+  \u0438 \u0437\u2026"
+lastmod: 2024-02-18 23:08:59.910376
+model: gpt-4-0125-preview
+summary: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 TOML \u043E\u0437\u043D\u0430\
+  \u0447\u0430\u0454 \u043F\u0430\u0440\u0441\u0438\u043D\u0433 \u0456 \u0433\u0435\
+  \u043D\u0435\u0440\u0430\u0446\u0456\u044E \u0434\u0430\u043D\u0438\u0445 TOML (Tom's\
+  \ Obvious, Minimal Language) \u0437\u0430 \u0434\u043E\u043F\u043E\u043C\u043E\u0433\
+  \u043E\u044E Elixir. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0456\u0441\u0442\
+  \u0438 \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u043E\u0432\u0443\u044E\u0442\
+  \u044C \u0439\u043E\u0433\u043E \u0434\u043B\u044F \u0440\u043E\u0431\u043E\u0442\
+  \u0438 \u0437\u2026"
+title: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 TOML"
 ---
 
 {{< edit_this_page >}}

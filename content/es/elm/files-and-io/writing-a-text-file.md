@@ -1,12 +1,13 @@
 ---
-title:                "Escritura de un archivo de texto"
 aliases:
 - /es/elm/writing-a-text-file/
-date:                  2024-01-19
-simple_title:         "Escritura de un archivo de texto"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/writing-a-text-file.md"
+date: 2024-01-19
+description: "Escribir un archivo de texto consiste en guardar datos en un documento\
+  \ que puedas leer y editar. Los programadores lo hacen para mantener la\u2026"
+lastmod: 2024-02-18 23:09:09.910279
+summary: "Escribir un archivo de texto consiste en guardar datos en un documento que\
+  \ puedas leer y editar. Los programadores lo hacen para mantener la\u2026"
+title: Escritura de un archivo de texto
 ---
 
 {{< edit_this_page >}}

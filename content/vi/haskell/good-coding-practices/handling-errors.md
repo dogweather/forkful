@@ -1,15 +1,21 @@
 ---
-title:                "Xử lý lỗi"
 aliases:
 - /vi/haskell/handling-errors/
-date:                  2024-01-28T22:02:16.764422-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Xử lý lỗi"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/haskell/handling-errors.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:02:16.764422-07:00
+description: "X\u1EED l\xFD l\u1ED7i trong l\u1EADp tr\xECnh l\xE0 v\u1EC1 vi\u1EC7\
+  c qu\u1EA3n l\xFD nh\u1EEFng \u0111i\u1EC1u kh\xF4ng mong \u0111\u1EE3i\u2014nh\u1EEF\
+  ng \u0111i\u1EC1u c\xF3 th\u1EC3 \u0111i sai. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
+  i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o r\u1EB1ng ch\u01B0\u01A1ng tr\xEC\
+  nh\u2026"
+lastmod: 2024-02-18 23:08:50.753127
+model: gpt-4-0125-preview
+summary: "X\u1EED l\xFD l\u1ED7i trong l\u1EADp tr\xECnh l\xE0 v\u1EC1 vi\u1EC7c qu\u1EA3\
+  n l\xFD nh\u1EEFng \u0111i\u1EC1u kh\xF4ng mong \u0111\u1EE3i\u2014nh\u1EEFng \u0111\
+  i\u1EC1u c\xF3 th\u1EC3 \u0111i sai. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1\
+  u n\xE0y \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o r\u1EB1ng ch\u01B0\u01A1ng tr\xECnh\u2026"
+title: "X\u1EED l\xFD l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

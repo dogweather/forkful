@@ -1,15 +1,16 @@
 ---
-title:                "Een datum uit een string parsen"
 aliases:
 - /nl/cpp/parsing-a-date-from-a-string/
-date:                  2024-01-28T22:04:04.024540-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een datum uit een string parsen"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/cpp/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:04:04.024540-07:00
+description: "Het parsen van een datum uit een tekenreeks betekent het omzetten van\
+  \ tekst naar een datumgegevenstype. Programmeurs doen dit om datumgerelateerde logica\u2026"
+lastmod: 2024-02-18 23:09:02.193219
+model: gpt-4-0125-preview
+summary: "Het parsen van een datum uit een tekenreeks betekent het omzetten van tekst\
+  \ naar een datumgegevenstype. Programmeurs doen dit om datumgerelateerde logica\u2026"
+title: Een datum uit een string parsen
 ---
 
 {{< edit_this_page >}}

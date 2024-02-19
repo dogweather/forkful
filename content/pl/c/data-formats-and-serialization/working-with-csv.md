@@ -1,14 +1,18 @@
 ---
-title:                "Praca z plikami CSV"
 aliases:
 - /pl/c/working-with-csv/
-date:                  2024-02-03T18:11:49.480327-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z plikami CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:11:49.480327-07:00
+description: "W \u015Bwiecie programowania praca z plikami CSV (Comma-Separated Values)\
+  \ obejmuje odczyt z plik\xF3w tekstowych oraz zapis danych do nich, zorganizowanych\
+  \ w\u2026"
+lastmod: 2024-02-18 23:08:50.104182
+model: gpt-4-0125-preview
+summary: "W \u015Bwiecie programowania praca z plikami CSV (Comma-Separated Values)\
+  \ obejmuje odczyt z plik\xF3w tekstowych oraz zapis danych do nich, zorganizowanych\
+  \ w\u2026"
+title: Praca z plikami CSV
 ---
 
 {{< edit_this_page >}}

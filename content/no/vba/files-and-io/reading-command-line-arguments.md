@@ -1,14 +1,18 @@
 ---
-title:                "Lese kommandolinje-argumenter"
 aliases:
 - /no/vba/reading-command-line-arguments/
-date:                  2024-02-01T21:59:30.494620-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lese kommandolinje-argumenter"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/vba/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:30.494620-07:00
+description: "\xC5 lese kommandolinjeargumenter i Visual Basic for Applications (VBA)\
+  \ inneb\xE6rer \xE5 f\xE5 tilgang til parametere som er sendt til programmet ditt\
+  \ ved utf\xF8relse.\u2026"
+lastmod: 2024-02-18 23:08:53.744450
+model: gpt-4-0125-preview
+summary: "\xC5 lese kommandolinjeargumenter i Visual Basic for Applications (VBA)\
+  \ inneb\xE6rer \xE5 f\xE5 tilgang til parametere som er sendt til programmet ditt\
+  \ ved utf\xF8relse.\u2026"
+title: Lese kommandolinje-argumenter
 ---
 
 {{< edit_this_page >}}

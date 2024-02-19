@@ -1,14 +1,17 @@
 ---
-title:                "Arbeta med XML"
 aliases:
 - /sv/google-apps-script/working-with-xml/
-date:                  2024-02-01T22:06:41.589733-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeta med XML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/google-apps-script/working-with-xml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:06:41.589733-07:00
+description: "Att arbeta med XML i Google Apps Script l\xE5ter programmerare tolka,\
+  \ manipulera och generera XML-data, vilket \xE4r avg\xF6rande f\xF6r webbtj\xE4\
+  nster och\u2026"
+lastmod: 2024-02-18 23:08:51.404847
+model: gpt-4-0125-preview
+summary: "Att arbeta med XML i Google Apps Script l\xE5ter programmerare tolka, manipulera\
+  \ och generera XML-data, vilket \xE4r avg\xF6rande f\xF6r webbtj\xE4nster och\u2026"
+title: Arbeta med XML
 ---
 
 {{< edit_this_page >}}

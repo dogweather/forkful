@@ -1,14 +1,18 @@
 ---
-title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 aliases:
 - /fi/lua/capitalizing-a-string/
-date:                  2024-02-03T19:05:54.861204-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:54.861204-07:00
+description: "Merkkijonon alkukirjaimen muuttaminen isoksi tarkoittaa jokaisen lauseen\
+  \ sanan ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi, samalla varmistaen,\
+  \ ett\xE4\u2026"
+lastmod: 2024-02-18 23:09:07.739357
+model: gpt-4-0125-preview
+summary: "Merkkijonon alkukirjaimen muuttaminen isoksi tarkoittaa jokaisen lauseen\
+  \ sanan ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi, samalla varmistaen,\
+  \ ett\xE4\u2026"
+title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,19 @@
 ---
-title:                "デバッグ出力を表示する"
 aliases:
 - /ja/rust/printing-debug-output/
-date:                  2024-01-20T17:53:35.645223-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "デバッグ出力を表示する"
-
-tag:                  "Testing and Debugging"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/printing-debug-output.md"
+date: 2024-01-20 17:53:35.645223-07:00
+description: "\u30C7\u30D0\u30C3\u30B0\u51FA\u529B\u3063\u3066\u306E\u306F\u3001\u30B3\
+  \u30FC\u30C9\u306E\u52D5\u304D\u3092\u898B\u3084\u3059\u304F\u3059\u308B\u305F\u3081\
+  \u306B\u4F7F\u3046\u3082\u3093\u3067\u3059\u3002\u554F\u984C\u89E3\u6C7A\u3084\u30B3\
+  \u30FC\u30C9\u7406\u89E3\u306B\u5F79\u7ACB\u3064\u3093\u3060\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:54.723736
+model: gpt-4-1106-preview
+summary: "\u30C7\u30D0\u30C3\u30B0\u51FA\u529B\u3063\u3066\u306E\u306F\u3001\u30B3\
+  \u30FC\u30C9\u306E\u52D5\u304D\u3092\u898B\u3084\u3059\u304F\u3059\u308B\u305F\u3081\
+  \u306B\u4F7F\u3046\u3082\u3093\u3067\u3059\u3002\u554F\u984C\u89E3\u6C7A\u3084\u30B3\
+  \u30FC\u30C9\u7406\u89E3\u306B\u5F79\u7ACB\u3064\u3093\u3060\u3002"
+title: "\u30C7\u30D0\u30C3\u30B0\u51FA\u529B\u3092\u8868\u793A\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

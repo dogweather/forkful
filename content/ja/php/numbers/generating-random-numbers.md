@@ -1,13 +1,12 @@
 ---
-title:                "乱数の生成"
 aliases:
 - /ja/php/generating-random-numbers/
-date:                  2024-01-27T20:34:40.108159-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "乱数の生成"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/generating-random-numbers.md"
+date: 2024-01-27 20:34:40.108159-07:00
+description: "\u2026"
+lastmod: 2024-02-18 23:08:54.991788
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u4E71\u6570\u306E\u751F\u6210"
 ---
 
 {{< edit_this_page >}}

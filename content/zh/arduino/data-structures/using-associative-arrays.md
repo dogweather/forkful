@@ -1,15 +1,26 @@
 ---
-title:                "使用关联数组"
 aliases:
 - /zh/arduino/using-associative-arrays/
-date:                  2024-01-30T19:12:43.820208-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用关联数组"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:43.820208-07:00
+description: "\u5728 Arduino \u7684\u4E16\u754C\u91CC\uFF0C\u5173\u8054\u6570\u7EC4\
+  \u5141\u8BB8\u4F60\u5C06\u952E\u4E0E\u503C\u914D\u5BF9\uFF0C\u6709\u70B9\u50CF\u5C06\
+  \u889C\u5B50\u4E0E\u5B83\u4EEC\u7684\u53E6\u4E00\u534A\u914D\u5BF9\u4E00\u6837\u3002\
+  \u5F53\u4F60\u9700\u8981\u4F7F\u7528\u63CF\u8FF0\u6027\u7684\u540D\u79F0\u6765\u5B58\
+  \u50A8\u548C\u68C0\u7D22\u6570\u636E\u65F6\uFF0C\u5B83\u4EEC\u6210\u4E3A\u4E86\u9996\
+  \u9009\uFF0C\u80FD\u8BA9\u4F60\u7684\u4EE3\u7801\u66F4\u6E05\u6670\u3001\u66F4\u6613\
+  \u4E8E\u7406\u89E3\u3002"
+lastmod: 2024-02-18 23:08:59.363305
+model: gpt-4-0125-preview
+summary: "\u5728 Arduino \u7684\u4E16\u754C\u91CC\uFF0C\u5173\u8054\u6570\u7EC4\u5141\
+  \u8BB8\u4F60\u5C06\u952E\u4E0E\u503C\u914D\u5BF9\uFF0C\u6709\u70B9\u50CF\u5C06\u889C\
+  \u5B50\u4E0E\u5B83\u4EEC\u7684\u53E6\u4E00\u534A\u914D\u5BF9\u4E00\u6837\u3002\u5F53\
+  \u4F60\u9700\u8981\u4F7F\u7528\u63CF\u8FF0\u6027\u7684\u540D\u79F0\u6765\u5B58\u50A8\
+  \u548C\u68C0\u7D22\u6570\u636E\u65F6\uFF0C\u5B83\u4EEC\u6210\u4E3A\u4E86\u9996\u9009\
+  \uFF0C\u80FD\u8BA9\u4F60\u7684\u4EE3\u7801\u66F4\u6E05\u6670\u3001\u66F4\u6613\u4E8E\
+  \u7406\u89E3\u3002"
+title: "\u4F7F\u7528\u5173\u8054\u6570\u7EC4"
 ---
 
 {{< edit_this_page >}}

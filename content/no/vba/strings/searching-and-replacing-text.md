@@ -1,14 +1,17 @@
 ---
-title:                "Søke og erstatte tekst"
 aliases:
 - /no/vba/searching-and-replacing-text/
-date:                  2024-02-01T22:01:26.126638-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Søke og erstatte tekst"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/vba/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:26.126638-07:00
+description: "S\xF8king og erstatning av tekst i Visual Basic for Applications (VBA)\
+  \ er vesentlig for \xE5 programmert redigere dokumenter, regneark og databaser.\
+  \ Denne\u2026"
+lastmod: 2024-02-18 23:08:53.712084
+model: gpt-4-0125-preview
+summary: "S\xF8king og erstatning av tekst i Visual Basic for Applications (VBA) er\
+  \ vesentlig for \xE5 programmert redigere dokumenter, regneark og databaser. Denne\u2026"
+title: "S\xF8ke og erstatte tekst"
 ---
 
 {{< edit_this_page >}}

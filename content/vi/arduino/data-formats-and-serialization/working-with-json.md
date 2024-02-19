@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với JSON"
 aliases:
 - /vi/arduino/working-with-json/
-date:                  2024-01-28T22:10:37.938451-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với JSON"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/working-with-json.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:37.938451-07:00
+description: "L\xE0m vi\u1EC7c v\u1EDBi JSON (JavaScript Object Notation) bao g\u1ED3\
+  m vi\u1EC7c thao t\xE1c d\u1EEF li\u1EC7u \u0111\u01B0\u1EE3c c\u1EA5u tr\xFAc trong\
+  \ m\u1ED9t \u0111\u1ECBnh d\u1EA1ng d\u1EF1a tr\xEAn v\u0103n b\u1EA3n, nh\u1EB9\
+  , d\u1EC5 \u0111\u1ECDc v\xE0 vi\u1EBFt cho\u2026"
+lastmod: 2024-02-18 23:08:51.022790
+model: gpt-4-0125-preview
+summary: "L\xE0m vi\u1EC7c v\u1EDBi JSON (JavaScript Object Notation) bao g\u1ED3\
+  m vi\u1EC7c thao t\xE1c d\u1EEF li\u1EC7u \u0111\u01B0\u1EE3c c\u1EA5u tr\xFAc trong\
+  \ m\u1ED9t \u0111\u1ECBnh d\u1EA1ng d\u1EF1a tr\xEAn v\u0103n b\u1EA3n, nh\u1EB9\
+  , d\u1EC5 \u0111\u1ECDc v\xE0 vi\u1EBFt cho\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 ---
 
 {{< edit_this_page >}}

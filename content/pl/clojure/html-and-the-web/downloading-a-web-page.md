@@ -1,13 +1,16 @@
 ---
-title:                "Pobieranie strony internetowej"
 aliases:
 - /pl/clojure/downloading-a-web-page/
-date:                  2024-01-20T17:43:37.385573-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Pobieranie strony internetowej"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/downloading-a-web-page.md"
+date: 2024-01-20 17:43:37.385573-07:00
+description: "Pobieranie strony internetowej oznacza \u015Bci\u0105gni\u0119cie jej\
+  \ zawarto\u015Bci do lokalnej pami\u0119ci komputera. Programi\u015Bci to robi\u0105\
+  , by przetworzy\u0107 dane, zautomatyzowa\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.263597
+model: gpt-4-1106-preview
+summary: "Pobieranie strony internetowej oznacza \u015Bci\u0105gni\u0119cie jej zawarto\u015B\
+  ci do lokalnej pami\u0119ci komputera. Programi\u015Bci to robi\u0105, by przetworzy\u0107\
+  \ dane, zautomatyzowa\u0107\u2026"
+title: Pobieranie strony internetowej
 ---
 
 {{< edit_this_page >}}

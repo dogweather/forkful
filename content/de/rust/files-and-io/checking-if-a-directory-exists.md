@@ -1,14 +1,18 @@
 ---
-title:                "Überprüfung, ob ein Verzeichnis existiert"
 aliases:
 - /de/rust/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:35.680358-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:35.680358-07:00
+description: "In der Softwareentwicklung ist es oft notwendig zu \xFCberpr\xFCfen,\
+  \ ob ein Verzeichnis existiert, um Fehler zu vermeiden, wenn versucht wird, Dateien\
+  \ zu\u2026"
+lastmod: 2024-02-18 23:09:04.656844
+model: gpt-4-0125-preview
+summary: "In der Softwareentwicklung ist es oft notwendig zu \xFCberpr\xFCfen, ob\
+  \ ein Verzeichnis existiert, um Fehler zu vermeiden, wenn versucht wird, Dateien\
+  \ zu\u2026"
+title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 ---
 
 {{< edit_this_page >}}

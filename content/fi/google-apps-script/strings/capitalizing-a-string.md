@@ -1,14 +1,18 @@
 ---
-title:                "Merkkijonon alkukirjaimen suurentaminen"
 aliases:
 - /fi/google-apps-script/capitalizing-a-string/
-date:                  2024-02-01T21:49:23.265549-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonon alkukirjaimen suurentaminen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/capitalizing-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:23.265549-07:00
+description: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa sy\xF6tteen muuttamista\
+  \ siten, ett\xE4 ensimm\xE4inen merkki on iso kirjain ja loput pieni\xE4 kirjaimia,\
+  \ ja t\xE4t\xE4\u2026"
+lastmod: 2024-02-18 23:09:07.114766
+model: gpt-4-0125-preview
+summary: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa sy\xF6tteen muuttamista\
+  \ siten, ett\xE4 ensimm\xE4inen merkki on iso kirjain ja loput pieni\xE4 kirjaimia,\
+  \ ja t\xE4t\xE4\u2026"
+title: Merkkijonon alkukirjaimen suurentaminen
 ---
 
 {{< edit_this_page >}}

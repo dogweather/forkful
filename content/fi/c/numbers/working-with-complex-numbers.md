@@ -1,14 +1,16 @@
 ---
-title:                "Työskenteleminen kompleksilukujen kanssa"
 aliases:
 - /fi/c/working-with-complex-numbers/
-date:                  2024-02-03T18:13:52.632009-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskenteleminen kompleksilukujen kanssa"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:13:52.632009-07:00
+description: "Kompleksiluvut koostuvat reaaliosasta ja imagin\xE4\xE4riosasta, jotka\
+  \ esitet\xE4\xE4n muodossa `a + bi`, miss\xE4 `i` on luvun `-1` neli\xF6juuri. Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:08.125067
+model: gpt-4-0125-preview
+summary: "Kompleksiluvut koostuvat reaaliosasta ja imagin\xE4\xE4riosasta, jotka esitet\xE4\
+  \xE4n muodossa `a + bi`, miss\xE4 `i` on luvun `-1` neli\xF6juuri. Ohjelmoijat\u2026"
+title: "Ty\xF6skenteleminen kompleksilukujen kanssa"
 ---
 
 {{< edit_this_page >}}

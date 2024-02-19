@@ -1,14 +1,16 @@
 ---
-title:                "Organisation von Code in Funktionen"
 aliases:
 - /de/google-apps-script/organizing-code-into-functions/
-date:                  2024-02-01T21:56:09.771796-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Organisation von Code in Funktionen"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/google-apps-script/organizing-code-into-functions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:56:09.771796-07:00
+description: "Code in Funktionen zu organisieren, bedeutet, Ihren Google Apps Script\
+  \ Code zu strukturieren, indem logische Segmente in separate Bl\xF6cke aufgeteilt\u2026"
+lastmod: 2024-02-18 23:09:04.420283
+model: gpt-4-0125-preview
+summary: "Code in Funktionen zu organisieren, bedeutet, Ihren Google Apps Script Code\
+  \ zu strukturieren, indem logische Segmente in separate Bl\xF6cke aufgeteilt\u2026"
+title: Organisation von Code in Funktionen
 ---
 
 {{< edit_this_page >}}

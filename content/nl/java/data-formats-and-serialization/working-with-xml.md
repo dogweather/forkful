@@ -1,15 +1,16 @@
 ---
-title:                "Werken met XML"
 aliases:
 - /nl/java/working-with-xml/
-date:                  2024-01-28T22:11:28.858512-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/java/working-with-xml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:28.858512-07:00
+description: "Werken met XML houdt het parsen, opvragen en manipuleren van XML-documenten\
+  \ met Java in. Programmeurs doen dit voor gegevensuitwisseling,\u2026"
+lastmod: 2024-02-18 23:09:01.739655
+model: gpt-4-0125-preview
+summary: "Werken met XML houdt het parsen, opvragen en manipuleren van XML-documenten\
+  \ met Java in. Programmeurs doen dit voor gegevensuitwisseling,\u2026"
+title: Werken met XML
 ---
 
 {{< edit_this_page >}}

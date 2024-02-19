@@ -1,13 +1,16 @@
 ---
-title:                "Avrunding av tall"
 aliases:
 - /no/elixir/rounding-numbers/
-date:                  2024-01-26T03:43:46.757764-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Avrunding av tall"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/rounding-numbers.md"
+date: 2024-01-26 03:43:46.757764-07:00
+description: "\xC5 avrunde tall betyr \xE5 justere dem til en n\xE6rliggende verdi\
+  \ for enkelhets skyld eller for \xE5 matche en viss presisjon. Det er nyttig for\
+  \ \xE5 forbedre\u2026"
+lastmod: 2024-02-18 23:08:53.600027
+model: gpt-4-0125-preview
+summary: "\xC5 avrunde tall betyr \xE5 justere dem til en n\xE6rliggende verdi for\
+  \ enkelhets skyld eller for \xE5 matche en viss presisjon. Det er nyttig for \xE5\
+  \ forbedre\u2026"
+title: Avrunding av tall
 ---
 
 {{< edit_this_page >}}

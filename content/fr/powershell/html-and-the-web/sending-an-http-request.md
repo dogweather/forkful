@@ -1,13 +1,16 @@
 ---
-title:                "Envoi d'une requête HTTP"
 aliases:
 - /fr/powershell/sending-an-http-request/
-date:                  2024-01-20T18:00:36.038726-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Envoi d'une requête HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/sending-an-http-request.md"
+date: 2024-01-20 18:00:36.038726-07:00
+description: "Envoyer une requ\xEAte HTTP, c'est demander des infos ou passer une\
+  \ action sur un serveur web \xE0 distance. Les programmeurs le font pour interagir\
+  \ avec des\u2026"
+lastmod: 2024-02-18 23:09:09.064663
+model: gpt-4-1106-preview
+summary: "Envoyer une requ\xEAte HTTP, c'est demander des infos ou passer une action\
+  \ sur un serveur web \xE0 distance. Les programmeurs le font pour interagir avec\
+  \ des\u2026"
+title: "Envoi d'une requ\xEAte HTTP"
 ---
 
 {{< edit_this_page >}}

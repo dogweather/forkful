@@ -1,13 +1,15 @@
 ---
-title:                "Using associative arrays"
 aliases:
 - /en/lua/using-associative-arrays/
-date:                  2024-01-30T18:57:14.533924-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using associative arrays"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/using-associative-arrays.md"
+date: 2024-01-30 18:57:14.533924-07:00
+description: "Associative arrays are like secret handshakes for data in Lua\u2014\
+  instead of just numbers lining up dutifully by index, your keys can be whatever\
+  \ you want,\u2026"
+lastmod: 2024-02-18 23:09:11.171549
+model: gpt-4-0125-preview
+summary: "Associative arrays are like secret handshakes for data in Lua\u2014instead\
+  \ of just numbers lining up dutifully by index, your keys can be whatever you want,\u2026"
+title: Using associative arrays
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,21 @@
 ---
-title:                "Sử dụng giao diện dòng lệnh tương tác (REPL)"
 aliases:
 - /vi/go/using-an-interactive-shell-repl/
-date:                  2024-02-03T18:10:36.646535-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng giao diện dòng lệnh tương tác (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:36.646535-07:00
+description: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c, hay V\xF2ng l\u1EB7p \u0110\u1ECD\
+  c-\u0110\xE1nh gi\xE1-In (REPL), cho ph\xE9p b\u1EA1n th\u1EED nghi\u1EC7m v\u1EDB\
+  i m\xE3 Go trong th\u1EDDi gian th\u1EF1c, th\u1EF1c thi c\xE1c l\u1EC7nh v\xE0\
+  \ nh\u1EADn ph\u1EA3n h\u1ED3i ngay\u2026"
+lastmod: 2024-02-18 23:08:50.172486
+model: gpt-4-0125-preview
+summary: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c, hay V\xF2ng l\u1EB7p \u0110\u1ECD\
+  c-\u0110\xE1nh gi\xE1-In (REPL), cho ph\xE9p b\u1EA1n th\u1EED nghi\u1EC7m v\u1EDB\
+  i m\xE3 Go trong th\u1EDDi gian th\u1EF1c, th\u1EF1c thi c\xE1c l\u1EC7nh v\xE0\
+  \ nh\u1EADn ph\u1EA3n h\u1ED3i ngay\u2026"
+title: "S\u1EED d\u1EE5ng giao di\u1EC7n d\xF2ng l\u1EC7nh t\u01B0\u01A1ng t\xE1c\
+  \ (REPL)"
 ---
 
 {{< edit_this_page >}}

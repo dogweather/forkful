@@ -1,14 +1,16 @@
 ---
-title:                "Capitalizzare una stringa"
 aliases:
 - /it/bash/capitalizing-a-string/
-date:                  2024-02-03T19:04:52.471856-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizzare una stringa"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:04:52.471856-07:00
+description: "Capitalizzare una stringa in Bash comporta la trasformazione del primo\
+  \ carattere della stringa in maiuscolo lasciando inalterata il resto della stringa.\u2026"
+lastmod: 2024-02-18 23:08:56.035218
+model: gpt-4-0125-preview
+summary: "Capitalizzare una stringa in Bash comporta la trasformazione del primo carattere\
+  \ della stringa in maiuscolo lasciando inalterata il resto della stringa.\u2026"
+title: Capitalizzare una stringa
 ---
 
 {{< edit_this_page >}}

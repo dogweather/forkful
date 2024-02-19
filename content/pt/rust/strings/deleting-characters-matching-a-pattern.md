@@ -1,13 +1,16 @@
 ---
-title:                "Excluindo caracteres que correspondem a um padrão"
 aliases:
 - /pt/rust/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:59.913326-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Excluindo caracteres que correspondem a um padrão"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:59.913326-07:00
+description: "Na programa\xE7\xE3o, deletar caracteres que correspondem a um padr\xE3\
+  o significa identificar e remover s\xE9ries espec\xEDficas de caracteres dentro\
+  \ de uma string.\u2026"
+lastmod: 2024-02-18 23:08:57.912043
+model: gpt-4-1106-preview
+summary: "Na programa\xE7\xE3o, deletar caracteres que correspondem a um padr\xE3\
+  o significa identificar e remover s\xE9ries espec\xEDficas de caracteres dentro\
+  \ de uma string.\u2026"
+title: "Excluindo caracteres que correspondem a um padr\xE3o"
 ---
 
 {{< edit_this_page >}}

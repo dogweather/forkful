@@ -1,13 +1,16 @@
 ---
-title:                "Korzystanie z interaktywnego shella (REPL)"
 aliases:
 - /pl/rust/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:18:12.707352-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z interaktywnego shella (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:18:12.707352-07:00
+description: "Interaktywna pow\u0142oka Rust, czyli REPL (Read-Eval-Print Loop - P\u0119\
+  tla Czytaj-Wykonaj-Wydrukuj), pozwala na uruchamianie kodu Rust na bie\u017C\u0105\
+  co, widz\u0105c\u2026"
+lastmod: 2024-02-18 23:08:49.391613
+model: gpt-4-0125-preview
+summary: "Interaktywna pow\u0142oka Rust, czyli REPL (Read-Eval-Print Loop - P\u0119\
+  tla Czytaj-Wykonaj-Wydrukuj), pozwala na uruchamianie kodu Rust na bie\u017C\u0105\
+  co, widz\u0105c\u2026"
+title: Korzystanie z interaktywnego shella (REPL)
 ---
 
 {{< edit_this_page >}}

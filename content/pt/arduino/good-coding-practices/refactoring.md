@@ -1,13 +1,14 @@
 ---
-title:                "Refatoração"
 aliases:
 - /pt/arduino/refactoring/
-date:                  2024-01-26T01:16:27.752628-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refatoração"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/refactoring.md"
+date: 2024-01-26 01:16:27.752628-07:00
+description: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o seu c\xF3digo para\
+  \ melhorar sua estrutura e legibilidade sem alterar o comportamento externo ou funcionalidade.\u2026"
+lastmod: 2024-02-18 23:08:58.417302
+model: gpt-4-0125-preview
+summary: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o seu c\xF3digo para melhorar\
+  \ sua estrutura e legibilidade sem alterar o comportamento externo ou funcionalidade.\u2026"
+title: "Refatora\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Comprobando si un directorio existe"
 aliases:
 - /es/clojure/checking-if-a-directory-exists/
-date:                  2024-02-03T19:07:02.306717-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Comprobando si un directorio existe"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:07:02.306717-07:00
+description: "Verificar si un directorio existe en Clojure implica comprobar la presencia\
+  \ de un directorio en el sistema de archivos desde dentro de tu aplicaci\xF3n\u2026"
+lastmod: 2024-02-18 23:09:09.618662
+model: gpt-4-0125-preview
+summary: "Verificar si un directorio existe en Clojure implica comprobar la presencia\
+  \ de un directorio en el sistema de archivos desde dentro de tu aplicaci\xF3n\u2026"
+title: Comprobando si un directorio existe
 ---
 
 {{< edit_this_page >}}

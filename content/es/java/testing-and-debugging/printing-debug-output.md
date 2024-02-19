@@ -1,13 +1,16 @@
 ---
-title:                "Imprimiendo salida de depuración"
 aliases:
 - /es/java/printing-debug-output/
-date:                  2024-01-20T17:52:50.266460-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Imprimiendo salida de depuración"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/printing-debug-output.md"
+date: 2024-01-20 17:52:50.266460-07:00
+description: "Imprimir mensajes de depuraci\xF3n es el arte de mostrar informaci\xF3\
+  n temporal en la consola para entender qu\xE9 est\xE1 pasando en nuestro c\xF3digo.\
+  \ Los\u2026"
+lastmod: 2024-02-18 23:09:09.847712
+model: gpt-4-1106-preview
+summary: "Imprimir mensajes de depuraci\xF3n es el arte de mostrar informaci\xF3n\
+  \ temporal en la consola para entender qu\xE9 est\xE1 pasando en nuestro c\xF3digo.\
+  \ Los\u2026"
+title: "Imprimiendo salida de depuraci\xF3n"
 ---
 
 {{< edit_this_page >}}

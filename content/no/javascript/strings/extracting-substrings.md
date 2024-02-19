@@ -1,13 +1,15 @@
 ---
-title:                "Uthenting av delstrenger"
 aliases:
 - /no/javascript/extracting-substrings/
-date:                  2024-01-20T17:46:11.797273-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Uthenting av delstrenger"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/extracting-substrings.md"
+date: 2024-01-20 17:46:11.797273-07:00
+description: "I JavaScript er uttrekk av delstrenger som et mini-felttog for \xE5\
+  \ hente spesifikke tekstbiter fra st\xF8rre strenger. Vi gj\xF8r dette for \xE5\
+  \ manipulere,\u2026"
+lastmod: 2024-02-18 23:08:54.298816
+model: gpt-4-1106-preview
+summary: "I JavaScript er uttrekk av delstrenger som et mini-felttog for \xE5 hente\
+  \ spesifikke tekstbiter fra st\xF8rre strenger. Vi gj\xF8r dette for \xE5 manipulere,\u2026"
+title: Uthenting av delstrenger
 ---
 
 {{< edit_this_page >}}

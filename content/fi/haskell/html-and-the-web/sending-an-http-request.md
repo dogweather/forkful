@@ -1,13 +1,16 @@
 ---
-title:                "HTTP-pyynnön lähettäminen"
 aliases:
 - /fi/haskell/sending-an-http-request/
-date:                  2024-01-20T17:59:56.180525-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-pyynnön lähettäminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/sending-an-http-request.md"
+date: 2024-01-20 17:59:56.180525-07:00
+description: "L\xE4hett\xE4m\xE4\xE4n HTTP-pyynn\xF6n tarkoittaa, ett\xE4 pyydet\xE4\
+  \xE4n tietoja verkossa olevasta palvelimesta tai l\xE4hetet\xE4\xE4n dataa sille.\
+  \ Ohjelmoijat tekev\xE4t t\xE4m\xE4n, koska se\u2026"
+lastmod: 2024-02-18 23:09:07.663120
+model: gpt-4-1106-preview
+summary: "L\xE4hett\xE4m\xE4\xE4n HTTP-pyynn\xF6n tarkoittaa, ett\xE4 pyydet\xE4\xE4\
+  n tietoja verkossa olevasta palvelimesta tai l\xE4hetet\xE4\xE4n dataa sille. Ohjelmoijat\
+  \ tekev\xE4t t\xE4m\xE4n, koska se\u2026"
+title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 ---
 
 {{< edit_this_page >}}

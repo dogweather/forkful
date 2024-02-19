@@ -1,13 +1,16 @@
 ---
-title:                "Obliczanie daty w przyszłości lub przeszłości"
 aliases:
 - /pl/lua/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:31:58.714171-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:31:58.714171-07:00
+description: "Calculating a date in the future or past to znalezienie konkretnej daty\
+  \ przed lub po wyznaczonej liczbie dni. Programi\u015Bci robi\u0105 to, aby obs\u0142\
+  ugiwa\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.753290
+model: gpt-4-1106-preview
+summary: "Calculating a date in the future or past to znalezienie konkretnej daty\
+  \ przed lub po wyznaczonej liczbie dni. Programi\u015Bci robi\u0105 to, aby obs\u0142\
+  ugiwa\u0107\u2026"
+title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 ---
 
 {{< edit_this_page >}}

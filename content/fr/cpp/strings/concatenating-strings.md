@@ -1,13 +1,16 @@
 ---
-title:                "Concaténation de chaînes de caractères"
 aliases:
 - /fr/cpp/concatenating-strings/
-date:                  2024-01-20T17:34:08.315368-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concaténation de chaînes de caractères"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/concatenating-strings.md"
+date: 2024-01-20 17:34:08.315368-07:00
+description: "La concat\xE9nation des cha\xEEnes, c'est quand on fusionne deux textes\
+  \ en un seul. Les d\xE9veloppeurs la font pour construire des messages dynamiques,\
+  \ g\xE9rer des\u2026"
+lastmod: 2024-02-18 23:09:09.151527
+model: gpt-4-1106-preview
+summary: "La concat\xE9nation des cha\xEEnes, c'est quand on fusionne deux textes\
+  \ en un seul. Les d\xE9veloppeurs la font pour construire des messages dynamiques,\
+  \ g\xE9rer des\u2026"
+title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

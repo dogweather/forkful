@@ -1,13 +1,26 @@
 ---
-title:                "인터랙티브 셸 (REPL) 사용하기"
 aliases:
 - /ko/rust/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:18:13.057107-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "인터랙티브 셸 (REPL) 사용하기"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:18:13.057107-07:00
+description: "Rust \uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\uB294 REPL(Read-Eval-Print\
+  \ Loop, \uC77D\uAE30-\uD3C9\uAC00-\uCD9C\uB825 \uB8E8\uD504)\uC740 \uC989\uAC01\uC801\
+  \uC778 \uACB0\uACFC\uB97C \uBCF4\uBA74\uC11C Rust \uCF54\uB4DC\uB97C \uC2E4\uD589\
+  \uD560 \uC218 \uC788\uAC8C \uD574\uC8FC\uC5B4, \uC2E4\uD5D8\uD558\uAE30\uB098 \uBC30\
+  \uC6B0\uAE30\uC5D0 \uC644\uBCBD\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB4E4\uC740 \uC804\uCCB4 \uD504\uB85C\uC81D\uD2B8\uB97C \uCEF4\uD30C\uC77C\uD558\
+  \uB294 \uBD80\uB2F4 \uC5C6\uC774 \uCF54\uB4DC \uC870\uAC01\uC744 \uD14C\uC2A4\uD2B8\
+  \uD558\uAC70\uB098\u2026"
+lastmod: 2024-02-18 23:09:05.886367
+model: gpt-4-0125-preview
+summary: "Rust \uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\uB294 REPL(Read-Eval-Print\
+  \ Loop, \uC77D\uAE30-\uD3C9\uAC00-\uCD9C\uB825 \uB8E8\uD504)\uC740 \uC989\uAC01\uC801\
+  \uC778 \uACB0\uACFC\uB97C \uBCF4\uBA74\uC11C Rust \uCF54\uB4DC\uB97C \uC2E4\uD589\
+  \uD560 \uC218 \uC788\uAC8C \uD574\uC8FC\uC5B4, \uC2E4\uD5D8\uD558\uAE30\uB098 \uBC30\
+  \uC6B0\uAE30\uC5D0 \uC644\uBCBD\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB4E4\uC740 \uC804\uCCB4 \uD504\uB85C\uC81D\uD2B8\uB97C \uCEF4\uD30C\uC77C\uD558\
+  \uB294 \uBD80\uB2F4 \uC5C6\uC774 \uCF54\uB4DC \uC870\uAC01\uC744 \uD14C\uC2A4\uD2B8\
+  \uD558\uAC70\uB098\u2026"
+title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

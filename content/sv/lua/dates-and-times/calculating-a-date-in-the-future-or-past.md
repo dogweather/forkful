@@ -1,13 +1,16 @@
 ---
-title:                "Beräkna ett datum i framtiden eller förflutenheten"
 aliases:
 - /sv/lua/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:31:28.802374-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Beräkna ett datum i framtiden eller förflutenheten"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/lua/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:31:28.802374-07:00
+description: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutet inneb\xE4r att man\
+  \ \xE4ndrar ett specifikt datum med ett visst antal dagar, m\xE5nader eller \xE5\
+  r. Programmerare g\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.931534
+model: gpt-4-1106-preview
+summary: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutet inneb\xE4r att man \xE4\
+  ndrar ett specifikt datum med ett visst antal dagar, m\xE5nader eller \xE5r. Programmerare\
+  \ g\xF6r\u2026"
+title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 ---
 
 {{< edit_this_page >}}

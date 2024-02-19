@@ -1,13 +1,15 @@
 ---
-title:                "Att organisera kod i funktioner"
 aliases:
 - /sv/clojure/organizing-code-into-functions/
-date:                  2024-01-26T01:09:28.447292-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Att organisera kod i funktioner"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/organizing-code-into-functions.md"
+date: 2024-01-26 01:09:28.447292-07:00
+description: "Att organisera kod i funktioner handlar om att paketera kodblock som\
+  \ utf\xF6r specifika uppgifter. Genom att g\xF6ra detta blir koden renare, l\xE4\
+  ttare att\u2026"
+lastmod: 2024-02-18 23:08:51.467406
+model: gpt-4-1106-preview
+summary: "Att organisera kod i funktioner handlar om att paketera kodblock som utf\xF6\
+  r specifika uppgifter. Genom att g\xF6ra detta blir koden renare, l\xE4ttare att\u2026"
+title: Att organisera kod i funktioner
 ---
 
 {{< edit_this_page >}}

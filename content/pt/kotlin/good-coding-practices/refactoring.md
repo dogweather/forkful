@@ -1,13 +1,16 @@
 ---
-title:                "Refatoração"
 aliases:
 - /pt/kotlin/refactoring/
-date:                  2024-01-26T01:44:01.959580-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refatoração"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/refactoring.md"
+date: 2024-01-26 01:44:01.959580-07:00
+description: "Refatora\xE7\xE3o \xE9 o processo de ajustar o c\xF3digo existente para\
+  \ melhorar sua estrutura, legibilidade e desempenho sem alterar seu comportamento\
+  \ externo.\u2026"
+lastmod: 2024-02-18 23:08:58.117686
+model: gpt-4-0125-preview
+summary: "Refatora\xE7\xE3o \xE9 o processo de ajustar o c\xF3digo existente para\
+  \ melhorar sua estrutura, legibilidade e desempenho sem alterar seu comportamento\
+  \ externo.\u2026"
+title: "Refatora\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

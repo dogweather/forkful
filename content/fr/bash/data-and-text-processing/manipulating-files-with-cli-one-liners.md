@@ -1,13 +1,14 @@
 ---
-title:                "Manipulation de fichiers avec des commandes en une ligne en CLI"
 aliases:
 - /fr/bash/manipulating-files-with-cli-one-liners/
-date:                  2024-01-27T16:20:32.344618-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulation de fichiers avec des commandes en une ligne en CLI"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/manipulating-files-with-cli-one-liners.md"
+date: 2024-01-27 16:20:32.344618-07:00
+description: "Manipuler des fichiers avec des lignes de commande CLI (Interface de\
+  \ Ligne de Commande) implique l'utilisation de scripts Bash ou de commandes pour\u2026"
+lastmod: 2024-02-18 23:09:09.013310
+model: gpt-4-0125-preview
+summary: "Manipuler des fichiers avec des lignes de commande CLI (Interface de Ligne\
+  \ de Commande) implique l'utilisation de scripts Bash ou de commandes pour\u2026"
+title: Manipulation de fichiers avec des commandes en une ligne en CLI
 ---
 
 {{< edit_this_page >}}

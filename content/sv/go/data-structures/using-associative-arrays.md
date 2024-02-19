@@ -1,14 +1,18 @@
 ---
-title:                "Använda associativa arrayer"
 aliases:
 - /sv/go/using-associative-arrays/
-date:                  2024-02-03T18:10:53.455404-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Använda associativa arrayer"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/using-associative-arrays.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:53.455404-07:00
+description: "Associerade arrayer, k\xE4nda som maps i Go, g\xF6r det m\xF6jligt f\xF6\
+  r dig att lagra nyckel-v\xE4rdepar d\xE4r varje unik nyckel mappas till ett v\xE4\
+  rde. Programmerare\u2026"
+lastmod: 2024-02-18 23:08:51.325830
+model: gpt-4-0125-preview
+summary: "Associerade arrayer, k\xE4nda som maps i Go, g\xF6r det m\xF6jligt f\xF6\
+  r dig att lagra nyckel-v\xE4rdepar d\xE4r varje unik nyckel mappas till ett v\xE4\
+  rde. Programmerare\u2026"
+title: "Anv\xE4nda associativa arrayer"
 ---
 
 {{< edit_this_page >}}

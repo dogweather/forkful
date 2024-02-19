@@ -1,13 +1,16 @@
 ---
-title:                "Interpolacja łańcuchów znaków"
 aliases:
 - /pl/c-sharp/interpolating-a-string/
-date:                  2024-01-20T17:50:40.594514-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolacja łańcuchów znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/interpolating-a-string.md"
+date: 2024-01-20 17:50:40.594514-07:00
+description: "Interpolacja string\xF3w to spos\xF3b wkluczania zmiennych bezpo\u015B\
+  rednio w ci\u0105gi tekstowe. Programi\u015Bci u\u017Cywaj\u0105 jej, by \u0142\
+  atwo \u0142\u0105czy\u0107 tekst z danymi, co czyni kod\u2026"
+lastmod: 2024-02-18 23:08:49.597295
+model: gpt-4-1106-preview
+summary: "Interpolacja string\xF3w to spos\xF3b wkluczania zmiennych bezpo\u015Brednio\
+  \ w ci\u0105gi tekstowe. Programi\u015Bci u\u017Cywaj\u0105 jej, by \u0142atwo \u0142\
+  \u0105czy\u0107 tekst z danymi, co czyni kod\u2026"
+title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 ---
 
 {{< edit_this_page >}}

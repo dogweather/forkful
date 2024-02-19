@@ -1,13 +1,15 @@
 ---
-title:                "Manipulation des nombres complexes"
 aliases:
 - /fr/java/working-with-complex-numbers/
-date:                  2024-01-26T04:41:49.084601-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulation des nombres complexes"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/working-with-complex-numbers.md"
+date: 2024-01-26 04:41:49.084601-07:00
+description: "Les nombres complexes \xE9tendent la ligne des nombres r\xE9els par\
+  \ l'ajout d'une unit\xE9 imaginaire, `i`, o\xF9 `i^2 = -1`. Ils sont cruciaux dans\
+  \ des domaines\u2026"
+lastmod: 2024-02-18 23:09:08.621752
+model: gpt-4-0125-preview
+summary: "Les nombres complexes \xE9tendent la ligne des nombres r\xE9els par l'ajout\
+  \ d'une unit\xE9 imaginaire, `i`, o\xF9 `i^2 = -1`. Ils sont cruciaux dans des domaines\u2026"
+title: Manipulation des nombres complexes
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Code in Funktionen organisieren"
 aliases:
 - /de/ruby/organizing-code-into-functions/
-date:                  2024-01-26T01:11:54.403673-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Code in Funktionen organisieren"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/organizing-code-into-functions.md"
+date: 2024-01-26 01:11:54.403673-07:00
+description: "Code in Funktionen zu organisieren teilt Ihr Skript in wiederverwendbare\
+  \ Bl\xF6cke auf. Es geht darum, Ihren Code sauber, handhabbar und weniger\u2026"
+lastmod: 2024-02-18 23:09:05.429132
+model: gpt-4-1106-preview
+summary: "Code in Funktionen zu organisieren teilt Ihr Skript in wiederverwendbare\
+  \ Bl\xF6cke auf. Es geht darum, Ihren Code sauber, handhabbar und weniger\u2026"
+title: Code in Funktionen organisieren
 ---
 
 {{< edit_this_page >}}

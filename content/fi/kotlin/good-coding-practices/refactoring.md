@@ -1,13 +1,14 @@
 ---
-title:                "Koodin uudelleenjärjestely"
 aliases:
 - /fi/kotlin/refactoring/
-date:                  2024-01-26T01:43:15.352121-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Koodin uudelleenjärjestely"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/refactoring.md"
+date: 2024-01-26 01:43:15.352121-07:00
+description: "Refaktorointi on prosessi, jossa olemassa olevaa koodia muokataan parantamaan\
+  \ sen rakennetta, luettavuutta ja suorituskyky\xE4 muuttamatta sen ulkoista\u2026"
+lastmod: 2024-02-18 23:09:07.583881
+model: gpt-4-0125-preview
+summary: "Refaktorointi on prosessi, jossa olemassa olevaa koodia muokataan parantamaan\
+  \ sen rakennetta, luettavuutta ja suorituskyky\xE4 muuttamatta sen ulkoista\u2026"
+title: "Koodin uudelleenj\xE4rjestely"
 ---
 
 {{< edit_this_page >}}

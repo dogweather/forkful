@@ -1,14 +1,18 @@
 ---
-title:                "Lähettäminen HTTP-pyyntö perustodennuksella"
 aliases:
 - /fi/c/sending-an-http-request-with-basic-authentication/
-date:                  2024-02-03T18:09:23.228746-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lähettäminen HTTP-pyyntö perustodennuksella"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:09:23.228746-07:00
+description: "HTTP-pyynt\xF6 perusautentikaatiolla C-kielell\xE4 l\xE4hett\xE4minen\
+  \ tarkoittaa HTTP-pyynn\xF6n muodostamista, joka sis\xE4lt\xE4\xE4 Authorization-otsakkeen\
+  \ k\xE4ytt\xE4j\xE4tiedot\u2026"
+lastmod: 2024-02-18 23:09:08.132121
+model: gpt-4-0125-preview
+summary: "HTTP-pyynt\xF6 perusautentikaatiolla C-kielell\xE4 l\xE4hett\xE4minen tarkoittaa\
+  \ HTTP-pyynn\xF6n muodostamista, joka sis\xE4lt\xE4\xE4 Authorization-otsakkeen\
+  \ k\xE4ytt\xE4j\xE4tiedot\u2026"
+title: "L\xE4hett\xE4minen HTTP-pyynt\xF6 perustodennuksella"
 ---
 
 {{< edit_this_page >}}

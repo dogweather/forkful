@@ -1,13 +1,15 @@
 ---
-title:                "Concatenando strings"
 aliases:
 - /pt/php/concatenating-strings/
-date:                  2024-01-20T17:35:33.731743-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenando strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/concatenating-strings.md"
+date: 2024-01-20 17:35:33.731743-07:00
+description: "Concatenar strings \xE9 basicamente junt\xE1-las para formar uma nova.\
+  \ Programadores fazem isso para montar mensagens, caminhos de arquivos, consultas\
+  \ SQL,\u2026"
+lastmod: 2024-02-18 23:08:58.232804
+model: gpt-4-1106-preview
+summary: "Concatenar strings \xE9 basicamente junt\xE1-las para formar uma nova. Programadores\
+  \ fazem isso para montar mensagens, caminhos de arquivos, consultas SQL,\u2026"
+title: Concatenando strings
 ---
 
 {{< edit_this_page >}}

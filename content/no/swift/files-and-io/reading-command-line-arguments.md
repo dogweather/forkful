@@ -1,13 +1,15 @@
 ---
-title:                "Lese kommandolinjeargumenter"
 aliases:
 - /no/swift/reading-command-line-arguments/
-date:                  2024-01-20T17:56:41.481245-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lese kommandolinjeargumenter"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:41.481245-07:00
+description: "Lesing av kommandolinjeargumenter lar programmer reagere p\xE5 input\
+  \ de f\xE5r n\xE5r de startes fra terminalen. Programmerere bruker dette til \xE5\
+  \ tilpasse\u2026"
+lastmod: 2024-02-18 23:08:54.283631
+model: gpt-4-1106-preview
+summary: "Lesing av kommandolinjeargumenter lar programmer reagere p\xE5 input de\
+  \ f\xE5r n\xE5r de startes fra terminalen. Programmerere bruker dette til \xE5 tilpasse\u2026"
+title: Lese kommandolinjeargumenter
 ---
 
 {{< edit_this_page >}}

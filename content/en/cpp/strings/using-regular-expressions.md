@@ -1,12 +1,15 @@
 ---
-title:                "Using regular expressions"
 aliases:
 - /en/cpp/using-regular-expressions/
-date:                  2024-02-03T19:02:48.448800-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using regular expressions"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/using-regular-expressions.md"
+date: 2024-02-03 19:02:48.448800-07:00
+description: "Regular expressions in C++ are sequences of characters that define a\
+  \ search pattern, used for string matching or manipulation. Programmers use them\
+  \ for\u2026"
+lastmod: 2024-02-18 23:09:11.345676
+model: gpt-4-0125-preview
+summary: "Regular expressions in C++ are sequences of characters that define a search\
+  \ pattern, used for string matching or manipulation. Programmers use them for\u2026"
+title: Using regular expressions
 ---
 
 {{< edit_this_page >}}

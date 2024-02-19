@@ -1,13 +1,14 @@
 ---
-title:                "Rounding numbers"
 aliases:
 - /en/elm/rounding-numbers/
-date:                  2024-01-25T02:59:57.763595-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rounding numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/rounding-numbers.md"
+date: 2024-01-25 02:59:57.763595-07:00
+description: "Rounding numbers is tweaking a decimal to its nearest whole value or\
+  \ to a specified number of fractional digits. Programmers round to reduce complexity,\u2026"
+lastmod: 2024-02-18 23:09:10.966834
+model: gpt-4-1106-preview
+summary: "Rounding numbers is tweaking a decimal to its nearest whole value or to\
+  \ a specified number of fractional digits. Programmers round to reduce complexity,\u2026"
+title: Rounding numbers
 ---
 
 {{< edit_this_page >}}

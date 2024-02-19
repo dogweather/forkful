@@ -1,13 +1,14 @@
 ---
-title:                "Gestione degli errori"
 aliases:
 - /it/c-sharp/handling-errors/
-date:                  2024-01-26T00:50:10.744079-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Gestione degli errori"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/handling-errors.md"
+date: 2024-01-26 00:50:10.744079-07:00
+description: "Gestire gli errori in C# significa gestire l'inaspettato\u2014come inciampare\
+  \ sui propri lacci delle scarpe. I programmi possono inciampare su dati errati o\u2026"
+lastmod: 2024-02-18 23:08:55.895355
+model: gpt-4-1106-preview
+summary: "Gestire gli errori in C# significa gestire l'inaspettato\u2014come inciampare\
+  \ sui propri lacci delle scarpe. I programmi possono inciampare su dati errati o\u2026"
+title: Gestione degli errori
 ---
 
 {{< edit_this_page >}}

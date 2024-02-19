@@ -1,13 +1,16 @@
 ---
-title:                "Generowanie liczb losowych"
 aliases:
 - /pl/rust/generating-random-numbers/
-date:                  2024-01-27T20:35:27.329547-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generowanie liczb losowych"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/generating-random-numbers.md"
+date: 2024-01-27 20:35:27.329547-07:00
+description: "Generowanie losowych liczb w Rust polega na korzystaniu z bibliotek\
+  \ do produkcji nieprzewidywalnych warto\u015Bci liczbowych, co jest niezb\u0119\
+  dne do zada\u0144 z\u2026"
+lastmod: 2024-02-18 23:08:49.386074
+model: gpt-4-0125-preview
+summary: "Generowanie losowych liczb w Rust polega na korzystaniu z bibliotek do produkcji\
+  \ nieprzewidywalnych warto\u015Bci liczbowych, co jest niezb\u0119dne do zada\u0144\
+  \ z\u2026"
+title: Generowanie liczb losowych
 ---
 
 {{< edit_this_page >}}

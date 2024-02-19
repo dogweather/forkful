@@ -1,14 +1,21 @@
 ---
-title:                "创建临时文件"
 aliases:
 - /zh/elm/creating-a-temporary-file/
-date:                  2024-01-20T17:39:58.782275-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "创建临时文件"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/creating-a-temporary-file.md"
+date: 2024-01-20 17:39:58.782275-07:00
+description: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6\u901A\u5E38\u7528\u4E8E\u4E34\u65F6\
+  \u5B58\u50A8\u4FE1\u606F\uFF0C\u51CF\u5C11\u5185\u5B58\u4F7F\u7528\u3002\u7A0B\u5E8F\
+  \u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u786E\u4FDD\u6570\u636E\u7684\u4E34\u65F6\
+  \u5904\u7406\u5B89\u5168\u3001\u6709\u6548\uFF0C\u901A\u5E38\u7528\u4E8E\u6D4B\u8BD5\
+  \u6216\u7F13\u5B58\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.075222
+model: gpt-4-1106-preview
+summary: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6\u901A\u5E38\u7528\u4E8E\u4E34\u65F6\
+  \u5B58\u50A8\u4FE1\u606F\uFF0C\u51CF\u5C11\u5185\u5B58\u4F7F\u7528\u3002\u7A0B\u5E8F\
+  \u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u786E\u4FDD\u6570\u636E\u7684\u4E34\u65F6\
+  \u5904\u7406\u5B89\u5168\u3001\u6709\u6548\uFF0C\u901A\u5E38\u7528\u4E8E\u6D4B\u8BD5\
+  \u6216\u7F13\u5B58\u3002"
+title: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

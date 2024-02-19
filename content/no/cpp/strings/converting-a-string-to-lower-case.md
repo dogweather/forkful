@@ -1,13 +1,16 @@
 ---
-title:                "Konvertere en streng til små bokstaver"
 aliases:
 - /no/cpp/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:06.523323-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konvertere en streng til små bokstaver"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:06.523323-07:00
+description: "Omforming av strenger til sm\xE5 bokstaver betyr \xE5 konvertere alle\
+  \ tegn i en streng til deres tilsvarende sm\xE5 bokstavform. Programmerere gj\xF8\
+  r dette for data-\u2026"
+lastmod: 2024-02-18 23:08:54.171577
+model: gpt-4-1106-preview
+summary: "Omforming av strenger til sm\xE5 bokstaver betyr \xE5 konvertere alle tegn\
+  \ i en streng til deres tilsvarende sm\xE5 bokstavform. Programmerere gj\xF8r dette\
+  \ for data-\u2026"
+title: "Konvertere en streng til sm\xE5 bokstaver"
 ---
 
 {{< edit_this_page >}}

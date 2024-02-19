@@ -1,13 +1,16 @@
 ---
-title:                "Virheiden käsittely"
 aliases:
 - /fi/cpp/handling-errors/
-date:                  2024-01-26T00:50:13.044951-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheiden käsittely"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/handling-errors.md"
+date: 2024-01-26 00:50:13.044951-07:00
+description: "Virheiden k\xE4sittely tarkoittaa suunnitelmien tekemist\xE4 silloin,\
+  \ kun asiat menev\xE4t pieleen. Se on t\xE4rke\xE4\xE4, koska se auttaa v\xE4ltt\xE4\
+  m\xE4\xE4n kaatumisia ja tekee\u2026"
+lastmod: 2024-02-18 23:09:07.952135
+model: gpt-4-1106-preview
+summary: "Virheiden k\xE4sittely tarkoittaa suunnitelmien tekemist\xE4 silloin, kun\
+  \ asiat menev\xE4t pieleen. Se on t\xE4rke\xE4\xE4, koska se auttaa v\xE4ltt\xE4\
+  m\xE4\xE4n kaatumisia ja tekee\u2026"
+title: "Virheiden k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

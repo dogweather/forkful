@@ -1,15 +1,22 @@
 ---
-title:                "Đọc một tệp văn bản"
 aliases:
 - /vi/c-sharp/reading-a-text-file/
-date:                  2024-01-28T22:05:11.688018-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Đọc một tệp văn bản"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/reading-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:05:11.688018-07:00
+description: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 l\u1EA5y d\u1EEF\
+  \ li\u1EC7u t\u1EEB m\u1ED9t t\u1EC7p ch\u1EE9a v\u0103n b\u1EA3n. L\u1EADp tr\xEC\
+  nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u1EA3i c\u1EA5u h\xECnh,\
+  \ \u0111\u1ECDc d\u1EEF li\u1EC7u ho\u1EB7c n\u1EA1p c\xE1c t\xE0i nguy\xEAn qu\xE1\
+  \ c\u1ED3ng k\u1EC1nh\u2026"
+lastmod: 2024-02-18 23:08:50.717698
+model: gpt-4-0125-preview
+summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 l\u1EA5y d\u1EEF\
+  \ li\u1EC7u t\u1EEB m\u1ED9t t\u1EC7p ch\u1EE9a v\u0103n b\u1EA3n. L\u1EADp tr\xEC\
+  nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u1EA3i c\u1EA5u h\xECnh,\
+  \ \u0111\u1ECDc d\u1EEF li\u1EC7u ho\u1EB7c n\u1EA1p c\xE1c t\xE0i nguy\xEAn qu\xE1\
+  \ c\u1ED3ng k\u1EC1nh\u2026"
+title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 ---
 
 {{< edit_this_page >}}

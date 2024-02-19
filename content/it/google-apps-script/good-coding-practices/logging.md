@@ -1,14 +1,16 @@
 ---
-title:                "Registrazione"
 aliases:
 - /it/google-apps-script/logging/
-date:                  2024-02-01T21:56:24.808235-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Registrazione"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/google-apps-script/logging.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:56:24.808235-07:00
+description: "Il logging nella programmazione comporta la registrazione di eventi,\
+  \ errori o occorrenze notevoli durante l'esecuzione. I programmatori lo fanno per\u2026"
+lastmod: 2024-02-18 23:08:55.484949
+model: gpt-4-0125-preview
+summary: "Il logging nella programmazione comporta la registrazione di eventi, errori\
+  \ o occorrenze notevoli durante l'esecuzione. I programmatori lo fanno per\u2026"
+title: Registrazione
 ---
 
 {{< edit_this_page >}}

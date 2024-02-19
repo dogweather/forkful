@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie do standardowego błędu"
 aliases:
 - /pl/clojure/writing-to-standard-error/
-date:                  2024-02-03T19:33:03.998061-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie do standardowego błędu"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:33:03.998061-07:00
+description: "Zapisywanie do standardowego b\u0142\u0119du (stderr) polega na kierowaniu\
+  \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki do strumienia stderr, oddzielnie\
+  \ od standardowego\u2026"
+lastmod: 2024-02-18 23:08:49.280667
+model: gpt-4-0125-preview
+summary: "Zapisywanie do standardowego b\u0142\u0119du (stderr) polega na kierowaniu\
+  \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki do strumienia stderr, oddzielnie\
+  \ od standardowego\u2026"
+title: "Pisanie do standardowego b\u0142\u0119du"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Merkkien poistaminen hakemalla osumia kaavaan"
 aliases:
 - /fi/haskell/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:19.161789-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:19.161789-07:00
+description: "Haskellissa merkkien poistaminen kuvion mukaisesti tarkoittaa ei-toivottujen\
+  \ merkkien suodattamista sy\xF6tteest\xE4. Ohjelmoijat tekev\xE4t t\xE4m\xE4n datan\u2026"
+lastmod: 2024-02-18 23:09:07.649580
+model: gpt-4-1106-preview
+summary: "Haskellissa merkkien poistaminen kuvion mukaisesti tarkoittaa ei-toivottujen\
+  \ merkkien suodattamista sy\xF6tteest\xE4. Ohjelmoijat tekev\xE4t t\xE4m\xE4n datan\u2026"
+title: Merkkien poistaminen hakemalla osumia kaavaan
 ---
 
 {{< edit_this_page >}}

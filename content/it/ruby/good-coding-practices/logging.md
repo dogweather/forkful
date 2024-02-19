@@ -1,13 +1,15 @@
 ---
-title:                "Registrazione delle Attività (Logging)"
 aliases:
 - /it/ruby/logging/
-date:                  2024-01-26T01:07:45.839285-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registrazione delle Attività (Logging)"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/logging.md"
+date: 2024-01-26 01:07:45.839285-07:00
+description: "Il logging nella programmazione \xE8 come tenere un diario per la tua\
+  \ applicazione. \xC8 la registrazione sistematica di eventi, messaggi e punti dati\
+  \ che ti\u2026"
+lastmod: 2024-02-18 23:08:56.389225
+model: gpt-4-1106-preview
+summary: "Il logging nella programmazione \xE8 come tenere un diario per la tua applicazione.\
+  \ \xC8 la registrazione sistematica di eventi, messaggi e punti dati che ti\u2026"
+title: "Registrazione delle Attivit\xE0 (Logging)"
 ---
 
 {{< edit_this_page >}}

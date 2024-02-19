@@ -1,14 +1,28 @@
 ---
-title:                "문자열 보간하기"
 aliases:
 - /ko/go/interpolating-a-string/
-date:                  2024-02-03T17:58:39.603739-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열 보간하기"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/interpolating-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:58:39.603739-07:00
+description: "\uBB38\uC790\uC5F4 \uBCF4\uAC04(string interpolation)\uC740 \uBCC0\uC218\
+  \uB97C \uD3EC\uD568\uD558\uC5EC \uBB38\uC790\uC5F4\uC744 \uAD6C\uC131\uD558\uB294\
+  \ \uBC29\uBC95\uC73C\uB85C, \uB3D9\uC801 \uBB38\uC790\uC5F4 \uC0DD\uC131\uC744 \uAC00\
+  \uB2A5\uD558\uAC8C \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\
+  \ \uC774\uB97C \uC0AC\uC6A9\uD558\uC5EC \uBA54\uC2DC\uC9C0\uB97C \uB9DE\uCDA4 \uC124\
+  \uC815\uD558\uAC70\uB098, URL\uC744 \uAD6C\uC131\uD558\uAC70\uB098, SQL \uCFFC\uB9AC\
+  \uB97C \uC0DD\uC131\uD558\uB294 \uB4F1\uC758 \uC791\uC5C5\uC744 \uC218\uD589\uD558\
+  \uBA70, \uC774\uB97C \uD1B5\uD574 \uCF54\uB4DC\uC758\u2026"
+lastmod: 2024-02-18 23:09:05.456181
+model: gpt-4-0125-preview
+summary: "\uBB38\uC790\uC5F4 \uBCF4\uAC04(string interpolation)\uC740 \uBCC0\uC218\
+  \uB97C \uD3EC\uD568\uD558\uC5EC \uBB38\uC790\uC5F4\uC744 \uAD6C\uC131\uD558\uB294\
+  \ \uBC29\uBC95\uC73C\uB85C, \uB3D9\uC801 \uBB38\uC790\uC5F4 \uC0DD\uC131\uC744 \uAC00\
+  \uB2A5\uD558\uAC8C \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\
+  \ \uC774\uB97C \uC0AC\uC6A9\uD558\uC5EC \uBA54\uC2DC\uC9C0\uB97C \uB9DE\uCDA4 \uC124\
+  \uC815\uD558\uAC70\uB098, URL\uC744 \uAD6C\uC131\uD558\uAC70\uB098, SQL \uCFFC\uB9AC\
+  \uB97C \uC0DD\uC131\uD558\uB294 \uB4F1\uC758 \uC791\uC5C5\uC744 \uC218\uD589\uD558\
+  \uBA70, \uC774\uB97C \uD1B5\uD574 \uCF54\uB4DC\uC758\u2026"
+title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

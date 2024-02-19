@@ -1,14 +1,16 @@
 ---
-title:                "Een tekstbestand schrijven"
 aliases:
 - /nl/vba/writing-a-text-file/
-date:                  2024-02-01T22:08:19.376206-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tekstbestand schrijven"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/vba/writing-a-text-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:08:19.376206-07:00
+description: "Een tekstbestand schrijven in Visual Basic for Applications (VBA) houdt\
+  \ in dat je tekstgegevens aanmaakt, wijzigt of toevoegt aan bestanden, een\u2026"
+lastmod: 2024-02-18 23:09:01.686474
+model: gpt-4-0125-preview
+summary: "Een tekstbestand schrijven in Visual Basic for Applications (VBA) houdt\
+  \ in dat je tekstgegevens aanmaakt, wijzigt of toevoegt aan bestanden, een\u2026"
+title: Een tekstbestand schrijven
 ---
 
 {{< edit_this_page >}}

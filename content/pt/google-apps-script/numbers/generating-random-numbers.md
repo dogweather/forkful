@@ -1,14 +1,18 @@
 ---
-title:                "Gerando números aleatórios"
 aliases:
 - /pt/google-apps-script/generating-random-numbers/
-date:                  2024-02-01T21:54:04.144975-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gerando números aleatórios"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/google-apps-script/generating-random-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:04.144975-07:00
+description: "Gerar n\xFAmeros aleat\xF3rios \xE9 uma tarefa fundamental na programa\xE7\
+  \xE3o que \xE9 usada para uma mir\xEDade de aplica\xE7\xF5es, como simula\xE7\xF5\
+  es, jogos e sistemas de\u2026"
+lastmod: 2024-02-18 23:08:57.710981
+model: gpt-4-0125-preview
+summary: "Gerar n\xFAmeros aleat\xF3rios \xE9 uma tarefa fundamental na programa\xE7\
+  \xE3o que \xE9 usada para uma mir\xEDade de aplica\xE7\xF5es, como simula\xE7\xF5\
+  es, jogos e sistemas de\u2026"
+title: "Gerando n\xFAmeros aleat\xF3rios"
 ---
 
 {{< edit_this_page >}}

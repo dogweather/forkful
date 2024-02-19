@@ -1,14 +1,16 @@
 ---
-title:                "Sprawdzanie, czy katalog istnieje"
 aliases:
 - /pl/php/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:26.047038-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sprawdzanie, czy katalog istnieje"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:26.047038-07:00
+description: "Sprawdzanie, czy katalog istnieje, jest podstawowym zadaniem w programowaniu\
+  \ PHP, poniewa\u017C pozwala na weryfikacj\u0119 obecno\u015Bci katalogu przed wykonaniem\u2026"
+lastmod: 2024-02-18 23:08:49.710353
+model: gpt-4-0125-preview
+summary: "Sprawdzanie, czy katalog istnieje, jest podstawowym zadaniem w programowaniu\
+  \ PHP, poniewa\u017C pozwala na weryfikacj\u0119 obecno\u015Bci katalogu przed wykonaniem\u2026"
+title: Sprawdzanie, czy katalog istnieje
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Einen HTTP-Request senden"
 aliases:
 - /de/bash/sending-an-http-request/
-date:                  2024-01-20T17:59:02.407574-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Einen HTTP-Request senden"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/sending-an-http-request.md"
+date: 2024-01-20 17:59:02.407574-07:00
+description: "HTTP-Anfragen (Hypertext Transfer Protocol) sind die Basis des Webs.\
+  \ Programmierer nutzen sie, um mit Webservern zu kommunizieren \u2013 Daten abfragen\
+  \ oder\u2026"
+lastmod: 2024-02-18 23:09:05.051087
+model: gpt-4-1106-preview
+summary: "HTTP-Anfragen (Hypertext Transfer Protocol) sind die Basis des Webs. Programmierer\
+  \ nutzen sie, um mit Webservern zu kommunizieren \u2013 Daten abfragen oder\u2026"
+title: Einen HTTP-Request senden
 ---
 
 {{< edit_this_page >}}

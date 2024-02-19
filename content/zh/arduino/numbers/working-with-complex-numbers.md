@@ -1,13 +1,20 @@
 ---
-title:                "处理复数"
 aliases:
 - /zh/arduino/working-with-complex-numbers/
-date:                  2024-01-26T04:36:52.916098-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理复数"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/working-with-complex-numbers.md"
+date: 2024-01-26 04:36:52.916098-07:00
+description: "\u590D\u6570\u6709\u5B9E\u90E8\u548C\u865A\u90E8\uFF0C\u901A\u5E38\u5199\
+  \u4F5C`a + bi`\u3002\u5B83\u4EEC\u5BF9\u4E8E\u4E00\u4E9B\u6D89\u53CA\u4FE1\u53F7\
+  \u5904\u7406\u3001\u7535\u6C14\u5DE5\u7A0B\u6216\u4EFB\u4F55\u5176\u4ED6\u6700\u597D\
+  \u5728\u5E73\u9762\u4E2D\u5EFA\u6A21\u7684\u73B0\u8C61\u7684\u6570\u5B66\u5BC6\u96C6\
+  \u578BArduino\u9879\u76EE\u81F3\u5173\u91CD\u8981\u3002"
+lastmod: 2024-02-18 23:08:59.364198
+model: gpt-4-0125-preview
+summary: "\u590D\u6570\u6709\u5B9E\u90E8\u548C\u865A\u90E8\uFF0C\u901A\u5E38\u5199\
+  \u4F5C`a + bi`\u3002\u5B83\u4EEC\u5BF9\u4E8E\u4E00\u4E9B\u6D89\u53CA\u4FE1\u53F7\
+  \u5904\u7406\u3001\u7535\u6C14\u5DE5\u7A0B\u6216\u4EFB\u4F55\u5176\u4ED6\u6700\u597D\
+  \u5728\u5E73\u9762\u4E2D\u5EFA\u6A21\u7684\u73B0\u8C61\u7684\u6570\u5B66\u5BC6\u96C6\
+  \u578BArduino\u9879\u76EE\u81F3\u5173\u91CD\u8981\u3002"
+title: "\u5904\u7406\u590D\u6570"
 ---
 
 {{< edit_this_page >}}

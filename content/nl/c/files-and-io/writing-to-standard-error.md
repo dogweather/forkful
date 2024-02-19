@@ -1,14 +1,16 @@
 ---
-title:                "Schrijven naar standaardfout"
 aliases:
 - /nl/c/writing-to-standard-error/
-date:                  2024-02-03T18:15:01.143013-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Schrijven naar standaardfout"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:15:01.143013-07:00
+description: "Schrijven naar de standaardfout in C houdt in dat foutmeldingen en diagnostische\
+  \ informatie naar een aparte stroom worden geleid dan de hoofdprogramma-\u2026"
+lastmod: 2024-02-18 23:09:02.391596
+model: gpt-4-0125-preview
+summary: "Schrijven naar de standaardfout in C houdt in dat foutmeldingen en diagnostische\
+  \ informatie naar een aparte stroom worden geleid dan de hoofdprogramma-\u2026"
+title: Schrijven naar standaardfout
 ---
 
 {{< edit_this_page >}}

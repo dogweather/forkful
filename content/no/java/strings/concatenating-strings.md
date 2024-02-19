@@ -1,13 +1,16 @@
 ---
-title:                "Sammenslåing av strenger"
 aliases:
 - /no/java/concatenating-strings/
-date:                  2024-01-20T17:34:59.188104-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammenslåing av strenger"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/concatenating-strings.md"
+date: 2024-01-20 17:34:59.188104-07:00
+description: "I Java smelter vi sammen tekststrenger ved \xE5 konkatere dem. Dette\
+  \ gj\xF8r vi for \xE5 bygge setninger, dynamiske meldinger eller for \xE5 sl\xE5\
+  \ sammen data til en\u2026"
+lastmod: 2024-02-18 23:08:53.763152
+model: gpt-4-1106-preview
+summary: "I Java smelter vi sammen tekststrenger ved \xE5 konkatere dem. Dette gj\xF8\
+  r vi for \xE5 bygge setninger, dynamiske meldinger eller for \xE5 sl\xE5 sammen\
+  \ data til en\u2026"
+title: "Sammensl\xE5ing av strenger"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,20 @@
 ---
-title:                "Nội suy chuỗi ký tự"
 aliases:
 - /vi/vba/interpolating-a-string/
-date:                  2024-02-01T21:55:59.784760-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Nội suy chuỗi ký tự"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/interpolating-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:59.784760-07:00
+description: "N\u1ED9i suy chu\u1ED7i trong Visual Basic cho \u1EE8ng d\u1EE5ng (VBA)\
+  \ \u0111\u1EC1 c\u1EADp \u0111\u1EBFn qu\xE1 tr\xECnh nh\xFAng bi\u1EBFn ho\u1EB7\
+  c bi\u1EC3u th\u1EE9c v\xE0o trong m\u1ED9t chu\u1ED7i k\xFD t\u1EF1, cho ph\xE9\
+  p t\u1EA1o chu\u1ED7i \u0111\u1ED9ng. L\u1EADp\u2026"
+lastmod: 2024-02-18 23:08:50.493388
+model: gpt-4-0125-preview
+summary: "N\u1ED9i suy chu\u1ED7i trong Visual Basic cho \u1EE8ng d\u1EE5ng (VBA)\
+  \ \u0111\u1EC1 c\u1EADp \u0111\u1EBFn qu\xE1 tr\xECnh nh\xFAng bi\u1EBFn ho\u1EB7\
+  c bi\u1EC3u th\u1EE9c v\xE0o trong m\u1ED9t chu\u1ED7i k\xFD t\u1EF1, cho ph\xE9\
+  p t\u1EA1o chu\u1ED7i \u0111\u1ED9ng. L\u1EADp\u2026"
+title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 ---
 
 {{< edit_this_page >}}

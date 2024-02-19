@@ -1,13 +1,14 @@
 ---
-title:                "Lesen von Kommandozeilenargumenten"
 aliases:
 - /de/clojure/reading-command-line-arguments/
-date:                  2024-01-20T17:55:38.396030-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lesen von Kommandozeilenargumenten"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:38.396030-07:00
+description: "Lesen von Kommandozeilenargumenten erm\xF6glicht es Programmen, beim\
+  \ Start spezifische Optionen und Daten zu erhalten. Programmierer nutzen dies, um\u2026"
+lastmod: 2024-02-18 23:09:04.523469
+model: gpt-4-1106-preview
+summary: "Lesen von Kommandozeilenargumenten erm\xF6glicht es Programmen, beim Start\
+  \ spezifische Optionen und Daten zu erhalten. Programmierer nutzen dies, um\u2026"
+title: Lesen von Kommandozeilenargumenten
 ---
 
 {{< edit_this_page >}}

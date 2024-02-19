@@ -1,14 +1,16 @@
 ---
-title:                "Kommandozeilenargumente lesen"
 aliases:
 - /de/c/reading-command-line-arguments/
-date:                  2024-02-03T18:05:58.013267-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kommandozeilenargumente lesen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:58.013267-07:00
+description: "In der C-Programmierung erm\xF6glicht das Lesen von Befehlszeilenargumenten,\
+  \ dass Programme Eingaben direkt aus dem Terminal akzeptieren k\xF6nnen, was\u2026"
+lastmod: 2024-02-18 23:09:05.391724
+model: gpt-4-0125-preview
+summary: "In der C-Programmierung erm\xF6glicht das Lesen von Befehlszeilenargumenten,\
+  \ dass Programme Eingaben direkt aus dem Terminal akzeptieren k\xF6nnen, was\u2026"
+title: Kommandozeilenargumente lesen
 ---
 
 {{< edit_this_page >}}

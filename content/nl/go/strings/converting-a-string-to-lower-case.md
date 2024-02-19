@@ -1,14 +1,16 @@
 ---
-title:                "Een string converteren naar kleine letters"
 aliases:
 - /nl/go/converting-a-string-to-lower-case/
-date:                  2024-02-03T17:54:54.159451-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string converteren naar kleine letters"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:54.159451-07:00
+description: "Het omzetten van een tekenreeks naar kleine letters is een fundamentele\
+  \ bewerking die uniformiteit en consistentie in tekstverwerking mogelijk maakt,\u2026"
+lastmod: 2024-02-18 23:09:01.323646
+model: gpt-4-0125-preview
+summary: "Het omzetten van een tekenreeks naar kleine letters is een fundamentele\
+  \ bewerking die uniformiteit en consistentie in tekstverwerking mogelijk maakt,\u2026"
+title: Een string converteren naar kleine letters
 ---
 
 {{< edit_this_page >}}

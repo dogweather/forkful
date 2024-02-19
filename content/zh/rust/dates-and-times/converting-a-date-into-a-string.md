@@ -1,14 +1,13 @@
 ---
-title:                "将日期转换为字符串"
 aliases:
 - /zh/rust/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:26.064471-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "将日期转换为字符串"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:26.064471-07:00
+description: ''
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:58.951394
+model: gpt-4-1106-preview
+summary: ''
+title: "\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Concatenación de cadenas de texto"
 aliases:
 - /es/haskell/concatenating-strings/
-date:                  2024-01-20T17:34:49.613199-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenación de cadenas de texto"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/concatenating-strings.md"
+date: 2024-01-20 17:34:49.613199-07:00
+description: "La concatenaci\xF3n de cadenas es el proceso de unir dos o m\xE1s cadenas\
+  \ para formar una nueva. Los programadores concatenan cadenas para construir mensajes,\u2026"
+lastmod: 2024-02-18 23:09:10.019284
+model: gpt-4-1106-preview
+summary: "La concatenaci\xF3n de cadenas es el proceso de unir dos o m\xE1s cadenas\
+  \ para formar una nueva. Los programadores concatenan cadenas para construir mensajes,\u2026"
+title: "Concatenaci\xF3n de cadenas de texto"
 ---
 
 {{< edit_this_page >}}

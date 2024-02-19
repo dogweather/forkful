@@ -1,13 +1,16 @@
 ---
-title:                "Lokitus"
 aliases:
 - /fi/php/logging/
-date:                  2024-01-26T01:07:19.359731-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lokitus"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/logging.md"
+date: 2024-01-26 01:07:19.359731-07:00
+description: "Lokittaminen on k\xE4yt\xE4nn\xF6ss\xE4 kuin p\xE4iv\xE4kirjan pit\xE4\
+  mist\xE4 koodillesi; se on tapa tallentaa tapahtumia, virheit\xE4 ja muita merkitt\xE4\
+  vi\xE4 datapisteit\xE4, jotka\u2026"
+lastmod: 2024-02-18 23:09:07.718524
+model: gpt-4-1106-preview
+summary: "Lokittaminen on k\xE4yt\xE4nn\xF6ss\xE4 kuin p\xE4iv\xE4kirjan pit\xE4mist\xE4\
+  \ koodillesi; se on tapa tallentaa tapahtumia, virheit\xE4 ja muita merkitt\xE4\
+  vi\xE4 datapisteit\xE4, jotka\u2026"
+title: Lokitus
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,21 @@
 ---
-title:                "부분 문자열 추출"
 aliases:
 - /ko/ruby/extracting-substrings/
-date:                  2024-01-20T17:46:44.622784-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "부분 문자열 추출"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/extracting-substrings.md"
+date: 2024-01-20 17:46:44.622784-07:00
+description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uBD80\uBD84\uC744 \uBF51\
+  \uC544\uB0B4\uB294 \uAC83\uC744 \"\uC11C\uBE0C\uC2A4\uD2B8\uB9C1 \uCD94\uCD9C\"\uC774\
+  \uB77C \uD569\uB2C8\uB2E4. \uB370\uC774\uD130\uB97C \uB2E4\uB8F0 \uB54C \uC6B0\uB9AC\
+  \uAC00 \uD544\uC694\uD55C \uC815\uBCF4\uB9CC \uBE60\uB974\uAC8C \uCC3E\uAE30 \uC704\
+  \uD574 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:07.005517
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uBD80\uBD84\uC744 \uBF51\uC544\
+  \uB0B4\uB294 \uAC83\uC744 \"\uC11C\uBE0C\uC2A4\uD2B8\uB9C1 \uCD94\uCD9C\"\uC774\uB77C\
+  \ \uD569\uB2C8\uB2E4. \uB370\uC774\uD130\uB97C \uB2E4\uB8F0 \uB54C \uC6B0\uB9AC\uAC00\
+  \ \uD544\uC694\uD55C \uC815\uBCF4\uB9CC \uBE60\uB974\uAC8C \uCC3E\uAE30 \uC704\uD574\
+  \ \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C"
 ---
 
 {{< edit_this_page >}}

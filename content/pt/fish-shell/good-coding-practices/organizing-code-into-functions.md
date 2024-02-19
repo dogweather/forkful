@@ -1,16 +1,19 @@
 ---
-title:                "Organizando código em funções"
 aliases:
 - /pt/fish-shell/organizing-code-into-functions/
-date:                  2024-01-28T23:01:27.474205-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Organizando código em funções"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/organizing-code-into-functions.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed and added links
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed and added links
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 23:01:27.474205-07:00
+description: "Organizar o c\xF3digo em fun\xE7\xF5es \xE9 sobre agrupar peda\xE7os\
+  \ de script para realizar tarefas espec\xEDficas. Fazemos isso porque torna o c\xF3\
+  digo mais f\xE1cil de ler,\u2026"
+lastmod: 2024-02-18 23:08:58.581060
+model: gpt-4-0125-preview
+summary: "Organizar o c\xF3digo em fun\xE7\xF5es \xE9 sobre agrupar peda\xE7os de\
+  \ script para realizar tarefas espec\xEDficas. Fazemos isso porque torna o c\xF3\
+  digo mais f\xE1cil de ler,\u2026"
+title: "Organizando c\xF3digo em fun\xE7\xF5es"
 ---
 
 {{< edit_this_page >}}

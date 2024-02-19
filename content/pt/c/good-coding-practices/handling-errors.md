@@ -1,14 +1,18 @@
 ---
-title:                "Gerenciando erros"
 aliases:
 - /pt/c/handling-errors/
-date:                  2024-02-03T17:57:54.046209-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gerenciando erros"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/handling-errors.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:54.046209-07:00
+description: "O tratamento de erros em C envolve a detec\xE7\xE3o e resposta a condi\xE7\
+  \xF5es an\xF4malas que surgem durante a execu\xE7\xE3o do programa. Os programadores\
+  \ fazem isso para\u2026"
+lastmod: 2024-02-18 23:08:58.627368
+model: gpt-4-0125-preview
+summary: "O tratamento de erros em C envolve a detec\xE7\xE3o e resposta a condi\xE7\
+  \xF5es an\xF4malas que surgem durante a execu\xE7\xE3o do programa. Os programadores\
+  \ fazem isso para\u2026"
+title: Gerenciando erros
 ---
 
 {{< edit_this_page >}}

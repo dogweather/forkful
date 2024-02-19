@@ -1,14 +1,16 @@
 ---
-title:                "Säännöllisten lausekkeiden käyttö"
 aliases:
 - /fi/bash/using-regular-expressions/
-date:                  2024-02-03T19:16:13.089329-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Säännöllisten lausekkeiden käyttö"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:16:13.089329-07:00
+description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Bashissa mahdollistavat merkkijonojen\
+  \ ja tiedostojen etsimisen, manipuloinnin ja k\xE4sittelyn tiettyjen mallien perusteella.\u2026"
+lastmod: 2024-02-18 23:09:07.791541
+model: gpt-4-0125-preview
+summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Bashissa mahdollistavat merkkijonojen\
+  \ ja tiedostojen etsimisen, manipuloinnin ja k\xE4sittelyn tiettyjen mallien perusteella.\u2026"
+title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

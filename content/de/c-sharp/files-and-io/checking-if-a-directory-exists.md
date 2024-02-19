@@ -1,14 +1,17 @@
 ---
-title:                "Überprüfung, ob ein Verzeichnis existiert"
 aliases:
 - /de/c-sharp/checking-if-a-directory-exists/
-date:                  2024-02-03T19:07:07.187714-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:07:07.187714-07:00
+description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in C# existiert, involviert\
+  \ die Verifizierung der Pr\xE4senz eines Ordners in einem spezifizierten Pfad im\
+  \ Dateisystem.\u2026"
+lastmod: 2024-02-18 23:09:04.886805
+model: gpt-4-0125-preview
+summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in C# existiert, involviert die\
+  \ Verifizierung der Pr\xE4senz eines Ordners in einem spezifizierten Pfad im Dateisystem.\u2026"
+title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Debug-Ausgaben drucken"
 aliases:
 - /de/kotlin/printing-debug-output/
-date:                  2024-01-20T17:52:46.688350-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Debug-Ausgaben drucken"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/printing-debug-output.md"
+date: 2024-01-20 17:52:46.688350-07:00
+description: "Debug-Ausgaben dienen dazu, den Programmfluss und Variablenwerte w\xE4\
+  hrend der Laufzeit zu beobachten. Programmierer nutzen sie, um Fehler schneller\
+  \ zu\u2026"
+lastmod: 2024-02-18 23:09:04.829167
+model: gpt-4-1106-preview
+summary: "Debug-Ausgaben dienen dazu, den Programmfluss und Variablenwerte w\xE4hrend\
+  \ der Laufzeit zu beobachten. Programmierer nutzen sie, um Fehler schneller zu\u2026"
+title: Debug-Ausgaben drucken
 ---
 
 {{< edit_this_page >}}

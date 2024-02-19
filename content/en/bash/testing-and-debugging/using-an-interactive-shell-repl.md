@@ -1,13 +1,14 @@
 ---
-title:                "Using an interactive shell (REPL)"
 aliases:
 - /en/bash/using-an-interactive-shell-repl/
-date:                  2024-01-25T03:39:54.985454-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Using an interactive shell (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/using-an-interactive-shell-repl.md"
+date: 2024-01-25 03:39:54.985454-07:00
+description: "REPL stands for Read-Eval-Print Loop, a simple, interactive computer\
+  \ programming environment. Coders use it to quickly write and test code, experiment\u2026"
+lastmod: 2024-02-18 23:09:11.231745
+model: gpt-4-1106-preview
+summary: "REPL stands for Read-Eval-Print Loop, a simple, interactive computer programming\
+  \ environment. Coders use it to quickly write and test code, experiment\u2026"
+title: Using an interactive shell (REPL)
 ---
 
 {{< edit_this_page >}}

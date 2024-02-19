@@ -1,13 +1,16 @@
 ---
-title:                "Läsa in kommandoradsargument"
 aliases:
 - /sv/php/reading-command-line-arguments/
-date:                  2024-01-20T17:56:38.322726-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Läsa in kommandoradsargument"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:38.322726-07:00
+description: "Att l\xE4sa kommandoradsargument inneb\xE4r att f\xE5nga text som skickas\
+  \ till ett PHP-script fr\xE5n terminalen. Programmerare g\xF6r detta f\xF6r att\
+  \ till\xE5ta interaktion\u2026"
+lastmod: 2024-02-18 23:08:51.893098
+model: gpt-4-1106-preview
+summary: "Att l\xE4sa kommandoradsargument inneb\xE4r att f\xE5nga text som skickas\
+  \ till ett PHP-script fr\xE5n terminalen. Programmerare g\xF6r detta f\xF6r att\
+  \ till\xE5ta interaktion\u2026"
+title: "L\xE4sa in kommandoradsargument"
 ---
 
 {{< edit_this_page >}}

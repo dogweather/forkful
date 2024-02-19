@@ -1,13 +1,14 @@
 ---
-title:                "Converting a string to lower case"
 aliases:
 - /en/php/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:53.131250-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Converting a string to lower case"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:53.131250-07:00
+description: "In PHP, converting a string to lower case means transforming all alphabetical\
+  \ characters in a string to their lowercase variant. Programmers do this for\u2026"
+lastmod: 2024-02-18 23:09:11.124373
+model: gpt-4-1106-preview
+summary: "In PHP, converting a string to lower case means transforming all alphabetical\
+  \ characters in a string to their lowercase variant. Programmers do this for\u2026"
+title: Converting a string to lower case
 ---
 
 {{< edit_this_page >}}

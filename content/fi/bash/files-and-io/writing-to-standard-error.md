@@ -1,14 +1,16 @@
 ---
-title:                "Kirjoittaminen standardivirheeseen"
 aliases:
 - /fi/bash/writing-to-standard-error/
-date:                  2024-02-03T19:32:20.433142-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kirjoittaminen standardivirheeseen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:20.433142-07:00
+description: "Kirjoittaminen vakiovirheeseen (stderr) Bashissa tarkoittaa virheviestien\
+  \ tai muiden t\xE4rkeiden diagnostisten tulosteiden ohjaamista erilleen\u2026"
+lastmod: 2024-02-18 23:09:07.822433
+model: gpt-4-0125-preview
+summary: "Kirjoittaminen vakiovirheeseen (stderr) Bashissa tarkoittaa virheviestien\
+  \ tai muiden t\xE4rkeiden diagnostisten tulosteiden ohjaamista erilleen\u2026"
+title: Kirjoittaminen standardivirheeseen
 ---
 
 {{< edit_this_page >}}

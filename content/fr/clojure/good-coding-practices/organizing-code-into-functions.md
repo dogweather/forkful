@@ -1,13 +1,16 @@
 ---
-title:                "Organisation du code en fonctions"
 aliases:
 - /fr/clojure/organizing-code-into-functions/
-date:                  2024-01-26T01:09:31.047152-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organisation du code en fonctions"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/organizing-code-into-functions.md"
+date: 2024-01-26 01:09:31.047152-07:00
+description: "Organiser le code en fonctions consiste \xE0 emballer des blocs de code\
+  \ qui accomplissent des t\xE2ches sp\xE9cifiques. Faire cela rend votre code propre,\
+  \ plus\u2026"
+lastmod: 2024-02-18 23:09:08.392752
+model: gpt-4-1106-preview
+summary: "Organiser le code en fonctions consiste \xE0 emballer des blocs de code\
+  \ qui accomplissent des t\xE2ches sp\xE9cifiques. Faire cela rend votre code propre,\
+  \ plus\u2026"
+title: Organisation du code en fonctions
 ---
 
 {{< edit_this_page >}}

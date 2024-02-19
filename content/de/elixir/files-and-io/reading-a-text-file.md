@@ -1,13 +1,16 @@
 ---
-title:                "Textdatei einlesen"
 aliases:
 - /de/elixir/reading-a-text-file/
-date:                  2024-01-20T17:54:03.339646-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Textdatei einlesen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/reading-a-text-file.md"
+date: 2024-01-20 17:54:03.339646-07:00
+description: "Das Einlesen von Textdateien erm\xF6glicht es, Inhalt von der Festplatte\
+  \ in eine Anwendung zu laden. Programmierer ben\xF6tigen diese Funktionalit\xE4\
+  t, um Datei-\u2026"
+lastmod: 2024-02-18 23:09:04.570274
+model: gpt-4-1106-preview
+summary: "Das Einlesen von Textdateien erm\xF6glicht es, Inhalt von der Festplatte\
+  \ in eine Anwendung zu laden. Programmierer ben\xF6tigen diese Funktionalit\xE4\
+  t, um Datei-\u2026"
+title: Textdatei einlesen
 ---
 
 {{< edit_this_page >}}

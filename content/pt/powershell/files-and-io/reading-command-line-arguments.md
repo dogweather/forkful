@@ -1,13 +1,16 @@
 ---
-title:                "Lendo argumentos da linha de comando"
 aliases:
 - /pt/powershell/reading-command-line-arguments/
-date:                  2024-01-20T17:56:36.425983-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lendo argumentos da linha de comando"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/powershell/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:36.425983-07:00
+description: "Argumentos de linha de comando s\xE3o informa\xE7\xF5es que voc\xEA\
+  \ passa para o seu script quando o executa. Programadores usam isso para tornar\
+  \ os scripts mais\u2026"
+lastmod: 2024-02-18 23:08:58.384025
+model: gpt-4-1106-preview
+summary: "Argumentos de linha de comando s\xE3o informa\xE7\xF5es que voc\xEA passa\
+  \ para o seu script quando o executa. Programadores usam isso para tornar os scripts\
+  \ mais\u2026"
+title: Lendo argumentos da linha de comando
 ---
 
 {{< edit_this_page >}}

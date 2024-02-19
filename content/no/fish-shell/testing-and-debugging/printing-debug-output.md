@@ -1,13 +1,16 @@
 ---
-title:                "Skrive ut feilsøkingsdata"
 aliases:
 - /no/fish-shell/printing-debug-output/
-date:                  2024-01-20T17:52:42.813239-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skrive ut feilsøkingsdata"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/printing-debug-output.md"
+date: 2024-01-20 17:52:42.813239-07:00
+description: "Debugging-utskrifter er info vi skriver ut for \xE5 forst\xE5 hva koden\
+  \ v\xE5r egentlig gj\xF8r. Programmerere bruker dette for \xE5 finne bugs eller\
+  \ forst\xE5 flyten\u2026"
+lastmod: 2024-02-18 23:08:54.354201
+model: gpt-4-1106-preview
+summary: "Debugging-utskrifter er info vi skriver ut for \xE5 forst\xE5 hva koden\
+  \ v\xE5r egentlig gj\xF8r. Programmerere bruker dette for \xE5 finne bugs eller\
+  \ forst\xE5 flyten\u2026"
+title: "Skrive ut feils\xF8kingsdata"
 ---
 
 {{< edit_this_page >}}

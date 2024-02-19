@@ -1,14 +1,17 @@
 ---
-title:                "Comparer deux dates"
 aliases:
 - /fr/vba/comparing-two-dates/
-date:                  2024-02-01T21:50:59.194242-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Comparer deux dates"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/vba/comparing-two-dates.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:59.194242-07:00
+description: "Comparer deux dates en Visual Basic pour Applications (VBA) consiste\
+  \ \xE0 d\xE9terminer leur relation chronologique l'une par rapport \xE0 l'autre.\
+  \ Les\u2026"
+lastmod: 2024-02-18 23:09:08.593946
+model: gpt-4-0125-preview
+summary: "Comparer deux dates en Visual Basic pour Applications (VBA) consiste \xE0\
+  \ d\xE9terminer leur relation chronologique l'une par rapport \xE0 l'autre. Les\u2026"
+title: Comparer deux dates
 ---
 
 {{< edit_this_page >}}

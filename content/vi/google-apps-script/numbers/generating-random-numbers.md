@@ -1,14 +1,20 @@
 ---
-title:                "Sinh số ngẫu nhiên"
 aliases:
 - /vi/google-apps-script/generating-random-numbers/
-date:                  2024-02-01T21:54:38.535051-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sinh số ngẫu nhiên"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/google-apps-script/generating-random-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:38.535051-07:00
+description: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn l\xE0 m\u1ED9\
+  t nhi\u1EC7m v\u1EE5 c\u01A1 b\u1EA3n trong l\u1EADp tr\xECnh, \u0111\u01B0\u1EE3\
+  c s\u1EED d\u1EE5ng cho h\xE0ng lo\u1EA1t \u1EE9ng d\u1EE5ng nh\u01B0 m\xF4 ph\u1ECF\
+  ng, tr\xF2 ch\u01A1i v\xE0 h\u1EC7 th\u1ED1ng an ninh. C\xE1c\u2026"
+lastmod: 2024-02-18 23:08:50.214643
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn l\xE0 m\u1ED9t nhi\u1EC7\
+  m v\u1EE5 c\u01A1 b\u1EA3n trong l\u1EADp tr\xECnh, \u0111\u01B0\u1EE3c s\u1EED\
+  \ d\u1EE5ng cho h\xE0ng lo\u1EA1t \u1EE9ng d\u1EE5ng nh\u01B0 m\xF4 ph\u1ECFng,\
+  \ tr\xF2 ch\u01A1i v\xE0 h\u1EC7 th\u1ED1ng an ninh. C\xE1c\u2026"
+title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 ---
 
 {{< edit_this_page >}}

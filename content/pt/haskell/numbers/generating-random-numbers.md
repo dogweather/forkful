@@ -1,13 +1,16 @@
 ---
-title:                "Geração de números aleatórios"
 aliases:
 - /pt/haskell/generating-random-numbers/
-date:                  2024-01-27T20:33:56.708979-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Geração de números aleatórios"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/generating-random-numbers.md"
+date: 2024-01-27 20:33:56.708979-07:00
+description: "Gerar n\xFAmeros aleat\xF3rios em Haskell implica na cria\xE7\xE3o de\
+  \ n\xFAmeros que s\xE3o imprevis\xEDveis segundo padr\xF5es humanos. Isso \xE9 cr\xED\
+  tico em cen\xE1rios que v\xE3o desde\u2026"
+lastmod: 2024-02-18 23:08:58.195032
+model: gpt-4-0125-preview
+summary: "Gerar n\xFAmeros aleat\xF3rios em Haskell implica na cria\xE7\xE3o de n\xFA\
+  meros que s\xE3o imprevis\xEDveis segundo padr\xF5es humanos. Isso \xE9 cr\xEDtico\
+  \ em cen\xE1rios que v\xE3o desde\u2026"
+title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 ---
 
 {{< edit_this_page >}}

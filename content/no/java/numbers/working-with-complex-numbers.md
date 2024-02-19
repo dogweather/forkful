@@ -1,13 +1,14 @@
 ---
-title:                "Å jobbe med komplekse tall"
 aliases:
 - /no/java/working-with-complex-numbers/
-date:                  2024-01-26T04:42:20.971162-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å jobbe med komplekse tall"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/working-with-complex-numbers.md"
+date: 2024-01-26 04:42:20.971162-07:00
+description: "Komplekse tall utvider den reelle tallinjen gjennom tillegg av en imagin\xE6\
+  r enhet, `i`, der `i^2 = -1`. De er avgj\xF8rende i felter som ingeni\xF8rvitenskap,\u2026"
+lastmod: 2024-02-18 23:08:53.765171
+model: gpt-4-0125-preview
+summary: "Komplekse tall utvider den reelle tallinjen gjennom tillegg av en imagin\xE6\
+  r enhet, `i`, der `i^2 = -1`. De er avgj\xF8rende i felter som ingeni\xF8rvitenskap,\u2026"
+title: "\xC5 jobbe med komplekse tall"
 ---
 
 {{< edit_this_page >}}

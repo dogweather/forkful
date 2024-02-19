@@ -1,13 +1,14 @@
 ---
-title:                "Handling errors"
 aliases:
 - /en/javascript/handling-errors/
-date:                  2024-01-21T21:20:11.687655-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Handling errors"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/handling-errors.md"
+date: 2024-01-21 21:20:11.687655-07:00
+description: "Error handling is how you manage when things go sideways in your code.\
+  \ It's key because it helps your programs fail gracefully and instructs users\u2026"
+lastmod: 2024-02-18 23:09:11.445312
+model: gpt-4-1106-preview
+summary: "Error handling is how you manage when things go sideways in your code. It's\
+  \ key because it helps your programs fail gracefully and instructs users\u2026"
+title: Handling errors
 ---
 
 {{< edit_this_page >}}

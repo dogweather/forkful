@@ -1,14 +1,18 @@
 ---
-title:                "Analizando una fecha a partir de una cadena de texto"
 aliases:
 - /es/java/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:14:16.083734-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analizando una fecha a partir de una cadena de texto"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:14:16.083734-07:00
+description: "Convertir una fecha de una cadena implica convertir la representaci\xF3\
+  n en texto de una fecha y hora en un objeto `Date` o en un objeto `LocalDateTime`\
+  \ m\xE1s\u2026"
+lastmod: 2024-02-18 23:09:09.855062
+model: gpt-4-0125-preview
+summary: "Convertir una fecha de una cadena implica convertir la representaci\xF3\
+  n en texto de una fecha y hora en un objeto `Date` o en un objeto `LocalDateTime`\
+  \ m\xE1s\u2026"
+title: Analizando una fecha a partir de una cadena de texto
 ---
 
 {{< edit_this_page >}}

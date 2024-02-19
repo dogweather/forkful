@@ -1,14 +1,20 @@
 ---
-title:                "Chuyển đổi ngày thành chuỗi"
 aliases:
 - /vi/c/converting-a-date-into-a-string/
-date:                  2024-02-03T17:55:05.217616-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Chuyển đổi ngày thành chuỗi"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:05.217616-07:00
+description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i trong\
+  \ C bao g\u1ED3m vi\u1EC7c d\u1ECBch m\u1ED9t c\u1EA5u tr\xFAc ng\xE0y th\xE1ng\
+  \ ho\u1EB7c d\u1EA5u th\u1EDDi gian th\xE0nh \u0111\u1ECBnh d\u1EA1ng d\u1EC5 \u0111\
+  \u1ECDc cho con ng\u01B0\u1EDDi. C\xE1c l\u1EADp tr\xECnh\u2026"
+lastmod: 2024-02-18 23:08:51.247378
+model: gpt-4-0125-preview
+summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i trong C bao\
+  \ g\u1ED3m vi\u1EC7c d\u1ECBch m\u1ED9t c\u1EA5u tr\xFAc ng\xE0y th\xE1ng ho\u1EB7\
+  c d\u1EA5u th\u1EDDi gian th\xE0nh \u0111\u1ECBnh d\u1EA1ng d\u1EC5 \u0111\u1ECD\
+  c cho con ng\u01B0\u1EDDi. C\xE1c l\u1EADp tr\xECnh\u2026"
+title: "Chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE0nh chu\u1ED7i"
 ---
 
 {{< edit_this_page >}}

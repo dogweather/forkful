@@ -1,14 +1,16 @@
 ---
-title:                "HTML:n jäsennys"
 aliases:
 - /fi/python/parsing-html/
-date:                  2024-02-03T19:12:55.775292-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML:n jäsennys"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:55.775292-07:00
+description: "HTML:n j\xE4sennys tarkoittaa verkkosivun HTML-koodin analysointia tiettyjen\
+  \ tietojen tai elementtien erottamiseksi, mik\xE4 on yleinen teht\xE4v\xE4 verkkosivujen\u2026"
+lastmod: 2024-02-18 23:09:07.181215
+model: gpt-4-0125-preview
+summary: "HTML:n j\xE4sennys tarkoittaa verkkosivun HTML-koodin analysointia tiettyjen\
+  \ tietojen tai elementtien erottamiseksi, mik\xE4 on yleinen teht\xE4v\xE4 verkkosivujen\u2026"
+title: "HTML:n j\xE4sennys"
 ---
 
 {{< edit_this_page >}}

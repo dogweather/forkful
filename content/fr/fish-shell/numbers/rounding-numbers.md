@@ -1,13 +1,16 @@
 ---
-title:                "Arrondir les nombres"
 aliases:
 - /fr/fish-shell/rounding-numbers/
-date:                  2024-01-26T03:44:03.195543-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrondir les nombres"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/rounding-numbers.md"
+date: 2024-01-26 03:44:03.195543-07:00
+description: "Arrondir les nombres consiste \xE0 supprimer les d\xE9cimales pour simplifier\
+  \ vos donn\xE9es ou les adapter \xE0 des formats sp\xE9cifiques. Les programmeurs\
+  \ le font\u2026"
+lastmod: 2024-02-18 23:09:09.297783
+model: gpt-4-0125-preview
+summary: "Arrondir les nombres consiste \xE0 supprimer les d\xE9cimales pour simplifier\
+  \ vos donn\xE9es ou les adapter \xE0 des formats sp\xE9cifiques. Les programmeurs\
+  \ le font\u2026"
+title: Arrondir les nombres
 ---
 
 {{< edit_this_page >}}

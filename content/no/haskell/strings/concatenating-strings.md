@@ -1,13 +1,16 @@
 ---
-title:                "Sammenslåing av strenger"
 aliases:
 - /no/haskell/concatenating-strings/
-date:                  2024-01-20T17:35:00.273360-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammenslåing av strenger"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/concatenating-strings.md"
+date: 2024-01-20 17:35:00.273360-07:00
+description: "Sammenkjeding av strenger handler om \xE5 sl\xE5 sammen tekster til\
+  \ \xE9n. Programmerere gj\xF8r dette for \xE5 bygge setninger, vise data og kombinere\
+  \ brukerinput."
+lastmod: 2024-02-18 23:08:53.927163
+model: gpt-4-1106-preview
+summary: "Sammenkjeding av strenger handler om \xE5 sl\xE5 sammen tekster til \xE9\
+  n. Programmerere gj\xF8r dette for \xE5 bygge setninger, vise data og kombinere\
+  \ brukerinput."
+title: "Sammensl\xE5ing av strenger"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie pliku tekstowego"
 aliases:
 - /pl/ruby/writing-a-text-file/
-date:                  2024-02-03T19:29:03.765315-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie pliku tekstowego"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:03.765315-07:00
+description: "Zapisywanie do pliku tekstowego w Ruby jest podstawow\u0105 operacj\u0105\
+  , kt\xF3ra pozwala na trwa\u0142e przechowywanie wyj\u015Bcia i danych, umo\u017C\
+  liwiaj\u0105c p\xF3\u017Aniejszy dost\u0119p\u2026"
+lastmod: 2024-02-18 23:08:50.143906
+model: gpt-4-0125-preview
+summary: "Zapisywanie do pliku tekstowego w Ruby jest podstawow\u0105 operacj\u0105\
+  , kt\xF3ra pozwala na trwa\u0142e przechowywanie wyj\u015Bcia i danych, umo\u017C\
+  liwiaj\u0105c p\xF3\u017Aniejszy dost\u0119p\u2026"
+title: Pisanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

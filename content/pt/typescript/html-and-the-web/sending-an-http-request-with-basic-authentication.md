@@ -1,13 +1,16 @@
 ---
-title:                "Enviando uma requisição HTTP com autenticação básica"
 aliases:
 - /pt/typescript/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:55.001975-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando uma requisição HTTP com autenticação básica"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:55.001975-07:00
+description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
+  \ incluir as credenciais do usu\xE1rio (usu\xE1rio e senha) na requisi\xE7\xE3o\
+  \ para acessar recursos\u2026"
+lastmod: 2024-02-18 23:08:57.884687
+model: gpt-4-1106-preview
+summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
+  \ incluir as credenciais do usu\xE1rio (usu\xE1rio e senha) na requisi\xE7\xE3o\
+  \ para acessar recursos\u2026"
+title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 ---
 
 {{< edit_this_page >}}

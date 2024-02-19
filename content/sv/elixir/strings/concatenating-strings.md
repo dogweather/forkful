@@ -1,13 +1,16 @@
 ---
-title:                "Konkatenering av strängar"
 aliases:
 - /sv/elixir/concatenating-strings/
-date:                  2024-01-27T10:42:47.554258-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Konkatenering av strängar"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/concatenating-strings.md"
+date: 2024-01-27 10:42:47.554258-07:00
+description: "Att sammanfoga str\xE4ngar handlar om att f\xF6rena tv\xE5 eller flera\
+  \ str\xE4ngar f\xF6r att bilda en enda textbit. Du kan beh\xF6va sammanfoga text\
+  \ f\xF6r att generera\u2026"
+lastmod: 2024-02-18 23:08:51.494800
+model: gpt-4-0125-preview
+summary: "Att sammanfoga str\xE4ngar handlar om att f\xF6rena tv\xE5 eller flera str\xE4\
+  ngar f\xF6r att bilda en enda textbit. Du kan beh\xF6va sammanfoga text f\xF6r att\
+  \ generera\u2026"
+title: "Konkatenering av str\xE4ngar"
 ---
 
 {{< edit_this_page >}}

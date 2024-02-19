@@ -1,13 +1,14 @@
 ---
-title:                "Working with complex numbers"
 aliases:
 - /en/bash/working-with-complex-numbers/
-date:                  2024-01-25T02:59:42.293888-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Working with complex numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/working-with-complex-numbers.md"
+date: 2024-01-25 02:59:42.293888-07:00
+description: "Complex numbers consist of a real part and an imaginary part. Programmers\
+  \ use them in fields like signal processing, quantum mechanics, and whenever the\u2026"
+lastmod: 2024-02-18 23:09:11.221674
+model: gpt-4-1106-preview
+summary: "Complex numbers consist of a real part and an imaginary part. Programmers\
+  \ use them in fields like signal processing, quantum mechanics, and whenever the\u2026"
+title: Working with complex numbers
 ---
 
 {{< edit_this_page >}}

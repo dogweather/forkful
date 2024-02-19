@@ -1,14 +1,18 @@
 ---
-title:                "Testien kirjoittaminen"
 aliases:
 - /fi/elm/writing-tests/
-date:                  2024-02-03T19:30:32.533374-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Testien kirjoittaminen"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:30:32.533374-07:00
+description: "Testien kirjoittaminen Elm-kielell\xE4 k\xE4sitt\xE4\xE4 testitapausten\
+  \ laatimisen Elm-koodisi oikeellisuuden varmistamiseksi, jotta se toimii odotetusti.\
+  \ Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:07.532338
+model: gpt-4-0125-preview
+summary: "Testien kirjoittaminen Elm-kielell\xE4 k\xE4sitt\xE4\xE4 testitapausten\
+  \ laatimisen Elm-koodisi oikeellisuuden varmistamiseksi, jotta se toimii odotetusti.\
+  \ Ohjelmoijat\u2026"
+title: Testien kirjoittaminen
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Utilisation d'un débogueur"
 aliases:
 - /fr/kotlin/using-a-debugger/
-date:                  2024-01-26T03:49:50.074976-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation d'un débogueur"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/using-a-debugger.md"
+date: 2024-01-26 03:49:50.074976-07:00
+description: "Plonger dans un d\xE9bogueur, c'est tout simplement parcourir votre\
+  \ code pas \xE0 pas, observer les rouages en action et attraper ces ennuyeux bugs\
+  \ sur le fait.\u2026"
+lastmod: 2024-02-18 23:09:08.785901
+model: gpt-4-0125-preview
+summary: "Plonger dans un d\xE9bogueur, c'est tout simplement parcourir votre code\
+  \ pas \xE0 pas, observer les rouages en action et attraper ces ennuyeux bugs sur\
+  \ le fait.\u2026"
+title: "Utilisation d'un d\xE9bogueur"
 ---
 
 {{< edit_this_page >}}

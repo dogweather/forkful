@@ -1,14 +1,17 @@
 ---
-title:                "Lendo um arquivo de texto"
 aliases:
 - /pt/c/reading-a-text-file/
-date:                  2024-02-03T18:05:09.066272-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lendo um arquivo de texto"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/reading-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:09.066272-07:00
+description: "Ler um arquivo de texto em C envolve abrir um arquivo no seu sistema\
+  \ para extrair informa\xE7\xF5es e manipul\xE1-las ou exibi-las conforme necess\xE1\
+  rio.\u2026"
+lastmod: 2024-02-18 23:08:58.637851
+model: gpt-4-0125-preview
+summary: "Ler um arquivo de texto em C envolve abrir um arquivo no seu sistema para\
+  \ extrair informa\xE7\xF5es e manipul\xE1-las ou exibi-las conforme necess\xE1rio.\u2026"
+title: Lendo um arquivo de texto
 ---
 
 {{< edit_this_page >}}

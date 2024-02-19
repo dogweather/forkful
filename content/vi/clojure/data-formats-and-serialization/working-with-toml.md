@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với TOML"
 aliases:
 - /vi/clojure/working-with-toml/
-date:                  2024-01-28T22:10:58.030787-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/clojure/working-with-toml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:58.030787-07:00
+description: "L\xE0m vi\u1EC7c v\u1EDBi TOML c\xF3 ngh\u0129a l\xE0 b\u1EA1n \u0111\
+  ang x\u1EED l\xFD d\u1EEF li\u1EC7u theo \u0111\u1ECBnh d\u1EA1ng \"Ng\xF4n ng\u1EEF\
+  \ T\u1ED1i thi\u1EC3u Hi\u1EC3n nhi\xEAn c\u1EE7a Tom\" (Tom's Obvious, Minimal\
+  \ Language), ph\u1ED5 bi\u1EBFn\u2026"
+lastmod: 2024-02-18 23:08:50.340245
+model: gpt-4-0125-preview
+summary: "L\xE0m vi\u1EC7c v\u1EDBi TOML c\xF3 ngh\u0129a l\xE0 b\u1EA1n \u0111ang\
+  \ x\u1EED l\xFD d\u1EEF li\u1EC7u theo \u0111\u1ECBnh d\u1EA1ng \"Ng\xF4n ng\u1EEF\
+  \ T\u1ED1i thi\u1EC3u Hi\u1EC3n nhi\xEAn c\u1EE7a Tom\" (Tom's Obvious, Minimal\
+  \ Language), ph\u1ED5 bi\u1EBFn\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Avvio di un nuovo progetto"
 aliases:
 - /it/c-sharp/starting-a-new-project/
-date:                  2024-01-20T18:03:14.287298-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Avvio di un nuovo progetto"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/starting-a-new-project.md"
+date: 2024-01-20 18:03:14.287298-07:00
+description: "Iniziamo nuovi progetti per trasformare idee in software. \xC8 il primo\
+  \ passo per sviluppare applicazioni che risolvono problemi o realizzano qualcosa\
+  \ di\u2026"
+lastmod: 2024-02-18 23:08:55.888530
+model: gpt-4-1106-preview
+summary: "Iniziamo nuovi progetti per trasformare idee in software. \xC8 il primo\
+  \ passo per sviluppare applicazioni che risolvono problemi o realizzano qualcosa\
+  \ di\u2026"
+title: Avvio di un nuovo progetto
 ---
 
 {{< edit_this_page >}}

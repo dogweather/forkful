@@ -1,13 +1,14 @@
 ---
-title:                "Textdatei einlesen"
 aliases:
 - /de/rust/reading-a-text-file/
-date:                  2024-01-20T17:55:15.482764-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Textdatei einlesen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/reading-a-text-file.md"
+date: 2024-01-20 17:55:15.482764-07:00
+description: "Textdateien auslesen hei\xDFt, ihren Inhalt programmatisch zu erfassen.\
+  \ Programmierer tun dies, um Daten zu verarbeiten oder Konfigurationen zu laden."
+lastmod: 2024-02-18 23:09:04.659990
+model: gpt-4-1106-preview
+summary: "Textdateien auslesen hei\xDFt, ihren Inhalt programmatisch zu erfassen.\
+  \ Programmierer tun dies, um Daten zu verarbeiten oder Konfigurationen zu laden."
+title: Textdatei einlesen
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Virheiden käsittely"
 aliases:
 - /fi/javascript/handling-errors/
-date:                  2024-01-26T00:53:55.093985-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheiden käsittely"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/handling-errors.md"
+date: 2024-01-26 00:53:55.093985-07:00
+description: "Virheenk\xE4sittely on tapasi hallita tilanteita, kun koodissasi tapahtuu\
+  \ odottamattomia virheit\xE4. Se on keskeist\xE4, koska se auttaa ohjelmiasi kaatumaan\u2026"
+lastmod: 2024-02-18 23:09:08.043647
+model: gpt-4-1106-preview
+summary: "Virheenk\xE4sittely on tapasi hallita tilanteita, kun koodissasi tapahtuu\
+  \ odottamattomia virheit\xE4. Se on keskeist\xE4, koska se auttaa ohjelmiasi kaatumaan\u2026"
+title: "Virheiden k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

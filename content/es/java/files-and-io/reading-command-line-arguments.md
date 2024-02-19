@@ -1,13 +1,16 @@
 ---
-title:                "Lectura de argumentos de línea de comandos"
 aliases:
 - /es/java/reading-command-line-arguments/
-date:                  2024-01-20T17:56:05.146473-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lectura de argumentos de línea de comandos"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:05.146473-07:00
+description: "Leer argumentos de la l\xEDnea de comandos significa acceder a los datos\
+  \ que el usuario proporciona al ejecutar un programa. Los programadores lo hacen\
+  \ para\u2026"
+lastmod: 2024-02-18 23:09:09.861645
+model: gpt-4-1106-preview
+summary: "Leer argumentos de la l\xEDnea de comandos significa acceder a los datos\
+  \ que el usuario proporciona al ejecutar un programa. Los programadores lo hacen\
+  \ para\u2026"
+title: "Lectura de argumentos de l\xEDnea de comandos"
 ---
 
 {{< edit_this_page >}}

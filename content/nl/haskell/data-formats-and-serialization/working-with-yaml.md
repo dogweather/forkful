@@ -1,15 +1,16 @@
 ---
-title:                "Werken met YAML"
 aliases:
 - /nl/haskell/working-with-yaml/
-date:                  2024-01-28T22:11:44.366180-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met YAML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/haskell/working-with-yaml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:44.366180-07:00
+description: "YAML (YAML Ain't Markup Language) is een door mensen leesbaar gegevensserialisatieformaat.\
+  \ Programmeurs gebruiken het voor configuratiebestanden en\u2026"
+lastmod: 2024-02-18 23:09:01.921374
+model: gpt-4-0125-preview
+summary: "YAML (YAML Ain't Markup Language) is een door mensen leesbaar gegevensserialisatieformaat.\
+  \ Programmeurs gebruiken het voor configuratiebestanden en\u2026"
+title: Werken met YAML
 ---
 
 {{< edit_this_page >}}

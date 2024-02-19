@@ -1,14 +1,16 @@
 ---
-title:                "Skrive en tekstfil"
 aliases:
 - /no/swift/writing-a-text-file/
-date:                  2024-02-03T19:29:44.260035-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skrive en tekstfil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:44.260035-07:00
+description: "\xC5 skrive en tekstfil i Swift gj\xF8r at du kan lagre strengdata permanent\
+  \ p\xE5 filsystemet, noe som er avgj\xF8rende for oppgaver som \xE5 lagre\u2026"
+lastmod: 2024-02-18 23:08:54.286570
+model: gpt-4-0125-preview
+summary: "\xC5 skrive en tekstfil i Swift gj\xF8r at du kan lagre strengdata permanent\
+  \ p\xE5 filsystemet, noe som er avgj\xF8rende for oppgaver som \xE5 lagre\u2026"
+title: Skrive en tekstfil
 ---
 
 {{< edit_this_page >}}

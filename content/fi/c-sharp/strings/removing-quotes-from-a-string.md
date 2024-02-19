@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonosta lainausmerkkien poistaminen"
 aliases:
 - /fi/c-sharp/removing-quotes-from-a-string/
-date:                  2024-01-26T03:38:27.288244-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonosta lainausmerkkien poistaminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:38:27.288244-07:00
+description: "Merkkijonosta lainausmerkkien poistaminen C#:ss\xE4 tarkoittaa sit\xE4\
+  , ett\xE4 poistat teksti\xE4si ymp\xE4r\xF6iv\xE4t \xE4rsytt\xE4v\xE4t kaksois-\
+  \ (`\"`) tai yksinkertaiset (`'`)\u2026"
+lastmod: 2024-02-18 23:09:07.607567
+model: gpt-4-0125-preview
+summary: "Merkkijonosta lainausmerkkien poistaminen C#:ss\xE4 tarkoittaa sit\xE4,\
+  \ ett\xE4 poistat teksti\xE4si ymp\xE4r\xF6iv\xE4t \xE4rsytt\xE4v\xE4t kaksois-\
+  \ (`\"`) tai yksinkertaiset (`'`)\u2026"
+title: Merkkijonosta lainausmerkkien poistaminen
 ---
 
 {{< edit_this_page >}}

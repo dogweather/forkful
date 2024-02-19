@@ -1,13 +1,14 @@
 ---
-title:                "Manipulating files with CLI one-liners"
 aliases:
 - /en/bash/manipulating-files-with-cli-one-liners/
-date:                  2024-01-27T16:10:06.588131-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulating files with CLI one-liners"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/manipulating-files-with-cli-one-liners.md"
+date: 2024-01-27 16:10:06.588131-07:00
+description: "Manipulating files with CLI (Command Line Interface) one-liners involves\
+  \ using Bash scripts or commands to perform actions on files, like creating,\u2026"
+lastmod: 2024-02-18 23:09:11.224607
+model: gpt-4-0125-preview
+summary: "Manipulating files with CLI (Command Line Interface) one-liners involves\
+  \ using Bash scripts or commands to perform actions on files, like creating,\u2026"
+title: Manipulating files with CLI one-liners
 ---
 
 {{< edit_this_page >}}

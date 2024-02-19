@@ -1,15 +1,20 @@
 ---
-title:                "Sắp xếp mã thành các hàm"
 aliases:
 - /vi/lua/organizing-code-into-functions/
-date:                  2024-01-28T22:03:18.600887-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sắp xếp mã thành các hàm"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/lua/organizing-code-into-functions.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:03:18.600887-07:00
+description: "T\u1ED5 ch\u1EE9c m\xE3 l\u1EC7nh th\xE0nh c\xE1c h\xE0m l\xE0 vi\u1EC7\
+  c ph\xE2n chia k\u1ECBch b\u1EA3n c\u1EE7a b\u1EA1n th\xE0nh c\xE1c kh\u1ED1i nh\u1ECF\
+  \ - h\xE3y ngh\u0129 \u0111\u1EBFn ch\xFAng nh\u01B0 c\xE1c kh\u1ED1i LEGO ch\u1EE9\
+  c n\u0103ng. Ch\xFAng ta l\xE0m \u0111i\u1EC1u\u2026"
+lastmod: 2024-02-18 23:08:50.842893
+model: gpt-4-0125-preview
+summary: "T\u1ED5 ch\u1EE9c m\xE3 l\u1EC7nh th\xE0nh c\xE1c h\xE0m l\xE0 vi\u1EC7\
+  c ph\xE2n chia k\u1ECBch b\u1EA3n c\u1EE7a b\u1EA1n th\xE0nh c\xE1c kh\u1ED1i nh\u1ECF\
+  \ - h\xE3y ngh\u0129 \u0111\u1EBFn ch\xFAng nh\u01B0 c\xE1c kh\u1ED1i LEGO ch\u1EE9\
+  c n\u0103ng. Ch\xFAng ta l\xE0m \u0111i\u1EC1u\u2026"
+title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Ta bort citattecken från en sträng"
 aliases:
 - /sv/fish-shell/removing-quotes-from-a-string/
-date:                  2024-01-26T03:38:53.400816-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ta bort citattecken från en sträng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:38:53.400816-07:00
+description: "Att ta bort citattecken fr\xE5n en str\xE4ng handlar om att rensa bort\
+  \ de d\xE4r irriterande enkla (' ') eller dubbla (\" \") citationstecknen fr\xE5\
+  n din textdata.\u2026"
+lastmod: 2024-02-18 23:08:52.193967
+model: gpt-4-0125-preview
+summary: "Att ta bort citattecken fr\xE5n en str\xE4ng handlar om att rensa bort de\
+  \ d\xE4r irriterande enkla (' ') eller dubbla (\" \") citationstecknen fr\xE5n din\
+  \ textdata.\u2026"
+title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Working with complex numbers"
 aliases:
 - /en/fish-shell/working-with-complex-numbers/
-date:                  2024-01-25T02:59:58.849195-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Working with complex numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/working-with-complex-numbers.md"
+date: 2024-01-25 02:59:58.849195-07:00
+description: "Complex numbers extend the idea of one-dimensional number lines to a\
+  \ two-dimensional complex plane. Programmers use them in fields like engineering,\u2026"
+lastmod: 2024-02-18 23:09:11.473019
+model: gpt-4-1106-preview
+summary: "Complex numbers extend the idea of one-dimensional number lines to a two-dimensional\
+  \ complex plane. Programmers use them in fields like engineering,\u2026"
+title: Working with complex numbers
 ---
 
 {{< edit_this_page >}}

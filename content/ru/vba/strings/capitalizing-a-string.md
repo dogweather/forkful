@@ -1,14 +1,32 @@
 ---
-title:                "Преобразование строки в верхний регистр"
 aliases:
 - /ru/vba/capitalizing-a-string/
-date:                  2024-02-01T21:49:29.708290-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Преобразование строки в верхний регистр"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/vba/capitalizing-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:29.708290-07:00
+description: "\u041F\u0440\u0438\u0432\u0435\u0434\u0435\u043D\u0438\u0435 \u0441\u0442\
+  \u0440\u043E\u043A\u0438 \u043A \u0437\u0430\u0433\u043B\u0430\u0432\u043D\u044B\
+  \u043C \u0431\u0443\u043A\u0432\u0430\u043C \u0432 Visual Basic for Applications\
+  \ (VBA) \u0437\u0430\u043A\u043B\u044E\u0447\u0430\u0435\u0442\u0441\u044F \u0432\
+  \ \u043F\u0440\u0435\u043E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u043D\u0438\
+  \u0438 \u043F\u0435\u0440\u0432\u043E\u0433\u043E \u0441\u0438\u043C\u0432\u043E\
+  \u043B\u0430 \u043A\u0430\u0436\u0434\u043E\u0433\u043E \u0441\u043B\u043E\u0432\
+  \u0430 \u0432 \u0441\u0442\u0440\u043E\u043A\u0435 \u0432 \u0432\u0435\u0440\u0445\
+  \u043D\u0438\u0439\u2026"
+lastmod: 2024-02-18 23:08:56.766093
+model: gpt-4-0125-preview
+summary: "\u041F\u0440\u0438\u0432\u0435\u0434\u0435\u043D\u0438\u0435 \u0441\u0442\
+  \u0440\u043E\u043A\u0438 \u043A \u0437\u0430\u0433\u043B\u0430\u0432\u043D\u044B\
+  \u043C \u0431\u0443\u043A\u0432\u0430\u043C \u0432 Visual Basic for Applications\
+  \ (VBA) \u0437\u0430\u043A\u043B\u044E\u0447\u0430\u0435\u0442\u0441\u044F \u0432\
+  \ \u043F\u0440\u0435\u043E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u043D\u0438\
+  \u0438 \u043F\u0435\u0440\u0432\u043E\u0433\u043E \u0441\u0438\u043C\u0432\u043E\
+  \u043B\u0430 \u043A\u0430\u0436\u0434\u043E\u0433\u043E \u0441\u043B\u043E\u0432\
+  \u0430 \u0432 \u0441\u0442\u0440\u043E\u043A\u0435 \u0432 \u0432\u0435\u0440\u0445\
+  \u043D\u0438\u0439\u2026"
+title: "\u041F\u0440\u0435\u043E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u043D\u0438\
+  \u0435 \u0441\u0442\u0440\u043E\u043A\u0438 \u0432 \u0432\u0435\u0440\u0445\u043D\
+  \u0438\u0439 \u0440\u0435\u0433\u0438\u0441\u0442\u0440"
 ---
 
 {{< edit_this_page >}}

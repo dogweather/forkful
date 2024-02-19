@@ -1,15 +1,16 @@
 ---
-title:                "Reguliere expressies gebruiken"
 aliases:
 - /nl/clojure/using-regular-expressions/
-date:                  2024-01-28T22:09:20.369190-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Reguliere expressies gebruiken"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/clojure/using-regular-expressions.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:20.369190-07:00
+description: "Reguliere expressies (regex) zoeken, matchen en manipuleren strings.\
+  \ Ze worden gebruikt vanwege hun flexibiliteit en effici\xEBntie bij tekstverwerkingstaken."
+lastmod: 2024-02-18 23:09:01.468614
+model: gpt-4-0125-preview
+summary: "Reguliere expressies (regex) zoeken, matchen en manipuleren strings. Ze\
+  \ worden gebruikt vanwege hun flexibiliteit en effici\xEBntie bij tekstverwerkingstaken."
+title: Reguliere expressies gebruiken
 ---
 
 {{< edit_this_page >}}

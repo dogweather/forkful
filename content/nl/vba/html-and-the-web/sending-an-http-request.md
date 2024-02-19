@@ -1,14 +1,16 @@
 ---
-title:                "Een HTTP-verzoek verzenden"
 aliases:
 - /nl/vba/sending-an-http-request/
-date:                  2024-02-01T22:02:03.289938-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een HTTP-verzoek verzenden"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/vba/sending-an-http-request.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:02:03.289938-07:00
+description: "Een HTTP-verzoek verzenden in Visual Basic for Applications (VBA) houdt\
+  \ in dat je programmatisch toegang krijgt tot webbronnen of webservices door\u2026"
+lastmod: 2024-02-18 23:09:01.662216
+model: gpt-4-0125-preview
+summary: "Een HTTP-verzoek verzenden in Visual Basic for Applications (VBA) houdt\
+  \ in dat je programmatisch toegang krijgt tot webbronnen of webservices door\u2026"
+title: Een HTTP-verzoek verzenden
 ---
 
 {{< edit_this_page >}}

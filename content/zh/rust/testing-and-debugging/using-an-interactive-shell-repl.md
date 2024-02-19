@@ -1,13 +1,24 @@
 ---
-title:                "在编程中使用交互式Shell（REPL）"
 aliases:
 - /zh/rust/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:18:20.273697-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "在编程中使用交互式Shell（REPL）"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:18:20.273697-07:00
+description: "Rust \u4EA4\u4E92\u5F0F shell\uFF0C\u6216 REPL\uFF08\u8BFB\u53D6-\u6C42\
+  \u503C-\u6253\u5370 \u5FAA\u73AF\uFF09\uFF0C\u8BA9\u4F60\u80FD\u5373\u65F6\u8FD0\
+  \u884C Rust \u4EE3\u7801\uFF0C\u770B\u5230\u5373\u65F6\u7ED3\u679C\uFF0C\u975E\u5E38\
+  \u9002\u5408\u5B9E\u9A8C\u6216\u5B66\u4E60\u3002\u7A0B\u5E8F\u5458\u4F7F\u7528\u5B83\
+  \u6765\u6D4B\u8BD5\u4EE3\u7801\u7247\u6BB5\u3001\u8C03\u8BD5\uFF0C\u6216\u53EA\u662F\
+  \u73A9\u5F04\u8BED\u8A00\u7279\u6027\uFF0C\u65E0\u9700\u7F16\u8BD1\u6574\u4E2A\u9879\
+  \u76EE\u7684\u5F00\u9500\u3002"
+lastmod: 2024-02-18 23:08:58.942643
+model: gpt-4-0125-preview
+summary: "Rust \u4EA4\u4E92\u5F0F shell\uFF0C\u6216 REPL\uFF08\u8BFB\u53D6-\u6C42\u503C\
+  -\u6253\u5370 \u5FAA\u73AF\uFF09\uFF0C\u8BA9\u4F60\u80FD\u5373\u65F6\u8FD0\u884C\
+  \ Rust \u4EE3\u7801\uFF0C\u770B\u5230\u5373\u65F6\u7ED3\u679C\uFF0C\u975E\u5E38\u9002\
+  \u5408\u5B9E\u9A8C\u6216\u5B66\u4E60\u3002\u7A0B\u5E8F\u5458\u4F7F\u7528\u5B83\u6765\
+  \u6D4B\u8BD5\u4EE3\u7801\u7247\u6BB5\u3001\u8C03\u8BD5\uFF0C\u6216\u53EA\u662F\u73A9\
+  \u5F04\u8BED\u8A00\u7279\u6027\uFF0C\u65E0\u9700\u7F16\u8BD1\u6574\u4E2A\u9879\u76EE\
+  \u7684\u5F00\u9500\u3002"
+title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uFF09"
 ---
 
 {{< edit_this_page >}}

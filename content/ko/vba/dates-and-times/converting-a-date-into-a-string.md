@@ -1,14 +1,28 @@
 ---
-title:                "날짜를 문자열로 변환하기"
 aliases:
 - /ko/vba/converting-a-date-into-a-string/
-date:                  2024-02-01T21:51:28.497260-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "날짜를 문자열로 변환하기"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/vba/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:28.497260-07:00
+description: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uBB38\
+  \uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294 \uACFC\uC815\uC740 \uB0A0\uC9DC\uC758\
+  \ \uB370\uC774\uD130 \uC720\uD615\uC744 \uBB38\uC790\uC5F4 \uD615\uC2DD\uC73C\uB85C\
+  \ \uBCC0\uACBD\uD558\uB294 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uC774\uB7EC\uD55C \uBCC0\uD658\uC744 \uC0AC\uC6A9\uC790 \uCE5C\
+  \uD654\uC801\uC778 \uD615\uC2DD\uC73C\uB85C \uB0A0\uC9DC\uB97C \uC870\uC791\uD558\
+  \uAC70\uB098 \uD45C\uC2DC\uD558\uACE0, \uC9C0\uC5ED\uD654\uB41C \uB0A0\uC9DC \uD615\
+  \uC2DD\uC5D0 \uB9DE\uCD94\uAC70\uB098,\u2026"
+lastmod: 2024-02-18 23:09:05.971704
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uBB38\
+  \uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294 \uACFC\uC815\uC740 \uB0A0\uC9DC\uC758\
+  \ \uB370\uC774\uD130 \uC720\uD615\uC744 \uBB38\uC790\uC5F4 \uD615\uC2DD\uC73C\uB85C\
+  \ \uBCC0\uACBD\uD558\uB294 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uC774\uB7EC\uD55C \uBCC0\uD658\uC744 \uC0AC\uC6A9\uC790 \uCE5C\
+  \uD654\uC801\uC778 \uD615\uC2DD\uC73C\uB85C \uB0A0\uC9DC\uB97C \uC870\uC791\uD558\
+  \uAC70\uB098 \uD45C\uC2DC\uD558\uACE0, \uC9C0\uC5ED\uD654\uB41C \uB0A0\uC9DC \uD615\
+  \uC2DD\uC5D0 \uB9DE\uCD94\uAC70\uB098,\u2026"
+title: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "HTML parsen"
 aliases:
 - /de/lua/parsing-html/
-date:                  2024-02-03T19:12:24.323299-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML parsen"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:24.323299-07:00
+description: "Das Parsen von HTML beinhaltet das Extrahieren von Daten und Informationen\
+  \ aus HTML-Dokumenten, was f\xFCr das Web-Scraping, die Datenanalyse und\u2026"
+lastmod: 2024-02-18 23:09:05.004939
+model: gpt-4-0125-preview
+summary: "Das Parsen von HTML beinhaltet das Extrahieren von Daten und Informationen\
+  \ aus HTML-Dokumenten, was f\xFCr das Web-Scraping, die Datenanalyse und\u2026"
+title: HTML parsen
 ---
 
 {{< edit_this_page >}}

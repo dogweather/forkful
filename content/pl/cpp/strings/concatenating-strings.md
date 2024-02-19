@@ -1,13 +1,16 @@
 ---
-title:                "Łączenie łańcuchów znaków"
 aliases:
 - /pl/cpp/concatenating-strings/
-date:                  2024-01-20T17:34:12.479530-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Łączenie łańcuchów znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/concatenating-strings.md"
+date: 2024-01-20 17:34:12.479530-07:00
+description: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w to po prostu sklejanie s\u0142\
+  \xF3w lub zda\u0144, aby tworzy\u0107 nowe ci\u0105gi znak\xF3w. Programi\u015B\
+  ci robi\u0105 to, by tworzy\u0107 komunikaty, dynamiczne tre\u015Bci\u2026"
+lastmod: 2024-02-18 23:08:49.901874
+model: gpt-4-1106-preview
+summary: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w to po prostu sklejanie s\u0142\
+  \xF3w lub zda\u0144, aby tworzy\u0107 nowe ci\u0105gi znak\xF3w. Programi\u015B\
+  ci robi\u0105 to, by tworzy\u0107 komunikaty, dynamiczne tre\u015Bci\u2026"
+title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 ---
 
 {{< edit_this_page >}}

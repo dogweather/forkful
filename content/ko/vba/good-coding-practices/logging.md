@@ -1,14 +1,28 @@
 ---
-title:                "로깅"
 aliases:
 - /ko/vba/logging/
-date:                  2024-02-01T21:56:04.548731-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "로깅"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/vba/logging.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:56:04.548731-07:00
+description: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uB85C\uAE45\uC740 \uD504\
+  \uB85C\uADF8\uB7A8\uC758 \uB7F0\uD0C0\uC784 \uB3D9\uC791\uC5D0 \uB300\uD55C \uC815\
+  \uBCF4\uB97C \uD30C\uC77C, \uCF58\uC194 \uB610\uB294 \uB370\uC774\uD130\uBCA0\uC774\
+  \uC2A4\uC5D0 \uAE30\uB85D\uD558\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uD504\
+  \uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB85C\uAE45\uC744 \uD1B5\uD574 \uC560\uD50C\
+  \uB9AC\uCF00\uC774\uC158\uC744 \uBAA8\uB2C8\uD130\uB9C1\uD558\uACE0, \uBB38\uC81C\
+  \uB97C \uC9C4\uB2E8\uD558\uBA70, \uC131\uB2A5 \uD2B9\uC131\uC744 \uC774\uD574\uD569\
+  \uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:05.963416
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uB85C\uAE45\uC740 \uD504\
+  \uB85C\uADF8\uB7A8\uC758 \uB7F0\uD0C0\uC784 \uB3D9\uC791\uC5D0 \uB300\uD55C \uC815\
+  \uBCF4\uB97C \uD30C\uC77C, \uCF58\uC194 \uB610\uB294 \uB370\uC774\uD130\uBCA0\uC774\
+  \uC2A4\uC5D0 \uAE30\uB85D\uD558\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uD504\
+  \uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB85C\uAE45\uC744 \uD1B5\uD574 \uC560\uD50C\
+  \uB9AC\uCF00\uC774\uC158\uC744 \uBAA8\uB2C8\uD130\uB9C1\uD558\uACE0, \uBB38\uC81C\
+  \uB97C \uC9C4\uB2E8\uD558\uBA70, \uC131\uB2A5 \uD2B9\uC131\uC744 \uC774\uD574\uD569\
+  \uB2C8\uB2E4."
+title: "\uB85C\uAE45"
 ---
 
 {{< edit_this_page >}}

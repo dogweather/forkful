@@ -1,15 +1,24 @@
 ---
-title:                "使用关联数组"
 aliases:
 - /zh/elixir/using-associative-arrays/
-date:                  2024-01-30T19:10:43.216852-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用关联数组"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:43.216852-07:00
+description: "\u5728Elixir\u4E2D\uFF0C\u5173\u8054\u6570\u7EC4\u88AB\u79F0\u4E3A\u6620\
+  \u5C04\uFF08Maps\uFF09\uFF0C\u5B83\u4EEC\u662F\u7531\u552F\u4E00\u952E\u6307\u5411\
+  \u503C\u7684\u952E-\u503C\u5BF9\u96C6\u5408\u3002\u5BF9\u4E8E\u5373\u65F6\u5B58\u50A8\
+  \u548C\u68C0\u7D22\u6570\u636E\u975E\u5E38\u65B9\u4FBF\uFF0C\u4F7F\u60A8\u7684\u4EE3\
+  \u7801\u66F4\u52A0\u7B80\u6D01\uFF0C\u8BA9\u60A8\u7684\u751F\u6D3B\u66F4\u52A0\u8F7B\
+  \u677E\u3002"
+lastmod: 2024-02-18 23:08:58.859794
+model: gpt-4-0125-preview
+summary: "\u5728Elixir\u4E2D\uFF0C\u5173\u8054\u6570\u7EC4\u88AB\u79F0\u4E3A\u6620\
+  \u5C04\uFF08Maps\uFF09\uFF0C\u5B83\u4EEC\u662F\u7531\u552F\u4E00\u952E\u6307\u5411\
+  \u503C\u7684\u952E-\u503C\u5BF9\u96C6\u5408\u3002\u5BF9\u4E8E\u5373\u65F6\u5B58\u50A8\
+  \u548C\u68C0\u7D22\u6570\u636E\u975E\u5E38\u65B9\u4FBF\uFF0C\u4F7F\u60A8\u7684\u4EE3\
+  \u7801\u66F4\u52A0\u7B80\u6D01\uFF0C\u8BA9\u60A8\u7684\u751F\u6D3B\u66F4\u52A0\u8F7B\
+  \u677E\u3002"
+title: "\u4F7F\u7528\u5173\u8054\u6570\u7EC4"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,17 @@
 ---
-title:                "Usando arrays asociativos"
 aliases:
 - /es/c/using-associative-arrays/
-date:                  2024-02-03T18:10:35.887326-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando arrays asociativos"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/using-associative-arrays.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:35.887326-07:00
+description: "Los arreglos asociativos, conocidos en otros lenguajes como mapas o\
+  \ diccionarios, son pares clave-valor utilizados para la b\xFAsqueda y manipulaci\xF3\
+  n\u2026"
+lastmod: 2024-02-18 23:09:10.492725
+model: gpt-4-0125-preview
+summary: "Los arreglos asociativos, conocidos en otros lenguajes como mapas o diccionarios,\
+  \ son pares clave-valor utilizados para la b\xFAsqueda y manipulaci\xF3n\u2026"
+title: Usando arrays asociativos
 ---
 
 {{< edit_this_page >}}

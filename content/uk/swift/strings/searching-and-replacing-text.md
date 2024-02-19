@@ -1,13 +1,15 @@
 ---
-title:                "Пошук та заміна тексту"
 aliases:
 - /uk/swift/searching-and-replacing-text/
-date:                  2024-01-20T17:58:47.455822-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Пошук та заміна тексту"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:47.455822-07:00
+description: "Searching and replacing text lets you find strings within strings and\
+  \ swap them with something else. Programmers do it for tasks like editing user input,\u2026"
+lastmod: 2024-02-18 23:09:00.936836
+model: gpt-4-1106-preview
+summary: "Searching and replacing text lets you find strings within strings and swap\
+  \ them with something else. Programmers do it for tasks like editing user input,\u2026"
+title: "\u041F\u043E\u0448\u0443\u043A \u0442\u0430 \u0437\u0430\u043C\u0456\u043D\
+  \u0430 \u0442\u0435\u043A\u0441\u0442\u0443"
 ---
 
 {{< edit_this_page >}}

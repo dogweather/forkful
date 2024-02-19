@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonosta lainausmerkkien poistaminen"
 aliases:
 - /fi/arduino/removing-quotes-from-a-string/
-date:                  2024-01-26T03:37:05.556687-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonosta lainausmerkkien poistaminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:37:05.556687-07:00
+description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yksitt\xE4isten\
+  \ (`'`) tai kaksinkertaisten (`\"`) lainausmerkkien poistamista tekstin ymp\xE4\
+  rilt\xE4.\u2026"
+lastmod: 2024-02-18 23:09:07.887248
+model: gpt-4-0125-preview
+summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yksitt\xE4isten (`'`)\
+  \ tai kaksinkertaisten (`\"`) lainausmerkkien poistamista tekstin ymp\xE4rilt\xE4\
+  .\u2026"
+title: Merkkijonosta lainausmerkkien poistaminen
 ---
 
 {{< edit_this_page >}}

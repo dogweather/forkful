@@ -1,13 +1,16 @@
 ---
-title:                "Extraindo substrings"
 aliases:
 - /pt/php/extracting-substrings/
-date:                  2024-01-20T17:46:23.874533-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extraindo substrings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/extracting-substrings.md"
+date: 2024-01-20 17:46:23.874533-07:00
+description: "Extrair substrings \xE9 o processo de selecionar partes espec\xEDficas\
+  \ de uma string. Programadores fazem isso para manipular, analisar ou validar informa\xE7\
+  \xF5es\u2026"
+lastmod: 2024-02-18 23:08:58.229955
+model: gpt-4-1106-preview
+summary: "Extrair substrings \xE9 o processo de selecionar partes espec\xEDficas de\
+  \ uma string. Programadores fazem isso para manipular, analisar ou validar informa\xE7\
+  \xF5es\u2026"
+title: Extraindo substrings
 ---
 
 {{< edit_this_page >}}

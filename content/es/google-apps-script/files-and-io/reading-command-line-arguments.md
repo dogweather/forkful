@@ -1,14 +1,18 @@
 ---
-title:                "Leyendo argumentos de la línea de comandos"
 aliases:
 - /es/google-apps-script/reading-command-line-arguments/
-date:                  2024-02-01T21:58:49.858889-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Leyendo argumentos de la línea de comandos"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/google-apps-script/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:49.858889-07:00
+description: "Leer argumentos de la l\xEDnea de comandos en Google Apps Script es\
+  \ un poco un t\xE9rmino incorrecto porque, a diferencia de las interfaces de l\xED\
+  nea de comandos\u2026"
+lastmod: 2024-02-18 23:09:09.526002
+model: gpt-4-0125-preview
+summary: "Leer argumentos de la l\xEDnea de comandos en Google Apps Script es un poco\
+  \ un t\xE9rmino incorrecto porque, a diferencia de las interfaces de l\xEDnea de\
+  \ comandos\u2026"
+title: "Leyendo argumentos de la l\xEDnea de comandos"
 ---
 
 {{< edit_this_page >}}

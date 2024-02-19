@@ -1,14 +1,18 @@
 ---
-title:                "Koodin järjestäminen funktioihin"
 aliases:
 - /fi/c/organizing-code-into-functions/
-date:                  2024-02-03T17:59:19.269579-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Koodin järjestäminen funktioihin"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/organizing-code-into-functions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:19.269579-07:00
+description: "Koodin j\xE4rjest\xE4minen funktioihin C-kieless\xE4 tarkoittaa monimutkaisten\
+  \ teht\xE4vien pilkkomista pienempiin, uudelleenk\xE4ytett\xE4viin koodilohkoihin.\
+  \ T\xE4m\xE4\u2026"
+lastmod: 2024-02-18 23:09:08.138889
+model: gpt-4-0125-preview
+summary: "Koodin j\xE4rjest\xE4minen funktioihin C-kieless\xE4 tarkoittaa monimutkaisten\
+  \ teht\xE4vien pilkkomista pienempiin, uudelleenk\xE4ytett\xE4viin koodilohkoihin.\
+  \ T\xE4m\xE4\u2026"
+title: "Koodin j\xE4rjest\xE4minen funktioihin"
 ---
 
 {{< edit_this_page >}}

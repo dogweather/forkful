@@ -1,14 +1,21 @@
 ---
-title:                "문자열 연결하기"
 aliases:
 - /ko/fish-shell/concatenating-strings/
-date:                  2024-01-20T17:35:09.370596-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "문자열 연결하기"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/concatenating-strings.md"
+date: 2024-01-20 17:35:09.370596-07:00
+description: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uC5EC\uB7EC \uBB38\uC790\uC5F4\
+  \uC744 \uD558\uB098\uB85C \uD569\uCE58\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC774 \uB370\uC774\uD130\uB97C \uAD6C\uC131\uD558\uACE0\
+  , \uCD9C\uB825\uC744 \uD615\uC2DD\uD654\uD558\uBA70, \uB3D9\uC801 \uAC12\uC744 \uC0DD\
+  \uC131\uD560 \uB54C \uC790\uC8FC \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.865461
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uC5EC\uB7EC \uBB38\uC790\uC5F4\uC744\
+  \ \uD558\uB098\uB85C \uD569\uCE58\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC774 \uB370\uC774\uD130\uB97C \uAD6C\uC131\uD558\uACE0, \uCD9C\
+  \uB825\uC744 \uD615\uC2DD\uD654\uD558\uBA70, \uB3D9\uC801 \uAC12\uC744 \uC0DD\uC131\
+  \uD560 \uB54C \uC790\uC8FC \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Trabajando con YAML"
 aliases:
 - /es/ruby/working-with-yaml/
-date:                  2024-02-03T19:26:16.561306-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:26:16.561306-07:00
+description: "YAML, que significa \"YAML Ain't Markup Language\" (YAML No Es Un Lenguaje\
+  \ de Marcado), es ampliamente usado en Ruby para archivos de configuraci\xF3n y\u2026"
+lastmod: 2024-02-18 23:09:10.574284
+model: gpt-4-0125-preview
+summary: "YAML, que significa \"YAML Ain't Markup Language\" (YAML No Es Un Lenguaje\
+  \ de Marcado), es ampliamente usado en Ruby para archivos de configuraci\xF3n y\u2026"
+title: Trabajando con YAML
 ---
 
 {{< edit_this_page >}}

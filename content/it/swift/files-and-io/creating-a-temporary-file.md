@@ -1,13 +1,14 @@
 ---
-title:                "Creazione di un file temporaneo"
 aliases:
 - /it/swift/creating-a-temporary-file/
-date:                  2024-01-20T17:41:13.881851-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Creazione di un file temporaneo"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:13.881851-07:00
+description: "Creare un file temporaneo vuol dire generare un file destinato a una\
+  \ breve esistenza, spesso usato come buffer o per scambi di dati. Si fa per gestire\u2026"
+lastmod: 2024-02-18 23:08:56.231050
+model: gpt-4-1106-preview
+summary: "Creare un file temporaneo vuol dire generare un file destinato a una breve\
+  \ esistenza, spesso usato come buffer o per scambi di dati. Si fa per gestire\u2026"
+title: Creazione di un file temporaneo
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Skicka en HTTP-förfrågan med Basic-autentisering"
 aliases:
 - /sv/php/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:25.913153-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skicka en HTTP-förfrågan med Basic-autentisering"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:25.913153-07:00
+description: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering inneb\xE4\
+  r att du f\xF6rser en server med anv\xE4ndarnamn och l\xF6senord f\xF6r att bevisa\
+  \ din identitet.\u2026"
+lastmod: 2024-02-18 23:08:51.878000
+model: gpt-4-1106-preview
+summary: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering inneb\xE4\
+  r att du f\xF6rser en server med anv\xE4ndarnamn och l\xF6senord f\xF6r att bevisa\
+  \ din identitet.\u2026"
+title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 ---
 
 {{< edit_this_page >}}

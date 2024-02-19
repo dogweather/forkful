@@ -1,15 +1,18 @@
 ---
-title:                "Utilizando arrays associativos"
 aliases:
 - /pt/c-sharp/using-associative-arrays/
-date:                  2024-01-30T19:09:57.954784-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizando arrays associativos"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:09:57.954784-07:00
+description: "Arrays associativos, ou dicion\xE1rios em C#, permitem armazenar e gerenciar\
+  \ pares de chaves e valores. Eles s\xE3o sua melhor op\xE7\xE3o quando voc\xEA precisa\
+  \ buscar\u2026"
+lastmod: 2024-02-18 23:08:58.150584
+model: gpt-4-0125-preview
+summary: "Arrays associativos, ou dicion\xE1rios em C#, permitem armazenar e gerenciar\
+  \ pares de chaves e valores. Eles s\xE3o sua melhor op\xE7\xE3o quando voc\xEA precisa\
+  \ buscar\u2026"
+title: Utilizando arrays associativos
 ---
 
 {{< edit_this_page >}}

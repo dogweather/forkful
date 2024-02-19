@@ -1,13 +1,16 @@
 ---
-title:                "Obliczanie daty w przyszłości lub przeszłości"
 aliases:
 - /pl/elm/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:30:44.293435-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:30:44.293435-07:00
+description: "Obliczanie daty w przysz\u0142o\u015Bci czy przesz\u0142o\u015Bci to\
+  \ ustalenie daty, kt\xF3ra pojawi si\u0119 lub wyst\u0105pi\u0142a po okre\u015B\
+  lonej liczbie dni, miesi\u0119cy, czy lat od konkretnej\u2026"
+lastmod: 2024-02-18 23:08:49.531874
+model: gpt-4-1106-preview
+summary: "Obliczanie daty w przysz\u0142o\u015Bci czy przesz\u0142o\u015Bci to ustalenie\
+  \ daty, kt\xF3ra pojawi si\u0119 lub wyst\u0105pi\u0142a po okre\u015Blonej liczbie\
+  \ dni, miesi\u0119cy, czy lat od konkretnej\u2026"
+title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 ---
 
 {{< edit_this_page >}}

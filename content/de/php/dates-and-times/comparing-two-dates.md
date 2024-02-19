@@ -1,13 +1,15 @@
 ---
-title:                "Vergleich von zwei Daten"
 aliases:
 - /de/php/comparing-two-dates/
-date:                  2024-01-20T17:33:42.927532-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Vergleich von zwei Daten"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/comparing-two-dates.md"
+date: 2024-01-20 17:33:42.927532-07:00
+description: "(Das Was und das Warum) Datumvergleiche? Das ist einfach das Gegen\xFC\
+  berstellen zweier Zeitpunkte. Wir nutzen das, um Zeitr\xE4ume zu \xFCberpr\xFCfen,\
+  \ Deadlines\u2026"
+lastmod: 2024-02-18 23:09:04.975367
+model: gpt-4-1106-preview
+summary: "(Das Was und das Warum) Datumvergleiche? Das ist einfach das Gegen\xFCberstellen\
+  \ zweier Zeitpunkte. Wir nutzen das, um Zeitr\xE4ume zu \xFCberpr\xFCfen, Deadlines\u2026"
+title: Vergleich von zwei Daten
 ---
 
 {{< edit_this_page >}}

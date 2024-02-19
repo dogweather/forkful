@@ -1,15 +1,16 @@
 ---
-title:                "Een tijdelijk bestand aanmaken"
 aliases:
 - /nl/typescript/creating-a-temporary-file/
-date:                  2024-01-28T21:59:09.968231-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tijdelijk bestand aanmaken"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/typescript/creating-a-temporary-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:09.968231-07:00
+description: "Een tijdelijk bestand maken betekent het cre\xEBren van een bestand\
+  \ dat slechts voor korte tijd nodig is, meestal tijdens de uitvoering van een programma.\u2026"
+lastmod: 2024-02-18 23:09:01.594265
+model: gpt-4-0125-preview
+summary: "Een tijdelijk bestand maken betekent het cre\xEBren van een bestand dat\
+  \ slechts voor korte tijd nodig is, meestal tijdens de uitvoering van een programma.\u2026"
+title: Een tijdelijk bestand aanmaken
 ---
 
 {{< edit_this_page >}}

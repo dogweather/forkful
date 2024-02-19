@@ -1,13 +1,16 @@
 ---
-title:                "Generowanie liczb losowych"
 aliases:
 - /pl/typescript/generating-random-numbers/
-date:                  2024-01-27T20:35:47.077997-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generowanie liczb losowych"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/generating-random-numbers.md"
+date: 2024-01-27 20:35:47.077997-07:00
+description: "Generowanie losowych liczb w TypeScript polega na tworzeniu nieprzewidywalnych\
+  \ warto\u015Bci numerycznych w okre\u015Blonym zakresie. Programi\u015Bci wykorzystuj\u0105\
+  \ te\u2026"
+lastmod: 2024-02-18 23:08:49.344064
+model: gpt-4-0125-preview
+summary: "Generowanie losowych liczb w TypeScript polega na tworzeniu nieprzewidywalnych\
+  \ warto\u015Bci numerycznych w okre\u015Blonym zakresie. Programi\u015Bci wykorzystuj\u0105\
+  \ te\u2026"
+title: Generowanie liczb losowych
 ---
 
 {{< edit_this_page >}}

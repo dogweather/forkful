@@ -1,13 +1,16 @@
 ---
-title:                "Usuwanie cudzysłowów z ciągu znaków"
 aliases:
 - /pl/fish-shell/removing-quotes-from-a-string/
-date:                  2024-01-26T03:39:16.776497-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usuwanie cudzysłowów z ciągu znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:39:16.776497-07:00
+description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w polega na pozbyciu\
+  \ si\u0119 tych irytuj\u0105cych pojedynczych (' ') lub podw\xF3jnych (\" \") znak\xF3\
+  w cudzys\u0142owu z danych tekstowych.\u2026"
+lastmod: 2024-02-18 23:08:50.023300
+model: gpt-4-0125-preview
+summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w polega na pozbyciu si\u0119\
+  \ tych irytuj\u0105cych pojedynczych (' ') lub podw\xF3jnych (\" \") znak\xF3w cudzys\u0142\
+  owu z danych tekstowych.\u2026"
+title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

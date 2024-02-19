@@ -1,15 +1,20 @@
 ---
-title:                "Xử lý lỗi"
 aliases:
 - /vi/fish-shell/handling-errors/
-date:                  2024-01-28T22:02:01.685275-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Xử lý lỗi"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/handling-errors.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:02:01.685275-07:00
+description: "X\u1EED l\xFD l\u1ED7i cho ph\xE9p k\u1ECBch b\u1EA3n c\u1EE7a b\u1EA1\
+  n gi\u1EA3i quy\u1EBFt nh\u1EEFng t\xECnh hu\u1ED1ng kh\xF4ng mong \u0111\u1EE3\
+  i m\u1ED9t c\xE1ch nh\u1EB9 nh\xE0ng. Ch\xFAng ta l\xE0m \u0111i\u1EC1u n\xE0y \u0111\
+  \u1EC3 qu\u1EA3n l\xFD s\u1EF1 c\u1ED1 m\xE0 kh\xF4ng l\xE0m\u2026"
+lastmod: 2024-02-18 23:08:51.193920
+model: gpt-4-0125-preview
+summary: "X\u1EED l\xFD l\u1ED7i cho ph\xE9p k\u1ECBch b\u1EA3n c\u1EE7a b\u1EA1n\
+  \ gi\u1EA3i quy\u1EBFt nh\u1EEFng t\xECnh hu\u1ED1ng kh\xF4ng mong \u0111\u1EE3\
+  i m\u1ED9t c\xE1ch nh\u1EB9 nh\xE0ng. Ch\xFAng ta l\xE0m \u0111i\u1EC1u n\xE0y \u0111\
+  \u1EC3 qu\u1EA3n l\xFD s\u1EF1 c\u1ED1 m\xE0 kh\xF4ng l\xE0m\u2026"
+title: "X\u1EED l\xFD l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

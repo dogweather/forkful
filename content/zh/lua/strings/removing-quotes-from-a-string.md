@@ -1,13 +1,22 @@
 ---
-title:                "从字符串中移除引号"
 aliases:
 - /zh/lua/removing-quotes-from-a-string/
-date:                  2024-01-26T03:40:35.068220-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "从字符串中移除引号"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/lua/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:40:35.068220-07:00
+description: "\u4ECE\u5B57\u7B26\u4E32\u4E2D\u5265\u53BB\u5F15\u53F7\u610F\u5473\u7740\
+  \u5C06\u90A3\u4E9B\u7D27\u7D27\u56F4\u7ED5\u4F60\u6587\u672C\u7684\u53CC\u5F15\u53F7\
+  \u6216\u5355\u5F15\u53F7\u5B57\u7B26\u53BB\u9664\u3002\u7F16\u7A0B\u4EBA\u5458\u8FD9\
+  \u4E48\u505A\u662F\u4E3A\u4E86\u6E05\u7406\u8F93\u5165\u3001\u7B80\u5316\u89E3\u6790\
+  \uFF0C\u6216\u662F\u4E3A\u4E86\u7EDF\u4E00\u53EF\u80FD\u5F15\u53F7\u4F7F\u7528\u4E0D\
+  \u4E00\u81F4\u7684\u6570\u636E\u3002"
+lastmod: 2024-02-18 23:08:59.243172
+model: gpt-4-0125-preview
+summary: "\u4ECE\u5B57\u7B26\u4E32\u4E2D\u5265\u53BB\u5F15\u53F7\u610F\u5473\u7740\
+  \u5C06\u90A3\u4E9B\u7D27\u7D27\u56F4\u7ED5\u4F60\u6587\u672C\u7684\u53CC\u5F15\u53F7\
+  \u6216\u5355\u5F15\u53F7\u5B57\u7B26\u53BB\u9664\u3002\u7F16\u7A0B\u4EBA\u5458\u8FD9\
+  \u4E48\u505A\u662F\u4E3A\u4E86\u6E05\u7406\u8F93\u5165\u3001\u7B80\u5316\u89E3\u6790\
+  \uFF0C\u6216\u662F\u4E3A\u4E86\u7EDF\u4E00\u53EF\u80FD\u5F15\u53F7\u4F7F\u7528\u4E0D\
+  \u4E00\u81F4\u7684\u6570\u636E\u3002"
+title: "\u4ECE\u5B57\u7B26\u4E32\u4E2D\u79FB\u9664\u5F15\u53F7"
 ---
 
 {{< edit_this_page >}}

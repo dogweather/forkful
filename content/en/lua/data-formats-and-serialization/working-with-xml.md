@@ -1,13 +1,14 @@
 ---
-title:                "Working with XML"
 aliases:
 - /en/lua/working-with-xml/
-date:                  2024-01-25T03:39:58.864514-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Working with XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/working-with-xml.md"
+date: 2024-01-25 03:39:58.864514-07:00
+description: "Working with XML involves parsing and manipulating XML documents using\
+  \ code. Programmers do this to read, write, and modify data in a structured, portable\u2026"
+lastmod: 2024-02-18 23:09:11.209968
+model: gpt-4-1106-preview
+summary: "Working with XML involves parsing and manipulating XML documents using code.\
+  \ Programmers do this to read, write, and modify data in a structured, portable\u2026"
+title: Working with XML
 ---
 
 {{< edit_this_page >}}

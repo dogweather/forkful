@@ -1,13 +1,14 @@
 ---
-title:                "Interpolering av en streng"
 aliases:
 - /no/javascript/interpolating-a-string/
-date:                  2024-01-20T17:50:59.943159-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolering av en streng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/interpolating-a-string.md"
+date: 2024-01-20 17:50:59.943159-07:00
+description: "Interpolering av strenger i JavaScript betyr \xE5 sette sammen bitene\
+  \ av tekst og variabler til en helhetlig streng. Vi gj\xF8r det for \xE5 lage dynamiske\u2026"
+lastmod: 2024-02-18 23:08:54.296097
+model: gpt-4-1106-preview
+summary: "Interpolering av strenger i JavaScript betyr \xE5 sette sammen bitene av\
+  \ tekst og variabler til en helhetlig streng. Vi gj\xF8r det for \xE5 lage dynamiske\u2026"
+title: Interpolering av en streng
 ---
 
 {{< edit_this_page >}}

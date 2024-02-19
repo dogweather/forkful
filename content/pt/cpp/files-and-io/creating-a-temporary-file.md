@@ -1,13 +1,16 @@
 ---
-title:                "Criando um arquivo temporário"
 aliases:
 - /pt/cpp/creating-a-temporary-file/
-date:                  2024-01-20T17:40:13.916001-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Criando um arquivo temporário"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:13.916001-07:00
+description: "Criar um arquivo tempor\xE1rio \xE9 o processo de criar um arquivo que\
+  \ \xE9 usado apenas durante a vida \xFAtil de um programa ou processo. Programadores\
+  \ fazem isso\u2026"
+lastmod: 2024-02-18 23:08:58.468888
+model: gpt-4-1106-preview
+summary: "Criar um arquivo tempor\xE1rio \xE9 o processo de criar um arquivo que \xE9\
+  \ usado apenas durante a vida \xFAtil de um programa ou processo. Programadores\
+  \ fazem isso\u2026"
+title: "Criando um arquivo tempor\xE1rio"
 ---
 
 {{< edit_this_page >}}

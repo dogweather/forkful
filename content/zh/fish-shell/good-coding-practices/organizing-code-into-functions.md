@@ -1,16 +1,25 @@
 ---
-title:                "将代码组织成函数"
 aliases:
 - /zh/fish-shell/organizing-code-into-functions/
-date:                  2024-01-28T23:01:28.563755-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "将代码组织成函数"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/organizing-code-into-functions.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed and added links
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed and added links
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 23:01:28.563755-07:00
+description: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\u51FD\u6570\u662F\u6307\u5C06\u811A\
+  \u672C\u7684\u4E00\u90E8\u5206\u6253\u5305\u8D77\u6765\u6267\u884C\u7279\u5B9A\u4EFB\
+  \u52A1\u3002\u6211\u4EEC\u8FD9\u4E48\u505A\u662F\u56E0\u4E3A\u5B83\u4F7F\u4EE3\u7801\
+  \u66F4\u6613\u4E8E\u9605\u8BFB\u3001\u6D4B\u8BD5\u548C\u91CD\u7528 \u2014\u2014\
+  \ \u6CA1\u6709\u4EBA\u60F3\u8981\u5728\u4E00\u5806\u4EE3\u7801\u610F\u5927\u5229\
+  \u9762\u4E2D\u6323\u624E\u3002"
+lastmod: 2024-02-18 23:08:59.524413
+model: gpt-4-0125-preview
+summary: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\u51FD\u6570\u662F\u6307\u5C06\u811A\
+  \u672C\u7684\u4E00\u90E8\u5206\u6253\u5305\u8D77\u6765\u6267\u884C\u7279\u5B9A\u4EFB\
+  \u52A1\u3002\u6211\u4EEC\u8FD9\u4E48\u505A\u662F\u56E0\u4E3A\u5B83\u4F7F\u4EE3\u7801\
+  \u66F4\u6613\u4E8E\u9605\u8BFB\u3001\u6D4B\u8BD5\u548C\u91CD\u7528 \u2014\u2014\
+  \ \u6CA1\u6709\u4EBA\u60F3\u8981\u5728\u4E00\u5806\u4EE3\u7801\u610F\u5927\u5229\
+  \u9762\u4E2D\u6323\u624E\u3002"
+title: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\u51FD\u6570"
 ---
 
 {{< edit_this_page >}}

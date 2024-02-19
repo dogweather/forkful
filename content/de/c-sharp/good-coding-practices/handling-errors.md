@@ -1,13 +1,16 @@
 ---
-title:                "Fehlerbehandlung"
 aliases:
 - /de/c-sharp/handling-errors/
-date:                  2024-01-26T00:50:05.347551-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Fehlerbehandlung"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/handling-errors.md"
+date: 2024-01-26 00:50:05.347551-07:00
+description: "Die Fehlerbehandlung in C# dient dazu, das Unerwartete zu bew\xE4ltigen\
+  \ \u2013 so wie \xFCber eigene Schn\xFCrsenkel zu stolpern. Programme k\xF6nnen\
+  \ \xFCber schlechte Daten\u2026"
+lastmod: 2024-02-18 23:09:04.879265
+model: gpt-4-1106-preview
+summary: "Die Fehlerbehandlung in C# dient dazu, das Unerwartete zu bew\xE4ltigen\
+  \ \u2013 so wie \xFCber eigene Schn\xFCrsenkel zu stolpern. Programme k\xF6nnen\
+  \ \xFCber schlechte Daten\u2026"
+title: Fehlerbehandlung
 ---
 
 {{< edit_this_page >}}

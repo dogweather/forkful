@@ -1,13 +1,16 @@
 ---
-title:                "Konwersja ciągu znaków na małe litery"
 aliases:
 - /pl/kotlin/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:56.746032-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konwersja ciągu znaków na małe litery"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:56.746032-07:00
+description: "Zamiana \u0142a\u0144cucha znak\xF3w na ma\u0142e litery to proces,\
+  \ gdzie wszystkie wielkie litery w tek\u015Bcie staj\u0105 si\u0119 ma\u0142ymi.\
+  \ Programi\u015Bci u\u017Cywaj\u0105 tej zmiany dla unifikacji\u2026"
+lastmod: 2024-02-18 23:08:49.546887
+model: gpt-4-1106-preview
+summary: "Zamiana \u0142a\u0144cucha znak\xF3w na ma\u0142e litery to proces, gdzie\
+  \ wszystkie wielkie litery w tek\u015Bcie staj\u0105 si\u0119 ma\u0142ymi. Programi\u015B\
+  ci u\u017Cywaj\u0105 tej zmiany dla unifikacji\u2026"
+title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 ---
 
 {{< edit_this_page >}}

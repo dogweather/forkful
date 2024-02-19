@@ -1,15 +1,26 @@
 ---
-title:                "連想配列の使用"
 aliases:
 - /ja/elixir/using-associative-arrays/
-date:                  2024-01-30T19:10:51.416443-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "連想配列の使用"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:51.416443-07:00
+description: "Elixir\u3067\u306F\u3001\u30DE\u30C3\u30D7\u3068\u547C\u3070\u308C\u308B\
+  \u9023\u60F3\u914D\u5217\u306F\u3001\u4E00\u610F\u306E\u30AD\u30FC\u304C\u5024\u3092\
+  \u6307\u3057\u793A\u3059\u30AD\u30FC\u30FB\u30D0\u30EA\u30E5\u30FC\u30DA\u30A2\u306E\
+  \u30B3\u30EC\u30AF\u30B7\u30E7\u30F3\u3067\u3059\u3002\u30C7\u30FC\u30BF\u306E\u4FDD\
+  \u5B58\u3084\u53D6\u5F97\u306B\u975E\u5E38\u306B\u4FBF\u5229\u3067\u3001\u30B3\u30FC\
+  \u30C9\u3092\u30AF\u30EA\u30FC\u30CA\u30FC\u306B\u3057\u3001\u3042\u306A\u305F\u306E\
+  \u751F\u6D3B\u3092\u697D\u306B\u3057\u307E\u3059\u3002"
+lastmod: 2024-02-18 23:08:54.636501
+model: gpt-4-0125-preview
+summary: "Elixir\u3067\u306F\u3001\u30DE\u30C3\u30D7\u3068\u547C\u3070\u308C\u308B\
+  \u9023\u60F3\u914D\u5217\u306F\u3001\u4E00\u610F\u306E\u30AD\u30FC\u304C\u5024\u3092\
+  \u6307\u3057\u793A\u3059\u30AD\u30FC\u30FB\u30D0\u30EA\u30E5\u30FC\u30DA\u30A2\u306E\
+  \u30B3\u30EC\u30AF\u30B7\u30E7\u30F3\u3067\u3059\u3002\u30C7\u30FC\u30BF\u306E\u4FDD\
+  \u5B58\u3084\u53D6\u5F97\u306B\u975E\u5E38\u306B\u4FBF\u5229\u3067\u3001\u30B3\u30FC\
+  \u30C9\u3092\u30AF\u30EA\u30FC\u30CA\u30FC\u306B\u3057\u3001\u3042\u306A\u305F\u306E\
+  \u751F\u6D3B\u3092\u697D\u306B\u3057\u307E\u3059\u3002"
+title: "\u9023\u60F3\u914D\u5217\u306E\u4F7F\u7528"
 ---
 
 {{< edit_this_page >}}

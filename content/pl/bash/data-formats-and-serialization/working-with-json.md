@@ -1,14 +1,18 @@
 ---
-title:                "Praca z JSON"
 aliases:
 - /pl/bash/working-with-json/
-date:                  2024-02-03T19:21:43.312661-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:21:43.312661-07:00
+description: "Praca z JSON w Bash polega na parsowaniu, wydobywaniu i manipulowaniu\
+  \ danymi JSON bezpo\u015Brednio z linii polece\u0144. Programi\u015Bci cz\u0119\
+  sto robi\u0105 to, aby p\u0142ynnie\u2026"
+lastmod: 2024-02-18 23:08:49.806380
+model: gpt-4-0125-preview
+summary: "Praca z JSON w Bash polega na parsowaniu, wydobywaniu i manipulowaniu danymi\
+  \ JSON bezpo\u015Brednio z linii polece\u0144. Programi\u015Bci cz\u0119sto robi\u0105\
+  \ to, aby p\u0142ynnie\u2026"
+title: Praca z JSON
 ---
 
 {{< edit_this_page >}}

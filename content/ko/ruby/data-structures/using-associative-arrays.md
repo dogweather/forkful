@@ -1,15 +1,30 @@
 ---
-title:                "연관 배열 사용하기"
 aliases:
 - /ko/ruby/using-associative-arrays/
-date:                  2024-01-30T19:13:13.865041-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "연관 배열 사용하기"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:13:13.865041-07:00
+description: "\uC5F0\uAD00 \uBC30\uC5F4\uC740 Ruby\uC5D0\uC11C\uB294 \uC77C\uBC18\uC801\
+  \uC73C\uB85C \uD574\uC2DC\uB77C\uACE0 \uC54C\uB824\uC838 \uC788\uC73C\uBA70, \uACE0\
+  \uC720\uD55C \uD0A4\uB97C \uAC12\uACFC \uC5F0\uACB0\uD560 \uC218 \uC788\uAC8C \uD574\
+  \uC90D\uB2C8\uB2E4. \uD2B9\uC815 \uCC38\uC870\uB97C \uD1B5\uD574 \uC694\uC18C\uB97C\
+  \ \uCD94\uC801\uD558\uAC70\uB098 \uAC1D\uCCB4\uC758 \uC18D\uC131\uC744 \uC800\uC7A5\
+  \uD558\uAC70\uB098 \uACE0\uC720 \uC2DD\uBCC4\uC790\uB85C \uB370\uC774\uD130\uC5D0\
+  \ \uBE60\uB974\uAC8C \uC811\uADFC\uD560 \uD544\uC694\uAC00 \uC788\uC744 \uB54C \uC5C6\
+  \uC5B4\uC11C\uB294 \uC548\uB420 \uC911\uC694\uD55C \uAE30\uB2A5\uC785\uB2C8\uB2E4\
+  ."
+lastmod: 2024-02-18 23:09:07.011232
+model: gpt-4-0125-preview
+summary: "\uC5F0\uAD00 \uBC30\uC5F4\uC740 Ruby\uC5D0\uC11C\uB294 \uC77C\uBC18\uC801\
+  \uC73C\uB85C \uD574\uC2DC\uB77C\uACE0 \uC54C\uB824\uC838 \uC788\uC73C\uBA70, \uACE0\
+  \uC720\uD55C \uD0A4\uB97C \uAC12\uACFC \uC5F0\uACB0\uD560 \uC218 \uC788\uAC8C \uD574\
+  \uC90D\uB2C8\uB2E4. \uD2B9\uC815 \uCC38\uC870\uB97C \uD1B5\uD574 \uC694\uC18C\uB97C\
+  \ \uCD94\uC801\uD558\uAC70\uB098 \uAC1D\uCCB4\uC758 \uC18D\uC131\uC744 \uC800\uC7A5\
+  \uD558\uAC70\uB098 \uACE0\uC720 \uC2DD\uBCC4\uC790\uB85C \uB370\uC774\uD130\uC5D0\
+  \ \uBE60\uB974\uAC8C \uC811\uADFC\uD560 \uD544\uC694\uAC00 \uC788\uC744 \uB54C \uC5C6\
+  \uC5B4\uC11C\uB294 \uC548\uB420 \uC911\uC694\uD55C \uAE30\uB2A5\uC785\uB2C8\uB2E4\
+  ."
+title: "\uC5F0\uAD00 \uBC30\uC5F4 \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,17 @@
 ---
-title:                "Työskentely YAML:n kanssa"
 aliases:
 - /fi/elm/working-with-yaml/
-date:                  2024-02-03T19:25:37.898661-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely YAML:n kanssa"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:25:37.898661-07:00
+description: "Elm ei tarjoa sis\xE4\xE4nrakennettua tukea YAML:lle, joka on datan\
+  \ serialisointiformaatti ja jota k\xE4ytet\xE4\xE4n usein konfiguraatiotiedostoissa\
+  \ tai datan\u2026"
+lastmod: 2024-02-18 23:09:07.551152
+model: gpt-4-0125-preview
+summary: "Elm ei tarjoa sis\xE4\xE4nrakennettua tukea YAML:lle, joka on datan serialisointiformaatti\
+  \ ja jota k\xE4ytet\xE4\xE4n usein konfiguraatiotiedostoissa tai datan\u2026"
+title: "Ty\xF6skentely YAML:n kanssa"
 ---
 
 {{< edit_this_page >}}

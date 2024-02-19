@@ -1,15 +1,20 @@
 ---
-title:                "Tính toán ngày trong tương lai hoặc quá khứ"
 aliases:
 - /vi/swift/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-28T21:55:48.485435-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tính toán ngày trong tương lai hoặc quá khứ"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/swift/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:55:48.485435-07:00
+description: "B\u1EA1n \u0111\xE3 bao gi\u1EDD c\u1EA7n t\xECm m\u1ED9t ng\xE0y trong\
+  \ qu\xE1 kh\u1EE9 ho\u1EB7c t\u01B0\u01A1ng lai ch\u01B0a? V\u1EC1 m\u1EB7t l\u1EAD\
+  p tr\xECnh, ch\xFAng ta th\u01B0\u1EDDng t\xEDnh to\xE1n ng\xE0y cho c\xE1c h\u1EA1\
+  n ch\xF3t, nh\u1EAFc nh\u1EDF, ho\u1EB7c s\u1EF1\u2026"
+lastmod: 2024-02-18 23:08:51.104776
+model: gpt-4-0125-preview
+summary: "B\u1EA1n \u0111\xE3 bao gi\u1EDD c\u1EA7n t\xECm m\u1ED9t ng\xE0y trong\
+  \ qu\xE1 kh\u1EE9 ho\u1EB7c t\u01B0\u01A1ng lai ch\u01B0a? V\u1EC1 m\u1EB7t l\u1EAD\
+  p tr\xECnh, ch\xFAng ta th\u01B0\u1EDDng t\xEDnh to\xE1n ng\xE0y cho c\xE1c h\u1EA1\
+  n ch\xF3t, nh\u1EAFc nh\u1EDF, ho\u1EB7c s\u1EF1\u2026"
+title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
 ---
 
 {{< edit_this_page >}}

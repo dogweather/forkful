@@ -1,14 +1,16 @@
 ---
-title:                "Reguliere expressies gebruiken"
 aliases:
 - /nl/vba/using-regular-expressions/
-date:                  2024-02-01T22:04:53.756793-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Reguliere expressies gebruiken"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/vba/using-regular-expressions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:53.756793-07:00
+description: "Reguliere expressies (regex) in Visual Basic for Applications (VBA)\
+  \ bieden een krachtige manier om te zoeken, te matchen en strings te manipuleren.\u2026"
+lastmod: 2024-02-18 23:09:01.654422
+model: gpt-4-0125-preview
+summary: "Reguliere expressies (regex) in Visual Basic for Applications (VBA) bieden\
+  \ een krachtige manier om te zoeken, te matchen en strings te manipuleren.\u2026"
+title: Reguliere expressies gebruiken
 ---
 
 {{< edit_this_page >}}

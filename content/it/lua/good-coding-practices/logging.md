@@ -1,13 +1,14 @@
 ---
-title:                "Registrazione delle Attività (Logging)"
 aliases:
 - /it/lua/logging/
-date:                  2024-01-26T01:07:17.217873-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registrazione delle Attività (Logging)"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/lua/logging.md"
+date: 2024-01-26 01:07:17.217873-07:00
+description: "Il logging \xE8 la pratica di registrare eventi, errori e altri punti\
+  \ dati significativi che si verificano all'interno del ciclo di vita di un'applicazione\u2026"
+lastmod: 2024-02-18 23:08:56.016983
+model: gpt-4-1106-preview
+summary: "Il logging \xE8 la pratica di registrare eventi, errori e altri punti dati\
+  \ significativi che si verificano all'interno del ciclo di vita di un'applicazione\u2026"
+title: "Registrazione delle Attivit\xE0 (Logging)"
 ---
 
 {{< edit_this_page >}}

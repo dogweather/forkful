@@ -1,15 +1,20 @@
 ---
-title:                "Kiểm tra xem thư mục có tồn tại không"
 aliases:
 - /vi/ruby/checking-if-a-directory-exists/
-date:                  2024-01-28T21:56:38.822660-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kiểm tra xem thư mục có tồn tại không"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:38.822660-07:00
+description: "Ki\u1EC3m tra n\u1EBFu m\u1ED9t th\u01B0 m\u1EE5c t\u1ED3n t\u1EA1i\
+  \ c\xF3 ngh\u0129a l\xE0 x\xE1c nh\u1EADn xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 m\u1EB7\
+  t trong h\u1EC7 th\u1ED1ng t\u1EC7p tin hay kh\xF4ng. L\u1EADp tr\xECnh vi\xEAn\
+  \ th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 tr\xE1nh\u2026"
+lastmod: 2024-02-18 23:08:51.301673
+model: gpt-4-0125-preview
+summary: "Ki\u1EC3m tra n\u1EBFu m\u1ED9t th\u01B0 m\u1EE5c t\u1ED3n t\u1EA1i c\xF3\
+  \ ngh\u0129a l\xE0 x\xE1c nh\u1EADn xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 m\u1EB7\
+  t trong h\u1EC7 th\u1ED1ng t\u1EC7p tin hay kh\xF4ng. L\u1EADp tr\xECnh vi\xEAn\
+  \ th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 tr\xE1nh\u2026"
+title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Organizando código en funciones"
 aliases:
 - /es/python/organizing-code-into-functions/
-date:                  2024-01-26T01:11:44.189681-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organizando código en funciones"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/organizing-code-into-functions.md"
+date: 2024-01-26 01:11:44.189681-07:00
+description: "Organizar el c\xF3digo en funciones consiste en desglosar tu c\xF3digo\
+  \ en bloques reutilizables con fines espec\xEDficos. Lo hacemos para que el c\xF3\
+  digo sea m\xE1s\u2026"
+lastmod: 2024-02-18 23:09:09.562428
+model: gpt-4-1106-preview
+summary: "Organizar el c\xF3digo en funciones consiste en desglosar tu c\xF3digo en\
+  \ bloques reutilizables con fines espec\xEDficos. Lo hacemos para que el c\xF3digo\
+  \ sea m\xE1s\u2026"
+title: "Organizando c\xF3digo en funciones"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Arbeiten mit CSV"
 aliases:
 - /de/vba/working-with-csv/
-date:                  2024-02-01T22:05:05.516150-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeiten mit CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/vba/working-with-csv.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:05:05.516150-07:00
+description: "Die Arbeit mit CSV-Dateien (Comma Separated Values, durch Kommas getrennte\
+  \ Werte) beinhaltet das Lesen von oder das Schreiben in einfache Textdateien, bei\u2026"
+lastmod: 2024-02-18 23:09:04.715405
+model: gpt-4-0125-preview
+summary: "Die Arbeit mit CSV-Dateien (Comma Separated Values, durch Kommas getrennte\
+  \ Werte) beinhaltet das Lesen von oder das Schreiben in einfache Textdateien, bei\u2026"
+title: Arbeiten mit CSV
 ---
 
 {{< edit_this_page >}}

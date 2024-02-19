@@ -1,15 +1,17 @@
 ---
-title:                "Controleren of een directory bestaat"
 aliases:
 - /nl/ruby/checking-if-a-directory-exists/
-date:                  2024-01-28T21:56:17.938032-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Controleren of een directory bestaat"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:17.938032-07:00
+description: "Controleren of een map bestaat betekent bevestigen of een map aanwezig\
+  \ is in het bestandssysteem. Programmeurs doen dit om fouten te voorkomen voordat\
+  \ ze\u2026"
+lastmod: 2024-02-18 23:09:02.438237
+model: gpt-4-0125-preview
+summary: "Controleren of een map bestaat betekent bevestigen of een map aanwezig is\
+  \ in het bestandssysteem. Programmeurs doen dit om fouten te voorkomen voordat ze\u2026"
+title: Controleren of een directory bestaat
 ---
 
 {{< edit_this_page >}}

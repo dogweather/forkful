@@ -1,14 +1,19 @@
 ---
-title:                "下载网页"
 aliases:
 - /zh/java/downloading-a-web-page/
-date:                  2024-01-20T17:44:33.854371-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "下载网页"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/downloading-a-web-page.md"
+date: 2024-01-20 17:44:33.854371-07:00
+description: "\u4E0B\u8F7D\u7F51\u9875\u662F\u6307\u5C06\u7F51\u4E0A\u7684\u9875\u9762\
+  \u4FDD\u5B58\u5230\u672C\u5730\u3002\u7F16\u7A0B\u5E08\u8FD9\u4E48\u505A\u4EE5\u6536\
+  \u96C6\u6570\u636E\u3001\u6D4B\u8BD5\u7F51\u7AD9\u6216\u8FDB\u884C\u5185\u5BB9\u5907\
+  \u4EFD\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.020102
+model: gpt-4-1106-preview
+summary: "\u4E0B\u8F7D\u7F51\u9875\u662F\u6307\u5C06\u7F51\u4E0A\u7684\u9875\u9762\
+  \u4FDD\u5B58\u5230\u672C\u5730\u3002\u7F16\u7A0B\u5E08\u8FD9\u4E48\u505A\u4EE5\u6536\
+  \u96C6\u6570\u636E\u3001\u6D4B\u8BD5\u7F51\u7AD9\u6216\u8FDB\u884C\u5185\u5BB9\u5907\
+  \u4EFD\u3002"
+title: "\u4E0B\u8F7D\u7F51\u9875"
 ---
 
 {{< edit_this_page >}}

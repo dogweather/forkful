@@ -1,12 +1,14 @@
 ---
-title:                "Generating random numbers"
 aliases:
 - /en/vba/generating-random-numbers/
-date:                  2024-02-01T21:30:24.808919-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generating random numbers"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/vba/generating-random-numbers.md"
+date: 2024-02-01 21:30:24.808919-07:00
+description: "Generating random numbers in Visual Basic for Applications (VBA) allows\
+  \ programs to simulate processes with elements of chance or variability, such as\u2026"
+lastmod: 2024-02-18 23:09:10.885784
+model: gpt-4-0125-preview
+summary: "Generating random numbers in Visual Basic for Applications (VBA) allows\
+  \ programs to simulate processes with elements of chance or variability, such as\u2026"
+title: Generating random numbers
 ---
 
 {{< edit_this_page >}}

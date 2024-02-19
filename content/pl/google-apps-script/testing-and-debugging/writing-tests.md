@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie testów"
 aliases:
 - /pl/google-apps-script/writing-tests/
-date:                  2024-02-01T22:08:56.272841-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie testów"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/writing-tests.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:08:56.272841-07:00
+description: "Pisanie test\xF3w w Google Apps Script (GAS) polega na tworzeniu automatycznych\
+  \ skrypt\xF3w, kt\xF3re weryfikuj\u0105 zachowanie Twoich kod\xF3w, zapewniaj\u0105\
+  c ich\u2026"
+lastmod: 2024-02-18 23:08:49.151650
+model: gpt-4-0125-preview
+summary: "Pisanie test\xF3w w Google Apps Script (GAS) polega na tworzeniu automatycznych\
+  \ skrypt\xF3w, kt\xF3re weryfikuj\u0105 zachowanie Twoich kod\xF3w, zapewniaj\u0105\
+  c ich\u2026"
+title: "Pisanie test\xF3w"
 ---
 
 {{< edit_this_page >}}

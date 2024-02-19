@@ -1,13 +1,16 @@
 ---
-title:                "Läsa in kommandoradsargument"
 aliases:
 - /sv/bash/reading-command-line-arguments/
-date:                  2024-01-20T17:55:19.417068-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Läsa in kommandoradsargument"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:19.417068-07:00
+description: "Att l\xE4sa kommandoradsargument \xE4r att f\xE5nga de v\xE4rden som\
+  \ anv\xE4nds n\xE4r du k\xF6r ett script. Det l\xE5ter dig anpassa scriptets beteende\
+  \ utan att \xE4ndra koden."
+lastmod: 2024-02-18 23:08:51.976113
+model: gpt-4-1106-preview
+summary: "Att l\xE4sa kommandoradsargument \xE4r att f\xE5nga de v\xE4rden som anv\xE4\
+  nds n\xE4r du k\xF6r ett script. Det l\xE5ter dig anpassa scriptets beteende utan\
+  \ att \xE4ndra koden."
+title: "L\xE4sa in kommandoradsargument"
 ---
 
 {{< edit_this_page >}}

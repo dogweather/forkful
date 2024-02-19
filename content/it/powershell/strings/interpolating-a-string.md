@@ -1,13 +1,14 @@
 ---
-title:                "Interpolazione di una stringa"
 aliases:
 - /it/powershell/interpolating-a-string/
-date:                  2024-01-20T17:51:22.254741-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolazione di una stringa"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/interpolating-a-string.md"
+date: 2024-01-20 17:51:22.254741-07:00
+description: "L'interpolazione di una stringa consente di inserire variabili o espressioni\
+  \ direttamente all'interno di una stringa di testo. I programmatori la usano\u2026"
+lastmod: 2024-02-18 23:08:56.079346
+model: gpt-4-1106-preview
+summary: "L'interpolazione di una stringa consente di inserire variabili o espressioni\
+  \ direttamente all'interno di una stringa di testo. I programmatori la usano\u2026"
+title: Interpolazione di una stringa
 ---
 
 {{< edit_this_page >}}

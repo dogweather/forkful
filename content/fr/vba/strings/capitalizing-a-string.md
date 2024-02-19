@@ -1,14 +1,18 @@
 ---
-title:                "Mettre une chaîne en majuscules"
 aliases:
 - /fr/vba/capitalizing-a-string/
-date:                  2024-02-01T21:49:03.901273-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Mettre une chaîne en majuscules"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/vba/capitalizing-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:03.901273-07:00
+description: "La capitalisation d'une cha\xEEne de caract\xE8res dans Visual Basic\
+  \ pour Applications (VBA) consiste \xE0 convertir le premier caract\xE8re de chaque\
+  \ mot en\u2026"
+lastmod: 2024-02-18 23:09:08.557638
+model: gpt-4-0125-preview
+summary: "La capitalisation d'une cha\xEEne de caract\xE8res dans Visual Basic pour\
+  \ Applications (VBA) consiste \xE0 convertir le premier caract\xE8re de chaque mot\
+  \ en\u2026"
+title: "Mettre une cha\xEEne en majuscules"
 ---
 
 {{< edit_this_page >}}

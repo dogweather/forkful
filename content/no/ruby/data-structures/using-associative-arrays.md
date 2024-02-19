@@ -1,15 +1,18 @@
 ---
-title:                "Bruke associative tabeller"
 aliases:
 - /no/ruby/using-associative-arrays/
-date:                  2024-01-30T19:12:43.911652-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke associative tabeller"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:43.911652-07:00
+description: "Assosiative tabeller, mer kjent som hashes i Ruby, gj\xF8r det mulig\
+  \ \xE5 pare unike n\xF8kler med verdier. De er uunnv\xE6rlige n\xE5r du trenger\
+  \ \xE5 holde styr p\xE5\u2026"
+lastmod: 2024-02-18 23:08:54.429907
+model: gpt-4-0125-preview
+summary: "Assosiative tabeller, mer kjent som hashes i Ruby, gj\xF8r det mulig \xE5\
+  \ pare unike n\xF8kler med verdier. De er uunnv\xE6rlige n\xE5r du trenger \xE5\
+  \ holde styr p\xE5\u2026"
+title: Bruke associative tabeller
 ---
 
 {{< edit_this_page >}}

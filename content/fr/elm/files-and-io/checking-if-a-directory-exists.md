@@ -1,12 +1,15 @@
 ---
-title:                "Vérification de l'existence d'un répertoire"
 aliases:
 - /fr/elm/checking-if-a-directory-exists/
-date:                  2024-01-19
-simple_title:         "Vérification de l'existence d'un répertoire"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/checking-if-a-directory-exists.md"
+date: 2024-01-19
+description: "\"Quoi et Pourquoi ?\": V\xE9rifier si un dossier existe c'est s'assurer\
+  \ que le chemin d'acc\xE8s pointe vers quelque chose de r\xE9el. Les d\xE9veloppeurs\
+  \ font \xE7a pour\u2026"
+lastmod: 2024-02-18 23:09:08.750328
+summary: "\"Quoi et Pourquoi ?\": V\xE9rifier si un dossier existe c'est s'assurer\
+  \ que le chemin d'acc\xE8s pointe vers quelque chose de r\xE9el. Les d\xE9veloppeurs\
+  \ font \xE7a pour\u2026"
+title: "V\xE9rification de l'existence d'un r\xE9pertoire"
 ---
 
 {{< edit_this_page >}}

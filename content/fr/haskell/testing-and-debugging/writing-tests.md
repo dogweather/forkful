@@ -1,14 +1,18 @@
 ---
-title:                "Rédaction de tests"
 aliases:
 - /fr/haskell/writing-tests/
-date:                  2024-02-03T19:30:45.537260-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rédaction de tests"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:30:45.537260-07:00
+description: "\xC9crire des tests en Haskell, c'est s'assurer que vos fonctions fonctionnent\
+  \ comme pr\xE9vu gr\xE2ce \xE0 des v\xE9rifications automatis\xE9es. Les programmeurs\
+  \ le font\u2026"
+lastmod: 2024-02-18 23:09:08.879113
+model: gpt-4-0125-preview
+summary: "\xC9crire des tests en Haskell, c'est s'assurer que vos fonctions fonctionnent\
+  \ comme pr\xE9vu gr\xE2ce \xE0 des v\xE9rifications automatis\xE9es. Les programmeurs\
+  \ le font\u2026"
+title: "R\xE9daction de tests"
 ---
 
 {{< edit_this_page >}}

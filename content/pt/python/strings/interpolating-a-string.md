@@ -1,16 +1,19 @@
 ---
-title:                "Interpolando uma string"
 aliases:
 - /pt/python/interpolating-a-string/
-date:                  2024-01-28T21:24:01.169975-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interpolando uma string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/interpolating-a-string.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:24:01.169975-07:00
+description: "A interpola\xE7\xE3o de strings \xE9 o m\xE9todo de embutir express\xF5\
+  es dentro de literais de string. Programadores a utilizam para inserir valores dinamicamente\
+  \ em\u2026"
+lastmod: 2024-02-18 23:08:57.747641
+model: gpt-4-0125-preview
+summary: "A interpola\xE7\xE3o de strings \xE9 o m\xE9todo de embutir express\xF5\
+  es dentro de literais de string. Programadores a utilizam para inserir valores dinamicamente\
+  \ em\u2026"
+title: Interpolando uma string
 ---
 
 {{< edit_this_page >}}

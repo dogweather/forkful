@@ -1,14 +1,18 @@
 ---
-title:                "Generowanie liczb losowych"
 aliases:
 - /pl/go/generating-random-numbers/
-date:                  2024-02-03T17:57:39.703723-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generowanie liczb losowych"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/generating-random-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:39.703723-07:00
+description: "Generowanie losowych liczb w programowaniu polega na tworzeniu sekwencji\
+  \ liczb, kt\xF3rych nie mo\u017Cna racjonalnie przewidzie\u0107 lepiej ni\u017C\
+  \ przez przypadek.\u2026"
+lastmod: 2024-02-18 23:08:49.092591
+model: gpt-4-0125-preview
+summary: "Generowanie losowych liczb w programowaniu polega na tworzeniu sekwencji\
+  \ liczb, kt\xF3rych nie mo\u017Cna racjonalnie przewidzie\u0107 lepiej ni\u017C\
+  \ przez przypadek.\u2026"
+title: Generowanie liczb losowych
 ---
 
 {{< edit_this_page >}}

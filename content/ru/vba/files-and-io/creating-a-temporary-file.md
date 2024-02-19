@@ -1,14 +1,31 @@
 ---
-title:                "Создание временного файла"
 aliases:
 - /ru/vba/creating-a-temporary-file/
-date:                  2024-02-01T21:52:23.495775-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Создание временного файла"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/vba/creating-a-temporary-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:23.495775-07:00
+description: "\u0421\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u0432\u0440\u0435\u043C\
+  \u0435\u043D\u043D\u043E\u0433\u043E \u0444\u0430\u0439\u043B\u0430 \u0432 Visual\
+  \ Basic for Applications (VBA) \u0432\u043A\u043B\u044E\u0447\u0430\u0435\u0442\
+  \ \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043D\u043E\u0435 \u0433\u0435\
+  \u043D\u0435\u0440\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u0444\u0430\u0439\
+  \u043B\u0430 \u0434\u043B\u044F \u043A\u0440\u0430\u0442\u043A\u043E\u0441\u0440\
+  \u043E\u0447\u043D\u043E\u0433\u043E \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\
+  \u0432\u0430\u043D\u0438\u044F, \u043E\u0431\u044B\u0447\u043D\u043E \u0434\u043B\
+  \u044F\u2026"
+lastmod: 2024-02-18 23:08:56.810698
+model: gpt-4-0125-preview
+summary: "\u0421\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u0432\u0440\u0435\u043C\
+  \u0435\u043D\u043D\u043E\u0433\u043E \u0444\u0430\u0439\u043B\u0430 \u0432 Visual\
+  \ Basic for Applications (VBA) \u0432\u043A\u043B\u044E\u0447\u0430\u0435\u0442\
+  \ \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043D\u043E\u0435 \u0433\u0435\
+  \u043D\u0435\u0440\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u0444\u0430\u0439\
+  \u043B\u0430 \u0434\u043B\u044F \u043A\u0440\u0430\u0442\u043A\u043E\u0441\u0440\
+  \u043E\u0447\u043D\u043E\u0433\u043E \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\
+  \u0432\u0430\u043D\u0438\u044F, \u043E\u0431\u044B\u0447\u043D\u043E \u0434\u043B\
+  \u044F\u2026"
+title: "\u0421\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u0432\u0440\u0435\u043C\u0435\
+  \u043D\u043D\u043E\u0433\u043E \u0444\u0430\u0439\u043B\u0430"
 ---
 
 {{< edit_this_page >}}

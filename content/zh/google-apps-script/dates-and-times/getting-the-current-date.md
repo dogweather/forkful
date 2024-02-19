@@ -1,14 +1,28 @@
 ---
-title:                "获取当前日期"
 aliases:
 - /zh/google-apps-script/getting-the-current-date/
-date:                  2024-02-01T21:54:38.327929-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "获取当前日期"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/google-apps-script/getting-the-current-date.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:38.327929-07:00
+description: "\u5728 Google Apps \u811A\u672C\u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\
+  \u662F\u5173\u4E8E\u83B7\u53D6\u5B9E\u65F6\u65E5\u671F\u548C\u65F6\u95F4\u7684\u5E38\
+  \u89C1\u4EFB\u52A1\uFF0C\u7528\u4E8E\u81EA\u52A8\u5316\u4EFB\u52A1\u3001\u65E5\u5FD7\
+  \u8BB0\u5F55\u548C\u5728 Google \u751F\u6001\u7CFB\u7EDF\u5185\u7684\u5E94\u7528\
+  \u4E2D\u8FDB\u884C\u65F6\u95F4\u6233\u8BB0\u5F55\u3002\u7A0B\u5E8F\u5458\u4F7F\u7528\
+  \u8FD9\u4E00\u529F\u80FD\u8FDB\u884C\u52A8\u6001\u5185\u5BB9\u751F\u6210\u3001\u622A\
+  \u6B62\u65E5\u671F\u8DDF\u8E2A\u4EE5\u53CA\u5728 Google Docs\u3001Sheets \u548C\u5176\
+  \u4ED6 Google \u670D\u52A1\u5185\u7684\u8C03\u5EA6\u3002"
+lastmod: 2024-02-18 23:08:58.760989
+model: gpt-4-0125-preview
+summary: "\u5728 Google Apps \u811A\u672C\u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\
+  \u662F\u5173\u4E8E\u83B7\u53D6\u5B9E\u65F6\u65E5\u671F\u548C\u65F6\u95F4\u7684\u5E38\
+  \u89C1\u4EFB\u52A1\uFF0C\u7528\u4E8E\u81EA\u52A8\u5316\u4EFB\u52A1\u3001\u65E5\u5FD7\
+  \u8BB0\u5F55\u548C\u5728 Google \u751F\u6001\u7CFB\u7EDF\u5185\u7684\u5E94\u7528\
+  \u4E2D\u8FDB\u884C\u65F6\u95F4\u6233\u8BB0\u5F55\u3002\u7A0B\u5E8F\u5458\u4F7F\u7528\
+  \u8FD9\u4E00\u529F\u80FD\u8FDB\u884C\u52A8\u6001\u5185\u5BB9\u751F\u6210\u3001\u622A\
+  \u6B62\u65E5\u671F\u8DDF\u8E2A\u4EE5\u53CA\u5728 Google Docs\u3001Sheets \u548C\u5176\
+  \u4ED6 Google \u670D\u52A1\u5185\u7684\u8C03\u5EA6\u3002"
+title: "\u83B7\u53D6\u5F53\u524D\u65E5\u671F"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Att arbeta med komplexa tal"
 aliases:
 - /sv/fish-shell/working-with-complex-numbers/
-date:                  2024-01-26T04:40:18.552964-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med komplexa tal"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/working-with-complex-numbers.md"
+date: 2024-01-26 04:40:18.552964-07:00
+description: "Komplexa tal utvidgar id\xE9n om en endimensionell nummerlinje till\
+  \ ett tv\xE5dimensionellt komplext plan. Programmerare anv\xE4nder dem inom omr\xE5\
+  den som\u2026"
+lastmod: 2024-02-18 23:08:52.199783
+model: gpt-4-0125-preview
+summary: "Komplexa tal utvidgar id\xE9n om en endimensionell nummerlinje till ett\
+  \ tv\xE5dimensionellt komplext plan. Programmerare anv\xE4nder dem inom omr\xE5\
+  den som\u2026"
+title: Att arbeta med komplexa tal
 ---
 
 {{< edit_this_page >}}

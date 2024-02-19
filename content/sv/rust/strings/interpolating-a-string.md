@@ -1,13 +1,16 @@
 ---
-title:                "Interpolera en sträng"
 aliases:
 - /sv/rust/interpolating-a-string/
-date:                  2024-01-20T17:51:30.648021-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolera en sträng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/interpolating-a-string.md"
+date: 2024-01-20 17:51:30.648021-07:00
+description: "Str\xE4nginterpolering inneb\xE4r att man blandar variabler med vanlig\
+  \ text. Programmerare g\xF6r detta f\xF6r att skapa dynamiska meddelanden, d\xE4\
+  r inneh\xE5llet kan\u2026"
+lastmod: 2024-02-18 23:08:51.570782
+model: gpt-4-1106-preview
+summary: "Str\xE4nginterpolering inneb\xE4r att man blandar variabler med vanlig text.\
+  \ Programmerare g\xF6r detta f\xF6r att skapa dynamiska meddelanden, d\xE4r inneh\xE5\
+  llet kan\u2026"
+title: "Interpolera en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

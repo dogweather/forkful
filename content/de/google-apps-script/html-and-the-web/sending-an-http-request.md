@@ -1,14 +1,16 @@
 ---
-title:                "Eine HTTP-Anfrage senden"
 aliases:
 - /de/google-apps-script/sending-an-http-request/
-date:                  2024-02-01T22:01:32.246607-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eine HTTP-Anfrage senden"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/google-apps-script/sending-an-http-request.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:32.246607-07:00
+description: "Das Senden einer HTTP-Anfrage in Google Apps Script bedeutet, programmgesteuert\
+  \ eine Anfrage an einen externen Webserver oder eine API zu stellen.\u2026"
+lastmod: 2024-02-18 23:09:04.409608
+model: gpt-4-0125-preview
+summary: "Das Senden einer HTTP-Anfrage in Google Apps Script bedeutet, programmgesteuert\
+  \ eine Anfrage an einen externen Webserver oder eine API zu stellen.\u2026"
+title: Eine HTTP-Anfrage senden
 ---
 
 {{< edit_this_page >}}

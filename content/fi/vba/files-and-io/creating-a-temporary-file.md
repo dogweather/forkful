@@ -1,14 +1,18 @@
 ---
-title:                "Tilapäisen tiedoston luominen"
 aliases:
 - /fi/vba/creating-a-temporary-file/
-date:                  2024-02-01T21:52:23.769340-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tilapäisen tiedoston luominen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/creating-a-temporary-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:23.769340-07:00
+description: "V\xE4liaikaistiedoston luominen Visual Basic for Applicationsissa (VBA)\
+  \ tarkoittaa ohjelmallisesti lyhytaikaiseen k\xE4ytt\xF6\xF6n tarkoitetun tiedoston\
+  \ tuottamista,\u2026"
+lastmod: 2024-02-18 23:09:07.433484
+model: gpt-4-0125-preview
+summary: "V\xE4liaikaistiedoston luominen Visual Basic for Applicationsissa (VBA)\
+  \ tarkoittaa ohjelmallisesti lyhytaikaiseen k\xE4ytt\xF6\xF6n tarkoitetun tiedoston\
+  \ tuottamista,\u2026"
+title: "Tilap\xE4isen tiedoston luominen"
 ---
 
 {{< edit_this_page >}}

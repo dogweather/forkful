@@ -1,12 +1,15 @@
 ---
-title:                "Checking if a directory exists"
 aliases:
 - /en/cpp/checking-if-a-directory-exists/
-date:                  2024-02-03T19:02:35.355748-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Checking if a directory exists"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/checking-if-a-directory-exists.md"
+date: 2024-02-03 19:02:35.355748-07:00
+description: "Checking if a directory exists is about determining the presence of\
+  \ a directory at a specified path before performing operations like reading from\
+  \ or\u2026"
+lastmod: 2024-02-18 23:09:11.369517
+model: gpt-4-0125-preview
+summary: "Checking if a directory exists is about determining the presence of a directory\
+  \ at a specified path before performing operations like reading from or\u2026"
+title: Checking if a directory exists
 ---
 
 {{< edit_this_page >}}

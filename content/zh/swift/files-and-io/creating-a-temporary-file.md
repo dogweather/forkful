@@ -1,14 +1,23 @@
 ---
-title:                "创建临时文件"
 aliases:
 - /zh/swift/creating-a-temporary-file/
-date:                  2024-01-20T17:41:11.344687-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "创建临时文件"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:11.344687-07:00
+description: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6\u53EF\u4EE5\u5E2E\u52A9\u4F60\u5B58\
+  \u50A8\u4F1A\u8BDD\u6570\u636E\u6216\u5904\u7406\u4E34\u65F6\u6570\u636E\u4EA4\u6362\
+  \u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u56E0\u4E3A\u5B83\u4EEC\u53EF\u4EE5\
+  \u786E\u4FDD\u6570\u636E\u7684\u5373\u65F6\u6027\uFF0C\u5E76\u4E14\u5728\u4F7F\u7528\
+  \u5B8C\u6BD5\u540E\u53EF\u4EE5\u81EA\u52A8\u6216\u5BB9\u6613\u5730\u88AB\u6E05\u7406\
+  \u6389\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.459222
+model: gpt-4-1106-preview
+summary: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6\u53EF\u4EE5\u5E2E\u52A9\u4F60\u5B58\
+  \u50A8\u4F1A\u8BDD\u6570\u636E\u6216\u5904\u7406\u4E34\u65F6\u6570\u636E\u4EA4\u6362\
+  \u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u56E0\u4E3A\u5B83\u4EEC\u53EF\u4EE5\
+  \u786E\u4FDD\u6570\u636E\u7684\u5373\u65F6\u6027\uFF0C\u5E76\u4E14\u5728\u4F7F\u7528\
+  \u5B8C\u6BD5\u540E\u53EF\u4EE5\u81EA\u52A8\u6216\u5BB9\u6613\u5730\u88AB\u6E05\u7406\
+  \u6389\u3002"
+title: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

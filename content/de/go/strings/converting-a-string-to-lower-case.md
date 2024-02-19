@@ -1,14 +1,17 @@
 ---
-title:                "Konvertierung eines Strings in Kleinbuchstaben"
 aliases:
 - /de/go/converting-a-string-to-lower-case/
-date:                  2024-02-03T17:54:38.630613-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Konvertierung eines Strings in Kleinbuchstaben"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:38.630613-07:00
+description: "Das Umwandeln eines Strings in Kleinbuchstaben ist eine grundlegende\
+  \ Operation, die Einheitlichkeit und Konsistenz bei der Textverarbeitung erm\xF6\
+  glicht,\u2026"
+lastmod: 2024-02-18 23:09:04.348086
+model: gpt-4-0125-preview
+summary: "Das Umwandeln eines Strings in Kleinbuchstaben ist eine grundlegende Operation,\
+  \ die Einheitlichkeit und Konsistenz bei der Textverarbeitung erm\xF6glicht,\u2026"
+title: Konvertierung eines Strings in Kleinbuchstaben
 ---
 
 {{< edit_this_page >}}

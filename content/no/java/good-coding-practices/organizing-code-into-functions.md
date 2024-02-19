@@ -1,13 +1,16 @@
 ---
-title:                "Organisering av kode i funksjoner"
 aliases:
 - /no/java/organizing-code-into-functions/
-date:                  2024-01-26T01:10:54.086677-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organisering av kode i funksjoner"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/organizing-code-into-functions.md"
+date: 2024-01-26 01:10:54.086677-07:00
+description: "\xC5 organisere kode i funksjoner betyr \xE5 bryte ned et stort program\
+  \ inn i h\xE5ndterbare deler, hvor hver gj\xF8r en distinkt oppgave. Programmerere\
+  \ gj\xF8r dette\u2026"
+lastmod: 2024-02-18 23:08:53.775956
+model: gpt-4-1106-preview
+summary: "\xC5 organisere kode i funksjoner betyr \xE5 bryte ned et stort program\
+  \ inn i h\xE5ndterbare deler, hvor hver gj\xF8r en distinkt oppgave. Programmerere\
+  \ gj\xF8r dette\u2026"
+title: Organisering av kode i funksjoner
 ---
 
 {{< edit_this_page >}}

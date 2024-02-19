@@ -1,13 +1,14 @@
 ---
-title:                "Eliminazione di caratteri che corrispondono a un pattern"
 aliases:
 - /it/ruby/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:43:24.112558-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Eliminazione di caratteri che corrispondono a un pattern"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:43:24.112558-07:00
+description: "Eliminare caratteri corrispondenti a un modello (pattern) significa\
+  \ togliere da una stringa tutti i caratteri che coincidono con un criterio specifico.\u2026"
+lastmod: 2024-02-18 23:08:56.366413
+model: gpt-4-1106-preview
+summary: "Eliminare caratteri corrispondenti a un modello (pattern) significa togliere\
+  \ da una stringa tutti i caratteri che coincidono con un criterio specifico.\u2026"
+title: Eliminazione di caratteri che corrispondono a un pattern
 ---
 
 {{< edit_this_page >}}

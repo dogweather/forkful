@@ -1,13 +1,20 @@
 ---
-title:                "使用调试器"
 aliases:
 - /zh/elixir/using-a-debugger/
-date:                  2024-01-26T03:49:06.037147-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用调试器"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/using-a-debugger.md"
+date: 2024-01-26 03:49:06.037147-07:00
+description: "\u4F7F\u7528 Elixir \u7684\u8C03\u8BD5\u5668\u6D89\u53CA\u9010\u6B65\
+  \u6267\u884C\u4EE3\u7801\u3001\u68C0\u67E5\u53D8\u91CF\u4EE5\u53CA\u8FFD\u8E2A\u6D41\
+  \u7A0B\u4EE5\u6D88\u9664\u9519\u8BEF\u3002\u7A0B\u5E8F\u5458\u8FDB\u884C\u8FD9\u4E9B\
+  \u64CD\u4F5C\u662F\u4E3A\u4E86\u7406\u89E3\u610F\u5916\u60C5\u51B5\u5E76\u786E\u4FDD\
+  \u4ED6\u4EEC\u7684\u5E94\u7528\u7A0B\u5E8F\u6309\u8BBE\u8BA1\u8FD0\u884C\u3002"
+lastmod: 2024-02-18 23:08:58.869891
+model: gpt-4-0125-preview
+summary: "\u4F7F\u7528 Elixir \u7684\u8C03\u8BD5\u5668\u6D89\u53CA\u9010\u6B65\u6267\
+  \u884C\u4EE3\u7801\u3001\u68C0\u67E5\u53D8\u91CF\u4EE5\u53CA\u8FFD\u8E2A\u6D41\u7A0B\
+  \u4EE5\u6D88\u9664\u9519\u8BEF\u3002\u7A0B\u5E8F\u5458\u8FDB\u884C\u8FD9\u4E9B\u64CD\
+  \u4F5C\u662F\u4E3A\u4E86\u7406\u89E3\u610F\u5916\u60C5\u51B5\u5E76\u786E\u4FDD\u4ED6\
+  \u4EEC\u7684\u5E94\u7528\u7A0B\u5E8F\u6309\u8BBE\u8BA1\u8FD0\u884C\u3002"
+title: "\u4F7F\u7528\u8C03\u8BD5\u5668"
 ---
 
 {{< edit_this_page >}}

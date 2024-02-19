@@ -1,13 +1,16 @@
 ---
-title:                "Convertendo uma string para minúsculas"
 aliases:
 - /pt/lua/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:45.725613-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Convertendo uma string para minúsculas"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/lua/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:45.725613-07:00
+description: "Converter uma string para min\xFAsculas \xE9 o processo de transformar\
+  \ todas as letras mai\xFAsculas de uma dada string em min\xFAsculas. Programadores\
+  \ fazem isso\u2026"
+lastmod: 2024-02-18 23:08:58.269934
+model: gpt-4-1106-preview
+summary: "Converter uma string para min\xFAsculas \xE9 o processo de transformar todas\
+  \ as letras mai\xFAsculas de uma dada string em min\xFAsculas. Programadores fazem\
+  \ isso\u2026"
+title: "Convertendo uma string para min\xFAsculas"
 ---
 
 {{< edit_this_page >}}

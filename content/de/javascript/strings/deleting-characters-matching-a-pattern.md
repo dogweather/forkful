@@ -1,13 +1,14 @@
 ---
-title:                "Löschen von Zeichen, die einem Muster entsprechen"
 aliases:
 - /de/javascript/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:37.115483-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:37.115483-07:00
+description: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, ist ein Filterprozess:\
+  \ Unn\xF6tiges oder st\xF6rendes Zeugs fliegt raus. Programmierer nutzen das, um\u2026"
+lastmod: 2024-02-18 23:09:05.262100
+model: gpt-4-1106-preview
+summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, ist ein Filterprozess:\
+  \ Unn\xF6tiges oder st\xF6rendes Zeugs fliegt raus. Programmierer nutzen das, um\u2026"
+title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Kontrollera om en katalog existerar"
 aliases:
 - /sv/arduino/checking-if-a-directory-exists/
-date:                  2024-02-03T19:06:44.537063-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kontrollera om en katalog existerar"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:44.537063-07:00
+description: "I sammanhanget av Arduino-programmering \xE4r det viktigt att kontrollera\
+  \ om en mapp finns p\xE5 ett SD-kort eller liknande lagringsmodul f\xF6r att kunna\
+  \ l\xE4sa\u2026"
+lastmod: 2024-02-18 23:08:52.057533
+model: gpt-4-0125-preview
+summary: "I sammanhanget av Arduino-programmering \xE4r det viktigt att kontrollera\
+  \ om en mapp finns p\xE5 ett SD-kort eller liknande lagringsmodul f\xF6r att kunna\
+  \ l\xE4sa\u2026"
+title: Kontrollera om en katalog existerar
 ---
 
 {{< edit_this_page >}}

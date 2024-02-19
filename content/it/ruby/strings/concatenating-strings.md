@@ -1,13 +1,14 @@
 ---
-title:                "Concatenazione di stringhe"
 aliases:
 - /it/ruby/concatenating-strings/
-date:                  2024-01-20T17:35:23.593240-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenazione di stringhe"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/concatenating-strings.md"
+date: 2024-01-20 17:35:23.593240-07:00
+description: "Concatenare le stringhe significa unirle insieme, fine a fine, per formarne\
+  \ una nuova. I programmatori lo fanno per manipolare il testo, costruire output\u2026"
+lastmod: 2024-02-18 23:08:56.373477
+model: gpt-4-1106-preview
+summary: "Concatenare le stringhe significa unirle insieme, fine a fine, per formarne\
+  \ una nuova. I programmatori lo fanno per manipolare il testo, costruire output\u2026"
+title: Concatenazione di stringhe
 ---
 
 {{< edit_this_page >}}

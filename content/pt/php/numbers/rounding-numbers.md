@@ -1,13 +1,16 @@
 ---
-title:                "Arredondamento de números"
 aliases:
 - /pt/php/rounding-numbers/
-date:                  2024-01-26T03:46:07.410917-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arredondamento de números"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/rounding-numbers.md"
+date: 2024-01-26 03:46:07.410917-07:00
+description: "Arredondar n\xFAmeros significa cortar os decimais at\xE9 uma precis\xE3\
+  o definida, frequentemente para n\xFAmeros inteiros. Programadores arredondam para\
+  \ simplificar\u2026"
+lastmod: 2024-02-18 23:08:58.235661
+model: gpt-4-0125-preview
+summary: "Arredondar n\xFAmeros significa cortar os decimais at\xE9 uma precis\xE3\
+  o definida, frequentemente para n\xFAmeros inteiros. Programadores arredondam para\
+  \ simplificar\u2026"
+title: "Arredondamento de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

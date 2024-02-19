@@ -1,14 +1,14 @@
 ---
-title:                "連想配列の使用"
 aliases:
 - /ja/google-apps-script/using-associative-arrays/
-date:                  2024-02-01T22:04:18.248544-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "連想配列の使用"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/google-apps-script/using-associative-arrays.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:18.248544-07:00
+description: "\u9023\u60F3\u914D\u5217\u306F\u3001Google Apps\u2026"
+lastmod: 2024-02-18 23:08:54.515051
+model: gpt-4-0125-preview
+summary: "\u9023\u60F3\u914D\u5217\u306F\u3001Google Apps\u2026"
+title: "\u9023\u60F3\u914D\u5217\u306E\u4F7F\u7528"
 ---
 
 {{< edit_this_page >}}

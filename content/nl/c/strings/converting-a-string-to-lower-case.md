@@ -1,14 +1,16 @@
 ---
-title:                "Een string converteren naar kleine letters"
 aliases:
 - /nl/c/converting-a-string-to-lower-case/
-date:                  2024-02-03T17:54:42.443172-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string converteren naar kleine letters"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:42.443172-07:00
+description: "Het omzetten van een tekenreeks naar kleine letters in C houdt in dat\
+  \ alle hoofdletters in een gegeven tekenreeks worden getransformeerd naar hun\u2026"
+lastmod: 2024-02-18 23:09:02.358034
+model: gpt-4-0125-preview
+summary: "Het omzetten van een tekenreeks naar kleine letters in C houdt in dat alle\
+  \ hoofdletters in een gegeven tekenreeks worden getransformeerd naar hun\u2026"
+title: Een string converteren naar kleine letters
 ---
 
 {{< edit_this_page >}}

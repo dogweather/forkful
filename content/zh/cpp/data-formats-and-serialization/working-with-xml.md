@@ -1,13 +1,20 @@
 ---
-title:                "处理XML"
 aliases:
 - /zh/cpp/working-with-xml/
-date:                  2024-01-26T04:28:26.054350-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/working-with-xml.md"
+date: 2024-01-26 04:28:26.054350-07:00
+description: "\u4F7F\u7528XML\u6D89\u53CA\u89E3\u6790\u3001\u521B\u5EFA\u548C\u64CD\
+  \u4F5CXML\uFF08\u53EF\u6269\u5C55\u6807\u8BB0\u8BED\u8A00\uFF09\u6570\u636E\u3002\
+  \u7A0B\u5E8F\u5458\u5904\u7406XML\u4EE5\u5904\u7406\u7ED3\u6784\u5316\u6570\u636E\
+  \u4EA4\u6362\u3001\u914D\u7F6E\u7B49\u4EFB\u52A1\uFF0C\u8FD9\u5F52\u529F\u4E8E\u5176\
+  \u5E73\u53F0\u4E2D\u7ACB\u7684\u7279\u6027\u3002"
+lastmod: 2024-02-18 23:08:59.426756
+model: gpt-4-0125-preview
+summary: "\u4F7F\u7528XML\u6D89\u53CA\u89E3\u6790\u3001\u521B\u5EFA\u548C\u64CD\u4F5C\
+  XML\uFF08\u53EF\u6269\u5C55\u6807\u8BB0\u8BED\u8A00\uFF09\u6570\u636E\u3002\u7A0B\
+  \u5E8F\u5458\u5904\u7406XML\u4EE5\u5904\u7406\u7ED3\u6784\u5316\u6570\u636E\u4EA4\
+  \u6362\u3001\u914D\u7F6E\u7B49\u4EFB\u52A1\uFF0C\u8FD9\u5F52\u529F\u4E8E\u5176\u5E73\
+  \u53F0\u4E2D\u7ACB\u7684\u7279\u6027\u3002"
+title: "\u5904\u7406XML"
 ---
 
 {{< edit_this_page >}}

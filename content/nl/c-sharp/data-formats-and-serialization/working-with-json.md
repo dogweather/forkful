@@ -1,15 +1,16 @@
 ---
-title:                "Werken met JSON"
 aliases:
 - /nl/c-sharp/working-with-json/
-date:                  2024-01-28T22:10:17.080361-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met JSON"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c-sharp/working-with-json.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:17.080361-07:00
+description: "Werken met JSON betekent het verwerken en genereren van JSON (JavaScript\
+  \ Object Notation) data in uw applicaties. Programmeurs doen dit omdat JSON een\u2026"
+lastmod: 2024-02-18 23:09:01.875581
+model: gpt-4-0125-preview
+summary: "Werken met JSON betekent het verwerken en genereren van JSON (JavaScript\
+  \ Object Notation) data in uw applicaties. Programmeurs doen dit omdat JSON een\u2026"
+title: Werken met JSON
 ---
 
 {{< edit_this_page >}}

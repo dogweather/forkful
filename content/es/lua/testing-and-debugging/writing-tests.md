@@ -1,14 +1,18 @@
 ---
-title:                "Escribiendo pruebas"
 aliases:
 - /es/lua/writing-tests/
-date:                  2024-02-03T19:31:42.995104-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escribiendo pruebas"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/lua/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:42.995104-07:00
+description: "Escribir pruebas en programaci\xF3n implica crear peque\xF1as piezas\
+  \ de c\xF3digo separadas para verificar autom\xE1ticamente que diferentes partes\
+  \ de tu aplicaci\xF3n\u2026"
+lastmod: 2024-02-18 23:09:10.123330
+model: gpt-4-0125-preview
+summary: "Escribir pruebas en programaci\xF3n implica crear peque\xF1as piezas de\
+  \ c\xF3digo separadas para verificar autom\xE1ticamente que diferentes partes de\
+  \ tu aplicaci\xF3n\u2026"
+title: Escribiendo pruebas
 ---
 
 {{< edit_this_page >}}

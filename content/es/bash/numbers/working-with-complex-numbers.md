@@ -1,13 +1,14 @@
 ---
-title:                "Trabajando con números complejos"
 aliases:
 - /es/bash/working-with-complex-numbers/
-date:                  2024-01-26T04:36:43.925360-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con números complejos"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/working-with-complex-numbers.md"
+date: 2024-01-26 04:36:43.925360-07:00
+description: "Los n\xFAmeros complejos consisten en una parte real y una parte imaginaria.\
+  \ Los programadores los usan en campos como el procesamiento de se\xF1ales, la\u2026"
+lastmod: 2024-02-18 23:09:10.158614
+model: gpt-4-0125-preview
+summary: "Los n\xFAmeros complejos consisten en una parte real y una parte imaginaria.\
+  \ Los programadores los usan en campos como el procesamiento de se\xF1ales, la\u2026"
+title: "Trabajando con n\xFAmeros complejos"
 ---
 
 {{< edit_this_page >}}

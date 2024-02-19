@@ -1,15 +1,16 @@
 ---
-title:                "Quotes verwijderen uit een string"
 aliases:
 - /nl/java/removing-quotes-from-a-string/
-date:                  2024-01-28T22:06:31.693210-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Quotes verwijderen uit een string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/java/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:06:31.693210-07:00
+description: "Het verwijderen van aanhalingstekens uit een string betekent het weghalen\
+  \ van enkele (' '), dubbele (\" \"), of beide soorten aanhalingstekens uit de\u2026"
+lastmod: 2024-02-18 23:09:01.699599
+model: gpt-4-0125-preview
+summary: "Het verwijderen van aanhalingstekens uit een string betekent het weghalen\
+  \ van enkele (' '), dubbele (\" \"), of beide soorten aanhalingstekens uit de\u2026"
+title: Quotes verwijderen uit een string
 ---
 
 {{< edit_this_page >}}

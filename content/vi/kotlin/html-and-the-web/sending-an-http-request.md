@@ -1,15 +1,20 @@
 ---
-title:                "Gửi một yêu cầu HTTP"
 aliases:
 - /vi/kotlin/sending-an-http-request/
-date:                  2024-01-28T22:08:00.575825-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gửi một yêu cầu HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/kotlin/sending-an-http-request.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:00.575825-07:00
+description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP gi\u1ED1ng nh\u01B0 y\xEAu c\u1EA7\
+  u m\u1ED9t m\xE1y ch\u1EE7 web th\u1EF1c hi\u1EC7n \u0111i\u1EC1u g\xEC \u0111\xF3\
+  \ ho\u1EB7c cung c\u1EA5p cho b\u1EA1n th\u1EE9 g\xEC \u0111\xF3. C\xE1c l\u1EAD\
+  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3\u2026"
+lastmod: 2024-02-18 23:08:50.647539
+model: gpt-4-0125-preview
+summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP gi\u1ED1ng nh\u01B0 y\xEAu c\u1EA7\
+  u m\u1ED9t m\xE1y ch\u1EE7 web th\u1EF1c hi\u1EC7n \u0111i\u1EC1u g\xEC \u0111\xF3\
+  \ ho\u1EB7c cung c\u1EA5p cho b\u1EA1n th\u1EE9 g\xEC \u0111\xF3. C\xE1c l\u1EAD\
+  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3\u2026"
+title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 ---
 
 {{< edit_this_page >}}

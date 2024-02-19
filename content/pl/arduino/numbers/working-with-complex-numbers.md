@@ -1,13 +1,16 @@
 ---
-title:                "Praca z liczbami zespolonymi"
 aliases:
 - /pl/arduino/working-with-complex-numbers/
-date:                  2024-01-26T04:36:53.136927-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z liczbami zespolonymi"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/working-with-complex-numbers.md"
+date: 2024-01-26 04:36:53.136927-07:00
+description: "Liczby zespolone maj\u0105 cz\u0119\u015B\u0107 rzeczywist\u0105 i cz\u0119\
+  \u015B\u0107 urojon\u0105, zwykle zapisywane jako `a + bi`. S\u0105 one niezb\u0119\
+  dne w niekt\xF3rych projektach Arduino, kt\xF3re wymagaj\u0105\u2026"
+lastmod: 2024-02-18 23:08:49.864244
+model: gpt-4-0125-preview
+summary: "Liczby zespolone maj\u0105 cz\u0119\u015B\u0107 rzeczywist\u0105 i cz\u0119\
+  \u015B\u0107 urojon\u0105, zwykle zapisywane jako `a + bi`. S\u0105 one niezb\u0119\
+  dne w niekt\xF3rych projektach Arduino, kt\xF3re wymagaj\u0105\u2026"
+title: Praca z liczbami zespolonymi
 ---
 
 {{< edit_this_page >}}

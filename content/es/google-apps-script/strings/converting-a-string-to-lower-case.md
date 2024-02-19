@@ -1,14 +1,18 @@
 ---
-title:                "Convirtiendo una cadena de texto a minúsculas"
 aliases:
 - /es/google-apps-script/converting-a-string-to-lower-case/
-date:                  2024-02-01T21:50:46.129941-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Convirtiendo una cadena de texto a minúsculas"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/google-apps-script/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:46.129941-07:00
+description: "Convertir una cadena a min\xFAsculas en Google Apps Script, un lenguaje\
+  \ de scripting basado en la nube para automatizar tareas a trav\xE9s de productos\
+  \ de\u2026"
+lastmod: 2024-02-18 23:09:09.490602
+model: gpt-4-0125-preview
+summary: "Convertir una cadena a min\xFAsculas en Google Apps Script, un lenguaje\
+  \ de scripting basado en la nube para automatizar tareas a trav\xE9s de productos\
+  \ de\u2026"
+title: "Convirtiendo una cadena de texto a min\xFAsculas"
 ---
 
 {{< edit_this_page >}}

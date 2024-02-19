@@ -1,14 +1,28 @@
 ---
-title:                "문자열 대문자화"
 aliases:
 - /ko/python/capitalizing-a-string/
-date:                  2024-02-03T19:06:15.184201-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열 대문자화"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:15.184201-07:00
+description: "\uBB38\uC790\uC5F4\uC744 \uB300\uBB38\uC790\uD654\uD558\uB294 \uAC83\
+  \uC740 \uBB38\uC790\uC5F4\uC758 \uCCAB \uAE00\uC790\uB97C \uB300\uBB38\uC790\uB85C\
+  \ \uBCC0\uD658\uD558\uACE0 \uB098\uBA38\uC9C0\uB97C \uC18C\uBB38\uC790\uB85C \uBCC0\
+  \uD658\uD558\uB294 \uAC83\uC744 \uC758\uBBF8\uD569\uB2C8\uB2E4. \uC774 \uC791\uC5C5\
+  \uC740 \uC785\uB825\uC744 \uC815\uADDC\uD654\uD558\uAC70\uB098 \uC81C\uBAA9, \uC774\
+  \uB984 \uB4F1\uC758 \uAC00\uB3C5\uC131\uC744 \uD5A5\uC0C1\uC2DC\uD0A4\uAE30 \uC704\
+  \uD574 \uB370\uC774\uD130 \uCC98\uB9AC\uC5D0\uC11C \uC77C\uBC18\uC801\uC73C\uB85C\
+  \ \uC0AC\uC6A9\uB429\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:05.599529
+model: gpt-4-0125-preview
+summary: "\uBB38\uC790\uC5F4\uC744 \uB300\uBB38\uC790\uD654\uD558\uB294 \uAC83\uC740\
+  \ \uBB38\uC790\uC5F4\uC758 \uCCAB \uAE00\uC790\uB97C \uB300\uBB38\uC790\uB85C \uBCC0\
+  \uD658\uD558\uACE0 \uB098\uBA38\uC9C0\uB97C \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\
+  \uD558\uB294 \uAC83\uC744 \uC758\uBBF8\uD569\uB2C8\uB2E4. \uC774 \uC791\uC5C5\uC740\
+  \ \uC785\uB825\uC744 \uC815\uADDC\uD654\uD558\uAC70\uB098 \uC81C\uBAA9, \uC774\uB984\
+  \ \uB4F1\uC758 \uAC00\uB3C5\uC131\uC744 \uD5A5\uC0C1\uC2DC\uD0A4\uAE30 \uC704\uD574\
+  \ \uB370\uC774\uD130 \uCC98\uB9AC\uC5D0\uC11C \uC77C\uBC18\uC801\uC73C\uB85C \uC0AC\
+  \uC6A9\uB429\uB2C8\uB2E4."
+title: "\uBB38\uC790\uC5F4 \uB300\uBB38\uC790\uD654"
 ---
 
 {{< edit_this_page >}}

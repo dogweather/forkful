@@ -1,13 +1,16 @@
 ---
-title:                "Numerojen pyöristäminen"
 aliases:
 - /fi/kotlin/rounding-numbers/
-date:                  2024-01-26T03:45:48.568987-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Numerojen pyöristäminen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/rounding-numbers.md"
+date: 2024-01-26 03:45:48.568987-07:00
+description: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE4\
+  \ l\xE4himp\xE4\xE4n kokonaislukuun tai tiettyyn tarkkuuteen. Ohjelmoijat tekev\xE4\
+  t niin parantaakseen\u2026"
+lastmod: 2024-02-18 23:09:07.569575
+model: gpt-4-0125-preview
+summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE4\
+  \ l\xE4himp\xE4\xE4n kokonaislukuun tai tiettyyn tarkkuuteen. Ohjelmoijat tekev\xE4\
+  t niin parantaakseen\u2026"
+title: "Numerojen py\xF6rist\xE4minen"
 ---
 
 {{< edit_this_page >}}

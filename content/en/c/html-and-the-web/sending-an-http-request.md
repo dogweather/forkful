@@ -1,12 +1,15 @@
 ---
-title:                "Sending an HTTP request"
 aliases:
 - /en/c/sending-an-http-request/
-date:                  2024-02-03T17:50:08.096430-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sending an HTTP request"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/sending-an-http-request.md"
+date: 2024-02-03 17:50:08.096430-07:00
+description: "Sending an HTTP request involves creating and dispatching a request\
+  \ to a web server to retrieve or submit data. Programmers do this in C to interact\
+  \ with\u2026"
+lastmod: 2024-02-18 23:09:11.519473
+model: gpt-4-0125-preview
+summary: "Sending an HTTP request involves creating and dispatching a request to a\
+  \ web server to retrieve or submit data. Programmers do this in C to interact with\u2026"
+title: Sending an HTTP request
 ---
 
 {{< edit_this_page >}}

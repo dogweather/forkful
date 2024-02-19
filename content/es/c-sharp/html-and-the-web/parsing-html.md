@@ -1,12 +1,13 @@
 ---
-title:                "Análisis de HTML"
 aliases:
 - /es/c-sharp/parsing-html/
-date:                  2024-01-20T15:30:36.963297-07:00
-simple_title:         "Análisis de HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/parsing-html.md"
+date: 2024-01-20 15:30:36.963297-07:00
+description: "Parsear HTML es interpretar y transformar el contenido de un documento\
+  \ HTML en algo que tu programa C# puede manejar. Los programadores lo hacen para\u2026"
+lastmod: 2024-02-18 23:09:09.979585
+summary: "Parsear HTML es interpretar y transformar el contenido de un documento HTML\
+  \ en algo que tu programa C# puede manejar. Los programadores lo hacen para\u2026"
+title: "An\xE1lisis de HTML"
 ---
 
 {{< edit_this_page >}}

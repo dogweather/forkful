@@ -1,14 +1,18 @@
 ---
-title:                "Ottenere la data corrente"
 aliases:
 - /it/javascript/getting-the-current-date/
-date:                  2024-02-03T19:10:01.646444-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ottenere la data corrente"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/javascript/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:10:01.646444-07:00
+description: "Ottenere la data corrente in JavaScript \xE8 un compito fondamentale,\
+  \ che comporta il recupero e, eventualmente, la manipolazione della data e dell'ora\
+  \ di\u2026"
+lastmod: 2024-02-18 23:08:56.263050
+model: gpt-4-0125-preview
+summary: "Ottenere la data corrente in JavaScript \xE8 un compito fondamentale, che\
+  \ comporta il recupero e, eventualmente, la manipolazione della data e dell'ora\
+  \ di\u2026"
+title: Ottenere la data corrente
 ---
 
 {{< edit_this_page >}}

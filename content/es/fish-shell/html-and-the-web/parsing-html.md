@@ -1,14 +1,16 @@
 ---
-title:                "Analizando HTML"
 aliases:
 - /es/fish-shell/parsing-html/
-date:                  2024-02-03T19:12:01.235358-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analizando HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:01.235358-07:00
+description: "El an\xE1lisis (parseo) de HTML se trata de extraer datos o informaci\xF3\
+  n del contenido HTML, una tarea com\xFAn al trabajar con datos web. Los programadores\u2026"
+lastmod: 2024-02-18 23:09:10.450790
+model: gpt-4-0125-preview
+summary: "El an\xE1lisis (parseo) de HTML se trata de extraer datos o informaci\xF3\
+  n del contenido HTML, una tarea com\xFAn al trabajar con datos web. Los programadores\u2026"
+title: Analizando HTML
 ---
 
 {{< edit_this_page >}}

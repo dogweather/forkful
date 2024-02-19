@@ -1,15 +1,16 @@
 ---
-title:                "Een HTTP-verzoek verzenden met basisauthenticatie"
 aliases:
 - /nl/typescript/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-28T22:08:15.627684-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een HTTP-verzoek verzenden met basisauthenticatie"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/typescript/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:15.627684-07:00
+description: "In TypeScript betekent het verzenden van een HTTP-verzoek met basisauthenticatie\
+  \ het over het web schieten van data met een eenvoudige\u2026"
+lastmod: 2024-02-18 23:09:01.572709
+model: gpt-4-0125-preview
+summary: "In TypeScript betekent het verzenden van een HTTP-verzoek met basisauthenticatie\
+  \ het over het web schieten van data met een eenvoudige\u2026"
+title: Een HTTP-verzoek verzenden met basisauthenticatie
 ---
 
 {{< edit_this_page >}}

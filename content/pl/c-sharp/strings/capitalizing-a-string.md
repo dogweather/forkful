@@ -1,14 +1,18 @@
 ---
-title:                "Zamiana liter na wielkie w łańcuchu znaków"
 aliases:
 - /pl/c-sharp/capitalizing-a-string/
-date:                  2024-02-03T19:05:14.664260-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zamiana liter na wielkie w łańcuchu znaków"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:14.664260-07:00
+description: "Wielko\u015B\u0107 liter w ci\u0105gu znak\xF3w w C# polega na zamianie\
+  \ pierwszego znaku ci\u0105gu na wielk\u0105 liter\u0119, je\u015Bli nie jest ona\
+  \ ju\u017C wielka. Ta zmiana mo\u017Ce by\u0107 kluczowa\u2026"
+lastmod: 2024-02-18 23:08:49.594490
+model: gpt-4-0125-preview
+summary: "Wielko\u015B\u0107 liter w ci\u0105gu znak\xF3w w C# polega na zamianie\
+  \ pierwszego znaku ci\u0105gu na wielk\u0105 liter\u0119, je\u015Bli nie jest ona\
+  \ ju\u017C wielka. Ta zmiana mo\u017Ce by\u0107 kluczowa\u2026"
+title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Suppression de caractères correspondant à un motif"
 aliases:
 - /fr/bash/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:31.463382-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Suppression de caractères correspondant à un motif"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:31.463382-07:00
+description: "Supprimer des caract\xE8res correspondant \xE0 un motif, c'est filtrer\
+  \ un texte pour ne garder que ce qui est utile. Les programmeurs le font pour nettoyer\
+  \ des\u2026"
+lastmod: 2024-02-18 23:09:08.999304
+model: gpt-4-1106-preview
+summary: "Supprimer des caract\xE8res correspondant \xE0 un motif, c'est filtrer un\
+  \ texte pour ne garder que ce qui est utile. Les programmeurs le font pour nettoyer\
+  \ des\u2026"
+title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 ---
 
 {{< edit_this_page >}}

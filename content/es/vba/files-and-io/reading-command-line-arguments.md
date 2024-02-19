@@ -1,14 +1,17 @@
 ---
-title:                "Leyendo argumentos de la línea de comandos"
 aliases:
 - /es/vba/reading-command-line-arguments/
-date:                  2024-02-01T21:59:11.738958-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Leyendo argumentos de la línea de comandos"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/vba/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:11.738958-07:00
+description: "Leer los argumentos de la l\xEDnea de comandos en Visual Basic para\
+  \ Aplicaciones (VBA) implica acceder a los par\xE1metros pasados a tu programa al\
+  \ ejecutarse.\u2026"
+lastmod: 2024-02-18 23:09:09.815035
+model: gpt-4-0125-preview
+summary: "Leer los argumentos de la l\xEDnea de comandos en Visual Basic para Aplicaciones\
+  \ (VBA) implica acceder a los par\xE1metros pasados a tu programa al ejecutarse.\u2026"
+title: "Leyendo argumentos de la l\xEDnea de comandos"
 ---
 
 {{< edit_this_page >}}

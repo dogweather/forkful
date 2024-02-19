@@ -1,15 +1,18 @@
 ---
-title:                "Bruke associative tabeller"
 aliases:
 - /no/javascript/using-associative-arrays/
-date:                  2024-01-30T19:11:50.991805-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke associative tabeller"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:11:50.991805-07:00
+description: "Assosiative arrays, eller som de mer n\xF8yaktig er kjent som i JavaScript,\
+  \ objekter, lar deg knytte n\xF8kler til verdier. Dette er super praktisk for n\xE5\
+  r du\u2026"
+lastmod: 2024-02-18 23:08:54.302487
+model: gpt-4-0125-preview
+summary: "Assosiative arrays, eller som de mer n\xF8yaktig er kjent som i JavaScript,\
+  \ objekter, lar deg knytte n\xF8kler til verdier. Dette er super praktisk for n\xE5\
+  r du\u2026"
+title: Bruke associative tabeller
 ---
 
 {{< edit_this_page >}}

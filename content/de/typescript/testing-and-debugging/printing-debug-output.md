@@ -1,13 +1,16 @@
 ---
-title:                "Debug-Ausgaben drucken"
 aliases:
 - /de/typescript/printing-debug-output/
-date:                  2024-01-20T17:53:37.182179-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Debug-Ausgaben drucken"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/printing-debug-output.md"
+date: 2024-01-20 17:53:37.182179-07:00
+description: "Debug-Output ist wie das Fl\xFCstern deines Codes. Es verr\xE4t dir,\
+  \ was im Code passiert, w\xE4hrend er l\xE4uft. Warum? Weil wir Menschen nicht in\
+  \ Matrix-Code sehen\u2026"
+lastmod: 2024-02-18 23:09:04.599423
+model: gpt-4-1106-preview
+summary: "Debug-Output ist wie das Fl\xFCstern deines Codes. Es verr\xE4t dir, was\
+  \ im Code passiert, w\xE4hrend er l\xE4uft. Warum? Weil wir Menschen nicht in Matrix-Code\
+  \ sehen\u2026"
+title: Debug-Ausgaben drucken
 ---
 
 {{< edit_this_page >}}

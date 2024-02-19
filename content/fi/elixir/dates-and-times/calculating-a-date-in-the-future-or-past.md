@@ -1,13 +1,16 @@
 ---
-title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
 aliases:
 - /fi/elixir/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:28:34.558383-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:28:34.558383-07:00
+description: "Menneiden tai tulevien p\xE4ivien laskenta on p\xE4iv\xE4m\xE4\xE4rien\
+  \ manipulointia. Sit\xE4 k\xE4ytet\xE4\xE4n esimerkiksi vanhentumisp\xE4ivien, tapahtumien\
+  \ ajoitusten tai\u2026"
+lastmod: 2024-02-18 23:09:07.288282
+model: gpt-4-1106-preview
+summary: "Menneiden tai tulevien p\xE4ivien laskenta on p\xE4iv\xE4m\xE4\xE4rien manipulointia.\
+  \ Sit\xE4 k\xE4ytet\xE4\xE4n esimerkiksi vanhentumisp\xE4ivien, tapahtumien ajoitusten\
+  \ tai\u2026"
+title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 ---
 
 {{< edit_this_page >}}

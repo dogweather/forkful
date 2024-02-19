@@ -1,14 +1,23 @@
 ---
-title:                "웹 페이지 다운로드하기"
 aliases:
 - /ko/swift/downloading-a-web-page/
-date:                  2024-01-20T17:45:07.664781-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "웹 페이지 다운로드하기"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/swift/downloading-a-web-page.md"
+date: 2024-01-20 17:45:07.664781-07:00
+description: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uB294 \uC778\uD130\
+  \uB137\uC5D0\uC11C \uD2B9\uC815 URL\uC758 \uB370\uC774\uD130\uB97C \uAC00\uC838\uC640\
+  \ \uB85C\uCEEC\uC5D0\uC11C \uC0AC\uC6A9\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uC774\
+  \uB97C \uD1B5\uD574 \uC571\uC774 \uB3D9\uC801\uC778 \uCF58\uD150\uCE20\uB97C \uD45C\
+  \uC2DC\uD558\uAC70\uB098 \uB370\uC774\uD130 \uBD84\uC11D\uC744 \uD560 \uC218 \uC788\
+  \uC2B5\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.746693
+model: gpt-4-1106-preview
+summary: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uB294 \uC778\uD130\uB137\
+  \uC5D0\uC11C \uD2B9\uC815 URL\uC758 \uB370\uC774\uD130\uB97C \uAC00\uC838\uC640\
+  \ \uB85C\uCEEC\uC5D0\uC11C \uC0AC\uC6A9\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uC774\
+  \uB97C \uD1B5\uD574 \uC571\uC774 \uB3D9\uC801\uC778 \uCF58\uD150\uCE20\uB97C \uD45C\
+  \uC2DC\uD558\uAC70\uB098 \uB370\uC774\uD130 \uBD84\uC11D\uC744 \uD560 \uC218 \uC788\
+  \uC2B5\uB2C8\uB2E4."
+title: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,28 @@
 ---
-title:                "XML을 활용한 작업하기"
 aliases:
 - /ko/google-apps-script/working-with-xml/
-date:                  2024-02-01T22:06:59.317081-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML을 활용한 작업하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/working-with-xml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:06:59.317081-07:00
+description: "Google Apps Script\uC5D0\uC11C XML\uC744 \uC791\uC5C5\uD558\uAC8C \uD574\
+  \uC8FC\uB294 \uAC83\uC740 \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC774 XML \uB370\uC774\
+  \uD130\uB97C \uD30C\uC2F1\uD558\uACE0, \uC870\uC791\uD558\uBA70, \uC0DD\uC131\uD560\
+  \ \uC218 \uC788\uAC8C \uD574\uC8FC\uBBC0\uB85C, \uC6F9 \uC11C\uBE44\uC2A4\uC640\
+  \ \uAD6C\uC131\uC5D0 \uD544\uC218\uC801\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uC774 \uC811\uADFC\uBC95\uC744 \uAD6C\uC2DD \uC2DC\uC2A4\uD15C\
+  \uACFC\uC758 \uD1B5\uD569, \uC6F9 \uC2A4\uD06C\uB798\uD551 \uC218\uD589 \uB610\uB294\
+  \ \uC5EC\uC804\uD788 \uB370\uC774\uD130 \uAD50\uD658\uC744\u2026"
+lastmod: 2024-02-18 23:09:05.597876
+model: gpt-4-0125-preview
+summary: "Google Apps Script\uC5D0\uC11C XML\uC744 \uC791\uC5C5\uD558\uAC8C \uD574\
+  \uC8FC\uB294 \uAC83\uC740 \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC774 XML \uB370\uC774\
+  \uD130\uB97C \uD30C\uC2F1\uD558\uACE0, \uC870\uC791\uD558\uBA70, \uC0DD\uC131\uD560\
+  \ \uC218 \uC788\uAC8C \uD574\uC8FC\uBBC0\uB85C, \uC6F9 \uC11C\uBE44\uC2A4\uC640\
+  \ \uAD6C\uC131\uC5D0 \uD544\uC218\uC801\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uC774 \uC811\uADFC\uBC95\uC744 \uAD6C\uC2DD \uC2DC\uC2A4\uD15C\
+  \uACFC\uC758 \uD1B5\uD569, \uC6F9 \uC2A4\uD06C\uB798\uD551 \uC218\uD589 \uB610\uB294\
+  \ \uC5EC\uC804\uD788 \uB370\uC774\uD130 \uAD50\uD658\uC744\u2026"
+title: "XML\uC744 \uD65C\uC6A9\uD55C \uC791\uC5C5\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

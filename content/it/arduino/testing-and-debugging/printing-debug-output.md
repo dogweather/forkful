@@ -1,13 +1,14 @@
 ---
-title:                "Stampa dell'output di debug"
 aliases:
 - /it/arduino/printing-debug-output/
-date:                  2024-01-20T17:51:49.286378-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Stampa dell'output di debug"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/printing-debug-output.md"
+date: 2024-01-20 17:51:49.286378-07:00
+description: "Stampare l'output di debug aiuta a seguire ci\xF2 che Arduino sta facendo\
+  \ e a capire problemi nel codice. Lo facciamo per testare e correggere pi\xF9\u2026"
+lastmod: 2024-02-18 23:08:56.135773
+model: gpt-4-1106-preview
+summary: "Stampare l'output di debug aiuta a seguire ci\xF2 che Arduino sta facendo\
+  \ e a capire problemi nel codice. Lo facciamo per testare e correggere pi\xF9\u2026"
+title: Stampa dell'output di debug
 ---
 
 {{< edit_this_page >}}

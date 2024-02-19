@@ -1,13 +1,14 @@
 ---
-title:                "Lettura degli argomenti della riga di comando"
 aliases:
 - /it/clojure/reading-command-line-arguments/
-date:                  2024-01-20T17:55:46.982449-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lettura degli argomenti della riga di comando"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:46.982449-07:00
+description: "Leggere gli argomenti della riga di comando permette di passare informazioni\
+  \ a un programma all'avvio. I programmatori lo fanno per rendere i loro script\u2026"
+lastmod: 2024-02-18 23:08:55.575435
+model: gpt-4-1106-preview
+summary: "Leggere gli argomenti della riga di comando permette di passare informazioni\
+  \ a un programma all'avvio. I programmatori lo fanno per rendere i loro script\u2026"
+title: Lettura degli argomenti della riga di comando
 ---
 
 {{< edit_this_page >}}

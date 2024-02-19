@@ -1,13 +1,16 @@
 ---
-title:                "Interpolering av en streng"
 aliases:
 - /no/bash/interpolating-a-string/
-date:                  2024-01-20T17:50:17.560921-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolering av en streng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/interpolating-a-string.md"
+date: 2024-01-20 17:50:17.560921-07:00
+description: "Interpolering av en streng betyr \xE5 sette inn variabler eller uttrykk\
+  \ inni en tekststreng. Programmere bruker det for \xE5 bygge dynamisk innhold og\
+  \ meldinger."
+lastmod: 2024-02-18 23:08:54.042849
+model: gpt-4-1106-preview
+summary: "Interpolering av en streng betyr \xE5 sette inn variabler eller uttrykk\
+  \ inni en tekststreng. Programmere bruker det for \xE5 bygge dynamisk innhold og\
+  \ meldinger."
+title: Interpolering av en streng
 ---
 
 {{< edit_this_page >}}

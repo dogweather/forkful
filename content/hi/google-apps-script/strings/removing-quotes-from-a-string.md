@@ -1,14 +1,31 @@
 ---
-title:                "स्ट्रिंग से कोट्स हटाना"
 aliases:
 - /hi/google-apps-script/removing-quotes-from-a-string/
-date:                  2024-02-01T22:01:54.781039-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "स्ट्रिंग से कोट्स हटाना"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/google-apps-script/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:54.781039-07:00
+description: "Google Apps Script \u092E\u0947\u0902 \u090F\u0915 \u0938\u094D\u091F\
+  \u094D\u0930\u093F\u0902\u0917 \u0938\u0947 \u0909\u0926\u094D\u0927\u0930\u0923\
+  \ \u091A\u093F\u0928\u094D\u0939 \u0939\u091F\u093E\u0928\u093E, \u0906\u092A\u0915\
+  \u0947 \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0921\u0947\u091F\u093E\
+  \ \u0915\u094B \u0918\u0947\u0930\u0947 \u0939\u0941\u090F \u0905\u0928\u093E\u0935\
+  \u0936\u094D\u092F\u0915 \u0909\u0926\u094D\u0927\u0930\u0923 \u091A\u093F\u0928\
+  \u094D\u0939\u094B\u0902 \u0915\u094B \u0939\u091F\u093E\u0928\u0947 \u0915\u0947\
+  \ \u092C\u093E\u0930\u0947 \u092E\u0947\u0902 \u0939\u0948, \u091C\u094B \u0906\u092E\
+  \u0924\u094C\u0930 \u092A\u0930\u2026"
+lastmod: 2024-02-18 23:09:02.543959
+model: gpt-4-0125-preview
+summary: "Google Apps Script \u092E\u0947\u0902 \u090F\u0915 \u0938\u094D\u091F\u094D\
+  \u0930\u093F\u0902\u0917 \u0938\u0947 \u0909\u0926\u094D\u0927\u0930\u0923 \u091A\
+  \u093F\u0928\u094D\u0939 \u0939\u091F\u093E\u0928\u093E, \u0906\u092A\u0915\u0947\
+  \ \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0921\u0947\u091F\u093E \u0915\
+  \u094B \u0918\u0947\u0930\u0947 \u0939\u0941\u090F \u0905\u0928\u093E\u0935\u0936\
+  \u094D\u092F\u0915 \u0909\u0926\u094D\u0927\u0930\u0923 \u091A\u093F\u0928\u094D\
+  \u0939\u094B\u0902 \u0915\u094B \u0939\u091F\u093E\u0928\u0947 \u0915\u0947 \u092C\
+  \u093E\u0930\u0947 \u092E\u0947\u0902 \u0939\u0948, \u091C\u094B \u0906\u092E\u0924\
+  \u094C\u0930 \u092A\u0930\u2026"
+title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0938\u0947 \u0915\u094B\
+  \u091F\u094D\u0938 \u0939\u091F\u093E\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

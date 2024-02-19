@@ -1,15 +1,20 @@
 ---
-title:                "Tìm chiều dài của một chuỗi ký tự"
 aliases:
 - /vi/haskell/finding-the-length-of-a-string/
-date:                  2024-01-28T22:00:42.288157-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tìm chiều dài của một chuỗi ký tự"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/haskell/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:00:42.288157-07:00
+description: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i trong\
+  \ Haskell li\xEAn quan \u0111\u1EBFn vi\u1EC7c x\xE1c \u0111\u1ECBnh xem n\xF3 ch\u1EE9\
+  a bao nhi\xEAu k\xFD t\u1EF1. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng\
+  \ c\u1EA7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 ki\u1EC3m so\xE1t\u2026"
+lastmod: 2024-02-18 23:08:50.734940
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i trong\
+  \ Haskell li\xEAn quan \u0111\u1EBFn vi\u1EC7c x\xE1c \u0111\u1ECBnh xem n\xF3 ch\u1EE9\
+  a bao nhi\xEAu k\xFD t\u1EF1. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng\
+  \ c\u1EA7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 ki\u1EC3m so\xE1t\u2026"
+title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 ---
 
 {{< edit_this_page >}}

@@ -1,12 +1,13 @@
 ---
-title:                "Parsing HTML"
 aliases:
 - /en/kotlin/parsing-html/
-date:                  2024-01-20T15:32:27.978327-07:00
-simple_title:         "Parsing HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/parsing-html.md"
+date: 2024-01-20 15:32:27.978327-07:00
+description: "Parsing HTML means dissecting a webpage's markup into something a program\
+  \ can understand and manipulate. Programmers parse HTML to extract data, automate\u2026"
+lastmod: 2024-02-18 23:09:11.010580
+summary: "Parsing HTML means dissecting a webpage's markup into something a program\
+  \ can understand and manipulate. Programmers parse HTML to extract data, automate\u2026"
+title: Parsing HTML
 ---
 
 {{< edit_this_page >}}

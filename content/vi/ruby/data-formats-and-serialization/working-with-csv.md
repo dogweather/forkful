@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với CSV"
 aliases:
 - /vi/ruby/working-with-csv/
-date:                  2024-01-28T22:10:37.058369-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với CSV"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/working-with-csv.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:37.058369-07:00
+description: "T\u1EC7p CSV (Comma-Separated Values - Gi\xE1 tr\u1ECB ph\xE2n c\xE1\
+  ch b\u1EB1ng d\u1EA5u ph\u1EA9y) bi\u1EC3u di\u1EC5n d\u1EEF li\u1EC7u b\u1EA3ng\
+  \ d\u01B0\u1EDBi d\u1EA1ng v\u0103n b\u1EA3n thu\u1EA7n t\xFAy. C\xE1c l\u1EADp\
+  \ tr\xECnh vi\xEAn s\u1EED d\u1EE5ng CSV \u0111\u1EC3\u2026"
+lastmod: 2024-02-18 23:08:51.312123
+model: gpt-4-0125-preview
+summary: "T\u1EC7p CSV (Comma-Separated Values - Gi\xE1 tr\u1ECB ph\xE2n c\xE1ch b\u1EB1\
+  ng d\u1EA5u ph\u1EA9y) bi\u1EC3u di\u1EC5n d\u1EEF li\u1EC7u b\u1EA3ng d\u01B0\u1EDB\
+  i d\u1EA1ng v\u0103n b\u1EA3n thu\u1EA7n t\xFAy. C\xE1c l\u1EADp tr\xECnh vi\xEA\
+  n s\u1EED d\u1EE5ng CSV \u0111\u1EC3\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 ---
 
 {{< edit_this_page >}}

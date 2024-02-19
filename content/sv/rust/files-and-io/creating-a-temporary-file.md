@@ -1,13 +1,16 @@
 ---
-title:                "Skapa en temporär fil"
 aliases:
 - /sv/rust/creating-a-temporary-file/
-date:                  2024-01-20T17:41:17.890266-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skapa en temporär fil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:17.890266-07:00
+description: "Att skapa en tempor\xE4r fil inneb\xE4r att man tempor\xE4rt lagrar\
+  \ data p\xE5 disken under programmets k\xF6rning. Programutvecklare g\xF6r detta\
+  \ f\xF6r att hantera stora\u2026"
+lastmod: 2024-02-18 23:08:51.602626
+model: gpt-4-1106-preview
+summary: "Att skapa en tempor\xE4r fil inneb\xE4r att man tempor\xE4rt lagrar data\
+  \ p\xE5 disken under programmets k\xF6rning. Programutvecklare g\xF6r detta f\xF6\
+  r att hantera stora\u2026"
+title: "Skapa en tempor\xE4r fil"
 ---
 
 {{< edit_this_page >}}

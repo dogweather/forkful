@@ -1,13 +1,24 @@
 ---
-title:                "복소수 다루기"
 aliases:
 - /ko/bash/working-with-complex-numbers/
-date:                  2024-01-26T04:37:22.197965-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "복소수 다루기"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/working-with-complex-numbers.md"
+date: 2024-01-26 04:37:22.197965-07:00
+description: "\uBCF5\uC18C\uC218\uB294 \uC2E4\uC218\uBD80\uC640 \uD5C8\uC218\uBD80\
+  \uB85C \uAD6C\uC131\uB429\uB2C8\uB2E4. \uC2E0\uD638 \uCC98\uB9AC, \uC591\uC790\uC5ED\
+  \uD559 \uB4F1\uC758 \uBD84\uC57C\uC5D0\uC11C, \uADF8\uB9AC\uACE0 \uACC4\uC0B0\uC774\
+  \ \uC774\uB97C \uC694\uAD6C\uD560 \uB54C \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\
+  \ \uBCF5\uC18C\uC218\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4. \uC65C\uB0D0\uD558\uBA74\
+  \ \uC77C\uBC18 \uC2E4\uC218\uB9CC\uC73C\uB85C\uB294 \uBD80\uC871\uD558\uAE30 \uB54C\
+  \uBB38\uC785\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.471801
+model: gpt-4-0125-preview
+summary: "\uBCF5\uC18C\uC218\uB294 \uC2E4\uC218\uBD80\uC640 \uD5C8\uC218\uBD80\uB85C\
+  \ \uAD6C\uC131\uB429\uB2C8\uB2E4. \uC2E0\uD638 \uCC98\uB9AC, \uC591\uC790\uC5ED\uD559\
+  \ \uB4F1\uC758 \uBD84\uC57C\uC5D0\uC11C, \uADF8\uB9AC\uACE0 \uACC4\uC0B0\uC774 \uC774\
+  \uB97C \uC694\uAD6C\uD560 \uB54C \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uBCF5\
+  \uC18C\uC218\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4. \uC65C\uB0D0\uD558\uBA74 \uC77C\
+  \uBC18 \uC2E4\uC218\uB9CC\uC73C\uB85C\uB294 \uBD80\uC871\uD558\uAE30 \uB54C\uBB38\
+  \uC785\uB2C8\uB2E4."
+title: "\uBCF5\uC18C\uC218 \uB2E4\uB8E8\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Refaktorering"
 aliases:
 - /no/java/refactoring/
-date:                  2024-01-26T01:18:50.944324-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refaktorering"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/refactoring.md"
+date: 2024-01-26 01:18:50.944324-07:00
+description: "Omstrukturering er prosessen med \xE5 restrukturere eksisterende dataprogramkode\u2014\
+  endre faktoriseringen\u2014uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere\u2026"
+lastmod: 2024-02-18 23:08:53.778531
+model: gpt-4-0125-preview
+summary: "Omstrukturering er prosessen med \xE5 restrukturere eksisterende dataprogramkode\u2014\
+  endre faktoriseringen\u2014uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere\u2026"
+title: Refaktorering
 ---
 
 {{< edit_this_page >}}

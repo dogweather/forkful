@@ -1,13 +1,16 @@
 ---
-title:                "Praca z XML"
 aliases:
 - /pl/elixir/working-with-xml/
-date:                  2024-01-26T04:29:59.001384-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/working-with-xml.md"
+date: 2024-01-26 04:29:59.001384-07:00
+description: "Praca z XML w Elixirze oznacza analizowanie, tworzenie i manipulowanie\
+  \ danymi XML. Programi\u015Bci cz\u0119sto zajmuj\u0105 si\u0119 XML, poniewa\u017C\
+  \ jest on powszechnie\u2026"
+lastmod: 2024-02-18 23:08:49.330644
+model: gpt-4-0125-preview
+summary: "Praca z XML w Elixirze oznacza analizowanie, tworzenie i manipulowanie danymi\
+  \ XML. Programi\u015Bci cz\u0119sto zajmuj\u0105 si\u0119 XML, poniewa\u017C jest\
+  \ on powszechnie\u2026"
+title: Praca z XML
 ---
 
 {{< edit_this_page >}}

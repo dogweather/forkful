@@ -1,13 +1,16 @@
 ---
-title:                "Virheiden käsittely"
 aliases:
 - /fi/c-sharp/handling-errors/
-date:                  2024-01-26T00:50:58.841439-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheiden käsittely"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/handling-errors.md"
+date: 2024-01-26 00:50:58.841439-07:00
+description: "Virheiden k\xE4sittely C#:ssa on yll\xE4tt\xE4v\xE4n hallintaa\u2014\
+  kuten kompastuminen omiin keng\xE4nnauhoihisi. Ohjelmat voivat kompastua huonoihin\
+  \ tietoihin tai\u2026"
+lastmod: 2024-02-18 23:09:07.628642
+model: gpt-4-1106-preview
+summary: "Virheiden k\xE4sittely C#:ssa on yll\xE4tt\xE4v\xE4n hallintaa\u2014kuten\
+  \ kompastuminen omiin keng\xE4nnauhoihisi. Ohjelmat voivat kompastua huonoihin tietoihin\
+  \ tai\u2026"
+title: "Virheiden k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

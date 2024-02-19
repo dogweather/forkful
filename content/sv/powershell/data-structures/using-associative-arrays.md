@@ -1,15 +1,18 @@
 ---
-title:                "Att använda associativa arrayer"
 aliases:
 - /sv/powershell/using-associative-arrays/
-date:                  2024-01-30T19:12:40.208846-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda associativa arrayer"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:40.208846-07:00
+description: "Associativa arrayer, \xE4ven k\xE4nda som hashtabeller eller ordb\xF6\
+  cker i PowerShell, l\xE5ter dig lagra data i nyckel-v\xE4rdepar, vilket g\xF6r data\xE5\
+  tertagning enkel\u2026"
+lastmod: 2024-02-18 23:08:51.995008
+model: gpt-4-0125-preview
+summary: "Associativa arrayer, \xE4ven k\xE4nda som hashtabeller eller ordb\xF6cker\
+  \ i PowerShell, l\xE5ter dig lagra data i nyckel-v\xE4rdepar, vilket g\xF6r data\xE5\
+  tertagning enkel\u2026"
+title: "Att anv\xE4nda associativa arrayer"
 ---
 
 {{< edit_this_page >}}

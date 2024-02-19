@@ -1,14 +1,26 @@
 ---
-title:                "로깅"
 aliases:
 - /ko/google-apps-script/logging/
-date:                  2024-02-01T21:55:49.900099-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "로깅"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/logging.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:49.900099-07:00
+description: "Google Apps \uC2A4\uD06C\uB9BD\uD2B8\uC5D0\uC11C\uB294 `Logger` \uD074\
+  \uB798\uC2A4\uC640 `console.log()`\uC640 \uAC19\uC740 \uC5EC\uB7EC \uAC00\uC9C0\
+  \ \uBC29\uBC95\uC744 \uC0AC\uC6A9\uD558\uC5EC \uB85C\uAE45\uC744 \uC218\uD589\uD560\
+  \ \uC218 \uC788\uC2B5\uB2C8\uB2E4. Logger \uD074\uB798\uC2A4\uB294 \uC804\uD1B5\uC801\
+  \uC778 \uBC29\uBC95\uC73C\uB85C \uAC04\uB2E8\uD55C \uB514\uBC84\uAE45 \uBC0F \uAC1C\
+  \uBC1C \uBAA9\uC801\uC5D0 \uC801\uD569\uD569\uB2C8\uB2E4. \uCD5C\uADFC \uC5C5\uB370\
+  \uC774\uD2B8\uC5D0\uC11C\uB294\u2026"
+lastmod: 2024-02-18 23:09:05.566878
+model: gpt-4-0125-preview
+summary: "Google Apps \uC2A4\uD06C\uB9BD\uD2B8\uC5D0\uC11C\uB294 `Logger` \uD074\uB798\
+  \uC2A4\uC640 `console.log()`\uC640 \uAC19\uC740 \uC5EC\uB7EC \uAC00\uC9C0 \uBC29\
+  \uBC95\uC744 \uC0AC\uC6A9\uD558\uC5EC \uB85C\uAE45\uC744 \uC218\uD589\uD560 \uC218\
+  \ \uC788\uC2B5\uB2C8\uB2E4. Logger \uD074\uB798\uC2A4\uB294 \uC804\uD1B5\uC801\uC778\
+  \ \uBC29\uBC95\uC73C\uB85C \uAC04\uB2E8\uD55C \uB514\uBC84\uAE45 \uBC0F \uAC1C\uBC1C\
+  \ \uBAA9\uC801\uC5D0 \uC801\uD569\uD569\uB2C8\uB2E4. \uCD5C\uADFC \uC5C5\uB370\uC774\
+  \uD2B8\uC5D0\uC11C\uB294\u2026"
+title: "\uB85C\uAE45"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,30 @@
 ---
-title:                "Розбір HTML"
 aliases:
 - /uk/google-apps-script/parsing-html/
-date:                  2024-02-01T21:57:37.956905-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Розбір HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/google-apps-script/parsing-html.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:37.956905-07:00
+description: "\u0420\u043E\u0437\u0431\u0456\u0440 HTML \u0443 Google Apps Script\
+  \ \u043F\u043E\u043B\u044F\u0433\u0430\u0454 \u0432 \u0435\u043A\u0441\u0442\u0440\
+  \u0430\u043A\u0446\u0456\u0457 \u0434\u0430\u043D\u0438\u0445 \u0456\u0437 HTML-\u043A\
+  \u043E\u043D\u0442\u0435\u043D\u0442\u0443, \u0449\u043E \u043E\u0441\u043E\u0431\
+  \u043B\u0438\u0432\u043E \u043A\u043E\u0440\u0438\u0441\u043D\u043E \u043F\u0440\
+  \u0438 \u0432\u0437\u0430\u0454\u043C\u043E\u0434\u0456\u0457 \u0437 \u0432\u0435\
+  \u0431-\u0441\u0442\u043E\u0440\u0456\u043D\u043A\u0430\u043C\u0438 \u0430\u0431\
+  \u043E \u0432\u0435\u0431-\u043E\u0440\u0456\u0454\u043D\u0442\u043E\u0432\u0430\
+  \u043D\u0438\u043C\u0438\u2026"
+lastmod: 2024-02-18 23:08:59.739764
+model: gpt-4-0125-preview
+summary: "\u0420\u043E\u0437\u0431\u0456\u0440 HTML \u0443 Google Apps Script \u043F\
+  \u043E\u043B\u044F\u0433\u0430\u0454 \u0432 \u0435\u043A\u0441\u0442\u0440\u0430\
+  \u043A\u0446\u0456\u0457 \u0434\u0430\u043D\u0438\u0445 \u0456\u0437 HTML-\u043A\
+  \u043E\u043D\u0442\u0435\u043D\u0442\u0443, \u0449\u043E \u043E\u0441\u043E\u0431\
+  \u043B\u0438\u0432\u043E \u043A\u043E\u0440\u0438\u0441\u043D\u043E \u043F\u0440\
+  \u0438 \u0432\u0437\u0430\u0454\u043C\u043E\u0434\u0456\u0457 \u0437 \u0432\u0435\
+  \u0431-\u0441\u0442\u043E\u0440\u0456\u043D\u043A\u0430\u043C\u0438 \u0430\u0431\
+  \u043E \u0432\u0435\u0431-\u043E\u0440\u0456\u0454\u043D\u0442\u043E\u0432\u0430\
+  \u043D\u0438\u043C\u0438\u2026"
+title: "\u0420\u043E\u0437\u0431\u0456\u0440 HTML"
 ---
 
 {{< edit_this_page >}}

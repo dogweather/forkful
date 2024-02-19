@@ -1,14 +1,18 @@
 ---
-title:                "Arredondamento de números"
 aliases:
 - /pt/vba/rounding-numbers/
-date:                  2024-02-01T22:00:57.014944-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arredondamento de números"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/vba/rounding-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:57.014944-07:00
+description: "Arredondar n\xFAmeros em programa\xE7\xE3o \xE9 sobre aproximar um n\xFA\
+  mero ao seu n\xFAmero inteiro mais pr\xF3ximo ou a um certo n\xFAmero de casas decimais.\
+  \ Programadores\u2026"
+lastmod: 2024-02-18 23:08:57.968124
+model: gpt-4-0125-preview
+summary: "Arredondar n\xFAmeros em programa\xE7\xE3o \xE9 sobre aproximar um n\xFA\
+  mero ao seu n\xFAmero inteiro mais pr\xF3ximo ou a um certo n\xFAmero de casas decimais.\
+  \ Programadores\u2026"
+title: "Arredondamento de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

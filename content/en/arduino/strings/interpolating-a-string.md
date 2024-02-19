@@ -1,13 +1,14 @@
 ---
-title:                "Interpolating a string"
 aliases:
 - /en/arduino/interpolating-a-string/
-date:                  2024-01-20T17:50:13.004065-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolating a string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/interpolating-a-string.md"
+date: 2024-01-20 17:50:13.004065-07:00
+description: String interpolation is mixing variables with text. Programmers do it
+  to build strings on-the-fly, making output dynamic and readable.
+lastmod: 2024-02-18 23:09:11.301961
+model: gpt-4-1106-preview
+summary: String interpolation is mixing variables with text. Programmers do it to
+  build strings on-the-fly, making output dynamic and readable.
+title: Interpolating a string
 ---
 
 {{< edit_this_page >}}

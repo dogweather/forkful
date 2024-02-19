@@ -1,14 +1,18 @@
 ---
-title:                "Rédiger un fichier texte"
 aliases:
 - /fr/fish-shell/writing-a-text-file/
-date:                  2024-02-03T19:27:36.462027-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rédiger un fichier texte"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:36.462027-07:00
+description: "\xC9crire dans un fichier texte avec Fish Shell vous permet de stocker\
+  \ des donn\xE9es de mani\xE8re persistante, facilitant ainsi la r\xE9cup\xE9ration\
+  \ ou la\u2026"
+lastmod: 2024-02-18 23:09:09.326560
+model: gpt-4-0125-preview
+summary: "\xC9crire dans un fichier texte avec Fish Shell vous permet de stocker des\
+  \ donn\xE9es de mani\xE8re persistante, facilitant ainsi la r\xE9cup\xE9ration ou\
+  \ la\u2026"
+title: "R\xE9diger un fichier texte"
 ---
 
 {{< edit_this_page >}}

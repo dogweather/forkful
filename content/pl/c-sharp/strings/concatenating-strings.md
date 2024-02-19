@@ -1,13 +1,12 @@
 ---
-title:                "Łączenie łańcuchów znaków"
 aliases:
 - /pl/c-sharp/concatenating-strings/
-date:                  2024-01-20T17:34:15.756437-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Łączenie łańcuchów znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/concatenating-strings.md"
+date: 2024-01-20 17:34:15.756437-07:00
+description: (
+lastmod: 2024-02-18 23:08:49.602982
+model: gpt-4-1106-preview
+summary: (
+title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 ---
 
 {{< edit_this_page >}}

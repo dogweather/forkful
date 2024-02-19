@@ -1,13 +1,16 @@
 ---
-title:                "Concatenación de cadenas"
 aliases:
 - /es/elixir/concatenating-strings/
-date:                  2024-01-27T10:42:28.298638-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Concatenación de cadenas"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/concatenating-strings.md"
+date: 2024-01-27 10:42:28.298638-07:00
+description: "Concatenar cadenas trata sobre unir dos o m\xE1s cadenas para formar\
+  \ un solo texto. Podr\xEDas necesitar fusionar texto para generar mensajes de usuario,\
+  \ crear\u2026"
+lastmod: 2024-02-18 23:09:09.639768
+model: gpt-4-0125-preview
+summary: "Concatenar cadenas trata sobre unir dos o m\xE1s cadenas para formar un\
+  \ solo texto. Podr\xEDas necesitar fusionar texto para generar mensajes de usuario,\
+  \ crear\u2026"
+title: "Concatenaci\xF3n de cadenas"
 ---
 
 {{< edit_this_page >}}

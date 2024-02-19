@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng biểu thức chính quy"
 aliases:
 - /vi/arduino/using-regular-expressions/
-date:                  2024-01-28T22:09:20.243579-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng biểu thức chính quy"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/using-regular-expressions.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:20.243579-07:00
+description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) cho ph\xE9p b\u1EA1n t\xEC\
+  m ki\u1EBFm v\u0103n b\u1EA3n theo m\xF4 h\xECnh\u2014ngh\u0129 \u0111\u1EBFn l\xE0\
+  \ phi\xEAn b\u1EA3n n\xE2ng cao c\u1EE7a wild card. L\u1EADp tr\xECnh vi\xEAn s\u1EED\
+  \ d\u1EE5ng ch\xFAng \u0111\u1EC3 x\xE1c\u2026"
+lastmod: 2024-02-18 23:08:50.988997
+model: gpt-4-0125-preview
+summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) cho ph\xE9p b\u1EA1n t\xECm ki\u1EBF\
+  m v\u0103n b\u1EA3n theo m\xF4 h\xECnh\u2014ngh\u0129 \u0111\u1EBFn l\xE0 phi\xEA\
+  n b\u1EA3n n\xE2ng cao c\u1EE7a wild card. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5\
+  ng ch\xFAng \u0111\u1EC3 x\xE1c\u2026"
+title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 ---
 
 {{< edit_this_page >}}

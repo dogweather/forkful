@@ -1,13 +1,16 @@
 ---
-title:                "Skrive ut feilsøkingsdata"
 aliases:
 - /no/elm/printing-debug-output/
-date:                  2024-01-20T17:52:21.420264-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skrive ut feilsøkingsdata"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/printing-debug-output.md"
+date: 2024-01-20 17:52:21.420264-07:00
+description: "Debug-utskrift er \xE5 kaste ut data til konsollen for \xE5 spore hva\
+  \ programmet ditt gj\xF8r. Programmerere gj\xF8r dette for \xE5 forst\xE5 feil og\
+  \ forbedre kodeflyten."
+lastmod: 2024-02-18 23:08:53.813874
+model: gpt-4-1106-preview
+summary: "Debug-utskrift er \xE5 kaste ut data til konsollen for \xE5 spore hva programmet\
+  \ ditt gj\xF8r. Programmerere gj\xF8r dette for \xE5 forst\xE5 feil og forbedre\
+  \ kodeflyten."
+title: "Skrive ut feils\xF8kingsdata"
 ---
 
 {{< edit_this_page >}}

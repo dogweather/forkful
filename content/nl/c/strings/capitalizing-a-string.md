@@ -1,14 +1,16 @@
 ---
-title:                "Een string kapitaliseren"
 aliases:
 - /nl/c/capitalizing-a-string/
-date:                  2024-02-03T17:52:50.382197-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string kapitaliseren"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:52:50.382197-07:00
+description: "Een string met hoofdletters schrijven in C houdt in dat je het eerste\
+  \ teken van elk woord in een gegeven string omzet naar een hoofdletter als het een\u2026"
+lastmod: 2024-02-18 23:09:02.353526
+model: gpt-4-0125-preview
+summary: "Een string met hoofdletters schrijven in C houdt in dat je het eerste teken\
+  \ van elk woord in een gegeven string omzet naar een hoofdletter als het een\u2026"
+title: Een string kapitaliseren
 ---
 
 {{< edit_this_page >}}

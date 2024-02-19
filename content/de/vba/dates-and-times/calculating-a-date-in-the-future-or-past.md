@@ -1,14 +1,16 @@
 ---
-title:                "Berechnung eines zukünftigen oder vergangenen Datums"
 aliases:
 - /de/vba/calculating-a-date-in-the-future-or-past/
-date:                  2024-02-01T21:49:06.029488-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Berechnung eines zukünftigen oder vergangenen Datums"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/vba/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:06.029488-07:00
+description: "Das Berechnen eines Datums in der Zukunft oder Vergangenheit umfasst\
+  \ die Bestimmung eines Datums, das eine festgelegte Anzahl von Tagen, Monaten oder\u2026"
+lastmod: 2024-02-18 23:09:04.704913
+model: gpt-4-0125-preview
+summary: "Das Berechnen eines Datums in der Zukunft oder Vergangenheit umfasst die\
+  \ Bestimmung eines Datums, das eine festgelegte Anzahl von Tagen, Monaten oder\u2026"
+title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 ---
 
 {{< edit_this_page >}}

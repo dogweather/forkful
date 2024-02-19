@@ -1,13 +1,16 @@
 ---
-title:                "Nedlasting av en nettside"
 aliases:
 - /no/fish-shell/downloading-a-web-page/
-date:                  2024-01-20T17:44:10.514583-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Nedlasting av en nettside"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/downloading-a-web-page.md"
+date: 2024-01-20 17:44:10.514583-07:00
+description: "Nedlasting av en nettside betyr \xE5 hente HTML-koden fra en nettadresse\
+  \ til lokalt lagringsmedium. Programmerere gj\xF8r dette for \xE5 analysere innhold,\
+  \ teste\u2026"
+lastmod: 2024-02-18 23:08:54.350382
+model: gpt-4-1106-preview
+summary: "Nedlasting av en nettside betyr \xE5 hente HTML-koden fra en nettadresse\
+  \ til lokalt lagringsmedium. Programmerere gj\xF8r dette for \xE5 analysere innhold,\
+  \ teste\u2026"
+title: Nedlasting av en nettside
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Arbeiten mit XML"
 aliases:
 - /de/javascript/working-with-xml/
-date:                  2024-01-26T04:32:30.144854-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeiten mit XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/working-with-xml.md"
+date: 2024-01-26 04:32:30.144854-07:00
+description: "Mit XML zu arbeiten bedeutet, XML-Inhalte mit Code zu parsen, zu manipulieren\
+  \ und zu erzeugen. Programmierer tun dies, weil XML aufgrund seiner\u2026"
+lastmod: 2024-02-18 23:09:05.304732
+model: gpt-4-0125-preview
+summary: "Mit XML zu arbeiten bedeutet, XML-Inhalte mit Code zu parsen, zu manipulieren\
+  \ und zu erzeugen. Programmierer tun dies, weil XML aufgrund seiner\u2026"
+title: Arbeiten mit XML
 ---
 
 {{< edit_this_page >}}

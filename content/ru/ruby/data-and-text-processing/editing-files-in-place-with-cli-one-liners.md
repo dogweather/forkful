@@ -1,15 +1,33 @@
 ---
-title:                "Редактирование файлов на месте с помощью однострочников CLI"
 aliases:
 - /ru/ruby/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-28T23:58:24.320722-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Редактирование файлов на месте с помощью однострочников CLI"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/ruby/editing-files-in-place-with-cli-one-liners.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 23:58:24.320722-07:00
+description: "\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u043D\
+  \u0438\u0435 \u0444\u0430\u0439\u043B\u043E\u0432 \u043D\u0430 \u043C\u0435\u0441\
+  \u0442\u0435 \u0441 \u043F\u043E\u043C\u043E\u0449\u044C\u044E \u043E\u0434\u043D\
+  \u043E\u0441\u0442\u0440\u043E\u0447\u043D\u044B\u0445 \u043A\u043E\u043C\u0430\u043D\
+  \u0434 CLI (Command Line Interface) \u043D\u0430 Ruby \u043F\u043E\u0437\u0432\u043E\
+  \u043B\u044F\u0435\u0442 \u0432\u0430\u043C \u0438\u0437\u043C\u0435\u043D\u044F\
+  \u0442\u044C \u0444\u0430\u0439\u043B\u044B \u043D\u0435\u043F\u043E\u0441\u0440\
+  \u0435\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u043E \u0438\u0437 \u0432\u0430\
+  \u0448\u0435\u0433\u043E\u2026"
+lastmod: 2024-02-18 23:08:57.614681
+model: gpt-4-0125-preview
+summary: "\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u043D\
+  \u0438\u0435 \u0444\u0430\u0439\u043B\u043E\u0432 \u043D\u0430 \u043C\u0435\u0441\
+  \u0442\u0435 \u0441 \u043F\u043E\u043C\u043E\u0449\u044C\u044E \u043E\u0434\u043D\
+  \u043E\u0441\u0442\u0440\u043E\u0447\u043D\u044B\u0445 \u043A\u043E\u043C\u0430\u043D\
+  \u0434 CLI (Command Line Interface) \u043D\u0430 Ruby \u043F\u043E\u0437\u0432\u043E\
+  \u043B\u044F\u0435\u0442 \u0432\u0430\u043C \u0438\u0437\u043C\u0435\u043D\u044F\
+  \u0442\u044C \u0444\u0430\u0439\u043B\u044B \u043D\u0435\u043F\u043E\u0441\u0440\
+  \u0435\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u043E \u0438\u0437 \u0432\u0430\
+  \u0448\u0435\u0433\u043E\u2026"
+title: "\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\
+  \u0435 \u0444\u0430\u0439\u043B\u043E\u0432 \u043D\u0430 \u043C\u0435\u0441\u0442\
+  \u0435 \u0441 \u043F\u043E\u043C\u043E\u0449\u044C\u044E \u043E\u0434\u043D\u043E\
+  \u0441\u0442\u0440\u043E\u0447\u043D\u0438\u043A\u043E\u0432 CLI"
 ---
 
 {{< edit_this_page >}}

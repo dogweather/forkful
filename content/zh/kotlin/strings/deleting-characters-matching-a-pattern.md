@@ -1,14 +1,21 @@
 ---
-title:                "匹配模式删除字符"
 aliases:
 - /zh/kotlin/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:32.276596-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "匹配模式删除字符"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:32.276596-07:00
+description: "\u5220\u9664\u5B57\u7B26\u5339\u914D\u6A21\u5F0F\u662F\u627E\u51FA\u7B26\
+  \u5408\u7279\u5B9A\u89C4\u5219\u7684\u5B57\u7B26\uFF0C\u7136\u540E\u628A\u5B83\u4EEC\
+  \u79FB\u9664\u6389\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u6570\
+  \u636E\u6E05\u6D17\u3001\u683C\u5F0F\u5316\uFF0C\u6216\u8005\u7B80\u5316\u5B57\u7B26\
+  \u4E32\u5904\u7406\u4EFB\u52A1\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.081272
+model: gpt-4-1106-preview
+summary: "\u5220\u9664\u5B57\u7B26\u5339\u914D\u6A21\u5F0F\u662F\u627E\u51FA\u7B26\
+  \u5408\u7279\u5B9A\u89C4\u5219\u7684\u5B57\u7B26\uFF0C\u7136\u540E\u628A\u5B83\u4EEC\
+  \u79FB\u9664\u6389\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u6570\
+  \u636E\u6E05\u6D17\u3001\u683C\u5F0F\u5316\uFF0C\u6216\u8005\u7B80\u5316\u5B57\u7B26\
+  \u4E32\u5904\u7406\u4EFB\u52A1\u3002"
+title: "\u5339\u914D\u6A21\u5F0F\u5220\u9664\u5B57\u7B26"
 ---
 
 {{< edit_this_page >}}

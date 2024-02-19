@@ -1,14 +1,26 @@
 ---
-title:                "编写文本文件"
 aliases:
 - /zh/go/writing-a-text-file/
-date:                  2024-02-03T18:14:50.235666-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "编写文本文件"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:14:50.235666-07:00
+description: "\u5728 Go \u4E2D\u5199\u5165\u6587\u672C\u6587\u4EF6\u6D89\u53CA\u5230\
+  \u521B\u5EFA\u5E76\u5C06\u6570\u636E\u5B57\u7B26\u4E32\u5199\u5165\u65B0\u7684\u6216\
+  \u73B0\u6709\u6587\u672C\u6587\u4EF6\u4E2D\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\
+  \u662F\u4E3A\u4E86\u4FDD\u7559\u6570\u636E\uFF0C\u4F8B\u5982\u5E94\u7528\u7A0B\u5E8F\
+  \u65E5\u5FD7\u3001\u914D\u7F6E\u8BBE\u7F6E\u6216\u6570\u636E\u5904\u7406\u4EFB\u52A1\
+  \u7684\u8F93\u51FA\uFF0C\u8FD9\u662F\u8F6F\u4EF6\u5F00\u53D1\u4E2D\u6570\u636E\u7BA1\
+  \u7406\u548C\u62A5\u544A\u7684\u57FA\u672C\u6280\u80FD\u3002"
+lastmod: 2024-02-18 23:08:58.725936
+model: gpt-4-0125-preview
+summary: "\u5728 Go \u4E2D\u5199\u5165\u6587\u672C\u6587\u4EF6\u6D89\u53CA\u5230\u521B\
+  \u5EFA\u5E76\u5C06\u6570\u636E\u5B57\u7B26\u4E32\u5199\u5165\u65B0\u7684\u6216\u73B0\
+  \u6709\u6587\u672C\u6587\u4EF6\u4E2D\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\
+  \u4E3A\u4E86\u4FDD\u7559\u6570\u636E\uFF0C\u4F8B\u5982\u5E94\u7528\u7A0B\u5E8F\u65E5\
+  \u5FD7\u3001\u914D\u7F6E\u8BBE\u7F6E\u6216\u6570\u636E\u5904\u7406\u4EFB\u52A1\u7684\
+  \u8F93\u51FA\uFF0C\u8FD9\u662F\u8F6F\u4EF6\u5F00\u53D1\u4E2D\u6570\u636E\u7BA1\u7406\
+  \u548C\u62A5\u544A\u7684\u57FA\u672C\u6280\u80FD\u3002"
+title: "\u7F16\u5199\u6587\u672C\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

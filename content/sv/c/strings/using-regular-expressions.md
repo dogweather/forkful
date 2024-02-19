@@ -1,14 +1,18 @@
 ---
-title:                "Använda reguljära uttryck"
 aliases:
 - /sv/c/using-regular-expressions/
-date:                  2024-02-03T18:10:57.705225-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Använda reguljära uttryck"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:57.705225-07:00
+description: "Regulj\xE4ra uttryck (regex) erbjuder ett s\xE4tt att s\xF6ka, matcha\
+  \ och manipulera str\xE4ngar med definierade m\xF6nster. Programmerare anv\xE4nder\
+  \ dem i stor\u2026"
+lastmod: 2024-02-18 23:08:52.239565
+model: gpt-4-0125-preview
+summary: "Regulj\xE4ra uttryck (regex) erbjuder ett s\xE4tt att s\xF6ka, matcha och\
+  \ manipulera str\xE4ngar med definierade m\xF6nster. Programmerare anv\xE4nder dem\
+  \ i stor\u2026"
+title: "Anv\xE4nda regulj\xE4ra uttryck"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie argumentów linii poleceń"
 aliases:
 - /pl/bash/reading-command-line-arguments/
-date:                  2024-01-20T17:55:28.350388-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie argumentów linii poleceń"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:28.350388-07:00
+description: "Czytanie argument\xF3w z linii polece\u0144 pozwala skryptom Bash przyjmowa\u0107\
+  \ dane wej\u015Bciowe podczas uruchamiania. U\u017Cywamy tego, bo to elastyczny\
+  \ spos\xF3b na\u2026"
+lastmod: 2024-02-18 23:08:49.800430
+model: gpt-4-1106-preview
+summary: "Czytanie argument\xF3w z linii polece\u0144 pozwala skryptom Bash przyjmowa\u0107\
+  \ dane wej\u015Bciowe podczas uruchamiania. U\u017Cywamy tego, bo to elastyczny\
+  \ spos\xF3b na\u2026"
+title: "Odczytywanie argument\xF3w linii polece\u0144"
 ---
 
 {{< edit_this_page >}}

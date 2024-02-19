@@ -1,13 +1,16 @@
 ---
-title:                "Extrahera delsträngar"
 aliases:
 - /sv/fish-shell/extracting-substrings/
-date:                  2024-01-20T17:45:37.058976-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extrahera delsträngar"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/extracting-substrings.md"
+date: 2024-01-20 17:45:37.058976-07:00
+description: "Ibland beh\xF6ver du bara en del av en str\xE4ng, antingen f\xF6r att\
+  \ analysera data eller f\xF6r att manipulera text. Att extrahera substr\xE4ngar\
+  \ l\xE5ter dig snoppa av\u2026"
+lastmod: 2024-02-18 23:08:52.194925
+model: gpt-4-1106-preview
+summary: "Ibland beh\xF6ver du bara en del av en str\xE4ng, antingen f\xF6r att analysera\
+  \ data eller f\xF6r att manipulera text. Att extrahera substr\xE4ngar l\xE5ter dig\
+  \ snoppa av\u2026"
+title: "Extrahera delstr\xE4ngar"
 ---
 
 {{< edit_this_page >}}

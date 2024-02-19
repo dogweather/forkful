@@ -1,13 +1,14 @@
 ---
-title:                "Bruke et interaktivt skall (REPL)"
 aliases:
 - /no/fish-shell/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:14:12.058858-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke et interaktivt skall (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:14:12.058858-07:00
+description: "REPL, eller Les-Evaluer-Skriv-L\xF8kke, er et interaktivt programmeringsmilj\xF8\
+  \ som tar enkelt brukerinput, utf\xF8rer dem, og returnerer resultatet.\u2026"
+lastmod: 2024-02-18 23:08:54.353254
+model: gpt-4-0125-preview
+summary: "REPL, eller Les-Evaluer-Skriv-L\xF8kke, er et interaktivt programmeringsmilj\xF8\
+  \ som tar enkelt brukerinput, utf\xF8rer dem, og returnerer resultatet.\u2026"
+title: Bruke et interaktivt skall (REPL)
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Omvandla ett datum till en sträng"
 aliases:
 - /sv/c/converting-a-date-into-a-string/
-date:                  2024-02-03T17:54:09.453436-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Omvandla ett datum till en sträng"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:09.453436-07:00
+description: "Att konvertera ett datum till en str\xE4ng i C inneb\xE4r att \xF6vers\xE4\
+  tta en datumstruktur eller tidsst\xE4mpel till ett l\xE4sbart format f\xF6r m\xE4\
+  nniskor. Programmerare\u2026"
+lastmod: 2024-02-18 23:08:52.262675
+model: gpt-4-0125-preview
+summary: "Att konvertera ett datum till en str\xE4ng i C inneb\xE4r att \xF6vers\xE4\
+  tta en datumstruktur eller tidsst\xE4mpel till ett l\xE4sbart format f\xF6r m\xE4\
+  nniskor. Programmerare\u2026"
+title: "Omvandla ett datum till en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

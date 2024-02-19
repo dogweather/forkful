@@ -1,13 +1,16 @@
 ---
-title:                "Koodin järjestäminen funktioihin"
 aliases:
 - /fi/haskell/organizing-code-into-functions/
-date:                  2024-01-26T01:10:21.757800-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Koodin järjestäminen funktioihin"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/organizing-code-into-functions.md"
+date: 2024-01-26 01:10:21.757800-07:00
+description: "Koodin j\xE4rjest\xE4minen funktioihin Haskellissa tarkoittaa koodin\
+  \ pilkkomista uudelleenk\xE4ytett\xE4viin, nimettyihin lohkoihin. Miksi? Se pit\xE4\
+  \xE4 koodisi DRY:n\xE4\u2026"
+lastmod: 2024-02-18 23:09:07.672052
+model: gpt-4-1106-preview
+summary: "Koodin j\xE4rjest\xE4minen funktioihin Haskellissa tarkoittaa koodin pilkkomista\
+  \ uudelleenk\xE4ytett\xE4viin, nimettyihin lohkoihin. Miksi? Se pit\xE4\xE4 koodisi\
+  \ DRY:n\xE4\u2026"
+title: "Koodin j\xE4rjest\xE4minen funktioihin"
 ---
 
 {{< edit_this_page >}}

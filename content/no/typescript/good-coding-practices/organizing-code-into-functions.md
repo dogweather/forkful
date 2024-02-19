@@ -1,13 +1,14 @@
 ---
-title:                "Organisering av kode i funksjoner"
 aliases:
 - /no/typescript/organizing-code-into-functions/
-date:                  2024-01-26T01:16:22.474002-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Organisering av kode i funksjoner"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/organizing-code-into-functions.md"
+date: 2024-01-26 01:16:22.474002-07:00
+description: "\xC5 organisere kode i funksjoner betyr \xE5 bryte opp koden din i gjenbrukbare,\
+  \ modul\xE6re blokker. Vi gj\xF8r dette for \xE5 holde ting DRY (Don't Repeat Yourself),\u2026"
+lastmod: 2024-02-18 23:08:53.650372
+model: gpt-4-0125-preview
+summary: "\xC5 organisere kode i funksjoner betyr \xE5 bryte opp koden din i gjenbrukbare,\
+  \ modul\xE6re blokker. Vi gj\xF8r dette for \xE5 holde ting DRY (Don't Repeat Yourself),\u2026"
+title: Organisering av kode i funksjoner
 ---
 
 {{< edit_this_page >}}

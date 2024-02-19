@@ -1,13 +1,16 @@
 ---
-title:                "Enviando uma requisição HTTP"
 aliases:
 - /pt/ruby/sending-an-http-request/
-date:                  2024-01-20T18:00:20.331192-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando uma requisição HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/sending-an-http-request.md"
+date: 2024-01-20 18:00:20.331192-07:00
+description: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o ato de pedir informa\xE7\xF5\
+  es a um servidor web. Programadores fazem isso para interagir com APIs, solicitar\
+  \ dados, ou submeter\u2026"
+lastmod: 2024-02-18 23:08:58.662628
+model: gpt-4-1106-preview
+summary: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o ato de pedir informa\xE7\xF5es a\
+  \ um servidor web. Programadores fazem isso para interagir com APIs, solicitar dados,\
+  \ ou submeter\u2026"
+title: "Enviando uma requisi\xE7\xE3o HTTP"
 ---
 
 {{< edit_this_page >}}

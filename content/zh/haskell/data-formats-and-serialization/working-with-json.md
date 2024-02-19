@@ -1,14 +1,28 @@
 ---
-title:                "使用JSON进行编程"
 aliases:
 - /zh/haskell/working-with-json/
-date:                  2024-02-03T19:22:58.571375-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用JSON进行编程"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:22:58.571375-07:00
+description: "\u5728 Haskell \u4E2D\u5904\u7406 JSON\uFF08JavaScript \u5BF9\u8C61\u8868\
+  \u793A\u6CD5\uFF09\u6D89\u53CA\u5230\u5C06 JSON \u6570\u636E\u89E3\u6790\u6210 Haskell\
+  \ \u7C7B\u578B\u4EE5\u53CA\u5C06 Haskell \u7C7B\u578B\u53CD\u5411\u8F6C\u6362\u6210\
+  \ JSON\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u4F7F\u4ED6\u4EEC\
+  \u7684 Haskell \u5E94\u7528\u80FD\u591F\u4E0E\u7F51\u7EDC\u670D\u52A1\u6216 API\
+  \ \u65E0\u7F1D\u4EA4\u6362\u6570\u636E\uFF0C\u8FD9\u5728\u73B0\u4EE3\u8F6F\u4EF6\
+  \u5F00\u53D1\u4E2D\u662F\u8DE8\u5E73\u53F0\u6570\u636E\u4EA4\u6362\u7684\u5E38\u89C1\
+  \u505A\u6CD5\u3002"
+lastmod: 2024-02-18 23:08:59.197309
+model: gpt-4-0125-preview
+summary: "\u5728 Haskell \u4E2D\u5904\u7406 JSON\uFF08JavaScript \u5BF9\u8C61\u8868\
+  \u793A\u6CD5\uFF09\u6D89\u53CA\u5230\u5C06 JSON \u6570\u636E\u89E3\u6790\u6210 Haskell\
+  \ \u7C7B\u578B\u4EE5\u53CA\u5C06 Haskell \u7C7B\u578B\u53CD\u5411\u8F6C\u6362\u6210\
+  \ JSON\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u4F7F\u4ED6\u4EEC\
+  \u7684 Haskell \u5E94\u7528\u80FD\u591F\u4E0E\u7F51\u7EDC\u670D\u52A1\u6216 API\
+  \ \u65E0\u7F1D\u4EA4\u6362\u6570\u636E\uFF0C\u8FD9\u5728\u73B0\u4EE3\u8F6F\u4EF6\
+  \u5F00\u53D1\u4E2D\u662F\u8DE8\u5E73\u53F0\u6570\u636E\u4EA4\u6362\u7684\u5E38\u89C1\
+  \u505A\u6CD5\u3002"
+title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,16 @@
 ---
-title:                "Controleren of een directory bestaat"
 aliases:
 - /nl/c-sharp/checking-if-a-directory-exists/
-date:                  2024-01-28T21:56:00.050871-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Controleren of een directory bestaat"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c-sharp/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:00.050871-07:00
+description: "Het controleren van het bestaan van een map in C# stelt je in staat\
+  \ om te bevestigen of een specifieke map beschikbaar is in het bestandssysteem.\u2026"
+lastmod: 2024-02-18 23:09:01.868268
+model: gpt-4-0125-preview
+summary: "Het controleren van het bestaan van een map in C# stelt je in staat om te\
+  \ bevestigen of een specifieke map beschikbaar is in het bestandssysteem.\u2026"
+title: Controleren of een directory bestaat
 ---
 
 {{< edit_this_page >}}

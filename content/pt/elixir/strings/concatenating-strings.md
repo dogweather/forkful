@@ -1,13 +1,16 @@
 ---
-title:                "Concatenando strings"
 aliases:
 - /pt/elixir/concatenating-strings/
-date:                  2024-01-27T10:43:11.660520-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Concatenando strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/concatenating-strings.md"
+date: 2024-01-27 10:43:11.660520-07:00
+description: "Concatenar strings \xE9 sobre juntar duas ou mais cadeias de caracteres\
+  \ para formar um \xFAnico texto. Voc\xEA pode precisar mesclar textos para gerar\
+  \ mensagens de\u2026"
+lastmod: 2024-02-18 23:08:57.836104
+model: gpt-4-0125-preview
+summary: "Concatenar strings \xE9 sobre juntar duas ou mais cadeias de caracteres\
+  \ para formar um \xFAnico texto. Voc\xEA pode precisar mesclar textos para gerar\
+  \ mensagens de\u2026"
+title: Concatenando strings
 ---
 
 {{< edit_this_page >}}

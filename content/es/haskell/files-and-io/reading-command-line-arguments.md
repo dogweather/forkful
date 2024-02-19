@@ -1,13 +1,16 @@
 ---
-title:                "Lectura de argumentos de línea de comandos"
 aliases:
 - /es/haskell/reading-command-line-arguments/
-date:                  2024-01-20T17:56:10.233077-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lectura de argumentos de línea de comandos"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:10.233077-07:00
+description: "Leer argumentos de la l\xEDnea de comandos permite a nuestros programas\
+  \ en Haskell recibir datos externos al ejecutarse, algo \xFAtil para tareas como\
+  \ la\u2026"
+lastmod: 2024-02-18 23:09:10.044508
+model: gpt-4-1106-preview
+summary: "Leer argumentos de la l\xEDnea de comandos permite a nuestros programas\
+  \ en Haskell recibir datos externos al ejecutarse, algo \xFAtil para tareas como\
+  \ la\u2026"
+title: "Lectura de argumentos de l\xEDnea de comandos"
 ---
 
 {{< edit_this_page >}}

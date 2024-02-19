@@ -1,14 +1,20 @@
 ---
-title:                "Lấy ngày hiện tại"
 aliases:
 - /vi/vba/getting-the-current-date/
-date:                  2024-02-01T21:54:58.223770-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lấy ngày hiện tại"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/getting-the-current-date.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:58.223770-07:00
+description: "Trong Visual Basic for Applications (VBA), vi\u1EC7c l\u1EA5y ng\xE0\
+  y hi\u1EC7n t\u1EA1i l\xE0 m\u1ED9t nhi\u1EC7m v\u1EE5 ph\u1ED5 bi\u1EBFn gi\xFA\
+  p c\xE1c l\u1EADp tr\xECnh vi\xEAn c\xF3 th\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi ng\xE0\
+  y m\u1ED9t c\xE1ch linh\u2026"
+lastmod: 2024-02-18 23:08:50.521224
+model: gpt-4-0125-preview
+summary: "Trong Visual Basic for Applications (VBA), vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7\
+  n t\u1EA1i l\xE0 m\u1ED9t nhi\u1EC7m v\u1EE5 ph\u1ED5 bi\u1EBFn gi\xFAp c\xE1c l\u1EAD\
+  p tr\xECnh vi\xEAn c\xF3 th\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi ng\xE0y m\u1ED9t c\xE1\
+  ch linh\u2026"
+title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 ---
 
 {{< edit_this_page >}}

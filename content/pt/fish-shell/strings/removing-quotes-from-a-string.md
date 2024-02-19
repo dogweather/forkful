@@ -1,13 +1,14 @@
 ---
-title:                "Removendo aspas de uma string"
 aliases:
 - /pt/fish-shell/removing-quotes-from-a-string/
-date:                  2024-01-26T03:38:50.572644-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Removendo aspas de uma string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:38:50.572644-07:00
+description: "Remover aspas de uma string \xE9 sobre eliminar aquelas inc\xF4modas\
+  \ aspas simples (' ') ou duplas (\" \") dos seus dados de texto. Programadores frequentemente\u2026"
+lastmod: 2024-02-18 23:08:58.561931
+model: gpt-4-0125-preview
+summary: "Remover aspas de uma string \xE9 sobre eliminar aquelas inc\xF4modas aspas\
+  \ simples (' ') ou duplas (\" \") dos seus dados de texto. Programadores frequentemente\u2026"
+title: Removendo aspas de uma string
 ---
 
 {{< edit_this_page >}}

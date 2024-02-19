@@ -1,14 +1,18 @@
 ---
-title:                "Få dagens dato"
 aliases:
 - /no/kotlin/getting-the-current-date/
-date:                  2024-02-03T19:10:18.788450-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Få dagens dato"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:10:18.788450-07:00
+description: "I programmering er det \xE5 f\xE5 tak i dagens dato en grunnleggende\
+  \ oppgave som gj\xF8r det mulig for utviklere \xE5 f\xE5 tilgang til, vise eller\
+  \ manipulere dagens\u2026"
+lastmod: 2024-02-18 23:08:53.862531
+model: gpt-4-0125-preview
+summary: "I programmering er det \xE5 f\xE5 tak i dagens dato en grunnleggende oppgave\
+  \ som gj\xF8r det mulig for utviklere \xE5 f\xE5 tilgang til, vise eller manipulere\
+  \ dagens\u2026"
+title: "F\xE5 dagens dato"
 ---
 
 {{< edit_this_page >}}

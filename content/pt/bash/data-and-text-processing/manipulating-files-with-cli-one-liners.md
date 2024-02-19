@@ -1,13 +1,14 @@
 ---
-title:                "Manipulando arquivos com one-liners de CLI"
 aliases:
 - /pt/bash/manipulating-files-with-cli-one-liners/
-date:                  2024-01-27T16:20:39.704908-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulando arquivos com one-liners de CLI"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/manipulating-files-with-cli-one-liners.md"
+date: 2024-01-27 16:20:39.704908-07:00
+description: "Manipular arquivos com CLI (Interface de Linha de Comando) com one-liners\
+  \ envolve usar scripts ou comandos Bash para realizar a\xE7\xF5es em arquivos, como\u2026"
+lastmod: 2024-02-18 23:08:58.320478
+model: gpt-4-0125-preview
+summary: "Manipular arquivos com CLI (Interface de Linha de Comando) com one-liners\
+  \ envolve usar scripts ou comandos Bash para realizar a\xE7\xF5es em arquivos, como\u2026"
+title: Manipulando arquivos com one-liners de CLI
 ---
 
 {{< edit_this_page >}}

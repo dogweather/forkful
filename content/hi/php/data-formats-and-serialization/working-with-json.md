@@ -1,14 +1,29 @@
 ---
-title:                "JSON के साथ काम करना"
 aliases:
 - /hi/php/working-with-json/
-date:                  2024-02-03T19:24:26.789970-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "JSON के साथ काम करना"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/php/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:24:26.789970-07:00
+description: "JSON, \u092F\u093E JavaScript Object Notation, \u090F\u0915 \u0939\u0932\
+  \u094D\u0915\u093E \u0921\u0947\u091F\u093E-\u0906\u0926\u093E\u0928-\u092A\u094D\
+  \u0930\u0926\u093E\u0928 \u092A\u094D\u0930\u093E\u0930\u0942\u092A \u0939\u0948\
+  \ \u091C\u093F\u0938\u0947 \u092E\u0928\u0941\u0937\u094D\u092F\u094B\u0902 \u0926\
+  \u094D\u0935\u093E\u0930\u093E \u092A\u0922\u093C\u0928\u093E \u0914\u0930 \u0932\
+  \u093F\u0916\u0928\u093E \u0906\u0938\u093E\u0928 \u0939\u0948, \u0914\u0930 \u092E\
+  \u0936\u0940\u0928\u094B\u0902 \u0926\u094D\u0935\u093E\u0930\u093E \u092A\u093E\
+  \u0930\u094D\u0938 \u0914\u0930 \u091C\u0928\u0930\u0947\u091F\u2026"
+lastmod: 2024-02-18 23:09:03.539033
+model: gpt-4-0125-preview
+summary: "JSON, \u092F\u093E JavaScript Object Notation, \u090F\u0915 \u0939\u0932\
+  \u094D\u0915\u093E \u0921\u0947\u091F\u093E-\u0906\u0926\u093E\u0928-\u092A\u094D\
+  \u0930\u0926\u093E\u0928 \u092A\u094D\u0930\u093E\u0930\u0942\u092A \u0939\u0948\
+  \ \u091C\u093F\u0938\u0947 \u092E\u0928\u0941\u0937\u094D\u092F\u094B\u0902 \u0926\
+  \u094D\u0935\u093E\u0930\u093E \u092A\u0922\u093C\u0928\u093E \u0914\u0930 \u0932\
+  \u093F\u0916\u0928\u093E \u0906\u0938\u093E\u0928 \u0939\u0948, \u0914\u0930 \u092E\
+  \u0936\u0940\u0928\u094B\u0902 \u0926\u094D\u0935\u093E\u0930\u093E \u092A\u093E\
+  \u0930\u094D\u0938 \u0914\u0930 \u091C\u0928\u0930\u0947\u091F\u2026"
+title: "JSON \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\
+  \u093E"
 ---
 
 {{< edit_this_page >}}

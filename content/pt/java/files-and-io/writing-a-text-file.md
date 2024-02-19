@@ -1,14 +1,16 @@
 ---
-title:                "Escrevendo um arquivo de texto"
 aliases:
 - /pt/java/writing-a-text-file/
-date:                  2024-02-03T19:28:10.590064-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escrevendo um arquivo de texto"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:28:10.590064-07:00
+description: "Escrever um arquivo de texto em Java envolve utilizar as capacidades\
+  \ da linguagem para criar e escrever conte\xFAdo em arquivos no sistema de arquivos.\u2026"
+lastmod: 2024-02-18 23:08:58.037093
+model: gpt-4-0125-preview
+summary: "Escrever um arquivo de texto em Java envolve utilizar as capacidades da\
+  \ linguagem para criar e escrever conte\xFAdo em arquivos no sistema de arquivos.\u2026"
+title: Escrevendo um arquivo de texto
 ---
 
 {{< edit_this_page >}}

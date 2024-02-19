@@ -1,14 +1,23 @@
 ---
-title:                "임시 파일 생성하기"
 aliases:
 - /ko/powershell/creating-a-temporary-file/
-date:                  2024-01-20T17:41:02.444360-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "임시 파일 생성하기"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:02.444360-07:00
+description: "\uD504\uB85C\uADF8\uB798\uBA38\uAC00 \uC784\uC2DC \uD30C\uC77C\uC744\
+  \ \uB9CC\uB4DC\uB294 \uAC74 \uB370\uC774\uD130\uB97C \uC77C\uC2DC\uC801\uC73C\uB85C\
+  \ \uC800\uC7A5\uD558\uAE30 \uC704\uD574\uC11C\uC608\uC694. \uC791\uC5C5 \uC911\uAC04\
+  \uC5D0 \uD544\uC694\uD55C \uB370\uC774\uD130\uB97C \uBCF4\uAD00\uD558\uAC70\uB098\
+  , \uC751\uC6A9 \uD504\uB85C\uADF8\uB7A8 \uAC04 \uB370\uC774\uD130\uB97C \uC804\uC1A1\
+  \uD558\uB294 \uB370 \uC4F0\uC9C0\uC694."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.584730
+model: gpt-4-1106-preview
+summary: "\uD504\uB85C\uADF8\uB798\uBA38\uAC00 \uC784\uC2DC \uD30C\uC77C\uC744 \uB9CC\
+  \uB4DC\uB294 \uAC74 \uB370\uC774\uD130\uB97C \uC77C\uC2DC\uC801\uC73C\uB85C \uC800\
+  \uC7A5\uD558\uAE30 \uC704\uD574\uC11C\uC608\uC694. \uC791\uC5C5 \uC911\uAC04\uC5D0\
+  \ \uD544\uC694\uD55C \uB370\uC774\uD130\uB97C \uBCF4\uAD00\uD558\uAC70\uB098, \uC751\
+  \uC6A9 \uD504\uB85C\uADF8\uB7A8 \uAC04 \uB370\uC774\uD130\uB97C \uC804\uC1A1\uD558\
+  \uB294 \uB370 \uC4F0\uC9C0\uC694."
+title: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Beräkna ett datum i framtiden eller förflutenheten"
 aliases:
 - /sv/clojure/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:30:48.016606-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Beräkna ett datum i framtiden eller förflutenheten"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:30:48.016606-07:00
+description: "Ber\xE4kning av ett datum i framtiden eller f\xF6rflutna \xE4r precis\
+  \ det det l\xE5ter som - att hitta ett datum f\xF6re eller efter ett k\xE4nt datum.\
+  \ Programmerare g\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.474852
+model: gpt-4-1106-preview
+summary: "Ber\xE4kning av ett datum i framtiden eller f\xF6rflutna \xE4r precis det\
+  \ det l\xE5ter som - att hitta ett datum f\xF6re eller efter ett k\xE4nt datum.\
+  \ Programmerare g\xF6r\u2026"
+title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 ---
 
 {{< edit_this_page >}}

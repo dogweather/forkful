@@ -1,13 +1,15 @@
 ---
-title:                "Slette tegn som matcher et mønster"
 aliases:
 - /no/fish-shell/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:13.744614-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Slette tegn som matcher et mønster"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:13.744614-07:00
+description: "\xC5 slette tegn som matcher et m\xF8nster betyr \xE5 fjerne bestemte\
+  \ sekvenser fra tekststrenger. Programmerere gj\xF8r dette for \xE5 rense data,\
+  \ ekstrahere\u2026"
+lastmod: 2024-02-18 23:08:54.334665
+model: gpt-4-1106-preview
+summary: "\xC5 slette tegn som matcher et m\xF8nster betyr \xE5 fjerne bestemte sekvenser\
+  \ fra tekststrenger. Programmerere gj\xF8r dette for \xE5 rense data, ekstrahere\u2026"
+title: "Slette tegn som matcher et m\xF8nster"
 ---
 
 {{< edit_this_page >}}

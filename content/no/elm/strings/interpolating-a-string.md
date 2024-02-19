@@ -1,13 +1,15 @@
 ---
-title:                "Interpolering av en streng"
 aliases:
 - /no/elm/interpolating-a-string/
-date:                  2024-01-20T17:50:40.548706-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolering av en streng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/interpolating-a-string.md"
+date: 2024-01-20 17:50:40.548706-07:00
+description: "Strenginterpolasjon betyr \xE5 smelte sammen variabler med tekst. Vi\
+  \ gj\xF8r det for \xE5 bygge brukertilpassede meldinger eller for \xE5 kombinere\
+  \ data dynamisk."
+lastmod: 2024-02-18 23:08:53.797853
+model: gpt-4-1106-preview
+summary: "Strenginterpolasjon betyr \xE5 smelte sammen variabler med tekst. Vi gj\xF8\
+  r det for \xE5 bygge brukertilpassede meldinger eller for \xE5 kombinere data dynamisk."
+title: Interpolering av en streng
 ---
 
 {{< edit_this_page >}}

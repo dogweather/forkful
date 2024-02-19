@@ -1,15 +1,18 @@
 ---
-title:                "Karakters verwijderen die overeenkomen met een patroon"
 aliases:
 - /nl/bash/deleting-characters-matching-a-pattern/
-date:                  2024-01-28T21:58:32.528387-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Karakters verwijderen die overeenkomen met een patroon"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:58:32.528387-07:00
+description: "Karakters verwijderen die overeenkomen met een patroon in Bash laat\
+  \ je toe om strings te manipuleren naar je behoefte\u2014zoals ongewenste tekens\
+  \ strippen of\u2026"
+lastmod: 2024-02-18 23:09:02.019933
+model: gpt-4-0125-preview
+summary: "Karakters verwijderen die overeenkomen met een patroon in Bash laat je toe\
+  \ om strings te manipuleren naar je behoefte\u2014zoals ongewenste tekens strippen\
+  \ of\u2026"
+title: Karakters verwijderen die overeenkomen met een patroon
 ---
 
 {{< edit_this_page >}}

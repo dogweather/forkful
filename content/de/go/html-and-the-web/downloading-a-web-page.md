@@ -1,14 +1,16 @@
 ---
-title:                "Herunterladen einer Webseite"
 aliases:
 - /de/go/downloading-a-web-page/
-date:                  2024-02-03T17:55:56.781110-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Herunterladen einer Webseite"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/downloading-a-web-page.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:56.781110-07:00
+description: "Das Herunterladen einer Webseite bezieht sich auf das Abrufen des HTML-Inhalts\
+  \ einer Webseite \xFCber das HTTP/HTTPS-Protokoll. Programmierer tun dies oft\u2026"
+lastmod: 2024-02-18 23:09:04.362099
+model: gpt-4-0125-preview
+summary: "Das Herunterladen einer Webseite bezieht sich auf das Abrufen des HTML-Inhalts\
+  \ einer Webseite \xFCber das HTTP/HTTPS-Protokoll. Programmierer tun dies oft\u2026"
+title: Herunterladen einer Webseite
 ---
 
 {{< edit_this_page >}}

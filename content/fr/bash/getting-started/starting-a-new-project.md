@@ -1,13 +1,15 @@
 ---
-title:                "Lancement d'un nouveau projet"
 aliases:
 - /fr/bash/starting-a-new-project/
-date:                  2024-01-20T18:02:43.386486-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lancement d'un nouveau projet"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/starting-a-new-project.md"
+date: 2024-01-20 18:02:43.386486-07:00
+description: "Commencer un nouveau projet, c'est comme planter une graine digitale\
+  \ \u2013 on ne sait jamais quel arbre \xE7a va devenir. Les programmeurs lancent\
+  \ des projets\u2026"
+lastmod: 2024-02-18 23:09:09.020119
+model: gpt-4-1106-preview
+summary: "Commencer un nouveau projet, c'est comme planter une graine digitale \u2013\
+  \ on ne sait jamais quel arbre \xE7a va devenir. Les programmeurs lancent des projets\u2026"
+title: Lancement d'un nouveau projet
 ---
 
 {{< edit_this_page >}}

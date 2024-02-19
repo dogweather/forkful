@@ -1,13 +1,25 @@
 ---
-title:                "पाठ खोजना और बदलना"
 aliases:
 - /hi/php/searching-and-replacing-text/
-date:                  2024-01-20T17:58:20.903771-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "पाठ खोजना और बदलना"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/php/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:20.903771-07:00
+description: "Searching and replacing text in PHP \u092E\u0924\u0932\u092C \u0939\u0948\
+  \ \u0926\u093F\u090F \u0917\u090F \u091F\u0947\u0915\u094D\u0938\u094D\u091F \u0915\
+  \u094B \u0922\u0942\u0901\u0922\u0928\u093E \u0914\u0930 \u092C\u0926\u0932\u0928\
+  \u093E\u0964 Programmers \u0907\u0938\u0947 \u0915\u0930\u0924\u0947 \u0939\u0948\
+  \u0902 \u0921\u0947\u091F\u093E \u0915\u094B \u092B\u0949\u0930\u094D\u092E\u0947\
+  \u091F \u092F\u093E \u0905\u092A\u0921\u0947\u091F \u0915\u0930\u0928\u0947 \u0915\
+  \u0947 \u0932\u093F\u090F, \u091C\u0948\u0938\u0947 \u0915\u093F\u0938\u0940\u2026"
+lastmod: 2024-02-18 23:09:03.472759
+model: gpt-4-1106-preview
+summary: "Searching and replacing text in PHP \u092E\u0924\u0932\u092C \u0939\u0948\
+  \ \u0926\u093F\u090F \u0917\u090F \u091F\u0947\u0915\u094D\u0938\u094D\u091F \u0915\
+  \u094B \u0922\u0942\u0901\u0922\u0928\u093E \u0914\u0930 \u092C\u0926\u0932\u0928\
+  \u093E\u0964 Programmers \u0907\u0938\u0947 \u0915\u0930\u0924\u0947 \u0939\u0948\
+  \u0902 \u0921\u0947\u091F\u093E \u0915\u094B \u092B\u0949\u0930\u094D\u092E\u0947\
+  \u091F \u092F\u093E \u0905\u092A\u0921\u0947\u091F \u0915\u0930\u0928\u0947 \u0915\
+  \u0947 \u0932\u093F\u090F, \u091C\u0948\u0938\u0947 \u0915\u093F\u0938\u0940\u2026"
+title: "\u092A\u093E\u0920 \u0916\u094B\u091C\u0928\u093E \u0914\u0930 \u092C\u0926\
+  \u0932\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Logging"
 aliases:
 - /en/typescript/logging/
-date:                  2024-01-25T02:03:12.954798-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Logging"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/logging.md"
+date: 2024-01-25 02:03:12.954798-07:00
+description: "Logging is the process of recording events, errors, and other significant\
+  \ information during the execution of a program to an external medium, often files\u2026"
+lastmod: 2024-02-18 23:09:10.813736
+model: gpt-4-1106-preview
+summary: "Logging is the process of recording events, errors, and other significant\
+  \ information during the execution of a program to an external medium, often files\u2026"
+title: Logging
 ---
 
 {{< edit_this_page >}}

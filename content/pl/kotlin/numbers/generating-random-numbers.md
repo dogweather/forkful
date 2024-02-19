@@ -1,13 +1,16 @@
 ---
-title:                "Generowanie liczb losowych"
 aliases:
 - /pl/kotlin/generating-random-numbers/
-date:                  2024-01-27T20:34:17.772647-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generowanie liczb losowych"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/generating-random-numbers.md"
+date: 2024-01-27 20:34:17.772647-07:00
+description: "Generowanie losowych liczb w programowaniu polega na tworzeniu liczb,\
+  \ kt\xF3re nie wykazuj\u0105 \u017Cadnego przewidywalnego wzorca. Programi\u015B\
+  ci robi\u0105 to z r\xF3\u017Cnych\u2026"
+lastmod: 2024-02-18 23:08:49.557673
+model: gpt-4-0125-preview
+summary: "Generowanie losowych liczb w programowaniu polega na tworzeniu liczb, kt\xF3\
+  re nie wykazuj\u0105 \u017Cadnego przewidywalnego wzorca. Programi\u015Bci robi\u0105\
+  \ to z r\xF3\u017Cnych\u2026"
+title: Generowanie liczb losowych
 ---
 
 {{< edit_this_page >}}

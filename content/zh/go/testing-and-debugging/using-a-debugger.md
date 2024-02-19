@@ -1,14 +1,25 @@
 ---
-title:                "使用调试器"
 aliases:
 - /zh/go/using-a-debugger/
-date:                  2024-02-03T18:10:15.706213-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用调试器"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/using-a-debugger.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:15.706213-07:00
+description: "\u5728 Go \u7F16\u7A0B\u4E2D\u4F7F\u7528\u8C03\u8BD5\u5668\uFF0C\u6D89\
+  \u53CA\u5230\u4F7F\u7528\u5DE5\u5177\u6216\u529F\u80FD\u6765\u68C0\u67E5\u548C\u4FEE\
+  \u6539\u8FD0\u884C\u4E2D\u7A0B\u5E8F\u7684\u72B6\u6001\uFF0C\u4EE5\u4E86\u89E3\u5176\
+  \u884C\u4E3A\u6216\u8BCA\u65AD\u95EE\u9898\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\
+  \u662F\u4E3A\u4E86\u9AD8\u6548\u5730\u627E\u5230\u5E76\u4FEE\u590D\u9519\u8BEF\uFF0C\
+  \u4F18\u5316\u6027\u80FD\uFF0C\u5E76\u786E\u4FDD\u4EE3\u7801\u7684\u6B63\u786E\u6027\
+  \u3002"
+lastmod: 2024-02-18 23:08:58.712593
+model: gpt-4-0125-preview
+summary: "\u5728 Go \u7F16\u7A0B\u4E2D\u4F7F\u7528\u8C03\u8BD5\u5668\uFF0C\u6D89\u53CA\
+  \u5230\u4F7F\u7528\u5DE5\u5177\u6216\u529F\u80FD\u6765\u68C0\u67E5\u548C\u4FEE\u6539\
+  \u8FD0\u884C\u4E2D\u7A0B\u5E8F\u7684\u72B6\u6001\uFF0C\u4EE5\u4E86\u89E3\u5176\u884C\
+  \u4E3A\u6216\u8BCA\u65AD\u95EE\u9898\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\
+  \u4E3A\u4E86\u9AD8\u6548\u5730\u627E\u5230\u5E76\u4FEE\u590D\u9519\u8BEF\uFF0C\u4F18\
+  \u5316\u6027\u80FD\uFF0C\u5E76\u786E\u4FDD\u4EE3\u7801\u7684\u6B63\u786E\u6027\u3002"
+title: "\u4F7F\u7528\u8C03\u8BD5\u5668"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Czytanie argumentów z linii poleceń"
 aliases:
 - /pl/google-apps-script/reading-command-line-arguments/
-date:                  2024-02-01T21:59:32.993768-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Czytanie argumentów z linii poleceń"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:32.993768-07:00
+description: "Czytanie argument\xF3w linii polece\u0144 w Google Apps Script to nieco\
+  \ mylne okre\u015Blenie, poniewa\u017C, w przeciwie\u0144stwie do tradycyjnych interfejs\xF3\
+  w linii polece\u0144 w\u2026"
+lastmod: 2024-02-18 23:08:49.169246
+model: gpt-4-0125-preview
+summary: "Czytanie argument\xF3w linii polece\u0144 w Google Apps Script to nieco\
+  \ mylne okre\u015Blenie, poniewa\u017C, w przeciwie\u0144stwie do tradycyjnych interfejs\xF3\
+  w linii polece\u0144 w\u2026"
+title: "Czytanie argument\xF3w z linii polece\u0144"
 ---
 
 {{< edit_this_page >}}

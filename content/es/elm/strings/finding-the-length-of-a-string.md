@@ -1,13 +1,16 @@
 ---
-title:                "Calculando la longitud de una cadena"
 aliases:
 - /es/elm/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:15.502432-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Calculando la longitud de una cadena"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:15.502432-07:00
+description: "En elm, encontrar la longitud de una cadena significa contar cu\xE1\
+  ntos caracteres contiene. Los programadores lo hacen para validar entradas, limitar\
+  \ texto\u2026"
+lastmod: 2024-02-18 23:09:09.880766
+model: gpt-4-1106-preview
+summary: "En elm, encontrar la longitud de una cadena significa contar cu\xE1ntos\
+  \ caracteres contiene. Los programadores lo hacen para validar entradas, limitar\
+  \ texto\u2026"
+title: Calculando la longitud de una cadena
 ---
 
 {{< edit_this_page >}}

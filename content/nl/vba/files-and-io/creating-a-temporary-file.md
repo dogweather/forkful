@@ -1,14 +1,16 @@
 ---
-title:                "Een tijdelijk bestand aanmaken"
 aliases:
 - /nl/vba/creating-a-temporary-file/
-date:                  2024-02-01T21:52:35.314383-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tijdelijk bestand aanmaken"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/vba/creating-a-temporary-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:35.314383-07:00
+description: "Het aanmaken van een tijdelijk bestand in Visual Basic for Applications\
+  \ (VBA) houdt in dat je programmatisch een bestand genereert voor kortstondig\u2026"
+lastmod: 2024-02-18 23:09:01.687627
+model: gpt-4-0125-preview
+summary: "Het aanmaken van een tijdelijk bestand in Visual Basic for Applications\
+  \ (VBA) houdt in dat je programmatisch een bestand genereert voor kortstondig\u2026"
+title: Een tijdelijk bestand aanmaken
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Slette tegn som matcher et mønster"
 aliases:
 - /no/javascript/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:27.276150-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Slette tegn som matcher et mønster"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:27.276150-07:00
+description: "I JavaScript kan vi slette tegn som matcher et m\xF8nster gjennom regul\xE6\
+  re uttrykk for \xE5 rense strenger, trekke ut data eller for en rekke andre oppgaver\
+  \ som\u2026"
+lastmod: 2024-02-18 23:08:54.294362
+model: gpt-4-1106-preview
+summary: "I JavaScript kan vi slette tegn som matcher et m\xF8nster gjennom regul\xE6\
+  re uttrykk for \xE5 rense strenger, trekke ut data eller for en rekke andre oppgaver\
+  \ som\u2026"
+title: "Slette tegn som matcher et m\xF8nster"
 ---
 
 {{< edit_this_page >}}

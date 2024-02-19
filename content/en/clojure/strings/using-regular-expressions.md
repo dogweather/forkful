@@ -1,12 +1,14 @@
 ---
-title:                "Using regular expressions"
 aliases:
 - /en/clojure/using-regular-expressions/
-date:                  2024-02-03T19:02:47.953382-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using regular expressions"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/using-regular-expressions.md"
+date: 2024-02-03 19:02:47.953382-07:00
+description: "Regular expressions, a powerful tool for pattern matching and data manipulation,\
+  \ are essential in text processing tasks such as validating input,\u2026"
+lastmod: 2024-02-18 23:09:10.713563
+model: gpt-4-0125-preview
+summary: "Regular expressions, a powerful tool for pattern matching and data manipulation,\
+  \ are essential in text processing tasks such as validating input,\u2026"
+title: Using regular expressions
 ---
 
 {{< edit_this_page >}}

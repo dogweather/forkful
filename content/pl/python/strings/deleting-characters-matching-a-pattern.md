@@ -1,13 +1,16 @@
 ---
-title:                "Usuwanie znaków pasujących do wzorca"
 aliases:
 - /pl/python/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:43:03.177930-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Usuwanie znaków pasujących do wzorca"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:43:03.177930-07:00
+description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces filtrowania tekstu\
+  \ wed\u0142ug zdefiniowanych regu\u0142, na przyk\u0142ad za pomoc\u0105 wyra\u017C\
+  e\u0144 regularnych. Robimy to, by\u2026"
+lastmod: 2024-02-18 23:08:49.191183
+model: gpt-4-1106-preview
+summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces filtrowania tekstu\
+  \ wed\u0142ug zdefiniowanych regu\u0142, na przyk\u0142ad za pomoc\u0105 wyra\u017C\
+  e\u0144 regularnych. Robimy to, by\u2026"
+title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 ---
 
 {{< edit_this_page >}}

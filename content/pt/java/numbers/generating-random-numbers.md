@@ -1,13 +1,16 @@
 ---
-title:                "Geração de números aleatórios"
 aliases:
 - /pt/java/generating-random-numbers/
-date:                  2024-01-27T20:34:02.785467-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Geração de números aleatórios"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/generating-random-numbers.md"
+date: 2024-01-27 20:34:02.785467-07:00
+description: "Gerar n\xFAmeros aleat\xF3rios consiste em produzir sequ\xEAncias ou\
+  \ valores \xFAnicos imprevis\xEDveis dentro de um intervalo definido. Os programadores\
+  \ utilizam esta\u2026"
+lastmod: 2024-02-18 23:08:58.014299
+model: gpt-4-0125-preview
+summary: "Gerar n\xFAmeros aleat\xF3rios consiste em produzir sequ\xEAncias ou valores\
+  \ \xFAnicos imprevis\xEDveis dentro de um intervalo definido. Os programadores utilizam\
+  \ esta\u2026"
+title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,17 @@
 ---
-title:                "Analisando HTML"
 aliases:
 - /pt/ruby/parsing-html/
-date:                  2024-02-03T19:12:58.854865-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analisando HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:58.854865-07:00
+description: "Analisar HTML significa desmembrar um peda\xE7o de c\xF3digo HTML para\
+  \ compreender sua estrutura e conte\xFAdo. Os programadores fazem isso para extrair\
+  \ dados,\u2026"
+lastmod: 2024-02-18 23:08:58.663571
+model: gpt-4-0125-preview
+summary: "Analisar HTML significa desmembrar um peda\xE7o de c\xF3digo HTML para compreender\
+  \ sua estrutura e conte\xFAdo. Os programadores fazem isso para extrair dados,\u2026"
+title: Analisando HTML
 ---
 
 {{< edit_this_page >}}

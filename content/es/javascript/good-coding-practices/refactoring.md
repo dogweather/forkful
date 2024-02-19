@@ -1,13 +1,16 @@
 ---
-title:                "Refactorización"
 aliases:
 - /es/javascript/refactoring/
-date:                  2024-01-26T01:18:58.325686-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactorización"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/refactoring.md"
+date: 2024-01-26 01:18:58.325686-07:00
+description: "Refactorizar es el proceso de reestructurar el c\xF3digo inform\xE1\
+  tico existente sin cambiar su comportamiento externo. Los programadores lo hacen\
+  \ para mejorar\u2026"
+lastmod: 2024-02-18 23:09:10.413808
+model: gpt-4-0125-preview
+summary: "Refactorizar es el proceso de reestructurar el c\xF3digo inform\xE1tico\
+  \ existente sin cambiar su comportamiento externo. Los programadores lo hacen para\
+  \ mejorar\u2026"
+title: "Refactorizaci\xF3n"
 ---
 
 {{< edit_this_page >}}

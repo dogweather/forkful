@@ -1,13 +1,16 @@
 ---
-title:                "Koodin järjestäminen funktioihin"
 aliases:
 - /fi/c-sharp/organizing-code-into-functions/
-date:                  2024-01-26T01:09:44.095505-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Koodin järjestäminen funktioihin"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/organizing-code-into-functions.md"
+date: 2024-01-26 01:09:44.095505-07:00
+description: "Koodin j\xE4senteleminen funktioiksi on kuin LEGO-palikoiden lajitteleminen\
+  \ bokseihin\u2014se tekee niiden l\xF6yt\xE4misest\xE4 ja k\xE4yt\xF6st\xE4 helpompaa.\
+  \ T\xE4m\xE4 tehd\xE4\xE4n\u2026"
+lastmod: 2024-02-18 23:09:07.626672
+model: gpt-4-1106-preview
+summary: "Koodin j\xE4senteleminen funktioiksi on kuin LEGO-palikoiden lajitteleminen\
+  \ bokseihin\u2014se tekee niiden l\xF6yt\xE4misest\xE4 ja k\xE4yt\xF6st\xE4 helpompaa.\
+  \ T\xE4m\xE4 tehd\xE4\xE4n\u2026"
+title: "Koodin j\xE4rjest\xE4minen funktioihin"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,23 @@
 ---
-title:                "匹配模式删除字符"
 aliases:
 - /zh/clojure/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:19.107995-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "匹配模式删除字符"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:19.107995-07:00
+description: "\u5220\u9664\u5339\u914D\u6A21\u5F0F\u7684\u5B57\u7B26\u610F\u5473\u7740\
+  \u627E\u51FA\u7B26\u5408\u7279\u5B9A\u89C4\u5219\u7684\u5B57\u7B26\u5E76\u5C06\u5B83\
+  \u4EEC\u79FB\u9664\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u6765\u6E05\u7406\u6570\
+  \u636E\uFF0C\u6BD4\u5982\u53BB\u6389\u65E0\u7528\u7684\u6807\u70B9\u6216\u7A7A\u683C\
+  \uFF0C\u6216\u8005\u51FA\u4E8E\u5B89\u5168\u539F\u56E0\uFF0C\u6BD4\u5982\u79FB\u9664\
+  \u53EF\u80FD\u5BFC\u81F4\u4EE3\u7801\u6CE8\u5165\u7684\u5B57\u7B26\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:58.814283
+model: gpt-4-1106-preview
+summary: "\u5220\u9664\u5339\u914D\u6A21\u5F0F\u7684\u5B57\u7B26\u610F\u5473\u7740\
+  \u627E\u51FA\u7B26\u5408\u7279\u5B9A\u89C4\u5219\u7684\u5B57\u7B26\u5E76\u5C06\u5B83\
+  \u4EEC\u79FB\u9664\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u6765\u6E05\u7406\u6570\
+  \u636E\uFF0C\u6BD4\u5982\u53BB\u6389\u65E0\u7528\u7684\u6807\u70B9\u6216\u7A7A\u683C\
+  \uFF0C\u6216\u8005\u51FA\u4E8E\u5B89\u5168\u539F\u56E0\uFF0C\u6BD4\u5982\u79FB\u9664\
+  \u53EF\u80FD\u5BFC\u81F4\u4EE3\u7801\u6CE8\u5165\u7684\u5B57\u7B26\u3002"
+title: "\u5339\u914D\u6A21\u5F0F\u5220\u9664\u5B57\u7B26"
 ---
 
 {{< edit_this_page >}}

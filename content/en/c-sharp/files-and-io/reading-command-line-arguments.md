@@ -1,13 +1,14 @@
 ---
-title:                "Reading command line arguments"
 aliases:
 - /en/c-sharp/reading-command-line-arguments/
-date:                  2024-01-20T17:55:43.038233-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Reading command line arguments"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:43.038233-07:00
+description: "Reading command line arguments allows a C# program to process user inputs\
+  \ given at launch. Programmers use this to customize app behavior without altering\u2026"
+lastmod: 2024-02-18 23:09:11.069622
+model: gpt-4-1106-preview
+summary: "Reading command line arguments allows a C# program to process user inputs\
+  \ given at launch. Programmers use this to customize app behavior without altering\u2026"
+title: Reading command line arguments
 ---
 
 {{< edit_this_page >}}

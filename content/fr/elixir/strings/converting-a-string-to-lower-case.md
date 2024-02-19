@@ -1,13 +1,16 @@
 ---
-title:                "Conversion d'une chaîne de caractères en minuscules"
 aliases:
 - /fr/elixir/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:13.861824-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Conversion d'une chaîne de caractères en minuscules"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:13.861824-07:00
+description: "Convertissez une cha\xEEne de caract\xE8res en minuscules pour unifier\
+  \ le format des donn\xE9es textuelles. Les programmeurs le font souvent pour comparer\
+  \ des\u2026"
+lastmod: 2024-02-18 23:09:08.419393
+model: gpt-4-1106-preview
+summary: "Convertissez une cha\xEEne de caract\xE8res en minuscules pour unifier le\
+  \ format des donn\xE9es textuelles. Les programmeurs le font souvent pour comparer\
+  \ des\u2026"
+title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 ---
 
 {{< edit_this_page >}}

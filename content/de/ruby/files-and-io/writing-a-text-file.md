@@ -1,14 +1,16 @@
 ---
-title:                "Eine Textdatei schreiben"
 aliases:
 - /de/ruby/writing-a-text-file/
-date:                  2024-02-03T19:28:52.230256-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eine Textdatei schreiben"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:28:52.230256-07:00
+description: "Das Schreiben in eine Textdatei mit Ruby ist eine grundlegende Operation,\
+  \ die es Ihnen erm\xF6glicht, Ausgaben und Daten dauerhaft zu speichern. Dadurch\u2026"
+lastmod: 2024-02-18 23:09:05.442798
+model: gpt-4-0125-preview
+summary: "Das Schreiben in eine Textdatei mit Ruby ist eine grundlegende Operation,\
+  \ die es Ihnen erm\xF6glicht, Ausgaben und Daten dauerhaft zu speichern. Dadurch\u2026"
+title: Eine Textdatei schreiben
 ---
 
 {{< edit_this_page >}}

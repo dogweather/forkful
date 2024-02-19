@@ -1,15 +1,16 @@
 ---
-title:                "Twee datums vergelijken"
 aliases:
 - /nl/fish-shell/comparing-two-dates/
-date:                  2024-01-28T21:56:36.155065-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Twee datums vergelijken"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/comparing-two-dates.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:36.155065-07:00
+description: "Het vergelijken van twee data houdt in dat je controleert of een datum\
+  \ eerder, hetzelfde, of later is dan een andere. Programmeurs doen dit om evenementen\u2026"
+lastmod: 2024-02-18 23:09:02.339649
+model: gpt-4-0125-preview
+summary: "Het vergelijken van twee data houdt in dat je controleert of een datum eerder,\
+  \ hetzelfde, of later is dan een andere. Programmeurs doen dit om evenementen\u2026"
+title: Twee datums vergelijken
 ---
 
 {{< edit_this_page >}}

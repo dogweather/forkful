@@ -1,13 +1,14 @@
 ---
-title:                "Concatenating strings"
 aliases:
 - /en/elixir/concatenating-strings/
-date:                  2024-01-27T10:38:42.803142-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Concatenating strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/concatenating-strings.md"
+date: 2024-01-27 10:38:42.803142-07:00
+description: "Concatenating strings is about joining two or more strings together\
+  \ to form a single piece of text. You might need to merge text for generating user\u2026"
+lastmod: 2024-02-18 23:09:10.757589
+model: gpt-4-0125-preview
+summary: "Concatenating strings is about joining two or more strings together to form\
+  \ a single piece of text. You might need to merge text for generating user\u2026"
+title: Concatenating strings
 ---
 
 {{< edit_this_page >}}

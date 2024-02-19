@@ -1,13 +1,22 @@
 ---
-title:                "处理XML"
 aliases:
 - /zh/arduino/working-with-xml/
-date:                  2024-01-26T04:27:47.713033-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/working-with-xml.md"
+date: 2024-01-26 04:27:47.713033-07:00
+description: "\u5728Arduino\u4E0A\u5904\u7406XML\u6D89\u53CA\u89E3\u6790\u548C\u64CD\
+  \u4F5CXML\u6570\u636E\uFF0C\u8FD9\u4E9B\u6570\u636E\u901A\u5E38\u6765\u81EA\u4E8E\
+  \u7F51\u7EDCAPI\u6216\u914D\u7F6E\u6587\u4EF6\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\
+  \u505A\u662F\u4E3A\u4E86\u4E0E\u4F7F\u7528XML\u8FDB\u884C\u6570\u636E\u4EA4\u6362\
+  \u7684\u670D\u52A1\u96C6\u6210\uFF0C\u6216\u8005\u4EE5\u7ED3\u6784\u5316\u3001\u53EF\
+  \u8BFB\u7684\u683C\u5F0F\u5B58\u50A8\u6570\u636E\u3002"
+lastmod: 2024-02-18 23:08:59.389849
+model: gpt-4-0125-preview
+summary: "\u5728Arduino\u4E0A\u5904\u7406XML\u6D89\u53CA\u89E3\u6790\u548C\u64CD\u4F5C\
+  XML\u6570\u636E\uFF0C\u8FD9\u4E9B\u6570\u636E\u901A\u5E38\u6765\u81EA\u4E8E\u7F51\
+  \u7EDCAPI\u6216\u914D\u7F6E\u6587\u4EF6\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\
+  \u662F\u4E3A\u4E86\u4E0E\u4F7F\u7528XML\u8FDB\u884C\u6570\u636E\u4EA4\u6362\u7684\
+  \u670D\u52A1\u96C6\u6210\uFF0C\u6216\u8005\u4EE5\u7ED3\u6784\u5316\u3001\u53EF\u8BFB\
+  \u7684\u683C\u5F0F\u5B58\u50A8\u6570\u636E\u3002"
+title: "\u5904\u7406XML"
 ---
 
 {{< edit_this_page >}}

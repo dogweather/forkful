@@ -1,12 +1,14 @@
 ---
-title:                "Refactoring"
 aliases:
 - /en/google-apps-script/refactoring/
-date:                  2024-02-01T21:12:12.931066-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactoring"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/google-apps-script/refactoring.md"
+date: 2024-02-01 21:12:12.931066-07:00
+description: "Refactoring in the programming lexicon refers to the process of restructuring\
+  \ existing computer code\u2014changing the factoring without changing its external\u2026"
+lastmod: 2024-02-18 23:09:10.647792
+model: gpt-4-0125-preview
+summary: "Refactoring in the programming lexicon refers to the process of restructuring\
+  \ existing computer code\u2014changing the factoring without changing its external\u2026"
+title: Refactoring
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Loggføring"
 aliases:
 - /no/typescript/logging/
-date:                  2024-01-26T01:08:56.302597-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Loggføring"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/logging.md"
+date: 2024-01-26 01:08:56.302597-07:00
+description: "Logging er prosessen med \xE5 registrere hendelser, feil og annen viktig\
+  \ informasjon under kj\xF8ringen av et program til et eksternt medium, ofte filer\
+  \ eller\u2026"
+lastmod: 2024-02-18 23:08:53.651247
+model: gpt-4-1106-preview
+summary: "Logging er prosessen med \xE5 registrere hendelser, feil og annen viktig\
+  \ informasjon under kj\xF8ringen av et program til et eksternt medium, ofte filer\
+  \ eller\u2026"
+title: "Loggf\xF8ring"
 ---
 
 {{< edit_this_page >}}

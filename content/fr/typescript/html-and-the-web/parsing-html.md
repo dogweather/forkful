@@ -1,14 +1,16 @@
 ---
-title:                "Analyse Syntaxique du HTML"
 aliases:
 - /fr/typescript/parsing-html/
-date:                  2024-02-03T19:13:11.716447-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analyse Syntaxique du HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:13:11.716447-07:00
+description: "Parser du HTML signifie fouiller dans le code HTML pour trouver, extraire\
+  \ ou manipuler des informations. Les programmeurs le font pour interagir avec le\u2026"
+lastmod: 2024-02-18 23:09:08.479333
+model: gpt-4-0125-preview
+summary: "Parser du HTML signifie fouiller dans le code HTML pour trouver, extraire\
+  \ ou manipuler des informations. Les programmeurs le font pour interagir avec le\u2026"
+title: Analyse Syntaxique du HTML
 ---
 
 {{< edit_this_page >}}

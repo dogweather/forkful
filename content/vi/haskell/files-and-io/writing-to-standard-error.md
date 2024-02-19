@@ -1,15 +1,20 @@
 ---
-title:                "Ghi vào lỗi chuẩn"
 aliases:
 - /vi/haskell/writing-to-standard-error/
-date:                  2024-01-28T22:13:25.816504-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ghi vào lỗi chuẩn"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/haskell/writing-to-standard-error.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:13:25.816504-07:00
+description: "Vi\u1EC7c vi\u1EBFt ra l\u1ED7i chu\u1EA9n (stderr) trong Haskell cho\
+  \ ph\xE9p b\u1EA1n b\xE1o c\xE1o l\u1ED7i v\xE0 th\xF4ng tin g\u1EE1 l\u1ED7i m\u1ED9\
+  t c\xE1ch ri\xEAng bi\u1EC7t so v\u1EDBi \u0111\u1EA7u ra chu\u1EA9n (stdout). Vi\u1EC7\
+  c n\xE0y \u0111\u01B0\u1EE3c\u2026"
+lastmod: 2024-02-18 23:08:50.762933
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c vi\u1EBFt ra l\u1ED7i chu\u1EA9n (stderr) trong Haskell cho ph\xE9\
+  p b\u1EA1n b\xE1o c\xE1o l\u1ED7i v\xE0 th\xF4ng tin g\u1EE1 l\u1ED7i m\u1ED9t c\xE1\
+  ch ri\xEAng bi\u1EC7t so v\u1EDBi \u0111\u1EA7u ra chu\u1EA9n (stdout). Vi\u1EC7\
+  c n\xE0y \u0111\u01B0\u1EE3c\u2026"
+title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Interpolering av en streng"
 aliases:
 - /no/rust/interpolating-a-string/
-date:                  2024-01-20T17:51:31.230358-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolering av en streng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/interpolating-a-string.md"
+date: 2024-01-20 17:51:31.230358-07:00
+description: "Stringinterpolasjon lar oss flette inn verdier i en streng. Det gj\xF8\
+  r koden mer lesbar og dynamisk, og sparer oss for maset med konstant plussing av\u2026"
+lastmod: 2024-02-18 23:08:53.671927
+model: gpt-4-1106-preview
+summary: "Stringinterpolasjon lar oss flette inn verdier i en streng. Det gj\xF8r\
+  \ koden mer lesbar og dynamisk, og sparer oss for maset med konstant plussing av\u2026"
+title: Interpolering av en streng
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Loại bỏ dấu ngoặc kép khỏi chuỗi"
 aliases:
 - /vi/python/removing-quotes-from-a-string/
-date:                  2024-01-28T22:06:52.066662-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Loại bỏ dấu ngoặc kép khỏi chuỗi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/python/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:06:52.066662-07:00
+description: "Vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7\
+  i th\u01B0\u1EDDng c\xF3 ngh\u0129a l\xE0 b\u1ECF \u0111i nh\u1EEFng d\u1EA5u ngo\u1EB7\
+  c k\xE9p (\") ho\u1EB7c d\u1EA5u ngo\u1EB7c \u0111\u01A1n (') kh\xF4ng c\u1EA7n\
+  \ thi\u1EBFt. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n\u2026"
+lastmod: 2024-02-18 23:08:50.254706
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7\
+  i th\u01B0\u1EDDng c\xF3 ngh\u0129a l\xE0 b\u1ECF \u0111i nh\u1EEFng d\u1EA5u ngo\u1EB7\
+  c k\xE9p (\") ho\u1EB7c d\u1EA5u ngo\u1EB7c \u0111\u01A1n (') kh\xF4ng c\u1EA7n\
+  \ thi\u1EBFt. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n\u2026"
+title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 ---
 
 {{< edit_this_page >}}

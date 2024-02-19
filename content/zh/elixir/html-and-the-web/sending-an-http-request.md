@@ -1,14 +1,19 @@
 ---
-title:                "发出 HTTP 请求"
 aliases:
 - /zh/elixir/sending-an-http-request/
-date:                  2024-01-20T17:59:21.561023-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "发出 HTTP 请求"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/sending-an-http-request.md"
+date: 2024-01-20 17:59:21.561023-07:00
+description: "HTTP\u8BF7\u6C42\uFF0C\u5C31\u662F\u4ECE\u4F60\u7684\u5E94\u7528\u53D1\
+  \u5411\u670D\u52A1\u5668\u7684\u6D88\u606F\u3002\u7A0B\u5E8F\u5458\u7528\u5B83\u83B7\
+  \u53D6\u6570\u636E\u3001\u63D0\u4EA4\u8868\u5355\u3001\u8DDF\u5176\u4ED6\u670D\u52A1\
+  \u4EA4\u4E92\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:58.863173
+model: gpt-4-1106-preview
+summary: "HTTP\u8BF7\u6C42\uFF0C\u5C31\u662F\u4ECE\u4F60\u7684\u5E94\u7528\u53D1\u5411\
+  \u670D\u52A1\u5668\u7684\u6D88\u606F\u3002\u7A0B\u5E8F\u5458\u7528\u5B83\u83B7\u53D6\
+  \u6570\u636E\u3001\u63D0\u4EA4\u8868\u5355\u3001\u8DDF\u5176\u4ED6\u670D\u52A1\u4EA4\
+  \u4E92\u3002"
+title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 ---
 
 {{< edit_this_page >}}

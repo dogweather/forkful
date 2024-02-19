@@ -1,13 +1,15 @@
 ---
-title:                "Conversión de una cadena de texto a minúsculas"
 aliases:
 - /es/python/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:39:15.916928-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Conversión de una cadena de texto a minúsculas"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:39:15.916928-07:00
+description: "Convertir una cadena a min\xFAsculas significa transformar todos los\
+  \ caracteres alfab\xE9ticos en dicha cadena a su equivalente en min\xFAsculas. Los\
+  \ programadores\u2026"
+lastmod: 2024-02-18 23:09:09.542289
+model: gpt-4-1106-preview
+summary: "Convertir una cadena a min\xFAsculas significa transformar todos los caracteres\
+  \ alfab\xE9ticos en dicha cadena a su equivalente en min\xFAsculas. Los programadores\u2026"
+title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 ---
 
 {{< edit_this_page >}}

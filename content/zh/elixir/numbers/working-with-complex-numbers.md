@@ -1,13 +1,22 @@
 ---
-title:                "处理复数"
 aliases:
 - /zh/elixir/working-with-complex-numbers/
-date:                  2024-01-26T04:39:16.428546-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理复数"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/working-with-complex-numbers.md"
+date: 2024-01-26 04:39:16.428546-07:00
+description: "\u590D\u6570\u6709\u5B9E\u90E8\u548C\u865A\u90E8\uFF08\u5982 `3 + 4i`\uFF09\
+  \u3002\u5B83\u4EEC\u5728\u5DE5\u7A0B\u5B66\u3001\u7269\u7406\u5B66\u4EE5\u53CA\u67D0\
+  \u4E9B\u8BA1\u7B97\u95EE\u9898\u4E2D\u88AB\u4F7F\u7528\u3002\u7A0B\u5E8F\u5458\u5728\
+  \u8FDB\u884C\u6A21\u62DF\u3001\u4FE1\u53F7\u5904\u7406\u4EE5\u53CA\u6709\u6548\u89E3\
+  \u51B3\u67D0\u4E9B\u7C7B\u578B\u7684\u6570\u5B66\u95EE\u9898\u65F6\u4F1A\u7528\u5230\
+  \u5B83\u4EEC\u3002"
+lastmod: 2024-02-18 23:08:58.860667
+model: gpt-4-0125-preview
+summary: "\u590D\u6570\u6709\u5B9E\u90E8\u548C\u865A\u90E8\uFF08\u5982 `3 + 4i`\uFF09\
+  \u3002\u5B83\u4EEC\u5728\u5DE5\u7A0B\u5B66\u3001\u7269\u7406\u5B66\u4EE5\u53CA\u67D0\
+  \u4E9B\u8BA1\u7B97\u95EE\u9898\u4E2D\u88AB\u4F7F\u7528\u3002\u7A0B\u5E8F\u5458\u5728\
+  \u8FDB\u884C\u6A21\u62DF\u3001\u4FE1\u53F7\u5904\u7406\u4EE5\u53CA\u6709\u6548\u89E3\
+  \u51B3\u67D0\u4E9B\u7C7B\u578B\u7684\u6570\u5B66\u95EE\u9898\u65F6\u4F1A\u7528\u5230\
+  \u5B83\u4EEC\u3002"
+title: "\u5904\u7406\u590D\u6570"
 ---
 
 {{< edit_this_page >}}

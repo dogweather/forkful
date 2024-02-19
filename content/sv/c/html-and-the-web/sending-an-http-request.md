@@ -1,14 +1,18 @@
 ---
-title:                "Att skicka en HTTP-begäran"
 aliases:
 - /sv/c/sending-an-http-request/
-date:                  2024-02-03T18:08:32.456112-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att skicka en HTTP-begäran"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/sending-an-http-request.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:32.456112-07:00
+description: "Att skicka en HTTP-f\xF6rfr\xE5gan inneb\xE4r att skapa och skicka en\
+  \ f\xF6rfr\xE5gan till en webbserver f\xF6r att h\xE4mta eller skicka in data. Programmerare\
+  \ g\xF6r detta i C\u2026"
+lastmod: 2024-02-18 23:08:52.246822
+model: gpt-4-0125-preview
+summary: "Att skicka en HTTP-f\xF6rfr\xE5gan inneb\xE4r att skapa och skicka en f\xF6\
+  rfr\xE5gan till en webbserver f\xF6r att h\xE4mta eller skicka in data. Programmerare\
+  \ g\xF6r detta i C\u2026"
+title: "Att skicka en HTTP-beg\xE4ran"
 ---
 
 {{< edit_this_page >}}

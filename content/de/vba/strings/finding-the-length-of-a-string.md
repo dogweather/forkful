@@ -1,14 +1,16 @@
 ---
-title:                "Die Länge eines Strings ermitteln"
 aliases:
 - /de/vba/finding-the-length-of-a-string/
-date:                  2024-02-01T21:53:39.258909-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Die Länge eines Strings ermitteln"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/vba/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:39.258909-07:00
+description: "Die Ermittlung der L\xE4nge eines Strings in Visual Basic for Applications\
+  \ (VBA) umfasst die Bestimmung der Anzahl der Zeichen, die er enth\xE4lt. Programmierer\u2026"
+lastmod: 2024-02-18 23:09:04.678180
+model: gpt-4-0125-preview
+summary: "Die Ermittlung der L\xE4nge eines Strings in Visual Basic for Applications\
+  \ (VBA) umfasst die Bestimmung der Anzahl der Zeichen, die er enth\xE4lt. Programmierer\u2026"
+title: "Die L\xE4nge eines Strings ermitteln"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Använda reguljära uttryck"
 aliases:
 - /sv/google-apps-script/using-regular-expressions/
-date:                  2024-02-01T22:05:09.638947-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Använda reguljära uttryck"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/google-apps-script/using-regular-expressions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:05:09.638947-07:00
+description: "Regulj\xE4ra uttryck (regex) \xE4r m\xF6nster som anv\xE4nds f\xF6r\
+  \ att matcha teckenkombinationer i str\xE4ngar. Programmerare anv\xE4nder dem f\xF6\
+  r att s\xF6ka, redigera eller\u2026"
+lastmod: 2024-02-18 23:08:51.367651
+model: gpt-4-0125-preview
+summary: "Regulj\xE4ra uttryck (regex) \xE4r m\xF6nster som anv\xE4nds f\xF6r att\
+  \ matcha teckenkombinationer i str\xE4ngar. Programmerare anv\xE4nder dem f\xF6\
+  r att s\xF6ka, redigera eller\u2026"
+title: "Anv\xE4nda regulj\xE4ra uttryck"
 ---
 
 {{< edit_this_page >}}

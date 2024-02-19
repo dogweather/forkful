@@ -1,14 +1,16 @@
 ---
-title:                "Analyse Syntaxique du HTML"
 aliases:
 - /fr/arduino/parsing-html/
-date:                  2024-02-03T19:11:37.913460-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analyse Syntaxique du HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:11:37.913460-07:00
+description: "L'analyse du HTML dans les projets Arduino consiste \xE0 extraire des\
+  \ informations des pages Web. Les programmeurs font cela pour permettre \xE0 leurs\u2026"
+lastmod: 2024-02-18 23:09:09.112758
+model: gpt-4-0125-preview
+summary: "L'analyse du HTML dans les projets Arduino consiste \xE0 extraire des informations\
+  \ des pages Web. Les programmeurs font cela pour permettre \xE0 leurs\u2026"
+title: Analyse Syntaxique du HTML
 ---
 
 {{< edit_this_page >}}

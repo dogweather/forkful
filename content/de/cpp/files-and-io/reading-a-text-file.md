@@ -1,13 +1,15 @@
 ---
-title:                "Textdatei einlesen"
 aliases:
 - /de/cpp/reading-a-text-file/
-date:                  2024-01-20T17:54:00.900171-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Textdatei einlesen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/reading-a-text-file.md"
+date: 2024-01-20 17:54:00.900171-07:00
+description: "Das Lesen einer Textdatei in C++ bedeutet, dass wir den Inhalt einer\
+  \ Datei in unserem Programm verwenden. Wir machen das, um Daten zu verarbeiten,\
+  \ die in\u2026"
+lastmod: 2024-02-18 23:09:05.207220
+model: gpt-4-1106-preview
+summary: "Das Lesen einer Textdatei in C++ bedeutet, dass wir den Inhalt einer Datei\
+  \ in unserem Programm verwenden. Wir machen das, um Daten zu verarbeiten, die in\u2026"
+title: Textdatei einlesen
 ---
 
 {{< edit_this_page >}}

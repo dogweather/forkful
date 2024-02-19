@@ -1,13 +1,16 @@
 ---
-title:                "Création d'un fichier temporaire"
 aliases:
 - /fr/swift/creating-a-temporary-file/
-date:                  2024-01-20T17:41:33.600849-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Création d'un fichier temporaire"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:33.600849-07:00
+description: "Cr\xE9er un fichier temporaire, c'est juste \xE9crire des donn\xE9es\
+  \ qui n'ont pas besoin de rester longtemps. Les programmeurs le font pour stocker\
+  \ des trucs de\u2026"
+lastmod: 2024-02-18 23:09:09.230457
+model: gpt-4-1106-preview
+summary: "Cr\xE9er un fichier temporaire, c'est juste \xE9crire des donn\xE9es qui\
+  \ n'ont pas besoin de rester longtemps. Les programmeurs le font pour stocker des\
+  \ trucs de\u2026"
+title: "Cr\xE9ation d'un fichier temporaire"
 ---
 
 {{< edit_this_page >}}

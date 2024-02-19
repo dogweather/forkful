@@ -1,13 +1,16 @@
 ---
-title:                "Komennoriviparametrien lukeminen"
 aliases:
 - /fi/haskell/reading-command-line-arguments/
-date:                  2024-01-20T17:56:02.282341-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Komennoriviparametrien lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:02.282341-07:00
+description: "Komennon rivin argumenttien lukeminen mahdollistaa parametrien antamisen\
+  \ ohjelmalle sen k\xE4ynnistyess\xE4. Ohjelmistokehitt\xE4j\xE4t k\xE4ytt\xE4v\xE4\
+  t t\xE4t\xE4 toimintoa\u2026"
+lastmod: 2024-02-18 23:09:07.682872
+model: gpt-4-1106-preview
+summary: "Komennon rivin argumenttien lukeminen mahdollistaa parametrien antamisen\
+  \ ohjelmalle sen k\xE4ynnistyess\xE4. Ohjelmistokehitt\xE4j\xE4t k\xE4ytt\xE4v\xE4\
+  t t\xE4t\xE4 toimintoa\u2026"
+title: Komennoriviparametrien lukeminen
 ---
 
 {{< edit_this_page >}}

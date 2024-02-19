@@ -1,12 +1,14 @@
 ---
-title:                "Writing tests"
 aliases:
 - /en/kotlin/writing-tests/
-date:                  2024-02-03T19:03:33.785130-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Writing tests"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/writing-tests.md"
+date: 2024-02-03 19:03:33.785130-07:00
+description: "Writing tests in Kotlin involves crafting code snippets that automatically\
+  \ validate the functional correctness of your software modules, ensuring they\u2026"
+lastmod: 2024-02-18 23:09:11.016520
+model: gpt-4-0125-preview
+summary: "Writing tests in Kotlin involves crafting code snippets that automatically\
+  \ validate the functional correctness of your software modules, ensuring they\u2026"
+title: Writing tests
 ---
 
 {{< edit_this_page >}}

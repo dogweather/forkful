@@ -1,12 +1,16 @@
 ---
-title:                "Sending an HTTP request"
 aliases:
 - /en/google-apps-script/sending-an-http-request/
-date:                  2024-02-01T21:12:02.062998-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sending an HTTP request"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/google-apps-script/sending-an-http-request.md"
+date: 2024-02-01 21:12:02.062998-07:00
+description: "Sending an HTTP request in Google Apps Script is about programmatically\
+  \ making a call to an external web server or API. Programmers do this to retrieve\
+  \ or\u2026"
+lastmod: 2024-02-18 23:09:10.636200
+model: gpt-4-0125-preview
+summary: "Sending an HTTP request in Google Apps Script is about programmatically\
+  \ making a call to an external web server or API. Programmers do this to retrieve\
+  \ or\u2026"
+title: Sending an HTTP request
 ---
 
 {{< edit_this_page >}}

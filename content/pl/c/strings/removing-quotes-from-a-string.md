@@ -1,14 +1,18 @@
 ---
-title:                "Usuwanie cudzysłowów z ciągu znaków"
 aliases:
 - /pl/c/removing-quotes-from-a-string/
-date:                  2024-02-03T18:07:19.319527-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usuwanie cudzysłowów z ciągu znaków"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:19.319527-07:00
+description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w w j\u0119zyku C\
+  \ polega na wyodr\u0119bnieniu zawarto\u015Bci tekstowej bez otaczaj\u0105cych pojedynczych\
+  \ (' ') lub podw\xF3jnych (\" \")\u2026"
+lastmod: 2024-02-18 23:08:50.066993
+model: gpt-4-0125-preview
+summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w w j\u0119zyku C polega\
+  \ na wyodr\u0119bnieniu zawarto\u015Bci tekstowej bez otaczaj\u0105cych pojedynczych\
+  \ (' ') lub podw\xF3jnych (\" \")\u2026"
+title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

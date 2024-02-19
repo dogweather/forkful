@@ -1,13 +1,16 @@
 ---
-title:                "Lecture des arguments de ligne de commande"
 aliases:
 - /fr/fish-shell/reading-command-line-arguments/
-date:                  2024-01-20T17:55:49.759452-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lecture des arguments de ligne de commande"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:49.759452-07:00
+description: "Lire les arguments de la ligne de commande, \xE7a consiste \xE0 r\xE9\
+  cup\xE9rer ce que l'utilisateur tape apr\xE8s le nom de ton script. On fait \xE7\
+  a pour rendre nos\u2026"
+lastmod: 2024-02-18 23:09:09.323339
+model: gpt-4-1106-preview
+summary: "Lire les arguments de la ligne de commande, \xE7a consiste \xE0 r\xE9cup\xE9\
+  rer ce que l'utilisateur tape apr\xE8s le nom de ton script. On fait \xE7a pour\
+  \ rendre nos\u2026"
+title: Lecture des arguments de ligne de commande
 ---
 
 {{< edit_this_page >}}

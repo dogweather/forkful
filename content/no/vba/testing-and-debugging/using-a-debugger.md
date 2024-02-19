@@ -1,14 +1,18 @@
 ---
-title:                "Bruker en debugger"
 aliases:
 - /no/vba/using-a-debugger/
-date:                  2024-02-01T22:03:36.744808-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruker en debugger"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/vba/using-a-debugger.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:36.744808-07:00
+description: "\xC5 bruke en feils\xF8ker i Visual Basic for Applications (VBA) inneb\xE6\
+  rer \xE5 kj\xF8re koden din steg for steg for \xE5 inspisere utf\xF8relsesflyten\
+  \ og\u2026"
+lastmod: 2024-02-18 23:08:53.733087
+model: gpt-4-0125-preview
+summary: "\xC5 bruke en feils\xF8ker i Visual Basic for Applications (VBA) inneb\xE6\
+  rer \xE5 kj\xF8re koden din steg for steg for \xE5 inspisere utf\xF8relsesflyten\
+  \ og\u2026"
+title: Bruker en debugger
 ---
 
 {{< edit_this_page >}}

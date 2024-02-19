@@ -1,13 +1,20 @@
 ---
-title:                "处理复数"
 aliases:
 - /zh/bash/working-with-complex-numbers/
-date:                  2024-01-26T04:37:17.420454-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理复数"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/bash/working-with-complex-numbers.md"
+date: 2024-01-26 04:37:17.420454-07:00
+description: "\u590D\u6570\u7531\u5B9E\u90E8\u548C\u865A\u90E8\u7EC4\u6210\u3002\u7A0B\
+  \u5E8F\u5458\u5728\u4FE1\u53F7\u5904\u7406\u3001\u91CF\u5B50\u529B\u5B66\u7B49\u9886\
+  \u57DF\u4EE5\u53CA\u4EFB\u4F55\u9700\u8981\u5B83\u4EEC\u7684\u8BA1\u7B97\u4E2D\u4F7F\
+  \u7528\u590D\u6570\uFF0C\u56E0\u4E3A\u666E\u901A\u7684\u5B9E\u6570\u65E0\u6CD5\u6EE1\
+  \u8DB3\u9700\u6C42\u3002"
+lastmod: 2024-02-18 23:08:59.285227
+model: gpt-4-0125-preview
+summary: "\u590D\u6570\u7531\u5B9E\u90E8\u548C\u865A\u90E8\u7EC4\u6210\u3002\u7A0B\
+  \u5E8F\u5458\u5728\u4FE1\u53F7\u5904\u7406\u3001\u91CF\u5B50\u529B\u5B66\u7B49\u9886\
+  \u57DF\u4EE5\u53CA\u4EFB\u4F55\u9700\u8981\u5B83\u4EEC\u7684\u8BA1\u7B97\u4E2D\u4F7F\
+  \u7528\u590D\u6570\uFF0C\u56E0\u4E3A\u666E\u901A\u7684\u5B9E\u6570\u65E0\u6CD5\u6EE1\
+  \u8DB3\u9700\u6C42\u3002"
+title: "\u5904\u7406\u590D\u6570"
 ---
 
 {{< edit_this_page >}}

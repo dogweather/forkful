@@ -1,14 +1,18 @@
 ---
-title:                "Skriva tester"
 aliases:
 - /sv/powershell/writing-tests/
-date:                  2024-02-03T19:31:40.125826-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriva tester"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:40.125826-07:00
+description: "Att skriva tester i PowerShell inneb\xE4r att skapa skript som automatiskt\
+  \ validerar funktionaliteten i din PowerShell-kod, f\xF6r att s\xE4kerst\xE4lla\
+  \ att den beter\u2026"
+lastmod: 2024-02-18 23:08:52.007416
+model: gpt-4-0125-preview
+summary: "Att skriva tester i PowerShell inneb\xE4r att skapa skript som automatiskt\
+  \ validerar funktionaliteten i din PowerShell-kod, f\xF6r att s\xE4kerst\xE4lla\
+  \ att den beter\u2026"
+title: Skriva tester
 ---
 
 {{< edit_this_page >}}

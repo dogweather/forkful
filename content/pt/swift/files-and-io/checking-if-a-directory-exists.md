@@ -1,14 +1,18 @@
 ---
-title:                "Verificando se um diretório existe"
 aliases:
 - /pt/swift/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:39.157233-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verificando se um diretório existe"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:39.157233-07:00
+description: "Verificar se um diret\xF3rio existe no sistema de arquivos \xE9 essencial\
+  \ para gerenciar estruturas de arquivo dentro de suas aplica\xE7\xF5es Swift. Esta\
+  \ tarefa\u2026"
+lastmod: 2024-02-18 23:08:58.504996
+model: gpt-4-0125-preview
+summary: "Verificar se um diret\xF3rio existe no sistema de arquivos \xE9 essencial\
+  \ para gerenciar estruturas de arquivo dentro de suas aplica\xE7\xF5es Swift. Esta\
+  \ tarefa\u2026"
+title: "Verificando se um diret\xF3rio existe"
 ---
 
 {{< edit_this_page >}}

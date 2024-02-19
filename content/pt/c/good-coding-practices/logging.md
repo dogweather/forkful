@@ -1,14 +1,18 @@
 ---
-title:                "Registro de Logs"
 aliases:
 - /pt/c/logging/
-date:                  2024-02-03T17:58:51.984481-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Registro de Logs"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/logging.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:58:51.984481-07:00
+description: "Registrar logs em C envolve documentar o fluxo e eventos not\xE1veis\
+  \ de um programa durante sua execu\xE7\xE3o, fornecendo uma revis\xE3o tang\xED\
+  vel do seu\u2026"
+lastmod: 2024-02-18 23:08:58.626333
+model: gpt-4-0125-preview
+summary: "Registrar logs em C envolve documentar o fluxo e eventos not\xE1veis de\
+  \ um programa durante sua execu\xE7\xE3o, fornecendo uma revis\xE3o tang\xEDvel\
+  \ do seu\u2026"
+title: Registro de Logs
 ---
 
 {{< edit_this_page >}}

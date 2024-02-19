@@ -1,14 +1,18 @@
 ---
-title:                "Extrayendo subcadenas"
 aliases:
 - /es/c/extracting-substrings/
-date:                  2024-02-03T17:56:23.975646-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Extrayendo subcadenas"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/extracting-substrings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:23.975646-07:00
+description: "Extraer subcadenas en C implica crear una cadena m\xE1s peque\xF1a (subcadena)\
+  \ a partir de una cadena m\xE1s grande bas\xE1ndose en criterios especificados,\
+  \ como la\u2026"
+lastmod: 2024-02-18 23:09:10.488092
+model: gpt-4-0125-preview
+summary: "Extraer subcadenas en C implica crear una cadena m\xE1s peque\xF1a (subcadena)\
+  \ a partir de una cadena m\xE1s grande bas\xE1ndose en criterios especificados,\
+  \ como la\u2026"
+title: Extrayendo subcadenas
 ---
 
 {{< edit_this_page >}}

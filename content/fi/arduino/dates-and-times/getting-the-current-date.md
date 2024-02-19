@@ -1,14 +1,18 @@
 ---
-title:                "Nykyisen päivämäärän hankkiminen"
 aliases:
 - /fi/arduino/getting-the-current-date/
-date:                  2024-02-03T19:09:00.393780-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Nykyisen päivämäärän hankkiminen"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:09:00.393780-07:00
+description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Arduino-projekteissa tarkoittaa\
+  \ reaaliaikaisen tiedon hankkimista, joka voi olla ratkaisevan t\xE4rke\xE4\xE4\
+  \ lokitiedostojen\u2026"
+lastmod: 2024-02-18 23:09:07.910529
+model: gpt-4-0125-preview
+summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Arduino-projekteissa tarkoittaa\
+  \ reaaliaikaisen tiedon hankkimista, joka voi olla ratkaisevan t\xE4rke\xE4\xE4\
+  \ lokitiedostojen\u2026"
+title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 ---
 
 {{< edit_this_page >}}

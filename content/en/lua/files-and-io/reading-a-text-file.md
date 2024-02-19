@@ -1,13 +1,14 @@
 ---
-title:                "Reading a text file"
 aliases:
 - /en/lua/reading-a-text-file/
-date:                  2024-01-20T17:54:48.071374-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Reading a text file"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/reading-a-text-file.md"
+date: 2024-01-20 17:54:48.071374-07:00
+description: Reading a text file means loading its content into your program. We do
+  it to process, analyze, or display stored data, like settings, logs, or user input.
+lastmod: 2024-02-18 23:09:11.195633
+model: gpt-4-1106-preview
+summary: Reading a text file means loading its content into your program. We do it
+  to process, analyze, or display stored data, like settings, logs, or user input.
+title: Reading a text file
 ---
 
 {{< edit_this_page >}}

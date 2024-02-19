@@ -1,13 +1,14 @@
 ---
-title:                "Removing quotes from a string"
 aliases:
 - /en/lua/removing-quotes-from-a-string/
-date:                  2024-01-25T20:50:08.733239-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Removing quotes from a string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/removing-quotes-from-a-string.md"
+date: 2024-01-25 20:50:08.733239-07:00
+description: "Stripping quotes from a string means peeling away those double or single\
+  \ quote characters hugging your text. Coders do this to sanitize inputs, to ease\u2026"
+lastmod: 2024-02-18 23:09:11.166868
+model: gpt-4-1106-preview
+summary: "Stripping quotes from a string means peeling away those double or single\
+  \ quote characters hugging your text. Coders do this to sanitize inputs, to ease\u2026"
+title: Removing quotes from a string
 ---
 
 {{< edit_this_page >}}

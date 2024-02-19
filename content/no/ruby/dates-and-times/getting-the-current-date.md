@@ -1,14 +1,17 @@
 ---
-title:                "Få dagens dato"
 aliases:
 - /no/ruby/getting-the-current-date/
-date:                  2024-02-03T19:10:41.961492-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Få dagens dato"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:10:41.961492-07:00
+description: "\xC5 hente gjeldende dato er en avgj\xF8rende oppgave i nesten enhver\
+  \ programmeringsinnsats, fra \xE5 logge aktiviteter i en applikasjon til \xE5 generere\
+  \ rapporter\u2026"
+lastmod: 2024-02-18 23:08:54.448333
+model: gpt-4-0125-preview
+summary: "\xC5 hente gjeldende dato er en avgj\xF8rende oppgave i nesten enhver programmeringsinnsats,\
+  \ fra \xE5 logge aktiviteter i en applikasjon til \xE5 generere rapporter\u2026"
+title: "F\xE5 dagens dato"
 ---
 
 {{< edit_this_page >}}

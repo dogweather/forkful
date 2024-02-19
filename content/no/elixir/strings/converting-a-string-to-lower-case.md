@@ -1,13 +1,16 @@
 ---
-title:                "Konvertere en streng til små bokstaver"
 aliases:
 - /no/elixir/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:28.696065-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konvertere en streng til små bokstaver"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:28.696065-07:00
+description: "Konvertering av strenger til sm\xE5 bokstaver betyr \xE5 endre alle\
+  \ tegn i en tekststreng til deres sm\xE5 bokstavversjon. Programmerere gj\xF8r dette\
+  \ for \xE5\u2026"
+lastmod: 2024-02-18 23:08:53.592422
+model: gpt-4-1106-preview
+summary: "Konvertering av strenger til sm\xE5 bokstaver betyr \xE5 endre alle tegn\
+  \ i en tekststreng til deres sm\xE5 bokstavversjon. Programmerere gj\xF8r dette\
+  \ for \xE5\u2026"
+title: "Konvertere en streng til sm\xE5 bokstaver"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,20 @@
 ---
-title:                "Gửi yêu cầu HTTP"
 aliases:
 - /vi/vba/sending-an-http-request/
-date:                  2024-02-01T22:02:04.308442-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gửi yêu cầu HTTP"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/sending-an-http-request.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:02:04.308442-07:00
+description: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP trong Visual Basic\
+  \ for Applications (VBA) bao g\u1ED3m vi\u1EC7c truy c\u1EADp v\xE0o c\xE1c t\xE0\
+  i nguy\xEAn web ho\u1EB7c d\u1ECBch v\u1EE5 web m\u1ED9t c\xE1ch l\u1EADp tr\xEC\
+  nh b\u1EB1ng\u2026"
+lastmod: 2024-02-18 23:08:50.505551
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP trong Visual Basic for\
+  \ Applications (VBA) bao g\u1ED3m vi\u1EC7c truy c\u1EADp v\xE0o c\xE1c t\xE0i nguy\xEA\
+  n web ho\u1EB7c d\u1ECBch v\u1EE5 web m\u1ED9t c\xE1ch l\u1EADp tr\xECnh b\u1EB1\
+  ng\u2026"
+title: "G\u1EEDi y\xEAu c\u1EA7u HTTP"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Eine Textdatei schreiben"
 aliases:
 - /de/haskell/writing-a-text-file/
-date:                  2024-02-03T19:27:53.950102-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eine Textdatei schreiben"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:53.950102-07:00
+description: "Das Schreiben in eine Textdatei in Haskell dreht sich darum, Dateien\
+  \ mit textuellem Inhalt programmatisch zu erstellen oder zu aktualisieren.\u2026"
+lastmod: 2024-02-18 23:09:04.936978
+model: gpt-4-0125-preview
+summary: "Das Schreiben in eine Textdatei in Haskell dreht sich darum, Dateien mit\
+  \ textuellem Inhalt programmatisch zu erstellen oder zu aktualisieren.\u2026"
+title: Eine Textdatei schreiben
 ---
 
 {{< edit_this_page >}}

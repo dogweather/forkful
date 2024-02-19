@@ -1,15 +1,17 @@
 ---
-title:                "Controleren of een directory bestaat"
 aliases:
 - /nl/bash/checking-if-a-directory-exists/
-date:                  2024-01-28T21:55:36.294188-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Controleren of een directory bestaat"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:55:36.294188-07:00
+description: "Controleren of een directory bestaat is belangrijk om zeker te weten\
+  \ dat een map er is voordat je probeert er iets mee te doen, zoals bestanden lezen\
+  \ of\u2026"
+lastmod: 2024-02-18 23:09:02.057647
+model: gpt-4-0125-preview
+summary: "Controleren of een directory bestaat is belangrijk om zeker te weten dat\
+  \ een map er is voordat je probeert er iets mee te doen, zoals bestanden lezen of\u2026"
+title: Controleren of een directory bestaat
 ---
 
 {{< edit_this_page >}}

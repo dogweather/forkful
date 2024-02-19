@@ -1,12 +1,16 @@
 ---
-title:                "Checking if a directory exists"
 aliases:
 - /en/powershell/checking-if-a-directory-exists/
-date:                  2024-02-03T19:02:29.170384-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Checking if a directory exists"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/powershell/checking-if-a-directory-exists.md"
+date: 2024-02-03 19:02:29.170384-07:00
+description: "In PowerShell, checking if a directory exists is a common task that\
+  \ helps scripts make decisions based on filesystem structure\u2014such as avoiding\
+  \ errors by\u2026"
+lastmod: 2024-02-18 23:09:11.288436
+model: gpt-4-0125-preview
+summary: "In PowerShell, checking if a directory exists is a common task that helps\
+  \ scripts make decisions based on filesystem structure\u2014such as avoiding errors\
+  \ by\u2026"
+title: Checking if a directory exists
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Läsa in kommandoradsargument"
 aliases:
 - /sv/java/reading-command-line-arguments/
-date:                  2024-01-20T17:56:21.282050-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Läsa in kommandoradsargument"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:21.282050-07:00
+description: "Kommandoradsargument l\xE5ter dig mata in data till ditt Java-program\
+  \ n\xE4r du startar det. Programmerare anv\xE4nder detta f\xF6r att g\xF6ra programmen\
+  \ flexibla och\u2026"
+lastmod: 2024-02-18 23:08:51.684097
+model: gpt-4-1106-preview
+summary: "Kommandoradsargument l\xE5ter dig mata in data till ditt Java-program n\xE4\
+  r du startar det. Programmerare anv\xE4nder detta f\xF6r att g\xF6ra programmen\
+  \ flexibla och\u2026"
+title: "L\xE4sa in kommandoradsargument"
 ---
 
 {{< edit_this_page >}}

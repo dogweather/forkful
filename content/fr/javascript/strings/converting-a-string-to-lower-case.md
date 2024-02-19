@@ -1,13 +1,16 @@
 ---
-title:                "Conversion d'une chaîne de caractères en minuscules"
 aliases:
 - /fr/javascript/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:39.408946-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Conversion d'une chaîne de caractères en minuscules"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:39.408946-07:00
+description: "Convertir une cha\xEEne en minuscules, c'est transformer tous les caract\xE8\
+  res alphab\xE9tiques en leur \xE9quivalent minuscule. C'est utile pour uniformiser\
+  \ les\u2026"
+lastmod: 2024-02-18 23:09:09.241452
+model: gpt-4-1106-preview
+summary: "Convertir une cha\xEEne en minuscules, c'est transformer tous les caract\xE8\
+  res alphab\xE9tiques en leur \xE9quivalent minuscule. C'est utile pour uniformiser\
+  \ les\u2026"
+title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 ---
 
 {{< edit_this_page >}}

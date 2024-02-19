@@ -1,13 +1,16 @@
 ---
-title:                "Printing debug output"
 aliases:
 - /en/lua/printing-debug-output/
-date:                  2024-01-20T17:53:05.561298-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Printing debug output"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/printing-debug-output.md"
+date: 2024-01-20 17:53:05.561298-07:00
+description: "Printing debug output is chucking info onto your screen to see what's\
+  \ up with your code. Programmers do it to track down gremlins in the machine\u2014\
+  bugs."
+lastmod: 2024-02-18 23:09:11.181170
+model: gpt-4-1106-preview
+summary: "Printing debug output is chucking info onto your screen to see what's up\
+  \ with your code. Programmers do it to track down gremlins in the machine\u2014\
+  bugs."
+title: Printing debug output
 ---
 
 {{< edit_this_page >}}

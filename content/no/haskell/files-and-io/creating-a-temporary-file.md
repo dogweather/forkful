@@ -1,13 +1,16 @@
 ---
-title:                "Opprette en midlertidig fil"
 aliases:
 - /no/haskell/creating-a-temporary-file/
-date:                  2024-01-20T17:40:24.344850-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Opprette en midlertidig fil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:24.344850-07:00
+description: "Oppretting av en midlertidig fil lar programmer lagre data som trengs\
+  \ for kort tid. Vi gj\xF8r dette for \xE5 h\xE5ndtere data som ikke trenger \xE5\
+  \ bli varig lagret\u2026"
+lastmod: 2024-02-18 23:08:53.953433
+model: gpt-4-1106-preview
+summary: "Oppretting av en midlertidig fil lar programmer lagre data som trengs for\
+  \ kort tid. Vi gj\xF8r dette for \xE5 h\xE5ndtere data som ikke trenger \xE5 bli\
+  \ varig lagret\u2026"
+title: Opprette en midlertidig fil
 ---
 
 {{< edit_this_page >}}

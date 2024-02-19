@@ -1,14 +1,18 @@
 ---
-title:                "Skrive en tekstfil"
 aliases:
 - /no/google-apps-script/writing-a-text-file/
-date:                  2024-02-01T22:08:21.425028-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skrive en tekstfil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/google-apps-script/writing-a-text-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:08:21.425028-07:00
+description: "\xC5 skrive en tekstfil i Google Apps Script lar utviklere lagre data\
+  \ p\xE5 en vedvarende m\xE5te, noe som gj\xF8r det tilgjengelig for fremtidig bruk\
+  \ eller analyse.\u2026"
+lastmod: 2024-02-18 23:08:53.500998
+model: gpt-4-0125-preview
+summary: "\xC5 skrive en tekstfil i Google Apps Script lar utviklere lagre data p\xE5\
+  \ en vedvarende m\xE5te, noe som gj\xF8r det tilgjengelig for fremtidig bruk eller\
+  \ analyse.\u2026"
+title: Skrive en tekstfil
 ---
 
 {{< edit_this_page >}}

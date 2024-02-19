@@ -1,14 +1,16 @@
 ---
-title:                "Testien kirjoittaminen"
 aliases:
 - /fi/go/writing-tests/
-date:                  2024-02-03T18:15:23.023718-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Testien kirjoittaminen"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:15:23.023718-07:00
+description: "Testien kirjoittaminen Go-kielell\xE4 k\xE4sitt\xE4\xE4 pienien, hallittavien\
+  \ koodip\xE4tkien luomisen, jotka varmistavat sovelluksesi toiminnallisuuden ja\u2026"
+lastmod: 2024-02-18 23:09:07.089308
+model: gpt-4-0125-preview
+summary: "Testien kirjoittaminen Go-kielell\xE4 k\xE4sitt\xE4\xE4 pienien, hallittavien\
+  \ koodip\xE4tkien luomisen, jotka varmistavat sovelluksesi toiminnallisuuden ja\u2026"
+title: Testien kirjoittaminen
 ---
 
 {{< edit_this_page >}}

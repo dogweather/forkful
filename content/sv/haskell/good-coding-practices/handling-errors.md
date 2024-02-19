@@ -1,13 +1,16 @@
 ---
-title:                "Hantering av fel"
 aliases:
 - /sv/haskell/handling-errors/
-date:                  2024-01-26T00:53:15.582051-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Hantering av fel"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/handling-errors.md"
+date: 2024-01-26 00:53:15.582051-07:00
+description: "Att hantera fel i programmering handlar om att f\xF6rvalta det ov\xE4\
+  ntade\u2014saker som kan g\xE5 fel. Programmerare g\xF6r detta f\xF6r att s\xE4\
+  kerst\xE4lla att deras program\u2026"
+lastmod: 2024-02-18 23:08:51.844106
+model: gpt-4-1106-preview
+summary: "Att hantera fel i programmering handlar om att f\xF6rvalta det ov\xE4ntade\u2014\
+  saker som kan g\xE5 fel. Programmerare g\xF6r detta f\xF6r att s\xE4kerst\xE4lla\
+  \ att deras program\u2026"
+title: Hantering av fel
 ---
 
 {{< edit_this_page >}}

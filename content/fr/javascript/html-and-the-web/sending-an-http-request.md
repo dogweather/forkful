@@ -1,13 +1,16 @@
 ---
-title:                "Envoi d'une requête HTTP"
 aliases:
 - /fr/javascript/sending-an-http-request/
-date:                  2024-01-20T17:59:58.342925-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Envoi d'une requête HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/sending-an-http-request.md"
+date: 2024-01-20 17:59:58.342925-07:00
+description: "Envoyer une requ\xEAte HTTP, c'est demander quelque chose \xE0 un autre\
+  \ serveur web. On le fait pour r\xE9cup\xE9rer des donn\xE9es, soumettre des formulaires\
+  \ ou\u2026"
+lastmod: 2024-02-18 23:09:09.252412
+model: gpt-4-1106-preview
+summary: "Envoyer une requ\xEAte HTTP, c'est demander quelque chose \xE0 un autre\
+  \ serveur web. On le fait pour r\xE9cup\xE9rer des donn\xE9es, soumettre des formulaires\
+  \ ou\u2026"
+title: "Envoi d'une requ\xEAte HTTP"
 ---
 
 {{< edit_this_page >}}

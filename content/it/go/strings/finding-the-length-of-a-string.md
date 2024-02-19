@@ -1,14 +1,16 @@
 ---
-title:                "Trovare la lunghezza di una stringa"
 aliases:
 - /it/go/finding-the-length-of-a-string/
-date:                  2024-02-03T17:56:49.042378-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trovare la lunghezza di una stringa"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:49.042378-07:00
+description: "Trovare la lunghezza di una stringa in Go riguarda il determinare il\
+  \ numero di caratteri che contiene. I programmatori eseguono regolarmente questa\u2026"
+lastmod: 2024-02-18 23:08:55.422789
+model: gpt-4-0125-preview
+summary: "Trovare la lunghezza di una stringa in Go riguarda il determinare il numero\
+  \ di caratteri che contiene. I programmatori eseguono regolarmente questa\u2026"
+title: Trovare la lunghezza di una stringa
 ---
 
 {{< edit_this_page >}}

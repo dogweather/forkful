@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng mảng liên kết"
 aliases:
 - /vi/elm/using-associative-arrays/
-date:                  2024-01-30T19:11:28.698131-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng mảng liên kết"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elm/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:11:28.698131-07:00
+description: "M\u1EA3ng li\xEAn k\u1EBFt, hay nh\u01B0 Elm g\u1ECDi l\xE0, T\u1EEB\
+  \ \u0111i\u1EC3n, \xE1nh x\u1EA1 c\xE1c kh\xF3a v\u1EDBi c\xE1c gi\xE1 tr\u1ECB\
+  \ theo c\xE1ch l\xE0m cho vi\u1EC7c tra c\u1EE9u, ch\xE8n, v\xE0 x\xF3a c\xE1c gi\xE1\
+  \ tr\u1ECB tr\u1EDF n\xEAn c\u1EF1c k\u1EF3 nhanh\u2026"
+lastmod: 2024-02-18 23:08:50.595667
+model: gpt-4-0125-preview
+summary: "M\u1EA3ng li\xEAn k\u1EBFt, hay nh\u01B0 Elm g\u1ECDi l\xE0, T\u1EEB \u0111\
+  i\u1EC3n, \xE1nh x\u1EA1 c\xE1c kh\xF3a v\u1EDBi c\xE1c gi\xE1 tr\u1ECB theo c\xE1\
+  ch l\xE0m cho vi\u1EC7c tra c\u1EE9u, ch\xE8n, v\xE0 x\xF3a c\xE1c gi\xE1 tr\u1ECB\
+  \ tr\u1EDF n\xEAn c\u1EF1c k\u1EF3 nhanh\u2026"
+title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 ---
 
 {{< edit_this_page >}}

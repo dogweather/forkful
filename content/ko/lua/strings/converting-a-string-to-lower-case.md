@@ -1,14 +1,23 @@
 ---
-title:                "문자열을 소문자로 변환하기"
 aliases:
 - /ko/lua/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:49.461120-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "문자열을 소문자로 변환하기"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/lua/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:49.461120-07:00
+description: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD55C\
+  \uB2E4\uB294 \uAC83\uC740, \uC608\uB97C \uB4E4\uC5B4 'HELLO'\uB97C 'hello'\uB85C\
+  \ \uBC14\uAFB8\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uC774\uB97C \uD1B5\uD574\
+  \ \uB300\uC18C\uBB38\uC790\uB97C \uBB34\uC2DC\uD558\uACE0 \uB370\uC774\uD130\uB97C\
+  \ \uBE44\uAD50\uD558\uAC70\uB098 \uC815\uB82C\uD558\uB294 \uB4F1\uC758 \uC791\uC5C5\
+  \ \uC2DC \uC77C\uAD00\uC131\uC744 \uC9C0\uD0AC \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.397084
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD55C\uB2E4\
+  \uB294 \uAC83\uC740, \uC608\uB97C \uB4E4\uC5B4 'HELLO'\uB97C 'hello'\uB85C \uBC14\
+  \uAFB8\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uC774\uB97C \uD1B5\uD574 \uB300\
+  \uC18C\uBB38\uC790\uB97C \uBB34\uC2DC\uD558\uACE0 \uB370\uC774\uD130\uB97C \uBE44\
+  \uAD50\uD558\uAC70\uB098 \uC815\uB82C\uD558\uB294 \uB4F1\uC758 \uC791\uC5C5 \uC2DC\
+  \ \uC77C\uAD00\uC131\uC744 \uC9C0\uD0AC \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+title: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

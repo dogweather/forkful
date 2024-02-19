@@ -1,14 +1,24 @@
 ---
-title:                "基本認証を使用したHTTPリクエストの送信"
 aliases:
 - /ja/kotlin/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:15.037041-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "基本認証を使用したHTTPリクエストの送信"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:15.037041-07:00
+description: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u306B\u57FA\u672C\u8A8D\u8A3C\u3092\
+  \u4ED8\u3051\u3066\u9001\u308B\u3053\u3068\u306F\u3001\u30B5\u30FC\u30D0\u306B\u300C\
+  \u81EA\u5206\u306F\u8AB0\u3060\u300D\u3063\u3066\u6559\u3048\u308B\u305F\u3081\u3067\
+  \u3059\u3002\u5B89\u5168\u6027\u3092\u9AD8\u3081\u308B\u305F\u3081\u3001\u30D7\u30ED\
+  \u30B0\u30E9\u30DE\u30FC\u306F\u8A8D\u8A3C\u60C5\u5831\u3092\u30EA\u30AF\u30A8\u30B9\
+  \u30C8\u306B\u542B\u3081\u307E\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:54.879039
+model: gpt-4-1106-preview
+summary: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u306B\u57FA\u672C\u8A8D\u8A3C\u3092\u4ED8\
+  \u3051\u3066\u9001\u308B\u3053\u3068\u306F\u3001\u30B5\u30FC\u30D0\u306B\u300C\u81EA\
+  \u5206\u306F\u8AB0\u3060\u300D\u3063\u3066\u6559\u3048\u308B\u305F\u3081\u3067\u3059\
+  \u3002\u5B89\u5168\u6027\u3092\u9AD8\u3081\u308B\u305F\u3081\u3001\u30D7\u30ED\u30B0\
+  \u30E9\u30DE\u30FC\u306F\u8A8D\u8A3C\u60C5\u5831\u3092\u30EA\u30AF\u30A8\u30B9\u30C8\
+  \u306B\u542B\u3081\u307E\u3059\u3002"
+title: "\u57FA\u672C\u8A8D\u8A3C\u3092\u4F7F\u7528\u3057\u305FHTTP\u30EA\u30AF\u30A8\
+  \u30B9\u30C8\u306E\u9001\u4FE1"
 ---
 
 {{< edit_this_page >}}

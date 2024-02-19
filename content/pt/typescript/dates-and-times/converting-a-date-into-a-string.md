@@ -1,13 +1,14 @@
 ---
-title:                "Convertendo uma data em uma string"
 aliases:
 - /pt/typescript/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:58.206352-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Convertendo uma data em uma string"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:58.206352-07:00
+description: "Converter uma data em uma string trata-se de transformar o objeto Date\
+  \ em um texto leg\xEDvel. Programadores fazem isso para exibir datas de forma\u2026"
+lastmod: 2024-02-18 23:08:57.896362
+model: gpt-4-1106-preview
+summary: "Converter uma data em uma string trata-se de transformar o objeto Date em\
+  \ um texto leg\xEDvel. Programadores fazem isso para exibir datas de forma\u2026"
+title: Convertendo uma data em uma string
 ---
 
 {{< edit_this_page >}}

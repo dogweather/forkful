@@ -1,14 +1,21 @@
 ---
-title:                "문자열 연결하기"
 aliases:
 - /ko/typescript/concatenating-strings/
-date:                  2024-01-20T17:36:08.425422-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "문자열 연결하기"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/concatenating-strings.md"
+date: 2024-01-20 17:36:08.425422-07:00
+description: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uB450 \uAC1C \uC774\uC0C1\uC758\
+  \ \uBB38\uC790\uC5F4\uC744 \uD558\uB098\uB85C \uD569\uCE58\uB294 \uAC83\uC785\uB2C8\
+  \uB2E4. \uB370\uC774\uD130\uB97C \uD569\uCE58\uAC70\uB098 \uBA54\uC2DC\uC9C0\uB97C\
+  \ \uB3D9\uC801\uC73C\uB85C \uB9CC\uB4E4\uAE30 \uC704\uD574 \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC774 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:05.807173
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uB450 \uAC1C \uC774\uC0C1\uC758 \uBB38\
+  \uC790\uC5F4\uC744 \uD558\uB098\uB85C \uD569\uCE58\uB294 \uAC83\uC785\uB2C8\uB2E4\
+  . \uB370\uC774\uD130\uB97C \uD569\uCE58\uAC70\uB098 \uBA54\uC2DC\uC9C0\uB97C \uB3D9\
+  \uC801\uC73C\uB85C \uB9CC\uB4E4\uAE30 \uC704\uD574 \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB4E4\uC774 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

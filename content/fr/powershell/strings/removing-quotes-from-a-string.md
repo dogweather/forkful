@@ -1,13 +1,14 @@
 ---
-title:                "Retirer les guillemets d'une chaîne"
 aliases:
 - /fr/powershell/removing-quotes-from-a-string/
-date:                  2024-01-26T03:40:59.041802-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Retirer les guillemets d'une chaîne"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:40:59.041802-07:00
+description: "Retirer les guillemets d'une cha\xEEne dans PowerShell \xE9limine les\
+  \ marques de citation simple (`'`) ou double (`\"`) entourant votre texte. Les programmeurs\u2026"
+lastmod: 2024-02-18 23:09:09.052463
+model: gpt-4-0125-preview
+summary: "Retirer les guillemets d'une cha\xEEne dans PowerShell \xE9limine les marques\
+  \ de citation simple (`'`) ou double (`\"`) entourant votre texte. Les programmeurs\u2026"
+title: "Retirer les guillemets d'une cha\xEEne"
 ---
 
 {{< edit_this_page >}}

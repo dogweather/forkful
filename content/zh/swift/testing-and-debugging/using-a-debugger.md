@@ -1,13 +1,22 @@
 ---
-title:                "使用调试器"
 aliases:
 - /zh/swift/using-a-debugger/
-date:                  2024-01-26T04:10:50.206772-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用调试器"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/using-a-debugger.md"
+date: 2024-01-26 04:10:50.206772-07:00
+description: "\u4F7F\u7528\u8C03\u8BD5\u5668\u610F\u5473\u7740\u5229\u7528\u4E13\u4E1A\
+  \u5DE5\u5177\u6765\u6D4B\u8BD5\u548C\u68C0\u67E5\u4F60\u7684\u4EE3\u7801\u5728\u8FD0\
+  \u884C\u65F6\u7684\u60C5\u51B5\u3002\u8FD9\u5F88\u91CD\u8981\uFF0C\u56E0\u4E3A\u5B83\
+  \u80FD\u8BA9\u4F60\u770B\u5230\u4EE3\u7801\u5185\u90E8\u53D1\u751F\u4E86\u4EC0\u4E48\
+  \uFF0C\u627E\u5230\u9519\u8BEF\uFF0C\u5E76\u66F4\u597D\u5730\u7406\u89E3\u4EE3\u7801\
+  \u7684\u884C\u4E3A\u3002"
+lastmod: 2024-02-18 23:08:59.446229
+model: gpt-4-0125-preview
+summary: "\u4F7F\u7528\u8C03\u8BD5\u5668\u610F\u5473\u7740\u5229\u7528\u4E13\u4E1A\
+  \u5DE5\u5177\u6765\u6D4B\u8BD5\u548C\u68C0\u67E5\u4F60\u7684\u4EE3\u7801\u5728\u8FD0\
+  \u884C\u65F6\u7684\u60C5\u51B5\u3002\u8FD9\u5F88\u91CD\u8981\uFF0C\u56E0\u4E3A\u5B83\
+  \u80FD\u8BA9\u4F60\u770B\u5230\u4EE3\u7801\u5185\u90E8\u53D1\u751F\u4E86\u4EC0\u4E48\
+  \uFF0C\u627E\u5230\u9519\u8BEF\uFF0C\u5E76\u66F4\u597D\u5730\u7406\u89E3\u4EE3\u7801\
+  \u7684\u884C\u4E3A\u3002"
+title: "\u4F7F\u7528\u8C03\u8BD5\u5668"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Imprimiendo salida de depuración"
 aliases:
 - /es/vba/printing-debug-output/
-date:                  2024-02-01T21:58:23.486510-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Imprimiendo salida de depuración"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/vba/printing-debug-output.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:23.486510-07:00
+description: "Imprimir la salida de depuraci\xF3n en Visual Basic para Aplicaciones\
+  \ (VBA) implica colocar estrat\xE9gicamente instrucciones de impresi\xF3n dentro\
+  \ de su c\xF3digo\u2026"
+lastmod: 2024-02-18 23:09:09.799884
+model: gpt-4-0125-preview
+summary: "Imprimir la salida de depuraci\xF3n en Visual Basic para Aplicaciones (VBA)\
+  \ implica colocar estrat\xE9gicamente instrucciones de impresi\xF3n dentro de su\
+  \ c\xF3digo\u2026"
+title: "Imprimiendo salida de depuraci\xF3n"
 ---
 
 {{< edit_this_page >}}

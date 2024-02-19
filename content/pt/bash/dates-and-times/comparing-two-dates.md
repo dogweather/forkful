@@ -1,13 +1,14 @@
 ---
-title:                "Comparando duas datas"
 aliases:
 - /pt/bash/comparing-two-dates/
-date:                  2024-01-20T17:32:19.235868-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Comparando duas datas"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/comparing-two-dates.md"
+date: 2024-01-20 17:32:19.235868-07:00
+description: "Comparar duas datas significa verificar se s\xE3o iguais, qual vem antes\
+  \ ou o intervalo entre elas. Programadores fazem isso para agendar eventos, verificar\u2026"
+lastmod: 2024-02-18 23:08:58.337649
+model: gpt-4-1106-preview
+summary: "Comparar duas datas significa verificar se s\xE3o iguais, qual vem antes\
+  \ ou o intervalo entre elas. Programadores fazem isso para agendar eventos, verificar\u2026"
+title: Comparando duas datas
 ---
 
 {{< edit_this_page >}}

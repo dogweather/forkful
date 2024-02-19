@@ -1,14 +1,30 @@
 ---
-title:                "문자열 보간하기"
 aliases:
 - /ko/google-apps-script/interpolating-a-string/
-date:                  2024-02-01T21:55:20.550535-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열 보간하기"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/interpolating-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:20.550535-07:00
+description: "Google Apps Script\uC5D0\uC11C \uBB38\uC790\uC5F4 \uBCF4\uAC04\uC740\
+  \ \uBB38\uC790\uC5F4 \uB0B4\uC5D0\uC11C \uD45C\uD604\uC2DD\uC744 \uB3D9\uC801\uC73C\
+  \uB85C \uC0BD\uC785\uD560 \uC218 \uC788\uAC8C \uD574\uC8FC\uC5B4, \uB354 \uC77D\uAE30\
+  \ \uC27D\uACE0 \uC720\uC9C0\uBCF4\uC218\uD558\uAE30 \uC26C\uC6B4 \uCF54\uB4DC \uC791\
+  \uC131\uC744 \uAC00\uB2A5\uD558\uAC8C \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uC774 \uAE30\uC220\uC744 \uC0AC\uC6A9\uD558\uC5EC \uBCC0\uC218\
+  \uC640 \uD45C\uD604\uC2DD\uC744 \uBB38\uC790\uC5F4\uC5D0 \uBC88\uAC70\uB85C\uC6B4\
+  \ \uC5F0\uACB0 \uAD6C\uBB38 \uC5C6\uC774 \uB9E4\uB044\uB7FD\uAC8C \uD1B5\uD569\uD569\
+  \uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:05.531284
+model: gpt-4-0125-preview
+summary: "Google Apps Script\uC5D0\uC11C \uBB38\uC790\uC5F4 \uBCF4\uAC04\uC740 \uBB38\
+  \uC790\uC5F4 \uB0B4\uC5D0\uC11C \uD45C\uD604\uC2DD\uC744 \uB3D9\uC801\uC73C\uB85C\
+  \ \uC0BD\uC785\uD560 \uC218 \uC788\uAC8C \uD574\uC8FC\uC5B4, \uB354 \uC77D\uAE30\
+  \ \uC27D\uACE0 \uC720\uC9C0\uBCF4\uC218\uD558\uAE30 \uC26C\uC6B4 \uCF54\uB4DC \uC791\
+  \uC131\uC744 \uAC00\uB2A5\uD558\uAC8C \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uC774 \uAE30\uC220\uC744 \uC0AC\uC6A9\uD558\uC5EC \uBCC0\uC218\
+  \uC640 \uD45C\uD604\uC2DD\uC744 \uBB38\uC790\uC5F4\uC5D0 \uBC88\uAC70\uB85C\uC6B4\
+  \ \uC5F0\uACB0 \uAD6C\uBB38 \uC5C6\uC774 \uB9E4\uB044\uB7FD\uAC8C \uD1B5\uD569\uD569\
+  \uB2C8\uB2E4."
+title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

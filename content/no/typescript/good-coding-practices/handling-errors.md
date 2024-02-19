@@ -1,13 +1,16 @@
 ---
-title:                "Feilhåndtering"
 aliases:
 - /no/typescript/handling-errors/
-date:                  2024-01-26T00:58:37.145866-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Feilhåndtering"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/handling-errors.md"
+date: 2024-01-26 00:58:37.145866-07:00
+description: "\xC5 h\xE5ndtere feil handler om \xE5 forvente det uforventede; det\
+  \ er hvordan vi tar oss av situasjoner n\xE5r ting g\xE5r galt i koden v\xE5r. Vi\
+  \ gj\xF8r det for \xE5 unng\xE5\u2026"
+lastmod: 2024-02-18 23:08:53.652164
+model: gpt-4-1106-preview
+summary: "\xC5 h\xE5ndtere feil handler om \xE5 forvente det uforventede; det er hvordan\
+  \ vi tar oss av situasjoner n\xE5r ting g\xE5r galt i koden v\xE5r. Vi gj\xF8r det\
+  \ for \xE5 unng\xE5\u2026"
+title: "Feilh\xE5ndtering"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,18 @@
 ---
-title:                "Een debugger gebruiken"
 aliases:
 - /nl/javascript/using-a-debugger/
-date:                  2024-01-28T22:08:45.299623-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een debugger gebruiken"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/javascript/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:45.299623-07:00
+description: "Een debugger gebruiken betekent dat je gespecialiseerde tools inzet\
+  \ die je een kijkje onder de motorkap van je code geven, door het stap voor stap\
+  \ uit te\u2026"
+lastmod: 2024-02-18 23:09:02.280998
+model: gpt-4-0125-preview
+summary: "Een debugger gebruiken betekent dat je gespecialiseerde tools inzet die\
+  \ je een kijkje onder de motorkap van je code geven, door het stap voor stap uit\
+  \ te\u2026"
+title: Een debugger gebruiken
 ---
 
 {{< edit_this_page >}}

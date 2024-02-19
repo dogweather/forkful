@@ -1,13 +1,26 @@
 ---
-title:                "XML 다루기"
 aliases:
 - /ko/haskell/working-with-xml/
-date:                  2024-01-26T04:31:51.729035-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML 다루기"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/working-with-xml.md"
+date: 2024-01-26 04:31:51.729035-07:00
+description: "Haskell\uC5D0\uC11C XML\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740 XML \uAD6C\
+  \uC870\uC758 \uD30C\uC2F1(parsing), \uC870\uC791, \uC0DD\uC131\uC744 \uD3EC\uD568\
+  \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC6F9 \uC11C\uBE44\
+  \uC2A4\uC640 \uC124\uC815 \uD30C\uC77C\uACFC \uAC19\uC774 XML\uC744 \uB370\uC774\
+  \uD130 \uD615\uC2DD\uC73C\uB85C \uC0AC\uC6A9\uD558\uB294 \uB2E4\uC591\uD55C \uC560\
+  \uD50C\uB9AC\uCF00\uC774\uC158 \uBC0F \uD504\uB85C\uD1A0\uCF5C\uACFC \uC0C1\uD638\
+  \ \uC791\uC6A9\uD558\uAE30 \uC704\uD574 XML\uC744 \uCC98\uB9AC\uD569\uB2C8\uB2E4\
+  ."
+lastmod: 2024-02-18 23:09:06.325437
+model: gpt-4-0125-preview
+summary: "Haskell\uC5D0\uC11C XML\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740 XML \uAD6C\
+  \uC870\uC758 \uD30C\uC2F1(parsing), \uC870\uC791, \uC0DD\uC131\uC744 \uD3EC\uD568\
+  \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC6F9 \uC11C\uBE44\
+  \uC2A4\uC640 \uC124\uC815 \uD30C\uC77C\uACFC \uAC19\uC774 XML\uC744 \uB370\uC774\
+  \uD130 \uD615\uC2DD\uC73C\uB85C \uC0AC\uC6A9\uD558\uB294 \uB2E4\uC591\uD55C \uC560\
+  \uD50C\uB9AC\uCF00\uC774\uC158 \uBC0F \uD504\uB85C\uD1A0\uCF5C\uACFC \uC0C1\uD638\
+  \ \uC791\uC6A9\uD558\uAE30 \uC704\uD574 XML\uC744 \uCC98\uB9AC\uD569\uB2C8\uB2E4\
+  ."
+title: "XML \uB2E4\uB8E8\uAE30"
 ---
 
 {{< edit_this_page >}}

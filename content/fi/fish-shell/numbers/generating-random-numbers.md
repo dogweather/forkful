@@ -1,13 +1,16 @@
 ---
-title:                "Satunnaislukujen generointi"
 aliases:
 - /fi/fish-shell/generating-random-numbers/
-date:                  2024-01-27T20:33:33.010958-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Satunnaislukujen generointi"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/generating-random-numbers.md"
+date: 2024-01-27 20:33:33.010958-07:00
+description: "Satunnaislukujen generointi on ohjelmoinnissa perusteht\xE4v\xE4, jota\
+  \ k\xE4ytet\xE4\xE4n kaikessa datan otannasta pelikehitykseen. Fish Shelliss\xE4\
+  \ j\xE4rjestelm\xE4ty\xF6kalujen\u2026"
+lastmod: 2024-02-18 23:09:08.077138
+model: gpt-4-0125-preview
+summary: "Satunnaislukujen generointi on ohjelmoinnissa perusteht\xE4v\xE4, jota k\xE4\
+  ytet\xE4\xE4n kaikessa datan otannasta pelikehitykseen. Fish Shelliss\xE4 j\xE4\
+  rjestelm\xE4ty\xF6kalujen\u2026"
+title: Satunnaislukujen generointi
 ---
 
 {{< edit_this_page >}}

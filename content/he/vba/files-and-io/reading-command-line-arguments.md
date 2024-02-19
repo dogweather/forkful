@@ -1,14 +1,31 @@
 ---
-title:                "קריאת ארגומנטים משורת הפקודה"
 aliases:
 - /he/vba/reading-command-line-arguments/
-date:                  2024-02-01T22:00:18.280580-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "קריאת ארגומנטים משורת הפקודה"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/vba/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:18.280580-07:00
+description: "\u05E7\u05E8\u05D9\u05D0\u05EA \u05D0\u05E8\u05D2\u05D5\u05DE\u05E0\u05D8\
+  \u05D9\u05DD \u05E9\u05DC \u05E9\u05D5\u05E8\u05EA \u05D4\u05E4\u05E7\u05D5\u05D3\
+  \u05D4 \u05D1-Visual Basic for Applications (VBA) \u05DB\u05D5\u05DC\u05DC\u05EA\
+  \ \u05D2\u05D9\u05E9\u05D4 \u05DC\u05E4\u05E8\u05DE\u05D8\u05E8\u05D9\u05DD \u05E9\
+  \u05D4\u05D5\u05E2\u05D1\u05E8\u05D5 \u05DC\u05EA\u05D5\u05DB\u05E0\u05D9\u05EA\
+  \ \u05E9\u05DC\u05DA \u05D1\u05E2\u05EA \u05D4\u05D4\u05E4\u05E2\u05DC\u05D4. \u05D4\
+  \u05D8\u05DB\u05E0\u05D9\u05E7\u05D4 \u05D4\u05D6\u05D5 \u05DE\u05E9\u05DE\u05E9\
+  \u05EA \u05DC\u05E2\u05D9\u05EA\u05D9\u05DD \u05E7\u05E8\u05D5\u05D1\u05D5\u05EA\
+  \u2026"
+lastmod: 2024-02-18 23:08:52.679267
+model: gpt-4-0125-preview
+summary: "\u05E7\u05E8\u05D9\u05D0\u05EA \u05D0\u05E8\u05D2\u05D5\u05DE\u05E0\u05D8\
+  \u05D9\u05DD \u05E9\u05DC \u05E9\u05D5\u05E8\u05EA \u05D4\u05E4\u05E7\u05D5\u05D3\
+  \u05D4 \u05D1-Visual Basic for Applications (VBA) \u05DB\u05D5\u05DC\u05DC\u05EA\
+  \ \u05D2\u05D9\u05E9\u05D4 \u05DC\u05E4\u05E8\u05DE\u05D8\u05E8\u05D9\u05DD \u05E9\
+  \u05D4\u05D5\u05E2\u05D1\u05E8\u05D5 \u05DC\u05EA\u05D5\u05DB\u05E0\u05D9\u05EA\
+  \ \u05E9\u05DC\u05DA \u05D1\u05E2\u05EA \u05D4\u05D4\u05E4\u05E2\u05DC\u05D4. \u05D4\
+  \u05D8\u05DB\u05E0\u05D9\u05E7\u05D4 \u05D4\u05D6\u05D5 \u05DE\u05E9\u05DE\u05E9\
+  \u05EA \u05DC\u05E2\u05D9\u05EA\u05D9\u05DD \u05E7\u05E8\u05D5\u05D1\u05D5\u05EA\
+  \u2026"
+title: "\u05E7\u05E8\u05D9\u05D0\u05EA \u05D0\u05E8\u05D2\u05D5\u05DE\u05E0\u05D8\u05D9\
+  \u05DD \u05DE\u05E9\u05D5\u05E8\u05EA \u05D4\u05E4\u05E7\u05D5\u05D3\u05D4"
 ---
 
 {{< edit_this_page >}}

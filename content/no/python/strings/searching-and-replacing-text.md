@@ -1,13 +1,16 @@
 ---
-title:                "Søking og erstatting av tekst"
 aliases:
 - /no/python/searching-and-replacing-text/
-date:                  2024-01-20T17:58:24.262059-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Søking og erstatting av tekst"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:24.262059-07:00
+description: "S\xF8k og erstatt i tekst betyr \xE5 finne spesifikke ord eller fraser\
+  \ og bytte dem ut med andre. Programmerere bruker dette til \xE5 oppdatere kode,\
+  \ rette feil\u2026"
+lastmod: 2024-02-18 23:08:53.510182
+model: gpt-4-1106-preview
+summary: "S\xF8k og erstatt i tekst betyr \xE5 finne spesifikke ord eller fraser og\
+  \ bytte dem ut med andre. Programmerere bruker dette til \xE5 oppdatere kode, rette\
+  \ feil\u2026"
+title: "S\xF8king og erstatting av tekst"
 ---
 
 {{< edit_this_page >}}

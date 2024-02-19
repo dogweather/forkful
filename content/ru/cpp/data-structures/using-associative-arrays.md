@@ -1,15 +1,30 @@
 ---
-title:                "Использование ассоциативных массивов"
 aliases:
 - /ru/cpp/using-associative-arrays/
-date:                  2024-01-30T19:10:40.290041-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Использование ассоциативных массивов"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/cpp/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:40.290041-07:00
+description: "\u0410\u0441\u0441\u043E\u0446\u0438\u0430\u0442\u0438\u0432\u043D\u044B\
+  \u0435 \u043C\u0430\u0441\u0441\u0438\u0432\u044B, \u0438\u0437\u0432\u0435\u0441\
+  \u0442\u043D\u044B\u0435 \u0432 C++ \u043A\u0430\u043A `std::map` \u0438\u043B\u0438\
+  \ `std::unordered_map`, \u0437\u0430\u043A\u0440\u044B\u0432\u0430\u044E\u0442 \u043F\
+  \u0440\u043E\u0431\u0435\u043B \u043C\u0435\u0436\u0434\u0443 \u0438\u043D\u0434\
+  \u0435\u043A\u0441\u0430\u043C\u0438 \u043C\u0430\u0441\u0441\u0438\u0432\u043E\u0432\
+  \ \u0438 \u0434\u0430\u043D\u043D\u044B\u043C\u0438 \u0440\u0435\u0430\u043B\u044C\
+  \u043D\u043E\u0433\u043E \u043C\u0438\u0440\u0430,\u2026"
+lastmod: 2024-02-18 23:08:57.349404
+model: gpt-4-0125-preview
+summary: "\u0410\u0441\u0441\u043E\u0446\u0438\u0430\u0442\u0438\u0432\u043D\u044B\
+  \u0435 \u043C\u0430\u0441\u0441\u0438\u0432\u044B, \u0438\u0437\u0432\u0435\u0441\
+  \u0442\u043D\u044B\u0435 \u0432 C++ \u043A\u0430\u043A `std::map` \u0438\u043B\u0438\
+  \ `std::unordered_map`, \u0437\u0430\u043A\u0440\u044B\u0432\u0430\u044E\u0442 \u043F\
+  \u0440\u043E\u0431\u0435\u043B \u043C\u0435\u0436\u0434\u0443 \u0438\u043D\u0434\
+  \u0435\u043A\u0441\u0430\u043C\u0438 \u043C\u0430\u0441\u0441\u0438\u0432\u043E\u0432\
+  \ \u0438 \u0434\u0430\u043D\u043D\u044B\u043C\u0438 \u0440\u0435\u0430\u043B\u044C\
+  \u043D\u043E\u0433\u043E \u043C\u0438\u0440\u0430,\u2026"
+title: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435\
+  \ \u0430\u0441\u0441\u043E\u0446\u0438\u0430\u0442\u0438\u0432\u043D\u044B\u0445\
+  \ \u043C\u0430\u0441\u0441\u0438\u0432\u043E\u0432"
 ---
 
 {{< edit_this_page >}}

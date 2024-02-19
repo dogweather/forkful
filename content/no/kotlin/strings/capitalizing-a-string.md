@@ -1,14 +1,18 @@
 ---
-title:                "Sette stor bokstav i en streng"
 aliases:
 - /no/kotlin/capitalizing-a-string/
-date:                  2024-02-03T19:05:44.183840-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sette stor bokstav i en streng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:44.183840-07:00
+description: "\xC5 gj\xF8re om en streng til stor forbokstav i programmering inneb\xE6\
+  rer \xE5 konvertere det f\xF8rste tegnet i strengen til en stor bokstav hvis det\
+  \ ikke allerede er\u2026"
+lastmod: 2024-02-18 23:08:53.835280
+model: gpt-4-0125-preview
+summary: "\xC5 gj\xF8re om en streng til stor forbokstav i programmering inneb\xE6\
+  rer \xE5 konvertere det f\xF8rste tegnet i strengen til en stor bokstav hvis det\
+  \ ikke allerede er\u2026"
+title: Sette stor bokstav i en streng
 ---
 
 {{< edit_this_page >}}

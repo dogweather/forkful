@@ -1,14 +1,17 @@
 ---
-title:                "Analisando HTML"
 aliases:
 - /pt/c-sharp/parsing-html/
-date:                  2024-02-03T19:11:43.733575-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analisando HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:11:43.733575-07:00
+description: "Analisar HTML na programa\xE7\xE3o envolve analisar a estrutura de um\
+  \ documento HTML, permitindo extrair, manipular e interagir com seu conte\xFAdo\
+  \ de forma\u2026"
+lastmod: 2024-02-18 23:08:58.155290
+model: gpt-4-0125-preview
+summary: "Analisar HTML na programa\xE7\xE3o envolve analisar a estrutura de um documento\
+  \ HTML, permitindo extrair, manipular e interagir com seu conte\xFAdo de forma\u2026"
+title: Analisando HTML
 ---
 
 {{< edit_this_page >}}

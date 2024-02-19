@@ -1,13 +1,16 @@
 ---
-title:                "Usando um depurador"
 aliases:
 - /pt/powershell/using-a-debugger/
-date:                  2024-01-26T04:08:48.394903-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando um depurador"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/powershell/using-a-debugger.md"
+date: 2024-01-26 04:08:48.394903-07:00
+description: "Usar um depurador significa definir pontos de interrup\xE7\xE3o, acompanhar\
+  \ os passos do seu c\xF3digo, observar vari\xE1veis e inspecionar o estado do seu\
+  \ programa\u2026"
+lastmod: 2024-02-18 23:08:58.373270
+model: gpt-4-0125-preview
+summary: "Usar um depurador significa definir pontos de interrup\xE7\xE3o, acompanhar\
+  \ os passos do seu c\xF3digo, observar vari\xE1veis e inspecionar o estado do seu\
+  \ programa\u2026"
+title: Usando um depurador
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Reading command line arguments"
 aliases:
 - /en/fish-shell/reading-command-line-arguments/
-date:                  2024-01-20T17:56:02.966338-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Reading command line arguments"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:02.966338-07:00
+description: "Reading command line arguments is grabbing the extra bits you type after\
+  \ your script's name, like secret handshakes to customize a script's behavior.\u2026"
+lastmod: 2024-02-18 23:09:11.496359
+model: gpt-4-1106-preview
+summary: "Reading command line arguments is grabbing the extra bits you type after\
+  \ your script's name, like secret handshakes to customize a script's behavior.\u2026"
+title: Reading command line arguments
 ---
 
 {{< edit_this_page >}}

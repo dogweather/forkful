@@ -1,14 +1,16 @@
 ---
-title:                "Analyse Syntaxique du HTML"
 aliases:
 - /fr/haskell/parsing-html/
-date:                  2024-02-03T19:12:09.960677-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analyse Syntaxique du HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:09.960677-07:00
+description: "Parser du HTML en Haskell vous permet d'extraire des donn\xE9es, de\
+  \ manipuler le contenu HTML ou d'interagir avec des pages web de mani\xE8re programmatique.\u2026"
+lastmod: 2024-02-18 23:09:08.872673
+model: gpt-4-0125-preview
+summary: "Parser du HTML en Haskell vous permet d'extraire des donn\xE9es, de manipuler\
+  \ le contenu HTML ou d'interagir avec des pages web de mani\xE8re programmatique.\u2026"
+title: Analyse Syntaxique du HTML
 ---
 
 {{< edit_this_page >}}

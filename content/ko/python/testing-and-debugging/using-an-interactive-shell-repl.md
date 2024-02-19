@@ -1,13 +1,26 @@
 ---
-title:                "인터랙티브 셸 (REPL) 사용하기"
 aliases:
 - /ko/python/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:17:11.261117-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "인터랙티브 셸 (REPL) 사용하기"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:17:11.261117-07:00
+description: "REPL(Read-Eval-Print Loop, \uC77D\uAE30-\uD3C9\uAC00-\uCD9C\uB825 \uBC18\
+  \uBCF5)\uC740 \uC0AC\uC6A9\uC790 \uC785\uB825\uC744 \uD55C \uBC88\uC5D0 \uD558\uB098\
+  \uC529 \uBC1B\uC544\uC11C \uC2E4\uD589\uD55C \uD6C4 \uACB0\uACFC\uB97C \uC0AC\uC6A9\
+  \uC790\uC5D0\uAC8C \uBC18\uD658\uD558\uB294 \uD504\uB85C\uADF8\uB798\uBC0D \uD658\
+  \uACBD\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774\uB97C\
+  \ \uBE60\uB978 \uD14C\uC2A4\uD2B8, \uD559\uC2B5, \uB514\uBC84\uAE45 \uB610\uB294\
+  \ \uC989\uC11D\uC5D0\uC11C \uACC4\uC0B0\uC744 \uC218\uD589\uD558\uAE30 \uC704\uD574\
+  \ \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:05.627330
+model: gpt-4-0125-preview
+summary: "REPL(Read-Eval-Print Loop, \uC77D\uAE30-\uD3C9\uAC00-\uCD9C\uB825 \uBC18\
+  \uBCF5)\uC740 \uC0AC\uC6A9\uC790 \uC785\uB825\uC744 \uD55C \uBC88\uC5D0 \uD558\uB098\
+  \uC529 \uBC1B\uC544\uC11C \uC2E4\uD589\uD55C \uD6C4 \uACB0\uACFC\uB97C \uC0AC\uC6A9\
+  \uC790\uC5D0\uAC8C \uBC18\uD658\uD558\uB294 \uD504\uB85C\uADF8\uB798\uBC0D \uD658\
+  \uACBD\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774\uB97C\
+  \ \uBE60\uB978 \uD14C\uC2A4\uD2B8, \uD559\uC2B5, \uB514\uBC84\uAE45 \uB610\uB294\
+  \ \uC989\uC11D\uC5D0\uC11C \uACC4\uC0B0\uC744 \uC218\uD589\uD558\uAE30 \uC704\uD574\
+  \ \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,28 @@
 ---
-title:                "使用TOML工作"
 aliases:
 - /zh/google-apps-script/working-with-toml/
-date:                  2024-02-01T22:06:14.142194-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用TOML工作"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/google-apps-script/working-with-toml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:06:14.142194-07:00
+description: "TOML\uFF0C\u5373 Tom's Obvious, Minimal Language\uFF08\u6C64\u59C6\u7684\
+  \u663E\u800C\u6613\u89C1\u7684\u6700\u7B80\u8BED\u8A00\uFF09\uFF0C\u662F\u4E00\u79CD\
+  \u914D\u7F6E\u6587\u4EF6\u683C\u5F0F\uFF0C\u56E0\u5176\u6E05\u6670\u7684\u8BED\u4E49\
+  \u800C\u6613\u4E8E\u9605\u8BFB\u3002\u7A0B\u5E8F\u5458\u7ECF\u5E38\u4F7F\u7528\u5B83\
+  \u6765\u5904\u7406\u5E94\u7528\u7A0B\u5E8F\u4E2D\u7684\u914D\u7F6E\u6587\u4EF6\uFF0C\
+  \u56E0\u4E3A\u5B83\u76F4\u63A5\u4E14\u6613\u4E8E\u4EBA\u7C7B\u9605\u8BFB\uFF0C\u4F7F\
+  \u5F97\u8DE8\u4E0D\u540C\u73AF\u5883\u4E0B\u5E94\u7528\u7A0B\u5E8F\u8BBE\u7F6E\u548C\
+  \u914D\u7F6E\u7684\u7BA1\u7406\u53D8\u5F97\u65E0\u7F1D\u3002"
+lastmod: 2024-02-18 23:08:58.773996
+model: gpt-4-0125-preview
+summary: "TOML\uFF0C\u5373 Tom's Obvious, Minimal Language\uFF08\u6C64\u59C6\u7684\
+  \u663E\u800C\u6613\u89C1\u7684\u6700\u7B80\u8BED\u8A00\uFF09\uFF0C\u662F\u4E00\u79CD\
+  \u914D\u7F6E\u6587\u4EF6\u683C\u5F0F\uFF0C\u56E0\u5176\u6E05\u6670\u7684\u8BED\u4E49\
+  \u800C\u6613\u4E8E\u9605\u8BFB\u3002\u7A0B\u5E8F\u5458\u7ECF\u5E38\u4F7F\u7528\u5B83\
+  \u6765\u5904\u7406\u5E94\u7528\u7A0B\u5E8F\u4E2D\u7684\u914D\u7F6E\u6587\u4EF6\uFF0C\
+  \u56E0\u4E3A\u5B83\u76F4\u63A5\u4E14\u6613\u4E8E\u4EBA\u7C7B\u9605\u8BFB\uFF0C\u4F7F\
+  \u5F97\u8DE8\u4E0D\u540C\u73AF\u5883\u4E0B\u5E94\u7528\u7A0B\u5E8F\u8BBE\u7F6E\u548C\
+  \u914D\u7F6E\u7684\u7BA1\u7406\u53D8\u5F97\u65E0\u7F1D\u3002"
+title: "\u4F7F\u7528TOML\u5DE5\u4F5C"
 ---
 
 {{< edit_this_page >}}

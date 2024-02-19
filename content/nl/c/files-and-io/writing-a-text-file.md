@@ -1,14 +1,16 @@
 ---
-title:                "Een tekstbestand schrijven"
 aliases:
 - /nl/c/writing-a-text-file/
-date:                  2024-02-03T18:14:30.019326-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tekstbestand schrijven"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:14:30.019326-07:00
+description: "Een tekstbestand schrijven in C houdt in dat je een bestand maakt of\
+  \ opent in schrijfmodus en vervolgens de bestands-I/O-functies van C gebruikt om\u2026"
+lastmod: 2024-02-18 23:09:02.393782
+model: gpt-4-0125-preview
+summary: "Een tekstbestand schrijven in C houdt in dat je een bestand maakt of opent\
+  \ in schrijfmodus en vervolgens de bestands-I/O-functies van C gebruikt om\u2026"
+title: Een tekstbestand schrijven
 ---
 
 {{< edit_this_page >}}

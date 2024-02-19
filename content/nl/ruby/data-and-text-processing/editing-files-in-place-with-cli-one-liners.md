@@ -1,15 +1,16 @@
 ---
-title:                "Bestanden ter plekke bewerken met CLI one-liners"
 aliases:
 - /nl/ruby/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-28T21:59:53.300909-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bestanden ter plekke bewerken met CLI one-liners"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/editing-files-in-place-with-cli-one-liners.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:53.300909-07:00
+description: "Bestanden ter plaatse bewerken met CLI (Command Line Interface) one-liners\
+  \ in Ruby stelt je in staat om bestanden rechtstreeks vanuit je terminal te\u2026"
+lastmod: 2024-02-18 23:09:02.417829
+model: gpt-4-0125-preview
+summary: "Bestanden ter plaatse bewerken met CLI (Command Line Interface) one-liners\
+  \ in Ruby stelt je in staat om bestanden rechtstreeks vanuit je terminal te\u2026"
+title: Bestanden ter plekke bewerken met CLI one-liners
 ---
 
 {{< edit_this_page >}}

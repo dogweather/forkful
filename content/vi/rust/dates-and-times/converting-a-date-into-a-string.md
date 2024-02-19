@@ -1,15 +1,20 @@
 ---
-title:                "Chuyển đổi một ngày thành chuỗi"
 aliases:
 - /vi/rust/converting-a-date-into-a-string/
-date:                  2024-01-28T21:57:45.939818-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Chuyển đổi một ngày thành chuỗi"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:57:45.939818-07:00
+description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y sang d\u1EA1ng chu\u1ED7\
+  i trong Rust cho ph\xE9p hi\u1EC3n th\u1ECB ng\xE0y th\xE1ng d\u01B0\u1EDBi d\u1EA1\
+  ng d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\u1EDDi. Ch\xFAng ta l\xE0m \u0111i\u1EC1\
+  u n\xE0y cho giao di\u1EC7n ng\u01B0\u1EDDi d\xF9ng\u2026"
+lastmod: 2024-02-18 23:08:50.474733
+model: gpt-4-0125-preview
+summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y sang d\u1EA1ng chu\u1ED7i trong\
+  \ Rust cho ph\xE9p hi\u1EC3n th\u1ECB ng\xE0y th\xE1ng d\u01B0\u1EDBi d\u1EA1ng\
+  \ d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\u1EDDi. Ch\xFAng ta l\xE0m \u0111i\u1EC1\
+  u n\xE0y cho giao di\u1EC7n ng\u01B0\u1EDDi d\xF9ng\u2026"
+title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,22 @@
 ---
-title:                "使用命令行一行命令操作文件"
 aliases:
 - /zh/powershell/manipulating-files-with-cli-one-liners/
-date:                  2024-01-27T16:22:05.636095-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用命令行一行命令操作文件"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/manipulating-files-with-cli-one-liners.md"
+date: 2024-01-27 16:22:05.636095-07:00
+description: "\u4F7F\u7528 PowerShell \u4E2D\u7684 CLI \u5355\u884C\u547D\u4EE4\u64CD\
+  \u4F5C\u6587\u4EF6\uFF0C\u662F\u5173\u4E8E\u5982\u4F55\u76F4\u63A5\u4ECE\u547D\u4EE4\
+  \u884C\u5FEB\u901F\u66F4\u6539\u3001\u79FB\u52A8\u6216\u83B7\u53D6\u6587\u4EF6\u6570\
+  \u636E\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u6548\u7387\uFF1B\
+  \u5B83\u6BD4\u5BFC\u822A GUI \u6216\u4E3A\u7B80\u5355\u4EFB\u52A1\u7F16\u5199\u5197\
+  \u957F\u7684\u811A\u672C\u8981\u5FEB\u3002"
+lastmod: 2024-02-18 23:08:59.327237
+model: gpt-4-0125-preview
+summary: "\u4F7F\u7528 PowerShell \u4E2D\u7684 CLI \u5355\u884C\u547D\u4EE4\u64CD\u4F5C\
+  \u6587\u4EF6\uFF0C\u662F\u5173\u4E8E\u5982\u4F55\u76F4\u63A5\u4ECE\u547D\u4EE4\u884C\
+  \u5FEB\u901F\u66F4\u6539\u3001\u79FB\u52A8\u6216\u83B7\u53D6\u6587\u4EF6\u6570\u636E\
+  \u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u6548\u7387\uFF1B\u5B83\
+  \u6BD4\u5BFC\u822A GUI \u6216\u4E3A\u7B80\u5355\u4EFB\u52A1\u7F16\u5199\u5197\u957F\
+  \u7684\u811A\u672C\u8981\u5FEB\u3002"
+title: "\u4F7F\u7528\u547D\u4EE4\u884C\u4E00\u884C\u547D\u4EE4\u64CD\u4F5C\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

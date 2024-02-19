@@ -1,14 +1,16 @@
 ---
-title:                "Utilizzare un debugger"
 aliases:
 - /it/c/using-a-debugger/
-date:                  2024-02-03T18:09:45.286297-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzare un debugger"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/using-a-debugger.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:09:45.286297-07:00
+description: "I debugger in C sono strumenti specializzati che consentono agli sviluppatori\
+  \ di analizzare passo dopo passo il proprio codice, ispezionare le variabili e\u2026"
+lastmod: 2024-02-18 23:08:56.343336
+model: gpt-4-0125-preview
+summary: "I debugger in C sono strumenti specializzati che consentono agli sviluppatori\
+  \ di analizzare passo dopo passo il proprio codice, ispezionare le variabili e\u2026"
+title: Utilizzare un debugger
 ---
 
 {{< edit_this_page >}}

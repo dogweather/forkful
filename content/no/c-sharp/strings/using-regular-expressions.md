@@ -1,14 +1,18 @@
 ---
-title:                "Bruke regulære uttrykk"
 aliases:
 - /no/c-sharp/using-regular-expressions/
-date:                  2024-02-03T19:16:31.690021-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke regulære uttrykk"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:16:31.690021-07:00
+description: "Regul\xE6re uttrykk (regex) i C# er et kraftig verkt\xF8y for m\xF8\
+  nsters\xF8king i strenger, som lar programmerere s\xF8ke etter, erstatte, splitte\
+  \ eller trekke ut data\u2026"
+lastmod: 2024-02-18 23:08:53.883954
+model: gpt-4-0125-preview
+summary: "Regul\xE6re uttrykk (regex) i C# er et kraftig verkt\xF8y for m\xF8nsters\xF8\
+  king i strenger, som lar programmerere s\xF8ke etter, erstatte, splitte eller trekke\
+  \ ut data\u2026"
+title: "Bruke regul\xE6re uttrykk"
 ---
 
 {{< edit_this_page >}}

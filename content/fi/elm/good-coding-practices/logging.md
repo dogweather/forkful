@@ -1,13 +1,14 @@
 ---
-title:                "Lokitus"
 aliases:
 - /fi/elm/logging/
-date:                  2024-01-26T01:03:10.678966-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lokitus"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/logging.md"
+date: 2024-01-26 01:03:10.678966-07:00
+description: "Lokitus on pohjimmiltaan prosessi, jossa tallennetaan tapahtumia ja\
+  \ ohjelmiston tuottamia tietoja sen suorituksen aikana, ajattele sit\xE4 ohjelmiston\u2026"
+lastmod: 2024-02-18 23:09:07.535741
+model: gpt-4-1106-preview
+summary: "Lokitus on pohjimmiltaan prosessi, jossa tallennetaan tapahtumia ja ohjelmiston\
+  \ tuottamia tietoja sen suorituksen aikana, ajattele sit\xE4 ohjelmiston\u2026"
+title: Lokitus
 ---
 
 {{< edit_this_page >}}

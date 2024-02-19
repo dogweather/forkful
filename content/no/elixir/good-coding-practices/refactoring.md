@@ -1,13 +1,16 @@
 ---
-title:                "Refaktorering"
 aliases:
 - /no/elixir/refactoring/
-date:                  2024-01-26T01:18:23.770597-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refaktorering"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/refactoring.md"
+date: 2024-01-26 01:18:23.770597-07:00
+description: "Refaktorering er prosessen med \xE5 restrukturere eksisterende kode\
+  \ uten \xE5 endre dens eksterne oppf\xF8rsel, med m\xE5l om \xE5 forbedre ikke-funksjonelle\
+  \ attributter\u2026"
+lastmod: 2024-02-18 23:08:53.612743
+model: gpt-4-0125-preview
+summary: "Refaktorering er prosessen med \xE5 restrukturere eksisterende kode uten\
+  \ \xE5 endre dens eksterne oppf\xF8rsel, med m\xE5l om \xE5 forbedre ikke-funksjonelle\
+  \ attributter\u2026"
+title: Refaktorering
 ---
 
 {{< edit_this_page >}}

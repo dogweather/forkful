@@ -1,13 +1,14 @@
 ---
-title:                "Å jobbe med komplekse tall"
 aliases:
 - /no/haskell/working-with-complex-numbers/
-date:                  2024-01-26T04:41:47.812184-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å jobbe med komplekse tall"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/working-with-complex-numbers.md"
+date: 2024-01-26 04:41:47.812184-07:00
+description: "Komplekse tall, som best\xE5r av en reell og en imagin\xE6r del, er\
+  \ essensielle i ulike beregningsfelt som ingeni\xF8rvitenskap, fysikk og signalbehandling.\u2026"
+lastmod: 2024-02-18 23:08:53.929100
+model: gpt-4-0125-preview
+summary: "Komplekse tall, som best\xE5r av en reell og en imagin\xE6r del, er essensielle\
+  \ i ulike beregningsfelt som ingeni\xF8rvitenskap, fysikk og signalbehandling.\u2026"
+title: "\xC5 jobbe med komplekse tall"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie argumentów linii poleceń"
 aliases:
 - /pl/arduino/reading-command-line-arguments/
-date:                  2024-01-20T17:55:39.237148-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie argumentów linii poleceń"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:39.237148-07:00
+description: "\"Co i Dlaczego?\" Czytanie argument\xF3w linii polece\u0144 to spos\xF3\
+  b na wprowadzanie danych do programu, gdy jest on uruchamiany. Programi\u015Bci\
+  \ u\u017Cywaj\u0105 tego, by\u2026"
+lastmod: 2024-02-18 23:08:49.884287
+model: gpt-4-1106-preview
+summary: "\"Co i Dlaczego?\" Czytanie argument\xF3w linii polece\u0144 to spos\xF3\
+  b na wprowadzanie danych do programu, gdy jest on uruchamiany. Programi\u015Bci\
+  \ u\u017Cywaj\u0105 tego, by\u2026"
+title: "Odczytywanie argument\xF3w linii polece\u0144"
 ---
 
 {{< edit_this_page >}}

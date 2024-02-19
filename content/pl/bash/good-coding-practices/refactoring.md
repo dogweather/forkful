@@ -1,13 +1,14 @@
 ---
-title:                "Refaktoryzacja"
 aliases:
 - /pl/bash/refactoring/
-date:                  2024-01-26T01:16:40.593487-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refaktoryzacja"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/refactoring.md"
+date: 2024-01-26 01:16:40.593487-07:00
+description: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu komputerowego\
+  \ bez zmiany jego zewn\u0119trznego zachowania. Jest to kluczowa praktyka, aby\u2026"
+lastmod: 2024-02-18 23:08:49.793289
+model: gpt-4-0125-preview
+summary: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu komputerowego\
+  \ bez zmiany jego zewn\u0119trznego zachowania. Jest to kluczowa praktyka, aby\u2026"
+title: Refaktoryzacja
 ---
 
 {{< edit_this_page >}}

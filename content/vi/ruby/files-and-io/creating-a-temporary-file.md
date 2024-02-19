@@ -1,15 +1,20 @@
 ---
-title:                "Tạo một tập tin tạm thời"
 aliases:
 - /vi/ruby/creating-a-temporary-file/
-date:                  2024-01-28T21:58:44.751962-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tạo một tập tin tạm thời"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/creating-a-temporary-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:58:44.751962-07:00
+description: "Trong Ruby, vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m gi\xFAp b\u1EA3\
+  o v\u1EC7 d\u1EEF li\u1EC7u nh\u1EA1y c\u1EA3m v\xE0 qu\u1EA3n l\xFD nhu c\u1EA7\
+  u l\u01B0u tr\u1EEF tho\xE1ng qua. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5\
+  ng n\xF3 cho vi\u1EC7c x\u1EED l\xFD t\u1EC7p ng\u1EAFn\u2026"
+lastmod: 2024-02-18 23:08:51.307383
+model: gpt-4-0125-preview
+summary: "Trong Ruby, vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m gi\xFAp b\u1EA3\
+  o v\u1EC7 d\u1EEF li\u1EC7u nh\u1EA1y c\u1EA3m v\xE0 qu\u1EA3n l\xFD nhu c\u1EA7\
+  u l\u01B0u tr\u1EEF tho\xE1ng qua. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5\
+  ng n\xF3 cho vi\u1EC7c x\u1EED l\xFD t\u1EC7p ng\u1EAFn\u2026"
+title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 ---
 
 {{< edit_this_page >}}

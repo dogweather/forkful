@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonojen osien poimiminen"
 aliases:
 - /fi/haskell/extracting-substrings/
-date:                  2024-01-20T17:46:05.335070-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonojen osien poimiminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/extracting-substrings.md"
+date: 2024-01-20 17:46:05.335070-07:00
+description: "Subjonojen poiminta tarkoittaa merkkijonon osien irrottamista. Ohjelmoijat\
+  \ tekev\xE4t sit\xE4, kun tarvitsevat k\xE4sitell\xE4 merkkijonojen erityisi\xE4\
+  \ segmenttej\xE4 \u2013\u2026"
+lastmod: 2024-02-18 23:09:07.654666
+model: gpt-4-1106-preview
+summary: "Subjonojen poiminta tarkoittaa merkkijonon osien irrottamista. Ohjelmoijat\
+  \ tekev\xE4t sit\xE4, kun tarvitsevat k\xE4sitell\xE4 merkkijonojen erityisi\xE4\
+  \ segmenttej\xE4 \u2013\u2026"
+title: Merkkijonojen osien poimiminen
 ---
 
 {{< edit_this_page >}}

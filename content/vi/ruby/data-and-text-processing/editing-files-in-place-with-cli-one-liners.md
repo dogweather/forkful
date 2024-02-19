@@ -1,15 +1,21 @@
 ---
-title:                "Chỉnh sửa file tại chỗ với câu lệnh CLI ngắn gọn"
 aliases:
 - /vi/ruby/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-28T22:00:51.728102-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Chỉnh sửa file tại chỗ với câu lệnh CLI ngắn gọn"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/editing-files-in-place-with-cli-one-liners.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:00:51.728102-07:00
+description: "Ch\u1EC9nh s\u1EEDa t\u1EADp tin t\u1EA1i ch\u1ED7 v\u1EDBi CLI (Giao\
+  \ di\u1EC7n D\xF2ng L\u1EC7nh) b\u1EB1ng m\u1ED9t d\xF2ng l\u1EC7nh trong Ruby cho\
+  \ ph\xE9p b\u1EA1n s\u1EEDa \u0111\u1ED5i t\u1EADp tin tr\u1EF1c ti\u1EBFp t\u1EEB\
+  \ terminal c\u1EE7a b\u1EA1n, kh\xF4ng\u2026"
+lastmod: 2024-02-18 23:08:51.280110
+model: gpt-4-0125-preview
+summary: "Ch\u1EC9nh s\u1EEDa t\u1EADp tin t\u1EA1i ch\u1ED7 v\u1EDBi CLI (Giao di\u1EC7\
+  n D\xF2ng L\u1EC7nh) b\u1EB1ng m\u1ED9t d\xF2ng l\u1EC7nh trong Ruby cho ph\xE9\
+  p b\u1EA1n s\u1EEDa \u0111\u1ED5i t\u1EADp tin tr\u1EF1c ti\u1EBFp t\u1EEB terminal\
+  \ c\u1EE7a b\u1EA1n, kh\xF4ng\u2026"
+title: "Ch\u1EC9nh s\u1EEDa file t\u1EA1i ch\u1ED7 v\u1EDBi c\xE2u l\u1EC7nh CLI ng\u1EAF\
+  n g\u1ECDn"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Interaktiivisen komentotulkin (REPL) käyttö"
 aliases:
 - /fi/haskell/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:14:57.385625-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interaktiivisen komentotulkin (REPL) käyttö"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:14:57.385625-07:00
+description: "Interaktiivinen kuori eli REPL (Read-Eval-Print Loop) Haskellissa antaa\
+  \ sinun suorittaa koodinp\xE4tki\xE4 reaaliajassa. Se on leikkikentt\xE4 nopeaa\
+  \ palautetta,\u2026"
+lastmod: 2024-02-18 23:09:07.667900
+model: gpt-4-0125-preview
+summary: "Interaktiivinen kuori eli REPL (Read-Eval-Print Loop) Haskellissa antaa\
+  \ sinun suorittaa koodinp\xE4tki\xE4 reaaliajassa. Se on leikkikentt\xE4 nopeaa\
+  \ palautetta,\u2026"
+title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

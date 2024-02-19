@@ -1,14 +1,14 @@
 ---
-title:                "TOMLを操作する"
 aliases:
 - /ja/c/working-with-toml/
-date:                  2024-02-03T18:12:45.945263-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "TOMLを操作する"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/working-with-toml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:12:45.945263-07:00
+description: "TOML\uFF08Tom's Obvious, Minimal\u2026"
+lastmod: 2024-02-18 23:08:55.371954
+model: gpt-4-0125-preview
+summary: "TOML\uFF08Tom's Obvious, Minimal\u2026"
+title: "TOML\u3092\u64CD\u4F5C\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

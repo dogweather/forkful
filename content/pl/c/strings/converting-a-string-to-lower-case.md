@@ -1,14 +1,18 @@
 ---
-title:                "Konwersja łańcucha znaków na małe litery"
 aliases:
 - /pl/c/converting-a-string-to-lower-case/
-date:                  2024-02-03T17:54:37.775217-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Konwersja łańcucha znaków na małe litery"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:37.775217-07:00
+description: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery w j\u0119\
+  zyku C polega na przekszta\u0142ceniu wszystkich wielkich liter w danym \u0142a\u0144\
+  cuchu na odpowiadaj\u0105ce im ma\u0142e litery.\u2026"
+lastmod: 2024-02-18 23:08:50.065939
+model: gpt-4-0125-preview
+summary: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery w j\u0119zyku\
+  \ C polega na przekszta\u0142ceniu wszystkich wielkich liter w danym \u0142a\u0144\
+  cuchu na odpowiadaj\u0105ce im ma\u0142e litery.\u2026"
+title: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery"
 ---
 
 {{< edit_this_page >}}

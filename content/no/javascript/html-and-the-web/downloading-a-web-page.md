@@ -1,13 +1,16 @@
 ---
-title:                "Nedlasting av en nettside"
 aliases:
 - /no/javascript/downloading-a-web-page/
-date:                  2024-01-20T17:44:13.695964-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Nedlasting av en nettside"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/downloading-a-web-page.md"
+date: 2024-01-20 17:44:13.695964-07:00
+description: "Nettsider lastes ned for \xE5 hente og bruke data eller innhold uten\
+  \ en nettleser. Programmerere gj\xF8r dette for \xE5 analysere informasjonen, teste\
+  \ nettsider\u2026"
+lastmod: 2024-02-18 23:08:54.307989
+model: gpt-4-1106-preview
+summary: "Nettsider lastes ned for \xE5 hente og bruke data eller innhold uten en\
+  \ nettleser. Programmerere gj\xF8r dette for \xE5 analysere informasjonen, teste\
+  \ nettsider\u2026"
+title: Nedlasting av en nettside
 ---
 
 {{< edit_this_page >}}

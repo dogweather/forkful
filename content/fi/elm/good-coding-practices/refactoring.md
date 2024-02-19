@@ -1,13 +1,16 @@
 ---
-title:                "Koodin refaktorointi"
 aliases:
 - /fi/elm/refactoring/
-date:                  2024-01-26T01:18:42.817301-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Koodin refaktorointi"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/refactoring.md"
+date: 2024-01-26 01:18:42.817301-07:00
+description: "Refaktorointi on k\xE4yt\xE4nn\xF6ss\xE4 koodikannan kev\xE4tsiivous\
+  \ \u2013 siin\xE4 uudelleenj\xE4rjestet\xE4\xE4n olemassa olevaa koodia muuttamatta\
+  \ sen ulkoista toimintaa. Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:07.538003
+model: gpt-4-0125-preview
+summary: "Refaktorointi on k\xE4yt\xE4nn\xF6ss\xE4 koodikannan kev\xE4tsiivous \u2013\
+  \ siin\xE4 uudelleenj\xE4rjestet\xE4\xE4n olemassa olevaa koodia muuttamatta sen\
+  \ ulkoista toimintaa. Ohjelmoijat\u2026"
+title: Koodin refaktorointi
 ---
 
 {{< edit_this_page >}}

@@ -1,12 +1,15 @@
 ---
-title:                "Using associative arrays"
 aliases:
 - /en/vba/using-associative-arrays/
-date:                  2024-02-01T21:30:04.480138-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using associative arrays"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/vba/using-associative-arrays.md"
+date: 2024-02-01 21:30:04.480138-07:00
+description: "Associative arrays, often known as dictionaries in Visual Basic for\
+  \ Applications (VBA), allow programmers to create collections of key-value pairs.\
+  \ This\u2026"
+lastmod: 2024-02-18 23:09:10.882863
+model: gpt-4-0125-preview
+summary: "Associative arrays, often known as dictionaries in Visual Basic for Applications\
+  \ (VBA), allow programmers to create collections of key-value pairs. This\u2026"
+title: Using associative arrays
 ---
 
 {{< edit_this_page >}}

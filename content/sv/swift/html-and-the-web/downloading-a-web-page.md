@@ -1,13 +1,16 @@
 ---
-title:                "Hämta en webbsida"
 aliases:
 - /sv/swift/downloading-a-web-page/
-date:                  2024-01-20T17:45:19.404103-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Hämta en webbsida"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/downloading-a-web-page.md"
+date: 2024-01-20 17:45:19.404103-07:00
+description: "H\xE4mtning av en webbsida inneb\xE4r att ladda ner dess HTML-inneh\xE5\
+  ll. Programm\xF6rer g\xF6r detta f\xF6r att l\xE4sa eller bearbeta information fr\xE5\
+  n webben."
+lastmod: 2024-02-18 23:08:52.123365
+model: gpt-4-1106-preview
+summary: "H\xE4mtning av en webbsida inneb\xE4r att ladda ner dess HTML-inneh\xE5\
+  ll. Programm\xF6rer g\xF6r detta f\xF6r att l\xE4sa eller bearbeta information fr\xE5\
+  n webben."
+title: "H\xE4mta en webbsida"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Interaktiivisen komentotulkin (REPL) käyttö"
 aliases:
 - /fi/python/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:17:08.792030-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interaktiivisen komentotulkin (REPL) käyttö"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:17:08.792030-07:00
+description: "REPL, eli Read-Eval-Print -silmukka, on ohjelmointiymp\xE4rist\xF6,\
+  \ joka ottaa vastaan yksitt\xE4isi\xE4 k\xE4ytt\xE4j\xE4n sy\xF6tteit\xE4, suorittaa\
+  \ ne ja palauttaa tuloksen\u2026"
+lastmod: 2024-02-18 23:09:07.185438
+model: gpt-4-0125-preview
+summary: "REPL, eli Read-Eval-Print -silmukka, on ohjelmointiymp\xE4rist\xF6, joka\
+  \ ottaa vastaan yksitt\xE4isi\xE4 k\xE4ytt\xE4j\xE4n sy\xF6tteit\xE4, suorittaa\
+  \ ne ja palauttaa tuloksen\u2026"
+title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

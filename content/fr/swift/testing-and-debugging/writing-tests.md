@@ -1,14 +1,18 @@
 ---
-title:                "Rédaction de tests"
 aliases:
 - /fr/swift/writing-tests/
-date:                  2024-02-03T19:32:12.877505-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rédaction de tests"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:12.877505-07:00
+description: "\xC9crire des tests en Swift implique de cr\xE9er et d'ex\xE9cuter du\
+  \ code qui v\xE9rifie la justesse d'autres unit\xE9s de code dans votre application.\
+  \ Les programmeurs\u2026"
+lastmod: 2024-02-18 23:09:09.212488
+model: gpt-4-0125-preview
+summary: "\xC9crire des tests en Swift implique de cr\xE9er et d'ex\xE9cuter du code\
+  \ qui v\xE9rifie la justesse d'autres unit\xE9s de code dans votre application.\
+  \ Les programmeurs\u2026"
+title: "R\xE9daction de tests"
 ---
 
 {{< edit_this_page >}}

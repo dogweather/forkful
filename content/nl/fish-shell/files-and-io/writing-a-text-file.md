@@ -1,15 +1,16 @@
 ---
-title:                "Een tekstbestand schrijven"
 aliases:
 - /nl/fish-shell/writing-a-text-file/
-date:                  2024-01-28T22:12:39.584022-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tekstbestand schrijven"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/writing-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:39.584022-07:00
+description: "Schrijven naar een tekstbestand betekent het opslaan van gegevens zoals\
+  \ tekst of code op je computer. Programmeurs doen dit om configuraties op te slaan,\u2026"
+lastmod: 2024-02-18 23:09:02.345987
+model: gpt-4-0125-preview
+summary: "Schrijven naar een tekstbestand betekent het opslaan van gegevens zoals\
+  \ tekst of code op je computer. Programmeurs doen dit om configuraties op te slaan,\u2026"
+title: Een tekstbestand schrijven
 ---
 
 {{< edit_this_page >}}

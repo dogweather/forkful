@@ -1,13 +1,16 @@
 ---
-title:                "Wyszukiwanie i zamiana tekstu"
 aliases:
 - /pl/elm/searching-and-replacing-text/
-date:                  2024-01-20T17:57:44.333418-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wyszukiwanie i zamiana tekstu"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:44.333418-07:00
+description: "\"Co i dlaczego?\" Szukanie i zamiana tekstu to podstawowe operacje\
+  \ pozwalaj\u0105ce na lokalizowanie wzorc\xF3w w tek\u015Bcie oraz ich modyfikacj\u0119\
+  . Programi\u015Bci u\u017Cywaj\u0105\u2026"
+lastmod: 2024-02-18 23:08:49.504683
+model: gpt-4-1106-preview
+summary: "\"Co i dlaczego?\" Szukanie i zamiana tekstu to podstawowe operacje pozwalaj\u0105\
+  ce na lokalizowanie wzorc\xF3w w tek\u015Bcie oraz ich modyfikacj\u0119. Programi\u015B\
+  ci u\u017Cywaj\u0105\u2026"
+title: Wyszukiwanie i zamiana tekstu
 ---
 
 {{< edit_this_page >}}

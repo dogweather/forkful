@@ -1,13 +1,16 @@
 ---
-title:                "Lavorare con XML"
 aliases:
 - /it/clojure/working-with-xml/
-date:                  2024-01-26T04:29:04.694659-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/working-with-xml.md"
+date: 2024-01-26 04:29:04.694659-07:00
+description: "XML \xE8 un linguaggio di marcatura per codificare documenti in un modo\
+  \ che sia leggibile sia dall'uomo che dalla macchina. \xC8 fondamentale nei servizi\
+  \ web,\u2026"
+lastmod: 2024-02-18 23:08:55.584029
+model: gpt-4-0125-preview
+summary: "XML \xE8 un linguaggio di marcatura per codificare documenti in un modo\
+  \ che sia leggibile sia dall'uomo che dalla macchina. \xC8 fondamentale nei servizi\
+  \ web,\u2026"
+title: Lavorare con XML
 ---
 
 {{< edit_this_page >}}

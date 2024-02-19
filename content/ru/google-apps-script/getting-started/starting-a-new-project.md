@@ -1,14 +1,29 @@
 ---
-title:                "Начало нового проекта"
 aliases:
 - /ru/google-apps-script/starting-a-new-project/
-date:                  2024-02-01T22:03:19.591047-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Начало нового проекта"
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/google-apps-script/starting-a-new-project.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:19.591047-07:00
+description: "\u041D\u0430\u0447\u0430\u043B\u043E \u043D\u043E\u0432\u043E\u0433\u043E\
+  \ \u043F\u0440\u043E\u0435\u043A\u0442\u0430 \u0432 Google Apps Script (GAS) \u0432\
+  \u043A\u043B\u044E\u0447\u0430\u0435\u0442 \u0438\u043D\u0438\u0446\u0438\u0430\u043B\
+  \u0438\u0437\u0430\u0446\u0438\u044E \u0444\u0430\u0439\u043B\u0430 \u0441\u043A\
+  \u0440\u0438\u043F\u0442\u0430 \u0432 \u044D\u043A\u043E\u0441\u0438\u0441\u0442\
+  \u0435\u043C\u0435 Google (Google Drive, \u0414\u043E\u043A\u0443\u043C\u0435\u043D\
+  \u0442\u044B, \u0422\u0430\u0431\u043B\u0438\u0446\u044B \u0438 \u0442.\u0434.)\
+  \ \u0434\u043B\u044F\u2026"
+lastmod: 2024-02-18 23:08:56.481944
+model: gpt-4-0125-preview
+summary: "\u041D\u0430\u0447\u0430\u043B\u043E \u043D\u043E\u0432\u043E\u0433\u043E\
+  \ \u043F\u0440\u043E\u0435\u043A\u0442\u0430 \u0432 Google Apps Script (GAS) \u0432\
+  \u043A\u043B\u044E\u0447\u0430\u0435\u0442 \u0438\u043D\u0438\u0446\u0438\u0430\u043B\
+  \u0438\u0437\u0430\u0446\u0438\u044E \u0444\u0430\u0439\u043B\u0430 \u0441\u043A\
+  \u0440\u0438\u043F\u0442\u0430 \u0432 \u044D\u043A\u043E\u0441\u0438\u0441\u0442\
+  \u0435\u043C\u0435 Google (Google Drive, \u0414\u043E\u043A\u0443\u043C\u0435\u043D\
+  \u0442\u044B, \u0422\u0430\u0431\u043B\u0438\u0446\u044B \u0438 \u0442.\u0434.)\
+  \ \u0434\u043B\u044F\u2026"
+title: "\u041D\u0430\u0447\u0430\u043B\u043E \u043D\u043E\u0432\u043E\u0433\u043E\
+  \ \u043F\u0440\u043E\u0435\u043A\u0442\u0430"
 ---
 
 {{< edit_this_page >}}

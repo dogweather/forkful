@@ -1,13 +1,16 @@
 ---
-title:                "Ta bort tecken som matchar ett mönster"
 aliases:
 - /sv/php/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:50.791286-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ta bort tecken som matchar ett mönster"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:50.791286-07:00
+description: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att vi tar bort\
+  \ specifika tecken fr\xE5n en str\xE4ng baserat p\xE5 best\xE4mda kriterier. Programmerare\
+  \ g\xF6r detta\u2026"
+lastmod: 2024-02-18 23:08:51.863110
+model: gpt-4-1106-preview
+summary: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att vi tar bort\
+  \ specifika tecken fr\xE5n en str\xE4ng baserat p\xE5 best\xE4mda kriterier. Programmerare\
+  \ g\xF6r detta\u2026"
+title: "Ta bort tecken som matchar ett m\xF6nster"
 ---
 
 {{< edit_this_page >}}

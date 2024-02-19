@@ -1,14 +1,18 @@
 ---
-title:                "Pobieranie aktualnej daty"
 aliases:
 - /pl/fish-shell/getting-the-current-date/
-date:                  2024-02-03T19:09:38.513860-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pobieranie aktualnej daty"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:09:38.513860-07:00
+description: "Pobieranie bie\u017C\u0105cej daty w programowaniu to podstawowe zadanie,\
+  \ kt\xF3re pozwala na pobieranie i manipulowanie danymi dotycz\u0105cymi daty i\
+  \ czasu systemu. W\u2026"
+lastmod: 2024-02-18 23:08:50.046963
+model: gpt-4-0125-preview
+summary: "Pobieranie bie\u017C\u0105cej daty w programowaniu to podstawowe zadanie,\
+  \ kt\xF3re pozwala na pobieranie i manipulowanie danymi dotycz\u0105cymi daty i\
+  \ czasu systemu. W\u2026"
+title: Pobieranie aktualnej daty
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Lấy ngày hiện tại"
 aliases:
 - /vi/arduino/getting-the-current-date/
-date:                  2024-01-28T22:01:42.886527-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lấy ngày hiện tại"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/getting-the-current-date.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:42.886527-07:00
+description: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i tr\xEAn Arduino c\xF3 ngh\u0129\
+  a l\xE0 truy v\u1EA5n m\u1ED9t \u0111\u1ED3ng h\u1ED3 th\u1EDDi gian th\u1EF1c (RTC)\
+  \ ho\u1EB7c d\u1ECBch v\u1EE5 th\u1EDDi gian d\u1EF1a tr\xEAn internet \u0111\u1EC3\
+  \ bi\u1EBFt ng\xE0y hi\u1EC7n t\u1EA1i. T\u1EA1i\u2026"
+lastmod: 2024-02-18 23:08:51.010619
+model: gpt-4-0125-preview
+summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i tr\xEAn Arduino c\xF3 ngh\u0129a l\xE0\
+  \ truy v\u1EA5n m\u1ED9t \u0111\u1ED3ng h\u1ED3 th\u1EDDi gian th\u1EF1c (RTC) ho\u1EB7\
+  c d\u1ECBch v\u1EE5 th\u1EDDi gian d\u1EF1a tr\xEAn internet \u0111\u1EC3 bi\u1EBF\
+  t ng\xE0y hi\u1EC7n t\u1EA1i. T\u1EA1i\u2026"
+title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 ---
 
 {{< edit_this_page >}}

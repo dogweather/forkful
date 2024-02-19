@@ -1,14 +1,19 @@
 ---
-title:                "获取字符串的长度"
 aliases:
 - /zh/cpp/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:03.572907-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "获取字符串的长度"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:03.572907-07:00
+description: "\u627E\u51FA\u5B57\u7B26\u4E32\u7684\u957F\u5EA6\u662F\u6307\u786E\u5B9A\
+  \u5B57\u7B26\u4E32\u4E2D\u5B57\u7B26\u7684\u6570\u91CF\u3002\u7A0B\u5E8F\u5458\u8FD9\
+  \u4E48\u505A\u662F\u4E3A\u4E86\u6570\u636E\u9A8C\u8BC1\u3001\u5FAA\u73AF\u903B\u8F91\
+  \u3001\u5185\u5B58\u5206\u914D\u7B49\u64CD\u4F5C\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.397588
+model: gpt-4-1106-preview
+summary: "\u627E\u51FA\u5B57\u7B26\u4E32\u7684\u957F\u5EA6\u662F\u6307\u786E\u5B9A\
+  \u5B57\u7B26\u4E32\u4E2D\u5B57\u7B26\u7684\u6570\u91CF\u3002\u7A0B\u5E8F\u5458\u8FD9\
+  \u4E48\u505A\u662F\u4E3A\u4E86\u6570\u636E\u9A8C\u8BC1\u3001\u5FAA\u73AF\u903B\u8F91\
+  \u3001\u5185\u5B58\u5206\u914D\u7B49\u64CD\u4F5C\u3002"
+title: "\u83B7\u53D6\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
 ---
 
 {{< edit_this_page >}}

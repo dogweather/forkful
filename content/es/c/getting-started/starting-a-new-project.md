@@ -1,14 +1,17 @@
 ---
-title:                "Iniciando un nuevo proyecto"
 aliases:
 - /es/c/starting-a-new-project/
-date:                  2024-02-03T18:09:00.375811-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Iniciando un nuevo proyecto"
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/starting-a-new-project.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:09:00.375811-07:00
+description: "Iniciar un nuevo proyecto en C implica establecer una estructura de\
+  \ c\xF3digo y un ambiente fundamentales para gestionar eficientemente las tareas\
+  \ de\u2026"
+lastmod: 2024-02-18 23:09:10.502221
+model: gpt-4-0125-preview
+summary: "Iniciar un nuevo proyecto en C implica establecer una estructura de c\xF3\
+  digo y un ambiente fundamentales para gestionar eficientemente las tareas de\u2026"
+title: Iniciando un nuevo proyecto
 ---
 
 {{< edit_this_page >}}

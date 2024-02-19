@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie pliku tekstowego"
 aliases:
 - /pl/elixir/writing-a-text-file/
-date:                  2024-02-03T19:27:44.245813-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie pliku tekstowego"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:44.245813-07:00
+description: "Zapisywanie do pliku tekstowego w Elixirze to podstawowa umiej\u0119\
+  tno\u015B\u0107 dla programist\xF3w, pozwalaj\u0105ca na trwa\u0142o\u015B\u0107\
+  \ danych, logowanie lub eksportowanie tre\u015Bci\u2026"
+lastmod: 2024-02-18 23:08:49.324514
+model: gpt-4-0125-preview
+summary: "Zapisywanie do pliku tekstowego w Elixirze to podstawowa umiej\u0119tno\u015B\
+  \u0107 dla programist\xF3w, pozwalaj\u0105ca na trwa\u0142o\u015B\u0107 danych,\
+  \ logowanie lub eksportowanie tre\u015Bci\u2026"
+title: Pisanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

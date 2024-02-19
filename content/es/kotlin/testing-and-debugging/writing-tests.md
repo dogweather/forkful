@@ -1,14 +1,17 @@
 ---
-title:                "Escribiendo pruebas"
 aliases:
 - /es/kotlin/writing-tests/
-date:                  2024-02-03T19:31:15.971426-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escribiendo pruebas"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:15.971426-07:00
+description: "Escribir pruebas en Kotlin implica elaborar fragmentos de c\xF3digo\
+  \ que validan autom\xE1ticamente la correcci\xF3n funcional de tus m\xF3dulos de\
+  \ software,\u2026"
+lastmod: 2024-02-18 23:09:09.939696
+model: gpt-4-0125-preview
+summary: "Escribir pruebas en Kotlin implica elaborar fragmentos de c\xF3digo que\
+  \ validan autom\xE1ticamente la correcci\xF3n funcional de tus m\xF3dulos de software,\u2026"
+title: Escribiendo pruebas
 ---
 
 {{< edit_this_page >}}

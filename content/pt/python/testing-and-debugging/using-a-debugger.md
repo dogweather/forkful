@@ -1,13 +1,16 @@
 ---
-title:                "Usando um depurador"
 aliases:
 - /pt/python/using-a-debugger/
-date:                  2024-01-26T04:08:54.084302-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando um depurador"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/using-a-debugger.md"
+date: 2024-01-26 04:08:54.084302-07:00
+description: "\"Usar um depurador\" significa percorrer o seu c\xF3digo Python para\
+  \ descobrir erros e entender o comportamento. Fazemos isso porque \xE9 muito mais\
+  \ f\xE1cil do que\u2026"
+lastmod: 2024-02-18 23:08:57.765637
+model: gpt-4-0125-preview
+summary: "\"Usar um depurador\" significa percorrer o seu c\xF3digo Python para descobrir\
+  \ erros e entender o comportamento. Fazemos isso porque \xE9 muito mais f\xE1cil\
+  \ do que\u2026"
+title: Usando um depurador
 ---
 
 {{< edit_this_page >}}

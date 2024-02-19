@@ -1,14 +1,18 @@
 ---
-title:                "Analiza składniowa HTML"
 aliases:
 - /pl/arduino/parsing-html/
-date:                  2024-02-03T19:11:44.996071-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analiza składniowa HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:11:44.996071-07:00
+description: "Przetwarzanie HTML w projektach Arduino polega na ekstrakcji informacji\
+  \ ze stron internetowych. Programi\u015Bci robi\u0105 to, aby umo\u017Cliwi\u0107\
+  \ ich urz\u0105dzeniom\u2026"
+lastmod: 2024-02-18 23:08:49.868030
+model: gpt-4-0125-preview
+summary: "Przetwarzanie HTML w projektach Arduino polega na ekstrakcji informacji\
+  \ ze stron internetowych. Programi\u015Bci robi\u0105 to, aby umo\u017Cliwi\u0107\
+  \ ich urz\u0105dzeniom\u2026"
+title: "Analiza sk\u0142adniowa HTML"
 ---
 
 {{< edit_this_page >}}

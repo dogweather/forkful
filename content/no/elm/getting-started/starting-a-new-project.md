@@ -1,13 +1,16 @@
 ---
-title:                "Å starte et nytt prosjekt"
 aliases:
 - /no/elm/starting-a-new-project/
-date:                  2024-01-20T18:03:21.406676-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Å starte et nytt prosjekt"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/starting-a-new-project.md"
+date: 2024-01-20 18:03:21.406676-07:00
+description: "Et nytt prosjekt er starten p\xE5 en frisk kodebase, og programmerere\
+  \ starter nye prosjekter for \xE5 realisere unike ideer eller l\xF8se spesifikke\
+  \ problemer. Det\u2026"
+lastmod: 2024-02-18 23:08:53.811651
+model: gpt-4-1106-preview
+summary: "Et nytt prosjekt er starten p\xE5 en frisk kodebase, og programmerere starter\
+  \ nye prosjekter for \xE5 realisere unike ideer eller l\xF8se spesifikke problemer.\
+  \ Det\u2026"
+title: "\xC5 starte et nytt prosjekt"
 ---
 
 {{< edit_this_page >}}

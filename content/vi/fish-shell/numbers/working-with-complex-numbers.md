@@ -1,15 +1,21 @@
 ---
-title:                "Làm việc với số phức"
 aliases:
 - /vi/fish-shell/working-with-complex-numbers/
-date:                  2024-01-28T22:12:21.384248-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với số phức"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/working-with-complex-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:21.384248-07:00
+description: "S\u1ED1 ph\u1EE9c m\u1EDF r\u1ED9ng \xFD t\u01B0\u1EDFng v\u1EC1 \u0111\
+  \u01B0\u1EDDng s\u1ED1 m\u1ED9t chi\u1EC1u th\xE0nh m\u1ED9t m\u1EB7t ph\u1EB3ng\
+  \ ph\u1EE9c t\u1EA1p hai chi\u1EC1u. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng\
+  \ ch\xFAng trong c\xE1c l\u0129nh v\u1EF1c nh\u01B0 k\u1EF9 thu\u1EADt, v\u1EAD\
+  t l\xFD\u2026"
+lastmod: 2024-02-18 23:08:51.175764
+model: gpt-4-0125-preview
+summary: "S\u1ED1 ph\u1EE9c m\u1EDF r\u1ED9ng \xFD t\u01B0\u1EDFng v\u1EC1 \u0111\u01B0\
+  \u1EDDng s\u1ED1 m\u1ED9t chi\u1EC1u th\xE0nh m\u1ED9t m\u1EB7t ph\u1EB3ng ph\u1EE9\
+  c t\u1EA1p hai chi\u1EC1u. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng\
+  \ trong c\xE1c l\u0129nh v\u1EF1c nh\u01B0 k\u1EF9 thu\u1EADt, v\u1EADt l\xFD\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 ---
 
 {{< edit_this_page >}}

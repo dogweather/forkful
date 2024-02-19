@@ -1,14 +1,18 @@
 ---
-title:                "Mettre en majuscule une chaîne"
 aliases:
 - /fr/python/capitalizing-a-string/
-date:                  2024-02-03T19:06:05.907354-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Mettre en majuscule une chaîne"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:05.907354-07:00
+description: "Mettre une cha\xEEne en capitales signifie convertir le premier caract\xE8\
+  re d'une cha\xEEne en majuscule et le reste en minuscule. Cette op\xE9ration est\
+  \ couramment\u2026"
+lastmod: 2024-02-18 23:09:08.321212
+model: gpt-4-0125-preview
+summary: "Mettre une cha\xEEne en capitales signifie convertir le premier caract\xE8\
+  re d'une cha\xEEne en majuscule et le reste en minuscule. Cette op\xE9ration est\
+  \ couramment\u2026"
+title: "Mettre en majuscule une cha\xEEne"
 ---
 
 {{< edit_this_page >}}

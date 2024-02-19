@@ -1,14 +1,17 @@
 ---
-title:                "Konvertierung eines Strings in Kleinbuchstaben"
 aliases:
 - /de/c/converting-a-string-to-lower-case/
-date:                  2024-02-03T17:55:00.358262-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Konvertierung eines Strings in Kleinbuchstaben"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:00.358262-07:00
+description: "Die Umwandlung eines Strings in Kleinbuchstaben in C bedeutet, alle\
+  \ Gro\xDFbuchstaben in einem gegebenen String in ihre entsprechenden Kleinbuchstaben\
+  \ zu\u2026"
+lastmod: 2024-02-18 23:09:05.358118
+model: gpt-4-0125-preview
+summary: "Die Umwandlung eines Strings in Kleinbuchstaben in C bedeutet, alle Gro\xDF\
+  buchstaben in einem gegebenen String in ihre entsprechenden Kleinbuchstaben zu\u2026"
+title: Konvertierung eines Strings in Kleinbuchstaben
 ---
 
 {{< edit_this_page >}}

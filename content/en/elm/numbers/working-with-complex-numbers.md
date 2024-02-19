@@ -1,13 +1,15 @@
 ---
-title:                "Working with complex numbers"
 aliases:
 - /en/elm/working-with-complex-numbers/
-date:                  2024-01-25T03:00:04.589438-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Working with complex numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/working-with-complex-numbers.md"
+date: 2024-01-25 03:00:04.589438-07:00
+description: "Complex numbers are a combo of real and imaginary numbers, like `a +\
+  \ bi` where `i` is the square root of -1. They're key in fields like engineering\
+  \ and\u2026"
+lastmod: 2024-02-18 23:09:10.965906
+model: gpt-4-1106-preview
+summary: "Complex numbers are a combo of real and imaginary numbers, like `a + bi`\
+  \ where `i` is the square root of -1. They're key in fields like engineering and\u2026"
+title: Working with complex numbers
 ---
 
 {{< edit_this_page >}}

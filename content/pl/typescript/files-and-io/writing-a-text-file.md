@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie pliku tekstowego"
 aliases:
 - /pl/typescript/writing-a-text-file/
-date:                  2024-02-03T19:29:40.616971-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie pliku tekstowego"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:40.616971-07:00
+description: "Pisanie pliku tekstowego w TypeScript jest kluczow\u0105 umiej\u0119\
+  tno\u015Bci\u0105 dla trwa\u0142o\u015Bci danych, konfiguracji lub generowania log\xF3\
+  w. Programi\u015Bci cz\u0119sto wykonuj\u0105 to\u2026"
+lastmod: 2024-02-18 23:08:49.366054
+model: gpt-4-0125-preview
+summary: "Pisanie pliku tekstowego w TypeScript jest kluczow\u0105 umiej\u0119tno\u015B\
+  ci\u0105 dla trwa\u0142o\u015Bci danych, konfiguracji lub generowania log\xF3w.\
+  \ Programi\u015Bci cz\u0119sto wykonuj\u0105 to\u2026"
+title: Pisanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

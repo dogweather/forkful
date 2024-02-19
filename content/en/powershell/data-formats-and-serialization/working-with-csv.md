@@ -1,12 +1,14 @@
 ---
-title:                "Working with CSV"
 aliases:
 - /en/powershell/working-with-csv/
-date:                  2024-02-03T19:03:13.807014-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Working with CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/powershell/working-with-csv.md"
+date: 2024-02-03 19:03:13.807014-07:00
+description: "Working with CSV (Comma-Separated Values) files is a common task for\
+  \ managing and manipulating data in a structured, tabular form. Programmers often\u2026"
+lastmod: 2024-02-18 23:09:11.296263
+model: gpt-4-0125-preview
+summary: "Working with CSV (Comma-Separated Values) files is a common task for managing\
+  \ and manipulating data in a structured, tabular form. Programmers often\u2026"
+title: Working with CSV
 ---
 
 {{< edit_this_page >}}

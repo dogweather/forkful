@@ -1,13 +1,16 @@
 ---
-title:                "Znalezienie długości ciągu znaków"
 aliases:
 - /pl/powershell/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:51.492693-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Znalezienie długości ciągu znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:51.492693-07:00
+description: "D\u0142ugo\u015B\u0107 \u0142a\u0144cucha znak\xF3w to ilo\u015B\u0107\
+  \ znak\xF3w, z kt\xF3rych si\u0119 sk\u0142ada. Programi\u015Bci musz\u0105 to sprawdza\u0107\
+  , aby zarz\u0105dza\u0107 tekstem, np. w walidacji, ekstrakcji danych,\u2026"
+lastmod: 2024-02-18 23:08:49.818115
+model: gpt-4-1106-preview
+summary: "D\u0142ugo\u015B\u0107 \u0142a\u0144cucha znak\xF3w to ilo\u015B\u0107 znak\xF3\
+  w, z kt\xF3rych si\u0119 sk\u0142ada. Programi\u015Bci musz\u0105 to sprawdza\u0107\
+  , aby zarz\u0105dza\u0107 tekstem, np. w walidacji, ekstrakcji danych,\u2026"
+title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

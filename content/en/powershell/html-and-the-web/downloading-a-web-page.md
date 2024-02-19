@@ -1,13 +1,14 @@
 ---
-title:                "Downloading a web page"
 aliases:
 - /en/powershell/downloading-a-web-page/
-date:                  2024-01-20T17:44:41.290845-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Downloading a web page"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/powershell/downloading-a-web-page.md"
+date: 2024-01-20 17:44:41.290845-07:00
+description: Downloading a web page means snagging its contents via the web. Coders
+  do this for web scraping, offline viewing, or automating interactions with websites.
+lastmod: 2024-02-18 23:09:11.272704
+model: gpt-4-1106-preview
+summary: Downloading a web page means snagging its contents via the web. Coders do
+  this for web scraping, offline viewing, or automating interactions with websites.
+title: Downloading a web page
 ---
 
 {{< edit_this_page >}}

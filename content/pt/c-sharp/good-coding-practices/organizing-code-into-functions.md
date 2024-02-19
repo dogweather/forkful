@@ -1,13 +1,16 @@
 ---
-title:                "Organizando o código em funções"
 aliases:
 - /pt/c-sharp/organizing-code-into-functions/
-date:                  2024-01-26T01:09:23.563546-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organizando o código em funções"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/organizing-code-into-functions.md"
+date: 2024-01-26 01:09:23.563546-07:00
+description: "Organizar c\xF3digo em fun\xE7\xF5es \xE9 como separar pe\xE7as de LEGO\
+  \ em caixas\u2014torna encontrar e usar essas pe\xE7as mais f\xE1cil. Fazemos isso\
+  \ para evitar repeti\xE7\xE3o, para\u2026"
+lastmod: 2024-02-18 23:08:58.162879
+model: gpt-4-1106-preview
+summary: "Organizar c\xF3digo em fun\xE7\xF5es \xE9 como separar pe\xE7as de LEGO\
+  \ em caixas\u2014torna encontrar e usar essas pe\xE7as mais f\xE1cil. Fazemos isso\
+  \ para evitar repeti\xE7\xE3o, para\u2026"
+title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 ---
 
 {{< edit_this_page >}}

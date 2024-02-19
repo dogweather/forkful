@@ -1,13 +1,16 @@
 ---
-title:                "Refatoração"
 aliases:
 - /pt/elm/refactoring/
-date:                  2024-01-26T01:18:18.802559-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refatoração"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/refactoring.md"
+date: 2024-01-26 01:18:18.802559-07:00
+description: "Refatora\xE7\xE3o \xE9 essencialmente uma limpeza de primavera no seu\
+  \ c\xF3digo \u2014 trata-se de reestruturar o c\xF3digo existente sem alterar seu\
+  \ comportamento externo.\u2026"
+lastmod: 2024-02-18 23:08:58.068737
+model: gpt-4-0125-preview
+summary: "Refatora\xE7\xE3o \xE9 essencialmente uma limpeza de primavera no seu c\xF3\
+  digo \u2014 trata-se de reestruturar o c\xF3digo existente sem alterar seu comportamento\
+  \ externo.\u2026"
+title: "Refatora\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

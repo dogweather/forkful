@@ -1,13 +1,14 @@
 ---
-title:                "Lendo argumentos da linha de comando"
 aliases:
 - /pt/c-sharp/reading-command-line-arguments/
-date:                  2024-01-20T17:55:36.651159-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lendo argumentos da linha de comando"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:36.651159-07:00
+description: "Ler argumentos da linha de comando significa capturar os dados fornecidos\
+  \ quando um programa \xE9 iniciado no terminal. Programadores fazem isso para\u2026"
+lastmod: 2024-02-18 23:08:58.172440
+model: gpt-4-1106-preview
+summary: "Ler argumentos da linha de comando significa capturar os dados fornecidos\
+  \ quando um programa \xE9 iniciado no terminal. Programadores fazem isso para\u2026"
+title: Lendo argumentos da linha de comando
 ---
 
 {{< edit_this_page >}}

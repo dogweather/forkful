@@ -1,12 +1,14 @@
 ---
-title:                "Organizing code into functions"
 aliases:
 - /en/go/organizing-code-into-functions/
-date:                  2024-02-03T17:50:12.605034-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Organizing code into functions"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/organizing-code-into-functions.md"
+date: 2024-02-03 17:50:12.605034-07:00
+description: "Organizing code into functions in Go involves breaking down code into\
+  \ reusable, modular blocks that perform specific tasks. This approach enhances code\u2026"
+lastmod: 2024-02-18 23:09:10.602235
+model: gpt-4-0125-preview
+summary: "Organizing code into functions in Go involves breaking down code into reusable,\
+  \ modular blocks that perform specific tasks. This approach enhances code\u2026"
+title: Organizing code into functions
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Avvio di un nuovo progetto"
 aliases:
 - /it/elm/starting-a-new-project/
-date:                  2024-01-20T18:03:09.371599-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Avvio di un nuovo progetto"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/starting-a-new-project.md"
+date: 2024-01-20 18:03:09.371599-07:00
+description: Creare un nuovo progetto Elm significa mettere su qualcosa di fresco.
+  Lo facciamo per sperimentare, imparare o per costruire qualcosa di utilizzabile.
+lastmod: 2024-02-18 23:08:55.806568
+model: gpt-4-1106-preview
+summary: Creare un nuovo progetto Elm significa mettere su qualcosa di fresco. Lo
+  facciamo per sperimentare, imparare o per costruire qualcosa di utilizzabile.
+title: Avvio di un nuovo progetto
 ---
 
 {{< edit_this_page >}}

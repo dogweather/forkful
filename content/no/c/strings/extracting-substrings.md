@@ -1,14 +1,18 @@
 ---
-title:                "Utdrag av delstrenger"
 aliases:
 - /no/c/extracting-substrings/
-date:                  2024-02-03T17:56:22.928270-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utdrag av delstrenger"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/extracting-substrings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:22.928270-07:00
+description: "\xC5 trekke ut delstrenger i C inneb\xE6rer \xE5 skape en mindre streng\
+  \ (delstreng) fra en st\xF8rre etter angitte kriterier, som posisjon og lengde.\
+  \ Programmerere\u2026"
+lastmod: 2024-02-18 23:08:54.382495
+model: gpt-4-0125-preview
+summary: "\xC5 trekke ut delstrenger i C inneb\xE6rer \xE5 skape en mindre streng\
+  \ (delstreng) fra en st\xF8rre etter angitte kriterier, som posisjon og lengde.\
+  \ Programmerere\u2026"
+title: Utdrag av delstrenger
 ---
 
 {{< edit_this_page >}}

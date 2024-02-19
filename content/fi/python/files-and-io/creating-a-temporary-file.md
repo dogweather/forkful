@@ -1,13 +1,16 @@
 ---
-title:                "Väliaikaistiedoston luominen"
 aliases:
 - /fi/python/creating-a-temporary-file/
-date:                  2024-01-20T17:41:15.152469-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Väliaikaistiedoston luominen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:15.152469-07:00
+description: "Tilap\xE4iset tiedostot ovat ohjelmoinnissa k\xE4ytett\xE4vi\xE4 v\xE4\
+  liaikaisia tiedostoja, jotka yleens\xE4 poistetaan ohjelman suorituksen lopussa.\
+  \ Niit\xE4 k\xE4ytet\xE4\xE4n datan\u2026"
+lastmod: 2024-02-18 23:09:07.204452
+model: gpt-4-1106-preview
+summary: "Tilap\xE4iset tiedostot ovat ohjelmoinnissa k\xE4ytett\xE4vi\xE4 v\xE4liaikaisia\
+  \ tiedostoja, jotka yleens\xE4 poistetaan ohjelman suorituksen lopussa. Niit\xE4\
+  \ k\xE4ytet\xE4\xE4n datan\u2026"
+title: "V\xE4liaikaistiedoston luominen"
 ---
 
 {{< edit_this_page >}}

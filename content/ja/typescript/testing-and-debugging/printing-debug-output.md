@@ -1,14 +1,21 @@
 ---
-title:                "デバッグ出力を表示する"
 aliases:
 - /ja/typescript/printing-debug-output/
-date:                  2024-01-20T17:53:38.716716-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "デバッグ出力を表示する"
-
-tag:                  "Testing and Debugging"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/printing-debug-output.md"
+date: 2024-01-20 17:53:38.716716-07:00
+description: "\u30C7\u30D0\u30C3\u30B0\u51FA\u529B\u306F\u30D0\u30B0\u306E\u539F\u56E0\
+  \u3092\u898B\u3064\u3051\u308B\u305F\u3081\u306B\u30D7\u30ED\u30B0\u30E9\u30E0\u306E\
+  \u5B9F\u884C\u4E2D\u306E\u5909\u6570\u3084\u72B6\u614B\u3092\u8868\u793A\u3057\u307E\
+  \u3059\u3002\u30B3\u30FC\u30C9\u306E\u52D5\u304D\u3092\u7406\u89E3\u3057\u3001\u554F\
+  \u984C\u3092\u89E3\u6C7A\u3059\u308B\u306E\u306B\u5F79\u7ACB\u3061\u307E\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:54.684644
+model: gpt-4-1106-preview
+summary: "\u30C7\u30D0\u30C3\u30B0\u51FA\u529B\u306F\u30D0\u30B0\u306E\u539F\u56E0\
+  \u3092\u898B\u3064\u3051\u308B\u305F\u3081\u306B\u30D7\u30ED\u30B0\u30E9\u30E0\u306E\
+  \u5B9F\u884C\u4E2D\u306E\u5909\u6570\u3084\u72B6\u614B\u3092\u8868\u793A\u3057\u307E\
+  \u3059\u3002\u30B3\u30FC\u30C9\u306E\u52D5\u304D\u3092\u7406\u89E3\u3057\u3001\u554F\
+  \u984C\u3092\u89E3\u6C7A\u3059\u308B\u306E\u306B\u5F79\u7ACB\u3061\u307E\u3059\u3002"
+title: "\u30C7\u30D0\u30C3\u30B0\u51FA\u529B\u3092\u8868\u793A\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

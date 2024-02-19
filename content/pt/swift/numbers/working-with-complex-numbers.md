@@ -1,13 +1,15 @@
 ---
-title:                "Trabalhando com números complexos"
 aliases:
 - /pt/swift/working-with-complex-numbers/
-date:                  2024-01-26T04:45:49.161702-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com números complexos"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/working-with-complex-numbers.md"
+date: 2024-01-26 04:45:49.161702-07:00
+description: "N\xFAmeros complexos possuem uma parte real e uma imagin\xE1ria (como\
+  \ 3 + 4i). Programadores os utilizam no Swift para tarefas como processamento de\
+  \ sinais,\u2026"
+lastmod: 2024-02-18 23:08:58.485353
+model: gpt-4-0125-preview
+summary: "N\xFAmeros complexos possuem uma parte real e uma imagin\xE1ria (como 3\
+  \ + 4i). Programadores os utilizam no Swift para tarefas como processamento de sinais,\u2026"
+title: "Trabalhando com n\xFAmeros complexos"
 ---
 
 {{< edit_this_page >}}

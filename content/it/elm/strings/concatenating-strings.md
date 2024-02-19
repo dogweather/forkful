@@ -1,13 +1,14 @@
 ---
-title:                "Concatenazione di stringhe"
 aliases:
 - /it/elm/concatenating-strings/
-date:                  2024-01-20T17:34:23.491440-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenazione di stringhe"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/concatenating-strings.md"
+date: 2024-01-20 17:34:23.491440-07:00
+description: "Concatenare le stringhe significa unirle in una sola. I programmatori\
+  \ lo fanno per creare messaggi, interfacciarsi con l'utente, e manipolare dati\u2026"
+lastmod: 2024-02-18 23:08:55.798513
+model: gpt-4-1106-preview
+summary: "Concatenare le stringhe significa unirle in una sola. I programmatori lo\
+  \ fanno per creare messaggi, interfacciarsi con l'utente, e manipolare dati\u2026"
+title: Concatenazione di stringhe
 ---
 
 {{< edit_this_page >}}

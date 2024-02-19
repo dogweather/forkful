@@ -1,13 +1,16 @@
 ---
-title:                "Estrazione di sottostringhe"
 aliases:
 - /it/cpp/extracting-substrings/
-date:                  2024-01-20T17:45:24.400898-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Estrazione di sottostringhe"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/extracting-substrings.md"
+date: 2024-01-20 17:45:24.400898-07:00
+description: "Estrarre sottosequenze di stringhe significa prelevare parti di testo\
+  \ da una stringa pi\xF9 grande. Questo \xE8 utile per analizzare i dati, manipolare\
+  \ il testo\u2026"
+lastmod: 2024-02-18 23:08:56.162512
+model: gpt-4-1106-preview
+summary: "Estrarre sottosequenze di stringhe significa prelevare parti di testo da\
+  \ una stringa pi\xF9 grande. Questo \xE8 utile per analizzare i dati, manipolare\
+  \ il testo\u2026"
+title: Estrazione di sottostringhe
 ---
 
 {{< edit_this_page >}}

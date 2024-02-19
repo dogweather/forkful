@@ -1,13 +1,14 @@
 ---
-title:                "Inviare una richiesta http con autenticazione di base"
 aliases:
 - /it/php/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:16.973308-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Inviare una richiesta http con autenticazione di base"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/php/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:16.973308-07:00
+description: "Invio di una richiesta HTTP con autenticazione di base permette di accedere\
+  \ a risorse protette online. I programmatori lo utilizzano per interagire con\u2026"
+lastmod: 2024-02-18 23:08:55.970574
+model: gpt-4-1106-preview
+summary: "Invio di una richiesta HTTP con autenticazione di base permette di accedere\
+  \ a risorse protette online. I programmatori lo utilizzano per interagire con\u2026"
+title: Inviare una richiesta http con autenticazione di base
 ---
 
 {{< edit_this_page >}}

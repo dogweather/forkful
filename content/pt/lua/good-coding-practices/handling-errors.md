@@ -1,13 +1,16 @@
 ---
-title:                "Tratamento de erros"
 aliases:
 - /pt/lua/handling-errors/
-date:                  2024-01-26T00:55:27.883879-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tratamento de erros"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/lua/handling-errors.md"
+date: 2024-01-26 00:55:27.883879-07:00
+description: "Tratar erros na codifica\xE7\xE3o \xE9 esperar pelo inesperado. \xC9\
+  \ a arte de se planejar para quando as coisas sa\xEDrem do controle, para que voc\xEA\
+  \ possa manter seu\u2026"
+lastmod: 2024-02-18 23:08:58.289434
+model: gpt-4-1106-preview
+summary: "Tratar erros na codifica\xE7\xE3o \xE9 esperar pelo inesperado. \xC9 a arte\
+  \ de se planejar para quando as coisas sa\xEDrem do controle, para que voc\xEA possa\
+  \ manter seu\u2026"
+title: Tratamento de erros
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Logging"
 aliases:
 - /no/vba/logging/
-date:                  2024-02-01T21:56:13.363018-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Logging"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/vba/logging.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:56:13.363018-07:00
+description: "Logging i Visual Basic for Applications (VBA) inneb\xE6rer \xE5 registrere\
+  \ informasjon om et programs kj\xF8retidsoppf\xF8rsel til en fil, konsoll eller\
+  \ database.\u2026"
+lastmod: 2024-02-18 23:08:53.735103
+model: gpt-4-0125-preview
+summary: "Logging i Visual Basic for Applications (VBA) inneb\xE6rer \xE5 registrere\
+  \ informasjon om et programs kj\xF8retidsoppf\xF8rsel til en fil, konsoll eller\
+  \ database.\u2026"
+title: Logging
 ---
 
 {{< edit_this_page >}}

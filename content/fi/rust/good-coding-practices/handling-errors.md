@@ -1,13 +1,16 @@
 ---
-title:                "Virheiden käsittely"
 aliases:
 - /fi/rust/handling-errors/
-date:                  2024-01-26T00:59:38.034803-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheiden käsittely"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/handling-errors.md"
+date: 2024-01-26 00:59:38.034803-07:00
+description: "Virheenk\xE4sittely on toimien hallintaa, kun asiat eiv\xE4t mene odotetusti.\
+  \ Ohjelmoijat tekev\xE4t sit\xE4 k\xE4sitell\xE4kseen odottamattomia tilanteita,\
+  \ varmistaakseen,\u2026"
+lastmod: 2024-02-18 23:09:07.371660
+model: gpt-4-1106-preview
+summary: "Virheenk\xE4sittely on toimien hallintaa, kun asiat eiv\xE4t mene odotetusti.\
+  \ Ohjelmoijat tekev\xE4t sit\xE4 k\xE4sitell\xE4kseen odottamattomia tilanteita,\
+  \ varmistaakseen,\u2026"
+title: "Virheiden k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

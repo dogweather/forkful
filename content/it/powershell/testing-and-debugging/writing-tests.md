@@ -1,14 +1,18 @@
 ---
-title:                "Scrivere test"
 aliases:
 - /it/powershell/writing-tests/
-date:                  2024-02-03T19:31:34.408779-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Scrivere test"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:34.408779-07:00
+description: "Scrivere test in PowerShell comporta la creazione di script che validano\
+  \ automaticamente la funzionalit\xE0 del vostro codice PowerShell, garantendo che\
+  \ si\u2026"
+lastmod: 2024-02-18 23:08:56.097763
+model: gpt-4-0125-preview
+summary: "Scrivere test in PowerShell comporta la creazione di script che validano\
+  \ automaticamente la funzionalit\xE0 del vostro codice PowerShell, garantendo che\
+  \ si\u2026"
+title: Scrivere test
 ---
 
 {{< edit_this_page >}}

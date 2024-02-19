@@ -1,13 +1,14 @@
 ---
-title:                "Verkkosivun lataaminen"
 aliases:
 - /fi/powershell/downloading-a-web-page/
-date:                  2024-01-20T17:44:36.922313-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Verkkosivun lataaminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/downloading-a-web-page.md"
+date: 2024-01-20 17:44:36.922313-07:00
+description: "Lataaminen on verkkosivun datan siirt\xE4mist\xE4 paikalliselle koneelle.\
+  \ Ohjelmoijat tekev\xE4t sen tiedon k\xE4sittely\xE4 tai automatisointia varten."
+lastmod: 2024-02-18 23:09:07.851616
+model: gpt-4-1106-preview
+summary: "Lataaminen on verkkosivun datan siirt\xE4mist\xE4 paikalliselle koneelle.\
+  \ Ohjelmoijat tekev\xE4t sen tiedon k\xE4sittely\xE4 tai automatisointia varten."
+title: Verkkosivun lataaminen
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,28 @@
 ---
-title:                "Работа с YAML"
 aliases:
 - /ru/swift/working-with-yaml/
-date:                  2024-01-29T00:05:22.565176-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Работа с YAML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/swift/working-with-yaml.md"
 changelog:
-  - 2024-01-29, gpt-4-0125-preview, translated from English
+- 2024-01-29, gpt-4-0125-preview, translated from English
+date: 2024-01-29 00:05:22.565176-07:00
+description: "YAML, \u0447\u0442\u043E \u0440\u0430\u0441\u0448\u0438\u0444\u0440\u043E\
+  \u0432\u044B\u0432\u0430\u0435\u0442\u0441\u044F \u043A\u0430\u043A \"YAML Ain't\
+  \ Markup Language\" (YAML - \u044D\u0442\u043E \u043D\u0435 \u044F\u0437\u044B\u043A\
+  \ \u0440\u0430\u0437\u043C\u0435\u0442\u043A\u0438), \u043F\u0440\u0435\u0434\u0441\
+  \u0442\u0430\u0432\u043B\u044F\u0435\u0442 \u0441\u043E\u0431\u043E\u0439 \u0441\
+  \u0442\u0430\u043D\u0434\u0430\u0440\u0442 \u0441\u0435\u0440\u0438\u0430\u043B\u0438\
+  \u0437\u0430\u0446\u0438\u0438 \u0434\u0430\u043D\u043D\u044B\u0445, \u043F\u043E\
+  \u043D\u044F\u0442\u043D\u044B\u0439\u2026"
+lastmod: 2024-02-18 23:08:57.433577
+model: gpt-4-0125-preview
+summary: "YAML, \u0447\u0442\u043E \u0440\u0430\u0441\u0448\u0438\u0444\u0440\u043E\
+  \u0432\u044B\u0432\u0430\u0435\u0442\u0441\u044F \u043A\u0430\u043A \"YAML Ain't\
+  \ Markup Language\" (YAML - \u044D\u0442\u043E \u043D\u0435 \u044F\u0437\u044B\u043A\
+  \ \u0440\u0430\u0437\u043C\u0435\u0442\u043A\u0438), \u043F\u0440\u0435\u0434\u0441\
+  \u0442\u0430\u0432\u043B\u044F\u0435\u0442 \u0441\u043E\u0431\u043E\u0439 \u0441\
+  \u0442\u0430\u043D\u0434\u0430\u0440\u0442 \u0441\u0435\u0440\u0438\u0430\u043B\u0438\
+  \u0437\u0430\u0446\u0438\u0438 \u0434\u0430\u043D\u043D\u044B\u0445, \u043F\u043E\
+  \u043D\u044F\u0442\u043D\u044B\u0439\u2026"
+title: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 YAML"
 ---
 
 {{< edit_this_page >}}

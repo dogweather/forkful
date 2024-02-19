@@ -1,15 +1,18 @@
 ---
-title:                "Verwendung von assoziativen Arrays"
 aliases:
 - /de/elixir/using-associative-arrays/
-date:                  2024-01-30T19:10:32.042983-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verwendung von assoziativen Arrays"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:32.042983-07:00
+description: "In Elixir sind assoziative Arrays, genannt Maps, Sammlungen von Schl\xFC\
+  ssel-Wert-Paaren, bei denen ein einzigartiger Schl\xFCssel auf einen Wert zeigt.\
+  \ Sie\u2026"
+lastmod: 2024-02-18 23:09:04.544443
+model: gpt-4-0125-preview
+summary: "In Elixir sind assoziative Arrays, genannt Maps, Sammlungen von Schl\xFC\
+  ssel-Wert-Paaren, bei denen ein einzigartiger Schl\xFCssel auf einen Wert zeigt.\
+  \ Sie\u2026"
+title: Verwendung von assoziativen Arrays
 ---
 
 {{< edit_this_page >}}

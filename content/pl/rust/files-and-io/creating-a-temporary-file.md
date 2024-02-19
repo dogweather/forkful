@@ -1,13 +1,16 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
 aliases:
 - /pl/rust/creating-a-temporary-file/
-date:                  2024-01-20T17:41:27.687220-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tworzenie pliku tymczasowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:27.687220-07:00
+description: "Tworzenie tymczasowych plik\xF3w to proces, w kt\xF3rym program tworzy\
+  \ plik, kt\xF3ry ma by\u0107 u\u017Cyty tylko na kr\xF3tki czas. Programi\u015B\
+  ci robi\u0105 to, by zarz\u0105dza\u0107 danymi\u2026"
+lastmod: 2024-02-18 23:08:49.408956
+model: gpt-4-1106-preview
+summary: "Tworzenie tymczasowych plik\xF3w to proces, w kt\xF3rym program tworzy plik,\
+  \ kt\xF3ry ma by\u0107 u\u017Cyty tylko na kr\xF3tki czas. Programi\u015Bci robi\u0105\
+  \ to, by zarz\u0105dza\u0107 danymi\u2026"
+title: Tworzenie pliku tymczasowego
 ---
 
 {{< edit_this_page >}}

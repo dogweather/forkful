@@ -1,14 +1,29 @@
 ---
-title:                "Сравнение двух дат"
 aliases:
 - /ru/vba/comparing-two-dates/
-date:                  2024-02-01T21:49:56.048665-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Сравнение двух дат"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/vba/comparing-two-dates.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:56.048665-07:00
+description: "\u0421\u0440\u0430\u0432\u043D\u0435\u043D\u0438\u0435 \u0434\u0432\u0443\
+  \u0445 \u0434\u0430\u0442 \u0432 Visual Basic for Applications (VBA) \u0432\u043A\
+  \u043B\u044E\u0447\u0430\u0435\u0442 \u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0435\
+  \u043D\u0438\u0435 \u0438\u0445 \u0445\u0440\u043E\u043D\u043E\u043B\u043E\u0433\
+  \u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E \u043E\u0442\u043D\u043E\u0448\u0435\
+  \u043D\u0438\u044F \u0434\u0440\u0443\u0433 \u043A \u0434\u0440\u0443\u0433\u0443\
+  . \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442\u044B \u0434\
+  \u0435\u043B\u0430\u044E\u0442 \u044D\u0442\u043E \u0434\u043B\u044F\u2026"
+lastmod: 2024-02-18 23:08:56.802217
+model: gpt-4-0125-preview
+summary: "\u0421\u0440\u0430\u0432\u043D\u0435\u043D\u0438\u0435 \u0434\u0432\u0443\
+  \u0445 \u0434\u0430\u0442 \u0432 Visual Basic for Applications (VBA) \u0432\u043A\
+  \u043B\u044E\u0447\u0430\u0435\u0442 \u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0435\
+  \u043D\u0438\u0435 \u0438\u0445 \u0445\u0440\u043E\u043D\u043E\u043B\u043E\u0433\
+  \u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E \u043E\u0442\u043D\u043E\u0448\u0435\
+  \u043D\u0438\u044F \u0434\u0440\u0443\u0433 \u043A \u0434\u0440\u0443\u0433\u0443\
+  . \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442\u044B \u0434\
+  \u0435\u043B\u0430\u044E\u0442 \u044D\u0442\u043E \u0434\u043B\u044F\u2026"
+title: "\u0421\u0440\u0430\u0432\u043D\u0435\u043D\u0438\u0435 \u0434\u0432\u0443\u0445\
+  \ \u0434\u0430\u0442"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Vérifier si un répertoire existe"
 aliases:
 - /fr/vba/checking-if-a-directory-exists/
-date:                  2024-02-01T21:48:53.279595-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Vérifier si un répertoire existe"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/vba/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:48:53.279595-07:00
+description: "V\xE9rifier si un r\xE9pertoire existe en Visual Basic pour Applications\
+  \ (VBA) consiste \xE0 confirmer la pr\xE9sence d'un dossier dans le syst\xE8me de\
+  \ fichiers avant\u2026"
+lastmod: 2024-02-18 23:09:08.596361
+model: gpt-4-0125-preview
+summary: "V\xE9rifier si un r\xE9pertoire existe en Visual Basic pour Applications\
+  \ (VBA) consiste \xE0 confirmer la pr\xE9sence d'un dossier dans le syst\xE8me de\
+  \ fichiers avant\u2026"
+title: "V\xE9rifier si un r\xE9pertoire existe"
 ---
 
 {{< edit_this_page >}}

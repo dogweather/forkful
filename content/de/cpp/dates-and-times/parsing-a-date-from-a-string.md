@@ -1,14 +1,16 @@
 ---
-title:                "Einen Datum aus einem String analysieren"
 aliases:
 - /de/cpp/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:13:33.202127-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Einen Datum aus einem String analysieren"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:13:33.202127-07:00
+description: "Das Parsen eines Datums aus einem String beinhaltet die Interpretation\
+  \ des Stringformats, um Komponenten wie Tag, Monat und Jahr zu extrahieren.\u2026"
+lastmod: 2024-02-18 23:09:05.198902
+model: gpt-4-0125-preview
+summary: "Das Parsen eines Datums aus einem String beinhaltet die Interpretation des\
+  \ Stringformats, um Komponenten wie Tag, Monat und Jahr zu extrahieren.\u2026"
+title: Einen Datum aus einem String analysieren
 ---
 
 {{< edit_this_page >}}

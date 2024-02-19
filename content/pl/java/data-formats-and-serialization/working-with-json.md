@@ -1,12 +1,15 @@
 ---
-title:                "Praca z JSON"
 aliases:
 - /pl/java/working-with-json/
-date:                  2024-01-19
-simple_title:         "Praca z JSON"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/working-with-json.md"
+date: 2024-01-19
+description: "JSON (JavaScript Object Notation) to format wymiany danych. Programi\u015B\
+  ci u\u017Cywaj\u0105 go, bo jest lekki i \u0142atwy do czytania dla ludzi, a tak\u017C\
+  e \u0142atwy do\u2026"
+lastmod: 2024-02-18 23:08:49.498973
+summary: "JSON (JavaScript Object Notation) to format wymiany danych. Programi\u015B\
+  ci u\u017Cywaj\u0105 go, bo jest lekki i \u0142atwy do czytania dla ludzi, a tak\u017C\
+  e \u0142atwy do\u2026"
+title: Praca z JSON
 ---
 
 {{< edit_this_page >}}

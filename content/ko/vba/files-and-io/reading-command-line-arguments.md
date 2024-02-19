@@ -1,14 +1,28 @@
 ---
-title:                "명령 줄 인수 읽기"
 aliases:
 - /ko/vba/reading-command-line-arguments/
-date:                  2024-02-01T21:59:28.450876-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "명령 줄 인수 읽기"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/vba/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:28.450876-07:00
+description: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uBA85\uB839\uC904 \uC778\
+  \uC218\uB97C \uC77D\uB294 \uAC83\uC740 \uC2E4\uD589 \uC2DC \uD504\uB85C\uADF8\uB7A8\
+  \uC5D0 \uC804\uB2EC\uB41C \uB9E4\uAC1C\uBCC0\uC218\uC5D0 \uC811\uADFC\uD558\uB294\
+  \ \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uC774 \uAE30\uC220\uC740 \uC77C\uBC18\
+  \uC801\uC73C\uB85C \uC0AC\uC6A9\uC790\uC758 \uC0C1\uD638 \uC791\uC6A9 \uC5C6\uC774\
+  \ \uD504\uB85C\uADF8\uB7A8\uC758 \uB3D9\uC791\uC774\uB098 \uCD9C\uB825\uC744 \uBCC0\
+  \uD654\uC2DC\uD0A4\uB294 \uB370 \uC0AC\uC6A9\uB418\uC5B4, \uC790\uB3D9\uD654 \uBC0F\
+  \ \uC2A4\uD06C\uB9BD\uD305\u2026"
+lastmod: 2024-02-18 23:09:05.978415
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uBA85\uB839\uC904 \uC778\
+  \uC218\uB97C \uC77D\uB294 \uAC83\uC740 \uC2E4\uD589 \uC2DC \uD504\uB85C\uADF8\uB7A8\
+  \uC5D0 \uC804\uB2EC\uB41C \uB9E4\uAC1C\uBCC0\uC218\uC5D0 \uC811\uADFC\uD558\uB294\
+  \ \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uC774 \uAE30\uC220\uC740 \uC77C\uBC18\
+  \uC801\uC73C\uB85C \uC0AC\uC6A9\uC790\uC758 \uC0C1\uD638 \uC791\uC6A9 \uC5C6\uC774\
+  \ \uD504\uB85C\uADF8\uB7A8\uC758 \uB3D9\uC791\uC774\uB098 \uCD9C\uB825\uC744 \uBCC0\
+  \uD654\uC2DC\uD0A4\uB294 \uB370 \uC0AC\uC6A9\uB418\uC5B4, \uC790\uB3D9\uD654 \uBC0F\
+  \ \uC2A4\uD06C\uB9BD\uD305\u2026"
+title: "\uBA85\uB839 \uC904 \uC778\uC218 \uC77D\uAE30"
 ---
 
 {{< edit_this_page >}}

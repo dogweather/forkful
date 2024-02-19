@@ -1,13 +1,15 @@
 ---
-title:                "Excluindo caracteres que correspondem a um padrão"
 aliases:
 - /pt/haskell/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:17.469328-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Excluindo caracteres que correspondem a um padrão"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:17.469328-07:00
+description: "Eliminar caracteres que correspondem a um padr\xE3o \xE9 o processo\
+  \ de remover seletivamente certos caracteres de uma string com base em crit\xE9\
+  rios definidos.\u2026"
+lastmod: 2024-02-18 23:08:58.183641
+model: gpt-4-1106-preview
+summary: "Eliminar caracteres que correspondem a um padr\xE3o \xE9 o processo de remover\
+  \ seletivamente certos caracteres de uma string com base em crit\xE9rios definidos.\u2026"
+title: "Excluindo caracteres que correspondem a um padr\xE3o"
 ---
 
 {{< edit_this_page >}}

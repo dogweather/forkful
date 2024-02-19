@@ -1,13 +1,16 @@
 ---
-title:                "Trabalhando com XML"
 aliases:
 - /pt/haskell/working-with-xml/
-date:                  2024-01-26T04:31:51.453169-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/working-with-xml.md"
+date: 2024-01-26 04:31:51.453169-07:00
+description: "Trabalhar com XML em Haskell envolve analisar, manipular e gerar estruturas\
+  \ XML. Programadores lidam com XML para interagir com in\xFAmeras aplica\xE7\xF5\
+  es e\u2026"
+lastmod: 2024-02-18 23:08:58.223408
+model: gpt-4-0125-preview
+summary: "Trabalhar com XML em Haskell envolve analisar, manipular e gerar estruturas\
+  \ XML. Programadores lidam com XML para interagir com in\xFAmeras aplica\xE7\xF5\
+  es e\u2026"
+title: Trabalhando com XML
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Inviare una richiesta http con autenticazione di base"
 aliases:
 - /it/ruby/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:20.178057-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Inviare una richiesta http con autenticazione di base"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:20.178057-07:00
+description: "Inviare una richiesta HTTP con autenticazione di base significa fornire\
+  \ username e password per accedere a risorse protette. Si fa questo per interagire\u2026"
+lastmod: 2024-02-18 23:08:56.382838
+model: gpt-4-1106-preview
+summary: "Inviare una richiesta HTTP con autenticazione di base significa fornire\
+  \ username e password per accedere a risorse protette. Si fa questo per interagire\u2026"
+title: Inviare una richiesta http con autenticazione di base
 ---
 
 {{< edit_this_page >}}

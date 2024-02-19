@@ -1,13 +1,14 @@
 ---
-title:                "Interpolering av en streng"
 aliases:
 - /no/ruby/interpolating-a-string/
-date:                  2024-01-20T17:51:42.594301-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolering av en streng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/interpolating-a-string.md"
+date: 2024-01-20 17:51:42.594301-07:00
+description: "Interpolering av strenger i Ruby lar deg sette variabler eller Ruby-kode\
+  \ inn i en streng. Vi gj\xF8r det for \xE5 bygge dynamiske strenger raskt og rent."
+lastmod: 2024-02-18 23:08:54.423536
+model: gpt-4-1106-preview
+summary: "Interpolering av strenger i Ruby lar deg sette variabler eller Ruby-kode\
+  \ inn i en streng. Vi gj\xF8r det for \xE5 bygge dynamiske strenger raskt og rent."
+title: Interpolering av en streng
 ---
 
 {{< edit_this_page >}}

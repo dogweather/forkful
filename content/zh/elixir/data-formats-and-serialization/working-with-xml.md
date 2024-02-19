@@ -1,13 +1,18 @@
 ---
-title:                "处理XML"
 aliases:
 - /zh/elixir/working-with-xml/
-date:                  2024-01-26T04:29:50.982177-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/working-with-xml.md"
+date: 2024-01-26 04:29:50.982177-07:00
+description: "\u5728 Elixir \u4E2D\u5904\u7406 XML \u610F\u5473\u7740\u89E3\u6790\u3001\
+  \u521B\u5EFA\u548C\u64CD\u4F5C XML \u6570\u636E\u3002\u7A0B\u5E8F\u5458\u5904\u7406\
+  \ XML \u662F\u56E0\u4E3A\u5B83\u5728\u7F51\u7EDC\u670D\u52A1\u3001\u914D\u7F6E\u6587\
+  \u4EF6\u548C\u9057\u7559\u7CFB\u7EDF\u4E2D\u5E7F\u6CDB\u5B58\u5728\u3002"
+lastmod: 2024-02-18 23:08:58.887883
+model: gpt-4-0125-preview
+summary: "\u5728 Elixir \u4E2D\u5904\u7406 XML \u610F\u5473\u7740\u89E3\u6790\u3001\
+  \u521B\u5EFA\u548C\u64CD\u4F5C XML \u6570\u636E\u3002\u7A0B\u5E8F\u5458\u5904\u7406\
+  \ XML \u662F\u56E0\u4E3A\u5B83\u5728\u7F51\u7EDC\u670D\u52A1\u3001\u914D\u7F6E\u6587\
+  \u4EF6\u548C\u9057\u7559\u7CFB\u7EDF\u4E2D\u5E7F\u6CDB\u5B58\u5728\u3002"
+title: "\u5904\u7406XML"
 ---
 
 {{< edit_this_page >}}

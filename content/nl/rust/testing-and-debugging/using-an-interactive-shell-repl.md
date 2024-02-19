@@ -1,15 +1,16 @@
 ---
-title:                "Het gebruik van een interactieve shell (REPL)"
 aliases:
 - /nl/rust/using-an-interactive-shell-repl/
-date:                  2024-01-28T22:09:30.755852-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Het gebruik van een interactieve shell (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:30.755852-07:00
+description: "Een interactieve Rust-shell, of REPL (Read-Eval-Print Loop), laat je\
+  \ Rust-code direct uitvoeren, met onmiddellijke resultaten, perfect voor experimenteren\u2026"
+lastmod: 2024-02-18 23:09:01.621104
+model: gpt-4-0125-preview
+summary: "Een interactieve Rust-shell, of REPL (Read-Eval-Print Loop), laat je Rust-code\
+  \ direct uitvoeren, met onmiddellijke resultaten, perfect voor experimenteren\u2026"
+title: Het gebruik van een interactieve shell (REPL)
 ---
 
 {{< edit_this_page >}}

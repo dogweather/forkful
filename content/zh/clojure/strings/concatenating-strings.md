@@ -1,14 +1,19 @@
 ---
-title:                "字符串拼接"
 aliases:
 - /zh/clojure/concatenating-strings/
-date:                  2024-01-20T17:34:35.178711-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "字符串拼接"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/concatenating-strings.md"
+date: 2024-01-20 17:34:35.178711-07:00
+description: "\u5B57\u7B26\u4E32\u8FDE\u63A5\u5C31\u662F\u628A\u51E0\u4E2A\u5B57\u7B26\
+  \u4E32\u62FC\u63A5\u6210\u4E00\u4E2A\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u4E3B\
+  \u8981\u662F\u4E3A\u4E86\u683C\u5F0F\u5316\u8F93\u51FA\u6216\u8005\u6784\u9020\u6570\
+  \u636E\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:58.821180
+model: gpt-4-1106-preview
+summary: "\u5B57\u7B26\u4E32\u8FDE\u63A5\u5C31\u662F\u628A\u51E0\u4E2A\u5B57\u7B26\
+  \u4E32\u62FC\u63A5\u6210\u4E00\u4E2A\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u4E3B\
+  \u8981\u662F\u4E3A\u4E86\u683C\u5F0F\u5316\u8F93\u51FA\u6216\u8005\u6784\u9020\u6570\
+  \u636E\u3002"
+title: "\u5B57\u7B26\u4E32\u62FC\u63A5"
 ---
 
 {{< edit_this_page >}}

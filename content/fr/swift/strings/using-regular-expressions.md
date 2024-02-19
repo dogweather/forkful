@@ -1,14 +1,17 @@
 ---
-title:                "Utilisation des expressions régulières"
 aliases:
 - /fr/swift/using-regular-expressions/
-date:                  2024-02-03T19:18:22.109846-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation des expressions régulières"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:18:22.109846-07:00
+description: "Les expressions r\xE9guli\xE8res, ou regex, sont des s\xE9quences de\
+  \ caract\xE8res qui forment un motif de recherche, souvent utilis\xE9 pour des t\xE2\
+  ches de\u2026"
+lastmod: 2024-02-18 23:09:09.197707
+model: gpt-4-0125-preview
+summary: "Les expressions r\xE9guli\xE8res, ou regex, sont des s\xE9quences de caract\xE8\
+  res qui forment un motif de recherche, souvent utilis\xE9 pour des t\xE2ches de\u2026"
+title: "Utilisation des expressions r\xE9guli\xE8res"
 ---
 
 {{< edit_this_page >}}

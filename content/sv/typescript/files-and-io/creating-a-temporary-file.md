@@ -1,13 +1,16 @@
 ---
-title:                "Skapa en temporär fil"
 aliases:
 - /sv/typescript/creating-a-temporary-file/
-date:                  2024-01-20T17:41:31.068102-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skapa en temporär fil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:31.068102-07:00
+description: "Att skapa en tempor\xE4r fil inneb\xE4r att man tillf\xE4lligt lagrar\
+  \ data p\xE5 disken. Programmerare g\xF6r detta f\xF6r att hantera information som\
+  \ inte beh\xF6vs efter\u2026"
+lastmod: 2024-02-18 23:08:51.562166
+model: gpt-4-1106-preview
+summary: "Att skapa en tempor\xE4r fil inneb\xE4r att man tillf\xE4lligt lagrar data\
+  \ p\xE5 disken. Programmerare g\xF6r detta f\xF6r att hantera information som inte\
+  \ beh\xF6vs efter\u2026"
+title: "Skapa en tempor\xE4r fil"
 ---
 
 {{< edit_this_page >}}

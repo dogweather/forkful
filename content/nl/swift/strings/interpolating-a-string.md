@@ -1,15 +1,16 @@
 ---
-title:                "Een string interpoleren"
 aliases:
 - /nl/swift/interpolating-a-string/
-date:                  2024-01-28T22:02:44.359274-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string interpoleren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/swift/interpolating-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:02:44.359274-07:00
+description: "Het interpoleren van een string houdt in dat je variabelen in een letterlijke\
+  \ string invoegt. Programmeurs doen dit om dynamisch strings te construeren,\u2026"
+lastmod: 2024-02-18 23:09:02.213672
+model: gpt-4-0125-preview
+summary: "Het interpoleren van een string houdt in dat je variabelen in een letterlijke\
+  \ string invoegt. Programmeurs doen dit om dynamisch strings te construeren,\u2026"
+title: Een string interpoleren
 ---
 
 {{< edit_this_page >}}

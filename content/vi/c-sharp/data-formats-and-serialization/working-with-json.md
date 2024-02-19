@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với JSON"
 aliases:
 - /vi/c-sharp/working-with-json/
-date:                  2024-01-28T22:10:21.094472-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với JSON"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/working-with-json.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:21.094472-07:00
+description: "L\xE0m vi\u1EC7c v\u1EDBi JSON c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xED\
+  ch c\xFA ph\xE1p v\xE0 t\u1EA1o ra d\u1EEF li\u1EC7u JSON (Notation \u0111\u1ED1\
+  i t\u01B0\u1EE3ng JavaScript) trong c\xE1c \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n.\
+  \ L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u\u2026"
+lastmod: 2024-02-18 23:08:50.722077
+model: gpt-4-0125-preview
+summary: "L\xE0m vi\u1EC7c v\u1EDBi JSON c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch c\xFA\
+  \ ph\xE1p v\xE0 t\u1EA1o ra d\u1EEF li\u1EC7u JSON (Notation \u0111\u1ED1i t\u01B0\
+  \u1EE3ng JavaScript) trong c\xE1c \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n. L\u1EAD\
+  p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 ---
 
 {{< edit_this_page >}}

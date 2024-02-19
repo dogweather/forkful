@@ -1,14 +1,16 @@
 ---
-title:                "Virheiden käsittely"
 aliases:
 - /fi/c/handling-errors/
-date:                  2024-02-03T17:58:06.289960-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Virheiden käsittely"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/handling-errors.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:58:06.289960-07:00
+description: "Virheiden k\xE4sittely C:ss\xE4 tarkoittaa ohjelman suorituksen aikana\
+  \ esiintyvien poikkeavien tilanteiden havaitsemista ja niihin vastaamista. Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:08.141085
+model: gpt-4-0125-preview
+summary: "Virheiden k\xE4sittely C:ss\xE4 tarkoittaa ohjelman suorituksen aikana esiintyvien\
+  \ poikkeavien tilanteiden havaitsemista ja niihin vastaamista. Ohjelmoijat\u2026"
+title: "Virheiden k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

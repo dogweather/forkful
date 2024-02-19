@@ -1,14 +1,18 @@
 ---
-title:                "Convertendo uma string para minúsculas"
 aliases:
 - /pt/google-apps-script/converting-a-string-to-lower-case/
-date:                  2024-02-01T21:51:27.270324-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Convertendo uma string para minúsculas"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/google-apps-script/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:27.270324-07:00
+description: "Converter uma string para letras min\xFAsculas no Google Apps Script,\
+  \ uma linguagem de script baseada na nuvem para automatiza\xE7\xE3o de tarefas atrav\xE9\
+  s dos\u2026"
+lastmod: 2024-02-18 23:08:57.701005
+model: gpt-4-0125-preview
+summary: "Converter uma string para letras min\xFAsculas no Google Apps Script, uma\
+  \ linguagem de script baseada na nuvem para automatiza\xE7\xE3o de tarefas atrav\xE9\
+  s dos\u2026"
+title: "Convertendo uma string para min\xFAsculas"
 ---
 
 {{< edit_this_page >}}

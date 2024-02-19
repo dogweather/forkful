@@ -1,15 +1,16 @@
 ---
-title:                "Samenvoegen van strings"
 aliases:
 - /nl/javascript/concatenating-strings/
-date:                  2024-01-28T21:57:08.005216-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Samenvoegen van strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/javascript/concatenating-strings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:57:08.005216-07:00
+description: "Het aan elkaar plakken van strings betekent dat je ze achter elkaar\
+  \ koppelt. We doen dit om berichten, URL's of elke tekst met stukjes & beetjes uit\u2026"
+lastmod: 2024-02-18 23:09:02.266733
+model: gpt-4-0125-preview
+summary: "Het aan elkaar plakken van strings betekent dat je ze achter elkaar koppelt.\
+  \ We doen dit om berichten, URL's of elke tekst met stukjes & beetjes uit\u2026"
+title: Samenvoegen van strings
 ---
 
 {{< edit_this_page >}}

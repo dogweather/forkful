@@ -1,13 +1,15 @@
 ---
-title:                "Envoi d'une requête HTTP avec authentification de base"
 aliases:
 - /fr/javascript/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:01:57.632330-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Envoi d'une requête HTTP avec authentification de base"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:01:57.632330-07:00
+description: "Envoyer une requ\xEAte HTTP avec une authentification de base, c'est\
+  \ transmettre des identifiants (login/mot de passe) encod\xE9s en Base64 dans l'en-t\xEA\
+  te d'une\u2026"
+lastmod: 2024-02-18 23:09:09.255629
+model: gpt-4-1106-preview
+summary: "Envoyer une requ\xEAte HTTP avec une authentification de base, c'est transmettre\
+  \ des identifiants (login/mot de passe) encod\xE9s en Base64 dans l'en-t\xEAte d'une\u2026"
+title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 ---
 
 {{< edit_this_page >}}

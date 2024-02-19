@@ -1,14 +1,18 @@
 ---
-title:                "Få den gjeldende datoen"
 aliases:
 - /no/vba/getting-the-current-date/
-date:                  2024-02-01T21:54:39.984767-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Få den gjeldende datoen"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/vba/getting-the-current-date.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:39.984767-07:00
+description: "I Visual Basic for Applications (VBA) er det \xE5 hente den gjeldende\
+  \ datoen en vanlig oppgave som gj\xF8r at programmerere kan jobbe dynamisk med datoer\
+  \ i sine\u2026"
+lastmod: 2024-02-18 23:08:53.739228
+model: gpt-4-0125-preview
+summary: "I Visual Basic for Applications (VBA) er det \xE5 hente den gjeldende datoen\
+  \ en vanlig oppgave som gj\xF8r at programmerere kan jobbe dynamisk med datoer i\
+  \ sine\u2026"
+title: "F\xE5 den gjeldende datoen"
 ---
 
 {{< edit_this_page >}}

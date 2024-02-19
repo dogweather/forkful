@@ -1,14 +1,17 @@
 ---
-title:                "Redondeo de números"
 aliases:
 - /es/google-apps-script/rounding-numbers/
-date:                  2024-02-01T22:00:29.172102-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Redondeo de números"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/google-apps-script/rounding-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:29.172102-07:00
+description: "Redondear n\xFAmeros, un concepto fundamental en la programaci\xF3n\
+  \ de computadoras, involucra ajustar un n\xFAmero a su entero m\xE1s cercano o a\
+  \ un n\xFAmero\u2026"
+lastmod: 2024-02-18 23:09:09.500170
+model: gpt-4-0125-preview
+summary: "Redondear n\xFAmeros, un concepto fundamental en la programaci\xF3n de computadoras,\
+  \ involucra ajustar un n\xFAmero a su entero m\xE1s cercano o a un n\xFAmero\u2026"
+title: "Redondeo de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

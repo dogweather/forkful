@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie argumentów linii poleceń"
 aliases:
 - /pl/cpp/reading-command-line-arguments/
-date:                  2024-01-20T17:55:30.025837-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie argumentów linii poleceń"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:30.025837-07:00
+description: "Odczytywanie argument\xF3w linii komend to spos\xF3b na przekazywanie\
+  \ danych zewn\u0119trznych do programu przy jego starcie. Programi\u015Bci wykorzystuj\u0105\
+  \ to, aby\u2026"
+lastmod: 2024-02-18 23:08:49.926876
+model: gpt-4-1106-preview
+summary: "Odczytywanie argument\xF3w linii komend to spos\xF3b na przekazywanie danych\
+  \ zewn\u0119trznych do programu przy jego starcie. Programi\u015Bci wykorzystuj\u0105\
+  \ to, aby\u2026"
+title: "Odczytywanie argument\xF3w linii polece\u0144"
 ---
 
 {{< edit_this_page >}}

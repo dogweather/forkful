@@ -1,13 +1,14 @@
 ---
-title:                "Anführungszeichen aus einem String entfernen"
 aliases:
 - /de/lua/removing-quotes-from-a-string/
-date:                  2024-01-26T03:40:20.310137-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Anführungszeichen aus einem String entfernen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:40:20.310137-07:00
+description: "Anf\xFChrungszeichen aus einem String zu entfernen bedeutet, diese doppelten\
+  \ oder einfachen Anf\xFChrungszeichen, die deinen Text umarmen, wegzusch\xE4len.\u2026"
+lastmod: 2024-02-18 23:09:04.994446
+model: gpt-4-0125-preview
+summary: "Anf\xFChrungszeichen aus einem String zu entfernen bedeutet, diese doppelten\
+  \ oder einfachen Anf\xFChrungszeichen, die deinen Text umarmen, wegzusch\xE4len.\u2026"
+title: "Anf\xFChrungszeichen aus einem String entfernen"
 ---
 
 {{< edit_this_page >}}

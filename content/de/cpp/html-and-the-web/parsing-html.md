@@ -1,14 +1,16 @@
 ---
-title:                "HTML parsen"
 aliases:
 - /de/cpp/parsing-html/
-date:                  2024-02-03T19:11:24.329034-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML parsen"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:11:24.329034-07:00
+description: "HTML zu parsen bedeutet, HTML-Inhalte so aufzubrechen, dass ein Programm\
+  \ sie verstehen und manipulieren kann. Programmierer tun dies, um Daten zu\u2026"
+lastmod: 2024-02-18 23:09:05.186794
+model: gpt-4-0125-preview
+summary: "HTML zu parsen bedeutet, HTML-Inhalte so aufzubrechen, dass ein Programm\
+  \ sie verstehen und manipulieren kann. Programmierer tun dies, um Daten zu\u2026"
+title: HTML parsen
 ---
 
 {{< edit_this_page >}}

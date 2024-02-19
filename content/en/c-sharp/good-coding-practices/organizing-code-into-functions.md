@@ -1,13 +1,14 @@
 ---
-title:                "Organizing code into functions"
 aliases:
 - /en/c-sharp/organizing-code-into-functions/
-date:                  2024-01-25T02:59:35.207552-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organizing code into functions"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/organizing-code-into-functions.md"
+date: 2024-01-25 02:59:35.207552-07:00
+description: "Chunking code into functions is like sorting LEGO bricks into bins\u2014\
+  it makes finding and using them easier. We do this to avoid repetition, to simplify\u2026"
+lastmod: 2024-02-18 23:09:11.059975
+model: gpt-4-1106-preview
+summary: "Chunking code into functions is like sorting LEGO bricks into bins\u2014\
+  it makes finding and using them easier. We do this to avoid repetition, to simplify\u2026"
+title: Organizing code into functions
 ---
 
 {{< edit_this_page >}}

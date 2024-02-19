@@ -1,13 +1,16 @@
 ---
-title:                "Redondeo de números"
 aliases:
 - /es/arduino/rounding-numbers/
-date:                  2024-01-26T03:42:28.484005-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Redondeo de números"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/rounding-numbers.md"
+date: 2024-01-26 03:42:28.484005-07:00
+description: "Redondear n\xFAmeros es recortar un decimal a su valor entero m\xE1\
+  s cercano o a un n\xFAmero establecido de decimales. Los programadores redondean\
+  \ los n\xFAmeros\u2026"
+lastmod: 2024-02-18 23:09:10.256181
+model: gpt-4-0125-preview
+summary: "Redondear n\xFAmeros es recortar un decimal a su valor entero m\xE1s cercano\
+  \ o a un n\xFAmero establecido de decimales. Los programadores redondean los n\xFA\
+  meros\u2026"
+title: "Redondeo de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,20 @@
 ---
-title:                "Sử dụng trình gỡ lỗi"
 aliases:
 - /vi/go/using-a-debugger/
-date:                  2024-02-03T18:10:47.833278-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng trình gỡ lỗi"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/using-a-debugger.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:47.833278-07:00
+description: "Vi\u1EC7c s\u1EED d\u1EE5ng debugger trong l\u1EADp tr\xECnh Go bao\
+  \ g\u1ED3m vi\u1EC7c \u1EE9ng d\u1EE5ng c\xE1c c\xF4ng c\u1EE5 ho\u1EB7c t\xEDnh\
+  \ n\u0103ng \u0111\u1EC3 ki\u1EC3m tra v\xE0 ch\u1EC9nh s\u1EEDa tr\u1EA1ng th\xE1\
+  i c\u1EE7a ch\u01B0\u01A1ng tr\xECnh \u0111ang ch\u1EA1y\u2026"
+lastmod: 2024-02-18 23:08:50.175837
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c s\u1EED d\u1EE5ng debugger trong l\u1EADp tr\xECnh Go bao g\u1ED3\
+  m vi\u1EC7c \u1EE9ng d\u1EE5ng c\xE1c c\xF4ng c\u1EE5 ho\u1EB7c t\xEDnh n\u0103\
+  ng \u0111\u1EC3 ki\u1EC3m tra v\xE0 ch\u1EC9nh s\u1EEDa tr\u1EA1ng th\xE1i c\u1EE7\
+  a ch\u01B0\u01A1ng tr\xECnh \u0111ang ch\u1EA1y\u2026"
+title: "S\u1EED d\u1EE5ng tr\xECnh g\u1EE1 l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

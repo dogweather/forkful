@@ -1,14 +1,18 @@
 ---
-title:                "Extraction de sous-chaînes"
 aliases:
 - /fr/go/extracting-substrings/
-date:                  2024-02-03T17:56:21.617718-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Extraction de sous-chaînes"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/extracting-substrings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:21.617718-07:00
+description: "Extraire des sous-cha\xEEnes implique de r\xE9cup\xE9rer des portions\
+  \ sp\xE9cifiques d'une cha\xEEne en fonction de leurs positions. Les programmeurs\
+  \ r\xE9alisent\u2026"
+lastmod: 2024-02-18 23:09:08.218074
+model: gpt-4-0125-preview
+summary: "Extraire des sous-cha\xEEnes implique de r\xE9cup\xE9rer des portions sp\xE9\
+  cifiques d'une cha\xEEne en fonction de leurs positions. Les programmeurs r\xE9\
+  alisent\u2026"
+title: "Extraction de sous-cha\xEEnes"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Å bruke en feilsøker"
 aliases:
 - /no/lua/using-a-debugger/
-date:                  2024-01-26T03:50:18.805776-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å bruke en feilsøker"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/lua/using-a-debugger.md"
+date: 2024-01-26 03:50:18.805776-07:00
+description: "En feils\xF8ker er et verkt\xF8y som lar deg inspisere og kontrollere\
+  \ utf\xF8relsen av et program, noe som gj\xF8r det enkelt \xE5 finne ut hvor ting\
+  \ g\xE5r galt.\u2026"
+lastmod: 2024-02-18 23:08:54.020185
+model: gpt-4-0125-preview
+summary: "En feils\xF8ker er et verkt\xF8y som lar deg inspisere og kontrollere utf\xF8\
+  relsen av et program, noe som gj\xF8r det enkelt \xE5 finne ut hvor ting g\xE5r\
+  \ galt.\u2026"
+title: "\xC5 bruke en feils\xF8ker"
 ---
 
 {{< edit_this_page >}}

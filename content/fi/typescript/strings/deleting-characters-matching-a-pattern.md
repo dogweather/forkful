@@ -1,13 +1,16 @@
 ---
-title:                "Merkkien poistaminen hakemalla osumia kaavaan"
 aliases:
 - /fi/typescript/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:43:24.689964-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:43:24.689964-07:00
+description: "Mit\xE4 ja miksi? Kun poistetaan merkkej\xE4, jotka vastaavat tietty\xE4\
+  \ kaavaa, siivotaan merkkijonoja. T\xE4m\xE4 auttaa meit\xE4 p\xE4\xE4sem\xE4\xE4\
+  n eroon ei-toivotuista\u2026"
+lastmod: 2024-02-18 23:09:07.302071
+model: gpt-4-1106-preview
+summary: "Mit\xE4 ja miksi? Kun poistetaan merkkej\xE4, jotka vastaavat tietty\xE4\
+  \ kaavaa, siivotaan merkkijonoja. T\xE4m\xE4 auttaa meit\xE4 p\xE4\xE4sem\xE4\xE4\
+  n eroon ei-toivotuista\u2026"
+title: Merkkien poistaminen hakemalla osumia kaavaan
 ---
 
 {{< edit_this_page >}}

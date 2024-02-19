@@ -1,13 +1,16 @@
 ---
-title:                "Tratamento de erros"
 aliases:
 - /pt/cpp/handling-errors/
-date:                  2024-01-26T00:49:58.639415-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tratamento de erros"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/handling-errors.md"
+date: 2024-01-26 00:49:58.639415-07:00
+description: "Tratar erros significa planejar para quando as coisas derem errado.\
+  \ \xC9 vital por ajudar a evitar falhas e tornar seu software robusto e amig\xE1\
+  vel para o\u2026"
+lastmod: 2024-02-18 23:08:58.457014
+model: gpt-4-1106-preview
+summary: "Tratar erros significa planejar para quando as coisas derem errado. \xC9\
+  \ vital por ajudar a evitar falhas e tornar seu software robusto e amig\xE1vel para\
+  \ o\u2026"
+title: Tratamento de erros
 ---
 
 {{< edit_this_page >}}

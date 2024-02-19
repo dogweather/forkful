@@ -1,13 +1,16 @@
 ---
-title:                "Lancement d'un nouveau projet"
 aliases:
 - /fr/kotlin/starting-a-new-project/
-date:                  2024-01-20T18:04:00.609836-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lancement d'un nouveau projet"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/starting-a-new-project.md"
+date: 2024-01-20 18:04:00.609836-07:00
+description: "D\xE9marrer un nouveau projet, c'est mettre la premi\xE8re pierre \xE0\
+  \ votre \xE9difice num\xE9rique. Les programmeurs le font pour concr\xE9tiser une\
+  \ id\xE9e, apprendre une\u2026"
+lastmod: 2024-02-18 23:09:08.781592
+model: gpt-4-1106-preview
+summary: "D\xE9marrer un nouveau projet, c'est mettre la premi\xE8re pierre \xE0 votre\
+  \ \xE9difice num\xE9rique. Les programmeurs le font pour concr\xE9tiser une id\xE9\
+  e, apprendre une\u2026"
+title: Lancement d'un nouveau projet
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Verifica se una directory esiste"
 aliases:
 - /it/google-apps-script/checking-if-a-directory-exists/
-date:                  2024-02-01T21:48:48.475052-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verifica se una directory esiste"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/google-apps-script/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:48:48.475052-07:00
+description: "Verificare se una directory esiste in Google Apps Script implica la\
+  \ verifica della presenza di una cartella all'interno di Google Drive. Gli sviluppatori\u2026"
+lastmod: 2024-02-18 23:08:55.493616
+model: gpt-4-0125-preview
+summary: "Verificare se una directory esiste in Google Apps Script implica la verifica\
+  \ della presenza di una cartella all'interno di Google Drive. Gli sviluppatori\u2026"
+title: Verifica se una directory esiste
 ---
 
 {{< edit_this_page >}}

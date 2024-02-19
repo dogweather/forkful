@@ -1,13 +1,16 @@
 ---
-title:                "Interaktiivisen komentotulkin (REPL) käyttö"
 aliases:
 - /fi/ruby/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:17:18.189518-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interaktiivisen komentotulkin (REPL) käyttö"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:17:18.189518-07:00
+description: "Interaktiivinen kuori, tai REPL (Read-Eval-Print Loop, lue-arvioi-tulosta\
+  \ -silmukka), mahdollistaa koodin testaamisen reaaliajassa. Ohjelmoijat k\xE4ytt\xE4\
+  v\xE4t\u2026"
+lastmod: 2024-02-18 23:09:08.184419
+model: gpt-4-0125-preview
+summary: "Interaktiivinen kuori, tai REPL (Read-Eval-Print Loop, lue-arvioi-tulosta\
+  \ -silmukka), mahdollistaa koodin testaamisen reaaliajassa. Ohjelmoijat k\xE4ytt\xE4\
+  v\xE4t\u2026"
+title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Mallin mukaisten merkkien poistaminen"
 aliases:
 - /fi/vba/deleting-characters-matching-a-pattern/
-date:                  2024-02-01T21:52:35.724499-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Mallin mukaisten merkkien poistaminen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:35.724499-07:00
+description: "Merkkien poistaminen tietyll\xE4 kaavalla Visual Basic for Applications\
+  \ (VBA) -ohjelmassa tarkoittaa tiettyjen ehtojen t\xE4ytt\xE4vien merkkien tai merkkijonojen\u2026"
+lastmod: 2024-02-18 23:09:07.392190
+model: gpt-4-0125-preview
+summary: "Merkkien poistaminen tietyll\xE4 kaavalla Visual Basic for Applications\
+  \ (VBA) -ohjelmassa tarkoittaa tiettyjen ehtojen t\xE4ytt\xE4vien merkkien tai merkkijonojen\u2026"
+title: Mallin mukaisten merkkien poistaminen
 ---
 
 {{< edit_this_page >}}

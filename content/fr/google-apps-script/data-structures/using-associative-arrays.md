@@ -1,14 +1,16 @@
 ---
-title:                "Utilisation des tableaux associatifs"
 aliases:
 - /fr/google-apps-script/using-associative-arrays/
-date:                  2024-02-01T22:04:20.065001-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation des tableaux associatifs"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/google-apps-script/using-associative-arrays.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:20.065001-07:00
+description: "Les tableaux associatifs, connus sous le nom d'objets dans Google Apps\
+  \ Script (une variante de JavaScript), permettent aux programmeurs de cr\xE9er des\u2026"
+lastmod: 2024-02-18 23:09:08.279315
+model: gpt-4-0125-preview
+summary: "Les tableaux associatifs, connus sous le nom d'objets dans Google Apps Script\
+  \ (une variante de JavaScript), permettent aux programmeurs de cr\xE9er des\u2026"
+title: Utilisation des tableaux associatifs
 ---
 
 {{< edit_this_page >}}

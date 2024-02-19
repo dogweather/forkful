@@ -1,14 +1,17 @@
 ---
-title:                "Utilizzo delle espressioni regolari"
 aliases:
 - /it/go/using-regular-expressions/
-date:                  2024-02-03T18:11:14.512896-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo delle espressioni regolari"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:11:14.512896-07:00
+description: "Le espressioni regolari (regex) nella programmazione sono utilizzate\
+  \ per cercare, corrispondere e manipolare stringhe basate su specifici modelli.\
+  \ I\u2026"
+lastmod: 2024-02-18 23:08:55.421815
+model: gpt-4-0125-preview
+summary: "Le espressioni regolari (regex) nella programmazione sono utilizzate per\
+  \ cercare, corrispondere e manipolare stringhe basate su specifici modelli. I\u2026"
+title: Utilizzo delle espressioni regolari
 ---
 
 {{< edit_this_page >}}

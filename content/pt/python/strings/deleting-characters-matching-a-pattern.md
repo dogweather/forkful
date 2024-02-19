@@ -1,13 +1,16 @@
 ---
-title:                "Excluindo caracteres que correspondem a um padrão"
 aliases:
 - /pt/python/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:47.654872-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Excluindo caracteres que correspondem a um padrão"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:47.654872-07:00
+description: "Deletar caracteres que correspondem a um padr\xE3o \xE9 uma forma de\
+  \ filtrar strings, preservando s\xF3 o que \xE9 relevante para o seu contexto. Programadores\
+  \ fazem\u2026"
+lastmod: 2024-02-18 23:08:57.745722
+model: gpt-4-1106-preview
+summary: "Deletar caracteres que correspondem a um padr\xE3o \xE9 uma forma de filtrar\
+  \ strings, preservando s\xF3 o que \xE9 relevante para o seu contexto. Programadores\
+  \ fazem\u2026"
+title: "Excluindo caracteres que correspondem a um padr\xE3o"
 ---
 
 {{< edit_this_page >}}

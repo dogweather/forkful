@@ -1,14 +1,18 @@
 ---
-title:                "Escribiendo pruebas"
 aliases:
 - /es/javascript/writing-tests/
-date:                  2024-02-03T19:31:03.015066-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escribiendo pruebas"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:03.015066-07:00
+description: "Escribir pruebas en JavaScript se refiere a la pr\xE1ctica de crear\
+  \ scripts automatizados que ejecutan tu c\xF3digo para asegurarse de que se comporte\
+  \ como se\u2026"
+lastmod: 2024-02-18 23:09:10.408573
+model: gpt-4-0125-preview
+summary: "Escribir pruebas en JavaScript se refiere a la pr\xE1ctica de crear scripts\
+  \ automatizados que ejecutan tu c\xF3digo para asegurarse de que se comporte como\
+  \ se\u2026"
+title: Escribiendo pruebas
 ---
 
 {{< edit_this_page >}}

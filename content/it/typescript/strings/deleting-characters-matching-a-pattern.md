@@ -1,13 +1,15 @@
 ---
-title:                "Eliminazione di caratteri che corrispondono a un pattern"
 aliases:
 - /it/typescript/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:43:05.715171-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Eliminazione di caratteri che corrispondono a un pattern"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:43:05.715171-07:00
+description: "Cancellare i caratteri che corrispondono a un pattern significa usare\
+  \ espressioni regolari o funzioni per rimuovere specifiche sequenze di caratteri\
+  \ da\u2026"
+lastmod: 2024-02-18 23:08:55.625807
+model: gpt-4-1106-preview
+summary: "Cancellare i caratteri che corrispondono a un pattern significa usare espressioni\
+  \ regolari o funzioni per rimuovere specifiche sequenze di caratteri da\u2026"
+title: Eliminazione di caratteri che corrispondono a un pattern
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Łączenie łańcuchów znaków"
 aliases:
 - /pl/rust/concatenating-strings/
-date:                  2024-01-20T17:35:40.191452-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Łączenie łańcuchów znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/concatenating-strings.md"
+date: 2024-01-20 17:35:40.191452-07:00
+description: "\u0141\u0105czenie string\xF3w to po prostu spos\xF3b, by z dw\xF3ch\
+  \ czy wi\u0119cej osobnych tekst\xF3w zrobi\u0107 jeden ci\u0105g\u0142y. Programi\u015B\
+  ci robi\u0105 to, gdy potrzebuj\u0105 stworzy\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.382166
+model: gpt-4-1106-preview
+summary: "\u0141\u0105czenie string\xF3w to po prostu spos\xF3b, by z dw\xF3ch czy\
+  \ wi\u0119cej osobnych tekst\xF3w zrobi\u0107 jeden ci\u0105g\u0142y. Programi\u015B\
+  ci robi\u0105 to, gdy potrzebuj\u0105 stworzy\u0107\u2026"
+title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 ---
 
 {{< edit_this_page >}}

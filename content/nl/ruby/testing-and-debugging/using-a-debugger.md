@@ -1,15 +1,17 @@
 ---
-title:                "Een debugger gebruiken"
 aliases:
 - /nl/ruby/using-a-debugger/
-date:                  2024-01-28T22:08:45.932461-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een debugger gebruiken"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:45.932461-07:00
+description: "Een debugger gebruiken in Ruby geeft programmeurs een superkracht om\
+  \ hun code te pauzeren, variabelen te inspecteren en stap voor stap door hun code\
+  \ te\u2026"
+lastmod: 2024-02-18 23:09:02.427419
+model: gpt-4-0125-preview
+summary: "Een debugger gebruiken in Ruby geeft programmeurs een superkracht om hun\
+  \ code te pauzeren, variabelen te inspecteren en stap voor stap door hun code te\u2026"
+title: Een debugger gebruiken
 ---
 
 {{< edit_this_page >}}

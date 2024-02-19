@@ -1,14 +1,18 @@
 ---
-title:                "Tarkistetaan, onko hakemisto olemassa"
 aliases:
 - /fi/fish-shell/checking-if-a-directory-exists/
-date:                  2024-02-03T19:07:18.852533-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tarkistetaan, onko hakemisto olemassa"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:07:18.852533-07:00
+description: "Hakemiston olemassaolon tarkistaminen Fish Shelliss\xE4 mahdollistaa\
+  \ skriptien tehd\xE4 p\xE4\xE4t\xF6ksi\xE4 perustuen hakemistorakenteiden l\xE4\
+  sn\xE4oloon tai puuttumiseen,\u2026"
+lastmod: 2024-02-18 23:09:08.100037
+model: gpt-4-0125-preview
+summary: "Hakemiston olemassaolon tarkistaminen Fish Shelliss\xE4 mahdollistaa skriptien\
+  \ tehd\xE4 p\xE4\xE4t\xF6ksi\xE4 perustuen hakemistorakenteiden l\xE4sn\xE4oloon\
+  \ tai puuttumiseen,\u2026"
+title: Tarkistetaan, onko hakemisto olemassa
 ---
 
 {{< edit_this_page >}}

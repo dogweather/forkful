@@ -1,14 +1,18 @@
 ---
-title:                "Escribiendo pruebas"
 aliases:
 - /es/elm/writing-tests/
-date:                  2024-02-03T19:30:26.385044-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escribiendo pruebas"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:30:26.385044-07:00
+description: "Escribir pruebas en Elm implica crear casos de prueba para verificar\
+  \ la correcci\xF3n de tu c\xF3digo Elm, asegurando que se comporte como se espera.\
+  \ Los\u2026"
+lastmod: 2024-02-18 23:09:09.894570
+model: gpt-4-0125-preview
+summary: "Escribir pruebas en Elm implica crear casos de prueba para verificar la\
+  \ correcci\xF3n de tu c\xF3digo Elm, asegurando que se comporte como se espera.\
+  \ Los\u2026"
+title: Escribiendo pruebas
 ---
 
 {{< edit_this_page >}}

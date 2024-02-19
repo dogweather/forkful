@@ -1,14 +1,18 @@
 ---
-title:                "Einen String großschreiben"
 aliases:
 - /de/google-apps-script/capitalizing-a-string/
-date:                  2024-02-01T21:48:43.615107-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Einen String großschreiben"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/google-apps-script/capitalizing-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:48:43.615107-07:00
+description: "Das Gro\xDFschreiben eines Strings beinhaltet die Modifizierung der\
+  \ Eingabe, so dass der erste Buchstabe gro\xDFgeschrieben wird, w\xE4hrend der Rest\
+  \ klein bleibt.\u2026"
+lastmod: 2024-02-18 23:09:04.393201
+model: gpt-4-0125-preview
+summary: "Das Gro\xDFschreiben eines Strings beinhaltet die Modifizierung der Eingabe,\
+  \ so dass der erste Buchstabe gro\xDFgeschrieben wird, w\xE4hrend der Rest klein\
+  \ bleibt.\u2026"
+title: "Einen String gro\xDFschreiben"
 ---
 
 {{< edit_this_page >}}

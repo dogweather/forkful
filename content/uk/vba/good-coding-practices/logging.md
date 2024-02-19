@@ -1,14 +1,28 @@
 ---
-title:                "Журналювання"
 aliases:
 - /uk/vba/logging/
-date:                  2024-02-01T21:56:47.326326-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Журналювання"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/vba/logging.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:56:47.326326-07:00
+description: "\u041B\u043E\u0433\u0443\u0432\u0430\u043D\u043D\u044F \u0432 Visual\
+  \ Basic for Applications (VBA) \u043F\u0435\u0440\u0435\u0434\u0431\u0430\u0447\u0430\
+  \u0454 \u0437\u0430\u043F\u0438\u0441 \u0456\u043D\u0444\u043E\u0440\u043C\u0430\
+  \u0446\u0456\u0457 \u043F\u0440\u043E \u043F\u043E\u0432\u0435\u0434\u0456\u043D\
+  \u043A\u0443 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438 \u043F\u0456\u0434\
+  \ \u0447\u0430\u0441 \u0432\u0438\u043A\u043E\u043D\u0430\u043D\u043D\u044F \u0443\
+  \ \u0444\u0430\u0439\u043B, \u043A\u043E\u043D\u0441\u043E\u043B\u044C \u0430\u0431\
+  \u043E \u0431\u0430\u0437\u0443 \u0434\u0430\u043D\u0438\u0445.\u2026"
+lastmod: 2024-02-18 23:09:00.056212
+model: gpt-4-0125-preview
+summary: "\u041B\u043E\u0433\u0443\u0432\u0430\u043D\u043D\u044F \u0432 Visual Basic\
+  \ for Applications (VBA) \u043F\u0435\u0440\u0435\u0434\u0431\u0430\u0447\u0430\u0454\
+  \ \u0437\u0430\u043F\u0438\u0441 \u0456\u043D\u0444\u043E\u0440\u043C\u0430\u0446\
+  \u0456\u0457 \u043F\u0440\u043E \u043F\u043E\u0432\u0435\u0434\u0456\u043D\u043A\
+  \u0443 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0438 \u043F\u0456\u0434 \u0447\
+  \u0430\u0441 \u0432\u0438\u043A\u043E\u043D\u0430\u043D\u043D\u044F \u0443 \u0444\
+  \u0430\u0439\u043B, \u043A\u043E\u043D\u0441\u043E\u043B\u044C \u0430\u0431\u043E\
+  \ \u0431\u0430\u0437\u0443 \u0434\u0430\u043D\u0438\u0445.\u2026"
+title: "\u0416\u0443\u0440\u043D\u0430\u043B\u044E\u0432\u0430\u043D\u043D\u044F"
 ---
 
 {{< edit_this_page >}}

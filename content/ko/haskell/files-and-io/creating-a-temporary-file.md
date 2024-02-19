@@ -1,14 +1,25 @@
 ---
-title:                "임시 파일 생성하기"
 aliases:
 - /ko/haskell/creating-a-temporary-file/
-date:                  2024-01-20T17:40:25.737732-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "임시 파일 생성하기"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:25.737732-07:00
+description: "\uC784\uC2DC \uD30C\uC77C\uC744 \uB9CC\uB4DC\uB294 \uAC83\uC740 \uC784\
+  \uC2DC \uB370\uC774\uD130\uB97C \uC800\uC7A5\uD558\uAE30 \uC704\uD55C \uD30C\uC77C\
+  \uC744 \uC0DD\uC131\uD558\uB294 \uACFC\uC815\uC785\uB2C8\uB2E4. \uC774\uB97C \uC0AC\
+  \uC6A9\uD574 \uD504\uB85C\uADF8\uB7A8\uC774 \uC2E4\uD589\uB418\uB294 \uB3D9\uC548\
+  \uC5D0\uB9CC \uD544\uC694\uD55C \uB370\uC774\uD130\uB97C \uAD00\uB9AC\uD558\uAC70\
+  \uB098, \uB370\uC774\uD130 \uCDA9\uB3CC\uACFC \uB3D9\uC2DC\uC131 \uBB38\uC81C\uB97C\
+  \ \uD53C\uD558\uAE30 \uC704\uD574 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.317529
+model: gpt-4-1106-preview
+summary: "\uC784\uC2DC \uD30C\uC77C\uC744 \uB9CC\uB4DC\uB294 \uAC83\uC740 \uC784\uC2DC\
+  \ \uB370\uC774\uD130\uB97C \uC800\uC7A5\uD558\uAE30 \uC704\uD55C \uD30C\uC77C\uC744\
+  \ \uC0DD\uC131\uD558\uB294 \uACFC\uC815\uC785\uB2C8\uB2E4. \uC774\uB97C \uC0AC\uC6A9\
+  \uD574 \uD504\uB85C\uADF8\uB7A8\uC774 \uC2E4\uD589\uB418\uB294 \uB3D9\uC548\uC5D0\
+  \uB9CC \uD544\uC694\uD55C \uB370\uC774\uD130\uB97C \uAD00\uB9AC\uD558\uAC70\uB098\
+  , \uB370\uC774\uD130 \uCDA9\uB3CC\uACFC \uB3D9\uC2DC\uC131 \uBB38\uC81C\uB97C \uD53C\
+  \uD558\uAE30 \uC704\uD574 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+title: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

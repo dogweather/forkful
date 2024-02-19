@@ -1,13 +1,16 @@
 ---
-title:                "Virheenjäljitystulosteiden tulostaminen"
 aliases:
 - /fi/haskell/printing-debug-output/
-date:                  2024-01-20T17:52:44.270186-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheenjäljitystulosteiden tulostaminen"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/printing-debug-output.md"
+date: 2024-01-20 17:52:44.270186-07:00
+description: "Mik\xE4 & Miksi? Ohjelmoinnissa debug-tulostus tarkoittaa tilap\xE4\
+  isten viestien tulostamista koodin suorituksen seuraamiseksi. K\xE4yt\xE4mme t\xE4\
+  t\xE4 selvitt\xE4\xE4ksemme\u2026"
+lastmod: 2024-02-18 23:09:07.668905
+model: gpt-4-1106-preview
+summary: "Mik\xE4 & Miksi? Ohjelmoinnissa debug-tulostus tarkoittaa tilap\xE4isten\
+  \ viestien tulostamista koodin suorituksen seuraamiseksi. K\xE4yt\xE4mme t\xE4t\xE4\
+  \ selvitt\xE4\xE4ksemme\u2026"
+title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 ---
 
 {{< edit_this_page >}}

@@ -1,16 +1,19 @@
 ---
-title:                "Organisera kod i funktioner"
 aliases:
 - /sv/fish-shell/organizing-code-into-functions/
-date:                  2024-01-28T23:01:28.693984-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Organisera kod i funktioner"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/organizing-code-into-functions.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed and added links
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed and added links
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 23:01:28.693984-07:00
+description: "Att organisera kod i funktioner handlar om att bunta ihop bitar av skript\
+  \ f\xF6r att g\xF6ra specifika uppgifter. Vi g\xF6r det eftersom det g\xF6r koden\
+  \ enklare att\u2026"
+lastmod: 2024-02-18 23:08:52.212926
+model: gpt-4-0125-preview
+summary: "Att organisera kod i funktioner handlar om att bunta ihop bitar av skript\
+  \ f\xF6r att g\xF6ra specifika uppgifter. Vi g\xF6r det eftersom det g\xF6r koden\
+  \ enklare att\u2026"
+title: Organisera kod i funktioner
 ---
 
 {{< edit_this_page >}}

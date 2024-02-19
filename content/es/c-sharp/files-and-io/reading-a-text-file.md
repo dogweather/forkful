@@ -1,13 +1,16 @@
 ---
-title:                "Lectura de un archivo de texto"
 aliases:
 - /es/c-sharp/reading-a-text-file/
-date:                  2024-01-20T17:54:08.055687-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lectura de un archivo de texto"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/reading-a-text-file.md"
+date: 2024-01-20 17:54:08.055687-07:00
+description: "Leer un archivo de texto en programaci\xF3n significa acceder al contenido\
+  \ almacenado en un archivo en tu disco y trabajar con \xE9l en tu c\xF3digo. Es\
+  \ una tarea\u2026"
+lastmod: 2024-02-18 23:09:10.000788
+model: gpt-4-1106-preview
+summary: "Leer un archivo de texto en programaci\xF3n significa acceder al contenido\
+  \ almacenado en un archivo en tu disco y trabajar con \xE9l en tu c\xF3digo. Es\
+  \ una tarea\u2026"
+title: Lectura de un archivo de texto
 ---
 
 {{< edit_this_page >}}

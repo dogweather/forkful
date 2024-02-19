@@ -1,13 +1,14 @@
 ---
-title:                "Eliminazione di caratteri che corrispondono a un pattern"
 aliases:
 - /it/java/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:34.484093-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Eliminazione di caratteri che corrispondono a un pattern"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/java/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:34.484093-07:00
+description: "In Java, cancellare caratteri che corrispondono a un modello significa\
+  \ usare espressioni regolari per identificare e rimuovere sequenze specifiche di\u2026"
+lastmod: 2024-02-18 23:08:55.751040
+model: gpt-4-1106-preview
+summary: "In Java, cancellare caratteri che corrispondono a un modello significa usare\
+  \ espressioni regolari per identificare e rimuovere sequenze specifiche di\u2026"
+title: Eliminazione di caratteri che corrispondono a un pattern
 ---
 
 {{< edit_this_page >}}

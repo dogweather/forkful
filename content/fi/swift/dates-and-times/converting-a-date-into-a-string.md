@@ -1,13 +1,16 @@
 ---
-title:                "Päivämäärän muuntaminen merkkijonoksi"
 aliases:
 - /fi/swift/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:37.325190-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:37.325190-07:00
+description: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi jotta se olisi helpompi\
+  \ n\xE4ytt\xE4\xE4 k\xE4ytt\xE4j\xE4lle. T\xE4m\xE4 tehd\xE4\xE4n k\xE4ytt\xE4j\xE4\
+  yst\xE4v\xE4llisten muotojen ja paikallisten\u2026"
+lastmod: 2024-02-18 23:09:08.002400
+model: gpt-4-1106-preview
+summary: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi jotta se olisi helpompi\
+  \ n\xE4ytt\xE4\xE4 k\xE4ytt\xE4j\xE4lle. T\xE4m\xE4 tehd\xE4\xE4n k\xE4ytt\xE4j\xE4\
+  yst\xE4v\xE4llisten muotojen ja paikallisten\u2026"
+title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 ---
 
 {{< edit_this_page >}}

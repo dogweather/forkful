@@ -1,13 +1,15 @@
 ---
-title:                "Textdatei einlesen"
 aliases:
 - /de/bash/reading-a-text-file/
-date:                  2024-01-20T17:53:35.831012-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Textdatei einlesen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/reading-a-text-file.md"
+date: 2024-01-20 17:53:35.831012-07:00
+description: "Lesen einer Textdatei bedeutet, deren Inhalt in den Speicher zu laden,\
+  \ um ihn zu verarbeiten. Programmierer nutzen das, um Konfigurationen zu laden,\
+  \ Daten\u2026"
+lastmod: 2024-02-18 23:09:05.072854
+model: gpt-4-1106-preview
+summary: "Lesen einer Textdatei bedeutet, deren Inhalt in den Speicher zu laden, um\
+  \ ihn zu verarbeiten. Programmierer nutzen das, um Konfigurationen zu laden, Daten\u2026"
+title: Textdatei einlesen
 ---
 
 {{< edit_this_page >}}

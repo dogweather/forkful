@@ -1,13 +1,16 @@
 ---
-title:                "Å sende en HTTP-forespørsel med grunnleggende autentisering"
 aliases:
 - /no/clojure/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:01:25.904701-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Å sende en HTTP-forespørsel med grunnleggende autentisering"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:01:25.904701-07:00
+description: "HTTP-foresp\xF8rsler med grunnleggende autentisering inneb\xE6rer \xE5\
+  \ sende brukernavn og passord i en header for tilgang. Programmerere bruker dette\
+  \ for \xE5 sikre\u2026"
+lastmod: 2024-02-18 23:08:53.564240
+model: gpt-4-1106-preview
+summary: "HTTP-foresp\xF8rsler med grunnleggende autentisering inneb\xE6rer \xE5 sende\
+  \ brukernavn og passord i en header for tilgang. Programmerere bruker dette for\
+  \ \xE5 sikre\u2026"
+title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 ---
 
 {{< edit_this_page >}}

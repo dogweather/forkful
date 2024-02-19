@@ -1,14 +1,29 @@
 ---
-title:                "सहयोगी अरे का उपयोग करना"
 aliases:
 - /hi/vba/using-associative-arrays/
-date:                  2024-02-01T22:05:32.827254-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "सहयोगी अरे का उपयोग करना"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/vba/using-associative-arrays.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:05:32.827254-07:00
+description: "Visual Basic for Applications (VBA) \u092E\u0947\u0902, \u0938\u0939\
+  \u092F\u094B\u091C\u0940 \u090F\u0930\u0947, \u091C\u093F\u0928\u094D\u0939\u0947\
+  \u0902 \u0905\u0915\u094D\u0938\u0930 \u0936\u092C\u094D\u0926\u0915\u094B\u0937\
+  \u094B\u0902 (dictionaries) \u0915\u0947 \u0930\u0942\u092A \u092E\u0947\u0902 \u091C\
+  \u093E\u0928\u093E \u091C\u093E\u0924\u093E \u0939\u0948, \u092A\u094D\u0930\u094B\
+  \u0917\u094D\u0930\u093E\u092E\u0930\u094D\u0938 \u0915\u094B \u0915\u0941\u0902\
+  \u091C\u0940-\u092E\u0942\u0932\u094D\u092F \u091C\u094B\u0921\u093C\u094B\u0902\
+  \ \u0915\u0947\u2026"
+lastmod: 2024-02-18 23:09:03.021205
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications (VBA) \u092E\u0947\u0902, \u0938\u0939\u092F\
+  \u094B\u091C\u0940 \u090F\u0930\u0947, \u091C\u093F\u0928\u094D\u0939\u0947\u0902\
+  \ \u0905\u0915\u094D\u0938\u0930 \u0936\u092C\u094D\u0926\u0915\u094B\u0937\u094B\
+  \u0902 (dictionaries) \u0915\u0947 \u0930\u0942\u092A \u092E\u0947\u0902 \u091C\u093E\
+  \u0928\u093E \u091C\u093E\u0924\u093E \u0939\u0948, \u092A\u094D\u0930\u094B\u0917\
+  \u094D\u0930\u093E\u092E\u0930\u094D\u0938 \u0915\u094B \u0915\u0941\u0902\u091C\
+  \u0940-\u092E\u0942\u0932\u094D\u092F \u091C\u094B\u0921\u093C\u094B\u0902 \u0915\
+  \u0947\u2026"
+title: "\u0938\u0939\u092F\u094B\u0917\u0940 \u0905\u0930\u0947 \u0915\u093E \u0909\
+  \u092A\u092F\u094B\u0917 \u0915\u0930\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

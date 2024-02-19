@@ -1,13 +1,20 @@
 ---
-title:                "YAMLを扱う"
 aliases:
 - /ja/elm/working-with-yaml/
-date:                  2024-01-19
-simple_title:         "YAMLを扱う"
-
-tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/working-with-yaml.md"
+date: 2024-01-19
+description: "YAML\u306F\u4EBA\u9593\u53EF\u8AAD\u306A\u30C7\u30FC\u30BF\u30B7\u30EA\
+  \u30A2\u30E9\u30A4\u30BC\u30FC\u30B7\u30E7\u30F3\u5F62\u5F0F\u3067\u3059\u3002\u69CB\
+  \u6210\u30D5\u30A1\u30A4\u30EB\u3084\u30C7\u30FC\u30BF\u4EA4\u63DB\u3067\u4F7F\u308F\
+  \u308C\u3001\u305D\u306E\u660E\u77AD\u3055\u304B\u3089\u30D7\u30ED\u30B0\u30E9\u30DE\
+  \u30FC\u306B\u597D\u307E\u308C\u3066\u3044\u307E\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:54.859729
+summary: "YAML\u306F\u4EBA\u9593\u53EF\u8AAD\u306A\u30C7\u30FC\u30BF\u30B7\u30EA\u30A2\
+  \u30E9\u30A4\u30BC\u30FC\u30B7\u30E7\u30F3\u5F62\u5F0F\u3067\u3059\u3002\u69CB\u6210\
+  \u30D5\u30A1\u30A4\u30EB\u3084\u30C7\u30FC\u30BF\u4EA4\u63DB\u3067\u4F7F\u308F\u308C\
+  \u3001\u305D\u306E\u660E\u77AD\u3055\u304B\u3089\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\
+  \u306B\u597D\u307E\u308C\u3066\u3044\u307E\u3059\u3002"
+title: "YAML\u3092\u6271\u3046"
 ---
 
 {{< edit_this_page >}}

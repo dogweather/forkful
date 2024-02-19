@@ -1,12 +1,15 @@
 ---
-title:                "Concatenating strings"
 aliases:
 - /en/google-apps-script/concatenating-strings/
-date:                  2024-02-01T21:12:01.346171-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Concatenating strings"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/google-apps-script/concatenating-strings.md"
+date: 2024-02-01 21:12:01.346171-07:00
+description: "Concatenating strings involves combining two or more strings into a\
+  \ single string. Programmers do this to dynamically construct messages, URLs, or\
+  \ any\u2026"
+lastmod: 2024-02-18 23:09:10.631238
+model: gpt-4-0125-preview
+summary: "Concatenating strings involves combining two or more strings into a single\
+  \ string. Programmers do this to dynamically construct messages, URLs, or any\u2026"
+title: Concatenating strings
 ---
 
 {{< edit_this_page >}}

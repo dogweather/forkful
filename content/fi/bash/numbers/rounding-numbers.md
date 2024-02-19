@@ -1,13 +1,14 @@
 ---
-title:                "Numerojen pyöristäminen"
 aliases:
 - /fi/bash/rounding-numbers/
-date:                  2024-01-26T03:42:46.666327-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Numerojen pyöristäminen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/rounding-numbers.md"
+date: 2024-01-26 03:42:46.666327-07:00
+description: "Numeroiden py\xF6rist\xE4minen tarkoittaa desimaalien karsimista yksinkertaisempaan\
+  \ arvoon, joka on riitt\xE4v\xE4n hyv\xE4 tietyss\xE4 kontekstissa. Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:07.796727
+model: gpt-4-0125-preview
+summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa desimaalien karsimista yksinkertaisempaan\
+  \ arvoon, joka on riitt\xE4v\xE4n hyv\xE4 tietyss\xE4 kontekstissa. Ohjelmoijat\u2026"
+title: "Numerojen py\xF6rist\xE4minen"
 ---
 
 {{< edit_this_page >}}

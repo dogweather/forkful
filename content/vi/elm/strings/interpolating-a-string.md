@@ -1,15 +1,20 @@
 ---
-title:                "Nội suy chuỗi ký tự"
 aliases:
 - /vi/elm/interpolating-a-string/
-date:                  2024-01-28T22:02:21.838635-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Nội suy chuỗi ký tự"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elm/interpolating-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:02:21.838635-07:00
+description: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n nh\xFAng tr\u1EF1c ti\u1EBF\
+  p bi\u1EBFn v\xE0o trong m\u1ED9t chu\u1ED7i, v\xEC v\u1EADy n\xF3 \u0111\u1ECD\
+  c gi\u1ED1ng nh\u01B0 v\u0103n b\u1EA3n b\xECnh th\u01B0\u1EDDng h\u01A1n. L\u1EAD\
+  p tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 x\xE2y\u2026"
+lastmod: 2024-02-18 23:08:50.588184
+model: gpt-4-0125-preview
+summary: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n nh\xFAng tr\u1EF1c ti\u1EBF\
+  p bi\u1EBFn v\xE0o trong m\u1ED9t chu\u1ED7i, v\xEC v\u1EADy n\xF3 \u0111\u1ECD\
+  c gi\u1ED1ng nh\u01B0 v\u0103n b\u1EA3n b\xECnh th\u01B0\u1EDDng h\u01A1n. L\u1EAD\
+  p tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 x\xE2y\u2026"
+title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 ---
 
 {{< edit_this_page >}}

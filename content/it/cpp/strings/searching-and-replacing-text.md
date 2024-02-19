@@ -1,13 +1,14 @@
 ---
-title:                "Ricerca e sostituzione del testo"
 aliases:
 - /it/cpp/searching-and-replacing-text/
-date:                  2024-01-20T17:57:28.830251-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ricerca e sostituzione del testo"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:28.830251-07:00
+description: "La ricerca e la sostituzione di testo in C++ permette di trovare stringhe\
+  \ all'interno di una serie di dati e sostituirle con altre stringhe. I\u2026"
+lastmod: 2024-02-18 23:08:56.159005
+model: gpt-4-1106-preview
+summary: "La ricerca e la sostituzione di testo in C++ permette di trovare stringhe\
+  \ all'interno di una serie di dati e sostituirle con altre stringhe. I\u2026"
+title: Ricerca e sostituzione del testo
 ---
 
 {{< edit_this_page >}}

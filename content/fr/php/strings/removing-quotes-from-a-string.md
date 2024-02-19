@@ -1,13 +1,14 @@
 ---
-title:                "Retirer les guillemets d'une chaîne"
 aliases:
 - /fr/php/removing-quotes-from-a-string/
-date:                  2024-01-26T03:40:38.024667-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Retirer les guillemets d'une chaîne"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/php/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:40:38.024667-07:00
+description: "Enlever les guillemets d'une cha\xEEne en PHP signifie retirer ces caract\xE8\
+  res de guillemets doubles (`\"`) ou simples (`'`) qui peuvent perturber la logique\u2026"
+lastmod: 2024-02-18 23:09:08.908964
+model: gpt-4-0125-preview
+summary: "Enlever les guillemets d'une cha\xEEne en PHP signifie retirer ces caract\xE8\
+  res de guillemets doubles (`\"`) ou simples (`'`) qui peuvent perturber la logique\u2026"
+title: "Retirer les guillemets d'une cha\xEEne"
 ---
 
 {{< edit_this_page >}}

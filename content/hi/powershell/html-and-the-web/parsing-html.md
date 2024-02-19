@@ -1,14 +1,30 @@
 ---
-title:                "HTML विश्लेषण"
 aliases:
 - /hi/powershell/parsing-html/
-date:                  2024-02-03T19:13:28.589724-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML विश्लेषण"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/powershell/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:13:28.589724-07:00
+description: "PowerShell \u092E\u0947\u0902 HTML \u092A\u093E\u0930\u094D\u0938\u093F\
+  \u0902\u0917 \u0915\u093E \u0905\u0930\u094D\u0925 \u0939\u0948 HTML \u0938\u093E\
+  \u092E\u0917\u094D\u0930\u0940 \u0915\u093E \u0935\u093F\u0936\u094D\u0932\u0947\
+  \u0937\u0923 \u0915\u0930\u0928\u093E \u0924\u093E\u0915\u093F \u0935\u093F\u0936\
+  \u0947\u0937 \u0921\u0947\u091F\u093E \u0928\u093F\u0915\u093E\u0932\u093E \u091C\
+  \u093E \u0938\u0915\u0947 \u092F\u093E \u0935\u0947\u092C-\u0938\u0902\u092C\u0902\
+  \u0927\u093F\u0924 \u0915\u093E\u0930\u094D\u092F\u094B\u0902 \u0915\u094B \u0938\
+  \u094D\u0935\u091A\u093E\u0932\u093F\u0924 \u0915\u093F\u092F\u093E \u091C\u093E\
+  \ \u0938\u0915\u0947\u0964\u2026"
+lastmod: 2024-02-18 23:09:03.733836
+model: gpt-4-0125-preview
+summary: "PowerShell \u092E\u0947\u0902 HTML \u092A\u093E\u0930\u094D\u0938\u093F\u0902\
+  \u0917 \u0915\u093E \u0905\u0930\u094D\u0925 \u0939\u0948 HTML \u0938\u093E\u092E\
+  \u0917\u094D\u0930\u0940 \u0915\u093E \u0935\u093F\u0936\u094D\u0932\u0947\u0937\
+  \u0923 \u0915\u0930\u0928\u093E \u0924\u093E\u0915\u093F \u0935\u093F\u0936\u0947\
+  \u0937 \u0921\u0947\u091F\u093E \u0928\u093F\u0915\u093E\u0932\u093E \u091C\u093E\
+  \ \u0938\u0915\u0947 \u092F\u093E \u0935\u0947\u092C-\u0938\u0902\u092C\u0902\u0927\
+  \u093F\u0924 \u0915\u093E\u0930\u094D\u092F\u094B\u0902 \u0915\u094B \u0938\u094D\
+  \u0935\u091A\u093E\u0932\u093F\u0924 \u0915\u093F\u092F\u093E \u091C\u093E \u0938\
+  \u0915\u0947\u0964\u2026"
+title: "HTML \u0935\u093F\u0936\u094D\u0932\u0947\u0937\u0923"
 ---
 
 {{< edit_this_page >}}

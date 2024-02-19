@@ -1,14 +1,25 @@
 ---
-title:                "명령줄 인수 읽기"
 aliases:
 - /ko/php/reading-command-line-arguments/
-date:                  2024-01-20T17:56:42.263052-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "명령줄 인수 읽기"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:42.263052-07:00
+description: "PHP\uC5D0\uC11C \uBA85\uB839\uC904 \uC778\uC218\uB97C \uC77D\uB294 \uAC83\
+  \uC740 \uC0AC\uC6A9\uC790\uAC00 \uC2A4\uD06C\uB9BD\uD2B8\uC5D0 \uCD94\uAC00 \uB370\
+  \uC774\uD130\uB97C \uC804\uB2EC\uD560 \uC218 \uC788\uAC8C \uD574\uC90D\uB2C8\uB2E4\
+  . \uC774\uB97C \uD1B5\uD574 \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB2E4\uC591\
+  \uD55C \uC2DC\uB098\uB9AC\uC624\uC5D0 \uB300\uC751\uD558\uB294 \uC720\uC5F0\uD55C\
+  \ \uC2A4\uD06C\uB9BD\uD2B8\uB97C \uC791\uC131\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4\
+  ."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.376330
+model: gpt-4-1106-preview
+summary: "PHP\uC5D0\uC11C \uBA85\uB839\uC904 \uC778\uC218\uB97C \uC77D\uB294 \uAC83\
+  \uC740 \uC0AC\uC6A9\uC790\uAC00 \uC2A4\uD06C\uB9BD\uD2B8\uC5D0 \uCD94\uAC00 \uB370\
+  \uC774\uD130\uB97C \uC804\uB2EC\uD560 \uC218 \uC788\uAC8C \uD574\uC90D\uB2C8\uB2E4\
+  . \uC774\uB97C \uD1B5\uD574 \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB2E4\uC591\
+  \uD55C \uC2DC\uB098\uB9AC\uC624\uC5D0 \uB300\uC751\uD558\uB294 \uC720\uC5F0\uD55C\
+  \ \uC2A4\uD06C\uB9BD\uD2B8\uB97C \uC791\uC131\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4\
+  ."
+title: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30"
 ---
 
 {{< edit_this_page >}}

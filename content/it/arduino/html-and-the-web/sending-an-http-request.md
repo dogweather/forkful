@@ -1,13 +1,14 @@
 ---
-title:                "Inviare una richiesta http"
 aliases:
 - /it/arduino/sending-an-http-request/
-date:                  2024-01-20T17:58:55.544615-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Inviare una richiesta http"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/sending-an-http-request.md"
+date: 2024-01-20 17:58:55.544615-07:00
+description: Inviamo una richiesta HTTP per comunicare con server web. Usato per ottenere
+  informazioni da servizi internet o inviarne.
+lastmod: 2024-02-18 23:08:56.131397
+model: gpt-4-1106-preview
+summary: Inviamo una richiesta HTTP per comunicare con server web. Usato per ottenere
+  informazioni da servizi internet o inviarne.
+title: Inviare una richiesta http
 ---
 
 {{< edit_this_page >}}

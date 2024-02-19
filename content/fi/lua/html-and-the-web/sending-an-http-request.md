@@ -1,13 +1,12 @@
 ---
-title:                "HTTP-pyynnön lähettäminen"
 aliases:
 - /fi/lua/sending-an-http-request/
-date:                  2024-01-20T18:00:20.791439-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-pyynnön lähettäminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/sending-an-http-request.md"
+date: 2024-01-20 18:00:20.791439-07:00
+description: null
+lastmod: 2024-02-18 23:09:07.753816
+model: gpt-4-1106-preview
+summary: null
+title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 ---
 
 {{< edit_this_page >}}

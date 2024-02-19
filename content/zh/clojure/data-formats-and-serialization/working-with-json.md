@@ -1,14 +1,28 @@
 ---
-title:                "使用JSON进行编程"
 aliases:
 - /zh/clojure/working-with-json/
-date:                  2024-02-03T19:22:04.960170-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用JSON进行编程"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:22:04.960170-07:00
+description: "\u5728Clojure\u4E2D\u5904\u7406JSON\uFF08JavaScript\u5BF9\u8C61\u8868\
+  \u793A\u6CD5\uFF09\u5305\u62EC\u5C06JSON\u5B57\u7B26\u4E32\u89E3\u6790\u6210Clojure\u6570\
+  \u636E\u7ED3\u6784\uFF08\u6620\u5C04\uFF0C\u5411\u91CF\uFF09\u53CA\u5176\u76F8\u53CD\
+  \u64CD\u4F5C\u3002\u8FD9\u9879\u4EFB\u52A1\u5BF9\u4E8E\u9700\u8981\u7528\u7ED3\u6784\
+  \u5316\u3001\u57FA\u4E8E\u6587\u672C\u7684\u683C\u5F0F\u901A\u4FE1\u6570\u636E\u7684\
+  \u7F51\u7EDC\u670D\u52A1\u3001API\u4EE5\u53CA\u5E94\u7528\u6765\u8BF4\u662F\u57FA\
+  \u672C\u7684\uFF0C\u56E0\u4E3AJSON\u5728\u4E0D\u540C\u7684\u7F16\u7A0B\u73AF\u5883\
+  \u4E2D\u88AB\u666E\u904D\u8BA4\u53EF\u5E76\u652F\u6301\u3002"
+lastmod: 2024-02-18 23:08:58.847335
+model: gpt-4-0125-preview
+summary: "\u5728Clojure\u4E2D\u5904\u7406JSON\uFF08JavaScript\u5BF9\u8C61\u8868\u793A\
+  \u6CD5\uFF09\u5305\u62EC\u5C06JSON\u5B57\u7B26\u4E32\u89E3\u6790\u6210Clojure\u6570\
+  \u636E\u7ED3\u6784\uFF08\u6620\u5C04\uFF0C\u5411\u91CF\uFF09\u53CA\u5176\u76F8\u53CD\
+  \u64CD\u4F5C\u3002\u8FD9\u9879\u4EFB\u52A1\u5BF9\u4E8E\u9700\u8981\u7528\u7ED3\u6784\
+  \u5316\u3001\u57FA\u4E8E\u6587\u672C\u7684\u683C\u5F0F\u901A\u4FE1\u6570\u636E\u7684\
+  \u7F51\u7EDC\u670D\u52A1\u3001API\u4EE5\u53CA\u5E94\u7528\u6765\u8BF4\u662F\u57FA\
+  \u672C\u7684\uFF0C\u56E0\u4E3AJSON\u5728\u4E0D\u540C\u7684\u7F16\u7A0B\u73AF\u5883\
+  \u4E2D\u88AB\u666E\u904D\u8BA4\u53EF\u5E76\u652F\u6301\u3002"
+title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 ---
 
 {{< edit_this_page >}}

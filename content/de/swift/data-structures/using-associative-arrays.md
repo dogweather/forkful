@@ -1,15 +1,18 @@
 ---
-title:                "Verwendung von assoziativen Arrays"
 aliases:
 - /de/swift/using-associative-arrays/
-date:                  2024-01-30T19:12:56.290726-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verwendung von assoziativen Arrays"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:56.290726-07:00
+description: "Assoziative Arrays, in Swift als W\xF6rterb\xFCcher (dictionaries) bekannt,\
+  \ erm\xF6glichen es Ihnen, Daten als Schl\xFCssel-Wert-Paare zu speichern und zu\
+  \ verwalten.\u2026"
+lastmod: 2024-02-18 23:09:05.226658
+model: gpt-4-0125-preview
+summary: "Assoziative Arrays, in Swift als W\xF6rterb\xFCcher (dictionaries) bekannt,\
+  \ erm\xF6glichen es Ihnen, Daten als Schl\xFCssel-Wert-Paare zu speichern und zu\
+  \ verwalten.\u2026"
+title: Verwendung von assoziativen Arrays
 ---
 
 {{< edit_this_page >}}

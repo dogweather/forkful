@@ -1,14 +1,26 @@
 ---
-title:                "编写文本文件"
 aliases:
 - /zh/vba/writing-a-text-file/
-date:                  2024-02-01T22:08:13.439524-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "编写文本文件"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/writing-a-text-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:08:13.439524-07:00
+description: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u7F16\u5199\u6587\u672C\
+  \u6587\u4EF6\u6D89\u53CA\u521B\u5EFA\u3001\u4FEE\u6539\u6216\u5411\u6587\u4EF6\u8FFD\
+  \u52A0\u6587\u672C\u6570\u636E\uFF0C\u8FD9\u662F\u5B58\u50A8\u8F93\u51FA\u3001\u8BB0\
+  \u5F55\u6216\u4E0E\u5176\u4ED6\u5E94\u7528\u7A0B\u5E8F\u4EA4\u4E92\u7684\u57FA\u672C\
+  \u4EFB\u52A1\u3002\u7A0B\u5E8F\u5458\u5229\u7528\u8FD9\u4E00\u529F\u80FD\u6765\u81EA\
+  \u52A8\u5316\u62A5\u544A\u3001\u6570\u636E\u5BFC\u51FA\u6216\u5728 Microsoft Office\
+  \ \u751F\u6001\u7CFB\u7EDF\u5185\u751F\u6210\u914D\u7F6E\u6587\u4EF6\u3002"
+lastmod: 2024-02-18 23:08:58.999103
+model: gpt-4-0125-preview
+summary: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u7F16\u5199\u6587\u672C\
+  \u6587\u4EF6\u6D89\u53CA\u521B\u5EFA\u3001\u4FEE\u6539\u6216\u5411\u6587\u4EF6\u8FFD\
+  \u52A0\u6587\u672C\u6570\u636E\uFF0C\u8FD9\u662F\u5B58\u50A8\u8F93\u51FA\u3001\u8BB0\
+  \u5F55\u6216\u4E0E\u5176\u4ED6\u5E94\u7528\u7A0B\u5E8F\u4EA4\u4E92\u7684\u57FA\u672C\
+  \u4EFB\u52A1\u3002\u7A0B\u5E8F\u5458\u5229\u7528\u8FD9\u4E00\u529F\u80FD\u6765\u81EA\
+  \u52A8\u5316\u62A5\u544A\u3001\u6570\u636E\u5BFC\u51FA\u6216\u5728 Microsoft Office\
+  \ \u751F\u6001\u7CFB\u7EDF\u5185\u751F\u6210\u914D\u7F6E\u6587\u4EF6\u3002"
+title: "\u7F16\u5199\u6587\u672C\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

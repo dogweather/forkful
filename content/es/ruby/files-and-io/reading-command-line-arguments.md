@@ -1,13 +1,14 @@
 ---
-title:                "Lectura de argumentos de línea de comandos"
 aliases:
 - /es/ruby/reading-command-line-arguments/
-date:                  2024-01-20T17:56:43.852194-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lectura de argumentos de línea de comandos"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:43.852194-07:00
+description: "Leer argumentos de la l\xEDnea de comandos en Ruby significa capturar\
+  \ datos que los usuarios o scripts externos pasan a tu programa al ejecutarlo. Los\u2026"
+lastmod: 2024-02-18 23:09:10.568880
+model: gpt-4-1106-preview
+summary: "Leer argumentos de la l\xEDnea de comandos en Ruby significa capturar datos\
+  \ que los usuarios o scripts externos pasan a tu programa al ejecutarlo. Los\u2026"
+title: "Lectura de argumentos de l\xEDnea de comandos"
 ---
 
 {{< edit_this_page >}}

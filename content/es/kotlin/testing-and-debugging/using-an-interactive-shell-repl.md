@@ -1,13 +1,15 @@
 ---
-title:                "Usando una shell interactiva (REPL)"
 aliases:
 - /es/kotlin/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:15:34.725538-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando una shell interactiva (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:15:34.725538-07:00
+description: "Un REPL (Read-Eval-Print Loop, o Bucle de Leer-Evaluar-Imprimir) es\
+  \ un entorno de programaci\xF3n de computadoras simple e interactivo. Los programadores\
+  \ lo\u2026"
+lastmod: 2024-02-18 23:09:09.937575
+model: gpt-4-0125-preview
+summary: "Un REPL (Read-Eval-Print Loop, o Bucle de Leer-Evaluar-Imprimir) es un entorno\
+  \ de programaci\xF3n de computadoras simple e interactivo. Los programadores lo\u2026"
+title: Usando una shell interactiva (REPL)
 ---
 
 {{< edit_this_page >}}

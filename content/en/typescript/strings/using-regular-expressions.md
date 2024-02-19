@@ -1,12 +1,13 @@
 ---
-title:                "Using regular expressions"
 aliases:
 - /en/typescript/using-regular-expressions/
-date:                  2024-01-19
-simple_title:         "Using regular expressions"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/using-regular-expressions.md"
+date: 2024-01-19
+description: "Regular expressions, or regex, is a powerful pattern matching and searching\
+  \ tool in programming. Programmers use regex for tasks like validating user\u2026"
+lastmod: 2024-02-18 23:09:10.797524
+summary: "Regular expressions, or regex, is a powerful pattern matching and searching\
+  \ tool in programming. Programmers use regex for tasks like validating user\u2026"
+title: Using regular expressions
 ---
 
 {{< edit_this_page >}}

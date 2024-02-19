@@ -1,14 +1,21 @@
 ---
-title:                "将日期转换为字符串"
 aliases:
 - /zh/java/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:57.264710-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "将日期转换为字符串"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:57.264710-07:00
+description: "\u5728Java\u4E2D\uFF0C\u628A\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\
+  \u4E32\u610F\u5473\u7740\u5C06\u65E5\u671F\u683C\u5F0F\u5316\u4E3A\u53EF\u8BFB\u6587\
+  \u672C\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u6765\u663E\u793A\u53CB\u597D\u7684\
+  \u65E5\u671F\u683C\u5F0F\uFF0C\u6216\u8005\u5728\u6570\u636E\u5904\u7406\u548C\u65E5\
+  \u5FD7\u8BB0\u5F55\u4E2D\u4F7F\u7528\u5B57\u7B26\u4E32\u683C\u5F0F\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.031117
+model: gpt-4-1106-preview
+summary: "\u5728Java\u4E2D\uFF0C\u628A\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32\
+  \u610F\u5473\u7740\u5C06\u65E5\u671F\u683C\u5F0F\u5316\u4E3A\u53EF\u8BFB\u6587\u672C\
+  \u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u6765\u663E\u793A\u53CB\u597D\u7684\u65E5\
+  \u671F\u683C\u5F0F\uFF0C\u6216\u8005\u5728\u6570\u636E\u5904\u7406\u548C\u65E5\u5FD7\
+  \u8BB0\u5F55\u4E2D\u4F7F\u7528\u5B57\u7B26\u4E32\u683C\u5F0F\u3002"
+title: "\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32"
 ---
 
 {{< edit_this_page >}}

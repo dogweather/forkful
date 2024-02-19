@@ -1,15 +1,18 @@
 ---
-title:                "Att använda associativa arrayer"
 aliases:
 - /sv/arduino/using-associative-arrays/
-date:                  2024-01-30T19:09:55.187301-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda associativa arrayer"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:09:55.187301-07:00
+description: "I Arduino-v\xE4rlden l\xE5ter associativa arrayer dig koppla nycklar\
+  \ till v\xE4rden, lite som att du skulle matcha sockor med deras par. De \xE4r ett\
+  \ givet val n\xE4r du\u2026"
+lastmod: 2024-02-18 23:08:52.037850
+model: gpt-4-0125-preview
+summary: "I Arduino-v\xE4rlden l\xE5ter associativa arrayer dig koppla nycklar till\
+  \ v\xE4rden, lite som att du skulle matcha sockor med deras par. De \xE4r ett givet\
+  \ val n\xE4r du\u2026"
+title: "Att anv\xE4nda associativa arrayer"
 ---
 
 {{< edit_this_page >}}

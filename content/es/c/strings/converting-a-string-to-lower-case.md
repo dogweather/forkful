@@ -1,14 +1,18 @@
 ---
-title:                "Convirtiendo una cadena de texto a minúsculas"
 aliases:
 - /es/c/converting-a-string-to-lower-case/
-date:                  2024-02-03T17:54:31.831941-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Convirtiendo una cadena de texto a minúsculas"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:31.831941-07:00
+description: "Convertir una cadena a min\xFAsculas en C implica transformar todas\
+  \ las letras may\xFAsculas de una cadena dada en sus equivalentes en min\xFAsculas.\
+  \ Los\u2026"
+lastmod: 2024-02-18 23:09:10.485755
+model: gpt-4-0125-preview
+summary: "Convertir una cadena a min\xFAsculas en C implica transformar todas las\
+  \ letras may\xFAsculas de una cadena dada en sus equivalentes en min\xFAsculas.\
+  \ Los\u2026"
+title: "Convirtiendo una cadena de texto a min\xFAsculas"
 ---
 
 {{< edit_this_page >}}

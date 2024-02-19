@@ -1,12 +1,15 @@
 ---
-title:                "Printing debug output"
 aliases:
 - /en/go/printing-debug-output/
-date:                  2024-02-03T17:50:09.547841-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Printing debug output"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/printing-debug-output.md"
+date: 2024-02-03 17:50:09.547841-07:00
+description: "In computer programming, \"Printing debug output\" involves producing\
+  \ detailed informational messages that help developers understand the execution\
+  \ flow of\u2026"
+lastmod: 2024-02-18 23:09:10.599330
+model: gpt-4-0125-preview
+summary: "In computer programming, \"Printing debug output\" involves producing detailed\
+  \ informational messages that help developers understand the execution flow of\u2026"
+title: Printing debug output
 ---
 
 {{< edit_this_page >}}

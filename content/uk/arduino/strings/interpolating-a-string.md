@@ -1,13 +1,19 @@
 ---
-title:                "Інтерполяція рядків"
 aliases:
 - /uk/arduino/interpolating-a-string/
-date:                  2024-01-20T17:50:06.046178-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Інтерполяція рядків"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/arduino/interpolating-a-string.md"
+date: 2024-01-20 17:50:06.046178-07:00
+description: "String interpolation is plugging variables into strings. Programmers\
+  \ do it to create messages dynamically, merging text with data. \u0406\u043D\u0442\
+  \u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0456\u044F \u0440\u044F\u0434\u043A\u0456\
+  \u0432 -\u2026"
+lastmod: 2024-02-18 23:09:00.778718
+model: gpt-4-1106-preview
+summary: "String interpolation is plugging variables into strings. Programmers do\
+  \ it to create messages dynamically, merging text with data. \u0406\u043D\u0442\u0435\
+  \u0440\u043F\u043E\u043B\u044F\u0446\u0456\u044F \u0440\u044F\u0434\u043A\u0456\u0432\
+  \ -\u2026"
+title: "\u0406\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0456\u044F \u0440\
+  \u044F\u0434\u043A\u0456\u0432"
 ---
 
 {{< edit_this_page >}}

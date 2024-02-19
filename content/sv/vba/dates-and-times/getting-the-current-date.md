@@ -1,14 +1,18 @@
 ---
-title:                "Hämta aktuellt datum"
 aliases:
 - /sv/vba/getting-the-current-date/
-date:                  2024-02-01T21:54:41.733519-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Hämta aktuellt datum"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/getting-the-current-date.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:41.733519-07:00
+description: "I Visual Basic f\xF6r Applikationer (VBA) \xE4r det en vanlig uppgift\
+  \ att h\xE4mta aktuellt datum, vilket m\xF6jligg\xF6r f\xF6r programmerare att dynamiskt\
+  \ arbeta med\u2026"
+lastmod: 2024-02-18 23:08:51.637650
+model: gpt-4-0125-preview
+summary: "I Visual Basic f\xF6r Applikationer (VBA) \xE4r det en vanlig uppgift att\
+  \ h\xE4mta aktuellt datum, vilket m\xF6jligg\xF6r f\xF6r programmerare att dynamiskt\
+  \ arbeta med\u2026"
+title: "H\xE4mta aktuellt datum"
 ---
 
 {{< edit_this_page >}}

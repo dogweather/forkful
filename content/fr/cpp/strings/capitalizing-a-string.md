@@ -1,14 +1,18 @@
 ---
-title:                "Mettre en majuscule une chaîne"
 aliases:
 - /fr/cpp/capitalizing-a-string/
-date:                  2024-02-03T19:05:04.994202-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Mettre en majuscule une chaîne"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:04.994202-07:00
+description: "Mettre une cha\xEEne de caract\xE8res en capitales implique de convertir\
+  \ le premier caract\xE8re de chaque mot de la cha\xEEne en majuscule s'il est en\
+  \ minuscule,\u2026"
+lastmod: 2024-02-18 23:09:09.141748
+model: gpt-4-0125-preview
+summary: "Mettre une cha\xEEne de caract\xE8res en capitales implique de convertir\
+  \ le premier caract\xE8re de chaque mot de la cha\xEEne en majuscule s'il est en\
+  \ minuscule,\u2026"
+title: "Mettre en majuscule une cha\xEEne"
 ---
 
 {{< edit_this_page >}}

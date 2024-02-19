@@ -1,14 +1,26 @@
 ---
-title:                "读取文本文件"
 aliases:
 - /zh/go/reading-a-text-file/
-date:                  2024-02-03T18:06:02.672511-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "读取文本文件"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/reading-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:06:02.672511-07:00
+description: "\u5728 Go \u4E2D\u8BFB\u53D6\u6587\u672C\u6587\u4EF6\u5305\u62EC\u8BBF\
+  \u95EE\u548C\u68C0\u7D22\u5B58\u50A8\u5728\u78C1\u76D8\u4E0A\u7684\u6587\u4EF6\u5185\
+  \u5BB9\uFF0C\u4EE5\u4FBF\u8FDB\u884C\u5904\u7406\u6216\u5206\u6790\u3002\u7A0B\u5E8F\
+  \u5458\u7ECF\u5E38\u6267\u884C\u6B64\u64CD\u4F5C\u4EE5\u64CD\u7EB5\u6570\u636E\uFF0C\
+  \u914D\u7F6E\u5E94\u7528\u7A0B\u5E8F\uFF0C\u6216\u8BFB\u53D6\u7A0B\u5E8F\u6267\u884C\
+  \u7684\u8F93\u5165\uFF0C\u8FD9\u4F7F\u5176\u6210\u4E3A\u8F6F\u4EF6\u5F00\u53D1\u4E2D\
+  \u7684\u57FA\u7840\u6280\u80FD\u3002"
+lastmod: 2024-02-18 23:08:58.725010
+model: gpt-4-0125-preview
+summary: "\u5728 Go \u4E2D\u8BFB\u53D6\u6587\u672C\u6587\u4EF6\u5305\u62EC\u8BBF\u95EE\
+  \u548C\u68C0\u7D22\u5B58\u50A8\u5728\u78C1\u76D8\u4E0A\u7684\u6587\u4EF6\u5185\u5BB9\
+  \uFF0C\u4EE5\u4FBF\u8FDB\u884C\u5904\u7406\u6216\u5206\u6790\u3002\u7A0B\u5E8F\u5458\
+  \u7ECF\u5E38\u6267\u884C\u6B64\u64CD\u4F5C\u4EE5\u64CD\u7EB5\u6570\u636E\uFF0C\u914D\
+  \u7F6E\u5E94\u7528\u7A0B\u5E8F\uFF0C\u6216\u8BFB\u53D6\u7A0B\u5E8F\u6267\u884C\u7684\
+  \u8F93\u5165\uFF0C\u8FD9\u4F7F\u5176\u6210\u4E3A\u8F6F\u4EF6\u5F00\u53D1\u4E2D\u7684\
+  \u57FA\u7840\u6280\u80FD\u3002"
+title: "\u8BFB\u53D6\u6587\u672C\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

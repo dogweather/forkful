@@ -1,13 +1,14 @@
 ---
-title:                "Protokollierung"
 aliases:
 - /de/ruby/logging/
-date:                  2024-01-26T01:08:27.465647-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Protokollierung"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/logging.md"
+date: 2024-01-26 01:08:27.465647-07:00
+description: "Das Protokollieren in der Programmierung gleicht dem F\xFChren eines\
+  \ Tagebuchs f\xFCr Ihre Anwendung. Es ist die systematische Aufzeichnung von Ereignissen,\u2026"
+lastmod: 2024-02-18 23:09:05.430129
+model: gpt-4-1106-preview
+summary: "Das Protokollieren in der Programmierung gleicht dem F\xFChren eines Tagebuchs\
+  \ f\xFCr Ihre Anwendung. Es ist die systematische Aufzeichnung von Ereignissen,\u2026"
+title: Protokollierung
 ---
 
 {{< edit_this_page >}}

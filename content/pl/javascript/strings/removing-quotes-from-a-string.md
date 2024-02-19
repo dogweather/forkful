@@ -1,13 +1,16 @@
 ---
-title:                "Usuwanie cudzysłowów z ciągu znaków"
 aliases:
 - /pl/javascript/removing-quotes-from-a-string/
-date:                  2024-01-26T03:40:32.873795-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usuwanie cudzysłowów z ciągu znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:40:32.873795-07:00
+description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza pozbycie\
+  \ si\u0119 tych irytuj\u0105cych znak\xF3w cudzys\u0142owu, kt\xF3re mog\u0105 namiesza\u0107\
+  \ w twoim kodzie, szczeg\xF3lnie kiedy\u2026"
+lastmod: 2024-02-18 23:08:49.982058
+model: gpt-4-0125-preview
+summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza pozbycie si\u0119\
+  \ tych irytuj\u0105cych znak\xF3w cudzys\u0142owu, kt\xF3re mog\u0105 namiesza\u0107\
+  \ w twoim kodzie, szczeg\xF3lnie kiedy\u2026"
+title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

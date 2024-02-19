@@ -1,14 +1,28 @@
 ---
-title:                "문자열에서 날짜 분석하기"
 aliases:
 - /ko/ruby/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:15:24.575285-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열에서 날짜 분석하기"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:15:24.575285-07:00
+description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD55C\
+  \uB2E4\uB294 \uAC83\uC740 \uB0A0\uC9DC\uB97C \uB098\uD0C0\uB0B4\uB294 \uD14D\uC2A4\
+  \uD2B8\uB97C Ruby\uAC00 \uC774\uD574\uD560 \uC218 \uC788\uB294 `Date` \uB610\uB294\
+  \ `DateTime` \uAC1D\uCCB4\uB85C \uBCC0\uD658\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uC77C\uC815 \uAD00\uB9AC, \uBD84\uC11D,\
+  \ \uB610\uB294 \uB370\uC774\uD130 \uCC98\uB9AC\uC640 \uAC19\uC740 \uC791\uC5C5\uC5D0\
+  \uC11C \uB0A0\uC9DC \uBE44\uAD50, \uACC4\uC0B0, \uD615\uC2DD \uC9C0\uC815 \uB4F1\
+  \uC758 \uC791\uC5C5\uC744 \uC218\uD589\uD558\uAE30 \uC704\uD574 \uC774\u2026"
+lastmod: 2024-02-18 23:09:07.040710
+model: gpt-4-0125-preview
+summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD55C\uB2E4\
+  \uB294 \uAC83\uC740 \uB0A0\uC9DC\uB97C \uB098\uD0C0\uB0B4\uB294 \uD14D\uC2A4\uD2B8\
+  \uB97C Ruby\uAC00 \uC774\uD574\uD560 \uC218 \uC788\uB294 `Date` \uB610\uB294 `DateTime`\
+  \ \uAC1D\uCCB4\uB85C \uBCC0\uD658\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB294 \uC77C\uC815 \uAD00\uB9AC, \uBD84\uC11D, \uB610\uB294 \uB370\
+  \uC774\uD130 \uCC98\uB9AC\uC640 \uAC19\uC740 \uC791\uC5C5\uC5D0\uC11C \uB0A0\uC9DC\
+  \ \uBE44\uAD50, \uACC4\uC0B0, \uD615\uC2DD \uC9C0\uC815 \uB4F1\uC758 \uC791\uC5C5\
+  \uC744 \uC218\uD589\uD558\uAE30 \uC704\uD574 \uC774\u2026"
+title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uBD84\uC11D\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

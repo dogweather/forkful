@@ -1,13 +1,14 @@
 ---
-title:                "Affichage des sorties de débogage"
 aliases:
 - /fr/swift/printing-debug-output/
-date:                  2024-01-20T17:53:17.821961-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Affichage des sorties de débogage"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/printing-debug-output.md"
+date: 2024-01-20 17:53:17.821961-07:00
+description: "L'affichage des informations de d\xE9bogage est essentiel pour comprendre\
+  \ ce qui se passe dans votre code. Les programmeurs utilisent cette technique pour\u2026"
+lastmod: 2024-02-18 23:09:09.211403
+model: gpt-4-1106-preview
+summary: "L'affichage des informations de d\xE9bogage est essentiel pour comprendre\
+  \ ce qui se passe dans votre code. Les programmeurs utilisent cette technique pour\u2026"
+title: "Affichage des sorties de d\xE9bogage"
 ---
 
 {{< edit_this_page >}}

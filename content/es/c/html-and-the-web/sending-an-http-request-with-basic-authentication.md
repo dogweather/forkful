@@ -1,14 +1,18 @@
 ---
-title:                "Enviando una solicitud HTTP con autenticación básica"
 aliases:
 - /es/c/sending-an-http-request-with-basic-authentication/
-date:                  2024-02-03T18:08:50.946982-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Enviando una solicitud HTTP con autenticación básica"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:50.946982-07:00
+description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en C implica\
+  \ crear una solicitud HTTP que incluya un encabezado de Autorizaci\xF3n con credenciales\
+  \ de\u2026"
+lastmod: 2024-02-18 23:09:10.501040
+model: gpt-4-0125-preview
+summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en C implica crear\
+  \ una solicitud HTTP que incluya un encabezado de Autorizaci\xF3n con credenciales\
+  \ de\u2026"
+title: "Enviando una solicitud HTTP con autenticaci\xF3n b\xE1sica"
 ---
 
 {{< edit_this_page >}}

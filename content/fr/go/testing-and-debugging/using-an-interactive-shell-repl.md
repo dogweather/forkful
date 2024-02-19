@@ -1,14 +1,18 @@
 ---
-title:                "Utilisation d'un interpréteur de commandes interactif (REPL)"
 aliases:
 - /fr/go/using-an-interactive-shell-repl/
-date:                  2024-02-03T18:10:07.895198-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation d'un interpréteur de commandes interactif (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:07.895198-07:00
+description: "Un shell interactif, ou boucle lire-\xE9valuer-afficher (REPL, de l'anglais\
+  \ Read-Eval-Print Loop), vous permet d'exp\xE9rimenter avec du code Go en temps\
+  \ r\xE9el,\u2026"
+lastmod: 2024-02-18 23:09:08.235820
+model: gpt-4-0125-preview
+summary: "Un shell interactif, ou boucle lire-\xE9valuer-afficher (REPL, de l'anglais\
+  \ Read-Eval-Print Loop), vous permet d'exp\xE9rimenter avec du code Go en temps\
+  \ r\xE9el,\u2026"
+title: "Utilisation d'un interpr\xE9teur de commandes interactif (REPL)"
 ---
 
 {{< edit_this_page >}}

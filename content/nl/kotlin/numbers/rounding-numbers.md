@@ -1,15 +1,16 @@
 ---
-title:                "Afronden van getallen"
 aliases:
 - /nl/kotlin/rounding-numbers/
-date:                  2024-01-28T22:06:38.057890-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Afronden van getallen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/kotlin/rounding-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:06:38.057890-07:00
+description: "Het afronden van getallen betekent dat je ze aanpast naar het dichtstbijzijnde\
+  \ hele getal of naar een gespecificeerd niveau van precisie. Programmeurs\u2026"
+lastmod: 2024-02-18 23:09:01.799898
+model: gpt-4-0125-preview
+summary: "Het afronden van getallen betekent dat je ze aanpast naar het dichtstbijzijnde\
+  \ hele getal of naar een gespecificeerd niveau van precisie. Programmeurs\u2026"
+title: Afronden van getallen
 ---
 
 {{< edit_this_page >}}

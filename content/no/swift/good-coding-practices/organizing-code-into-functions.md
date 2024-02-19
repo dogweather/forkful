@@ -1,13 +1,16 @@
 ---
-title:                "Organisering av kode i funksjoner"
 aliases:
 - /no/swift/organizing-code-into-functions/
-date:                  2024-01-26T01:12:02.421873-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organisering av kode i funksjoner"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/organizing-code-into-functions.md"
+date: 2024-01-26 01:12:02.421873-07:00
+description: "\xC5 gruppere kode i funksjoner er \xE5 bryte ned oppgaver i gjenbrukbare\
+  \ deler. Det gj\xF8r koden ren, mindre utsatt for feil, og enklere \xE5 feils\xF8\
+  ke eller\u2026"
+lastmod: 2024-02-18 23:08:54.274231
+model: gpt-4-1106-preview
+summary: "\xC5 gruppere kode i funksjoner er \xE5 bryte ned oppgaver i gjenbrukbare\
+  \ deler. Det gj\xF8r koden ren, mindre utsatt for feil, og enklere \xE5 feils\xF8\
+  ke eller\u2026"
+title: Organisering av kode i funksjoner
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Convirtiendo una fecha en una cadena de texto"
 aliases:
 - /es/go/converting-a-date-into-a-string/
-date:                  2024-02-03T17:55:29.780261-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Convirtiendo una fecha en una cadena de texto"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:29.780261-07:00
+description: "Convertir una fecha en una cadena en Go implica transformar un objeto\
+  \ `time.Time` en un formato de cadena legible. Los programadores a menudo realizan\u2026"
+lastmod: 2024-02-18 23:09:09.469061
+model: gpt-4-0125-preview
+summary: "Convertir una fecha en una cadena en Go implica transformar un objeto `time.Time`\
+  \ en un formato de cadena legible. Los programadores a menudo realizan\u2026"
+title: Convirtiendo una fecha en una cadena de texto
 ---
 
 {{< edit_this_page >}}

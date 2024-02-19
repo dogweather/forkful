@@ -1,13 +1,14 @@
 ---
-title:                "Merkkijonosta lainausmerkkien poistaminen"
 aliases:
 - /fi/fish-shell/removing-quotes-from-a-string/
-date:                  2024-01-26T03:39:12.564927-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonosta lainausmerkkien poistaminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:39:12.564927-07:00
+description: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa n\xE4iden kiusallisten\
+  \ yksitt\xE4isten (' ') tai kaksinkertaisten (\" \") lainausmerkkien poistamista\u2026"
+lastmod: 2024-02-18 23:09:08.068760
+model: gpt-4-0125-preview
+summary: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa n\xE4iden kiusallisten\
+  \ yksitt\xE4isten (' ') tai kaksinkertaisten (\" \") lainausmerkkien poistamista\u2026"
+title: Merkkijonosta lainausmerkkien poistaminen
 ---
 
 {{< edit_this_page >}}

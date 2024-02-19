@@ -1,14 +1,18 @@
 ---
-title:                "Skriving til standardfeil"
 aliases:
 - /no/fish-shell/writing-to-standard-error/
-date:                  2024-02-03T19:33:25.164157-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriving til standardfeil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:33:25.164157-07:00
+description: "\xC5 skrive til standard feil (stderr) i Fish Shell handler om \xE5\
+  \ dirigere feilmeldinger eller diagnostikk separat fra standard utdata (stdout).\
+  \ Programm\xF8rer\u2026"
+lastmod: 2024-02-18 23:08:54.367517
+model: gpt-4-0125-preview
+summary: "\xC5 skrive til standard feil (stderr) i Fish Shell handler om \xE5 dirigere\
+  \ feilmeldinger eller diagnostikk separat fra standard utdata (stdout). Programm\xF8\
+  rer\u2026"
+title: Skriving til standardfeil
 ---
 
 {{< edit_this_page >}}

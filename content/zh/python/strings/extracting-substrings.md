@@ -1,14 +1,21 @@
 ---
-title:                "提取子字符串"
 aliases:
 - /zh/python/extracting-substrings/
-date:                  2024-01-20T17:46:12.983437-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "提取子字符串"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/extracting-substrings.md"
+date: 2024-01-20 17:46:12.983437-07:00
+description: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32\u5C31\u662F\u4ECE\u4E00\u4E2A\u5B57\
+  \u7B26\u4E32\u4E2D\u62FF\u51FA\u4E00\u90E8\u5206\u5185\u5BB9\u3002\u7A0B\u5E8F\u5458\
+  \u8FD9\u4E48\u505A\u662F\u56E0\u4E3A\u6709\u65F6\u6211\u4EEC\u53EA\u9700\u8981\u5B57\
+  \u7B26\u4E32\u7684\u4E00\u5C0F\u6BB5\uFF0C\u6BD4\u5982\u7528\u6237\u8F93\u5165\u7684\
+  \u6570\u636E\u5904\u7406\u6216\u8005\u6587\u672C\u5206\u6790\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:58.781153
+model: gpt-4-1106-preview
+summary: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32\u5C31\u662F\u4ECE\u4E00\u4E2A\u5B57\
+  \u7B26\u4E32\u4E2D\u62FF\u51FA\u4E00\u90E8\u5206\u5185\u5BB9\u3002\u7A0B\u5E8F\u5458\
+  \u8FD9\u4E48\u505A\u662F\u56E0\u4E3A\u6709\u65F6\u6211\u4EEC\u53EA\u9700\u8981\u5B57\
+  \u7B26\u4E32\u7684\u4E00\u5C0F\u6BB5\uFF0C\u6BD4\u5982\u7528\u6237\u8F93\u5165\u7684\
+  \u6570\u636E\u5904\u7406\u6216\u8005\u6587\u672C\u5206\u6790\u3002"
+title: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32"
 ---
 
 {{< edit_this_page >}}

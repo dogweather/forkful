@@ -1,13 +1,15 @@
 ---
-title:                "Usando um depurador"
 aliases:
 - /pt/haskell/using-a-debugger/
-date:                  2024-01-26T03:50:20.611670-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando um depurador"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/using-a-debugger.md"
+date: 2024-01-26 03:50:20.611670-07:00
+description: "Usar um depurador significa mergulhar no seu c\xF3digo com ferramentas\
+  \ projetadas para inspecionar, pausar e manipular um programa durante a execu\xE7\
+  \xE3o. Os\u2026"
+lastmod: 2024-02-18 23:08:58.203621
+model: gpt-4-0125-preview
+summary: "Usar um depurador significa mergulhar no seu c\xF3digo com ferramentas projetadas\
+  \ para inspecionar, pausar e manipular um programa durante a execu\xE7\xE3o. Os\u2026"
+title: Usando um depurador
 ---
 
 {{< edit_this_page >}}

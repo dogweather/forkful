@@ -1,15 +1,17 @@
 ---
-title:                "Een tekstbestand lezen"
 aliases:
 - /nl/arduino/reading-a-text-file/
-date:                  2024-01-28T22:04:52.626293-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tekstbestand lezen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/reading-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:04:52.626293-07:00
+description: "Een tekstbestand lezen met Arduino stelt je in staat om gegevens op\
+  \ te halen die zijn opgeslagen op een SD-kaart of in het geheugen van het apparaat\
+  \ -\u2026"
+lastmod: 2024-02-18 23:09:02.156936
+model: gpt-4-0125-preview
+summary: "Een tekstbestand lezen met Arduino stelt je in staat om gegevens op te halen\
+  \ die zijn opgeslagen op een SD-kaart of in het geheugen van het apparaat -\u2026"
+title: Een tekstbestand lezen
 ---
 
 {{< edit_this_page >}}

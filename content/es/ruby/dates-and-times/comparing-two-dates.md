@@ -1,13 +1,16 @@
 ---
-title:                "Comparación de dos fechas"
 aliases:
 - /es/ruby/comparing-two-dates/
-date:                  2024-01-20T17:34:08.021535-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Comparación de dos fechas"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/comparing-two-dates.md"
+date: 2024-01-20 17:34:08.021535-07:00
+description: "Comparar dos fechas es verificar c\xF3mo se relacionan temporalmente:\
+  \ si una es anterior, posterior o la misma que la otra. Los programadores lo hacen\
+  \ para\u2026"
+lastmod: 2024-02-18 23:09:10.565832
+model: gpt-4-1106-preview
+summary: "Comparar dos fechas es verificar c\xF3mo se relacionan temporalmente: si\
+  \ una es anterior, posterior o la misma que la otra. Los programadores lo hacen\
+  \ para\u2026"
+title: "Comparaci\xF3n de dos fechas"
 ---
 
 {{< edit_this_page >}}

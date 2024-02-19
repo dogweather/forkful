@@ -1,14 +1,30 @@
 ---
-title:                "문자열에서 날짜 분석하기"
 aliases:
 - /ko/elm/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:14:30.618072-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열에서 날짜 분석하기"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:14:30.618072-07:00
+description: "Elm\uC5D0\uC11C \uBB38\uC790\uC5F4\uB85C\uBD80\uD130 \uB0A0\uC9DC\uB97C\
+  \ \uD30C\uC2F1\uD558\uB294 \uAC83\uC740 \uB0A0\uC9DC\uC640 \uC2DC\uAC04\uC744 \uB300\
+  \uD45C\uD558\uB294 \uD14D\uC2A4\uD2B8 \uC815\uBCF4\uB97C Elm\uC774 \uC774\uD574\uD558\
+  \uACE0 \uC870\uC791\uD560 \uC218 \uC788\uB294 \uD615\uC2DD, \uAD6C\uCCB4\uC801\uC73C\
+  \uB85C\uB294 `Date` \uD0C0\uC785\uC73C\uB85C \uBCC0\uD658\uD558\uB294 \uACFC\uC815\
+  \uC744 \uB9D0\uD569\uB2C8\uB2E4. \uC774 \uACFC\uC815\uC740 \uC0AC\uC6A9\uC790 \uC785\
+  \uB825\uC744 \uCC98\uB9AC\uD558\uACE0, \uC9C0\uC5ED\uD654\uB41C \uB0A0\uC9DC\uB97C\
+  \ \uC62C\uBC14\uB974\uAC8C \uD45C\uC2DC\uD558\uBA70, \uB0A0\uC9DC \uAD00\uB828 \uACC4\
+  \uC0B0\uC744\u2026"
+lastmod: 2024-02-18 23:09:06.100729
+model: gpt-4-0125-preview
+summary: "Elm\uC5D0\uC11C \uBB38\uC790\uC5F4\uB85C\uBD80\uD130 \uB0A0\uC9DC\uB97C\
+  \ \uD30C\uC2F1\uD558\uB294 \uAC83\uC740 \uB0A0\uC9DC\uC640 \uC2DC\uAC04\uC744 \uB300\
+  \uD45C\uD558\uB294 \uD14D\uC2A4\uD2B8 \uC815\uBCF4\uB97C Elm\uC774 \uC774\uD574\uD558\
+  \uACE0 \uC870\uC791\uD560 \uC218 \uC788\uB294 \uD615\uC2DD, \uAD6C\uCCB4\uC801\uC73C\
+  \uB85C\uB294 `Date` \uD0C0\uC785\uC73C\uB85C \uBCC0\uD658\uD558\uB294 \uACFC\uC815\
+  \uC744 \uB9D0\uD569\uB2C8\uB2E4. \uC774 \uACFC\uC815\uC740 \uC0AC\uC6A9\uC790 \uC785\
+  \uB825\uC744 \uCC98\uB9AC\uD558\uACE0, \uC9C0\uC5ED\uD654\uB41C \uB0A0\uC9DC\uB97C\
+  \ \uC62C\uBC14\uB974\uAC8C \uD45C\uC2DC\uD558\uBA70, \uB0A0\uC9DC \uAD00\uB828 \uACC4\
+  \uC0B0\uC744\u2026"
+title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uBD84\uC11D\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

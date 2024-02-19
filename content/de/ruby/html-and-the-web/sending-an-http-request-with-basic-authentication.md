@@ -1,13 +1,14 @@
 ---
-title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
 aliases:
 - /de/ruby/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:32.647298-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:32.647298-07:00
+description: "HTTP-Anfragen mit Basic-Authentifizierung senden Daten \xFCber Benutzername\
+  \ und Passwort im Header, um Zugriff auf gesch\xFCtzte Ressourcen zu erhalten.\u2026"
+lastmod: 2024-02-18 23:09:05.423103
+model: gpt-4-1106-preview
+summary: "HTTP-Anfragen mit Basic-Authentifizierung senden Daten \xFCber Benutzername\
+  \ und Passwort im Header, um Zugriff auf gesch\xFCtzte Ressourcen zu erhalten.\u2026"
+title: HTTP-Anfragen mit Basisauthentifizierung senden
 ---
 
 {{< edit_this_page >}}

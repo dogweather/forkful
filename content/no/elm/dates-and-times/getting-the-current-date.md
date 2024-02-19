@@ -1,12 +1,15 @@
 ---
-title:                "Slik får du tak i dagens dato"
 aliases:
 - /no/elm/getting-the-current-date/
-date:                  2024-01-20T15:14:18.979784-07:00
-simple_title:         "Slik får du tak i dagens dato"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/getting-the-current-date.md"
+date: 2024-01-20 15:14:18.979784-07:00
+description: "\xC5 hente n\xE5v\xE6rende dato betyr \xE5 tilgjengeliggj\xF8re akkurat\
+  \ hvilken dag det er, helt ned til millisekundet, i Elm-programmet ditt. Dette er\
+  \ nyttig for alt\u2026"
+lastmod: 2024-02-18 23:08:53.821505
+summary: "\xC5 hente n\xE5v\xE6rende dato betyr \xE5 tilgjengeliggj\xF8re akkurat\
+  \ hvilken dag det er, helt ned til millisekundet, i Elm-programmet ditt. Dette er\
+  \ nyttig for alt\u2026"
+title: "Slik f\xE5r du tak i dagens dato"
 ---
 
 {{< edit_this_page >}}

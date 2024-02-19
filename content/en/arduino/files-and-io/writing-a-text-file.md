@@ -1,12 +1,15 @@
 ---
-title:                "Writing a text file"
 aliases:
 - /en/arduino/writing-a-text-file/
-date:                  2024-02-03T19:03:07.502456-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Writing a text file"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/writing-a-text-file.md"
+date: 2024-02-03 19:03:07.502456-07:00
+description: "Writing a text file in Arduino involves saving data to a file on an\
+  \ SD card or similar storage module, often for data logging purposes. Programmers\
+  \ do\u2026"
+lastmod: 2024-02-18 23:09:11.333149
+model: gpt-4-0125-preview
+summary: "Writing a text file in Arduino involves saving data to a file on an SD card\
+  \ or similar storage module, often for data logging purposes. Programmers do\u2026"
+title: Writing a text file
 ---
 
 {{< edit_this_page >}}

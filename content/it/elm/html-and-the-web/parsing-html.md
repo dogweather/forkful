@@ -1,14 +1,16 @@
 ---
-title:                "Analisi del HTML"
 aliases:
 - /it/elm/parsing-html/
-date:                  2024-02-03T19:11:55.049121-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analisi del HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:11:55.049121-07:00
+description: "Analizzare HTML in Elm implica l'estrazione di informazioni da documenti\
+  \ HTML. I programmatori lo fanno per interfacciarsi con contenuti web o API che\u2026"
+lastmod: 2024-02-18 23:08:55.803917
+model: gpt-4-0125-preview
+summary: "Analizzare HTML in Elm implica l'estrazione di informazioni da documenti\
+  \ HTML. I programmatori lo fanno per interfacciarsi con contenuti web o API che\u2026"
+title: Analisi del HTML
 ---
 
 {{< edit_this_page >}}

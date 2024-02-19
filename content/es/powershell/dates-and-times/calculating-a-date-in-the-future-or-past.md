@@ -1,13 +1,15 @@
 ---
-title:                "Calcular una fecha en el futuro o pasado"
 aliases:
 - /es/powershell/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:31:52.730962-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Calcular una fecha en el futuro o pasado"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/powershell/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:31:52.730962-07:00
+description: "Calcular fechas futuras o pasadas implica a\xF1adir o quitar d\xEDas,\
+  \ meses o a\xF1os a una fecha dada. Los programadores lo hacen para automatizar\
+  \ recordatorios,\u2026"
+lastmod: 2024-02-18 23:09:10.230163
+model: gpt-4-1106-preview
+summary: "Calcular fechas futuras o pasadas implica a\xF1adir o quitar d\xEDas, meses\
+  \ o a\xF1os a una fecha dada. Los programadores lo hacen para automatizar recordatorios,\u2026"
+title: Calcular una fecha en el futuro o pasado
 ---
 
 {{< edit_this_page >}}

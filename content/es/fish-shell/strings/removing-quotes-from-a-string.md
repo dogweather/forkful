@@ -1,13 +1,14 @@
 ---
-title:                "Eliminando comillas de una cadena"
 aliases:
 - /es/fish-shell/removing-quotes-from-a-string/
-date:                  2024-01-26T03:39:23.166610-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eliminando comillas de una cadena"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:39:23.166610-07:00
+description: "Eliminar las comillas de una cadena se trata de deshacerse de esos molestos\
+  \ signos de comillas simples (' ') o dobles (\" \") de tus datos de texto. Los\u2026"
+lastmod: 2024-02-18 23:09:10.437973
+model: gpt-4-0125-preview
+summary: "Eliminar las comillas de una cadena se trata de deshacerse de esos molestos\
+  \ signos de comillas simples (' ') o dobles (\" \") de tus datos de texto. Los\u2026"
+title: Eliminando comillas de una cadena
 ---
 
 {{< edit_this_page >}}

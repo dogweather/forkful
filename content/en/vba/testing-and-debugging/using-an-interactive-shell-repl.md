@@ -1,12 +1,14 @@
 ---
-title:                "Using an interactive shell (REPL)"
 aliases:
 - /en/vba/using-an-interactive-shell-repl/
-date:                  2024-02-01T21:30:14.592570-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using an interactive shell (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/vba/using-an-interactive-shell-repl.md"
+date: 2024-02-01 21:30:14.592570-07:00
+description: "An interactive shell, or Read-Eval-Print Loop (REPL), allows users to\
+  \ enter commands, execute them, and see the results in real time. Programmers leverage\u2026"
+lastmod: 2024-02-18 23:09:10.891642
+model: gpt-4-0125-preview
+summary: "An interactive shell, or Read-Eval-Print Loop (REPL), allows users to enter\
+  \ commands, execute them, and see the results in real time. Programmers leverage\u2026"
+title: Using an interactive shell (REPL)
 ---
 
 {{< edit_this_page >}}

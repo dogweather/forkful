@@ -1,14 +1,18 @@
 ---
-title:                "Refonte de Code"
 aliases:
 - /fr/go/refactoring/
-date:                  2024-02-03T18:06:57.774564-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refonte de Code"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/refactoring.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:06:57.774564-07:00
+description: "Le refactoring en programmation implique de restructurer le code informatique\
+  \ existant \u2014 changer le fa\xE7onnage \u2014 sans modifier son comportement\
+  \ externe.\u2026"
+lastmod: 2024-02-18 23:09:08.245112
+model: gpt-4-0125-preview
+summary: "Le refactoring en programmation implique de restructurer le code informatique\
+  \ existant \u2014 changer le fa\xE7onnage \u2014 sans modifier son comportement\
+  \ externe.\u2026"
+title: Refonte de Code
 ---
 
 {{< edit_this_page >}}

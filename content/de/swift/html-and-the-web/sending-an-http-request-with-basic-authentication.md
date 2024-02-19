@@ -1,13 +1,14 @@
 ---
-title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
 aliases:
 - /de/swift/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:54.481387-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:54.481387-07:00
+description: "Beim Senden einer HTTP-Anfrage mit Basisauthentifizierung f\xFCgen wir\
+  \ Anmeldeinformationen in den Request-Header ein, um uns beim Server zu\u2026"
+lastmod: 2024-02-18 23:09:05.234037
+model: gpt-4-1106-preview
+summary: "Beim Senden einer HTTP-Anfrage mit Basisauthentifizierung f\xFCgen wir Anmeldeinformationen\
+  \ in den Request-Header ein, um uns beim Server zu\u2026"
+title: HTTP-Anfragen mit Basisauthentifizierung senden
 ---
 
 {{< edit_this_page >}}

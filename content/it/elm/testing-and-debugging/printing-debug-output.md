@@ -1,13 +1,15 @@
 ---
-title:                "Stampa dell'output di debug"
 aliases:
 - /it/elm/printing-debug-output/
-date:                  2024-01-20T17:52:21.095552-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Stampa dell'output di debug"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/printing-debug-output.md"
+date: 2024-01-20 17:52:21.095552-07:00
+description: "La stampa del debug output \xE8 mostrare i valori delle variabili o\
+  \ messaggi su console per capire meglio cosa sta facendo il codice. I programmatori\
+  \ lo\u2026"
+lastmod: 2024-02-18 23:08:55.808304
+model: gpt-4-1106-preview
+summary: "La stampa del debug output \xE8 mostrare i valori delle variabili o messaggi\
+  \ su console per capire meglio cosa sta facendo il codice. I programmatori lo\u2026"
+title: Stampa dell'output di debug
 ---
 
 {{< edit_this_page >}}

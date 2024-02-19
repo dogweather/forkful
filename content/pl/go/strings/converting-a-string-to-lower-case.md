@@ -1,14 +1,18 @@
 ---
-title:                "Konwersja łańcucha znaków na małe litery"
 aliases:
 - /pl/go/converting-a-string-to-lower-case/
-date:                  2024-02-03T17:54:58.121122-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Konwersja łańcucha znaków na małe litery"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:58.121122-07:00
+description: "Konwersja ci\u0105g\xF3w znak\xF3w na ma\u0142e litery to podstawowa\
+  \ operacja umo\u017Cliwiaj\u0105ca jednolito\u015B\u0107 i sp\xF3jno\u015B\u0107\
+  \ w przetwarzaniu tekstu, co jest niezb\u0119dne do zada\u0144\u2026"
+lastmod: 2024-02-18 23:08:49.082086
+model: gpt-4-0125-preview
+summary: "Konwersja ci\u0105g\xF3w znak\xF3w na ma\u0142e litery to podstawowa operacja\
+  \ umo\u017Cliwiaj\u0105ca jednolito\u015B\u0107 i sp\xF3jno\u015B\u0107 w przetwarzaniu\
+  \ tekstu, co jest niezb\u0119dne do zada\u0144\u2026"
+title: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery"
 ---
 
 {{< edit_this_page >}}

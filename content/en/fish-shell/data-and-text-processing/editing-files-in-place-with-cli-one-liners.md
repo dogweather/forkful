@@ -1,13 +1,14 @@
 ---
-title:                "Editing files in-place with CLI one-liners"
 aliases:
 - /en/fish-shell/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:14:16.677583-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Editing files in-place with CLI one-liners"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:14:16.677583-07:00
+description: "Editing files in-place with CLI one-liners is about making changes directly\
+  \ to files from the command line, without opening them in a text editor.\u2026"
+lastmod: 2024-02-18 23:09:11.477016
+model: gpt-4-0125-preview
+summary: "Editing files in-place with CLI one-liners is about making changes directly\
+  \ to files from the command line, without opening them in a text editor.\u2026"
+title: Editing files in-place with CLI one-liners
 ---
 
 {{< edit_this_page >}}

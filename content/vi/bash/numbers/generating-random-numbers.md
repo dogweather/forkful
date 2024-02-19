@@ -1,15 +1,20 @@
 ---
-title:                "Sinh số ngẫu nhiên"
 aliases:
 - /vi/bash/generating-random-numbers/
-date:                  2024-01-28T22:01:10.974573-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sinh số ngẫu nhiên"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/bash/generating-random-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:10.974573-07:00
+description: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong Bash mang l\u1EA1\
+  i c\xE1ch th\u1EE9c \u0111\u1EC3 b\u1ED5 sung t\xEDnh kh\xF4ng d\u1EF1 \u0111o\xE1\
+  n tr\u01B0\u1EDBc v\xE0o c\xE1c script, \u0111i\u1EC1u n\xE0y r\u1EA5t c\u1EA7n\
+  \ thi\u1EBFt cho c\xE1c t\xE1c v\u1EE5 nh\u01B0 t\u1EA1o m\u1EADt\u2026"
+lastmod: 2024-02-18 23:08:50.878186
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong Bash mang l\u1EA1i c\xE1\
+  ch th\u1EE9c \u0111\u1EC3 b\u1ED5 sung t\xEDnh kh\xF4ng d\u1EF1 \u0111o\xE1n tr\u01B0\
+  \u1EDBc v\xE0o c\xE1c script, \u0111i\u1EC1u n\xE0y r\u1EA5t c\u1EA7n thi\u1EBF\
+  t cho c\xE1c t\xE1c v\u1EE5 nh\u01B0 t\u1EA1o m\u1EADt\u2026"
+title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 ---
 
 {{< edit_this_page >}}

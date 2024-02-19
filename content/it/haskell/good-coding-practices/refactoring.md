@@ -1,13 +1,16 @@
 ---
-title:                "Rifattorizzazione"
 aliases:
 - /it/haskell/refactoring/
-date:                  2024-01-26T01:18:30.339242-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rifattorizzazione"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/refactoring.md"
+date: 2024-01-26 01:18:30.339242-07:00
+description: "Il refactoring \xE8 il processo di ritocco del codice senza cambiarne\
+  \ il comportamento esterno. Si tratta tutto di pulire e organizzare il proprio lavoro\
+  \ per\u2026"
+lastmod: 2024-02-18 23:08:55.938106
+model: gpt-4-0125-preview
+summary: "Il refactoring \xE8 il processo di ritocco del codice senza cambiarne il\
+  \ comportamento esterno. Si tratta tutto di pulire e organizzare il proprio lavoro\
+  \ per\u2026"
+title: Rifattorizzazione
 ---
 
 {{< edit_this_page >}}

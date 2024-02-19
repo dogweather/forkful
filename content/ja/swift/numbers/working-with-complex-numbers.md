@@ -1,13 +1,22 @@
 ---
-title:                "複素数の扱い方"
 aliases:
 - /ja/swift/working-with-complex-numbers/
-date:                  2024-01-26T04:45:44.697306-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "複素数の扱い方"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/working-with-complex-numbers.md"
+date: 2024-01-26 04:45:44.697306-07:00
+description: "\u8907\u7D20\u6570\u306F\u5B9F\u90E8\u3068\u865A\u90E8\uFF08\u4F8B\uFF1A\
+  3 + 4i\uFF09\u3092\u6301\u3063\u3066\u3044\u307E\u3059\u3002\u30D7\u30ED\u30B0\u30E9\
+  \u30DE\u30FC\u306F\u3001\u4FE1\u53F7\u51E6\u7406\u3001\u7279\u5B9A\u306E\u6570\u5B66\
+  \u554F\u984C\u306E\u89E3\u6C7A\u3001\u7269\u7406\u306E\u30B7\u30DF\u30E5\u30EC\u30FC\
+  \u30B7\u30E7\u30F3\u306A\u3069\u306E\u30BF\u30B9\u30AF\u306BSwift\u3067\u305D\u308C\
+  \u3089\u3092\u4F7F\u7528\u3057\u307E\u3059\u3002"
+lastmod: 2024-02-18 23:08:55.223941
+model: gpt-4-0125-preview
+summary: "\u8907\u7D20\u6570\u306F\u5B9F\u90E8\u3068\u865A\u90E8\uFF08\u4F8B\uFF1A\
+  3 + 4i\uFF09\u3092\u6301\u3063\u3066\u3044\u307E\u3059\u3002\u30D7\u30ED\u30B0\u30E9\
+  \u30DE\u30FC\u306F\u3001\u4FE1\u53F7\u51E6\u7406\u3001\u7279\u5B9A\u306E\u6570\u5B66\
+  \u554F\u984C\u306E\u89E3\u6C7A\u3001\u7269\u7406\u306E\u30B7\u30DF\u30E5\u30EC\u30FC\
+  \u30B7\u30E7\u30F3\u306A\u3069\u306E\u30BF\u30B9\u30AF\u306BSwift\u3067\u305D\u308C\
+  \u3089\u3092\u4F7F\u7528\u3057\u307E\u3059\u3002"
+title: "\u8907\u7D20\u6570\u306E\u6271\u3044\u65B9"
 ---
 
 {{< edit_this_page >}}

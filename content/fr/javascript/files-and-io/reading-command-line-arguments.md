@@ -1,13 +1,16 @@
 ---
-title:                "Lecture des arguments de ligne de commande"
 aliases:
 - /fr/javascript/reading-command-line-arguments/
-date:                  2024-01-20T17:56:18.424998-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lecture des arguments de ligne de commande"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:18.424998-07:00
+description: "Lire les arguments de ligne de commande, c'est r\xE9cup\xE9rer les donn\xE9\
+  es que les utilisateurs passent \xE0 votre programme Node.js quand ils le lancent.\
+  \ On fait\u2026"
+lastmod: 2024-02-18 23:09:09.273197
+model: gpt-4-1106-preview
+summary: "Lire les arguments de ligne de commande, c'est r\xE9cup\xE9rer les donn\xE9\
+  es que les utilisateurs passent \xE0 votre programme Node.js quand ils le lancent.\
+  \ On fait\u2026"
+title: Lecture des arguments de ligne de commande
 ---
 
 {{< edit_this_page >}}

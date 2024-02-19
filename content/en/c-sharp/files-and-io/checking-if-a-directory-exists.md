@@ -1,12 +1,14 @@
 ---
-title:                "Checking if a directory exists"
 aliases:
 - /en/c-sharp/checking-if-a-directory-exists/
-date:                  2024-02-03T19:02:42.891176-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Checking if a directory exists"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/checking-if-a-directory-exists.md"
+date: 2024-02-03 19:02:42.891176-07:00
+description: "Checking if a directory exists in C# involves verifying the presence\
+  \ of a folder at a specified path in the file system. Programmers do this to avoid\u2026"
+lastmod: 2024-02-18 23:09:11.068659
+model: gpt-4-0125-preview
+summary: "Checking if a directory exists in C# involves verifying the presence of\
+  \ a folder at a specified path in the file system. Programmers do this to avoid\u2026"
+title: Checking if a directory exists
 ---
 
 {{< edit_this_page >}}

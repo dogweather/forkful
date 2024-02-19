@@ -1,14 +1,18 @@
 ---
-title:                "Fjerne sitatmerker fra en streng"
 aliases:
 - /no/vba/removing-quotes-from-a-string/
-date:                  2024-02-01T22:01:00.046372-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Fjerne sitatmerker fra en streng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/vba/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:00.046372-07:00
+description: "\xC5 fjerne anf\xF8rselstegn fra en streng i VBA involverer \xE5 strippe\
+  \ ut forekomster av enkle (`'`) eller doble (`\"`) anf\xF8rselstegn som kan innkapsle\
+  \ eller v\xE6re\u2026"
+lastmod: 2024-02-18 23:08:53.715221
+model: gpt-4-0125-preview
+summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i VBA involverer \xE5 strippe\
+  \ ut forekomster av enkle (`'`) eller doble (`\"`) anf\xF8rselstegn som kan innkapsle\
+  \ eller v\xE6re\u2026"
+title: Fjerne sitatmerker fra en streng
 ---
 
 {{< edit_this_page >}}

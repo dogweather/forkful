@@ -1,13 +1,16 @@
 ---
-title:                "Satunnaislukujen generointi"
 aliases:
 - /fi/typescript/generating-random-numbers/
-date:                  2024-01-27T20:35:50.828627-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Satunnaislukujen generointi"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/generating-random-numbers.md"
+date: 2024-01-27 20:35:50.828627-07:00
+description: "Satunnaislukujen tuottaminen TypeScriptill\xE4 tarkoittaa ennalta arvaamattomien\
+  \ numeeristen arvojen luomista m\xE4\xE4ritetyll\xE4 v\xE4lill\xE4. Ohjelmoijat\
+  \ hy\xF6dynt\xE4v\xE4t\u2026"
+lastmod: 2024-02-18 23:09:07.314140
+model: gpt-4-0125-preview
+summary: "Satunnaislukujen tuottaminen TypeScriptill\xE4 tarkoittaa ennalta arvaamattomien\
+  \ numeeristen arvojen luomista m\xE4\xE4ritetyll\xE4 v\xE4lill\xE4. Ohjelmoijat\
+  \ hy\xF6dynt\xE4v\xE4t\u2026"
+title: Satunnaislukujen generointi
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Lokitus"
 aliases:
 - /fi/haskell/logging/
-date:                  2024-01-26T01:07:04.110977-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lokitus"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/logging.md"
+date: 2024-01-26 01:07:04.110977-07:00
+description: "Ohjelmoinnissa lokitus tarkoittaa k\xE4yt\xE4nn\xF6ss\xE4 murusten j\xE4\
+  tt\xE4mist\xE4 j\xE4lkeensa tapahtumien tai viestien muodossa, jotka auttavat seuraamaan,\
+  \ mit\xE4\u2026"
+lastmod: 2024-02-18 23:09:07.673052
+model: gpt-4-1106-preview
+summary: "Ohjelmoinnissa lokitus tarkoittaa k\xE4yt\xE4nn\xF6ss\xE4 murusten j\xE4\
+  tt\xE4mist\xE4 j\xE4lkeensa tapahtumien tai viestien muodossa, jotka auttavat seuraamaan,\
+  \ mit\xE4\u2026"
+title: Lokitus
 ---
 
 {{< edit_this_page >}}

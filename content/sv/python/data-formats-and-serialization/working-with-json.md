@@ -1,14 +1,18 @@
 ---
-title:                "Arbeta med JSON"
 aliases:
 - /sv/python/working-with-json/
-date:                  2024-02-03T19:24:09.047747-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeta med JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:24:09.047747-07:00
+description: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att tolka\
+  \ JSON-formaterade str\xE4ngar till Python-objekt och tv\xE4rtom. Detta \xE4r avg\xF6\
+  rande f\xF6r webb-\u2026"
+lastmod: 2024-02-18 23:08:51.442286
+model: gpt-4-0125-preview
+summary: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att tolka JSON-formaterade\
+  \ str\xE4ngar till Python-objekt och tv\xE4rtom. Detta \xE4r avg\xF6rande f\xF6\
+  r webb-\u2026"
+title: Arbeta med JSON
 ---
 
 {{< edit_this_page >}}

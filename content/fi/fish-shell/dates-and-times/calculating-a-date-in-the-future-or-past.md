@@ -1,13 +1,16 @@
 ---
-title:                "Tulevan tai menneen päivämäärän laskeminen"
 aliases:
 - /fi/fish-shell/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:30:54.171443-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:30:54.171443-07:00
+description: "Lasketaan p\xE4iv\xE4m\xE4\xE4r\xE4 tulevaisuudessa tai menneisyydess\xE4\
+  . Se on hy\xF6dyllist\xE4, kun halutaan aikatauluttaa tapahtumia, muistuttaa deadlineista\
+  \ tai seurata\u2026"
+lastmod: 2024-02-18 23:09:08.098972
+model: gpt-4-1106-preview
+summary: "Lasketaan p\xE4iv\xE4m\xE4\xE4r\xE4 tulevaisuudessa tai menneisyydess\xE4\
+  . Se on hy\xF6dyllist\xE4, kun halutaan aikatauluttaa tapahtumia, muistuttaa deadlineista\
+  \ tai seurata\u2026"
+title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 ---
 
 {{< edit_this_page >}}

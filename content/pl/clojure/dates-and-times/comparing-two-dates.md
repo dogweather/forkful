@@ -1,13 +1,16 @@
 ---
-title:                "Porównywanie dwóch dat"
 aliases:
 - /pl/clojure/comparing-two-dates/
-date:                  2024-01-20T17:32:30.043659-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Porównywanie dwóch dat"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/comparing-two-dates.md"
+date: 2024-01-20 17:32:30.043659-07:00
+description: "Por\xF3wnywanie dw\xF3ch dat to sprawdzanie, kt\xF3ra data jest wcze\u015B\
+  niejsza, a kt\xF3ra p\xF3\u017Aniejsza lub czy s\u0105 identyczne. W programowaniu\
+  \ robimy to, aby zarz\u0105dza\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.276824
+model: gpt-4-1106-preview
+summary: "Por\xF3wnywanie dw\xF3ch dat to sprawdzanie, kt\xF3ra data jest wcze\u015B\
+  niejsza, a kt\xF3ra p\xF3\u017Aniejsza lub czy s\u0105 identyczne. W programowaniu\
+  \ robimy to, aby zarz\u0105dza\u0107\u2026"
+title: "Por\xF3wnywanie dw\xF3ch dat"
 ---
 
 {{< edit_this_page >}}

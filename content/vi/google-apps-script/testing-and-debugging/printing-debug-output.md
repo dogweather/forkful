@@ -1,14 +1,20 @@
 ---
-title:                "In ra thông tin debug"
 aliases:
 - /vi/google-apps-script/printing-debug-output/
-date:                  2024-02-01T21:59:00.754850-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "In ra thông tin debug"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/google-apps-script/printing-debug-output.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:00.754850-07:00
+description: "In th\xF4ng tin l\u1ED7i \u0111\u1EC3 g\u1EE1 r\u1ED1i bao g\u1ED3m\
+  \ vi\u1EC7c \u0111\u1EB7t chi\u1EBFn l\u01B0\u1EE3c c\xE1c c\xE2u l\u1EC7nh ghi\
+  \ nh\u1EADt k\xFD trong m\xE3 c\u1EE7a b\u1EA1n \u0111\u1EC3 hi\u1EC3n th\u1ECB\
+  \ gi\xE1 tr\u1ECB bi\u1EBFn, d\xF2ng th\u1EF1c thi, ho\u1EB7c th\xF4ng b\xE1o\u2026"
+lastmod: 2024-02-18 23:08:50.222876
+model: gpt-4-0125-preview
+summary: "In th\xF4ng tin l\u1ED7i \u0111\u1EC3 g\u1EE1 r\u1ED1i bao g\u1ED3m vi\u1EC7\
+  c \u0111\u1EB7t chi\u1EBFn l\u01B0\u1EE3c c\xE1c c\xE2u l\u1EC7nh ghi nh\u1EADt\
+  \ k\xFD trong m\xE3 c\u1EE7a b\u1EA1n \u0111\u1EC3 hi\u1EC3n th\u1ECB gi\xE1 tr\u1ECB\
+  \ bi\u1EBFn, d\xF2ng th\u1EF1c thi, ho\u1EB7c th\xF4ng b\xE1o\u2026"
+title: "In ra th\xF4ng tin debug"
 ---
 
 {{< edit_this_page >}}

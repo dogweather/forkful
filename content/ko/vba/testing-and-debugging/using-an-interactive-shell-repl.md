@@ -1,14 +1,28 @@
 ---
-title:                "인터랙티브 셸(REPL) 사용하기"
 aliases:
 - /ko/vba/using-an-interactive-shell-repl/
-date:                  2024-02-01T22:04:04.079744-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "인터랙티브 셸(REPL) 사용하기"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/vba/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:04.079744-07:00
+description: "\uB300\uD654\uD615 \uC258 \uB610\uB294 Read-Eval-Print Loop (REPL)\uC740\
+  \ \uC0AC\uC6A9\uC790\uAC00 \uBA85\uB839\uC744 \uC785\uB825\uD558\uACE0 \uC2E4\uD589\
+  \uD558\uC5EC \uC2E4\uC2DC\uAC04\uC73C\uB85C \uACB0\uACFC\uB97C \uBCFC \uC218 \uC788\
+  \uAC8C \uD574\uC90D\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 REPL\uC744\
+  \ \uC0AC\uC6A9\uD558\uC5EC \uBE60\uB978 \uD504\uB85C\uD1A0\uD0C0\uC774\uD551, \uCF54\
+  \uB4DC \uC870\uAC01 \uD14C\uC2A4\uD2B8 \uB610\uB294 \uBCF4\uB2E4 \uC0C1\uD638 \uC791\
+  \uC6A9\uC801\uC774\uACE0 \uBC18\uBCF5\uC801\uC778 \uD658\uACBD\uC5D0\uC11C \uB514\
+  \uBC84\uAE45\uC744\u2026"
+lastmod: 2024-02-18 23:09:05.955056
+model: gpt-4-0125-preview
+summary: "\uB300\uD654\uD615 \uC258 \uB610\uB294 Read-Eval-Print Loop (REPL)\uC740\
+  \ \uC0AC\uC6A9\uC790\uAC00 \uBA85\uB839\uC744 \uC785\uB825\uD558\uACE0 \uC2E4\uD589\
+  \uD558\uC5EC \uC2E4\uC2DC\uAC04\uC73C\uB85C \uACB0\uACFC\uB97C \uBCFC \uC218 \uC788\
+  \uAC8C \uD574\uC90D\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 REPL\uC744\
+  \ \uC0AC\uC6A9\uD558\uC5EC \uBE60\uB978 \uD504\uB85C\uD1A0\uD0C0\uC774\uD551, \uCF54\
+  \uB4DC \uC870\uAC01 \uD14C\uC2A4\uD2B8 \uB610\uB294 \uBCF4\uB2E4 \uC0C1\uD638 \uC791\
+  \uC6A9\uC801\uC774\uACE0 \uBC18\uBCF5\uC801\uC778 \uD658\uACBD\uC5D0\uC11C \uB514\
+  \uBC84\uAE45\uC744\u2026"
+title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178(REPL) \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

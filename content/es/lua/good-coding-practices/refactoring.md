@@ -1,13 +1,15 @@
 ---
-title:                "Refactorización"
 aliases:
 - /es/lua/refactoring/
-date:                  2024-01-26T01:45:42.902855-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactorización"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/lua/refactoring.md"
+date: 2024-01-26 01:45:42.902855-07:00
+description: "Refactorizar es el arte de ajustar c\xF3digo existente para mejorar\
+  \ su estructura, legibilidad y eficiencia sin alterar su comportamiento externo.\
+  \ Los\u2026"
+lastmod: 2024-02-18 23:09:10.128553
+model: gpt-4-0125-preview
+summary: "Refactorizar es el arte de ajustar c\xF3digo existente para mejorar su estructura,\
+  \ legibilidad y eficiencia sin alterar su comportamiento externo. Los\u2026"
+title: "Refactorizaci\xF3n"
 ---
 
 {{< edit_this_page >}}

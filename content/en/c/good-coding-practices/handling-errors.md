@@ -1,12 +1,15 @@
 ---
-title:                "Handling errors"
 aliases:
 - /en/c/handling-errors/
-date:                  2024-02-03T17:50:05.622207-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Handling errors"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/handling-errors.md"
+date: 2024-02-03 17:50:05.622207-07:00
+description: "Handling errors in C involves detecting and responding to anomalous\
+  \ conditions that arise during program execution. Programmers do this to prevent\
+  \ bugs,\u2026"
+lastmod: 2024-02-18 23:09:11.529945
+model: gpt-4-0125-preview
+summary: "Handling errors in C involves detecting and responding to anomalous conditions\
+  \ that arise during program execution. Programmers do this to prevent bugs,\u2026"
+title: Handling errors
 ---
 
 {{< edit_this_page >}}

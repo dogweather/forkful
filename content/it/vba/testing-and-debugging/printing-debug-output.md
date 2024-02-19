@@ -1,14 +1,16 @@
 ---
-title:                "Stampa dell'output di debug"
 aliases:
 - /it/vba/printing-debug-output/
-date:                  2024-02-01T21:58:11.957240-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Stampa dell'output di debug"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/vba/printing-debug-output.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:11.957240-07:00
+description: "Stampare l'output di debug in Visual Basic for Applications (VBA) implica\
+  \ posizionare strategicamente istruzioni di stampa all'interno del codice per\u2026"
+lastmod: 2024-02-18 23:08:55.725863
+model: gpt-4-0125-preview
+summary: "Stampare l'output di debug in Visual Basic for Applications (VBA) implica\
+  \ posizionare strategicamente istruzioni di stampa all'interno del codice per\u2026"
+title: Stampa dell'output di debug
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Drukowanie komunikatów debugowania"
 aliases:
 - /pl/php/printing-debug-output/
-date:                  2024-01-20T17:53:13.121783-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Drukowanie komunikatów debugowania"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/printing-debug-output.md"
+date: 2024-01-20 17:53:13.121783-07:00
+description: "Drukowanie informacji debugowych w PHP to wy\u015Bwietlanie danych,\
+  \ kt\xF3re pomagaj\u0105 nam zrozumie\u0107, co si\u0119 dzieje w naszym skrypcie.\
+  \ Robimy to, \u017Ceby szybko\u2026"
+lastmod: 2024-02-18 23:08:49.697696
+model: gpt-4-1106-preview
+summary: "Drukowanie informacji debugowych w PHP to wy\u015Bwietlanie danych, kt\xF3\
+  re pomagaj\u0105 nam zrozumie\u0107, co si\u0119 dzieje w naszym skrypcie. Robimy\
+  \ to, \u017Ceby szybko\u2026"
+title: "Drukowanie komunikat\xF3w debugowania"
 ---
 
 {{< edit_this_page >}}

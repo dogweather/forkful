@@ -1,14 +1,23 @@
 ---
-title:                "HTTP 요청 보내기"
 aliases:
 - /ko/java/sending-an-http-request/
-date:                  2024-01-20T17:59:56.930772-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP 요청 보내기"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/sending-an-http-request.md"
+date: 2024-01-20 17:59:56.930772-07:00
+description: "HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B4\uB294 \uAC83\uC740 \uC6F9 \uC11C\
+  \uBC84\uC5D0 \uC815\uBCF4\uB97C \uC694\uCCAD\uD558\uAC70\uB098 \uC81C\uCD9C\uD558\
+  \uB294 \uBC29\uBC95\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uB370\
+  \uC774\uD130\uB97C \uC8FC\uACE0\uBC1B\uAC70\uB098, API\uB97C \uD65C\uC6A9\uD558\uC5EC\
+  \ \uC6F9 \uC11C\uBE44\uC2A4\uC640 \uC0C1\uD638\uC791\uC6A9\uD558\uAE30 \uC704\uD574\
+  \ \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.015877
+model: gpt-4-1106-preview
+summary: "HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B4\uB294 \uAC83\uC740 \uC6F9 \uC11C\uBC84\
+  \uC5D0 \uC815\uBCF4\uB97C \uC694\uCCAD\uD558\uAC70\uB098 \uC81C\uCD9C\uD558\uB294\
+  \ \uBC29\uBC95\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uB370\uC774\
+  \uD130\uB97C \uC8FC\uACE0\uBC1B\uAC70\uB098, API\uB97C \uD65C\uC6A9\uD558\uC5EC\
+  \ \uC6F9 \uC11C\uBE44\uC2A4\uC640 \uC0C1\uD638\uC791\uC6A9\uD558\uAE30 \uC704\uD574\
+  \ \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
 ---
 
 {{< edit_this_page >}}

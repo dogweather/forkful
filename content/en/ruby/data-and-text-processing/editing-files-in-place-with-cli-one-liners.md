@@ -1,13 +1,15 @@
 ---
-title:                "Editing files in-place with CLI one-liners"
 aliases:
 - /en/ruby/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:14:22.954897-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Editing files in-place with CLI one-liners"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:14:22.954897-07:00
+description: "Editing files in-place with CLI (Command Line Interface) one-liners\
+  \ in Ruby allows you to modify files directly from your terminal, without needing\
+  \ to\u2026"
+lastmod: 2024-02-18 23:09:11.561760
+model: gpt-4-0125-preview
+summary: "Editing files in-place with CLI (Command Line Interface) one-liners in Ruby\
+  \ allows you to modify files directly from your terminal, without needing to\u2026"
+title: Editing files in-place with CLI one-liners
 ---
 
 {{< edit_this_page >}}

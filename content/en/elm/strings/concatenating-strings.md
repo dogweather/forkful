@@ -1,13 +1,14 @@
 ---
-title:                "Concatenating strings"
 aliases:
 - /en/elm/concatenating-strings/
-date:                  2024-01-20T17:34:24.812334-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenating strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/concatenating-strings.md"
+date: 2024-01-20 17:34:24.812334-07:00
+description: "Concatenating strings means sticking two or more pieces of text together.\
+  \ It's as basic and essential as using duct tape, allowing you to create new\u2026"
+lastmod: 2024-02-18 23:09:10.963977
+model: gpt-4-1106-preview
+summary: "Concatenating strings means sticking two or more pieces of text together.\
+  \ It's as basic and essential as using duct tape, allowing you to create new\u2026"
+title: Concatenating strings
 ---
 
 {{< edit_this_page >}}

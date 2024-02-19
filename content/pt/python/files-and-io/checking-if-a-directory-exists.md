@@ -1,14 +1,18 @@
 ---
-title:                "Verificando se um diretório existe"
 aliases:
 - /pt/python/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:13.860175-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verificando se um diretório existe"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:13.860175-07:00
+description: "Verificar se um diret\xF3rio existe em Python consiste em confirmar\
+  \ a presen\xE7a de uma pasta no sistema de arquivos antes de realizar opera\xE7\xF5\
+  es como ler ou\u2026"
+lastmod: 2024-02-18 23:08:57.775171
+model: gpt-4-0125-preview
+summary: "Verificar se um diret\xF3rio existe em Python consiste em confirmar a presen\xE7\
+  a de uma pasta no sistema de arquivos antes de realizar opera\xE7\xF5es como ler\
+  \ ou\u2026"
+title: "Verificando se um diret\xF3rio existe"
 ---
 
 {{< edit_this_page >}}

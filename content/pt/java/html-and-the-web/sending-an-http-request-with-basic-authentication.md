@@ -1,13 +1,16 @@
 ---
-title:                "Enviando uma requisição HTTP com autenticação básica"
 aliases:
 - /pt/java/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:11.997467-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando uma requisição HTTP com autenticação básica"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:11.997467-07:00
+description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9\
+  \ o processo de acessar um recurso web protegido, incluindo um cabe\xE7alho de autoriza\xE7\
+  \xE3o com um nome de\u2026"
+lastmod: 2024-02-18 23:08:58.018384
+model: gpt-4-1106-preview
+summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9 o\
+  \ processo de acessar um recurso web protegido, incluindo um cabe\xE7alho de autoriza\xE7\
+  \xE3o com um nome de\u2026"
+title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 ---
 
 {{< edit_this_page >}}

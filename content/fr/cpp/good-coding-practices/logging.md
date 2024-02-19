@@ -1,13 +1,16 @@
 ---
-title:                "Journalisation"
 aliases:
 - /fr/cpp/logging/
-date:                  2024-01-26T01:00:35.021147-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Journalisation"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/logging.md"
+date: 2024-01-26 01:00:35.021147-07:00
+description: "La journalisation, dans le contexte de la programmation, est le processus\
+  \ d'enregistrement des \xE9v\xE9nements, des \xE9tats et des informations dans un\
+  \ fichier\u2026"
+lastmod: 2024-02-18 23:09:09.168022
+model: gpt-4-1106-preview
+summary: "La journalisation, dans le contexte de la programmation, est le processus\
+  \ d'enregistrement des \xE9v\xE9nements, des \xE9tats et des informations dans un\
+  \ fichier\u2026"
+title: Journalisation
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,29 @@
 ---
-title:                "두 날짜 비교하기"
 aliases:
 - /ko/google-apps-script/comparing-two-dates/
-date:                  2024-02-01T21:50:26.644212-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "두 날짜 비교하기"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/comparing-two-dates.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:26.644212-07:00
+description: "Google Apps Script\uC5D0\uC11C \uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\
+  \uD558\uB294 \uAC83\uC740 \uC2A4\uCF00\uC904\uB9C1, \uD0C0\uC784\uB77C\uC778, \uB610\
+  \uB294 \uB0A0\uC9DC \uAD00\uB828 \uB370\uC774\uD130\uB97C \uB2E4\uB8E8\uB294 \uAC1C\
+  \uBC1C\uC790\uC5D0\uAC8C \uD544\uC218\uC801\uC778 \uC791\uC5C5\uC785\uB2C8\uB2E4\
+  . \uB0A0\uC9DC\uB97C \uC815\uD655\uD558\uAC8C \uBE44\uAD50\uD558\uB294 \uBC29\uBC95\
+  \uC744 \uC774\uD574\uD558\uB294 \uAC83\uC740 \uB9C8\uAC10\uC77C, \uC774\uBCA4\uD2B8\
+  \ \uACC4\uD68D, \uB610\uB294 \uCF58\uD150\uCE20 \uC2A4\uCF00\uC904\uB9C1\uACFC \uAC19\
+  \uC740 \uAE30\uB2A5\uC744 \uD6A8\uACFC\uC801\uC73C\uB85C \uAD6C\uD604\uD560 \uC218\
+  \u2026"
+lastmod: 2024-02-18 23:09:05.577703
+model: gpt-4-0125-preview
+summary: "Google Apps Script\uC5D0\uC11C \uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD558\
+  \uB294 \uAC83\uC740 \uC2A4\uCF00\uC904\uB9C1, \uD0C0\uC784\uB77C\uC778, \uB610\uB294\
+  \ \uB0A0\uC9DC \uAD00\uB828 \uB370\uC774\uD130\uB97C \uB2E4\uB8E8\uB294 \uAC1C\uBC1C\
+  \uC790\uC5D0\uAC8C \uD544\uC218\uC801\uC778 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uB0A0\
+  \uC9DC\uB97C \uC815\uD655\uD558\uAC8C \uBE44\uAD50\uD558\uB294 \uBC29\uBC95\uC744\
+  \ \uC774\uD574\uD558\uB294 \uAC83\uC740 \uB9C8\uAC10\uC77C, \uC774\uBCA4\uD2B8 \uACC4\
+  \uD68D, \uB610\uB294 \uCF58\uD150\uCE20 \uC2A4\uCF00\uC904\uB9C1\uACFC \uAC19\uC740\
+  \ \uAE30\uB2A5\uC744 \uD6A8\uACFC\uC801\uC73C\uB85C \uAD6C\uD604\uD560 \uC218\u2026"
+title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

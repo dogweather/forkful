@@ -1,13 +1,16 @@
 ---
-title:                "Création d'un fichier temporaire"
 aliases:
 - /fr/kotlin/creating-a-temporary-file/
-date:                  2024-01-20T17:40:51.109082-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Création d'un fichier temporaire"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:51.109082-07:00
+description: "Cr\xE9er un fichier temporaire permet de stocker des donn\xE9es qui\
+  \ ne sont n\xE9cessaires que bri\xE8vement. Les programmeurs le font pour g\xE9\
+  rer l'espace de stockage\u2026"
+lastmod: 2024-02-18 23:09:08.802286
+model: gpt-4-1106-preview
+summary: "Cr\xE9er un fichier temporaire permet de stocker des donn\xE9es qui ne sont\
+  \ n\xE9cessaires que bri\xE8vement. Les programmeurs le font pour g\xE9rer l'espace\
+  \ de stockage\u2026"
+title: "Cr\xE9ation d'un fichier temporaire"
 ---
 
 {{< edit_this_page >}}

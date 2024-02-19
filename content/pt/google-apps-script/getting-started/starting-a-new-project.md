@@ -1,14 +1,16 @@
 ---
-title:                "Iniciando um novo projeto"
 aliases:
 - /pt/google-apps-script/starting-a-new-project/
-date:                  2024-02-01T22:02:48.381222-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Iniciando um novo projeto"
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/google-apps-script/starting-a-new-project.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:02:48.381222-07:00
+description: "Iniciar um novo projeto no Google Apps Script (GAS) envolve a inicializa\xE7\
+  \xE3o de um arquivo de script dentro do ecossistema do Google (Google Drive, Docs,\u2026"
+lastmod: 2024-02-18 23:08:57.716493
+model: gpt-4-0125-preview
+summary: "Iniciar um novo projeto no Google Apps Script (GAS) envolve a inicializa\xE7\
+  \xE3o de um arquivo de script dentro do ecossistema do Google (Google Drive, Docs,\u2026"
+title: Iniciando um novo projeto
 ---
 
 {{< edit_this_page >}}

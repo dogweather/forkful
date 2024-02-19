@@ -1,15 +1,16 @@
 ---
-title:                "Karakters verwijderen die overeenkomen met een patroon"
 aliases:
 - /nl/haskell/deleting-characters-matching-a-pattern/
-date:                  2024-01-28T21:58:45.201706-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Karakters verwijderen die overeenkomen met een patroon"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/haskell/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:58:45.201706-07:00
+description: "Karakters verwijderen die overeenkomen met een specifiek patroon gaat\
+  \ over het doorzoeken van tekst en het verwijderen van delen die je niet nodig hebt.\u2026"
+lastmod: 2024-02-18 23:09:01.880950
+model: gpt-4-0125-preview
+summary: "Karakters verwijderen die overeenkomen met een specifiek patroon gaat over\
+  \ het doorzoeken van tekst en het verwijderen van delen die je niet nodig hebt.\u2026"
+title: Karakters verwijderen die overeenkomen met een patroon
 ---
 
 {{< edit_this_page >}}

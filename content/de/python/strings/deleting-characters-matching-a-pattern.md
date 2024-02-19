@@ -1,13 +1,15 @@
 ---
-title:                "Löschen von Zeichen, die einem Muster entsprechen"
 aliases:
 - /de/python/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:42.569822-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:42.569822-07:00
+description: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, bedeutet,\
+  \ bestimmte Zeichen aus einer Zeichenkette (String) zu entfernen. Programmierer\
+  \ tun dies,\u2026"
+lastmod: 2024-02-18 23:09:04.445132
+model: gpt-4-1106-preview
+summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, bedeutet, bestimmte\
+  \ Zeichen aus einer Zeichenkette (String) zu entfernen. Programmierer tun dies,\u2026"
+title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 ---
 
 {{< edit_this_page >}}

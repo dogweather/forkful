@@ -1,13 +1,16 @@
 ---
-title:                "XML:n käsittely"
 aliases:
 - /fi/cpp/working-with-xml/
-date:                  2024-01-26T04:28:24.545351-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML:n käsittely"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/working-with-xml.md"
+date: 2024-01-26 04:28:24.545351-07:00
+description: "XML:n (laajennettava merkint\xE4kieli) kanssa ty\xF6skentely tarkoittaa\
+  \ XML-tietojen j\xE4sent\xE4mist\xE4, luomista ja manipulointia. Ohjelmoijat hallinnoivat\
+  \ XML-\u2026"
+lastmod: 2024-02-18 23:09:07.970595
+model: gpt-4-0125-preview
+summary: "XML:n (laajennettava merkint\xE4kieli) kanssa ty\xF6skentely tarkoittaa\
+  \ XML-tietojen j\xE4sent\xE4mist\xE4, luomista ja manipulointia. Ohjelmoijat hallinnoivat\
+  \ XML-\u2026"
+title: "XML:n k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

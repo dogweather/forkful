@@ -1,14 +1,18 @@
 ---
-title:                "Rejestrowanie"
 aliases:
 - /pl/google-apps-script/logging/
-date:                  2024-02-01T21:56:15.760202-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rejestrowanie"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/logging.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:56:15.760202-07:00
+description: "Rejestrowanie (logowanie) w programowaniu polega na zapisywaniu zdarze\u0144\
+  , b\u0142\u0119d\xF3w lub wybitnych wyst\u0105pie\u0144 podczas dzia\u0142ania programu.\
+  \ Programi\u015Bci robi\u0105 to w\u2026"
+lastmod: 2024-02-18 23:08:49.155145
+model: gpt-4-0125-preview
+summary: "Rejestrowanie (logowanie) w programowaniu polega na zapisywaniu zdarze\u0144\
+  , b\u0142\u0119d\xF3w lub wybitnych wyst\u0105pie\u0144 podczas dzia\u0142ania programu.\
+  \ Programi\u015Bci robi\u0105 to w\u2026"
+title: Rejestrowanie
 ---
 
 {{< edit_this_page >}}

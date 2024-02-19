@@ -1,14 +1,14 @@
 ---
-title:                "CSVファイルの操作"
 aliases:
 - /ja/c/working-with-csv/
-date:                  2024-02-03T18:11:55.878074-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "CSVファイルの操作"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:11:55.878074-07:00
+description: "\u2026"
+lastmod: 2024-02-18 23:08:55.371080
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "CSV\u30D5\u30A1\u30A4\u30EB\u306E\u64CD\u4F5C"
 ---
 
 {{< edit_this_page >}}

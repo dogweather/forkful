@@ -1,14 +1,29 @@
 ---
-title:                "패턴에 일치하는 문자 삭제하기"
 aliases:
 - /ko/google-apps-script/deleting-characters-matching-a-pattern/
-date:                  2024-02-01T21:52:27.273243-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "패턴에 일치하는 문자 삭제하기"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:27.273243-07:00
+description: "\uD2B9\uC815 \uD328\uD134\uACFC \uC77C\uCE58\uD558\uB294 \uBB38\uC790\
+  \uB97C \uC0AD\uC81C\uD558\uB294 \uAC83\uC740 \uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\
+  \uC11C \uBB38\uC790\uC5F4\uC744 \uC815\uC81C\uD558\uAC70\uB098 \uD615\uC2DD\uC744\
+  \ \uC9C0\uC815\uD558\uB294 \uAE30\uC220\uC785\uB2C8\uB2E4. Google Apps Script\uC758\
+  \ \uCEE8\uD14D\uC2A4\uD2B8\uC5D0\uC11C, \uC774\uB294 Google \uC11C\uBE44\uC2A4(\uC608\
+  : \uC2DC\uD2B8\uC640 \uBB38\uC11C)\uC640 \uD06C\uAC8C \uC778\uD130\uD398\uC774\uC2A4\
+  \uD558\uB294 \uC0C1\uD669\uC5D0\uC11C \uB370\uC774\uD130 \uC720\uD6A8\uC131 \uAC80\
+  \uC0AC, \uC900\uBE44 \uBC0F \uC870\uC791\uC5D0 \uD544\uC218\uC801\uC778\u2026"
+lastmod: 2024-02-18 23:09:05.527801
+model: gpt-4-0125-preview
+summary: "\uD2B9\uC815 \uD328\uD134\uACFC \uC77C\uCE58\uD558\uB294 \uBB38\uC790\uB97C\
+  \ \uC0AD\uC81C\uD558\uB294 \uAC83\uC740 \uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C\
+  \ \uBB38\uC790\uC5F4\uC744 \uC815\uC81C\uD558\uAC70\uB098 \uD615\uC2DD\uC744 \uC9C0\
+  \uC815\uD558\uB294 \uAE30\uC220\uC785\uB2C8\uB2E4. Google Apps Script\uC758 \uCEE8\
+  \uD14D\uC2A4\uD2B8\uC5D0\uC11C, \uC774\uB294 Google \uC11C\uBE44\uC2A4(\uC608: \uC2DC\
+  \uD2B8\uC640 \uBB38\uC11C)\uC640 \uD06C\uAC8C \uC778\uD130\uD398\uC774\uC2A4\uD558\
+  \uB294 \uC0C1\uD669\uC5D0\uC11C \uB370\uC774\uD130 \uC720\uD6A8\uC131 \uAC80\uC0AC\
+  , \uC900\uBE44 \uBC0F \uC870\uC791\uC5D0 \uD544\uC218\uC801\uC778\u2026"
+title: "\uD328\uD134\uC5D0 \uC77C\uCE58\uD558\uB294 \uBB38\uC790 \uC0AD\uC81C\uD558\
+  \uAE30"
 ---
 
 {{< edit_this_page >}}

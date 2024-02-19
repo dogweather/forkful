@@ -1,14 +1,26 @@
 ---
-title:                "检查目录是否存在"
 aliases:
 - /zh/powershell/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:11.483516-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "检查目录是否存在"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:11.483516-07:00
+description: "\u5728 PowerShell \u4E2D\uFF0C\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\
+  \u5728\u662F\u4E00\u4E2A\u5E38\u89C1\u7684\u4EFB\u52A1\uFF0C\u5B83\u5E2E\u52A9\u811A\
+  \u672C\u6839\u636E\u6587\u4EF6\u7CFB\u7EDF\u7ED3\u6784\u505A\u51FA\u51B3\u7B56\u2014\
+  \u2014\u4F8B\u5982\uFF0C\u5728\u5C1D\u8BD5\u8BFB\u53D6\u6216\u5199\u5165\u4E4B\u524D\
+  \u786E\u8BA4\u76EE\u6807\u76EE\u5F55\u662F\u5426\u5C31\u7EEA\u4EE5\u907F\u514D\u9519\
+  \u8BEF\u3002\u8FD9\u5BF9\u4E8E\u786E\u4FDD\u60A8\u7684\u811A\u672C\u5728\u4E0D\u540C\
+  \u73AF\u5883\u4E2D\u53EF\u9760\u8FD0\u884C\u81F3\u5173\u91CD\u8981\u3002"
+lastmod: 2024-02-18 23:08:59.344655
+model: gpt-4-0125-preview
+summary: "\u5728 PowerShell \u4E2D\uFF0C\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\
+  \u5728\u662F\u4E00\u4E2A\u5E38\u89C1\u7684\u4EFB\u52A1\uFF0C\u5B83\u5E2E\u52A9\u811A\
+  \u672C\u6839\u636E\u6587\u4EF6\u7CFB\u7EDF\u7ED3\u6784\u505A\u51FA\u51B3\u7B56\u2014\
+  \u2014\u4F8B\u5982\uFF0C\u5728\u5C1D\u8BD5\u8BFB\u53D6\u6216\u5199\u5165\u4E4B\u524D\
+  \u786E\u8BA4\u76EE\u6807\u76EE\u5F55\u662F\u5426\u5C31\u7EEA\u4EE5\u907F\u514D\u9519\
+  \u8BEF\u3002\u8FD9\u5BF9\u4E8E\u786E\u4FDD\u60A8\u7684\u811A\u672C\u5728\u4E0D\u540C\
+  \u73AF\u5883\u4E2D\u53EF\u9760\u8FD0\u884C\u81F3\u5173\u91CD\u8981\u3002"
+title: "\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728"
 ---
 
 {{< edit_this_page >}}

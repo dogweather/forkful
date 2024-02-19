@@ -1,14 +1,18 @@
 ---
-title:                "Zamiana liter na wielkie w ciągu znaków"
 aliases:
 - /pl/go/capitalizing-a-string/
-date:                  2024-02-03T17:52:45.332269-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zamiana liter na wielkie w ciągu znaków"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:52:45.332269-07:00
+description: "Zamiana pierwszej litery \u0142a\u0144cucha na wielk\u0105 liter\u0119\
+  \ polega na przekszta\u0142ceniu pierwszego znaku danego \u0142a\u0144cucha na wielk\u0105\
+  \ liter\u0119, je\u015Bli jest on pisany ma\u0142\u0105\u2026"
+lastmod: 2024-02-18 23:08:49.077001
+model: gpt-4-0125-preview
+summary: "Zamiana pierwszej litery \u0142a\u0144cucha na wielk\u0105 liter\u0119 polega\
+  \ na przekszta\u0142ceniu pierwszego znaku danego \u0142a\u0144cucha na wielk\u0105\
+  \ liter\u0119, je\u015Bli jest on pisany ma\u0142\u0105\u2026"
+title: "Zamiana liter na wielkie w ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

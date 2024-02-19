@@ -1,15 +1,20 @@
 ---
-title:                "Chuyển đổi một ngày thành chuỗi"
 aliases:
 - /vi/bash/converting-a-date-into-a-string/
-date:                  2024-01-28T21:57:33.547736-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Chuyển đổi một ngày thành chuỗi"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/bash/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:57:33.547736-07:00
+description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i ngh\u0129\
+  a l\xE0 chuy\u1EC3n n\xF3 th\xE0nh v\u0103n b\u1EA3n bi\u1EC3u di\u1EC5n ng\xE0\
+  y \u0111\xF3. Ch\xFAng ta th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 \u0111\
+  \u1ECBnh d\u1EA1ng c\xE1c ng\xE0y cho con ng\u01B0\u1EDDi d\u1EC5 \u0111\u1ECDc\u2026"
+lastmod: 2024-02-18 23:08:50.898018
+model: gpt-4-0125-preview
+summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i ngh\u0129\
+  a l\xE0 chuy\u1EC3n n\xF3 th\xE0nh v\u0103n b\u1EA3n bi\u1EC3u di\u1EC5n ng\xE0\
+  y \u0111\xF3. Ch\xFAng ta th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 \u0111\
+  \u1ECBnh d\u1EA1ng c\xE1c ng\xE0y cho con ng\u01B0\u1EDDi d\u1EC5 \u0111\u1ECDc\u2026"
+title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 ---
 
 {{< edit_this_page >}}

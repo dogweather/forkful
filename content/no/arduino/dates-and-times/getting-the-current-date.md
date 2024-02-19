@@ -1,14 +1,18 @@
 ---
-title:                "Få den gjeldende datoen"
 aliases:
 - /no/arduino/getting-the-current-date/
-date:                  2024-02-03T19:08:46.849050-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Få den gjeldende datoen"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:46.849050-07:00
+description: "\xC5 f\xE5 tak i dagens dato i Arduino-prosjekter inneb\xE6rer \xE5\
+  \ skaffe sanntidsinformasjon som kan v\xE6re avgj\xF8rende for logging, tidsstempling\
+  \ eller planlegging av\u2026"
+lastmod: 2024-02-18 23:08:54.152732
+model: gpt-4-0125-preview
+summary: "\xC5 f\xE5 tak i dagens dato i Arduino-prosjekter inneb\xE6rer \xE5 skaffe\
+  \ sanntidsinformasjon som kan v\xE6re avgj\xF8rende for logging, tidsstempling eller\
+  \ planlegging av\u2026"
+title: "F\xE5 den gjeldende datoen"
 ---
 
 {{< edit_this_page >}}

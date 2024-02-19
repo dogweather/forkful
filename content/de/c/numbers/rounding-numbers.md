@@ -1,14 +1,16 @@
 ---
-title:                "Zahlen runden"
 aliases:
 - /de/c/rounding-numbers/
-date:                  2024-02-03T18:07:21.364953-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zahlen runden"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/rounding-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:21.364953-07:00
+description: "Das Runden von Zahlen ist der Prozess der Anpassung der Ziffern einer\
+  \ Zahl, um deren Genauigkeit nach bestimmten Regeln zu verringern, entweder in\u2026"
+lastmod: 2024-02-18 23:09:05.367334
+model: gpt-4-0125-preview
+summary: "Das Runden von Zahlen ist der Prozess der Anpassung der Ziffern einer Zahl,\
+  \ um deren Genauigkeit nach bestimmten Regeln zu verringern, entweder in\u2026"
+title: Zahlen runden
 ---
 
 {{< edit_this_page >}}

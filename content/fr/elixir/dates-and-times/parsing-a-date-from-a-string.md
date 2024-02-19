@@ -1,16 +1,19 @@
 ---
-title:                "Analyser une date à partir d'une chaîne de caractères"
 aliases:
 - /fr/elixir/parsing-a-date-from-a-string/
-date:                  2024-01-28T02:05:00.732896-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analyser une date à partir d'une chaîne de caractères"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 02:05:00.732896-07:00
+description: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
+  \ \xE0 prendre un texte, comme \"2023-04-05\", et \xE0 le convertir en un format\
+  \ de date que votre\u2026"
+lastmod: 2024-02-18 23:09:08.444771
+model: gpt-4-0125-preview
+summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
+  \ \xE0 prendre un texte, comme \"2023-04-05\", et \xE0 le convertir en un format\
+  \ de date que votre\u2026"
+title: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

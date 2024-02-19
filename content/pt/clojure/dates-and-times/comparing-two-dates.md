@@ -1,13 +1,16 @@
 ---
-title:                "Comparando duas datas"
 aliases:
 - /pt/clojure/comparing-two-dates/
-date:                  2024-01-20T17:32:52.004629-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Comparando duas datas"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/comparing-two-dates.md"
+date: 2024-01-20 17:32:52.004629-07:00
+description: "Comparar duas datas \xE9 verificar se elas s\xE3o iguais, qual vem antes\
+  \ ou depois. Programadores fazem isso para controlar eventos, prazos, e para l\xF3\
+  gica de\u2026"
+lastmod: 2024-02-18 23:08:57.814897
+model: gpt-4-1106-preview
+summary: "Comparar duas datas \xE9 verificar se elas s\xE3o iguais, qual vem antes\
+  \ ou depois. Programadores fazem isso para controlar eventos, prazos, e para l\xF3\
+  gica de\u2026"
+title: Comparando duas datas
 ---
 
 {{< edit_this_page >}}

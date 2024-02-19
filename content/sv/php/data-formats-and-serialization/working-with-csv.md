@@ -1,14 +1,18 @@
 ---
-title:                "Arbeta med CSV"
 aliases:
 - /sv/php/working-with-csv/
-date:                  2024-02-03T19:21:10.995563-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeta med CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:21:10.995563-07:00
+description: "Att arbeta med CSV (Comma-Separated Values - kommaavgr\xE4nsade v\xE4\
+  rden) inneb\xE4r att l\xE4sa fr\xE5n och skriva data till CSV-filer, ett popul\xE4\
+  rt format f\xF6r att\u2026"
+lastmod: 2024-02-18 23:08:51.899888
+model: gpt-4-0125-preview
+summary: "Att arbeta med CSV (Comma-Separated Values - kommaavgr\xE4nsade v\xE4rden)\
+  \ inneb\xE4r att l\xE4sa fr\xE5n och skriva data till CSV-filer, ett popul\xE4rt\
+  \ format f\xF6r att\u2026"
+title: Arbeta med CSV
 ---
 
 {{< edit_this_page >}}

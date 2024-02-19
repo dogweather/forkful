@@ -1,13 +1,15 @@
 ---
-title:                "Virheiden käsittely"
 aliases:
 - /fi/php/handling-errors/
-date:                  2024-01-26T00:55:57.245131-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheiden käsittely"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/handling-errors.md"
+date: 2024-01-26 00:55:57.245131-07:00
+description: "Virheiden k\xE4sittely PHP:ss\xE4 tarkoittaa olosuhteiden hallintaa\
+  \ ja niihin reagointia, jotka h\xE4iritsev\xE4t ohjelman normaalia toimintaa, kuten\
+  \ puuttuvia\u2026"
+lastmod: 2024-02-18 23:09:07.719579
+model: gpt-4-1106-preview
+summary: "Virheiden k\xE4sittely PHP:ss\xE4 tarkoittaa olosuhteiden hallintaa ja niihin\
+  \ reagointia, jotka h\xE4iritsev\xE4t ohjelman normaalia toimintaa, kuten puuttuvia\u2026"
+title: "Virheiden k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

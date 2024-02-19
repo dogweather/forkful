@@ -1,13 +1,15 @@
 ---
-title:                "Lectura de argumentos de línea de comandos"
 aliases:
 - /es/arduino/reading-command-line-arguments/
-date:                  2024-01-20T17:55:31.103045-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lectura de argumentos de línea de comandos"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:31.103045-07:00
+description: "Leer argumentos de la l\xEDnea de comando permite que tus programas\
+  \ de Arduino reactiven a la entrada del usuario cuando arrancan. Los programadores\
+  \ usan\u2026"
+lastmod: 2024-02-18 23:09:10.277839
+model: gpt-4-1106-preview
+summary: "Leer argumentos de la l\xEDnea de comando permite que tus programas de Arduino\
+  \ reactiven a la entrada del usuario cuando arrancan. Los programadores usan\u2026"
+title: "Lectura de argumentos de l\xEDnea de comandos"
 ---
 
 {{< edit_this_page >}}

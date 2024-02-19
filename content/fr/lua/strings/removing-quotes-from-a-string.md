@@ -1,13 +1,14 @@
 ---
-title:                "Retirer les guillemets d'une chaîne"
 aliases:
 - /fr/lua/removing-quotes-from-a-string/
-date:                  2024-01-26T03:40:29.117268-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Retirer les guillemets d'une chaîne"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/lua/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:40:29.117268-07:00
+description: "Retirer les guillemets d'une cha\xEEne de caract\xE8res signifie enlever\
+  \ ces caract\xE8res de guillemets doubles ou simples qui enlacent votre texte. Les\u2026"
+lastmod: 2024-02-18 23:09:08.956457
+model: gpt-4-0125-preview
+summary: "Retirer les guillemets d'une cha\xEEne de caract\xE8res signifie enlever\
+  \ ces caract\xE8res de guillemets doubles ou simples qui enlacent votre texte. Les\u2026"
+title: "Retirer les guillemets d'une cha\xEEne"
 ---
 
 {{< edit_this_page >}}

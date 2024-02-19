@@ -1,14 +1,16 @@
 ---
-title:                "Analisi di una data da una stringa"
 aliases:
 - /it/java/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:14:22.826195-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analisi di una data da una stringa"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/java/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:14:22.826195-07:00
+description: "Estrarre una data da una stringa implica convertire la rappresentazione\
+  \ testuale di una data e ora in un oggetto `Date` o in un oggetto `LocalDateTime`\u2026"
+lastmod: 2024-02-18 23:08:55.774536
+model: gpt-4-0125-preview
+summary: "Estrarre una data da una stringa implica convertire la rappresentazione\
+  \ testuale di una data e ora in un oggetto `Date` o in un oggetto `LocalDateTime`\u2026"
+title: Analisi di una data da una stringa
 ---
 
 {{< edit_this_page >}}

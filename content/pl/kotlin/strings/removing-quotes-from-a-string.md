@@ -1,13 +1,16 @@
 ---
-title:                "Usuwanie cudzysłowów z ciągu znaków"
 aliases:
 - /pl/kotlin/removing-quotes-from-a-string/
-date:                  2024-01-26T03:41:58.833828-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usuwanie cudzysłowów z ciągu znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:41:58.833828-07:00
+description: "Usuwanie cudzys\u0142ow\xF3w ze stringa oznacza wyci\u0119cie wszelkich\
+  \ instancji znak\xF3w cudzys\u0142owu, zar\xF3wno pojedynczych (' ') jak i podw\xF3\
+  jnych (\" \"), z danych\u2026"
+lastmod: 2024-02-18 23:08:49.547837
+model: gpt-4-0125-preview
+summary: "Usuwanie cudzys\u0142ow\xF3w ze stringa oznacza wyci\u0119cie wszelkich\
+  \ instancji znak\xF3w cudzys\u0142owu, zar\xF3wno pojedynczych (' ') jak i podw\xF3\
+  jnych (\" \"), z danych\u2026"
+title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

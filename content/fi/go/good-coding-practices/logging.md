@@ -1,14 +1,17 @@
 ---
-title:                "Lokitiedostot"
 aliases:
 - /fi/go/logging/
-date:                  2024-02-03T17:59:12.197401-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lokitiedostot"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/logging.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:12.197401-07:00
+description: "Lokitus ohjelmistokehityksess\xE4 on prosessi, jossa kirjataan tietoa\
+  \ ohjelman suorituksesta, jonka tarkoituksena on seurata sen k\xE4ytt\xE4ytymist\xE4\
+  \ ja\u2026"
+lastmod: 2024-02-18 23:09:07.092842
+model: gpt-4-0125-preview
+summary: "Lokitus ohjelmistokehityksess\xE4 on prosessi, jossa kirjataan tietoa ohjelman\
+  \ suorituksesta, jonka tarkoituksena on seurata sen k\xE4ytt\xE4ytymist\xE4 ja\u2026"
+title: Lokitiedostot
 ---
 
 {{< edit_this_page >}}

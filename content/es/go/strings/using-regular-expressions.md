@@ -1,14 +1,17 @@
 ---
-title:                "Usando expresiones regulares"
 aliases:
 - /es/go/using-regular-expressions/
-date:                  2024-02-03T18:11:08.047393-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando expresiones regulares"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:11:08.047393-07:00
+description: "Las expresiones regulares (regex) en la programaci\xF3n se utilizan\
+  \ para buscar, coincidir y manipular cadenas basadas en patrones espec\xEDficos.\
+  \ Los\u2026"
+lastmod: 2024-02-18 23:09:09.443160
+model: gpt-4-0125-preview
+summary: "Las expresiones regulares (regex) en la programaci\xF3n se utilizan para\
+  \ buscar, coincidir y manipular cadenas basadas en patrones espec\xEDficos. Los\u2026"
+title: Usando expresiones regulares
 ---
 
 {{< edit_this_page >}}

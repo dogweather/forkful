@@ -1,13 +1,16 @@
 ---
-title:                "Använda en interaktiv skal (REPL)"
 aliases:
 - /sv/ruby/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:17:24.407303-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Använda en interaktiv skal (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:17:24.407303-07:00
+description: "Ett interaktivt skal, eller REPL (Read-Eval-Print Loop), l\xE5ter dig\
+  \ testa kod i realtid. Programmerare anv\xE4nder det f\xF6r att experimentera, fels\xF6\
+  ka och l\xE4ra\u2026"
+lastmod: 2024-02-18 23:08:52.296863
+model: gpt-4-0125-preview
+summary: "Ett interaktivt skal, eller REPL (Read-Eval-Print Loop), l\xE5ter dig testa\
+  \ kod i realtid. Programmerare anv\xE4nder det f\xF6r att experimentera, fels\xF6\
+  ka och l\xE4ra\u2026"
+title: "Anv\xE4nda en interaktiv skal (REPL)"
 ---
 
 {{< edit_this_page >}}

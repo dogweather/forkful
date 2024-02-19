@@ -1,13 +1,16 @@
 ---
-title:                "Päivämäärän muuntaminen merkkijonoksi"
 aliases:
 - /fi/typescript/converting-a-date-into-a-string/
-date:                  2024-01-20T17:38:05.623499-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:38:05.623499-07:00
+description: "\"Mik\xE4 ja Miksi?\" Muunnamme p\xE4iv\xE4m\xE4\xE4r\xE4n merkkijonoksi\
+  \ hallitaksemme sen esitysmuotoa. T\xE4m\xE4 tekee p\xE4iv\xE4m\xE4\xE4rien kanssa\
+  \ ty\xF6skentelyst\xE4 helpompaa, kuten\u2026"
+lastmod: 2024-02-18 23:09:07.331277
+model: gpt-4-1106-preview
+summary: "\"Mik\xE4 ja Miksi?\" Muunnamme p\xE4iv\xE4m\xE4\xE4r\xE4n merkkijonoksi\
+  \ hallitaksemme sen esitysmuotoa. T\xE4m\xE4 tekee p\xE4iv\xE4m\xE4\xE4rien kanssa\
+  \ ty\xF6skentelyst\xE4 helpompaa, kuten\u2026"
+title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 ---
 
 {{< edit_this_page >}}

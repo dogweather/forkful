@@ -1,14 +1,18 @@
 ---
-title:                "Obteniendo la fecha actual"
 aliases:
 - /es/fish-shell/getting-the-current-date/
-date:                  2024-02-03T19:09:21.651043-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Obteniendo la fecha actual"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:09:21.651043-07:00
+description: "Obtener la fecha actual en programaci\xF3n es una tarea fundamental\
+  \ que te permite recuperar y manipular los datos de fecha y hora del sistema. En\
+  \ tareas de\u2026"
+lastmod: 2024-02-18 23:09:10.464694
+model: gpt-4-0125-preview
+summary: "Obtener la fecha actual en programaci\xF3n es una tarea fundamental que\
+  \ te permite recuperar y manipular los datos de fecha y hora del sistema. En tareas\
+  \ de\u2026"
+title: Obteniendo la fecha actual
 ---
 
 {{< edit_this_page >}}

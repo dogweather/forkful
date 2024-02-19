@@ -1,13 +1,16 @@
 ---
-title:                "Znalezienie długości ciągu znaków"
 aliases:
 - /pl/bash/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:00.288176-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Znalezienie długości ciągu znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:00.288176-07:00
+description: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha polega na ustaleniu,\
+  \ ile znak\xF3w zawiera dany tekst. Programi\u015Bci robi\u0105 to, by zarz\u0105\
+  dza\u0107 danymi tekstowymi \u2013 sprawdza\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.773045
+model: gpt-4-1106-preview
+summary: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha polega na ustaleniu, ile\
+  \ znak\xF3w zawiera dany tekst. Programi\u015Bci robi\u0105 to, by zarz\u0105dza\u0107\
+  \ danymi tekstowymi \u2013 sprawdza\u0107\u2026"
+title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

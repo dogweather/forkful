@@ -1,13 +1,16 @@
 ---
-title:                "Ricerca e sostituzione del testo"
 aliases:
 - /it/rust/searching-and-replacing-text/
-date:                  2024-01-20T17:59:05.376180-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ricerca e sostituzione del testo"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/searching-and-replacing-text.md"
+date: 2024-01-20 17:59:05.376180-07:00
+description: "Cercare e sostituire del testo \xE8 l'atto di trovare specifiche stringhe\
+  \ in un dato testo e scambiarle con altre. I programmatori lo fanno per correzioni\
+  \ in\u2026"
+lastmod: 2024-02-18 23:08:55.666645
+model: gpt-4-1106-preview
+summary: "Cercare e sostituire del testo \xE8 l'atto di trovare specifiche stringhe\
+  \ in un dato testo e scambiarle con altre. I programmatori lo fanno per correzioni\
+  \ in\u2026"
+title: Ricerca e sostituzione del testo
 ---
 
 {{< edit_this_page >}}

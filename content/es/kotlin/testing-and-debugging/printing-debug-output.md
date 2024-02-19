@@ -1,13 +1,16 @@
 ---
-title:                "Imprimiendo salida de depuración"
 aliases:
 - /es/kotlin/printing-debug-output/
-date:                  2024-01-20T17:52:51.002504-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Imprimiendo salida de depuración"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/printing-debug-output.md"
+date: 2024-01-20 17:52:51.002504-07:00
+description: "Imprimir mensajes de depuraci\xF3n es un truco sencillo: mandar informaci\xF3\
+  n a la consola para entender qu\xE9 est\xE1 haciendo tu programa. \xBFPor qu\xE9\
+  ? Porque\u2026"
+lastmod: 2024-02-18 23:09:09.938622
+model: gpt-4-1106-preview
+summary: "Imprimir mensajes de depuraci\xF3n es un truco sencillo: mandar informaci\xF3\
+  n a la consola para entender qu\xE9 est\xE1 haciendo tu programa. \xBFPor qu\xE9\
+  ? Porque\u2026"
+title: "Imprimiendo salida de depuraci\xF3n"
 ---
 
 {{< edit_this_page >}}

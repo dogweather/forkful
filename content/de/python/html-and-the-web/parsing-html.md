@@ -1,14 +1,16 @@
 ---
-title:                "HTML parsen"
 aliases:
 - /de/python/parsing-html/
-date:                  2024-02-03T19:12:39.581886-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML parsen"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:39.581886-07:00
+description: "Das Parsen von HTML beinhaltet die Analyse des HTML-Codes einer Webseite,\
+  \ um spezifische Informationen oder Elemente zu extrahieren. Es ist eine g\xE4ngige\u2026"
+lastmod: 2024-02-18 23:09:04.459743
+model: gpt-4-0125-preview
+summary: "Das Parsen von HTML beinhaltet die Analyse des HTML-Codes einer Webseite,\
+  \ um spezifische Informationen oder Elemente zu extrahieren. Es ist eine g\xE4ngige\u2026"
+title: HTML parsen
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Konvertere en dato til en streng"
 aliases:
 - /no/bash/converting-a-date-into-a-string/
-date:                  2024-01-20T17:35:51.419531-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konvertere en dato til en streng"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:35:51.419531-07:00
+description: "Dato til tekstkonvertering inneb\xE6rer \xE5 endre en dato-representasjon\
+  \ til en lesbar tekststreng. Programmerere gj\xF8r dette for \xE5 vise datoen i\
+  \ et format som\u2026"
+lastmod: 2024-02-18 23:08:54.069352
+model: gpt-4-1106-preview
+summary: "Dato til tekstkonvertering inneb\xE6rer \xE5 endre en dato-representasjon\
+  \ til en lesbar tekststreng. Programmerere gj\xF8r dette for \xE5 vise datoen i\
+  \ et format som\u2026"
+title: Konvertere en dato til en streng
 ---
 
 {{< edit_this_page >}}

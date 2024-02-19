@@ -1,13 +1,16 @@
 ---
-title:                "Att använda en debugger"
 aliases:
 - /sv/c-sharp/using-a-debugger/
-date:                  2024-01-26T03:48:27.575605-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda en debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/using-a-debugger.md"
+date: 2024-01-26 03:48:27.575605-07:00
+description: "Att anv\xE4nda en debugger inneb\xE4r att man utnyttjar specialverktyg\
+  \ f\xF6r att testa och diagnostisera kod. Programmerare g\xF6r det f\xF6r att krossa\
+  \ buggar, f\xF6rst\xE5\u2026"
+lastmod: 2024-02-18 23:08:51.800212
+model: gpt-4-0125-preview
+summary: "Att anv\xE4nda en debugger inneb\xE4r att man utnyttjar specialverktyg f\xF6\
+  r att testa och diagnostisera kod. Programmerare g\xF6r det f\xF6r att krossa buggar,\
+  \ f\xF6rst\xE5\u2026"
+title: "Att anv\xE4nda en debugger"
 ---
 
 {{< edit_this_page >}}

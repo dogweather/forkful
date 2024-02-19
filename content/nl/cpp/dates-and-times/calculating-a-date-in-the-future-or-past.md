@@ -1,15 +1,17 @@
 ---
-title:                "Een datum in de toekomst of het verleden berekenen"
 aliases:
 - /nl/cpp/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-28T21:56:25.582162-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een datum in de toekomst of het verleden berekenen"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/cpp/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:25.582162-07:00
+description: "Een datum in de toekomst of het verleden berekenen betekent uitzoeken\
+  \ welke datum het zal zijn na of voor een bepaalde tijdsspanne. Het is nuttig voor\
+  \ het\u2026"
+lastmod: 2024-02-18 23:09:02.197488
+model: gpt-4-0125-preview
+summary: "Een datum in de toekomst of het verleden berekenen betekent uitzoeken welke\
+  \ datum het zal zijn na of voor een bepaalde tijdsspanne. Het is nuttig voor het\u2026"
+title: Een datum in de toekomst of het verleden berekenen
 ---
 
 {{< edit_this_page >}}

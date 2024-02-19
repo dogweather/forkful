@@ -1,13 +1,15 @@
 ---
-title:                "Zeichenketten verknüpfen"
 aliases:
 - /de/lua/concatenating-strings/
-date:                  2024-01-20T17:35:29.281721-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Zeichenketten verknüpfen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/concatenating-strings.md"
+date: 2024-01-20 17:35:29.281721-07:00
+description: "String-Konkatenation ist das Zusammenf\xFCgen von zwei oder mehreren\
+  \ Zeichenketten (Strings). Programmierer nutzen das, um dynamische Texte zu erzeugen\
+  \ oder\u2026"
+lastmod: 2024-02-18 23:09:04.998570
+model: gpt-4-1106-preview
+summary: "String-Konkatenation ist das Zusammenf\xFCgen von zwei oder mehreren Zeichenketten\
+  \ (Strings). Programmierer nutzen das, um dynamische Texte zu erzeugen oder\u2026"
+title: "Zeichenketten verkn\xFCpfen"
 ---
 
 {{< edit_this_page >}}

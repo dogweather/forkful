@@ -1,13 +1,16 @@
 ---
-title:                "Feilhåndtering"
 aliases:
 - /no/elixir/handling-errors/
-date:                  2024-01-26T00:51:30.468650-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Feilhåndtering"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/handling-errors.md"
+date: 2024-01-26 00:51:30.468650-07:00
+description: "\xC5 h\xE5ndtere feil betyr \xE5 skrive kode som kan takle at ting ikke\
+  \ g\xE5r som planlagt. Programmerere gj\xF8r det for \xE5 hindre krasj og for \xE5\
+  \ forsikre seg om at\u2026"
+lastmod: 2024-02-18 23:08:53.611870
+model: gpt-4-1106-preview
+summary: "\xC5 h\xE5ndtere feil betyr \xE5 skrive kode som kan takle at ting ikke\
+  \ g\xE5r som planlagt. Programmerere gj\xF8r det for \xE5 hindre krasj og for \xE5\
+  \ forsikre seg om at\u2026"
+title: "Feilh\xE5ndtering"
 ---
 
 {{< edit_this_page >}}

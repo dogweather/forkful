@@ -1,13 +1,15 @@
 ---
-title:                "Å starte et nytt prosjekt"
 aliases:
 - /no/cpp/starting-a-new-project/
-date:                  2024-01-20T18:02:55.063545-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Å starte et nytt prosjekt"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/starting-a-new-project.md"
+date: 2024-01-20 18:02:55.063545-07:00
+description: "Et nytt prosjekt er en fersk kodebase skapt fra grunnen. Programmerere\
+  \ starter nye prosjekter for \xE5 bygge unike applikasjoner, eksperimentere med\
+  \ ideer,\u2026"
+lastmod: 2024-02-18 23:08:54.185444
+model: gpt-4-1106-preview
+summary: "Et nytt prosjekt er en fersk kodebase skapt fra grunnen. Programmerere starter\
+  \ nye prosjekter for \xE5 bygge unike applikasjoner, eksperimentere med ideer,\u2026"
+title: "\xC5 starte et nytt prosjekt"
 ---
 
 {{< edit_this_page >}}

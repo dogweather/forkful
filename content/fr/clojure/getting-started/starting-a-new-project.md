@@ -1,13 +1,16 @@
 ---
-title:                "Lancement d'un nouveau projet"
 aliases:
 - /fr/clojure/starting-a-new-project/
-date:                  2024-01-20T18:03:22.413063-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lancement d'un nouveau projet"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/starting-a-new-project.md"
+date: 2024-01-20 18:03:22.413063-07:00
+description: "Commencer un nouveau projet, c'est cr\xE9er une structure de base pour\
+  \ d\xE9velopper une application. Les programmeurs font \xE7a pour organiser le code,\
+  \ g\xE9rer les\u2026"
+lastmod: 2024-02-18 23:09:08.387503
+model: gpt-4-1106-preview
+summary: "Commencer un nouveau projet, c'est cr\xE9er une structure de base pour d\xE9\
+  velopper une application. Les programmeurs font \xE7a pour organiser le code, g\xE9\
+  rer les\u2026"
+title: Lancement d'un nouveau projet
 ---
 
 {{< edit_this_page >}}

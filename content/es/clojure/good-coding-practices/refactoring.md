@@ -1,13 +1,14 @@
 ---
-title:                "Refactorización"
 aliases:
 - /es/clojure/refactoring/
-date:                  2024-01-26T01:17:16.495107-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactorización"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/refactoring.md"
+date: 2024-01-26 01:17:16.495107-07:00
+description: "Refactorizaci\xF3n es el proceso de reestructurar c\xF3digo de computadora\
+  \ existente sin cambiar su comportamiento externo, con el objetivo de mejorar atributos\u2026"
+lastmod: 2024-02-18 23:09:09.612088
+model: gpt-4-0125-preview
+summary: "Refactorizaci\xF3n es el proceso de reestructurar c\xF3digo de computadora\
+  \ existente sin cambiar su comportamiento externo, con el objetivo de mejorar atributos\u2026"
+title: "Refactorizaci\xF3n"
 ---
 
 {{< edit_this_page >}}

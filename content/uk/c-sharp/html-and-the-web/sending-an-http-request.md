@@ -1,13 +1,15 @@
 ---
-title:                "Надсилання HTTP-запиту"
 aliases:
 - /uk/c-sharp/sending-an-http-request/
-date:                  2024-01-20T17:59:30.128089-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Надсилання HTTP-запиту"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c-sharp/sending-an-http-request.md"
+date: 2024-01-20 17:59:30.128089-07:00
+description: "Sending an HTTP request means asking another system for data or a response\
+  \ over the web. Programmers do it to interact with APIs, fetch web content, or\u2026"
+lastmod: 2024-02-18 23:09:00.335330
+model: gpt-4-1106-preview
+summary: "Sending an HTTP request means asking another system for data or a response\
+  \ over the web. Programmers do it to interact with APIs, fetch web content, or\u2026"
+title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437\u0430\
+  \u043F\u0438\u0442\u0443"
 ---
 
 {{< edit_this_page >}}

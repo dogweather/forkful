@@ -1,14 +1,18 @@
 ---
-title:                "Merkkijonon interpolaatio"
 aliases:
 - /fi/go/interpolating-a-string/
-date:                  2024-02-03T17:58:31.160543-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonon interpolaatio"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/interpolating-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:58:31.160543-07:00
+description: "Merkkijonojen interpolaatio on menetelm\xE4, jolla rakennetaan merkkijonoja,\
+  \ joihin sis\xE4llytet\xE4\xE4n muuttujia, mahdollistaen dynaamisen merkkijonon\
+  \ luomisen.\u2026"
+lastmod: 2024-02-18 23:09:07.068413
+model: gpt-4-0125-preview
+summary: "Merkkijonojen interpolaatio on menetelm\xE4, jolla rakennetaan merkkijonoja,\
+  \ joihin sis\xE4llytet\xE4\xE4n muuttujia, mahdollistaen dynaamisen merkkijonon\
+  \ luomisen.\u2026"
+title: Merkkijonon interpolaatio
 ---
 
 {{< edit_this_page >}}

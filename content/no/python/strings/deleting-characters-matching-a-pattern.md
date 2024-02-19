@@ -1,13 +1,16 @@
 ---
-title:                "Slette tegn som matcher et mønster"
 aliases:
 - /no/python/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:43:06.587399-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Slette tegn som matcher et mønster"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:43:06.587399-07:00
+description: "Sletting av tegn som matcher et m\xF8nster fjerner spesifikke deler\
+  \ av en streng basert p\xE5 gitte kriterier. Programmerere gj\xF8r dette for \xE5\
+  \ rense data,\u2026"
+lastmod: 2024-02-18 23:08:53.509285
+model: gpt-4-1106-preview
+summary: "Sletting av tegn som matcher et m\xF8nster fjerner spesifikke deler av en\
+  \ streng basert p\xE5 gitte kriterier. Programmerere gj\xF8r dette for \xE5 rense\
+  \ data,\u2026"
+title: "Slette tegn som matcher et m\xF8nster"
 ---
 
 {{< edit_this_page >}}

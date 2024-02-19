@@ -1,14 +1,15 @@
 ---
-title:                "コマンドライン引数の読み込み"
 aliases:
 - /ja/vba/reading-command-line-arguments/
-date:                  2024-02-01T21:59:47.034464-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "コマンドライン引数の読み込み"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/vba/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:47.034464-07:00
+description: "Visual Basic for\u2026"
+lastmod: 2024-02-18 23:08:54.776064
+model: gpt-4-0125-preview
+summary: "Visual Basic for\u2026"
+title: "\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u5F15\u6570\u306E\u8AAD\u307F\u8FBC\
+  \u307F"
 ---
 
 {{< edit_this_page >}}

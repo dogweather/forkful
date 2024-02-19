@@ -1,15 +1,16 @@
 ---
-title:                "Werken met XML"
 aliases:
 - /nl/rust/working-with-xml/
-date:                  2024-01-28T22:11:56.919248-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/working-with-xml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:56.919248-07:00
+description: "XML, de afkorting voor eXtensible Markup Language, is zoals de breedsprakige\
+  \ neef van JSON. Je zult met XML worstelen wanneer je te maken hebt met legacy\u2026"
+lastmod: 2024-02-18 23:09:01.645589
+model: gpt-4-0125-preview
+summary: "XML, de afkorting voor eXtensible Markup Language, is zoals de breedsprakige\
+  \ neef van JSON. Je zult met XML worstelen wanneer je te maken hebt met legacy\u2026"
+title: Werken met XML
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,20 @@
 ---
-title:                "处理错误"
 aliases:
 - /zh/arduino/handling-errors/
-date:                  2024-01-26T00:36:46.803138-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "处理错误"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/handling-errors.md"
+date: 2024-01-26 00:36:46.803138-07:00
+description: "\u5728\u60A8\u7684\u7A0B\u5E8F\u4E2D\u5904\u7406\u9519\u8BEF\u53EF\u4EE5\
+  \u6293\u4F4F\u90A3\u4E9B\u672A\u9884\u89C1\u5230\u7684\u3001\u53EF\u80FD\u4F1A\u8BA9\
+  \u60A8\u72AF\u9519\u7684\u4E8B\u60C5\u3002\u5F53\u51FA\u73B0\u610F\u6599\u4E4B\u5916\
+  \u7684\u60C5\u51B5\u65F6\uFF0C\u901A\u8FC7\u8FD9\u6837\u505A\u53EF\u4EE5\u9632\u6B62\
+  \u60A8\u7684Arduino\u53D1\u751F\u6545\u969C\u3002"
+lastmod: 2024-02-18 23:08:59.375197
+model: gpt-4-1106-preview
+summary: "\u5728\u60A8\u7684\u7A0B\u5E8F\u4E2D\u5904\u7406\u9519\u8BEF\u53EF\u4EE5\
+  \u6293\u4F4F\u90A3\u4E9B\u672A\u9884\u89C1\u5230\u7684\u3001\u53EF\u80FD\u4F1A\u8BA9\
+  \u60A8\u72AF\u9519\u7684\u4E8B\u60C5\u3002\u5F53\u51FA\u73B0\u610F\u6599\u4E4B\u5916\
+  \u7684\u60C5\u51B5\u65F6\uFF0C\u901A\u8FC7\u8FD9\u6837\u505A\u53EF\u4EE5\u9632\u6B62\
+  \u60A8\u7684Arduino\u53D1\u751F\u6545\u969C\u3002"
+title: "\u5904\u7406\u9519\u8BEF"
 ---
 
 {{< edit_this_page >}}

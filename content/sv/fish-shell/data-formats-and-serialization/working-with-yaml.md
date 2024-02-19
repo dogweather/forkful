@@ -1,14 +1,17 @@
 ---
-title:                "Att Arbeta med YAML"
 aliases:
 - /sv/fish-shell/working-with-yaml/
-date:                  2024-02-03T19:25:41.342767-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att Arbeta med YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:25:41.342767-07:00
+description: "Att arbeta med YAML inneb\xE4r att tolka och hantera YAML-filer (YAML\
+  \ Ain't Markup Language), ett serialiseringsformat f\xF6r data som anv\xE4nds f\xF6\
+  r\u2026"
+lastmod: 2024-02-18 23:08:52.227321
+model: gpt-4-0125-preview
+summary: "Att arbeta med YAML inneb\xE4r att tolka och hantera YAML-filer (YAML Ain't\
+  \ Markup Language), ett serialiseringsformat f\xF6r data som anv\xE4nds f\xF6r\u2026"
+title: Att Arbeta med YAML
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Skapa en temporär fil"
 aliases:
 - /sv/cpp/creating-a-temporary-file/
-date:                  2024-01-20T17:39:55.355167-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skapa en temporär fil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/creating-a-temporary-file.md"
+date: 2024-01-20 17:39:55.355167-07:00
+description: "Att skapa en tempor\xE4r fil inneb\xE4r att vi tillf\xE4lligt lagrar\
+  \ data p\xE5 disk. Programmerare g\xF6r detta f\xF6r att hantera stora datam\xE4\
+  ngder, h\xE5lla p\xE5 anv\xE4ndardata\u2026"
+lastmod: 2024-02-18 23:08:52.102477
+model: gpt-4-1106-preview
+summary: "Att skapa en tempor\xE4r fil inneb\xE4r att vi tillf\xE4lligt lagrar data\
+  \ p\xE5 disk. Programmerare g\xF6r detta f\xF6r att hantera stora datam\xE4ngder,\
+  \ h\xE5lla p\xE5 anv\xE4ndardata\u2026"
+title: "Skapa en tempor\xE4r fil"
 ---
 
 {{< edit_this_page >}}

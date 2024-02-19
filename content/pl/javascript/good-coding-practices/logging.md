@@ -1,13 +1,16 @@
 ---
-title:                "Rejestrowanie zdarzeń"
 aliases:
 - /pl/javascript/logging/
-date:                  2024-01-26T01:07:36.402883-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rejestrowanie zdarzeń"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/logging.md"
+date: 2024-01-26 01:07:36.402883-07:00
+description: "Logowanie, w najwi\u0119kszym skr\xF3cie, przypomina prowadzenie dziennika\
+  \ dla Twojej aplikacji \u2013 rejestruje zdarzenia, b\u0142\u0119dy i inne znacz\u0105\
+  ce akcje, kt\xF3re maj\u0105\u2026"
+lastmod: 2024-02-18 23:08:50.000098
+model: gpt-4-1106-preview
+summary: "Logowanie, w najwi\u0119kszym skr\xF3cie, przypomina prowadzenie dziennika\
+  \ dla Twojej aplikacji \u2013 rejestruje zdarzenia, b\u0142\u0119dy i inne znacz\u0105\
+  ce akcje, kt\xF3re maj\u0105\u2026"
+title: "Rejestrowanie zdarze\u0144"
 ---
 
 {{< edit_this_page >}}

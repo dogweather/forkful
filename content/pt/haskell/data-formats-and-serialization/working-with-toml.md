@@ -1,13 +1,14 @@
 ---
-title:                "Trabalhando com TOML"
 aliases:
 - /pt/haskell/working-with-toml/
-date:                  2024-01-26T04:22:59.717539-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/working-with-toml.md"
+date: 2024-01-26 04:22:59.717539-07:00
+description: "Trabalhar com TOML envolve analisar e gerar dados TOML (Tom's Obvious,\
+  \ Minimal Language) com Haskell. Os programadores fazem isso para gerenciar\u2026"
+lastmod: 2024-02-18 23:08:58.222503
+model: gpt-4-0125-preview
+summary: "Trabalhar com TOML envolve analisar e gerar dados TOML (Tom's Obvious, Minimal\
+  \ Language) com Haskell. Os programadores fazem isso para gerenciar\u2026"
+title: Trabalhando com TOML
 ---
 
 {{< edit_this_page >}}

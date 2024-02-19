@@ -1,13 +1,14 @@
 ---
-title:                "Interpolación de cadenas de texto"
 aliases:
 - /es/arduino/interpolating-a-string/
-date:                  2024-01-20T17:50:12.175783-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolación de cadenas de texto"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/interpolating-a-string.md"
+date: 2024-01-20 17:50:12.175783-07:00
+description: "La interpolaci\xF3n de cadenas permite insertar valores de variables\
+  \ dentro de una cadena de texto, creando as\xED una cadena compuesta din\xE1micamente.\u2026"
+lastmod: 2024-02-18 23:09:10.246442
+model: gpt-4-1106-preview
+summary: "La interpolaci\xF3n de cadenas permite insertar valores de variables dentro\
+  \ de una cadena de texto, creando as\xED una cadena compuesta din\xE1micamente.\u2026"
+title: "Interpolaci\xF3n de cadenas de texto"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Usuwanie znaków pasujących do wzorca"
 aliases:
 - /pl/haskell/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:31.299202-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Usuwanie znaków pasujących do wzorca"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:31.299202-07:00
+description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces filtrowania ci\u0105\
+  gu, by pozby\u0107 si\u0119 niechcianych znak\xF3w. Programi\u015Bci robi\u0105\
+  \ to dla czysto\u015Bci danych,\u2026"
+lastmod: 2024-02-18 23:08:49.638270
+model: gpt-4-1106-preview
+summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces filtrowania ci\u0105\
+  gu, by pozby\u0107 si\u0119 niechcianych znak\xF3w. Programi\u015Bci robi\u0105\
+  \ to dla czysto\u015Bci danych,\u2026"
+title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 ---
 
 {{< edit_this_page >}}

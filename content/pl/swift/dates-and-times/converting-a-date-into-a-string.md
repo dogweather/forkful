@@ -1,13 +1,16 @@
 ---
-title:                "Konwersja daty na łańcuch znaków"
 aliases:
 - /pl/swift/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:37.173674-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konwersja daty na łańcuch znaków"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:37.173674-07:00
+description: "Co i dlaczego? Konwersja daty na ci\u0105g znak\xF3w umo\u017Cliwia\
+  \ \u0142atwy wy\u015Bwietlanie i zapisywanie dat. Programi\u015Bci robi\u0105 to,\
+  \ by formatowa\u0107 daty w spos\xF3b zrozumia\u0142y\u2026"
+lastmod: 2024-02-18 23:08:49.964039
+model: gpt-4-1106-preview
+summary: "Co i dlaczego? Konwersja daty na ci\u0105g znak\xF3w umo\u017Cliwia \u0142\
+  atwy wy\u015Bwietlanie i zapisywanie dat. Programi\u015Bci robi\u0105 to, by formatowa\u0107\
+  \ daty w spos\xF3b zrozumia\u0142y\u2026"
+title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 ---
 
 {{< edit_this_page >}}

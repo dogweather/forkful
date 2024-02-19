@@ -1,13 +1,14 @@
 ---
-title:                "Using a debugger"
 aliases:
 - /en/lua/using-a-debugger/
-date:                  2024-01-25T20:49:59.490338-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Using a debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/using-a-debugger.md"
+date: 2024-01-25 20:49:59.490338-07:00
+description: "A debugger is a tool that lets you inspect and control the execution\
+  \ of a program, making it easy to pinpoint where things go awry. Programmers use\u2026"
+lastmod: 2024-02-18 23:09:11.183107
+model: gpt-4-1106-preview
+summary: "A debugger is a tool that lets you inspect and control the execution of\
+  \ a program, making it easy to pinpoint where things go awry. Programmers use\u2026"
+title: Using a debugger
 ---
 
 {{< edit_this_page >}}

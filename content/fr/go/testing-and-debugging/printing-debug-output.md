@@ -1,14 +1,18 @@
 ---
-title:                "Impression de sortie de débogage"
 aliases:
 - /fr/go/printing-debug-output/
-date:                  2024-02-03T18:05:09.294631-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Impression de sortie de débogage"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/printing-debug-output.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:09.294631-07:00
+description: "En programmation informatique, \"Imprimer les sorties de d\xE9bogage\"\
+  \ consiste \xE0 produire des messages d'information d\xE9taill\xE9s qui aident les\
+  \ d\xE9veloppeurs \xE0\u2026"
+lastmod: 2024-02-18 23:09:08.237077
+model: gpt-4-0125-preview
+summary: "En programmation informatique, \"Imprimer les sorties de d\xE9bogage\" consiste\
+  \ \xE0 produire des messages d'information d\xE9taill\xE9s qui aident les d\xE9\
+  veloppeurs \xE0\u2026"
+title: "Impression de sortie de d\xE9bogage"
 ---
 
 {{< edit_this_page >}}

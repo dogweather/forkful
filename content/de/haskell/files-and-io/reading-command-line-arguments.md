@@ -1,13 +1,14 @@
 ---
-title:                "Lesen von Kommandozeilenargumenten"
 aliases:
 - /de/haskell/reading-command-line-arguments/
-date:                  2024-01-20T17:56:02.681646-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lesen von Kommandozeilenargumenten"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:02.681646-07:00
+description: "Beim Lesen von Kommandozeilenargumenten nimmt ein Programm Parameter\
+  \ von au\xDFen auf, um sein Verhalten zu steuern oder Daten zu verarbeiten. Programmierer\u2026"
+lastmod: 2024-02-18 23:09:04.933791
+model: gpt-4-1106-preview
+summary: "Beim Lesen von Kommandozeilenargumenten nimmt ein Programm Parameter von\
+  \ au\xDFen auf, um sein Verhalten zu steuern oder Daten zu verarbeiten. Programmierer\u2026"
+title: Lesen von Kommandozeilenargumenten
 ---
 
 {{< edit_this_page >}}

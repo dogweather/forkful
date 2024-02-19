@@ -1,14 +1,18 @@
 ---
-title:                "Kontrollera om en katalog existerar"
 aliases:
 - /sv/java/checking-if-a-directory-exists/
-date:                  2024-02-03T19:07:58.608216-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kontrollera om en katalog existerar"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:07:58.608216-07:00
+description: "Att kontrollera om en katalog finns i Java \xE4r en grundl\xE4ggande\
+  \ uppgift som inneb\xE4r att man verifierar n\xE4rvaron av en katalog i filsystemet\
+  \ innan man l\xE4ser\u2026"
+lastmod: 2024-02-18 23:08:51.683018
+model: gpt-4-0125-preview
+summary: "Att kontrollera om en katalog finns i Java \xE4r en grundl\xE4ggande uppgift\
+  \ som inneb\xE4r att man verifierar n\xE4rvaron av en katalog i filsystemet innan\
+  \ man l\xE4ser\u2026"
+title: Kontrollera om en katalog existerar
 ---
 
 {{< edit_this_page >}}

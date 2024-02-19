@@ -1,13 +1,16 @@
 ---
-title:                "Ermittlung der Zeichenkettenlänge"
 aliases:
 - /de/powershell/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:53.967215-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ermittlung der Zeichenkettenlänge"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:53.967215-07:00
+description: "Die L\xE4nge eines Strings zu finden bedeutet, die Anzahl der Zeichen\
+  \ zu z\xE4hlen, die er enth\xE4lt. Programmierer nutzen diese Information h\xE4\
+  ufig, um Eingaben\u2026"
+lastmod: 2024-02-18 23:09:05.089551
+model: gpt-4-1106-preview
+summary: "Die L\xE4nge eines Strings zu finden bedeutet, die Anzahl der Zeichen zu\
+  \ z\xE4hlen, die er enth\xE4lt. Programmierer nutzen diese Information h\xE4ufig,\
+  \ um Eingaben\u2026"
+title: "Ermittlung der Zeichenkettenl\xE4nge"
 ---
 
 {{< edit_this_page >}}

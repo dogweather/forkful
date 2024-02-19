@@ -1,13 +1,16 @@
 ---
-title:                "Bruke et interaktivt skall (REPL)"
 aliases:
 - /no/c-sharp/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:12:22.043848-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke et interaktivt skall (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:12:22.043848-07:00
+description: "En REPL, eller Read-Eval-Print Loop, lar deg skrive C#-kode og kj\xF8\
+  re den interaktivt. Programmerere bruker det for raske eksperimenter, feils\xF8\
+  king, eller\u2026"
+lastmod: 2024-02-18 23:08:53.895407
+model: gpt-4-0125-preview
+summary: "En REPL, eller Read-Eval-Print Loop, lar deg skrive C#-kode og kj\xF8re\
+  \ den interaktivt. Programmerere bruker det for raske eksperimenter, feils\xF8king,\
+  \ eller\u2026"
+title: Bruke et interaktivt skall (REPL)
 ---
 
 {{< edit_this_page >}}

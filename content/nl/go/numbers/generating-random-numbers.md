@@ -1,14 +1,17 @@
 ---
-title:                "Willekeurige getallen genereren"
 aliases:
 - /nl/go/generating-random-numbers/
-date:                  2024-02-03T17:57:20.293324-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Willekeurige getallen genereren"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/generating-random-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:20.293324-07:00
+description: "Het genereren van willekeurige getallen in programmeren gaat over het\
+  \ cre\xEBren van een reeks getallen die niet redelijkerwijs beter voorspeld kunnen\
+  \ worden\u2026"
+lastmod: 2024-02-18 23:09:01.333563
+model: gpt-4-0125-preview
+summary: "Het genereren van willekeurige getallen in programmeren gaat over het cre\xEB\
+  ren van een reeks getallen die niet redelijkerwijs beter voorspeld kunnen worden\u2026"
+title: Willekeurige getallen genereren
 ---
 
 {{< edit_this_page >}}

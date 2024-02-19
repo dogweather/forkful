@@ -1,13 +1,22 @@
 ---
-title:                "에러 처리하기"
 aliases:
 - /ko/swift/handling-errors/
-date:                  2024-01-26T00:59:13.061250-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "에러 처리하기"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/swift/handling-errors.md"
+date: 2024-01-26 00:59:13.061250-07:00
+description: "Swift\uC5D0\uC11C\uC758 \uC624\uB958 \uCC98\uB9AC\uB780 \uCF54\uB4DC\
+  \ \uC2E4\uD589 \uC911 \uBC1C\uC0DD\uD558\uB294 \uBB38\uC81C\uC5D0 \uB300\uBE44\uD558\
+  \uACE0 \uB300\uC751\uD558\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uC774\uB97C\
+  \ \uD1B5\uD574 \uD63C\uB3C8\uC744 \uC81C\uC5B4\uD558\uC5EC \uC571\uC774 \uCDA9\uB3CC\
+  \uD558\uB294 \uAC83\uC744 \uBC29\uC9C0\uD558\uACE0 \uC0AC\uC6A9\uC790\uC5D0\uAC8C\
+  \ \uC6D0\uD65C\uD55C \uACBD\uD5D8\uC744 \uC81C\uACF5\uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.759789
+model: gpt-4-1106-preview
+summary: "Swift\uC5D0\uC11C\uC758 \uC624\uB958 \uCC98\uB9AC\uB780 \uCF54\uB4DC \uC2E4\
+  \uD589 \uC911 \uBC1C\uC0DD\uD558\uB294 \uBB38\uC81C\uC5D0 \uB300\uBE44\uD558\uACE0\
+  \ \uB300\uC751\uD558\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uC774\uB97C \uD1B5\
+  \uD574 \uD63C\uB3C8\uC744 \uC81C\uC5B4\uD558\uC5EC \uC571\uC774 \uCDA9\uB3CC\uD558\
+  \uB294 \uAC83\uC744 \uBC29\uC9C0\uD558\uACE0 \uC0AC\uC6A9\uC790\uC5D0\uAC8C \uC6D0\
+  \uD65C\uD55C \uACBD\uD5D8\uC744 \uC81C\uACF5\uD569\uB2C8\uB2E4."
+title: "\uC5D0\uB7EC \uCC98\uB9AC\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

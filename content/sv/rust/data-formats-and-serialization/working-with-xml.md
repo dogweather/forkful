@@ -1,13 +1,15 @@
 ---
-title:                "Att arbeta med XML"
 aliases:
 - /sv/rust/working-with-xml/
-date:                  2024-01-26T04:35:50.743722-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/working-with-xml.md"
+date: 2024-01-26 04:35:50.743722-07:00
+description: "XML, som st\xE5r f\xF6r eXtensible Markup Language, \xE4r som JSON:s\
+  \ ordrika kusin. Du kommer att brottas med XML n\xE4r du hanterar legacysystem,\
+  \ f\xF6retagsprogramvara\u2026"
+lastmod: 2024-02-18 23:08:51.607510
+model: gpt-4-0125-preview
+summary: "XML, som st\xE5r f\xF6r eXtensible Markup Language, \xE4r som JSON:s ordrika\
+  \ kusin. Du kommer att brottas med XML n\xE4r du hanterar legacysystem, f\xF6retagsprogramvara\u2026"
+title: Att arbeta med XML
 ---
 
 {{< edit_this_page >}}

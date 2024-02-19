@@ -1,14 +1,24 @@
 ---
-title:                "写入标准错误"
 aliases:
 - /zh/java/writing-to-standard-error/
-date:                  2024-02-03T19:33:32.558323-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "写入标准错误"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:33:32.558323-07:00
+description: "\u5C06\u9519\u8BEF\u4FE1\u606F\u548C\u8BCA\u65AD\u4FE1\u606F\u5199\u5165\
+  \u6807\u51C6\u9519\u8BEF\uFF08stderr\uFF09\u6D89\u53CA\u5230\u5C06\u8FD9\u4E9B\u4FE1\
+  \u606F\u8F93\u51FA\u5230\u63A7\u5236\u53F0\u6216\u7EC8\u7AEF\u3002\u7A0B\u5E8F\u5458\
+  \u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u5C06\u9519\u8BEF\u4FE1\u606F\u4E0E\u6807\u51C6\
+  \u8F93\u51FA\uFF08stdout\uFF09\u5206\u5F00\uFF0C\u4FBF\u4E8E\u8C03\u8BD5\u548C\u65E5\
+  \u5FD7\u5206\u6790\u3002"
+lastmod: 2024-02-18 23:08:59.035510
+model: gpt-4-0125-preview
+summary: "\u5C06\u9519\u8BEF\u4FE1\u606F\u548C\u8BCA\u65AD\u4FE1\u606F\u5199\u5165\
+  \u6807\u51C6\u9519\u8BEF\uFF08stderr\uFF09\u6D89\u53CA\u5230\u5C06\u8FD9\u4E9B\u4FE1\
+  \u606F\u8F93\u51FA\u5230\u63A7\u5236\u53F0\u6216\u7EC8\u7AEF\u3002\u7A0B\u5E8F\u5458\
+  \u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u5C06\u9519\u8BEF\u4FE1\u606F\u4E0E\u6807\u51C6\
+  \u8F93\u51FA\uFF08stdout\uFF09\u5206\u5F00\uFF0C\u4FBF\u4E8E\u8C03\u8BD5\u548C\u65E5\
+  \u5FD7\u5206\u6790\u3002"
+title: "\u5199\u5165\u6807\u51C6\u9519\u8BEF"
 ---
 
 {{< edit_this_page >}}

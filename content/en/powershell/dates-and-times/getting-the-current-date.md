@@ -1,12 +1,14 @@
 ---
-title:                "Getting the current date"
 aliases:
 - /en/powershell/getting-the-current-date/
-date:                  2024-02-03T19:02:40.928755-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Getting the current date"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/powershell/getting-the-current-date.md"
+date: 2024-02-03 19:02:40.928755-07:00
+description: "Retrieving the current date in PowerShell is about fetching the system\u2019\
+  s current date and time. This operation is fundamental for tasks such as logging,\u2026"
+lastmod: 2024-02-18 23:09:11.284415
+model: gpt-4-0125-preview
+summary: "Retrieving the current date in PowerShell is about fetching the system\u2019\
+  s current date and time. This operation is fundamental for tasks such as logging,\u2026"
+title: Getting the current date
 ---
 
 {{< edit_this_page >}}

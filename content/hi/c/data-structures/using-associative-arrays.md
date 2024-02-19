@@ -1,14 +1,31 @@
 ---
-title:                "संघटक अरेज़ का उपयोग"
 aliases:
 - /hi/c/using-associative-arrays/
-date:                  2024-02-03T18:11:58.738135-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "संघटक अरेज़ का उपयोग"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c/using-associative-arrays.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:11:58.738135-07:00
+description: "`Associative arrays`, \u091C\u093F\u0928\u094D\u0939\u0947\u0902 \u0926\
+  \u0942\u0938\u0930\u0940 \u092D\u093E\u0937\u093E\u0913\u0902 \u092E\u0947\u0902\
+  \ \u092E\u0948\u092A\u094D\u0938 \u092F\u093E \u0921\u093F\u0915\u094D\u0936\u0928\
+  \u0930\u0940\u091C \u0915\u0947 \u0930\u0942\u092A \u092E\u0947\u0902 \u091C\u093E\
+  \u0928\u093E \u091C\u093E\u0924\u093E \u0939\u0948, \u092E\u0939\u0924\u094D\u0935\
+  \u092A\u0942\u0930\u094D\u0923-\u092E\u0942\u0932\u094D\u092F \u0915\u0947 \u091C\
+  \u094B\u0921\u093C\u0947 \u0939\u094B\u0924\u0947 \u0939\u0948\u0902 \u091C\u093F\
+  \u0928\u0915\u093E \u0909\u092A\u092F\u094B\u0917 \u0921\u0947\u091F\u093E \u0916\
+  \u094B\u091C \u0914\u0930\u2026"
+lastmod: 2024-02-18 23:09:04.196523
+model: gpt-4-0125-preview
+summary: "`Associative arrays`, \u091C\u093F\u0928\u094D\u0939\u0947\u0902 \u0926\u0942\
+  \u0938\u0930\u0940 \u092D\u093E\u0937\u093E\u0913\u0902 \u092E\u0947\u0902 \u092E\
+  \u0948\u092A\u094D\u0938 \u092F\u093E \u0921\u093F\u0915\u094D\u0936\u0928\u0930\
+  \u0940\u091C \u0915\u0947 \u0930\u0942\u092A \u092E\u0947\u0902 \u091C\u093E\u0928\
+  \u093E \u091C\u093E\u0924\u093E \u0939\u0948, \u092E\u0939\u0924\u094D\u0935\u092A\
+  \u0942\u0930\u094D\u0923-\u092E\u0942\u0932\u094D\u092F \u0915\u0947 \u091C\u094B\
+  \u0921\u093C\u0947 \u0939\u094B\u0924\u0947 \u0939\u0948\u0902 \u091C\u093F\u0928\
+  \u0915\u093E \u0909\u092A\u092F\u094B\u0917 \u0921\u0947\u091F\u093E \u0916\u094B\
+  \u091C \u0914\u0930\u2026"
+title: "\u0938\u0902\u0918\u091F\u0915 \u0905\u0930\u0947\u091C\u093C \u0915\u093E\
+  \ \u0909\u092A\u092F\u094B\u0917"
 ---
 
 {{< edit_this_page >}}

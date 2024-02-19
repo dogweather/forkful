@@ -1,13 +1,14 @@
 ---
-title:                "Redondeo de números"
 aliases:
 - /es/bash/rounding-numbers/
-date:                  2024-01-26T03:42:37.095687-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Redondeo de números"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/rounding-numbers.md"
+date: 2024-01-26 03:42:37.095687-07:00
+description: "Redondear n\xFAmeros significa cortar los decimales a un valor m\xE1\
+  s simple que es suficientemente bueno para un contexto dado. Los programadores redondean\u2026"
+lastmod: 2024-02-18 23:09:10.159616
+model: gpt-4-0125-preview
+summary: "Redondear n\xFAmeros significa cortar los decimales a un valor m\xE1s simple\
+  \ que es suficientemente bueno para un contexto dado. Los programadores redondean\u2026"
+title: "Redondeo de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

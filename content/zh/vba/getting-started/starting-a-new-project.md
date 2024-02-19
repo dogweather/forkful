@@ -1,14 +1,28 @@
 ---
-title:                "启动新项目"
 aliases:
 - /zh/vba/starting-a-new-project/
-date:                  2024-02-01T22:03:11.669582-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "启动新项目"
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/starting-a-new-project.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:11.669582-07:00
+description: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u5F00\u59CB\u4E00\u4E2A\
+  \u65B0\u9879\u76EE\u6D89\u53CA\u5728\u5BBF\u4E3B\u5E94\u7528\u7A0B\u5E8F\uFF08\u5982\
+  \ Excel\uFF09\u5185\u8BBE\u7F6E\u4E00\u4E2A\u73AF\u5883\uFF0C\u4EE5\u81EA\u52A8\u5316\
+  \u4EFB\u52A1\u6216\u6269\u5C55\u529F\u80FD\u3002\u7F16\u7A0B\u4EBA\u5458\u8FDB\u5165\
+  \u8FD9\u4E00\u9886\u57DF\u662F\u4E3A\u4E86\u5229\u7528 VBA \u7684\u5F3A\u5927\u529F\
+  \u80FD\uFF0C\u5B9A\u5236\u548C\u81EA\u52A8\u5316 Microsoft Office \u5E94\u7528\u7A0B\
+  \u5E8F\uFF0C\u4ECE\u800C\u7B80\u5316\u5DE5\u4F5C\u6D41\u7A0B\u5E76\u63D0\u9AD8\u751F\
+  \u4EA7\u529B\u3002"
+lastmod: 2024-02-18 23:08:58.981493
+model: gpt-4-0125-preview
+summary: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u5F00\u59CB\u4E00\u4E2A\
+  \u65B0\u9879\u76EE\u6D89\u53CA\u5728\u5BBF\u4E3B\u5E94\u7528\u7A0B\u5E8F\uFF08\u5982\
+  \ Excel\uFF09\u5185\u8BBE\u7F6E\u4E00\u4E2A\u73AF\u5883\uFF0C\u4EE5\u81EA\u52A8\u5316\
+  \u4EFB\u52A1\u6216\u6269\u5C55\u529F\u80FD\u3002\u7F16\u7A0B\u4EBA\u5458\u8FDB\u5165\
+  \u8FD9\u4E00\u9886\u57DF\u662F\u4E3A\u4E86\u5229\u7528 VBA \u7684\u5F3A\u5927\u529F\
+  \u80FD\uFF0C\u5B9A\u5236\u548C\u81EA\u52A8\u5316 Microsoft Office \u5E94\u7528\u7A0B\
+  \u5E8F\uFF0C\u4ECE\u800C\u7B80\u5316\u5DE5\u4F5C\u6D41\u7A0B\u5E76\u63D0\u9AD8\u751F\
+  \u4EA7\u529B\u3002"
+title: "\u542F\u52A8\u65B0\u9879\u76EE"
 ---
 
 {{< edit_this_page >}}

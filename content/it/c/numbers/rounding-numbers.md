@@ -1,14 +1,16 @@
 ---
-title:                "Arrotondamento dei numeri"
 aliases:
 - /it/c/rounding-numbers/
-date:                  2024-02-03T18:07:32.632300-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrotondamento dei numeri"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/rounding-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:32.632300-07:00
+description: "Arrotondare i numeri \xE8 il processo di aggiustamento delle cifre di\
+  \ un numero per ridurne la precisione secondo determinate regole, sia verso il numero\u2026"
+lastmod: 2024-02-18 23:08:56.333060
+model: gpt-4-0125-preview
+summary: "Arrotondare i numeri \xE8 il processo di aggiustamento delle cifre di un\
+  \ numero per ridurne la precisione secondo determinate regole, sia verso il numero\u2026"
+title: Arrotondamento dei numeri
 ---
 
 {{< edit_this_page >}}

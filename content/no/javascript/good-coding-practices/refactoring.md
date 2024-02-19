@@ -1,13 +1,16 @@
 ---
-title:                "Refaktorering"
 aliases:
 - /no/javascript/refactoring/
-date:                  2024-01-26T01:41:39.392979-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refaktorering"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/refactoring.md"
+date: 2024-01-26 01:41:39.392979-07:00
+description: "Refaktorering er prosessen med \xE5 restrukturere eksisterende dataprogramkode\
+  \ uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere gj\xF8r dette for \xE5\
+  \ forbedre\u2026"
+lastmod: 2024-02-18 23:08:54.316918
+model: gpt-4-0125-preview
+summary: "Refaktorering er prosessen med \xE5 restrukturere eksisterende dataprogramkode\
+  \ uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere gj\xF8r dette for \xE5\
+  \ forbedre\u2026"
+title: Refaktorering
 ---
 
 {{< edit_this_page >}}

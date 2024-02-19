@@ -1,14 +1,17 @@
 ---
-title:                "Praca z formatem CSV"
 aliases:
 - /pl/vba/working-with-csv/
-date:                  2024-02-01T22:05:23.657463-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z formatem CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/vba/working-with-csv.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:05:23.657463-07:00
+description: "Praca z plikami CSV (Comma Separated Values - warto\u015Bci oddzielone\
+  \ przecinkami) polega na odczytywaniu z nich danych lub zapisywaniu do nich danych\
+  \ w\u2026"
+lastmod: 2024-02-18 23:08:49.458354
+model: gpt-4-0125-preview
+summary: "Praca z plikami CSV (Comma Separated Values - warto\u015Bci oddzielone przecinkami)\
+  \ polega na odczytywaniu z nich danych lub zapisywaniu do nich danych w\u2026"
+title: Praca z formatem CSV
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Calculer une date dans le futur ou le passé"
 aliases:
 - /fr/vba/calculating-a-date-in-the-future-or-past/
-date:                  2024-02-01T21:49:06.976600-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Calculer une date dans le futur ou le passé"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/vba/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:06.976600-07:00
+description: "Calculer une date dans le futur ou le pass\xE9 implique de d\xE9terminer\
+  \ une date qui se trouve \xE0 un nombre sp\xE9cifi\xE9 de jours, de mois ou d'ann\xE9\
+  es d'une date\u2026"
+lastmod: 2024-02-18 23:09:08.595162
+model: gpt-4-0125-preview
+summary: "Calculer une date dans le futur ou le pass\xE9 implique de d\xE9terminer\
+  \ une date qui se trouve \xE0 un nombre sp\xE9cifi\xE9 de jours, de mois ou d'ann\xE9\
+  es d'une date\u2026"
+title: "Calculer une date dans le futur ou le pass\xE9"
 ---
 
 {{< edit_this_page >}}

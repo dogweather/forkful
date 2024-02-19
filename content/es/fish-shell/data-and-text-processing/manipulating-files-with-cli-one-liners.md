@@ -1,13 +1,16 @@
 ---
-title:                "Manipulando archivos con comandos de línea de una sola línea"
 aliases:
 - /es/fish-shell/manipulating-files-with-cli-one-liners/
-date:                  2024-01-27T16:21:07.606182-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulando archivos con comandos de línea de una sola línea"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/manipulating-files-with-cli-one-liners.md"
+date: 2024-01-27 16:21:07.606182-07:00
+description: "En el \xE1mbito de la programaci\xF3n, especialmente cuando se trata\
+  \ de entornos Linux o Unix, manipular archivos directamente desde la interfaz de\
+  \ l\xEDnea de\u2026"
+lastmod: 2024-02-18 23:09:10.447310
+model: gpt-4-0125-preview
+summary: "En el \xE1mbito de la programaci\xF3n, especialmente cuando se trata de\
+  \ entornos Linux o Unix, manipular archivos directamente desde la interfaz de l\xED\
+  nea de\u2026"
+title: "Manipulando archivos con comandos de l\xEDnea de una sola l\xEDnea"
 ---
 
 {{< edit_this_page >}}

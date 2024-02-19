@@ -1,14 +1,26 @@
 ---
-title:                "임시 파일 생성하기"
 aliases:
 - /ko/java/creating-a-temporary-file/
-date:                  2024-01-20T17:40:47.514540-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "임시 파일 생성하기"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:47.514540-07:00
+description: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uC740 \uC77C\uC2DC\uC801\uC778\
+  \ \uB370\uC774\uD130\uB97C \uC800\uC7A5\uD558\uAE30 \uC704\uD574 \uC0AC\uC6A9\uB418\
+  \uB294 \uD30C\uC77C\uC744 \uB9CC\uB4DC\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC774 \uC784\uC2DC \uD30C\uC77C\uC744 \uB9CC\uB4DC\uB294\
+  \ \uC774\uC720\uB294 \uD504\uB85C\uADF8\uB7A8 \uC2E4\uD589 \uB3C4\uC911 \uC911\uAC04\
+  \ \uACB0\uACFC\uB97C \uBCF4\uAD00\uD558\uAC70\uB098, \uC790\uC6D0\uC744 \uD6A8\uC728\
+  \uC801\uC73C\uB85C \uAD00\uB9AC\uD558\uAE30 \uC704\uD574\uC11C\uC785\uB2C8\uB2E4\
+  ."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.051059
+model: gpt-4-1106-preview
+summary: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uC740 \uC77C\uC2DC\uC801\uC778 \uB370\
+  \uC774\uD130\uB97C \uC800\uC7A5\uD558\uAE30 \uC704\uD574 \uC0AC\uC6A9\uB418\uB294\
+  \ \uD30C\uC77C\uC744 \uB9CC\uB4DC\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC774 \uC784\uC2DC \uD30C\uC77C\uC744 \uB9CC\uB4DC\uB294 \uC774\
+  \uC720\uB294 \uD504\uB85C\uADF8\uB7A8 \uC2E4\uD589 \uB3C4\uC911 \uC911\uAC04 \uACB0\
+  \uACFC\uB97C \uBCF4\uAD00\uD558\uAC70\uB098, \uC790\uC6D0\uC744 \uD6A8\uC728\uC801\
+  \uC73C\uB85C \uAD00\uB9AC\uD558\uAE30 \uC704\uD574\uC11C\uC785\uB2C8\uB2E4."
+title: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,12 +1,15 @@
 ---
-title:                "Writing tests"
 aliases:
 - /en/go/writing-tests/
-date:                  2024-02-03T17:50:27.458019-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Writing tests"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/writing-tests.md"
+date: 2024-02-03 17:50:27.458019-07:00
+description: "Writing tests in Go involves creating small, manageable pieces of code\
+  \ that validate the functionality and behavior of your application. Programmers\
+  \ write\u2026"
+lastmod: 2024-02-18 23:09:10.600304
+model: gpt-4-0125-preview
+summary: "Writing tests in Go involves creating small, manageable pieces of code that\
+  \ validate the functionality and behavior of your application. Programmers write\u2026"
+title: Writing tests
 ---
 
 {{< edit_this_page >}}

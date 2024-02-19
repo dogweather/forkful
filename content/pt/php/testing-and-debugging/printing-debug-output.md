@@ -1,13 +1,16 @@
 ---
-title:                "Exibindo saídas de depuração"
 aliases:
 - /pt/php/printing-debug-output/
-date:                  2024-01-20T17:53:11.278437-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Exibindo saídas de depuração"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/printing-debug-output.md"
+date: 2024-01-20 17:53:11.278437-07:00
+description: "A impress\xE3o de sa\xEDda de depura\xE7\xE3o \xE9 o ato de exibir informa\xE7\
+  \xF5es de interesse durante a execu\xE7\xE3o de um programa, geralmente para rastrear\
+  \ bugs ou verificar\u2026"
+lastmod: 2024-02-18 23:08:58.243418
+model: gpt-4-1106-preview
+summary: "A impress\xE3o de sa\xEDda de depura\xE7\xE3o \xE9 o ato de exibir informa\xE7\
+  \xF5es de interesse durante a execu\xE7\xE3o de um programa, geralmente para rastrear\
+  \ bugs ou verificar\u2026"
+title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

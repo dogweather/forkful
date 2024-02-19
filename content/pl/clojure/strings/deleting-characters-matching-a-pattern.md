@@ -1,13 +1,16 @@
 ---
-title:                "Usuwanie znaków pasujących do wzorca"
 aliases:
 - /pl/clojure/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:49.365843-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Usuwanie znaków pasujących do wzorca"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:49.365843-07:00
+description: "**Co i Dlaczego?** Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces\
+  \ eliminowania okre\u015Blonych znak\xF3w z ci\u0105g\xF3w tekstowych. Robimy to,\
+  \ by oczy\u015Bci\u0107 dane,\u2026"
+lastmod: 2024-02-18 23:08:49.249159
+model: gpt-4-1106-preview
+summary: "**Co i Dlaczego?** Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces\
+  \ eliminowania okre\u015Blonych znak\xF3w z ci\u0105g\xF3w tekstowych. Robimy to,\
+  \ by oczy\u015Bci\u0107 dane,\u2026"
+title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 ---
 
 {{< edit_this_page >}}

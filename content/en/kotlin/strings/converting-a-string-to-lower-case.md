@@ -1,13 +1,14 @@
 ---
-title:                "Converting a string to lower case"
 aliases:
 - /en/kotlin/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:50.106863-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Converting a string to lower case"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:50.106863-07:00
+description: "Converting a string to lower case means making every character in the\
+  \ string a lower-case character. Programmers do this for consistency when comparing,\u2026"
+lastmod: 2024-02-18 23:09:11.000241
+model: gpt-4-1106-preview
+summary: "Converting a string to lower case means making every character in the string\
+  \ a lower-case character. Programmers do this for consistency when comparing,\u2026"
+title: Converting a string to lower case
 ---
 
 {{< edit_this_page >}}

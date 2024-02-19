@@ -1,13 +1,14 @@
 ---
-title:                "שליחת בקשת HTTP"
 aliases:
 - /he/python/sending-an-http-request/
-date:                  2024-01-20T18:00:20.079942-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "שליחת בקשת HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/sending-an-http-request.md"
+date: 2024-01-20 18:00:20.079942-07:00
+description: "HTTP requests are how we ask for stuff on the web. Programmers send\
+  \ them to get data, post data, and interact with web services. Essential for web\u2026"
+lastmod: 2024-02-18 23:08:52.433417
+model: gpt-4-1106-preview
+summary: "HTTP requests are how we ask for stuff on the web. Programmers send them\
+  \ to get data, post data, and interact with web services. Essential for web\u2026"
+title: "\u05E9\u05DC\u05D9\u05D7\u05EA \u05D1\u05E7\u05E9\u05EA HTTP"
 ---
 
 {{< edit_this_page >}}

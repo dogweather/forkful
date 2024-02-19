@@ -1,13 +1,15 @@
 ---
-title:                "Redondeo de números"
 aliases:
 - /es/swift/rounding-numbers/
-date:                  2024-01-26T03:46:53.768510-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Redondeo de números"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/rounding-numbers.md"
+date: 2024-01-26 03:46:53.768510-07:00
+description: "Redondear n\xFAmeros significa aproximar un valor num\xE9rico a una\
+  \ precisi\xF3n espec\xEDfica, t\xEDpicamente para eliminar decimales no deseados.\
+  \ Los programadores\u2026"
+lastmod: 2024-02-18 23:09:10.352269
+model: gpt-4-0125-preview
+summary: "Redondear n\xFAmeros significa aproximar un valor num\xE9rico a una precisi\xF3\
+  n espec\xEDfica, t\xEDpicamente para eliminar decimales no deseados. Los programadores\u2026"
+title: "Redondeo de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

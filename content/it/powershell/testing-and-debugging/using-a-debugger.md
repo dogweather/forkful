@@ -1,13 +1,14 @@
 ---
-title:                "Utilizzo di un debugger"
 aliases:
 - /it/powershell/using-a-debugger/
-date:                  2024-01-26T03:50:50.886434-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di un debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/using-a-debugger.md"
+date: 2024-01-26 03:50:50.886434-07:00
+description: "Usare un debugger significa impostare dei breakpoint, eseguire passo\
+  \ dopo passo il proprio codice, osservare le variabili e ispezionare lo stato del\u2026"
+lastmod: 2024-02-18 23:08:56.098735
+model: gpt-4-0125-preview
+summary: "Usare un debugger significa impostare dei breakpoint, eseguire passo dopo\
+  \ passo il proprio codice, osservare le variabili e ispezionare lo stato del\u2026"
+title: Utilizzo di un debugger
 ---
 
 {{< edit_this_page >}}

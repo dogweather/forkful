@@ -1,14 +1,18 @@
 ---
-title:                "Rédiger un fichier texte"
 aliases:
 - /fr/kotlin/writing-a-text-file/
-date:                  2024-02-03T19:28:16.445611-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rédiger un fichier texte"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:28:16.445611-07:00
+description: "\xC9crire un fichier texte en Kotlin implique la cr\xE9ation d'un fichier\
+  \ et l'insertion de contenu textuel \xE0 l'int\xE9rieur, une t\xE2che courante pour\
+  \ le stockage\u2026"
+lastmod: 2024-02-18 23:09:08.801159
+model: gpt-4-0125-preview
+summary: "\xC9crire un fichier texte en Kotlin implique la cr\xE9ation d'un fichier\
+  \ et l'insertion de contenu textuel \xE0 l'int\xE9rieur, une t\xE2che courante pour\
+  \ le stockage\u2026"
+title: "R\xE9diger un fichier texte"
 ---
 
 {{< edit_this_page >}}

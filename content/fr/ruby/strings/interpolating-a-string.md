@@ -1,13 +1,14 @@
 ---
-title:                "Interpolation de chaînes de caractères"
 aliases:
 - /fr/ruby/interpolating-a-string/
-date:                  2024-01-20T17:51:24.388419-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolation de chaînes de caractères"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/interpolating-a-string.md"
+date: 2024-01-20 17:51:24.388419-07:00
+description: "L'interpolation de cha\xEEnes permet d'ins\xE9rer des valeurs de variables\
+  \ ou des expressions dans une cha\xEEne de texte. On l'utilise pour simplifier\u2026"
+lastmod: 2024-02-18 23:09:09.389747
+model: gpt-4-1106-preview
+summary: "L'interpolation de cha\xEEnes permet d'ins\xE9rer des valeurs de variables\
+  \ ou des expressions dans une cha\xEEne de texte. On l'utilise pour simplifier\u2026"
+title: "Interpolation de cha\xEEnes de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

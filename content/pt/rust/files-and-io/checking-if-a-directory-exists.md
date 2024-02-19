@@ -1,14 +1,16 @@
 ---
-title:                "Verificando se um diretório existe"
 aliases:
 - /pt/rust/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:41.790894-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verificando se um diretório existe"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:41.790894-07:00
+description: "No desenvolvimento de software, \xE9 frequentemente necess\xE1rio verificar\
+  \ se um diret\xF3rio existe para evitar erros ao tentar acessar, ler ou escrever\u2026"
+lastmod: 2024-02-18 23:08:57.943230
+model: gpt-4-0125-preview
+summary: "No desenvolvimento de software, \xE9 frequentemente necess\xE1rio verificar\
+  \ se um diret\xF3rio existe para evitar erros ao tentar acessar, ler ou escrever\u2026"
+title: "Verificando se um diret\xF3rio existe"
 ---
 
 {{< edit_this_page >}}

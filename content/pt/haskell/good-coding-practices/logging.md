@@ -1,13 +1,16 @@
 ---
-title:                "Registro de Logs"
 aliases:
 - /pt/haskell/logging/
-date:                  2024-01-26T01:04:33.123292-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registro de Logs"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/logging.md"
+date: 2024-01-26 01:04:33.123292-07:00
+description: "Log em programa\xE7\xE3o \xE9 basicamente deixar um rastro de migalhas\
+  \ na forma de eventos ou mensagens gravadas, que podem ser usadas para acompanhar\
+  \ o que sua\u2026"
+lastmod: 2024-02-18 23:08:58.205517
+model: gpt-4-1106-preview
+summary: "Log em programa\xE7\xE3o \xE9 basicamente deixar um rastro de migalhas na\
+  \ forma de eventos ou mensagens gravadas, que podem ser usadas para acompanhar o\
+  \ que sua\u2026"
+title: Registro de Logs
 ---
 
 {{< edit_this_page >}}

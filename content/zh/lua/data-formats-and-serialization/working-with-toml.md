@@ -1,13 +1,20 @@
 ---
-title:                "使用TOML"
 aliases:
 - /zh/lua/working-with-toml/
-date:                  2024-01-26T04:24:27.523111-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/lua/working-with-toml.md"
+date: 2024-01-26 04:24:27.523111-07:00
+description: "\u4F7F\u7528TOML\u6D89\u53CA\u4F7F\u7528Lua\u89E3\u6790\u548C\u751F\u6210\
+  TOML\uFF08Tom\u7684\u663E\u800C\u6613\u89C1\u7684\u6700\u7B80\u8BED\u8A00\uFF09\u6570\
+  \u636E\u3002\u7A0B\u5E8F\u5458\u4F7F\u7528TOML\u6765\u7F16\u5199\u914D\u7F6E\u6587\
+  \u4EF6\uFF0C\u7531\u4E8E\u5176\u53EF\u8BFB\u6027\u548C\u7B80\u5355\u7684\u8BED\u6CD5\
+  \u5F88\u5BB9\u6613\u8F6C\u6362\u4E3A\u6570\u636E\u7ED3\u6784\u3002"
+lastmod: 2024-02-18 23:08:59.274332
+model: gpt-4-0125-preview
+summary: "\u4F7F\u7528TOML\u6D89\u53CA\u4F7F\u7528Lua\u89E3\u6790\u548C\u751F\u6210\
+  TOML\uFF08Tom\u7684\u663E\u800C\u6613\u89C1\u7684\u6700\u7B80\u8BED\u8A00\uFF09\u6570\
+  \u636E\u3002\u7A0B\u5E8F\u5458\u4F7F\u7528TOML\u6765\u7F16\u5199\u914D\u7F6E\u6587\
+  \u4EF6\uFF0C\u7531\u4E8E\u5176\u53EF\u8BFB\u6027\u548C\u7B80\u5355\u7684\u8BED\u6CD5\
+  \u5F88\u5BB9\u6613\u8F6C\u6362\u4E3A\u6570\u636E\u7ED3\u6784\u3002"
+title: "\u4F7F\u7528TOML"
 ---
 
 {{< edit_this_page >}}

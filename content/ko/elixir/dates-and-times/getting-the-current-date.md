@@ -1,16 +1,31 @@
 ---
-title:                "현재 날짜 가져오기"
 aliases:
 - /ko/elixir/getting-the-current-date/
-date:                  2024-02-03T19:09:49.133164-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "현재 날짜 가져오기"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
-  - 2024-02-05, dogweather, reviewed and corrected
-lastmod:              2024-02-05
+- 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-05, dogweather, reviewed and corrected
+date: 2024-02-03 19:09:49.133164-07:00
+description: "Elixir\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC00\uC838\uC624\
+  \uB294 \uAC83\uC740 \uC2DC\uC2A4\uD15C\uC758 \uB0A0\uC9DC\uC640 \uC2DC\uAC04 \uC815\
+  \uBCF4\uC5D0 \uC811\uADFC\uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD558\uBA70, \uB85C\
+  \uAE45, \uB370\uC774\uD130 \uC2A4\uD0EC\uD551 \uB610\uB294 \uD604\uC7AC \uB0A0\uC9DC\
+  \uB97C \uC54C\uC544\uC57C \uD558\uB294 \uAE30\uB2A5\uC5D0 \uD754\uD788 \uC0AC\uC6A9\
+  \uB418\uB294 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uC774 \uC791\uC5C5\uC740 \uC2DC\uAC04\
+  \uC5D0 \uBBFC\uAC10\uD55C \uC5B4\uD50C\uB9AC\uCF00\uC774\uC158\uC744 \uB9CC\uB4E4\
+  \uACE0, \uC6F9 \uC5B4\uD50C\uB9AC\uCF00\uC774\uC158\uC5D0\uC11C \uB9AC\uD3EC\uD2B8\
+  \uB098 \uD0C0\uC784\uC2A4\uD0EC\uD504\uB97C\u2026"
+lastmod: 2024-02-18 23:09:05.771850
+model: gpt-4-0125-preview
+summary: "Elixir\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC00\uC838\uC624\uB294\
+  \ \uAC83\uC740 \uC2DC\uC2A4\uD15C\uC758 \uB0A0\uC9DC\uC640 \uC2DC\uAC04 \uC815\uBCF4\
+  \uC5D0 \uC811\uADFC\uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD558\uBA70, \uB85C\uAE45\
+  , \uB370\uC774\uD130 \uC2A4\uD0EC\uD551 \uB610\uB294 \uD604\uC7AC \uB0A0\uC9DC\uB97C\
+  \ \uC54C\uC544\uC57C \uD558\uB294 \uAE30\uB2A5\uC5D0 \uD754\uD788 \uC0AC\uC6A9\uB418\
+  \uB294 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uC774 \uC791\uC5C5\uC740 \uC2DC\uAC04\uC5D0\
+  \ \uBBFC\uAC10\uD55C \uC5B4\uD50C\uB9AC\uCF00\uC774\uC158\uC744 \uB9CC\uB4E4\uACE0\
+  , \uC6F9 \uC5B4\uD50C\uB9AC\uCF00\uC774\uC158\uC5D0\uC11C \uB9AC\uD3EC\uD2B8\uB098\
+  \ \uD0C0\uC784\uC2A4\uD0EC\uD504\uB97C\u2026"
+title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
 ---
 
 {{< edit_this_page >}}

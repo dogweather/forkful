@@ -1,14 +1,21 @@
 ---
-title:                "日付を文字列に変換する"
 aliases:
 - /ja/arduino/converting-a-date-into-a-string/
-date:                  2024-01-20T17:35:56.705642-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "日付を文字列に変換する"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:35:56.705642-07:00
+description: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B\u306E\
+  \u306F\u30C7\u30FC\u30BF\u3092\u8868\u793A\u53EF\u80FD\u306A\u5F62\u5F0F\u306B\u3059\
+  \u308B\u3053\u3068\u3002\u3053\u308C\u306B\u3088\u308A\u3001LCD\u3084\u30B7\u30EA\
+  \u30A2\u30EB\u30E2\u30CB\u30BF\u3067\u8AAD\u3081\u308B\u3088\u3046\u306B\u306A\u308B\
+  \u3057\u3001\u30ED\u30B0\u306B\u8A18\u9332\u3057\u3084\u3059\u304F\u306A\u308B\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.163287
+model: gpt-4-1106-preview
+summary: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B\u306E\
+  \u306F\u30C7\u30FC\u30BF\u3092\u8868\u793A\u53EF\u80FD\u306A\u5F62\u5F0F\u306B\u3059\
+  \u308B\u3053\u3068\u3002\u3053\u308C\u306B\u3088\u308A\u3001LCD\u3084\u30B7\u30EA\
+  \u30A2\u30EB\u30E2\u30CB\u30BF\u3067\u8AAD\u3081\u308B\u3088\u3046\u306B\u306A\u308B\
+  \u3057\u3001\u30ED\u30B0\u306B\u8A18\u9332\u3057\u3084\u3059\u304F\u306A\u308B\u3002"
+title: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

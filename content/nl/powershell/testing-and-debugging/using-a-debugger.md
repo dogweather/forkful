@@ -1,15 +1,16 @@
 ---
-title:                "Een debugger gebruiken"
 aliases:
 - /nl/powershell/using-a-debugger/
-date:                  2024-01-28T22:08:43.713165-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een debugger gebruiken"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/powershell/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:43.713165-07:00
+description: "Het gebruiken van een debugger betekent het instellen van breakpoints,\
+  \ stap voor stap door je code heen lopen, variabelen bekijken, en de staat van je\u2026"
+lastmod: 2024-02-18 23:09:02.096941
+model: gpt-4-0125-preview
+summary: "Het gebruiken van een debugger betekent het instellen van breakpoints, stap\
+  \ voor stap door je code heen lopen, variabelen bekijken, en de staat van je\u2026"
+title: Een debugger gebruiken
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Avrunding av tall"
 aliases:
 - /no/java/rounding-numbers/
-date:                  2024-01-26T03:45:00.207331-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Avrunding av tall"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/rounding-numbers.md"
+date: 2024-01-26 03:45:00.207331-07:00
+description: "\xC5 runde av tall betyr \xE5 justere dem til en spesifisert grad av\
+  \ presisjon. Programmerere gj\xF8r dette for \xE5 forenkle tall for lesbarhet, for\
+  \ \xE5 m\xF8te visse\u2026"
+lastmod: 2024-02-18 23:08:53.766081
+model: gpt-4-0125-preview
+summary: "\xC5 runde av tall betyr \xE5 justere dem til en spesifisert grad av presisjon.\
+  \ Programmerere gj\xF8r dette for \xE5 forenkle tall for lesbarhet, for \xE5 m\xF8\
+  te visse\u2026"
+title: Avrunding av tall
 ---
 
 {{< edit_this_page >}}

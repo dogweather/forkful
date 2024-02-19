@@ -1,13 +1,16 @@
 ---
-title:                "Enviando uma requisição HTTP"
 aliases:
 - /pt/c-sharp/sending-an-http-request/
-date:                  2024-01-20T17:59:12.185576-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando uma requisição HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/sending-an-http-request.md"
+date: 2024-01-20 17:59:12.185576-07:00
+description: "Enviar uma requisi\xE7\xE3o HTTP \xE9 basicamente pedir para um servidor\
+  \ web enviar dados para a sua aplica\xE7\xE3o. Fazemos isso para interagir com APIs,\
+  \ acessar\u2026"
+lastmod: 2024-02-18 23:08:58.154344
+model: gpt-4-1106-preview
+summary: "Enviar uma requisi\xE7\xE3o HTTP \xE9 basicamente pedir para um servidor\
+  \ web enviar dados para a sua aplica\xE7\xE3o. Fazemos isso para interagir com APIs,\
+  \ acessar\u2026"
+title: "Enviando uma requisi\xE7\xE3o HTTP"
 ---
 
 {{< edit_this_page >}}

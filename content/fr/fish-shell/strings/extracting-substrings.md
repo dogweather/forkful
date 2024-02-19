@@ -1,13 +1,16 @@
 ---
-title:                "Extraction de sous-chaînes"
 aliases:
 - /fr/fish-shell/extracting-substrings/
-date:                  2024-01-20T17:45:31.333103-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extraction de sous-chaînes"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/extracting-substrings.md"
+date: 2024-01-20 17:45:31.333103-07:00
+description: "Extraire des sous-cha\xEEnes, c'est comme d\xE9couper un morceau pr\xE9\
+  cis de votre baguette pr\xE9f\xE9r\xE9e. Les programmeurs le font pour manipuler,\
+  \ analyser ou\u2026"
+lastmod: 2024-02-18 23:09:09.291316
+model: gpt-4-1106-preview
+summary: "Extraire des sous-cha\xEEnes, c'est comme d\xE9couper un morceau pr\xE9\
+  cis de votre baguette pr\xE9f\xE9r\xE9e. Les programmeurs le font pour manipuler,\
+  \ analyser ou\u2026"
+title: "Extraction de sous-cha\xEEnes"
 ---
 
 {{< edit_this_page >}}

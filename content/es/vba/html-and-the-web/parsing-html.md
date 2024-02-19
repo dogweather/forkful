@@ -1,14 +1,17 @@
 ---
-title:                "Analizando HTML"
 aliases:
 - /es/vba/parsing-html/
-date:                  2024-02-01T21:57:01.170809-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analizando HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/vba/parsing-html.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:01.170809-07:00
+description: "Parsear HTML en Visual Basic for Applications (VBA) implica extraer\
+  \ informaci\xF3n espec\xEDfica de un documento HTML. Los programadores lo hacen\
+  \ para\u2026"
+lastmod: 2024-02-18 23:09:09.794016
+model: gpt-4-0125-preview
+summary: "Parsear HTML en Visual Basic for Applications (VBA) implica extraer informaci\xF3\
+  n espec\xEDfica de un documento HTML. Los programadores lo hacen para\u2026"
+title: Analizando HTML
 ---
 
 {{< edit_this_page >}}

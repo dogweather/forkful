@@ -1,13 +1,16 @@
 ---
-title:                "Utilisation d'un débogueur"
 aliases:
 - /fr/arduino/using-a-debugger/
-date:                  2024-01-26T03:47:20.321423-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation d'un débogueur"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/using-a-debugger.md"
+date: 2024-01-26 03:47:20.321423-07:00
+description: "Un d\xE9bogueur est un outil qui vous aide \xE0 \xE9liminer les bugs\
+  \ de votre code en vous permettant de faire une pause, de fouiller un peu partout\
+  \ et de\u2026"
+lastmod: 2024-02-18 23:09:09.119310
+model: gpt-4-0125-preview
+summary: "Un d\xE9bogueur est un outil qui vous aide \xE0 \xE9liminer les bugs de\
+  \ votre code en vous permettant de faire une pause, de fouiller un peu partout et\
+  \ de\u2026"
+title: "Utilisation d'un d\xE9bogueur"
 ---
 
 {{< edit_this_page >}}

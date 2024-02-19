@@ -1,14 +1,21 @@
 ---
-title:                "문자열 보간하기"
 aliases:
 - /ko/lua/interpolating-a-string/
-date:                  2024-01-20T17:51:31.234441-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "문자열 보간하기"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/lua/interpolating-a-string.md"
+date: 2024-01-20 17:51:31.234441-07:00
+description: "\uBB38\uC790\uC5F4 \uB0B4\uC0BD(string interpolation)\uC740 \uBB38\uC790\
+  \uC5F4\uC5D0 \uBCC0\uC218\uB098 \uD45C\uD604\uC2DD\uC758 \uAC12\uC744 \uC9D1\uC5B4\
+  \uB123\uB294 \uAC70\uC608\uC694. \uCF54\uB4DC\uB97C \uC77D\uAE30 \uD3B8\uD558\uAC8C\
+  \ \uD558\uACE0, \uB3D9\uC801\uC73C\uB85C \uBB38\uC790\uC5F4\uC744 \uC0DD\uC131\uD560\
+  \ \uB54C \uC720\uC6A9\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.395745
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4 \uB0B4\uC0BD(string interpolation)\uC740 \uBB38\uC790\
+  \uC5F4\uC5D0 \uBCC0\uC218\uB098 \uD45C\uD604\uC2DD\uC758 \uAC12\uC744 \uC9D1\uC5B4\
+  \uB123\uB294 \uAC70\uC608\uC694. \uCF54\uB4DC\uB97C \uC77D\uAE30 \uD3B8\uD558\uAC8C\
+  \ \uD558\uACE0, \uB3D9\uC801\uC73C\uB85C \uBB38\uC790\uC5F4\uC744 \uC0DD\uC131\uD560\
+  \ \uB54C \uC720\uC6A9\uD569\uB2C8\uB2E4."
+title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

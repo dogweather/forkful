@@ -1,14 +1,18 @@
 ---
-title:                "Analysering av HTML"
 aliases:
 - /no/fish-shell/parsing-html/
-date:                  2024-02-03T19:12:11.861189-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analysering av HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:11.861189-07:00
+description: "Parsing av HTML handler om \xE5 trekke ut data eller informasjon fra\
+  \ HTML-innhold, en vanlig oppgave n\xE5r man h\xE5ndterer webdata. Programmerere\
+  \ gj\xF8r dette for\u2026"
+lastmod: 2024-02-18 23:08:54.349389
+model: gpt-4-0125-preview
+summary: "Parsing av HTML handler om \xE5 trekke ut data eller informasjon fra HTML-innhold,\
+  \ en vanlig oppgave n\xE5r man h\xE5ndterer webdata. Programmerere gj\xF8r dette\
+  \ for\u2026"
+title: Analysering av HTML
 ---
 
 {{< edit_this_page >}}

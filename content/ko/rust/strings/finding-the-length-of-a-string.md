@@ -1,14 +1,21 @@
 ---
-title:                "문자열의 길이 찾기"
 aliases:
 - /ko/rust/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:23.919459-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "문자열의 길이 찾기"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:23.919459-07:00
+description: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCC3E\uAE30\uB294 \uBB38\uC790\uC758\
+  \ \uCD1D \uAC1C\uC218\uB97C \uC138\uB294 \uAC83\uC785\uB2C8\uB2E4. \uBA54\uBAA8\uB9AC\
+  \ \uC0AC\uC6A9\uC744 \uCD5C\uC801\uD654\uD558\uAC70\uB098, \uD2B9\uC815 \uAE38\uC774\
+  \uC758 \uC785\uB825\uC744 \uD544\uC694\uB85C \uD560 \uB54C \uC720\uC6A9\uD569\uB2C8\
+  \uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:05.870558
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCC3E\uAE30\uB294 \uBB38\uC790\uC758 \uCD1D\
+  \ \uAC1C\uC218\uB97C \uC138\uB294 \uAC83\uC785\uB2C8\uB2E4. \uBA54\uBAA8\uB9AC \uC0AC\
+  \uC6A9\uC744 \uCD5C\uC801\uD654\uD558\uAC70\uB098, \uD2B9\uC815 \uAE38\uC774\uC758\
+  \ \uC785\uB825\uC744 \uD544\uC694\uB85C \uD560 \uB54C \uC720\uC6A9\uD569\uB2C8\uB2E4\
+  ."
+title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 ---
 
 {{< edit_this_page >}}

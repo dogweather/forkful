@@ -1,14 +1,17 @@
 ---
-title:                "Työskentely CSV:n kanssa"
 aliases:
 - /fi/c/working-with-csv/
-date:                  2024-02-03T18:11:53.273387-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely CSV:n kanssa"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:11:53.273387-07:00
+description: "Ohjelmoinnissa CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely\
+  \ tarkoittaa tietojen lukemista ja kirjoittamista tekstiedostoihin, jotka on j\xE4\
+  rjestetty\u2026"
+lastmod: 2024-02-18 23:09:08.158801
+model: gpt-4-0125-preview
+summary: "Ohjelmoinnissa CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely tarkoittaa\
+  \ tietojen lukemista ja kirjoittamista tekstiedostoihin, jotka on j\xE4rjestetty\u2026"
+title: "Ty\xF6skentely CSV:n kanssa"
 ---
 
 {{< edit_this_page >}}

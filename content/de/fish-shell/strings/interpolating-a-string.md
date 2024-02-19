@@ -1,13 +1,14 @@
 ---
-title:                "Zeichenketten interpolieren"
 aliases:
 - /de/fish-shell/interpolating-a-string/
-date:                  2024-01-20T17:50:49.970956-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Zeichenketten interpolieren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/interpolating-a-string.md"
+date: 2024-01-20 17:50:49.970956-07:00
+description: "Interpolieren, also das Einf\xFCgen von Variablen in Strings, spart\
+  \ dir viel Tipparbeit und vereinfacht die Code-Wartung. Es erm\xF6glicht dynamische\u2026"
+lastmod: 2024-02-18 23:09:05.308818
+model: gpt-4-1106-preview
+summary: "Interpolieren, also das Einf\xFCgen von Variablen in Strings, spart dir\
+  \ viel Tipparbeit und vereinfacht die Code-Wartung. Es erm\xF6glicht dynamische\u2026"
+title: Zeichenketten interpolieren
 ---
 
 {{< edit_this_page >}}

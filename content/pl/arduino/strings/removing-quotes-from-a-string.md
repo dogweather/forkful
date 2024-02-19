@@ -1,13 +1,16 @@
 ---
-title:                "Usuwanie cudzysłowów z ciągu znaków"
 aliases:
 - /pl/arduino/removing-quotes-from-a-string/
-date:                  2024-01-26T03:37:45.539599-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usuwanie cudzysłowów z ciągu znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:37:45.539599-07:00
+description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza usuni\u0119\
+  cie wszystkich wyst\u0105pie\u0144 pojedynczych (`'`) lub podw\xF3jnych (`\"`) znak\xF3\
+  w cudzys\u0142owu otaczaj\u0105cych tekst.\u2026"
+lastmod: 2024-02-18 23:08:49.858441
+model: gpt-4-0125-preview
+summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza usuni\u0119\
+  cie wszystkich wyst\u0105pie\u0144 pojedynczych (`'`) lub podw\xF3jnych (`\"`) znak\xF3\
+  w cudzys\u0142owu otaczaj\u0105cych tekst.\u2026"
+title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

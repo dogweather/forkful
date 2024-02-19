@@ -1,13 +1,16 @@
 ---
-title:                "Usando um shell interativo (REPL)"
 aliases:
 - /pt/powershell/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:16:54.292771-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando um shell interativo (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/powershell/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:16:54.292771-07:00
+description: "O shell interativo, ou Loop de Ler-Avaliar-Imprimir (REPL), permite\
+  \ que voc\xEA digite comandos PowerShell e obtenha feedback imediato. Programadores\
+  \ o usam\u2026"
+lastmod: 2024-02-18 23:08:58.370399
+model: gpt-4-0125-preview
+summary: "O shell interativo, ou Loop de Ler-Avaliar-Imprimir (REPL), permite que\
+  \ voc\xEA digite comandos PowerShell e obtenha feedback imediato. Programadores\
+  \ o usam\u2026"
+title: Usando um shell interativo (REPL)
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,25 @@
 ---
-title:                "두 날짜 비교하기"
 aliases:
 - /ko/python/comparing-two-dates/
-date:                  2024-01-20T17:33:44.860756-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "두 날짜 비교하기"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/comparing-two-dates.md"
+date: 2024-01-20 17:33:44.860756-07:00
+description: "\uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD55C\uB2E4\uB294 \uAC74, \uADF8\
+  \uB4E4\uC774 \uC11C\uB85C \uC5BC\uB9C8\uB098 \uCC28\uC774\uB098\uB294\uC9C0, \uC5B4\
+  \uB5A4 \uAC83\uC774 \uB354 \uC774\uC804\uC774\uAC70\uB098 \uCD5C\uC2E0\uC778\uC9C0\
+  \ \uD30C\uC545\uD558\uB294 \uACFC\uC815\uC785\uB2C8\uB2E4. \uC774\uB97C \uD1B5\uD574\
+  \ \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uC720\uD6A8\uC131 \uAC80\uC0AC, \uC774\uBCA4\
+  \uD2B8 \uAE30\uAC04 \uBD84\uC11D, \uC2DC\uAC04 \uAE30\uBC18\uC758 \uB85C\uC9C1 \uC2E4\
+  \uD589 \uB4F1\uC744 \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:05.644316
+model: gpt-4-1106-preview
+summary: "\uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD55C\uB2E4\uB294 \uAC74, \uADF8\uB4E4\
+  \uC774 \uC11C\uB85C \uC5BC\uB9C8\uB098 \uCC28\uC774\uB098\uB294\uC9C0, \uC5B4\uB5A4\
+  \ \uAC83\uC774 \uB354 \uC774\uC804\uC774\uAC70\uB098 \uCD5C\uC2E0\uC778\uC9C0 \uD30C\
+  \uC545\uD558\uB294 \uACFC\uC815\uC785\uB2C8\uB2E4. \uC774\uB97C \uD1B5\uD574 \uD504\
+  \uB85C\uADF8\uB798\uBA38\uB294 \uC720\uD6A8\uC131 \uAC80\uC0AC, \uC774\uBCA4\uD2B8\
+  \ \uAE30\uAC04 \uBD84\uC11D, \uC2DC\uAC04 \uAE30\uBC18\uC758 \uB85C\uC9C1 \uC2E4\
+  \uD589 \uB4F1\uC744 \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

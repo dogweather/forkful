@@ -1,13 +1,14 @@
 ---
-title:                "Lectura de un archivo de texto"
 aliases:
 - /es/clojure/reading-a-text-file/
-date:                  2024-01-20T17:53:58.415796-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lectura de un archivo de texto"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/reading-a-text-file.md"
+date: 2024-01-20 17:53:58.415796-07:00
+description: "Leer un archivo de texto es obtener su contenido para procesarlo. Los\
+  \ programadores hacen esto para manipular datos, configuraciones o simplemente\u2026"
+lastmod: 2024-02-18 23:09:09.621916
+model: gpt-4-1106-preview
+summary: "Leer un archivo de texto es obtener su contenido para procesarlo. Los programadores\
+  \ hacen esto para manipular datos, configuraciones o simplemente\u2026"
+title: Lectura de un archivo de texto
 ---
 
 {{< edit_this_page >}}

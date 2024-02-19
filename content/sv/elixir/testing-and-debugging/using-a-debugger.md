@@ -1,13 +1,16 @@
 ---
-title:                "Att använda en debugger"
 aliases:
 - /sv/elixir/using-a-debugger/
-date:                  2024-01-26T03:48:49.784631-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda en debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/using-a-debugger.md"
+date: 2024-01-26 03:48:49.784631-07:00
+description: "Att anv\xE4nda en debugger i Elixir inneb\xE4r att stega igenom din\
+  \ kod, inspektera variabler och sp\xE5ra fl\xF6den f\xF6r att krossa buggar. Programmerare\
+  \ g\xF6r det f\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.506829
+model: gpt-4-0125-preview
+summary: "Att anv\xE4nda en debugger i Elixir inneb\xE4r att stega igenom din kod,\
+  \ inspektera variabler och sp\xE5ra fl\xF6den f\xF6r att krossa buggar. Programmerare\
+  \ g\xF6r det f\xF6r\u2026"
+title: "Att anv\xE4nda en debugger"
 ---
 
 {{< edit_this_page >}}

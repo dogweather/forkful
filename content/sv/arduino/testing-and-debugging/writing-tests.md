@@ -1,14 +1,16 @@
 ---
-title:                "Skriva tester"
 aliases:
 - /sv/arduino/writing-tests/
-date:                  2024-02-03T19:29:44.023548-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriva tester"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:44.023548-07:00
+description: "Att skriva tester i Arduino-milj\xF6n h\xE4nvisar till processen att\
+  \ skapa automatiserade tester som validerar funktionaliteten hos din kod p\xE5 Arduino-enheter.\u2026"
+lastmod: 2024-02-18 23:08:52.046958
+model: gpt-4-0125-preview
+summary: "Att skriva tester i Arduino-milj\xF6n h\xE4nvisar till processen att skapa\
+  \ automatiserade tester som validerar funktionaliteten hos din kod p\xE5 Arduino-enheter.\u2026"
+title: Skriva tester
 ---
 
 {{< edit_this_page >}}

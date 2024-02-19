@@ -1,14 +1,19 @@
 ---
-title:                "发出 HTTP 请求"
 aliases:
 - /zh/arduino/sending-an-http-request/
-date:                  2024-01-20T17:58:56.283266-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "发出 HTTP 请求"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/sending-an-http-request.md"
+date: 2024-01-20 17:58:56.283266-07:00
+description: "\u53D1\u9001HTTP\u8BF7\u6C42\u662F\u5411\u670D\u52A1\u5668\u53D1\u6570\
+  \u636E\u6216\u83B7\u53D6\u6570\u636E\u7684\u65B9\u5F0F\uFF1B\u7A0B\u5E8F\u5458\u8FD9\
+  \u4E48\u505A\u6765\u4EA4\u6362\u7F51\u7EDC\u4E0A\u7684\u4FE1\u606F\uFF0C\u6BD4\u5982\
+  \u5929\u6C14\u66F4\u65B0\uFF0C\u793E\u4EA4\u5A92\u4F53\u4EA4\u4E91\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.366667
+model: gpt-4-1106-preview
+summary: "\u53D1\u9001HTTP\u8BF7\u6C42\u662F\u5411\u670D\u52A1\u5668\u53D1\u6570\u636E\
+  \u6216\u83B7\u53D6\u6570\u636E\u7684\u65B9\u5F0F\uFF1B\u7A0B\u5E8F\u5458\u8FD9\u4E48\
+  \u505A\u6765\u4EA4\u6362\u7F51\u7EDC\u4E0A\u7684\u4FE1\u606F\uFF0C\u6BD4\u5982\u5929\
+  \u6C14\u66F4\u65B0\uFF0C\u793E\u4EA4\u5A92\u4F53\u4EA4\u4E91\u3002"
+title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 ---
 
 {{< edit_this_page >}}

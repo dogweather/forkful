@@ -1,13 +1,16 @@
 ---
-title:                "Trouver la longueur d'une chaîne de caractères"
 aliases:
 - /fr/haskell/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:25.569033-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Trouver la longueur d'une chaîne de caractères"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:25.569033-07:00
+description: "La longueur d'une cha\xEEne, c'est compter les \xE9l\xE9ments qui la\
+  \ composent. Les programmeurs le font pour valider des donn\xE9es, optimiser des\
+  \ performances ou\u2026"
+lastmod: 2024-02-18 23:09:08.865167
+model: gpt-4-1106-preview
+summary: "La longueur d'une cha\xEEne, c'est compter les \xE9l\xE9ments qui la composent.\
+  \ Les programmeurs le font pour valider des donn\xE9es, optimiser des performances\
+  \ ou\u2026"
+title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

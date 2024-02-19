@@ -1,13 +1,16 @@
 ---
-title:                "Affichage des sorties de débogage"
 aliases:
 - /fr/lua/printing-debug-output/
-date:                  2024-01-20T17:52:59.077649-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Affichage des sorties de débogage"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/lua/printing-debug-output.md"
+date: 2024-01-20 17:52:59.077649-07:00
+description: "On imprime des donn\xE9es de d\xE9bogage pour voir ce qui se passe dans\
+  \ le code pendant son ex\xE9cution. Cela aide \xE0 rep\xE9rer les erreurs et \xE0\
+  \ comprendre le flux\u2026"
+lastmod: 2024-02-18 23:09:08.972472
+model: gpt-4-1106-preview
+summary: "On imprime des donn\xE9es de d\xE9bogage pour voir ce qui se passe dans\
+  \ le code pendant son ex\xE9cution. Cela aide \xE0 rep\xE9rer les erreurs et \xE0\
+  \ comprendre le flux\u2026"
+title: "Affichage des sorties de d\xE9bogage"
 ---
 
 {{< edit_this_page >}}

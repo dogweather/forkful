@@ -1,14 +1,28 @@
 ---
-title:                "Робота з JSON"
 aliases:
 - /uk/powershell/working-with-json/
-date:                  2024-02-03T19:23:52.071128-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Робота з JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/powershell/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:52.071128-07:00
+description: "\u0406\u043D\u0442\u0435\u0433\u0440\u0430\u0446\u0456\u044F PowerShell\
+  \ \u0437 JSON (JavaScript Object Notation) \u0437\u0432\u043E\u0434\u0438\u0442\u044C\
+  \u0441\u044F \u0434\u043E \u043F\u0430\u0440\u0441\u0438\u043D\u0433\u0443 (\u0447\
+  \u0438\u0442\u0430\u043D\u043D\u044F) \u0442\u0430 \u0433\u0435\u043D\u0435\u0440\
+  \u0430\u0446\u0456\u0457 (\u0437\u0430\u043F\u0438\u0441\u0443) \u0434\u0430\u043D\
+  \u0438\u0445 JSON, \u044F\u043A\u0438\u0439 \u0454 \u043F\u043E\u0448\u0438\u0440\
+  \u0435\u043D\u0438\u043C \u0444\u043E\u0440\u043C\u0430\u0442\u043E\u043C \u0434\
+  \u043B\u044F\u2026"
+lastmod: 2024-02-18 23:09:00.767525
+model: gpt-4-0125-preview
+summary: "\u0406\u043D\u0442\u0435\u0433\u0440\u0430\u0446\u0456\u044F PowerShell\
+  \ \u0437 JSON (JavaScript Object Notation) \u0437\u0432\u043E\u0434\u0438\u0442\u044C\
+  \u0441\u044F \u0434\u043E \u043F\u0430\u0440\u0441\u0438\u043D\u0433\u0443 (\u0447\
+  \u0438\u0442\u0430\u043D\u043D\u044F) \u0442\u0430 \u0433\u0435\u043D\u0435\u0440\
+  \u0430\u0446\u0456\u0457 (\u0437\u0430\u043F\u0438\u0441\u0443) \u0434\u0430\u043D\
+  \u0438\u0445 JSON, \u044F\u043A\u0438\u0439 \u0454 \u043F\u043E\u0448\u0438\u0440\
+  \u0435\u043D\u0438\u043C \u0444\u043E\u0440\u043C\u0430\u0442\u043E\u043C \u0434\
+  \u043B\u044F\u2026"
+title: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 JSON"
 ---
 
 {{< edit_this_page >}}

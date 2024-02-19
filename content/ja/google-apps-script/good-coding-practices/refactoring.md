@@ -1,14 +1,14 @@
 ---
-title:                "リファクタリング"
 aliases:
 - /ja/google-apps-script/refactoring/
-date:                  2024-02-01T22:00:08.576651-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "リファクタリング"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/google-apps-script/refactoring.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:08.576651-07:00
+description: "\u2026"
+lastmod: 2024-02-18 23:08:54.531589
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u30EA\u30D5\u30A1\u30AF\u30BF\u30EA\u30F3\u30B0"
 ---
 
 {{< edit_this_page >}}

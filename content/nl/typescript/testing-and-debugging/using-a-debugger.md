@@ -1,15 +1,16 @@
 ---
-title:                "Een debugger gebruiken"
 aliases:
 - /nl/typescript/using-a-debugger/
-date:                  2024-01-28T22:08:51.052696-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een debugger gebruiken"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/typescript/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:51.052696-07:00
+description: "Een debugger is een hulpmiddel waarmee je de interne werking van je\
+  \ code kunt onderzoeken en wijzigen terwijl deze wordt uitgevoerd. Programmeurs\u2026"
+lastmod: 2024-02-18 23:09:01.578124
+model: gpt-4-0125-preview
+summary: "Een debugger is een hulpmiddel waarmee je de interne werking van je code\
+  \ kunt onderzoeken en wijzigen terwijl deze wordt uitgevoerd. Programmeurs\u2026"
+title: Een debugger gebruiken
 ---
 
 {{< edit_this_page >}}

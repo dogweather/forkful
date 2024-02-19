@@ -1,13 +1,16 @@
 ---
-title:                "Interpolacja łańcuchów znaków"
 aliases:
 - /pl/fish-shell/interpolating-a-string/
-date:                  2024-01-20T17:50:42.385195-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolacja łańcuchów znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/interpolating-a-string.md"
+date: 2024-01-20 17:50:42.385195-07:00
+description: "\"Co i dlaczego?\" Interpolacja napis\xF3w to proces wstawiania warto\u015B\
+  ci zmiennych do ci\u0105g\xF3w znak\xF3w. Programi\u015Bci u\u017Cywaj\u0105 tego,\
+  \ aby tworzy\u0107 dynamiczne teksty i\u2026"
+lastmod: 2024-02-18 23:08:50.021484
+model: gpt-4-1106-preview
+summary: "\"Co i dlaczego?\" Interpolacja napis\xF3w to proces wstawiania warto\u015B\
+  ci zmiennych do ci\u0105g\xF3w znak\xF3w. Programi\u015Bci u\u017Cywaj\u0105 tego,\
+  \ aby tworzy\u0107 dynamiczne teksty i\u2026"
+title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Generowanie liczb losowych"
 aliases:
 - /pl/google-apps-script/generating-random-numbers/
-date:                  2024-02-01T21:54:47.713194-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generowanie liczb losowych"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/generating-random-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:47.713194-07:00
+description: "Generowanie losowych liczb to podstawowe zadanie w programowaniu, u\u017C\
+  ywane w wielu aplikacjach, takich jak symulacje, gry i systemy bezpiecze\u0144stwa.\u2026"
+lastmod: 2024-02-18 23:08:49.142106
+model: gpt-4-0125-preview
+summary: "Generowanie losowych liczb to podstawowe zadanie w programowaniu, u\u017C\
+  ywane w wielu aplikacjach, takich jak symulacje, gry i systemy bezpiecze\u0144stwa.\u2026"
+title: Generowanie liczb losowych
 ---
 
 {{< edit_this_page >}}

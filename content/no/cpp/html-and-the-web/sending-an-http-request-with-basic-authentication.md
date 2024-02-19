@@ -1,13 +1,16 @@
 ---
-title:                "Å sende en HTTP-forespørsel med grunnleggende autentisering"
 aliases:
 - /no/cpp/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:01:29.225274-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Å sende en HTTP-forespørsel med grunnleggende autentisering"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:01:29.225274-07:00
+description: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering betyr\
+  \ at du inkluderer brukernavn og passord for \xE5 f\xE5 tilgang til en beskyttet\
+  \ ressurs p\xE5 et\u2026"
+lastmod: 2024-02-18 23:08:54.184511
+model: gpt-4-1106-preview
+summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering betyr\
+  \ at du inkluderer brukernavn og passord for \xE5 f\xE5 tilgang til en beskyttet\
+  \ ressurs p\xE5 et\u2026"
+title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 ---
 
 {{< edit_this_page >}}

@@ -1,12 +1,14 @@
 ---
-title:                "Writing tests"
 aliases:
 - /en/clojure/writing-tests/
-date:                  2024-02-03T19:03:16.905534-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Writing tests"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/writing-tests.md"
+date: 2024-02-03 19:03:16.905534-07:00
+description: "Writing tests in Clojure, much like in other programming languages,\
+  \ involves creating dedicated code to verify that your main codebase works as expected.\u2026"
+lastmod: 2024-02-18 23:09:10.727446
+model: gpt-4-0125-preview
+summary: "Writing tests in Clojure, much like in other programming languages, involves\
+  \ creating dedicated code to verify that your main codebase works as expected.\u2026"
+title: Writing tests
 ---
 
 {{< edit_this_page >}}

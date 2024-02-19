@@ -1,14 +1,18 @@
 ---
-title:                "Kontrollera om en katalog existerar"
 aliases:
 - /sv/rust/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:37.008045-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kontrollera om en katalog existerar"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:37.008045-07:00
+description: "I programutveckling \xE4r det ofta n\xF6dv\xE4ndigt att kontrollera\
+  \ om en katalog existerar f\xF6r att undvika fel n\xE4r man f\xF6rs\xF6ker f\xE5\
+  \ tillg\xE5ng till, l\xE4sa eller\u2026"
+lastmod: 2024-02-18 23:08:51.597661
+model: gpt-4-0125-preview
+summary: "I programutveckling \xE4r det ofta n\xF6dv\xE4ndigt att kontrollera om en\
+  \ katalog existerar f\xF6r att undvika fel n\xE4r man f\xF6rs\xF6ker f\xE5 tillg\xE5\
+  ng till, l\xE4sa eller\u2026"
+title: Kontrollera om en katalog existerar
 ---
 
 {{< edit_this_page >}}

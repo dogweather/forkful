@@ -1,15 +1,16 @@
 ---
-title:                "Substrings extraheren"
 aliases:
 - /nl/lua/extracting-substrings/
-date:                  2024-01-28T21:59:57.097674-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Substrings extraheren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/extracting-substrings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:57.097674-07:00
+description: "Het extraheren van deelreeksen betekent het uithalen van een specifiek\
+  \ stukje uit een reeks tekens. Programmeurs doen dit om specifieke gegevens binnen\u2026"
+lastmod: 2024-02-18 23:09:01.979205
+model: gpt-4-0125-preview
+summary: "Het extraheren van deelreeksen betekent het uithalen van een specifiek stukje\
+  \ uit een reeks tekens. Programmeurs doen dit om specifieke gegevens binnen\u2026"
+title: Substrings extraheren
 ---
 
 {{< edit_this_page >}}

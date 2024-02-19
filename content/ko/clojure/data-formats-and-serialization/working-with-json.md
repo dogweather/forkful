@@ -1,14 +1,24 @@
 ---
-title:                "JSON과 함께 일하기"
 aliases:
 - /ko/clojure/working-with-json/
-date:                  2024-02-03T19:22:16.226012-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "JSON과 함께 일하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:22:16.226012-07:00
+description: "Clojure\uC5D0\uC11C JSON(JavaScript Object Notation)\uC744 \uB2E4\uB8E8\
+  \uB294 \uAC83\uC740 JSON \uBB38\uC790\uC5F4\uC744 Clojure \uB370\uC774\uD130 \uAD6C\
+  \uC870\uCCB4(\uB9F5, \uBCA1\uD130)\uB85C \uD30C\uC2F1\uD558\uACE0 \uADF8 \uBC18\uB300\
+  \uB85C \uBCC0\uD658\uD558\uB294 \uC791\uC5C5\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4\
+  . \uC774 \uC791\uC5C5\uC740 \uC6F9 \uC11C\uBE44\uC2A4, API, \uADF8\uB9AC\uACE0 \uAD6C\
+  \uC870\uD654\uB41C \uD14D\uC2A4\uD2B8 \uAE30\uBC18 \uD3EC\uB9F7\uC73C\uB85C\u2026"
+lastmod: 2024-02-18 23:09:05.723238
+model: gpt-4-0125-preview
+summary: "Clojure\uC5D0\uC11C JSON(JavaScript Object Notation)\uC744 \uB2E4\uB8E8\uB294\
+  \ \uAC83\uC740 JSON \uBB38\uC790\uC5F4\uC744 Clojure \uB370\uC774\uD130 \uAD6C\uC870\
+  \uCCB4(\uB9F5, \uBCA1\uD130)\uB85C \uD30C\uC2F1\uD558\uACE0 \uADF8 \uBC18\uB300\uB85C\
+  \ \uBCC0\uD658\uD558\uB294 \uC791\uC5C5\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uC774\
+  \ \uC791\uC5C5\uC740 \uC6F9 \uC11C\uBE44\uC2A4, API, \uADF8\uB9AC\uACE0 \uAD6C\uC870\
+  \uD654\uB41C \uD14D\uC2A4\uD2B8 \uAE30\uBC18 \uD3EC\uB9F7\uC73C\uB85C\u2026"
+title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

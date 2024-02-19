@@ -1,16 +1,25 @@
 ---
-title:                "HTML 파싱"
 aliases:
 - /ko/javascript/parsing-html/
-date:                  2024-01-28T03:00:40.517504-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML 파싱"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/parsing-html.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 03:00:40.517504-07:00
+description: "HTML \uD30C\uC2F1\uC740 HTML \uBB38\uC11C\uC5D0\uC11C \uB370\uC774\uD130\
+  \uB97C \uCD94\uCD9C\uD558\uB294 \uAC83\uC744 \uC758\uBBF8\uD569\uB2C8\uB2E4. \uD504\
+  \uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC6F9 \uCF58\uD150\uCE20\uC640 \uC0C1\uD638\
+  \ \uC791\uC6A9\uD558\uAC70\uB098 \uC870\uC791, \uC790\uB3D9 \uB370\uC774\uD130 \uCD94\
+  \uCD9C \uB610\uB294 \uC6F9 \uC2A4\uD06C\uB798\uD551 \uBAA9\uC801\uC73C\uB85C \uC774\
+  \uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.809378
+model: gpt-4-0125-preview
+summary: "HTML \uD30C\uC2F1\uC740 HTML \uBB38\uC11C\uC5D0\uC11C \uB370\uC774\uD130\
+  \uB97C \uCD94\uCD9C\uD558\uB294 \uAC83\uC744 \uC758\uBBF8\uD569\uB2C8\uB2E4. \uD504\
+  \uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC6F9 \uCF58\uD150\uCE20\uC640 \uC0C1\uD638\
+  \ \uC791\uC6A9\uD558\uAC70\uB098 \uC870\uC791, \uC790\uB3D9 \uB370\uC774\uD130 \uCD94\
+  \uCD9C \uB610\uB294 \uC6F9 \uC2A4\uD06C\uB798\uD551 \uBAA9\uC801\uC73C\uB85C \uC774\
+  \uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
+title: "HTML \uD30C\uC2F1"
 ---
 
 {{< edit_this_page >}}

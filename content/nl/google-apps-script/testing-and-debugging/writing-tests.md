@@ -1,14 +1,18 @@
 ---
-title:                "Tests Schrijven"
 aliases:
 - /nl/google-apps-script/writing-tests/
-date:                  2024-02-01T22:08:42.016073-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tests Schrijven"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/google-apps-script/writing-tests.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:08:42.016073-07:00
+description: "Tests schrijven in Google Apps Script (GAS) betekent het cre\xEBren\
+  \ van geautomatiseerde scripts om het gedrag van je codes te verifi\xEBren, zodat\
+  \ ze presteren\u2026"
+lastmod: 2024-02-18 23:09:01.389907
+model: gpt-4-0125-preview
+summary: "Tests schrijven in Google Apps Script (GAS) betekent het cre\xEBren van\
+  \ geautomatiseerde scripts om het gedrag van je codes te verifi\xEBren, zodat ze\
+  \ presteren\u2026"
+title: Tests Schrijven
 ---
 
 {{< edit_this_page >}}

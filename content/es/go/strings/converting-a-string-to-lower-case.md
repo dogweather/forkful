@@ -1,14 +1,18 @@
 ---
-title:                "Convirtiendo una cadena de texto a minúsculas"
 aliases:
 - /es/go/converting-a-string-to-lower-case/
-date:                  2024-02-03T17:54:33.477030-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Convirtiendo una cadena de texto a minúsculas"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:33.477030-07:00
+description: "Convertir una cadena a min\xFAsculas es una operaci\xF3n fundamental\
+  \ que permite uniformidad y consistencia en el procesamiento de texto, esencial\
+  \ para tareas\u2026"
+lastmod: 2024-02-18 23:09:09.439775
+model: gpt-4-0125-preview
+summary: "Convertir una cadena a min\xFAsculas es una operaci\xF3n fundamental que\
+  \ permite uniformidad y consistencia en el procesamiento de texto, esencial para\
+  \ tareas\u2026"
+title: "Convirtiendo una cadena de texto a min\xFAsculas"
 ---
 
 {{< edit_this_page >}}

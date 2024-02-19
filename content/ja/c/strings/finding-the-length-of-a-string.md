@@ -1,14 +1,14 @@
 ---
-title:                "文字列の長さを求める"
 aliases:
 - /ja/c/finding-the-length-of-a-string/
-date:                  2024-02-03T17:56:39.420072-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "文字列の長さを求める"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:39.420072-07:00
+description: "\u2026"
+lastmod: 2024-02-18 23:08:55.340548
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u6587\u5B57\u5217\u306E\u9577\u3055\u3092\u6C42\u3081\u308B"
 ---
 
 {{< edit_this_page >}}

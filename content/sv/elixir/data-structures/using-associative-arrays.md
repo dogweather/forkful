@@ -1,15 +1,18 @@
 ---
-title:                "Att använda associativa arrayer"
 aliases:
 - /sv/elixir/using-associative-arrays/
-date:                  2024-01-30T19:10:51.326344-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda associativa arrayer"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:51.326344-07:00
+description: "I Elixir, kallade associativa arrayer f\xF6r Maps, \xE4r samlingar av\
+  \ nyckel-v\xE4rde-par d\xE4r en unik nyckel pekar p\xE5 ett v\xE4rde. De \xE4r superpraktiska\
+  \ f\xF6r att lagra\u2026"
+lastmod: 2024-02-18 23:08:51.495842
+model: gpt-4-0125-preview
+summary: "I Elixir, kallade associativa arrayer f\xF6r Maps, \xE4r samlingar av nyckel-v\xE4\
+  rde-par d\xE4r en unik nyckel pekar p\xE5 ett v\xE4rde. De \xE4r superpraktiska\
+  \ f\xF6r att lagra\u2026"
+title: "Att anv\xE4nda associativa arrayer"
 ---
 
 {{< edit_this_page >}}

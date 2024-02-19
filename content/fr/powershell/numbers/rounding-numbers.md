@@ -1,13 +1,16 @@
 ---
-title:                "Arrondir les nombres"
 aliases:
 - /fr/powershell/rounding-numbers/
-date:                  2024-01-26T03:46:19.473332-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrondir les nombres"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/rounding-numbers.md"
+date: 2024-01-26 03:46:19.473332-07:00
+description: "Arrondir des nombres consiste \xE0 ajuster une valeur au plus proche\
+  \ entier ou \xE0 un nombre de d\xE9cimales sp\xE9cifi\xE9. Les programmeurs arrondissent\
+  \ les nombres\u2026"
+lastmod: 2024-02-18 23:09:09.060192
+model: gpt-4-0125-preview
+summary: "Arrondir des nombres consiste \xE0 ajuster une valeur au plus proche entier\
+  \ ou \xE0 un nombre de d\xE9cimales sp\xE9cifi\xE9. Les programmeurs arrondissent\
+  \ les nombres\u2026"
+title: Arrondir les nombres
 ---
 
 {{< edit_this_page >}}

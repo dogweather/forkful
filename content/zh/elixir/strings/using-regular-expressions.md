@@ -1,14 +1,26 @@
 ---
-title:                "使用正则表达式"
 aliases:
 - /zh/elixir/using-regular-expressions/
-date:                  2024-02-03T19:16:34.784071-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用正则表达式"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:16:34.784071-07:00
+description: "\u5728Elixir\u4E2D\uFF0C\u5E38\u89C4\u8868\u8FBE\u5F0F\uFF08regex\uFF09\
+  \u7528\u4E8E\u57FA\u4E8E\u7279\u5B9A\u6A21\u5F0F\u641C\u7D22\u3001\u5339\u914D\u548C\
+  \u64CD\u4F5C\u5B57\u7B26\u4E32\u3002\u7A0B\u5E8F\u5458\u5229\u7528regex\u8FDB\u884C\
+  \u5982\u9A8C\u8BC1\u683C\u5F0F\uFF08\u7535\u5B50\u90AE\u4EF6\u3001URLs\uFF09\u3001\
+  \u89E3\u6790\u65E5\u5FD7\u6216\u6570\u636E\u63D0\u53D6\u7B49\u4EFB\u52A1\uFF0C\u5F97\
+  \u76CA\u4E8E\u5176\u5728\u5B57\u7B26\u4E32\u5904\u7406\u4E0A\u7684\u6548\u7387\u548C\
+  \u591A\u529F\u80FD\u6027\u3002"
+lastmod: 2024-02-18 23:08:58.857159
+model: gpt-4-0125-preview
+summary: "\u5728Elixir\u4E2D\uFF0C\u5E38\u89C4\u8868\u8FBE\u5F0F\uFF08regex\uFF09\u7528\
+  \u4E8E\u57FA\u4E8E\u7279\u5B9A\u6A21\u5F0F\u641C\u7D22\u3001\u5339\u914D\u548C\u64CD\
+  \u4F5C\u5B57\u7B26\u4E32\u3002\u7A0B\u5E8F\u5458\u5229\u7528regex\u8FDB\u884C\u5982\
+  \u9A8C\u8BC1\u683C\u5F0F\uFF08\u7535\u5B50\u90AE\u4EF6\u3001URLs\uFF09\u3001\u89E3\
+  \u6790\u65E5\u5FD7\u6216\u6570\u636E\u63D0\u53D6\u7B49\u4EFB\u52A1\uFF0C\u5F97\u76CA\
+  \u4E8E\u5176\u5728\u5B57\u7B26\u4E32\u5904\u7406\u4E0A\u7684\u6548\u7387\u548C\u591A\
+  \u529F\u80FD\u6027\u3002"
+title: "\u4F7F\u7528\u6B63\u5219\u8868\u8FBE\u5F0F"
 ---
 
 {{< edit_this_page >}}

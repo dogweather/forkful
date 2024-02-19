@@ -1,13 +1,16 @@
 ---
-title:                "Työskentely TOML:n kanssa"
 aliases:
 - /fi/elixir/working-with-toml/
-date:                  2024-01-26T04:20:50.772412-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely TOML:n kanssa"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/working-with-toml.md"
+date: 2024-01-26 04:20:50.772412-07:00
+description: "TOML:n kanssa ty\xF6skentely tarkoittaa TOML-datam (Tom's Obvious, Minimal\
+  \ Language) j\xE4sent\xE4mist\xE4 ja generointia k\xE4ytt\xE4en Elixiria. Ohjelmoijat\
+  \ k\xE4ytt\xE4v\xE4t\u2026"
+lastmod: 2024-02-18 23:09:07.298911
+model: gpt-4-0125-preview
+summary: "TOML:n kanssa ty\xF6skentely tarkoittaa TOML-datam (Tom's Obvious, Minimal\
+  \ Language) j\xE4sent\xE4mist\xE4 ja generointia k\xE4ytt\xE4en Elixiria. Ohjelmoijat\
+  \ k\xE4ytt\xE4v\xE4t\u2026"
+title: "Ty\xF6skentely TOML:n kanssa"
 ---
 
 {{< edit_this_page >}}

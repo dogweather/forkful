@@ -1,14 +1,26 @@
 ---
-title:                "字符串插值"
 aliases:
 - /zh/google-apps-script/interpolating-a-string/
-date:                  2024-02-01T21:55:19.229092-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "字符串插值"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/google-apps-script/interpolating-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:19.229092-07:00
+description: "\u5728 Google Apps \u811A\u672C\u4E2D\u4F7F\u7528\u5B57\u7B26\u4E32\u63D2\
+  \u503C\u53EF\u4EE5\u52A8\u6001\u5730\u5C06\u8868\u8FBE\u5F0F\u5D4C\u5165\u5230\u5B57\
+  \u7B26\u4E32\u4E2D\uFF0C\u6709\u52A9\u4E8E\u521B\u5EFA\u66F4\u53EF\u8BFB\u548C\u53EF\
+  \u7EF4\u62A4\u7684\u4EE3\u7801\u3002\u7A0B\u5E8F\u5458\u5229\u7528\u8FD9\u79CD\u6280\
+  \u672F\u65E0\u7F1D\u5730\u5C06\u53D8\u91CF\u548C\u8868\u8FBE\u5F0F\u96C6\u6210\u5230\
+  \u5B57\u7B26\u4E32\u4E2D\uFF0C\u800C\u65E0\u9700\u7E41\u7410\u7684\u8FDE\u63A5\u8BED\
+  \u6CD5\u3002"
+lastmod: 2024-02-18 23:08:58.736042
+model: gpt-4-0125-preview
+summary: "\u5728 Google Apps \u811A\u672C\u4E2D\u4F7F\u7528\u5B57\u7B26\u4E32\u63D2\
+  \u503C\u53EF\u4EE5\u52A8\u6001\u5730\u5C06\u8868\u8FBE\u5F0F\u5D4C\u5165\u5230\u5B57\
+  \u7B26\u4E32\u4E2D\uFF0C\u6709\u52A9\u4E8E\u521B\u5EFA\u66F4\u53EF\u8BFB\u548C\u53EF\
+  \u7EF4\u62A4\u7684\u4EE3\u7801\u3002\u7A0B\u5E8F\u5458\u5229\u7528\u8FD9\u79CD\u6280\
+  \u672F\u65E0\u7F1D\u5730\u5C06\u53D8\u91CF\u548C\u8868\u8FBE\u5F0F\u96C6\u6210\u5230\
+  \u5B57\u7B26\u4E32\u4E2D\uFF0C\u800C\u65E0\u9700\u7E41\u7410\u7684\u8FDE\u63A5\u8BED\
+  \u6CD5\u3002"
+title: "\u5B57\u7B26\u4E32\u63D2\u503C"
 ---
 
 {{< edit_this_page >}}

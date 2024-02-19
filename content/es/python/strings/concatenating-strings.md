@@ -1,13 +1,14 @@
 ---
-title:                "Concatenación de cadenas de texto"
 aliases:
 - /es/python/concatenating-strings/
-date:                  2024-01-20T17:35:40.514603-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenación de cadenas de texto"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/concatenating-strings.md"
+date: 2024-01-20 17:35:40.514603-07:00
+description: "La concatenaci\xF3n de cadenas es el proceso de unir dos o m\xE1s cadenas\
+  \ de texto en una sola. Los programadores concatenan cadenas para formar mensajes,\u2026"
+lastmod: 2024-02-18 23:09:09.547386
+model: gpt-4-1106-preview
+summary: "La concatenaci\xF3n de cadenas es el proceso de unir dos o m\xE1s cadenas\
+  \ de texto en una sola. Los programadores concatenan cadenas para formar mensajes,\u2026"
+title: "Concatenaci\xF3n de cadenas de texto"
 ---
 
 {{< edit_this_page >}}

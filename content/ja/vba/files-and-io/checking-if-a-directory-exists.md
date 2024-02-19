@@ -1,14 +1,15 @@
 ---
-title:                "ディレクトリが存在するかどうかの確認"
 aliases:
 - /ja/vba/checking-if-a-directory-exists/
-date:                  2024-02-01T21:49:14.620435-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "ディレクトリが存在するかどうかの確認"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/vba/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:14.620435-07:00
+description: "Visual Basic for\u2026"
+lastmod: 2024-02-18 23:08:54.775206
+model: gpt-4-0125-preview
+summary: "Visual Basic for\u2026"
+title: "\u30C7\u30A3\u30EC\u30AF\u30C8\u30EA\u304C\u5B58\u5728\u3059\u308B\u304B\u3069\
+  \u3046\u304B\u306E\u78BA\u8A8D"
 ---
 
 {{< edit_this_page >}}

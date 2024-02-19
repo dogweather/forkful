@@ -1,13 +1,14 @@
 ---
-title:                "Sending an HTTP request with basic authentication"
 aliases:
 - /en/kotlin/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:05.656700-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sending an HTTP request with basic authentication"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:05.656700-07:00
+description: Basic authentication slaps a username:password combo onto an HTTP request.
+  Devs use it for a quick-and-dirty way to prove who's asking for what on the web.
+lastmod: 2024-02-18 23:09:11.012480
+model: gpt-4-1106-preview
+summary: Basic authentication slaps a username:password combo onto an HTTP request.
+  Devs use it for a quick-and-dirty way to prove who's asking for what on the web.
+title: Sending an HTTP request with basic authentication
 ---
 
 {{< edit_this_page >}}

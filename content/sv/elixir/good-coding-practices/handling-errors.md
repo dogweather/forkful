@@ -1,13 +1,16 @@
 ---
-title:                "Hantering av fel"
 aliases:
 - /sv/elixir/handling-errors/
-date:                  2024-01-26T00:51:10.385167-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Hantering av fel"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/handling-errors.md"
+date: 2024-01-26 00:51:10.385167-07:00
+description: "Att hantera fel inneb\xE4r att skriva kod som kan hantera n\xE4r saker\
+  \ g\xE5r snett. Programmerare g\xF6r det f\xF6r att undvika krascher och f\xF6r\
+  \ att f\xF6rs\xE4kra sig om att\u2026"
+lastmod: 2024-02-18 23:08:51.509489
+model: gpt-4-1106-preview
+summary: "Att hantera fel inneb\xE4r att skriva kod som kan hantera n\xE4r saker g\xE5\
+  r snett. Programmerare g\xF6r det f\xF6r att undvika krascher och f\xF6r att f\xF6\
+  rs\xE4kra sig om att\u2026"
+title: Hantering av fel
 ---
 
 {{< edit_this_page >}}

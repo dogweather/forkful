@@ -1,13 +1,22 @@
 ---
-title:                "从字符串中移除引号"
 aliases:
 - /zh/powershell/removing-quotes-from-a-string/
-date:                  2024-01-26T03:41:43.067500-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "从字符串中移除引号"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:41:43.067500-07:00
+description: "\u5728PowerShell\u4E2D\u4ECE\u5B57\u7B26\u4E32\u4E2D\u79FB\u9664\u5F15\
+  \u53F7\u662F\u6307\u53BB\u9664\u5305\u56F4\u5728\u6587\u672C\u5468\u56F4\u7684\u5355\
+  \u5F15\u53F7\uFF08`'`\uFF09\u6216\u53CC\u5F15\u53F7\uFF08`\"`\uFF09\u3002\u7A0B\u5E8F\
+  \u5458\u5728\u5904\u7406\u3001\u6BD4\u8F83\u6216\u8F93\u51FA\u5B57\u7B26\u4E32\u65F6\
+  \uFF0C\u7279\u522B\u662F\u5728\u5904\u7406\u7528\u6237\u8F93\u5165\u6216\u89E3\u6790\
+  \u6587\u4EF6\u65F6\uFF0C\u7ECF\u5E38\u9700\u8981\u6E05\u7406\u5B57\u7B26\u4E32\u3002"
+lastmod: 2024-02-18 23:08:59.319347
+model: gpt-4-0125-preview
+summary: "\u5728PowerShell\u4E2D\u4ECE\u5B57\u7B26\u4E32\u4E2D\u79FB\u9664\u5F15\u53F7\
+  \u662F\u6307\u53BB\u9664\u5305\u56F4\u5728\u6587\u672C\u5468\u56F4\u7684\u5355\u5F15\
+  \u53F7\uFF08`'`\uFF09\u6216\u53CC\u5F15\u53F7\uFF08`\"`\uFF09\u3002\u7A0B\u5E8F\u5458\
+  \u5728\u5904\u7406\u3001\u6BD4\u8F83\u6216\u8F93\u51FA\u5B57\u7B26\u4E32\u65F6\uFF0C\
+  \u7279\u522B\u662F\u5728\u5904\u7406\u7528\u6237\u8F93\u5165\u6216\u89E3\u6790\u6587\
+  \u4EF6\u65F6\uFF0C\u7ECF\u5E38\u9700\u8981\u6E05\u7406\u5B57\u7B26\u4E32\u3002"
+title: "\u4ECE\u5B57\u7B26\u4E32\u4E2D\u79FB\u9664\u5F15\u53F7"
 ---
 
 {{< edit_this_page >}}

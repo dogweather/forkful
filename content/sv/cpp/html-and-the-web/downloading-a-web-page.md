@@ -1,13 +1,16 @@
 ---
-title:                "Hämta en webbsida"
 aliases:
 - /sv/cpp/downloading-a-web-page/
-date:                  2024-01-20T17:43:38.444844-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Hämta en webbsida"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/downloading-a-web-page.md"
+date: 2024-01-20 17:43:38.444844-07:00
+description: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta sidans inneh\xE5ll\
+  \ \xF6ver n\xE4tet. Programmerare g\xF6r detta f\xF6r att analysera inneh\xE5llet,\
+  \ granska data eller integrera\u2026"
+lastmod: 2024-02-18 23:08:52.082645
+model: gpt-4-1106-preview
+summary: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta sidans inneh\xE5ll \xF6\
+  ver n\xE4tet. Programmerare g\xF6r detta f\xF6r att analysera inneh\xE5llet, granska\
+  \ data eller integrera\u2026"
+title: "H\xE4mta en webbsida"
 ---
 
 {{< edit_this_page >}}

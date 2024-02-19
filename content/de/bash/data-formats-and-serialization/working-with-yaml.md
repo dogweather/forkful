@@ -1,14 +1,18 @@
 ---
-title:                "Arbeiten mit YAML"
 aliases:
 - /de/bash/working-with-yaml/
-date:                  2024-02-03T19:24:53.284339-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeiten mit YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:24:53.284339-07:00
+description: "YAML, was f\xFCr \"YAML Ain't Markup Language\" steht, ist ein f\xFC\
+  r den Menschen lesbarer Daten-Serialisierungsstandard, der f\xFCr Konfigurationsdateien\
+  \ sowie in\u2026"
+lastmod: 2024-02-18 23:09:05.075952
+model: gpt-4-0125-preview
+summary: "YAML, was f\xFCr \"YAML Ain't Markup Language\" steht, ist ein f\xFCr den\
+  \ Menschen lesbarer Daten-Serialisierungsstandard, der f\xFCr Konfigurationsdateien\
+  \ sowie in\u2026"
+title: Arbeiten mit YAML
 ---
 
 {{< edit_this_page >}}

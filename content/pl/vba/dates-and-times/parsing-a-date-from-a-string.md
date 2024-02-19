@@ -1,14 +1,18 @@
 ---
-title:                "Analiza składniowa daty z ciągu znaków"
 aliases:
 - /pl/vba/parsing-a-date-from-a-string/
-date:                  2024-02-01T21:58:54.739159-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analiza składniowa daty z ciągu znaków"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/vba/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:54.739159-07:00
+description: "Parsowanie daty z ci\u0105gu znak\xF3w w Visual Basic for Applications\
+  \ (VBA) polega na konwersji tekstu, kt\xF3ry reprezentuje dat\u0119, na typ danych\
+  \ daty. Programi\u015Bci\u2026"
+lastmod: 2024-02-18 23:08:49.444139
+model: gpt-4-0125-preview
+summary: "Parsowanie daty z ci\u0105gu znak\xF3w w Visual Basic for Applications (VBA)\
+  \ polega na konwersji tekstu, kt\xF3ry reprezentuje dat\u0119, na typ danych daty.\
+  \ Programi\u015Bci\u2026"
+title: "Analiza sk\u0142adniowa daty z ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

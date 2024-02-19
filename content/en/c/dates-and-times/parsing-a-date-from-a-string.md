@@ -1,12 +1,14 @@
 ---
-title:                "Parsing a date from a string"
 aliases:
 - /en/c/parsing-a-date-from-a-string/
-date:                  2024-02-03T17:50:03.745077-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Parsing a date from a string"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/parsing-a-date-from-a-string.md"
+date: 2024-02-03 17:50:03.745077-07:00
+description: "Parsing a date from a string in C involves converting textual representations\
+  \ of dates into a format that programs can more effectively manipulate and\u2026"
+lastmod: 2024-02-18 23:09:11.531824
+model: gpt-4-0125-preview
+summary: "Parsing a date from a string in C involves converting textual representations\
+  \ of dates into a format that programs can more effectively manipulate and\u2026"
+title: Parsing a date from a string
 ---
 
 {{< edit_this_page >}}

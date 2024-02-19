@@ -1,14 +1,18 @@
 ---
-title:                "Excluindo caracteres correspondentes a um padrão"
 aliases:
 - /pt/google-apps-script/deleting-characters-matching-a-pattern/
-date:                  2024-02-01T21:52:02.378480-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Excluindo caracteres correspondentes a um padrão"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/google-apps-script/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:02.378480-07:00
+description: "Deletar caracteres que correspondem a um padr\xE3o espec\xEDfico \xE9\
+  \ uma t\xE9cnica usada para limpar ou formatar strings na programa\xE7\xE3o. No\
+  \ contexto do Google Apps\u2026"
+lastmod: 2024-02-18 23:08:57.697626
+model: gpt-4-0125-preview
+summary: "Deletar caracteres que correspondem a um padr\xE3o espec\xEDfico \xE9 uma\
+  \ t\xE9cnica usada para limpar ou formatar strings na programa\xE7\xE3o. No contexto\
+  \ do Google Apps\u2026"
+title: "Excluindo caracteres correspondentes a um padr\xE3o"
 ---
 
 {{< edit_this_page >}}

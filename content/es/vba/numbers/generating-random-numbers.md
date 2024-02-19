@@ -1,14 +1,17 @@
 ---
-title:                "Generando números aleatorios"
 aliases:
 - /es/vba/generating-random-numbers/
-date:                  2024-02-01T21:53:51.549680-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generando números aleatorios"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/vba/generating-random-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:51.549680-07:00
+description: "Generar n\xFAmeros aleatorios en Visual Basic para Aplicaciones (VBA)\
+  \ permite a los programas simular procesos con elementos de azar o variabilidad,\
+  \ como\u2026"
+lastmod: 2024-02-18 23:09:09.791701
+model: gpt-4-0125-preview
+summary: "Generar n\xFAmeros aleatorios en Visual Basic para Aplicaciones (VBA) permite\
+  \ a los programas simular procesos con elementos de azar o variabilidad, como\u2026"
+title: "Generando n\xFAmeros aleatorios"
 ---
 
 {{< edit_this_page >}}

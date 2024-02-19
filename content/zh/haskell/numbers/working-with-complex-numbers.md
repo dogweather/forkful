@@ -1,13 +1,20 @@
 ---
-title:                "处理复数"
 aliases:
 - /zh/haskell/working-with-complex-numbers/
-date:                  2024-01-26T04:42:05.246884-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理复数"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/working-with-complex-numbers.md"
+date: 2024-01-26 04:42:05.246884-07:00
+description: "\u590D\u6570\u7531\u4E00\u4E2A\u5B9E\u90E8\u548C\u4E00\u4E2A\u865A\u90E8\
+  \u7EC4\u6210\uFF0C\u5728\u5DE5\u7A0B\u5B66\u3001\u7269\u7406\u5B66\u548C\u4FE1\u53F7\
+  \u5904\u7406\u7B49\u5404\u79CD\u8BA1\u7B97\u9886\u57DF\u81F3\u5173\u91CD\u8981\u3002\
+  \u7A0B\u5E8F\u5458\u4F7F\u7528\u5B83\u4EEC\u6765\u89E3\u51B3\u5B9E\u6570\u65E0\u6CD5\
+  \u89E3\u51B3\u7684\u65B9\u7A0B\uFF0C\u5982\u627E\u51FA\u8D1F\u6570\u7684\u6839\u3002"
+lastmod: 2024-02-18 23:08:59.164675
+model: gpt-4-0125-preview
+summary: "\u590D\u6570\u7531\u4E00\u4E2A\u5B9E\u90E8\u548C\u4E00\u4E2A\u865A\u90E8\
+  \u7EC4\u6210\uFF0C\u5728\u5DE5\u7A0B\u5B66\u3001\u7269\u7406\u5B66\u548C\u4FE1\u53F7\
+  \u5904\u7406\u7B49\u5404\u79CD\u8BA1\u7B97\u9886\u57DF\u81F3\u5173\u91CD\u8981\u3002\
+  \u7A0B\u5E8F\u5458\u4F7F\u7528\u5B83\u4EEC\u6765\u89E3\u51B3\u5B9E\u6570\u65E0\u6CD5\
+  \u89E3\u51B3\u7684\u65B9\u7A0B\uFF0C\u5982\u627E\u51FA\u8D1F\u6570\u7684\u6839\u3002"
+title: "\u5904\u7406\u590D\u6570"
 ---
 
 {{< edit_this_page >}}

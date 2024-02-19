@@ -1,14 +1,16 @@
 ---
-title:                "Scrivere test"
 aliases:
 - /it/ruby/writing-tests/
-date:                  2024-02-03T19:31:55.105294-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Scrivere test"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:55.105294-07:00
+description: "Nel contesto di Ruby, il testing si riferisce alla verifica che il codice\
+  \ si comporti come previsto in varie condizioni. I programmatori scrivono test per\u2026"
+lastmod: 2024-02-18 23:08:56.386453
+model: gpt-4-0125-preview
+summary: "Nel contesto di Ruby, il testing si riferisce alla verifica che il codice\
+  \ si comporti come previsto in varie condizioni. I programmatori scrivono test per\u2026"
+title: Scrivere test
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,16 @@
 ---
-title:                "Een debugger gebruiken"
 aliases:
 - /nl/fish-shell/using-a-debugger/
-date:                  2024-01-28T22:08:59.860969-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een debugger gebruiken"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:59.860969-07:00
+description: "Een debugger gebruiken draait allemaal om het pletten van bugs\u2014\
+  de vervelende, tijdrovende fouten in je code. Programmeurs debuggen omdat ze problemen\u2026"
+lastmod: 2024-02-18 23:09:02.330920
+model: gpt-4-0125-preview
+summary: "Een debugger gebruiken draait allemaal om het pletten van bugs\u2014de vervelende,\
+  \ tijdrovende fouten in je code. Programmeurs debuggen omdat ze problemen\u2026"
+title: Een debugger gebruiken
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Praca z XML"
 aliases:
 - /pl/clojure/working-with-xml/
-date:                  2024-01-26T04:29:27.152667-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/working-with-xml.md"
+date: 2024-01-26 04:29:27.152667-07:00
+description: "XML to j\u0119zyk znacznik\xF3w u\u017Cywany do kodowania dokument\xF3\
+  w w spos\xF3b czytelny zar\xF3wno dla cz\u0142owieka, jak i maszyny. Ma kluczowe\
+  \ znaczenie w us\u0142ugach\u2026"
+lastmod: 2024-02-18 23:08:49.288619
+model: gpt-4-0125-preview
+summary: "XML to j\u0119zyk znacznik\xF3w u\u017Cywany do kodowania dokument\xF3w\
+  \ w spos\xF3b czytelny zar\xF3wno dla cz\u0142owieka, jak i maszyny. Ma kluczowe\
+  \ znaczenie w us\u0142ugach\u2026"
+title: Praca z XML
 ---
 
 {{< edit_this_page >}}

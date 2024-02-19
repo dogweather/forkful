@@ -1,13 +1,16 @@
 ---
-title:                "Praca z XML"
 aliases:
 - /pl/rust/working-with-xml/
-date:                  2024-01-26T04:35:52.849089-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/working-with-xml.md"
+date: 2024-01-26 04:35:52.849089-07:00
+description: "XML, czyli eXtensible Markup Language, to jakby rozwlek\u0142y kuzyn\
+  \ JSON-a. Z XML-em b\u0119dziesz si\u0119 zmaga\u0107, maj\u0105c do czynienia ze\
+  \ starszymi systemami,\u2026"
+lastmod: 2024-02-18 23:08:49.414083
+model: gpt-4-0125-preview
+summary: "XML, czyli eXtensible Markup Language, to jakby rozwlek\u0142y kuzyn JSON-a.\
+  \ Z XML-em b\u0119dziesz si\u0119 zmaga\u0107, maj\u0105c do czynienia ze starszymi\
+  \ systemami,\u2026"
+title: Praca z XML
 ---
 
 {{< edit_this_page >}}

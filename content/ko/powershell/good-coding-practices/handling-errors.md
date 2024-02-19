@@ -1,13 +1,24 @@
 ---
-title:                "에러 처리하기"
 aliases:
 - /ko/powershell/handling-errors/
-date:                  2024-01-26T00:56:28.706408-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "에러 처리하기"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/handling-errors.md"
+date: 2024-01-26 00:56:28.706408-07:00
+description: "PowerShell\uC5D0\uC11C \uC624\uB958\uB97C \uCC98\uB9AC\uD55C\uB2E4\uB294\
+  \ \uAC83\uC740 \uC608\uAE30\uCE58 \uC54A\uC740 \uC624\uB958\uB97C \uC608\uCE21\uD558\
+  \uACE0 \uC6D0\uD65C\uD558\uAC8C \uAD00\uB9AC\uD558\uB294 \uAC83\uC744 \uC758\uBBF8\
+  \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774 \uC791\uC5C5\
+  \uC744 \uD1B5\uD574 \uC2DC\uC2A4\uD15C \uCDA9\uB3CC\uC744 \uBC29\uC9C0\uD558\uACE0\
+  \ \uC0AC\uC6A9\uC790\uC5D0\uAC8C \uC720\uC6A9\uD55C \uD53C\uB4DC\uBC31\uC744 \uC81C\
+  \uACF5\uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.566238
+model: gpt-4-1106-preview
+summary: "PowerShell\uC5D0\uC11C \uC624\uB958\uB97C \uCC98\uB9AC\uD55C\uB2E4\uB294\
+  \ \uAC83\uC740 \uC608\uAE30\uCE58 \uC54A\uC740 \uC624\uB958\uB97C \uC608\uCE21\uD558\
+  \uACE0 \uC6D0\uD65C\uD558\uAC8C \uAD00\uB9AC\uD558\uB294 \uAC83\uC744 \uC758\uBBF8\
+  \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774 \uC791\uC5C5\
+  \uC744 \uD1B5\uD574 \uC2DC\uC2A4\uD15C \uCDA9\uB3CC\uC744 \uBC29\uC9C0\uD558\uACE0\
+  \ \uC0AC\uC6A9\uC790\uC5D0\uAC8C \uC720\uC6A9\uD55C \uD53C\uB4DC\uBC31\uC744 \uC81C\
+  \uACF5\uD569\uB2C8\uB2E4."
+title: "\uC5D0\uB7EC \uCC98\uB9AC\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

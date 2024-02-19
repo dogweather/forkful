@@ -1,14 +1,16 @@
 ---
-title:                "Trabajando con JSON"
 aliases:
 - /es/elixir/working-with-json/
-date:                  2024-02-03T19:22:04.343635-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:22:04.343635-07:00
+description: "Trabajar con JSON implica analizar cadenas con formato JSON en estructuras\
+  \ de datos que Elixir puede manipular y serializar estructuras de datos de Elixir\u2026"
+lastmod: 2024-02-18 23:09:09.680202
+model: gpt-4-0125-preview
+summary: "Trabajar con JSON implica analizar cadenas con formato JSON en estructuras\
+  \ de datos que Elixir puede manipular y serializar estructuras de datos de Elixir\u2026"
+title: Trabajando con JSON
 ---
 
 {{< edit_this_page >}}

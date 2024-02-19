@@ -1,14 +1,26 @@
 ---
-title:                "读取文本文件"
 aliases:
 - /zh/vba/reading-a-text-file/
-date:                  2024-02-01T21:58:28.132629-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "读取文本文件"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/reading-a-text-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:28.132629-07:00
+description: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u8BFB\u53D6\u6587\u672C\
+  \u6587\u4EF6\u6D89\u53CA\u4EE5\u7F16\u7A0B\u65B9\u5F0F\u8BBF\u95EE\u548C\u63D0\u53D6\
+  \ Office \u5E94\u7528\u7A0B\u5E8F\u5185\u6587\u672C\u6587\u4EF6\u7684\u5185\u5BB9\
+  \u3002\u7A0B\u5E8F\u5458\u7ECF\u5E38\u6267\u884C\u6B64\u4EFB\u52A1\u4EE5\u5BFC\u5165\
+  \u6216\u5904\u7406\u5B58\u50A8\u5728\u5E73\u9762\u6587\u4EF6\u4E2D\u7684\u6570\u636E\
+  \uFF0C\u4FBF\u4E8E\u5728 Office \u751F\u6001\u7CFB\u7EDF\u5185\u76F4\u63A5\u8FDB\
+  \u884C\u81EA\u52A8\u5316\u548C\u6570\u636E\u64CD\u4F5C\u3002"
+lastmod: 2024-02-18 23:08:58.998114
+model: gpt-4-0125-preview
+summary: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u8BFB\u53D6\u6587\u672C\
+  \u6587\u4EF6\u6D89\u53CA\u4EE5\u7F16\u7A0B\u65B9\u5F0F\u8BBF\u95EE\u548C\u63D0\u53D6\
+  \ Office \u5E94\u7528\u7A0B\u5E8F\u5185\u6587\u672C\u6587\u4EF6\u7684\u5185\u5BB9\
+  \u3002\u7A0B\u5E8F\u5458\u7ECF\u5E38\u6267\u884C\u6B64\u4EFB\u52A1\u4EE5\u5BFC\u5165\
+  \u6216\u5904\u7406\u5B58\u50A8\u5728\u5E73\u9762\u6587\u4EF6\u4E2D\u7684\u6570\u636E\
+  \uFF0C\u4FBF\u4E8E\u5728 Office \u751F\u6001\u7CFB\u7EDF\u5185\u76F4\u63A5\u8FDB\
+  \u884C\u81EA\u52A8\u5316\u548C\u6570\u636E\u64CD\u4F5C\u3002"
+title: "\u8BFB\u53D6\u6587\u672C\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,25 @@
 ---
-title:                "날짜를 문자열로 변환하기"
 aliases:
 - /ko/bash/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:42.993690-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "날짜를 문자열로 변환하기"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:42.993690-07:00
+description: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294\
+  \ \uAC83\uC740 \uB0A0\uC9DC \uB370\uC774\uD130\uB97C \uD14D\uC2A4\uD2B8 \uD615\uD0DC\
+  \uB85C \uBC14\uAFB8\uB294 \uACFC\uC815\uC785\uB2C8\uB2E4. \uC774\uB807\uAC8C \uBCC0\
+  \uD658\uD558\uB294 \uC774\uC720\uB294 \uD30C\uC77C \uC774\uB984, \uB85C\uADF8 \uBA54\
+  \uC2DC\uC9C0, \uD639\uC740 \uC0AC\uC6A9\uC790 \uC778\uD130\uD398\uC774\uC2A4\uC5D0\
+  \ \uB0A0\uC9DC\uB97C \uD45C\uC2DC\uD560 \uB54C \uC720\uC6A9\uD558\uAE30 \uB54C\uBB38\
+  \uC785\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.503584
+model: gpt-4-1106-preview
+summary: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294 \uAC83\
+  \uC740 \uB0A0\uC9DC \uB370\uC774\uD130\uB97C \uD14D\uC2A4\uD2B8 \uD615\uD0DC\uB85C\
+  \ \uBC14\uAFB8\uB294 \uACFC\uC815\uC785\uB2C8\uB2E4. \uC774\uB807\uAC8C \uBCC0\uD658\
+  \uD558\uB294 \uC774\uC720\uB294 \uD30C\uC77C \uC774\uB984, \uB85C\uADF8 \uBA54\uC2DC\
+  \uC9C0, \uD639\uC740 \uC0AC\uC6A9\uC790 \uC778\uD130\uD398\uC774\uC2A4\uC5D0 \uB0A0\
+  \uC9DC\uB97C \uD45C\uC2DC\uD560 \uB54C \uC720\uC6A9\uD558\uAE30 \uB54C\uBB38\uC785\
+  \uB2C8\uB2E4."
+title: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,27 @@
 ---
-title:                "तारीख को स्ट्रिंग में बदलना"
 aliases:
 - /hi/elm/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:40.470161-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "तारीख को स्ट्रिंग में बदलना"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elm/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:40.470161-07:00
+description: "Dates \u0915\u094B strings \u092E\u0947\u0902 \u092C\u0926\u0932\u0928\
+  \u0947 \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 \u0909\u0928\u094D\u0939\
+  \u0947\u0902 \u092A\u0922\u093C\u0928\u0947 \u092F\u094B\u0917\u094D\u092F \u092B\
+  \u0949\u0930\u094D\u092E \u092E\u0947\u0902 \u092A\u094D\u0930\u0938\u094D\u0924\
+  \u0941\u0924 \u0915\u0930\u0928\u093E\u0964 Programmers \u0907\u0938\u0947 \u0915\
+  \u0930\u0924\u0947 \u0939\u0948\u0902 user interface \u092E\u0947\u0902 \u0924\u093E\
+  \u0930\u0940\u0916\u0947\u0902 \u0926\u093F\u0916\u093E\u0928\u0947 \u092F\u093E\
+  \ logs \u092E\u0947\u0902\u2026"
+lastmod: 2024-02-18 23:09:03.212939
+model: gpt-4-1106-preview
+summary: "Dates \u0915\u094B strings \u092E\u0947\u0902 \u092C\u0926\u0932\u0928\u0947\
+  \ \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 \u0909\u0928\u094D\u0939\u0947\
+  \u0902 \u092A\u0922\u093C\u0928\u0947 \u092F\u094B\u0917\u094D\u092F \u092B\u0949\
+  \u0930\u094D\u092E \u092E\u0947\u0902 \u092A\u094D\u0930\u0938\u094D\u0924\u0941\
+  \u0924 \u0915\u0930\u0928\u093E\u0964 Programmers \u0907\u0938\u0947 \u0915\u0930\
+  \u0924\u0947 \u0939\u0948\u0902 user interface \u092E\u0947\u0902 \u0924\u093E\u0930\
+  \u0940\u0916\u0947\u0902 \u0926\u093F\u0916\u093E\u0928\u0947 \u092F\u093E logs\
+  \ \u092E\u0947\u0902\u2026"
+title: "\u0924\u093E\u0930\u0940\u0916 \u0915\u094B \u0938\u094D\u091F\u094D\u0930\
+  \u093F\u0902\u0917 \u092E\u0947\u0902 \u092C\u0926\u0932\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

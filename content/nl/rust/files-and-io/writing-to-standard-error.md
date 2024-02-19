@@ -1,15 +1,17 @@
 ---
-title:                "Schrijven naar standaardfout"
 aliases:
 - /nl/rust/writing-to-standard-error/
-date:                  2024-01-28T22:13:55.510883-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Schrijven naar standaardfout"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/writing-to-standard-error.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:13:55.510883-07:00
+description: "Schrijven naar standaardfout (stderr) betekent tekst uitvoeren naar\
+  \ de foutenstroom, los van de standaarduitvoer (stdout). Programmeurs doen dit om\
+  \ fouten\u2026"
+lastmod: 2024-02-18 23:09:01.637270
+model: gpt-4-0125-preview
+summary: "Schrijven naar standaardfout (stderr) betekent tekst uitvoeren naar de foutenstroom,\
+  \ los van de standaarduitvoer (stdout). Programmeurs doen dit om fouten\u2026"
+title: Schrijven naar standaardfout
 ---
 
 {{< edit_this_page >}}

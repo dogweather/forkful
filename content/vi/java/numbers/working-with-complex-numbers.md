@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với số phức"
 aliases:
 - /vi/java/working-with-complex-numbers/
-date:                  2024-01-28T22:13:28.659989-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với số phức"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/java/working-with-complex-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:13:28.659989-07:00
+description: "S\u1ED1 ph\u1EE9c m\u1EDF r\u1ED9ng d\xE3y s\u1ED1 th\u1EF1c th\xF4\
+  ng qua vi\u1EC7c th\xEAm m\u1ED9t \u0111\u01A1n v\u1ECB \u1EA3o, `i`, n\u01A1i m\xE0\
+  \ `i^2 = -1`. Ch\xFAng r\u1EA5t quan tr\u1ECDng trong c\xE1c l\u0129nh v\u1EF1c\
+  \ nh\u01B0 k\u1EF9 thu\u1EADt, v\u1EADt l\xFD v\xE0\u2026"
+lastmod: 2024-02-18 23:08:50.550226
+model: gpt-4-0125-preview
+summary: "S\u1ED1 ph\u1EE9c m\u1EDF r\u1ED9ng d\xE3y s\u1ED1 th\u1EF1c th\xF4ng qua\
+  \ vi\u1EC7c th\xEAm m\u1ED9t \u0111\u01A1n v\u1ECB \u1EA3o, `i`, n\u01A1i m\xE0\
+  \ `i^2 = -1`. Ch\xFAng r\u1EA5t quan tr\u1ECDng trong c\xE1c l\u0129nh v\u1EF1c\
+  \ nh\u01B0 k\u1EF9 thu\u1EADt, v\u1EADt l\xFD v\xE0\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 ---
 
 {{< edit_this_page >}}

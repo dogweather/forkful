@@ -1,13 +1,14 @@
 ---
-title:                "Zahlen runden"
 aliases:
 - /de/elixir/rounding-numbers/
-date:                  2024-01-26T03:43:49.116126-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zahlen runden"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/rounding-numbers.md"
+date: 2024-01-26 03:43:49.116126-07:00
+description: "Das Runden von Zahlen bedeutet, sie zu einem nahegelegenen Wert zu justieren,\
+  \ um sie zu vereinfachen oder eine bestimmte Genauigkeit zu erreichen. Das ist\u2026"
+lastmod: 2024-02-18 23:09:04.546484
+model: gpt-4-0125-preview
+summary: "Das Runden von Zahlen bedeutet, sie zu einem nahegelegenen Wert zu justieren,\
+  \ um sie zu vereinfachen oder eine bestimmte Genauigkeit zu erreichen. Das ist\u2026"
+title: Zahlen runden
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,23 @@
 ---
-title:                "日付を比較する"
 aliases:
 - /ja/arduino/comparing-two-dates/
-date:                  2024-01-20T17:32:22.078474-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "日付を比較する"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/comparing-two-dates.md"
+date: 2024-01-20 17:32:22.078474-07:00
+description: "\u6BD4\u8F03\u3059\u308B\u4E8C\u3064\u306E\u65E5\u4ED8\u3068\u306F\u3001\
+  \u30AB\u30EC\u30F3\u30C0\u30FC\u4E0A\u306E\u7570\u306A\u308B\u65E5\u3005\u3092\u6307\
+  \u3057\u307E\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3053\u308C\u3092\
+  \u884C\u3044\u3001\u30A4\u30D9\u30F3\u30C8\u9806\u5E8F\u3001\u671F\u9650\u306E\u7BA1\
+  \u7406\u3084\u7D4C\u904E\u6642\u9593\u3092\u76E3\u8996\u3059\u308B\u305F\u3081\u3067\
+  \u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.164118
+model: gpt-4-1106-preview
+summary: "\u6BD4\u8F03\u3059\u308B\u4E8C\u3064\u306E\u65E5\u4ED8\u3068\u306F\u3001\
+  \u30AB\u30EC\u30F3\u30C0\u30FC\u4E0A\u306E\u7570\u306A\u308B\u65E5\u3005\u3092\u6307\
+  \u3057\u307E\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3053\u308C\u3092\
+  \u884C\u3044\u3001\u30A4\u30D9\u30F3\u30C8\u9806\u5E8F\u3001\u671F\u9650\u306E\u7BA1\
+  \u7406\u3084\u7D4C\u904E\u6642\u9593\u3092\u76E3\u8996\u3059\u308B\u305F\u3081\u3067\
+  \u3059\u3002"
+title: "\u65E5\u4ED8\u3092\u6BD4\u8F03\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Creando un archivo temporal"
 aliases:
 - /es/fish-shell/creating-a-temporary-file/
-date:                  2024-01-20T17:40:02.454738-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Creando un archivo temporal"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:02.454738-07:00
+description: "Crear un archivo temporal significa generar un archivo que existe s\xF3\
+  lo durante la duraci\xF3n de un programa o proceso. Los programadores lo hacen para\u2026"
+lastmod: 2024-02-18 23:09:10.474251
+model: gpt-4-1106-preview
+summary: "Crear un archivo temporal significa generar un archivo que existe s\xF3\
+  lo durante la duraci\xF3n de un programa o proceso. Los programadores lo hacen para\u2026"
+title: Creando un archivo temporal
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Lavorare con XML"
 aliases:
 - /it/swift/working-with-xml/
-date:                  2024-01-26T04:35:56.707211-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/working-with-xml.md"
+date: 2024-01-26 04:35:56.707211-07:00
+description: "Lavorare con XML significa analizzare e generare dati XML in Swift.\
+  \ I programmatori lo fanno per lo scambio di dati, specialmente quando si integrano\
+  \ con\u2026"
+lastmod: 2024-02-18 23:08:56.235975
+model: gpt-4-0125-preview
+summary: "Lavorare con XML significa analizzare e generare dati XML in Swift. I programmatori\
+  \ lo fanno per lo scambio di dati, specialmente quando si integrano con\u2026"
+title: Lavorare con XML
 ---
 
 {{< edit_this_page >}}

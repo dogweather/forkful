@@ -1,13 +1,16 @@
 ---
-title:                "Deleting characters matching a pattern"
 aliases:
 - /en/bash/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:29.677647-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Deleting characters matching a pattern"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:29.677647-07:00
+description: "Deleting characters matching a pattern in Bash lets you manipulate strings\
+  \ to fit your needs\u2014like stripping unwanted chars or sanitizing input. It's\
+  \ the\u2026"
+lastmod: 2024-02-18 23:09:11.211995
+model: gpt-4-1106-preview
+summary: "Deleting characters matching a pattern in Bash lets you manipulate strings\
+  \ to fit your needs\u2014like stripping unwanted chars or sanitizing input. It's\
+  \ the\u2026"
+title: Deleting characters matching a pattern
 ---
 
 {{< edit_this_page >}}

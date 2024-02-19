@@ -1,12 +1,14 @@
 ---
-title:                "Handling errors"
 aliases:
 - /en/google-apps-script/handling-errors/
-date:                  2024-02-01T21:12:56.065519-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Handling errors"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/google-apps-script/handling-errors.md"
+date: 2024-02-01 21:12:56.065519-07:00
+description: "Error handling in Google Apps Script is about predicting, catching,\
+  \ and responding to exceptions or errors that occur during script execution. Programmers\u2026"
+lastmod: 2024-02-18 23:09:10.646841
+model: gpt-4-0125-preview
+summary: "Error handling in Google Apps Script is about predicting, catching, and\
+  \ responding to exceptions or errors that occur during script execution. Programmers\u2026"
+title: Handling errors
 ---
 
 {{< edit_this_page >}}

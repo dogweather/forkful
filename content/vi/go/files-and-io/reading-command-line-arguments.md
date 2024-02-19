@@ -1,14 +1,21 @@
 ---
-title:                "Đọc các tham số dòng lệnh"
 aliases:
 - /vi/go/reading-command-line-arguments/
-date:                  2024-02-03T18:06:41.846770-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Đọc các tham số dòng lệnh"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:06:41.846770-07:00
+description: "Vi\u1EC7c \u0111\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7\
+  nh trong Go bao g\u1ED3m vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c \u0111\u1ED1i s\u1ED1\
+  \ \u0111\u01B0\u1EE3c cung c\u1EA5p cho m\u1ED9t ch\u01B0\u01A1ng tr\xECnh trong\
+  \ qu\xE1 tr\xECnh \u0111\u01B0\u1EE3c g\u1ECDi t\u1EEB terminal ho\u1EB7c d\u1EA5\
+  u\u2026"
+lastmod: 2024-02-18 23:08:50.188383
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c \u0111\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh trong\
+  \ Go bao g\u1ED3m vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c \u0111\u1ED1i s\u1ED1 \u0111\
+  \u01B0\u1EE3c cung c\u1EA5p cho m\u1ED9t ch\u01B0\u01A1ng tr\xECnh trong qu\xE1\
+  \ tr\xECnh \u0111\u01B0\u1EE3c g\u1ECDi t\u1EEB terminal ho\u1EB7c d\u1EA5u\u2026"
+title: "\u0110\u1ECDc c\xE1c tham s\u1ED1 d\xF2ng l\u1EC7nh"
 ---
 
 {{< edit_this_page >}}

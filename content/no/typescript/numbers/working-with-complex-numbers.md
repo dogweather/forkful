@@ -1,13 +1,16 @@
 ---
-title:                "Å jobbe med komplekse tall"
 aliases:
 - /no/typescript/working-with-complex-numbers/
-date:                  2024-01-26T04:46:23.798045-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å jobbe med komplekse tall"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/working-with-complex-numbers.md"
+date: 2024-01-26 04:46:23.798045-07:00
+description: "Komplekse tall, som best\xE5r av en reell del og en imagin\xE6r del\
+  \ (vanligvis skrevet som a + bi), \xE5pner for beregninger som er upraktiske eller\
+  \ umulige med\u2026"
+lastmod: 2024-02-18 23:08:53.639312
+model: gpt-4-0125-preview
+summary: "Komplekse tall, som best\xE5r av en reell del og en imagin\xE6r del (vanligvis\
+  \ skrevet som a + bi), \xE5pner for beregninger som er upraktiske eller umulige\
+  \ med\u2026"
+title: "\xC5 jobbe med komplekse tall"
 ---
 
 {{< edit_this_page >}}

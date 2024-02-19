@@ -1,13 +1,20 @@
 ---
-title:                "将代码组织成函数"
 aliases:
 - /zh/clojure/organizing-code-into-functions/
-date:                  2024-01-26T01:09:29.718840-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "将代码组织成函数"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/organizing-code-into-functions.md"
+date: 2024-01-26 01:09:29.718840-07:00
+description: "\u5C06\u4EE3\u7801\u5757\u7EC4\u7EC7\u6210\u51FD\u6570\u662F\u4E3A\u4E86\
+  \u5C06\u5B8C\u6210\u7279\u5B9A\u4EFB\u52A1\u7684\u4EE3\u7801\u6253\u5305\u3002\u8FD9\
+  \u6837\u505A\u53EF\u4EE5\u4F7F\u60A8\u7684\u4EE3\u7801\u66F4\u6E05\u6670\u3001\u66F4\
+  \u6613\u4E8E\u7EF4\u62A4\uFF0C\u5E76\u4E14\u6613\u4E8E\u5176\u4ED6\u5F00\u53D1\u4EBA\
+  \u5458\u9605\u8BFB\u3002"
+lastmod: 2024-02-18 23:08:58.833192
+model: gpt-4-1106-preview
+summary: "\u5C06\u4EE3\u7801\u5757\u7EC4\u7EC7\u6210\u51FD\u6570\u662F\u4E3A\u4E86\
+  \u5C06\u5B8C\u6210\u7279\u5B9A\u4EFB\u52A1\u7684\u4EE3\u7801\u6253\u5305\u3002\u8FD9\
+  \u6837\u505A\u53EF\u4EE5\u4F7F\u60A8\u7684\u4EE3\u7801\u66F4\u6E05\u6670\u3001\u66F4\
+  \u6613\u4E8E\u7EF4\u62A4\uFF0C\u5E76\u4E14\u6613\u4E8E\u5176\u4ED6\u5F00\u53D1\u4EBA\
+  \u5458\u9605\u8BFB\u3002"
+title: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\u51FD\u6570"
 ---
 
 {{< edit_this_page >}}

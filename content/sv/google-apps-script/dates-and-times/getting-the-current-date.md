@@ -1,14 +1,16 @@
 ---
-title:                "Hämta aktuellt datum"
 aliases:
 - /sv/google-apps-script/getting-the-current-date/
-date:                  2024-02-01T21:54:48.584747-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Hämta aktuellt datum"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/google-apps-script/getting-the-current-date.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:48.584747-07:00
+description: "Att f\xE5 det aktuella datumet i Google Apps Script handlar om att h\xE4\
+  mta det levande datumet och tiden, en vanlig uppgift f\xF6r att automatisera uppgifter,\u2026"
+lastmod: 2024-02-18 23:08:51.389985
+model: gpt-4-0125-preview
+summary: "Att f\xE5 det aktuella datumet i Google Apps Script handlar om att h\xE4\
+  mta det levande datumet och tiden, en vanlig uppgift f\xF6r att automatisera uppgifter,\u2026"
+title: "H\xE4mta aktuellt datum"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Koodin järjestäminen funktioihin"
 aliases:
 - /fi/javascript/organizing-code-into-functions/
-date:                  2024-01-26T01:10:42.365157-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Koodin järjestäminen funktioihin"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/organizing-code-into-functions.md"
+date: 2024-01-26 01:10:42.365157-07:00
+description: "Koodin j\xE4rjest\xE4minen funktioihin pilkkoo teht\xE4v\xE4t uudelleenk\xE4\
+  ytett\xE4viksi osiksi, mik\xE4 tekee koodista siistimp\xE4\xE4 ja yll\xE4pidett\xE4\
+  v\xE4mp\xE4\xE4. T\xE4m\xE4 v\xE4hent\xE4\xE4\u2026"
+lastmod: 2024-02-18 23:09:08.041591
+model: gpt-4-1106-preview
+summary: "Koodin j\xE4rjest\xE4minen funktioihin pilkkoo teht\xE4v\xE4t uudelleenk\xE4\
+  ytett\xE4viksi osiksi, mik\xE4 tekee koodista siistimp\xE4\xE4 ja yll\xE4pidett\xE4\
+  v\xE4mp\xE4\xE4. T\xE4m\xE4 v\xE4hent\xE4\xE4\u2026"
+title: "Koodin j\xE4rjest\xE4minen funktioihin"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Hitta längden på en sträng"
 aliases:
 - /sv/python/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:19.638615-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Hitta längden på en sträng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:19.638615-07:00
+description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Python betyder att ta reda\
+  \ p\xE5 hur m\xE5nga tecken den inneh\xE5ller. Programm\xF6rer g\xF6r detta f\xF6\
+  r att hantera textdata effektivt\u2026"
+lastmod: 2024-02-18 23:08:51.413380
+model: gpt-4-1106-preview
+summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Python betyder att ta reda p\xE5\
+  \ hur m\xE5nga tecken den inneh\xE5ller. Programm\xF6rer g\xF6r detta f\xF6r att\
+  \ hantera textdata effektivt\u2026"
+title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Sende en HTTP-forespørsel"
 aliases:
 - /no/google-apps-script/sending-an-http-request/
-date:                  2024-02-01T22:01:46.274847-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sende en HTTP-forespørsel"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/google-apps-script/sending-an-http-request.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:46.274847-07:00
+description: "\xC5 sende en HTTP-foresp\xF8rsel i Google Apps Script handler om \xE5\
+  \ programmert utf\xF8re et kall til en ekstern webserver eller API. Programmerere\
+  \ gj\xF8r dette for\u2026"
+lastmod: 2024-02-18 23:08:53.477237
+model: gpt-4-0125-preview
+summary: "\xC5 sende en HTTP-foresp\xF8rsel i Google Apps Script handler om \xE5 programmert\
+  \ utf\xF8re et kall til en ekstern webserver eller API. Programmerere gj\xF8r dette\
+  \ for\u2026"
+title: "Sende en HTTP-foresp\xF8rsel"
 ---
 
 {{< edit_this_page >}}

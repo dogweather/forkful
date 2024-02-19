@@ -1,13 +1,16 @@
 ---
-title:                "Lecture d'un fichier texte"
 aliases:
 - /fr/bash/reading-a-text-file/
-date:                  2024-01-20T17:53:39.725483-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lecture d'un fichier texte"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/reading-a-text-file.md"
+date: 2024-01-20 17:53:39.725483-07:00
+description: "Lire un fichier texte, c'est parcourir et manipuler le contenu stock\xE9\
+  . Les programmeurs le font pour traiter des donn\xE9es, configurer des logiciels,\
+  \ et\u2026"
+lastmod: 2024-02-18 23:09:09.038088
+model: gpt-4-1106-preview
+summary: "Lire un fichier texte, c'est parcourir et manipuler le contenu stock\xE9\
+  . Les programmeurs le font pour traiter des donn\xE9es, configurer des logiciels,\
+  \ et\u2026"
+title: Lecture d'un fichier texte
 ---
 
 {{< edit_this_page >}}

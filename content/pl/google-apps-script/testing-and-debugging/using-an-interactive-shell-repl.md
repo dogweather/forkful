@@ -1,14 +1,17 @@
 ---
-title:                "Korzystanie z interaktywnej powłoki (REPL)"
 aliases:
 - /pl/google-apps-script/using-an-interactive-shell-repl/
-date:                  2024-02-01T22:04:09.681795-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z interaktywnej powłoki (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:09.681795-07:00
+description: "Interaktywne \u015Brodowisko, czyli P\u0119tla Odczyt-Wykonanie-Wydruk\
+  \ (REPL), to proste, interaktywne \u015Brodowisko programistyczne, kt\xF3re przyjmuje\
+  \ pojedyncze\u2026"
+lastmod: 2024-02-18 23:08:49.149049
+model: gpt-4-0125-preview
+summary: "Interaktywne \u015Brodowisko, czyli P\u0119tla Odczyt-Wykonanie-Wydruk (REPL),\
+  \ to proste, interaktywne \u015Brodowisko programistyczne, kt\xF3re przyjmuje pojedyncze\u2026"
+title: "Korzystanie z interaktywnej pow\u0142oki (REPL)"
 ---
 
 {{< edit_this_page >}}

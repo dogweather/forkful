@@ -1,13 +1,14 @@
 ---
-title:                "Fehlerbehandlung"
 aliases:
 - /de/haskell/handling-errors/
-date:                  2024-01-26T00:53:20.320524-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Fehlerbehandlung"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/handling-errors.md"
+date: 2024-01-26 00:53:20.320524-07:00
+description: "Fehlerbehandlung in der Programmierung handelt davon, mit Unerwartetem\
+  \ umzugehen\u2014Dinge, die schiefgehen k\xF6nnen. Programmierer machen dies, um\u2026"
+lastmod: 2024-02-18 23:09:04.924790
+model: gpt-4-1106-preview
+summary: "Fehlerbehandlung in der Programmierung handelt davon, mit Unerwartetem umzugehen\u2014\
+  Dinge, die schiefgehen k\xF6nnen. Programmierer machen dies, um\u2026"
+title: Fehlerbehandlung
 ---
 
 {{< edit_this_page >}}

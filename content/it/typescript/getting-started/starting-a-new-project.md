@@ -1,13 +1,14 @@
 ---
-title:                "Avvio di un nuovo progetto"
 aliases:
 - /it/typescript/starting-a-new-project/
-date:                  2024-01-20T18:04:27.652437-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Avvio di un nuovo progetto"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/starting-a-new-project.md"
+date: 2024-01-20 18:04:27.652437-07:00
+description: "Iniziare un nuovo progetto significa creare un ambiente di lavoro da\
+  \ zero, dove il codice prende vita. Si fa per trasformare le idee in software\u2026"
+lastmod: 2024-02-18 23:08:55.640919
+model: gpt-4-1106-preview
+summary: "Iniziare un nuovo progetto significa creare un ambiente di lavoro da zero,\
+  \ dove il codice prende vita. Si fa per trasformare le idee in software\u2026"
+title: Avvio di un nuovo progetto
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Journalisation"
 aliases:
 - /fr/google-apps-script/logging/
-date:                  2024-02-01T21:57:02.633189-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Journalisation"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/google-apps-script/logging.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:02.633189-07:00
+description: "La journalisation en programmation consiste \xE0 enregistrer des \xE9\
+  v\xE9nements, des erreurs ou des occurrences notables pendant l'ex\xE9cution. Les\
+  \ programmeurs le\u2026"
+lastmod: 2024-02-18 23:09:08.296741
+model: gpt-4-0125-preview
+summary: "La journalisation en programmation consiste \xE0 enregistrer des \xE9v\xE9\
+  nements, des erreurs ou des occurrences notables pendant l'ex\xE9cution. Les programmeurs\
+  \ le\u2026"
+title: Journalisation
 ---
 
 {{< edit_this_page >}}

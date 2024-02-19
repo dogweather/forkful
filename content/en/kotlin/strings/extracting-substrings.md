@@ -1,13 +1,14 @@
 ---
-title:                "Extracting substrings"
 aliases:
 - /en/kotlin/extracting-substrings/
-date:                  2024-01-20T17:45:54.335545-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extracting substrings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/extracting-substrings.md"
+date: 2024-01-20 17:45:54.335545-07:00
+description: "Extracting substrings means pulling out specific parts from a string.\
+  \ We do it to manipulate or analyze text data, like grabbing usernames from email\u2026"
+lastmod: 2024-02-18 23:09:11.002160
+model: gpt-4-1106-preview
+summary: "Extracting substrings means pulling out specific parts from a string. We\
+  \ do it to manipulate or analyze text data, like grabbing usernames from email\u2026"
+title: Extracting substrings
 ---
 
 {{< edit_this_page >}}

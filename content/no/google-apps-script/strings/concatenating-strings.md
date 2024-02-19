@@ -1,14 +1,18 @@
 ---
-title:                "Sammensetting av strenger"
 aliases:
 - /no/google-apps-script/concatenating-strings/
-date:                  2024-02-01T21:50:12.621564-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sammensetting av strenger"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/google-apps-script/concatenating-strings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:12.621564-07:00
+description: "Konkatenere (sammensl\xE5) strenger inneb\xE6rer \xE5 kombinere to eller\
+  \ flere strenger til en enkelt streng. Programmerere gj\xF8r dette for \xE5 dynamisk\
+  \ konstruere\u2026"
+lastmod: 2024-02-18 23:08:53.472087
+model: gpt-4-0125-preview
+summary: "Konkatenere (sammensl\xE5) strenger inneb\xE6rer \xE5 kombinere to eller\
+  \ flere strenger til en enkelt streng. Programmerere gj\xF8r dette for \xE5 dynamisk\
+  \ konstruere\u2026"
+title: Sammensetting av strenger
 ---
 
 {{< edit_this_page >}}

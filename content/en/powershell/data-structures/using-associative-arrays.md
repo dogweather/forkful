@@ -1,13 +1,14 @@
 ---
-title:                "Using associative arrays"
 aliases:
 - /en/powershell/using-associative-arrays/
-date:                  2024-01-30T18:57:29.755923-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using associative arrays"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/powershell/using-associative-arrays.md"
+date: 2024-01-30 18:57:29.755923-07:00
+description: "Associative arrays, also known as hash tables or dictionaries in PowerShell,\
+  \ let you store data in key-value pairs, making data retrieval straightforward\u2026"
+lastmod: 2024-02-18 23:09:11.264917
+model: gpt-4-0125-preview
+summary: "Associative arrays, also known as hash tables or dictionaries in PowerShell,\
+  \ let you store data in key-value pairs, making data retrieval straightforward\u2026"
+title: Using associative arrays
 ---
 
 {{< edit_this_page >}}

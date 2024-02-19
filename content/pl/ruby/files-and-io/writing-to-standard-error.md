@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie do standardowego błędu"
 aliases:
 - /pl/ruby/writing-to-standard-error/
-date:                  2024-02-03T19:34:26.376529-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie do standardowego błędu"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:34:26.376529-07:00
+description: "Pisanie do standardowego b\u0142\u0119du (stderr) w Ruby polega na kierowaniu\
+  \ komunikat\xF3w o b\u0142\u0119dach lub informacji diagnostycznych do oddzielnego\
+  \ strumienia\u2026"
+lastmod: 2024-02-18 23:08:50.141958
+model: gpt-4-0125-preview
+summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Ruby polega na kierowaniu\
+  \ komunikat\xF3w o b\u0142\u0119dach lub informacji diagnostycznych do oddzielnego\
+  \ strumienia\u2026"
+title: "Pisanie do standardowego b\u0142\u0119du"
 ---
 
 {{< edit_this_page >}}

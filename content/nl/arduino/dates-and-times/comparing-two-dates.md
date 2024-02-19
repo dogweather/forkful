@@ -1,15 +1,17 @@
 ---
-title:                "Twee data vergelijken"
 aliases:
 - /nl/arduino/comparing-two-dates/
-date:                  2024-01-28T21:56:17.895644-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Twee data vergelijken"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/comparing-two-dates.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:17.895644-07:00
+description: "Twee datums vergelijken betekent uitzoeken welke eerder is, later, of\
+  \ als ze hetzelfde zijn. Programmeurs doen dit om tijdgebaseerde evenementen bij\
+  \ te\u2026"
+lastmod: 2024-02-18 23:09:02.151475
+model: gpt-4-0125-preview
+summary: "Twee datums vergelijken betekent uitzoeken welke eerder is, later, of als\
+  \ ze hetzelfde zijn. Programmeurs doen dit om tijdgebaseerde evenementen bij te\u2026"
+title: Twee data vergelijken
 ---
 
 {{< edit_this_page >}}

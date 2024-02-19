@@ -1,13 +1,16 @@
 ---
-title:                "Extraction de sous-chaînes"
 aliases:
 - /fr/rust/extracting-substrings/
-date:                  2024-01-20T17:46:21.402076-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extraction de sous-chaînes"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/extracting-substrings.md"
+date: 2024-01-20 17:46:21.402076-07:00
+description: "Extraire des sous-cha\xEEnes, c'est pr\xE9lever des parties pr\xE9cises\
+  \ d'une cha\xEEne de caract\xE8res. Les d\xE9veloppeurs le font pour analyser, manipuler\
+  \ ou valider\u2026"
+lastmod: 2024-02-18 23:09:08.516644
+model: gpt-4-1106-preview
+summary: "Extraire des sous-cha\xEEnes, c'est pr\xE9lever des parties pr\xE9cises\
+  \ d'une cha\xEEne de caract\xE8res. Les d\xE9veloppeurs le font pour analyser, manipuler\
+  \ ou valider\u2026"
+title: "Extraction de sous-cha\xEEnes"
 ---
 
 {{< edit_this_page >}}

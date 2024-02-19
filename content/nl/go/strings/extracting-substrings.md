@@ -1,14 +1,16 @@
 ---
-title:                "Substrings extraheren"
 aliases:
 - /nl/go/extracting-substrings/
-date:                  2024-02-03T17:56:46.998542-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Substrings extraheren"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/extracting-substrings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:46.998542-07:00
+description: "Het extraheren van substrings houdt in dat specifieke delen van een\
+  \ string worden opgehaald op basis van hun positie. Programmeurs voeren deze bewerking\u2026"
+lastmod: 2024-02-18 23:09:01.325830
+model: gpt-4-0125-preview
+summary: "Het extraheren van substrings houdt in dat specifieke delen van een string\
+  \ worden opgehaald op basis van hun positie. Programmeurs voeren deze bewerking\u2026"
+title: Substrings extraheren
 ---
 
 {{< edit_this_page >}}

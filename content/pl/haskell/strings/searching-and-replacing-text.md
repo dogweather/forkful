@@ -1,13 +1,16 @@
 ---
-title:                "Wyszukiwanie i zamiana tekstu"
 aliases:
 - /pl/haskell/searching-and-replacing-text/
-date:                  2024-01-20T17:58:09.251172-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wyszukiwanie i zamiana tekstu"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:09.251172-07:00
+description: "Wyszukiwanie i zamiana tekstu to podstawa edycji: zmieniasz jedno przez\
+  \ drugie, proste. Programi\u015Bci to robi\u0105, by szybko poprawia\u0107 kody\
+  \ i aktualizowa\u0107 dane."
+lastmod: 2024-02-18 23:08:49.639156
+model: gpt-4-1106-preview
+summary: "Wyszukiwanie i zamiana tekstu to podstawa edycji: zmieniasz jedno przez\
+  \ drugie, proste. Programi\u015Bci to robi\u0105, by szybko poprawia\u0107 kody\
+  \ i aktualizowa\u0107 dane."
+title: Wyszukiwanie i zamiana tekstu
 ---
 
 {{< edit_this_page >}}

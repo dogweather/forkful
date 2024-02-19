@@ -1,14 +1,21 @@
 ---
-title:                "开始一个新项目"
 aliases:
 - /zh/swift/starting-a-new-project/
-date:                  2024-01-20T18:04:35.834748-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "开始一个新项目"
-
-tag:                  "Getting Started"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/starting-a-new-project.md"
+date: 2024-01-20 18:04:35.834748-07:00
+description: "\u5F00\u59CB\u4E00\u4E2A\u65B0\u9879\u76EE\u610F\u5473\u7740\u521B\u5EFA\
+  \u4E86\u4E00\u4E2A\u7A7A\u767D\u7684\u7F16\u7A0B\u73AF\u5883\uFF0C\u7528\u4E8E\u5F00\
+  \u53D1\u5168\u65B0\u7684\u8F6F\u4EF6\u6216\u5E94\u7528\u3002\u7A0B\u5E8F\u5458\u8FD9\
+  \u4E48\u505A\u662F\u4E3A\u4E86\u5B9E\u73B0\u65B0\u7684\u60F3\u6CD5\uFF0C\u5F00\u53D1\
+  \u89E3\u51B3\u65B9\u6848\uFF0C\u6216\u8005\u5B66\u4E60\u65B0\u6280\u80FD\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.442844
+model: gpt-4-1106-preview
+summary: "\u5F00\u59CB\u4E00\u4E2A\u65B0\u9879\u76EE\u610F\u5473\u7740\u521B\u5EFA\
+  \u4E86\u4E00\u4E2A\u7A7A\u767D\u7684\u7F16\u7A0B\u73AF\u5883\uFF0C\u7528\u4E8E\u5F00\
+  \u53D1\u5168\u65B0\u7684\u8F6F\u4EF6\u6216\u5E94\u7528\u3002\u7A0B\u5E8F\u5458\u8FD9\
+  \u4E48\u505A\u662F\u4E3A\u4E86\u5B9E\u73B0\u65B0\u7684\u60F3\u6CD5\uFF0C\u5F00\u53D1\
+  \u89E3\u51B3\u65B9\u6848\uFF0C\u6216\u8005\u5B66\u4E60\u65B0\u6280\u80FD\u3002"
+title: "\u5F00\u59CB\u4E00\u4E2A\u65B0\u9879\u76EE"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Een HTTP-verzoek verzenden"
 aliases:
 - /nl/c/sending-an-http-request/
-date:                  2024-02-03T18:08:23.427753-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een HTTP-verzoek verzenden"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/sending-an-http-request.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:23.427753-07:00
+description: "Het verzenden van een HTTP-verzoek houdt in dat je een verzoek cre\xEB\
+  ert en verstuurt naar een webserver om gegevens op te halen of in te dienen.\u2026"
+lastmod: 2024-02-18 23:09:02.369276
+model: gpt-4-0125-preview
+summary: "Het verzenden van een HTTP-verzoek houdt in dat je een verzoek cre\xEBert\
+  \ en verstuurt naar een webserver om gegevens op te halen of in te dienen.\u2026"
+title: Een HTTP-verzoek verzenden
 ---
 
 {{< edit_this_page >}}

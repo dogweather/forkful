@@ -1,15 +1,28 @@
 ---
-title:                "Работа с XML"
 aliases:
 - /ru/rust/working-with-xml/
-date:                  2024-01-29T00:04:55.208736-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Работа с XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/rust/working-with-xml.md"
 changelog:
-  - 2024-01-29, gpt-4-0125-preview, translated from English
+- 2024-01-29, gpt-4-0125-preview, translated from English
+date: 2024-01-29 00:04:55.208736-07:00
+description: "XML, \u0447\u0442\u043E \u0440\u0430\u0441\u0448\u0438\u0444\u0440\u043E\
+  \u0432\u044B\u0432\u0430\u0435\u0442\u0441\u044F \u043A\u0430\u043A eXtensible Markup\
+  \ Language (\u0440\u0430\u0441\u0448\u0438\u0440\u044F\u0435\u043C\u044B\u0439 \u044F\
+  \u0437\u044B\u043A \u0440\u0430\u0437\u043C\u0435\u0442\u043A\u0438), \u043D\u0430\
+  \u043F\u043E\u043C\u0438\u043D\u0430\u0435\u0442 \u043C\u043D\u043E\u0433\u043E\u0441\
+  \u043B\u043E\u0432\u043D\u043E\u0433\u043E \u043A\u0443\u0437\u0435\u043D\u0430\
+  \ JSON. \u0421 XML \u0432\u0430\u043C \u043F\u0440\u0438\u0434\u0435\u0442\u0441\
+  \u044F\u2026"
+lastmod: 2024-02-18 23:08:56.764919
+model: gpt-4-0125-preview
+summary: "XML, \u0447\u0442\u043E \u0440\u0430\u0441\u0448\u0438\u0444\u0440\u043E\
+  \u0432\u044B\u0432\u0430\u0435\u0442\u0441\u044F \u043A\u0430\u043A eXtensible Markup\
+  \ Language (\u0440\u0430\u0441\u0448\u0438\u0440\u044F\u0435\u043C\u044B\u0439 \u044F\
+  \u0437\u044B\u043A \u0440\u0430\u0437\u043C\u0435\u0442\u043A\u0438), \u043D\u0430\
+  \u043F\u043E\u043C\u0438\u043D\u0430\u0435\u0442 \u043C\u043D\u043E\u0433\u043E\u0441\
+  \u043B\u043E\u0432\u043D\u043E\u0433\u043E \u043A\u0443\u0437\u0435\u043D\u0430\
+  \ JSON. \u0421 XML \u0432\u0430\u043C \u043F\u0440\u0438\u0434\u0435\u0442\u0441\
+  \u044F\u2026"
+title: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 XML"
 ---
 
 {{< edit_this_page >}}

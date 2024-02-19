@@ -1,14 +1,18 @@
 ---
-title:                "Hantera fel"
 aliases:
 - /sv/go/handling-errors/
-date:                  2024-02-03T17:58:09.826289-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Hantera fel"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/handling-errors.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:58:09.826289-07:00
+description: "Att hantera fel i Go inneb\xE4r att k\xE4nna igen och svara p\xE5 felvillkor\
+  \ i ditt program. Programmerare \xE4gnar sig \xE5t felhantering f\xF6r att s\xE4\
+  kerst\xE4lla att deras\u2026"
+lastmod: 2024-02-18 23:08:51.341230
+model: gpt-4-0125-preview
+summary: "Att hantera fel i Go inneb\xE4r att k\xE4nna igen och svara p\xE5 felvillkor\
+  \ i ditt program. Programmerare \xE4gnar sig \xE5t felhantering f\xF6r att s\xE4\
+  kerst\xE4lla att deras\u2026"
+title: Hantera fel
 ---
 
 {{< edit_this_page >}}

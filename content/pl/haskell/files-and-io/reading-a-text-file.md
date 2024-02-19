@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
 aliases:
 - /pl/haskell/reading-a-text-file/
-date:                  2024-01-20T17:54:28.202213-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie pliku tekstowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/reading-a-text-file.md"
+date: 2024-01-20 17:54:28.202213-07:00
+description: "Czytanie pliku tekstowego to proces pobierania danych z pliku przechowywanego\
+  \ na dysku. Programi\u015Bci robi\u0105 to, by za\u0142adowa\u0107 i przetworzy\u0107\
+  \ informacje,\u2026"
+lastmod: 2024-02-18 23:08:49.670162
+model: gpt-4-1106-preview
+summary: "Czytanie pliku tekstowego to proces pobierania danych z pliku przechowywanego\
+  \ na dysku. Programi\u015Bci robi\u0105 to, by za\u0142adowa\u0107 i przetworzy\u0107\
+  \ informacje,\u2026"
+title: Odczytywanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

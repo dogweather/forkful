@@ -1,14 +1,18 @@
 ---
-title:                "Analisando HTML"
 aliases:
 - /pt/haskell/parsing-html/
-date:                  2024-02-03T19:12:11.815629-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analisando HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:11.815629-07:00
+description: "Analisar HTML em Haskell permite extrair dados, manipular conte\xFA\
+  do HTML ou interagir com p\xE1ginas web programaticamente. Essa opera\xE7\xE3o \xE9\
+  \ essencial para\u2026"
+lastmod: 2024-02-18 23:08:58.196968
+model: gpt-4-0125-preview
+summary: "Analisar HTML em Haskell permite extrair dados, manipular conte\xFAdo HTML\
+  \ ou interagir com p\xE1ginas web programaticamente. Essa opera\xE7\xE3o \xE9 essencial\
+  \ para\u2026"
+title: Analisando HTML
 ---
 
 {{< edit_this_page >}}

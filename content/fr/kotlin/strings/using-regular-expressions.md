@@ -1,14 +1,17 @@
 ---
-title:                "Utilisation des expressions régulières"
 aliases:
 - /fr/kotlin/using-regular-expressions/
-date:                  2024-02-03T19:17:22.718891-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation des expressions régulières"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:17:22.718891-07:00
+description: "Les expressions r\xE9guli\xE8res (regex) sont un outil puissant pour\
+  \ le traitement de texte, permettant aux programmeurs de rechercher, correspondre\
+  \ et\u2026"
+lastmod: 2024-02-18 23:09:08.769821
+model: gpt-4-0125-preview
+summary: "Les expressions r\xE9guli\xE8res (regex) sont un outil puissant pour le\
+  \ traitement de texte, permettant aux programmeurs de rechercher, correspondre et\u2026"
+title: "Utilisation des expressions r\xE9guli\xE8res"
 ---
 
 {{< edit_this_page >}}

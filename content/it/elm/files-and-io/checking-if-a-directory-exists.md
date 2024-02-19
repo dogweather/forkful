@@ -1,12 +1,13 @@
 ---
-title:                "Verifica dell'esistenza di una directory"
 aliases:
 - /it/elm/checking-if-a-directory-exists/
-date:                  2024-01-19
-simple_title:         "Verifica dell'esistenza di una directory"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/checking-if-a-directory-exists.md"
+date: 2024-01-19
+description: "Controllare l'esistenza di una directory significa verificare se una\
+  \ specifica cartella esiste nel file system. I programmatori lo fanno per evitare\u2026"
+lastmod: 2024-02-18 23:08:55.819615
+summary: "Controllare l'esistenza di una directory significa verificare se una specifica\
+  \ cartella esiste nel file system. I programmatori lo fanno per evitare\u2026"
+title: Verifica dell'esistenza di una directory
 ---
 
 {{< edit_this_page >}}

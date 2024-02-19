@@ -1,14 +1,30 @@
 ---
-title:                "CSV와 함께 작업하기"
 aliases:
 - /ko/c-sharp/working-with-csv/
-date:                  2024-02-03T19:19:14.640446-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "CSV와 함께 작업하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:19:14.640446-07:00
+description: "CSV(\uC27C\uD45C\uB85C \uAD6C\uBD84\uB41C \uAC12) \uD30C\uC77C\uC740\
+  \ \uD45C \uD615\uC2DD \uB370\uC774\uD130\uB97C \uC77C\uBC18 \uD14D\uC2A4\uD2B8\uB85C\
+  \ \uB098\uD0C0\uB0B4\uBA70, \uAC1C\uBCC4 \uAC12\uC744 \uAD6C\uBD84\uD558\uAE30 \uC704\
+  \uD574 \uC27C\uD45C\uB97C \uC0AC\uC6A9\uD558\uB294 \uC77C\uBC18\uC801\uC778 \uB370\
+  \uC774\uD130 \uAD50\uD658 \uD615\uC2DD\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uC774\uB97C \uD1B5\uD574 \uB2E4\uC591\uD55C \uC751\uC6A9 \uD504\
+  \uB85C\uADF8\uB7A8 \uBC0F \uC11C\uBE44\uC2A4\uC5D0\uC11C \uB370\uC774\uD130\uB97C\
+  \ \uC27D\uAC8C \uAC00\uC838\uC624\uAE30, \uB0B4\uBCF4\uB0B4\uAE30 \uBC0F \uC870\uC791\
+  \uD558\uAE30 \uC704\uD574 CSV\u2026"
+lastmod: 2024-02-18 23:09:06.256010
+model: gpt-4-0125-preview
+summary: "CSV(\uC27C\uD45C\uB85C \uAD6C\uBD84\uB41C \uAC12) \uD30C\uC77C\uC740 \uD45C\
+  \ \uD615\uC2DD \uB370\uC774\uD130\uB97C \uC77C\uBC18 \uD14D\uC2A4\uD2B8\uB85C \uB098\
+  \uD0C0\uB0B4\uBA70, \uAC1C\uBCC4 \uAC12\uC744 \uAD6C\uBD84\uD558\uAE30 \uC704\uD574\
+  \ \uC27C\uD45C\uB97C \uC0AC\uC6A9\uD558\uB294 \uC77C\uBC18\uC801\uC778 \uB370\uC774\
+  \uD130 \uAD50\uD658 \uD615\uC2DD\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB4E4\uC740 \uC774\uB97C \uD1B5\uD574 \uB2E4\uC591\uD55C \uC751\uC6A9 \uD504\uB85C\
+  \uADF8\uB7A8 \uBC0F \uC11C\uBE44\uC2A4\uC5D0\uC11C \uB370\uC774\uD130\uB97C \uC27D\
+  \uAC8C \uAC00\uC838\uC624\uAE30, \uB0B4\uBCF4\uB0B4\uAE30 \uBC0F \uC870\uC791\uD558\
+  \uAE30 \uC704\uD574 CSV\u2026"
+title: "CSV\uC640 \uD568\uAED8 \uC791\uC5C5\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

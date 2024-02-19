@@ -1,14 +1,31 @@
 ---
-title:                "기본 인증을 사용하여 HTTP 요청 보내기"
 aliases:
 - /ko/go/sending-an-http-request-with-basic-authentication/
-date:                  2024-02-03T18:09:27.915898-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "기본 인증을 사용하여 HTTP 요청 보내기"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:09:27.915898-07:00
+description: "Go\uC5D0\uC11C \uAE30\uBCF8 \uC778\uC99D\uC744 \uD3EC\uD568\uD55C HTTP\
+  \ \uC694\uCCAD\uC744 \uBCF4\uB0B4\uB294 \uAC83\uC740 Base64\uB85C \uC778\uCF54\uB529\
+  \uB41C \uBB38\uC790\uC5F4 \uD615\uD0DC\uC758 \uC0AC\uC6A9\uC790 \uC774\uB984\uACFC\
+  \ \uBE44\uBC00\uBC88\uD638\uB97C \uD3EC\uD568\uD558\uB294 \uC778\uC99D \uD5E4\uB354\
+  \uB97C \uC694\uCCAD\uC5D0 \uCD94\uAC00\uD558\uB294 \uAC83\uC744 \uC758\uBBF8\uD569\
+  \uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC0AC\uC6A9\uC790 \uAC80\
+  \uC99D\uC744 \uC694\uAD6C\uD558\uB294 \uB9AC\uC18C\uC2A4\uC5D0 \uC811\uADFC\uD558\
+  \uAE30 \uC704\uD574 \uC774 \uBC29\uBC95\uC744 \uC0AC\uC6A9\uD558\uC5EC, \uC560\uD50C\
+  \uB9AC\uCF00\uC774\uC158\uC774 \uC6F9\uC744\u2026"
+lastmod: 2024-02-18 23:09:05.480459
+model: gpt-4-0125-preview
+summary: "Go\uC5D0\uC11C \uAE30\uBCF8 \uC778\uC99D\uC744 \uD3EC\uD568\uD55C HTTP \uC694\
+  \uCCAD\uC744 \uBCF4\uB0B4\uB294 \uAC83\uC740 Base64\uB85C \uC778\uCF54\uB529\uB41C\
+  \ \uBB38\uC790\uC5F4 \uD615\uD0DC\uC758 \uC0AC\uC6A9\uC790 \uC774\uB984\uACFC \uBE44\
+  \uBC00\uBC88\uD638\uB97C \uD3EC\uD568\uD558\uB294 \uC778\uC99D \uD5E4\uB354\uB97C\
+  \ \uC694\uCCAD\uC5D0 \uCD94\uAC00\uD558\uB294 \uAC83\uC744 \uC758\uBBF8\uD569\uB2C8\
+  \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC0AC\uC6A9\uC790 \uAC80\uC99D\
+  \uC744 \uC694\uAD6C\uD558\uB294 \uB9AC\uC18C\uC2A4\uC5D0 \uC811\uADFC\uD558\uAE30\
+  \ \uC704\uD574 \uC774 \uBC29\uBC95\uC744 \uC0AC\uC6A9\uD558\uC5EC, \uC560\uD50C\uB9AC\
+  \uCF00\uC774\uC158\uC774 \uC6F9\uC744\u2026"
+title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD558\uC5EC HTTP \uC694\uCCAD\
+  \ \uBCF4\uB0B4\uAE30"
 ---
 
 {{< edit_this_page >}}

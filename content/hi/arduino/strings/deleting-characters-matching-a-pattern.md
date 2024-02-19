@@ -1,13 +1,28 @@
 ---
-title:                "पैटर्न से मेल खाते अक्षरों को हटाना"
 aliases:
 - /hi/arduino/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:00.907489-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "पैटर्न से मेल खाते अक्षरों को हटाना"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/arduino/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:00.907489-07:00
+description: "\u092A\u0948\u091F\u0930\u094D\u0928 \u0938\u0947 \u092E\u093F\u0932\
+  \u0924\u0947 \u0915\u0948\u0930\u0947\u0915\u094D\u091F\u0930\u094D\u0938 \u0915\
+  \u094B \u0921\u093F\u0932\u0940\u091F \u0915\u0930\u0928\u093E (deleting characters\
+  \ matching a pattern) \u0907\u0938\u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948\
+  , \u0915\u093F\u0938\u0940 \u091F\u0947\u0915\u094D\u0938\u094D\u091F \u092E\u0947\
+  \u0902 \u0938\u0947 \u0916\u093E\u0938 \u0924\u0930\u0939 \u0915\u0947 \u0915\u0948\
+  \u0930\u0947\u0915\u094D\u091F\u0930\u094D\u0938 \u0915\u094B \u0939\u091F\u093E\
+  \u0928\u093E\u0964\u2026"
+lastmod: 2024-02-18 23:09:03.786066
+model: gpt-4-1106-preview
+summary: "\u092A\u0948\u091F\u0930\u094D\u0928 \u0938\u0947 \u092E\u093F\u0932\u0924\
+  \u0947 \u0915\u0948\u0930\u0947\u0915\u094D\u091F\u0930\u094D\u0938 \u0915\u094B\
+  \ \u0921\u093F\u0932\u0940\u091F \u0915\u0930\u0928\u093E (deleting characters matching\
+  \ a pattern) \u0907\u0938\u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948, \u0915\
+  \u093F\u0938\u0940 \u091F\u0947\u0915\u094D\u0938\u094D\u091F \u092E\u0947\u0902\
+  \ \u0938\u0947 \u0916\u093E\u0938 \u0924\u0930\u0939 \u0915\u0947 \u0915\u0948\u0930\
+  \u0947\u0915\u094D\u091F\u0930\u094D\u0938 \u0915\u094B \u0939\u091F\u093E\u0928\
+  \u093E\u0964\u2026"
+title: "\u092A\u0948\u091F\u0930\u094D\u0928 \u0938\u0947 \u092E\u0947\u0932 \u0916\
+  \u093E\u0924\u0947 \u0905\u0915\u094D\u0937\u0930\u094B\u0902 \u0915\u094B \u0939\
+  \u091F\u093E\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

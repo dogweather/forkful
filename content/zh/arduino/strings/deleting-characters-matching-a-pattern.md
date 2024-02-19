@@ -1,14 +1,21 @@
 ---
-title:                "匹配模式删除字符"
 aliases:
 - /zh/arduino/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:38.436762-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "匹配模式删除字符"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:38.436762-07:00
+description: "\u5220\u9664\u5339\u914D\u6A21\u5F0F\u7684\u5B57\u7B26\uFF0C\u5C31\u662F\
+  \u53BB\u6389\u5B57\u7B26\u4E32\u4E2D\u7B26\u5408\u7279\u5B9A\u89C4\u5219\u7684\u5B57\
+  \u7B26\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u4E3A\u4E86\u6570\u636E\u6E05\u6D17\
+  \u3001\u683C\u5F0F\u7EDF\u4E00\uFF0C\u6216\u51CF\u5C11\u4E0D\u5FC5\u8981\u7684\u4FE1\
+  \u606F\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.355814
+model: gpt-4-1106-preview
+summary: "\u5220\u9664\u5339\u914D\u6A21\u5F0F\u7684\u5B57\u7B26\uFF0C\u5C31\u662F\
+  \u53BB\u6389\u5B57\u7B26\u4E32\u4E2D\u7B26\u5408\u7279\u5B9A\u89C4\u5219\u7684\u5B57\
+  \u7B26\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u4E3A\u4E86\u6570\u636E\u6E05\u6D17\
+  \u3001\u683C\u5F0F\u7EDF\u4E00\uFF0C\u6216\u51CF\u5C11\u4E0D\u5FC5\u8981\u7684\u4FE1\
+  \u606F\u3002"
+title: "\u5339\u914D\u6A21\u5F0F\u5220\u9664\u5B57\u7B26"
 ---
 
 {{< edit_this_page >}}

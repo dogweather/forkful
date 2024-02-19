@@ -1,14 +1,18 @@
 ---
-title:                "Extrahera delsträngar"
 aliases:
 - /sv/google-apps-script/extracting-substrings/
-date:                  2024-02-01T21:53:07.739278-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Extrahera delsträngar"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/google-apps-script/extracting-substrings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:07.739278-07:00
+description: "Extrahering av substr\xE4ngar inneb\xE4r att man tar en del av en str\xE4\
+  ng - i princip skapar en ny str\xE4ng fr\xE5n en del av en befintlig s\xE5dan. Programmerare\
+  \ g\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.366562
+model: gpt-4-0125-preview
+summary: "Extrahering av substr\xE4ngar inneb\xE4r att man tar en del av en str\xE4\
+  ng - i princip skapar en ny str\xE4ng fr\xE5n en del av en befintlig s\xE5dan. Programmerare\
+  \ g\xF6r\u2026"
+title: "Extrahera delstr\xE4ngar"
 ---
 
 {{< edit_this_page >}}

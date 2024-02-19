@@ -1,13 +1,16 @@
 ---
-title:                "Väliaikaistiedoston luominen"
 aliases:
 - /fi/powershell/creating-a-temporary-file/
-date:                  2024-01-20T17:41:03.601210-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Väliaikaistiedoston luominen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:03.601210-07:00
+description: "Tilap\xE4iset tiedostot ovat v\xE4liaikaisia tiedostoja, joita k\xE4\
+  ytet\xE4\xE4n dataa k\xE4sitelless\xE4 tai tallennettaessa. Ne ovat hy\xF6dyllisi\xE4\
+  , kun tarvitaan nopeaa,\u2026"
+lastmod: 2024-02-18 23:09:07.874898
+model: gpt-4-1106-preview
+summary: "Tilap\xE4iset tiedostot ovat v\xE4liaikaisia tiedostoja, joita k\xE4ytet\xE4\
+  \xE4n dataa k\xE4sitelless\xE4 tai tallennettaessa. Ne ovat hy\xF6dyllisi\xE4, kun\
+  \ tarvitaan nopeaa,\u2026"
+title: "V\xE4liaikaistiedoston luominen"
 ---
 
 {{< edit_this_page >}}

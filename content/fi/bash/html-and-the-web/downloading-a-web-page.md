@@ -1,13 +1,14 @@
 ---
-title:                "Verkkosivun lataaminen"
 aliases:
 - /fi/bash/downloading-a-web-page/
-date:                  2024-01-20T17:43:14.143267-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Verkkosivun lataaminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/downloading-a-web-page.md"
+date: 2024-01-20 17:43:14.143267-07:00
+description: "Ladataan verkkosivun sis\xE4lt\xF6 palvelimelta omalle koneelle. Ohjelmoijat\
+  \ tekev\xE4t t\xE4m\xE4n, kun tarvitaan tietoa automaattisesti tai testataan sovelluksia."
+lastmod: 2024-02-18 23:09:07.803266
+model: gpt-4-1106-preview
+summary: "Ladataan verkkosivun sis\xE4lt\xF6 palvelimelta omalle koneelle. Ohjelmoijat\
+  \ tekev\xE4t t\xE4m\xE4n, kun tarvitaan tietoa automaattisesti tai testataan sovelluksia."
+title: Verkkosivun lataaminen
 ---
 
 {{< edit_this_page >}}

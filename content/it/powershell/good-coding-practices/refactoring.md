@@ -1,13 +1,14 @@
 ---
-title:                "Rifattorizzazione"
 aliases:
 - /it/powershell/refactoring/
-date:                  2024-01-26T03:37:37.045031-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rifattorizzazione"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/refactoring.md"
+date: 2024-01-26 03:37:37.045031-07:00
+description: "Il refactoring \xE8 il processo di ristrutturazione del codice informatico\
+  \ esistente senza modificarne il comportamento esterno, con l'obiettivo di\u2026"
+lastmod: 2024-02-18 23:08:56.102396
+model: gpt-4-0125-preview
+summary: "Il refactoring \xE8 il processo di ristrutturazione del codice informatico\
+  \ esistente senza modificarne il comportamento esterno, con l'obiettivo di\u2026"
+title: Rifattorizzazione
 ---
 
 {{< edit_this_page >}}

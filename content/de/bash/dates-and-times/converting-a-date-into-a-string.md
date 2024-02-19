@@ -1,13 +1,16 @@
 ---
-title:                "Datum in einen String umwandeln"
 aliases:
 - /de/bash/converting-a-date-into-a-string/
-date:                  2024-01-20T17:35:51.195648-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Datum in einen String umwandeln"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:35:51.195648-07:00
+description: "Das Umwandeln eines Datums in einen String bedeutet, ein Datum in Textform\
+  \ auszudr\xFCcken. Programmierer nutzen dies f\xFCr eine bessere Lesbarkeit und\
+  \ um\u2026"
+lastmod: 2024-02-18 23:09:05.066597
+model: gpt-4-1106-preview
+summary: "Das Umwandeln eines Datums in einen String bedeutet, ein Datum in Textform\
+  \ auszudr\xFCcken. Programmierer nutzen dies f\xFCr eine bessere Lesbarkeit und\
+  \ um\u2026"
+title: Datum in einen String umwandeln
 ---
 
 {{< edit_this_page >}}

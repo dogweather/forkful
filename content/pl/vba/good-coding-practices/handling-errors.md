@@ -1,14 +1,18 @@
 ---
-title:                "Obsługa błędów"
 aliases:
 - /pl/vba/handling-errors/
-date:                  2024-02-01T21:55:21.561575-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Obsługa błędów"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/vba/handling-errors.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:21.561575-07:00
+description: "Obs\u0142uga b\u0142\u0119d\xF3w w Visual Basic dla Aplikacji (VBA)\
+  \ odnosi si\u0119 do procesu przewidywania, wykrywania i rozwi\u0105zywania b\u0142\
+  \u0119d\xF3w programowania, aplikacji lub\u2026"
+lastmod: 2024-02-18 23:08:49.442014
+model: gpt-4-0125-preview
+summary: "Obs\u0142uga b\u0142\u0119d\xF3w w Visual Basic dla Aplikacji (VBA) odnosi\
+  \ si\u0119 do procesu przewidywania, wykrywania i rozwi\u0105zywania b\u0142\u0119\
+  d\xF3w programowania, aplikacji lub\u2026"
+title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 ---
 
 {{< edit_this_page >}}

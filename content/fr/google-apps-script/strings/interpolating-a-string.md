@@ -1,14 +1,18 @@
 ---
-title:                "Interpolation d'une chaîne de caractères"
 aliases:
 - /fr/google-apps-script/interpolating-a-string/
-date:                  2024-02-01T21:55:25.348863-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interpolation d'une chaîne de caractères"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/google-apps-script/interpolating-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:25.348863-07:00
+description: "L'interpolation de cha\xEEnes dans Google Apps Script permet d'incorporer\
+  \ dynamiquement des expressions au sein des cha\xEEnes, facilitant ainsi la cr\xE9\
+  ation\u2026"
+lastmod: 2024-02-18 23:09:08.270649
+model: gpt-4-0125-preview
+summary: "L'interpolation de cha\xEEnes dans Google Apps Script permet d'incorporer\
+  \ dynamiquement des expressions au sein des cha\xEEnes, facilitant ainsi la cr\xE9\
+  ation\u2026"
+title: "Interpolation d'une cha\xEEne de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

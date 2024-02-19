@@ -1,14 +1,16 @@
 ---
-title:                "Een datum in de toekomst of verleden berekenen"
 aliases:
 - /nl/go/calculating-a-date-in-the-future-or-past/
-date:                  2024-02-03T17:53:04.971704-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een datum in de toekomst of verleden berekenen"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:04.971704-07:00
+description: "Het berekenen van een datum in de toekomst of het verleden in Go omvat\
+  \ het manipuleren van datum- en tijdwaarden om een specifiek punt ten opzichte van\u2026"
+lastmod: 2024-02-18 23:09:01.353542
+model: gpt-4-0125-preview
+summary: "Het berekenen van een datum in de toekomst of het verleden in Go omvat het\
+  \ manipuleren van datum- en tijdwaarden om een specifiek punt ten opzichte van\u2026"
+title: Een datum in de toekomst of verleden berekenen
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,18 @@
 ---
-title:                "Verwendung von assoziativen Arrays"
 aliases:
 - /de/rust/using-associative-arrays/
-date:                  2024-01-30T19:12:47.346598-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verwendung von assoziativen Arrays"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:47.346598-07:00
+description: "Assoziative Arrays oder, wie Rustaceaner sie nennen, \"Hash Maps\",\
+  \ sind Sammlungen, die Daten in Schl\xFCssel-Wert-Paaren speichern. Programmierer\
+  \ nutzen sie\u2026"
+lastmod: 2024-02-18 23:09:04.634111
+model: gpt-4-0125-preview
+summary: "Assoziative Arrays oder, wie Rustaceaner sie nennen, \"Hash Maps\", sind\
+  \ Sammlungen, die Daten in Schl\xFCssel-Wert-Paaren speichern. Programmierer nutzen\
+  \ sie\u2026"
+title: Verwendung von assoziativen Arrays
 ---
 
 {{< edit_this_page >}}

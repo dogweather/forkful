@@ -1,14 +1,18 @@
 ---
-title:                "Skicka en HTTP-begäran med grundläggande autentisering"
 aliases:
 - /sv/vba/sending-an-http-request-with-basic-authentication/
-date:                  2024-02-01T22:02:14.063287-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skicka en HTTP-begäran med grundläggande autentisering"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:02:14.063287-07:00
+description: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering i Visual\
+  \ Basic for Applications (VBA) handlar om att komma \xE5t webbresurser som skyddas\
+  \ av\u2026"
+lastmod: 2024-02-18 23:08:51.626328
+model: gpt-4-0125-preview
+summary: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering i Visual\
+  \ Basic for Applications (VBA) handlar om att komma \xE5t webbresurser som skyddas\
+  \ av\u2026"
+title: "Skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering"
 ---
 
 {{< edit_this_page >}}

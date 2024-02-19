@@ -1,14 +1,18 @@
 ---
-title:                "Praca z plikami CSV"
 aliases:
 - /pl/go/working-with-csv/
-date:                  2024-02-03T18:11:51.342769-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z plikami CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:11:51.342769-07:00
+description: "Format warto\u015Bci rozdzielanych przecinkami (CSV) jest wszechobecny\
+  \ w wymianie danych ze wzgl\u0119du na swoj\u0105 prostot\u0119 i \u0142atwo\u015B\
+  \u0107 integracji z wi\u0119kszo\u015Bci\u0105\u2026"
+lastmod: 2024-02-18 23:08:49.123706
+model: gpt-4-0125-preview
+summary: "Format warto\u015Bci rozdzielanych przecinkami (CSV) jest wszechobecny w\
+  \ wymianie danych ze wzgl\u0119du na swoj\u0105 prostot\u0119 i \u0142atwo\u015B\
+  \u0107 integracji z wi\u0119kszo\u015Bci\u0105\u2026"
+title: Praca z plikami CSV
 ---
 
 {{< edit_this_page >}}

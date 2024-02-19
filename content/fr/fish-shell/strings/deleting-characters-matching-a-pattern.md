@@ -1,13 +1,16 @@
 ---
-title:                "Suppression de caractères correspondant à un motif"
 aliases:
 - /fr/fish-shell/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:06.281833-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Suppression de caractères correspondant à un motif"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:06.281833-07:00
+description: "Supprimer des caract\xE8res selon un motif, c'est retirer de notre texte\
+  \ des bouts sp\xE9cifiques qui suivent une r\xE8gle pr\xE9cise. Les programmeurs\
+  \ y recourent\u2026"
+lastmod: 2024-02-18 23:09:09.285795
+model: gpt-4-1106-preview
+summary: "Supprimer des caract\xE8res selon un motif, c'est retirer de notre texte\
+  \ des bouts sp\xE9cifiques qui suivent une r\xE8gle pr\xE9cise. Les programmeurs\
+  \ y recourent\u2026"
+title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 ---
 
 {{< edit_this_page >}}

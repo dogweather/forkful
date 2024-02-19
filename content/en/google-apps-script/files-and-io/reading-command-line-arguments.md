@@ -1,12 +1,14 @@
 ---
-title:                "Reading command line arguments"
 aliases:
 - /en/google-apps-script/reading-command-line-arguments/
-date:                  2024-02-01T21:12:11.076997-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Reading command line arguments"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/google-apps-script/reading-command-line-arguments.md"
+date: 2024-02-01 21:12:11.076997-07:00
+description: "Reading command line arguments in Google Apps Script is a bit of a misnomer\
+  \ because, unlike traditional command-line interfaces in programming languages\u2026"
+lastmod: 2024-02-18 23:09:10.654892
+model: gpt-4-0125-preview
+summary: "Reading command line arguments in Google Apps Script is a bit of a misnomer\
+  \ because, unlike traditional command-line interfaces in programming languages\u2026"
+title: Reading command line arguments
 ---
 
 {{< edit_this_page >}}

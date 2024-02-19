@@ -1,13 +1,12 @@
 ---
-title:                "Pobieranie strony internetowej"
 aliases:
 - /pl/python/downloading-a-web-page/
-date:                  2024-01-20T17:44:33.849526-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Pobieranie strony internetowej"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/downloading-a-web-page.md"
+date: 2024-01-20 17:44:33.849526-07:00
+description: '"'
+lastmod: 2024-02-18 23:08:49.221631
+model: gpt-4-1106-preview
+summary: '"'
+title: Pobieranie strony internetowej
 ---
 
 {{< edit_this_page >}}

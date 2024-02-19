@@ -1,13 +1,14 @@
 ---
-title:                "Virheenjäljitystulosteiden tulostaminen"
 aliases:
 - /fi/lua/printing-debug-output/
-date:                  2024-01-20T17:53:13.586530-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheenjäljitystulosteiden tulostaminen"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/printing-debug-output.md"
+date: 2024-01-20 17:53:13.586530-07:00
+description: "Mik\xE4 se on ja miksi ihmeess\xE4? Koodin debuggaus eli vianetsint\xE4\
+  \ on prosessi, jossa etsit\xE4\xE4n ja korjataan ohjelmakoodin virheit\xE4. Tulostamalla\u2026"
+lastmod: 2024-02-18 23:09:07.759727
+model: gpt-4-1106-preview
+summary: "Mik\xE4 se on ja miksi ihmeess\xE4? Koodin debuggaus eli vianetsint\xE4\
+  \ on prosessi, jossa etsit\xE4\xE4n ja korjataan ohjelmakoodin virheit\xE4. Tulostamalla\u2026"
+title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 ---
 
 {{< edit_this_page >}}

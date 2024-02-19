@@ -1,13 +1,16 @@
 ---
-title:                "Tekstin etsiminen ja korvaaminen"
 aliases:
 - /fi/lua/searching-and-replacing-text/
-date:                  2024-01-20T17:58:20.094070-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tekstin etsiminen ja korvaaminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:20.094070-07:00
+description: "Etsim\xE4ll\xE4 ja korvaamalla teksti\xE4 voit muokata merkkijonoja\
+  \ nopeasti. Koodareille t\xE4m\xE4 on keskeist\xE4, kun p\xE4ivitet\xE4\xE4n dataa\
+  \ tai siistit\xE4\xE4n sy\xF6tett\xE4."
+lastmod: 2024-02-18 23:09:07.741542
+model: gpt-4-1106-preview
+summary: "Etsim\xE4ll\xE4 ja korvaamalla teksti\xE4 voit muokata merkkijonoja nopeasti.\
+  \ Koodareille t\xE4m\xE4 on keskeist\xE4, kun p\xE4ivitet\xE4\xE4n dataa tai siistit\xE4\
+  \xE4n sy\xF6tett\xE4."
+title: Tekstin etsiminen ja korvaaminen
 ---
 
 {{< edit_this_page >}}

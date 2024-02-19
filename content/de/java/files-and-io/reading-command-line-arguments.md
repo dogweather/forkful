@@ -1,13 +1,14 @@
 ---
-title:                "Lesen von Kommandozeilenargumenten"
 aliases:
 - /de/java/reading-command-line-arguments/
-date:                  2024-01-20T17:56:01.313692-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lesen von Kommandozeilenargumenten"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:01.313692-07:00
+description: "Kommandozeilenargumente erm\xF6glichen es Benutzern, Werte oder Verhaltensweisen\
+  \ einer Java-Anwendung beim Start zu steuern. Programmierer nutzen sie, um\u2026"
+lastmod: 2024-02-18 23:09:04.753593
+model: gpt-4-1106-preview
+summary: "Kommandozeilenargumente erm\xF6glichen es Benutzern, Werte oder Verhaltensweisen\
+  \ einer Java-Anwendung beim Start zu steuern. Programmierer nutzen sie, um\u2026"
+title: Lesen von Kommandozeilenargumenten
 ---
 
 {{< edit_this_page >}}

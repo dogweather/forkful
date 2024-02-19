@@ -1,14 +1,18 @@
 ---
-title:                "Używanie tablic asocjacyjnych"
 aliases:
 - /pl/c/using-associative-arrays/
-date:                  2024-02-03T18:10:55.008600-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Używanie tablic asocjacyjnych"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/using-associative-arrays.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:55.008600-07:00
+description: "Tablice asocjacyjne, znane w innych j\u0119zykach jako mapy lub s\u0142\
+  owniki, s\u0105 parami klucz-warto\u015B\u0107 u\u017Cywanymi do efektywnego wyszukiwania\
+  \ i manipulowania danymi.\u2026"
+lastmod: 2024-02-18 23:08:50.072265
+model: gpt-4-0125-preview
+summary: "Tablice asocjacyjne, znane w innych j\u0119zykach jako mapy lub s\u0142\
+  owniki, s\u0105 parami klucz-warto\u015B\u0107 u\u017Cywanymi do efektywnego wyszukiwania\
+  \ i manipulowania danymi.\u2026"
+title: "U\u017Cywanie tablic asocjacyjnych"
 ---
 
 {{< edit_this_page >}}

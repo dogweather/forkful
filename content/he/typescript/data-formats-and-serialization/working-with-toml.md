@@ -1,13 +1,26 @@
 ---
-title:                "עבודה עם TOML"
 aliases:
 - /he/typescript/working-with-toml/
-date:                  2024-01-26T04:27:36.584402-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "עבודה עם TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/typescript/working-with-toml.md"
+date: 2024-01-26 04:27:36.584402-07:00
+description: "TOML, \u05D4\u05DE\u05E7\u05D5\u05E6\u05E8 \u05E9\u05DC Tom's Obvious,\
+  \ Minimal Language, \u05D4\u05D5\u05D0 \u05E4\u05D5\u05E8\u05DE\u05D8 \u05E7\u05D9\
+  \u05D3\u05D5\u05D3 \u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05D3\u05D5\u05DE\u05D4\
+  \ \u05DC-JSON \u05D0\u05D5 YAML. \u05EA\u05DB\u05E0\u05EA\u05D9\u05DD \u05DE\u05E9\
+  \u05EA\u05DE\u05E9\u05D9\u05DD \u05D1\u05D5 \u05D1\u05E9\u05DC \u05E7\u05E8\u05D9\
+  \u05D0\u05D5\u05EA\u05D5 \u05D4\u05D0\u05E0\u05D5\u05E9\u05D9\u05EA \u05D5\u05DE\
+  \u05D9\u05E4\u05D5\u05D9\u05D5 \u05D4\u05D9\u05E9\u05D9\u05E8 \u05DC\u05E1\u05D5\
+  \u05D2\u05D9\u2026"
+lastmod: 2024-02-18 23:08:52.595231
+model: gpt-4-0125-preview
+summary: "TOML, \u05D4\u05DE\u05E7\u05D5\u05E6\u05E8 \u05E9\u05DC Tom's Obvious, Minimal\
+  \ Language, \u05D4\u05D5\u05D0 \u05E4\u05D5\u05E8\u05DE\u05D8 \u05E7\u05D9\u05D3\
+  \u05D5\u05D3 \u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05D3\u05D5\u05DE\u05D4 \u05DC\
+  -JSON \u05D0\u05D5 YAML. \u05EA\u05DB\u05E0\u05EA\u05D9\u05DD \u05DE\u05E9\u05EA\
+  \u05DE\u05E9\u05D9\u05DD \u05D1\u05D5 \u05D1\u05E9\u05DC \u05E7\u05E8\u05D9\u05D0\
+  \u05D5\u05EA\u05D5 \u05D4\u05D0\u05E0\u05D5\u05E9\u05D9\u05EA \u05D5\u05DE\u05D9\
+  \u05E4\u05D5\u05D9\u05D5 \u05D4\u05D9\u05E9\u05D9\u05E8 \u05DC\u05E1\u05D5\u05D2\
+  \u05D9\u2026"
+title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD TOML"
 ---
 
 {{< edit_this_page >}}

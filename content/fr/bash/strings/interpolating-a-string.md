@@ -1,13 +1,16 @@
 ---
-title:                "Interpolation de chaînes de caractères"
 aliases:
 - /fr/bash/interpolating-a-string/
-date:                  2024-01-20T17:50:18.452223-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolation de chaînes de caractères"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/interpolating-a-string.md"
+date: 2024-01-20 17:50:18.452223-07:00
+description: "Interpoler une cha\xEEne, c'est ins\xE9rer des valeurs de variables\
+  \ ou d'expressions directement dans le texte. C'est ultra-pratique pour int\xE9\
+  grer des donn\xE9es\u2026"
+lastmod: 2024-02-18 23:09:09.001372
+model: gpt-4-1106-preview
+summary: "Interpoler une cha\xEEne, c'est ins\xE9rer des valeurs de variables ou d'expressions\
+  \ directement dans le texte. C'est ultra-pratique pour int\xE9grer des donn\xE9\
+  es\u2026"
+title: "Interpolation de cha\xEEnes de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

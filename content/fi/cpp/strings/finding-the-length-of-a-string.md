@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonon pituuden selvittäminen"
 aliases:
 - /fi/cpp/finding-the-length-of-a-string/
-date:                  2024-01-20T17:46:50.521927-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon pituuden selvittäminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:46:50.521927-07:00
+description: "Stringin pituuden selvitt\xE4minen tarkoittaa merkkijonossa olevien\
+  \ merkkien m\xE4\xE4r\xE4n laskemista. Ohjelmoijat tekev\xE4t t\xE4m\xE4n ymm\xE4\
+  rt\xE4\xE4kseen datan kokoa ja\u2026"
+lastmod: 2024-02-18 23:09:07.934120
+model: gpt-4-1106-preview
+summary: "Stringin pituuden selvitt\xE4minen tarkoittaa merkkijonossa olevien merkkien\
+  \ m\xE4\xE4r\xE4n laskemista. Ohjelmoijat tekev\xE4t t\xE4m\xE4n ymm\xE4rt\xE4\xE4\
+  kseen datan kokoa ja\u2026"
+title: "Merkkijonon pituuden selvitt\xE4minen"
 ---
 
 {{< edit_this_page >}}

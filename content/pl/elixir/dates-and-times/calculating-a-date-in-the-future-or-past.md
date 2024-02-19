@@ -1,13 +1,16 @@
 ---
-title:                "Obliczanie daty w przyszłości lub przeszłości"
 aliases:
 - /pl/elixir/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:30:55.747152-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:30:55.747152-07:00
+description: "Co to jest i dlaczego? Obliczanie daty w przysz\u0142o\u015Bci albo\
+  \ przesz\u0142o\u015Bci to ustalanie nowych dat na podstawie zadanej. Programi\u015B\
+  ci robi\u0105 to dla organizacji\u2026"
+lastmod: 2024-02-18 23:08:49.319584
+model: gpt-4-1106-preview
+summary: "Co to jest i dlaczego? Obliczanie daty w przysz\u0142o\u015Bci albo przesz\u0142\
+  o\u015Bci to ustalanie nowych dat na podstawie zadanej. Programi\u015Bci robi\u0105\
+  \ to dla organizacji\u2026"
+title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 ---
 
 {{< edit_this_page >}}

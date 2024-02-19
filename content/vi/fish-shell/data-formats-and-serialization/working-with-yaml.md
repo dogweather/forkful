@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với YAML"
 aliases:
 - /vi/fish-shell/working-with-yaml/
-date:                  2024-01-28T22:12:07.756559-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với YAML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/working-with-yaml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:07.756559-07:00
+description: "YAML, \"YAML Ain't Markup Language\" (YAML kh\xF4ng ph\u1EA3i l\xE0\
+  \ Ng\xF4n ng\u1EEF \u0110\xE1nh d\u1EA5u), l\xE0 m\u1ED9t ti\xEAu chu\u1EA9n m\xE3\
+  \ h\xF3a d\u1EEF li\u1EC7u th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi, c\xF3\
+  \ k\xFD hi\u1EC7u \u01B0u vi\u1EC7t\u2026"
+lastmod: 2024-02-18 23:08:51.208945
+model: gpt-4-0125-preview
+summary: "YAML, \"YAML Ain't Markup Language\" (YAML kh\xF4ng ph\u1EA3i l\xE0 Ng\xF4\
+  n ng\u1EEF \u0110\xE1nh d\u1EA5u), l\xE0 m\u1ED9t ti\xEAu chu\u1EA9n m\xE3 h\xF3\
+  a d\u1EEF li\u1EC7u th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi, c\xF3 k\xFD\
+  \ hi\u1EC7u \u01B0u vi\u1EC7t\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 ---
 
 {{< edit_this_page >}}

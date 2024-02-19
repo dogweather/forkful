@@ -1,15 +1,20 @@
 ---
-title:                "Xử lý lỗi"
 aliases:
 - /vi/php/handling-errors/
-date:                  2024-01-28T22:02:26.991365-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Xử lý lỗi"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/php/handling-errors.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:02:26.991365-07:00
+description: "X\u1EED l\xFD l\u1ED7i trong PHP l\xE0 v\u1EC1 qu\u1EA3n l\xFD v\xE0\
+  \ ph\u1EA3n \u1EE9ng v\u1EDBi c\xE1c \u0111i\u1EC1u ki\u1EC7n l\xE0m gi\xE1n \u0111\
+  o\u1EA1n d\xF2ng ch\u1EA3y b\xECnh th\u01B0\u1EDDng c\u1EE7a ch\u01B0\u01A1ng tr\xEC\
+  nh, nh\u01B0 t\u1EC7p tin b\u1ECB thi\u1EBFu ho\u1EB7c d\u1EEF li\u1EC7u\u2026"
+lastmod: 2024-02-18 23:08:50.799374
+model: gpt-4-0125-preview
+summary: "X\u1EED l\xFD l\u1ED7i trong PHP l\xE0 v\u1EC1 qu\u1EA3n l\xFD v\xE0 ph\u1EA3\
+  n \u1EE9ng v\u1EDBi c\xE1c \u0111i\u1EC1u ki\u1EC7n l\xE0m gi\xE1n \u0111o\u1EA1\
+  n d\xF2ng ch\u1EA3y b\xECnh th\u01B0\u1EDDng c\u1EE7a ch\u01B0\u01A1ng tr\xECnh,\
+  \ nh\u01B0 t\u1EC7p tin b\u1ECB thi\u1EBFu ho\u1EB7c d\u1EEF li\u1EC7u\u2026"
+title: "X\u1EED l\xFD l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

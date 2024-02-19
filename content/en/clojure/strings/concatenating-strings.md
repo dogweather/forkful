@@ -1,13 +1,15 @@
 ---
-title:                "Concatenating strings"
 aliases:
 - /en/clojure/concatenating-strings/
-date:                  2024-01-20T17:34:29.220521-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenating strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/concatenating-strings.md"
+date: 2024-01-20 17:34:29.220521-07:00
+description: "Concatenating strings means sticking them end to end - \"hello\" + \"\
+  world\" becomes \"helloworld\". Programmers do this to build up text, like URLs,\
+  \ messages,\u2026"
+lastmod: 2024-02-18 23:09:10.715479
+model: gpt-4-1106-preview
+summary: "Concatenating strings means sticking them end to end - \"hello\" + \"world\"\
+  \ becomes \"helloworld\". Programmers do this to build up text, like URLs, messages,\u2026"
+title: Concatenating strings
 ---
 
 {{< edit_this_page >}}

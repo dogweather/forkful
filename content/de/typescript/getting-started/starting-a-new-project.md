@@ -1,13 +1,14 @@
 ---
-title:                "Einen neuen Projekt starten"
 aliases:
 - /de/typescript/starting-a-new-project/
-date:                  2024-01-20T18:04:43.412537-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Einen neuen Projekt starten"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/starting-a-new-project.md"
+date: 2024-01-20 18:04:43.412537-07:00
+description: "Ein neues Projekt zu beginnen bedeutet, eine frische Codebasis anzulegen,\
+  \ um eine Idee oder L\xF6sung umzusetzen. Programmierer starten neue Projekte, um\u2026"
+lastmod: 2024-02-18 23:09:04.597320
+model: gpt-4-1106-preview
+summary: "Ein neues Projekt zu beginnen bedeutet, eine frische Codebasis anzulegen,\
+  \ um eine Idee oder L\xF6sung umzusetzen. Programmierer starten neue Projekte, um\u2026"
+title: Einen neuen Projekt starten
 ---
 
 {{< edit_this_page >}}

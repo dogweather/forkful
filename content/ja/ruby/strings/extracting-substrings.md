@@ -1,14 +1,21 @@
 ---
-title:                "部分文字列の抽出"
 aliases:
 - /ja/ruby/extracting-substrings/
-date:                  2024-01-20T17:46:31.677926-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "部分文字列の抽出"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/extracting-substrings.md"
+date: 2024-01-20 17:46:31.677926-07:00
+description: "\u6587\u5B57\u5217\u304B\u3089\u7279\u5B9A\u306E\u90E8\u5206\u3092\u629C\
+  \u304D\u51FA\u3059\u3053\u3068\u3092\u3001\u30B5\u30D6\u30B9\u30C8\u30EA\u30F3\u30B0\
+  \u306E\u62BD\u51FA\u3068\u8A00\u3044\u307E\u3059\u3002\u30C7\u30FC\u30BF\u51E6\u7406\
+  \u3084\u691C\u7D22\u3067\u6B63\u78BA\u306A\u60C5\u5831\u3092\u5F97\u308B\u305F\u3081\
+  \u306B\u884C\u3044\u307E\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.378812
+model: gpt-4-1106-preview
+summary: "\u6587\u5B57\u5217\u304B\u3089\u7279\u5B9A\u306E\u90E8\u5206\u3092\u629C\
+  \u304D\u51FA\u3059\u3053\u3068\u3092\u3001\u30B5\u30D6\u30B9\u30C8\u30EA\u30F3\u30B0\
+  \u306E\u62BD\u51FA\u3068\u8A00\u3044\u307E\u3059\u3002\u30C7\u30FC\u30BF\u51E6\u7406\
+  \u3084\u691C\u7D22\u3067\u6B63\u78BA\u306A\u60C5\u5831\u3092\u5F97\u308B\u305F\u3081\
+  \u306B\u884C\u3044\u307E\u3059\u3002"
+title: "\u90E8\u5206\u6587\u5B57\u5217\u306E\u62BD\u51FA"
 ---
 
 {{< edit_this_page >}}

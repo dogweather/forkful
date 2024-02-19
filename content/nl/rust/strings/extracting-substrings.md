@@ -1,15 +1,17 @@
 ---
-title:                "Substrings extraheren"
 aliases:
 - /nl/rust/extracting-substrings/
-date:                  2024-01-28T22:00:12.574190-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Substrings extraheren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/extracting-substrings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:00:12.574190-07:00
+description: "Substrings extraheren betekent een kleiner stuk uit een grotere string\
+  \ halen\u2014een beetje zoals het snijden van een cake om het stuk te krijgen dat\
+  \ je echt\u2026"
+lastmod: 2024-02-18 23:09:01.607079
+model: gpt-4-0125-preview
+summary: "Substrings extraheren betekent een kleiner stuk uit een grotere string halen\u2014\
+  een beetje zoals het snijden van een cake om het stuk te krijgen dat je echt\u2026"
+title: Substrings extraheren
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Usuwanie cudzysłowów z ciągu znaków"
 aliases:
 - /pl/haskell/removing-quotes-from-a-string/
-date:                  2024-01-26T03:39:46.648636-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usuwanie cudzysłowów z ciągu znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:39:46.648636-07:00
+description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza pozbycie\
+  \ si\u0119 wszelkich znak\xF3w cudzys\u0142owu\u2014pojedynczych (' ') lub podw\xF3\
+  jnych (\" \")\u2014kt\xF3re s\u0105 cz\u0119\u015Bci\u0105 danych\u2026"
+lastmod: 2024-02-18 23:08:49.641845
+model: gpt-4-0125-preview
+summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza pozbycie si\u0119\
+  \ wszelkich znak\xF3w cudzys\u0142owu\u2014pojedynczych (' ') lub podw\xF3jnych\
+  \ (\" \")\u2014kt\xF3re s\u0105 cz\u0119\u015Bci\u0105 danych\u2026"
+title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

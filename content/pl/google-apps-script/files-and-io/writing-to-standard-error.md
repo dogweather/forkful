@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie do standardowego błędu"
 aliases:
 - /pl/google-apps-script/writing-to-standard-error/
-date:                  2024-02-01T22:08:57.402354-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie do standardowego błędu"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/writing-to-standard-error.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:08:57.402354-07:00
+description: "Pisanie do standardowego b\u0142\u0119du (stderr) w j\u0119zykach programowania\
+  \ dotyczy kierowania komunikat\xF3w o b\u0142\u0119dach i diagnostyki do oddzielnego\
+  \ strumienia,\u2026"
+lastmod: 2024-02-18 23:08:49.170562
+model: gpt-4-0125-preview
+summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w j\u0119zykach programowania\
+  \ dotyczy kierowania komunikat\xF3w o b\u0142\u0119dach i diagnostyki do oddzielnego\
+  \ strumienia,\u2026"
+title: "Pisanie do standardowego b\u0142\u0119du"
 ---
 
 {{< edit_this_page >}}

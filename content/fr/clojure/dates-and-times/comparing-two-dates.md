@@ -1,13 +1,16 @@
 ---
-title:                "Comparer deux dates"
 aliases:
 - /fr/clojure/comparing-two-dates/
-date:                  2024-01-20T17:32:26.165810-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Comparer deux dates"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/comparing-two-dates.md"
+date: 2024-01-20 17:32:26.165810-07:00
+description: "Comparer deux dates, c'est \xE9valuer leur ordre chronologique relatif.\
+  \ Les d\xE9veloppeurs le font pour trier des \xE9v\xE9nements, g\xE9rer des d\xE9\
+  lais ou v\xE9rifier des\u2026"
+lastmod: 2024-02-18 23:09:08.400385
+model: gpt-4-1106-preview
+summary: "Comparer deux dates, c'est \xE9valuer leur ordre chronologique relatif.\
+  \ Les d\xE9veloppeurs le font pour trier des \xE9v\xE9nements, g\xE9rer des d\xE9\
+  lais ou v\xE9rifier des\u2026"
+title: Comparer deux dates
 ---
 
 {{< edit_this_page >}}

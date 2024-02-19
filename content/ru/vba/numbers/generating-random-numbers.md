@@ -1,14 +1,31 @@
 ---
-title:                "Генерация случайных чисел"
 aliases:
 - /ru/vba/generating-random-numbers/
-date:                  2024-02-01T21:54:37.603847-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Генерация случайных чисел"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/vba/generating-random-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:37.603847-07:00
+description: "\u0413\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u044F \u0441\u043B\u0443\
+  \u0447\u0430\u0439\u043D\u044B\u0445 \u0447\u0438\u0441\u0435\u043B \u0432 Visual\
+  \ Basic for Applications (VBA) \u043F\u043E\u0437\u0432\u043E\u043B\u044F\u0435\u0442\
+  \ \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\u043C \u0438\u043C\u0438\
+  \u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u043F\u0440\u043E\u0446\u0435\u0441\
+  \u0441\u044B \u0441 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u0430\u043C\u0438\
+  \ \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E\u0441\u0442\u0438 \u0438\u043B\
+  \u0438 \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u0447\u0438\u0432\u043E\u0441\u0442\
+  \u0438,\u2026"
+lastmod: 2024-02-18 23:08:56.781665
+model: gpt-4-0125-preview
+summary: "\u0413\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u044F \u0441\u043B\u0443\
+  \u0447\u0430\u0439\u043D\u044B\u0445 \u0447\u0438\u0441\u0435\u043B \u0432 Visual\
+  \ Basic for Applications (VBA) \u043F\u043E\u0437\u0432\u043E\u043B\u044F\u0435\u0442\
+  \ \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430\u043C \u0438\u043C\u0438\
+  \u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u043F\u0440\u043E\u0446\u0435\u0441\
+  \u0441\u044B \u0441 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u0430\u043C\u0438\
+  \ \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E\u0441\u0442\u0438 \u0438\u043B\
+  \u0438 \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u0447\u0438\u0432\u043E\u0441\u0442\
+  \u0438,\u2026"
+title: "\u0413\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u044F \u0441\u043B\u0443\u0447\
+  \u0430\u0439\u043D\u044B\u0445 \u0447\u0438\u0441\u0435\u043B"
 ---
 
 {{< edit_this_page >}}

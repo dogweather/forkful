@@ -1,13 +1,14 @@
 ---
-title:                "Printing debug output"
 aliases:
 - /en/python/printing-debug-output/
-date:                  2024-01-20T17:53:05.673374-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Printing debug output"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/printing-debug-output.md"
+date: 2024-01-20 17:53:05.673374-07:00
+description: "Printing debug output is like having a conversation with your code to\
+  \ figure out what it's thinking. Programmers do it to track down gremlins causing\u2026"
+lastmod: 2024-02-18 23:09:10.683974
+model: gpt-4-1106-preview
+summary: "Printing debug output is like having a conversation with your code to figure\
+  \ out what it's thinking. Programmers do it to track down gremlins causing\u2026"
+title: Printing debug output
 ---
 
 {{< edit_this_page >}}

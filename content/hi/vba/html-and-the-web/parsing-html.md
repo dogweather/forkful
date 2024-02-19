@@ -1,14 +1,28 @@
 ---
-title:                "HTML पार्स करना"
 aliases:
 - /hi/vba/parsing-html/
-date:                  2024-02-01T21:59:01.767099-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML पार्स करना"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/vba/parsing-html.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:01.767099-07:00
+description: "Visual Basic for Applications (VBA) \u092E\u0947\u0902 HTML \u092A\u093E\
+  \u0930\u094D\u0938 \u0915\u0930\u0928\u093E \u090F\u0915 HTML \u0926\u0938\u094D\
+  \u0924\u093E\u0935\u0947\u091C\u093C \u0938\u0947 \u0935\u093F\u0936\u093F\u0937\
+  \u094D\u091F \u091C\u093E\u0928\u0915\u093E\u0930\u0940 \u0928\u093F\u0915\u093E\
+  \u0932\u0928\u0947 \u0915\u0940 \u092A\u094D\u0930\u0915\u094D\u0930\u093F\u092F\
+  \u093E \u0939\u0948\u0964 \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\
+  \u0930 \u0907\u0938\u0947 \u0935\u0947\u092C \u092A\u0943\u0937\u094D\u0920\u094B\
+  \u0902 \u0938\u0947 \u0921\u0947\u091F\u093E\u2026"
+lastmod: 2024-02-18 23:09:03.030684
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications (VBA) \u092E\u0947\u0902 HTML \u092A\u093E\
+  \u0930\u094D\u0938 \u0915\u0930\u0928\u093E \u090F\u0915 HTML \u0926\u0938\u094D\
+  \u0924\u093E\u0935\u0947\u091C\u093C \u0938\u0947 \u0935\u093F\u0936\u093F\u0937\
+  \u094D\u091F \u091C\u093E\u0928\u0915\u093E\u0930\u0940 \u0928\u093F\u0915\u093E\
+  \u0932\u0928\u0947 \u0915\u0940 \u092A\u094D\u0930\u0915\u094D\u0930\u093F\u092F\
+  \u093E \u0939\u0948\u0964 \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\
+  \u0930 \u0907\u0938\u0947 \u0935\u0947\u092C \u092A\u0943\u0937\u094D\u0920\u094B\
+  \u0902 \u0938\u0947 \u0921\u0947\u091F\u093E\u2026"
+title: "HTML \u092A\u093E\u0930\u094D\u0938 \u0915\u0930\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

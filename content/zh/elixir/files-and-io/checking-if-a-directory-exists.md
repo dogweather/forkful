@@ -1,14 +1,26 @@
 ---
-title:                "检查目录是否存在"
 aliases:
 - /zh/elixir/checking-if-a-directory-exists/
-date:                  2024-02-03T19:07:05.172678-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "检查目录是否存在"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:07:05.172678-07:00
+description: "\u5728Elixir\u4E2D\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728\u662F\
+  \u5173\u4E8E\u9A8C\u8BC1\u6587\u4EF6\u7CFB\u7EDF\u4E2D\u6307\u5B9A\u8DEF\u5F84\u7684\
+  \u76EE\u5F55\u662F\u5426\u5B58\u5728\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\
+  \u4E3A\u4E86\u786E\u4FDD\u4ED6\u4EEC\u53EF\u4EE5\u5B89\u5168\u5730\u4ECE\u4E2D\u8BFB\
+  \u53D6\u3001\u5199\u5165\u6216\u5BF9\u76EE\u5F55\u6267\u884C\u64CD\u4F5C\uFF0C\u800C\
+  \u4E0D\u4F1A\u56E0\u4E3A\u76EE\u5F55\u4E0D\u5B58\u5728\u800C\u9047\u5230\u9519\u8BEF\
+  \u3002"
+lastmod: 2024-02-18 23:08:58.878569
+model: gpt-4-0125-preview
+summary: "\u5728Elixir\u4E2D\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728\u662F\
+  \u5173\u4E8E\u9A8C\u8BC1\u6587\u4EF6\u7CFB\u7EDF\u4E2D\u6307\u5B9A\u8DEF\u5F84\u7684\
+  \u76EE\u5F55\u662F\u5426\u5B58\u5728\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\
+  \u4E3A\u4E86\u786E\u4FDD\u4ED6\u4EEC\u53EF\u4EE5\u5B89\u5168\u5730\u4ECE\u4E2D\u8BFB\
+  \u53D6\u3001\u5199\u5165\u6216\u5BF9\u76EE\u5F55\u6267\u884C\u64CD\u4F5C\uFF0C\u800C\
+  \u4E0D\u4F1A\u56E0\u4E3A\u76EE\u5F55\u4E0D\u5B58\u5728\u800C\u9047\u5230\u9519\u8BEF\
+  \u3002"
+title: "\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728"
 ---
 
 {{< edit_this_page >}}

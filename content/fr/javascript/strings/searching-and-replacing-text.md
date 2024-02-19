@@ -1,13 +1,16 @@
 ---
-title:                "Recherche et remplacement de texte"
 aliases:
 - /fr/javascript/searching-and-replacing-text/
-date:                  2024-01-20T17:58:02.948038-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Recherche et remplacement de texte"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:02.948038-07:00
+description: "La recherche et le remplacement de texte, c'est changer une cha\xEE\
+  ne de caract\xE8res par une autre dans une donn\xE9e. Les programmeurs font \xE7\
+  a pour corriger des\u2026"
+lastmod: 2024-02-18 23:09:09.239445
+model: gpt-4-1106-preview
+summary: "La recherche et le remplacement de texte, c'est changer une cha\xEEne de\
+  \ caract\xE8res par une autre dans une donn\xE9e. Les programmeurs font \xE7a pour\
+  \ corriger des\u2026"
+title: Recherche et remplacement de texte
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "HTML:n jäsennys"
 aliases:
 - /fi/cpp/parsing-html/
-date:                  2024-02-03T19:11:47.985829-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML:n jäsennys"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:11:47.985829-07:00
+description: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-sis\xE4ll\xF6n hajottamista\
+  \ joksikin, jonka ohjelma voi ymm\xE4rt\xE4\xE4 ja k\xE4sitell\xE4. Ohjelmoijat\
+  \ tekev\xE4t t\xE4m\xE4n, jotta voivat\u2026"
+lastmod: 2024-02-18 23:09:07.941457
+model: gpt-4-0125-preview
+summary: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-sis\xE4ll\xF6n hajottamista joksikin,\
+  \ jonka ohjelma voi ymm\xE4rt\xE4\xE4 ja k\xE4sitell\xE4. Ohjelmoijat tekev\xE4\
+  t t\xE4m\xE4n, jotta voivat\u2026"
+title: "HTML:n j\xE4sennys"
 ---
 
 {{< edit_this_page >}}

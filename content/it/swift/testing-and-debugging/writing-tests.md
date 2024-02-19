@@ -1,14 +1,17 @@
 ---
-title:                "Scrivere test"
 aliases:
 - /it/swift/writing-tests/
-date:                  2024-02-03T19:32:02.171963-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Scrivere test"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:02.171963-07:00
+description: "Scrivere test in Swift comporta la creazione e l'esecuzione di codice\
+  \ che verifica la correttezza di altre unit\xE0 di codice nella tua applicazione.\
+  \ I\u2026"
+lastmod: 2024-02-18 23:08:56.215746
+model: gpt-4-0125-preview
+summary: "Scrivere test in Swift comporta la creazione e l'esecuzione di codice che\
+  \ verifica la correttezza di altre unit\xE0 di codice nella tua applicazione. I\u2026"
+title: Scrivere test
 ---
 
 {{< edit_this_page >}}

@@ -1,12 +1,14 @@
 ---
-title:                "Writing to standard error"
 aliases:
 - /en/c/writing-to-standard-error/
-date:                  2024-02-03T17:50:03.774840-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Writing to standard error"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/writing-to-standard-error.md"
+date: 2024-02-03 17:50:03.774840-07:00
+description: "Writing to standard error in C involves directing error messages and\
+  \ diagnostic information to a separate stream from the main program output. Programmers\u2026"
+lastmod: 2024-02-18 23:09:11.538551
+model: gpt-4-0125-preview
+summary: "Writing to standard error in C involves directing error messages and diagnostic\
+  \ information to a separate stream from the main program output. Programmers\u2026"
+title: Writing to standard error
 ---
 
 {{< edit_this_page >}}

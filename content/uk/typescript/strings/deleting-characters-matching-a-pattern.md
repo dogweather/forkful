@@ -1,13 +1,16 @@
 ---
-title:                "Видалення символів за візерунком"
 aliases:
 - /uk/typescript/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:43:15.336494-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Видалення символів за візерунком"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/typescript/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:43:15.336494-07:00
+description: "Deleting characters matching a pattern means finding specific sets of\
+  \ characters in a string and removing them. Programmers do this for data cleaning,\u2026"
+lastmod: 2024-02-18 23:08:59.913651
+model: gpt-4-1106-preview
+summary: "Deleting characters matching a pattern means finding specific sets of characters\
+  \ in a string and removing them. Programmers do this for data cleaning,\u2026"
+title: "\u0412\u0438\u0434\u0430\u043B\u0435\u043D\u043D\u044F \u0441\u0438\u043C\u0432\
+  \u043E\u043B\u0456\u0432 \u0437\u0430 \u0432\u0456\u0437\u0435\u0440\u0443\u043D\
+  \u043A\u043E\u043C"
 ---
 
 {{< edit_this_page >}}

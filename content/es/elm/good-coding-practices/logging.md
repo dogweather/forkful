@@ -1,13 +1,16 @@
 ---
-title:                "Registro de Actividades en Programación"
 aliases:
 - /es/elm/logging/
-date:                  2024-01-26T01:02:35.800030-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registro de Actividades en Programación"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/logging.md"
+date: 2024-01-26 01:02:35.800030-07:00
+description: "El registro (\"logging\") es esencialmente el proceso de grabar eventos\
+  \ y salidas de datos de un software mientras se ejecuta; piense en ello como el\
+  \ diario\u2026"
+lastmod: 2024-02-18 23:09:09.897763
+model: gpt-4-1106-preview
+summary: "El registro (\"logging\") es esencialmente el proceso de grabar eventos\
+  \ y salidas de datos de un software mientras se ejecuta; piense en ello como el\
+  \ diario\u2026"
+title: "Registro de Actividades en Programaci\xF3n"
 ---
 
 {{< edit_this_page >}}

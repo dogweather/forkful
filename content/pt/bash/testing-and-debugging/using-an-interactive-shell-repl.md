@@ -1,13 +1,16 @@
 ---
-title:                "Usando um shell interativo (REPL)"
 aliases:
 - /pt/bash/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:11:22.119219-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando um shell interativo (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:11:22.119219-07:00
+description: "REPL significa Loop de Ler-Avaliar-Imprimir, um ambiente de programa\xE7\
+  \xE3o computacional simples e interativo. Programadores o utilizam para escrever\
+  \ e\u2026"
+lastmod: 2024-02-18 23:08:58.327252
+model: gpt-4-0125-preview
+summary: "REPL significa Loop de Ler-Avaliar-Imprimir, um ambiente de programa\xE7\
+  \xE3o computacional simples e interativo. Programadores o utilizam para escrever\
+  \ e\u2026"
+title: Usando um shell interativo (REPL)
 ---
 
 {{< edit_this_page >}}

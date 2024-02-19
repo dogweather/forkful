@@ -1,13 +1,16 @@
 ---
-title:                "Sammenslåing av strenger"
 aliases:
 - /no/cpp/concatenating-strings/
-date:                  2024-01-20T17:34:24.608629-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammenslåing av strenger"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/concatenating-strings.md"
+date: 2024-01-20 17:34:24.608629-07:00
+description: "Strengsammensl\xE5ing handler om \xE5 sette sammen to eller flere tekststykker\
+  \ for \xE5 danne \xE9n enhet. Programmerere gj\xF8r det for \xE5 bygge opp meldinger,\
+  \ lage\u2026"
+lastmod: 2024-02-18 23:08:54.176541
+model: gpt-4-1106-preview
+summary: "Strengsammensl\xE5ing handler om \xE5 sette sammen to eller flere tekststykker\
+  \ for \xE5 danne \xE9n enhet. Programmerere gj\xF8r det for \xE5 bygge opp meldinger,\
+  \ lage\u2026"
+title: "Sammensl\xE5ing av strenger"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonojen osien poimiminen"
 aliases:
 - /fi/bash/extracting-substrings/
-date:                  2024-01-20T17:45:03.252593-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonojen osien poimiminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/extracting-substrings.md"
+date: 2024-01-20 17:45:03.252593-07:00
+description: "Substringien erottelu tarkoittaa isomman merkkijonon osan leikkaamista\
+  \ ja k\xE4ytt\xE4mist\xE4. Ohjelmoijat tekev\xE4t t\xE4t\xE4, kun tarvitsevat t\xF6\
+  ihin vain osan datasta."
+lastmod: 2024-02-18 23:09:07.790507
+model: gpt-4-1106-preview
+summary: "Substringien erottelu tarkoittaa isomman merkkijonon osan leikkaamista ja\
+  \ k\xE4ytt\xE4mist\xE4. Ohjelmoijat tekev\xE4t t\xE4t\xE4, kun tarvitsevat t\xF6\
+  ihin vain osan datasta."
+title: Merkkijonojen osien poimiminen
 ---
 
 {{< edit_this_page >}}

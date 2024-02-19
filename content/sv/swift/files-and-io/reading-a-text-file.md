@@ -1,13 +1,16 @@
 ---
-title:                "Läsa en textfil"
 aliases:
 - /sv/swift/reading-a-text-file/
-date:                  2024-01-20T17:55:06.767651-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Läsa en textfil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/reading-a-text-file.md"
+date: 2024-01-20 17:55:06.767651-07:00
+description: "L\xE4sa en textfil betyder att ditt program h\xE4mtar information lagrad\
+  \ i en fil p\xE5 disken. Programmerare g\xF6r detta f\xF6r att anv\xE4nda data,\
+  \ konfigurera\u2026"
+lastmod: 2024-02-18 23:08:52.140947
+model: gpt-4-1106-preview
+summary: "L\xE4sa en textfil betyder att ditt program h\xE4mtar information lagrad\
+  \ i en fil p\xE5 disken. Programmerare g\xF6r detta f\xF6r att anv\xE4nda data,\
+  \ konfigurera\u2026"
+title: "L\xE4sa en textfil"
 ---
 
 {{< edit_this_page >}}

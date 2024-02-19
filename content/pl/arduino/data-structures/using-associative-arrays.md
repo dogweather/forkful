@@ -1,15 +1,18 @@
 ---
-title:                "Korzystanie z tablic asocjacyjnych"
 aliases:
 - /pl/arduino/using-associative-arrays/
-date:                  2024-01-30T19:10:05.922025-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z tablic asocjacyjnych"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:05.922025-07:00
+description: "W \u015Bwiecie Arduino, tablice asocjacyjne pozwalaj\u0105 na parowanie\
+  \ kluczy z warto\u015Bciami, mniej wi\u0119cej jak dobieranie skarpetek w pary.\
+  \ S\u0105 wyborem numer jeden,\u2026"
+lastmod: 2024-02-18 23:08:49.863250
+model: gpt-4-0125-preview
+summary: "W \u015Bwiecie Arduino, tablice asocjacyjne pozwalaj\u0105 na parowanie\
+  \ kluczy z warto\u015Bciami, mniej wi\u0119cej jak dobieranie skarpetek w pary.\
+  \ S\u0105 wyborem numer jeden,\u2026"
+title: Korzystanie z tablic asocjacyjnych
 ---
 
 {{< edit_this_page >}}

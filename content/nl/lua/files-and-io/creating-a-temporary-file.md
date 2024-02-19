@@ -1,15 +1,18 @@
 ---
-title:                "Een tijdelijk bestand aanmaken"
 aliases:
 - /nl/lua/creating-a-temporary-file/
-date:                  2024-01-28T21:59:06.481668-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tijdelijk bestand aanmaken"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/creating-a-temporary-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:06.481668-07:00
+description: "Het cre\xEBren van een tijdelijk bestand is het proces van het maken\
+  \ van een kortstondig bestand om gegevens in op te slaan die alleen nodig zijn tijdens\
+  \ de\u2026"
+lastmod: 2024-02-18 23:09:02.012384
+model: gpt-4-0125-preview
+summary: "Het cre\xEBren van een tijdelijk bestand is het proces van het maken van\
+  \ een kortstondig bestand om gegevens in op te slaan die alleen nodig zijn tijdens\
+  \ de\u2026"
+title: Een tijdelijk bestand aanmaken
 ---
 
 {{< edit_this_page >}}

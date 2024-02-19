@@ -1,14 +1,18 @@
 ---
-title:                "Työskentely CSV:n kanssa"
 aliases:
 - /fi/python/working-with-csv/
-date:                  2024-02-03T19:21:00.119000-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely CSV:n kanssa"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:21:00.119000-07:00
+description: "Ty\xF6skentely CSV:n (pilkuin erotetut arvot) parissa sis\xE4lt\xE4\xE4\
+  \ lukemista ja kirjoittamista CSV-tiedostoihin, yleinen muoto tabulaarisen datan\
+  \ tallentamiseen.\u2026"
+lastmod: 2024-02-18 23:09:07.207750
+model: gpt-4-0125-preview
+summary: "Ty\xF6skentely CSV:n (pilkuin erotetut arvot) parissa sis\xE4lt\xE4\xE4\
+  \ lukemista ja kirjoittamista CSV-tiedostoihin, yleinen muoto tabulaarisen datan\
+  \ tallentamiseen.\u2026"
+title: "Ty\xF6skentely CSV:n kanssa"
 ---
 
 {{< edit_this_page >}}

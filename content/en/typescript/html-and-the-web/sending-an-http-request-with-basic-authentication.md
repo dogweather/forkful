@@ -1,13 +1,15 @@
 ---
-title:                "Sending an HTTP request with basic authentication"
 aliases:
 - /en/typescript/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:54.663141-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sending an HTTP request with basic authentication"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:54.663141-07:00
+description: "In TypeScript, sending an HTTP request with basic authentication means\
+  \ shooting data across the web with a simple username:password combo for access.\
+  \ It's\u2026"
+lastmod: 2024-02-18 23:09:10.806952
+model: gpt-4-1106-preview
+summary: "In TypeScript, sending an HTTP request with basic authentication means shooting\
+  \ data across the web with a simple username:password combo for access. It's\u2026"
+title: Sending an HTTP request with basic authentication
 ---
 
 {{< edit_this_page >}}

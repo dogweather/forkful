@@ -1,14 +1,26 @@
 ---
-title:                "下载网页"
 aliases:
 - /zh/google-apps-script/downloading-a-web-page/
-date:                  2024-02-01T21:52:40.129691-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "下载网页"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/google-apps-script/downloading-a-web-page.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:40.129691-07:00
+description: "\u5728Google\u5E94\u7528\u811A\u672C\u4E2D\u4E0B\u8F7D\u7F51\u9875\u6D89\
+  \u53CA\u901A\u8FC7HTML\u83B7\u53D6\u7F51\u9875\u5185\u5BB9\uFF0C\u7528\u4E8E\u5404\
+  \u79CD\u76EE\u7684\uFF0C\u4F8B\u5982\u7F51\u9875\u6293\u53D6\u3001\u6570\u636E\u63D0\
+  \u53D6\u6216\u76D1\u63A7\u66F4\u6539\u3002\u7A0B\u5E8F\u5458\u9009\u62E9\u8FD9\u79CD\
+  \u64CD\u4F5C\u662F\u4E3A\u4E86\u81EA\u52A8\u5316\u6570\u636E\u6536\u96C6\u6216\u6574\
+  \u5408\u4EFB\u52A1\uFF0C\u6700\u5C0F\u5316\u624B\u52A8\u52AA\u529B\u5E76\u786E\u4FDD\
+  \u5B9E\u65F6\u6570\u636E\u5904\u7406\u3002"
+lastmod: 2024-02-18 23:08:58.748901
+model: gpt-4-0125-preview
+summary: "\u5728Google\u5E94\u7528\u811A\u672C\u4E2D\u4E0B\u8F7D\u7F51\u9875\u6D89\
+  \u53CA\u901A\u8FC7HTML\u83B7\u53D6\u7F51\u9875\u5185\u5BB9\uFF0C\u7528\u4E8E\u5404\
+  \u79CD\u76EE\u7684\uFF0C\u4F8B\u5982\u7F51\u9875\u6293\u53D6\u3001\u6570\u636E\u63D0\
+  \u53D6\u6216\u76D1\u63A7\u66F4\u6539\u3002\u7A0B\u5E8F\u5458\u9009\u62E9\u8FD9\u79CD\
+  \u64CD\u4F5C\u662F\u4E3A\u4E86\u81EA\u52A8\u5316\u6570\u636E\u6536\u96C6\u6216\u6574\
+  \u5408\u4EFB\u52A1\uFF0C\u6700\u5C0F\u5316\u624B\u52A8\u52AA\u529B\u5E76\u786E\u4FDD\
+  \u5B9E\u65F6\u6570\u636E\u5904\u7406\u3002"
+title: "\u4E0B\u8F7D\u7F51\u9875"
 ---
 
 {{< edit_this_page >}}

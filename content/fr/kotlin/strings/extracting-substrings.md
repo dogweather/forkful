@@ -1,13 +1,16 @@
 ---
-title:                "Extraction de sous-chaînes"
 aliases:
 - /fr/kotlin/extracting-substrings/
-date:                  2024-01-20T17:46:13.974366-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extraction de sous-chaînes"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/extracting-substrings.md"
+date: 2024-01-20 17:46:13.974366-07:00
+description: "Extraire des sous-cha\xEEnes, c'est simplement r\xE9cup\xE9rer une partie\
+  \ d'une cha\xEEne de caract\xE8res. Les programmeurs le font pour analyser, manipuler\
+  \ ou tester\u2026"
+lastmod: 2024-02-18 23:09:08.768781
+model: gpt-4-1106-preview
+summary: "Extraire des sous-cha\xEEnes, c'est simplement r\xE9cup\xE9rer une partie\
+  \ d'une cha\xEEne de caract\xE8res. Les programmeurs le font pour analyser, manipuler\
+  \ ou tester\u2026"
+title: "Extraction de sous-cha\xEEnes"
 ---
 
 {{< edit_this_page >}}

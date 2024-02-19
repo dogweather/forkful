@@ -1,14 +1,18 @@
 ---
-title:                "Sette stor bokstav i en streng"
 aliases:
 - /no/haskell/capitalizing-a-string/
-date:                  2024-02-03T19:05:25.995963-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sette stor bokstav i en streng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:25.995963-07:00
+description: "Det \xE5 kapitalisere en streng inneb\xE6rer \xE5 transformere den f\xF8\
+  rste bokstaven i en gitt streng til stor bokstav mens resten av bokstavene forblir\
+  \ sm\xE5.\u2026"
+lastmod: 2024-02-18 23:08:53.918802
+model: gpt-4-0125-preview
+summary: "Det \xE5 kapitalisere en streng inneb\xE6rer \xE5 transformere den f\xF8\
+  rste bokstaven i en gitt streng til stor bokstav mens resten av bokstavene forblir\
+  \ sm\xE5.\u2026"
+title: Sette stor bokstav i en streng
 ---
 
 {{< edit_this_page >}}

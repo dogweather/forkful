@@ -1,14 +1,16 @@
 ---
-title:                "Å Arbeide med Komplekse Tall"
 aliases:
 - /no/c/working-with-complex-numbers/
-date:                  2024-02-03T18:13:53.473297-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å Arbeide med Komplekse Tall"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:13:53.473297-07:00
+description: "Komplekse tall best\xE5r av en reell del og en imagin\xE6r del, representert\
+  \ som `a + bi` hvor `i` er kvadratroten av `-1`. Programmerere arbeider med komplekse\u2026"
+lastmod: 2024-02-18 23:08:54.387657
+model: gpt-4-0125-preview
+summary: "Komplekse tall best\xE5r av en reell del og en imagin\xE6r del, representert\
+  \ som `a + bi` hvor `i` er kvadratroten av `-1`. Programmerere arbeider med komplekse\u2026"
+title: "\xC5 Arbeide med Komplekse Tall"
 ---
 
 {{< edit_this_page >}}

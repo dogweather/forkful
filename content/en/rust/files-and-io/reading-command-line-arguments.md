@@ -1,13 +1,14 @@
 ---
-title:                "Reading command line arguments"
 aliases:
 - /en/rust/reading-command-line-arguments/
-date:                  2024-01-20T17:57:02.616433-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Reading command line arguments"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/reading-command-line-arguments.md"
+date: 2024-01-20 17:57:02.616433-07:00
+description: Reading command line arguments in Rust lets programs take user input
+  on launch. It's key for custom behavior without a GUI.
+lastmod: 2024-02-18 23:09:10.863839
+model: gpt-4-1106-preview
+summary: Reading command line arguments in Rust lets programs take user input on launch.
+  It's key for custom behavior without a GUI.
+title: Reading command line arguments
 ---
 
 {{< edit_this_page >}}

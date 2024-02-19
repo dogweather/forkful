@@ -1,14 +1,18 @@
 ---
-title:                "Wysyłanie żądania HTTP"
 aliases:
 - /pl/c/sending-an-http-request/
-date:                  2024-02-03T18:08:36.313872-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Wysyłanie żądania HTTP"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/sending-an-http-request.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:36.313872-07:00
+description: "Wysy\u0142anie \u017C\u0105dania HTTP polega na tworzeniu i wysy\u0142\
+  aniu \u017C\u0105dania do serwera WWW w celu pobrania lub przes\u0142ania danych.\
+  \ Programi\u015Bci robi\u0105 to w j\u0119zyku C, aby\u2026"
+lastmod: 2024-02-18 23:08:50.076500
+model: gpt-4-0125-preview
+summary: "Wysy\u0142anie \u017C\u0105dania HTTP polega na tworzeniu i wysy\u0142aniu\
+  \ \u017C\u0105dania do serwera WWW w celu pobrania lub przes\u0142ania danych. Programi\u015B\
+  ci robi\u0105 to w j\u0119zyku C, aby\u2026"
+title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 ---
 
 {{< edit_this_page >}}

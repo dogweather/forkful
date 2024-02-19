@@ -1,14 +1,18 @@
 ---
-title:                "Utiliser un débogueur"
 aliases:
 - /fr/c/using-a-debugger/
-date:                  2024-02-03T18:09:44.935969-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utiliser un débogueur"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/using-a-debugger.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:09:44.935969-07:00
+description: "Les d\xE9bogueurs en C sont des outils sp\xE9cialis\xE9s qui permettent\
+  \ aux d\xE9veloppeurs de parcourir leur code pas \xE0 pas, d'inspecter les variables\
+  \ et de\u2026"
+lastmod: 2024-02-18 23:09:09.361331
+model: gpt-4-0125-preview
+summary: "Les d\xE9bogueurs en C sont des outils sp\xE9cialis\xE9s qui permettent\
+  \ aux d\xE9veloppeurs de parcourir leur code pas \xE0 pas, d'inspecter les variables\
+  \ et de\u2026"
+title: "Utiliser un d\xE9bogueur"
 ---
 
 {{< edit_this_page >}}

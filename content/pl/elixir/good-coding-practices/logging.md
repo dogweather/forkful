@@ -1,13 +1,16 @@
 ---
-title:                "Rejestrowanie zdarzeń"
 aliases:
 - /pl/elixir/logging/
-date:                  2024-01-26T01:02:50.779259-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rejestrowanie zdarzeń"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/logging.md"
+date: 2024-01-26 01:02:50.779259-07:00
+description: "Logowanie w rozwoju oprogramowania to technika rejestrowania wydarze\u0144\
+  , kt\xF3re zachodz\u0105 podczas dzia\u0142ania programu, zazwyczaj do pliku lub\
+  \ zewn\u0119trznego\u2026"
+lastmod: 2024-02-18 23:08:49.312153
+model: gpt-4-1106-preview
+summary: "Logowanie w rozwoju oprogramowania to technika rejestrowania wydarze\u0144\
+  , kt\xF3re zachodz\u0105 podczas dzia\u0142ania programu, zazwyczaj do pliku lub\
+  \ zewn\u0119trznego\u2026"
+title: "Rejestrowanie zdarze\u0144"
 ---
 
 {{< edit_this_page >}}

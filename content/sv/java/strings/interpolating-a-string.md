@@ -1,13 +1,16 @@
 ---
-title:                "Interpolera en sträng"
 aliases:
 - /sv/java/interpolating-a-string/
-date:                  2024-01-20T17:51:16.589686-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolera en sträng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/interpolating-a-string.md"
+date: 2024-01-20 17:51:16.589686-07:00
+description: "Interpolering av str\xE4ngar inneb\xE4r att man blandar variabler och\
+  \ str\xE4ngar f\xF6r att skapa en ny, sammansatt str\xE4ng. Programmerare interpolerar\
+  \ str\xE4ngar f\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.656299
+model: gpt-4-1106-preview
+summary: "Interpolering av str\xE4ngar inneb\xE4r att man blandar variabler och str\xE4\
+  ngar f\xF6r att skapa en ny, sammansatt str\xE4ng. Programmerare interpolerar str\xE4\
+  ngar f\xF6r\u2026"
+title: "Interpolera en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

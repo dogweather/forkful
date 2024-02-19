@@ -1,13 +1,16 @@
 ---
-title:                "Iniciando um novo projeto"
 aliases:
 - /pt/ruby/starting-a-new-project/
-date:                  2024-01-20T18:04:17.118975-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Iniciando um novo projeto"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/starting-a-new-project.md"
+date: 2024-01-20 18:04:17.118975-07:00
+description: "Iniciar um novo projeto \xE9 como colocar a primeira pedra na constru\xE7\
+  \xE3o de uma ideia. Programadores fazem isso para transformar solu\xE7\xF5es imagin\xE1\
+  rias em\u2026"
+lastmod: 2024-02-18 23:08:58.666419
+model: gpt-4-1106-preview
+summary: "Iniciar um novo projeto \xE9 como colocar a primeira pedra na constru\xE7\
+  \xE3o de uma ideia. Programadores fazem isso para transformar solu\xE7\xF5es imagin\xE1\
+  rias em\u2026"
+title: Iniciando um novo projeto
 ---
 
 {{< edit_this_page >}}

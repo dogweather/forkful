@@ -1,13 +1,15 @@
 ---
-title:                "Manipulation des nombres complexes"
 aliases:
 - /fr/javascript/working-with-complex-numbers/
-date:                  2024-01-26T04:42:03.153866-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulation des nombres complexes"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/working-with-complex-numbers.md"
+date: 2024-01-26 04:42:03.153866-07:00
+description: "Les nombres complexes sont des nombres ayant une partie r\xE9elle et\
+  \ une partie imaginaire (comme 3 + 4i). Ils apparaissent dans divers probl\xE8mes\
+  \ de\u2026"
+lastmod: 2024-02-18 23:09:09.249040
+model: gpt-4-0125-preview
+summary: "Les nombres complexes sont des nombres ayant une partie r\xE9elle et une\
+  \ partie imaginaire (comme 3 + 4i). Ils apparaissent dans divers probl\xE8mes de\u2026"
+title: Manipulation des nombres complexes
 ---
 
 {{< edit_this_page >}}

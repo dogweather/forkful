@@ -1,13 +1,14 @@
 ---
-title:                "Generating random numbers"
 aliases:
 - /en/php/generating-random-numbers/
-date:                  2024-01-27T20:26:30.387709-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generating random numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/generating-random-numbers.md"
+date: 2024-01-27 20:26:30.387709-07:00
+description: "Generating random numbers in PHP is about producing unpredictable values\
+  \ within a specified range, which is essential for tasks like creating unique user\u2026"
+lastmod: 2024-02-18 23:09:11.132974
+model: gpt-4-0125-preview
+summary: "Generating random numbers in PHP is about producing unpredictable values\
+  \ within a specified range, which is essential for tasks like creating unique user\u2026"
+title: Generating random numbers
 ---
 
 {{< edit_this_page >}}

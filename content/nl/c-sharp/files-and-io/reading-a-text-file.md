@@ -1,15 +1,17 @@
 ---
-title:                "Een tekstbestand lezen"
 aliases:
 - /nl/c-sharp/reading-a-text-file/
-date:                  2024-01-28T22:04:58.410052-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tekstbestand lezen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c-sharp/reading-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:04:58.410052-07:00
+description: "Een tekstbestand lezen is het ophalen van gegevens uit een bestand dat\
+  \ tekst bevat. Programmeurs doen dit om configuraties te laden, gegevens te lezen\
+  \ of\u2026"
+lastmod: 2024-02-18 23:09:01.871426
+model: gpt-4-0125-preview
+summary: "Een tekstbestand lezen is het ophalen van gegevens uit een bestand dat tekst\
+  \ bevat. Programmeurs doen dit om configuraties te laden, gegevens te lezen of\u2026"
+title: Een tekstbestand lezen
 ---
 
 {{< edit_this_page >}}

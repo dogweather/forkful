@@ -1,14 +1,18 @@
 ---
-title:                "Écrire sur l'erreur standard"
 aliases:
 - /fr/lua/writing-to-standard-error/
-date:                  2024-02-03T19:33:45.687361-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Écrire sur l'erreur standard"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/lua/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:33:45.687361-07:00
+description: "\xC9crire dans l'erreur standard (stderr) consiste \xE0 diriger les\
+  \ messages d'erreur et les sorties de diagnostic vers un canal distinct, diff\xE9\
+  rent de la\u2026"
+lastmod: 2024-02-18 23:09:08.987994
+model: gpt-4-0125-preview
+summary: "\xC9crire dans l'erreur standard (stderr) consiste \xE0 diriger les messages\
+  \ d'erreur et les sorties de diagnostic vers un canal distinct, diff\xE9rent de\
+  \ la\u2026"
+title: "\xC9crire sur l'erreur standard"
 ---
 
 {{< edit_this_page >}}

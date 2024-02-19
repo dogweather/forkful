@@ -1,13 +1,14 @@
 ---
-title:                "Protokollierung"
 aliases:
 - /de/haskell/logging/
-date:                  2024-01-26T01:07:04.543913-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Protokollierung"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/logging.md"
+date: 2024-01-26 01:07:04.543913-07:00
+description: "Protokollierung in der Programmierung bedeutet im Grunde, eine Spur\
+  \ von Brotkrumen in Form von aufgezeichneten Ereignissen oder Nachrichten zu\u2026"
+lastmod: 2024-02-18 23:09:04.923773
+model: gpt-4-1106-preview
+summary: "Protokollierung in der Programmierung bedeutet im Grunde, eine Spur von\
+  \ Brotkrumen in Form von aufgezeichneten Ereignissen oder Nachrichten zu\u2026"
+title: Protokollierung
 ---
 
 {{< edit_this_page >}}

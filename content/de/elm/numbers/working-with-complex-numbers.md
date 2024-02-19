@@ -1,13 +1,15 @@
 ---
-title:                "Umgang mit komplexen Zahlen"
 aliases:
 - /de/elm/working-with-complex-numbers/
-date:                  2024-01-26T04:39:12.302213-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Umgang mit komplexen Zahlen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/working-with-complex-numbers.md"
+date: 2024-01-26 04:39:12.302213-07:00
+description: "Komplexe Zahlen sind eine Kombination aus reellen und imagin\xE4ren\
+  \ Zahlen, wie `a + bi`, wobei `i` die Quadratwurzel von -1 ist. Sie sind entscheidend\
+  \ in\u2026"
+lastmod: 2024-02-18 23:09:04.775165
+model: gpt-4-0125-preview
+summary: "Komplexe Zahlen sind eine Kombination aus reellen und imagin\xE4ren Zahlen,\
+  \ wie `a + bi`, wobei `i` die Quadratwurzel von -1 ist. Sie sind entscheidend in\u2026"
+title: Umgang mit komplexen Zahlen
 ---
 
 {{< edit_this_page >}}

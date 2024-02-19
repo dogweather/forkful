@@ -1,12 +1,13 @@
 ---
-title:                "Arbeiten mit CSV-Dateien"
 aliases:
 - /de/haskell/working-with-csv/
-date:                  2024-01-19
-simple_title:         "Arbeiten mit CSV-Dateien"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/working-with-csv.md"
+date: 2024-01-19
+description: "CSV (Comma-Separated Values) sind einfache Textdateien, die tabellarische\
+  \ Daten speichern. Programmierer nutzen CSV, weil es ein weit verbreitetes, leicht\u2026"
+lastmod: 2024-02-18 23:09:04.941299
+summary: "CSV (Comma-Separated Values) sind einfache Textdateien, die tabellarische\
+  \ Daten speichern. Programmierer nutzen CSV, weil es ein weit verbreitetes, leicht\u2026"
+title: Arbeiten mit CSV-Dateien
 ---
 
 {{< edit_this_page >}}

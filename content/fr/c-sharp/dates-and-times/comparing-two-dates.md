@@ -1,13 +1,16 @@
 ---
-title:                "Comparer deux dates"
 aliases:
 - /fr/c-sharp/comparing-two-dates/
-date:                  2024-01-20T17:32:32.758925-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Comparer deux dates"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/comparing-two-dates.md"
+date: 2024-01-20 17:32:32.758925-07:00
+description: "Comparer deux dates, c'est d\xE9cider laquelle vient avant ou apr\xE8\
+  s, ou si elles sont identiques. Les d\xE9veloppeurs le font pour trier des \xE9\
+  v\xE9nements, g\xE9rer\u2026"
+lastmod: 2024-02-18 23:09:08.841564
+model: gpt-4-1106-preview
+summary: "Comparer deux dates, c'est d\xE9cider laquelle vient avant ou apr\xE8s,\
+  \ ou si elles sont identiques. Les d\xE9veloppeurs le font pour trier des \xE9v\xE9\
+  nements, g\xE9rer\u2026"
+title: Comparer deux dates
 ---
 
 {{< edit_this_page >}}

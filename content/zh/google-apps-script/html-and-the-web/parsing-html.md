@@ -1,14 +1,25 @@
 ---
-title:                "解析HTML"
 aliases:
 - /zh/google-apps-script/parsing-html/
-date:                  2024-02-01T21:57:01.967328-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "解析HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/google-apps-script/parsing-html.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:01.967328-07:00
+description: "\u5728Google Apps\u811A\u672C\u4E2D\u89E3\u6790HTML\u6D89\u53CA\u4ECE\
+  HTML\u5185\u5BB9\u4E2D\u63D0\u53D6\u6570\u636E\uFF0C\u8FD9\u5728\u4E0E\u7F51\u9875\
+  \u6216\u57FA\u4E8Eweb\u7684\u6570\u636E\u6765\u6E90\u4EA4\u4E92\u65F6\u5C24\u5176\
+  \u6709\u7528\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u81EA\u52A8\
+  \u5316\u6570\u636E\u6536\u96C6\u3001\u64CD\u4F5C\u7F51\u9875\u5185\u5BB9\u6216\u5C06\
+  \u7F51\u9875\u529F\u80FD\u4E0EGoogle Apps\uFF08\u5982Sheets\u548CDocs\uFF09\u6574\
+  \u5408\u3002"
+lastmod: 2024-02-18 23:08:58.747881
+model: gpt-4-0125-preview
+summary: "\u5728Google Apps\u811A\u672C\u4E2D\u89E3\u6790HTML\u6D89\u53CA\u4ECEHTML\u5185\
+  \u5BB9\u4E2D\u63D0\u53D6\u6570\u636E\uFF0C\u8FD9\u5728\u4E0E\u7F51\u9875\u6216\u57FA\
+  \u4E8Eweb\u7684\u6570\u636E\u6765\u6E90\u4EA4\u4E92\u65F6\u5C24\u5176\u6709\u7528\
+  \u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u81EA\u52A8\u5316\u6570\
+  \u636E\u6536\u96C6\u3001\u64CD\u4F5C\u7F51\u9875\u5185\u5BB9\u6216\u5C06\u7F51\u9875\
+  \u529F\u80FD\u4E0EGoogle Apps\uFF08\u5982Sheets\u548CDocs\uFF09\u6574\u5408\u3002"
+title: "\u89E3\u6790HTML"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonojen yhdistäminen"
 aliases:
 - /fi/javascript/concatenating-strings/
-date:                  2024-01-20T17:34:57.429032-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonojen yhdistäminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/concatenating-strings.md"
+date: 2024-01-20 17:34:57.429032-07:00
+description: "Stringien yhdist\xE4minen tarkoittaa kahden tai useamman tekstinp\xE4\
+  tk\xE4n liitt\xE4mist\xE4 yhteen. Koodarit tekev\xE4t t\xE4t\xE4 muodostaakseen\
+  \ k\xE4ytt\xE4j\xE4lle n\xE4ytett\xE4vi\xE4\u2026"
+lastmod: 2024-02-18 23:09:08.027111
+model: gpt-4-1106-preview
+summary: "Stringien yhdist\xE4minen tarkoittaa kahden tai useamman tekstinp\xE4tk\xE4\
+  n liitt\xE4mist\xE4 yhteen. Koodarit tekev\xE4t t\xE4t\xE4 muodostaakseen k\xE4\
+  ytt\xE4j\xE4lle n\xE4ytett\xE4vi\xE4\u2026"
+title: "Merkkijonojen yhdist\xE4minen"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Virheiden käsittely"
 aliases:
 - /fi/powershell/handling-errors/
-date:                  2024-01-26T00:57:58.607513-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheiden käsittely"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/handling-errors.md"
+date: 2024-01-26 00:57:58.607513-07:00
+description: "Virheiden k\xE4sittely PowerShellissa tarkoittaa mahdollisten ongelmien\
+  \ ennakointia ja niiden sujuvaa hallintaa. Ohjelmoijat tekev\xE4t t\xE4m\xE4n est\xE4\
+  \xE4kseen\u2026"
+lastmod: 2024-02-18 23:09:07.861401
+model: gpt-4-1106-preview
+summary: "Virheiden k\xE4sittely PowerShellissa tarkoittaa mahdollisten ongelmien\
+  \ ennakointia ja niiden sujuvaa hallintaa. Ohjelmoijat tekev\xE4t t\xE4m\xE4n est\xE4\
+  \xE4kseen\u2026"
+title: "Virheiden k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

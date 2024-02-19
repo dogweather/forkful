@@ -1,14 +1,23 @@
 ---
-title:                "문자열의 길이 찾기"
 aliases:
 - /ko/java/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:44.670279-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "문자열의 길이 찾기"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:44.670279-07:00
+description: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30\uB294 \uBB38\uC790\
+  \uC5F4\uC5D0 \uC788\uB294 \uBB38\uC790\uC758 \uC218\uB97C \uD655\uC778\uD558\uB294\
+  \ \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB370\uC774\
+  \uD130 \uC720\uD6A8\uC131 \uAC80\uC0AC, \uBA54\uBAA8\uB9AC \uAD00\uB9AC, \uC785\uB825\
+  \ \uD06C\uAE30 \uC81C\uD55C \uB4F1\uC744 \uC704\uD574\uC11C \uC774\uB97C \uC0AC\uC6A9\
+  \uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.006763
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30\uB294 \uBB38\uC790\uC5F4\
+  \uC5D0 \uC788\uB294 \uBB38\uC790\uC758 \uC218\uB97C \uD655\uC778\uD558\uB294 \uAC83\
+  \uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB370\uC774\uD130\
+  \ \uC720\uD6A8\uC131 \uAC80\uC0AC, \uBA54\uBAA8\uB9AC \uAD00\uB9AC, \uC785\uB825\
+  \ \uD06C\uAE30 \uC81C\uD55C \uB4F1\uC744 \uC704\uD574\uC11C \uC774\uB97C \uC0AC\uC6A9\
+  \uD569\uB2C8\uB2E4."
+title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 ---
 
 {{< edit_this_page >}}

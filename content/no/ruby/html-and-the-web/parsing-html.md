@@ -1,14 +1,18 @@
 ---
-title:                "Analysering av HTML"
 aliases:
 - /no/ruby/parsing-html/
-date:                  2024-02-03T19:13:17.966953-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analysering av HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:13:17.966953-07:00
+description: "Parsing av HTML betyr \xE5 rive fra hverandre en bit HTML-kode for \xE5\
+  \ forst\xE5 dens struktur og innhold. Programmerere gj\xF8r dette for \xE5 ekstrahere\
+  \ data,\u2026"
+lastmod: 2024-02-18 23:08:54.436459
+model: gpt-4-0125-preview
+summary: "Parsing av HTML betyr \xE5 rive fra hverandre en bit HTML-kode for \xE5\
+  \ forst\xE5 dens struktur og innhold. Programmerere gj\xF8r dette for \xE5 ekstrahere\
+  \ data,\u2026"
+title: Analysering av HTML
 ---
 
 {{< edit_this_page >}}

@@ -1,12 +1,15 @@
 ---
-title:                "Writing tests"
 aliases:
 - /en/lua/writing-tests/
-date:                  2024-02-03T19:03:31.526357-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Writing tests"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/writing-tests.md"
+date: 2024-02-03 19:03:31.526357-07:00
+description: "Writing tests in programming involves creating small, separate pieces\
+  \ of code to automatically verify that different parts of your application work\
+  \ as\u2026"
+lastmod: 2024-02-18 23:09:11.182111
+model: gpt-4-0125-preview
+summary: "Writing tests in programming involves creating small, separate pieces of\
+  \ code to automatically verify that different parts of your application work as\u2026"
+title: Writing tests
 ---
 
 {{< edit_this_page >}}

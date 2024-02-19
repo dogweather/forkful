@@ -1,13 +1,15 @@
 ---
-title:                "Zahlen runden"
 aliases:
 - /de/javascript/rounding-numbers/
-date:                  2024-01-26T03:45:09.969000-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zahlen runden"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/rounding-numbers.md"
+date: 2024-01-26 03:45:09.969000-07:00
+description: "Runden ist das Abschneiden von \u201ERauschen\u201C an einer Zahl nach\
+  \ einem bestimmten Punkt. Programmierer runden, um die Genauigkeit zu kontrollieren,\
+  \ Speicher\u2026"
+lastmod: 2024-02-18 23:09:05.273333
+model: gpt-4-0125-preview
+summary: "Runden ist das Abschneiden von \u201ERauschen\u201C an einer Zahl nach einem\
+  \ bestimmten Punkt. Programmierer runden, um die Genauigkeit zu kontrollieren, Speicher\u2026"
+title: Zahlen runden
 ---
 
 {{< edit_this_page >}}

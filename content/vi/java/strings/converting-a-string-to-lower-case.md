@@ -1,15 +1,21 @@
 ---
-title:                "Chuyển đổi chuỗi thành chữ thường"
 aliases:
 - /vi/java/converting-a-string-to-lower-case/
-date:                  2024-01-28T21:58:38.219026-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Chuyển đổi chuỗi thành chữ thường"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/java/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:58:38.219026-07:00
+description: "Chuy\u1EC3n m\u1ED9t chu\u1ED7i sang ch\u1EEF th\u01B0\u1EDDng c\xF3\
+  \ ngh\u0129a l\xE0 bi\u1EBFn \u0111\u1ED5i t\u1EA5t c\u1EA3 c\xE1c ch\u1EEF c\xE1\
+  i trong chu\u1ED7i v\u1EC1 d\u1EA1ng ch\u1EEF th\u01B0\u1EDDng. L\u1EADp tr\xEC\
+  nh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 chu\u1EA9n h\xF3a d\u1EEF\
+  \u2026"
+lastmod: 2024-02-18 23:08:50.542599
+model: gpt-4-0125-preview
+summary: "Chuy\u1EC3n m\u1ED9t chu\u1ED7i sang ch\u1EEF th\u01B0\u1EDDng c\xF3 ngh\u0129\
+  a l\xE0 bi\u1EBFn \u0111\u1ED5i t\u1EA5t c\u1EA3 c\xE1c ch\u1EEF c\xE1i trong chu\u1ED7\
+  i v\u1EC1 d\u1EA1ng ch\u1EEF th\u01B0\u1EDDng. L\u1EADp tr\xECnh vi\xEAn th\u1EF1\
+  c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 chu\u1EA9n h\xF3a d\u1EEF\u2026"
+title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 ---
 
 {{< edit_this_page >}}

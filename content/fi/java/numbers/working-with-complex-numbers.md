@@ -1,13 +1,16 @@
 ---
-title:                "Kompleksilukujen käsittely"
 aliases:
 - /fi/java/working-with-complex-numbers/
-date:                  2024-01-26T04:41:52.714525-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kompleksilukujen käsittely"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/working-with-complex-numbers.md"
+date: 2024-01-26 04:41:52.714525-07:00
+description: "Kompleksiluvut laajentavat reaalilukusuoraa lis\xE4\xE4m\xE4ll\xE4 imaginaariyksik\xF6\
+  n, `i`, miss\xE4 `i^2 = -1`. Ne ovat keskeisi\xE4 aloilla kuten insin\xF6\xF6ritiede,\
+  \ fysiikka\u2026"
+lastmod: 2024-02-18 23:09:07.451660
+model: gpt-4-0125-preview
+summary: "Kompleksiluvut laajentavat reaalilukusuoraa lis\xE4\xE4m\xE4ll\xE4 imaginaariyksik\xF6\
+  n, `i`, miss\xE4 `i^2 = -1`. Ne ovat keskeisi\xE4 aloilla kuten insin\xF6\xF6ritiede,\
+  \ fysiikka\u2026"
+title: "Kompleksilukujen k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

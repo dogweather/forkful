@@ -1,13 +1,16 @@
 ---
-title:                "Einen neuen Projekt starten"
 aliases:
 - /de/python/starting-a-new-project/
-date:                  2024-01-20T18:04:08.196793-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Einen neuen Projekt starten"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/starting-a-new-project.md"
+date: 2024-01-20 18:04:08.196793-07:00
+description: "Ein neues Projekt zu starten bedeutet, eine frische Codebasis anzulegen,\
+  \ um eine Idee in ein lauff\xE4higes Programm zu verwandeln. Programmierer machen\
+  \ das,\u2026"
+lastmod: 2024-02-18 23:09:04.462766
+model: gpt-4-1106-preview
+summary: "Ein neues Projekt zu starten bedeutet, eine frische Codebasis anzulegen,\
+  \ um eine Idee in ein lauff\xE4higes Programm zu verwandeln. Programmierer machen\
+  \ das,\u2026"
+title: Einen neuen Projekt starten
 ---
 
 {{< edit_this_page >}}

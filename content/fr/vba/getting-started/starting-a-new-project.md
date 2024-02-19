@@ -1,14 +1,17 @@
 ---
-title:                "Démarrer un nouveau projet"
 aliases:
 - /fr/vba/starting-a-new-project/
-date:                  2024-02-01T22:02:47.105141-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Démarrer un nouveau projet"
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/vba/starting-a-new-project.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:02:47.105141-07:00
+description: "D\xE9marrer un nouveau projet en Visual Basic pour Applications (VBA)\
+  \ implique de configurer un environnement au sein d'une application h\xF4te, comme\
+  \ Excel,\u2026"
+lastmod: 2024-02-18 23:09:08.579449
+model: gpt-4-0125-preview
+summary: "D\xE9marrer un nouveau projet en Visual Basic pour Applications (VBA) implique\
+  \ de configurer un environnement au sein d'une application h\xF4te, comme Excel,\u2026"
+title: "D\xE9marrer un nouveau projet"
 ---
 
 {{< edit_this_page >}}

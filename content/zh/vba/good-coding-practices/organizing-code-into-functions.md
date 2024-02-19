@@ -1,14 +1,24 @@
 ---
-title:                "将代码组织成函数"
 aliases:
 - /zh/vba/organizing-code-into-functions/
-date:                  2024-02-01T21:57:07.386966-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "将代码组织成函数"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/organizing-code-into-functions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:07.386966-07:00
+description: "\u5728Visual Basic for Applications\uFF08VBA\uFF09\u4E2D\u5C06\u4EE3\
+  \u7801\u7EC4\u7EC7\u6210\u51FD\u6570\u6D89\u53CA\u5C06\u7A0B\u5E8F\u5206\u89E3\u6210\
+  \u79F0\u4E3A\u51FD\u6570\u7684\u66F4\u5C0F\u3001\u53EF\u7BA1\u7406\u7684\u7247\u6BB5\
+  \u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u589E\u5F3A\u4EE3\u7801\
+  \u53EF\u8BFB\u6027\uFF0C\u9AD8\u6548\u91CD\u7528\u4EE3\u7801\uFF0C\u4EE5\u53CA\u7B80\
+  \u5316\u8C03\u8BD5\u548C\u7EF4\u62A4\u8FC7\u7A0B\u3002"
+lastmod: 2024-02-18 23:08:58.986487
+model: gpt-4-0125-preview
+summary: "\u5728Visual Basic for Applications\uFF08VBA\uFF09\u4E2D\u5C06\u4EE3\u7801\
+  \u7EC4\u7EC7\u6210\u51FD\u6570\u6D89\u53CA\u5C06\u7A0B\u5E8F\u5206\u89E3\u6210\u79F0\
+  \u4E3A\u51FD\u6570\u7684\u66F4\u5C0F\u3001\u53EF\u7BA1\u7406\u7684\u7247\u6BB5\u3002\
+  \u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u589E\u5F3A\u4EE3\u7801\u53EF\
+  \u8BFB\u6027\uFF0C\u9AD8\u6548\u91CD\u7528\u4EE3\u7801\uFF0C\u4EE5\u53CA\u7B80\u5316\
+  \u8C03\u8BD5\u548C\u7EF4\u62A4\u8FC7\u7A0B\u3002"
+title: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\u51FD\u6570"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,23 @@
 ---
-title:                "文字列を小文字に変換"
 aliases:
 - /ja/fish-shell/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:12.915451-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "文字列を小文字に変換"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:12.915451-07:00
+description: "\u6587\u5B57\u5217\u3092\u5C0F\u6587\u5B57\u306B\u5909\u63DB\u3059\u308B\
+  \u3053\u3068\u306F\u3001\u5927\u6587\u5B57\u3092\u5BFE\u5FDC\u3059\u308B\u5C0F\u6587\
+  \u5B57\u306B\u5909\u3048\u308B\u3053\u3068\u3067\u3059\u3002\u3053\u308C\u306F\u30C7\
+  \u30FC\u30BF\u306E\u6A19\u6E96\u5316\u3084\u3001\u5927\u6587\u5B57\u3068\u5C0F\u6587\
+  \u5B57\u3092\u533A\u5225\u3057\u306A\u3044\u691C\u7D22\u3001\u30BD\u30FC\u30C8\u306B\
+  \u4F7F\u308F\u308C\u307E\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.295487
+model: gpt-4-1106-preview
+summary: "\u6587\u5B57\u5217\u3092\u5C0F\u6587\u5B57\u306B\u5909\u63DB\u3059\u308B\
+  \u3053\u3068\u306F\u3001\u5927\u6587\u5B57\u3092\u5BFE\u5FDC\u3059\u308B\u5C0F\u6587\
+  \u5B57\u306B\u5909\u3048\u308B\u3053\u3068\u3067\u3059\u3002\u3053\u308C\u306F\u30C7\
+  \u30FC\u30BF\u306E\u6A19\u6E96\u5316\u3084\u3001\u5927\u6587\u5B57\u3068\u5C0F\u6587\
+  \u5B57\u3092\u533A\u5225\u3057\u306A\u3044\u691C\u7D22\u3001\u30BD\u30FC\u30C8\u306B\
+  \u4F7F\u308F\u308C\u307E\u3059\u3002"
+title: "\u6587\u5B57\u5217\u3092\u5C0F\u6587\u5B57\u306B\u5909\u63DB"
 ---
 
 {{< edit_this_page >}}

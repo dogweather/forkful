@@ -1,13 +1,16 @@
 ---
-title:                "Trabalhando com números complexos"
 aliases:
 - /pt/typescript/working-with-complex-numbers/
-date:                  2024-01-26T04:46:22.655713-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com números complexos"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/working-with-complex-numbers.md"
+date: 2024-01-26 04:46:22.655713-07:00
+description: "N\xFAmeros complexos, consistindo de uma parte real e uma parte imagin\xE1\
+  ria (normalmente escritos como a + bi), possibilitam c\xE1lculos que s\xE3o impratic\xE1\
+  veis ou\u2026"
+lastmod: 2024-02-18 23:08:57.879157
+model: gpt-4-0125-preview
+summary: "N\xFAmeros complexos, consistindo de uma parte real e uma parte imagin\xE1\
+  ria (normalmente escritos como a + bi), possibilitam c\xE1lculos que s\xE3o impratic\xE1\
+  veis ou\u2026"
+title: "Trabalhando com n\xFAmeros complexos"
 ---
 
 {{< edit_this_page >}}

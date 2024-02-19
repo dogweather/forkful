@@ -1,14 +1,18 @@
 ---
-title:                "Sette stor bokstav i en streng"
 aliases:
 - /no/elixir/capitalizing-a-string/
-date:                  2024-02-03T19:04:47.943399-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sette stor bokstav i en streng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:04:47.943399-07:00
+description: "\xC5 kapitalisere en streng involverer \xE5 konvertere den f\xF8rste\
+  \ bokstaven i strengen til stor bokstav, mens man s\xF8rger for at resten av bokstavene\
+  \ er i sm\xE5\u2026"
+lastmod: 2024-02-18 23:08:53.588824
+model: gpt-4-0125-preview
+summary: "\xC5 kapitalisere en streng involverer \xE5 konvertere den f\xF8rste bokstaven\
+  \ i strengen til stor bokstav, mens man s\xF8rger for at resten av bokstavene er\
+  \ i sm\xE5\u2026"
+title: Sette stor bokstav i en streng
 ---
 
 {{< edit_this_page >}}

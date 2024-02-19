@@ -1,13 +1,16 @@
 ---
-title:                "Organizacja kodu w funkcje"
 aliases:
 - /pl/cpp/organizing-code-into-functions/
-date:                  2024-01-26T01:10:04.986266-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organizacja kodu w funkcje"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/organizing-code-into-functions.md"
+date: 2024-01-26 01:10:04.986266-07:00
+description: "Podzia\u0142 kodu na funkcje oznacza, \u017Ce rozdzielamy nasz kod na\
+  \ mniejsze, wielokrotnego u\u017Cytku cz\u0119\u015Bci. Robimy to, aby unika\u0107\
+  \ powt\xF3rze\u0144, uczyni\u0107 nasz kod\u2026"
+lastmod: 2024-02-18 23:08:49.916981
+model: gpt-4-1106-preview
+summary: "Podzia\u0142 kodu na funkcje oznacza, \u017Ce rozdzielamy nasz kod na mniejsze,\
+  \ wielokrotnego u\u017Cytku cz\u0119\u015Bci. Robimy to, aby unika\u0107 powt\xF3\
+  rze\u0144, uczyni\u0107 nasz kod\u2026"
+title: Organizacja kodu w funkcje
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Skriva ut felsökningsdata"
 aliases:
 - /sv/typescript/printing-debug-output/
-date:                  2024-01-20T17:53:25.853827-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skriva ut felsökningsdata"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/printing-debug-output.md"
+date: 2024-01-20 17:53:25.853827-07:00
+description: "Utskrift f\xF6r fels\xF6kning (debugging) \xE4r n\xE4r du skriver ut\
+  \ data till konsolen f\xF6r att se vad som h\xE4nder i din kod. Programmerare g\xF6\
+  r det f\xF6r att snabbt\u2026"
+lastmod: 2024-02-18 23:08:51.545963
+model: gpt-4-1106-preview
+summary: "Utskrift f\xF6r fels\xF6kning (debugging) \xE4r n\xE4r du skriver ut data\
+  \ till konsolen f\xF6r att se vad som h\xE4nder i din kod. Programmerare g\xF6r\
+  \ det f\xF6r att snabbt\u2026"
+title: "Skriva ut fels\xF6kningsdata"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Työskentely XML:n kanssa"
 aliases:
 - /fi/vba/working-with-xml/
-date:                  2024-02-01T22:06:51.862755-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely XML:n kanssa"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/working-with-xml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:06:51.862755-07:00
+description: "XML:n k\xE4sittely Visual Basic for Applicationsissa (VBA) sis\xE4lt\xE4\
+  \xE4 XML-dokumenttien j\xE4sent\xE4misen, luomisen ja muokkaamisen Microsoft Office\
+  \ -sovellusten\u2026"
+lastmod: 2024-02-18 23:09:07.439291
+model: gpt-4-0125-preview
+summary: "XML:n k\xE4sittely Visual Basic for Applicationsissa (VBA) sis\xE4lt\xE4\
+  \xE4 XML-dokumenttien j\xE4sent\xE4misen, luomisen ja muokkaamisen Microsoft Office\
+  \ -sovellusten\u2026"
+title: "Ty\xF6skentely XML:n kanssa"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonojen yhdistäminen"
 aliases:
 - /fi/elm/concatenating-strings/
-date:                  2024-01-20T17:34:44.990911-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonojen yhdistäminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/concatenating-strings.md"
+date: 2024-01-20 17:34:44.990911-07:00
+description: "Yhdist\xE4\xE4 tekstej\xE4 (stringej\xE4) tarkoittaa niiden liitt\xE4\
+  mist\xE4 per\xE4kk\xE4in. Koodarit yhdist\xE4v\xE4t tekstej\xE4, koska tarvitsevat\
+  \ luoda dynaamisia viestej\xE4, rakentaa\u2026"
+lastmod: 2024-02-18 23:09:07.494966
+model: gpt-4-1106-preview
+summary: "Yhdist\xE4\xE4 tekstej\xE4 (stringej\xE4) tarkoittaa niiden liitt\xE4mist\xE4\
+  \ per\xE4kk\xE4in. Koodarit yhdist\xE4v\xE4t tekstej\xE4, koska tarvitsevat luoda\
+  \ dynaamisia viestej\xE4, rakentaa\u2026"
+title: "Merkkijonojen yhdist\xE4minen"
 ---
 
 {{< edit_this_page >}}

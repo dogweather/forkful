@@ -1,13 +1,14 @@
 ---
-title:                "Remaniement de code"
 aliases:
 - /fr/typescript/refactoring/
-date:                  2024-01-26T03:36:26.394340-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Remaniement de code"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/refactoring.md"
+date: 2024-01-26 03:36:26.394340-07:00
+description: "Le refactoring est le processus de restructuration du code informatique\
+  \ existant sans en changer le comportement externe. Les programmeurs le font pour\u2026"
+lastmod: 2024-02-18 23:09:08.491100
+model: gpt-4-0125-preview
+summary: "Le refactoring est le processus de restructuration du code informatique\
+  \ existant sans en changer le comportement externe. Les programmeurs le font pour\u2026"
+title: Remaniement de code
 ---
 
 {{< edit_this_page >}}

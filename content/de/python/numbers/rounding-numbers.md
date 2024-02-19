@@ -1,13 +1,14 @@
 ---
-title:                "Zahlen runden"
 aliases:
 - /de/python/rounding-numbers/
-date:                  2024-01-26T03:46:08.581499-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zahlen runden"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/rounding-numbers.md"
+date: 2024-01-26 03:46:08.581499-07:00
+description: "Zahlen zu runden bedeutet, sie an einen einfacheren oder bedeutenderen\
+  \ Wert anzun\xE4hern. Programmierer runden Zahlen ab, um Ergebnisse zu vereinfachen,\u2026"
+lastmod: 2024-02-18 23:09:04.456746
+model: gpt-4-0125-preview
+summary: "Zahlen zu runden bedeutet, sie an einen einfacheren oder bedeutenderen Wert\
+  \ anzun\xE4hern. Programmierer runden Zahlen ab, um Ergebnisse zu vereinfachen,\u2026"
+title: Zahlen runden
 ---
 
 {{< edit_this_page >}}

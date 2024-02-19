@@ -1,13 +1,16 @@
 ---
-title:                "Korzystanie z debugera"
 aliases:
 - /pl/fish-shell/using-a-debugger/
-date:                  2024-01-26T03:49:36.220852-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z debugera"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/using-a-debugger.md"
+date: 2024-01-26 03:49:36.220852-07:00
+description: "U\u017Cywanie debugera to nic innego jak t\u0119pienie b\u0142\u0119\
+  d\xF3w \u2013 tych nieprzyjemnych, poch\u0142aniaj\u0105cych czas b\u0142\u0119\
+  d\xF3w w twoim kodzie. Programi\u015Bci debuguj\u0105, poniewa\u017C chc\u0105\u2026"
+lastmod: 2024-02-18 23:08:50.041138
+model: gpt-4-0125-preview
+summary: "U\u017Cywanie debugera to nic innego jak t\u0119pienie b\u0142\u0119d\xF3\
+  w \u2013 tych nieprzyjemnych, poch\u0142aniaj\u0105cych czas b\u0142\u0119d\xF3\
+  w w twoim kodzie. Programi\u015Bci debuguj\u0105, poniewa\u017C chc\u0105\u2026"
+title: Korzystanie z debugera
 ---
 
 {{< edit_this_page >}}

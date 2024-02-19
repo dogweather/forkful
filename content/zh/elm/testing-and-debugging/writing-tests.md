@@ -1,14 +1,24 @@
 ---
-title:                "编写测试"
 aliases:
 - /zh/elm/writing-tests/
-date:                  2024-02-03T19:30:28.987127-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "编写测试"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:30:28.987127-07:00
+description: "\u5728 Elm \u4E2D\u7F16\u5199\u6D4B\u8BD5\u5305\u62EC\u7F16\u5199\u6D4B\
+  \u8BD5\u7528\u4F8B\u6765\u9A8C\u8BC1\u4F60\u7684 Elm \u4EE3\u7801\u7684\u6B63\u786E\
+  \u6027\uFF0C\u786E\u4FDD\u5B83\u7684\u884C\u4E3A\u7B26\u5408\u9884\u671F\u3002\u7A0B\
+  \u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u5C3D\u65E9\u53D1\u73B0\u9519\u8BEF\
+  \uFF0C\u7B80\u5316\u7EF4\u62A4\uFF0C\u5E76\u63D0\u9AD8\u4ED6\u4EEC\u7684\u5E94\u7528\
+  \u7A0B\u5E8F\u7684\u8D28\u91CF\u548C\u53EF\u9760\u6027\u3002"
+lastmod: 2024-02-18 23:08:59.061658
+model: gpt-4-0125-preview
+summary: "\u5728 Elm \u4E2D\u7F16\u5199\u6D4B\u8BD5\u5305\u62EC\u7F16\u5199\u6D4B\u8BD5\
+  \u7528\u4F8B\u6765\u9A8C\u8BC1\u4F60\u7684 Elm \u4EE3\u7801\u7684\u6B63\u786E\u6027\
+  \uFF0C\u786E\u4FDD\u5B83\u7684\u884C\u4E3A\u7B26\u5408\u9884\u671F\u3002\u7A0B\u5E8F\
+  \u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u5C3D\u65E9\u53D1\u73B0\u9519\u8BEF\uFF0C\
+  \u7B80\u5316\u7EF4\u62A4\uFF0C\u5E76\u63D0\u9AD8\u4ED6\u4EEC\u7684\u5E94\u7528\u7A0B\
+  \u5E8F\u7684\u8D28\u91CF\u548C\u53EF\u9760\u6027\u3002"
+title: "\u7F16\u5199\u6D4B\u8BD5"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Finn lengden på en streng"
 aliases:
 - /no/fish-shell/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:20.963008-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Finn lengden på en streng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:20.963008-07:00
+description: "\xC5 finne lengden p\xE5 en streng betyr \xE5 telle antall tegn den\
+  \ inneholder. Programmerere gj\xF8r dette for \xE5 validere inndata, skj\xE6re strenger\
+  \ eller for \xE5\u2026"
+lastmod: 2024-02-18 23:08:54.340914
+model: gpt-4-1106-preview
+summary: "\xC5 finne lengden p\xE5 en streng betyr \xE5 telle antall tegn den inneholder.\
+  \ Programmerere gj\xF8r dette for \xE5 validere inndata, skj\xE6re strenger eller\
+  \ for \xE5\u2026"
+title: "Finn lengden p\xE5 en streng"
 ---
 
 {{< edit_this_page >}}

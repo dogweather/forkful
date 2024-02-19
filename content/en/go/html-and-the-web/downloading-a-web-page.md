@@ -1,12 +1,14 @@
 ---
-title:                "Downloading a web page"
 aliases:
 - /en/go/downloading-a-web-page/
-date:                  2024-02-03T17:50:09.242181-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Downloading a web page"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/downloading-a-web-page.md"
+date: 2024-02-03 17:50:09.242181-07:00
+description: "Downloading a web page is about fetching the HTML content of a web page\
+  \ via HTTP/HTTPS protocol. Programmers often do this for web scraping, data\u2026"
+lastmod: 2024-02-18 23:09:10.595242
+model: gpt-4-0125-preview
+summary: "Downloading a web page is about fetching the HTML content of a web page\
+  \ via HTTP/HTTPS protocol. Programmers often do this for web scraping, data\u2026"
+title: Downloading a web page
 ---
 
 {{< edit_this_page >}}

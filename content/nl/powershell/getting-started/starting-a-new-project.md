@@ -1,15 +1,17 @@
 ---
-title:                "Een nieuw project starten"
 aliases:
 - /nl/powershell/starting-a-new-project/
-date:                  2024-01-28T22:08:28.085806-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een nieuw project starten"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/powershell/starting-a-new-project.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:28.085806-07:00
+description: "Een nieuw project starten gaat over het leggen van de fundamenten voor\
+  \ je codeerkunstwerk. Als programmeurs doen we dit om een frisse idee te starten\
+  \ of\u2026"
+lastmod: 2024-02-18 23:09:02.092654
+model: gpt-4-0125-preview
+summary: "Een nieuw project starten gaat over het leggen van de fundamenten voor je\
+  \ codeerkunstwerk. Als programmeurs doen we dit om een frisse idee te starten of\u2026"
+title: Een nieuw project starten
 ---
 
 {{< edit_this_page >}}
