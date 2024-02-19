@@ -1,15 +1,24 @@
 ---
-title:                "使用关联数组"
 aliases:
 - /zh/bash/using-associative-arrays/
-date:                  2024-01-30T19:10:00.214919-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用关联数组"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/bash/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:00.214919-07:00
+description: "\u5173\u8054\u6570\u7EC4\u5C31\u50CF\u8D85\u7EA7\u52A0\u5F3A\u7248\u7684\
+  \u6570\u7EC4\uFF0C\u5B83\u5141\u8BB8\u4F60\u4F7F\u7528\u5B57\u7B26\u4E32\u4F5C\u4E3A\
+  \u7D22\u5F15\uFF0C\u800C\u4E0D\u4EC5\u662F\u6574\u6570\u3002\u7A0B\u5E8F\u5458\u4F7F\
+  \u7528\u5B83\u4EEC\u6765\u5904\u7406\u66F4\u590D\u6742\u7684\u6570\u636E\u7ED3\u6784\
+  \uFF0C\u4F7F\u5F97\u5904\u7406\u90A3\u4E9B\u4E0D\u6574\u9F50\u5730\u9002\u5E94\u4E8E\
+  \u987A\u5E8F\u5217\u8868\u7684\u6570\u636E\u53D8\u5F97\u66F4\u52A0\u5BB9\u6613\u3002"
+lastmod: 2024-02-18 23:08:59.284357
+model: gpt-4-0125-preview
+summary: "\u5173\u8054\u6570\u7EC4\u5C31\u50CF\u8D85\u7EA7\u52A0\u5F3A\u7248\u7684\
+  \u6570\u7EC4\uFF0C\u5B83\u5141\u8BB8\u4F60\u4F7F\u7528\u5B57\u7B26\u4E32\u4F5C\u4E3A\
+  \u7D22\u5F15\uFF0C\u800C\u4E0D\u4EC5\u662F\u6574\u6570\u3002\u7A0B\u5E8F\u5458\u4F7F\
+  \u7528\u5B83\u4EEC\u6765\u5904\u7406\u66F4\u590D\u6742\u7684\u6570\u636E\u7ED3\u6784\
+  \uFF0C\u4F7F\u5F97\u5904\u7406\u90A3\u4E9B\u4E0D\u6574\u9F50\u5730\u9002\u5E94\u4E8E\
+  \u987A\u5E8F\u5217\u8868\u7684\u6570\u636E\u53D8\u5F97\u66F4\u52A0\u5BB9\u6613\u3002"
+title: "\u4F7F\u7528\u5173\u8054\u6570\u7EC4"
 ---
 
 {{< edit_this_page >}}

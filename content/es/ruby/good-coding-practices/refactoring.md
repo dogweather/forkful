@@ -1,13 +1,15 @@
 ---
-title:                "Refactorización"
 aliases:
 - /es/ruby/refactoring/
-date:                  2024-01-26T03:36:43.272948-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactorización"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/refactoring.md"
+date: 2024-01-26 03:36:43.272948-07:00
+description: "La refactorizaci\xF3n es el proceso de reestructurar el c\xF3digo de\
+  \ computadora existente sin cambiar su comportamiento externo. Los programadores\
+  \ refactorizan\u2026"
+lastmod: 2024-02-18 23:09:10.561531
+model: gpt-4-0125-preview
+summary: "La refactorizaci\xF3n es el proceso de reestructurar el c\xF3digo de computadora\
+  \ existente sin cambiar su comportamiento externo. Los programadores refactorizan\u2026"
+title: "Refactorizaci\xF3n"
 ---
 
 {{< edit_this_page >}}

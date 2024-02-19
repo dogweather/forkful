@@ -1,14 +1,22 @@
 ---
-title:                "使用调试器"
 aliases:
 - /zh/vba/using-a-debugger/
-date:                  2024-02-01T22:03:34.600469-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用调试器"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/using-a-debugger.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:34.600469-07:00
+description: "\u5728Visual Basic for Applications (VBA)\u4E2D\u4F7F\u7528\u8C03\u8BD5\
+  \u5668\u5305\u62EC\u9010\u6B65\u6267\u884C\u4EE3\u7801\u4EE5\u68C0\u67E5\u5176\u6267\
+  \u884C\u6D41\u7A0B\u548C\u53D8\u91CF\u72B6\u6001\u3002\u8FD9\u4E2A\u8FC7\u7A0B\u5BF9\
+  \u4E8E\u8BC6\u522B\u548C\u4FEE\u590D\u4EE3\u7801\u4E2D\u7684\u9519\u8BEF\u81F3\u5173\
+  \u91CD\u8981\uFF0C\u6700\u7EC8\u786E\u4FDD\u5B83\u6309\u9884\u671F\u6267\u884C\u3002"
+lastmod: 2024-02-18 23:08:58.985530
+model: gpt-4-0125-preview
+summary: "\u5728Visual Basic for Applications (VBA)\u4E2D\u4F7F\u7528\u8C03\u8BD5\u5668\
+  \u5305\u62EC\u9010\u6B65\u6267\u884C\u4EE3\u7801\u4EE5\u68C0\u67E5\u5176\u6267\u884C\
+  \u6D41\u7A0B\u548C\u53D8\u91CF\u72B6\u6001\u3002\u8FD9\u4E2A\u8FC7\u7A0B\u5BF9\u4E8E\
+  \u8BC6\u522B\u548C\u4FEE\u590D\u4EE3\u7801\u4E2D\u7684\u9519\u8BEF\u81F3\u5173\u91CD\
+  \u8981\uFF0C\u6700\u7EC8\u786E\u4FDD\u5B83\u6309\u9884\u671F\u6267\u884C\u3002"
+title: "\u4F7F\u7528\u8C03\u8BD5\u5668"
 ---
 
 {{< edit_this_page >}}

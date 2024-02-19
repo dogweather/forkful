@@ -1,14 +1,21 @@
 ---
-title:                "미래나 과거의 날짜 계산하기"
 aliases:
 - /ko/kotlin/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:31:43.611931-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "미래나 과거의 날짜 계산하기"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:31:43.611931-07:00
+description: "\uB0A0\uC9DC \uACC4\uC0B0\uC740 \uBBF8\uB798\uB098 \uACFC\uAC70\uC758\
+  \ \uD2B9\uC815 \uB0A0\uC9DC\uB97C \uCC3E\uB294 \uAC83\uC785\uB2C8\uB2E4. \uC77C\uC815\
+  \ \uAD00\uB9AC, \uAE30\uD55C \uC124\uC815, \uC2DC\uAC04 \uAE30\uBC18\uC758 \uAE30\
+  \uB2A5 \uAD6C\uD604 \uB4F1 \uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uC790\uC8FC\
+  \ \uD544\uC694\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.172381
+model: gpt-4-1106-preview
+summary: "\uB0A0\uC9DC \uACC4\uC0B0\uC740 \uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uD2B9\
+  \uC815 \uB0A0\uC9DC\uB97C \uCC3E\uB294 \uAC83\uC785\uB2C8\uB2E4. \uC77C\uC815 \uAD00\
+  \uB9AC, \uAE30\uD55C \uC124\uC815, \uC2DC\uAC04 \uAE30\uBC18\uC758 \uAE30\uB2A5\
+  \ \uAD6C\uD604 \uB4F1 \uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uC790\uC8FC \uD544\
+  \uC694\uD569\uB2C8\uB2E4."
+title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

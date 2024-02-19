@@ -1,13 +1,16 @@
 ---
-title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 aliases:
 - /fi/javascript/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:01:59.400463-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:01:59.400463-07:00
+description: "Perustiedot: HTTP-pyynt\xF6 basic-autentikaatiolla tarkoittaa k\xE4\
+  ytt\xE4j\xE4nimen ja salasanan sis\xE4llytt\xE4mist\xE4 HTTP-pyynt\xF6\xF6n tunnistautumista\
+  \ varten. Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:08.035442
+model: gpt-4-1106-preview
+summary: "Perustiedot: HTTP-pyynt\xF6 basic-autentikaatiolla tarkoittaa k\xE4ytt\xE4\
+  j\xE4nimen ja salasanan sis\xE4llytt\xE4mist\xE4 HTTP-pyynt\xF6\xF6n tunnistautumista\
+  \ varten. Ohjelmoijat\u2026"
+title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 ---
 
 {{< edit_this_page >}}

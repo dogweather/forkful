@@ -1,13 +1,24 @@
 ---
-title:                "코드를 함수로 구성하기"
 aliases:
 - /ko/clojure/organizing-code-into-functions/
-date:                  2024-01-26T01:09:38.384186-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "코드를 함수로 구성하기"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/organizing-code-into-functions.md"
+date: 2024-01-26 01:09:38.384186-07:00
+description: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uC870\uAC01\uB0B4\uB294 \uAC83\
+  \uC740 \uD2B9\uC815 \uC791\uC5C5\uC744 \uC218\uD589\uD558\uB294 \uCF54\uB4DC \uBE14\
+  \uB85D\uC744 \uD328\uD0A4\uC9D5\uD558\uB294 \uAC83\uC5D0 \uAD00\uD55C \uAC83\uC785\
+  \uB2C8\uB2E4. \uC774\uB7EC\uD55C \uC791\uC5C5\uC744 \uD568\uC73C\uB85C\uC368 \uCF54\
+  \uB4DC\uAC00 \uAE68\uB057\uD574\uC9C0\uBA70, \uC720\uC9C0\uBCF4\uC218\uAC00 \uC26C\
+  \uC6CC\uC9C0\uACE0, \uB2E4\uB978 \uAC1C\uBC1C\uC790\uB4E4\uC774 \uC77D\uAE30\uC5D0\
+  \uB3C4 \uC218\uC6D4\uD574\uC9D1\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:05.698432
+model: gpt-4-1106-preview
+summary: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uC870\uAC01\uB0B4\uB294 \uAC83\uC740\
+  \ \uD2B9\uC815 \uC791\uC5C5\uC744 \uC218\uD589\uD558\uB294 \uCF54\uB4DC \uBE14\uB85D\
+  \uC744 \uD328\uD0A4\uC9D5\uD558\uB294 \uAC83\uC5D0 \uAD00\uD55C \uAC83\uC785\uB2C8\
+  \uB2E4. \uC774\uB7EC\uD55C \uC791\uC5C5\uC744 \uD568\uC73C\uB85C\uC368 \uCF54\uB4DC\
+  \uAC00 \uAE68\uB057\uD574\uC9C0\uBA70, \uC720\uC9C0\uBCF4\uC218\uAC00 \uC26C\uC6CC\
+  \uC9C0\uACE0, \uB2E4\uB978 \uAC1C\uBC1C\uC790\uB4E4\uC774 \uC77D\uAE30\uC5D0\uB3C4\
+  \ \uC218\uC6D4\uD574\uC9D1\uB2C8\uB2E4."
+title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

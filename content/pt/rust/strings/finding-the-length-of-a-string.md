@@ -1,13 +1,14 @@
 ---
-title:                "Descobrindo o comprimento de uma string"
 aliases:
 - /pt/rust/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:25.197261-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Descobrindo o comprimento de uma string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:25.197261-07:00
+description: "Descobrir o tamanho de uma string significa saber quantos caracteres\
+  \ ela possui. Programadores precisam dessa informa\xE7\xE3o para, por exemplo, validar\u2026"
+lastmod: 2024-02-18 23:08:57.918693
+model: gpt-4-1106-preview
+summary: "Descobrir o tamanho de uma string significa saber quantos caracteres ela\
+  \ possui. Programadores precisam dessa informa\xE7\xE3o para, por exemplo, validar\u2026"
+title: Descobrindo o comprimento de uma string
 ---
 
 {{< edit_this_page >}}

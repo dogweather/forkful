@@ -1,15 +1,15 @@
 ---
-title:                "Создание временного файла"
 aliases:
 - /ru/elm/creating-a-temporary-file/
-date:                  2024-01-28T23:56:42.888036-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Создание временного файла"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/elm/creating-a-temporary-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 23:56:42.888036-07:00
+description: null
+lastmod: 2024-02-18 23:08:56.916798
+model: gpt-4-0125-preview
+summary: null
+title: "\u0421\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u0432\u0440\u0435\u043C\u0435\
+  \u043D\u043D\u043E\u0433\u043E \u0444\u0430\u0439\u043B\u0430"
 ---
 
 {{< edit_this_page >}}

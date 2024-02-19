@@ -1,14 +1,30 @@
 ---
-title:                "HTML 파싱"
 aliases:
 - /ko/elixir/parsing-html/
-date:                  2024-02-03T19:12:00.166293-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML 파싱"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:00.166293-07:00
+description: "Elixir\uC5D0\uC11C HTML \uD30C\uC2F1\uC740 HTML \uBB38\uC11C\uB85C\uBD80\
+  \uD130 \uC815\uBCF4\uB97C \uCD94\uCD9C\uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD569\
+  \uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC6F9 \uD398\uC774\uC9C0\
+  \uC640 \uD504\uB85C\uADF8\uB798\uB9C8\uD2F1\uD558\uAC8C \uC0C1\uD638\uC791\uC6A9\
+  \uD558\uAC70\uB098, \uB370\uC774\uD130\uB97C \uC2A4\uD06C\uB808\uC774\uD551\uD558\
+  \uAC70\uB098, \uC6F9 \uC0C1\uD638\uC791\uC6A9\uC744 \uC790\uB3D9\uD654\uD558\uAE30\
+  \ \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uC218\uD589\uD569\uB2C8\uB2E4. \uC774\uB97C\
+  \ \uD1B5\uD574 \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC774 \uC6F9 \uCF58\uD150\uCE20\
+  \uB97C \uB3D9\uC801\uC73C\uB85C\u2026"
+lastmod: 2024-02-18 23:09:05.752088
+model: gpt-4-0125-preview
+summary: "Elixir\uC5D0\uC11C HTML \uD30C\uC2F1\uC740 HTML \uBB38\uC11C\uB85C\uBD80\
+  \uD130 \uC815\uBCF4\uB97C \uCD94\uCD9C\uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD569\
+  \uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC6F9 \uD398\uC774\uC9C0\
+  \uC640 \uD504\uB85C\uADF8\uB798\uB9C8\uD2F1\uD558\uAC8C \uC0C1\uD638\uC791\uC6A9\
+  \uD558\uAC70\uB098, \uB370\uC774\uD130\uB97C \uC2A4\uD06C\uB808\uC774\uD551\uD558\
+  \uAC70\uB098, \uC6F9 \uC0C1\uD638\uC791\uC6A9\uC744 \uC790\uB3D9\uD654\uD558\uAE30\
+  \ \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uC218\uD589\uD569\uB2C8\uB2E4. \uC774\uB97C\
+  \ \uD1B5\uD574 \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC774 \uC6F9 \uCF58\uD150\uCE20\
+  \uB97C \uB3D9\uC801\uC73C\uB85C\u2026"
+title: "HTML \uD30C\uC2F1"
 ---
 
 {{< edit_this_page >}}

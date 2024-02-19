@@ -1,13 +1,22 @@
 ---
-title:                "处理错误"
 aliases:
 - /zh/bash/handling-errors/
-date:                  2024-01-26T00:37:22.346291-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "处理错误"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/bash/handling-errors.md"
+date: 2024-01-26 00:37:22.346291-07:00
+description: "\u5728 Bash \u811A\u672C\u4E2D\u5904\u7406\u9519\u8BEF\uFF0C\u662F\u5173\
+  \u4E8E\u9884\u89C1\u53EF\u80FD\u53D1\u751F\u95EE\u9898\u7684\u5730\u65B9\uFF0C\u5E76\
+  \u4E14\u4F18\u96C5\u5730\u5904\u7406\u5B83\u4EEC\u3002\u4E3A\u4EC0\u4E48\uFF1F\u8FD9\
+  \u6837\u53EF\u4EE5\u4FDD\u6301\u4F60\u7684\u811A\u672C\u5065\u58EE\uFF0C\u5E76\u4E14\
+  \u5F53\u4E8B\u60C5\u4E0D\u6309\u9884\u671F\u5DE5\u4F5C\u65F6\uFF0C\u8282\u7701\u7528\
+  \u6237\u7684\u7591\u60D1\u3002"
+lastmod: 2024-02-18 23:08:59.298894
+model: gpt-4-1106-preview
+summary: "\u5728 Bash \u811A\u672C\u4E2D\u5904\u7406\u9519\u8BEF\uFF0C\u662F\u5173\
+  \u4E8E\u9884\u89C1\u53EF\u80FD\u53D1\u751F\u95EE\u9898\u7684\u5730\u65B9\uFF0C\u5E76\
+  \u4E14\u4F18\u96C5\u5730\u5904\u7406\u5B83\u4EEC\u3002\u4E3A\u4EC0\u4E48\uFF1F\u8FD9\
+  \u6837\u53EF\u4EE5\u4FDD\u6301\u4F60\u7684\u811A\u672C\u5065\u58EE\uFF0C\u5E76\u4E14\
+  \u5F53\u4E8B\u60C5\u4E0D\u6309\u9884\u671F\u5DE5\u4F5C\u65F6\uFF0C\u8282\u7701\u7528\
+  \u6237\u7684\u7591\u60D1\u3002"
+title: "\u5904\u7406\u9519\u8BEF"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,28 @@
 ---
-title:                "정규 표현식 사용하기"
 aliases:
 - /ko/php/using-regular-expressions/
-date:                  2024-02-03T19:17:59.968008-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "정규 표현식 사용하기"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:17:59.968008-07:00
+description: "PHP\uC5D0\uC11C \uC815\uADDC \uD45C\uD604\uC2DD(regex)\uC740 \uBB38\uC790\
+  \uC5F4 \uB0B4\uC5D0\uC11C \uBB38\uC790 \uC870\uD569\uC744 \uC77C\uCE58\uC2DC\uD0A4\
+  \uB294 \uB370 \uC0AC\uC6A9\uB418\uB294 \uD328\uD134\uC73C\uB85C, \uC815\uAD50\uD55C\
+  \ \uAC80\uC0C9 \uBC0F \uAD50\uCCB4 \uC791\uC5C5\uACFC \uB370\uC774\uD130 \uAC80\uC99D\
+  \uC744 \uAC00\uB2A5\uD558\uAC8C \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB294 \uD14D\uC2A4\uD2B8 \uD30C\uC2F1, \uC591\uC2DD \uAC80\uC99D, \uC6F9 \uB370\
+  \uC774\uD130 \uC2A4\uD06C\uB798\uD551 \uB4F1\uC5D0 \uC788\uC5B4 \uADF8 \uAC15\uB825\
+  \uD568\uACFC \uC720\uC5F0\uC131 \uB54C\uBB38\uC5D0 regex\uB97C\u2026"
+lastmod: 2024-02-18 23:09:06.337510
+model: gpt-4-0125-preview
+summary: "PHP\uC5D0\uC11C \uC815\uADDC \uD45C\uD604\uC2DD(regex)\uC740 \uBB38\uC790\
+  \uC5F4 \uB0B4\uC5D0\uC11C \uBB38\uC790 \uC870\uD569\uC744 \uC77C\uCE58\uC2DC\uD0A4\
+  \uB294 \uB370 \uC0AC\uC6A9\uB418\uB294 \uD328\uD134\uC73C\uB85C, \uC815\uAD50\uD55C\
+  \ \uAC80\uC0C9 \uBC0F \uAD50\uCCB4 \uC791\uC5C5\uACFC \uB370\uC774\uD130 \uAC80\uC99D\
+  \uC744 \uAC00\uB2A5\uD558\uAC8C \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB294 \uD14D\uC2A4\uD2B8 \uD30C\uC2F1, \uC591\uC2DD \uAC80\uC99D, \uC6F9 \uB370\
+  \uC774\uD130 \uC2A4\uD06C\uB798\uD551 \uB4F1\uC5D0 \uC788\uC5B4 \uADF8 \uAC15\uB825\
+  \uD568\uACFC \uC720\uC5F0\uC131 \uB54C\uBB38\uC5D0 regex\uB97C\u2026"
+title: "\uC815\uADDC \uD45C\uD604\uC2DD \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

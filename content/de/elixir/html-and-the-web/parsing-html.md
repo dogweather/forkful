@@ -1,14 +1,16 @@
 ---
-title:                "HTML parsen"
 aliases:
 - /de/elixir/parsing-html/
-date:                  2024-02-03T19:11:42.251444-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML parsen"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:11:42.251444-07:00
+description: "HTML in Elixir zu parsen, umfasst das Extrahieren von Informationen\
+  \ aus HTML-Dokumenten. Programmierer tun dies, um programmatisch mit Webseiten zu\u2026"
+lastmod: 2024-02-18 23:09:04.549597
+model: gpt-4-0125-preview
+summary: "HTML in Elixir zu parsen, umfasst das Extrahieren von Informationen aus\
+  \ HTML-Dokumenten. Programmierer tun dies, um programmatisch mit Webseiten zu\u2026"
+title: HTML parsen
 ---
 
 {{< edit_this_page >}}

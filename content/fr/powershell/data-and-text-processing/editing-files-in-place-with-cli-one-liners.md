@@ -1,13 +1,17 @@
 ---
-title:                "Modification de fichiers sur place avec des lignes de commande en une seule étape"
 aliases:
 - /fr/powershell/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:20:35.926975-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Modification de fichiers sur place avec des lignes de commande en une seule étape"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:20:35.926975-07:00
+description: "L'\xE9dition de fichiers directement avec des lignes de commande (CLI)\
+  \ en une ligne avec PowerShell consiste \xE0 effectuer des modifications directes\
+  \ sur les\u2026"
+lastmod: 2024-02-18 23:09:09.063529
+model: gpt-4-0125-preview
+summary: "L'\xE9dition de fichiers directement avec des lignes de commande (CLI) en\
+  \ une ligne avec PowerShell consiste \xE0 effectuer des modifications directes sur\
+  \ les\u2026"
+title: "Modification de fichiers sur place avec des lignes de commande en une seule\
+  \ \xE9tape"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Lese en tekstfil"
 aliases:
 - /no/swift/reading-a-text-file/
-date:                  2024-01-20T17:55:16.688800-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lese en tekstfil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/reading-a-text-file.md"
+date: 2024-01-20 17:55:16.688800-07:00
+description: "Lesing av tekstfiler lar programmereren hente data utenfor appen. Det\
+  \ er n\xF8dvendig for lagring, konfigurasjoner, eller for \xE5 arbeide med brukergenerert\u2026"
+lastmod: 2024-02-18 23:08:54.285652
+model: gpt-4-1106-preview
+summary: "Lesing av tekstfiler lar programmereren hente data utenfor appen. Det er\
+  \ n\xF8dvendig for lagring, konfigurasjoner, eller for \xE5 arbeide med brukergenerert\u2026"
+title: Lese en tekstfil
 ---
 
 {{< edit_this_page >}}

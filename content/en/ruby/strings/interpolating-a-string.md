@@ -1,13 +1,14 @@
 ---
-title:                "Interpolating a string"
 aliases:
 - /en/ruby/interpolating-a-string/
-date:                  2024-01-20T17:51:31.620513-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolating a string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/interpolating-a-string.md"
+date: 2024-01-20 17:51:31.620513-07:00
+description: "String interpolation lets you embed variables or expressions inside\
+  \ a string. We do this for cleaner, more readable code that glues together dynamic\u2026"
+lastmod: 2024-02-18 23:09:11.550096
+model: gpt-4-1106-preview
+summary: "String interpolation lets you embed variables or expressions inside a string.\
+  \ We do this for cleaner, more readable code that glues together dynamic\u2026"
+title: Interpolating a string
 ---
 
 {{< edit_this_page >}}

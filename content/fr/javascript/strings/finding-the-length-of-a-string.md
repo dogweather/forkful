@@ -1,13 +1,16 @@
 ---
-title:                "Trouver la longueur d'une chaîne de caractères"
 aliases:
 - /fr/javascript/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:48.924493-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Trouver la longueur d'une chaîne de caractères"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:48.924493-07:00
+description: "En JavaScript, conna\xEEtre la longueur d'une cha\xEEne signifie compter\
+  \ le nombre de caract\xE8res qu'elle contient. C'est essentiel pour valider des\
+  \ entr\xE9es,\u2026"
+lastmod: 2024-02-18 23:09:09.245765
+model: gpt-4-1106-preview
+summary: "En JavaScript, conna\xEEtre la longueur d'une cha\xEEne signifie compter\
+  \ le nombre de caract\xE8res qu'elle contient. C'est essentiel pour valider des\
+  \ entr\xE9es,\u2026"
+title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Création d'un fichier temporaire"
 aliases:
 - /fr/c/creating-a-temporary-file/
-date:                  2024-02-03T17:55:06.845096-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Création d'un fichier temporaire"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/creating-a-temporary-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:06.845096-07:00
+description: "Cr\xE9er un fichier temporaire en C consiste \xE0 g\xE9n\xE9rer un fichier\
+  \ destin\xE9 \xE0 \xEAtre utilis\xE9 pendant une courte dur\xE9e, g\xE9n\xE9ralement\
+  \ comme espace de travail\u2026"
+lastmod: 2024-02-18 23:09:09.379149
+model: gpt-4-0125-preview
+summary: "Cr\xE9er un fichier temporaire en C consiste \xE0 g\xE9n\xE9rer un fichier\
+  \ destin\xE9 \xE0 \xEAtre utilis\xE9 pendant une courte dur\xE9e, g\xE9n\xE9ralement\
+  \ comme espace de travail\u2026"
+title: "Cr\xE9ation d'un fichier temporaire"
 ---
 
 {{< edit_this_page >}}

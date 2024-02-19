@@ -1,14 +1,17 @@
 ---
-title:                "Tarkistetaan, onko hakemisto olemassa"
 aliases:
 - /fi/bash/checking-if-a-directory-exists/
-date:                  2024-02-03T19:06:55.293122-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tarkistetaan, onko hakemisto olemassa"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:55.293122-07:00
+description: "Bash-ohjelmoinnissa tarkistus, onko hakemisto olemassa, on olennainen\
+  \ valvontamekanismi, jota k\xE4ytet\xE4\xE4n varmistamaan hakemiston olemassaolo\
+  \ ennen\u2026"
+lastmod: 2024-02-18 23:09:07.820255
+model: gpt-4-0125-preview
+summary: "Bash-ohjelmoinnissa tarkistus, onko hakemisto olemassa, on olennainen valvontamekanismi,\
+  \ jota k\xE4ytet\xE4\xE4n varmistamaan hakemiston olemassaolo ennen\u2026"
+title: Tarkistetaan, onko hakemisto olemassa
 ---
 
 {{< edit_this_page >}}

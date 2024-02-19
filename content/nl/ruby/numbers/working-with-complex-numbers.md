@@ -1,15 +1,17 @@
 ---
-title:                "Werken met complexe getallen"
 aliases:
 - /nl/ruby/working-with-complex-numbers/
-date:                  2024-01-28T22:12:40.339553-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met complexe getallen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/working-with-complex-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:40.339553-07:00
+description: "Complexe getallen, bestaande uit een re\xEBel en een imaginair deel\
+  \ (zoals 3+4i), zijn een basiscomponent in engineering en fysica. Programmeurs werken\
+  \ ermee\u2026"
+lastmod: 2024-02-18 23:09:02.413245
+model: gpt-4-0125-preview
+summary: "Complexe getallen, bestaande uit een re\xEBel en een imaginair deel (zoals\
+  \ 3+4i), zijn een basiscomponent in engineering en fysica. Programmeurs werken ermee\u2026"
+title: Werken met complexe getallen
 ---
 
 {{< edit_this_page >}}

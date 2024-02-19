@@ -1,14 +1,25 @@
 ---
-title:                "HTTP 요청 보내기"
 aliases:
 - /ko/lua/sending-an-http-request/
-date:                  2024-01-20T18:00:12.464622-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP 요청 보내기"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/lua/sending-an-http-request.md"
+date: 2024-01-20 18:00:12.464622-07:00
+description: "HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B8\uB2E4\uB294 \uAC74 \uC6F9 \uC11C\
+  \uBC84\uC640 \uB370\uC774\uD130\uB97C \uC8FC\uACE0\uBC1B\uAE30 \uC704\uD574\uC11C\
+  \uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uAC00 \uC774\uB97C \uC0AC\uC6A9\
+  \uD558\uB294 \uC774\uC720\uB294 \uC6F9 API \uD1B5\uC2E0, \uC6F9 \uD398\uC774\uC9C0\
+  \ \uB0B4\uC6A9 \uAC00\uC838\uC624\uAE30, \uC6F9 \uAE30\uBC18 \uB370\uC774\uD130\
+  \ \uBD84\uC11D \uB4F1 \uB2E4\uC591\uD55C \uC791\uC5C5\uC744 \uC790\uB3D9\uD654\uD558\
+  \uAE30 \uC704\uD574\uC11C\uC8E0."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.411802
+model: gpt-4-1106-preview
+summary: "HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B8\uB2E4\uB294 \uAC74 \uC6F9 \uC11C\uBC84\
+  \uC640 \uB370\uC774\uD130\uB97C \uC8FC\uACE0\uBC1B\uAE30 \uC704\uD574\uC11C\uC785\
+  \uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uAC00 \uC774\uB97C \uC0AC\uC6A9\uD558\
+  \uB294 \uC774\uC720\uB294 \uC6F9 API \uD1B5\uC2E0, \uC6F9 \uD398\uC774\uC9C0 \uB0B4\
+  \uC6A9 \uAC00\uC838\uC624\uAE30, \uC6F9 \uAE30\uBC18 \uB370\uC774\uD130 \uBD84\uC11D\
+  \ \uB4F1 \uB2E4\uC591\uD55C \uC791\uC5C5\uC744 \uC790\uB3D9\uD654\uD558\uAE30 \uC704\
+  \uD574\uC11C\uC8E0."
+title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,17 @@
 ---
-title:                "Gebruik van associatieve arrays"
 aliases:
 - /nl/php/using-associative-arrays/
-date:                  2024-01-30T19:12:21.707261-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gebruik van associatieve arrays"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/php/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:21.707261-07:00
+description: "Associatieve arrays in PHP zijn als super-opgeladen lijsten waar elk\
+  \ element toegankelijk is met behulp van een voor mensen leesbare sleutel in plaats\
+  \ van\u2026"
+lastmod: 2024-02-18 23:09:01.937165
+model: gpt-4-0125-preview
+summary: "Associatieve arrays in PHP zijn als super-opgeladen lijsten waar elk element\
+  \ toegankelijk is met behulp van een voor mensen leesbare sleutel in plaats van\u2026"
+title: Gebruik van associatieve arrays
 ---
 
 {{< edit_this_page >}}

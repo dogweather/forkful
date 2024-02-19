@@ -1,13 +1,14 @@
 ---
-title:                "Enviando una solicitud http"
 aliases:
 - /es/arduino/sending-an-http-request/
-date:                  2024-01-20T17:59:06.620091-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando una solicitud http"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/sending-an-http-request.md"
+date: 2024-01-20 17:59:06.620091-07:00
+description: "Enviar una petici\xF3n HTTP es b\xE1sicamente pedirle datos a una p\xE1\
+  gina web o servidor. Lo hacemos para interactuar con servicios web, sea para recoger\u2026"
+lastmod: 2024-02-18 23:09:10.258229
+model: gpt-4-1106-preview
+summary: "Enviar una petici\xF3n HTTP es b\xE1sicamente pedirle datos a una p\xE1\
+  gina web o servidor. Lo hacemos para interactuar con servicios web, sea para recoger\u2026"
+title: Enviando una solicitud http
 ---
 
 {{< edit_this_page >}}

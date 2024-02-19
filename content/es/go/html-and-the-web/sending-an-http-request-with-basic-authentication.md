@@ -1,14 +1,18 @@
 ---
-title:                "Enviando una solicitud HTTP con autenticación básica"
 aliases:
 - /es/go/sending-an-http-request-with-basic-authentication/
-date:                  2024-02-03T18:08:52.918102-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Enviando una solicitud HTTP con autenticación básica"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:52.918102-07:00
+description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en Go implica\
+  \ agregar un encabezado de autorizaci\xF3n a tu solicitud que incluya un nombre\
+  \ de usuario y\u2026"
+lastmod: 2024-02-18 23:09:09.454970
+model: gpt-4-0125-preview
+summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en Go implica agregar\
+  \ un encabezado de autorizaci\xF3n a tu solicitud que incluya un nombre de usuario\
+  \ y\u2026"
+title: "Enviando una solicitud HTTP con autenticaci\xF3n b\xE1sica"
 ---
 
 {{< edit_this_page >}}

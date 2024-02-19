@@ -1,13 +1,14 @@
 ---
-title:                "Generazione di numeri casuali"
 aliases:
 - /it/typescript/generating-random-numbers/
-date:                  2024-01-27T20:35:35.118406-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generazione di numeri casuali"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/generating-random-numbers.md"
+date: 2024-01-27 20:35:35.118406-07:00
+description: "Generare numeri casuali in TypeScript consiste nel creare valori numerici\
+  \ imprevedibili all'interno di un intervallo specificato. I programmatori\u2026"
+lastmod: 2024-02-18 23:08:55.636456
+model: gpt-4-0125-preview
+summary: "Generare numeri casuali in TypeScript consiste nel creare valori numerici\
+  \ imprevedibili all'interno di un intervallo specificato. I programmatori\u2026"
+title: Generazione di numeri casuali
 ---
 
 {{< edit_this_page >}}

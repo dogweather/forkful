@@ -1,14 +1,16 @@
 ---
-title:                "Rifattorizzazione"
 aliases:
 - /it/c/refactoring/
-date:                  2024-02-03T18:06:38.598168-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rifattorizzazione"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/refactoring.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:06:38.598168-07:00
+description: "Il refactoring nella programmazione implica la ristrutturazione del\
+  \ codice esistente senza modificarne il comportamento esterno, con l'obiettivo di\u2026"
+lastmod: 2024-02-18 23:08:56.347372
+model: gpt-4-0125-preview
+summary: "Il refactoring nella programmazione implica la ristrutturazione del codice\
+  \ esistente senza modificarne il comportamento esterno, con l'obiettivo di\u2026"
+title: Rifattorizzazione
 ---
 
 {{< edit_this_page >}}

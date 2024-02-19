@@ -1,13 +1,16 @@
 ---
-title:                "Interpolera en sträng"
 aliases:
 - /sv/ruby/interpolating-a-string/
-date:                  2024-01-20T17:51:50.722105-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolera en sträng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/interpolating-a-string.md"
+date: 2024-01-20 17:51:50.722105-07:00
+description: "Stringinterpolering l\xE5ter dig s\xE4tta in variabler eller Ruby-kod\
+  \ inne i en str\xE4ng. Det \xE4r ett snabbt och l\xE4sarv\xE4nligt s\xE4tt att bygga\
+  \ dynamiska str\xE4ngar."
+lastmod: 2024-02-18 23:08:52.280082
+model: gpt-4-1106-preview
+summary: "Stringinterpolering l\xE5ter dig s\xE4tta in variabler eller Ruby-kod inne\
+  \ i en str\xE4ng. Det \xE4r ett snabbt och l\xE4sarv\xE4nligt s\xE4tt att bygga\
+  \ dynamiska str\xE4ngar."
+title: "Interpolera en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

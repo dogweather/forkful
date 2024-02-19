@@ -1,13 +1,14 @@
 ---
-title:                "Merkkijonojen osien poimiminen"
 aliases:
 - /fi/typescript/extracting-substrings/
-date:                  2024-01-20T17:46:47.381956-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonojen osien poimiminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/extracting-substrings.md"
+date: 2024-01-20 17:46:47.381956-07:00
+description: "Substringit ovat string-tyypin osajonoja. Ne auttavat meit\xE4 pilkkomaan\
+  \ ja analysoimaan teksti\xE4 esim. tietojen kaivamiseksi tai formaatin muuttamiseksi."
+lastmod: 2024-02-18 23:09:07.306891
+model: gpt-4-1106-preview
+summary: "Substringit ovat string-tyypin osajonoja. Ne auttavat meit\xE4 pilkkomaan\
+  \ ja analysoimaan teksti\xE4 esim. tietojen kaivamiseksi tai formaatin muuttamiseksi."
+title: Merkkijonojen osien poimiminen
 ---
 
 {{< edit_this_page >}}

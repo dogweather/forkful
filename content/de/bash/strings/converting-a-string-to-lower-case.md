@@ -1,13 +1,15 @@
 ---
-title:                "Umformung eines Strings in Kleinbuchstaben"
 aliases:
 - /de/bash/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:37:54.982811-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Umformung eines Strings in Kleinbuchstaben"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:37:54.982811-07:00
+description: "Das Umwandeln eines Strings in Kleinbuchstaben in Bash bedeutet, alle\
+  \ Gro\xDFbuchstaben in einem Text in ihre entsprechenden Kleinbuchstaben zu \xE4\
+  ndern.\u2026"
+lastmod: 2024-02-18 23:09:05.038290
+model: gpt-4-1106-preview
+summary: "Das Umwandeln eines Strings in Kleinbuchstaben in Bash bedeutet, alle Gro\xDF\
+  buchstaben in einem Text in ihre entsprechenden Kleinbuchstaben zu \xE4ndern.\u2026"
+title: Umformung eines Strings in Kleinbuchstaben
 ---
 
 {{< edit_this_page >}}

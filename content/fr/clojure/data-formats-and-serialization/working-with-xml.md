@@ -1,13 +1,16 @@
 ---
-title:                "Travailler avec XML"
 aliases:
 - /fr/clojure/working-with-xml/
-date:                  2024-01-26T04:29:03.622343-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Travailler avec XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/working-with-xml.md"
+date: 2024-01-26 04:29:03.622343-07:00
+description: "XML est un langage de balisage pour encoder des documents d'une mani\xE8\
+  re qui est \xE0 la fois lisible par l'homme et par la machine. Il est cl\xE9 dans\
+  \ les\u2026"
+lastmod: 2024-02-18 23:09:08.413644
+model: gpt-4-0125-preview
+summary: "XML est un langage de balisage pour encoder des documents d'une mani\xE8\
+  re qui est \xE0 la fois lisible par l'homme et par la machine. Il est cl\xE9 dans\
+  \ les\u2026"
+title: Travailler avec XML
 ---
 
 {{< edit_this_page >}}

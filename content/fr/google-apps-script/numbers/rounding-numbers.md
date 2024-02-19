@@ -1,14 +1,18 @@
 ---
-title:                "Arrondissement des nombres"
 aliases:
 - /fr/google-apps-script/rounding-numbers/
-date:                  2024-02-01T22:00:43.642408-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrondissement des nombres"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/google-apps-script/rounding-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:43.642408-07:00
+description: "Arrondir les nombres, un concept fondamental en programmation informatique,\
+  \ consiste \xE0 ajuster un nombre \xE0 l'entier le plus proche ou \xE0 un nombre\
+  \ sp\xE9cifi\xE9\u2026"
+lastmod: 2024-02-18 23:09:08.281759
+model: gpt-4-0125-preview
+summary: "Arrondir les nombres, un concept fondamental en programmation informatique,\
+  \ consiste \xE0 ajuster un nombre \xE0 l'entier le plus proche ou \xE0 un nombre\
+  \ sp\xE9cifi\xE9\u2026"
+title: Arrondissement des nombres
 ---
 
 {{< edit_this_page >}}

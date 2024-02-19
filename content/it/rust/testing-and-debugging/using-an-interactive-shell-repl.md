@@ -1,13 +1,15 @@
 ---
-title:                "Utilizzo di un interprete interattivo (REPL)"
 aliases:
 - /it/rust/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:17:57.798919-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di un interprete interattivo (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:17:57.798919-07:00
+description: "Una shell interattiva di Rust, o un REPL (Read-Eval-Print Loop), ti\
+  \ permette di eseguire codice Rust al volo, vedendo risultati istantanei, perfetto\
+  \ per\u2026"
+lastmod: 2024-02-18 23:08:55.681749
+model: gpt-4-0125-preview
+summary: "Una shell interattiva di Rust, o un REPL (Read-Eval-Print Loop), ti permette\
+  \ di eseguire codice Rust al volo, vedendo risultati istantanei, perfetto per\u2026"
+title: Utilizzo di un interprete interattivo (REPL)
 ---
 
 {{< edit_this_page >}}

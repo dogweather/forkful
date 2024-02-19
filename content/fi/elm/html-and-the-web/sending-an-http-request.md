@@ -1,13 +1,16 @@
 ---
-title:                "HTTP-pyynnön lähettäminen"
 aliases:
 - /fi/elm/sending-an-http-request/
-date:                  2024-01-20T17:59:23.247905-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-pyynnön lähettäminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/sending-an-http-request.md"
+date: 2024-01-20 17:59:23.247905-07:00
+description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen on tiedon pyyt\xE4mist\xE4 palvelimelta.\
+  \ Ohjelmoijat tekev\xE4t sen, koska heid\xE4n sovelluksensa tarvitsevat tietoa p\xE4\
+  ivitty\xE4kseen tai\u2026"
+lastmod: 2024-02-18 23:09:07.500182
+model: gpt-4-1106-preview
+summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen on tiedon pyyt\xE4mist\xE4 palvelimelta.\
+  \ Ohjelmoijat tekev\xE4t sen, koska heid\xE4n sovelluksensa tarvitsevat tietoa p\xE4\
+  ivitty\xE4kseen tai\u2026"
+title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 ---
 
 {{< edit_this_page >}}

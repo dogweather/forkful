@@ -1,13 +1,14 @@
 ---
-title:                "Rounding numbers"
 aliases:
 - /en/lua/rounding-numbers/
-date:                  2024-01-25T03:00:08.560012-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rounding numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/rounding-numbers.md"
+date: 2024-01-25 03:00:08.560012-07:00
+description: "Rounding numbers means adjusting them to the nearest integer or specified\
+  \ decimal place. It's a staple in programming for reducing complexity, enhancing\u2026"
+lastmod: 2024-02-18 23:09:11.173504
+model: gpt-4-1106-preview
+summary: "Rounding numbers means adjusting them to the nearest integer or specified\
+  \ decimal place. It's a staple in programming for reducing complexity, enhancing\u2026"
+title: Rounding numbers
 ---
 
 {{< edit_this_page >}}

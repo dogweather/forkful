@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonosta lainausmerkkien poistaminen"
 aliases:
 - /fi/clojure/removing-quotes-from-a-string/
-date:                  2024-01-26T03:39:07.668911-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonosta lainausmerkkien poistaminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:39:07.668911-07:00
+description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa kiusallisten kaksin-\
+  \ tai yksinkertaisten lainausmerkkien h\xE4vitt\xE4mist\xE4 tekstin ymp\xE4rilt\xE4\
+  . Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:07.215645
+model: gpt-4-0125-preview
+summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa kiusallisten kaksin-\
+  \ tai yksinkertaisten lainausmerkkien h\xE4vitt\xE4mist\xE4 tekstin ymp\xE4rilt\xE4\
+  . Ohjelmoijat\u2026"
+title: Merkkijonosta lainausmerkkien poistaminen
 ---
 
 {{< edit_this_page >}}

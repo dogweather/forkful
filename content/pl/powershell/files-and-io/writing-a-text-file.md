@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie pliku tekstowego"
 aliases:
 - /pl/powershell/writing-a-text-file/
-date:                  2024-02-03T19:29:30.659097-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie pliku tekstowego"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:30.659097-07:00
+description: "Tworzenie pliku tekstowego w PowerShell polega na tworzeniu i manipulowaniu\
+  \ plikami opartymi na tek\u015Bcie, co jest fundamentaln\u0105 operacj\u0105 dla\
+  \ logowania,\u2026"
+lastmod: 2024-02-18 23:08:49.846824
+model: gpt-4-0125-preview
+summary: "Tworzenie pliku tekstowego w PowerShell polega na tworzeniu i manipulowaniu\
+  \ plikami opartymi na tek\u015Bcie, co jest fundamentaln\u0105 operacj\u0105 dla\
+  \ logowania,\u2026"
+title: Pisanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

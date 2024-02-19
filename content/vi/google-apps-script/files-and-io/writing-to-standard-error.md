@@ -1,14 +1,20 @@
 ---
-title:                "Ghi vào lỗi chuẩn"
 aliases:
 - /vi/google-apps-script/writing-to-standard-error/
-date:                  2024-02-01T22:09:14.371973-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ghi vào lỗi chuẩn"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/google-apps-script/writing-to-standard-error.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:09:14.371973-07:00
+description: "Vi\u1EBFt l\u1ED7i chu\u1EA9n (stderr) trong ng\xF4n ng\u1EEF l\u1EAD\
+  p tr\xECnh l\xE0 v\u1EC1 h\u01B0\u1EDBng c\xE1c th\xF4ng b\xE1o l\u1ED7i v\xE0 ch\u1EA9\
+  n \u0111o\xE1n sang m\u1ED9t lu\u1ED3ng ri\xEAng, t\xE1ch bi\u1EC7t kh\u1ECFi \u0111\
+  \u1EA7u ra chu\u1EA9n (stdout).\u2026"
+lastmod: 2024-02-18 23:08:50.238923
+model: gpt-4-0125-preview
+summary: "Vi\u1EBFt l\u1ED7i chu\u1EA9n (stderr) trong ng\xF4n ng\u1EEF l\u1EADp tr\xEC\
+  nh l\xE0 v\u1EC1 h\u01B0\u1EDBng c\xE1c th\xF4ng b\xE1o l\u1ED7i v\xE0 ch\u1EA9\
+  n \u0111o\xE1n sang m\u1ED9t lu\u1ED3ng ri\xEAng, t\xE1ch bi\u1EC7t kh\u1ECFi \u0111\
+  \u1EA7u ra chu\u1EA9n (stdout).\u2026"
+title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,28 @@
 ---
-title:                "使用YAML工作"
 aliases:
 - /zh/rust/working-with-yaml/
-date:                  2024-02-03T19:26:42.057132-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用YAML工作"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:26:42.057132-07:00
+description: "\u5728 Rust \u7F16\u7A0B\u4E2D\uFF0C\u5904\u7406 YAML\uFF08YAML \u4E0D\
+  \u662F\u6807\u8BB0\u8BED\u8A00\uFF09\u6D89\u53CA\u5230\u5728 YAML \u683C\u5F0F\u4E2D\
+  \u89E3\u6790\u548C\u751F\u6210\u6570\u636E\uFF0C\u8FD9\u662F\u4E00\u79CD\u5BF9\u4EBA\
+  \u7C7B\u53CB\u597D\u7684\u6570\u636E\u5E8F\u5217\u5316\u6807\u51C6\u3002\u7A0B\u5E8F\
+  \u5458\u5728 Rust \u4E2D\u96C6\u6210 YAML \u5904\u7406\u4EE5\u914D\u7F6E\u5E94\u7528\
+  \u7A0B\u5E8F\u3001\u7BA1\u7406\u8BBE\u7F6E\u6216\u4EE5\u6E05\u6670\u3001\u53EF\u8BFB\
+  \u7684\u683C\u5F0F\u5904\u7406\u590D\u6742\u7684\u6570\u636E\u7ED3\u6784\uFF0C\u5229\
+  \u7528\u5176\u76F8\u5BF9\u4E8E JSON \u6216 XML\u2026"
+lastmod: 2024-02-18 23:08:58.959243
+model: gpt-4-0125-preview
+summary: "\u5728 Rust \u7F16\u7A0B\u4E2D\uFF0C\u5904\u7406 YAML\uFF08YAML \u4E0D\u662F\
+  \u6807\u8BB0\u8BED\u8A00\uFF09\u6D89\u53CA\u5230\u5728 YAML \u683C\u5F0F\u4E2D\u89E3\
+  \u6790\u548C\u751F\u6210\u6570\u636E\uFF0C\u8FD9\u662F\u4E00\u79CD\u5BF9\u4EBA\u7C7B\
+  \u53CB\u597D\u7684\u6570\u636E\u5E8F\u5217\u5316\u6807\u51C6\u3002\u7A0B\u5E8F\u5458\
+  \u5728 Rust \u4E2D\u96C6\u6210 YAML \u5904\u7406\u4EE5\u914D\u7F6E\u5E94\u7528\u7A0B\
+  \u5E8F\u3001\u7BA1\u7406\u8BBE\u7F6E\u6216\u4EE5\u6E05\u6670\u3001\u53EF\u8BFB\u7684\
+  \u683C\u5F0F\u5904\u7406\u590D\u6742\u7684\u6570\u636E\u7ED3\u6784\uFF0C\u5229\u7528\
+  \u5176\u76F8\u5BF9\u4E8E JSON \u6216 XML\u2026"
+title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 ---
 
 {{< edit_this_page >}}

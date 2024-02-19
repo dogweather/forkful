@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonojen osien poimiminen"
 aliases:
 - /fi/arduino/extracting-substrings/
-date:                  2024-01-20T17:45:23.705683-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonojen osien poimiminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/extracting-substrings.md"
+date: 2024-01-20 17:45:23.705683-07:00
+description: "Subjektit ovat osajonoja alkuper\xE4isest\xE4 tekstijonosta. Ohjelmoijat\
+  \ k\xE4ytt\xE4v\xE4t niit\xE4 tiedon rajaamiseen ja k\xE4sittelyyn pienemmiss\xE4\
+  \ p\xE4tkiss\xE4."
+lastmod: 2024-02-18 23:09:07.888322
+model: gpt-4-1106-preview
+summary: "Subjektit ovat osajonoja alkuper\xE4isest\xE4 tekstijonosta. Ohjelmoijat\
+  \ k\xE4ytt\xE4v\xE4t niit\xE4 tiedon rajaamiseen ja k\xE4sittelyyn pienemmiss\xE4\
+  \ p\xE4tkiss\xE4."
+title: Merkkijonojen osien poimiminen
 ---
 
 {{< edit_this_page >}}

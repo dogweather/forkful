@@ -1,14 +1,24 @@
 ---
-title:                "检查目录是否存在"
 aliases:
 - /zh/google-apps-script/checking-if-a-directory-exists/
-date:                  2024-02-01T21:48:44.822650-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "检查目录是否存在"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/google-apps-script/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:48:44.822650-07:00
+description: "\u5728 Google Apps \u811A\u672C\u4E2D\u68C0\u67E5\u76EE\u5F55\u662F\u5426\
+  \u5B58\u5728\u6D89\u53CA\u9A8C\u8BC1 Google Drive \u5185\u6587\u4EF6\u5939\u7684\
+  \u5B58\u5728\u3002\u7A0B\u5E8F\u5458\u7ECF\u5E38\u6267\u884C\u6B64\u68C0\u67E5\uFF0C\
+  \u4EE5\u907F\u514D\u5728\u4EE5\u7F16\u7A0B\u65B9\u5F0F\u7BA1\u7406\u6587\u4EF6\u548C\
+  \u76EE\u5F55\u65F6\u51FA\u73B0\u9519\u8BEF\u6216\u91CD\u590D\u521B\u5EFA\u6587\u4EF6\
+  \u5939\u3002"
+lastmod: 2024-02-18 23:08:58.765029
+model: gpt-4-0125-preview
+summary: "\u5728 Google Apps \u811A\u672C\u4E2D\u68C0\u67E5\u76EE\u5F55\u662F\u5426\
+  \u5B58\u5728\u6D89\u53CA\u9A8C\u8BC1 Google Drive \u5185\u6587\u4EF6\u5939\u7684\
+  \u5B58\u5728\u3002\u7A0B\u5E8F\u5458\u7ECF\u5E38\u6267\u884C\u6B64\u68C0\u67E5\uFF0C\
+  \u4EE5\u907F\u514D\u5728\u4EE5\u7F16\u7A0B\u65B9\u5F0F\u7BA1\u7406\u6587\u4EF6\u548C\
+  \u76EE\u5F55\u65F6\u51FA\u73B0\u9519\u8BEF\u6216\u91CD\u590D\u521B\u5EFA\u6587\u4EF6\
+  \u5939\u3002"
+title: "\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728"
 ---
 
 {{< edit_this_page >}}

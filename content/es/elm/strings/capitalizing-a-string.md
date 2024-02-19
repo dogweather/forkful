@@ -1,14 +1,18 @@
 ---
-title:                "Capitalizando una cadena de texto"
 aliases:
 - /es/elm/capitalizing-a-string/
-date:                  2024-02-03T19:04:48.395236-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizando una cadena de texto"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:04:48.395236-07:00
+description: "Capitalizar una cadena implica transformar el car\xE1cter inicial de\
+  \ una cadena dada a may\xFAsculas mientras se mantienen el resto en min\xFAsculas,\
+  \ a menudo por\u2026"
+lastmod: 2024-02-18 23:09:09.872528
+model: gpt-4-0125-preview
+summary: "Capitalizar una cadena implica transformar el car\xE1cter inicial de una\
+  \ cadena dada a may\xFAsculas mientras se mantienen el resto en min\xFAsculas, a\
+  \ menudo por\u2026"
+title: Capitalizando una cadena de texto
 ---
 
 {{< edit_this_page >}}

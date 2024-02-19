@@ -1,15 +1,20 @@
 ---
-title:                "Viết các bài kiểm tra"
 aliases:
 - /vi/haskell/writing-tests/
-date:                  2024-01-28T22:13:26.876517-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Viết các bài kiểm tra"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/haskell/writing-tests.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:13:26.876517-07:00
+description: "Vi\u1EBFt test ki\u1EC3m tra xem code c\xF3 th\u1EF1c hi\u1EC7n \u0111\
+  \xFAng c\xF4ng vi\u1EC7c m\xE0 n\xF3 c\u1EA7n l\xE0m hay kh\xF4ng. Testing gi\xFA\
+  p b\u1EAFt l\u1ED7i, h\u1ED7 tr\u1EE3 b\u1EA3o tr\xEC code, v\xE0 \u0111\u1EA3m\
+  \ b\u1EA3o c\xE1c thay \u0111\u1ED5i kh\xF4ng\u2026"
+lastmod: 2024-02-18 23:08:50.748715
+model: gpt-4-0125-preview
+summary: "Vi\u1EBFt test ki\u1EC3m tra xem code c\xF3 th\u1EF1c hi\u1EC7n \u0111\xFA\
+  ng c\xF4ng vi\u1EC7c m\xE0 n\xF3 c\u1EA7n l\xE0m hay kh\xF4ng. Testing gi\xFAp b\u1EAF\
+  t l\u1ED7i, h\u1ED7 tr\u1EE3 b\u1EA3o tr\xEC code, v\xE0 \u0111\u1EA3m b\u1EA3o\
+  \ c\xE1c thay \u0111\u1ED5i kh\xF4ng\u2026"
+title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 ---
 
 {{< edit_this_page >}}

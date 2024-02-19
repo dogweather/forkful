@@ -1,14 +1,27 @@
 ---
-title:                "インタラクティブシェル（REPL）の使用方法"
 aliases:
 - /ja/go/using-an-interactive-shell-repl/
-date:                  2024-02-03T18:10:26.774137-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "インタラクティブシェル（REPL）の使用方法"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:26.774137-07:00
+description: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\u307E\
+  \u305F\u306FRead-Eval-Print Loop\uFF08REPL\uFF09\u3092\u4F7F\u7528\u3059\u308B\u3068\
+  \u3001\u30EA\u30A2\u30EB\u30BF\u30A4\u30E0\u3067Go\u30B3\u30FC\u30C9\u3092\u8A66\
+  \u884C\u3057\u3001\u30B3\u30DE\u30F3\u30C9\u3092\u5B9F\u884C\u3057\u3066\u5373\u5EA7\
+  \u306B\u30D5\u30A3\u30FC\u30C9\u30D0\u30C3\u30AF\u3092\u5F97\u308B\u3053\u3068\u304C\
+  \u3067\u304D\u307E\u3059\u3002\u3053\u306E\u30A2\u30D7\u30ED\u30FC\u30C1\u306F\u3001\
+  \u5F93\u6765\u306E\u7DE8\u96C6-\u30B3\u30F3\u30D1\u30A4\u30EB-\u2026"
+lastmod: 2024-02-18 23:08:54.481464
+model: gpt-4-0125-preview
+summary: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\u307E\
+  \u305F\u306FRead-Eval-Print Loop\uFF08REPL\uFF09\u3092\u4F7F\u7528\u3059\u308B\u3068\
+  \u3001\u30EA\u30A2\u30EB\u30BF\u30A4\u30E0\u3067Go\u30B3\u30FC\u30C9\u3092\u8A66\
+  \u884C\u3057\u3001\u30B3\u30DE\u30F3\u30C9\u3092\u5B9F\u884C\u3057\u3066\u5373\u5EA7\
+  \u306B\u30D5\u30A3\u30FC\u30C9\u30D0\u30C3\u30AF\u3092\u5F97\u308B\u3053\u3068\u304C\
+  \u3067\u304D\u307E\u3059\u3002\u3053\u306E\u30A2\u30D7\u30ED\u30FC\u30C1\u306F\u3001\
+  \u5F93\u6765\u306E\u7DE8\u96C6-\u30B3\u30F3\u30D1\u30A4\u30EB-\u2026"
+title: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\uFF08REPL\uFF09\
+  \u306E\u4F7F\u7528\u65B9\u6CD5"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,17 @@
 ---
-title:                "Lettura degli argomenti da linea di comando"
 aliases:
 - /it/go/reading-command-line-arguments/
-date:                  2024-02-03T18:06:12.760859-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lettura degli argomenti da linea di comando"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:06:12.760859-07:00
+description: "Leggere gli argomenti da linea di comando in Go implica l'estrazione\
+  \ degli argomenti forniti a un programma durante la sua invocazione dal terminale\
+  \ o dal\u2026"
+lastmod: 2024-02-18 23:08:55.448544
+model: gpt-4-0125-preview
+summary: "Leggere gli argomenti da linea di comando in Go implica l'estrazione degli\
+  \ argomenti forniti a un programma durante la sua invocazione dal terminale o dal\u2026"
+title: Lettura degli argomenti da linea di comando
 ---
 
 {{< edit_this_page >}}

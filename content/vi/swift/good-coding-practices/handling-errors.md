@@ -1,15 +1,20 @@
 ---
-title:                "Xử lý lỗi"
 aliases:
 - /vi/swift/handling-errors/
-date:                  2024-01-28T22:02:43.638429-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Xử lý lỗi"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/swift/handling-errors.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:02:43.638429-07:00
+description: "X\u1EED l\xFD l\u1ED7i trong Swift c\xF3 ngh\u0129a l\xE0 d\u1EF1 \u0111\
+  o\xE1n v\xE0 ph\u1EA3n \u1EE9ng v\u1EDBi nh\u1EEFng v\u1EA5n \u0111\u1EC1 ph\xE1\
+  t sinh khi m\xE3 c\u1EE7a b\u1EA1n \u0111\u01B0\u1EE3c ch\u1EA1y. Ch\xFAng ta l\xE0\
+  m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 ki\u1EC3m so\xE1t s\u1EF1 h\u1ED7n\u2026"
+lastmod: 2024-02-18 23:08:51.098383
+model: gpt-4-0125-preview
+summary: "X\u1EED l\xFD l\u1ED7i trong Swift c\xF3 ngh\u0129a l\xE0 d\u1EF1 \u0111\
+  o\xE1n v\xE0 ph\u1EA3n \u1EE9ng v\u1EDBi nh\u1EEFng v\u1EA5n \u0111\u1EC1 ph\xE1\
+  t sinh khi m\xE3 c\u1EE7a b\u1EA1n \u0111\u01B0\u1EE3c ch\u1EA1y. Ch\xFAng ta l\xE0\
+  m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 ki\u1EC3m so\xE1t s\u1EF1 h\u1ED7n\u2026"
+title: "X\u1EED l\xFD l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

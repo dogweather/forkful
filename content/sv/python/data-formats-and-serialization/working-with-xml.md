@@ -1,13 +1,16 @@
 ---
-title:                "Att arbeta med XML"
 aliases:
 - /sv/python/working-with-xml/
-date:                  2024-01-26T04:35:00.636311-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/working-with-xml.md"
+date: 2024-01-26 04:35:00.636311-07:00
+description: "\"Arbeta med XML\" avser processen att l\xE4sa, skapa och modifiera\
+  \ XML (eXtensible Markup Language)-filer med programmering. Programmerare g\xF6\
+  r det eftersom\u2026"
+lastmod: 2024-02-18 23:08:51.445125
+model: gpt-4-0125-preview
+summary: "\"Arbeta med XML\" avser processen att l\xE4sa, skapa och modifiera XML\
+  \ (eXtensible Markup Language)-filer med programmering. Programmerare g\xF6r det\
+  \ eftersom\u2026"
+title: Att arbeta med XML
 ---
 
 {{< edit_this_page >}}

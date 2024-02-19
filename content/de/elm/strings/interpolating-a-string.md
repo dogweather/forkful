@@ -1,13 +1,14 @@
 ---
-title:                "Zeichenketten interpolieren"
 aliases:
 - /de/elm/interpolating-a-string/
-date:                  2024-01-20T17:50:33.702713-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Zeichenketten interpolieren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/interpolating-a-string.md"
+date: 2024-01-20 17:50:33.702713-07:00
+description: "String-Interpolation bedeutet, Variable-Werte direkt in Zeichenketten\
+  \ einzuf\xFCgen. Das ist praktisch, um dynamische Texte wie Benutzereingaben oder\u2026"
+lastmod: 2024-02-18 23:09:04.767274
+model: gpt-4-1106-preview
+summary: "String-Interpolation bedeutet, Variable-Werte direkt in Zeichenketten einzuf\xFC\
+  gen. Das ist praktisch, um dynamische Texte wie Benutzereingaben oder\u2026"
+title: Zeichenketten interpolieren
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Trabalhando com números complexos"
 aliases:
 - /pt/elm/working-with-complex-numbers/
-date:                  2024-01-26T04:39:31.135489-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com números complexos"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/working-with-complex-numbers.md"
+date: 2024-01-26 04:39:31.135489-07:00
+description: "N\xFAmeros complexos s\xE3o uma combina\xE7\xE3o de n\xFAmeros reais\
+  \ e imagin\xE1rios, como `a + bi`, onde `i` \xE9 a raiz quadrada de -1. Eles s\xE3\
+  o essenciais em campos como\u2026"
+lastmod: 2024-02-18 23:08:58.054733
+model: gpt-4-0125-preview
+summary: "N\xFAmeros complexos s\xE3o uma combina\xE7\xE3o de n\xFAmeros reais e imagin\xE1\
+  rios, como `a + bi`, onde `i` \xE9 a raiz quadrada de -1. Eles s\xE3o essenciais\
+  \ em campos como\u2026"
+title: "Trabalhando com n\xFAmeros complexos"
 ---
 
 {{< edit_this_page >}}

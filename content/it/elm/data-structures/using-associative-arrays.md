@@ -1,15 +1,16 @@
 ---
-title:                "Utilizzo di array associativi"
 aliases:
 - /it/elm/using-associative-arrays/
-date:                  2024-01-30T19:11:03.043227-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di array associativi"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:11:03.043227-07:00
+description: "Gli array associativi, o come li chiama Elm, Dizionari, mappano le chiavi\
+  \ ai valori in modo tale da rendere il recupero, l'inserimento e l'eliminazione\u2026"
+lastmod: 2024-02-18 23:08:55.799402
+model: gpt-4-0125-preview
+summary: "Gli array associativi, o come li chiama Elm, Dizionari, mappano le chiavi\
+  \ ai valori in modo tale da rendere il recupero, l'inserimento e l'eliminazione\u2026"
+title: Utilizzo di array associativi
 ---
 
 {{< edit_this_page >}}

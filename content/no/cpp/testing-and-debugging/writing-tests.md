@@ -1,14 +1,18 @@
 ---
-title:                "Skrive tester"
 aliases:
 - /no/cpp/writing-tests/
-date:                  2024-02-03T19:30:06.443239-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skrive tester"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:30:06.443239-07:00
+description: "\xC5 skrive tester i C++ inneb\xE6rer \xE5 lage sm\xE5, selvstendige\
+  \ programmer som automatisk verifiserer oppf\xF8rselen til deler av koden. Programmerere\
+  \ gj\xF8r dette\u2026"
+lastmod: 2024-02-18 23:08:54.195627
+model: gpt-4-0125-preview
+summary: "\xC5 skrive tester i C++ inneb\xE6rer \xE5 lage sm\xE5, selvstendige programmer\
+  \ som automatisk verifiserer oppf\xF8rselen til deler av koden. Programmerere gj\xF8\
+  r dette\u2026"
+title: Skrive tester
 ---
 
 {{< edit_this_page >}}

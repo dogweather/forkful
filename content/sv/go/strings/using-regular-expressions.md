@@ -1,14 +1,18 @@
 ---
-title:                "Använda reguljära uttryck"
 aliases:
 - /sv/go/using-regular-expressions/
-date:                  2024-02-03T18:11:25.903546-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Använda reguljära uttryck"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:11:25.903546-07:00
+description: "Regulj\xE4ra uttryck (regex) i programmering anv\xE4nds f\xF6r att s\xF6\
+  ka, matcha och manipulera str\xE4ngar baserat p\xE5 specifika m\xF6nster. Programmerare\
+  \ anv\xE4nder dem\u2026"
+lastmod: 2024-02-18 23:08:51.322703
+model: gpt-4-0125-preview
+summary: "Regulj\xE4ra uttryck (regex) i programmering anv\xE4nds f\xF6r att s\xF6\
+  ka, matcha och manipulera str\xE4ngar baserat p\xE5 specifika m\xF6nster. Programmerare\
+  \ anv\xE4nder dem\u2026"
+title: "Anv\xE4nda regulj\xE4ra uttryck"
 ---
 
 {{< edit_this_page >}}

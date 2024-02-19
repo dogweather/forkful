@@ -1,13 +1,22 @@
 ---
-title:                "使用调试器"
 aliases:
 - /zh/lua/using-a-debugger/
-date:                  2024-01-26T03:50:46.447137-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用调试器"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/lua/using-a-debugger.md"
+date: 2024-01-26 03:50:46.447137-07:00
+description: "\u8C03\u8BD5\u5668\u662F\u4E00\u79CD\u5DE5\u5177\uFF0C\u5B83\u5141\u8BB8\
+  \u60A8\u68C0\u67E5\u548C\u63A7\u5236\u7A0B\u5E8F\u7684\u6267\u884C\uFF0C\u4F7F\u5F97\
+  \ pinpoint \u51FA\u95EE\u9898\u6240\u5728\u53D8\u5F97\u5BB9\u6613\u3002\u7A0B\u5E8F\
+  \u5458\u4F7F\u7528\u8C03\u8BD5\u5668\u6765\u5B9A\u4F4D bug\u3001\u7406\u89E3\u4EE3\
+  \u7801\u6D41\u7A0B\uFF0C\u5E76\u786E\u4FDD\u4ED6\u4EEC\u7684\u4EE3\u7801\u5E72\u51C0\
+  \u65E0\u7591\u3002"
+lastmod: 2024-02-18 23:08:59.257654
+model: gpt-4-0125-preview
+summary: "\u8C03\u8BD5\u5668\u662F\u4E00\u79CD\u5DE5\u5177\uFF0C\u5B83\u5141\u8BB8\
+  \u60A8\u68C0\u67E5\u548C\u63A7\u5236\u7A0B\u5E8F\u7684\u6267\u884C\uFF0C\u4F7F\u5F97\
+  \ pinpoint \u51FA\u95EE\u9898\u6240\u5728\u53D8\u5F97\u5BB9\u6613\u3002\u7A0B\u5E8F\
+  \u5458\u4F7F\u7528\u8C03\u8BD5\u5668\u6765\u5B9A\u4F4D bug\u3001\u7406\u89E3\u4EE3\
+  \u7801\u6D41\u7A0B\uFF0C\u5E76\u786E\u4FDD\u4ED6\u4EEC\u7684\u4EE3\u7801\u5E72\u51C0\
+  \u65E0\u7591\u3002"
+title: "\u4F7F\u7528\u8C03\u8BD5\u5668"
 ---
 
 {{< edit_this_page >}}

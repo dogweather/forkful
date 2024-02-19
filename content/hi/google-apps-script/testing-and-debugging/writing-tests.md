@@ -1,14 +1,30 @@
 ---
-title:                "टेस्ट लिखना"
 aliases:
 - /hi/google-apps-script/writing-tests/
-date:                  2024-02-01T22:10:38.838437-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "टेस्ट लिखना"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/google-apps-script/writing-tests.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:10:38.838437-07:00
+description: "Google Apps Script (\u0917\u0942\u0917\u0932 \u090F\u092A\u094D\u0938\
+  \ \u0938\u094D\u0915\u094D\u0930\u093F\u092A\u094D\u091F - GAS) \u092E\u0947\u0902\
+  \ \u092A\u0930\u0940\u0915\u094D\u0937\u0923 \u0932\u093F\u0916\u0928\u093E \u0906\
+  \u092A\u0915\u0947 \u0915\u094B\u0921\u094D\u0938 \u0915\u0947 \u0935\u094D\u092F\
+  \u0935\u0939\u093E\u0930 \u0915\u0940 \u092A\u0941\u0937\u094D\u091F\u093F \u0915\
+  \u0947 \u0932\u093F\u090F \u0938\u094D\u0935\u091A\u093E\u0932\u093F\u0924 \u0938\
+  \u094D\u0915\u094D\u0930\u093F\u092A\u094D\u091F\u094D\u0938 \u092C\u0928\u093E\u0928\
+  \u0947 \u0915\u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902 \u0939\u0948, \u092F\
+  \u0939\u2026"
+lastmod: 2024-02-18 23:09:02.574860
+model: gpt-4-0125-preview
+summary: "Google Apps Script (\u0917\u0942\u0917\u0932 \u090F\u092A\u094D\u0938 \u0938\
+  \u094D\u0915\u094D\u0930\u093F\u092A\u094D\u091F - GAS) \u092E\u0947\u0902 \u092A\
+  \u0930\u0940\u0915\u094D\u0937\u0923 \u0932\u093F\u0916\u0928\u093E \u0906\u092A\
+  \u0915\u0947 \u0915\u094B\u0921\u094D\u0938 \u0915\u0947 \u0935\u094D\u092F\u0935\
+  \u0939\u093E\u0930 \u0915\u0940 \u092A\u0941\u0937\u094D\u091F\u093F \u0915\u0947\
+  \ \u0932\u093F\u090F \u0938\u094D\u0935\u091A\u093E\u0932\u093F\u0924 \u0938\u094D\
+  \u0915\u094D\u0930\u093F\u092A\u094D\u091F\u094D\u0938 \u092C\u0928\u093E\u0928\u0947\
+  \ \u0915\u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902 \u0939\u0948, \u092F\u0939\
+  \u2026"
+title: "\u091F\u0947\u0938\u094D\u091F \u0932\u093F\u0916\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

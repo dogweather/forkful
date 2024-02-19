@@ -1,15 +1,20 @@
 ---
-title:                "Gửi một yêu cầu HTTP"
 aliases:
 - /vi/powershell/sending-an-http-request/
-date:                  2024-01-28T22:07:46.649591-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gửi một yêu cầu HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/powershell/sending-an-http-request.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:07:46.649591-07:00
+description: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 c\xE1ch b\u1EA1\
+  n y\xEAu c\u1EA7u d\u1EEF li\u1EC7u ho\u1EB7c ph\u1EA3n h\u1ED3i t\u1EEB m\u1ED9\
+  t d\u1ECBch v\u1EE5 web. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111\
+  i\u1EC1u n\xE0y \u0111\u1EC3 t\u01B0\u01A1ng t\xE1c v\u1EDBi c\xE1c API,\u2026"
+lastmod: 2024-02-18 23:08:50.930628
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 c\xE1ch b\u1EA1n\
+  \ y\xEAu c\u1EA7u d\u1EEF li\u1EC7u ho\u1EB7c ph\u1EA3n h\u1ED3i t\u1EEB m\u1ED9\
+  t d\u1ECBch v\u1EE5 web. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111\
+  i\u1EC1u n\xE0y \u0111\u1EC3 t\u01B0\u01A1ng t\xE1c v\u1EDBi c\xE1c API,\u2026"
+title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 ---
 
 {{< edit_this_page >}}

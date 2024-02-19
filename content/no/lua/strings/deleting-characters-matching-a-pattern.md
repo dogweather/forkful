@@ -1,13 +1,16 @@
 ---
-title:                "Slette tegn som matcher et mønster"
 aliases:
 - /no/lua/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:48.188094-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Slette tegn som matcher et mønster"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/lua/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:48.188094-07:00
+description: "\xC5 slette tegn som matcher et m\xF8nster i Lua betyr \xE5 fjerne spesifikke\
+  \ deler av en streng basert p\xE5 regler eller 'patterns'. Programm\xF8rer gj\xF8\
+  r dette for \xE5\u2026"
+lastmod: 2024-02-18 23:08:54.000623
+model: gpt-4-1106-preview
+summary: "\xC5 slette tegn som matcher et m\xF8nster i Lua betyr \xE5 fjerne spesifikke\
+  \ deler av en streng basert p\xE5 regler eller 'patterns'. Programm\xF8rer gj\xF8\
+  r dette for \xE5\u2026"
+title: "Slette tegn som matcher et m\xF8nster"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonojen yhdistäminen"
 aliases:
 - /fi/lua/concatenating-strings/
-date:                  2024-01-20T17:35:17.277629-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonojen yhdistäminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/concatenating-strings.md"
+date: 2024-01-20 17:35:17.277629-07:00
+description: "Merkkijonojen yhdist\xE4minen tarkoittaa kahden tai useamman tekstinp\xE4\
+  tk\xE4n liitt\xE4mist\xE4 yhteen. Se on handy tapa rakentaa dynaamisia tekstej\xE4\
+  , kuten viestej\xE4\u2026"
+lastmod: 2024-02-18 23:09:07.748633
+model: gpt-4-1106-preview
+summary: "Merkkijonojen yhdist\xE4minen tarkoittaa kahden tai useamman tekstinp\xE4\
+  tk\xE4n liitt\xE4mist\xE4 yhteen. Se on handy tapa rakentaa dynaamisia tekstej\xE4\
+  , kuten viestej\xE4\u2026"
+title: "Merkkijonojen yhdist\xE4minen"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Concaténation de chaînes de caractères"
 aliases:
 - /fr/arduino/concatenating-strings/
-date:                  2024-01-20T17:33:51.943093-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concaténation de chaînes de caractères"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/concatenating-strings.md"
+date: 2024-01-20 17:33:51.943093-07:00
+description: "Concat\xE9ner des cha\xEEnes, c'est les assembler bout \xE0 bout. On\
+  \ le fait pour construire du texte dynamiquement, combiner des donn\xE9es ou cr\xE9\
+  er des commandes."
+lastmod: 2024-02-18 23:09:09.106298
+model: gpt-4-1106-preview
+summary: "Concat\xE9ner des cha\xEEnes, c'est les assembler bout \xE0 bout. On le\
+  \ fait pour construire du texte dynamiquement, combiner des donn\xE9es ou cr\xE9\
+  er des commandes."
+title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

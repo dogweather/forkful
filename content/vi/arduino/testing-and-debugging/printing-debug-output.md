@@ -1,15 +1,20 @@
 ---
-title:                "In ra thông tin gỡ lỗi"
 aliases:
 - /vi/arduino/printing-debug-output/
-date:                  2024-01-28T22:04:25.002959-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "In ra thông tin gỡ lỗi"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/printing-debug-output.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:04:25.002959-07:00
+description: "In \u0111\u1EA7u ra g\u1EE1 l\u1ED7i v\xE0o m\xE0n h\xECnh n\u1ED1i\
+  \ ti\u1EBFp l\xE0 m\u1ED9t c\xE1ch \u0111\u1EC3 nh\xECn v\xE0o t\xE2m tr\xED c\u1EE7\
+  a Arduino. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
+  \ theo d\xF5i c\xE1c l\u1ED7i nh\u1ECF, ki\u1EC3m th\u1EED gi\u1EA3\u2026"
+lastmod: 2024-02-18 23:08:51.001925
+model: gpt-4-0125-preview
+summary: "In \u0111\u1EA7u ra g\u1EE1 l\u1ED7i v\xE0o m\xE0n h\xECnh n\u1ED1i ti\u1EBF\
+  p l\xE0 m\u1ED9t c\xE1ch \u0111\u1EC3 nh\xECn v\xE0o t\xE2m tr\xED c\u1EE7a Arduino.\
+  \ C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 theo\
+  \ d\xF5i c\xE1c l\u1ED7i nh\u1ECF, ki\u1EC3m th\u1EED gi\u1EA3\u2026"
+title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

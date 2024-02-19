@@ -1,13 +1,16 @@
 ---
-title:                "Journalisation"
 aliases:
 - /fr/powershell/logging/
-date:                  2024-01-26T01:07:40.281848-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Journalisation"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/logging.md"
+date: 2024-01-26 01:07:40.281848-07:00
+description: "Le logging, c'est fondamentalement laisser une tra\xEEn\xE9e de miettes\
+  \ \xE0 travers votre code - c'est la mani\xE8re de garder un \u0153il sur ce qui\
+  \ se passe lorsque\u2026"
+lastmod: 2024-02-18 23:09:09.075366
+model: gpt-4-1106-preview
+summary: "Le logging, c'est fondamentalement laisser une tra\xEEn\xE9e de miettes\
+  \ \xE0 travers votre code - c'est la mani\xE8re de garder un \u0153il sur ce qui\
+  \ se passe lorsque\u2026"
+title: Journalisation
 ---
 
 {{< edit_this_page >}}

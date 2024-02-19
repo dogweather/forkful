@@ -1,13 +1,16 @@
 ---
-title:                "Skapa en temporär fil"
 aliases:
 - /sv/swift/creating-a-temporary-file/
-date:                  2024-01-20T17:41:19.129102-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skapa en temporär fil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:19.129102-07:00
+description: "I Swift inneb\xE4r att skapa en tempor\xE4r fil att du skapar en fil\
+  \ som bara ska finnas d\xE4r under ett kort \xF6gonblick, ofta inom ramen f\xF6\
+  r en process eller\u2026"
+lastmod: 2024-02-18 23:08:52.142845
+model: gpt-4-1106-preview
+summary: "I Swift inneb\xE4r att skapa en tempor\xE4r fil att du skapar en fil som\
+  \ bara ska finnas d\xE4r under ett kort \xF6gonblick, ofta inom ramen f\xF6r en\
+  \ process eller\u2026"
+title: "Skapa en tempor\xE4r fil"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,16 @@
 ---
-title:                "Willekeurige getallen genereren"
 aliases:
 - /nl/elixir/generating-random-numbers/
-date:                  2024-01-28T22:01:04.688043-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Willekeurige getallen genereren"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elixir/generating-random-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:04.688043-07:00
+description: "Het genereren van willekeurige getallen in Elixir is een fundamentele\
+  \ programmeertaak, essentieel voor applicaties die onvoorspelbare resultaten nodig\u2026"
+lastmod: 2024-02-18 23:09:01.521759
+model: gpt-4-0125-preview
+summary: "Het genereren van willekeurige getallen in Elixir is een fundamentele programmeertaak,\
+  \ essentieel voor applicaties die onvoorspelbare resultaten nodig\u2026"
+title: Willekeurige getallen genereren
 ---
 
 {{< edit_this_page >}}

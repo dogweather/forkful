@@ -1,15 +1,20 @@
 ---
-title:                "Lấy ngày hiện tại"
 aliases:
 - /vi/ruby/getting-the-current-date/
-date:                  2024-01-28T22:01:44.584999-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lấy ngày hiện tại"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/getting-the-current-date.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:44.584999-07:00
+description: "Vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Ruby c\u1EF1c k\u1EF3\
+  \ \u0111\u01A1n gi\u1EA3n: l\u1EA5y ng\xE0y c\u1EE7a h\xF4m nay. C\xE1c l\u1EAD\
+  p tr\xECnh vi\xEAn c\u1EA7n n\xF3 cho nhi\u1EC1u t\xE1c v\u1EE5 kh\xE1c nhau t\u1EEB\
+  \ ghi log v\xE0 \u0111\xE1nh d\u1EA5u th\u1EDDi\u2026"
+lastmod: 2024-02-18 23:08:51.297219
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Ruby c\u1EF1c k\u1EF3\
+  \ \u0111\u01A1n gi\u1EA3n: l\u1EA5y ng\xE0y c\u1EE7a h\xF4m nay. C\xE1c l\u1EAD\
+  p tr\xECnh vi\xEAn c\u1EA7n n\xF3 cho nhi\u1EC1u t\xE1c v\u1EE5 kh\xE1c nhau t\u1EEB\
+  \ ghi log v\xE0 \u0111\xE1nh d\u1EA5u th\u1EDDi\u2026"
+title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 ---
 
 {{< edit_this_page >}}

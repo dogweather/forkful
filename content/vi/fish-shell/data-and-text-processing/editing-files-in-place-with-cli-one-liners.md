@@ -1,15 +1,21 @@
 ---
-title:                "Chỉnh sửa file tại chỗ với câu lệnh CLI ngắn gọn"
 aliases:
 - /vi/fish-shell/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-28T22:00:55.952857-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Chỉnh sửa file tại chỗ với câu lệnh CLI ngắn gọn"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/editing-files-in-place-with-cli-one-liners.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:00:55.952857-07:00
+description: "Ch\u1EC9nh s\u1EEDa t\u1EC7p t\u1EA1i ch\u1ED7 b\u1EB1ng c\xE1c d\xF2\
+  ng l\u1EC7nh CLI l\xE0 vi\u1EC7c th\u1EF1c hi\u1EC7n thay \u0111\u1ED5i tr\u1EF1\
+  c ti\u1EBFp \u0111\u1ED1i v\u1EDBi c\xE1c t\u1EC7p t\u1EEB d\xF2ng l\u1EC7nh, kh\xF4\
+  ng c\u1EA7n m\u1EDF ch\xFAng trong tr\xECnh so\u1EA1n th\u1EA3o\u2026"
+lastmod: 2024-02-18 23:08:51.180320
+model: gpt-4-0125-preview
+summary: "Ch\u1EC9nh s\u1EEDa t\u1EC7p t\u1EA1i ch\u1ED7 b\u1EB1ng c\xE1c d\xF2ng\
+  \ l\u1EC7nh CLI l\xE0 vi\u1EC7c th\u1EF1c hi\u1EC7n thay \u0111\u1ED5i tr\u1EF1\
+  c ti\u1EBFp \u0111\u1ED1i v\u1EDBi c\xE1c t\u1EC7p t\u1EEB d\xF2ng l\u1EC7nh, kh\xF4\
+  ng c\u1EA7n m\u1EDF ch\xFAng trong tr\xECnh so\u1EA1n th\u1EA3o\u2026"
+title: "Ch\u1EC9nh s\u1EEDa file t\u1EA1i ch\u1ED7 v\u1EDBi c\xE2u l\u1EC7nh CLI ng\u1EAF\
+  n g\u1ECDn"
 ---
 
 {{< edit_this_page >}}

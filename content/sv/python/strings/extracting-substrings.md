@@ -1,13 +1,16 @@
 ---
-title:                "Extrahera delsträngar"
 aliases:
 - /sv/python/extracting-substrings/
-date:                  2024-01-20T17:46:23.618271-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extrahera delsträngar"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/extracting-substrings.md"
+date: 2024-01-20 17:46:23.618271-07:00
+description: "Extrahering av substr\xE4ngar inneb\xE4r att v\xE4lja specifika delar\
+  \ av en str\xE4ng. Programmerare g\xF6r detta f\xF6r att bearbeta eller analysera\
+  \ specifika data, som\u2026"
+lastmod: 2024-02-18 23:08:51.411484
+model: gpt-4-1106-preview
+summary: "Extrahering av substr\xE4ngar inneb\xE4r att v\xE4lja specifika delar av\
+  \ en str\xE4ng. Programmerare g\xF6r detta f\xF6r att bearbeta eller analysera specifika\
+  \ data, som\u2026"
+title: "Extrahera delstr\xE4ngar"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Verkkosivun lataaminen"
 aliases:
 - /fi/arduino/downloading-a-web-page/
-date:                  2024-01-20T17:43:33.042835-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Verkkosivun lataaminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/downloading-a-web-page.md"
+date: 2024-01-20 17:43:33.042835-07:00
+description: "Mik\xE4 ja miksi? Ladataan web-sivu, eli haetaan tiedot internetiss\xE4\
+  \ olevasta osoitteesta. Koodarit tekev\xE4t t\xE4m\xE4n, kun tarvitsevat p\xE4ivitt\xE4\
+  \xE4 laitteen dataa\u2026"
+lastmod: 2024-02-18 23:09:07.898877
+model: gpt-4-1106-preview
+summary: "Mik\xE4 ja miksi? Ladataan web-sivu, eli haetaan tiedot internetiss\xE4\
+  \ olevasta osoitteesta. Koodarit tekev\xE4t t\xE4m\xE4n, kun tarvitsevat p\xE4ivitt\xE4\
+  \xE4 laitteen dataa\u2026"
+title: Verkkosivun lataaminen
 ---
 
 {{< edit_this_page >}}

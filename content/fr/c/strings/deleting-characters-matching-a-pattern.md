@@ -1,14 +1,18 @@
 ---
-title:                "Supprimer des caractères correspondant à un motif"
 aliases:
 - /fr/c/deleting-characters-matching-a-pattern/
-date:                  2024-02-03T17:55:15.960274-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Supprimer des caractères correspondant à un motif"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:15.960274-07:00
+description: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
+  \ dans les cha\xEEnes en C consiste \xE0 retirer toutes les instances de certains\
+  \ caract\xE8res\u2026"
+lastmod: 2024-02-18 23:09:09.335784
+model: gpt-4-0125-preview
+summary: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
+  \ dans les cha\xEEnes en C consiste \xE0 retirer toutes les instances de certains\
+  \ caract\xE8res\u2026"
+title: "Supprimer des caract\xE8res correspondant \xE0 un motif"
 ---
 
 {{< edit_this_page >}}

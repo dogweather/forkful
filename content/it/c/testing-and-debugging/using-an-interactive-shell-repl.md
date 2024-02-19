@@ -1,14 +1,16 @@
 ---
-title:                "Utilizzo di un guscio interattivo (REPL)"
 aliases:
 - /it/c/using-an-interactive-shell-repl/
-date:                  2024-02-03T18:10:03.073905-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di un guscio interattivo (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:03.073905-07:00
+description: "Un shell interattivo, conosciuto anche come Ciclo Leggi-Valuta-Stampa\
+  \ (REPL, dall'inglese Read-Eval-Print Loop), permette ai programmatori di digitare\u2026"
+lastmod: 2024-02-18 23:08:56.340295
+model: gpt-4-0125-preview
+summary: "Un shell interattivo, conosciuto anche come Ciclo Leggi-Valuta-Stampa (REPL,\
+  \ dall'inglese Read-Eval-Print Loop), permette ai programmatori di digitare\u2026"
+title: Utilizzo di un guscio interattivo (REPL)
 ---
 
 {{< edit_this_page >}}

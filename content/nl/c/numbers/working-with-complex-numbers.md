@@ -1,14 +1,16 @@
 ---
-title:                "Werken met complexe getallen"
 aliases:
 - /nl/c/working-with-complex-numbers/
-date:                  2024-02-03T18:13:58.428380-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met complexe getallen"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:13:58.428380-07:00
+description: "Complexe getallen bestaan uit een re\xEBel deel en een imaginair deel,\
+  \ voorgesteld als `a + bi` waarbij `i` de vierkantswortel van `-1` is. Programmeurs\u2026"
+lastmod: 2024-02-18 23:09:02.365811
+model: gpt-4-0125-preview
+summary: "Complexe getallen bestaan uit een re\xEBel deel en een imaginair deel, voorgesteld\
+  \ als `a + bi` waarbij `i` de vierkantswortel van `-1` is. Programmeurs\u2026"
+title: Werken met complexe getallen
 ---
 
 {{< edit_this_page >}}

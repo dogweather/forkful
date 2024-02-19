@@ -1,13 +1,16 @@
 ---
-title:                "Komennoriviparametrien lukeminen"
 aliases:
 - /fi/cpp/reading-command-line-arguments/
-date:                  2024-01-20T17:55:42.729081-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Komennoriviparametrien lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:42.729081-07:00
+description: "Komennon rivin argumentit ovat parametreja, jotka annetaan ohjelmalle\
+  \ sen k\xE4ynnistyess\xE4. Ne mahdollistavat joustavan ohjelman k\xE4yt\xF6n, koska\
+  \ k\xE4ytt\xE4j\xE4 voi\u2026"
+lastmod: 2024-02-18 23:09:07.960920
+model: gpt-4-1106-preview
+summary: "Komennon rivin argumentit ovat parametreja, jotka annetaan ohjelmalle sen\
+  \ k\xE4ynnistyess\xE4. Ne mahdollistavat joustavan ohjelman k\xE4yt\xF6n, koska\
+  \ k\xE4ytt\xE4j\xE4 voi\u2026"
+title: Komennoriviparametrien lukeminen
 ---
 
 {{< edit_this_page >}}

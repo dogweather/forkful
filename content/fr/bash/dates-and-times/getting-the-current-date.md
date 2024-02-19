@@ -1,14 +1,16 @@
 ---
-title:                "Obtenir la date actuelle"
 aliases:
 - /fr/bash/getting-the-current-date/
-date:                  2024-02-03T19:08:44.687685-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Obtenir la date actuelle"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:44.687685-07:00
+description: "R\xE9cup\xE9rer la date actuelle en Bash implique l'utilisation de commandes\
+  \ int\xE9gr\xE9es pour afficher la date et l'heure dans divers formats. Les programmeurs\u2026"
+lastmod: 2024-02-18 23:09:09.030832
+model: gpt-4-0125-preview
+summary: "R\xE9cup\xE9rer la date actuelle en Bash implique l'utilisation de commandes\
+  \ int\xE9gr\xE9es pour afficher la date et l'heure dans divers formats. Les programmeurs\u2026"
+title: Obtenir la date actuelle
 ---
 
 {{< edit_this_page >}}

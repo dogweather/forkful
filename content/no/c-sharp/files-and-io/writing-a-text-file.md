@@ -1,14 +1,18 @@
 ---
-title:                "Skrive en tekstfil"
 aliases:
 - /no/c-sharp/writing-a-text-file/
-date:                  2024-02-03T19:27:49.654045-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skrive en tekstfil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:49.654045-07:00
+description: "\xC5 skrive en tekstfil i C# involverer \xE5 programmert skape eller\
+  \ endre tekstfiler p\xE5 filsystemet - en grunnleggende oppgave for mange applikasjoner,\
+  \ slik\u2026"
+lastmod: 2024-02-18 23:08:53.911593
+model: gpt-4-0125-preview
+summary: "\xC5 skrive en tekstfil i C# involverer \xE5 programmert skape eller endre\
+  \ tekstfiler p\xE5 filsystemet - en grunnleggende oppgave for mange applikasjoner,\
+  \ slik\u2026"
+title: Skrive en tekstfil
 ---
 
 {{< edit_this_page >}}

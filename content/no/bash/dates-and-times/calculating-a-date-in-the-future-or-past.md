@@ -1,13 +1,16 @@
 ---
-title:                "Beregning av en dato i fremtiden eller fortiden"
 aliases:
 - /no/bash/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:28:30.144085-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Beregning av en dato i fremtiden eller fortiden"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:28:30.144085-07:00
+description: "Dato-beregning er \xE5 finne en fremtidig eller tidligere dato basert\
+  \ p\xE5 en gitt dato. Programmerere gj\xF8r dette for \xE5 h\xE5ndtere frister,\
+  \ planlegge hendelser\u2026"
+lastmod: 2024-02-18 23:08:54.071133
+model: gpt-4-1106-preview
+summary: "Dato-beregning er \xE5 finne en fremtidig eller tidligere dato basert p\xE5\
+  \ en gitt dato. Programmerere gj\xF8r dette for \xE5 h\xE5ndtere frister, planlegge\
+  \ hendelser\u2026"
+title: Beregning av en dato i fremtiden eller fortiden
 ---
 
 {{< edit_this_page >}}

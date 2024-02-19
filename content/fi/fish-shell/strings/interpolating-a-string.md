@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonon interpolointi"
 aliases:
 - /fi/fish-shell/interpolating-a-string/
-date:                  2024-01-20T17:50:39.852104-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon interpolointi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/interpolating-a-string.md"
+date: 2024-01-20 17:50:39.852104-07:00
+description: "Interpolointi yhdist\xE4\xE4 muuttujat ja teksti\xE4 yhdeksi merkkijonoksi.\
+  \ Koodarit hy\xF6dynt\xE4v\xE4t t\xE4t\xE4 luodakseen dynaamista dataa tai viestej\xE4\
+  \ k\xE4ytt\xE4jille."
+lastmod: 2024-02-18 23:09:08.066796
+model: gpt-4-1106-preview
+summary: "Interpolointi yhdist\xE4\xE4 muuttujat ja teksti\xE4 yhdeksi merkkijonoksi.\
+  \ Koodarit hy\xF6dynt\xE4v\xE4t t\xE4t\xE4 luodakseen dynaamista dataa tai viestej\xE4\
+  \ k\xE4ytt\xE4jille."
+title: Merkkijonon interpolointi
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,18 @@
 ---
-title:                "Att använda associativa arrayer"
 aliases:
 - /sv/cpp/using-associative-arrays/
-date:                  2024-01-30T19:10:24.072921-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda associativa arrayer"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:24.072921-07:00
+description: "Associativa arrayer, k\xE4nda som `std::map` eller `std::unordered_map`\
+  \ i C++, \xF6verbryggar klyftan mellan arrayindex och verkliga data, vilket l\xE5\
+  ter dig\u2026"
+lastmod: 2024-02-18 23:08:52.077057
+model: gpt-4-0125-preview
+summary: "Associativa arrayer, k\xE4nda som `std::map` eller `std::unordered_map`\
+  \ i C++, \xF6verbryggar klyftan mellan arrayindex och verkliga data, vilket l\xE5\
+  ter dig\u2026"
+title: "Att anv\xE4nda associativa arrayer"
 ---
 
 {{< edit_this_page >}}

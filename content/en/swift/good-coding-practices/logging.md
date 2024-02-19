@@ -1,13 +1,14 @@
 ---
-title:                "Logging"
 aliases:
 - /en/swift/logging/
-date:                  2024-01-25T02:04:03.910395-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Logging"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/logging.md"
+date: 2024-01-25 02:04:03.910395-07:00
+description: "Logging is the process of recording application behaviors, errors, and\
+  \ other important info to a persisting medium, like a file or database. Programmers\u2026"
+lastmod: 2024-02-18 23:09:11.403097
+model: gpt-4-1106-preview
+summary: "Logging is the process of recording application behaviors, errors, and other\
+  \ important info to a persisting medium, like a file or database. Programmers\u2026"
+title: Logging
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Zamiana liter na wielkie w łańcuchu znaków"
 aliases:
 - /pl/fish-shell/capitalizing-a-string/
-date:                  2024-02-03T19:05:27.304585-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zamiana liter na wielkie w łańcuchu znaków"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:27.304585-07:00
+description: "Zmiana pierwszej litery \u0142a\u0144cucha na wielk\u0105, a reszty\
+  \ na ma\u0142e litery, oznacza modyfikacj\u0119 tekstu w taki spos\xF3b, by pierwsza\
+  \ litera by\u0142a wielka, a pozosta\u0142a\u2026"
+lastmod: 2024-02-18 23:08:50.018667
+model: gpt-4-0125-preview
+summary: "Zmiana pierwszej litery \u0142a\u0144cucha na wielk\u0105, a reszty na ma\u0142\
+  e litery, oznacza modyfikacj\u0119 tekstu w taki spos\xF3b, by pierwsza litera by\u0142\
+  a wielka, a pozosta\u0142a\u2026"
+title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Affichage du débogage"
 aliases:
 - /fr/google-apps-script/printing-debug-output/
-date:                  2024-02-01T21:58:17.785204-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Affichage du débogage"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/google-apps-script/printing-debug-output.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:17.785204-07:00
+description: "L'impression des sorties de d\xE9bogage implique de placer strat\xE9\
+  giquement des d\xE9clarations de journalisation dans votre code pour afficher les\
+  \ valeurs des\u2026"
+lastmod: 2024-02-18 23:09:08.291904
+model: gpt-4-0125-preview
+summary: "L'impression des sorties de d\xE9bogage implique de placer strat\xE9giquement\
+  \ des d\xE9clarations de journalisation dans votre code pour afficher les valeurs\
+  \ des\u2026"
+title: "Affichage du d\xE9bogage"
 ---
 
 {{< edit_this_page >}}

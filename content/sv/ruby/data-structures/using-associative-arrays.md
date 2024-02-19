@@ -1,15 +1,18 @@
 ---
-title:                "Att använda associativa arrayer"
 aliases:
 - /sv/ruby/using-associative-arrays/
-date:                  2024-01-30T19:12:54.301462-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda associativa arrayer"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:54.301462-07:00
+description: "Associativa arrayer, som oftare kallas hashar i Ruby, g\xF6r det m\xF6\
+  jligt att para ihop unika nycklar med v\xE4rden. De \xE4r oumb\xE4rliga n\xE4r du\
+  \ beh\xF6ver h\xE5lla reda\u2026"
+lastmod: 2024-02-18 23:08:52.286648
+model: gpt-4-0125-preview
+summary: "Associativa arrayer, som oftare kallas hashar i Ruby, g\xF6r det m\xF6jligt\
+  \ att para ihop unika nycklar med v\xE4rden. De \xE4r oumb\xE4rliga n\xE4r du beh\xF6\
+  ver h\xE5lla reda\u2026"
+title: "Att anv\xE4nda associativa arrayer"
 ---
 
 {{< edit_this_page >}}

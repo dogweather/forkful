@@ -1,13 +1,14 @@
 ---
-title:                "Redondeo de números"
 aliases:
 - /es/php/rounding-numbers/
-date:                  2024-01-26T03:45:54.905166-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Redondeo de números"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/rounding-numbers.md"
+date: 2024-01-26 03:45:54.905166-07:00
+description: "Redondear n\xFAmeros significa eliminar los decimales hasta una precisi\xF3\
+  n determinada, a menudo hasta n\xFAmeros enteros. Los programadores redondean para\u2026"
+lastmod: 2024-02-18 23:09:10.068338
+model: gpt-4-0125-preview
+summary: "Redondear n\xFAmeros significa eliminar los decimales hasta una precisi\xF3\
+  n determinada, a menudo hasta n\xFAmeros enteros. Los programadores redondean para\u2026"
+title: "Redondeo de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,17 @@
 ---
-title:                "Een tekstbestand schrijven"
 aliases:
 - /nl/python/writing-a-text-file/
-date:                  2024-01-28T22:12:38.280905-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tekstbestand schrijven"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/python/writing-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:38.280905-07:00
+description: "Een tekstbestand schrijven in Python betekent het opslaan van strings\
+  \ in een bestand op je schijf. Programmeurs doen dit om gegevens tussen sessies\
+  \ te\u2026"
+lastmod: 2024-02-18 23:09:01.453710
+model: gpt-4-0125-preview
+summary: "Een tekstbestand schrijven in Python betekent het opslaan van strings in\
+  \ een bestand op je schijf. Programmeurs doen dit om gegevens tussen sessies te\u2026"
+title: Een tekstbestand schrijven
 ---
 
 {{< edit_this_page >}}

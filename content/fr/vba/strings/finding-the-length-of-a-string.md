@@ -1,14 +1,18 @@
 ---
-title:                "Trouver la longueur d'une chaîne"
 aliases:
 - /fr/vba/finding-the-length-of-a-string/
-date:                  2024-02-01T21:53:52.677381-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trouver la longueur d'une chaîne"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/vba/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:52.677381-07:00
+description: "Trouver la longueur d'une cha\xEEne de caract\xE8res en Visual Basic\
+  \ pour Applications (VBA) consiste \xE0 d\xE9terminer le nombre de caract\xE8res\
+  \ qu'elle contient. Les\u2026"
+lastmod: 2024-02-18 23:09:08.567356
+model: gpt-4-0125-preview
+summary: "Trouver la longueur d'une cha\xEEne de caract\xE8res en Visual Basic pour\
+  \ Applications (VBA) consiste \xE0 d\xE9terminer le nombre de caract\xE8res qu'elle\
+  \ contient. Les\u2026"
+title: "Trouver la longueur d'une cha\xEEne"
 ---
 
 {{< edit_this_page >}}

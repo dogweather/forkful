@@ -1,14 +1,16 @@
 ---
-title:                "Hantera fel"
 aliases:
 - /sv/vba/handling-errors/
-date:                  2024-02-01T21:55:13.374719-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Hantera fel"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/handling-errors.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:13.374719-07:00
+description: "Felhantering i Visual Basic for Applications (VBA) syftar till processen\
+  \ att f\xF6rutse, uppt\xE4cka och l\xF6sa programmerings-, applikations- eller\u2026"
+lastmod: 2024-02-18 23:08:51.634574
+model: gpt-4-0125-preview
+summary: "Felhantering i Visual Basic for Applications (VBA) syftar till processen\
+  \ att f\xF6rutse, uppt\xE4cka och l\xF6sa programmerings-, applikations- eller\u2026"
+title: Hantera fel
 ---
 
 {{< edit_this_page >}}

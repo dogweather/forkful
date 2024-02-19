@@ -1,14 +1,16 @@
 ---
-title:                "Werken met complexe getallen"
 aliases:
 - /nl/google-apps-script/working-with-complex-numbers/
-date:                  2024-02-01T22:07:38.793153-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met complexe getallen"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/google-apps-script/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:07:38.793153-07:00
+description: "Complexe getallen, gerepresenteerd als een combinatie van re\xEBle en\
+  \ imaginaire eenheden (bijv. 3 + 4i), zijn fundamenteel in verschillende computationele\u2026"
+lastmod: 2024-02-18 23:09:01.378744
+model: gpt-4-0125-preview
+summary: "Complexe getallen, gerepresenteerd als een combinatie van re\xEBle en imaginaire\
+  \ eenheden (bijv. 3 + 4i), zijn fundamenteel in verschillende computationele\u2026"
+title: Werken met complexe getallen
 ---
 
 {{< edit_this_page >}}

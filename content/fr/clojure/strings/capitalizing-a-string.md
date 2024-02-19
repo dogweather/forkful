@@ -1,14 +1,18 @@
 ---
-title:                "Mettre en majuscule une chaîne"
 aliases:
 - /fr/clojure/capitalizing-a-string/
-date:                  2024-02-03T19:04:58.896473-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Mettre en majuscule une chaîne"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:04:58.896473-07:00
+description: "La capitalisation d'une cha\xEEne implique de modifier la cha\xEEne\
+  \ afin que son premier caract\xE8re soit en majuscule, tandis que le reste de la\
+  \ cha\xEEne demeure\u2026"
+lastmod: 2024-02-18 23:09:08.368350
+model: gpt-4-0125-preview
+summary: "La capitalisation d'une cha\xEEne implique de modifier la cha\xEEne afin\
+  \ que son premier caract\xE8re soit en majuscule, tandis que le reste de la cha\xEE\
+  ne demeure\u2026"
+title: "Mettre en majuscule une cha\xEEne"
 ---
 
 {{< edit_this_page >}}

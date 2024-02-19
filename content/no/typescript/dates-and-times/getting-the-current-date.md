@@ -1,14 +1,18 @@
 ---
-title:                "Få dagens dato"
 aliases:
 - /no/typescript/getting-the-current-date/
-date:                  2024-02-03T19:11:03.770739-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Få dagens dato"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:11:03.770739-07:00
+description: "\xC5 hente den n\xE5v\xE6rende datoen i TypeScript, et spr\xE5k bygget\
+  \ p\xE5 JavaScript, lar deg f\xE5 tilgang til og manipulere informasjon om den n\xE5\
+  v\xE6rende datoen og\u2026"
+lastmod: 2024-02-18 23:08:53.655077
+model: gpt-4-0125-preview
+summary: "\xC5 hente den n\xE5v\xE6rende datoen i TypeScript, et spr\xE5k bygget p\xE5\
+  \ JavaScript, lar deg f\xE5 tilgang til og manipulere informasjon om den n\xE5v\xE6\
+  rende datoen og\u2026"
+title: "F\xE5 dagens dato"
 ---
 
 {{< edit_this_page >}}

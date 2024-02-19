@@ -1,12 +1,14 @@
 ---
-title:                "Finding the length of a string"
 aliases:
 - /en/vba/finding-the-length-of-a-string/
-date:                  2024-02-01T21:30:25.221283-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Finding the length of a string"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/vba/finding-the-length-of-a-string.md"
+date: 2024-02-01 21:30:25.221283-07:00
+description: "Finding the length of a string in Visual Basic for Applications (VBA)\
+  \ involves determining the number of characters it contains. Programmers frequently\u2026"
+lastmod: 2024-02-18 23:09:10.880924
+model: gpt-4-0125-preview
+summary: "Finding the length of a string in Visual Basic for Applications (VBA) involves\
+  \ determining the number of characters it contains. Programmers frequently\u2026"
+title: Finding the length of a string
 ---
 
 {{< edit_this_page >}}

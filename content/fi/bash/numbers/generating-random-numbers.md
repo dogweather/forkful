@@ -1,13 +1,14 @@
 ---
-title:                "Satunnaislukujen generointi"
 aliases:
 - /fi/bash/generating-random-numbers/
-date:                  2024-01-27T20:32:57.432945-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Satunnaislukujen generointi"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/generating-random-numbers.md"
+date: 2024-01-27 20:32:57.432945-07:00
+description: "Satunnaislukujen tuottaminen Bashissa tarjoaa keinon tuoda ep\xE4varmuutta\
+  \ skripteihin, mik\xE4 on olennaista teht\xE4viss\xE4 kuten turvallisten salasanojen\u2026"
+lastmod: 2024-02-18 23:09:07.797766
+model: gpt-4-0125-preview
+summary: "Satunnaislukujen tuottaminen Bashissa tarjoaa keinon tuoda ep\xE4varmuutta\
+  \ skripteihin, mik\xE4 on olennaista teht\xE4viss\xE4 kuten turvallisten salasanojen\u2026"
+title: Satunnaislukujen generointi
 ---
 
 {{< edit_this_page >}}

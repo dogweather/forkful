@@ -1,12 +1,14 @@
 ---
-title:                "Writing to standard error"
 aliases:
 - /en/go/writing-to-standard-error/
-date:                  2024-02-03T17:50:00.464734-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Writing to standard error"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/writing-to-standard-error.md"
+date: 2024-02-03 17:50:00.464734-07:00
+description: "Writing to standard error (stderr) in Go involves directing error messages\
+  \ or diagnostics not meant for the main output stream. Programmers use this to\u2026"
+lastmod: 2024-02-18 23:09:10.613063
+model: gpt-4-0125-preview
+summary: "Writing to standard error (stderr) in Go involves directing error messages\
+  \ or diagnostics not meant for the main output stream. Programmers use this to\u2026"
+title: Writing to standard error
 ---
 
 {{< edit_this_page >}}

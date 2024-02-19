@@ -1,13 +1,16 @@
 ---
-title:                "Ermittlung der Zeichenkettenlänge"
 aliases:
 - /de/lua/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:39.861783-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ermittlung der Zeichenkettenlänge"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:39.861783-07:00
+description: "String-L\xE4ngen messen, bedeutet, zu z\xE4hlen, wie viele Zeichen in\
+  \ einer Zeichenkette stecken. Programmierer brauchen das, um Daten zu validieren,\
+  \ Slices zu\u2026"
+lastmod: 2024-02-18 23:09:04.997549
+model: gpt-4-1106-preview
+summary: "String-L\xE4ngen messen, bedeutet, zu z\xE4hlen, wie viele Zeichen in einer\
+  \ Zeichenkette stecken. Programmierer brauchen das, um Daten zu validieren, Slices\
+  \ zu\u2026"
+title: "Ermittlung der Zeichenkettenl\xE4nge"
 ---
 
 {{< edit_this_page >}}

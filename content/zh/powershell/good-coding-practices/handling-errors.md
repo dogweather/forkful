@@ -1,13 +1,20 @@
 ---
-title:                "处理错误"
 aliases:
 - /zh/powershell/handling-errors/
-date:                  2024-01-26T00:56:26.394332-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "处理错误"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/handling-errors.md"
+date: 2024-01-26 00:56:26.394332-07:00
+description: "\u5728PowerShell\u4E2D\u5904\u7406\u9519\u8BEF\u610F\u5473\u7740\u9884\
+  \u6D4B\u53EF\u80FD\u53D1\u751F\u7684\u95EE\u9898\u5E76\u5E73\u6ED1\u5730\u7BA1\u7406\
+  \u8FD9\u4E9B\u95EE\u9898\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\
+  \u9632\u6B62\u7A0B\u5E8F\u5D29\u6E83\u5E76\u4E3A\u7528\u6237\u63D0\u4F9B\u6709\u7528\
+  \u7684\u53CD\u9988\u3002"
+lastmod: 2024-02-18 23:08:59.338551
+model: gpt-4-1106-preview
+summary: "\u5728PowerShell\u4E2D\u5904\u7406\u9519\u8BEF\u610F\u5473\u7740\u9884\u6D4B\
+  \u53EF\u80FD\u53D1\u751F\u7684\u95EE\u9898\u5E76\u5E73\u6ED1\u5730\u7BA1\u7406\u8FD9\
+  \u4E9B\u95EE\u9898\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u9632\
+  \u6B62\u7A0B\u5E8F\u5D29\u6E83\u5E76\u4E3A\u7528\u6237\u63D0\u4F9B\u6709\u7528\u7684\
+  \u53CD\u9988\u3002"
+title: "\u5904\u7406\u9519\u8BEF"
 ---
 
 {{< edit_this_page >}}

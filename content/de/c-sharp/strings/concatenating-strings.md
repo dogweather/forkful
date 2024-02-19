@@ -1,13 +1,15 @@
 ---
-title:                "Zeichenketten verknüpfen"
 aliases:
 - /de/c-sharp/concatenating-strings/
-date:                  2024-01-20T17:34:31.700287-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Zeichenketten verknüpfen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/concatenating-strings.md"
+date: 2024-01-20 17:34:31.700287-07:00
+description: "Das Zusammenf\xFCgen von Zeichenketten, auch \"String Concatenation\"\
+  \ genannt, ist ziemlich grundlegend: Es geht darum, zwei oder mehrere Strings zu\
+  \ einem\u2026"
+lastmod: 2024-02-18 23:09:04.862934
+model: gpt-4-1106-preview
+summary: "Das Zusammenf\xFCgen von Zeichenketten, auch \"String Concatenation\" genannt,\
+  \ ist ziemlich grundlegend: Es geht darum, zwei oder mehrere Strings zu einem\u2026"
+title: "Zeichenketten verkn\xFCpfen"
 ---
 
 {{< edit_this_page >}}

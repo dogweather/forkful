@@ -1,15 +1,17 @@
 ---
-title:                "Een string interpoleren"
 aliases:
 - /nl/cpp/interpolating-a-string/
-date:                  2024-01-28T22:02:03.501681-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string interpoleren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/cpp/interpolating-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:02:03.501681-07:00
+description: "Stringinterpolatie gaat over het invoegen van variabelen in strings.\
+  \ We doen dit om ter plekke berichten samen te stellen, output te personaliseren\
+  \ of\u2026"
+lastmod: 2024-02-18 23:09:02.167584
+model: gpt-4-0125-preview
+summary: "Stringinterpolatie gaat over het invoegen van variabelen in strings. We\
+  \ doen dit om ter plekke berichten samen te stellen, output te personaliseren of\u2026"
+title: Een string interpoleren
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonosta lainausmerkkien poistaminen"
 aliases:
 - /fi/swift/removing-quotes-from-a-string/
-date:                  2024-01-26T03:42:08.885110-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonosta lainausmerkkien poistaminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:42:08.885110-07:00
+description: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa sis\xE4lt\xF6\xE4\
+  \ ymp\xE4r\xF6ivien lainausmerkkien poistamista. T\xE4m\xE4 tehd\xE4\xE4n sy\xF6\
+  tteiden puhdistamiseksi, datan\u2026"
+lastmod: 2024-02-18 23:09:07.976719
+model: gpt-4-0125-preview
+summary: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa sis\xE4lt\xF6\xE4 ymp\xE4\
+  r\xF6ivien lainausmerkkien poistamista. T\xE4m\xE4 tehd\xE4\xE4n sy\xF6tteiden puhdistamiseksi,\
+  \ datan\u2026"
+title: Merkkijonosta lainausmerkkien poistaminen
 ---
 
 {{< edit_this_page >}}

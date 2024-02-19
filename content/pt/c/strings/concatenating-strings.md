@@ -1,14 +1,18 @@
 ---
-title:                "Concatenando strings"
 aliases:
 - /pt/c/concatenating-strings/
-date:                  2024-02-03T17:53:46.405581-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Concatenando strings"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/concatenating-strings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:46.405581-07:00
+description: "A concatena\xE7\xE3o de strings em C envolve a jun\xE7\xE3o de duas\
+  \ ou mais strings de ponta a ponta para formar uma nova string. Os programadores\
+  \ realizam essa\u2026"
+lastmod: 2024-02-18 23:08:58.610287
+model: gpt-4-0125-preview
+summary: "A concatena\xE7\xE3o de strings em C envolve a jun\xE7\xE3o de duas ou mais\
+  \ strings de ponta a ponta para formar uma nova string. Os programadores realizam\
+  \ essa\u2026"
+title: Concatenando strings
 ---
 
 {{< edit_this_page >}}

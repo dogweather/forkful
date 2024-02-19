@@ -1,14 +1,14 @@
 ---
-title:                "CSVとの作業"
 aliases:
 - /ja/swift/working-with-csv/
-date:                  2024-02-03T19:21:44.334543-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "CSVとの作業"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:21:44.334543-07:00
+description: "CSV\uFF08Comma-Separated\u2026"
+lastmod: 2024-02-18 23:08:55.250806
+model: gpt-4-0125-preview
+summary: "CSV\uFF08Comma-Separated\u2026"
+title: "CSV\u3068\u306E\u4F5C\u696D"
 ---
 
 {{< edit_this_page >}}

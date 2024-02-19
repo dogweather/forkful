@@ -1,13 +1,16 @@
 ---
-title:                "Korzystanie z interaktywnego shella (REPL)"
 aliases:
 - /pl/javascript/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:15:42.127682-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z interaktywnego shella (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:15:42.127682-07:00
+description: "Interaktywne pow\u0142oki, czyli REPL-y (Read-Eval-Print Loops - P\u0119\
+  tle Czytaj-Wykonaj-Wypisz), pozwalaj\u0105 na bie\u017C\u0105co uruchamia\u0107\
+  \ kod, testowa\u0107 funkcje, algorytmy\u2026"
+lastmod: 2024-02-18 23:08:49.995404
+model: gpt-4-0125-preview
+summary: "Interaktywne pow\u0142oki, czyli REPL-y (Read-Eval-Print Loops - P\u0119\
+  tle Czytaj-Wykonaj-Wypisz), pozwalaj\u0105 na bie\u017C\u0105co uruchamia\u0107\
+  \ kod, testowa\u0107 funkcje, algorytmy\u2026"
+title: Korzystanie z interaktywnego shella (REPL)
 ---
 
 {{< edit_this_page >}}

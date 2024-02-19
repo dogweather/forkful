@@ -1,13 +1,14 @@
 ---
-title:                "Registrazione Eventi (Logging)"
 aliases:
 - /it/c-sharp/logging/
-date:                  2024-01-26T01:01:04.480318-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registrazione Eventi (Logging)"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/logging.md"
+date: 2024-01-26 01:01:04.480318-07:00
+description: "Il logging \xE8 il processo di registrazione degli eventi dell'applicazione\
+  \ e dei dati in output durante l'esecuzione. I programmatori effettuano il logging\u2026"
+lastmod: 2024-02-18 23:08:55.894250
+model: gpt-4-1106-preview
+summary: "Il logging \xE8 il processo di registrazione degli eventi dell'applicazione\
+  \ e dei dati in output durante l'esecuzione. I programmatori effettuano il logging\u2026"
+title: Registrazione Eventi (Logging)
 ---
 
 {{< edit_this_page >}}

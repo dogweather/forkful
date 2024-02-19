@@ -1,13 +1,14 @@
 ---
-title:                "Printing debug output"
 aliases:
 - /en/javascript/printing-debug-output/
-date:                  2024-01-20T17:53:03.734143-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Printing debug output"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/printing-debug-output.md"
+date: 2024-01-20 17:53:03.734143-07:00
+description: "Printing debug output in JavaScript is about showing variables, errors,\
+  \ or any other info that helps figure out what your code is doing at a glance.\u2026"
+lastmod: 2024-02-18 23:09:11.440521
+model: gpt-4-1106-preview
+summary: "Printing debug output in JavaScript is about showing variables, errors,\
+  \ or any other info that helps figure out what your code is doing at a glance.\u2026"
+title: Printing debug output
 ---
 
 {{< edit_this_page >}}

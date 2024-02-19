@@ -1,14 +1,16 @@
 ---
-title:                "Manejando errores"
 aliases:
 - /es/go/handling-errors/
-date:                  2024-02-03T17:58:06.309425-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manejando errores"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/handling-errors.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:58:06.309425-07:00
+description: "El manejo de errores en Go implica reconocer y responder a las condiciones\
+  \ de error en tu programa. Los programadores se dedican al manejo de errores para\u2026"
+lastmod: 2024-02-18 23:09:09.464452
+model: gpt-4-0125-preview
+summary: "El manejo de errores en Go implica reconocer y responder a las condiciones\
+  \ de error en tu programa. Los programadores se dedican al manejo de errores para\u2026"
+title: Manejando errores
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,23 @@
 ---
-title:                "创建临时文件"
 aliases:
 - /zh/powershell/creating-a-temporary-file/
-date:                  2024-01-20T17:40:58.483339-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "创建临时文件"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:58.483339-07:00
+description: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6\u5728\u7F16\u7A0B\u4E2D\u5F88\u5E38\
+  \u89C1\uFF0C\u5B83\u5C31\u662F\u5236\u4F5C\u4E00\u4E2A\u77ED\u6682\u5B58\u5728\u7684\
+  \u6587\u4EF6\uFF0C\u7528\u6765\u5904\u7406\u4E34\u65F6\u6570\u636E\u6216\u8005\u5F53\
+  \u4F5C\u4E00\u4E2A\u64CD\u4F5C\u7684\u5907\u4EFD\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\
+  \u505A\u662F\u4E3A\u4E86\u4E0D\u5E72\u6270\u6B63\u5F0F\u6587\u4EF6\uFF0C\u5904\u7406\
+  \u5B8C\u5C31\u4E22\u6389\uFF0C\u4FDD\u6301\u73AF\u5883\u6E05\u6D01\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.349242
+model: gpt-4-1106-preview
+summary: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6\u5728\u7F16\u7A0B\u4E2D\u5F88\u5E38\
+  \u89C1\uFF0C\u5B83\u5C31\u662F\u5236\u4F5C\u4E00\u4E2A\u77ED\u6682\u5B58\u5728\u7684\
+  \u6587\u4EF6\uFF0C\u7528\u6765\u5904\u7406\u4E34\u65F6\u6570\u636E\u6216\u8005\u5F53\
+  \u4F5C\u4E00\u4E2A\u64CD\u4F5C\u7684\u5907\u4EFD\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\
+  \u505A\u662F\u4E3A\u4E86\u4E0D\u5E72\u6270\u6B63\u5F0F\u6587\u4EF6\uFF0C\u5904\u7406\
+  \u5B8C\u5C31\u4E22\u6389\uFF0C\u4FDD\u6301\u73AF\u5883\u6E05\u6D01\u3002"
+title: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

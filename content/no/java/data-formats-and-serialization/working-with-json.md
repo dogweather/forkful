@@ -1,14 +1,18 @@
 ---
-title:                "Arbeider med JSON"
 aliases:
 - /no/java/working-with-json/
-date:                  2024-02-03T19:23:29.236228-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeider med JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:29.236228-07:00
+description: "\xC5 jobbe med JSON (JavaScript Object Notation) betyr \xE5 h\xE5ndtere\
+  \ dette lette datautvekslingsformatet inne i Java-applikasjonene dine. Programmerere\
+  \ velger\u2026"
+lastmod: 2024-02-18 23:08:53.791315
+model: gpt-4-0125-preview
+summary: "\xC5 jobbe med JSON (JavaScript Object Notation) betyr \xE5 h\xE5ndtere\
+  \ dette lette datautvekslingsformatet inne i Java-applikasjonene dine. Programmerere\
+  \ velger\u2026"
+title: Arbeider med JSON
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Drukowanie komunikatów debugowania"
 aliases:
 - /pl/javascript/printing-debug-output/
-date:                  2024-01-20T17:52:40.848285-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Drukowanie komunikatów debugowania"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/printing-debug-output.md"
+date: 2024-01-20 17:52:40.848285-07:00
+description: "Wypisywanie danych debugowania pomaga zrozumie\u0107, co si\u0119 dzieje\
+  \ w kodzie. Programi\u015Bci u\u017Cywaj\u0105 tego, by szybko znale\u017A\u0107\
+  \ b\u0142\u0119dy lub monitorowa\u0107 dzia\u0142anie\u2026"
+lastmod: 2024-02-18 23:08:49.996349
+model: gpt-4-1106-preview
+summary: "Wypisywanie danych debugowania pomaga zrozumie\u0107, co si\u0119 dzieje\
+  \ w kodzie. Programi\u015Bci u\u017Cywaj\u0105 tego, by szybko znale\u017A\u0107\
+  \ b\u0142\u0119dy lub monitorowa\u0107 dzia\u0142anie\u2026"
+title: "Drukowanie komunikat\xF3w debugowania"
 ---
 
 {{< edit_this_page >}}

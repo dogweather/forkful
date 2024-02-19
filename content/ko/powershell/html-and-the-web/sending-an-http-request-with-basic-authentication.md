@@ -1,14 +1,26 @@
 ---
-title:                "기본 인증을 사용한 HTTP 요청 보내기"
 aliases:
 - /ko/powershell/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:49.112566-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "기본 인증을 사용한 HTTP 요청 보내기"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:49.112566-07:00
+description: "HTTP \uC694\uCCAD\uC740 \uC6F9 \uC11C\uBC84\uC640 \uD1B5\uC2E0\uC758\
+  \ \uAE30\uBCF8\uC785\uB2C8\uB2E4. \uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD558\
+  \uC5EC \uBCF4\uC548 \uC815\uBCF4\uB97C \uD3EC\uD568\uD55C \uC694\uCCAD\uC744 \uBCF4\
+  \uB0BC \uC218 \uC788\uC2B5\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uC774\
+  \ \uBC29\uC2DD\uC744 \uC885\uC885 \uC0AC\uC6A9\uD574 \uB370\uC774\uD130\uB97C \uC548\
+  \uC804\uD558\uAC8C \uC804\uC1A1\uD558\uACE0 API \uC11C\uBE44\uC2A4\uC5D0 \uC811\uADFC\
+  \uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.554016
+model: gpt-4-1106-preview
+summary: "HTTP \uC694\uCCAD\uC740 \uC6F9 \uC11C\uBC84\uC640 \uD1B5\uC2E0\uC758 \uAE30\
+  \uBCF8\uC785\uB2C8\uB2E4. \uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD558\uC5EC\
+  \ \uBCF4\uC548 \uC815\uBCF4\uB97C \uD3EC\uD568\uD55C \uC694\uCCAD\uC744 \uBCF4\uB0BC\
+  \ \uC218 \uC788\uC2B5\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uC774 \uBC29\
+  \uC2DD\uC744 \uC885\uC885 \uC0AC\uC6A9\uD574 \uB370\uC774\uD130\uB97C \uC548\uC804\
+  \uD558\uAC8C \uC804\uC1A1\uD558\uACE0 API \uC11C\uBE44\uC2A4\uC5D0 \uC811\uADFC\uD569\
+  \uB2C8\uB2E4."
+title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uBCF4\
+  \uB0B4\uAE30"
 ---
 
 {{< edit_this_page >}}

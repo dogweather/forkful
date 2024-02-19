@@ -1,13 +1,16 @@
 ---
-title:                "Pesquisando e substituindo texto"
 aliases:
 - /pt/fish-shell/searching-and-replacing-text/
-date:                  2024-01-20T17:57:49.074436-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Pesquisando e substituindo texto"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:49.074436-07:00
+description: "Pesquisar e substituir texto \xE9 a arte de encontrar peda\xE7os espec\xED\
+  ficos de texto e troc\xE1-los por outros. Programadores fazem isso para corrigir\
+  \ erros,\u2026"
+lastmod: 2024-02-18 23:08:58.559179
+model: gpt-4-1106-preview
+summary: "Pesquisar e substituir texto \xE9 a arte de encontrar peda\xE7os espec\xED\
+  ficos de texto e troc\xE1-los por outros. Programadores fazem isso para corrigir\
+  \ erros,\u2026"
+title: Pesquisando e substituindo texto
 ---
 
 {{< edit_this_page >}}

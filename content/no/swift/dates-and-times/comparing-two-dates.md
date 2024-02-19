@@ -1,13 +1,14 @@
 ---
-title:                "Sammenlikning av to datoer"
 aliases:
 - /no/swift/comparing-two-dates/
-date:                  2024-01-20T17:34:06.450092-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammenlikning av to datoer"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/comparing-two-dates.md"
+date: 2024-01-20 17:34:06.450092-07:00
+description: "Sammenligning av to datoer sjekker hvilken dato som kommer f\xF8r eller\
+  \ etter en annen. Programmerere gj\xF8r det for \xE5 h\xE5ndtere tidsfrister, organisere\u2026"
+lastmod: 2024-02-18 23:08:54.280663
+model: gpt-4-1106-preview
+summary: "Sammenligning av to datoer sjekker hvilken dato som kommer f\xF8r eller\
+  \ etter en annen. Programmerere gj\xF8r det for \xE5 h\xE5ndtere tidsfrister, organisere\u2026"
+title: Sammenlikning av to datoer
 ---
 
 {{< edit_this_page >}}

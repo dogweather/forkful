@@ -1,13 +1,16 @@
 ---
-title:                "Työskentely TOML:n kanssa"
 aliases:
 - /fi/haskell/working-with-toml/
-date:                  2024-01-26T04:22:44.683304-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely TOML:n kanssa"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/working-with-toml.md"
+date: 2024-01-26 04:22:44.683304-07:00
+description: "TOML:lla ty\xF6skentely sis\xE4lt\xE4\xE4 TOML-datan (Tom's Obvious,\
+  \ Minimal Language) j\xE4sent\xE4misen ja luomisen Haskellilla. Ohjelmoijat tekev\xE4\
+  t sen helposti\u2026"
+lastmod: 2024-02-18 23:09:07.691564
+model: gpt-4-0125-preview
+summary: "TOML:lla ty\xF6skentely sis\xE4lt\xE4\xE4 TOML-datan (Tom's Obvious, Minimal\
+  \ Language) j\xE4sent\xE4misen ja luomisen Haskellilla. Ohjelmoijat tekev\xE4t sen\
+  \ helposti\u2026"
+title: "Ty\xF6skentely TOML:n kanssa"
 ---
 
 {{< edit_this_page >}}

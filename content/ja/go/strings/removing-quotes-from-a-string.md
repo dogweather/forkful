@@ -1,14 +1,20 @@
 ---
-title:                "文字列から引用符を削除する"
 aliases:
 - /ja/go/removing-quotes-from-a-string/
-date:                  2024-02-03T18:07:28.753557-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "文字列から引用符を削除する"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:28.753557-07:00
+description: "Go\u3067\u6587\u5B57\u5217\u304B\u3089\u5F15\u7528\u7B26\u3092\u53D6\
+  \u308A\u9664\u304F\u3068\u306F\u3001\u6307\u5B9A\u3055\u308C\u305F\u6587\u5B57\u5217\
+  \u304B\u3089\u5148\u982D\u3068\u672B\u5C3E\u306E\u5F15\u7528\u7B26\uFF08`\"` \u307E\
+  \u305F\u306F\u2026"
+lastmod: 2024-02-18 23:08:54.467513
+model: gpt-4-0125-preview
+summary: "Go\u3067\u6587\u5B57\u5217\u304B\u3089\u5F15\u7528\u7B26\u3092\u53D6\u308A\
+  \u9664\u304F\u3068\u306F\u3001\u6307\u5B9A\u3055\u308C\u305F\u6587\u5B57\u5217\u304B\
+  \u3089\u5148\u982D\u3068\u672B\u5C3E\u306E\u5F15\u7528\u7B26\uFF08`\"` \u307E\u305F\
+  \u306F\u2026"
+title: "\u6587\u5B57\u5217\u304B\u3089\u5F15\u7528\u7B26\u3092\u524A\u9664\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

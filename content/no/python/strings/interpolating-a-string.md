@@ -1,16 +1,17 @@
 ---
-title:                "Interpolering av en streng"
 aliases:
 - /no/python/interpolating-a-string/
-date:                  2024-01-28T21:23:40.105231-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interpolering av en streng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/interpolating-a-string.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:23:40.105231-07:00
+description: "Strenginterpolasjon er metoden for \xE5 bygge inn uttrykk i strenglitteraler.\
+  \ Programmerere bruker det for \xE5 dynamisk sette inn verdier i strenger, noe som\u2026"
+lastmod: 2024-02-18 23:08:53.511163
+model: gpt-4-0125-preview
+summary: "Strenginterpolasjon er metoden for \xE5 bygge inn uttrykk i strenglitteraler.\
+  \ Programmerere bruker det for \xE5 dynamisk sette inn verdier i strenger, noe som\u2026"
+title: Interpolering av en streng
 ---
 
 {{< edit_this_page >}}

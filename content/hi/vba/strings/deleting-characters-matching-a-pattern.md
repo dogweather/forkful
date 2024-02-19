@@ -1,14 +1,30 @@
 ---
-title:                "पैटर्न मिलने पर संवर्णों को हटाना"
 aliases:
 - /hi/vba/deleting-characters-matching-a-pattern/
-date:                  2024-02-01T21:53:41.962744-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "पैटर्न मिलने पर संवर्णों को हटाना"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/vba/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:41.962744-07:00
+description: "Visual Basic for Applications (VBA) \u092E\u0947\u0902 \u090F\u0915\
+  \ \u0935\u093F\u0936\u093F\u0937\u094D\u091F \u092A\u0948\u091F\u0930\u094D\u0928\
+  \ \u0938\u0947 \u092E\u0947\u0932 \u0916\u093E\u0928\u0947 \u0935\u093E\u0932\u0947\
+  \ \u0905\u0915\u094D\u0937\u0930\u094B\u0902 \u0915\u094B \u0939\u091F\u093E\u0928\
+  \u093E \u0936\u093E\u092E\u093F\u0932 \u0939\u0948, \u091C\u093F\u0938\u092E\u0947\
+  \u0902 \u0915\u0941\u091B \u092E\u093E\u0928\u0926\u0902\u0921\u094B\u0902 \u0915\
+  \u094B \u092A\u0942\u0930\u093E \u0915\u0930\u0928\u0947 \u0935\u093E\u0932\u0947\
+  \ \u0905\u0915\u094D\u0937\u0930\u094B\u0902 \u092F\u093E\u2026"
+lastmod: 2024-02-18 23:09:03.004325
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications (VBA) \u092E\u0947\u0902 \u090F\u0915 \u0935\
+  \u093F\u0936\u093F\u0937\u094D\u091F \u092A\u0948\u091F\u0930\u094D\u0928 \u0938\
+  \u0947 \u092E\u0947\u0932 \u0916\u093E\u0928\u0947 \u0935\u093E\u0932\u0947 \u0905\
+  \u0915\u094D\u0937\u0930\u094B\u0902 \u0915\u094B \u0939\u091F\u093E\u0928\u093E\
+  \ \u0936\u093E\u092E\u093F\u0932 \u0939\u0948, \u091C\u093F\u0938\u092E\u0947\u0902\
+  \ \u0915\u0941\u091B \u092E\u093E\u0928\u0926\u0902\u0921\u094B\u0902 \u0915\u094B\
+  \ \u092A\u0942\u0930\u093E \u0915\u0930\u0928\u0947 \u0935\u093E\u0932\u0947 \u0905\
+  \u0915\u094D\u0937\u0930\u094B\u0902 \u092F\u093E\u2026"
+title: "\u092A\u0948\u091F\u0930\u094D\u0928 \u092E\u093F\u0932\u0928\u0947 \u092A\
+  \u0930 \u0938\u0902\u0935\u0930\u094D\u0923\u094B\u0902 \u0915\u094B \u0939\u091F\
+  \u093E\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

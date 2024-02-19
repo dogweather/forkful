@@ -1,14 +1,18 @@
 ---
-title:                "Trabalhando com números complexos"
 aliases:
 - /pt/google-apps-script/working-with-complex-numbers/
-date:                  2024-02-01T22:07:33.754844-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com números complexos"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/google-apps-script/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:07:33.754844-07:00
+description: "N\xFAmeros complexos, representados como uma combina\xE7\xE3o de unidades\
+  \ reais e imagin\xE1rias (por exemplo, 3 + 4i), s\xE3o fundamentais em v\xE1rios\
+  \ problemas\u2026"
+lastmod: 2024-02-18 23:08:57.708832
+model: gpt-4-0125-preview
+summary: "N\xFAmeros complexos, representados como uma combina\xE7\xE3o de unidades\
+  \ reais e imagin\xE1rias (por exemplo, 3 + 4i), s\xE3o fundamentais em v\xE1rios\
+  \ problemas\u2026"
+title: "Trabalhando com n\xFAmeros complexos"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Scaricare una pagina web"
 aliases:
 - /it/arduino/downloading-a-web-page/
-date:                  2024-01-20T17:43:23.364156-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Scaricare una pagina web"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/downloading-a-web-page.md"
+date: 2024-01-20 17:43:23.364156-07:00
+description: "Scaricare una pagina web significa far s\xEC che il tuo Arduino la richieda\
+  \ e la riceva dalla rete. I programmatori lo fanno per acquisire dati da internet,\u2026"
+lastmod: 2024-02-18 23:08:56.133157
+model: gpt-4-1106-preview
+summary: "Scaricare una pagina web significa far s\xEC che il tuo Arduino la richieda\
+  \ e la riceva dalla rete. I programmatori lo fanno per acquisire dati da internet,\u2026"
+title: Scaricare una pagina web
 ---
 
 {{< edit_this_page >}}

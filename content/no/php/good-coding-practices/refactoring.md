@@ -1,13 +1,16 @@
 ---
-title:                "Refaktorering"
 aliases:
 - /no/php/refactoring/
-date:                  2024-01-26T01:48:37.086197-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refaktorering"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/refactoring.md"
+date: 2024-01-26 01:48:37.086197-07:00
+description: "Refaktorering er prosessen med \xE5 omstrukturere eksisterende dataprogramkode\
+  \ uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere refaktorerer for \xE5\
+  \u2026"
+lastmod: 2024-02-18 23:08:53.983284
+model: gpt-4-0125-preview
+summary: "Refaktorering er prosessen med \xE5 omstrukturere eksisterende dataprogramkode\
+  \ uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere refaktorerer for \xE5\
+  \u2026"
+title: Refaktorering
 ---
 
 {{< edit_this_page >}}

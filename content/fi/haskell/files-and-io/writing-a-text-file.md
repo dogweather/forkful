@@ -1,14 +1,18 @@
 ---
-title:                "Tekstitiedoston kirjoittaminen"
 aliases:
 - /fi/haskell/writing-a-text-file/
-date:                  2024-02-03T19:28:13.309995-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tekstitiedoston kirjoittaminen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:28:13.309995-07:00
+description: "Tekstitiedoston kirjoittaminen Haskellissa tarkoittaa tekstimuotoisten\
+  \ tiedostojen ohjelmallista luomista tai p\xE4ivitt\xE4mist\xE4. Ohjelmoijat tekev\xE4\
+  t t\xE4t\xE4\u2026"
+lastmod: 2024-02-18 23:09:07.686045
+model: gpt-4-0125-preview
+summary: "Tekstitiedoston kirjoittaminen Haskellissa tarkoittaa tekstimuotoisten tiedostojen\
+  \ ohjelmallista luomista tai p\xE4ivitt\xE4mist\xE4. Ohjelmoijat tekev\xE4t t\xE4\
+  t\xE4\u2026"
+title: Tekstitiedoston kirjoittaminen
 ---
 
 {{< edit_this_page >}}

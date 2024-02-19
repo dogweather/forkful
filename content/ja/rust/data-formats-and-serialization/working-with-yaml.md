@@ -1,14 +1,16 @@
 ---
-title:                "YAML を操作する"
 aliases:
 - /ja/rust/working-with-yaml/
-date:                  2024-02-03T19:27:04.022560-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "YAML を操作する"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:04.022560-07:00
+description: "Rust\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u306B\u304A\u3044\u3066\
+  \u3001YAML\uFF08YAML Ain't Markup\u2026"
+lastmod: 2024-02-18 23:08:54.739537
+model: gpt-4-0125-preview
+summary: "Rust\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u306B\u304A\u3044\u3066\u3001\
+  YAML\uFF08YAML Ain't Markup\u2026"
+title: "YAML \u3092\u64CD\u4F5C\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

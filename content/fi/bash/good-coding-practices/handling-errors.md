@@ -1,13 +1,14 @@
 ---
-title:                "Virheiden käsittely"
 aliases:
 - /fi/bash/handling-errors/
-date:                  2024-01-26T00:49:50.338056-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheiden käsittely"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/handling-errors.md"
+date: 2024-01-26 00:49:50.338056-07:00
+description: "Virheiden k\xE4sittely Bash-skriptauksessa tarkoittaa mahdollisten ongelmakohtien\
+  \ ennakointia ja niiden arvokasta k\xE4sittely\xE4. Miksi? No, se tekee\u2026"
+lastmod: 2024-02-18 23:09:07.812394
+model: gpt-4-1106-preview
+summary: "Virheiden k\xE4sittely Bash-skriptauksessa tarkoittaa mahdollisten ongelmakohtien\
+  \ ennakointia ja niiden arvokasta k\xE4sittely\xE4. Miksi? No, se tekee\u2026"
+title: "Virheiden k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

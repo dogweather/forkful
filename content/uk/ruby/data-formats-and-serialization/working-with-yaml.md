@@ -1,14 +1,26 @@
 ---
-title:                "Робота з YAML"
 aliases:
 - /uk/ruby/working-with-yaml/
-date:                  2024-02-03T19:26:50.291014-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Робота з YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/ruby/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:26:50.291014-07:00
+description: "YAML, \u0449\u043E \u0440\u043E\u0437\u0448\u0438\u0444\u0440\u043E\u0432\
+  \u0443\u0454\u0442\u044C\u0441\u044F \u044F\u043A YAML Ain't Markup Language (YAML\
+  \ - \u0446\u0435 \u043D\u0435 \u043C\u043E\u0432\u0430 \u0440\u043E\u0437\u043C\u0456\
+  \u0442\u043A\u0438), \u0448\u0438\u0440\u043E\u043A\u043E \u0432\u0438\u043A\u043E\
+  \u0440\u0438\u0441\u0442\u043E\u0432\u0443\u0454\u0442\u044C\u0441\u044F \u0432\
+  \ Ruby \u0434\u043B\u044F \u0444\u0430\u0439\u043B\u0456\u0432 \u043A\u043E\u043D\
+  \u0444\u0456\u0433\u0443\u0440\u0430\u0446\u0456\u0457 \u0442\u0430\u2026"
+lastmod: 2024-02-18 23:09:01.310714
+model: gpt-4-0125-preview
+summary: "YAML, \u0449\u043E \u0440\u043E\u0437\u0448\u0438\u0444\u0440\u043E\u0432\
+  \u0443\u0454\u0442\u044C\u0441\u044F \u044F\u043A YAML Ain't Markup Language (YAML\
+  \ - \u0446\u0435 \u043D\u0435 \u043C\u043E\u0432\u0430 \u0440\u043E\u0437\u043C\u0456\
+  \u0442\u043A\u0438), \u0448\u0438\u0440\u043E\u043A\u043E \u0432\u0438\u043A\u043E\
+  \u0440\u0438\u0441\u0442\u043E\u0432\u0443\u0454\u0442\u044C\u0441\u044F \u0432\
+  \ Ruby \u0434\u043B\u044F \u0444\u0430\u0439\u043B\u0456\u0432 \u043A\u043E\u043D\
+  \u0444\u0456\u0433\u0443\u0440\u0430\u0446\u0456\u0457 \u0442\u0430\u2026"
+title: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 YAML"
 ---
 
 {{< edit_this_page >}}

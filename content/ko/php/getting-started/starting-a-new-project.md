@@ -1,14 +1,23 @@
 ---
-title:                "새 프로젝트 시작하기"
 aliases:
 - /ko/php/starting-a-new-project/
-date:                  2024-01-20T18:03:59.102188-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "새 프로젝트 시작하기"
-
-tag:                  "Getting Started"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/starting-a-new-project.md"
+date: 2024-01-20 18:03:59.102188-07:00
+description: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294\
+  \ \uAC74, \uACF5\uBC31\uC5D0\uC11C \uC0C8\uB85C\uC6B4 \uC544\uC774\uB514\uC5B4\uB97C\
+  \ \uD604\uC2E4\uB85C \uB9CC\uB4DC\uB294 \uACFC\uC815\uC785\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC740 \uBB38\uC81C\uB97C \uD574\uACB0\uD558\uAC70\uB098\
+  \ \uBB54\uAC00 \uC0C8\uB85C\uC6B4 \uAC83\uC744 \uCC3D\uC870\uD558\uAE30 \uC704\uD574\
+  \ \uC774 \uACFC\uC815\uC744 \uBC18\uBCF5\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.353470
+model: gpt-4-1106-preview
+summary: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294 \uAC74\
+  , \uACF5\uBC31\uC5D0\uC11C \uC0C8\uB85C\uC6B4 \uC544\uC774\uB514\uC5B4\uB97C \uD604\
+  \uC2E4\uB85C \uB9CC\uB4DC\uB294 \uACFC\uC815\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC740 \uBB38\uC81C\uB97C \uD574\uACB0\uD558\uAC70\uB098 \uBB54\
+  \uAC00 \uC0C8\uB85C\uC6B4 \uAC83\uC744 \uCC3D\uC870\uD558\uAE30 \uC704\uD574 \uC774\
+  \ \uACFC\uC815\uC744 \uBC18\uBCF5\uD569\uB2C8\uB2E4."
+title: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

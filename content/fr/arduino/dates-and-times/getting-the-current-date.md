@@ -1,14 +1,16 @@
 ---
-title:                "Obtenir la date actuelle"
 aliases:
 - /fr/arduino/getting-the-current-date/
-date:                  2024-02-03T19:08:52.616688-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Obtenir la date actuelle"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:52.616688-07:00
+description: "Obtenir la date actuelle dans les projets Arduino consiste \xE0 obtenir\
+  \ des informations en temps r\xE9el qui peuvent \xEAtre cruciales pour la journalisation,\u2026"
+lastmod: 2024-02-18 23:09:09.126082
+model: gpt-4-0125-preview
+summary: "Obtenir la date actuelle dans les projets Arduino consiste \xE0 obtenir\
+  \ des informations en temps r\xE9el qui peuvent \xEAtre cruciales pour la journalisation,\u2026"
+title: Obtenir la date actuelle
 ---
 
 {{< edit_this_page >}}

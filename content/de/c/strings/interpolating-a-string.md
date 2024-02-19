@@ -1,14 +1,16 @@
 ---
-title:                "Interpolation eines Strings"
 aliases:
 - /de/c/interpolating-a-string/
-date:                  2024-02-03T17:58:06.426412-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interpolation eines Strings"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/interpolating-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:58:06.426412-07:00
+description: "String-Interpolation, in der Programmierung, beinhaltet den Aufbau von\
+  \ Zeichenketten, indem Ausdr\xFCcke innerhalb von w\xF6rtlichen Zeichenketten eingebettet\u2026"
+lastmod: 2024-02-18 23:09:05.356977
+model: gpt-4-0125-preview
+summary: "String-Interpolation, in der Programmierung, beinhaltet den Aufbau von Zeichenketten,\
+  \ indem Ausdr\xFCcke innerhalb von w\xF6rtlichen Zeichenketten eingebettet\u2026"
+title: Interpolation eines Strings
 ---
 
 {{< edit_this_page >}}

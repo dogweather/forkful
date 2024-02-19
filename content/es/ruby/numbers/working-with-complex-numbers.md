@@ -1,13 +1,16 @@
 ---
-title:                "Trabajando con números complejos"
 aliases:
 - /es/ruby/working-with-complex-numbers/
-date:                  2024-01-26T04:44:57.310747-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con números complejos"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/working-with-complex-numbers.md"
+date: 2024-01-26 04:44:57.310747-07:00
+description: "Los n\xFAmeros complejos, compuestos por una parte real y una imaginaria\
+  \ (como 3+4i), son fundamentales en ingenier\xEDa y f\xEDsica. Los programadores\
+  \ trabajan\u2026"
+lastmod: 2024-02-18 23:09:10.543546
+model: gpt-4-0125-preview
+summary: "Los n\xFAmeros complejos, compuestos por una parte real y una imaginaria\
+  \ (como 3+4i), son fundamentales en ingenier\xEDa y f\xEDsica. Los programadores\
+  \ trabajan\u2026"
+title: "Trabajando con n\xFAmeros complejos"
 ---
 
 {{< edit_this_page >}}

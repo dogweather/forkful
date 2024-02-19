@@ -1,14 +1,21 @@
 ---
-title:                "打印调试输出"
 aliases:
 - /zh/kotlin/printing-debug-output/
-date:                  2024-01-20T17:53:05.659075-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "打印调试输出"
-
-tag:                  "Testing and Debugging"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/printing-debug-output.md"
+date: 2024-01-20 17:53:05.659075-07:00
+description: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA\u662F\u5728\u4EE3\u7801\u4E2D\u63D2\
+  \u5165\u4E00\u884C\u6253\u5370\u8BED\u53E5\u6765\u67E5\u770B\u7A0B\u5E8F\u72B6\u6001\
+  \u7684\u505A\u6CD5\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u9A8C\
+  \u8BC1\u4EE3\u7801\u903B\u8F91\u3001\u76D1\u6D4B\u53D8\u91CF\u7684\u503C\uFF0C\u4EE5\
+  \u4FBF\u53D1\u73B0\u548C\u4FEE\u6B63\u9519\u8BEF\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.097491
+model: gpt-4-1106-preview
+summary: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA\u662F\u5728\u4EE3\u7801\u4E2D\u63D2\
+  \u5165\u4E00\u884C\u6253\u5370\u8BED\u53E5\u6765\u67E5\u770B\u7A0B\u5E8F\u72B6\u6001\
+  \u7684\u505A\u6CD5\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u9A8C\
+  \u8BC1\u4EE3\u7801\u903B\u8F91\u3001\u76D1\u6D4B\u53D8\u91CF\u7684\u503C\uFF0C\u4EE5\
+  \u4FBF\u53D1\u73B0\u548C\u4FEE\u6B63\u9519\u8BEF\u3002"
+title: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA"
 ---
 
 {{< edit_this_page >}}

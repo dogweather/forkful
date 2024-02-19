@@ -1,14 +1,18 @@
 ---
-title:                "Eine Textdatei schreiben"
 aliases:
 - /de/elixir/writing-a-text-file/
-date:                  2024-02-03T19:27:36.379597-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eine Textdatei schreiben"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:36.379597-07:00
+description: "Das Schreiben in eine Textdatei in Elixir ist eine wesentliche F\xE4\
+  higkeit f\xFCr Entwickler, die es erm\xF6glicht, Daten zu persistieren, zu protokollieren\
+  \ oder\u2026"
+lastmod: 2024-02-18 23:09:04.571329
+model: gpt-4-0125-preview
+summary: "Das Schreiben in eine Textdatei in Elixir ist eine wesentliche F\xE4higkeit\
+  \ f\xFCr Entwickler, die es erm\xF6glicht, Daten zu persistieren, zu protokollieren\
+  \ oder\u2026"
+title: Eine Textdatei schreiben
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Znalezienie długości ciągu znaków"
 aliases:
 - /pl/fish-shell/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:28.715522-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Znalezienie długości ciągu znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:28.715522-07:00
+description: "Okre\u015Blenie d\u0142ugo\u015Bci stringa to po prostu zliczenie ilo\u015B\
+  ci znak\xF3w w nim zawartych. Programi\u015Bci robi\u0105 to, by walidowa\u0107\
+  \ dane, manipulowa\u0107 tekstami czy po\u2026"
+lastmod: 2024-02-18 23:08:50.025955
+model: gpt-4-1106-preview
+summary: "Okre\u015Blenie d\u0142ugo\u015Bci stringa to po prostu zliczenie ilo\u015B\
+  ci znak\xF3w w nim zawartych. Programi\u015Bci robi\u0105 to, by walidowa\u0107\
+  \ dane, manipulowa\u0107 tekstami czy po\u2026"
+title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

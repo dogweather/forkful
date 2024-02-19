@@ -1,13 +1,15 @@
 ---
-title:                "Lavorare con TOML"
 aliases:
 - /it/powershell/working-with-toml/
-date:                  2024-01-26T04:24:58.369723-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/working-with-toml.md"
+date: 2024-01-26 04:24:58.369723-07:00
+description: "TOML, acronimo di Tom's Obvious, Minimal Language, \xE8 un formato di\
+  \ serializzazione dei dati che \xE8 facile da leggere grazie alla sua chiara semantica.\
+  \ I\u2026"
+lastmod: 2024-02-18 23:08:56.117067
+model: gpt-4-0125-preview
+summary: "TOML, acronimo di Tom's Obvious, Minimal Language, \xE8 un formato di serializzazione\
+  \ dei dati che \xE8 facile da leggere grazie alla sua chiara semantica. I\u2026"
+title: Lavorare con TOML
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Перетворення рядка у нижній регістр"
 aliases:
 - /uk/cpp/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:21.773624-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Перетворення рядка у нижній регістр"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/cpp/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:21.773624-07:00
+description: ''
+lastmod: 2024-02-18 23:09:00.850919
+model: gpt-4-1106-preview
+summary: ''
+title: "\u041F\u0435\u0440\u0435\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F \u0440\
+  \u044F\u0434\u043A\u0430 \u0443 \u043D\u0438\u0436\u043D\u0456\u0439 \u0440\u0435\
+  \u0433\u0456\u0441\u0442\u0440"
 ---
 
 {{< edit_this_page >}}

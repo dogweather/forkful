@@ -1,14 +1,18 @@
 ---
-title:                "Tests schreiben"
 aliases:
 - /de/c/writing-tests/
-date:                  2024-02-03T18:14:31.931127-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tests schreiben"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:14:31.931127-07:00
+description: "Tests in C zu schreiben, bedeutet, kleinere Hilfsprogramme oder Funktionen\
+  \ zu erstellen, die automatisch die Funktionalit\xE4t Ihres Codes \xFCberpr\xFC\
+  fen.\u2026"
+lastmod: 2024-02-18 23:09:05.377676
+model: gpt-4-0125-preview
+summary: "Tests in C zu schreiben, bedeutet, kleinere Hilfsprogramme oder Funktionen\
+  \ zu erstellen, die automatisch die Funktionalit\xE4t Ihres Codes \xFCberpr\xFC\
+  fen.\u2026"
+title: Tests schreiben
 ---
 
 {{< edit_this_page >}}

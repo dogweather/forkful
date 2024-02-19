@@ -1,14 +1,26 @@
 ---
-title:                "HTMLの解析"
 aliases:
 - /ja/typescript/parsing-html/
-date:                  2024-02-03T19:13:19.179348-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTMLの解析"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:13:19.179348-07:00
+description: "HTML\u3092\u89E3\u6790\u3059\u308B\u3068\u306F\u3001HTML\u30B3\u30FC\
+  \u30C9\u3092\u7D30\u304B\u304F\u8ABF\u3079\u3066\u60C5\u5831\u3092\u63A2\u3057\u3001\
+  \u62BD\u51FA\u307E\u305F\u306F\u64CD\u4F5C\u3059\u308B\u3053\u3068\u3092\u610F\u5473\
+  \u3057\u307E\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\u30C7\u30FC\
+  \u30BF\u3092\u30B9\u30AF\u30EC\u30A4\u30D4\u30F3\u30B0\u3057\u305F\u308A\u3001\u30D6\
+  \u30E9\u30A6\u30B6\u3092\u81EA\u52D5\u64CD\u4F5C\u3057\u305F\u308A\u3059\u308B\u305F\
+  \u3081\u306B\u3053\u308C\u3092\u884C\u3044\u307E\u3059\u3002"
+lastmod: 2024-02-18 23:08:54.679896
+model: gpt-4-0125-preview
+summary: "HTML\u3092\u89E3\u6790\u3059\u308B\u3068\u306F\u3001HTML\u30B3\u30FC\u30C9\
+  \u3092\u7D30\u304B\u304F\u8ABF\u3079\u3066\u60C5\u5831\u3092\u63A2\u3057\u3001\u62BD\
+  \u51FA\u307E\u305F\u306F\u64CD\u4F5C\u3059\u308B\u3053\u3068\u3092\u610F\u5473\u3057\
+  \u307E\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\u30C7\u30FC\u30BF\
+  \u3092\u30B9\u30AF\u30EC\u30A4\u30D4\u30F3\u30B0\u3057\u305F\u308A\u3001\u30D6\u30E9\
+  \u30A6\u30B6\u3092\u81EA\u52D5\u64CD\u4F5C\u3057\u305F\u308A\u3059\u308B\u305F\u3081\
+  \u306B\u3053\u308C\u3092\u884C\u3044\u307E\u3059\u3002"
+title: "HTML\u306E\u89E3\u6790"
 ---
 
 {{< edit_this_page >}}

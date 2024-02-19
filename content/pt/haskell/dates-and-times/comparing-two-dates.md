@@ -1,13 +1,15 @@
 ---
-title:                "Comparando duas datas"
 aliases:
 - /pt/haskell/comparing-two-dates/
-date:                  2024-01-20T17:33:05.194546-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Comparando duas datas"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/comparing-two-dates.md"
+date: 2024-01-20 17:33:05.194546-07:00
+description: "Comparar duas datas significa verificar a rela\xE7\xE3o temporal entre\
+  \ elas: qual \xE9 anterior, posterior ou se s\xE3o a mesma. Programadores fazem\
+  \ isso para\u2026"
+lastmod: 2024-02-18 23:08:58.211414
+model: gpt-4-1106-preview
+summary: "Comparar duas datas significa verificar a rela\xE7\xE3o temporal entre elas:\
+  \ qual \xE9 anterior, posterior ou se s\xE3o a mesma. Programadores fazem isso para\u2026"
+title: Comparando duas datas
 ---
 
 {{< edit_this_page >}}

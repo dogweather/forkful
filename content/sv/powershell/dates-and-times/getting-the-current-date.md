@@ -1,14 +1,18 @@
 ---
-title:                "Få det aktuella datumet"
 aliases:
 - /sv/powershell/getting-the-current-date/
-date:                  2024-02-03T19:10:24.492951-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Få det aktuella datumet"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:10:24.492951-07:00
+description: "Att h\xE4mta det aktuella datumet i PowerShell handlar om att h\xE4\
+  mta systemets aktuella datum och tid. Denna operation \xE4r grundl\xE4ggande f\xF6\
+  r uppgifter som\u2026"
+lastmod: 2024-02-18 23:08:52.014061
+model: gpt-4-0125-preview
+summary: "Att h\xE4mta det aktuella datumet i PowerShell handlar om att h\xE4mta systemets\
+  \ aktuella datum och tid. Denna operation \xE4r grundl\xE4ggande f\xF6r uppgifter\
+  \ som\u2026"
+title: "F\xE5 det aktuella datumet"
 ---
 
 {{< edit_this_page >}}

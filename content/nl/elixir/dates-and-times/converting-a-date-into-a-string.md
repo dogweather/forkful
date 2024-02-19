@@ -1,15 +1,17 @@
 ---
-title:                "Een datum converteren naar een string"
 aliases:
 - /nl/elixir/converting-a-date-into-a-string/
-date:                  2024-01-28T21:57:11.910023-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een datum converteren naar een string"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elixir/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:57:11.910023-07:00
+description: "Een datum omzetten naar een string in Elixir verandert de datum van\
+  \ een struct naar een leesbare reeks tekens voor weergave of opslag. Programmeurs\
+  \ doen\u2026"
+lastmod: 2024-02-18 23:09:01.539180
+model: gpt-4-0125-preview
+summary: "Een datum omzetten naar een string in Elixir verandert de datum van een\
+  \ struct naar een leesbare reeks tekens voor weergave of opslag. Programmeurs doen\u2026"
+title: Een datum converteren naar een string
 ---
 
 {{< edit_this_page >}}

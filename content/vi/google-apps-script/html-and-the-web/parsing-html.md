@@ -1,14 +1,20 @@
 ---
-title:                "Phân Tích Cú Pháp HTML"
 aliases:
 - /vi/google-apps-script/parsing-html/
-date:                  2024-02-01T21:57:26.125573-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Phân Tích Cú Pháp HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/google-apps-script/parsing-html.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:26.125573-07:00
+description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong Google Apps Script bao g\u1ED3\
+  m vi\u1EC7c tr\xEDch xu\u1EA5t d\u1EEF li\u1EC7u t\u1EEB n\u1ED9i dung HTML, \u0111\
+  i\u1EC1u n\xE0y \u0111\u1EB7c bi\u1EC7t h\u1EEFu \xEDch khi t\u01B0\u01A1ng t\xE1\
+  c v\u1EDBi c\xE1c trang\u2026"
+lastmod: 2024-02-18 23:08:50.216959
+model: gpt-4-0125-preview
+summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong Google Apps Script bao g\u1ED3\
+  m vi\u1EC7c tr\xEDch xu\u1EA5t d\u1EEF li\u1EC7u t\u1EEB n\u1ED9i dung HTML, \u0111\
+  i\u1EC1u n\xE0y \u0111\u1EB7c bi\u1EC7t h\u1EEFu \xEDch khi t\u01B0\u01A1ng t\xE1\
+  c v\u1EDBi c\xE1c trang\u2026"
+title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 ---
 
 {{< edit_this_page >}}

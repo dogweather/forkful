@@ -1,13 +1,16 @@
 ---
-title:                "Att arbeta med komplexa tal"
 aliases:
 - /sv/kotlin/working-with-complex-numbers/
-date:                  2024-01-26T04:43:02.987590-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med komplexa tal"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/working-with-complex-numbers.md"
+date: 2024-01-26 04:43:02.987590-07:00
+description: "Komplexa tal ut\xF6kar v\xE5rt talsystem f\xF6r att inkludera kvadratr\xF6\
+  tter av negativa tal, d\xE4r den 'imagin\xE4ra' enheten i motsvarar kvadratroten\
+  \ av -1.\u2026"
+lastmod: 2024-02-18 23:08:51.743984
+model: gpt-4-0125-preview
+summary: "Komplexa tal ut\xF6kar v\xE5rt talsystem f\xF6r att inkludera kvadratr\xF6\
+  tter av negativa tal, d\xE4r den 'imagin\xE4ra' enheten i motsvarar kvadratroten\
+  \ av -1.\u2026"
+title: Att arbeta med komplexa tal
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,14 @@
 ---
-title:                "文字列の長さの取得"
 aliases:
 - /ja/vba/finding-the-length-of-a-string/
-date:                  2024-02-01T21:54:06.625648-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "文字列の長さの取得"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/vba/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:06.625648-07:00
+description: "Visual Basic for\u2026"
+lastmod: 2024-02-18 23:08:54.751810
+model: gpt-4-0125-preview
+summary: "Visual Basic for\u2026"
+title: "\u6587\u5B57\u5217\u306E\u9577\u3055\u306E\u53D6\u5F97"
 ---
 
 {{< edit_this_page >}}

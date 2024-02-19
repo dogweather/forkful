@@ -1,13 +1,16 @@
 ---
-title:                "Läsa en textfil"
 aliases:
 - /sv/kotlin/reading-a-text-file/
-date:                  2024-01-20T17:54:39.104745-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Läsa en textfil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/reading-a-text-file.md"
+date: 2024-01-20 17:54:39.104745-07:00
+description: "Att l\xE4sa en textfil inneb\xE4r att din Kotlin-kod h\xE4mtar data\
+  \ fr\xE5n en fil som sparats p\xE5 disken. Programmerare g\xF6r detta f\xF6r att\
+  \ hantera indata,\u2026"
+lastmod: 2024-02-18 23:08:51.769117
+model: gpt-4-1106-preview
+summary: "Att l\xE4sa en textfil inneb\xE4r att din Kotlin-kod h\xE4mtar data fr\xE5\
+  n en fil som sparats p\xE5 disken. Programmerare g\xF6r detta f\xF6r att hantera\
+  \ indata,\u2026"
+title: "L\xE4sa en textfil"
 ---
 
 {{< edit_this_page >}}

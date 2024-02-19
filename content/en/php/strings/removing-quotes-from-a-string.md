@@ -1,13 +1,15 @@
 ---
-title:                "Removing quotes from a string"
 aliases:
 - /en/php/removing-quotes-from-a-string/
-date:                  2024-01-25T20:50:15.639523-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Removing quotes from a string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/removing-quotes-from-a-string.md"
+date: 2024-01-25 20:50:15.639523-07:00
+description: "Removing quotes from a string in PHP means stripping out those pesky\
+  \ double (`\"`) or single (`'`) quote characters that can mess with your code logic\
+  \ or\u2026"
+lastmod: 2024-02-18 23:09:11.125340
+model: gpt-4-1106-preview
+summary: "Removing quotes from a string in PHP means stripping out those pesky double\
+  \ (`\"`) or single (`'`) quote characters that can mess with your code logic or\u2026"
+title: Removing quotes from a string
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Kontrollera om en katalog existerar"
 aliases:
 - /sv/cpp/checking-if-a-directory-exists/
-date:                  2024-02-03T19:07:13.438456-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kontrollera om en katalog existerar"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:07:13.438456-07:00
+description: "Att kontrollera om en katalog finns handlar om att avg\xF6ra n\xE4rvaron\
+  \ av en katalog p\xE5 en specificerad s\xF6kv\xE4g innan man utf\xF6r operationer\
+  \ som att l\xE4sa fr\xE5n\u2026"
+lastmod: 2024-02-18 23:08:52.097608
+model: gpt-4-0125-preview
+summary: "Att kontrollera om en katalog finns handlar om att avg\xF6ra n\xE4rvaron\
+  \ av en katalog p\xE5 en specificerad s\xF6kv\xE4g innan man utf\xF6r operationer\
+  \ som att l\xE4sa fr\xE5n\u2026"
+title: Kontrollera om en katalog existerar
 ---
 
 {{< edit_this_page >}}

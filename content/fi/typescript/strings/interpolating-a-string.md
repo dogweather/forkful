@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonon interpolointi"
 aliases:
 - /fi/typescript/interpolating-a-string/
-date:                  2024-01-20T17:51:42.701699-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon interpolointi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/interpolating-a-string.md"
+date: 2024-01-20 17:51:42.701699-07:00
+description: "String-interpolointi on tapa sis\xE4llytt\xE4\xE4 muuttujien arvoja\
+  \ suoraan merkkijonoihin. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4 ominaisuutta,\
+  \ koska se tekee koodista\u2026"
+lastmod: 2024-02-18 23:09:07.304067
+model: gpt-4-1106-preview
+summary: "String-interpolointi on tapa sis\xE4llytt\xE4\xE4 muuttujien arvoja suoraan\
+  \ merkkijonoihin. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4 ominaisuutta, koska\
+  \ se tekee koodista\u2026"
+title: Merkkijonon interpolointi
 ---
 
 {{< edit_this_page >}}

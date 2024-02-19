@@ -1,15 +1,16 @@
 ---
-title:                "Fouten afhandelen"
 aliases:
 - /nl/cpp/handling-errors/
-date:                  2024-01-28T22:01:58.397821-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Fouten afhandelen"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/cpp/handling-errors.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:58.397821-07:00
+description: "Fouten verwerken betekent plannen maken voor wanneer dingen verkeerd\
+  \ gaan. Het is essentieel omdat het helpt crashes te voorkomen en je software robuust\u2026"
+lastmod: 2024-02-18 23:09:02.191156
+model: gpt-4-0125-preview
+summary: "Fouten verwerken betekent plannen maken voor wanneer dingen verkeerd gaan.\
+  \ Het is essentieel omdat het helpt crashes te voorkomen en je software robuust\u2026"
+title: Fouten afhandelen
 ---
 
 {{< edit_this_page >}}

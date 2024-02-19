@@ -1,13 +1,16 @@
 ---
-title:                "Downloading a web page"
 aliases:
 - /en/clojure/downloading-a-web-page/
-date:                  2024-01-20T17:43:37.240018-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Downloading a web page"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/downloading-a-web-page.md"
+date: 2024-01-20 17:43:37.240018-07:00
+description: "Downloading a web page means grabbing the HTML from a URL so your program\
+  \ can work with it. Programmers do it to scrape data, automate web interactions\
+  \ or\u2026"
+lastmod: 2024-02-18 23:09:10.722430
+model: gpt-4-1106-preview
+summary: "Downloading a web page means grabbing the HTML from a URL so your program\
+  \ can work with it. Programmers do it to scrape data, automate web interactions\
+  \ or\u2026"
+title: Downloading a web page
 ---
 
 {{< edit_this_page >}}

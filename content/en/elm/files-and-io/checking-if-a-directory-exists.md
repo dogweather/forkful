@@ -1,12 +1,13 @@
 ---
-title:                "Checking if a directory exists"
 aliases:
 - /en/elm/checking-if-a-directory-exists/
-date:                  2024-01-20T14:56:09.311344-07:00
-simple_title:         "Checking if a directory exists"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/checking-if-a-directory-exists.md"
+date: 2024-01-20 14:56:09.311344-07:00
+description: "Checking if a directory exists means confirming whether a specific folder\
+  \ path is present in the file system. Programmers do it to avoid errors when\u2026"
+lastmod: 2024-02-18 23:09:10.986185
+summary: "Checking if a directory exists means confirming whether a specific folder\
+  \ path is present in the file system. Programmers do it to avoid errors when\u2026"
+title: Checking if a directory exists
 ---
 
 {{< edit_this_page >}}

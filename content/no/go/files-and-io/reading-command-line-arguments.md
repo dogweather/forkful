@@ -1,14 +1,16 @@
 ---
-title:                "Lese kommandolinjeargumenter"
 aliases:
 - /no/go/reading-command-line-arguments/
-date:                  2024-02-03T18:06:17.433775-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lese kommandolinjeargumenter"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:06:17.433775-07:00
+description: "\xC5 lese kommandolinjeargumenter i Go involverer \xE5 trekke ut argumentene\
+  \ som er gitt til et program under dets kall fra terminalen eller kommandoprompten.\u2026"
+lastmod: 2024-02-18 23:08:53.452201
+model: gpt-4-0125-preview
+summary: "\xC5 lese kommandolinjeargumenter i Go involverer \xE5 trekke ut argumentene\
+  \ som er gitt til et program under dets kall fra terminalen eller kommandoprompten.\u2026"
+title: Lese kommandolinjeargumenter
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Assosiatiivisten taulukoiden käyttö"
 aliases:
 - /fi/google-apps-script/using-associative-arrays/
-date:                  2024-02-01T22:04:34.848920-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Assosiatiivisten taulukoiden käyttö"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/using-associative-arrays.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:34.848920-07:00
+description: "Assosiatiiviset taulukot, jotka tunnetaan Google Apps Scriptiss\xE4\
+  \ (JavaScriptin muunnelma) objekteina, mahdollistavat ohjelmoijille avain-arvo -parien\u2026"
+lastmod: 2024-02-18 23:09:07.126642
+model: gpt-4-0125-preview
+summary: "Assosiatiiviset taulukot, jotka tunnetaan Google Apps Scriptiss\xE4 (JavaScriptin\
+  \ muunnelma) objekteina, mahdollistavat ohjelmoijille avain-arvo -parien\u2026"
+title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

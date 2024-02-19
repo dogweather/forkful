@@ -1,13 +1,16 @@
 ---
-title:                "Läsa en textfil"
 aliases:
 - /sv/bash/reading-a-text-file/
-date:                  2024-01-20T17:53:37.334044-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Läsa en textfil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/reading-a-text-file.md"
+date: 2024-01-20 17:53:37.334044-07:00
+description: "Att l\xE4sa en textfil inneb\xE4r att man programmeringsm\xE4ssigt extraherar\
+  \ inneh\xE5ll fr\xE5n en fil p\xE5 disk. Programmerare g\xF6r detta f\xF6r att hantera\
+  \ data,\u2026"
+lastmod: 2024-02-18 23:08:51.977980
+model: gpt-4-1106-preview
+summary: "Att l\xE4sa en textfil inneb\xE4r att man programmeringsm\xE4ssigt extraherar\
+  \ inneh\xE5ll fr\xE5n en fil p\xE5 disk. Programmerare g\xF6r detta f\xF6r att hantera\
+  \ data,\u2026"
+title: "L\xE4sa en textfil"
 ---
 
 {{< edit_this_page >}}

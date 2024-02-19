@@ -1,14 +1,16 @@
 ---
-title:                "De lengte van een string vinden"
 aliases:
 - /nl/c/finding-the-length-of-a-string/
-date:                  2024-02-03T17:56:43.211143-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "De lengte van een string vinden"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:43.211143-07:00
+description: "Het vinden van de lengte van een reeks in C houdt in dat wordt bepaald\
+  \ hoeveel tekens er zijn voor de null-terminator `\\0`. Programmeurs doen dit om\u2026"
+lastmod: 2024-02-18 23:09:02.362487
+model: gpt-4-0125-preview
+summary: "Het vinden van de lengte van een reeks in C houdt in dat wordt bepaald hoeveel\
+  \ tekens er zijn voor de null-terminator `\\0`. Programmeurs doen dit om\u2026"
+title: De lengte van een string vinden
 ---
 
 {{< edit_this_page >}}

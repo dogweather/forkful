@@ -1,13 +1,16 @@
 ---
-title:                "Einen neuen Projekt starten"
 aliases:
 - /de/cpp/starting-a-new-project/
-date:                  2024-01-20T18:02:57.317472-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Einen neuen Projekt starten"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/starting-a-new-project.md"
+date: 2024-01-20 18:02:57.317472-07:00
+description: "Ein neues C++ Projekt beginnen hei\xDFt, die Struktur f\xFCr frischen\
+  \ Code aufzubauen. Programmierer starten neue Projekte, um Ideen umzusetzen, Probleme\
+  \ zu\u2026"
+lastmod: 2024-02-18 23:09:05.189750
+model: gpt-4-1106-preview
+summary: "Ein neues C++ Projekt beginnen hei\xDFt, die Struktur f\xFCr frischen Code\
+  \ aufzubauen. Programmierer starten neue Projekte, um Ideen umzusetzen, Probleme\
+  \ zu\u2026"
+title: Einen neuen Projekt starten
 ---
 
 {{< edit_this_page >}}

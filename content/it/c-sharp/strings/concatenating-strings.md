@@ -1,13 +1,14 @@
 ---
-title:                "Concatenazione di stringhe"
 aliases:
 - /it/c-sharp/concatenating-strings/
-date:                  2024-01-20T17:34:42.744165-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenazione di stringhe"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/concatenating-strings.md"
+date: 2024-01-20 17:34:42.744165-07:00
+description: "Concatenare le stringhe significa unirle in una sola. I programmatori\
+  \ lo fanno per costruire testo dinamicamente, come combinare nome e cognome o generare\u2026"
+lastmod: 2024-02-18 23:08:55.879781
+model: gpt-4-1106-preview
+summary: "Concatenare le stringhe significa unirle in una sola. I programmatori lo\
+  \ fanno per costruire testo dinamicamente, come combinare nome e cognome o generare\u2026"
+title: Concatenazione di stringhe
 ---
 
 {{< edit_this_page >}}

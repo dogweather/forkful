@@ -1,15 +1,14 @@
 ---
-title:                "Kiểm tra xem thư mục có tồn tại không"
 aliases:
 - /vi/cpp/checking-if-a-directory-exists/
-date:                  2024-01-28T21:55:27.389571-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kiểm tra xem thư mục có tồn tại không"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/cpp/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:55:27.389571-07:00
+description: '#'
+lastmod: 2024-02-18 23:08:51.060119
+model: gpt-4-0125-preview
+summary: '#'
+title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 ---
 
 {{< edit_this_page >}}

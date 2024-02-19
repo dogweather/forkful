@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với YAML"
 aliases:
 - /vi/swift/working-with-yaml/
-date:                  2024-01-28T22:12:43.606792-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với YAML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/swift/working-with-yaml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:43.606792-07:00
+description: "YAML, vi\u1EBFt t\u1EAFt c\u1EE7a \"YAML Ain't Markup Language\", l\xE0\
+  \ m\u1ED9t chu\u1EA9n m\xE3 h\xF3a d\u1EEF li\u1EC7u d\u1EC5 \u0111\u1ECDc cho con\
+  \ ng\u01B0\u1EDDi, ch\xFAng ta c\xF3 th\u1EC3 s\u1EED d\u1EE5ng \u0111\u1EC3 c\u1EA5\
+  u h\xECnh t\u1EC7p ho\u1EB7c trao \u0111\u1ED5i\u2026"
+lastmod: 2024-02-18 23:08:51.112368
+model: gpt-4-0125-preview
+summary: "YAML, vi\u1EBFt t\u1EAFt c\u1EE7a \"YAML Ain't Markup Language\", l\xE0\
+  \ m\u1ED9t chu\u1EA9n m\xE3 h\xF3a d\u1EEF li\u1EC7u d\u1EC5 \u0111\u1ECDc cho con\
+  \ ng\u01B0\u1EDDi, ch\xFAng ta c\xF3 th\u1EC3 s\u1EED d\u1EE5ng \u0111\u1EC3 c\u1EA5\
+  u h\xECnh t\u1EC7p ho\u1EB7c trao \u0111\u1ED5i\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 ---
 
 {{< edit_this_page >}}

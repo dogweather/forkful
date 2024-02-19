@@ -1,14 +1,16 @@
 ---
-title:                "Escribiendo un archivo de texto"
 aliases:
 - /es/lua/writing-a-text-file/
-date:                  2024-02-03T19:28:28.241627-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escribiendo un archivo de texto"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/lua/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:28:28.241627-07:00
+description: "Escribir en un archivo de texto en Lua implica crear o abrir un archivo\
+  \ en modo de escritura, utilizando operaciones de archivo para insertar texto. Esta\u2026"
+lastmod: 2024-02-18 23:09:10.139477
+model: gpt-4-0125-preview
+summary: "Escribir en un archivo de texto en Lua implica crear o abrir un archivo\
+  \ en modo de escritura, utilizando operaciones de archivo para insertar texto. Esta\u2026"
+title: Escribiendo un archivo de texto
 ---
 
 {{< edit_this_page >}}

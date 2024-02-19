@@ -1,15 +1,18 @@
 ---
-title:                "Korzystanie z tablic asocjacyjnych"
 aliases:
 - /pl/bash/using-associative-arrays/
-date:                  2024-01-30T19:10:08.671526-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z tablic asocjacyjnych"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:08.671526-07:00
+description: "Tablice asocjacyjne to jakby na\u0142adowane tablice, kt\xF3re pozwalaj\u0105\
+  \ u\u017Cywa\u0107 ci\u0105g\xF3w znak\xF3w jako indeks\xF3w zamiast samych liczb\
+  \ ca\u0142kowitych. Programi\u015Bci u\u017Cywaj\u0105\u2026"
+lastmod: 2024-02-18 23:08:49.774956
+model: gpt-4-0125-preview
+summary: "Tablice asocjacyjne to jakby na\u0142adowane tablice, kt\xF3re pozwalaj\u0105\
+  \ u\u017Cywa\u0107 ci\u0105g\xF3w znak\xF3w jako indeks\xF3w zamiast samych liczb\
+  \ ca\u0142kowitych. Programi\u015Bci u\u017Cywaj\u0105\u2026"
+title: Korzystanie z tablic asocjacyjnych
 ---
 
 {{< edit_this_page >}}

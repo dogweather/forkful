@@ -1,13 +1,16 @@
 ---
-title:                "Organisation du code en fonctions"
 aliases:
 - /fr/swift/organizing-code-into-functions/
-date:                  2024-01-26T01:11:54.072879-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organisation du code en fonctions"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/organizing-code-into-functions.md"
+date: 2024-01-26 01:11:54.072879-07:00
+description: "Regrouper le code en fonctions, c'est d\xE9composer les t\xE2ches en\
+  \ morceaux r\xE9utilisables. Cela rend le code propre, moins sujet aux erreurs et\
+  \ plus facile \xE0\u2026"
+lastmod: 2024-02-18 23:09:09.214651
+model: gpt-4-1106-preview
+summary: "Regrouper le code en fonctions, c'est d\xE9composer les t\xE2ches en morceaux\
+  \ r\xE9utilisables. Cela rend le code propre, moins sujet aux erreurs et plus facile\
+  \ \xE0\u2026"
+title: Organisation du code en fonctions
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,21 @@
 ---
-title:                "Tìm kiếm và thay thế văn bản"
 aliases:
 - /vi/powershell/searching-and-replacing-text/
-date:                  2024-01-28T22:07:45.936174-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tìm kiếm và thay thế văn bản"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/powershell/searching-and-replacing-text.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:07:45.936174-07:00
+description: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong c\xE1c\
+  \ t\u1EC7p: n\xF3 l\xE0 ho\xE1n \u0111\u1ED5i t\u1EEB ho\u1EB7c c\u1EE5m t\u1EEB\
+  \ n\xE0y b\u1EB1ng t\u1EEB ho\u1EB7c c\u1EE5m t\u1EEB kh\xE1c. L\u1EADp tr\xECnh\
+  \ vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 c\u1EADp nh\u1EADt m\xE3, s\u1EED\
+  a l\u1ED7i,\u2026"
+lastmod: 2024-02-18 23:08:50.914936
+model: gpt-4-0125-preview
+summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong c\xE1c t\u1EC7\
+  p: n\xF3 l\xE0 ho\xE1n \u0111\u1ED5i t\u1EEB ho\u1EB7c c\u1EE5m t\u1EEB n\xE0y b\u1EB1\
+  ng t\u1EEB ho\u1EB7c c\u1EE5m t\u1EEB kh\xE1c. L\u1EADp tr\xECnh vi\xEAn s\u1EED\
+  \ d\u1EE5ng n\xF3 \u0111\u1EC3 c\u1EADp nh\u1EADt m\xE3, s\u1EEDa l\u1ED7i,\u2026"
+title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Interpolating a string"
 aliases:
 - /en/kotlin/interpolating-a-string/
-date:                  2024-01-20T17:51:05.824126-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolating a string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/interpolating-a-string.md"
+date: 2024-01-20 17:51:05.824126-07:00
+description: String interpolation lets you embed variables directly in strings. It's
+  handy for creating dynamic, readable text without clunky concatenation.
+lastmod: 2024-02-18 23:09:10.999319
+model: gpt-4-1106-preview
+summary: String interpolation lets you embed variables directly in strings. It's handy
+  for creating dynamic, readable text without clunky concatenation.
+title: Interpolating a string
 ---
 
 {{< edit_this_page >}}

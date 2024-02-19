@@ -1,15 +1,20 @@
 ---
-title:                "Đọc các đối số dòng lệnh"
 aliases:
 - /vi/fish-shell/reading-command-line-arguments/
-date:                  2024-01-28T22:05:21.447320-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Đọc các đối số dòng lệnh"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/reading-command-line-arguments.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:05:21.447320-07:00
+description: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh l\xE0 vi\u1EC7\
+  c l\u1EA5y nh\u1EEFng ph\u1EA7n th\xEAm b\u1EA1n g\xF5 sau t\xEAn c\u1EE7a script,\
+  \ gi\u1ED1ng nh\u01B0 nh\u1EEFng c\xE1i b\u1EAFt tay b\xED m\u1EADt \u0111\u1EC3\
+  \ t\xF9y ch\u1EC9nh h\xE0nh vi c\u1EE7a script. L\u1EADp\u2026"
+lastmod: 2024-02-18 23:08:51.203253
+model: gpt-4-0125-preview
+summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh l\xE0 vi\u1EC7\
+  c l\u1EA5y nh\u1EEFng ph\u1EA7n th\xEAm b\u1EA1n g\xF5 sau t\xEAn c\u1EE7a script,\
+  \ gi\u1ED1ng nh\u01B0 nh\u1EEFng c\xE1i b\u1EAFt tay b\xED m\u1EADt \u0111\u1EC3\
+  \ t\xF9y ch\u1EC9nh h\xE0nh vi c\u1EE7a script. L\u1EADp\u2026"
+title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonojen osien poimiminen"
 aliases:
 - /fi/cpp/extracting-substrings/
-date:                  2024-01-20T17:45:06.144602-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonojen osien poimiminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/extracting-substrings.md"
+date: 2024-01-20 17:45:06.144602-07:00
+description: "Haemme tekstin osia, eli substringej\xE4, kun tarvitsemme erityist\xE4\
+  \ tietoa merkkijonosta. Ohjelmoijat tekev\xE4t niin, jotta voivat k\xE4sitell\xE4\
+  , verrata tai\u2026"
+lastmod: 2024-02-18 23:09:07.931946
+model: gpt-4-1106-preview
+summary: "Haemme tekstin osia, eli substringej\xE4, kun tarvitsemme erityist\xE4 tietoa\
+  \ merkkijonosta. Ohjelmoijat tekev\xE4t niin, jotta voivat k\xE4sitell\xE4, verrata\
+  \ tai\u2026"
+title: Merkkijonojen osien poimiminen
 ---
 
 {{< edit_this_page >}}

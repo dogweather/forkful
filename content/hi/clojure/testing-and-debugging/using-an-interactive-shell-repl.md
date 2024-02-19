@@ -1,13 +1,27 @@
 ---
-title:                "इंटरैक्टिव शेल (REPL) का उपयोग"
 aliases:
 - /hi/clojure/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:13:53.423163-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "इंटरैक्टिव शेल (REPL) का उपयोग"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/clojure/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:13:53.423163-07:00
+description: "REPL, \u092F\u093E Read-Eval-Print Loop, \u090F\u0915 \u092A\u094D\u0930\
+  \u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902\u0917 \u0935\u093E\u0924\u093E\u0935\
+  \u0930\u0923 \u0939\u0948, \u091C\u093F\u0938\u0938\u0947 Clojure \u0915\u094B\u0921\
+  \ \u0915\u094B \u092D\u093E\u0917-\u0926\u0930-\u092D\u093E\u0917 \u0917\u0924\u093F\
+  \u0936\u0940\u0932 \u0930\u0942\u092A \u0938\u0947 \u092A\u0930\u0916\u093E \u091C\
+  \u093E \u0938\u0915\u0924\u093E \u0939\u0948\u0964 \u0915\u094B\u0921\u0930\u094D\
+  \u0938 \u0907\u0938\u0915\u093E \u0909\u092A\u092F\u094B\u0917 \u0924\u093E\u0924\
+  \u094D\u0915\u093E\u0932\u093F\u0915\u2026"
+lastmod: 2024-02-18 23:09:02.728056
+model: gpt-4-0125-preview
+summary: "REPL, \u092F\u093E Read-Eval-Print Loop, \u090F\u0915 \u092A\u094D\u0930\
+  \u094B\u0917\u094D\u0930\u093E\u092E\u093F\u0902\u0917 \u0935\u093E\u0924\u093E\u0935\
+  \u0930\u0923 \u0939\u0948, \u091C\u093F\u0938\u0938\u0947 Clojure \u0915\u094B\u0921\
+  \ \u0915\u094B \u092D\u093E\u0917-\u0926\u0930-\u092D\u093E\u0917 \u0917\u0924\u093F\
+  \u0936\u0940\u0932 \u0930\u0942\u092A \u0938\u0947 \u092A\u0930\u0916\u093E \u091C\
+  \u093E \u0938\u0915\u0924\u093E \u0939\u0948\u0964 \u0915\u094B\u0921\u0930\u094D\
+  \u0938 \u0907\u0938\u0915\u093E \u0909\u092A\u092F\u094B\u0917 \u0924\u093E\u0924\
+  \u094D\u0915\u093E\u0932\u093F\u0915\u2026"
+title: "\u0907\u0902\u091F\u0930\u0948\u0915\u094D\u091F\u093F\u0935 \u0936\u0947\u0932\
+  \ (REPL) \u0915\u093E \u0909\u092A\u092F\u094B\u0917"
 ---
 
 {{< edit_this_page >}}

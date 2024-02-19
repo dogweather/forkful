@@ -1,15 +1,28 @@
 ---
-title:                "Работа с JSON"
 aliases:
 - /ru/clojure/working-with-json/
-date:                  2024-01-29T00:04:15.188531-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Работа с JSON"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/clojure/working-with-json.md"
 changelog:
-  - 2024-01-29, gpt-4-0125-preview, translated from English
+- 2024-01-29, gpt-4-0125-preview, translated from English
+date: 2024-01-29 00:04:15.188531-07:00
+description: "JSON (JavaScript Object Notation) - \u044D\u0442\u043E \u0444\u043E\u0440\
+  \u043C\u0430\u0442 \u0434\u0430\u043D\u043D\u044B\u0445, \u0438\u0441\u043F\u043E\
+  \u043B\u044C\u0437\u0443\u0435\u043C\u044B\u0439 \u0434\u043B\u044F \u0445\u0440\
+  \u0430\u043D\u0435\u043D\u0438\u044F \u0438 \u043F\u0435\u0440\u0435\u0434\u0430\
+  \u0447\u0438 \u0434\u0430\u043D\u043D\u044B\u0445. \u041F\u0440\u043E\u0433\u0440\
+  \u0430\u043C\u043C\u0438\u0441\u0442\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\
+  \u0443\u044E\u0442 JSON \u0438\u0437-\u0437\u0430 \u0435\u0433\u043E \u0443\u0434\
+  \u043E\u0431\u0441\u0442\u0432\u0430 \u043F\u0440\u0438\u2026"
+lastmod: 2024-02-18 23:08:56.608236
+model: gpt-4-0125-preview
+summary: "JSON (JavaScript Object Notation) - \u044D\u0442\u043E \u0444\u043E\u0440\
+  \u043C\u0430\u0442 \u0434\u0430\u043D\u043D\u044B\u0445, \u0438\u0441\u043F\u043E\
+  \u043B\u044C\u0437\u0443\u0435\u043C\u044B\u0439 \u0434\u043B\u044F \u0445\u0440\
+  \u0430\u043D\u0435\u043D\u0438\u044F \u0438 \u043F\u0435\u0440\u0435\u0434\u0430\
+  \u0447\u0438 \u0434\u0430\u043D\u043D\u044B\u0445. \u041F\u0440\u043E\u0433\u0440\
+  \u0430\u043C\u043C\u0438\u0441\u0442\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\
+  \u0443\u044E\u0442 JSON \u0438\u0437-\u0437\u0430 \u0435\u0433\u043E \u0443\u0434\
+  \u043E\u0431\u0441\u0442\u0432\u0430 \u043F\u0440\u0438\u2026"
+title: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 JSON"
 ---
 
 {{< edit_this_page >}}

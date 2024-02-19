@@ -1,15 +1,16 @@
 ---
-title:                "Fouten afhandelen"
 aliases:
 - /nl/rust/handling-errors/
-date:                  2024-01-28T22:02:17.426859-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Fouten afhandelen"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/handling-errors.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:02:17.426859-07:00
+description: "Foutafhandeling gaat over omgaan met dingen wanneer ze mis gaan. Programmeren\
+  \ doen we om het onverwachte aan te kunnen, door ervoor te zorgen dat hun\u2026"
+lastmod: 2024-02-18 23:09:01.627589
+model: gpt-4-0125-preview
+summary: "Foutafhandeling gaat over omgaan met dingen wanneer ze mis gaan. Programmeren\
+  \ doen we om het onverwachte aan te kunnen, door ervoor te zorgen dat hun\u2026"
+title: Fouten afhandelen
 ---
 
 {{< edit_this_page >}}

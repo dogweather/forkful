@@ -1,13 +1,16 @@
 ---
-title:                "Feilhåndtering"
 aliases:
 - /no/swift/handling-errors/
-date:                  2024-01-26T00:57:55.209145-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Feilhåndtering"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/handling-errors.md"
+date: 2024-01-26 00:57:55.209145-07:00
+description: "\xC5 h\xE5ndtere feil i Swift betyr \xE5 forutse og svare p\xE5 problemer\
+  \ som dukker opp n\xE5r koden din kj\xF8rer. Vi gj\xF8r det for \xE5 kontrollere\
+  \ kaoset\u2014holde apper fra \xE5\u2026"
+lastmod: 2024-02-18 23:08:54.275957
+model: gpt-4-1106-preview
+summary: "\xC5 h\xE5ndtere feil i Swift betyr \xE5 forutse og svare p\xE5 problemer\
+  \ som dukker opp n\xE5r koden din kj\xF8rer. Vi gj\xF8r det for \xE5 kontrollere\
+  \ kaoset\u2014holde apper fra \xE5\u2026"
+title: "Feilh\xE5ndtering"
 ---
 
 {{< edit_this_page >}}

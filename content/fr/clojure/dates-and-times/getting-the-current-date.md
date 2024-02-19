@@ -1,14 +1,18 @@
 ---
-title:                "Obtenir la date actuelle"
 aliases:
 - /fr/clojure/getting-the-current-date/
-date:                  2024-02-03T19:09:17.278123-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Obtenir la date actuelle"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:09:17.278123-07:00
+description: "Obtenir la date actuelle en programmation est crucial pour une myriade\
+  \ de raisons, y compris la journalisation, le marquage temporel des \xE9v\xE9nements\
+  \ et la\u2026"
+lastmod: 2024-02-18 23:09:08.398270
+model: gpt-4-0125-preview
+summary: "Obtenir la date actuelle en programmation est crucial pour une myriade de\
+  \ raisons, y compris la journalisation, le marquage temporel des \xE9v\xE9nements\
+  \ et la\u2026"
+title: Obtenir la date actuelle
 ---
 
 {{< edit_this_page >}}

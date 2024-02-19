@@ -1,14 +1,21 @@
 ---
-title:                "部分文字列の抽出"
 aliases:
 - /ja/swift/extracting-substrings/
-date:                  2024-01-20T17:46:45.375012-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "部分文字列の抽出"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/extracting-substrings.md"
+date: 2024-01-20 17:46:45.375012-07:00
+description: "\u6587\u5B57\u5217\u304B\u3089\u7279\u5B9A\u306E\u90E8\u5206\u3092\u53D6\
+  \u308A\u51FA\u3059\u3053\u3068\u3092\u300C\u30B5\u30D6\u30B9\u30C8\u30EA\u30F3\u30B0\
+  \u300D\u3068\u3044\u3044\u307E\u3059\u3002\u30C7\u30FC\u30BF\u3092\u89E3\u6790\u3057\
+  \u305F\u308A\u3001\u7279\u5B9A\u306E\u60C5\u5831\u3060\u3051\u3092\u8868\u793A\u3057\
+  \u305F\u308A\u3059\u308B\u3068\u304D\u306B\u5FC5\u8981\u3067\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.219348
+model: gpt-4-1106-preview
+summary: "\u6587\u5B57\u5217\u304B\u3089\u7279\u5B9A\u306E\u90E8\u5206\u3092\u53D6\
+  \u308A\u51FA\u3059\u3053\u3068\u3092\u300C\u30B5\u30D6\u30B9\u30C8\u30EA\u30F3\u30B0\
+  \u300D\u3068\u3044\u3044\u307E\u3059\u3002\u30C7\u30FC\u30BF\u3092\u89E3\u6790\u3057\
+  \u305F\u308A\u3001\u7279\u5B9A\u306E\u60C5\u5831\u3060\u3051\u3092\u8868\u793A\u3057\
+  \u305F\u308A\u3059\u308B\u3068\u304D\u306B\u5FC5\u8981\u3067\u3059\u3002"
+title: "\u90E8\u5206\u6587\u5B57\u5217\u306E\u62BD\u51FA"
 ---
 
 {{< edit_this_page >}}

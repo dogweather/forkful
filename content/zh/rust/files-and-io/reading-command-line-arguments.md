@@ -1,14 +1,21 @@
 ---
-title:                "读取命令行参数"
 aliases:
 - /zh/rust/reading-command-line-arguments/
-date:                  2024-01-20T17:56:43.070625-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "读取命令行参数"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:43.070625-07:00
+description: "\u5728Rust\u4E2D\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570\u5141\u8BB8\
+  \u4F60\u63A5\u53D7\u7528\u6237\u5728\u542F\u52A8\u7A0B\u5E8F\u65F6\u8F93\u5165\u7684\
+  \u4FE1\u606F\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u56E0\u4E3A\u5B83\u8BA9\
+  \u7A0B\u5E8F\u53EF\u4EE5\u7075\u6D3B\u5730\u5E94\u5BF9\u4E0D\u540C\u7684\u7528\u9014\
+  \u548C\u6570\u636E\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:58.954769
+model: gpt-4-1106-preview
+summary: "\u5728Rust\u4E2D\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570\u5141\u8BB8\u4F60\
+  \u63A5\u53D7\u7528\u6237\u5728\u542F\u52A8\u7A0B\u5E8F\u65F6\u8F93\u5165\u7684\u4FE1\
+  \u606F\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u56E0\u4E3A\u5B83\u8BA9\u7A0B\
+  \u5E8F\u53EF\u4EE5\u7075\u6D3B\u5730\u5E94\u5BF9\u4E0D\u540C\u7684\u7528\u9014\u548C\
+  \u6570\u636E\u3002"
+title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
 ---
 
 {{< edit_this_page >}}

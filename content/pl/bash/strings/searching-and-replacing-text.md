@@ -1,13 +1,16 @@
 ---
-title:                "Wyszukiwanie i zamiana tekstu"
 aliases:
 - /pl/bash/searching-and-replacing-text/
-date:                  2024-01-20T17:57:12.712992-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wyszukiwanie i zamiana tekstu"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:12.712992-07:00
+description: "Wyszukiwanie i zamiana tekstu to operacje na ci\u0105gach znak\xF3w,\
+  \ umo\u017Cliwiaj\u0105ce szybkie modyfikowanie tre\u015Bci. W programowaniu stosuje\
+  \ si\u0119 je dla efektywno\u015Bci\u2026"
+lastmod: 2024-02-18 23:08:49.767392
+model: gpt-4-1106-preview
+summary: "Wyszukiwanie i zamiana tekstu to operacje na ci\u0105gach znak\xF3w, umo\u017C\
+  liwiaj\u0105ce szybkie modyfikowanie tre\u015Bci. W programowaniu stosuje si\u0119\
+  \ je dla efektywno\u015Bci\u2026"
+title: Wyszukiwanie i zamiana tekstu
 ---
 
 {{< edit_this_page >}}

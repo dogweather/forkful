@@ -1,14 +1,28 @@
 ---
-title:                "YAML を操作する"
 aliases:
 - /ja/cpp/working-with-yaml/
-date:                  2024-02-03T19:24:42.470224-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "YAML を操作する"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:24:42.470224-07:00
+description: "YAML\u306F\u3001\u300CYAML Ain't Markup Language\u300D\u3092\u610F\u5473\
+  \u3057\u3001\u4EBA\u9593\u304C\u8AAD\u307F\u3084\u3059\u3044\u30C7\u30FC\u30BF\u76F4\
+  \u5217\u5316\u5F62\u5F0F\u3067\u3059\u3002\u305D\u306E\u8AAD\u307F\u3084\u3059\u3055\
+  \u3068\u7406\u89E3\u3057\u3084\u3059\u3044\u69CB\u6587\u306E\u304A\u304B\u3052\u3067\
+  \u3001\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u8A2D\u5B9A\u30D5\u30A1\u30A4\u30EB\
+  \u3001\u30C7\u30FC\u30BF\u30C0\u30F3\u30D7\u3001\u968E\u5C64\u30C7\u30FC\u30BF\u306E\
+  \u4FDD\u5B58\u306BXML\u3084JSON\u3068\u6BD4\u3079\u3066YAML\u3092\u4F7F\u7528\u3057\
+  \u307E\u3059\u3002"
+lastmod: 2024-02-18 23:08:55.209473
+model: gpt-4-0125-preview
+summary: "YAML\u306F\u3001\u300CYAML Ain't Markup Language\u300D\u3092\u610F\u5473\
+  \u3057\u3001\u4EBA\u9593\u304C\u8AAD\u307F\u3084\u3059\u3044\u30C7\u30FC\u30BF\u76F4\
+  \u5217\u5316\u5F62\u5F0F\u3067\u3059\u3002\u305D\u306E\u8AAD\u307F\u3084\u3059\u3055\
+  \u3068\u7406\u89E3\u3057\u3084\u3059\u3044\u69CB\u6587\u306E\u304A\u304B\u3052\u3067\
+  \u3001\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u8A2D\u5B9A\u30D5\u30A1\u30A4\u30EB\
+  \u3001\u30C7\u30FC\u30BF\u30C0\u30F3\u30D7\u3001\u968E\u5C64\u30C7\u30FC\u30BF\u306E\
+  \u4FDD\u5B58\u306BXML\u3084JSON\u3068\u6BD4\u3079\u3066YAML\u3092\u4F7F\u7528\u3057\
+  \u307E\u3059\u3002"
+title: "YAML \u3092\u64CD\u4F5C\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

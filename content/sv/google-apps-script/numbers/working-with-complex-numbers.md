@@ -1,14 +1,18 @@
 ---
-title:                "Att arbeta med komplexa tal"
 aliases:
 - /sv/google-apps-script/working-with-complex-numbers/
-date:                  2024-02-01T22:07:36.905840-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med komplexa tal"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/google-apps-script/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:07:36.905840-07:00
+description: "Komplexa tal, representerade som en kombination av reella och imagin\xE4\
+  ra enheter (t.ex. 3 + 4i), \xE4r grundl\xE4ggande i olika ber\xE4kningsproblem,\
+  \ s\xE4rskilt inom\u2026"
+lastmod: 2024-02-18 23:08:51.371838
+model: gpt-4-0125-preview
+summary: "Komplexa tal, representerade som en kombination av reella och imagin\xE4\
+  ra enheter (t.ex. 3 + 4i), \xE4r grundl\xE4ggande i olika ber\xE4kningsproblem,\
+  \ s\xE4rskilt inom\u2026"
+title: Att arbeta med komplexa tal
 ---
 
 {{< edit_this_page >}}

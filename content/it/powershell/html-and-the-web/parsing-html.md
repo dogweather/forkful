@@ -1,14 +1,16 @@
 ---
-title:                "Analisi del HTML"
 aliases:
 - /it/powershell/parsing-html/
-date:                  2024-02-03T19:12:42.232453-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analisi del HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:42.232453-07:00
+description: "Il parsing di HTML in PowerShell riguarda l'analisi del contenuto HTML\
+  \ per estrarre dati specifici o per automatizzare compiti relativi al web. I\u2026"
+lastmod: 2024-02-18 23:08:56.092409
+model: gpt-4-0125-preview
+summary: "Il parsing di HTML in PowerShell riguarda l'analisi del contenuto HTML per\
+  \ estrarre dati specifici o per automatizzare compiti relativi al web. I\u2026"
+title: Analisi del HTML
 ---
 
 {{< edit_this_page >}}

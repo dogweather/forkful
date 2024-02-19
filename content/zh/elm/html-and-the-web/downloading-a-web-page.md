@@ -1,14 +1,19 @@
 ---
-title:                "下载网页"
 aliases:
 - /zh/elm/downloading-a-web-page/
-date:                  2024-01-20T17:44:12.925690-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "下载网页"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/downloading-a-web-page.md"
+date: 2024-01-20 17:44:12.925690-07:00
+description: "\u4E0B\u8F7D\u7F51\u9875\u662F\u83B7\u53D6\u7F51\u9875\u7684\u5185\u5BB9\
+  \u5E76\u5C06\u5176\u50A8\u5B58\u5728\u672C\u5730\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\
+  \u505A\u662F\u4E3A\u4E86\u5206\u6790\u5185\u5BB9\u3001\u79BB\u7EBF\u4F7F\u7528\u6216\
+  \u5907\u4EFD\u7F51\u7AD9\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.057432
+model: gpt-4-1106-preview
+summary: "\u4E0B\u8F7D\u7F51\u9875\u662F\u83B7\u53D6\u7F51\u9875\u7684\u5185\u5BB9\
+  \u5E76\u5C06\u5176\u50A8\u5B58\u5728\u672C\u5730\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\
+  \u505A\u662F\u4E3A\u4E86\u5206\u6790\u5185\u5BB9\u3001\u79BB\u7EBF\u4F7F\u7528\u6216\
+  \u5907\u4EFD\u7F51\u7AD9\u3002"
+title: "\u4E0B\u8F7D\u7F51\u9875"
 ---
 
 {{< edit_this_page >}}

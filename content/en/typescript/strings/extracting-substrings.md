@@ -1,13 +1,15 @@
 ---
-title:                "Extracting substrings"
 aliases:
 - /en/typescript/extracting-substrings/
-date:                  2024-01-20T17:46:57.514519-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extracting substrings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/extracting-substrings.md"
+date: 2024-01-20 17:46:57.514519-07:00
+description: "Extracting substrings means pulling out specific pieces of a string.\
+  \ It's handy for tasks like parsing data, validating input, or just breaking down\
+  \ text\u2026"
+lastmod: 2024-02-18 23:09:10.796635
+model: gpt-4-1106-preview
+summary: "Extracting substrings means pulling out specific pieces of a string. It's\
+  \ handy for tasks like parsing data, validating input, or just breaking down text\u2026"
+title: Extracting substrings
 ---
 
 {{< edit_this_page >}}

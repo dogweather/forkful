@@ -1,14 +1,18 @@
 ---
-title:                "Alimerkkijonojen erottaminen"
 aliases:
 - /fi/google-apps-script/extracting-substrings/
-date:                  2024-02-01T21:53:01.989144-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Alimerkkijonojen erottaminen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/extracting-substrings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:01.989144-07:00
+description: "Merkkijonojen osien poiminta tarkoittaa osan merkkijonosta ottamista\
+  \ - k\xE4yt\xE4nn\xF6ss\xE4 uuden merkkijonon luomista olemassa olevan osasta. Ohjelmoijat\
+  \ tekev\xE4t\u2026"
+lastmod: 2024-02-18 23:09:07.122039
+model: gpt-4-0125-preview
+summary: "Merkkijonojen osien poiminta tarkoittaa osan merkkijonosta ottamista - k\xE4\
+  yt\xE4nn\xF6ss\xE4 uuden merkkijonon luomista olemassa olevan osasta. Ohjelmoijat\
+  \ tekev\xE4t\u2026"
+title: Alimerkkijonojen erottaminen
 ---
 
 {{< edit_this_page >}}

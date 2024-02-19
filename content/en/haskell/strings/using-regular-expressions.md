@@ -1,12 +1,14 @@
 ---
-title:                "Using regular expressions"
 aliases:
 - /en/haskell/using-regular-expressions/
-date:                  2024-02-03T19:02:43.421953-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using regular expressions"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/using-regular-expressions.md"
+date: 2024-02-03 19:02:43.421953-07:00
+description: "Regular expressions in programming are sequences of characters that\
+  \ define a search pattern, typically employed for string searching and manipulation.\u2026"
+lastmod: 2024-02-18 23:09:11.086269
+model: gpt-4-0125-preview
+summary: "Regular expressions in programming are sequences of characters that define\
+  \ a search pattern, typically employed for string searching and manipulation.\u2026"
+title: Using regular expressions
 ---
 
 {{< edit_this_page >}}

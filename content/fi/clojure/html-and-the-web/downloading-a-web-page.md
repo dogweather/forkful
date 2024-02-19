@@ -1,13 +1,14 @@
 ---
-title:                "Verkkosivun lataaminen"
 aliases:
 - /fi/clojure/downloading-a-web-page/
-date:                  2024-01-20T17:43:52.850732-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Verkkosivun lataaminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/downloading-a-web-page.md"
+date: 2024-01-20 17:43:52.850732-07:00
+description: "Ladataan nettisivu tarkoittaa sivun sis\xE4ll\xF6n tallentamista paikallisesti.\
+  \ Ohjelmoijat tekev\xE4t sit\xE4 datan analysointia, skrapausta tai varmuuskopiointia\u2026"
+lastmod: 2024-02-18 23:09:07.227211
+model: gpt-4-1106-preview
+summary: "Ladataan nettisivu tarkoittaa sivun sis\xE4ll\xF6n tallentamista paikallisesti.\
+  \ Ohjelmoijat tekev\xE4t sit\xE4 datan analysointia, skrapausta tai varmuuskopiointia\u2026"
+title: Verkkosivun lataaminen
 ---
 
 {{< edit_this_page >}}

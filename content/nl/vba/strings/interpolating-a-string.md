@@ -1,14 +1,16 @@
 ---
-title:                "Een string interpoleren"
 aliases:
 - /nl/vba/interpolating-a-string/
-date:                  2024-02-01T21:56:33.239657-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string interpoleren"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/vba/interpolating-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:56:33.239657-07:00
+description: "String interpolation in Visual Basic for Applications (VBA) verwijst\
+  \ naar het proces van het inbedden van variabelen of uitdrukkingen binnen een\u2026"
+lastmod: 2024-02-18 23:09:01.649994
+model: gpt-4-0125-preview
+summary: "String interpolation in Visual Basic for Applications (VBA) verwijst naar\
+  \ het proces van het inbedden van variabelen of uitdrukkingen binnen een\u2026"
+title: Een string interpoleren
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,32 @@
 ---
-title:                "Использование интерактивной оболочки (REPL)"
 aliases:
 - /ru/java/using-an-interactive-shell-repl/
-date:                  2024-01-29T00:04:00.624948-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Использование интерактивной оболочки (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/java/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-01-29, gpt-4-0125-preview, translated from English
+- 2024-01-29, gpt-4-0125-preview, translated from English
+date: 2024-01-29 00:04:00.624948-07:00
+description: "REPL (Read-Eval-Print Loop \u2014 \u0426\u0438\u043A\u043B \xAB\u0427\
+  \u0438\u0442\u0430\u0442\u044C-\u0412\u044B\u043F\u043E\u043B\u043D\u044F\u0442\u044C\
+  -\u0412\u044B\u0432\u043E\u0434\u0438\u0442\u044C\xBB) \u2014 \u044D\u0442\u043E\
+  \ \u0438\u043D\u0442\u0435\u0440\u0430\u043A\u0442\u0438\u0432\u043D\u0430\u044F\
+  \ \u043E\u0431\u043E\u043B\u043E\u0447\u043A\u0430, \u043A\u043E\u0442\u043E\u0440\
+  \u0430\u044F \u043E\u0431\u0440\u0430\u0431\u0430\u0442\u044B\u0432\u0430\u0435\u0442\
+  \ \u043E\u0442\u0434\u0435\u043B\u044C\u043D\u044B\u0435 \u043F\u043E\u043B\u044C\
+  \u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\u0441\u043A\u0438\u0435 \u0432\u0445\
+  \u043E\u0434\u043D\u044B\u0435\u2026"
+lastmod: 2024-02-18 23:08:56.843739
+model: gpt-4-0125-preview
+summary: "REPL (Read-Eval-Print Loop \u2014 \u0426\u0438\u043A\u043B \xAB\u0427\u0438\
+  \u0442\u0430\u0442\u044C-\u0412\u044B\u043F\u043E\u043B\u043D\u044F\u0442\u044C\
+  -\u0412\u044B\u0432\u043E\u0434\u0438\u0442\u044C\xBB) \u2014 \u044D\u0442\u043E\
+  \ \u0438\u043D\u0442\u0435\u0440\u0430\u043A\u0442\u0438\u0432\u043D\u0430\u044F\
+  \ \u043E\u0431\u043E\u043B\u043E\u0447\u043A\u0430, \u043A\u043E\u0442\u043E\u0440\
+  \u0430\u044F \u043E\u0431\u0440\u0430\u0431\u0430\u0442\u044B\u0432\u0430\u0435\u0442\
+  \ \u043E\u0442\u0434\u0435\u043B\u044C\u043D\u044B\u0435 \u043F\u043E\u043B\u044C\
+  \u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\u0441\u043A\u0438\u0435 \u0432\u0445\
+  \u043E\u0434\u043D\u044B\u0435\u2026"
+title: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435\
+  \ \u0438\u043D\u0442\u0435\u0440\u0430\u043A\u0442\u0438\u0432\u043D\u043E\u0439\
+  \ \u043E\u0431\u043E\u043B\u043E\u0447\u043A\u0438 (REPL)"
 ---
 
 {{< edit_this_page >}}

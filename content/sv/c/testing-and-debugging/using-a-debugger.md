@@ -1,14 +1,18 @@
 ---
-title:                "Att använda en debugger"
 aliases:
 - /sv/c/using-a-debugger/
-date:                  2024-02-03T18:10:13.500535-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda en debugger"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/using-a-debugger.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:13.500535-07:00
+description: "Debuggers i C \xE4r specialiserade verktyg som g\xF6r det m\xF6jligt\
+  \ f\xF6r utvecklare att stega igenom sin kod, inspektera variabler och \xF6vervaka\
+  \ exekveringsfl\xF6det.\u2026"
+lastmod: 2024-02-18 23:08:52.255289
+model: gpt-4-0125-preview
+summary: "Debuggers i C \xE4r specialiserade verktyg som g\xF6r det m\xF6jligt f\xF6\
+  r utvecklare att stega igenom sin kod, inspektera variabler och \xF6vervaka exekveringsfl\xF6\
+  det.\u2026"
+title: "Att anv\xE4nda en debugger"
 ---
 
 {{< edit_this_page >}}

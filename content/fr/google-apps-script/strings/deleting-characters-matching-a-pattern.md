@@ -1,14 +1,18 @@
 ---
-title:                "Supprimer des caractères correspondant à un motif"
 aliases:
 - /fr/google-apps-script/deleting-characters-matching-a-pattern/
-date:                  2024-02-01T21:52:20.581173-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Supprimer des caractères correspondant à un motif"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/google-apps-script/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:20.581173-07:00
+description: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
+  \ est une technique utilis\xE9e pour nettoyer ou formater des cha\xEEnes de caract\xE8\
+  res en\u2026"
+lastmod: 2024-02-18 23:09:08.268129
+model: gpt-4-0125-preview
+summary: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
+  \ est une technique utilis\xE9e pour nettoyer ou formater des cha\xEEnes de caract\xE8\
+  res en\u2026"
+title: "Supprimer des caract\xE8res correspondant \xE0 un motif"
 ---
 
 {{< edit_this_page >}}

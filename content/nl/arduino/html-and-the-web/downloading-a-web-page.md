@@ -1,15 +1,16 @@
 ---
-title:                "Een webpagina downloaden"
 aliases:
 - /nl/arduino/downloading-a-web-page/
-date:                  2024-01-28T21:59:06.322117-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een webpagina downloaden"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/downloading-a-web-page.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:06.322117-07:00
+description: "Een webpagina downloaden betekent het ophalen van de HTML-inhoud van\
+  \ de URL waar je naar kijkt. Programmeurs doen dit om gegevens te trekken, hun gadgets\u2026"
+lastmod: 2024-02-18 23:09:02.137253
+model: gpt-4-0125-preview
+summary: "Een webpagina downloaden betekent het ophalen van de HTML-inhoud van de\
+  \ URL waar je naar kijkt. Programmeurs doen dit om gegevens te trekken, hun gadgets\u2026"
+title: Een webpagina downloaden
 ---
 
 {{< edit_this_page >}}

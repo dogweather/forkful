@@ -1,13 +1,14 @@
 ---
-title:                "Interaktiivisen komentotulkin (REPL) käyttö"
 aliases:
 - /fi/php/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:16:26.575999-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interaktiivisen komentotulkin (REPL) käyttö"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:16:26.575999-07:00
+description: "Interaktiivinen kuori, tai REPL (Read-Eval-Print Loop), mahdollistaa\
+  \ PHP-koodin kirjoittamisen ja suorittamisen lennosta. Se on ihanteellinen kokeiluihin,\u2026"
+lastmod: 2024-02-18 23:09:07.713216
+model: gpt-4-0125-preview
+summary: "Interaktiivinen kuori, tai REPL (Read-Eval-Print Loop), mahdollistaa PHP-koodin\
+  \ kirjoittamisen ja suorittamisen lennosta. Se on ihanteellinen kokeiluihin,\u2026"
+title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,14 @@
 ---
-title:                "部分文字列の抽出"
 aliases:
 - /ja/c/extracting-substrings/
-date:                  2024-02-03T17:56:40.908038-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "部分文字列の抽出"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/extracting-substrings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:40.908038-07:00
+description: "\u2026"
+lastmod: 2024-02-18 23:08:55.338657
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u90E8\u5206\u6587\u5B57\u5217\u306E\u62BD\u51FA"
 ---
 
 {{< edit_this_page >}}

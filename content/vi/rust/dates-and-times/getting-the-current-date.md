@@ -1,15 +1,20 @@
 ---
-title:                "Lấy ngày hiện tại"
 aliases:
 - /vi/rust/getting-the-current-date/
-date:                  2024-01-28T22:01:45.011623-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lấy ngày hiện tại"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/getting-the-current-date.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:45.011623-07:00
+description: "Trong l\u1EADp tr\xECnh, vi\u1EC7c l\u1EA5y ng\xE0y th\xE1ng hi\u1EC7\
+  n t\u1EA1i gi\xFAp theo d\xF5i s\u1EF1 ki\u1EC7n ho\u1EB7c ghi l\u1EA1i d\u1EEF\
+  \ li\u1EC7u. N\xF3 r\u1EA5t h\u1EEFu \xEDch cho vi\u1EC7c \u0111\xE1nh d\u1EA5u\
+  \ th\u1EDDi gian, l\u1EADp l\u1ECBch, ho\u1EB7c ch\u1EC9\u2026"
+lastmod: 2024-02-18 23:08:50.473681
+model: gpt-4-0125-preview
+summary: "Trong l\u1EADp tr\xECnh, vi\u1EC7c l\u1EA5y ng\xE0y th\xE1ng hi\u1EC7n t\u1EA1\
+  i gi\xFAp theo d\xF5i s\u1EF1 ki\u1EC7n ho\u1EB7c ghi l\u1EA1i d\u1EEF li\u1EC7\
+  u. N\xF3 r\u1EA5t h\u1EEFu \xEDch cho vi\u1EC7c \u0111\xE1nh d\u1EA5u th\u1EDDi\
+  \ gian, l\u1EADp l\u1ECBch, ho\u1EB7c ch\u1EC9\u2026"
+title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 ---
 
 {{< edit_this_page >}}

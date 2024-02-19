@@ -1,13 +1,16 @@
 ---
-title:                "Redondeo de números"
 aliases:
 - /es/javascript/rounding-numbers/
-date:                  2024-01-26T03:46:00.448057-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Redondeo de números"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/rounding-numbers.md"
+date: 2024-01-26 03:46:00.448057-07:00
+description: "Redondear es eliminar el ruido despu\xE9s de un cierto punto en un n\xFA\
+  mero. Los programadores redondean para controlar la precisi\xF3n, gestionar la memoria\
+  \ o\u2026"
+lastmod: 2024-02-18 23:09:10.399125
+model: gpt-4-0125-preview
+summary: "Redondear es eliminar el ruido despu\xE9s de un cierto punto en un n\xFA\
+  mero. Los programadores redondean para controlar la precisi\xF3n, gestionar la memoria\
+  \ o\u2026"
+title: "Redondeo de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

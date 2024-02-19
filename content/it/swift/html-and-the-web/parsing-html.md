@@ -1,12 +1,14 @@
 ---
-title:                "Analisi dell'HTML"
 aliases:
 - /it/swift/parsing-html/
-date:                  2024-01-20T15:34:07.510905-07:00
-simple_title:         "Analisi dell'HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/parsing-html.md"
+date: 2024-01-20 15:34:07.510905-07:00
+description: "L'interpretazione dell'HTML (parsing) serve a estrarre dati da pagine\
+  \ web. I programmatori lo fanno per analizzare, manipolare o estrarre informazioni\
+  \ in\u2026"
+lastmod: 2024-02-18 23:08:56.210504
+summary: "L'interpretazione dell'HTML (parsing) serve a estrarre dati da pagine web.\
+  \ I programmatori lo fanno per analizzare, manipolare o estrarre informazioni in\u2026"
+title: Analisi dell'HTML
 ---
 
 {{< edit_this_page >}}

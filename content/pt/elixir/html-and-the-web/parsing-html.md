@@ -1,12 +1,15 @@
 ---
-title:                "Análise de HTML"
 aliases:
 - /pt/elixir/parsing-html/
-date:                  2024-01-20T15:31:00.134803-07:00
-simple_title:         "Análise de HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/parsing-html.md"
+date: 2024-01-20 15:31:00.134803-07:00
+description: "Parsear HTML \xE9 o processo de ler e entender o c\xF3digo HTML, tipicamente\
+  \ para extrair informa\xE7\xF5es dele. Programadores fazem isso para interagir com\
+  \ dados de\u2026"
+lastmod: 2024-02-18 23:08:57.841817
+summary: "Parsear HTML \xE9 o processo de ler e entender o c\xF3digo HTML, tipicamente\
+  \ para extrair informa\xE7\xF5es dele. Programadores fazem isso para interagir com\
+  \ dados de\u2026"
+title: "An\xE1lise de HTML"
 ---
 
 {{< edit_this_page >}}

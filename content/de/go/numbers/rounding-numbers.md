@@ -1,14 +1,16 @@
 ---
-title:                "Zahlen runden"
 aliases:
 - /de/go/rounding-numbers/
-date:                  2024-02-03T18:07:43.280775-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zahlen runden"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/rounding-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:43.280775-07:00
+description: "Das Runden von Zahlen geht darum, den Wert einer Zahl auf die n\xE4\
+  chste ganze Zahl oder auf eine bestimmte Anzahl von Dezimalstellen anzupassen.\u2026"
+lastmod: 2024-02-18 23:09:04.357553
+model: gpt-4-0125-preview
+summary: "Das Runden von Zahlen geht darum, den Wert einer Zahl auf die n\xE4chste\
+  \ ganze Zahl oder auf eine bestimmte Anzahl von Dezimalstellen anzupassen.\u2026"
+title: Zahlen runden
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Đọc một tệp văn bản"
 aliases:
 - /vi/haskell/reading-a-text-file/
-date:                  2024-01-28T22:05:11.609251-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Đọc một tệp văn bản"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/haskell/reading-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:05:11.609251-07:00
+description: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong l\u1EADp tr\xEC\
+  nh cho ph\xE9p m\xE3 c\u1EE7a b\u1EA1n h\u1EA5p th\u1EE5 d\u1EEF li\u1EC7u, gi\u1ED1\
+  ng nh\u01B0 vi\u1EC7c \u0111\u1ED5 c\xE0 ph\xEA v\xE0o n\xE3o v\xE0o bu\u1ED5i s\xE1\
+  ng. Ch\xFAng ta l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 cung c\u1EA5p\u2026"
+lastmod: 2024-02-18 23:08:50.764034
+model: gpt-4-0125-preview
+summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong l\u1EADp tr\xEC\
+  nh cho ph\xE9p m\xE3 c\u1EE7a b\u1EA1n h\u1EA5p th\u1EE5 d\u1EEF li\u1EC7u, gi\u1ED1\
+  ng nh\u01B0 vi\u1EC7c \u0111\u1ED5 c\xE0 ph\xEA v\xE0o n\xE3o v\xE0o bu\u1ED5i s\xE1\
+  ng. Ch\xFAng ta l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 cung c\u1EA5p\u2026"
+title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Tekstitiedoston lukeminen"
 aliases:
 - /fi/bash/reading-a-text-file/
-date:                  2024-01-20T17:53:43.015528-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tekstitiedoston lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/reading-a-text-file.md"
+date: 2024-01-20 17:53:43.015528-07:00
+description: "Luetaan tekstifailia, koska tarvitaan dataa siit\xE4. Se on olennaista,\
+  \ kun k\xE4sitell\xE4\xE4n asetuksia, k\xE4ytt\xE4j\xE4n sis\xE4lt\xF6\xE4 tai skriptej\xE4\
+  ."
+lastmod: 2024-02-18 23:09:07.823502
+model: gpt-4-1106-preview
+summary: "Luetaan tekstifailia, koska tarvitaan dataa siit\xE4. Se on olennaista,\
+  \ kun k\xE4sitell\xE4\xE4n asetuksia, k\xE4ytt\xE4j\xE4n sis\xE4lt\xF6\xE4 tai skriptej\xE4\
+  ."
+title: Tekstitiedoston lukeminen
 ---
 
 {{< edit_this_page >}}

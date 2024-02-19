@@ -1,13 +1,27 @@
 ---
-title:                "שימוש במעטפת אינטראקטיבית (REPL)"
 aliases:
 - /he/rust/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:18:55.572082-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "שימוש במעטפת אינטראקטיבית (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/rust/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:18:55.572082-07:00
+description: "\u05E7\u05D5\u05E0\u05E1\u05D5\u05DC\u05D4 \u05D0\u05D9\u05E0\u05D8\u05E8\
+  \u05E7\u05D8\u05D9\u05D1\u05D9\u05EA \u05E9\u05DC Rust, \u05D0\u05D5 REPL (Read-Eval-Print\
+  \ Loop), \u05DE\u05D0\u05E4\u05E9\u05E8\u05EA \u05DC\u05DA \u05DC\u05D4\u05E8\u05D9\
+  \u05E5 \u05E7\u05D5\u05D3 Rust \u05D1\u05D6\u05DE\u05DF \u05D0\u05DE\u05EA \u05D5\
+  \u05DC\u05E8\u05D0\u05D5\u05EA \u05EA\u05D5\u05E6\u05D0\u05D5\u05EA \u05DE\u05D9\
+  \u05D9\u05D3\u05D9\u05D5\u05EA, \u05DE\u05D5\u05E9\u05DC\u05DD \u05DC\u05E0\u05D9\
+  \u05E1\u05D5\u05D9\u05D9\u05DD \u05D0\u05D5 \u05DC\u05DC\u05DE\u05D9\u05D3\u05D4\
+  . \u05DE\u05EA\u05DB\u05E0\u05EA\u05D9\u05DD\u2026"
+lastmod: 2024-02-18 23:08:52.616580
+model: gpt-4-0125-preview
+summary: "\u05E7\u05D5\u05E0\u05E1\u05D5\u05DC\u05D4 \u05D0\u05D9\u05E0\u05D8\u05E8\
+  \u05E7\u05D8\u05D9\u05D1\u05D9\u05EA \u05E9\u05DC Rust, \u05D0\u05D5 REPL (Read-Eval-Print\
+  \ Loop), \u05DE\u05D0\u05E4\u05E9\u05E8\u05EA \u05DC\u05DA \u05DC\u05D4\u05E8\u05D9\
+  \u05E5 \u05E7\u05D5\u05D3 Rust \u05D1\u05D6\u05DE\u05DF \u05D0\u05DE\u05EA \u05D5\
+  \u05DC\u05E8\u05D0\u05D5\u05EA \u05EA\u05D5\u05E6\u05D0\u05D5\u05EA \u05DE\u05D9\
+  \u05D9\u05D3\u05D9\u05D5\u05EA, \u05DE\u05D5\u05E9\u05DC\u05DD \u05DC\u05E0\u05D9\
+  \u05E1\u05D5\u05D9\u05D9\u05DD \u05D0\u05D5 \u05DC\u05DC\u05DE\u05D9\u05D3\u05D4\
+  . \u05DE\u05EA\u05DB\u05E0\u05EA\u05D9\u05DD\u2026"
+title: "\u05E9\u05D9\u05DE\u05D5\u05E9 \u05D1\u05DE\u05E2\u05D8\u05E4\u05EA \u05D0\
+  \u05D9\u05E0\u05D8\u05E8\u05D0\u05E7\u05D8\u05D9\u05D1\u05D9\u05EA (REPL)"
 ---
 
 {{< edit_this_page >}}

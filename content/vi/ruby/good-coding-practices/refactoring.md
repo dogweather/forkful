@@ -1,15 +1,20 @@
 ---
-title:                "Tái cấu trúc mã"
 aliases:
 - /vi/ruby/refactoring/
-date:                  2024-01-28T22:06:35.154390-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tái cấu trúc mã"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/refactoring.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:06:35.154390-07:00
+description: "T\xE1i c\u1EA5u tr\xFAc l\xE0 qu\xE1 tr\xECnh c\u1EA3i t\u1ED5 m\xE3\
+  \ m\xE1y t\xEDnh hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh vi b\xEA\
+  n ngo\xE0i c\u1EE7a n\xF3. L\u1EADp tr\xECnh vi\xEAn t\xE1i c\u1EA5u tr\xFAc \u0111\
+  \u1EC3 c\u1EA3i thi\u1EC7n c\xE1c thu\u1ED9c t\xEDnh\u2026"
+lastmod: 2024-02-18 23:08:51.294930
+model: gpt-4-0125-preview
+summary: "T\xE1i c\u1EA5u tr\xFAc l\xE0 qu\xE1 tr\xECnh c\u1EA3i t\u1ED5 m\xE3 m\xE1\
+  y t\xEDnh hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0\
+  i c\u1EE7a n\xF3. L\u1EADp tr\xECnh vi\xEAn t\xE1i c\u1EA5u tr\xFAc \u0111\u1EC3\
+  \ c\u1EA3i thi\u1EC7n c\xE1c thu\u1ED9c t\xEDnh\u2026"
+title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 ---
 
 {{< edit_this_page >}}

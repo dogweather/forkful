@@ -1,13 +1,16 @@
 ---
-title:                "Organisering av kode i funksjoner"
 aliases:
 - /no/rust/organizing-code-into-functions/
-date:                  2024-01-26T01:16:12.090645-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Organisering av kode i funksjoner"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/organizing-code-into-functions.md"
+date: 2024-01-26 01:16:12.090645-07:00
+description: "\xC5 organisere kode i funksjoner handler om \xE5 bryte programmet ditt\
+  \ ned i gjenbrukbare, modul\xE6re biter identifisert ved et navn. Vi gj\xF8r dette\
+  \ for \xE5 gj\xF8re\u2026"
+lastmod: 2024-02-18 23:08:53.690407
+model: gpt-4-0125-preview
+summary: "\xC5 organisere kode i funksjoner handler om \xE5 bryte programmet ditt\
+  \ ned i gjenbrukbare, modul\xE6re biter identifisert ved et navn. Vi gj\xF8r dette\
+  \ for \xE5 gj\xF8re\u2026"
+title: Organisering av kode i funksjoner
 ---
 
 {{< edit_this_page >}}

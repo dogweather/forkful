@@ -1,14 +1,18 @@
 ---
-title:                "Zamiana liter na wielkie w łańcuchu znaków"
 aliases:
 - /pl/ruby/capitalizing-a-string/
-date:                  2024-02-03T19:06:18.103640-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zamiana liter na wielkie w łańcuchu znaków"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:18.103640-07:00
+description: "Kapitalizacja ci\u0105gu znak\xF3w w programowaniu cz\u0119sto odnosi\
+  \ si\u0119 do zamiany pierwszego znaku ci\u0105gu na wielk\u0105 liter\u0119, a\
+  \ reszt\u0119 na ma\u0142e litery. Programi\u015Bci\u2026"
+lastmod: 2024-02-18 23:08:50.107387
+model: gpt-4-0125-preview
+summary: "Kapitalizacja ci\u0105gu znak\xF3w w programowaniu cz\u0119sto odnosi si\u0119\
+  \ do zamiany pierwszego znaku ci\u0105gu na wielk\u0105 liter\u0119, a reszt\u0119\
+  \ na ma\u0142e litery. Programi\u015Bci\u2026"
+title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

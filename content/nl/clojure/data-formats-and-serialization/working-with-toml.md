@@ -1,15 +1,18 @@
 ---
-title:                "Werken met TOML"
 aliases:
 - /nl/clojure/working-with-toml/
-date:                  2024-01-28T22:11:00.486439-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/clojure/working-with-toml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:00.486439-07:00
+description: "Werken met TOML betekent dat je gegevens beheert in een minimaal \"\
+  Tom's Obvious, Minimal Language\" formaat, populair voor configuratiebestanden vanwege\
+  \ de\u2026"
+lastmod: 2024-02-18 23:09:01.505330
+model: gpt-4-0125-preview
+summary: "Werken met TOML betekent dat je gegevens beheert in een minimaal \"Tom's\
+  \ Obvious, Minimal Language\" formaat, populair voor configuratiebestanden vanwege\
+  \ de\u2026"
+title: Werken met TOML
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,16 @@
 ---
-title:                "Werken met YAML"
 aliases:
 - /nl/elixir/working-with-yaml/
-date:                  2024-01-28T22:11:38.685590-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met YAML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elixir/working-with-yaml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:38.685590-07:00
+description: "Werken met YAML betekent het parsen en genereren van YAML-geformatteerde\
+  \ data, een voor mensen leesbare standaard voor data-serialisatie. Programmeurs\u2026"
+lastmod: 2024-02-18 23:09:01.548830
+model: gpt-4-0125-preview
+summary: "Werken met YAML betekent het parsen en genereren van YAML-geformatteerde\
+  \ data, een voor mensen leesbare standaard voor data-serialisatie. Programmeurs\u2026"
+title: Werken met YAML
 ---
 
 {{< edit_this_page >}}

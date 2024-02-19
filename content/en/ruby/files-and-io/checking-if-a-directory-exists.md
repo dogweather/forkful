@@ -1,12 +1,14 @@
 ---
-title:                "Checking if a directory exists"
 aliases:
 - /en/ruby/checking-if-a-directory-exists/
-date:                  2024-02-03T19:02:26.224094-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Checking if a directory exists"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/checking-if-a-directory-exists.md"
+date: 2024-02-03 19:02:26.224094-07:00
+description: "Checking if a directory exists in Ruby allows programmers to verify\
+  \ the presence of a directory before performing operations like reading files or\u2026"
+lastmod: 2024-02-18 23:09:11.580175
+model: gpt-4-0125-preview
+summary: "Checking if a directory exists in Ruby allows programmers to verify the\
+  \ presence of a directory before performing operations like reading files or\u2026"
+title: Checking if a directory exists
 ---
 
 {{< edit_this_page >}}

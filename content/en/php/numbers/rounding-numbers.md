@@ -1,13 +1,14 @@
 ---
-title:                "Rounding numbers"
 aliases:
 - /en/php/rounding-numbers/
-date:                  2024-01-25T02:59:57.892439-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rounding numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/rounding-numbers.md"
+date: 2024-01-25 02:59:57.892439-07:00
+description: "Rounding numbers means chopping off the decimals to a set precision,\
+  \ often to whole numbers. Programmers round to simplify calculations, improve\u2026"
+lastmod: 2024-02-18 23:09:11.132017
+model: gpt-4-1106-preview
+summary: "Rounding numbers means chopping off the decimals to a set precision, often\
+  \ to whole numbers. Programmers round to simplify calculations, improve\u2026"
+title: Rounding numbers
 ---
 
 {{< edit_this_page >}}

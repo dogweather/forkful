@@ -1,13 +1,16 @@
 ---
-title:                "Suppression de caractères correspondant à un motif"
 aliases:
 - /fr/java/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:44.276980-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Suppression de caractères correspondant à un motif"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:44.276980-07:00
+description: "En Java, supprimer des caract\xE8res correspondant \xE0 un motif, c'est\
+  \ retirer de fa\xE7on s\xE9lective certains caract\xE8res d'une cha\xEEne en se\
+  \ basant sur des r\xE8gles\u2026"
+lastmod: 2024-02-18 23:09:08.610887
+model: gpt-4-1106-preview
+summary: "En Java, supprimer des caract\xE8res correspondant \xE0 un motif, c'est\
+  \ retirer de fa\xE7on s\xE9lective certains caract\xE8res d'une cha\xEEne en se\
+  \ basant sur des r\xE8gles\u2026"
+title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 ---
 
 {{< edit_this_page >}}

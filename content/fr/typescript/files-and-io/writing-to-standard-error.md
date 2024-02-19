@@ -1,14 +1,18 @@
 ---
-title:                "Écrire sur l'erreur standard"
 aliases:
 - /fr/typescript/writing-to-standard-error/
-date:                  2024-02-03T19:34:36.994591-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Écrire sur l'erreur standard"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:34:36.994591-07:00
+description: "En TypeScript, \xE9crire sur l'erreur standard (stderr) est un processus\
+  \ consistant \xE0 envoyer des messages d'erreur ou des journaux directement sur\
+  \ le flux\u2026"
+lastmod: 2024-02-18 23:09:08.499916
+model: gpt-4-0125-preview
+summary: "En TypeScript, \xE9crire sur l'erreur standard (stderr) est un processus\
+  \ consistant \xE0 envoyer des messages d'erreur ou des journaux directement sur\
+  \ le flux\u2026"
+title: "\xC9crire sur l'erreur standard"
 ---
 
 {{< edit_this_page >}}

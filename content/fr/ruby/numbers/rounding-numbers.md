@@ -1,13 +1,16 @@
 ---
-title:                "Arrondir les nombres"
 aliases:
 - /fr/ruby/rounding-numbers/
-date:                  2024-01-26T03:47:34.893404-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrondir les nombres"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/rounding-numbers.md"
+date: 2024-01-26 03:47:34.893404-07:00
+description: "Arrondir les nombres signifie les ajuster au nombre entier le plus proche\
+  \ ou \xE0 un degr\xE9 de pr\xE9cision sp\xE9cifi\xE9. Les programmeurs arrondissent\
+  \ les nombres\u2026"
+lastmod: 2024-02-18 23:09:09.399340
+model: gpt-4-0125-preview
+summary: "Arrondir les nombres signifie les ajuster au nombre entier le plus proche\
+  \ ou \xE0 un degr\xE9 de pr\xE9cision sp\xE9cifi\xE9. Les programmeurs arrondissent\
+  \ les nombres\u2026"
+title: Arrondir les nombres
 ---
 
 {{< edit_this_page >}}

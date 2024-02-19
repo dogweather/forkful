@@ -1,14 +1,18 @@
 ---
-title:                "Tilapäisen tiedoston luominen"
 aliases:
 - /fi/google-apps-script/creating-a-temporary-file/
-date:                  2024-02-01T21:53:04.349248-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tilapäisen tiedoston luominen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/creating-a-temporary-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:04.349248-07:00
+description: "Tilap\xE4isen tiedoston luominen Google Apps Scriptill\xE4 tarkoittaa\
+  \ lyhytaikaiseen k\xE4ytt\xF6\xF6n tarkoitetun tiedoston generoimista, yleens\xE4\
+  \ v\xE4liaikaista datan\u2026"
+lastmod: 2024-02-18 23:09:07.158800
+model: gpt-4-0125-preview
+summary: "Tilap\xE4isen tiedoston luominen Google Apps Scriptill\xE4 tarkoittaa lyhytaikaiseen\
+  \ k\xE4ytt\xF6\xF6n tarkoitetun tiedoston generoimista, yleens\xE4 v\xE4liaikaista\
+  \ datan\u2026"
+title: "Tilap\xE4isen tiedoston luominen"
 ---
 
 {{< edit_this_page >}}

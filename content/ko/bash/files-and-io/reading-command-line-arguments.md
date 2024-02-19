@@ -1,14 +1,23 @@
 ---
-title:                "명령줄 인수 읽기"
 aliases:
 - /ko/bash/reading-command-line-arguments/
-date:                  2024-01-20T17:55:21.881385-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "명령줄 인수 읽기"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:21.881385-07:00
+description: "\uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC778\uC790 \uC77D\uAE30\uB294 \uC0AC\
+  \uC6A9\uC790\uAC00 \uD130\uBBF8\uB110\uC744 \uD1B5\uD574 \uC2A4\uD06C\uB9BD\uD2B8\
+  \uC5D0 \uB370\uC774\uD130\uB97C \uC804\uB2EC\uD560 \uC218 \uC788\uAC8C \uD574\uC90D\
+  \uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC720\uC5F0\uC131\uC744\
+  \ \uB192\uC774\uACE0 \uC0AC\uC6A9\uC790 \uB9DE\uCDA4\uD615 \uB3D9\uC791\uC744 \uAD6C\
+  \uD604\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.509646
+model: gpt-4-1106-preview
+summary: "\uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC778\uC790 \uC77D\uAE30\uB294 \uC0AC\uC6A9\
+  \uC790\uAC00 \uD130\uBBF8\uB110\uC744 \uD1B5\uD574 \uC2A4\uD06C\uB9BD\uD2B8\uC5D0\
+  \ \uB370\uC774\uD130\uB97C \uC804\uB2EC\uD560 \uC218 \uC788\uAC8C \uD574\uC90D\uB2C8\
+  \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC720\uC5F0\uC131\uC744 \uB192\
+  \uC774\uACE0 \uC0AC\uC6A9\uC790 \uB9DE\uCDA4\uD615 \uB3D9\uC791\uC744 \uAD6C\uD604\
+  \uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+title: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30"
 ---
 
 {{< edit_this_page >}}

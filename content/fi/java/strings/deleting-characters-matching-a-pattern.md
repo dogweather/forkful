@@ -1,13 +1,16 @@
 ---
-title:                "Merkkien poistaminen hakemalla osumia kaavaan"
 aliases:
 - /fi/java/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:33.317475-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:33.317475-07:00
+description: "Java-ohjelmoinnissa merkkien poistaminen kuvioita vastaavasti tarkoittaa\
+  \ tietyn s\xE4\xE4nn\xF6llisen lausekkeen (regex) m\xE4\xE4ritt\xE4mi\xE4 merkkej\xE4\
+  \ olevien kohtien\u2026"
+lastmod: 2024-02-18 23:09:07.441497
+model: gpt-4-1106-preview
+summary: "Java-ohjelmoinnissa merkkien poistaminen kuvioita vastaavasti tarkoittaa\
+  \ tietyn s\xE4\xE4nn\xF6llisen lausekkeen (regex) m\xE4\xE4ritt\xE4mi\xE4 merkkej\xE4\
+  \ olevien kohtien\u2026"
+title: Merkkien poistaminen hakemalla osumia kaavaan
 ---
 
 {{< edit_this_page >}}

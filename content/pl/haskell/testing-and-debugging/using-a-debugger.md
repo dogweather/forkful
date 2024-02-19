@@ -1,13 +1,16 @@
 ---
-title:                "Korzystanie z debugera"
 aliases:
 - /pl/haskell/using-a-debugger/
-date:                  2024-01-26T03:49:52.159715-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z debugera"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/using-a-debugger.md"
+date: 2024-01-26 03:49:52.159715-07:00
+description: "Korzystanie z debugera oznacza zag\u0142\u0119bianie si\u0119 w Tw\xF3\
+  j kod przy u\u017Cyciu narz\u0119dzi zaprojektowanych do inspekcji, wstrzymywania\
+  \ i manipulowania programem w\u2026"
+lastmod: 2024-02-18 23:08:49.657775
+model: gpt-4-0125-preview
+summary: "Korzystanie z debugera oznacza zag\u0142\u0119bianie si\u0119 w Tw\xF3j\
+  \ kod przy u\u017Cyciu narz\u0119dzi zaprojektowanych do inspekcji, wstrzymywania\
+  \ i manipulowania programem w\u2026"
+title: Korzystanie z debugera
 ---
 
 {{< edit_this_page >}}

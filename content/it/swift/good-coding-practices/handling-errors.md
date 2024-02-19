@@ -1,13 +1,16 @@
 ---
-title:                "Gestione degli errori"
 aliases:
 - /it/swift/handling-errors/
-date:                  2024-01-26T00:57:58.471263-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Gestione degli errori"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/handling-errors.md"
+date: 2024-01-26 00:57:58.471263-07:00
+description: "Gestire gli errori in Swift significa anticipare e rispondere ai problemi\
+  \ che emergono quando il codice \xE8 in esecuzione. Lo facciamo per controllare\
+  \ il\u2026"
+lastmod: 2024-02-18 23:08:56.219536
+model: gpt-4-1106-preview
+summary: "Gestire gli errori in Swift significa anticipare e rispondere ai problemi\
+  \ che emergono quando il codice \xE8 in esecuzione. Lo facciamo per controllare\
+  \ il\u2026"
+title: Gestione degli errori
 ---
 
 {{< edit_this_page >}}

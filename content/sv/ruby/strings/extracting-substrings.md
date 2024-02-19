@@ -1,13 +1,16 @@
 ---
-title:                "Extrahera delsträngar"
 aliases:
 - /sv/ruby/extracting-substrings/
-date:                  2024-01-20T17:46:35.844550-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extrahera delsträngar"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/extracting-substrings.md"
+date: 2024-01-20 17:46:35.844550-07:00
+description: "I Ruby \xE4r att extrahera substr\xE4ngar en stil med att plocka specifika\
+  \ delar fr\xE5n en str\xE4ng. Programmerare g\xF6r det f\xF6r att bearbeta text,\
+  \ validera indata\u2026"
+lastmod: 2024-02-18 23:08:52.282825
+model: gpt-4-1106-preview
+summary: "I Ruby \xE4r att extrahera substr\xE4ngar en stil med att plocka specifika\
+  \ delar fr\xE5n en str\xE4ng. Programmerare g\xF6r det f\xF6r att bearbeta text,\
+  \ validera indata\u2026"
+title: "Extrahera delstr\xE4ngar"
 ---
 
 {{< edit_this_page >}}

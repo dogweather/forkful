@@ -1,13 +1,16 @@
 ---
-title:                "Excluindo caracteres que correspondem a um padrão"
 aliases:
 - /pt/kotlin/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:52.883098-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Excluindo caracteres que correspondem a um padrão"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:52.883098-07:00
+description: "Remover caracteres que correspondem a um padr\xE3o \xE9 uma opera\xE7\
+  \xE3o de filtragem de strings para mold\xE1-las conforme a necessidade. Programadores\
+  \ fazem isso\u2026"
+lastmod: 2024-02-18 23:08:58.085928
+model: gpt-4-1106-preview
+summary: "Remover caracteres que correspondem a um padr\xE3o \xE9 uma opera\xE7\xE3\
+  o de filtragem de strings para mold\xE1-las conforme a necessidade. Programadores\
+  \ fazem isso\u2026"
+title: "Excluindo caracteres que correspondem a um padr\xE3o"
 ---
 
 {{< edit_this_page >}}

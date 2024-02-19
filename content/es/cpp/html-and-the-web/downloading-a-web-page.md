@@ -1,13 +1,16 @@
 ---
-title:                "Descargando una página web"
 aliases:
 - /es/cpp/downloading-a-web-page/
-date:                  2024-01-20T17:43:28.420987-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Descargando una página web"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/downloading-a-web-page.md"
+date: 2024-01-20 17:43:28.420987-07:00
+description: "Descargar una p\xE1gina web significa traer el contenido de una p\xE1\
+  gina de Internet a tu propia m\xE1quina. Los programadores hacen esto para analizar\
+  \ los datos,\u2026"
+lastmod: 2024-02-18 23:09:10.308757
+model: gpt-4-1106-preview
+summary: "Descargar una p\xE1gina web significa traer el contenido de una p\xE1gina\
+  \ de Internet a tu propia m\xE1quina. Los programadores hacen esto para analizar\
+  \ los datos,\u2026"
+title: "Descargando una p\xE1gina web"
 ---
 
 {{< edit_this_page >}}

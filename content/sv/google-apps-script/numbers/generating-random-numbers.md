@@ -1,14 +1,18 @@
 ---
-title:                "Generera slumpmässiga nummer"
 aliases:
 - /sv/google-apps-script/generating-random-numbers/
-date:                  2024-02-01T21:54:07.542056-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generera slumpmässiga nummer"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/google-apps-script/generating-random-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:07.542056-07:00
+description: "Att generera slumpm\xE4ssiga nummer \xE4r en grundl\xE4ggande uppgift\
+  \ inom programmering som anv\xE4nds f\xF6r en m\xE4ngd olika till\xE4mpningar, s\xE5\
+  som simuleringar, spel och\u2026"
+lastmod: 2024-02-18 23:08:51.373911
+model: gpt-4-0125-preview
+summary: "Att generera slumpm\xE4ssiga nummer \xE4r en grundl\xE4ggande uppgift inom\
+  \ programmering som anv\xE4nds f\xF6r en m\xE4ngd olika till\xE4mpningar, s\xE5\
+  som simuleringar, spel och\u2026"
+title: "Generera slumpm\xE4ssiga nummer"
 ---
 
 {{< edit_this_page >}}

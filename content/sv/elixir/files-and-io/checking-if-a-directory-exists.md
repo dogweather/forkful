@@ -1,14 +1,18 @@
 ---
-title:                "Kontrollera om en katalog existerar"
 aliases:
 - /sv/elixir/checking-if-a-directory-exists/
-date:                  2024-02-03T19:07:05.406878-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kontrollera om en katalog existerar"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:07:05.406878-07:00
+description: "Att kontrollera om en katalog finns i Elixir handlar om att verifiera\
+  \ n\xE4rvaron av en katalog p\xE5 en angiven s\xF6kv\xE4g i filsystemet. Programmerare\
+  \ g\xF6r detta\u2026"
+lastmod: 2024-02-18 23:08:51.516761
+model: gpt-4-0125-preview
+summary: "Att kontrollera om en katalog finns i Elixir handlar om att verifiera n\xE4\
+  rvaron av en katalog p\xE5 en angiven s\xF6kv\xE4g i filsystemet. Programmerare\
+  \ g\xF6r detta\u2026"
+title: Kontrollera om en katalog existerar
 ---
 
 {{< edit_this_page >}}

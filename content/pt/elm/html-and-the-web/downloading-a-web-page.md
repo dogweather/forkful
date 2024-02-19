@@ -1,13 +1,16 @@
 ---
-title:                "Baixando uma página da web"
 aliases:
 - /pt/elm/downloading-a-web-page/
-date:                  2024-01-20T17:44:09.952664-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Baixando uma página da web"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/downloading-a-web-page.md"
+date: 2024-01-20 17:44:09.952664-07:00
+description: "Baixar uma p\xE1gina web significa pegar o conte\xFAdo dela, geralmente\
+  \ em HTML, atrav\xE9s da internet. Programadores fazem isso para processar essa\
+  \ informa\xE7\xE3o,\u2026"
+lastmod: 2024-02-18 23:08:58.059283
+model: gpt-4-1106-preview
+summary: "Baixar uma p\xE1gina web significa pegar o conte\xFAdo dela, geralmente\
+  \ em HTML, atrav\xE9s da internet. Programadores fazem isso para processar essa\
+  \ informa\xE7\xE3o,\u2026"
+title: "Baixando uma p\xE1gina da web"
 ---
 
 {{< edit_this_page >}}

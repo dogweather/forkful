@@ -1,13 +1,16 @@
 ---
-title:                "Praca z liczbami zespolonymi"
 aliases:
 - /pl/c-sharp/working-with-complex-numbers/
-date:                  2024-01-26T04:39:04.370982-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z liczbami zespolonymi"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/working-with-complex-numbers.md"
+date: 2024-01-26 04:39:04.370982-07:00
+description: "Liczby zespolone poszerzaj\u0105 nasz system liczbowy o liczby urojone,\
+  \ umo\u017Cliwiaj\u0105c rozwi\u0105zywanie r\xF3wna\u0144, kt\xF3re nie maj\u0105\
+  \ rzeczywistych rozwi\u0105za\u0144. Programi\u015Bci\u2026"
+lastmod: 2024-02-18 23:08:49.604724
+model: gpt-4-0125-preview
+summary: "Liczby zespolone poszerzaj\u0105 nasz system liczbowy o liczby urojone,\
+  \ umo\u017Cliwiaj\u0105c rozwi\u0105zywanie r\xF3wna\u0144, kt\xF3re nie maj\u0105\
+  \ rzeczywistych rozwi\u0105za\u0144. Programi\u015Bci\u2026"
+title: Praca z liczbami zespolonymi
 ---
 
 {{< edit_this_page >}}

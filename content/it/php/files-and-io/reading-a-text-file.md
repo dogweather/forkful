@@ -1,13 +1,14 @@
 ---
-title:                "Lettura di un file di testo"
 aliases:
 - /it/php/reading-a-text-file/
-date:                  2024-01-20T17:54:45.586248-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lettura di un file di testo"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/php/reading-a-text-file.md"
+date: 2024-01-20 17:54:45.586248-07:00
+description: "Leggere un file di testo in PHP significa accedere al contenuto salvato\
+  \ in un file sul server. I programmatori lo fanno per elaborare dati, configurare\u2026"
+lastmod: 2024-02-18 23:08:55.987628
+model: gpt-4-1106-preview
+summary: "Leggere un file di testo in PHP significa accedere al contenuto salvato\
+  \ in un file sul server. I programmatori lo fanno per elaborare dati, configurare\u2026"
+title: Lettura di un file di testo
 ---
 
 {{< edit_this_page >}}

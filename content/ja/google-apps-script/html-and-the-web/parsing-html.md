@@ -1,14 +1,29 @@
 ---
-title:                "HTMLの解析"
 aliases:
 - /ja/google-apps-script/parsing-html/
-date:                  2024-02-01T21:57:40.113077-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTMLの解析"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/google-apps-script/parsing-html.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:40.113077-07:00
+description: "Google Apps Script\u3067HTML\u3092\u89E3\u6790\u3059\u308B\u3068\u306F\
+  \u3001HTML\u30B3\u30F3\u30C6\u30F3\u30C4\u304B\u3089\u30C7\u30FC\u30BF\u3092\u62BD\
+  \u51FA\u3059\u308B\u3053\u3068\u3092\u610F\u5473\u3057\u307E\u3059\u3002\u3053\u308C\
+  \u306F\u3001Web\u30DA\u30FC\u30B8\u3084Web\u30D9\u30FC\u30B9\u306E\u30C7\u30FC\u30BF\
+  \u30BD\u30FC\u30B9\u3068\u306E\u3084\u308A\u53D6\u308A\u3092\u3059\u308B\u3068\u304D\
+  \u306B\u7279\u306B\u6709\u7528\u3067\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\
+  \u306F\u3001\u30C7\u30FC\u30BF\u53CE\u96C6\u3092\u81EA\u52D5\u5316\u3057\u305F\u308A\
+  \u3001Web\u30B3\u30F3\u30C6\u30F3\u30C4\u3092\u64CD\u4F5C\u3057\u305F\u308A\u3001\
+  Google\u2026"
+lastmod: 2024-02-18 23:08:54.520468
+model: gpt-4-0125-preview
+summary: "Google Apps Script\u3067HTML\u3092\u89E3\u6790\u3059\u308B\u3068\u306F\u3001\
+  HTML\u30B3\u30F3\u30C6\u30F3\u30C4\u304B\u3089\u30C7\u30FC\u30BF\u3092\u62BD\u51FA\
+  \u3059\u308B\u3053\u3068\u3092\u610F\u5473\u3057\u307E\u3059\u3002\u3053\u308C\u306F\
+  \u3001Web\u30DA\u30FC\u30B8\u3084Web\u30D9\u30FC\u30B9\u306E\u30C7\u30FC\u30BF\u30BD\
+  \u30FC\u30B9\u3068\u306E\u3084\u308A\u53D6\u308A\u3092\u3059\u308B\u3068\u304D\u306B\
+  \u7279\u306B\u6709\u7528\u3067\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\
+  \u3001\u30C7\u30FC\u30BF\u53CE\u96C6\u3092\u81EA\u52D5\u5316\u3057\u305F\u308A\u3001\
+  Web\u30B3\u30F3\u30C6\u30F3\u30C4\u3092\u64CD\u4F5C\u3057\u305F\u308A\u3001Google\u2026"
+title: "HTML\u306E\u89E3\u6790"
 ---
 
 {{< edit_this_page >}}

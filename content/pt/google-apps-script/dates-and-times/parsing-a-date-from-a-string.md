@@ -1,14 +1,16 @@
 ---
-title:                "Analisando uma data a partir de uma string"
 aliases:
 - /pt/google-apps-script/parsing-a-date-from-a-string/
-date:                  2024-02-01T21:57:18.481011-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analisando uma data a partir de uma string"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/google-apps-script/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:18.481011-07:00
+description: "Analisar uma data a partir de uma string envolve converter um texto\
+  \ que representa uma data em um objeto de data, permitindo que programadores realizem\u2026"
+lastmod: 2024-02-18 23:08:57.726479
+model: gpt-4-0125-preview
+summary: "Analisar uma data a partir de uma string envolve converter um texto que\
+  \ representa uma data em um objeto de data, permitindo que programadores realizem\u2026"
+title: Analisando uma data a partir de uma string
 ---
 
 {{< edit_this_page >}}

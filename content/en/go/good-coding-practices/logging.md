@@ -1,12 +1,16 @@
 ---
-title:                "Logging"
 aliases:
 - /en/go/logging/
-date:                  2024-02-03T17:50:06.227894-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Logging"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/logging.md"
+date: 2024-02-03 17:50:06.227894-07:00
+description: "Logging in software development is the process of recording information\
+  \ about a program\u2019s execution, designed to track its behavior and diagnose\
+  \ issues.\u2026"
+lastmod: 2024-02-18 23:09:10.603206
+model: gpt-4-0125-preview
+summary: "Logging in software development is the process of recording information\
+  \ about a program\u2019s execution, designed to track its behavior and diagnose\
+  \ issues.\u2026"
+title: Logging
 ---
 
 {{< edit_this_page >}}

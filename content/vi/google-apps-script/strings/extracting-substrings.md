@@ -1,14 +1,20 @@
 ---
-title:                "Trích xuất chuỗi con"
 aliases:
 - /vi/google-apps-script/extracting-substrings/
-date:                  2024-02-01T21:53:42.165591-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trích xuất chuỗi con"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/google-apps-script/extracting-substrings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:42.165591-07:00
+description: "Vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con bao g\u1ED3m vi\u1EC7\
+  c l\u1EA5y m\u1ED9t ph\u1EA7n c\u1EE7a chu\u1ED7i - c\u01A1 b\u1EA3n l\xE0 t\u1EA1\
+  o m\u1ED9t chu\u1ED7i m\u1EDBi t\u1EEB m\u1ED9t ph\u1EA7n c\u1EE7a chu\u1ED7i hi\u1EC7\
+  n c\xF3. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n\u2026"
+lastmod: 2024-02-18 23:08:50.206758
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con bao g\u1ED3m vi\u1EC7\
+  c l\u1EA5y m\u1ED9t ph\u1EA7n c\u1EE7a chu\u1ED7i - c\u01A1 b\u1EA3n l\xE0 t\u1EA1\
+  o m\u1ED9t chu\u1ED7i m\u1EDBi t\u1EEB m\u1ED9t ph\u1EA7n c\u1EE7a chu\u1ED7i hi\u1EC7\
+  n c\xF3. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n\u2026"
+title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 ---
 
 {{< edit_this_page >}}

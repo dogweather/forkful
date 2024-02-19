@@ -1,14 +1,18 @@
 ---
-title:                "Työskentely XML:n kanssa"
 aliases:
 - /fi/google-apps-script/working-with-xml/
-date:                  2024-02-01T22:06:48.441875-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely XML:n kanssa"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/working-with-xml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:06:48.441875-07:00
+description: "XML:n k\xE4sittely Google Apps Scriptill\xE4 mahdollistaa ohjelmoijien\
+  \ j\xE4sent\xE4\xE4, manipuloida ja luoda XML-dataa, mik\xE4 on olennaista verkkopalveluille\
+  \ ja\u2026"
+lastmod: 2024-02-18 23:09:07.164666
+model: gpt-4-0125-preview
+summary: "XML:n k\xE4sittely Google Apps Scriptill\xE4 mahdollistaa ohjelmoijien j\xE4\
+  sent\xE4\xE4, manipuloida ja luoda XML-dataa, mik\xE4 on olennaista verkkopalveluille\
+  \ ja\u2026"
+title: "Ty\xF6skentely XML:n kanssa"
 ---
 
 {{< edit_this_page >}}

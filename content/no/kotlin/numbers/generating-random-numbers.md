@@ -1,13 +1,16 @@
 ---
-title:                "Generering av tilfeldige tall"
 aliases:
 - /no/kotlin/generating-random-numbers/
-date:                  2024-01-27T20:34:55.375036-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generering av tilfeldige tall"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/generating-random-numbers.md"
+date: 2024-01-27 20:34:55.375036-07:00
+description: "Generering av tilfeldige tall i programmering handler om \xE5 skape\
+  \ tall som mangler ethvert forutsigbart m\xF8nster. Programmerere gj\xF8r dette\
+  \ av ulike grunner,\u2026"
+lastmod: 2024-02-18 23:08:53.847962
+model: gpt-4-0125-preview
+summary: "Generering av tilfeldige tall i programmering handler om \xE5 skape tall\
+  \ som mangler ethvert forutsigbart m\xF8nster. Programmerere gj\xF8r dette av ulike\
+  \ grunner,\u2026"
+title: Generering av tilfeldige tall
 ---
 
 {{< edit_this_page >}}

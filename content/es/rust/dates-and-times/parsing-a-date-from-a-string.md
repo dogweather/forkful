@@ -1,14 +1,18 @@
 ---
-title:                "Analizando una fecha a partir de una cadena de texto"
 aliases:
 - /es/rust/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:15:13.071685-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analizando una fecha a partir de una cadena de texto"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:15:13.071685-07:00
+description: "Analizar una fecha desde una cadena es una tarea com\xFAn al tratar\
+  \ con entradas de usuario o al leer datos de archivos, lo cual implica convertir\
+  \ datos en\u2026"
+lastmod: 2024-02-18 23:09:09.759327
+model: gpt-4-0125-preview
+summary: "Analizar una fecha desde una cadena es una tarea com\xFAn al tratar con\
+  \ entradas de usuario o al leer datos de archivos, lo cual implica convertir datos\
+  \ en\u2026"
+title: Analizando una fecha a partir de una cadena de texto
 ---
 
 {{< edit_this_page >}}

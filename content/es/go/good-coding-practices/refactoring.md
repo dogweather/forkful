@@ -1,14 +1,18 @@
 ---
-title:                "Refactorización"
 aliases:
 - /es/go/refactoring/
-date:                  2024-02-03T18:07:05.724680-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactorización"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/refactoring.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:05.724680-07:00
+description: "Refactorizar en la programaci\xF3n implica reestructurar el c\xF3digo\
+  \ inform\xE1tico existente\u2014cambiando el factoreo\u2014sin alterar su comportamiento\
+  \ externo. Los\u2026"
+lastmod: 2024-02-18 23:09:09.465577
+model: gpt-4-0125-preview
+summary: "Refactorizar en la programaci\xF3n implica reestructurar el c\xF3digo inform\xE1\
+  tico existente\u2014cambiando el factoreo\u2014sin alterar su comportamiento externo.\
+  \ Los\u2026"
+title: "Refactorizaci\xF3n"
 ---
 
 {{< edit_this_page >}}

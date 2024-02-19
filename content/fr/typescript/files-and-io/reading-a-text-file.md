@@ -1,13 +1,14 @@
 ---
-title:                "Lecture d'un fichier texte"
 aliases:
 - /fr/typescript/reading-a-text-file/
-date:                  2024-01-20T17:55:25.822613-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lecture d'un fichier texte"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/reading-a-text-file.md"
+date: 2024-01-20 17:55:25.822613-07:00
+description: "Lire un fichier texte, c'est r\xE9cup\xE9rer son contenu pour l'utiliser\
+  \ dans votre programme. Les programmeurs le font souvent pour charger des configurations,\u2026"
+lastmod: 2024-02-18 23:09:08.501063
+model: gpt-4-1106-preview
+summary: "Lire un fichier texte, c'est r\xE9cup\xE9rer son contenu pour l'utiliser\
+  \ dans votre programme. Les programmeurs le font souvent pour charger des configurations,\u2026"
+title: Lecture d'un fichier texte
 ---
 
 {{< edit_this_page >}}

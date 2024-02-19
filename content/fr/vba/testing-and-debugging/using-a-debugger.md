@@ -1,14 +1,18 @@
 ---
-title:                "Utiliser un débogueur"
 aliases:
 - /fr/vba/using-a-debugger/
-date:                  2024-02-01T22:04:20.480102-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utiliser un débogueur"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/vba/using-a-debugger.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:20.480102-07:00
+description: "Utiliser un d\xE9bogueur dans Visual Basic pour Applications (VBA) consiste\
+  \ \xE0 ex\xE9cuter votre code pas \xE0 pas pour inspecter son flux d'ex\xE9cution\
+  \ et l'\xE9tat de\u2026"
+lastmod: 2024-02-18 23:09:08.584369
+model: gpt-4-0125-preview
+summary: "Utiliser un d\xE9bogueur dans Visual Basic pour Applications (VBA) consiste\
+  \ \xE0 ex\xE9cuter votre code pas \xE0 pas pour inspecter son flux d'ex\xE9cution\
+  \ et l'\xE9tat de\u2026"
+title: "Utiliser un d\xE9bogueur"
 ---
 
 {{< edit_this_page >}}

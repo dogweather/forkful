@@ -1,13 +1,27 @@
 ---
-title:                "CLI 한 줄 명령어로 파일을 제자리에서 편집하기"
 aliases:
 - /ko/ruby/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:21:02.007821-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "CLI 한 줄 명령어로 파일을 제자리에서 편집하기"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:21:02.007821-07:00
+description: "CLI(Command Line Interface) \uD55C \uC904 \uBA85\uB839\uC744 \uC0AC\uC6A9\
+  \uD55C Ruby\uC758 \uD30C\uC77C \uD604\uC7A5 \uD3B8\uC9D1\uC740 \uC5D0\uB514\uD130\
+  \uC5D0\uC11C \uC5F4\uC5B4 \uBCC0\uACBD \uD6C4 \uB2E4\uC2DC \uC800\uC7A5\uD560 \uD544\
+  \uC694 \uC5C6\uC774 \uD130\uBBF8\uB110\uC5D0\uC11C \uC9C1\uC811 \uD30C\uC77C\uC744\
+  \ \uC218\uC815\uD560 \uC218 \uC788\uAC8C \uD574\uC90D\uB2C8\uB2E4. \uC774 \uAE30\
+  \uC220\uC740 \uBE60\uB978 \uC218\uC815, \uC77C\uAD04 \uC5C5\uB370\uC774\uD2B8 \uB610\
+  \uB294 \uBC18\uBCF5 \uC791\uC5C5 \uC790\uB3D9\uD654\uC5D0 \uB9E4\uC6B0 \uC720\uC6A9\
+  \uD558\uC5EC\u2026"
+lastmod: 2024-02-18 23:09:07.019502
+model: gpt-4-0125-preview
+summary: "CLI(Command Line Interface) \uD55C \uC904 \uBA85\uB839\uC744 \uC0AC\uC6A9\
+  \uD55C Ruby\uC758 \uD30C\uC77C \uD604\uC7A5 \uD3B8\uC9D1\uC740 \uC5D0\uB514\uD130\
+  \uC5D0\uC11C \uC5F4\uC5B4 \uBCC0\uACBD \uD6C4 \uB2E4\uC2DC \uC800\uC7A5\uD560 \uD544\
+  \uC694 \uC5C6\uC774 \uD130\uBBF8\uB110\uC5D0\uC11C \uC9C1\uC811 \uD30C\uC77C\uC744\
+  \ \uC218\uC815\uD560 \uC218 \uC788\uAC8C \uD574\uC90D\uB2C8\uB2E4. \uC774 \uAE30\
+  \uC220\uC740 \uBE60\uB978 \uC218\uC815, \uC77C\uAD04 \uC5C5\uB370\uC774\uD2B8 \uB610\
+  \uB294 \uBC18\uBCF5 \uC791\uC5C5 \uC790\uB3D9\uD654\uC5D0 \uB9E4\uC6B0 \uC720\uC6A9\
+  \uD558\uC5EC\u2026"
+title: "CLI \uD55C \uC904 \uBA85\uB839\uC5B4\uB85C \uD30C\uC77C\uC744 \uC81C\uC790\
+  \uB9AC\uC5D0\uC11C \uD3B8\uC9D1\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

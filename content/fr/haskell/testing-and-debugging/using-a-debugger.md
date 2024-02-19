@@ -1,13 +1,16 @@
 ---
-title:                "Utilisation d'un débogueur"
 aliases:
 - /fr/haskell/using-a-debugger/
-date:                  2024-01-26T03:49:16.548208-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation d'un débogueur"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/using-a-debugger.md"
+date: 2024-01-26 03:49:16.548208-07:00
+description: "Utiliser un d\xE9bogueur signifie plonger dans votre code avec des outils\
+  \ con\xE7us pour inspecter, interrompre et manipuler un programme en cours d'ex\xE9\
+  cution.\u2026"
+lastmod: 2024-02-18 23:09:08.880192
+model: gpt-4-0125-preview
+summary: "Utiliser un d\xE9bogueur signifie plonger dans votre code avec des outils\
+  \ con\xE7us pour inspecter, interrompre et manipuler un programme en cours d'ex\xE9\
+  cution.\u2026"
+title: "Utilisation d'un d\xE9bogueur"
 ---
 
 {{< edit_this_page >}}

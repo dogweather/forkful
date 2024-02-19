@@ -1,13 +1,16 @@
 ---
-title:                "Beräkna ett datum i framtiden eller förflutet"
 aliases:
 - /sv/bash/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:28:29.724641-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Beräkna ett datum i framtiden eller förflutet"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:28:29.724641-07:00
+description: "Att r\xE4kna ut ett framtida eller f\xF6rflutet datum betyder att man\
+  \ l\xE4gger till eller drar ifr\xE5n dagar till ett givet datum. Programmerare g\xF6\
+  r det f\xF6r att\u2026"
+lastmod: 2024-02-18 23:08:51.974158
+model: gpt-4-1106-preview
+summary: "Att r\xE4kna ut ett framtida eller f\xF6rflutet datum betyder att man l\xE4\
+  gger till eller drar ifr\xE5n dagar till ett givet datum. Programmerare g\xF6r det\
+  \ f\xF6r att\u2026"
+title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutet"
 ---
 
 {{< edit_this_page >}}

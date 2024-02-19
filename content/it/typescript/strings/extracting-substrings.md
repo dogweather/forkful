@@ -1,13 +1,16 @@
 ---
-title:                "Estrazione di sottostringhe"
 aliases:
 - /it/typescript/extracting-substrings/
-date:                  2024-01-20T17:46:41.484275-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Estrazione di sottostringhe"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/extracting-substrings.md"
+date: 2024-01-20 17:46:41.484275-07:00
+description: "Estrarre le sottostringhe significa selezionare parti specifiche di\
+  \ una stringa. Lo facciamo per validazione, manipolazione dei dati, o semplicemente\
+  \ per\u2026"
+lastmod: 2024-02-18 23:08:55.630135
+model: gpt-4-1106-preview
+summary: "Estrarre le sottostringhe significa selezionare parti specifiche di una\
+  \ stringa. Lo facciamo per validazione, manipolazione dei dati, o semplicemente\
+  \ per\u2026"
+title: Estrazione di sottostringhe
 ---
 
 {{< edit_this_page >}}

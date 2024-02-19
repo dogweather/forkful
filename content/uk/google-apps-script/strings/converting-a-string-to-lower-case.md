@@ -1,14 +1,32 @@
 ---
-title:                "Перетворення рядка в нижній регістр"
 aliases:
 - /uk/google-apps-script/converting-a-string-to-lower-case/
-date:                  2024-02-01T21:52:03.623573-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Перетворення рядка в нижній регістр"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/google-apps-script/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:03.623573-07:00
+description: "\u041F\u0435\u0440\u0435\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F\
+  \ \u0440\u044F\u0434\u043A\u0430 \u0443 \u043D\u0438\u0436\u043D\u0456\u0439 \u0440\
+  \u0435\u0433\u0456\u0441\u0442\u0440 \u0443 Google Apps Script, \u0445\u043C\u0430\
+  \u0440\u043D\u0456\u0439 \u043C\u043E\u0432\u0456 \u0441\u043A\u0440\u0438\u043F\
+  \u0442\u0456\u0432 \u0434\u043B\u044F \u0430\u0432\u0442\u043E\u043C\u0430\u0442\
+  \u0438\u0437\u0430\u0446\u0456\u0457 \u0437\u0430\u0434\u0430\u0447 \u0447\u0435\
+  \u0440\u0435\u0437 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0438 Google, \u0454\
+  \ \u043E\u0441\u043D\u043E\u0432\u043D\u043E\u044E \u0437\u0430\u0434\u0430\u0447\
+  \u0435\u044E,\u2026"
+lastmod: 2024-02-18 23:08:59.726467
+model: gpt-4-0125-preview
+summary: "\u041F\u0435\u0440\u0435\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F\
+  \ \u0440\u044F\u0434\u043A\u0430 \u0443 \u043D\u0438\u0436\u043D\u0456\u0439 \u0440\
+  \u0435\u0433\u0456\u0441\u0442\u0440 \u0443 Google Apps Script, \u0445\u043C\u0430\
+  \u0440\u043D\u0456\u0439 \u043C\u043E\u0432\u0456 \u0441\u043A\u0440\u0438\u043F\
+  \u0442\u0456\u0432 \u0434\u043B\u044F \u0430\u0432\u0442\u043E\u043C\u0430\u0442\
+  \u0438\u0437\u0430\u0446\u0456\u0457 \u0437\u0430\u0434\u0430\u0447 \u0447\u0435\
+  \u0440\u0435\u0437 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0438 Google, \u0454\
+  \ \u043E\u0441\u043D\u043E\u0432\u043D\u043E\u044E \u0437\u0430\u0434\u0430\u0447\
+  \u0435\u044E,\u2026"
+title: "\u041F\u0435\u0440\u0435\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F \u0440\
+  \u044F\u0434\u043A\u0430 \u0432 \u043D\u0438\u0436\u043D\u0456\u0439 \u0440\u0435\
+  \u0433\u0456\u0441\u0442\u0440"
 ---
 
 {{< edit_this_page >}}

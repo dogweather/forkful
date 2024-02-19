@@ -1,14 +1,28 @@
 ---
-title:                "문자열 대문자화"
 aliases:
 - /ko/java/capitalizing-a-string/
-date:                  2024-02-03T19:05:49.378451-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열 대문자화"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:49.378451-07:00
+description: "\uBB38\uC790\uC5F4\uC758 \uCCAB \uAE00\uC790\uB97C \uB300\uBB38\uC790\
+  \uB85C \uBCC0\uD658\uD558\uBA74\uC11C \uB098\uBA38\uC9C0\uB294 \uC18C\uBB38\uC790\
+  \uB85C \uC720\uC9C0\uD558\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uC774\uB7EC\
+  \uD55C \uBB38\uC790\uC5F4 \uC870\uC791 \uC791\uC5C5\uC740 \uC0AC\uC6A9\uC790 \uC774\
+  \uB984\uC774\uB098 \uC81C\uBAA9\uC744 \uAD00\uB840\uB098 \uBB38\uBC95\uC801 \uC815\
+  \uD655\uC131\uC5D0 \uB530\uB77C \uD45C\uC2DC\uD558\uAE30 \uC704\uD574 \uC560\uD50C\
+  \uB9AC\uCF00\uC774\uC158\uC5D0\uC11C \uD14D\uC2A4\uD2B8\uB97C \uD3EC\uB9F7\uD305\
+  \uD558\uB294 \uB370 \uC720\uC6A9\uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:05.994945
+model: gpt-4-0125-preview
+summary: "\uBB38\uC790\uC5F4\uC758 \uCCAB \uAE00\uC790\uB97C \uB300\uBB38\uC790\uB85C\
+  \ \uBCC0\uD658\uD558\uBA74\uC11C \uB098\uBA38\uC9C0\uB294 \uC18C\uBB38\uC790\uB85C\
+  \ \uC720\uC9C0\uD558\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uC774\uB7EC\uD55C\
+  \ \uBB38\uC790\uC5F4 \uC870\uC791 \uC791\uC5C5\uC740 \uC0AC\uC6A9\uC790 \uC774\uB984\
+  \uC774\uB098 \uC81C\uBAA9\uC744 \uAD00\uB840\uB098 \uBB38\uBC95\uC801 \uC815\uD655\
+  \uC131\uC5D0 \uB530\uB77C \uD45C\uC2DC\uD558\uAE30 \uC704\uD574 \uC560\uD50C\uB9AC\
+  \uCF00\uC774\uC158\uC5D0\uC11C \uD14D\uC2A4\uD2B8\uB97C \uD3EC\uB9F7\uD305\uD558\
+  \uB294 \uB370 \uC720\uC6A9\uD569\uB2C8\uB2E4."
+title: "\uBB38\uC790\uC5F4 \uB300\uBB38\uC790\uD654"
 ---
 
 {{< edit_this_page >}}

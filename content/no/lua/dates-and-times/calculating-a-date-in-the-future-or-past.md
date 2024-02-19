@@ -1,13 +1,16 @@
 ---
-title:                "Beregning av en dato i fremtiden eller fortiden"
 aliases:
 - /no/lua/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:31:27.050877-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Beregning av en dato i fremtiden eller fortiden"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/lua/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:31:27.050877-07:00
+description: "Beregning av fremtidige eller tidligere datoer handler om \xE5 legge\
+  \ til eller trekke fra tid fra en spesifikk dato. Programmerere gj\xF8r dette for\
+  \ \xE5 h\xE5ndtere\u2026"
+lastmod: 2024-02-18 23:08:54.028671
+model: gpt-4-1106-preview
+summary: "Beregning av fremtidige eller tidligere datoer handler om \xE5 legge til\
+  \ eller trekke fra tid fra en spesifikk dato. Programmerere gj\xF8r dette for \xE5\
+  \ h\xE5ndtere\u2026"
+title: Beregning av en dato i fremtiden eller fortiden
 ---
 
 {{< edit_this_page >}}

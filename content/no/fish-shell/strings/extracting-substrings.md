@@ -1,13 +1,14 @@
 ---
-title:                "Uthenting av delstrenger"
 aliases:
 - /no/fish-shell/extracting-substrings/
-date:                  2024-01-20T17:45:50.299406-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Uthenting av delstrenger"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/extracting-substrings.md"
+date: 2024-01-20 17:45:50.299406-07:00
+description: "\xC5 trekke ut delstrenger betyr \xE5 hente en spesifikk del av en tekststreng.\
+  \ Programmerere gj\xF8r dette for \xE5 manipulere eller analysere data mer effektivt."
+lastmod: 2024-02-18 23:08:54.339051
+model: gpt-4-1106-preview
+summary: "\xC5 trekke ut delstrenger betyr \xE5 hente en spesifikk del av en tekststreng.\
+  \ Programmerere gj\xF8r dette for \xE5 manipulere eller analysere data mer effektivt."
+title: Uthenting av delstrenger
 ---
 
 {{< edit_this_page >}}

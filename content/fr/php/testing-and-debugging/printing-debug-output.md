@@ -1,13 +1,16 @@
 ---
-title:                "Affichage des sorties de débogage"
 aliases:
 - /fr/php/printing-debug-output/
-date:                  2024-01-20T17:53:14.443970-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Affichage des sorties de débogage"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/php/printing-debug-output.md"
+date: 2024-01-20 17:53:14.443970-07:00
+description: "L'impression des informations de d\xE9bogage est un moyen pour les d\xE9\
+  veloppeurs de suivre ce qui se passe dans un script PHP en affichant des variables,\
+  \ des\u2026"
+lastmod: 2024-02-18 23:09:08.925426
+model: gpt-4-1106-preview
+summary: "L'impression des informations de d\xE9bogage est un moyen pour les d\xE9\
+  veloppeurs de suivre ce qui se passe dans un script PHP en affichant des variables,\
+  \ des\u2026"
+title: "Affichage des sorties de d\xE9bogage"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Capitalizando una cadena de texto"
 aliases:
 - /es/cpp/capitalizing-a-string/
-date:                  2024-02-03T19:05:04.323999-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizando una cadena de texto"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:04.323999-07:00
+description: "Capitalizar un string implica convertir el car\xE1cter inicial de cada\
+  \ palabra en el string a may\xFAscula si est\xE1 en min\xFAscula, manteniendo sin\
+  \ cambio los\u2026"
+lastmod: 2024-02-18 23:09:10.289633
+model: gpt-4-0125-preview
+summary: "Capitalizar un string implica convertir el car\xE1cter inicial de cada palabra\
+  \ en el string a may\xFAscula si est\xE1 en min\xFAscula, manteniendo sin cambio\
+  \ los\u2026"
+title: Capitalizando una cadena de texto
 ---
 
 {{< edit_this_page >}}

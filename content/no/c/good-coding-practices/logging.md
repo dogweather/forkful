@@ -1,14 +1,18 @@
 ---
-title:                "Logging"
 aliases:
 - /no/c/logging/
-date:                  2024-02-03T17:59:00.527069-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Logging"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/logging.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:00.527069-07:00
+description: "Logging i C inneb\xE6rer \xE5 registrere flyten og merkbare hendelser\
+  \ av et program under kj\xF8retiden, som gir en konkret gjennomgang av dets oppf\xF8\
+  rsel og\u2026"
+lastmod: 2024-02-18 23:08:54.400967
+model: gpt-4-0125-preview
+summary: "Logging i C inneb\xE6rer \xE5 registrere flyten og merkbare hendelser av\
+  \ et program under kj\xF8retiden, som gir en konkret gjennomgang av dets oppf\xF8\
+  rsel og\u2026"
+title: Logging
 ---
 
 {{< edit_this_page >}}

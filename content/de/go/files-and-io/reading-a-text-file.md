@@ -1,14 +1,16 @@
 ---
-title:                "Eine Textdatei lesen"
 aliases:
 - /de/go/reading-a-text-file/
-date:                  2024-02-03T18:05:10.339057-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eine Textdatei lesen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/reading-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:10.339057-07:00
+description: "Das Lesen einer Textdatei in Go beinhaltet den Zugriff auf und das Abrufen\
+  \ von Inhalten aus einer auf dem Datentr\xE4ger gespeicherten Datei zur Verarbeitung\u2026"
+lastmod: 2024-02-18 23:09:04.383938
+model: gpt-4-0125-preview
+summary: "Das Lesen einer Textdatei in Go beinhaltet den Zugriff auf und das Abrufen\
+  \ von Inhalten aus einer auf dem Datentr\xE4ger gespeicherten Datei zur Verarbeitung\u2026"
+title: Eine Textdatei lesen
 ---
 
 {{< edit_this_page >}}

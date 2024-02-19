@@ -1,13 +1,14 @@
 ---
-title:                "Generating random numbers"
 aliases:
 - /en/haskell/generating-random-numbers/
-date:                  2024-01-27T20:26:20.689445-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generating random numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/generating-random-numbers.md"
+date: 2024-01-27 20:26:20.689445-07:00
+description: "Generating random numbers in Haskell entails creating numbers that are\
+  \ unpredictable by human standards. This is critical in scenarios ranging from\u2026"
+lastmod: 2024-02-18 23:09:11.092010
+model: gpt-4-0125-preview
+summary: "Generating random numbers in Haskell entails creating numbers that are unpredictable\
+  \ by human standards. This is critical in scenarios ranging from\u2026"
+title: Generating random numbers
 ---
 
 {{< edit_this_page >}}

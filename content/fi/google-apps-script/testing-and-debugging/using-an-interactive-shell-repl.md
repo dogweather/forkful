@@ -1,14 +1,18 @@
 ---
-title:                "Interaktiivisen kuoren (REPL) käyttö"
 aliases:
 - /fi/google-apps-script/using-an-interactive-shell-repl/
-date:                  2024-02-01T22:04:11.863400-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interaktiivisen kuoren (REPL) käyttö"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:11.863400-07:00
+description: "Interaktiivinen kuori, eli Read-Eval-Print Loop (REPL), on yksinkertainen\
+  \ interaktiivinen ohjelmointiymp\xE4rist\xF6, joka ottaa vastaan yksitt\xE4isi\xE4\
+  \ k\xE4ytt\xE4j\xE4n\u2026"
+lastmod: 2024-02-18 23:09:07.137240
+model: gpt-4-0125-preview
+summary: "Interaktiivinen kuori, eli Read-Eval-Print Loop (REPL), on yksinkertainen\
+  \ interaktiivinen ohjelmointiymp\xE4rist\xF6, joka ottaa vastaan yksitt\xE4isi\xE4\
+  \ k\xE4ytt\xE4j\xE4n\u2026"
+title: "Interaktiivisen kuoren (REPL) k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

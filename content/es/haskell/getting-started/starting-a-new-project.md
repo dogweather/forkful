@@ -1,13 +1,14 @@
 ---
-title:                "Iniciando un nuevo proyecto"
 aliases:
 - /es/haskell/starting-a-new-project/
-date:                  2024-01-20T18:04:06.661037-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Iniciando un nuevo proyecto"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/starting-a-new-project.md"
+date: 2024-01-20 18:04:06.661037-07:00
+description: "Iniciar un nuevo proyecto en Haskell es abrir la puerta a un mundo de\
+  \ programaci\xF3n funcional pura. Los programadores emprenden esta tarea para explorar\u2026"
+lastmod: 2024-02-18 23:09:10.028651
+model: gpt-4-1106-preview
+summary: "Iniciar un nuevo proyecto en Haskell es abrir la puerta a un mundo de programaci\xF3\
+  n funcional pura. Los programadores emprenden esta tarea para explorar\u2026"
+title: Iniciando un nuevo proyecto
 ---
 
 {{< edit_this_page >}}

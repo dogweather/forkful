@@ -1,14 +1,17 @@
 ---
-title:                "Beregning av en dato i fremtiden eller fortiden"
 aliases:
 - /no/go/calculating-a-date-in-the-future-or-past/
-date:                  2024-02-03T17:53:07.507451-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Beregning av en dato i fremtiden eller fortiden"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:07.507451-07:00
+description: "\xC5 beregne en dato i fremtiden eller fortiden i Go inneb\xE6rer \xE5\
+  \ manipulere dato- og tidsverdier for \xE5 bestemme et spesifikt punkt i forhold\
+  \ til en gitt\u2026"
+lastmod: 2024-02-18 23:08:53.450018
+model: gpt-4-0125-preview
+summary: "\xC5 beregne en dato i fremtiden eller fortiden i Go inneb\xE6rer \xE5 manipulere\
+  \ dato- og tidsverdier for \xE5 bestemme et spesifikt punkt i forhold til en gitt\u2026"
+title: Beregning av en dato i fremtiden eller fortiden
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Skrive til standard feil"
 aliases:
 - /no/go/writing-to-standard-error/
-date:                  2024-02-03T18:15:20.598906-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skrive til standard feil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:15:20.598906-07:00
+description: "\xC5 skrive til standardfeil (stderr) i Go involverer omdirigering av\
+  \ feilmeldinger eller diagnostikk som ikke er ment for hovedutstr\xF8mmen. Programmerere\u2026"
+lastmod: 2024-02-18 23:08:53.453223
+model: gpt-4-0125-preview
+summary: "\xC5 skrive til standardfeil (stderr) i Go involverer omdirigering av feilmeldinger\
+  \ eller diagnostikk som ikke er ment for hovedutstr\xF8mmen. Programmerere\u2026"
+title: Skrive til standard feil
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,26 @@
 ---
-title:                "JSON과 함께 일하기"
 aliases:
 - /ko/powershell/working-with-json/
-date:                  2024-02-03T19:23:34.414430-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "JSON과 함께 일하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:34.414430-07:00
+description: "PowerShell\uC774 JSON(JavaScript Object Notation)\uACFC \uD1B5\uD569\
+  \uB418\uB294 \uAC83\uC740 JSON \uB370\uC774\uD130\uB97C \uD30C\uC2F1(\uC77D\uAE30\
+  )\uD558\uACE0 \uC0DD\uC131(\uC4F0\uAE30)\uD558\uB294 \uAC83\uACFC \uAD00\uB828\uC774\
+  \ \uC788\uC2B5\uB2C8\uB2E4. \uC774\uB294 \uC6F9\uC0C1\uC758 \uB370\uC774\uD130 \uAD50\
+  \uD658\uC744 \uC704\uD55C \uC77C\uBC18\uC801\uC778 \uD615\uC2DD\uC785\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uAC00\uBCBC\uC6B4 \uD2B9\uC131\uACFC\
+  \ \uC5B8\uC5B4 \uB3C5\uB9BD\uC801\uC778 \uC131\uACA9\u2026"
+lastmod: 2024-02-18 23:09:06.587807
+model: gpt-4-0125-preview
+summary: "PowerShell\uC774 JSON(JavaScript Object Notation)\uACFC \uD1B5\uD569\uB418\
+  \uB294 \uAC83\uC740 JSON \uB370\uC774\uD130\uB97C \uD30C\uC2F1(\uC77D\uAE30)\uD558\
+  \uACE0 \uC0DD\uC131(\uC4F0\uAE30)\uD558\uB294 \uAC83\uACFC \uAD00\uB828\uC774 \uC788\
+  \uC2B5\uB2C8\uB2E4. \uC774\uB294 \uC6F9\uC0C1\uC758 \uB370\uC774\uD130 \uAD50\uD658\
+  \uC744 \uC704\uD55C \uC77C\uBC18\uC801\uC778 \uD615\uC2DD\uC785\uB2C8\uB2E4. \uD504\
+  \uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uAC00\uBCBC\uC6B4 \uD2B9\uC131\uACFC \uC5B8\
+  \uC5B4 \uB3C5\uB9BD\uC801\uC778 \uC131\uACA9\u2026"
+title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

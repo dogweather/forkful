@@ -1,14 +1,23 @@
 ---
-title:                "문자열 보간하기"
 aliases:
 - /ko/rust/interpolating-a-string/
-date:                  2024-01-20T17:51:38.500762-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "문자열 보간하기"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/interpolating-a-string.md"
+date: 2024-01-20 17:51:38.500762-07:00
+description: "\uBB38\uC790\uC5F4\uC744 \uBCF4\uAC04\uD558\uB294 \uAC83\uC740 \uBB38\
+  \uC790\uC5F4 \uC548\uC5D0 \uBCC0\uC218\uC758 \uAC12\uC744 \uC9D1\uC5B4\uB123\uB294\
+  \ \uACFC\uC815\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uCF54\
+  \uB4DC\uC758 \uAC00\uB3C5\uC131\uC744 \uB192\uC774\uACE0 \uBB38\uC790\uC5F4\uC744\
+  \ \uB3D9\uC801\uC73C\uB85C \uC0DD\uC131\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\
+  \uC6A9\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:05.863177
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4\uC744 \uBCF4\uAC04\uD558\uB294 \uAC83\uC740 \uBB38\uC790\
+  \uC5F4 \uC548\uC5D0 \uBCC0\uC218\uC758 \uAC12\uC744 \uC9D1\uC5B4\uB123\uB294 \uACFC\
+  \uC815\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uCF54\uB4DC\
+  \uC758 \uAC00\uB3C5\uC131\uC744 \uB192\uC774\uACE0 \uBB38\uC790\uC5F4\uC744 \uB3D9\
+  \uC801\uC73C\uB85C \uC0DD\uC131\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\
+  \uD569\uB2C8\uB2E4."
+title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Convirtiendo una fecha en una cadena de texto"
 aliases:
 - /es/haskell/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:43.342544-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Convirtiendo una fecha en una cadena de texto"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:43.342544-07:00
+description: "Convertir una fecha en un string permite representar fechas de manera\
+  \ legible para humanos. Programadores realizan esta conversi\xF3n para mostrar fechas\
+  \ en\u2026"
+lastmod: 2024-02-18 23:09:10.040236
+model: gpt-4-1106-preview
+summary: "Convertir una fecha en un string permite representar fechas de manera legible\
+  \ para humanos. Programadores realizan esta conversi\xF3n para mostrar fechas en\u2026"
+title: Convirtiendo una fecha en una cadena de texto
 ---
 
 {{< edit_this_page >}}

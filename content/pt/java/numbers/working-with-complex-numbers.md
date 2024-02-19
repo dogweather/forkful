@@ -1,13 +1,16 @@
 ---
-title:                "Trabalhando com números complexos"
 aliases:
 - /pt/java/working-with-complex-numbers/
-date:                  2024-01-26T04:41:55.018579-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com números complexos"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/working-with-complex-numbers.md"
+date: 2024-01-26 04:41:55.018579-07:00
+description: "N\xFAmeros complexos expandem a linha dos n\xFAmeros reais atrav\xE9\
+  s da adi\xE7\xE3o de uma unidade imagin\xE1ria, `i`, onde `i^2 = -1`. Eles s\xE3\
+  o cruciais em campos como\u2026"
+lastmod: 2024-02-18 23:08:58.012466
+model: gpt-4-0125-preview
+summary: "N\xFAmeros complexos expandem a linha dos n\xFAmeros reais atrav\xE9s da\
+  \ adi\xE7\xE3o de uma unidade imagin\xE1ria, `i`, onde `i^2 = -1`. Eles s\xE3o cruciais\
+  \ em campos como\u2026"
+title: "Trabalhando com n\xFAmeros complexos"
 ---
 
 {{< edit_this_page >}}

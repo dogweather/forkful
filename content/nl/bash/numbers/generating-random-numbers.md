@@ -1,15 +1,17 @@
 ---
-title:                "Willekeurige getallen genereren"
 aliases:
 - /nl/bash/generating-random-numbers/
-date:                  2024-01-28T22:00:57.834208-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Willekeurige getallen genereren"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/generating-random-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:00:57.834208-07:00
+description: "Het genereren van willekeurige getallen in Bash biedt een manier om\
+  \ onvoorspelbaarheid in scripts te introduceren, wat essentieel is voor taken zoals\
+  \ het\u2026"
+lastmod: 2024-02-18 23:09:02.032862
+model: gpt-4-0125-preview
+summary: "Het genereren van willekeurige getallen in Bash biedt een manier om onvoorspelbaarheid\
+  \ in scripts te introduceren, wat essentieel is voor taken zoals het\u2026"
+title: Willekeurige getallen genereren
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "HTML:n jäsennys"
 aliases:
 - /fi/java/parsing-html/
-date:                  2024-02-03T19:12:29.359905-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML:n jäsennys"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:29.359905-07:00
+description: "HTML:n j\xE4sent\xE4minen tarkoittaa merkint\xE4kielen l\xE4pik\xE4\
+  ynti\xE4 tietojen, kuten tekstin, linkkien tai muiden elementtien, poimimiseksi.\
+  \ Teemme sen\u2026"
+lastmod: 2024-02-18 23:09:07.455871
+model: gpt-4-0125-preview
+summary: "HTML:n j\xE4sent\xE4minen tarkoittaa merkint\xE4kielen l\xE4pik\xE4ynti\xE4\
+  \ tietojen, kuten tekstin, linkkien tai muiden elementtien, poimimiseksi. Teemme\
+  \ sen\u2026"
+title: "HTML:n j\xE4sennys"
 ---
 
 {{< edit_this_page >}}

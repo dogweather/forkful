@@ -1,13 +1,28 @@
 ---
-title:                "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
 aliases:
 - /hi/powershell/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:39:43.342011-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/powershell/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:39:43.342011-07:00
+description: "String \u0915\u094B lower case \u092E\u0947\u0902 \u092C\u0926\u0932\
+  \u0928\u093E \u092E\u0924\u0932\u092C \u0905\u0915\u094D\u0937\u0930\u094B\u0902\
+  \ \u0915\u094B \u091B\u094B\u091F\u093E \u0915\u0930\u0928\u093E\u0964 Programmers\
+  \ \u0907\u0938\u0947 \u0924\u092C \u0915\u0930\u0924\u0947 \u0939\u0948\u0902 \u091C\
+  \u092C case sensitivity \u092E\u0939\u0924\u094D\u0935\u092A\u0942\u0930\u094D\u0923\
+  \ \u0939\u094B, \u091C\u0948\u0938\u0947 \u092F\u0942\u091C\u0930 \u0907\u0928\u092A\
+  \u0941\u091F \u0915\u094B \u0938\u093E\u092B \u0915\u0930\u0928\u093E \u092F\u093E\
+  \u2026"
+lastmod: 2024-02-18 23:09:03.710132
+model: gpt-4-1106-preview
+summary: "String \u0915\u094B lower case \u092E\u0947\u0902 \u092C\u0926\u0932\u0928\
+  \u093E \u092E\u0924\u0932\u092C \u0905\u0915\u094D\u0937\u0930\u094B\u0902 \u0915\
+  \u094B \u091B\u094B\u091F\u093E \u0915\u0930\u0928\u093E\u0964 Programmers \u0907\
+  \u0938\u0947 \u0924\u092C \u0915\u0930\u0924\u0947 \u0939\u0948\u0902 \u091C\u092C\
+  \ case sensitivity \u092E\u0939\u0924\u094D\u0935\u092A\u0942\u0930\u094D\u0923\
+  \ \u0939\u094B, \u091C\u0948\u0938\u0947 \u092F\u0942\u091C\u0930 \u0907\u0928\u092A\
+  \u0941\u091F \u0915\u094B \u0938\u093E\u092B \u0915\u0930\u0928\u093E \u092F\u093E\
+  \u2026"
+title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u094B \u091B\u094B\
+  \u091F\u0947 \u0905\u0915\u094D\u0937\u0930\u094B\u0902 \u092E\u0947\u0902 \u092A\
+  \u0930\u093F\u0935\u0930\u094D\u0924\u093F\u0924 \u0915\u0930\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

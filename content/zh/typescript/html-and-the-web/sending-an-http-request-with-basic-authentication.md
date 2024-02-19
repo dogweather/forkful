@@ -1,14 +1,22 @@
 ---
-title:                "使用基本认证发送 HTTP 请求"
 aliases:
 - /zh/typescript/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:35.587785-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "使用基本认证发送 HTTP 请求"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:35.587785-07:00
+description: "\u5728TypeScript\u4E2D\uFF0C\u53D1\u9001\u5E26\u6709\u57FA\u672C\u8BA4\
+  \u8BC1\u7684HTTP\u8BF7\u6C42\uFF0C\u610F\u5473\u7740\u5C06\u7528\u6237\u540D\u548C\
+  \u5BC6\u7801\u52A0\u5BC6\u540E\u4F5C\u4E3A\u8BF7\u6C42\u5934\u90E8\u53D1\u9001\uFF0C\
+  \u4EE5\u5B9E\u73B0\u7528\u6237\u8BA4\u8BC1\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\
+  \u662F\u4E3A\u4E86\u5B89\u5168\u5730\u8BBF\u95EE\u53D7\u4FDD\u62A4\u7684\u8D44\u6E90\
+  \u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:58.903645
+model: gpt-4-1106-preview
+summary: "\u5728TypeScript\u4E2D\uFF0C\u53D1\u9001\u5E26\u6709\u57FA\u672C\u8BA4\u8BC1\
+  \u7684HTTP\u8BF7\u6C42\uFF0C\u610F\u5473\u7740\u5C06\u7528\u6237\u540D\u548C\u5BC6\
+  \u7801\u52A0\u5BC6\u540E\u4F5C\u4E3A\u8BF7\u6C42\u5934\u90E8\u53D1\u9001\uFF0C\u4EE5\
+  \u5B9E\u73B0\u7528\u6237\u8BA4\u8BC1\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\
+  \u4E3A\u4E86\u5B89\u5168\u5730\u8BBF\u95EE\u53D7\u4FDD\u62A4\u7684\u8D44\u6E90\u3002"
+title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
 ---
 
 {{< edit_this_page >}}

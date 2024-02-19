@@ -1,14 +1,30 @@
 ---
-title:                "미래 또는 과거의 날짜 계산하기"
 aliases:
 - /ko/google-apps-script/calculating-a-date-in-the-future-or-past/
-date:                  2024-02-01T21:49:25.620325-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "미래 또는 과거의 날짜 계산하기"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:25.620325-07:00
+description: "\uBBF8\uB798 \uB610\uB294 \uACFC\uAC70\uC758 \uB0A0\uC9DC\uB97C \uACC4\
+  \uC0B0\uD558\uB294 \uAC83\uC740 \uB0A0\uC9DC \uAC1D\uCCB4\uB97C \uC870\uC791\uD558\
+  \uC5EC \uD604\uC7AC \uB0A0\uC9DC\uB97C \uCD08\uC6D4\uD558\uAC70\uB098 \uC774\uC804\
+  \uD558\uB294 \uB0A0\uC9DC\uB97C \uCC3E\uB294 \uAC83\uC5D0 \uAD00\uD55C \uAC83\uC785\
+  \uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uC54C\uB9BC \uC124\uC815, \uB9CC\
+  \uB8CC \uB0A0\uC9DC \uC9C0\uC815\uBD80\uD130 \uC2DC\uAC04 \uAE30\uBC18 \uB370\uC774\
+  \uD130 \uCD94\uC138 \uBD84\uC11D\uC5D0 \uC774\uB974\uAE30\uAE4C\uC9C0 \uB2E4\uC591\
+  \uD55C \uC791\uC5C5\uC744 \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4\
+  ."
+lastmod: 2024-02-18 23:09:05.579437
+model: gpt-4-0125-preview
+summary: "\uBBF8\uB798 \uB610\uB294 \uACFC\uAC70\uC758 \uB0A0\uC9DC\uB97C \uACC4\uC0B0\
+  \uD558\uB294 \uAC83\uC740 \uB0A0\uC9DC \uAC1D\uCCB4\uB97C \uC870\uC791\uD558\uC5EC\
+  \ \uD604\uC7AC \uB0A0\uC9DC\uB97C \uCD08\uC6D4\uD558\uAC70\uB098 \uC774\uC804\uD558\
+  \uB294 \uB0A0\uC9DC\uB97C \uCC3E\uB294 \uAC83\uC5D0 \uAD00\uD55C \uAC83\uC785\uB2C8\
+  \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uC54C\uB9BC \uC124\uC815, \uB9CC\uB8CC\
+  \ \uB0A0\uC9DC \uC9C0\uC815\uBD80\uD130 \uC2DC\uAC04 \uAE30\uBC18 \uB370\uC774\uD130\
+  \ \uCD94\uC138 \uBD84\uC11D\uC5D0 \uC774\uB974\uAE30\uAE4C\uC9C0 \uB2E4\uC591\uD55C\
+  \ \uC791\uC5C5\uC744 \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
+title: "\uBBF8\uB798 \uB610\uB294 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\
+  \uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,26 @@
 ---
-title:                "打印调试输出"
 aliases:
 - /zh/google-apps-script/printing-debug-output/
-date:                  2024-02-01T21:57:58.437501-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "打印调试输出"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/google-apps-script/printing-debug-output.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:58.437501-07:00
+description: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA\u6D89\u53CA\u5728\u4EE3\u7801\u4E2D\
+  \u7B56\u7565\u6027\u5730\u653E\u7F6E\u65E5\u5FD7\u58F0\u660E\uFF0C\u4EE5\u4FBF\u5728\
+  \u8FD0\u884C\u65F6\u663E\u793A\u53D8\u91CF\u503C\u3001\u6267\u884C\u6D41\u7A0B\u6216\
+  \u6D88\u606F\u9519\u8BEF\u3002\u7A0B\u5E8F\u5458\u5E7F\u6CDB\u5229\u7528\u5B83\u6765\
+  \u8DDF\u8E2A\u548C\u8BCA\u65AD\u4ED6\u4EEC\u7684\u811A\u672C\u884C\u4E3A\uFF0C\u786E\
+  \u4FDD\u4ED6\u4EEC\u7684Google Apps Script\u5E94\u7528\u7A0B\u5E8F\u7684\u6B63\u786E\
+  \u6027\u548C\u6548\u7387\u3002"
+lastmod: 2024-02-18 23:08:58.753069
+model: gpt-4-0125-preview
+summary: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA\u6D89\u53CA\u5728\u4EE3\u7801\u4E2D\
+  \u7B56\u7565\u6027\u5730\u653E\u7F6E\u65E5\u5FD7\u58F0\u660E\uFF0C\u4EE5\u4FBF\u5728\
+  \u8FD0\u884C\u65F6\u663E\u793A\u53D8\u91CF\u503C\u3001\u6267\u884C\u6D41\u7A0B\u6216\
+  \u6D88\u606F\u9519\u8BEF\u3002\u7A0B\u5E8F\u5458\u5E7F\u6CDB\u5229\u7528\u5B83\u6765\
+  \u8DDF\u8E2A\u548C\u8BCA\u65AD\u4ED6\u4EEC\u7684\u811A\u672C\u884C\u4E3A\uFF0C\u786E\
+  \u4FDD\u4ED6\u4EEC\u7684Google Apps Script\u5E94\u7528\u7A0B\u5E8F\u7684\u6B63\u786E\
+  \u6027\u548C\u6548\u7387\u3002"
+title: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA"
 ---
 
 {{< edit_this_page >}}

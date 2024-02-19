@@ -1,15 +1,16 @@
 ---
-title:                "Een HTTP-verzoek verzenden met basisauthenticatie"
 aliases:
 - /nl/clojure/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-28T22:07:54.684564-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een HTTP-verzoek verzenden met basisauthenticatie"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/clojure/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:07:54.684564-07:00
+description: "Het verzenden van een HTTP-verzoek met basisauthenticatie omvat het\
+  \ toevoegen van een gebruikersnaam en wachtwoord aan een verzoek voor beperkte bronnen.\u2026"
+lastmod: 2024-02-18 23:09:01.479309
+model: gpt-4-0125-preview
+summary: "Het verzenden van een HTTP-verzoek met basisauthenticatie omvat het toevoegen\
+  \ van een gebruikersnaam en wachtwoord aan een verzoek voor beperkte bronnen.\u2026"
+title: Een HTTP-verzoek verzenden met basisauthenticatie
 ---
 
 {{< edit_this_page >}}

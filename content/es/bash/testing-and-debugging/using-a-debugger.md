@@ -1,13 +1,16 @@
 ---
-title:                "Usando un depurador"
 aliases:
 - /es/bash/using-a-debugger/
-date:                  2024-01-26T03:47:23.601844-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando un depurador"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/using-a-debugger.md"
+date: 2024-01-26 03:47:23.601844-07:00
+description: "Usar un depurador en Bash significa aprovechar herramientas para probar\
+  \ y encontrar problemas en tus scripts, como atrapar errores que hacen que tu c\xF3\
+  digo\u2026"
+lastmod: 2024-02-18 23:09:10.172175
+model: gpt-4-0125-preview
+summary: "Usar un depurador en Bash significa aprovechar herramientas para probar\
+  \ y encontrar problemas en tus scripts, como atrapar errores que hacen que tu c\xF3\
+  digo\u2026"
+title: Usando un depurador
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Redondeo de números"
 aliases:
 - /es/elm/rounding-numbers/
-date:                  2024-01-26T03:44:44.321885-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Redondeo de números"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/rounding-numbers.md"
+date: 2024-01-26 03:44:44.321885-07:00
+description: "Redondear n\xFAmeros es ajustar un decimal a su valor entero m\xE1s\
+  \ cercano o a un n\xFAmero especificado de d\xEDgitos fraccionarios. Los programadores\
+  \ redondean\u2026"
+lastmod: 2024-02-18 23:09:09.885149
+model: gpt-4-0125-preview
+summary: "Redondear n\xFAmeros es ajustar un decimal a su valor entero m\xE1s cercano\
+  \ o a un n\xFAmero especificado de d\xEDgitos fraccionarios. Los programadores redondean\u2026"
+title: "Redondeo de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

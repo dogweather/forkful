@@ -1,15 +1,28 @@
 ---
-title:                "연관 배열 사용하기"
 aliases:
 - /ko/swift/using-associative-arrays/
-date:                  2024-01-30T19:13:21.815097-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "연관 배열 사용하기"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/swift/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:13:21.815097-07:00
+description: "\uC5F0\uAD00 \uBC30\uC5F4\uC740 Swift\uC5D0\uC11C\uB294 \uC0AC\uC804\
+  (Dictionary)\uC774\uB77C\uACE0 \uC54C\uB824\uC838 \uC788\uC73C\uBA70, \uD0A4-\uAC12\
+  \ \uC30D\uC73C\uB85C \uB370\uC774\uD130\uB97C \uC800\uC7A5\uD558\uACE0 \uAD00\uB9AC\
+  \uD560 \uC218 \uC788\uAC8C \uD574\uC90D\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB4E4\uC740 \uACE0\uC720\uD55C \uD0A4\uB97C \uAE30\uBC18\uC73C\uB85C \uAC12\uC744\
+  \ \uC27D\uAC8C \uC811\uADFC\uD558\uACE0 \uC870\uC791\uD558\uAE30 \uC704\uD574 \uC774\
+  \uB97C \uB370\uC774\uD130\uB97C \uD6A8\uC728\uC801\uC73C\uB85C \uAD6C\uC131\uD558\
+  \uB294 \uB370 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.738184
+model: gpt-4-0125-preview
+summary: "\uC5F0\uAD00 \uBC30\uC5F4\uC740 Swift\uC5D0\uC11C\uB294 \uC0AC\uC804(Dictionary)\uC774\
+  \uB77C\uACE0 \uC54C\uB824\uC838 \uC788\uC73C\uBA70, \uD0A4-\uAC12 \uC30D\uC73C\uB85C\
+  \ \uB370\uC774\uD130\uB97C \uC800\uC7A5\uD558\uACE0 \uAD00\uB9AC\uD560 \uC218 \uC788\
+  \uAC8C \uD574\uC90D\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uACE0\
+  \uC720\uD55C \uD0A4\uB97C \uAE30\uBC18\uC73C\uB85C \uAC12\uC744 \uC27D\uAC8C \uC811\
+  \uADFC\uD558\uACE0 \uC870\uC791\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uB370\uC774\
+  \uD130\uB97C \uD6A8\uC728\uC801\uC73C\uB85C \uAD6C\uC131\uD558\uB294 \uB370 \uC0AC\
+  \uC6A9\uD569\uB2C8\uB2E4."
+title: "\uC5F0\uAD00 \uBC30\uC5F4 \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

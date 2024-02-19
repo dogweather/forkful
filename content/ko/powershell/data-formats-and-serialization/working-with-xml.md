@@ -1,13 +1,26 @@
 ---
-title:                "XML 다루기"
 aliases:
 - /ko/powershell/working-with-xml/
-date:                  2024-01-26T04:34:17.250134-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML 다루기"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/working-with-xml.md"
+date: 2024-01-26 04:34:17.250134-07:00
+description: "XML\uC744 \uC0AC\uC6A9\uD558\uB294 \uC791\uC5C5\uC740 eXtensible Markup\
+  \ Language\uB85C \uAD6C\uC131\uB41C \uB370\uC774\uD130\uB97C \uC870\uC791\uD558\uACE0\
+  \ \uC811\uADFC\uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC740 \uB2E4\uB978 \uC2DC\uC2A4\uD15C\uACFC\uC758 \uC0C1\
+  \uD638 \uC6B4\uC6A9\uC131\uC744 \uAC00\uB2A5\uD558\uAC8C \uD558\uAC70\uB098 \uAD6C\
+  \uC131 \uD30C\uC77C, \uB370\uC774\uD130 \uD53C\uB4DC \uBC0F \uC6F9 \uC11C\uBE44\uC2A4\
+  \uC5D0\uC11C \uC77C\uBC18\uC801\uC778 \uB2E4\uB978 \uAD6C\uC870\uD654\uB41C \uBB38\
+  \uC11C\uB97C \uC77D\uACE0 \uC4F0\uAE30 \uC704\uD574\u2026"
+lastmod: 2024-02-18 23:09:06.592629
+model: gpt-4-0125-preview
+summary: "XML\uC744 \uC0AC\uC6A9\uD558\uB294 \uC791\uC5C5\uC740 eXtensible Markup\
+  \ Language\uB85C \uAD6C\uC131\uB41C \uB370\uC774\uD130\uB97C \uC870\uC791\uD558\uACE0\
+  \ \uC811\uADFC\uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC740 \uB2E4\uB978 \uC2DC\uC2A4\uD15C\uACFC\uC758 \uC0C1\
+  \uD638 \uC6B4\uC6A9\uC131\uC744 \uAC00\uB2A5\uD558\uAC8C \uD558\uAC70\uB098 \uAD6C\
+  \uC131 \uD30C\uC77C, \uB370\uC774\uD130 \uD53C\uB4DC \uBC0F \uC6F9 \uC11C\uBE44\uC2A4\
+  \uC5D0\uC11C \uC77C\uBC18\uC801\uC778 \uB2E4\uB978 \uAD6C\uC870\uD654\uB41C \uBB38\
+  \uC11C\uB97C \uC77D\uACE0 \uC4F0\uAE30 \uC704\uD574\u2026"
+title: "XML \uB2E4\uB8E8\uAE30"
 ---
 
 {{< edit_this_page >}}

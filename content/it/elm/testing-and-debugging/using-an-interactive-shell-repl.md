@@ -1,13 +1,14 @@
 ---
-title:                "Utilizzo di un interprete interattivo (REPL)"
 aliases:
 - /it/elm/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:13:31.996309-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di un interprete interattivo (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:13:31.996309-07:00
+description: "Il Read-Eval-Print Loop (REPL) \xE8 un ambiente di programmazione semplice\
+  \ e interattivo che prende singoli input dall'utente, li valuta e ritorna il\u2026"
+lastmod: 2024-02-18 23:08:55.807403
+model: gpt-4-0125-preview
+summary: "Il Read-Eval-Print Loop (REPL) \xE8 un ambiente di programmazione semplice\
+  \ e interattivo che prende singoli input dall'utente, li valuta e ritorna il\u2026"
+title: Utilizzo di un interprete interattivo (REPL)
 ---
 
 {{< edit_this_page >}}

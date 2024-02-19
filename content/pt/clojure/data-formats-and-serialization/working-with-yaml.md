@@ -1,14 +1,18 @@
 ---
-title:                "Trabalhando com YAML"
 aliases:
 - /pt/clojure/working-with-yaml/
-date:                  2024-02-03T19:25:02.554694-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:25:02.554694-07:00
+description: "YAML, um acr\xF4nimo recursivo para \"YAML Ain't Markup Language\" (YAML\
+  \ N\xE3o \xE9 uma Linguagem de Marca\xE7\xE3o), \xE9 um formato de serializa\xE7\
+  \xE3o de dados leg\xEDvel por\u2026"
+lastmod: 2024-02-18 23:08:57.822795
+model: gpt-4-0125-preview
+summary: "YAML, um acr\xF4nimo recursivo para \"YAML Ain't Markup Language\" (YAML\
+  \ N\xE3o \xE9 uma Linguagem de Marca\xE7\xE3o), \xE9 um formato de serializa\xE7\
+  \xE3o de dados leg\xEDvel por\u2026"
+title: Trabalhando com YAML
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Säännöllisten lausekkeiden käyttö"
 aliases:
 - /fi/go/using-regular-expressions/
-date:                  2024-02-03T18:11:17.191541-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Säännöllisten lausekkeiden käyttö"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:11:17.191541-07:00
+description: "Ohjelmoinnissa s\xE4\xE4nn\xF6llisi\xE4 lausekkeita (regex) k\xE4ytet\xE4\
+  \xE4n etsim\xE4\xE4n, vastaamaan ja manipuloimaan merkkijonoja tiettyjen mallien\
+  \ perusteella. Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:07.073001
+model: gpt-4-0125-preview
+summary: "Ohjelmoinnissa s\xE4\xE4nn\xF6llisi\xE4 lausekkeita (regex) k\xE4ytet\xE4\
+  \xE4n etsim\xE4\xE4n, vastaamaan ja manipuloimaan merkkijonoja tiettyjen mallien\
+  \ perusteella. Ohjelmoijat\u2026"
+title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

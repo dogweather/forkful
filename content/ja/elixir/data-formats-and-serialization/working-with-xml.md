@@ -1,13 +1,22 @@
 ---
-title:                "XMLの扱い方"
 aliases:
 - /ja/elixir/working-with-xml/
-date:                  2024-01-26T04:29:57.806471-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XMLの扱い方"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/working-with-xml.md"
+date: 2024-01-26 04:29:57.806471-07:00
+description: "Elixir\u3067\u306EXML\u306E\u53D6\u308A\u6271\u3044\u3068\u306F\u3001\
+  XML\u30C7\u30FC\u30BF\u306E\u89E3\u6790\u3001\u4F5C\u6210\u3001\u64CD\u4F5C\u306E\
+  \u3053\u3068\u3092\u6307\u3057\u307E\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\
+  \u306F\u3001Web\u30B5\u30FC\u30D3\u30B9\u3001\u8A2D\u5B9A\u30D5\u30A1\u30A4\u30EB\
+  \u3001\u65E7\u30B7\u30B9\u30C6\u30E0\u306B\u5E83\u304F\u4F7F\u7528\u3055\u308C\u3066\
+  \u3044\u308B\u305F\u3081\u3001XML\u3092\u6271\u3044\u307E\u3059\u3002"
+lastmod: 2024-02-18 23:08:54.665718
+model: gpt-4-0125-preview
+summary: "Elixir\u3067\u306EXML\u306E\u53D6\u308A\u6271\u3044\u3068\u306F\u3001XML\u30C7\
+  \u30FC\u30BF\u306E\u89E3\u6790\u3001\u4F5C\u6210\u3001\u64CD\u4F5C\u306E\u3053\u3068\
+  \u3092\u6307\u3057\u307E\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\
+  Web\u30B5\u30FC\u30D3\u30B9\u3001\u8A2D\u5B9A\u30D5\u30A1\u30A4\u30EB\u3001\u65E7\
+  \u30B7\u30B9\u30C6\u30E0\u306B\u5E83\u304F\u4F7F\u7528\u3055\u308C\u3066\u3044\u308B\
+  \u305F\u3081\u3001XML\u3092\u6271\u3044\u307E\u3059\u3002"
+title: "XML\u306E\u6271\u3044\u65B9"
 ---
 
 {{< edit_this_page >}}

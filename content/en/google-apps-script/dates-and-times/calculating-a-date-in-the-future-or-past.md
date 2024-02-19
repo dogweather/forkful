@@ -1,12 +1,14 @@
 ---
-title:                "Calculating a date in the future or past"
 aliases:
 - /en/google-apps-script/calculating-a-date-in-the-future-or-past/
-date:                  2024-02-01T21:12:11.382059-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Calculating a date in the future or past"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/google-apps-script/calculating-a-date-in-the-future-or-past.md"
+date: 2024-02-01 21:12:11.382059-07:00
+description: "Calculating a date in the future or the past is about manipulating date\
+  \ objects to find dates beyond or before the present date, respectively. Programmers\u2026"
+lastmod: 2024-02-18 23:09:10.652931
+model: gpt-4-0125-preview
+summary: "Calculating a date in the future or the past is about manipulating date\
+  \ objects to find dates beyond or before the present date, respectively. Programmers\u2026"
+title: Calculating a date in the future or past
 ---
 
 {{< edit_this_page >}}

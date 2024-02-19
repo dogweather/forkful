@@ -1,13 +1,22 @@
 ---
-title:                "生成随机数"
 aliases:
 - /zh/powershell/generating-random-numbers/
-date:                  2024-01-27T20:35:02.915507-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "生成随机数"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/generating-random-numbers.md"
+date: 2024-01-27 20:35:02.915507-07:00
+description: "\u5728 PowerShell \u4E2D\u751F\u6210\u968F\u673A\u6570\u610F\u5473\u7740\
+  \u5728\u6307\u5B9A\u8303\u56F4\u5185\u521B\u5EFA\u4E0D\u53EF\u9884\u6D4B\u7684\u6570\
+  \u503C\u3002\u7A0B\u5E8F\u5458\u51FA\u4E8E\u4F17\u591A\u539F\u56E0\u5229\u7528\u8FD9\
+  \u4E00\u80FD\u529B\uFF0C\u5305\u62EC\u6D4B\u8BD5\u3001\u6A21\u62DF\u548C\u5B89\u5168\
+  \u76EE\u7684\uFF0C\u5176\u4E2D\u4E0D\u53EF\u9884\u6D4B\u6027\u6216\u6A21\u4EFF\u73B0\
+  \u5B9E\u4E16\u754C\u7684\u968F\u673A\u6027\u81F3\u5173\u91CD\u8981\u3002"
+lastmod: 2024-02-18 23:08:59.326323
+model: gpt-4-0125-preview
+summary: "\u5728 PowerShell \u4E2D\u751F\u6210\u968F\u673A\u6570\u610F\u5473\u7740\
+  \u5728\u6307\u5B9A\u8303\u56F4\u5185\u521B\u5EFA\u4E0D\u53EF\u9884\u6D4B\u7684\u6570\
+  \u503C\u3002\u7A0B\u5E8F\u5458\u51FA\u4E8E\u4F17\u591A\u539F\u56E0\u5229\u7528\u8FD9\
+  \u4E00\u80FD\u529B\uFF0C\u5305\u62EC\u6D4B\u8BD5\u3001\u6A21\u62DF\u548C\u5B89\u5168\
+  \u76EE\u7684\uFF0C\u5176\u4E2D\u4E0D\u53EF\u9884\u6D4B\u6027\u6216\u6A21\u4EFF\u73B0\
+  \u5B9E\u4E16\u754C\u7684\u968F\u673A\u6027\u81F3\u5173\u91CD\u8981\u3002"
+title: "\u751F\u6210\u968F\u673A\u6570"
 ---
 
 {{< edit_this_page >}}

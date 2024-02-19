@@ -1,13 +1,15 @@
 ---
-title:                "Lavorare con XML"
 aliases:
 - /it/cpp/working-with-xml/
-date:                  2024-01-26T04:28:31.058357-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/working-with-xml.md"
+date: 2024-01-26 04:28:31.058357-07:00
+description: "Lavorare con XML significa analizzare, creare e manipolare dati XML\
+  \ (eXtensible Markup Language). I programmatori gestiscono XML per gestire lo scambio\
+  \ di\u2026"
+lastmod: 2024-02-18 23:08:56.195764
+model: gpt-4-0125-preview
+summary: "Lavorare con XML significa analizzare, creare e manipolare dati XML (eXtensible\
+  \ Markup Language). I programmatori gestiscono XML per gestire lo scambio di\u2026"
+title: Lavorare con XML
 ---
 
 {{< edit_this_page >}}

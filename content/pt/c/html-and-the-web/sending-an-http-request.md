@@ -1,14 +1,18 @@
 ---
-title:                "Enviando uma solicitação HTTP"
 aliases:
 - /pt/c/sending-an-http-request/
-date:                  2024-02-03T18:08:27.934956-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Enviando uma solicitação HTTP"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/sending-an-http-request.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:27.934956-07:00
+description: "Enviar uma solicita\xE7\xE3o HTTP envolve criar e despachar uma solicita\xE7\
+  \xE3o para um servidor web para recuperar ou submeter dados. Programadores fazem\
+  \ isso em C\u2026"
+lastmod: 2024-02-18 23:08:58.615648
+model: gpt-4-0125-preview
+summary: "Enviar uma solicita\xE7\xE3o HTTP envolve criar e despachar uma solicita\xE7\
+  \xE3o para um servidor web para recuperar ou submeter dados. Programadores fazem\
+  \ isso em C\u2026"
+title: "Enviando uma solicita\xE7\xE3o HTTP"
 ---
 
 {{< edit_this_page >}}

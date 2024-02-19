@@ -1,14 +1,16 @@
 ---
-title:                "Interaktiivisen kuoren (REPL) käyttäminen"
 aliases:
 - /fi/c/using-an-interactive-shell-repl/
-date:                  2024-02-03T18:10:37.537744-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interaktiivisen kuoren (REPL) käyttäminen"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:37.537744-07:00
+description: "Interaktiivinen komentotulkki, joka on tunnettu my\xF6s nimityksell\xE4\
+  \ Lue-Arvo-Tulosta-Silmukka (REPL), mahdollistaa ohjelmoijille ilmaisujen tai koodin\u2026"
+lastmod: 2024-02-18 23:09:08.134447
+model: gpt-4-0125-preview
+summary: "Interaktiivinen komentotulkki, joka on tunnettu my\xF6s nimityksell\xE4\
+  \ Lue-Arvo-Tulosta-Silmukka (REPL), mahdollistaa ohjelmoijille ilmaisujen tai koodin\u2026"
+title: "Interaktiivisen kuoren (REPL) k\xE4ytt\xE4minen"
 ---
 
 {{< edit_this_page >}}

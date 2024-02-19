@@ -1,13 +1,14 @@
 ---
-title:                "Trabalhando com números complexos"
 aliases:
 - /pt/lua/working-with-complex-numbers/
-date:                  2024-01-26T04:43:07.933199-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com números complexos"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/lua/working-with-complex-numbers.md"
+date: 2024-01-26 04:43:07.933199-07:00
+description: "N\xFAmeros complexos estendem a ideia da linha num\xE9rica unidimensional\
+  \ para o plano bidimensional, incluindo um eixo imagin\xE1rio perpendicular. Programadores\u2026"
+lastmod: 2024-02-18 23:08:58.276424
+model: gpt-4-0125-preview
+summary: "N\xFAmeros complexos estendem a ideia da linha num\xE9rica unidimensional\
+  \ para o plano bidimensional, incluindo um eixo imagin\xE1rio perpendicular. Programadores\u2026"
+title: "Trabalhando com n\xFAmeros complexos"
 ---
 
 {{< edit_this_page >}}

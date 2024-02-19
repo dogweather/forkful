@@ -1,15 +1,14 @@
 ---
-title:                "Làm việc với CSV"
 aliases:
 - /vi/powershell/working-with-csv/
-date:                  2024-01-28T22:10:15.803832-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với CSV"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/powershell/working-with-csv.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:15.803832-07:00
+description: ''
+lastmod: 2024-02-18 23:08:50.959322
+model: gpt-4-0125-preview
+summary: ''
+title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 ---
 
 {{< edit_this_page >}}

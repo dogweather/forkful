@@ -1,13 +1,16 @@
 ---
-title:                "Konwersja ciągu znaków na małe litery"
 aliases:
 - /pl/python/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:39:04.042949-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konwersja ciągu znaków na małe litery"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:39:04.042949-07:00
+description: "Konwersja \u0142a\u0144cucha znak\xF3w do ma\u0142ych liter to proces\
+  \ zmiany wszystkich wielkich liter na ma\u0142e. Robimy to dla uproszczenia por\xF3\
+  wnywania tekstu,\u2026"
+lastmod: 2024-02-18 23:08:49.208911
+model: gpt-4-1106-preview
+summary: "Konwersja \u0142a\u0144cucha znak\xF3w do ma\u0142ych liter to proces zmiany\
+  \ wszystkich wielkich liter na ma\u0142e. Robimy to dla uproszczenia por\xF3wnywania\
+  \ tekstu,\u2026"
+title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 ---
 
 {{< edit_this_page >}}

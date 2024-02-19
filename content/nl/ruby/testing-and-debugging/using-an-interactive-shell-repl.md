@@ -1,15 +1,16 @@
 ---
-title:                "Het gebruik van een interactieve shell (REPL)"
 aliases:
 - /nl/ruby/using-an-interactive-shell-repl/
-date:                  2024-01-28T22:09:20.562018-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Het gebruik van een interactieve shell (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:20.562018-07:00
+description: "Een interactieve shell, of REPL (Read-Eval-Print Loop), stelt je in\
+  \ staat om in real-time code te testen. Programmeurs gebruiken het om te experimenteren,\u2026"
+lastmod: 2024-02-18 23:09:02.424303
+model: gpt-4-0125-preview
+summary: "Een interactieve shell, of REPL (Read-Eval-Print Loop), stelt je in staat\
+  \ om in real-time code te testen. Programmeurs gebruiken het om te experimenteren,\u2026"
+title: Het gebruik van een interactieve shell (REPL)
 ---
 
 {{< edit_this_page >}}

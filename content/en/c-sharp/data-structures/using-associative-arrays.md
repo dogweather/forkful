@@ -1,13 +1,14 @@
 ---
-title:                "Using associative arrays"
 aliases:
 - /en/c-sharp/using-associative-arrays/
-date:                  2024-01-30T18:57:11.420009-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using associative arrays"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/using-associative-arrays.md"
+date: 2024-01-30 18:57:11.420009-07:00
+description: "Associative arrays, or dictionaries in C#, let you store and manage\
+  \ pairs of keys and values. They're your go-to when you need to fetch values quickly\u2026"
+lastmod: 2024-02-18 23:09:11.047356
+model: gpt-4-0125-preview
+summary: "Associative arrays, or dictionaries in C#, let you store and manage pairs\
+  \ of keys and values. They're your go-to when you need to fetch values quickly\u2026"
+title: Using associative arrays
 ---
 
 {{< edit_this_page >}}

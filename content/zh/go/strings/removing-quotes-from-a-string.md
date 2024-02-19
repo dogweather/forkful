@@ -1,14 +1,25 @@
 ---
-title:                "删除字符串中的引号"
 aliases:
 - /zh/go/removing-quotes-from-a-string/
-date:                  2024-02-03T18:07:26.647024-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "删除字符串中的引号"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:26.647024-07:00
+description: "\u5728 Go \u4E2D\u4ECE\u5B57\u7B26\u4E32\u4E2D\u79FB\u9664\u5F15\u53F7\
+  \u662F\u6307\u53BB\u9664\u7ED9\u5B9A\u5B57\u7B26\u4E32\u9996\u5C3E\u7684\u5F15\u53F7\
+  (`\"` \u6216 `'`)\u3002\u7A0B\u5E8F\u5458\u5E38\u5E38\u9700\u8981\u6267\u884C\u8FD9\
+  \u4E00\u4EFB\u52A1\u4EE5\u6E05\u6D17\u7528\u6237\u8F93\u5165\u3001\u66F4\u9AD8\u6548\
+  \u5730\u89E3\u6790\u6587\u672C\u6570\u636E\u6216\u4E3A\u8FDB\u4E00\u6B65\u5904\u7406\
+  \u9700\u8981\u65E0\u5F15\u53F7\u5185\u5BB9\u7684\u5B57\u7B26\u4E32\u505A\u51C6\u5907\
+  \u3002"
+lastmod: 2024-02-18 23:08:58.696181
+model: gpt-4-0125-preview
+summary: "\u5728 Go \u4E2D\u4ECE\u5B57\u7B26\u4E32\u4E2D\u79FB\u9664\u5F15\u53F7\u662F\
+  \u6307\u53BB\u9664\u7ED9\u5B9A\u5B57\u7B26\u4E32\u9996\u5C3E\u7684\u5F15\u53F7(`\"\
+  ` \u6216 `'`)\u3002\u7A0B\u5E8F\u5458\u5E38\u5E38\u9700\u8981\u6267\u884C\u8FD9\u4E00\
+  \u4EFB\u52A1\u4EE5\u6E05\u6D17\u7528\u6237\u8F93\u5165\u3001\u66F4\u9AD8\u6548\u5730\
+  \u89E3\u6790\u6587\u672C\u6570\u636E\u6216\u4E3A\u8FDB\u4E00\u6B65\u5904\u7406\u9700\
+  \u8981\u65E0\u5F15\u53F7\u5185\u5BB9\u7684\u5B57\u7B26\u4E32\u505A\u51C6\u5907\u3002"
+title: "\u5220\u9664\u5B57\u7B26\u4E32\u4E2D\u7684\u5F15\u53F7"
 ---
 
 {{< edit_this_page >}}

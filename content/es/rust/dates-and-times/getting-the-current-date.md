@@ -1,14 +1,17 @@
 ---
-title:                "Obteniendo la fecha actual"
 aliases:
 - /es/rust/getting-the-current-date/
-date:                  2024-02-03T19:10:39.282115-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Obteniendo la fecha actual"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:10:39.282115-07:00
+description: "Recuperar la fecha actual en Rust es una tarea com\xFAn para acciones\
+  \ como registrar, operaciones basadas en tiempo o simplemente mostrar la fecha.\
+  \ A\u2026"
+lastmod: 2024-02-18 23:09:09.760515
+model: gpt-4-0125-preview
+summary: "Recuperar la fecha actual en Rust es una tarea com\xFAn para acciones como\
+  \ registrar, operaciones basadas en tiempo o simplemente mostrar la fecha. A\u2026"
+title: Obteniendo la fecha actual
 ---
 
 {{< edit_this_page >}}

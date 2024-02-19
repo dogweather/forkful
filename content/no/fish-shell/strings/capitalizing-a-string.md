@@ -1,14 +1,18 @@
 ---
-title:                "Sette stor bokstav i en streng"
 aliases:
 - /no/fish-shell/capitalizing-a-string/
-date:                  2024-02-03T19:05:19.170453-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sette stor bokstav i en streng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:19.170453-07:00
+description: "\xC5 sette stor forbokstav i en streng betyr \xE5 endre den slik at\
+  \ den f\xF8rste bokstaven er stor, og resten av strengen er med sm\xE5 bokstaver.\
+  \ Dette er en vanlig\u2026"
+lastmod: 2024-02-18 23:08:54.333671
+model: gpt-4-0125-preview
+summary: "\xC5 sette stor forbokstav i en streng betyr \xE5 endre den slik at den\
+  \ f\xF8rste bokstaven er stor, og resten av strengen er med sm\xE5 bokstaver. Dette\
+  \ er en vanlig\u2026"
+title: Sette stor bokstav i en streng
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Koodin refaktorointi"
 aliases:
 - /fi/ruby/refactoring/
-date:                  2024-01-26T03:36:57.422645-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Koodin refaktorointi"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/refactoring.md"
+date: 2024-01-26 03:36:57.422645-07:00
+description: "Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia rakenneuudistetaan\
+  \ muuttamatta sen ulkoista toimintaa. Ohjelmoijat refaktoroivat\u2026"
+lastmod: 2024-02-18 23:09:08.191869
+model: gpt-4-0125-preview
+summary: "Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia rakenneuudistetaan\
+  \ muuttamatta sen ulkoista toimintaa. Ohjelmoijat refaktoroivat\u2026"
+title: Koodin refaktorointi
 ---
 
 {{< edit_this_page >}}

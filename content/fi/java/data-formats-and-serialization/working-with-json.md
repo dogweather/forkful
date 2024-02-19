@@ -1,14 +1,18 @@
 ---
-title:                "Työskentely JSON:n kanssa"
 aliases:
 - /fi/java/working-with-json/
-date:                  2024-02-03T19:23:25.288240-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely JSON:n kanssa"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:25.288240-07:00
+description: "Ty\xF6skentely JSON:n (JavaScript Object Notation) parissa tarkoittaa\
+  \ t\xE4m\xE4n kevyen datanvaihtoformaatista hy\xF6dynt\xE4mist\xE4 Java-sovelluksissasi.\
+  \ Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:07.481116
+model: gpt-4-0125-preview
+summary: "Ty\xF6skentely JSON:n (JavaScript Object Notation) parissa tarkoittaa t\xE4\
+  m\xE4n kevyen datanvaihtoformaatista hy\xF6dynt\xE4mist\xE4 Java-sovelluksissasi.\
+  \ Ohjelmoijat\u2026"
+title: "Ty\xF6skentely JSON:n kanssa"
 ---
 
 {{< edit_this_page >}}

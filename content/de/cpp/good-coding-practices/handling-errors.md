@@ -1,13 +1,14 @@
 ---
-title:                "Fehlerbehandlung"
 aliases:
 - /de/cpp/handling-errors/
-date:                  2024-01-26T00:49:32.716273-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Fehlerbehandlung"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/handling-errors.md"
+date: 2024-01-26 00:49:32.716273-07:00
+description: "Fehlerbehandlung bedeutet, f\xFCr den Fall zu planen, dass etwas schiefgeht.\
+  \ Sie ist wichtig, weil sie Abst\xFCrze verhindert und Ihre Software robust und\u2026"
+lastmod: 2024-02-18 23:09:05.196897
+model: gpt-4-1106-preview
+summary: "Fehlerbehandlung bedeutet, f\xFCr den Fall zu planen, dass etwas schiefgeht.\
+  \ Sie ist wichtig, weil sie Abst\xFCrze verhindert und Ihre Software robust und\u2026"
+title: Fehlerbehandlung
 ---
 
 {{< edit_this_page >}}

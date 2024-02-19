@@ -1,13 +1,14 @@
 ---
-title:                "Creazione di un file temporaneo"
 aliases:
 - /it/clojure/creating-a-temporary-file/
-date:                  2024-01-20T17:40:02.471314-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Creazione di un file temporaneo"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:02.471314-07:00
+description: "Creare un file temporaneo significa generare un file destinato a essere\
+  \ usato per poco tempo, spesso come spazio di lavoro temporaneo o per evitare\u2026"
+lastmod: 2024-02-18 23:08:55.579128
+model: gpt-4-1106-preview
+summary: "Creare un file temporaneo significa generare un file destinato a essere\
+  \ usato per poco tempo, spesso come spazio di lavoro temporaneo o per evitare\u2026"
+title: Creazione di un file temporaneo
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "JSONを活用する"
 aliases:
 - /ja/java/working-with-json/
-date:                  2024-02-03T19:23:24.529015-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "JSONを活用する"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:24.529015-07:00
+description: "Java\u30A2\u30D7\u30EA\u30B1\u30FC\u30B7\u30E7\u30F3\u5185\u3067\u306E\
+  JSON\uFF08JavaScript Object\u2026"
+lastmod: 2024-02-18 23:08:54.821661
+model: gpt-4-0125-preview
+summary: "Java\u30A2\u30D7\u30EA\u30B1\u30FC\u30B7\u30E7\u30F3\u5185\u3067\u306EJSON\uFF08\
+  JavaScript Object\u2026"
+title: "JSON\u3092\u6D3B\u7528\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,20 @@
 ---
-title:                "处理复数"
 aliases:
 - /zh/fish-shell/working-with-complex-numbers/
-date:                  2024-01-26T04:40:13.230518-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理复数"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/working-with-complex-numbers.md"
+date: 2024-01-26 04:40:13.230518-07:00
+description: "\u590D\u6570\u5C06\u4E00\u7EF4\u6570\u7EBF\u7684\u6982\u5FF5\u6269\u5C55\
+  \u5230\u4E8C\u7EF4\u590D\u5E73\u9762\u3002\u7A0B\u5E8F\u5458\u5728\u5DE5\u7A0B\u5B66\
+  \u3001\u7269\u7406\u5B66\u548C\u56FE\u50CF\u5904\u7406\u7B49\u9886\u57DF\u4F7F\u7528\
+  \u5B83\u4EEC\u8FDB\u884C\u9700\u8981\u4E24\u4E2A\u7EC4\u6210\u90E8\u5206\u7684\u8BA1\
+  \u7B97\uFF0C\u5982\u4FE1\u53F7\u6216\u65CB\u8F6C\u3002"
+lastmod: 2024-02-18 23:08:59.511860
+model: gpt-4-0125-preview
+summary: "\u590D\u6570\u5C06\u4E00\u7EF4\u6570\u7EBF\u7684\u6982\u5FF5\u6269\u5C55\
+  \u5230\u4E8C\u7EF4\u590D\u5E73\u9762\u3002\u7A0B\u5E8F\u5458\u5728\u5DE5\u7A0B\u5B66\
+  \u3001\u7269\u7406\u5B66\u548C\u56FE\u50CF\u5904\u7406\u7B49\u9886\u57DF\u4F7F\u7528\
+  \u5B83\u4EEC\u8FDB\u884C\u9700\u8981\u4E24\u4E2A\u7EC4\u6210\u90E8\u5206\u7684\u8BA1\
+  \u7B97\uFF0C\u5982\u4FE1\u53F7\u6216\u65CB\u8F6C\u3002"
+title: "\u5904\u7406\u590D\u6570"
 ---
 
 {{< edit_this_page >}}

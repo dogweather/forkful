@@ -1,13 +1,16 @@
 ---
-title:                "Extraction de sous-chaînes"
 aliases:
 - /fr/swift/extracting-substrings/
-date:                  2024-01-20T17:46:28.573592-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extraction de sous-chaînes"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/extracting-substrings.md"
+date: 2024-01-20 17:46:28.573592-07:00
+description: "Extraction de sous-cha\xEEnes signifie r\xE9cup\xE9rer une partie sp\xE9\
+  cifique d'une cha\xEEne de caract\xE8res. Les programmeurs le font pour analyser\
+  \ des donn\xE9es,\u2026"
+lastmod: 2024-02-18 23:09:09.196606
+model: gpt-4-1106-preview
+summary: "Extraction de sous-cha\xEEnes signifie r\xE9cup\xE9rer une partie sp\xE9\
+  cifique d'une cha\xEEne de caract\xE8res. Les programmeurs le font pour analyser\
+  \ des donn\xE9es,\u2026"
+title: "Extraction de sous-cha\xEEnes"
 ---
 
 {{< edit_this_page >}}

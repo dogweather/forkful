@@ -1,14 +1,16 @@
 ---
-title:                "Generando números aleatorios"
 aliases:
 - /es/c/generating-random-numbers/
-date:                  2024-02-03T17:57:05.523122-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generando números aleatorios"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/generating-random-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:05.523122-07:00
+description: "Generar n\xFAmeros aleatorios en C implica crear valores que son impredecibles\
+  \ y siguen una distribuci\xF3n espec\xEDfica, como uniforme o normal. Esta capacidad\u2026"
+lastmod: 2024-02-18 23:09:10.496340
+model: gpt-4-0125-preview
+summary: "Generar n\xFAmeros aleatorios en C implica crear valores que son impredecibles\
+  \ y siguen una distribuci\xF3n espec\xEDfica, como uniforme o normal. Esta capacidad\u2026"
+title: "Generando n\xFAmeros aleatorios"
 ---
 
 {{< edit_this_page >}}

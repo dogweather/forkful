@@ -1,14 +1,16 @@
 ---
-title:                "Praca z plikami CSV"
 aliases:
 - /pl/kotlin/working-with-csv/
-date:                  2024-02-03T19:20:42.145690-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z plikami CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:20:42.145690-07:00
+description: "Praca z CSV (warto\u015Bci rozdzielone przecinkami) obejmuje odczytywanie\
+  \ z i zapisywanie danych do plik\xF3w CSV, co jest powszechnym formatem przechowywania\u2026"
+lastmod: 2024-02-18 23:08:49.591560
+model: gpt-4-0125-preview
+summary: "Praca z CSV (warto\u015Bci rozdzielone przecinkami) obejmuje odczytywanie\
+  \ z i zapisywanie danych do plik\xF3w CSV, co jest powszechnym formatem przechowywania\u2026"
+title: Praca z plikami CSV
 ---
 
 {{< edit_this_page >}}

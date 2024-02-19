@@ -1,13 +1,16 @@
 ---
-title:                "Virheenjäljitystulosteiden tulostaminen"
 aliases:
 - /fi/c-sharp/printing-debug-output/
-date:                  2024-01-20T17:52:05.835018-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheenjäljitystulosteiden tulostaminen"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/printing-debug-output.md"
+date: 2024-01-20 17:52:05.835018-07:00
+description: "Mik\xE4 & Miksi? Debug-tulosteiden printtaaminen on koodin tulostamista,\
+  \ n\xE4hd\xE4ksemme mit\xE4 siell\xE4 tapahtuu. K\xE4yt\xE4mme sit\xE4 virheiden\
+  \ j\xE4ljitt\xE4miseen ja ohjelman\u2026"
+lastmod: 2024-02-18 23:09:07.623502
+model: gpt-4-1106-preview
+summary: "Mik\xE4 & Miksi? Debug-tulosteiden printtaaminen on koodin tulostamista,\
+  \ n\xE4hd\xE4ksemme mit\xE4 siell\xE4 tapahtuu. K\xE4yt\xE4mme sit\xE4 virheiden\
+  \ j\xE4ljitt\xE4miseen ja ohjelman\u2026"
+title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 ---
 
 {{< edit_this_page >}}

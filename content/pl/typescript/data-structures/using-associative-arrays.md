@@ -1,15 +1,18 @@
 ---
-title:                "Korzystanie z tablic asocjacyjnych"
 aliases:
 - /pl/typescript/using-associative-arrays/
-date:                  2024-01-30T19:13:21.880946-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z tablic asocjacyjnych"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:13:21.880946-07:00
+description: "Asocjacyjne tablice, czyli obiekty w TypeScript, pozwalaj\u0105 u\u017C\
+  ywa\u0107 ci\u0105g\xF3w znak\xF3w (lub kluczy) do dost\u0119pu do par warto\u015B\
+  ci. Programi\u015Bci u\u017Cywaj\u0105 ich do\u2026"
+lastmod: 2024-02-18 23:08:49.341203
+model: gpt-4-0125-preview
+summary: "Asocjacyjne tablice, czyli obiekty w TypeScript, pozwalaj\u0105 u\u017C\
+  ywa\u0107 ci\u0105g\xF3w znak\xF3w (lub kluczy) do dost\u0119pu do par warto\u015B\
+  ci. Programi\u015Bci u\u017Cywaj\u0105 ich do\u2026"
+title: Korzystanie z tablic asocjacyjnych
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Convirtiendo una fecha en una cadena de texto"
 aliases:
 - /es/ruby/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:16.451158-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Convirtiendo una fecha en una cadena de texto"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:16.451158-07:00
+description: "Convertir una fecha a cadena permite mostrarla en un formato legible\
+  \ o almacenarla en una base de datos. Los programadores hacen esto para presentar\
+  \ las\u2026"
+lastmod: 2024-02-18 23:09:10.564821
+model: gpt-4-1106-preview
+summary: "Convertir una fecha a cadena permite mostrarla en un formato legible o almacenarla\
+  \ en una base de datos. Los programadores hacen esto para presentar las\u2026"
+title: Convirtiendo una fecha en una cadena de texto
 ---
 
 {{< edit_this_page >}}

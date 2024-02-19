@@ -1,14 +1,18 @@
 ---
-title:                "Usando expresiones regulares"
 aliases:
 - /es/cpp/using-regular-expressions/
-date:                  2024-02-03T19:16:03.680713-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando expresiones regulares"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:16:03.680713-07:00
+description: "Las expresiones regulares en C++ son secuencias de caracteres que definen\
+  \ un patr\xF3n de b\xFAsqueda, utilizadas para el emparejamiento o manipulaci\xF3\
+  n de\u2026"
+lastmod: 2024-02-18 23:09:10.297997
+model: gpt-4-0125-preview
+summary: "Las expresiones regulares en C++ son secuencias de caracteres que definen\
+  \ un patr\xF3n de b\xFAsqueda, utilizadas para el emparejamiento o manipulaci\xF3\
+  n de\u2026"
+title: Usando expresiones regulares
 ---
 
 {{< edit_this_page >}}

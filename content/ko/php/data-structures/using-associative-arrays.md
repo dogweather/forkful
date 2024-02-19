@@ -1,15 +1,28 @@
 ---
-title:                "연관 배열 사용하기"
 aliases:
 - /ko/php/using-associative-arrays/
-date:                  2024-01-30T19:12:31.842093-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "연관 배열 사용하기"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:31.842093-07:00
+description: "PHP\uC758 \uC5F0\uAD00 \uBC30\uC5F4\uC740 \uAC01 \uC694\uC18C\uB97C\
+  \ \uC22B\uC790\uAC00 \uC544\uB2CC \uC0AC\uB78C\uC774 \uC77D\uC744 \uC218 \uC788\uB294\
+  \ \uD0A4\uB97C \uC0AC\uC6A9\uD558\uC5EC \uC561\uC138\uC2A4\uD560 \uC218 \uC788\uB294\
+  \ \uCD08\uAC15\uB825 \uB9AC\uC2A4\uD2B8\uC640 \uAC19\uC2B5\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB294 \uC774\uB97C \uC0AC\uC6A9\uD558\uC5EC \uB370\uC774\uD130\
+  \uB97C \uBCF4\uB2E4 \uC9C1\uAD00\uC801\uC73C\uB85C \uC800\uC7A5\uD558\uACE0 \uC870\
+  \uC791\uD558\uC5EC \uCF54\uB4DC\uB97C \uB354 \uC27D\uAC8C \uC77D\uACE0 \uC720\uC9C0\
+  \uBCF4\uC218\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.341629
+model: gpt-4-0125-preview
+summary: "PHP\uC758 \uC5F0\uAD00 \uBC30\uC5F4\uC740 \uAC01 \uC694\uC18C\uB97C \uC22B\
+  \uC790\uAC00 \uC544\uB2CC \uC0AC\uB78C\uC774 \uC77D\uC744 \uC218 \uC788\uB294 \uD0A4\
+  \uB97C \uC0AC\uC6A9\uD558\uC5EC \uC561\uC138\uC2A4\uD560 \uC218 \uC788\uB294 \uCD08\
+  \uAC15\uB825 \uB9AC\uC2A4\uD2B8\uC640 \uAC19\uC2B5\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB294 \uC774\uB97C \uC0AC\uC6A9\uD558\uC5EC \uB370\uC774\uD130\uB97C\
+  \ \uBCF4\uB2E4 \uC9C1\uAD00\uC801\uC73C\uB85C \uC800\uC7A5\uD558\uACE0 \uC870\uC791\
+  \uD558\uC5EC \uCF54\uB4DC\uB97C \uB354 \uC27D\uAC8C \uC77D\uACE0 \uC720\uC9C0\uBCF4\
+  \uC218\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+title: "\uC5F0\uAD00 \uBC30\uC5F4 \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

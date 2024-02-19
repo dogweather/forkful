@@ -1,13 +1,15 @@
 ---
-title:                "Calculating a date in the future or past"
 aliases:
 - /en/swift/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:32:09.878769-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Calculating a date in the future or past"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:32:09.878769-07:00
+description: "Ever needed to find a date in the past or future? Programmatically,\
+  \ we often calculate dates for deadlines, reminders, or events. Knowing how takes\
+  \ the\u2026"
+lastmod: 2024-02-18 23:09:11.409768
+model: gpt-4-1106-preview
+summary: "Ever needed to find a date in the past or future? Programmatically, we often\
+  \ calculate dates for deadlines, reminders, or events. Knowing how takes the\u2026"
+title: Calculating a date in the future or past
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Création d'un fichier temporaire"
 aliases:
 - /fr/elm/creating-a-temporary-file/
-date:                  2024-01-20T17:40:15.559382-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Création d'un fichier temporaire"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:15.559382-07:00
+description: "Cr\xE9er un fichier temporaire, c'est comme prendre une feuille de papier\
+  \ pour gribouiller une id\xE9e avant de la jeter. Les programmeurs font cela pour\u2026"
+lastmod: 2024-02-18 23:09:08.755552
+model: gpt-4-1106-preview
+summary: "Cr\xE9er un fichier temporaire, c'est comme prendre une feuille de papier\
+  \ pour gribouiller une id\xE9e avant de la jeter. Les programmeurs font cela pour\u2026"
+title: "Cr\xE9ation d'un fichier temporaire"
 ---
 
 {{< edit_this_page >}}

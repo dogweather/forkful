@@ -1,14 +1,18 @@
 ---
-title:                "Escrevendo para o erro padrão"
 aliases:
 - /pt/ruby/writing-to-standard-error/
-date:                  2024-02-03T19:34:19.631260-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escrevendo para o erro padrão"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:34:19.631260-07:00
+description: "Escrever para o erro padr\xE3o (stderr) em Ruby \xE9 sobre direcionar\
+  \ mensagens de erro ou diagn\xF3sticos para um fluxo de sa\xEDda separado, distinto\
+  \ da sa\xEDda\u2026"
+lastmod: 2024-02-18 23:08:58.681972
+model: gpt-4-0125-preview
+summary: "Escrever para o erro padr\xE3o (stderr) em Ruby \xE9 sobre direcionar mensagens\
+  \ de erro ou diagn\xF3sticos para um fluxo de sa\xEDda separado, distinto da sa\xED\
+  da\u2026"
+title: "Escrevendo para o erro padr\xE3o"
 ---
 
 {{< edit_this_page >}}

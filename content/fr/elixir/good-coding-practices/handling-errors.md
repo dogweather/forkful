@@ -1,13 +1,16 @@
 ---
-title:                "Gestion des erreurs"
 aliases:
 - /fr/elixir/handling-errors/
-date:                  2024-01-26T00:50:48.669695-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Gestion des erreurs"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/handling-errors.md"
+date: 2024-01-26 00:50:48.669695-07:00
+description: "G\xE9rer les erreurs signifie \xE9crire du code capable de g\xE9rer\
+  \ les situations impr\xE9vues. Les programmeurs le font pour emp\xEAcher les plantages\
+  \ et pour\u2026"
+lastmod: 2024-02-18 23:09:08.442576
+model: gpt-4-1106-preview
+summary: "G\xE9rer les erreurs signifie \xE9crire du code capable de g\xE9rer les\
+  \ situations impr\xE9vues. Les programmeurs le font pour emp\xEAcher les plantages\
+  \ et pour\u2026"
+title: Gestion des erreurs
 ---
 
 {{< edit_this_page >}}

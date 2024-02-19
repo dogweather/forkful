@@ -1,12 +1,14 @@
 ---
-title:                "Utilizzo delle espressioni regolari"
 aliases:
 - /it/clojure/using-regular-expressions/
-date:                  2024-01-19
-simple_title:         "Utilizzo delle espressioni regolari"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/using-regular-expressions.md"
+date: 2024-01-19
+description: "Le espressioni regolari (regex) sono modelli per cercare e manipolare\
+  \ testo. Sono usate dai programmatori per validare, estrarre o sostituire parti\
+  \ di\u2026"
+lastmod: 2024-02-18 23:08:55.551738
+summary: "Le espressioni regolari (regex) sono modelli per cercare e manipolare testo.\
+  \ Sono usate dai programmatori per validare, estrarre o sostituire parti di\u2026"
+title: Utilizzo delle espressioni regolari
 ---
 
 {{< edit_this_page >}}

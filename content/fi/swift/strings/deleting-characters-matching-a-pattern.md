@@ -1,13 +1,14 @@
 ---
-title:                "Merkkien poistaminen hakemalla osumia kaavaan"
 aliases:
 - /fi/swift/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:43:14.076075-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:43:14.076075-07:00
+description: "Kun puhutaan merkkien poistamisesta tietyll\xE4 kuvioinnilla, tarkoitetaan\
+  \ prosessia, jossa valikoidut merkit siivotaan pois merkkijonosta. Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:07.972708
+model: gpt-4-1106-preview
+summary: "Kun puhutaan merkkien poistamisesta tietyll\xE4 kuvioinnilla, tarkoitetaan\
+  \ prosessia, jossa valikoidut merkit siivotaan pois merkkijonosta. Ohjelmoijat\u2026"
+title: Merkkien poistaminen hakemalla osumia kaavaan
 ---
 
 {{< edit_this_page >}}

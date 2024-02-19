@@ -1,13 +1,16 @@
 ---
-title:                "Rozpoczynanie nowego projektu"
 aliases:
 - /pl/java/starting-a-new-project/
-date:                  2024-01-20T18:03:53.543060-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rozpoczynanie nowego projektu"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/starting-a-new-project.md"
+date: 2024-01-20 18:03:53.543060-07:00
+description: "Rozpoczynanie nowego projektu to jak stawianie pierwszych cegie\u0142\
+  ek \u2013 wymaga jasnego planu i narz\u0119dzi. Programi\u015Bci tworz\u0105 nowe\
+  \ projekty, aby rozwi\u0105zywa\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.478606
+model: gpt-4-1106-preview
+summary: "Rozpoczynanie nowego projektu to jak stawianie pierwszych cegie\u0142ek\
+  \ \u2013 wymaga jasnego planu i narz\u0119dzi. Programi\u015Bci tworz\u0105 nowe\
+  \ projekty, aby rozwi\u0105zywa\u0107\u2026"
+title: Rozpoczynanie nowego projektu
 ---
 
 {{< edit_this_page >}}

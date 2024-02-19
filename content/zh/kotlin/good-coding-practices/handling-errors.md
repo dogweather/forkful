@@ -1,13 +1,22 @@
 ---
-title:                "处理错误"
 aliases:
 - /zh/kotlin/handling-errors/
-date:                  2024-01-26T00:54:51.918823-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "处理错误"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/handling-errors.md"
+date: 2024-01-26 00:54:51.918823-07:00
+description: "\u9519\u8BEF\u5904\u7406\u5C31\u662F\u60A8\u7684\u4EE3\u7801\u5728\u6267\
+  \u884C\u8FC7\u7A0B\u4E2D\u51FA\u73B0\u95EE\u9898\u65F6\u5E94\u5BF9\u7B56\u7565\u7684\
+  \u4F53\u73B0\u2014\u2014\u5C31\u50CF\u5728\u4E0D\u6389\u7403\u7684\u60C5\u51B5\u4E0B\
+  \u63A5\u4F4F\u4E00\u4E2A\u66F2\u7403\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\
+  \u4E3A\u4E86\u9632\u6B62\u7A0B\u5E8F\u5D29\u6E83\uFF0C\u7ED9\u7528\u6237\u63D0\u4F9B\
+  \u6D41\u7545\u7684\u4F53\u9A8C\u3002"
+lastmod: 2024-02-18 23:08:59.101778
+model: gpt-4-1106-preview
+summary: "\u9519\u8BEF\u5904\u7406\u5C31\u662F\u60A8\u7684\u4EE3\u7801\u5728\u6267\
+  \u884C\u8FC7\u7A0B\u4E2D\u51FA\u73B0\u95EE\u9898\u65F6\u5E94\u5BF9\u7B56\u7565\u7684\
+  \u4F53\u73B0\u2014\u2014\u5C31\u50CF\u5728\u4E0D\u6389\u7403\u7684\u60C5\u51B5\u4E0B\
+  \u63A5\u4F4F\u4E00\u4E2A\u66F2\u7403\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\
+  \u4E3A\u4E86\u9632\u6B62\u7A0B\u5E8F\u5D29\u6E83\uFF0C\u7ED9\u7528\u6237\u63D0\u4F9B\
+  \u6D41\u7545\u7684\u4F53\u9A8C\u3002"
+title: "\u5904\u7406\u9519\u8BEF"
 ---
 
 {{< edit_this_page >}}

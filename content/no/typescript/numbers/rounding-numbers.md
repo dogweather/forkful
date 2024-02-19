@@ -1,13 +1,14 @@
 ---
-title:                "Avrunding av tall"
 aliases:
 - /no/typescript/rounding-numbers/
-date:                  2024-01-26T03:47:26.170190-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Avrunding av tall"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/rounding-numbers.md"
+date: 2024-01-26 03:47:26.170190-07:00
+description: "Avrunding av tall er \xE5 beskj\xE6re et tall til en spesifikk presisjon.\
+  \ Programmerere gj\xF8r dette for \xE5 kontrollere numerisk utdata for lesbarhet,\u2026"
+lastmod: 2024-02-18 23:08:53.640221
+model: gpt-4-0125-preview
+summary: "Avrunding av tall er \xE5 beskj\xE6re et tall til en spesifikk presisjon.\
+  \ Programmerere gj\xF8r dette for \xE5 kontrollere numerisk utdata for lesbarhet,\u2026"
+title: Avrunding av tall
 ---
 
 {{< edit_this_page >}}

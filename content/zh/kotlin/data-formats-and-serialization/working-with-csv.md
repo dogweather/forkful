@@ -1,14 +1,26 @@
 ---
-title:                "处理CSV文件"
 aliases:
 - /zh/kotlin/working-with-csv/
-date:                  2024-02-03T19:20:49.286010-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理CSV文件"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:20:49.286010-07:00
+description: "\u5904\u7406 CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\uFF09\u6D89\u53CA\
+  \u4ECE CSV \u6587\u4EF6\u8BFB\u53D6\u548C\u5199\u5165\u6570\u636E\uFF0C\u8FD9\u662F\
+  \u4E00\u79CD\u5E38\u89C1\u7684\u4EE5\u7EAF\u6587\u672C\u5F62\u5F0F\u5B58\u50A8\u8868\
+  \u683C\u6570\u636E\u7684\u683C\u5F0F\u3002\u7A0B\u5E8F\u5458\u64CD\u4F5C CSV \u6587\
+  \u4EF6\u662F\u4E3A\u4E86\u65B9\u4FBF\u5730\u5728\u4E0D\u540C\u5E94\u7528\u7A0B\u5E8F\
+  \u3001\u6570\u636E\u5E93\u4E4B\u95F4\u4EA4\u6362\u6570\u636E\uFF0C\u6216\u8005\u4FBF\
+  \u4E8E\u8FDB\u884C\u6570\u636E\u5904\u7406\u548C\u5206\u6790\u4EFB\u52A1\u3002"
+lastmod: 2024-02-18 23:08:59.115112
+model: gpt-4-0125-preview
+summary: "\u5904\u7406 CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\uFF09\u6D89\u53CA\u4ECE\
+  \ CSV \u6587\u4EF6\u8BFB\u53D6\u548C\u5199\u5165\u6570\u636E\uFF0C\u8FD9\u662F\u4E00\
+  \u79CD\u5E38\u89C1\u7684\u4EE5\u7EAF\u6587\u672C\u5F62\u5F0F\u5B58\u50A8\u8868\u683C\
+  \u6570\u636E\u7684\u683C\u5F0F\u3002\u7A0B\u5E8F\u5458\u64CD\u4F5C CSV \u6587\u4EF6\
+  \u662F\u4E3A\u4E86\u65B9\u4FBF\u5730\u5728\u4E0D\u540C\u5E94\u7528\u7A0B\u5E8F\u3001\
+  \u6570\u636E\u5E93\u4E4B\u95F4\u4EA4\u6362\u6570\u636E\uFF0C\u6216\u8005\u4FBF\u4E8E\
+  \u8FDB\u884C\u6570\u636E\u5904\u7406\u548C\u5206\u6790\u4EFB\u52A1\u3002"
+title: "\u5904\u7406CSV\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

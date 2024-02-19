@@ -1,13 +1,16 @@
 ---
-title:                "Sammenlikning av to datoer"
 aliases:
 - /no/haskell/comparing-two-dates/
-date:                  2024-01-20T17:33:38.949127-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammenlikning av to datoer"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/comparing-two-dates.md"
+date: 2024-01-20 17:33:38.949127-07:00
+description: "\xC5 sammenligne to datoer betyr \xE5 finne ut hvilken som kommer f\xF8\
+  r eller etter, eller om de er like. Programmerere gj\xF8r dette for \xE5 h\xE5ndtere\
+  \ frister,\u2026"
+lastmod: 2024-02-18 23:08:53.946584
+model: gpt-4-1106-preview
+summary: "\xC5 sammenligne to datoer betyr \xE5 finne ut hvilken som kommer f\xF8\
+  r eller etter, eller om de er like. Programmerere gj\xF8r dette for \xE5 h\xE5ndtere\
+  \ frister,\u2026"
+title: Sammenlikning av to datoer
 ---
 
 {{< edit_this_page >}}

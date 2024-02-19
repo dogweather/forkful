@@ -1,13 +1,16 @@
 ---
-title:                "Rozpoczynanie nowego projektu"
 aliases:
 - /pl/lua/starting-a-new-project/
-date:                  2024-01-20T18:04:36.633085-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rozpoczynanie nowego projektu"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/starting-a-new-project.md"
+date: 2024-01-20 18:04:36.633085-07:00
+description: "Rozpocz\u0119cie nowego projektu oznacza stworzenie podstawy kodu, od\
+  \ kt\xF3rego zaczniemy budowa\u0107 nasze aplikacje. Programi\u015Bci robi\u0105\
+  \ to, aby dopracowa\u0107 pomys\u0142 od\u2026"
+lastmod: 2024-02-18 23:08:49.740491
+model: gpt-4-1106-preview
+summary: "Rozpocz\u0119cie nowego projektu oznacza stworzenie podstawy kodu, od kt\xF3\
+  rego zaczniemy budowa\u0107 nasze aplikacje. Programi\u015Bci robi\u0105 to, aby\
+  \ dopracowa\u0107 pomys\u0142 od\u2026"
+title: Rozpoczynanie nowego projektu
 ---
 
 {{< edit_this_page >}}

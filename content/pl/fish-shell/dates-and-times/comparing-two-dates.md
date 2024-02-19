@@ -1,13 +1,16 @@
 ---
-title:                "Porównywanie dwóch dat"
 aliases:
 - /pl/fish-shell/comparing-two-dates/
-date:                  2024-01-20T17:32:48.511549-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Porównywanie dwóch dat"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/comparing-two-dates.md"
+date: 2024-01-20 17:32:48.511549-07:00
+description: "Por\xF3wnywanie dat to sprawdzanie, kt\xF3ra data jest wcze\u015Bniejsza,\
+  \ p\xF3\u017Aniejsza, czy r\xF3wna drugiej. Programi\u015Bci robi\u0105 to, aby\
+  \ zarz\u0105dza\u0107 wydarzeniami, logami czy\u2026"
+lastmod: 2024-02-18 23:08:50.048816
+model: gpt-4-1106-preview
+summary: "Por\xF3wnywanie dat to sprawdzanie, kt\xF3ra data jest wcze\u015Bniejsza,\
+  \ p\xF3\u017Aniejsza, czy r\xF3wna drugiej. Programi\u015Bci robi\u0105 to, aby\
+  \ zarz\u0105dza\u0107 wydarzeniami, logami czy\u2026"
+title: "Por\xF3wnywanie dw\xF3ch dat"
 ---
 
 {{< edit_this_page >}}

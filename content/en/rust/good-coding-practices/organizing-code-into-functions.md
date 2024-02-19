@@ -1,13 +1,14 @@
 ---
-title:                "Organizing code into functions"
 aliases:
 - /en/rust/organizing-code-into-functions/
-date:                  2024-01-25T02:59:56.448373-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organizing code into functions"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/organizing-code-into-functions.md"
+date: 2024-01-25 02:59:56.448373-07:00
+description: "Organizing code into functions is about breaking your program into reusable,\
+  \ modular chunks identified by a name. We do it to make our code cleaner, more\u2026"
+lastmod: 2024-02-18 23:09:10.854065
+model: gpt-4-1106-preview
+summary: "Organizing code into functions is about breaking your program into reusable,\
+  \ modular chunks identified by a name. We do it to make our code cleaner, more\u2026"
+title: Organizing code into functions
 ---
 
 {{< edit_this_page >}}

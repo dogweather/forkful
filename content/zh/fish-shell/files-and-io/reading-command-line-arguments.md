@@ -1,14 +1,19 @@
 ---
-title:                "读取命令行参数"
 aliases:
 - /zh/fish-shell/reading-command-line-arguments/
-date:                  2024-01-20T17:55:47.841750-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "读取命令行参数"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:47.841750-07:00
+description: "\u547D\u4EE4\u884C\u53C2\u6570\u4F7F\u7A0B\u5E8F\u80FD\u591F\u63A5\u53D7\
+  \u989D\u5916\u7684\u7528\u6237\u8F93\u5165\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\
+  \u662F\u4E3A\u4E86\u63D0\u5347\u7075\u6D3B\u6027\uFF0C\u8BA9\u7A0B\u5E8F\u6839\u636E\
+  \u4E0D\u540C\u7684\u53C2\u6570\u6267\u884C\u4E0D\u540C\u7684\u4EFB\u52A1\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.533378
+model: gpt-4-1106-preview
+summary: "\u547D\u4EE4\u884C\u53C2\u6570\u4F7F\u7A0B\u5E8F\u80FD\u591F\u63A5\u53D7\
+  \u989D\u5916\u7684\u7528\u6237\u8F93\u5165\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\
+  \u662F\u4E3A\u4E86\u63D0\u5347\u7075\u6D3B\u6027\uFF0C\u8BA9\u7A0B\u5E8F\u6839\u636E\
+  \u4E0D\u540C\u7684\u53C2\u6570\u6267\u884C\u4E0D\u540C\u7684\u4EFB\u52A1\u3002"
+title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
 ---
 
 {{< edit_this_page >}}

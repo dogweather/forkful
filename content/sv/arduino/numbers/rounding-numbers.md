@@ -1,13 +1,16 @@
 ---
-title:                "Avrundning av tal"
 aliases:
 - /sv/arduino/rounding-numbers/
-date:                  2024-01-26T03:42:49.455390-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Avrundning av tal"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/rounding-numbers.md"
+date: 2024-01-26 03:42:49.455390-07:00
+description: "Avrundning av tal inneb\xE4r att trimma ett decimaltal till dess n\xE4\
+  rmaste hela v\xE4rde eller till ett best\xE4mt antal decimaler. Programmerare avrundar\
+  \ tal f\xF6r\u2026"
+lastmod: 2024-02-18 23:08:52.039695
+model: gpt-4-0125-preview
+summary: "Avrundning av tal inneb\xE4r att trimma ett decimaltal till dess n\xE4rmaste\
+  \ hela v\xE4rde eller till ett best\xE4mt antal decimaler. Programmerare avrundar\
+  \ tal f\xF6r\u2026"
+title: Avrundning av tal
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Wycinanie podłańcuchów"
 aliases:
 - /pl/lua/extracting-substrings/
-date:                  2024-01-20T17:46:09.645550-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wycinanie podłańcuchów"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/extracting-substrings.md"
+date: 2024-01-20 17:46:09.645550-07:00
+description: "Wyci\u0105ganie podci\u0105g\xF3w to proces wydobywania konkretnych\
+  \ cz\u0119\u015Bci z d\u0142u\u017Cszego ci\u0105gu znak\xF3w. Robimy to, \u017C\
+  eby pracowa\u0107 tylko z istotnymi fragmentami danych, na\u2026"
+lastmod: 2024-02-18 23:08:49.728745
+model: gpt-4-1106-preview
+summary: "Wyci\u0105ganie podci\u0105g\xF3w to proces wydobywania konkretnych cz\u0119\
+  \u015Bci z d\u0142u\u017Cszego ci\u0105gu znak\xF3w. Robimy to, \u017Ceby pracowa\u0107\
+  \ tylko z istotnymi fragmentami danych, na\u2026"
+title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 ---
 
 {{< edit_this_page >}}

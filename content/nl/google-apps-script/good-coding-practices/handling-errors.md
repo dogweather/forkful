@@ -1,14 +1,16 @@
 ---
-title:                "Fouten afhandelen"
 aliases:
 - /nl/google-apps-script/handling-errors/
-date:                  2024-02-01T21:54:50.429593-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Fouten afhandelen"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/google-apps-script/handling-errors.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:50.429593-07:00
+description: "Foutafhandeling in Google Apps Script is het voorspellen, vangen en\
+  \ reageren op uitzonderingen of fouten die optreden tijdens de uitvoering van een\u2026"
+lastmod: 2024-02-18 23:09:01.394195
+model: gpt-4-0125-preview
+summary: "Foutafhandeling in Google Apps Script is het voorspellen, vangen en reageren\
+  \ op uitzonderingen of fouten die optreden tijdens de uitvoering van een\u2026"
+title: Fouten afhandelen
 ---
 
 {{< edit_this_page >}}

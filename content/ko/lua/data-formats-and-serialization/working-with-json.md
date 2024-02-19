@@ -1,14 +1,28 @@
 ---
-title:                "JSON과 함께 일하기"
 aliases:
 - /ko/lua/working-with-json/
-date:                  2024-02-03T19:23:35.092992-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "JSON과 함께 일하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/lua/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:35.092992-07:00
+description: "Lua\uC5D0\uC11C JSON\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740 JSON \uD615\
+  \uC2DD\uC758 \uBB38\uC790\uC5F4\uC744 Lua \uD14C\uC774\uBE14\uB85C \uD30C\uC2F1\uD558\
+  \uACE0 \uADF8 \uBC18\uB300\uC758 \uC791\uC5C5\uC744 \uC218\uD589\uD568\uC744 \uD3EC\
+  \uD568\uD558\uC5EC, Lua \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uACFC \uC6F9 \uC11C\
+  \uBE44\uC2A4 \uB610\uB294 \uC678\uBD80 API \uAC04\uC758 \uC26C\uC6B4 \uB370\uC774\
+  \uD130 \uAD50\uD658\uC774 \uAC00\uB2A5\uD558\uAC8C \uD569\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC740 JSON\uC758 \uAC00\uBCBC\uC6C0\uACFC \uC27D\uAC8C\
+  \ \uD30C\uC2F1\uD560 \uC218 \uC788\uB294 \uD615\uC2DD\uC744\u2026"
+lastmod: 2024-02-18 23:09:06.449720
+model: gpt-4-0125-preview
+summary: "Lua\uC5D0\uC11C JSON\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740 JSON \uD615\uC2DD\
+  \uC758 \uBB38\uC790\uC5F4\uC744 Lua \uD14C\uC774\uBE14\uB85C \uD30C\uC2F1\uD558\uACE0\
+  \ \uADF8 \uBC18\uB300\uC758 \uC791\uC5C5\uC744 \uC218\uD589\uD568\uC744 \uD3EC\uD568\
+  \uD558\uC5EC, Lua \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uACFC \uC6F9 \uC11C\uBE44\
+  \uC2A4 \uB610\uB294 \uC678\uBD80 API \uAC04\uC758 \uC26C\uC6B4 \uB370\uC774\uD130\
+  \ \uAD50\uD658\uC774 \uAC00\uB2A5\uD558\uAC8C \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC740 JSON\uC758 \uAC00\uBCBC\uC6C0\uACFC \uC27D\uAC8C \uD30C\
+  \uC2F1\uD560 \uC218 \uC788\uB294 \uD615\uC2DD\uC744\u2026"
+title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

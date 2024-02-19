@@ -1,15 +1,20 @@
 ---
-title:                "Sắp xếp mã thành các hàm"
 aliases:
 - /vi/c-sharp/organizing-code-into-functions/
-date:                  2024-01-28T22:03:04.883079-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sắp xếp mã thành các hàm"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/organizing-code-into-functions.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:03:04.883079-07:00
+description: "Chia code th\xE0nh c\xE1c h\xE0m gi\u1ED1ng nh\u01B0 vi\u1EC7c s\u1EAF\
+  p x\u1EBFp c\xE1c vi\xEAn LEGO v\xE0o trong c\xE1c h\u1ED9p \u2014 l\xE0m cho vi\u1EC7\
+  c t\xECm ki\u1EBFm v\xE0 s\u1EED d\u1EE5ng ch\xFAng tr\u1EDF n\xEAn d\u1EC5 d\xE0\
+  ng h\u01A1n. Ch\xFAng ta l\xE0m\u2026"
+lastmod: 2024-02-18 23:08:50.704620
+model: gpt-4-0125-preview
+summary: "Chia code th\xE0nh c\xE1c h\xE0m gi\u1ED1ng nh\u01B0 vi\u1EC7c s\u1EAFp\
+  \ x\u1EBFp c\xE1c vi\xEAn LEGO v\xE0o trong c\xE1c h\u1ED9p \u2014 l\xE0m cho vi\u1EC7\
+  c t\xECm ki\u1EBFm v\xE0 s\u1EED d\u1EE5ng ch\xFAng tr\u1EDF n\xEAn d\u1EC5 d\xE0\
+  ng h\u01A1n. Ch\xFAng ta l\xE0m\u2026"
+title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 ---
 
 {{< edit_this_page >}}

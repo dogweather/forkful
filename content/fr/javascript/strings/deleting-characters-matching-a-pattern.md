@@ -1,13 +1,16 @@
 ---
-title:                "Suppression de caractères correspondant à un motif"
 aliases:
 - /fr/javascript/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:22.042815-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Suppression de caractères correspondant à un motif"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:22.042815-07:00
+description: "En JavaScript, supprimer des caract\xE8res qui correspondent \xE0 un\
+  \ motif, c'est comme filtrer les grains de sable d'un d\xE9sert - on ne garde que\
+  \ ce qu'on veut.\u2026"
+lastmod: 2024-02-18 23:09:09.238385
+model: gpt-4-1106-preview
+summary: "En JavaScript, supprimer des caract\xE8res qui correspondent \xE0 un motif,\
+  \ c'est comme filtrer les grains de sable d'un d\xE9sert - on ne garde que ce qu'on\
+  \ veut.\u2026"
+title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 ---
 
 {{< edit_this_page >}}

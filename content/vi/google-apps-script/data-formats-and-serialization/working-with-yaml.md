@@ -1,14 +1,20 @@
 ---
-title:                "Làm việc với YAML"
 aliases:
 - /vi/google-apps-script/working-with-yaml/
-date:                  2024-02-01T22:07:18.069347-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/google-apps-script/working-with-yaml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:07:18.069347-07:00
+description: "YAML, vi\u1EBFt t\u1EAFt c\u1EE7a \"YAML Ain't Markup Language,\" l\xE0\
+  \ m\u1ED9t chu\u1EA9n h\xF3a d\u1EEF li\u1EC7u d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\
+  \u1EDDi, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 t\u1EA1\
+  o c\xE1c t\u1EC7p c\u1EA5u h\xECnh v\xE0 trao \u0111\u1ED5i d\u1EEF\u2026"
+lastmod: 2024-02-18 23:08:50.243437
+model: gpt-4-0125-preview
+summary: "YAML, vi\u1EBFt t\u1EAFt c\u1EE7a \"YAML Ain't Markup Language,\" l\xE0\
+  \ m\u1ED9t chu\u1EA9n h\xF3a d\u1EEF li\u1EC7u d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\
+  \u1EDDi, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 t\u1EA1\
+  o c\xE1c t\u1EC7p c\u1EA5u h\xECnh v\xE0 trao \u0111\u1ED5i d\u1EEF\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Organisation du code en fonctions"
 aliases:
 - /fr/elixir/organizing-code-into-functions/
-date:                  2024-01-26T01:09:43.328748-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organisation du code en fonctions"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/organizing-code-into-functions.md"
+date: 2024-01-26 01:09:43.328748-07:00
+description: "Organiser le code en fonctions consiste \xE0 regrouper les op\xE9rations\
+  \ li\xE9es en blocs r\xE9utilisables. Nous le faisons pour am\xE9liorer la lisibilit\xE9\
+  \ et la\u2026"
+lastmod: 2024-02-18 23:09:08.440430
+model: gpt-4-1106-preview
+summary: "Organiser le code en fonctions consiste \xE0 regrouper les op\xE9rations\
+  \ li\xE9es en blocs r\xE9utilisables. Nous le faisons pour am\xE9liorer la lisibilit\xE9\
+  \ et la\u2026"
+title: Organisation du code en fonctions
 ---
 
 {{< edit_this_page >}}

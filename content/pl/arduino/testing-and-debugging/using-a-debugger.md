@@ -1,13 +1,16 @@
 ---
-title:                "Korzystanie z debugera"
 aliases:
 - /pl/arduino/using-a-debugger/
-date:                  2024-01-26T03:47:39.575932-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z debugera"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/using-a-debugger.md"
+date: 2024-01-26 03:47:39.575932-07:00
+description: "Debugger to narz\u0119dzie, kt\xF3re pomaga wyeliminowa\u0107 b\u0142\
+  \u0119dy w kodzie, pozwalaj\u0105c na jego zatrzymanie, przeszukanie i odkrycie,\
+  \ co tak naprawd\u0119 dzieje si\u0119 w\u2026"
+lastmod: 2024-02-18 23:08:49.873646
+model: gpt-4-0125-preview
+summary: "Debugger to narz\u0119dzie, kt\xF3re pomaga wyeliminowa\u0107 b\u0142\u0119\
+  dy w kodzie, pozwalaj\u0105c na jego zatrzymanie, przeszukanie i odkrycie, co tak\
+  \ naprawd\u0119 dzieje si\u0119 w\u2026"
+title: Korzystanie z debugera
 ---
 
 {{< edit_this_page >}}

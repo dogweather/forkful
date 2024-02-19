@@ -1,14 +1,18 @@
 ---
-title:                "Extraction de sous-chaînes"
 aliases:
 - /fr/c/extracting-substrings/
-date:                  2024-02-03T17:56:20.313360-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Extraction de sous-chaînes"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/extracting-substrings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:20.313360-07:00
+description: "Extraire des sous-cha\xEEnes en C consiste \xE0 cr\xE9er une cha\xEE\
+  ne plus petite (sous-cha\xEEne) \xE0 partir d'une cha\xEEne plus grande en fonction\
+  \ de crit\xE8res sp\xE9cifi\xE9s,\u2026"
+lastmod: 2024-02-18 23:09:09.341923
+model: gpt-4-0125-preview
+summary: "Extraire des sous-cha\xEEnes en C consiste \xE0 cr\xE9er une cha\xEEne plus\
+  \ petite (sous-cha\xEEne) \xE0 partir d'une cha\xEEne plus grande en fonction de\
+  \ crit\xE8res sp\xE9cifi\xE9s,\u2026"
+title: "Extraction de sous-cha\xEEnes"
 ---
 
 {{< edit_this_page >}}

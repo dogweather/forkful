@@ -1,13 +1,16 @@
 ---
-title:                "Exibindo saídas de depuração"
 aliases:
 - /pt/arduino/printing-debug-output/
-date:                  2024-01-20T17:51:46.623163-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Exibindo saídas de depuração"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/printing-debug-output.md"
+date: 2024-01-20 17:51:46.623163-07:00
+description: "Debugar escrevendo sa\xEDdas \xE9 como dar uma espiada no c\xE9rebro\
+  \ do seu Arduino \u2013 voc\xEA usa mensagens para descobrir o que est\xE1 acontecendo\
+  \ dentro do c\xF3digo.\u2026"
+lastmod: 2024-02-18 23:08:58.411628
+model: gpt-4-1106-preview
+summary: "Debugar escrevendo sa\xEDdas \xE9 como dar uma espiada no c\xE9rebro do\
+  \ seu Arduino \u2013 voc\xEA usa mensagens para descobrir o que est\xE1 acontecendo\
+  \ dentro do c\xF3digo.\u2026"
+title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

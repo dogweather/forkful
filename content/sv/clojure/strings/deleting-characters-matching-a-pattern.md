@@ -1,13 +1,16 @@
 ---
-title:                "Ta bort tecken som matchar ett mönster"
 aliases:
 - /sv/clojure/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:53.096448-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ta bort tecken som matchar ett mönster"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:53.096448-07:00
+description: "I Clojure och andra programmeringsspr\xE5k betyder att ta bort tecken\
+  \ som matchar ett m\xF6nster att du rensar din textstr\xE4ng fr\xE5n o\xF6nskade\
+  \ sekvenser. Detta\u2026"
+lastmod: 2024-02-18 23:08:51.447105
+model: gpt-4-1106-preview
+summary: "I Clojure och andra programmeringsspr\xE5k betyder att ta bort tecken som\
+  \ matchar ett m\xF6nster att du rensar din textstr\xE4ng fr\xE5n o\xF6nskade sekvenser.\
+  \ Detta\u2026"
+title: "Ta bort tecken som matchar ett m\xF6nster"
 ---
 
 {{< edit_this_page >}}

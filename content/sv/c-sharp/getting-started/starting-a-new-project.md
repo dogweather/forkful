@@ -1,13 +1,16 @@
 ---
-title:                "Att påbörja ett nytt projekt"
 aliases:
 - /sv/c-sharp/starting-a-new-project/
-date:                  2024-01-20T18:03:17.790824-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Att påbörja ett nytt projekt"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/starting-a-new-project.md"
+date: 2024-01-20 18:03:17.790824-07:00
+description: "Att starta ett nytt projekt i C# inneb\xE4r skapandet av en grundl\xE4\
+  ggande struktur f\xF6r din kod d\xE4r allt det roliga kan h\xE4nda. Programmerare\
+  \ g\xF6r detta f\xF6r att\u2026"
+lastmod: 2024-02-18 23:08:51.796396
+model: gpt-4-1106-preview
+summary: "Att starta ett nytt projekt i C# inneb\xE4r skapandet av en grundl\xE4ggande\
+  \ struktur f\xF6r din kod d\xE4r allt det roliga kan h\xE4nda. Programmerare g\xF6\
+  r detta f\xF6r att\u2026"
+title: "Att p\xE5b\xF6rja ett nytt projekt"
 ---
 
 {{< edit_this_page >}}

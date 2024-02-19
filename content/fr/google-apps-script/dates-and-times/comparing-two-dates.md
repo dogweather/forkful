@@ -1,14 +1,18 @@
 ---
-title:                "Comparer deux dates"
 aliases:
 - /fr/google-apps-script/comparing-two-dates/
-date:                  2024-02-01T21:49:58.310295-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Comparer deux dates"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/google-apps-script/comparing-two-dates.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:58.310295-07:00
+description: "Comparer deux dates dans Google Apps Script, un d\xE9riv\xE9 de JavaScript\
+  \ adapt\xE9 pour la suite d'applications de Google, est une t\xE2che essentielle\
+  \ pour les\u2026"
+lastmod: 2024-02-18 23:09:08.304586
+model: gpt-4-0125-preview
+summary: "Comparer deux dates dans Google Apps Script, un d\xE9riv\xE9 de JavaScript\
+  \ adapt\xE9 pour la suite d'applications de Google, est une t\xE2che essentielle\
+  \ pour les\u2026"
+title: Comparer deux dates
 ---
 
 {{< edit_this_page >}}

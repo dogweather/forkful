@@ -1,13 +1,16 @@
 ---
-title:                "Skriva ut felsökningsdata"
 aliases:
 - /sv/haskell/printing-debug-output/
-date:                  2024-01-20T17:52:59.681210-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skriva ut felsökningsdata"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/printing-debug-output.md"
+date: 2024-01-20 17:52:59.681210-07:00
+description: "Debug-utskrifter hj\xE4lper programmerare att f\xF6rst\xE5 vad deras\
+  \ kod g\xF6r genom att visa mellanliggande v\xE4rden och processfl\xF6den. De anv\xE4\
+  nds f\xF6r att snabbt\u2026"
+lastmod: 2024-02-18 23:08:51.839547
+model: gpt-4-1106-preview
+summary: "Debug-utskrifter hj\xE4lper programmerare att f\xF6rst\xE5 vad deras kod\
+  \ g\xF6r genom att visa mellanliggande v\xE4rden och processfl\xF6den. De anv\xE4\
+  nds f\xF6r att snabbt\u2026"
+title: "Skriva ut fels\xF6kningsdata"
 ---
 
 {{< edit_this_page >}}

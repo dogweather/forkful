@@ -1,14 +1,16 @@
 ---
-title:                "Analysering av en dato fra en streng"
 aliases:
 - /no/bash/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:13:41.965206-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analysering av en dato fra en streng"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:13:41.965206-07:00
+description: "\xC5 tolke en dato fra en tekststreng i Bash inneb\xE6rer \xE5 ekstrahere\
+  \ og konvertere datoinformasjon fra tekstuelle data til et format som Bash kan manipulere\u2026"
+lastmod: 2024-02-18 23:08:54.067337
+model: gpt-4-0125-preview
+summary: "\xC5 tolke en dato fra en tekststreng i Bash inneb\xE6rer \xE5 ekstrahere\
+  \ og konvertere datoinformasjon fra tekstuelle data til et format som Bash kan manipulere\u2026"
+title: Analysering av en dato fra en streng
 ---
 
 {{< edit_this_page >}}

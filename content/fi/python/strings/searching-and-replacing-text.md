@@ -1,13 +1,16 @@
 ---
-title:                "Tekstin etsiminen ja korvaaminen"
 aliases:
 - /fi/python/searching-and-replacing-text/
-date:                  2024-01-20T17:58:57.101609-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tekstin etsiminen ja korvaaminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:57.101609-07:00
+description: "Hakeminen ja korvaaminen tekstiss\xE4 tarkoittaa jotakin merkkijonoa\
+  \ toisella korvaamista. Ohjelmoijat tekev\xE4t t\xE4t\xE4 koodin virheit\xE4 korjatessaan\
+  \ tai\u2026"
+lastmod: 2024-02-18 23:09:07.167888
+model: gpt-4-1106-preview
+summary: "Hakeminen ja korvaaminen tekstiss\xE4 tarkoittaa jotakin merkkijonoa toisella\
+  \ korvaamista. Ohjelmoijat tekev\xE4t t\xE4t\xE4 koodin virheit\xE4 korjatessaan\
+  \ tai\u2026"
+title: Tekstin etsiminen ja korvaaminen
 ---
 
 {{< edit_this_page >}}

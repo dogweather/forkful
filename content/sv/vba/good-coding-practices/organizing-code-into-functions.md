@@ -1,14 +1,17 @@
 ---
-title:                "Att organisera kod i funktioner"
 aliases:
 - /sv/vba/organizing-code-into-functions/
-date:                  2024-02-01T21:56:41.696549-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att organisera kod i funktioner"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/organizing-code-into-functions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:56:41.696549-07:00
+description: "Att organisera kod i funktioner i Visual Basic for Applications (VBA)\
+  \ inneb\xE4r att man bryter ner ett program i mindre, hanterbara delar k\xE4nda\
+  \ som\u2026"
+lastmod: 2024-02-18 23:08:51.632619
+model: gpt-4-0125-preview
+summary: "Att organisera kod i funktioner i Visual Basic for Applications (VBA) inneb\xE4\
+  r att man bryter ner ett program i mindre, hanterbara delar k\xE4nda som\u2026"
+title: Att organisera kod i funktioner
 ---
 
 {{< edit_this_page >}}

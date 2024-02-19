@@ -1,14 +1,18 @@
 ---
-title:                "Ghi nhật ký"
 aliases:
 - /vi/vba/logging/
-date:                  2024-02-01T21:56:21.667356-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ghi nhật ký"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/logging.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:56:21.667356-07:00
+description: "Ghi log trong Visual Basic for Applications (VBA) bao g\u1ED3m vi\u1EC7\
+  c ghi l\u1EA1i th\xF4ng tin v\u1EC1 h\xE0nh vi th\u1EF1c thi c\u1EE7a ch\u01B0\u01A1\
+  ng tr\xECnh v\xE0o m\u1ED9t t\u1EC7p, console ho\u1EB7c c\u01A1 s\u1EDF d\u1EEF\u2026"
+lastmod: 2024-02-18 23:08:50.516811
+model: gpt-4-0125-preview
+summary: "Ghi log trong Visual Basic for Applications (VBA) bao g\u1ED3m vi\u1EC7\
+  c ghi l\u1EA1i th\xF4ng tin v\u1EC1 h\xE0nh vi th\u1EF1c thi c\u1EE7a ch\u01B0\u01A1\
+  ng tr\xECnh v\xE0o m\u1ED9t t\u1EC7p, console ho\u1EB7c c\u01A1 s\u1EDF d\u1EEF\u2026"
+title: "Ghi nh\u1EADt k\xFD"
 ---
 
 {{< edit_this_page >}}

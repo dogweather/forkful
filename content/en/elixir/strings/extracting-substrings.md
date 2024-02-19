@@ -1,13 +1,14 @@
 ---
-title:                "Extracting substrings"
 aliases:
 - /en/elixir/extracting-substrings/
-date:                  2024-01-20T17:45:34.050956-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extracting substrings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/extracting-substrings.md"
+date: 2024-01-20 17:45:34.050956-07:00
+description: "Extracting substrings means pulling out specific parts from a string.\
+  \ Programmers do it to manipulate and analyze text data, or simply to display only\u2026"
+lastmod: 2024-02-18 23:09:10.754669
+model: gpt-4-1106-preview
+summary: "Extracting substrings means pulling out specific parts from a string. Programmers\
+  \ do it to manipulate and analyze text data, or simply to display only\u2026"
+title: Extracting substrings
 ---
 
 {{< edit_this_page >}}

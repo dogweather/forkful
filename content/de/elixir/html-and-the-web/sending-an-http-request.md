@@ -1,13 +1,14 @@
 ---
-title:                "Einen HTTP-Request senden"
 aliases:
 - /de/elixir/sending-an-http-request/
-date:                  2024-01-20T17:59:17.117840-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Einen HTTP-Request senden"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/sending-an-http-request.md"
+date: 2024-01-20 17:59:17.117840-07:00
+description: "HTTP-Anfragen senden bedeutet, dass Daten \xFCber das Internet von einem\
+  \ Client zu einem Server \xFCbermittelt werden. Programmierer nutzen dies, um\u2026"
+lastmod: 2024-02-18 23:09:04.548549
+model: gpt-4-1106-preview
+summary: "HTTP-Anfragen senden bedeutet, dass Daten \xFCber das Internet von einem\
+  \ Client zu einem Server \xFCbermittelt werden. Programmierer nutzen dies, um\u2026"
+title: Einen HTTP-Request senden
 ---
 
 {{< edit_this_page >}}

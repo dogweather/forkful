@@ -1,14 +1,26 @@
 ---
-title:                "解析HTML"
 aliases:
 - /zh/vba/parsing-html/
-date:                  2024-02-01T21:57:02.649735-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "解析HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/parsing-html.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:02.649735-07:00
+description: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u89E3\u6790 HTML \u6D89\
+  \u53CA\u5230\u4ECE HTML \u6587\u6863\u4E2D\u63D0\u53D6\u7279\u5B9A\u4FE1\u606F\u3002\
+  \u7A0B\u5E8F\u5458\u8FDB\u884C\u6B64\u64CD\u4F5C\u662F\u4E3A\u4E86\u81EA\u52A8\u5316\
+  \u4ECE\u7F51\u9875\u8BFB\u53D6\u548C\u5904\u7406\u6570\u636E\u7684\u8FC7\u7A0B\uFF0C\
+  \u4F8B\u5982\u6293\u53D6\u7F51\u7AD9\u5185\u5BB9\u6216\u81EA\u52A8\u5316\u8868\u5355\
+  \u63D0\u4EA4\u548C\u6570\u636E\u68C0\u7D22\uFF0C\u4EE5\u53CA\u5728\u652F\u6301 VBA\
+  \ \u7684\u5E94\u7528\u7A0B\u5E8F\u4E2D\u4F7F\u7528\uFF0C\u5982 Microsoft Excel\u2026"
+lastmod: 2024-02-18 23:08:58.978450
+model: gpt-4-0125-preview
+summary: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u89E3\u6790 HTML \u6D89\
+  \u53CA\u5230\u4ECE HTML \u6587\u6863\u4E2D\u63D0\u53D6\u7279\u5B9A\u4FE1\u606F\u3002\
+  \u7A0B\u5E8F\u5458\u8FDB\u884C\u6B64\u64CD\u4F5C\u662F\u4E3A\u4E86\u81EA\u52A8\u5316\
+  \u4ECE\u7F51\u9875\u8BFB\u53D6\u548C\u5904\u7406\u6570\u636E\u7684\u8FC7\u7A0B\uFF0C\
+  \u4F8B\u5982\u6293\u53D6\u7F51\u7AD9\u5185\u5BB9\u6216\u81EA\u52A8\u5316\u8868\u5355\
+  \u63D0\u4EA4\u548C\u6570\u636E\u68C0\u7D22\uFF0C\u4EE5\u53CA\u5728\u652F\u6301 VBA\
+  \ \u7684\u5E94\u7528\u7A0B\u5E8F\u4E2D\u4F7F\u7528\uFF0C\u5982 Microsoft Excel\u2026"
+title: "\u89E3\u6790HTML"
 ---
 
 {{< edit_this_page >}}

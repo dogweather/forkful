@@ -1,13 +1,16 @@
 ---
-title:                "Rejestrowanie zdarzeń"
 aliases:
 - /pl/typescript/logging/
-date:                  2024-01-26T01:08:34.282533-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rejestrowanie zdarzeń"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/logging.md"
+date: 2024-01-26 01:08:34.282533-07:00
+description: "Logowanie to proces zapisywania zdarze\u0144, b\u0142\u0119d\xF3w i\
+  \ innych istotnych informacji podczas wykonania programu do zewn\u0119trznego medium,\
+  \ cz\u0119sto plik\xF3w lub baz\u2026"
+lastmod: 2024-02-18 23:08:49.354296
+model: gpt-4-1106-preview
+summary: "Logowanie to proces zapisywania zdarze\u0144, b\u0142\u0119d\xF3w i innych\
+  \ istotnych informacji podczas wykonania programu do zewn\u0119trznego medium, cz\u0119\
+  sto plik\xF3w lub baz\u2026"
+title: "Rejestrowanie zdarze\u0144"
 ---
 
 {{< edit_this_page >}}

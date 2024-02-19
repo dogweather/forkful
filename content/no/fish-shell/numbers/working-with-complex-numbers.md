@@ -1,13 +1,14 @@
 ---
-title:                "Å jobbe med komplekse tall"
 aliases:
 - /no/fish-shell/working-with-complex-numbers/
-date:                  2024-01-26T04:39:59.559297-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å jobbe med komplekse tall"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/working-with-complex-numbers.md"
+date: 2024-01-26 04:39:59.559297-07:00
+description: "Komplekse tall utvider ideen om en-dimensjonale tallinjer til et todimensjonalt\
+  \ komplekst plan. Programmerere bruker dem innen felt som ingeni\xF8rvitenskap,\u2026"
+lastmod: 2024-02-18 23:08:54.343707
+model: gpt-4-0125-preview
+summary: "Komplekse tall utvider ideen om en-dimensjonale tallinjer til et todimensjonalt\
+  \ komplekst plan. Programmerere bruker dem innen felt som ingeni\xF8rvitenskap,\u2026"
+title: "\xC5 jobbe med komplekse tall"
 ---
 
 {{< edit_this_page >}}

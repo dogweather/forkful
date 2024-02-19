@@ -1,13 +1,12 @@
 ---
-title:                "XMLの扱い方"
 aliases:
 - /ja/powershell/working-with-xml/
-date:                  2024-01-26T04:34:23.947178-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XMLの扱い方"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/powershell/working-with-xml.md"
+date: 2024-01-26 04:34:23.947178-07:00
+description: "XML\u3092\u6271\u3046\u3053\u3068\u306F\u3001eXtensible Markup\u2026"
+lastmod: 2024-02-18 23:08:55.136756
+model: gpt-4-0125-preview
+summary: "XML\u3092\u6271\u3046\u3053\u3068\u306F\u3001eXtensible Markup\u2026"
+title: "XML\u306E\u6271\u3044\u65B9"
 ---
 
 {{< edit_this_page >}}

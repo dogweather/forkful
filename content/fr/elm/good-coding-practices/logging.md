@@ -1,13 +1,16 @@
 ---
-title:                "Journalisation"
 aliases:
 - /fr/elm/logging/
-date:                  2024-01-26T01:02:48.560565-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Journalisation"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/logging.md"
+date: 2024-01-26 01:02:48.560565-07:00
+description: "Le logging est essentiellement le processus d'enregistrement des \xE9\
+  v\xE9nements et des sorties de donn\xE9es d'un logiciel lors de son ex\xE9cution,\
+  \ pensez-y comme\u2026"
+lastmod: 2024-02-18 23:09:08.741694
+model: gpt-4-1106-preview
+summary: "Le logging est essentiellement le processus d'enregistrement des \xE9v\xE9\
+  nements et des sorties de donn\xE9es d'un logiciel lors de son ex\xE9cution, pensez-y\
+  \ comme\u2026"
+title: Journalisation
 ---
 
 {{< edit_this_page >}}

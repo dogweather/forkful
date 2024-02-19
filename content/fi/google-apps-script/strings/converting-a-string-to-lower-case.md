@@ -1,14 +1,16 @@
 ---
-title:                "Merkkijonon muuttaminen pieniksi kirjaimiksi"
 aliases:
 - /fi/google-apps-script/converting-a-string-to-lower-case/
-date:                  2024-02-01T21:51:32.289781-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:32.289781-07:00
+description: "Merkkijonon muuttaminen pieniksi kirjaimiksi Google Apps Scriptill\xE4\
+  , pilvipohjaisella skriptauskielell\xE4 Google-tuotteiden automatisointiin, on\u2026"
+lastmod: 2024-02-18 23:09:07.119624
+model: gpt-4-0125-preview
+summary: "Merkkijonon muuttaminen pieniksi kirjaimiksi Google Apps Scriptill\xE4,\
+  \ pilvipohjaisella skriptauskielell\xE4 Google-tuotteiden automatisointiin, on\u2026"
+title: Merkkijonon muuttaminen pieniksi kirjaimiksi
 ---
 
 {{< edit_this_page >}}

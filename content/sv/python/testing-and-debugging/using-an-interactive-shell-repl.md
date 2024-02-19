@@ -1,13 +1,16 @@
 ---
-title:                "Använda en interaktiv skal (REPL)"
 aliases:
 - /sv/python/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:17:11.879919-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Använda en interaktiv skal (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:17:11.879919-07:00
+description: "En REPL, eller L\xE4s-Utv\xE4rdera-Skriv Loop, \xE4r en programmeringsmilj\xF6\
+  \ som tar emot enskilda anv\xE4ndarinput, exekverar dem och returnerar resultatet\
+  \ till\u2026"
+lastmod: 2024-02-18 23:08:51.423374
+model: gpt-4-0125-preview
+summary: "En REPL, eller L\xE4s-Utv\xE4rdera-Skriv Loop, \xE4r en programmeringsmilj\xF6\
+  \ som tar emot enskilda anv\xE4ndarinput, exekverar dem och returnerar resultatet\
+  \ till\u2026"
+title: "Anv\xE4nda en interaktiv skal (REPL)"
 ---
 
 {{< edit_this_page >}}

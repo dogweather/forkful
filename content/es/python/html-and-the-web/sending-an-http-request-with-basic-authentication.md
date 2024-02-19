@@ -1,13 +1,14 @@
 ---
-title:                "Enviando una solicitud http con autenticación básica"
 aliases:
 - /es/python/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:15.998023-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando una solicitud http con autenticación básica"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:15.998023-07:00
+description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica significa incluir\
+  \ credenciales de usuario y contrase\xF1a en una solicitud a un servidor. Los\u2026"
+lastmod: 2024-02-18 23:09:09.555972
+model: gpt-4-1106-preview
+summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica significa incluir\
+  \ credenciales de usuario y contrase\xF1a en una solicitud a un servidor. Los\u2026"
+title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 ---
 
 {{< edit_this_page >}}

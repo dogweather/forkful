@@ -1,13 +1,16 @@
 ---
-title:                "Refatoração"
 aliases:
 - /pt/c-sharp/refactoring/
-date:                  2024-01-26T01:17:14.841084-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refatoração"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/refactoring.md"
+date: 2024-01-26 01:17:14.841084-07:00
+description: "Refatora\xE7\xE3o \xE9 o processo de reestrutura\xE7\xE3o de c\xF3digo\
+  \ de computador existente sem alterar seu comportamento externo. Programadores fazem\
+  \ isso para limpar o\u2026"
+lastmod: 2024-02-18 23:08:58.165615
+model: gpt-4-0125-preview
+summary: "Refatora\xE7\xE3o \xE9 o processo de reestrutura\xE7\xE3o de c\xF3digo de\
+  \ computador existente sem alterar seu comportamento externo. Programadores fazem\
+  \ isso para limpar o\u2026"
+title: "Refatora\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

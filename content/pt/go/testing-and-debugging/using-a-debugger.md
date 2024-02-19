@@ -1,14 +1,18 @@
 ---
-title:                "Usando um depurador"
 aliases:
 - /pt/go/using-a-debugger/
-date:                  2024-02-03T18:10:09.023739-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando um depurador"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/using-a-debugger.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:09.023739-07:00
+description: "Utilizar um depurador na programa\xE7\xE3o em Go envolve o uso de ferramentas\
+  \ ou recursos para inspecionar e modificar o estado de um programa em execu\xE7\xE3\
+  o para\u2026"
+lastmod: 2024-02-18 23:08:57.673492
+model: gpt-4-0125-preview
+summary: "Utilizar um depurador na programa\xE7\xE3o em Go envolve o uso de ferramentas\
+  \ ou recursos para inspecionar e modificar o estado de um programa em execu\xE7\xE3\
+  o para\u2026"
+title: Usando um depurador
 ---
 
 {{< edit_this_page >}}

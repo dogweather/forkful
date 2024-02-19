@@ -1,13 +1,16 @@
 ---
-title:                "Korzystanie z debugera"
 aliases:
 - /pl/php/using-a-debugger/
-date:                  2024-01-26T03:50:42.497718-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z debugera"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/using-a-debugger.md"
+date: 2024-01-26 03:50:42.497718-07:00
+description: "Debugger to narz\u0119dzie, kt\xF3re pomaga programistom zrozumie\u0107\
+  , co ich kod faktycznie robi podczas wykonywania. To jest ta lupa, kt\xF3ra pozwala\
+  \ nam przybli\u017Ca\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.699613
+model: gpt-4-0125-preview
+summary: "Debugger to narz\u0119dzie, kt\xF3re pomaga programistom zrozumie\u0107\
+  , co ich kod faktycznie robi podczas wykonywania. To jest ta lupa, kt\xF3ra pozwala\
+  \ nam przybli\u017Ca\u0107\u2026"
+title: Korzystanie z debugera
 ---
 
 {{< edit_this_page >}}

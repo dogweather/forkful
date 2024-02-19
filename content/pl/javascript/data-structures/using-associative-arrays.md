@@ -1,15 +1,18 @@
 ---
-title:                "Korzystanie z tablic asocjacyjnych"
 aliases:
 - /pl/javascript/using-associative-arrays/
-date:                  2024-01-30T19:12:09.587143-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z tablic asocjacyjnych"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:09.587143-07:00
+description: "Tablice asocjacyjne, czy te\u017C dok\u0142adniej w kontek\u015Bcie\
+  \ JavaScript, obiekty, pozwalaj\u0105 na mapowanie kluczy do warto\u015Bci. Jest\
+  \ to niezwykle przydatne, gdy\u2026"
+lastmod: 2024-02-18 23:08:49.986927
+model: gpt-4-0125-preview
+summary: "Tablice asocjacyjne, czy te\u017C dok\u0142adniej w kontek\u015Bcie JavaScript,\
+  \ obiekty, pozwalaj\u0105 na mapowanie kluczy do warto\u015Bci. Jest to niezwykle\
+  \ przydatne, gdy\u2026"
+title: Korzystanie z tablic asocjacyjnych
 ---
 
 {{< edit_this_page >}}

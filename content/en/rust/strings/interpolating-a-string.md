@@ -1,13 +1,14 @@
 ---
-title:                "Interpolating a string"
 aliases:
 - /en/rust/interpolating-a-string/
-date:                  2024-01-20T17:51:29.618497-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolating a string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/interpolating-a-string.md"
+date: 2024-01-20 17:51:29.618497-07:00
+description: String interpolation inserts variables right into strings. It makes building
+  strings smooth and readable, avoiding clunky concatenations.
+lastmod: 2024-02-18 23:09:10.835003
+model: gpt-4-1106-preview
+summary: String interpolation inserts variables right into strings. It makes building
+  strings smooth and readable, avoiding clunky concatenations.
+title: Interpolating a string
 ---
 
 {{< edit_this_page >}}

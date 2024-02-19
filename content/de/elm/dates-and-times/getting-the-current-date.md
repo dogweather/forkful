@@ -1,12 +1,13 @@
 ---
-title:                "Aktuelles Datum abrufen"
 aliases:
 - /de/elm/getting-the-current-date/
-date:                  2024-01-20T15:14:15.658251-07:00
-simple_title:         "Aktuelles Datum abrufen"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/getting-the-current-date.md"
+date: 2024-01-20 15:14:15.658251-07:00
+description: "Das Abrufen des aktuellen Datums ist ein Prozess, bei dem wir die momentane\
+  \ Datumswerte (Tag, Monat, Jahr) vom Computer erhalten. Programmierer nutzen\u2026"
+lastmod: 2024-02-18 23:09:04.792668
+summary: "Das Abrufen des aktuellen Datums ist ein Prozess, bei dem wir die momentane\
+  \ Datumswerte (Tag, Monat, Jahr) vom Computer erhalten. Programmierer nutzen\u2026"
+title: Aktuelles Datum abrufen
 ---
 
 {{< edit_this_page >}}

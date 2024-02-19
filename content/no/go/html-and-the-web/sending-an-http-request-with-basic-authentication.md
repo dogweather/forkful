@@ -1,14 +1,18 @@
 ---
-title:                "Sende en HTTP-forespørsel med grunnleggende autentisering"
 aliases:
 - /no/go/sending-an-http-request-with-basic-authentication/
-date:                  2024-02-03T18:09:13.801135-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sende en HTTP-forespørsel med grunnleggende autentisering"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:09:13.801135-07:00
+description: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering i\
+  \ Go inneb\xE6rer \xE5 legge til en autorisasjonsheader til foresp\xF8rselen din\
+  \ som inkluderer et\u2026"
+lastmod: 2024-02-18 23:08:53.435544
+model: gpt-4-0125-preview
+summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering i Go inneb\xE6\
+  rer \xE5 legge til en autorisasjonsheader til foresp\xF8rselen din som inkluderer\
+  \ et\u2026"
+title: "Sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 ---
 
 {{< edit_this_page >}}

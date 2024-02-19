@@ -1,14 +1,18 @@
 ---
-title:                "Refaktoryzacja"
 aliases:
 - /pl/go/refactoring/
-date:                  2024-02-03T18:07:29.251877-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refaktoryzacja"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/refactoring.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:29.251877-07:00
+description: "Refaktoryzacja w programowaniu polega na restrukturyzacji istniej\u0105\
+  cego kodu komputerowego \u2014 zmianie faktoringu \u2014 bez zmiany jego zewn\u0119\
+  trznego zachowania.\u2026"
+lastmod: 2024-02-18 23:08:49.107680
+model: gpt-4-0125-preview
+summary: "Refaktoryzacja w programowaniu polega na restrukturyzacji istniej\u0105\
+  cego kodu komputerowego \u2014 zmianie faktoringu \u2014 bez zmiany jego zewn\u0119\
+  trznego zachowania.\u2026"
+title: Refaktoryzacja
 ---
 
 {{< edit_this_page >}}

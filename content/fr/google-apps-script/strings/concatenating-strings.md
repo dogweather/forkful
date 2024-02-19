@@ -1,14 +1,17 @@
 ---
-title:                "Concaténation de chaînes"
 aliases:
 - /fr/google-apps-script/concatenating-strings/
-date:                  2024-02-01T21:50:05.549309-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Concaténation de chaînes"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/google-apps-script/concatenating-strings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:05.549309-07:00
+description: "Concat\xE9ner des cha\xEEnes implique de combiner deux ou plusieurs\
+  \ cha\xEEnes en une seule. Les programmeurs font cela pour construire dynamiquement\
+  \ des messages,\u2026"
+lastmod: 2024-02-18 23:09:08.278204
+model: gpt-4-0125-preview
+summary: "Concat\xE9ner des cha\xEEnes implique de combiner deux ou plusieurs cha\xEE\
+  nes en une seule. Les programmeurs font cela pour construire dynamiquement des messages,\u2026"
+title: "Concat\xE9nation de cha\xEEnes"
 ---
 
 {{< edit_this_page >}}

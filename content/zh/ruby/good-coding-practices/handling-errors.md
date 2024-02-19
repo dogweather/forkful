@@ -1,13 +1,22 @@
 ---
-title:                "处理错误"
 aliases:
 - /zh/ruby/handling-errors/
-date:                  2024-01-26T00:57:20.421835-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "处理错误"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/handling-errors.md"
+date: 2024-01-26 00:57:20.421835-07:00
+description: "\u9519\u8BEF\u5904\u7406\u5305\u62EC\u5728\u4EE3\u7801\u4E2D\u9884\u6599\
+  \u5230\u610F\u5916\u60C5\u51B5 \u2014\u2014 \u4F18\u96C5\u5730\u7BA1\u7406\u9519\
+  \u8BEF\u548C\u95EE\u9898\u800C\u4E0D\u8BA9\u7A0B\u5E8F\u5D29\u6E83\u3002\u7A0B\u5E8F\
+  \u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u5728\u51FA\u73B0\u95EE\u9898\u65F6\u63A7\
+  \u5236\u6D41\u7A0B\uFF0C\u4EE5\u53CA\u4FDD\u6301\u7528\u6237\u4F53\u9A8C\u7684\u6D41\
+  \u7545\u3002"
+lastmod: 2024-02-18 23:08:59.607474
+model: gpt-4-1106-preview
+summary: "\u9519\u8BEF\u5904\u7406\u5305\u62EC\u5728\u4EE3\u7801\u4E2D\u9884\u6599\
+  \u5230\u610F\u5916\u60C5\u51B5 \u2014\u2014 \u4F18\u96C5\u5730\u7BA1\u7406\u9519\
+  \u8BEF\u548C\u95EE\u9898\u800C\u4E0D\u8BA9\u7A0B\u5E8F\u5D29\u6E83\u3002\u7A0B\u5E8F\
+  \u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u5728\u51FA\u73B0\u95EE\u9898\u65F6\u63A7\
+  \u5236\u6D41\u7A0B\uFF0C\u4EE5\u53CA\u4FDD\u6301\u7528\u6237\u4F53\u9A8C\u7684\u6D41\
+  \u7545\u3002"
+title: "\u5904\u7406\u9519\u8BEF"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Bruke assosiative tabeller"
 aliases:
 - /no/vba/using-associative-arrays/
-date:                  2024-02-01T22:04:30.332870-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke assosiative tabeller"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/vba/using-associative-arrays.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:30.332870-07:00
+description: "Assosiative tabeller, ofte kjent som ordb\xF8ker i Visual Basic for\
+  \ Applications (VBA), lar programmerere lage samlinger av n\xF8kkel-verdi-par. Denne\u2026"
+lastmod: 2024-02-18 23:08:53.720503
+model: gpt-4-0125-preview
+summary: "Assosiative tabeller, ofte kjent som ordb\xF8ker i Visual Basic for Applications\
+  \ (VBA), lar programmerere lage samlinger av n\xF8kkel-verdi-par. Denne\u2026"
+title: Bruke assosiative tabeller
 ---
 
 {{< edit_this_page >}}

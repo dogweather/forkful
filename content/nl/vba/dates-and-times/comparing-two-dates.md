@@ -1,14 +1,16 @@
 ---
-title:                "Twee datums vergelijken"
 aliases:
 - /nl/vba/comparing-two-dates/
-date:                  2024-02-01T21:50:00.052655-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Twee datums vergelijken"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/vba/comparing-two-dates.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:00.052655-07:00
+description: "Het vergelijken van twee datums in Visual Basic for Applications (VBA)\
+  \ behelst het bepalen van hun chronologische relatie tot elkaar. Programmeurs doen\u2026"
+lastmod: 2024-02-18 23:09:01.679561
+model: gpt-4-0125-preview
+summary: "Het vergelijken van twee datums in Visual Basic for Applications (VBA) behelst\
+  \ het bepalen van hun chronologische relatie tot elkaar. Programmeurs doen\u2026"
+title: Twee datums vergelijken
 ---
 
 {{< edit_this_page >}}

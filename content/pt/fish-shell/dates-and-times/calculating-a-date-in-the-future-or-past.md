@@ -1,13 +1,14 @@
 ---
-title:                "Calculando uma data no futuro ou passado"
 aliases:
 - /pt/fish-shell/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:31:01.614346-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Calculando uma data no futuro ou passado"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:31:01.614346-07:00
+description: "Calcular datas futuras ou passadas \xE9 o processo de adicionar ou subtrair\
+  \ dias a uma data espec\xEDfica. Programadores utilizam essa habilidade para\u2026"
+lastmod: 2024-02-18 23:08:58.588907
+model: gpt-4-1106-preview
+summary: "Calcular datas futuras ou passadas \xE9 o processo de adicionar ou subtrair\
+  \ dias a uma data espec\xEDfica. Programadores utilizam essa habilidade para\u2026"
+title: Calculando uma data no futuro ou passado
 ---
 
 {{< edit_this_page >}}

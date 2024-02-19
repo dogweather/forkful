@@ -1,14 +1,18 @@
 ---
-title:                "Skrive tester"
 aliases:
 - /no/haskell/writing-tests/
-date:                  2024-02-03T19:31:29.537183-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skrive tester"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:29.537183-07:00
+description: "\xC5 skrive tester i Haskell handler om \xE5 sikre at funksjonene dine\
+  \ fungerer som forventet gjennom automatiserte sjekker. Programmerere gj\xF8r det\
+  \ for \xE5 fange\u2026"
+lastmod: 2024-02-18 23:08:53.938284
+model: gpt-4-0125-preview
+summary: "\xC5 skrive tester i Haskell handler om \xE5 sikre at funksjonene dine fungerer\
+  \ som forventet gjennom automatiserte sjekker. Programmerere gj\xF8r det for \xE5\
+  \ fange\u2026"
+title: Skrive tester
 ---
 
 {{< edit_this_page >}}

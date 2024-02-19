@@ -1,14 +1,16 @@
 ---
-title:                "Karakters verwijderen die overeenkomen met een patroon"
 aliases:
 - /nl/go/deleting-characters-matching-a-pattern/
-date:                  2024-02-03T17:55:44.085157-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Karakters verwijderen die overeenkomen met een patroon"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:44.085157-07:00
+description: "Het verwijderen van tekens die overeenkomen met een specifiek patroon\
+  \ gaat over het verwijderen van bepaalde tekens of reeksen tekens uit strings,\u2026"
+lastmod: 2024-02-18 23:09:01.320182
+model: gpt-4-0125-preview
+summary: "Het verwijderen van tekens die overeenkomen met een specifiek patroon gaat\
+  \ over het verwijderen van bepaalde tekens of reeksen tekens uit strings,\u2026"
+title: Karakters verwijderen die overeenkomen met een patroon
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,30 @@
 ---
-title:                "표준 오류에 쓰기"
 aliases:
 - /ko/google-apps-script/writing-to-standard-error/
-date:                  2024-02-01T22:09:28.934969-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "표준 오류에 쓰기"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/writing-to-standard-error.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:09:28.934969-07:00
+description: "\uD504\uB85C\uADF8\uB798\uBC0D \uC5B8\uC5B4\uC5D0\uC11C \uD45C\uC900\
+  \ \uC624\uB958(stderr)\uC5D0 \uC791\uC131\uD55C\uB2E4\uB294 \uAC83\uC740 \uC624\uB958\
+  \ \uBA54\uC2DC\uC9C0\uC640 \uC9C4\uB2E8\uC744 \uD45C\uC900 \uCD9C\uB825(stdout)\uACFC\
+  \ \uBD84\uB9AC\uB41C \uBCC4\uB3C4\uC758 \uC2A4\uD2B8\uB9BC\uC73C\uB85C \uBCF4\uB0B4\
+  \uB294 \uAC83\uC744 \uC758\uBBF8\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB294 \uC774\uB97C \uD1B5\uD574 \uC77C\uBC18 \uD504\uB85C\uADF8\uB7A8 \uCD9C\uB825\
+  \uACFC \uC624\uB958 \uBA54\uC2DC\uC9C0\uB97C \uBD84\uB9AC\uD558\uC5EC \uB514\uBC84\
+  \uAE45\uACFC \uB85C\uADF8 \uBD84\uC11D\uC744 \uBCF4\uB2E4 \uC27D\uAC8C \uB9CC\uB4ED\
+  \uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:05.584663
+model: gpt-4-0125-preview
+summary: "\uD504\uB85C\uADF8\uB798\uBC0D \uC5B8\uC5B4\uC5D0\uC11C \uD45C\uC900 \uC624\
+  \uB958(stderr)\uC5D0 \uC791\uC131\uD55C\uB2E4\uB294 \uAC83\uC740 \uC624\uB958 \uBA54\
+  \uC2DC\uC9C0\uC640 \uC9C4\uB2E8\uC744 \uD45C\uC900 \uCD9C\uB825(stdout)\uACFC \uBD84\
+  \uB9AC\uB41C \uBCC4\uB3C4\uC758 \uC2A4\uD2B8\uB9BC\uC73C\uB85C \uBCF4\uB0B4\uB294\
+  \ \uAC83\uC744 \uC758\uBBF8\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB294\
+  \ \uC774\uB97C \uD1B5\uD574 \uC77C\uBC18 \uD504\uB85C\uADF8\uB7A8 \uCD9C\uB825\uACFC\
+  \ \uC624\uB958 \uBA54\uC2DC\uC9C0\uB97C \uBD84\uB9AC\uD558\uC5EC \uB514\uBC84\uAE45\
+  \uACFC \uB85C\uADF8 \uBD84\uC11D\uC744 \uBCF4\uB2E4 \uC27D\uAC8C \uB9CC\uB4ED\uB2C8\
+  \uB2E4."
+title: "\uD45C\uC900 \uC624\uB958\uC5D0 \uC4F0\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,21 @@
 ---
-title:                "디버그 출력을 찍어보기"
 aliases:
 - /ko/swift/printing-debug-output/
-date:                  2024-01-20T17:53:40.231946-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "디버그 출력을 찍어보기"
-
-tag:                  "Testing and Debugging"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/swift/printing-debug-output.md"
+date: 2024-01-20 17:53:40.231946-07:00
+description: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC\uC5D0\uC11C \uC815\
+  \uBCF4\uB97C \uCF58\uC194\uC5D0 \uCC0D\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC740 \uBC84\uADF8\uB97C \uCC3E\uACE0, \uD750\uB984\uC744\
+  \ \uC774\uD574\uD558\uBA70, \uBCC0\uC218\uC758 \uC0C1\uD0DC\uB97C \uD655\uC778\uD558\
+  \uAE30 \uC704\uD574 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.752359
+model: gpt-4-1106-preview
+summary: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC\uC5D0\uC11C \uC815\uBCF4\
+  \uB97C \uCF58\uC194\uC5D0 \uCC0D\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC740 \uBC84\uADF8\uB97C \uCC3E\uACE0, \uD750\uB984\uC744 \uC774\
+  \uD574\uD558\uBA70, \uBCC0\uC218\uC758 \uC0C1\uD0DC\uB97C \uD655\uC778\uD558\uAE30\
+  \ \uC704\uD574 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+title: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC744 \uCC0D\uC5B4\uBCF4\uAE30"
 ---
 
 {{< edit_this_page >}}

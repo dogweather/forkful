@@ -1,12 +1,14 @@
 ---
-title:                "Concatenating strings"
 aliases:
 - /en/vba/concatenating-strings/
-date:                  2024-02-01T21:30:36.235039-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Concatenating strings"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/vba/concatenating-strings.md"
+date: 2024-02-01 21:30:36.235039-07:00
+description: "Concatenation in Visual Basic for Applications (VBA) involves joining\
+  \ two or more strings into a single entity. This is a fundamental task in programming,\u2026"
+lastmod: 2024-02-18 23:09:10.881886
+model: gpt-4-0125-preview
+summary: "Concatenation in Visual Basic for Applications (VBA) involves joining two\
+  \ or more strings into a single entity. This is a fundamental task in programming,\u2026"
+title: Concatenating strings
 ---
 
 {{< edit_this_page >}}

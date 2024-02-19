@@ -1,14 +1,16 @@
 ---
-title:                "Envoi d'une requête HTTP"
 aliases:
 - /fr/google-apps-script/sending-an-http-request/
-date:                  2024-02-01T22:01:27.545091-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Envoi d'une requête HTTP"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/google-apps-script/sending-an-http-request.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:27.545091-07:00
+description: "Envoyer une requ\xEAte HTTP avec Google Apps Script consiste \xE0 effectuer\
+  \ programmatiquement un appel \xE0 un serveur web externe ou une API. Les programmeurs\u2026"
+lastmod: 2024-02-18 23:09:08.284348
+model: gpt-4-0125-preview
+summary: "Envoyer une requ\xEAte HTTP avec Google Apps Script consiste \xE0 effectuer\
+  \ programmatiquement un appel \xE0 un serveur web externe ou une API. Les programmeurs\u2026"
+title: "Envoi d'une requ\xEAte HTTP"
 ---
 
 {{< edit_this_page >}}

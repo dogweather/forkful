@@ -1,14 +1,18 @@
 ---
-title:                "Säännöllisten lausekkeiden käyttö"
 aliases:
 - /fi/cpp/using-regular-expressions/
-date:                  2024-02-03T19:16:12.920059-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Säännöllisten lausekkeiden käyttö"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:16:12.920059-07:00
+description: "C++:n s\xE4\xE4nn\xF6lliset lausekkeet ovat merkkijonoja, jotka m\xE4\
+  \xE4rittelev\xE4t hakukaavan, ja niit\xE4 k\xE4ytet\xE4\xE4n merkkijonojen vastaavuuksien\
+  \ etsint\xE4\xE4n tai\u2026"
+lastmod: 2024-02-18 23:09:07.933006
+model: gpt-4-0125-preview
+summary: "C++:n s\xE4\xE4nn\xF6lliset lausekkeet ovat merkkijonoja, jotka m\xE4\xE4\
+  rittelev\xE4t hakukaavan, ja niit\xE4 k\xE4ytet\xE4\xE4n merkkijonojen vastaavuuksien\
+  \ etsint\xE4\xE4n tai\u2026"
+title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

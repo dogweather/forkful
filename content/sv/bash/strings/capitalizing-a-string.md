@@ -1,14 +1,18 @@
 ---
-title:                "Gör om en sträng till versaler"
 aliases:
 - /sv/bash/capitalizing-a-string/
-date:                  2024-02-03T19:04:51.974936-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gör om en sträng till versaler"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:04:51.974936-07:00
+description: "Att g\xF6ra det f\xF6rsta tecknet i en str\xE4ng till versal i Bash\
+  \ involverar att omvandla det f\xF6rsta tecknet av str\xE4ngen till stort bokstav\
+  \ medan resten av\u2026"
+lastmod: 2024-02-18 23:08:51.943094
+model: gpt-4-0125-preview
+summary: "Att g\xF6ra det f\xF6rsta tecknet i en str\xE4ng till versal i Bash involverar\
+  \ att omvandla det f\xF6rsta tecknet av str\xE4ngen till stort bokstav medan resten\
+  \ av\u2026"
+title: "G\xF6r om en str\xE4ng till versaler"
 ---
 
 {{< edit_this_page >}}

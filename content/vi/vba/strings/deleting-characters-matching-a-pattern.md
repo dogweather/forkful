@@ -1,14 +1,20 @@
 ---
-title:                "Xóa các ký tự phù hợp với một mẫu"
 aliases:
 - /vi/vba/deleting-characters-matching-a-pattern/
-date:                  2024-02-01T21:54:18.895797-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Xóa các ký tự phù hợp với một mẫu"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:18.895797-07:00
+description: "X\xF3a k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu c\u1EE5\
+  \ th\u1EC3 trong Visual Basic cho Applications (VBA) bao g\u1ED3m vi\u1EC7c x\xE1\
+  c \u0111\u1ECBnh v\xE0 sau \u0111\xF3 lo\u1EA1i b\u1ECF c\xE1c k\xFD t\u1EF1 ho\u1EB7\
+  c chu\u1ED7i ph\xF9 h\u1EE3p v\u1EDBi\u2026"
+lastmod: 2024-02-18 23:08:50.491081
+model: gpt-4-0125-preview
+summary: "X\xF3a k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu c\u1EE5\
+  \ th\u1EC3 trong Visual Basic cho Applications (VBA) bao g\u1ED3m vi\u1EC7c x\xE1\
+  c \u0111\u1ECBnh v\xE0 sau \u0111\xF3 lo\u1EA1i b\u1ECF c\xE1c k\xFD t\u1EF1 ho\u1EB7\
+  c chu\u1ED7i ph\xF9 h\u1EE3p v\u1EDBi\u2026"
+title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 ---
 
 {{< edit_this_page >}}

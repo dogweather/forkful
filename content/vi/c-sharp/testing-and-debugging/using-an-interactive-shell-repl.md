@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng vỏ tương tác (REPL)"
 aliases:
 - /vi/c-sharp/using-an-interactive-shell-repl/
-date:                  2024-01-28T22:09:02.622594-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng vỏ tương tác (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:02.622594-07:00
+description: "REPL, hay V\xF2ng L\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In, cho\
+  \ ph\xE9p b\u1EA1n nh\u1EADp m\xE3 C# v\xE0 ch\u1EA1y n\xF3 m\u1ED9t c\xE1ch t\u01B0\
+  \u01A1ng t\xE1c. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\
+  \u1EC3 th\u1EED nghi\u1EC7m nhanh, g\u1EE1 l\u1ED7i, ho\u1EB7c\u2026"
+lastmod: 2024-02-18 23:08:50.700277
+model: gpt-4-0125-preview
+summary: "REPL, hay V\xF2ng L\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In, cho ph\xE9\
+  p b\u1EA1n nh\u1EADp m\xE3 C# v\xE0 ch\u1EA1y n\xF3 m\u1ED9t c\xE1ch t\u01B0\u01A1\
+  ng t\xE1c. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3\
+  \ th\u1EED nghi\u1EC7m nhanh, g\u1EE1 l\u1ED7i, ho\u1EB7c\u2026"
+title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Mettre en majuscule une chaîne"
 aliases:
 - /fr/rust/capitalizing-a-string/
-date:                  2024-02-03T19:06:23.170611-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Mettre en majuscule une chaîne"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:23.170611-07:00
+description: "Mettre en majuscule la premi\xE8re lettre d'une cha\xEEne de caract\xE8\
+  res en Rust implique de modifier cette cha\xEEne afin que son premier caract\xE8\
+  re soit une\u2026"
+lastmod: 2024-02-18 23:09:08.510022
+model: gpt-4-0125-preview
+summary: "Mettre en majuscule la premi\xE8re lettre d'une cha\xEEne de caract\xE8\
+  res en Rust implique de modifier cette cha\xEEne afin que son premier caract\xE8\
+  re soit une\u2026"
+title: "Mettre en majuscule une cha\xEEne"
 ---
 
 {{< edit_this_page >}}

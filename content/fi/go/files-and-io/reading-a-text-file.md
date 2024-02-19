@@ -1,14 +1,18 @@
 ---
-title:                "Tekstitiedoston lukeminen"
 aliases:
 - /fi/go/reading-a-text-file/
-date:                  2024-02-03T18:05:53.767429-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tekstitiedoston lukeminen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/reading-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:53.767429-07:00
+description: "Tekstitiedoston lukeminen Go-kielell\xE4 sis\xE4lt\xE4\xE4 sis\xE4ll\xF6\
+  n hakemisen ja noutamisen levylt\xE4 tallennetusta tiedostosta k\xE4sittely\xE4\
+  \ tai analysointia varten.\u2026"
+lastmod: 2024-02-18 23:09:07.105591
+model: gpt-4-0125-preview
+summary: "Tekstitiedoston lukeminen Go-kielell\xE4 sis\xE4lt\xE4\xE4 sis\xE4ll\xF6\
+  n hakemisen ja noutamisen levylt\xE4 tallennetusta tiedostosta k\xE4sittely\xE4\
+  \ tai analysointia varten.\u2026"
+title: Tekstitiedoston lukeminen
 ---
 
 {{< edit_this_page >}}

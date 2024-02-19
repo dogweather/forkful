@@ -1,13 +1,16 @@
 ---
-title:                "Registro de Actividades"
 aliases:
 - /es/powershell/logging/
-date:                  2024-01-26T01:07:41.341271-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registro de Actividades"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/powershell/logging.md"
+date: 2024-01-26 01:07:41.341271-07:00
+description: "Registrar es b\xE1sicamente dejar un rastro de migajas a trav\xE9s de\
+  \ tu c\xF3digo - es la forma de mantener un control de lo que est\xE1 sucediendo\
+  \ cuando tu script\u2026"
+lastmod: 2024-02-18 23:09:10.222573
+model: gpt-4-1106-preview
+summary: "Registrar es b\xE1sicamente dejar un rastro de migajas a trav\xE9s de tu\
+  \ c\xF3digo - es la forma de mantener un control de lo que est\xE1 sucediendo cuando\
+  \ tu script\u2026"
+title: Registro de Actividades
 ---
 
 {{< edit_this_page >}}

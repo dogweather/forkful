@@ -1,13 +1,16 @@
 ---
-title:                "Konvertere en dato til en streng"
 aliases:
 - /no/javascript/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:05.330262-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konvertere en dato til en streng"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:05.330262-07:00
+description: "\xC5 konvertere datoer til strenger gj\xF8r det enkelt \xE5 lese og\
+  \ vise datoer for brukere. Programmerere gj\xF8r dette for \xE5 formatere eller\
+  \ lagre datoer som tekst\u2026"
+lastmod: 2024-02-18 23:08:54.319828
+model: gpt-4-1106-preview
+summary: "\xC5 konvertere datoer til strenger gj\xF8r det enkelt \xE5 lese og vise\
+  \ datoer for brukere. Programmerere gj\xF8r dette for \xE5 formatere eller lagre\
+  \ datoer som tekst\u2026"
+title: Konvertere en dato til en streng
 ---
 
 {{< edit_this_page >}}

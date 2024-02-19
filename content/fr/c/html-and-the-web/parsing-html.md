@@ -1,14 +1,17 @@
 ---
-title:                "Analyse Syntaxique de HTML"
 aliases:
 - /fr/c/parsing-html/
-date:                  2024-02-03T17:59:30.939798-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analyse Syntaxique de HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:30.939798-07:00
+description: "Analyser le HTML en C implique d'examiner les documents HTML pour en\
+  \ extraire efficacement des donn\xE9es, une structure ou des parties sp\xE9cifiques,\
+  \ souvent\u2026"
+lastmod: 2024-02-18 23:09:09.352935
+model: gpt-4-0125-preview
+summary: "Analyser le HTML en C implique d'examiner les documents HTML pour en extraire\
+  \ efficacement des donn\xE9es, une structure ou des parties sp\xE9cifiques, souvent\u2026"
+title: Analyse Syntaxique de HTML
 ---
 
 {{< edit_this_page >}}

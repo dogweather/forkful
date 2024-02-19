@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
 aliases:
 - /pl/php/reading-a-text-file/
-date:                  2024-01-20T17:54:57.683300-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie pliku tekstowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/reading-a-text-file.md"
+date: 2024-01-20 17:54:57.683300-07:00
+description: "Czytanie pliku tekstowego to proces pobierania danych zawartych w pliku\
+  \ tekstowym do dalszego przetwarzania. Programi\u015Bci robi\u0105 to, by obs\u0142\
+  ugiwa\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.713964
+model: gpt-4-1106-preview
+summary: "Czytanie pliku tekstowego to proces pobierania danych zawartych w pliku\
+  \ tekstowym do dalszego przetwarzania. Programi\u015Bci robi\u0105 to, by obs\u0142\
+  ugiwa\u0107\u2026"
+title: Odczytywanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

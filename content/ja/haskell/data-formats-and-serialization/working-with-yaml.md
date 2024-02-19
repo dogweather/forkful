@@ -1,14 +1,30 @@
 ---
-title:                "YAML を操作する"
 aliases:
 - /ja/haskell/working-with-yaml/
-date:                  2024-02-03T19:25:54.908090-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "YAML を操作する"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:25:54.908090-07:00
+description: "YAML\u306F\u3001\u300CYAML Ain't Markup Language\u300D\u306E\u7565\u3067\
+  \u3042\u308A\u3001\u3059\u3079\u3066\u306E\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\
+  \u8A00\u8A9E\u3067\u4F7F\u7528\u3067\u304D\u308B\u4EBA\u9593\u306B\u512A\u3057\u3044\
+  \u30C7\u30FC\u30BF\u30B7\u30EA\u30A2\u30E9\u30A4\u30BC\u30FC\u30B7\u30E7\u30F3\u6A19\
+  \u6E96\u3067\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\u305D\u306E\
+  \u8AAD\u307F\u3084\u3059\u3055\u3068\u76F4\u63A5\u7684\u306A\u69CB\u9020\u306E\u305F\
+  \u3081\u3001\u8A2D\u5B9A\u30D5\u30A1\u30A4\u30EB\u3084\u8A00\u8A9E\u9593\u306E\u30C7\
+  \u30FC\u30BF\u4EA4\u63DB\u3067YAML\u3092\u3088\u304F\u4F7F\u7528\u3057\u307E\u3059\
+  \u3002"
+lastmod: 2024-02-18 23:08:54.975580
+model: gpt-4-0125-preview
+summary: "YAML\u306F\u3001\u300CYAML Ain't Markup Language\u300D\u306E\u7565\u3067\
+  \u3042\u308A\u3001\u3059\u3079\u3066\u306E\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\
+  \u8A00\u8A9E\u3067\u4F7F\u7528\u3067\u304D\u308B\u4EBA\u9593\u306B\u512A\u3057\u3044\
+  \u30C7\u30FC\u30BF\u30B7\u30EA\u30A2\u30E9\u30A4\u30BC\u30FC\u30B7\u30E7\u30F3\u6A19\
+  \u6E96\u3067\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\u305D\u306E\
+  \u8AAD\u307F\u3084\u3059\u3055\u3068\u76F4\u63A5\u7684\u306A\u69CB\u9020\u306E\u305F\
+  \u3081\u3001\u8A2D\u5B9A\u30D5\u30A1\u30A4\u30EB\u3084\u8A00\u8A9E\u9593\u306E\u30C7\
+  \u30FC\u30BF\u4EA4\u63DB\u3067YAML\u3092\u3088\u304F\u4F7F\u7528\u3057\u307E\u3059\
+  \u3002"
+title: "YAML \u3092\u64CD\u4F5C\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

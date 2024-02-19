@@ -1,15 +1,16 @@
 ---
-title:                "De lengte van een string vinden"
 aliases:
 - /nl/arduino/finding-the-length-of-a-string/
-date:                  2024-01-28T21:59:57.357203-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "De lengte van een string vinden"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:57.357203-07:00
+description: "Het vinden van de lengte van een string betekent uitzoeken hoeveel tekens\
+  \ deze bevat. Programmeurs doen dit om input te valideren, door tekens te loopen,\u2026"
+lastmod: 2024-02-18 23:09:02.128638
+model: gpt-4-0125-preview
+summary: "Het vinden van de lengte van een string betekent uitzoeken hoeveel tekens\
+  \ deze bevat. Programmeurs doen dit om input te valideren, door tekens te loopen,\u2026"
+title: De lengte van een string vinden
 ---
 
 {{< edit_this_page >}}

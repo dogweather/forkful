@@ -1,14 +1,26 @@
 ---
-title:                "현재 날짜 가져오기"
 aliases:
 - /ko/fish-shell/getting-the-current-date/
-date:                  2024-02-03T19:09:34.352563-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "현재 날짜 가져오기"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:09:34.352563-07:00
+description: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\
+  \uB97C \uC5BB\uB294 \uAC83\uC740 \uC2DC\uC2A4\uD15C\uC758 \uB0A0\uC9DC \uBC0F \uC2DC\
+  \uAC04 \uB370\uC774\uD130\uB97C \uAC80\uC0C9\uD558\uACE0 \uC870\uC791\uD560 \uC218\
+  \ \uC788\uAC8C \uD574\uC8FC\uB294 \uAE30\uBCF8\uC801\uC778 \uC791\uC5C5\uC785\uB2C8\
+  \uB2E4. \uC2A4\uD06C\uB9BD\uD305 \uBC0F \uC790\uB3D9\uD654 \uC791\uC5C5\uC5D0\uC11C\
+  \ \uD0C0\uC784\uC2A4\uD0EC\uD504 \uC0DD\uC131, \uC791\uC5C5 \uC608\uC57D, \uB85C\
+  \uADF8 \uC0DD\uC131 \uB4F1\uC5D0 \uD544\uC218\uC801\uC785\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.898239
+model: gpt-4-0125-preview
+summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C\
+  \ \uC5BB\uB294 \uAC83\uC740 \uC2DC\uC2A4\uD15C\uC758 \uB0A0\uC9DC \uBC0F \uC2DC\uAC04\
+  \ \uB370\uC774\uD130\uB97C \uAC80\uC0C9\uD558\uACE0 \uC870\uC791\uD560 \uC218 \uC788\
+  \uAC8C \uD574\uC8FC\uB294 \uAE30\uBCF8\uC801\uC778 \uC791\uC5C5\uC785\uB2C8\uB2E4\
+  . \uC2A4\uD06C\uB9BD\uD305 \uBC0F \uC790\uB3D9\uD654 \uC791\uC5C5\uC5D0\uC11C \uD0C0\
+  \uC784\uC2A4\uD0EC\uD504 \uC0DD\uC131, \uC791\uC5C5 \uC608\uC57D, \uB85C\uADF8 \uC0DD\
+  \uC131 \uB4F1\uC5D0 \uD544\uC218\uC801\uC785\uB2C8\uB2E4."
+title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
 ---
 
 {{< edit_this_page >}}

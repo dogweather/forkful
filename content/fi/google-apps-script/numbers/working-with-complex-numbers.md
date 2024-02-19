@@ -1,14 +1,18 @@
 ---
-title:                "Työskentely kompleksilukujen kanssa"
 aliases:
 - /fi/google-apps-script/working-with-complex-numbers/
-date:                  2024-02-01T22:07:25.969798-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely kompleksilukujen kanssa"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:07:25.969798-07:00
+description: "Kompleksiluvut, jotka esitet\xE4\xE4n reaaliluvun ja imaginaariyksik\xF6\
+  n yhdistelm\xE4n\xE4 (esim. 3 + 4i), ovat keskeisi\xE4 erilaisissa laskennallisissa\
+  \ ongelmissa,\u2026"
+lastmod: 2024-02-18 23:09:07.127826
+model: gpt-4-0125-preview
+summary: "Kompleksiluvut, jotka esitet\xE4\xE4n reaaliluvun ja imaginaariyksik\xF6\
+  n yhdistelm\xE4n\xE4 (esim. 3 + 4i), ovat keskeisi\xE4 erilaisissa laskennallisissa\
+  \ ongelmissa,\u2026"
+title: "Ty\xF6skentely kompleksilukujen kanssa"
 ---
 
 {{< edit_this_page >}}

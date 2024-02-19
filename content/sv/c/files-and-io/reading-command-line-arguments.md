@@ -1,14 +1,18 @@
 ---
-title:                "Läser in kommandoradsargument"
 aliases:
 - /sv/c/reading-command-line-arguments/
-date:                  2024-02-03T18:06:10.851635-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Läser in kommandoradsargument"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:06:10.851635-07:00
+description: "I C-programmering m\xF6jligg\xF6r l\xE4sning av kommandoradsargument\
+  \ att program accepterar indata direkt fr\xE5n terminalen, vilket \xF6kar flexibiliteten\
+  \ och\u2026"
+lastmod: 2024-02-18 23:08:52.266979
+model: gpt-4-0125-preview
+summary: "I C-programmering m\xF6jligg\xF6r l\xE4sning av kommandoradsargument att\
+  \ program accepterar indata direkt fr\xE5n terminalen, vilket \xF6kar flexibiliteten\
+  \ och\u2026"
+title: "L\xE4ser in kommandoradsargument"
 ---
 
 {{< edit_this_page >}}

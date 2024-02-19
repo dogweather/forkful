@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonojen osien poimiminen"
 aliases:
 - /fi/swift/extracting-substrings/
-date:                  2024-01-20T17:46:46.561603-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonojen osien poimiminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/extracting-substrings.md"
+date: 2024-01-20 17:46:46.561603-07:00
+description: "Substringin poimiminen on perusoperaatio, joka irrottaa osan merkkijonosta.\
+  \ K\xE4yt\xE4mme sit\xE4, kun haluamme k\xE4sitell\xE4 tai n\xE4ytt\xE4\xE4 vain\
+  \ tietyn osan\u2026"
+lastmod: 2024-02-18 23:09:07.977757
+model: gpt-4-1106-preview
+summary: "Substringin poimiminen on perusoperaatio, joka irrottaa osan merkkijonosta.\
+  \ K\xE4yt\xE4mme sit\xE4, kun haluamme k\xE4sitell\xE4 tai n\xE4ytt\xE4\xE4 vain\
+  \ tietyn osan\u2026"
+title: Merkkijonojen osien poimiminen
 ---
 
 {{< edit_this_page >}}

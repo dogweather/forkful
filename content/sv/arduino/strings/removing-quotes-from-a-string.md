@@ -1,13 +1,14 @@
 ---
-title:                "Ta bort citattecken från en sträng"
 aliases:
 - /sv/arduino/removing-quotes-from-a-string/
-date:                  2024-01-26T03:37:41.959131-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ta bort citattecken från en sträng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:37:41.959131-07:00
+description: "Att ta bort citattecken fr\xE5n en str\xE4ng betyder att ta bort alla\
+  \ f\xF6rekomster av enkla (`'`) eller dubbla (`\"`) citattecken som omsluter texten.\u2026"
+lastmod: 2024-02-18 23:08:52.033212
+model: gpt-4-0125-preview
+summary: "Att ta bort citattecken fr\xE5n en str\xE4ng betyder att ta bort alla f\xF6\
+  rekomster av enkla (`'`) eller dubbla (`\"`) citattecken som omsluter texten.\u2026"
+title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

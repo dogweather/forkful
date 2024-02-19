@@ -1,13 +1,16 @@
 ---
-title:                "Usuwanie cudzysłowów z ciągu znaków"
 aliases:
 - /pl/python/removing-quotes-from-a-string/
-date:                  2024-01-26T03:42:23.511559-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usuwanie cudzysłowów z ciągu znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:42:23.511559-07:00
+description: "Usuwanie cudzys\u0142ow\xF3w z \u0142a\u0144cucha znak\xF3w zazwyczaj\
+  \ oznacza usuwanie zb\u0119dnych podw\xF3jnych (\") lub pojedynczych (') znak\xF3\
+  w cudzys\u0142owu. Programi\u015Bci robi\u0105 to w\u2026"
+lastmod: 2024-02-18 23:08:49.210014
+model: gpt-4-0125-preview
+summary: "Usuwanie cudzys\u0142ow\xF3w z \u0142a\u0144cucha znak\xF3w zazwyczaj oznacza\
+  \ usuwanie zb\u0119dnych podw\xF3jnych (\") lub pojedynczych (') znak\xF3w cudzys\u0142\
+  owu. Programi\u015Bci robi\u0105 to w\u2026"
+title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

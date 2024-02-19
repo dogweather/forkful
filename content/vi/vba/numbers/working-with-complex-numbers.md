@@ -1,14 +1,20 @@
 ---
-title:                "Làm việc với số phức"
 aliases:
 - /vi/vba/working-with-complex-numbers/
-date:                  2024-02-01T22:08:29.843611-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với số phức"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:08:29.843611-07:00
+description: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c bao g\u1ED3m th\u1EF1c hi\u1EC7\
+  n c\xE1c ph\xE9p to\xE1n to\xE1n h\u1ECDc tr\xEAn nh\u1EEFng s\u1ED1 c\xF3 c\u1EA3\
+  \ ph\u1EA7n th\u1EF1c v\xE0 ph\u1EA7n \u1EA3o. C\xE1c l\u1EADp tr\xECnh vi\xEAn\
+  \ th\u01B0\u1EDDng xuy\xEAn g\u1EB7p ph\u1EA3i s\u1ED1 ph\u1EE9c\u2026"
+lastmod: 2024-02-18 23:08:50.502258
+model: gpt-4-0125-preview
+summary: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c bao g\u1ED3m th\u1EF1c hi\u1EC7\
+  n c\xE1c ph\xE9p to\xE1n to\xE1n h\u1ECDc tr\xEAn nh\u1EEFng s\u1ED1 c\xF3 c\u1EA3\
+  \ ph\u1EA7n th\u1EF1c v\xE0 ph\u1EA7n \u1EA3o. C\xE1c l\u1EADp tr\xECnh vi\xEAn\
+  \ th\u01B0\u1EDDng xuy\xEAn g\u1EB7p ph\u1EA3i s\u1ED1 ph\u1EE9c\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 ---
 
 {{< edit_this_page >}}

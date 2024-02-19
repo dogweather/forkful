@@ -1,14 +1,18 @@
 ---
-title:                "Praca z JSON"
 aliases:
 - /pl/php/working-with-json/
-date:                  2024-02-03T19:24:17.364203-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:24:17.364203-07:00
+description: "JSON, czyli Notacja Obiektowa JavaScriptu, to lekki format wymiany danych,\
+  \ \u0142atwy do odczytania i zapisania przez ludzi, jak r\xF3wnie\u017C \u0142atwy\
+  \ do przetwarzania\u2026"
+lastmod: 2024-02-18 23:08:49.718209
+model: gpt-4-0125-preview
+summary: "JSON, czyli Notacja Obiektowa JavaScriptu, to lekki format wymiany danych,\
+  \ \u0142atwy do odczytania i zapisania przez ludzi, jak r\xF3wnie\u017C \u0142atwy\
+  \ do przetwarzania\u2026"
+title: Praca z JSON
 ---
 
 {{< edit_this_page >}}

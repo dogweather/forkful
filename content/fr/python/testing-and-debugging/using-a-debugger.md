@@ -1,13 +1,16 @@
 ---
-title:                "Utilisation d'un débogueur"
 aliases:
 - /fr/python/using-a-debugger/
-date:                  2024-01-26T04:08:55.437362-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation d'un débogueur"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/using-a-debugger.md"
+date: 2024-01-26 04:08:55.437362-07:00
+description: "\"Utiliser un d\xE9bogueur\" consiste \xE0 parcourir pas \xE0 pas votre\
+  \ code Python pour d\xE9couvrir des bugs et comprendre le comportement. Nous le\
+  \ faisons parce que\u2026"
+lastmod: 2024-02-18 23:09:08.345058
+model: gpt-4-0125-preview
+summary: "\"Utiliser un d\xE9bogueur\" consiste \xE0 parcourir pas \xE0 pas votre\
+  \ code Python pour d\xE9couvrir des bugs et comprendre le comportement. Nous le\
+  \ faisons parce que\u2026"
+title: "Utilisation d'un d\xE9bogueur"
 ---
 
 {{< edit_this_page >}}

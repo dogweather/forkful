@@ -1,14 +1,16 @@
 ---
-title:                "Kirjoittaminen vakiovirheeseen"
 aliases:
 - /fi/google-apps-script/writing-to-standard-error/
-date:                  2024-02-01T22:09:04.414550-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kirjoittaminen vakiovirheeseen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/writing-to-standard-error.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:09:04.414550-07:00
+description: "Standardivirheen (stderr) kirjoittaminen ohjelmointikieliss\xE4 tarkoittaa\
+  \ virheilmoitusten ja diagnostiikkojen ohjaamista erilliseen virtaan, pois\u2026"
+lastmod: 2024-02-18 23:09:07.155313
+model: gpt-4-0125-preview
+summary: "Standardivirheen (stderr) kirjoittaminen ohjelmointikieliss\xE4 tarkoittaa\
+  \ virheilmoitusten ja diagnostiikkojen ohjaamista erilliseen virtaan, pois\u2026"
+title: Kirjoittaminen vakiovirheeseen
 ---
 
 {{< edit_this_page >}}

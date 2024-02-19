@@ -1,13 +1,14 @@
 ---
-title:                "Usando una shell interactiva (REPL)"
 aliases:
 - /es/swift/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:17:49.340442-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando una shell interactiva (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:17:49.340442-07:00
+description: "Usar una shell interactiva, o un Bucle de Leer-Evaluar-Imprimir (REPL,\
+  \ por sus siglas en ingl\xE9s), te permite programar de manera interactiva. Los\u2026"
+lastmod: 2024-02-18 23:09:10.359815
+model: gpt-4-0125-preview
+summary: "Usar una shell interactiva, o un Bucle de Leer-Evaluar-Imprimir (REPL, por\
+  \ sus siglas en ingl\xE9s), te permite programar de manera interactiva. Los\u2026"
+title: Usando una shell interactiva (REPL)
 ---
 
 {{< edit_this_page >}}

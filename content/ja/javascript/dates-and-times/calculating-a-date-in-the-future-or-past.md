@@ -1,14 +1,24 @@
 ---
-title:                "将来または過去の日付を計算する"
 aliases:
 - /ja/javascript/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:31:33.014965-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "将来または過去の日付を計算する"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:31:33.014965-07:00
+description: "\u65E5\u4ED8\u306E\u8A08\u7B97\u306F\u3001\u73FE\u5728\u304B\u3089\u898B\
+  \u3066\u672A\u6765\u3084\u904E\u53BB\u306E\u7279\u5B9A\u306E\u65E5\u3092\u6C42\u3081\
+  \u308B\u3053\u3068\u3067\u3059\u3002\u30BF\u30A4\u30E0\u30E9\u30A4\u30F3\u4E0A\u3067\
+  \u30A4\u30D9\u30F3\u30C8\u4E88\u5B9A\u3092\u8A2D\u5B9A\u3059\u308B\u305F\u3081\u3084\
+  \u3001\u671F\u9650\u3092\u8A08\u7B97\u3059\u308B\u305F\u3081\u306B\u30D7\u30ED\u30B0\
+  \u30E9\u30DE\u30FC\u306F\u3053\u306E\u8A08\u7B97\u3092\u884C\u3044\u307E\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.281435
+model: gpt-4-1106-preview
+summary: "\u65E5\u4ED8\u306E\u8A08\u7B97\u306F\u3001\u73FE\u5728\u304B\u3089\u898B\
+  \u3066\u672A\u6765\u3084\u904E\u53BB\u306E\u7279\u5B9A\u306E\u65E5\u3092\u6C42\u3081\
+  \u308B\u3053\u3068\u3067\u3059\u3002\u30BF\u30A4\u30E0\u30E9\u30A4\u30F3\u4E0A\u3067\
+  \u30A4\u30D9\u30F3\u30C8\u4E88\u5B9A\u3092\u8A2D\u5B9A\u3059\u308B\u305F\u3081\u3084\
+  \u3001\u671F\u9650\u3092\u8A08\u7B97\u3059\u308B\u305F\u3081\u306B\u30D7\u30ED\u30B0\
+  \u30E9\u30DE\u30FC\u306F\u3053\u306E\u8A08\u7B97\u3092\u884C\u3044\u307E\u3059\u3002"
+title: "\u5C06\u6765\u307E\u305F\u306F\u904E\u53BB\u306E\u65E5\u4ED8\u3092\u8A08\u7B97\
+  \u3059\u308B"
 ---
 
 {{< edit_this_page >}}

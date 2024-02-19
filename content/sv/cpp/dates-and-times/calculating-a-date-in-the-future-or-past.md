@@ -1,13 +1,16 @@
 ---
-title:                "Beräkna ett datum i framtiden eller förflutet"
 aliases:
 - /sv/cpp/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:28:33.468710-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Beräkna ett datum i framtiden eller förflutet"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:28:33.468710-07:00
+description: "R\xE4kna ut ett framtida eller f\xF6rflutet datum handlar om att best\xE4\
+  mma ett specifikt datum utifr\xE5n ett annat genom att addera eller subtrahera dagar,\
+  \ m\xE5nader\u2026"
+lastmod: 2024-02-18 23:08:52.096616
+model: gpt-4-1106-preview
+summary: "R\xE4kna ut ett framtida eller f\xF6rflutet datum handlar om att best\xE4\
+  mma ett specifikt datum utifr\xE5n ett annat genom att addera eller subtrahera dagar,\
+  \ m\xE5nader\u2026"
+title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutet"
 ---
 
 {{< edit_this_page >}}

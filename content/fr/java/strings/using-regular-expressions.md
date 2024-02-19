@@ -1,14 +1,18 @@
 ---
-title:                "Utilisation des expressions régulières"
 aliases:
 - /fr/java/using-regular-expressions/
-date:                  2024-02-03T19:17:13.160140-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation des expressions régulières"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:17:13.160140-07:00
+description: "Les expressions r\xE9guli\xE8res (regex) en Java vous permettent de\
+  \ d\xE9finir des motifs sp\xE9cifiques pour rechercher, manipuler ou valider des\
+  \ cha\xEEnes de\u2026"
+lastmod: 2024-02-18 23:09:08.617334
+model: gpt-4-0125-preview
+summary: "Les expressions r\xE9guli\xE8res (regex) en Java vous permettent de d\xE9\
+  finir des motifs sp\xE9cifiques pour rechercher, manipuler ou valider des cha\xEE\
+  nes de\u2026"
+title: "Utilisation des expressions r\xE9guli\xE8res"
 ---
 
 {{< edit_this_page >}}

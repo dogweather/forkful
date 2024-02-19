@@ -1,15 +1,16 @@
 ---
-title:                "Werken met CSV"
 aliases:
 - /nl/elixir/working-with-csv/
-date:                  2024-01-28T22:09:54.982802-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met CSV"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elixir/working-with-csv.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:54.982802-07:00
+description: "CSV (Comma-Separated Values ofwel met komma's gescheiden waarden) is\
+  \ een plat tekstformaat voor tabelgegevens. Programmeurs gebruiken CSV om gemakkelijk\u2026"
+lastmod: 2024-02-18 23:09:01.551014
+model: gpt-4-0125-preview
+summary: "CSV (Comma-Separated Values ofwel met komma's gescheiden waarden) is een\
+  \ plat tekstformaat voor tabelgegevens. Programmeurs gebruiken CSV om gemakkelijk\u2026"
+title: Werken met CSV
 ---
 
 {{< edit_this_page >}}

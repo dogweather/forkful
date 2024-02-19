@@ -1,15 +1,20 @@
 ---
-title:                "Đọc một tệp văn bản"
 aliases:
 - /vi/arduino/reading-a-text-file/
-date:                  2024-01-28T22:05:08.948673-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Đọc một tệp văn bản"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/reading-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:05:08.948673-07:00
+description: "Vi\u1EC7c \u0111\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Arduino\
+  \ cho ph\xE9p b\u1EA1n truy c\u1EADp d\u1EEF li\u1EC7u \u0111\u01B0\u1EE3c l\u01B0\
+  u tr\u1EEF tr\xEAn th\u1EBB SD ho\u1EB7c trong b\u1ED9 nh\u1EDB c\u1EE7a thi\u1EBF\
+  t b\u1ECB\u2014ti\u1EC7n l\u1EE3i cho vi\u1EC7c c\xE0i \u0111\u1EB7t, d\u1EEF\u2026"
+lastmod: 2024-02-18 23:08:51.018415
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c \u0111\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Arduino\
+  \ cho ph\xE9p b\u1EA1n truy c\u1EADp d\u1EEF li\u1EC7u \u0111\u01B0\u1EE3c l\u01B0\
+  u tr\u1EEF tr\xEAn th\u1EBB SD ho\u1EB7c trong b\u1ED9 nh\u1EDB c\u1EE7a thi\u1EBF\
+  t b\u1ECB\u2014ti\u1EC7n l\u1EE3i cho vi\u1EC7c c\xE0i \u0111\u1EB7t, d\u1EEF\u2026"
+title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 ---
 
 {{< edit_this_page >}}

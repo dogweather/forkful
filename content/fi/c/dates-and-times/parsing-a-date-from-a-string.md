@@ -1,14 +1,18 @@
 ---
-title:                "Päivämäärän jäsennys merkkijonosta"
 aliases:
 - /fi/c/parsing-a-date-from-a-string/
-date:                  2024-02-03T18:06:02.090950-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Päivämäärän jäsennys merkkijonosta"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:06:02.090950-07:00
+description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta C-kieless\xE4\
+  \ tarkoittaa tekstuaalisten p\xE4iv\xE4m\xE4\xE4r\xE4esitysten muuntamista muotoon,\
+  \ jonka ohjelmat voivat tehokkaammin\u2026"
+lastmod: 2024-02-18 23:09:08.143390
+model: gpt-4-0125-preview
+summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta C-kieless\xE4\
+  \ tarkoittaa tekstuaalisten p\xE4iv\xE4m\xE4\xE4r\xE4esitysten muuntamista muotoon,\
+  \ jonka ohjelmat voivat tehokkaammin\u2026"
+title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 ---
 
 {{< edit_this_page >}}

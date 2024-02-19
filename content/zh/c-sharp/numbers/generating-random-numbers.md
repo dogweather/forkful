@@ -1,13 +1,22 @@
 ---
-title:                "生成随机数"
 aliases:
 - /zh/c-sharp/generating-random-numbers/
-date:                  2024-01-27T20:33:08.078113-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "生成随机数"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/generating-random-numbers.md"
+date: 2024-01-27 20:33:08.078113-07:00
+description: "\u5728 C# \u4E2D\u751F\u6210\u968F\u673A\u6570\u6D89\u53CA\u5728\u6307\
+  \u5B9A\u8303\u56F4\u5185\u521B\u5EFA\u4E0D\u53EF\u9884\u6D4B\u7684\u6570\u503C\u3002\
+  \u7A0B\u5E8F\u5458\u4F7F\u7528\u8FD9\u4E9B\u65B9\u6CD5\u6765\u5B9E\u73B0\u8BF8\u5982\
+  \u52A0\u5BC6\u3001\u6A21\u62DF\u548C\u6E38\u620F\u7B49\u7279\u6027\uFF0C\u5176\u4E2D\
+  \u9700\u8981\u4E0D\u53EF\u9884\u6D4B\u6027\u6216\u6A21\u62DF\u73B0\u5B9E\u4E16\u754C\
+  \u7684\u968F\u673A\u6027\u3002"
+lastmod: 2024-02-18 23:08:59.128992
+model: gpt-4-0125-preview
+summary: "\u5728 C# \u4E2D\u751F\u6210\u968F\u673A\u6570\u6D89\u53CA\u5728\u6307\u5B9A\
+  \u8303\u56F4\u5185\u521B\u5EFA\u4E0D\u53EF\u9884\u6D4B\u7684\u6570\u503C\u3002\u7A0B\
+  \u5E8F\u5458\u4F7F\u7528\u8FD9\u4E9B\u65B9\u6CD5\u6765\u5B9E\u73B0\u8BF8\u5982\u52A0\
+  \u5BC6\u3001\u6A21\u62DF\u548C\u6E38\u620F\u7B49\u7279\u6027\uFF0C\u5176\u4E2D\u9700\
+  \u8981\u4E0D\u53EF\u9884\u6D4B\u6027\u6216\u6A21\u62DF\u73B0\u5B9E\u4E16\u754C\u7684\
+  \u968F\u673A\u6027\u3002"
+title: "\u751F\u6210\u968F\u673A\u6570"
 ---
 
 {{< edit_this_page >}}

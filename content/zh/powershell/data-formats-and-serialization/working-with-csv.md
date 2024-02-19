@@ -1,14 +1,26 @@
 ---
-title:                "处理CSV文件"
 aliases:
 - /zh/powershell/working-with-csv/
-date:                  2024-02-03T19:20:47.940621-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理CSV文件"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:20:47.940621-07:00
+description: "\u5904\u7406 CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\uFF09\u6587\u4EF6\
+  \u662F\u7BA1\u7406\u548C\u64CD\u4F5C\u7ED3\u6784\u5316\u3001\u8868\u683C\u5F62\u5F0F\
+  \u6570\u636E\u7684\u5E38\u89C1\u4EFB\u52A1\u3002\u7A0B\u5E8F\u5458\u7ECF\u5E38\u6267\
+  \u884C\u6B64\u64CD\u4F5C\u4EE5\u6709\u6548\u5730\u5BFC\u5165\u3001\u5BFC\u51FA\u6216\
+  \u64CD\u4F5C\u6570\u636E\uFF0C\u7528\u4E8E\u5404\u79CD\u5E94\u7528\u7A0B\u5E8F\uFF0C\
+  \u4F8B\u5982\u6570\u636E\u5206\u6790\u3001\u62A5\u544A\uFF0C\u751A\u81F3\u4E3A\u7F51\
+  \u9875\u5E94\u7528\u7A0B\u5E8F\u63D0\u4F9B\u52A8\u529B\u3002"
+lastmod: 2024-02-18 23:08:59.352262
+model: gpt-4-0125-preview
+summary: "\u5904\u7406 CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\uFF09\u6587\u4EF6\u662F\
+  \u7BA1\u7406\u548C\u64CD\u4F5C\u7ED3\u6784\u5316\u3001\u8868\u683C\u5F62\u5F0F\u6570\
+  \u636E\u7684\u5E38\u89C1\u4EFB\u52A1\u3002\u7A0B\u5E8F\u5458\u7ECF\u5E38\u6267\u884C\
+  \u6B64\u64CD\u4F5C\u4EE5\u6709\u6548\u5730\u5BFC\u5165\u3001\u5BFC\u51FA\u6216\u64CD\
+  \u4F5C\u6570\u636E\uFF0C\u7528\u4E8E\u5404\u79CD\u5E94\u7528\u7A0B\u5E8F\uFF0C\u4F8B\
+  \u5982\u6570\u636E\u5206\u6790\u3001\u62A5\u544A\uFF0C\u751A\u81F3\u4E3A\u7F51\u9875\
+  \u5E94\u7528\u7A0B\u5E8F\u63D0\u4F9B\u52A8\u529B\u3002"
+title: "\u5904\u7406CSV\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,17 @@
 ---
-title:                "Een string omzetten naar kleine letters"
 aliases:
 - /nl/haskell/converting-a-string-to-lower-case/
-date:                  2024-01-28T21:57:48.216931-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string omzetten naar kleine letters"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/haskell/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:57:48.216931-07:00
+description: "Een string naar kleine letters omzetten betekent het transformeren van\
+  \ alle letters in de tekst naar hun kleine lettertegenhangers. Programmeurs doen\
+  \ dit\u2026"
+lastmod: 2024-02-18 23:09:01.884336
+model: gpt-4-0125-preview
+summary: "Een string naar kleine letters omzetten betekent het transformeren van alle\
+  \ letters in de tekst naar hun kleine lettertegenhangers. Programmeurs doen dit\u2026"
+title: Een string omzetten naar kleine letters
 ---
 
 {{< edit_this_page >}}

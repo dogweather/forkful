@@ -1,14 +1,21 @@
 ---
-title:                "将字符串转换为小写"
 aliases:
 - /zh/cpp/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:09.700185-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "将字符串转换为小写"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:09.700185-07:00
+description: "\u8F6C\u6362\u5B57\u7B26\u4E32\u5230\u5C0F\u5199\u662F\u628A\u6240\u6709\
+  \u5B57\u6BCD\u6539\u6210\u5C0F\u5199\u5F62\u5F0F\u7684\u8FC7\u7A0B\u3002\u7A0B\u5E8F\
+  \u5458\u8FD9\u4E48\u505A\u901A\u5E38\u662F\u4E3A\u4E86\u6570\u636E\u7EDF\u4E00\u5316\
+  \uFF0C\u6BD4\u5982\u5728\u6BD4\u8F83\u5B57\u7B26\u4E32\u65F6\u5FFD\u7565\u5927\u5C0F\
+  \u5199\u5DEE\u5F02\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.394174
+model: gpt-4-1106-preview
+summary: "\u8F6C\u6362\u5B57\u7B26\u4E32\u5230\u5C0F\u5199\u662F\u628A\u6240\u6709\
+  \u5B57\u6BCD\u6539\u6210\u5C0F\u5199\u5F62\u5F0F\u7684\u8FC7\u7A0B\u3002\u7A0B\u5E8F\
+  \u5458\u8FD9\u4E48\u505A\u901A\u5E38\u662F\u4E3A\u4E86\u6570\u636E\u7EDF\u4E00\u5316\
+  \uFF0C\u6BD4\u5982\u5728\u6BD4\u8F83\u5B57\u7B26\u4E32\u65F6\u5FFD\u7565\u5927\u5C0F\
+  \u5199\u5DEE\u5F02\u3002"
+title: "\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\u5199"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Extrahera delsträngar"
 aliases:
 - /sv/go/extracting-substrings/
-date:                  2024-02-03T17:56:34.527685-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Extrahera delsträngar"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/extracting-substrings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:34.527685-07:00
+description: "Att extrahera delstr\xE4ngar inneb\xE4r att h\xE4mta specifika delar\
+  \ av en str\xE4ng baserat p\xE5 deras positioner. Programmerare utf\xF6r ofta denna\
+  \ operation f\xF6r att\u2026"
+lastmod: 2024-02-18 23:08:51.321700
+model: gpt-4-0125-preview
+summary: "Att extrahera delstr\xE4ngar inneb\xE4r att h\xE4mta specifika delar av\
+  \ en str\xE4ng baserat p\xE5 deras positioner. Programmerare utf\xF6r ofta denna\
+  \ operation f\xF6r att\u2026"
+title: "Extrahera delstr\xE4ngar"
 ---
 
 {{< edit_this_page >}}

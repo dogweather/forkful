@@ -1,13 +1,16 @@
 ---
-title:                "Att organisera kod i funktioner"
 aliases:
 - /sv/cpp/organizing-code-into-functions/
-date:                  2024-01-26T01:09:50.086938-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Att organisera kod i funktioner"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/organizing-code-into-functions.md"
+date: 2024-01-26 01:09:50.086938-07:00
+description: "Att dela upp kod i funktioner inneb\xE4r att man karvar upp sin kod\
+  \ i mindre, \xE5teranv\xE4ndbara bitar. Vi g\xF6r det f\xF6r att undvika upprepning,\
+  \ g\xF6ra v\xE5r kod\u2026"
+lastmod: 2024-02-18 23:08:52.089157
+model: gpt-4-1106-preview
+summary: "Att dela upp kod i funktioner inneb\xE4r att man karvar upp sin kod i mindre,\
+  \ \xE5teranv\xE4ndbara bitar. Vi g\xF6r det f\xF6r att undvika upprepning, g\xF6\
+  ra v\xE5r kod\u2026"
+title: Att organisera kod i funktioner
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Tekstitiedoston lukeminen"
 aliases:
 - /fi/swift/reading-a-text-file/
-date:                  2024-01-20T17:55:15.650173-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tekstitiedoston lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/reading-a-text-file.md"
+date: 2024-01-20 17:55:15.650173-07:00
+description: "Luemme tekstifailia, kun haluamme ohjelmassamme k\xE4sitell\xE4 failissa\
+  \ olevaa dataa. Se on arkip\xE4iv\xE4inen tapa saada sis\xE4lt\xF6\xE4 ohjelmaan;\
+  \ olkoon kyse\u2026"
+lastmod: 2024-02-18 23:09:08.008778
+model: gpt-4-1106-preview
+summary: "Luemme tekstifailia, kun haluamme ohjelmassamme k\xE4sitell\xE4 failissa\
+  \ olevaa dataa. Se on arkip\xE4iv\xE4inen tapa saada sis\xE4lt\xF6\xE4 ohjelmaan;\
+  \ olkoon kyse\u2026"
+title: Tekstitiedoston lukeminen
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,17 @@
 ---
-title:                "Willekeurige getallen genereren"
 aliases:
 - /nl/kotlin/generating-random-numbers/
-date:                  2024-01-28T22:00:45.536174-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Willekeurige getallen genereren"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/kotlin/generating-random-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:00:45.536174-07:00
+description: "Het genereren van willekeurige getallen in programmering gaat over het\
+  \ cre\xEBren van getallen die geen enkel voorspelbaar patroon hebben. Programmeurs\
+  \ doen\u2026"
+lastmod: 2024-02-18 23:09:01.800951
+model: gpt-4-0125-preview
+summary: "Het genereren van willekeurige getallen in programmering gaat over het cre\xEB\
+  ren van getallen die geen enkel voorspelbaar patroon hebben. Programmeurs doen\u2026"
+title: Willekeurige getallen genereren
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Interpolando uma string"
 aliases:
 - /pt/google-apps-script/interpolating-a-string/
-date:                  2024-02-01T21:55:16.747492-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interpolando uma string"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/google-apps-script/interpolating-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:16.747492-07:00
+description: "A interpola\xE7\xE3o de strings no Google Apps Script permite a incorpora\xE7\
+  \xE3o din\xE2mica de express\xF5es dentro de strings, facilitando a cria\xE7\xE3\
+  o de c\xF3digos mais\u2026"
+lastmod: 2024-02-18 23:08:57.699915
+model: gpt-4-0125-preview
+summary: "A interpola\xE7\xE3o de strings no Google Apps Script permite a incorpora\xE7\
+  \xE3o din\xE2mica de express\xF5es dentro de strings, facilitando a cria\xE7\xE3\
+  o de c\xF3digos mais\u2026"
+title: Interpolando uma string
 ---
 
 {{< edit_this_page >}}

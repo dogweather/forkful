@@ -1,13 +1,15 @@
 ---
-title:                "Convertendo uma data em uma string"
 aliases:
 - /pt/rust/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:30.711334-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Convertendo uma data em uma string"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:30.711334-07:00
+description: "Converter uma data em uma string em Rust \xE9 transformar um valor de\
+  \ data/hora em um formato de texto leg\xEDvel. Fazemos isso principalmente para\
+  \ mostrar\u2026"
+lastmod: 2024-02-18 23:08:57.940371
+model: gpt-4-1106-preview
+summary: "Converter uma data em uma string em Rust \xE9 transformar um valor de data/hora\
+  \ em um formato de texto leg\xEDvel. Fazemos isso principalmente para mostrar\u2026"
+title: Convertendo uma data em uma string
 ---
 
 {{< edit_this_page >}}

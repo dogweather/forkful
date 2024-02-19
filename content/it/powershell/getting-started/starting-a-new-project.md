@@ -1,13 +1,14 @@
 ---
-title:                "Avvio di un nuovo progetto"
 aliases:
 - /it/powershell/starting-a-new-project/
-date:                  2024-01-20T18:04:02.923861-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Avvio di un nuovo progetto"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/starting-a-new-project.md"
+date: 2024-01-20 18:04:02.923861-07:00
+description: "Iniziamo un nuovo progetto per creare qualcosa da zero e per risolvere\
+  \ problemi specifici. I programmatori lo fanno per innovare, lavorare su idee\u2026"
+lastmod: 2024-02-18 23:08:56.095100
+model: gpt-4-1106-preview
+summary: "Iniziamo un nuovo progetto per creare qualcosa da zero e per risolvere problemi\
+  \ specifici. I programmatori lo fanno per innovare, lavorare su idee\u2026"
+title: Avvio di un nuovo progetto
 ---
 
 {{< edit_this_page >}}

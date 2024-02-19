@@ -1,14 +1,16 @@
 ---
-title:                "Een string omzetten naar kleine letters"
 aliases:
 - /nl/vba/converting-a-string-to-lower-case/
-date:                  2024-02-01T21:51:21.770445-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string omzetten naar kleine letters"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/vba/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:21.770445-07:00
+description: "Het omzetten van een tekenreeks naar kleine letters omvat het transformeren\
+  \ van alle hoofdletters in een tekenreeks naar hun kleine letter equivalenten.\u2026"
+lastmod: 2024-02-18 23:09:01.651145
+model: gpt-4-0125-preview
+summary: "Het omzetten van een tekenreeks naar kleine letters omvat het transformeren\
+  \ van alle hoofdletters in een tekenreeks naar hun kleine letter equivalenten.\u2026"
+title: Een string omzetten naar kleine letters
 ---
 
 {{< edit_this_page >}}

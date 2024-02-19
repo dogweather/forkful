@@ -1,13 +1,16 @@
 ---
-title:                "Refactoring"
 aliases:
 - /en/python/refactoring/
-date:                  2024-01-25T02:12:22.396984-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Refactoring"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/refactoring.md"
+date: 2024-01-25 02:12:22.396984-07:00
+description: "Refactoring is the process of restructuring existing computer code\u2014\
+  changing the factoring\u2014without changing its external behavior. Programmers\
+  \ do it to\u2026"
+lastmod: 2024-02-18 23:09:10.689796
+model: gpt-4-1106-preview
+summary: "Refactoring is the process of restructuring existing computer code\u2014\
+  changing the factoring\u2014without changing its external behavior. Programmers\
+  \ do it to\u2026"
+title: Refactoring
 ---
 
 {{< edit_this_page >}}

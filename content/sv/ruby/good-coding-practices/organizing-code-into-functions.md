@@ -1,13 +1,15 @@
 ---
-title:                "Att organisera kod i funktioner"
 aliases:
 - /sv/ruby/organizing-code-into-functions/
-date:                  2024-01-26T01:11:38.584754-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Att organisera kod i funktioner"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/organizing-code-into-functions.md"
+date: 2024-01-26 01:11:38.584754-07:00
+description: "Att organisera kod i funktioner delar upp ditt script i \xE5teranv\xE4\
+  ndbara delar. Det handlar allt om att g\xF6ra din kod ren, hanterbar och mindre\
+  \ buggig.\u2026"
+lastmod: 2024-02-18 23:08:52.300516
+model: gpt-4-1106-preview
+summary: "Att organisera kod i funktioner delar upp ditt script i \xE5teranv\xE4ndbara\
+  \ delar. Det handlar allt om att g\xF6ra din kod ren, hanterbar och mindre buggig.\u2026"
+title: Att organisera kod i funktioner
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Skrive ut feilsøkingsdata"
 aliases:
 - /no/cpp/printing-debug-output/
-date:                  2024-01-20T17:52:02.397871-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skrive ut feilsøkingsdata"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/printing-debug-output.md"
+date: 2024-01-20 17:52:02.397871-07:00
+description: "Utskrift av feils\xF8kingsdata hjelper utviklere med \xE5 forst\xE5\
+  \ hva som skjer i koden deres. Det er en enkel metode for \xE5 spore variabler og\
+  \ applikasjonsflyt\u2026"
+lastmod: 2024-02-18 23:08:54.194506
+model: gpt-4-1106-preview
+summary: "Utskrift av feils\xF8kingsdata hjelper utviklere med \xE5 forst\xE5 hva\
+  \ som skjer i koden deres. Det er en enkel metode for \xE5 spore variabler og applikasjonsflyt\u2026"
+title: "Skrive ut feils\xF8kingsdata"
 ---
 
 {{< edit_this_page >}}

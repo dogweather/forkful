@@ -1,14 +1,17 @@
 ---
-title:                "Skrive tester"
 aliases:
 - /no/clojure/writing-tests/
-date:                  2024-02-03T19:30:02.482478-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skrive tester"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:30:02.482478-07:00
+description: "\xC5 skrive tester i Clojure, mye som i andre programmeringsspr\xE5\
+  k, inneb\xE6rer \xE5 lage dedikert kode for \xE5 verifisere at hovedkodebasen din\
+  \ fungerer som\u2026"
+lastmod: 2024-02-18 23:08:53.567837
+model: gpt-4-0125-preview
+summary: "\xC5 skrive tester i Clojure, mye som i andre programmeringsspr\xE5k, inneb\xE6\
+  rer \xE5 lage dedikert kode for \xE5 verifisere at hovedkodebasen din fungerer som\u2026"
+title: Skrive tester
 ---
 
 {{< edit_this_page >}}

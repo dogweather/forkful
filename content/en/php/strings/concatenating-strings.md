@@ -1,13 +1,16 @@
 ---
-title:                "Concatenating strings"
 aliases:
 - /en/php/concatenating-strings/
-date:                  2024-01-20T17:35:16.268542-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenating strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/concatenating-strings.md"
+date: 2024-01-20 17:35:16.268542-07:00
+description: "Concatenating strings is basically just stringing words together. Think\
+  \ of it like making a train out of words instead of carriages. Programmers do it\
+  \ to\u2026"
+lastmod: 2024-02-18 23:09:11.129113
+model: gpt-4-1106-preview
+summary: "Concatenating strings is basically just stringing words together. Think\
+  \ of it like making a train out of words instead of carriages. Programmers do it\
+  \ to\u2026"
+title: Concatenating strings
 ---
 
 {{< edit_this_page >}}

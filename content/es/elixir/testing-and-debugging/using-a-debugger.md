@@ -1,13 +1,15 @@
 ---
-title:                "Usando un depurador"
 aliases:
 - /es/elixir/using-a-debugger/
-date:                  2024-01-26T03:48:15.380274-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando un depurador"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/using-a-debugger.md"
+date: 2024-01-26 03:48:15.380274-07:00
+description: "Usar un depurador en Elixir implica recorrer tu c\xF3digo paso a paso,\
+  \ inspeccionar variables y seguir flujos para eliminar errores. Los programadores\
+  \ lo\u2026"
+lastmod: 2024-02-18 23:09:09.653534
+model: gpt-4-0125-preview
+summary: "Usar un depurador en Elixir implica recorrer tu c\xF3digo paso a paso, inspeccionar\
+  \ variables y seguir flujos para eliminar errores. Los programadores lo\u2026"
+title: Usando un depurador
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "TOML:n kanssa työskentely"
 aliases:
 - /fi/google-apps-script/working-with-toml/
-date:                  2024-02-01T22:06:32.885558-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "TOML:n kanssa työskentely"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/working-with-toml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:06:32.885558-07:00
+description: "TOML, joka tarkoittaa Tom's Obvious, Minimal Language, on asetustiedostomuoto,\
+  \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta. Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:07.163526
+model: gpt-4-0125-preview
+summary: "TOML, joka tarkoittaa Tom's Obvious, Minimal Language, on asetustiedostomuoto,\
+  \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta. Ohjelmoijat\u2026"
+title: "TOML:n kanssa ty\xF6skentely"
 ---
 
 {{< edit_this_page >}}

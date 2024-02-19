@@ -1,14 +1,18 @@
 ---
-title:                "Interpolacja ciągu znaków"
 aliases:
 - /pl/vba/interpolating-a-string/
-date:                  2024-02-01T21:56:02.315407-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interpolacja ciągu znaków"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/vba/interpolating-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:56:02.315407-07:00
+description: "Interpolacja ci\u0105g\xF3w w Visual Basic for Applications (VBA) odnosi\
+  \ si\u0119 do procesu osadzania zmiennych lub wyra\u017Ce\u0144 w dos\u0142ownym\
+  \ ci\u0105gu znak\xF3w, co umo\u017Cliwia\u2026"
+lastmod: 2024-02-18 23:08:49.418608
+model: gpt-4-0125-preview
+summary: "Interpolacja ci\u0105g\xF3w w Visual Basic for Applications (VBA) odnosi\
+  \ si\u0119 do procesu osadzania zmiennych lub wyra\u017Ce\u0144 w dos\u0142ownym\
+  \ ci\u0105gu znak\xF3w, co umo\u017Cliwia\u2026"
+title: "Interpolacja ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

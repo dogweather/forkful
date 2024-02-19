@@ -1,14 +1,16 @@
 ---
-title:                "Scrivere sull'errore standard"
 aliases:
 - /it/bash/writing-to-standard-error/
-date:                  2024-02-03T19:32:14.302404-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Scrivere sull'errore standard"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:14.302404-07:00
+description: "Scrivere su standard error (stderr) in Bash consiste nel dirigere messaggi\
+  \ di errore o qualsiasi output diagnostico importante separatamente dall'output\u2026"
+lastmod: 2024-02-18 23:08:56.068073
+model: gpt-4-0125-preview
+summary: "Scrivere su standard error (stderr) in Bash consiste nel dirigere messaggi\
+  \ di errore o qualsiasi output diagnostico importante separatamente dall'output\u2026"
+title: Scrivere sull'errore standard
 ---
 
 {{< edit_this_page >}}

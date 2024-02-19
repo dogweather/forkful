@@ -1,13 +1,14 @@
 ---
-title:                "Søking og erstatting av tekst"
 aliases:
 - /no/php/searching-and-replacing-text/
-date:                  2024-01-20T17:58:28.693380-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Søking og erstatting av tekst"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:28.693380-07:00
+description: "I PHP s\xF8ker og erstatter vi tekst for \xE5 oppdatere data eller formatere\
+  \ output. Dette sparer tid og automatiserer kjedelige oppgaver."
+lastmod: 2024-02-18 23:08:53.961148
+model: gpt-4-1106-preview
+summary: "I PHP s\xF8ker og erstatter vi tekst for \xE5 oppdatere data eller formatere\
+  \ output. Dette sparer tid og automatiserer kjedelige oppgaver."
+title: "S\xF8king og erstatting av tekst"
 ---
 
 {{< edit_this_page >}}

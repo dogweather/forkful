@@ -1,13 +1,18 @@
 ---
-title:                "将代码组织成函数"
 aliases:
 - /zh/swift/organizing-code-into-functions/
-date:                  2024-01-26T01:16:11.540529-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "将代码组织成函数"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/organizing-code-into-functions.md"
+date: 2024-01-26 01:16:11.540529-07:00
+description: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\u51FD\u6570\uFF0C\u5C31\u662F\u5C06\
+  \u4EFB\u52A1\u7EC6\u5206\u6210\u53EF\u91CD\u7528\u7684\u5757\u3002\u8FD9\u4F7F\u5F97\
+  \u4EE3\u7801\u66F4\u52A0\u6E05\u6670\uFF0C\u51CF\u5C11\u9519\u8BEF\uFF0C\u5E76\u4E14\
+  \u66F4\u6613\u4E8E\u8C03\u8BD5\u6216\u91CD\u6784\u3002"
+lastmod: 2024-02-18 23:08:59.447027
+model: gpt-4-0125-preview
+summary: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\u51FD\u6570\uFF0C\u5C31\u662F\u5C06\
+  \u4EFB\u52A1\u7EC6\u5206\u6210\u53EF\u91CD\u7528\u7684\u5757\u3002\u8FD9\u4F7F\u5F97\
+  \u4EE3\u7801\u66F4\u52A0\u6E05\u6670\uFF0C\u51CF\u5C11\u9519\u8BEF\uFF0C\u5E76\u4E14\
+  \u66F4\u6613\u4E8E\u8C03\u8BD5\u6216\u91CD\u6784\u3002"
+title: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\u51FD\u6570"
 ---
 
 {{< edit_this_page >}}

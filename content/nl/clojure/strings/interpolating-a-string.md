@@ -1,15 +1,16 @@
 ---
-title:                "Een string interpoleren"
 aliases:
 - /nl/clojure/interpolating-a-string/
-date:                  2024-01-28T22:01:57.099731-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string interpoleren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/clojure/interpolating-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:57.099731-07:00
+description: "Stringinterpolatie stelt ons in staat variabelen zonder moeite in strings\
+  \ te gooien. Waarom? Om dynamisch tekst te construeren - veel handiger dan de\u2026"
+lastmod: 2024-02-18 23:09:01.464327
+model: gpt-4-0125-preview
+summary: "Stringinterpolatie stelt ons in staat variabelen zonder moeite in strings\
+  \ te gooien. Waarom? Om dynamisch tekst te construeren - veel handiger dan de\u2026"
+title: Een string interpoleren
 ---
 
 {{< edit_this_page >}}

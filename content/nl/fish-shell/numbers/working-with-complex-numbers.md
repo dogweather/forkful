@@ -1,15 +1,16 @@
 ---
-title:                "Werken met complexe getallen"
 aliases:
 - /nl/fish-shell/working-with-complex-numbers/
-date:                  2024-01-28T22:12:28.751199-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met complexe getallen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/working-with-complex-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:28.751199-07:00
+description: "Complexe getallen breiden het idee van eendimensionale getallenlijnen\
+  \ uit naar een tweedimensionaal complex vlak. Programmeurs gebruiken ze in velden\u2026"
+lastmod: 2024-02-18 23:09:02.316236
+model: gpt-4-0125-preview
+summary: "Complexe getallen breiden het idee van eendimensionale getallenlijnen uit\
+  \ naar een tweedimensionaal complex vlak. Programmeurs gebruiken ze in velden\u2026"
+title: Werken met complexe getallen
 ---
 
 {{< edit_this_page >}}

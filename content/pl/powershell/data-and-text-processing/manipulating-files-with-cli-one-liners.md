@@ -1,13 +1,16 @@
 ---
-title:                "Manipulowanie plikami za pomocą jednolinijkowców CLI"
 aliases:
 - /pl/powershell/manipulating-files-with-cli-one-liners/
-date:                  2024-01-27T16:21:32.865679-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulowanie plikami za pomocą jednolinijkowców CLI"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/manipulating-files-with-cli-one-liners.md"
+date: 2024-01-27 16:21:32.865679-07:00
+description: "Manipulowanie plikami przy u\u017Cyciu jednolinijkowc\xF3w CLI w PowerShell\
+  \ to sprawa szybkiej zmiany, przenoszenia lub uzyskiwania danych pliku bezpo\u015B\
+  rednio z\u2026"
+lastmod: 2024-02-18 23:08:49.823868
+model: gpt-4-0125-preview
+summary: "Manipulowanie plikami przy u\u017Cyciu jednolinijkowc\xF3w CLI w PowerShell\
+  \ to sprawa szybkiej zmiany, przenoszenia lub uzyskiwania danych pliku bezpo\u015B\
+  rednio z\u2026"
+title: "Manipulowanie plikami za pomoc\u0105 jednolinijkowc\xF3w CLI"
 ---
 
 {{< edit_this_page >}}

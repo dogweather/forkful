@@ -1,13 +1,15 @@
 ---
-title:                "Інтерполяція рядків"
 aliases:
 - /uk/swift/interpolating-a-string/
-date:                  2024-01-20T17:51:37.457758-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Інтерполяція рядків"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/interpolating-a-string.md"
+date: 2024-01-20 17:51:37.457758-07:00
+description: String interpolation allows us to insert variables into strings. It's
+  a swift, clean way to construct strings - essentials in coding.
+lastmod: 2024-02-18 23:09:00.937884
+model: gpt-4-1106-preview
+summary: String interpolation allows us to insert variables into strings. It's a swift,
+  clean way to construct strings - essentials in coding.
+title: "\u0406\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0456\u044F \u0440\
+  \u044F\u0434\u043A\u0456\u0432"
 ---
 
 {{< edit_this_page >}}

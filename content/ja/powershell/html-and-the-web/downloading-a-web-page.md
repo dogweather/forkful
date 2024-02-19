@@ -1,14 +1,23 @@
 ---
-title:                "ウェブページのダウンロード"
 aliases:
 - /ja/powershell/downloading-a-web-page/
-date:                  2024-01-20T17:44:32.407025-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "ウェブページのダウンロード"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/powershell/downloading-a-web-page.md"
+date: 2024-01-20 17:44:32.407025-07:00
+description: "Web\u30DA\u30FC\u30B8\u3092\u30C0\u30A6\u30F3\u30ED\u30FC\u30C9\u3059\
+  \u308B\u3063\u3066\u306E\u306F\u3001\u30A4\u30F3\u30BF\u30FC\u30CD\u30C3\u30C8\u4E0A\
+  \u306E\u60C5\u5831\u3092\u624B\u306B\u5165\u308C\u308B\u30D7\u30ED\u30BB\u30B9\u3060\
+  \u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u30C7\u30FC\u30BF\u5206\u6790\u3001\
+  \u76E3\u8996\u3001\u30C6\u30B9\u30C8\u306E\u305F\u3081\u306B\u3053\u308C\u3092\u3084\
+  \u308B\u3093\u3060\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.113823
+model: gpt-4-1106-preview
+summary: "Web\u30DA\u30FC\u30B8\u3092\u30C0\u30A6\u30F3\u30ED\u30FC\u30C9\u3059\u308B\
+  \u3063\u3066\u306E\u306F\u3001\u30A4\u30F3\u30BF\u30FC\u30CD\u30C3\u30C8\u4E0A\u306E\
+  \u60C5\u5831\u3092\u624B\u306B\u5165\u308C\u308B\u30D7\u30ED\u30BB\u30B9\u3060\u3002\
+  \u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u30C7\u30FC\u30BF\u5206\u6790\u3001\u76E3\
+  \u8996\u3001\u30C6\u30B9\u30C8\u306E\u305F\u3081\u306B\u3053\u308C\u3092\u3084\u308B\
+  \u3093\u3060\u3002"
+title: "\u30A6\u30A7\u30D6\u30DA\u30FC\u30B8\u306E\u30C0\u30A6\u30F3\u30ED\u30FC\u30C9"
 ---
 
 {{< edit_this_page >}}

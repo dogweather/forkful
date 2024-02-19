@@ -1,13 +1,16 @@
 ---
-title:                "Feilhåndtering"
 aliases:
 - /no/php/handling-errors/
-date:                  2024-01-26T00:55:56.195757-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Feilhåndtering"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/handling-errors.md"
+date: 2024-01-26 00:55:56.195757-07:00
+description: "Feilh\xE5ndtering i PHP dreier seg om \xE5 h\xE5ndtere og respondere\
+  \ p\xE5 tilstander som forstyrrer det normale programflytet, som manglende filer\
+  \ eller d\xE5rlig\u2026"
+lastmod: 2024-02-18 23:08:53.982376
+model: gpt-4-1106-preview
+summary: "Feilh\xE5ndtering i PHP dreier seg om \xE5 h\xE5ndtere og respondere p\xE5\
+  \ tilstander som forstyrrer det normale programflytet, som manglende filer eller\
+  \ d\xE5rlig\u2026"
+title: "Feilh\xE5ndtering"
 ---
 
 {{< edit_this_page >}}

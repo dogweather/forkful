@@ -1,13 +1,15 @@
 ---
-title:                "Порівняння двох дат"
 aliases:
 - /uk/python/comparing-two-dates/
-date:                  2024-01-20T17:33:32.346766-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Порівняння двох дат"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/python/comparing-two-dates.md"
+date: 2024-01-20 17:33:32.346766-07:00
+description: "Comparing two dates lets you see which is earlier or later, or if they're\
+  \ the same. Programmers do this to track events, handle bookings, or set up\u2026"
+lastmod: 2024-02-18 23:08:59.805819
+model: gpt-4-1106-preview
+summary: "Comparing two dates lets you see which is earlier or later, or if they're\
+  \ the same. Programmers do this to track events, handle bookings, or set up\u2026"
+title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u0432\u043E\
+  \u0445 \u0434\u0430\u0442"
 ---
 
 {{< edit_this_page >}}

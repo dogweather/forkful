@@ -1,13 +1,16 @@
 ---
-title:                "Exibindo saídas de depuração"
 aliases:
 - /pt/java/printing-debug-output/
-date:                  2024-01-20T17:52:48.943296-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Exibindo saídas de depuração"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/printing-debug-output.md"
+date: 2024-01-20 17:52:48.943296-07:00
+description: "No mundo da programa\xE7\xE3o, imprimir sa\xEDdas de depura\xE7\xE3\
+  o \xE9 o equivalente a uma l\xE2mpada que piscar quando algo errado acontece. \xC9\
+  \ extremamente \xFAtil: ajuda a\u2026"
+lastmod: 2024-02-18 23:08:58.021270
+model: gpt-4-1106-preview
+summary: "No mundo da programa\xE7\xE3o, imprimir sa\xEDdas de depura\xE7\xE3o \xE9\
+  \ o equivalente a uma l\xE2mpada que piscar quando algo errado acontece. \xC9 extremamente\
+  \ \xFAtil: ajuda a\u2026"
+title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

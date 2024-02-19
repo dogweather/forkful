@@ -1,14 +1,18 @@
 ---
-title:                "Merkkijonon pituuden määrittäminen"
 aliases:
 - /fi/c/finding-the-length-of-a-string/
-date:                  2024-02-03T17:56:33.582878-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonon pituuden määrittäminen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:33.582878-07:00
+description: "Merkkijonon pituuden m\xE4\xE4ritt\xE4minen C-kieless\xE4 tarkoittaa\
+  \ merkkien lukum\xE4\xE4r\xE4n selvitt\xE4mist\xE4 ennen nolla-terminaattoria `\\\
+  0`. Ohjelmoijat tekev\xE4t t\xE4m\xE4n,\u2026"
+lastmod: 2024-02-18 23:09:08.121557
+model: gpt-4-0125-preview
+summary: "Merkkijonon pituuden m\xE4\xE4ritt\xE4minen C-kieless\xE4 tarkoittaa merkkien\
+  \ lukum\xE4\xE4r\xE4n selvitt\xE4mist\xE4 ennen nolla-terminaattoria `\\0`. Ohjelmoijat\
+  \ tekev\xE4t t\xE4m\xE4n,\u2026"
+title: "Merkkijonon pituuden m\xE4\xE4ritt\xE4minen"
 ---
 
 {{< edit_this_page >}}

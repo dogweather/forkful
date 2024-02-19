@@ -1,13 +1,15 @@
 ---
-title:                "Organisation du code en fonctions"
 aliases:
 - /fr/javascript/organizing-code-into-functions/
-date:                  2024-01-26T01:11:08.941884-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organisation du code en fonctions"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/organizing-code-into-functions.md"
+date: 2024-01-26 01:11:08.941884-07:00
+description: "Organiser le code en fonctions divise les t\xE2ches en morceaux r\xE9\
+  utilisables, rendant le code plus propre et plus facile \xE0 maintenir. Nous faisons\
+  \ cela pour\u2026"
+lastmod: 2024-02-18 23:09:09.262188
+model: gpt-4-1106-preview
+summary: "Organiser le code en fonctions divise les t\xE2ches en morceaux r\xE9utilisables,\
+  \ rendant le code plus propre et plus facile \xE0 maintenir. Nous faisons cela pour\u2026"
+title: Organisation du code en fonctions
 ---
 
 {{< edit_this_page >}}

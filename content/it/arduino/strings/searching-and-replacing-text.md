@@ -1,13 +1,15 @@
 ---
-title:                "Ricerca e sostituzione del testo"
 aliases:
 - /it/arduino/searching-and-replacing-text/
-date:                  2024-01-20T17:57:18.227559-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ricerca e sostituzione del testo"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:18.227559-07:00
+description: "In programmazione, cercare e sostituire del testo significa scovare\
+  \ una stringa specifica e rimpiazzarla con un'altra. Programmatori fanno questo\
+  \ per\u2026"
+lastmod: 2024-02-18 23:08:56.120902
+model: gpt-4-1106-preview
+summary: "In programmazione, cercare e sostituire del testo significa scovare una\
+  \ stringa specifica e rimpiazzarla con un'altra. Programmatori fanno questo per\u2026"
+title: Ricerca e sostituzione del testo
 ---
 
 {{< edit_this_page >}}

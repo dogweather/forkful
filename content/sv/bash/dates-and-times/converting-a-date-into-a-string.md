@@ -1,13 +1,16 @@
 ---
-title:                "Omvandla ett datum till en sträng"
 aliases:
 - /sv/bash/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:00.270443-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Omvandla ett datum till en sträng"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:00.270443-07:00
+description: "Att omvandla ett datum till en str\xE4ng inneb\xE4r att man formaterar\
+  \ det i en textrepresentation. Programmerare g\xF6r detta f\xF6r l\xE4sbarhet, f\xF6\
+  r att spara datum i\u2026"
+lastmod: 2024-02-18 23:08:51.972361
+model: gpt-4-1106-preview
+summary: "Att omvandla ett datum till en str\xE4ng inneb\xE4r att man formaterar det\
+  \ i en textrepresentation. Programmerare g\xF6r detta f\xF6r l\xE4sbarhet, f\xF6\
+  r att spara datum i\u2026"
+title: "Omvandla ett datum till en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

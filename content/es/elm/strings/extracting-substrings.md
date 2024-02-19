@@ -1,13 +1,14 @@
 ---
-title:                "Extracción de subcadenas"
 aliases:
 - /es/elm/extracting-substrings/
-date:                  2024-01-20T17:45:37.460353-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extracción de subcadenas"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/extracting-substrings.md"
+date: 2024-01-20 17:45:37.460353-07:00
+description: "Extraer subcadenas significa seleccionar partes espec\xEDficas de una\
+  \ cadena de texto. Los programadores hacen esto para manipular y utilizar solo los\u2026"
+lastmod: 2024-02-18 23:09:09.878665
+model: gpt-4-1106-preview
+summary: "Extraer subcadenas significa seleccionar partes espec\xEDficas de una cadena\
+  \ de texto. Los programadores hacen esto para manipular y utilizar solo los\u2026"
+title: "Extracci\xF3n de subcadenas"
 ---
 
 {{< edit_this_page >}}

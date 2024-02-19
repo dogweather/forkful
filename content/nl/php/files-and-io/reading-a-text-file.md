@@ -1,15 +1,17 @@
 ---
-title:                "Een tekstbestand lezen"
 aliases:
 - /nl/php/reading-a-text-file/
-date:                  2024-01-28T22:05:25.231198-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tekstbestand lezen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/php/reading-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:05:25.231198-07:00
+description: "Een tekstbestand lezen in PHP betekent inhoud uit een bestand halen\
+  \ en in je script brengen. Programmeurs doen dit om gegevensopslag, configuratie\
+  \ te\u2026"
+lastmod: 2024-02-18 23:09:01.964495
+model: gpt-4-0125-preview
+summary: "Een tekstbestand lezen in PHP betekent inhoud uit een bestand halen en in\
+  \ je script brengen. Programmeurs doen dit om gegevensopslag, configuratie te\u2026"
+title: Een tekstbestand lezen
 ---
 
 {{< edit_this_page >}}

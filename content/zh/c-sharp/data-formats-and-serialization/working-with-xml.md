@@ -1,13 +1,20 @@
 ---
-title:                "处理XML"
 aliases:
 - /zh/c-sharp/working-with-xml/
-date:                  2024-01-26T04:29:29.650786-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/working-with-xml.md"
+date: 2024-01-26 04:29:29.650786-07:00
+description: "XML\uFF08\u53EF\u6269\u5C55\u6807\u8BB0\u8BED\u8A00\uFF09\u662F\u5173\
+  \u4E8E\u4EE5\u53EF\u8BFB\u683C\u5F0F\u7ED3\u6784\u5316\u6570\u636E\u7684\u6280\u672F\
+  \u3002\u7A0B\u5E8F\u5458\u5728\u914D\u7F6E\u3001\u5E94\u7528\u7A0B\u5E8F\u4E4B\u95F4\
+  \u7684\u6570\u636E\u4EA4\u6362\u4EE5\u53CA\u89C4\u8303\u8981\u6C42\u65F6\u4F1A\u4F7F\
+  \u7528XML\u2014\u2014\u60F3\u60F3SOAP\u6216\u8005Web API\u3002"
+lastmod: 2024-02-18 23:08:59.154546
+model: gpt-4-0125-preview
+summary: "XML\uFF08\u53EF\u6269\u5C55\u6807\u8BB0\u8BED\u8A00\uFF09\u662F\u5173\u4E8E\
+  \u4EE5\u53EF\u8BFB\u683C\u5F0F\u7ED3\u6784\u5316\u6570\u636E\u7684\u6280\u672F\u3002\
+  \u7A0B\u5E8F\u5458\u5728\u914D\u7F6E\u3001\u5E94\u7528\u7A0B\u5E8F\u4E4B\u95F4\u7684\
+  \u6570\u636E\u4EA4\u6362\u4EE5\u53CA\u89C4\u8303\u8981\u6C42\u65F6\u4F1A\u4F7F\u7528\
+  XML\u2014\u2014\u60F3\u60F3SOAP\u6216\u8005Web API\u3002"
+title: "\u5904\u7406XML"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Analyse Syntaxique du HTML"
 aliases:
 - /fr/lua/parsing-html/
-date:                  2024-02-03T19:12:25.055990-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analyse Syntaxique du HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/lua/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:25.055990-07:00
+description: "L'analyse du HTML implique l'extraction de donn\xE9es et d'informations\
+  \ \xE0 partir de documents HTML, ce qui est crucial pour le web scraping, l'analyse\
+  \ de\u2026"
+lastmod: 2024-02-18 23:09:08.967244
+model: gpt-4-0125-preview
+summary: "L'analyse du HTML implique l'extraction de donn\xE9es et d'informations\
+  \ \xE0 partir de documents HTML, ce qui est crucial pour le web scraping, l'analyse\
+  \ de\u2026"
+title: Analyse Syntaxique du HTML
 ---
 
 {{< edit_this_page >}}

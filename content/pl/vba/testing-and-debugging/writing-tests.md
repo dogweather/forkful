@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie testów"
 aliases:
 - /pl/vba/writing-tests/
-date:                  2024-02-01T22:08:56.230298-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie testów"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/vba/writing-tests.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:08:56.230298-07:00
+description: "Pisanie test\xF3w w programowaniu polega na tworzeniu konkretnych procedur\
+  \ w celu walidacji funkcjonalno\u015Bci i wydajno\u015Bci fragment\xF3w kodu, zapewniaj\u0105\
+  c ich\u2026"
+lastmod: 2024-02-18 23:08:49.437946
+model: gpt-4-0125-preview
+summary: "Pisanie test\xF3w w programowaniu polega na tworzeniu konkretnych procedur\
+  \ w celu walidacji funkcjonalno\u015Bci i wydajno\u015Bci fragment\xF3w kodu, zapewniaj\u0105\
+  c ich\u2026"
+title: "Pisanie test\xF3w"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Skriva ut felsökningsdata"
 aliases:
 - /sv/cpp/printing-debug-output/
-date:                  2024-01-20T17:52:05.650822-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skriva ut felsökningsdata"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/printing-debug-output.md"
+date: 2024-01-20 17:52:05.650822-07:00
+description: "Utskrift f\xF6r fels\xF6kning \xE4r n\xE4r man skriver ut meddelanden\
+  \ f\xF6r att f\xF6rst\xE5 vad programmet g\xF6r. Programmerare g\xF6r detta f\xF6\
+  r att snabbt hitta och fixa buggar."
+lastmod: 2024-02-18 23:08:52.086351
+model: gpt-4-1106-preview
+summary: "Utskrift f\xF6r fels\xF6kning \xE4r n\xE4r man skriver ut meddelanden f\xF6\
+  r att f\xF6rst\xE5 vad programmet g\xF6r. Programmerare g\xF6r detta f\xF6r att\
+  \ snabbt hitta och fixa buggar."
+title: "Skriva ut fels\xF6kningsdata"
 ---
 
 {{< edit_this_page >}}

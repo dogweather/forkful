@@ -1,14 +1,16 @@
 ---
-title:                "Lavorare con CSV"
 aliases:
 - /it/c/working-with-csv/
-date:                  2024-02-03T18:11:38.338117-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:11:38.338117-07:00
+description: "Nel mondo della programmazione, lavorare con file CSV (Valori Separati\
+  \ da Virgola) implica la lettura e la scrittura di dati in file di testo organizzati\u2026"
+lastmod: 2024-02-18 23:08:56.362247
+model: gpt-4-0125-preview
+summary: "Nel mondo della programmazione, lavorare con file CSV (Valori Separati da\
+  \ Virgola) implica la lettura e la scrittura di dati in file di testo organizzati\u2026"
+title: Lavorare con CSV
 ---
 
 {{< edit_this_page >}}

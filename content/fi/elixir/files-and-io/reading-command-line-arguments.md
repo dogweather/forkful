@@ -1,13 +1,16 @@
 ---
-title:                "Komennoriviparametrien lukeminen"
 aliases:
 - /fi/elixir/reading-command-line-arguments/
-date:                  2024-01-20T17:55:43.658100-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Komennoriviparametrien lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:43.658100-07:00
+description: "Komennoriviparametrien lukeminen on tapa vastaanottaa k\xE4ytt\xE4j\xE4\
+  lt\xE4 tietoja ohjelman suorituksen yhteydess\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4\
+  t t\xE4t\xE4 toimintoa\u2026"
+lastmod: 2024-02-18 23:09:07.290408
+model: gpt-4-1106-preview
+summary: "Komennoriviparametrien lukeminen on tapa vastaanottaa k\xE4ytt\xE4j\xE4\
+  lt\xE4 tietoja ohjelman suorituksen yhteydess\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4\
+  t t\xE4t\xE4 toimintoa\u2026"
+title: Komennoriviparametrien lukeminen
 ---
 
 {{< edit_this_page >}}

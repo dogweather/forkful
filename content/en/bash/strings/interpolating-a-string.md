@@ -1,13 +1,14 @@
 ---
-title:                "Interpolating a string"
 aliases:
 - /en/bash/interpolating-a-string/
-date:                  2024-01-20T17:50:08.463610-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolating a string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/interpolating-a-string.md"
+date: 2024-01-20 17:50:08.463610-07:00
+description: String interpolation lets you insert values into a string. It's handy
+  for creating custom messages, automating commands, and scripting like a boss.
+lastmod: 2024-02-18 23:09:11.213997
+model: gpt-4-1106-preview
+summary: String interpolation lets you insert values into a string. It's handy for
+  creating custom messages, automating commands, and scripting like a boss.
+title: Interpolating a string
 ---
 
 {{< edit_this_page >}}

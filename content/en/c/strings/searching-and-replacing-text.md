@@ -1,12 +1,14 @@
 ---
-title:                "Searching and replacing text"
 aliases:
 - /en/c/searching-and-replacing-text/
-date:                  2024-02-03T17:50:18.481726-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Searching and replacing text"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/searching-and-replacing-text.md"
+date: 2024-02-03 17:50:18.481726-07:00
+description: "Searching and replacing text in C involves identifying specific substrings\
+  \ within a larger string and substituting them with different substrings.\u2026"
+lastmod: 2024-02-18 23:09:11.507813
+model: gpt-4-0125-preview
+summary: "Searching and replacing text in C involves identifying specific substrings\
+  \ within a larger string and substituting them with different substrings.\u2026"
+title: Searching and replacing text
 ---
 
 {{< edit_this_page >}}

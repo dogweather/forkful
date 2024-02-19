@@ -1,13 +1,16 @@
 ---
-title:                "Att använda en debugger"
 aliases:
 - /sv/elm/using-a-debugger/
-date:                  2024-01-26T03:50:16.908429-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda en debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/using-a-debugger.md"
+date: 2024-01-26 03:50:16.908429-07:00
+description: "Fels\xF6kning i Elm involverar att identifiera och ta bort fel fr\xE5\
+  n din kod. Programmerare g\xF6r detta f\xF6r att s\xE4kerst\xE4lla att deras applikationer\
+  \ fungerar\u2026"
+lastmod: 2024-02-18 23:08:51.713857
+model: gpt-4-0125-preview
+summary: "Fels\xF6kning i Elm involverar att identifiera och ta bort fel fr\xE5n din\
+  \ kod. Programmerare g\xF6r detta f\xF6r att s\xE4kerst\xE4lla att deras applikationer\
+  \ fungerar\u2026"
+title: "Att anv\xE4nda en debugger"
 ---
 
 {{< edit_this_page >}}

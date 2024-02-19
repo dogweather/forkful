@@ -1,13 +1,16 @@
 ---
-title:                "Wysyłanie żądania HTTP"
 aliases:
 - /pl/kotlin/sending-an-http-request/
-date:                  2024-01-20T17:59:55.549167-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wysyłanie żądania HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/sending-an-http-request.md"
+date: 2024-01-20 17:59:55.549167-07:00
+description: "Wysy\u0142anie \u017C\u0105dania HTTP to proces komunikacji z serwerem\
+  \ \u2013 pytasz, serwer odpowiada. Programi\u015Bci robi\u0105 to, aby pobiera\u0107\
+  \ dane, wysy\u0142a\u0107 informacje lub\u2026"
+lastmod: 2024-02-18 23:08:49.558652
+model: gpt-4-1106-preview
+summary: "Wysy\u0142anie \u017C\u0105dania HTTP to proces komunikacji z serwerem \u2013\
+  \ pytasz, serwer odpowiada. Programi\u015Bci robi\u0105 to, aby pobiera\u0107 dane,\
+  \ wysy\u0142a\u0107 informacje lub\u2026"
+title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Registrazione Eventi (Logging)"
 aliases:
 - /it/fish-shell/logging/
-date:                  2024-01-26T01:04:06.386758-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registrazione Eventi (Logging)"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/logging.md"
+date: 2024-01-26 01:04:06.386758-07:00
+description: "Il logging, essenzialmente, consiste nell'annotare ci\xF2 che la tua\
+  \ applicazione sta facendo \u2013 potremmo dire un diario, ma per il codice. I programmatori\
+  \ lo\u2026"
+lastmod: 2024-02-18 23:08:56.301977
+model: gpt-4-1106-preview
+summary: "Il logging, essenzialmente, consiste nell'annotare ci\xF2 che la tua applicazione\
+  \ sta facendo \u2013 potremmo dire un diario, ma per il codice. I programmatori\
+  \ lo\u2026"
+title: Registrazione Eventi (Logging)
 ---
 
 {{< edit_this_page >}}

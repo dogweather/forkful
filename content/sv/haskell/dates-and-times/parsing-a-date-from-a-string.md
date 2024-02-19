@@ -1,14 +1,18 @@
 ---
-title:                "Analysera ett datum från en sträng"
 aliases:
 - /sv/haskell/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:14:35.831510-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analysera ett datum från en sträng"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:14:35.831510-07:00
+description: "Att tolka ett datum fr\xE5n en str\xE4ng i Haskell inneb\xE4r att omvandla\
+  \ textuella representationer av datum till ett strukturerat format som programmet\
+  \ kan\u2026"
+lastmod: 2024-02-18 23:08:51.845962
+model: gpt-4-0125-preview
+summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Haskell inneb\xE4r att omvandla\
+  \ textuella representationer av datum till ett strukturerat format som programmet\
+  \ kan\u2026"
+title: "Analysera ett datum fr\xE5n en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

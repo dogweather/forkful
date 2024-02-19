@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonon pituuden selvittäminen"
 aliases:
 - /fi/bash/finding-the-length-of-a-string/
-date:                  2024-01-20T17:46:59.868967-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon pituuden selvittäminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:46:59.868967-07:00
+description: "Merkkijonon pituuden selvitt\xE4minen tarkoittaa merkkien lukum\xE4\xE4\
+  r\xE4n laskemista. Ohjelmoijat tarvitsevat t\xE4t\xE4 esimerkiksi sy\xF6tteiden\
+  \ validointiin ja tietojen\u2026"
+lastmod: 2024-02-18 23:09:07.792643
+model: gpt-4-1106-preview
+summary: "Merkkijonon pituuden selvitt\xE4minen tarkoittaa merkkien lukum\xE4\xE4\
+  r\xE4n laskemista. Ohjelmoijat tarvitsevat t\xE4t\xE4 esimerkiksi sy\xF6tteiden\
+  \ validointiin ja tietojen\u2026"
+title: "Merkkijonon pituuden selvitt\xE4minen"
 ---
 
 {{< edit_this_page >}}

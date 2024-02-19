@@ -1,14 +1,16 @@
 ---
-title:                "Merkkien poistaminen vastaavan mallin mukaan"
 aliases:
 - /fi/c/deleting-characters-matching-a-pattern/
-date:                  2024-02-03T17:55:31.327071-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkien poistaminen vastaavan mallin mukaan"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:31.327071-07:00
+description: "Merkkijonoista tietty\xE4 mallia vastaavien merkkien poistaminen C-kieless\xE4\
+  \ tarkoittaa kaikkien tiettyihin ennalta m\xE4\xE4riteltyihin kriteereihin sopivien\u2026"
+lastmod: 2024-02-18 23:09:08.113171
+model: gpt-4-0125-preview
+summary: "Merkkijonoista tietty\xE4 mallia vastaavien merkkien poistaminen C-kieless\xE4\
+  \ tarkoittaa kaikkien tiettyihin ennalta m\xE4\xE4riteltyihin kriteereihin sopivien\u2026"
+title: Merkkien poistaminen vastaavan mallin mukaan
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Generazione di numeri casuali"
 aliases:
 - /it/clojure/generating-random-numbers/
-date:                  2024-01-27T20:33:05.429183-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generazione di numeri casuali"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/generating-random-numbers.md"
+date: 2024-01-27 20:33:05.429183-07:00
+description: "Generare numeri casuali nella programmazione riguarda la creazione di\
+  \ valori che non possono essere previsti logicamente in anticipo. I programmatori\u2026"
+lastmod: 2024-02-18 23:08:55.557085
+model: gpt-4-0125-preview
+summary: "Generare numeri casuali nella programmazione riguarda la creazione di valori\
+  \ che non possono essere previsti logicamente in anticipo. I programmatori\u2026"
+title: Generazione di numeri casuali
 ---
 
 {{< edit_this_page >}}

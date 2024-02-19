@@ -1,13 +1,16 @@
 ---
-title:                "Trabalhando com XML"
 aliases:
 - /pt/clojure/working-with-xml/
-date:                  2024-01-26T04:29:39.292088-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/working-with-xml.md"
+date: 2024-01-26 04:29:39.292088-07:00
+description: "XML \xE9 uma linguagem de marca\xE7\xE3o para codificar documentos de\
+  \ forma que sejam leg\xEDveis por humanos e m\xE1quinas. \xC9 chave em servi\xE7\
+  os web, arquivos de\u2026"
+lastmod: 2024-02-18 23:08:57.826828
+model: gpt-4-0125-preview
+summary: "XML \xE9 uma linguagem de marca\xE7\xE3o para codificar documentos de forma\
+  \ que sejam leg\xEDveis por humanos e m\xE1quinas. \xC9 chave em servi\xE7os web,\
+  \ arquivos de\u2026"
+title: Trabalhando com XML
 ---
 
 {{< edit_this_page >}}

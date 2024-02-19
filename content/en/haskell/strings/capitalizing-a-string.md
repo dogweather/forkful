@@ -1,12 +1,14 @@
 ---
-title:                "Capitalizing a string"
 aliases:
 - /en/haskell/capitalizing-a-string/
-date:                  2024-02-03T19:02:30.982258-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizing a string"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/capitalizing-a-string.md"
+date: 2024-02-03 19:02:30.982258-07:00
+description: "Capitalizing a string involves transforming the first letter of a given\
+  \ string to uppercase while ensuring the rest of the letters remain lowercase.\u2026"
+lastmod: 2024-02-18 23:09:11.079463
+model: gpt-4-0125-preview
+summary: "Capitalizing a string involves transforming the first letter of a given\
+  \ string to uppercase while ensuring the rest of the letters remain lowercase.\u2026"
+title: Capitalizing a string
 ---
 
 {{< edit_this_page >}}

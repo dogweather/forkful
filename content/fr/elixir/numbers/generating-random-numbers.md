@@ -1,13 +1,16 @@
 ---
-title:                "Génération de nombres aléatoires"
 aliases:
 - /fr/elixir/generating-random-numbers/
-date:                  2024-01-27T20:33:30.222539-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Génération de nombres aléatoires"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/generating-random-numbers.md"
+date: 2024-01-27 20:33:30.222539-07:00
+description: "La g\xE9n\xE9ration de nombres al\xE9atoires en Elixir est une t\xE2\
+  che de programmation fondamentale, essentielle pour les applications n\xE9cessitant\
+  \ des r\xE9sultats\u2026"
+lastmod: 2024-02-18 23:09:08.429593
+model: gpt-4-0125-preview
+summary: "La g\xE9n\xE9ration de nombres al\xE9atoires en Elixir est une t\xE2che\
+  \ de programmation fondamentale, essentielle pour les applications n\xE9cessitant\
+  \ des r\xE9sultats\u2026"
+title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 ---
 
 {{< edit_this_page >}}

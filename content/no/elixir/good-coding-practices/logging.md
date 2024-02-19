@@ -1,13 +1,14 @@
 ---
-title:                "Loggføring"
 aliases:
 - /no/elixir/logging/
-date:                  2024-01-26T01:02:43.657794-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Loggføring"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/logging.md"
+date: 2024-01-26 01:02:43.657794-07:00
+description: "Logging i programvareutvikling er teknikken for \xE5 registrere hendelser\
+  \ som finner sted mens et program kj\xF8rer, vanligvis til en fil eller et eksternt\u2026"
+lastmod: 2024-02-18 23:08:53.610964
+model: gpt-4-1106-preview
+summary: "Logging i programvareutvikling er teknikken for \xE5 registrere hendelser\
+  \ som finner sted mens et program kj\xF8rer, vanligvis til en fil eller et eksternt\u2026"
+title: "Loggf\xF8ring"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,18 @@
 ---
-title:                "Korzystanie z tablic asocjacyjnych"
 aliases:
 - /pl/elixir/using-associative-arrays/
-date:                  2024-01-30T19:10:49.334125-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z tablic asocjacyjnych"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:49.334125-07:00
+description: "W Elixirze, tablice asocjacyjne, zwane Mapami, to kolekcje par klucz-warto\u015B\
+  \u0107, gdzie unikalny klucz wskazuje na warto\u015B\u0107. S\u0105 niesamowicie\
+  \ przydatne do\u2026"
+lastmod: 2024-02-18 23:08:49.299063
+model: gpt-4-0125-preview
+summary: "W Elixirze, tablice asocjacyjne, zwane Mapami, to kolekcje par klucz-warto\u015B\
+  \u0107, gdzie unikalny klucz wskazuje na warto\u015B\u0107. S\u0105 niesamowicie\
+  \ przydatne do\u2026"
+title: Korzystanie z tablic asocjacyjnych
 ---
 
 {{< edit_this_page >}}

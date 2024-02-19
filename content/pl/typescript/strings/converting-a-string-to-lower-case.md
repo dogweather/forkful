@@ -1,13 +1,16 @@
 ---
-title:                "Konwersja ciągu znaków na małe litery"
 aliases:
 - /pl/typescript/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:39:30.330469-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konwersja ciągu znaków na małe litery"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:39:30.330469-07:00
+description: "Zmiana ci\u0105gu znak\xF3w na ma\u0142e litery to przekszta\u0142cenie\
+  \ wszystkich liter w ci\u0105gu na ich odpowiedniki w dolnym rejestrze. Robimy to,\
+  \ by ujednolici\u0107 dane\u2026"
+lastmod: 2024-02-18 23:08:49.335447
+model: gpt-4-1106-preview
+summary: "Zmiana ci\u0105gu znak\xF3w na ma\u0142e litery to przekszta\u0142cenie\
+  \ wszystkich liter w ci\u0105gu na ich odpowiedniki w dolnym rejestrze. Robimy to,\
+  \ by ujednolici\u0107 dane\u2026"
+title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 ---
 
 {{< edit_this_page >}}

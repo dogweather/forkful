@@ -1,12 +1,14 @@
 ---
-title:                "Downloading a web page"
 aliases:
 - /en/c/downloading-a-web-page/
-date:                  2024-02-03T17:50:09.875050-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Downloading a web page"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/downloading-a-web-page.md"
+date: 2024-02-03 17:50:09.875050-07:00
+description: "Downloading a web page in C involves programmatically accessing the\
+  \ content of a web page over the internet and saving it locally for processing or\u2026"
+lastmod: 2024-02-18 23:09:11.521388
+model: gpt-4-0125-preview
+summary: "Downloading a web page in C involves programmatically accessing the content\
+  \ of a web page over the internet and saving it locally for processing or\u2026"
+title: Downloading a web page
 ---
 
 {{< edit_this_page >}}

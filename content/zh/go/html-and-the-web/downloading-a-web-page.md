@@ -1,14 +1,22 @@
 ---
-title:                "下载网页"
 aliases:
 - /zh/go/downloading-a-web-page/
-date:                  2024-02-03T17:56:12.181763-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "下载网页"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/downloading-a-web-page.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:12.181763-07:00
+description: "\u4E0B\u8F7D\u7F51\u9875\u5C31\u662F\u901A\u8FC7HTTP/HTTPS\u534F\u8BAE\
+  \u83B7\u53D6\u7F51\u9875\u7684HTML\u5185\u5BB9\u3002\u7A0B\u5E8F\u5458\u901A\u5E38\
+  \u56E0\u4E3A\u7F51\u9875\u6293\u53D6\u3001\u6570\u636E\u5206\u6790\u6216\u8005\u4EC5\
+  \u4EC5\u662F\u4E3A\u4E86\u4EE5\u7F16\u7A0B\u65B9\u5F0F\u4E0E\u7F51\u7AD9\u4EA4\u4E92\
+  \u4EE5\u81EA\u52A8\u5316\u4EFB\u52A1\u800C\u6267\u884C\u6B64\u64CD\u4F5C\u3002"
+lastmod: 2024-02-18 23:08:58.706661
+model: gpt-4-0125-preview
+summary: "\u4E0B\u8F7D\u7F51\u9875\u5C31\u662F\u901A\u8FC7HTTP/HTTPS\u534F\u8BAE\u83B7\
+  \u53D6\u7F51\u9875\u7684HTML\u5185\u5BB9\u3002\u7A0B\u5E8F\u5458\u901A\u5E38\u56E0\
+  \u4E3A\u7F51\u9875\u6293\u53D6\u3001\u6570\u636E\u5206\u6790\u6216\u8005\u4EC5\u4EC5\
+  \u662F\u4E3A\u4E86\u4EE5\u7F16\u7A0B\u65B9\u5F0F\u4E0E\u7F51\u7AD9\u4EA4\u4E92\u4EE5\
+  \u81EA\u52A8\u5316\u4EFB\u52A1\u800C\u6267\u884C\u6B64\u64CD\u4F5C\u3002"
+title: "\u4E0B\u8F7D\u7F51\u9875"
 ---
 
 {{< edit_this_page >}}

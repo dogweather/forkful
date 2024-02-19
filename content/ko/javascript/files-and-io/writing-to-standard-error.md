@@ -1,14 +1,30 @@
 ---
-title:                "표준 에러에 쓰기"
 aliases:
 - /ko/javascript/writing-to-standard-error/
-date:                  2024-02-03T19:33:48.998979-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "표준 에러에 쓰기"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:33:48.998979-07:00
+description: "\uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8\uC5D0\uC11C \uD45C\uC900 \uC624\
+  \uB958(stderr)\uB85C \uC791\uC131\uD558\uB294 \uAC83\uC740 \uC624\uB958 \uBA54\uC2DC\
+  \uC9C0\uB098 \uC911\uC694\uD55C \uC815\uBCF4\uB97C \uB85C\uAE45 \uBC0F \uB514\uBC84\
+  \uAE45 \uBAA9\uC801\uC73C\uB85C \uD2B9\uC815 \uBD84\uB9AC\uB41C \uC2A4\uD2B8\uB9BC\
+  \uC5D0 \uC9C0\uC2DC\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD2B9\uD788 Unix \uACC4\
+  \uC5F4 \uD658\uACBD\uC5D0\uC11C \uC720\uC6A9\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC740 \uC77C\uBC18 \uD504\uB85C\uADF8\uB7A8 \uCD9C\uB825\uACFC\
+  \ \uC624\uB958 \uBA54\uC2DC\uC9C0\uB97C \uAD6C\uBD84\uD568\uC73C\uB85C\uC368, \uCD9C\
+  \uB825 \uAD00\uB9AC\uB97C \uB354\u2026"
+lastmod: 2024-02-18 23:09:06.838381
+model: gpt-4-0125-preview
+summary: "\uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8\uC5D0\uC11C \uD45C\uC900 \uC624\uB958\
+  (stderr)\uB85C \uC791\uC131\uD558\uB294 \uAC83\uC740 \uC624\uB958 \uBA54\uC2DC\uC9C0\
+  \uB098 \uC911\uC694\uD55C \uC815\uBCF4\uB97C \uB85C\uAE45 \uBC0F \uB514\uBC84\uAE45\
+  \ \uBAA9\uC801\uC73C\uB85C \uD2B9\uC815 \uBD84\uB9AC\uB41C \uC2A4\uD2B8\uB9BC\uC5D0\
+  \ \uC9C0\uC2DC\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD2B9\uD788 Unix \uACC4\uC5F4\
+  \ \uD658\uACBD\uC5D0\uC11C \uC720\uC6A9\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uC77C\uBC18 \uD504\uB85C\uADF8\uB7A8 \uCD9C\uB825\uACFC \uC624\
+  \uB958 \uBA54\uC2DC\uC9C0\uB97C \uAD6C\uBD84\uD568\uC73C\uB85C\uC368, \uCD9C\uB825\
+  \ \uAD00\uB9AC\uB97C \uB354\u2026"
+title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
 ---
 
 {{< edit_this_page >}}

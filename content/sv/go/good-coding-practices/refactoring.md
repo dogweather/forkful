@@ -1,14 +1,16 @@
 ---
-title:                "Refaktorisering"
 aliases:
 - /sv/go/refactoring/
-date:                  2024-02-03T18:07:08.615365-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refaktorisering"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/refactoring.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:08.615365-07:00
+description: "Refaktorisering i programmering inneb\xE4r omstrukturering av befintlig\
+  \ programkod - att \xE4ndra faktoriseringen - utan att \xE4ndra dess externa beteende.\u2026"
+lastmod: 2024-02-18 23:08:51.342232
+model: gpt-4-0125-preview
+summary: "Refaktorisering i programmering inneb\xE4r omstrukturering av befintlig\
+  \ programkod - att \xE4ndra faktoriseringen - utan att \xE4ndra dess externa beteende.\u2026"
+title: Refaktorisering
 ---
 
 {{< edit_this_page >}}

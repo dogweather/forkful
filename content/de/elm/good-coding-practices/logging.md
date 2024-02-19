@@ -1,13 +1,15 @@
 ---
-title:                "Protokollierung"
 aliases:
 - /de/elm/logging/
-date:                  2024-01-26T01:02:00.076068-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Protokollierung"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/logging.md"
+date: 2024-01-26 01:02:00.076068-07:00
+description: "Protokollierung ist im Wesentlichen der Prozess der Aufzeichnung von\
+  \ Ereignissen und Datenausgaben einer Software w\xE4hrend ihres Betriebs \u2013\
+  \ man kann sie\u2026"
+lastmod: 2024-02-18 23:09:04.788418
+model: gpt-4-1106-preview
+summary: "Protokollierung ist im Wesentlichen der Prozess der Aufzeichnung von Ereignissen\
+  \ und Datenausgaben einer Software w\xE4hrend ihres Betriebs \u2013 man kann sie\u2026"
+title: Protokollierung
 ---
 
 {{< edit_this_page >}}

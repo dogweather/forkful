@@ -1,13 +1,16 @@
 ---
-title:                "Znalezienie długości ciągu znaków"
 aliases:
 - /pl/swift/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:16.208851-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Znalezienie długości ciągu znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:16.208851-07:00
+description: "Co i Dlaczego? Wyliczanie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w to\
+  \ spos\xF3b, by dowiedzie\u0107 si\u0119, ile znak\xF3w zawiera dany tekst. Programi\u015B\
+  ci robi\u0105 to, gdy potrzebuj\u0105 na\u2026"
+lastmod: 2024-02-18 23:08:49.944195
+model: gpt-4-1106-preview
+summary: "Co i Dlaczego? Wyliczanie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w to spos\xF3\
+  b, by dowiedzie\u0107 si\u0119, ile znak\xF3w zawiera dany tekst. Programi\u015B\
+  ci robi\u0105 to, gdy potrzebuj\u0105 na\u2026"
+title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

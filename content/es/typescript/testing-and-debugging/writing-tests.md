@@ -1,14 +1,18 @@
 ---
-title:                "Escribiendo pruebas"
 aliases:
 - /es/typescript/writing-tests/
-date:                  2024-02-03T19:32:40.782813-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escribiendo pruebas"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:40.782813-07:00
+description: "Escribir pruebas en TypeScript implica crear scripts automatizados para\
+  \ verificar la funcionalidad y la correcci\xF3n de tu c\xF3digo. Los programadores\
+  \ lo\u2026"
+lastmod: 2024-02-18 23:09:09.706711
+model: gpt-4-0125-preview
+summary: "Escribir pruebas en TypeScript implica crear scripts automatizados para\
+  \ verificar la funcionalidad y la correcci\xF3n de tu c\xF3digo. Los programadores\
+  \ lo\u2026"
+title: Escribiendo pruebas
 ---
 
 {{< edit_this_page >}}

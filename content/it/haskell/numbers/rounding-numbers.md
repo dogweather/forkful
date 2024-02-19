@@ -1,13 +1,16 @@
 ---
-title:                "Arrotondamento dei numeri"
 aliases:
 - /it/haskell/rounding-numbers/
-date:                  2024-01-26T03:44:42.436807-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrotondamento dei numeri"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/rounding-numbers.md"
+date: 2024-01-26 03:44:42.436807-07:00
+description: "Arrotondare i numeri significa aggiustarli all'intero pi\xF9 vicino\
+  \ o al numero decimale specificato. I programmatori arrotondano i numeri per controllare\
+  \ la\u2026"
+lastmod: 2024-02-18 23:08:55.925231
+model: gpt-4-0125-preview
+summary: "Arrotondare i numeri significa aggiustarli all'intero pi\xF9 vicino o al\
+  \ numero decimale specificato. I programmatori arrotondano i numeri per controllare\
+  \ la\u2026"
+title: Arrotondamento dei numeri
 ---
 
 {{< edit_this_page >}}

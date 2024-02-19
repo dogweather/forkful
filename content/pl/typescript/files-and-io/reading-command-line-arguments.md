@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie argumentów linii poleceń"
 aliases:
 - /pl/typescript/reading-command-line-arguments/
-date:                  2024-01-20T17:57:18.727246-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie argumentów linii poleceń"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/reading-command-line-arguments.md"
+date: 2024-01-20 17:57:18.727246-07:00
+description: "Czytanie argument\xF3w linii polece\u0144 to spos\xF3b na wprowadzanie\
+  \ danych do programu bezpo\u015Brednio z terminala. Programi\u015Bci to robi\u0105\
+  , by sterowa\u0107 zachowaniem\u2026"
+lastmod: 2024-02-18 23:08:49.363081
+model: gpt-4-1106-preview
+summary: "Czytanie argument\xF3w linii polece\u0144 to spos\xF3b na wprowadzanie danych\
+  \ do programu bezpo\u015Brednio z terminala. Programi\u015Bci to robi\u0105, by\
+  \ sterowa\u0107 zachowaniem\u2026"
+title: "Odczytywanie argument\xF3w linii polece\u0144"
 ---
 
 {{< edit_this_page >}}

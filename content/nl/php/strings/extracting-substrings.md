@@ -1,15 +1,16 @@
 ---
-title:                "Substrings extraheren"
 aliases:
 - /nl/php/extracting-substrings/
-date:                  2024-01-28T21:59:51.683853-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Substrings extraheren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/php/extracting-substrings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:51.683853-07:00
+description: "Het extraheren van substrings betekent het trekken van specifieke delen\
+  \ uit een string. Programmeurs doen dit om gegevens te verwerken of te manipuleren,\u2026"
+lastmod: 2024-02-18 23:09:01.932964
+model: gpt-4-0125-preview
+summary: "Het extraheren van substrings betekent het trekken van specifieke delen\
+  \ uit een string. Programmeurs doen dit om gegevens te verwerken of te manipuleren,\u2026"
+title: Substrings extraheren
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Inviare una richiesta http con autenticazione di base"
 aliases:
 - /it/fish-shell/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:01:27.758107-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Inviare una richiesta http con autenticazione di base"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:01:27.758107-07:00
+description: "Inviare una richiesta HTTP con autenticazione di base significa trasmettere\
+  \ username e password per accedere a risorse protette su un server. I\u2026"
+lastmod: 2024-02-18 23:08:56.295373
+model: gpt-4-1106-preview
+summary: "Inviare una richiesta HTTP con autenticazione di base significa trasmettere\
+  \ username e password per accedere a risorse protette su un server. I\u2026"
+title: Inviare una richiesta http con autenticazione di base
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "HTML:n jäsennys"
 aliases:
 - /fi/lua/parsing-html/
-date:                  2024-02-03T19:12:46.725841-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML:n jäsennys"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:46.725841-07:00
+description: "HTML:n j\xE4sennys sis\xE4lt\xE4\xE4 tietojen ja datan poimimisen HTML-dokumenteista,\
+  \ mik\xE4 on ratkaisevan t\xE4rke\xE4\xE4 verkkosivujen kaapauksessa, datan analysoinnissa\
+  \ ja\u2026"
+lastmod: 2024-02-18 23:09:07.754695
+model: gpt-4-0125-preview
+summary: "HTML:n j\xE4sennys sis\xE4lt\xE4\xE4 tietojen ja datan poimimisen HTML-dokumenteista,\
+  \ mik\xE4 on ratkaisevan t\xE4rke\xE4\xE4 verkkosivujen kaapauksessa, datan analysoinnissa\
+  \ ja\u2026"
+title: "HTML:n j\xE4sennys"
 ---
 
 {{< edit_this_page >}}

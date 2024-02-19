@@ -1,14 +1,17 @@
 ---
-title:                "Rimuovere le virgolette da una stringa"
 aliases:
 - /it/google-apps-script/removing-quotes-from-a-string/
-date:                  2024-02-01T22:00:06.591985-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rimuovere le virgolette da una stringa"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/google-apps-script/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:06.591985-07:00
+description: "Rimuovere le virgolette da una stringa in Google Apps Script riguarda\
+  \ l'eliminazione di segni di punteggiatura non necessari che possono circondare\
+  \ i dati\u2026"
+lastmod: 2024-02-18 23:08:55.464780
+model: gpt-4-0125-preview
+summary: "Rimuovere le virgolette da una stringa in Google Apps Script riguarda l'eliminazione\
+  \ di segni di punteggiatura non necessari che possono circondare i dati\u2026"
+title: Rimuovere le virgolette da una stringa
 ---
 
 {{< edit_this_page >}}

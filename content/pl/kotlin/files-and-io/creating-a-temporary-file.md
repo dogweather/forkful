@@ -1,13 +1,16 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
 aliases:
 - /pl/kotlin/creating-a-temporary-file/
-date:                  2024-01-20T17:40:56.523554-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tworzenie pliku tymczasowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:56.523554-07:00
+description: "Tworzenie pliku tymczasowego daje ci miejsce do przechowywania danych,\
+  \ kt\xF3re s\u0105 potrzebne tylko przez kr\xF3tki czas. Programi\u015Bci u\u017C\
+  ywaj\u0105 ich do r\xF3\u017Cnych\u2026"
+lastmod: 2024-02-18 23:08:49.588438
+model: gpt-4-1106-preview
+summary: "Tworzenie pliku tymczasowego daje ci miejsce do przechowywania danych, kt\xF3\
+  re s\u0105 potrzebne tylko przez kr\xF3tki czas. Programi\u015Bci u\u017Cywaj\u0105\
+  \ ich do r\xF3\u017Cnych\u2026"
+title: Tworzenie pliku tymczasowego
 ---
 
 {{< edit_this_page >}}

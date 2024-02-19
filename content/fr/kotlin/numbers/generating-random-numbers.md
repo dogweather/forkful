@@ -1,13 +1,16 @@
 ---
-title:                "Génération de nombres aléatoires"
 aliases:
 - /fr/kotlin/generating-random-numbers/
-date:                  2024-01-27T20:34:21.507568-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Génération de nombres aléatoires"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/generating-random-numbers.md"
+date: 2024-01-27 20:34:21.507568-07:00
+description: "G\xE9n\xE9rer des nombres al\xE9atoires en programmation consiste \xE0\
+  \ cr\xE9er des nombres qui ne pr\xE9sentent aucun sch\xE9ma pr\xE9visible. Les programmeurs\
+  \ font cela pour\u2026"
+lastmod: 2024-02-18 23:09:08.776334
+model: gpt-4-0125-preview
+summary: "G\xE9n\xE9rer des nombres al\xE9atoires en programmation consiste \xE0 cr\xE9\
+  er des nombres qui ne pr\xE9sentent aucun sch\xE9ma pr\xE9visible. Les programmeurs\
+  \ font cela pour\u2026"
+title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 ---
 
 {{< edit_this_page >}}

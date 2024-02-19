@@ -1,14 +1,23 @@
 ---
-title:                "문자열의 길이 찾기"
 aliases:
 - /ko/powershell/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:05.133170-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "문자열의 길이 찾기"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:05.133170-07:00
+description: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC740\
+  \ \uBB38\uC790\uC758 \uC218\uB97C \uC138\uB294 \uACFC\uC815\uC774\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC740 \uB370\uC774\uD130 \uAC80\uC99D, \uC785\uB825 \uCC98\
+  \uB9AC, UI \uB514\uC790\uC778 \uB610\uB294 \uC131\uB2A5 \uCD5C\uC801\uD654 \uB4F1\
+  \ \uC5EC\uB7EC \uBAA9\uC801\uC73C\uB85C \uBB38\uC790\uC5F4 \uAE38\uC774\uB97C \uC54C\
+  \uC544\uB0B4\uC57C \uD55C\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.536993
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC740 \uBB38\
+  \uC790\uC758 \uC218\uB97C \uC138\uB294 \uACFC\uC815\uC774\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC740 \uB370\uC774\uD130 \uAC80\uC99D, \uC785\uB825 \uCC98\uB9AC\
+  , UI \uB514\uC790\uC778 \uB610\uB294 \uC131\uB2A5 \uCD5C\uC801\uD654 \uB4F1 \uC5EC\
+  \uB7EC \uBAA9\uC801\uC73C\uB85C \uBB38\uC790\uC5F4 \uAE38\uC774\uB97C \uC54C\uC544\
+  \uB0B4\uC57C \uD55C\uB2E4."
+title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 ---
 
 {{< edit_this_page >}}

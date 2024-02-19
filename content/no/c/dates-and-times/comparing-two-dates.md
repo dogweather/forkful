@@ -1,14 +1,18 @@
 ---
-title:                "Sammenligne to datoer"
 aliases:
 - /no/c/comparing-two-dates/
-date:                  2024-02-03T17:53:38.979771-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sammenligne to datoer"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/comparing-two-dates.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:38.979771-07:00
+description: "\xC5 sammenligne to datoer i C inneb\xE6rer \xE5 bestemme det kronologiske\
+  \ forholdet mellom dem - om \xE9n dato kommer f\xF8r den andre eller om de er like.\
+  \ Denne evnen\u2026"
+lastmod: 2024-02-18 23:08:54.407018
+model: gpt-4-0125-preview
+summary: "\xC5 sammenligne to datoer i C inneb\xE6rer \xE5 bestemme det kronologiske\
+  \ forholdet mellom dem - om \xE9n dato kommer f\xF8r den andre eller om de er like.\
+  \ Denne evnen\u2026"
+title: Sammenligne to datoer
 ---
 
 {{< edit_this_page >}}

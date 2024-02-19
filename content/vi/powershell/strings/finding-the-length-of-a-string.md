@@ -1,15 +1,20 @@
 ---
-title:                "Tìm chiều dài của một chuỗi ký tự"
 aliases:
 - /vi/powershell/finding-the-length-of-a-string/
-date:                  2024-01-28T22:00:40.719790-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tìm chiều dài của một chuỗi ký tự"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/powershell/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:00:40.719790-07:00
+description: "Trong PowerShell, vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9\
+  t chu\u1ED7i ngh\u0129a l\xE0 \u0111\u1EBFm s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1\
+  \ m\xE0 n\xF3 ch\u1EE9a. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7\
+  c n\xE0y \u0111\u1EC3 x\xE1c nh\u1EADn \u0111\u1EA7u v\xE0o, thao\u2026"
+lastmod: 2024-02-18 23:08:50.921725
+model: gpt-4-0125-preview
+summary: "Trong PowerShell, vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9\
+  t chu\u1ED7i ngh\u0129a l\xE0 \u0111\u1EBFm s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1\
+  \ m\xE0 n\xF3 ch\u1EE9a. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7\
+  c n\xE0y \u0111\u1EC3 x\xE1c nh\u1EADn \u0111\u1EA7u v\xE0o, thao\u2026"
+title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 ---
 
 {{< edit_this_page >}}

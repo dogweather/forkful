@@ -1,13 +1,16 @@
 ---
-title:                "Recherche et remplacement de texte"
 aliases:
 - /fr/kotlin/searching-and-replacing-text/
-date:                  2024-01-20T17:58:10.587492-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Recherche et remplacement de texte"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:10.587492-07:00
+description: "Chercher et remplacer du texte, c'est un peu comme jouer \xE0 cache-cache\
+  \ dans une for\xEAt de mots pour d\xE9nicher une phrase et la transformer en quelque\
+  \ chose\u2026"
+lastmod: 2024-02-18 23:09:08.764577
+model: gpt-4-1106-preview
+summary: "Chercher et remplacer du texte, c'est un peu comme jouer \xE0 cache-cache\
+  \ dans une for\xEAt de mots pour d\xE9nicher une phrase et la transformer en quelque\
+  \ chose\u2026"
+title: Recherche et remplacement de texte
 ---
 
 {{< edit_this_page >}}

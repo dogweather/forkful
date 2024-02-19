@@ -1,13 +1,16 @@
 ---
-title:                "Tekstitiedoston lukeminen"
 aliases:
 - /fi/php/reading-a-text-file/
-date:                  2024-01-20T17:55:07.792215-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tekstitiedoston lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/reading-a-text-file.md"
+date: 2024-01-20 17:55:07.792215-07:00
+description: "Lukemalla tekstitiedostoja, PHP:ss\xE4 voimme k\xE4sitell\xE4 dataa\
+  \ suoraan l\xE4hdemuodossaan. T\xE4m\xE4 on t\xE4rke\xE4\xE4, koska se mahdollistaa\
+  \ tiedon dynaamisen hankkimisen\u2026"
+lastmod: 2024-02-18 23:09:07.730660
+model: gpt-4-1106-preview
+summary: "Lukemalla tekstitiedostoja, PHP:ss\xE4 voimme k\xE4sitell\xE4 dataa suoraan\
+  \ l\xE4hdemuodossaan. T\xE4m\xE4 on t\xE4rke\xE4\xE4, koska se mahdollistaa tiedon\
+  \ dynaamisen hankkimisen\u2026"
+title: Tekstitiedoston lukeminen
 ---
 
 {{< edit_this_page >}}

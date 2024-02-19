@@ -1,14 +1,21 @@
 ---
-title:                "使用基本认证发送 HTTP 请求"
 aliases:
 - /zh/powershell/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:57.945931-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "使用基本认证发送 HTTP 请求"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:57.945931-07:00
+description: "\u53D1\u9001\u5E26\u6709\u57FA\u672C\u8BA4\u8BC1\u7684HTTP\u8BF7\u6C42\
+  \u662F\u4E00\u79CD\u5BA2\u6237\u7AEF\u5411\u670D\u52A1\u7AEF\u4F20\u9012\u7528\u6237\
+  \u540D\u548C\u5BC6\u7801\u4EE5\u83B7\u53D6\u8D44\u6E90\u7684\u65B9\u5F0F\u3002\u7A0B\
+  \u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u8BBF\u95EE\u53D7\u5BC6\u7801\u4FDD\
+  \u62A4\u7684\u7F51\u9875\u6216API\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.331775
+model: gpt-4-1106-preview
+summary: "\u53D1\u9001\u5E26\u6709\u57FA\u672C\u8BA4\u8BC1\u7684HTTP\u8BF7\u6C42\u662F\
+  \u4E00\u79CD\u5BA2\u6237\u7AEF\u5411\u670D\u52A1\u7AEF\u4F20\u9012\u7528\u6237\u540D\
+  \u548C\u5BC6\u7801\u4EE5\u83B7\u53D6\u8D44\u6E90\u7684\u65B9\u5F0F\u3002\u7A0B\u5E8F\
+  \u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u8BBF\u95EE\u53D7\u5BC6\u7801\u4FDD\u62A4\
+  \u7684\u7F51\u9875\u6216API\u3002"
+title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
 ---
 
 {{< edit_this_page >}}

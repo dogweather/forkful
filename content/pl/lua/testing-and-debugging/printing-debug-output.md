@@ -1,13 +1,16 @@
 ---
-title:                "Drukowanie komunikatów debugowania"
 aliases:
 - /pl/lua/printing-debug-output/
-date:                  2024-01-20T17:52:53.764215-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Drukowanie komunikatów debugowania"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/printing-debug-output.md"
+date: 2024-01-20 17:52:53.764215-07:00
+description: "Drukowanie komunikat\xF3w debugowania to wy\u015Bwietlanie informacji\
+  \ o dzia\u0142aniu programu podczas jego wykonania. Programi\u015Bci to robi\u0105\
+  , by \u0142atwiej zrozumie\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.742463
+model: gpt-4-1106-preview
+summary: "Drukowanie komunikat\xF3w debugowania to wy\u015Bwietlanie informacji o\
+  \ dzia\u0142aniu programu podczas jego wykonania. Programi\u015Bci to robi\u0105\
+  , by \u0142atwiej zrozumie\u0107\u2026"
+title: "Drukowanie komunikat\xF3w debugowania"
 ---
 
 {{< edit_this_page >}}

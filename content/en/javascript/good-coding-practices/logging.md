@@ -1,13 +1,14 @@
 ---
-title:                "Logging"
 aliases:
 - /en/javascript/logging/
-date:                  2024-01-25T02:03:23.443479-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Logging"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/logging.md"
+date: 2024-01-25 02:03:23.443479-07:00
+description: "Logging, in a nutshell, is like keeping a diary for your application\u2014\
+  it records events, errors, and other significant actions that occur while the\u2026"
+lastmod: 2024-02-18 23:09:11.444284
+model: gpt-4-1106-preview
+summary: "Logging, in a nutshell, is like keeping a diary for your application\u2014\
+  it records events, errors, and other significant actions that occur while the\u2026"
+title: Logging
 ---
 
 {{< edit_this_page >}}

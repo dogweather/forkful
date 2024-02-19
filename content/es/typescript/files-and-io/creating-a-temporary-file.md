@@ -1,13 +1,14 @@
 ---
-title:                "Creando un archivo temporal"
 aliases:
 - /es/typescript/creating-a-temporary-file/
-date:                  2024-01-20T17:41:38.185818-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Creando un archivo temporal"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:38.185818-07:00
+description: "Crear un archivo temporal significa generar un fichero que pretendemos\
+  \ usar solo durante un breve periodo de tiempo o mientras dura una operaci\xF3n\u2026"
+lastmod: 2024-02-18 23:09:09.724206
+model: gpt-4-1106-preview
+summary: "Crear un archivo temporal significa generar un fichero que pretendemos usar\
+  \ solo durante un breve periodo de tiempo o mientras dura una operaci\xF3n\u2026"
+title: Creando un archivo temporal
 ---
 
 {{< edit_this_page >}}

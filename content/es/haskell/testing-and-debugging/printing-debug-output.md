@@ -1,13 +1,16 @@
 ---
-title:                "Imprimiendo salida de depuración"
 aliases:
 - /es/haskell/printing-debug-output/
-date:                  2024-01-20T17:52:53.552439-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Imprimiendo salida de depuración"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/printing-debug-output.md"
+date: 2024-01-20 17:52:53.552439-07:00
+description: "La impresi\xF3n de mensajes de depuraci\xF3n es simplemente mostrar\
+  \ informaci\xF3n en la consola para entender qu\xE9 est\xE1 pasando en tu c\xF3\
+  digo. Los programadores lo\u2026"
+lastmod: 2024-02-18 23:09:10.030694
+model: gpt-4-1106-preview
+summary: "La impresi\xF3n de mensajes de depuraci\xF3n es simplemente mostrar informaci\xF3\
+  n en la consola para entender qu\xE9 est\xE1 pasando en tu c\xF3digo. Los programadores\
+  \ lo\u2026"
+title: "Imprimiendo salida de depuraci\xF3n"
 ---
 
 {{< edit_this_page >}}

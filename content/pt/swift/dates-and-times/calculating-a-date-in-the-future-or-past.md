@@ -1,13 +1,16 @@
 ---
-title:                "Calculando uma data no futuro ou passado"
 aliases:
 - /pt/swift/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:32:24.853859-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Calculando uma data no futuro ou passado"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:32:24.853859-07:00
+description: "Calcular uma data no futuro ou no passado \xE9 simplesmente determinar\
+  \ um dia espec\xEDfico antes ou depois de uma data conhecida. Programadores fazem\
+  \ isso para\u2026"
+lastmod: 2024-02-18 23:08:58.504007
+model: gpt-4-1106-preview
+summary: "Calcular uma data no futuro ou no passado \xE9 simplesmente determinar um\
+  \ dia espec\xEDfico antes ou depois de uma data conhecida. Programadores fazem isso\
+  \ para\u2026"
+title: Calculando uma data no futuro ou passado
 ---
 
 {{< edit_this_page >}}

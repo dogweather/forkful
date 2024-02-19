@@ -1,14 +1,18 @@
 ---
-title:                "HTML:n jäsentäminen"
 aliases:
 - /fi/vba/parsing-html/
-date:                  2024-02-01T21:58:02.752208-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML:n jäsentäminen"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/parsing-html.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:02.752208-07:00
+description: "HTML:n j\xE4sent\xE4minen Visual Basic for Applications (VBA) -ohjelmoinnissa\
+  \ tarkoittaa tiettyjen tietojen poimimista HTML-dokumentista. Ohjelmoijat tekev\xE4\
+  t\u2026"
+lastmod: 2024-02-18 23:09:07.408101
+model: gpt-4-0125-preview
+summary: "HTML:n j\xE4sent\xE4minen Visual Basic for Applications (VBA) -ohjelmoinnissa\
+  \ tarkoittaa tiettyjen tietojen poimimista HTML-dokumentista. Ohjelmoijat tekev\xE4\
+  t\u2026"
+title: "HTML:n j\xE4sent\xE4minen"
 ---
 
 {{< edit_this_page >}}

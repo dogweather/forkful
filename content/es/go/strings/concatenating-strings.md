@@ -1,14 +1,16 @@
 ---
-title:                "Concatenando cadenas de texto"
 aliases:
 - /es/go/concatenating-strings/
-date:                  2024-02-03T17:54:01.340309-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Concatenando cadenas de texto"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/concatenating-strings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:01.340309-07:00
+description: "Concatenar cadenas implica unir dos o m\xE1s cadenas de extremo a extremo\
+  \ para formar una nueva cadena. Los programadores hacen esto para generar texto\u2026"
+lastmod: 2024-02-18 23:09:09.445422
+model: gpt-4-0125-preview
+summary: "Concatenar cadenas implica unir dos o m\xE1s cadenas de extremo a extremo\
+  \ para formar una nueva cadena. Los programadores hacen esto para generar texto\u2026"
+title: Concatenando cadenas de texto
 ---
 
 {{< edit_this_page >}}

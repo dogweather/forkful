@@ -1,12 +1,15 @@
 ---
-title:                "Parsing HTML"
 aliases:
 - /en/typescript/parsing-html/
-date:                  2024-01-20T15:33:59.686760-07:00
-simple_title:         "Parsing HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/parsing-html.md"
+date: 2024-01-20 15:33:59.686760-07:00
+description: "Parsing HTML means sifting through HTML code to find, extract, or manipulate\
+  \ info. Programmers do it to interact with web content\u2014maybe scraping data,\
+  \ or\u2026"
+lastmod: 2024-02-18 23:09:10.805043
+summary: "Parsing HTML means sifting through HTML code to find, extract, or manipulate\
+  \ info. Programmers do it to interact with web content\u2014maybe scraping data,\
+  \ or\u2026"
+title: Parsing HTML
 ---
 
 {{< edit_this_page >}}

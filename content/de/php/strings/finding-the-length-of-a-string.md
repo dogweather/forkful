@@ -1,13 +1,16 @@
 ---
-title:                "Ermittlung der Zeichenkettenlänge"
 aliases:
 - /de/php/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:05.160031-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ermittlung der Zeichenkettenlänge"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:05.160031-07:00
+description: "Die L\xE4nge eines Strings zu finden bedeutet, herauszufinden, wie viele\
+  \ Zeichen er beinhaltet. Programmierer brauchen diese Information, um Textdaten\
+  \ zu\u2026"
+lastmod: 2024-02-18 23:09:04.952688
+model: gpt-4-1106-preview
+summary: "Die L\xE4nge eines Strings zu finden bedeutet, herauszufinden, wie viele\
+  \ Zeichen er beinhaltet. Programmierer brauchen diese Information, um Textdaten\
+  \ zu\u2026"
+title: "Ermittlung der Zeichenkettenl\xE4nge"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với YAML"
 aliases:
 - /vi/clojure/working-with-yaml/
-date:                  2024-01-28T22:11:48.272974-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với YAML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/clojure/working-with-yaml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:48.272974-07:00
+description: "YAML, \"YAML Ain't Markup Language,\" l\xE0 m\u1ED9t ti\xEAu chu\u1EA9\
+  n h\xF3a d\u1EEF li\u1EC7u th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi d\xE0\
+  nh cho t\u1EA5t c\u1EA3 ng\xF4n ng\u1EEF l\u1EADp tr\xECnh. C\xE1c l\u1EADp tr\xEC\
+  nh vi\xEAn s\u1EED d\u1EE5ng\u2026"
+lastmod: 2024-02-18 23:08:50.337042
+model: gpt-4-0125-preview
+summary: "YAML, \"YAML Ain't Markup Language,\" l\xE0 m\u1ED9t ti\xEAu chu\u1EA9n\
+  \ h\xF3a d\u1EEF li\u1EC7u th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi d\xE0\
+  nh cho t\u1EA5t c\u1EA3 ng\xF4n ng\u1EEF l\u1EADp tr\xECnh. C\xE1c l\u1EADp tr\xEC\
+  nh vi\xEAn s\u1EED d\u1EE5ng\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 ---
 
 {{< edit_this_page >}}

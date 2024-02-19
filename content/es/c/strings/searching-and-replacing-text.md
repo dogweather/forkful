@@ -1,14 +1,18 @@
 ---
-title:                "Buscando y reemplazando texto"
 aliases:
 - /es/c/searching-and-replacing-text/
-date:                  2024-02-03T18:08:17.796189-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Buscando y reemplazando texto"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:17.796189-07:00
+description: "Buscar y reemplazar texto en C implica identificar subcadenas espec\xED\
+  ficas dentro de una cadena m\xE1s grande y sustituirlas con diferentes subcadenas.\
+  \ Los\u2026"
+lastmod: 2024-02-18 23:09:10.483313
+model: gpt-4-0125-preview
+summary: "Buscar y reemplazar texto en C implica identificar subcadenas espec\xED\
+  ficas dentro de una cadena m\xE1s grande y sustituirlas con diferentes subcadenas.\
+  \ Los\u2026"
+title: Buscando y reemplazando texto
 ---
 
 {{< edit_this_page >}}

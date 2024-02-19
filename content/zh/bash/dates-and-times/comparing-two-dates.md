@@ -1,14 +1,19 @@
 ---
-title:                "比较两个日期"
 aliases:
 - /zh/bash/comparing-two-dates/
-date:                  2024-01-20T17:32:12.938527-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "比较两个日期"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/bash/comparing-two-dates.md"
+date: 2024-01-20 17:32:12.938527-07:00
+description: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F\u662F\u6307\u786E\u5B9A\u5B83\u4EEC\
+  \u7684\u5148\u540E\u987A\u5E8F\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\
+  \u4E86\u7BA1\u7406\u65E5\u5FD7\u3001\u68C0\u67E5\u8BC1\u4E66\u6709\u6548\u6027\u6216\
+  \u8005\u5904\u7406\u8FC7\u671F\u6570\u636E\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.303303
+model: gpt-4-1106-preview
+summary: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F\u662F\u6307\u786E\u5B9A\u5B83\u4EEC\
+  \u7684\u5148\u540E\u987A\u5E8F\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\
+  \u4E86\u7BA1\u7406\u65E5\u5FD7\u3001\u68C0\u67E5\u8BC1\u4E66\u6709\u6548\u6027\u6216\
+  \u8005\u5904\u7406\u8FC7\u671F\u6570\u636E\u3002"
+title: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F"
 ---
 
 {{< edit_this_page >}}

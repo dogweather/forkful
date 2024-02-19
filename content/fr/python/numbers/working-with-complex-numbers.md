@@ -1,13 +1,16 @@
 ---
-title:                "Manipulation des nombres complexes"
 aliases:
 - /fr/python/working-with-complex-numbers/
-date:                  2024-01-26T04:44:38.566328-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulation des nombres complexes"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/working-with-complex-numbers.md"
+date: 2024-01-26 04:44:38.566328-07:00
+description: "Les nombres complexes sont un ensemble de nombres de la forme `a + bi`,\
+  \ o\xF9 `a` et `b` sont des nombres r\xE9els, et `i` est l'unit\xE9 imaginaire (`i^2\
+  \ = -1`).\u2026"
+lastmod: 2024-02-18 23:09:08.333335
+model: gpt-4-0125-preview
+summary: "Les nombres complexes sont un ensemble de nombres de la forme `a + bi`,\
+  \ o\xF9 `a` et `b` sont des nombres r\xE9els, et `i` est l'unit\xE9 imaginaire (`i^2\
+  \ = -1`).\u2026"
+title: Manipulation des nombres complexes
 ---
 
 {{< edit_this_page >}}

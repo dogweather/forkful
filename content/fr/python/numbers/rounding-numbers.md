@@ -1,13 +1,14 @@
 ---
-title:                "Arrondir les nombres"
 aliases:
 - /fr/python/rounding-numbers/
-date:                  2024-01-26T03:47:01.917175-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrondir les nombres"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/rounding-numbers.md"
+date: 2024-01-26 03:47:01.917175-07:00
+description: "Arrondir des nombres signifie les ajuster pour les rapprocher d'une\
+  \ valeur plus simple ou plus significative. Les programmeurs arrondissent les nombres\u2026"
+lastmod: 2024-02-18 23:09:08.334367
+model: gpt-4-0125-preview
+summary: "Arrondir des nombres signifie les ajuster pour les rapprocher d'une valeur\
+  \ plus simple ou plus significative. Les programmeurs arrondissent les nombres\u2026"
+title: Arrondir les nombres
 ---
 
 {{< edit_this_page >}}

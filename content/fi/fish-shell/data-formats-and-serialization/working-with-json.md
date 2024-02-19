@@ -1,14 +1,18 @@
 ---
-title:                "Työskentely JSON:n kanssa"
 aliases:
 - /fi/fish-shell/working-with-json/
-date:                  2024-02-03T19:22:43.568983-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely JSON:n kanssa"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:22:43.568983-07:00
+description: "JSON-tiedon k\xE4sittely Fish Shelliss\xE4 sis\xE4lt\xE4\xE4 JSON-datan\
+  \ j\xE4sent\xE4misen ja luomisen, mik\xE4 on yleinen teht\xE4v\xE4 sovellusten konfiguroinnissa,\
+  \ API-\u2026"
+lastmod: 2024-02-18 23:09:08.107591
+model: gpt-4-0125-preview
+summary: "JSON-tiedon k\xE4sittely Fish Shelliss\xE4 sis\xE4lt\xE4\xE4 JSON-datan\
+  \ j\xE4sent\xE4misen ja luomisen, mik\xE4 on yleinen teht\xE4v\xE4 sovellusten konfiguroinnissa,\
+  \ API-\u2026"
+title: "Ty\xF6skentely JSON:n kanssa"
 ---
 
 {{< edit_this_page >}}

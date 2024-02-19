@@ -1,13 +1,15 @@
 ---
-title:                "Fjerne anførselstegn fra en streng"
 aliases:
 - /no/elm/removing-quotes-from-a-string/
-date:                  2024-01-26T03:38:44.810184-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Fjerne anførselstegn fra en streng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:38:44.810184-07:00
+description: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 stripe bort de\
+  \ ekstra doble eller enkle anf\xF8rselstegnene som du faktisk ikke trenger i den\
+  \ bearbeidede\u2026"
+lastmod: 2024-02-18 23:08:53.799632
+model: gpt-4-0125-preview
+summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 stripe bort de ekstra\
+  \ doble eller enkle anf\xF8rselstegnene som du faktisk ikke trenger i den bearbeidede\u2026"
+title: "Fjerne anf\xF8rselstegn fra en streng"
 ---
 
 {{< edit_this_page >}}

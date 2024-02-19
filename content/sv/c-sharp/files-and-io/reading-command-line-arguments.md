@@ -1,13 +1,16 @@
 ---
-title:                "Läsa in kommandoradsargument"
 aliases:
 - /sv/c-sharp/reading-command-line-arguments/
-date:                  2024-01-20T17:55:43.214102-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Läsa in kommandoradsargument"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:43.214102-07:00
+description: "Att l\xE4sa kommandoradsargument inneb\xE4r att man h\xE4mtar de v\xE4\
+  rden som anv\xE4ndaren har angett n\xE4r de startar programmet. Programmerare anv\xE4\
+  nder det f\xF6r att\u2026"
+lastmod: 2024-02-18 23:08:51.810919
+model: gpt-4-1106-preview
+summary: "Att l\xE4sa kommandoradsargument inneb\xE4r att man h\xE4mtar de v\xE4rden\
+  \ som anv\xE4ndaren har angett n\xE4r de startar programmet. Programmerare anv\xE4\
+  nder det f\xF6r att\u2026"
+title: "L\xE4sa in kommandoradsargument"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,17 @@
 ---
-title:                "Commandoregelargumenten lezen"
 aliases:
 - /nl/powershell/reading-command-line-arguments/
-date:                  2024-01-28T22:05:12.895532-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Commandoregelargumenten lezen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/powershell/reading-command-line-arguments.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:05:12.895532-07:00
+description: "Het lezen van command line argumenten stelt scripts in staat om zich\
+  \ anders te gedragen op basis van invoer van buiten de code. Programmeurs gebruiken\
+  \ ze\u2026"
+lastmod: 2024-02-18 23:09:02.108882
+model: gpt-4-0125-preview
+summary: "Het lezen van command line argumenten stelt scripts in staat om zich anders\
+  \ te gedragen op basis van invoer van buiten de code. Programmeurs gebruiken ze\u2026"
+title: Commandoregelargumenten lezen
 ---
 
 {{< edit_this_page >}}

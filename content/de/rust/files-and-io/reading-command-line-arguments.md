@@ -1,13 +1,16 @@
 ---
-title:                "Lesen von Kommandozeilenargumenten"
 aliases:
 - /de/rust/reading-command-line-arguments/
-date:                  2024-01-20T17:56:59.414019-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lesen von Kommandozeilenargumenten"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:59.414019-07:00
+description: "Kommandozeilenargumente erlauben Nutzern, Programme durch zus\xE4tzliche\
+  \ Eingaben zu steuern. Programmierer nutzen sie, um flexiblere und anpassungsf\xE4\
+  higere\u2026"
+lastmod: 2024-02-18 23:09:04.657918
+model: gpt-4-1106-preview
+summary: "Kommandozeilenargumente erlauben Nutzern, Programme durch zus\xE4tzliche\
+  \ Eingaben zu steuern. Programmierer nutzen sie, um flexiblere und anpassungsf\xE4\
+  higere\u2026"
+title: Lesen von Kommandozeilenargumenten
 ---
 
 {{< edit_this_page >}}

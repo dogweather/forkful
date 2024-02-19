@@ -1,15 +1,18 @@
 ---
-title:                "Korzystanie z tablic asocjacyjnych"
 aliases:
 - /pl/fish-shell/using-associative-arrays/
-date:                  2024-01-30T19:10:59.015234-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z tablic asocjacyjnych"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:59.015234-07:00
+description: "Tablice asocjacyjne, czyli mapy haszowe, pozwalaj\u0105 przechowywa\u0107\
+  \ dane jako pary klucz-warto\u015B\u0107, co u\u0142atwia organizowanie i odzyskiwanie\
+  \ informacji za pomoc\u0105\u2026"
+lastmod: 2024-02-18 23:08:50.027835
+model: gpt-4-0125-preview
+summary: "Tablice asocjacyjne, czyli mapy haszowe, pozwalaj\u0105 przechowywa\u0107\
+  \ dane jako pary klucz-warto\u015B\u0107, co u\u0142atwia organizowanie i odzyskiwanie\
+  \ informacji za pomoc\u0105\u2026"
+title: Korzystanie z tablic asocjacyjnych
 ---
 
 {{< edit_this_page >}}

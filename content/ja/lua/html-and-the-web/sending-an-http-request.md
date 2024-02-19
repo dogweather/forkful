@@ -1,14 +1,24 @@
 ---
-title:                "HTTPリクエストの送信"
 aliases:
 - /ja/lua/sending-an-http-request/
-date:                  2024-01-20T18:00:09.335708-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTPリクエストの送信"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/lua/sending-an-http-request.md"
+date: 2024-01-20 18:00:09.335708-07:00
+description: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u3092\u9001\u308B\u3068\u306F\u3001\
+  \u30B5\u30FC\u30D0\u30FC\u306BWeb\u30DA\u30FC\u30B8\u3084\u30B5\u30FC\u30D3\u30B9\
+  \u3078\u306E\u554F\u3044\u5408\u308F\u305B\u3092\u884C\u3046\u3053\u3068\u3067\u3059\
+  \u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u304C\u3053\u308C\u3092\u884C\u3046\u7406\
+  \u7531\u306F\u3001\u30C7\u30FC\u30BF\u3092\u53D6\u5F97\u3057\u305F\u308A\u3001\u5916\
+  \u90E8\u30B5\u30FC\u30D3\u30B9\u3068\u9023\u643A\u3059\u308B\u305F\u3081\u3067\u3059\
+  \u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.030934
+model: gpt-4-1106-preview
+summary: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u3092\u9001\u308B\u3068\u306F\u3001\u30B5\
+  \u30FC\u30D0\u30FC\u306BWeb\u30DA\u30FC\u30B8\u3084\u30B5\u30FC\u30D3\u30B9\u3078\
+  \u306E\u554F\u3044\u5408\u308F\u305B\u3092\u884C\u3046\u3053\u3068\u3067\u3059\u3002\
+  \u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u304C\u3053\u308C\u3092\u884C\u3046\u7406\u7531\
+  \u306F\u3001\u30C7\u30FC\u30BF\u3092\u53D6\u5F97\u3057\u305F\u308A\u3001\u5916\u90E8\
+  \u30B5\u30FC\u30D3\u30B9\u3068\u9023\u643A\u3059\u308B\u305F\u3081\u3067\u3059\u3002"
+title: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u306E\u9001\u4FE1"
 ---
 
 {{< edit_this_page >}}

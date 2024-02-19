@@ -1,13 +1,14 @@
 ---
-title:                "Finding the length of a string"
 aliases:
 - /en/javascript/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:29.353328-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Finding the length of a string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:29.353328-07:00
+description: Finding a string's length means counting its characters. Programmers
+  do it to validate input, loop through strings, and manipulate text data efficiently.
+lastmod: 2024-02-18 23:09:11.429141
+model: gpt-4-1106-preview
+summary: Finding a string's length means counting its characters. Programmers do it
+  to validate input, loop through strings, and manipulate text data efficiently.
+title: Finding the length of a string
 ---
 
 {{< edit_this_page >}}

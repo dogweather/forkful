@@ -1,13 +1,14 @@
 ---
-title:                "Interpolación de cadenas de texto"
 aliases:
 - /es/elixir/interpolating-a-string/
-date:                  2024-01-20T17:50:51.573034-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolación de cadenas de texto"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/interpolating-a-string.md"
+date: 2024-01-20 17:50:51.573034-07:00
+description: "La interpolaci\xF3n de cadenas en programaci\xF3n implica insertar din\xE1\
+  micamente valores dentro de una cadena de texto. Los programadores la utilizan para\u2026"
+lastmod: 2024-02-18 23:09:09.633641
+model: gpt-4-1106-preview
+summary: "La interpolaci\xF3n de cadenas en programaci\xF3n implica insertar din\xE1\
+  micamente valores dentro de una cadena de texto. Los programadores la utilizan para\u2026"
+title: "Interpolaci\xF3n de cadenas de texto"
 ---
 
 {{< edit_this_page >}}

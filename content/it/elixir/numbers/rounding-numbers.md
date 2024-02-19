@@ -1,13 +1,14 @@
 ---
-title:                "Arrotondamento dei numeri"
 aliases:
 - /it/elixir/rounding-numbers/
-date:                  2024-01-26T03:44:34.470558-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrotondamento dei numeri"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/rounding-numbers.md"
+date: 2024-01-26 03:44:34.470558-07:00
+description: "Arrotondare i numeri significa aggiustarli a un valore vicino per semplicit\xE0\
+  \ o per corrispondere a una certa precisione. \xC8 utile per migliorare la\u2026"
+lastmod: 2024-02-18 23:08:55.596085
+model: gpt-4-0125-preview
+summary: "Arrotondare i numeri significa aggiustarli a un valore vicino per semplicit\xE0\
+  \ o per corrispondere a una certa precisione. \xC8 utile per migliorare la\u2026"
+title: Arrotondamento dei numeri
 ---
 
 {{< edit_this_page >}}

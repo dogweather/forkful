@@ -1,14 +1,17 @@
 ---
-title:                "Pisanie pliku tekstowego"
 aliases:
 - /pl/python/writing-a-text-file/
-date:                  2024-02-03T19:29:22.215750-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie pliku tekstowego"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:22.215750-07:00
+description: "Zapis do pliku tekstowego w Pythonie to podstawowe zadanie, kt\xF3re\
+  \ obejmuje tworzenie lub otwieranie pliku, a nast\u0119pnie dodawanie do niego tekstu\
+  \ lub\u2026"
+lastmod: 2024-02-18 23:08:49.241140
+model: gpt-4-0125-preview
+summary: "Zapis do pliku tekstowego w Pythonie to podstawowe zadanie, kt\xF3re obejmuje\
+  \ tworzenie lub otwieranie pliku, a nast\u0119pnie dodawanie do niego tekstu lub\u2026"
+title: Pisanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

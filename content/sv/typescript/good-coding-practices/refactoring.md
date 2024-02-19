@@ -1,13 +1,16 @@
 ---
-title:                "Refaktorisering"
 aliases:
 - /sv/typescript/refactoring/
-date:                  2024-01-26T03:36:26.384554-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refaktorisering"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/refactoring.md"
+date: 2024-01-26 03:36:26.384554-07:00
+description: "Refaktorisering \xE4r processen att omstrukturera befintlig dator kod\
+  \ utan att \xE4ndra dess yttre beteende. Programmerare g\xF6r det f\xF6r att g\xF6\
+  ra koden renare,\u2026"
+lastmod: 2024-02-18 23:08:51.551523
+model: gpt-4-0125-preview
+summary: "Refaktorisering \xE4r processen att omstrukturera befintlig dator kod utan\
+  \ att \xE4ndra dess yttre beteende. Programmerare g\xF6r det f\xF6r att g\xF6ra\
+  \ koden renare,\u2026"
+title: Refaktorisering
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Printing debug output"
 aliases:
 - /en/java/printing-debug-output/
-date:                  2024-01-20T17:52:49.178700-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Printing debug output"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/printing-debug-output.md"
+date: 2024-01-20 17:52:49.178700-07:00
+description: "Printing debug output is tossing little bread crumbs of information\
+  \ into the console to track down bugs. It's quick, dirty, and effective for\u2026"
+lastmod: 2024-02-18 23:09:10.933545
+model: gpt-4-1106-preview
+summary: "Printing debug output is tossing little bread crumbs of information into\
+  \ the console to track down bugs. It's quick, dirty, and effective for\u2026"
+title: Printing debug output
 ---
 
 {{< edit_this_page >}}

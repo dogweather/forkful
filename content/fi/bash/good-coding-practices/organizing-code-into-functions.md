@@ -1,13 +1,16 @@
 ---
-title:                "Koodin järjestäminen funktioihin"
 aliases:
 - /fi/bash/organizing-code-into-functions/
-date:                  2024-01-26T01:09:12.560901-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Koodin järjestäminen funktioihin"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/organizing-code-into-functions.md"
+date: 2024-01-26 01:09:12.560901-07:00
+description: "Koodin jakaminen funktioihin tarkoittaa skriptien pilkkomista pienempiin,\
+  \ uudelleenk\xE4ytett\xE4viin lohkoihin, jotka suorittavat tiettyj\xE4 teht\xE4\
+  vi\xE4. Se tekee\u2026"
+lastmod: 2024-02-18 23:09:07.810406
+model: gpt-4-1106-preview
+summary: "Koodin jakaminen funktioihin tarkoittaa skriptien pilkkomista pienempiin,\
+  \ uudelleenk\xE4ytett\xE4viin lohkoihin, jotka suorittavat tiettyj\xE4 teht\xE4\
+  vi\xE4. Se tekee\u2026"
+title: "Koodin j\xE4rjest\xE4minen funktioihin"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Organiser le code en fonctions"
 aliases:
 - /fr/c/organizing-code-into-functions/
-date:                  2024-02-03T17:59:02.668831-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Organiser le code en fonctions"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/organizing-code-into-functions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:02.668831-07:00
+description: "Organiser le code en fonctions en C consiste \xE0 d\xE9composer des\
+  \ t\xE2ches complexes en blocs de code plus petits et r\xE9utilisables. Cette pratique\
+  \ am\xE9liore la\u2026"
+lastmod: 2024-02-18 23:09:09.362512
+model: gpt-4-0125-preview
+summary: "Organiser le code en fonctions en C consiste \xE0 d\xE9composer des t\xE2\
+  ches complexes en blocs de code plus petits et r\xE9utilisables. Cette pratique\
+  \ am\xE9liore la\u2026"
+title: Organiser le code en fonctions
 ---
 
 {{< edit_this_page >}}

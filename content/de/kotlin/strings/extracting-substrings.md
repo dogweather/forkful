@@ -1,13 +1,16 @@
 ---
-title:                "Teilstrings extrahieren"
 aliases:
 - /de/kotlin/extracting-substrings/
-date:                  2024-01-20T17:46:06.719912-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Teilstrings extrahieren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/extracting-substrings.md"
+date: 2024-01-20 17:46:06.719912-07:00
+description: "Das Extrahieren von Teil-Strings erm\xF6glicht es, spezifische Segmente\
+  \ aus einem gr\xF6\xDFeren String herauszuschneiden. Programmierer nutzen dies,\
+  \ um Daten zu\u2026"
+lastmod: 2024-02-18 23:09:04.814445
+model: gpt-4-1106-preview
+summary: "Das Extrahieren von Teil-Strings erm\xF6glicht es, spezifische Segmente\
+  \ aus einem gr\xF6\xDFeren String herauszuschneiden. Programmierer nutzen dies,\
+  \ um Daten zu\u2026"
+title: Teilstrings extrahieren
 ---
 
 {{< edit_this_page >}}

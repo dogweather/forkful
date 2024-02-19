@@ -1,14 +1,20 @@
 ---
-title:                "テキストの検索と置換"
 aliases:
 - /ja/google-apps-script/searching-and-replacing-text/
-date:                  2024-02-01T22:01:19.029827-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "テキストの検索と置換"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/google-apps-script/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:19.029827-07:00
+description: "Google Apps Script\u3067\u306E\u30C6\u30AD\u30B9\u30C8\u691C\u7D22\u3068\
+  \u7F6E\u63DB\u306F\u3001\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\u3001\u30B9\u30D7\u30EC\
+  \u30C3\u30C9\u30B7\u30FC\u30C8\u3001\u307E\u305F\u306F\u305D\u306E\u4ED6\u306E\u30BF\
+  \u30A4\u30D7\u306EGoogle\u2026"
+lastmod: 2024-02-18 23:08:54.507593
+model: gpt-4-0125-preview
+summary: "Google Apps Script\u3067\u306E\u30C6\u30AD\u30B9\u30C8\u691C\u7D22\u3068\
+  \u7F6E\u63DB\u306F\u3001\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\u3001\u30B9\u30D7\u30EC\
+  \u30C3\u30C9\u30B7\u30FC\u30C8\u3001\u307E\u305F\u306F\u305D\u306E\u4ED6\u306E\u30BF\
+  \u30A4\u30D7\u306EGoogle\u2026"
+title: "\u30C6\u30AD\u30B9\u30C8\u306E\u691C\u7D22\u3068\u7F6E\u63DB"
 ---
 
 {{< edit_this_page >}}

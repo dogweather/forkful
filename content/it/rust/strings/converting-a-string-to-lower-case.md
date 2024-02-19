@@ -1,13 +1,14 @@
 ---
-title:                "Conversione di una stringa in minuscolo"
 aliases:
 - /it/rust/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:39:17.025953-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Conversione di una stringa in minuscolo"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:39:17.025953-07:00
+description: "Trasformare una stringa in minuscolo significa convertire tutti i caratteri\
+  \ alfabetici in minuscole. Questo serve per standardizzare l'input degli utenti,\u2026"
+lastmod: 2024-02-18 23:08:55.668389
+model: gpt-4-1106-preview
+summary: "Trasformare una stringa in minuscolo significa convertire tutti i caratteri\
+  \ alfabetici in minuscole. Questo serve per standardizzare l'input degli utenti,\u2026"
+title: Conversione di una stringa in minuscolo
 ---
 
 {{< edit_this_page >}}

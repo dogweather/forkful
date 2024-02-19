@@ -1,13 +1,16 @@
 ---
-title:                "HTTP-pyynnön lähettäminen"
 aliases:
 - /fi/cpp/sending-an-http-request/
-date:                  2024-01-20T17:59:04.545720-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-pyynnön lähettäminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/sending-an-http-request.md"
+date: 2024-01-20 17:59:04.545720-07:00
+description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen tarkoittaa pyynn\xF6n esitt\xE4mist\xE4\
+  \ verkkopalvelimelle. Ohjelmoijat tekev\xE4t t\xE4m\xE4n hankkiakseen tietoa tai\
+  \ toimittaakseen dataa."
+lastmod: 2024-02-18 23:09:07.940405
+model: gpt-4-1106-preview
+summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen tarkoittaa pyynn\xF6n esitt\xE4mist\xE4\
+  \ verkkopalvelimelle. Ohjelmoijat tekev\xE4t t\xE4m\xE4n hankkiakseen tietoa tai\
+  \ toimittaakseen dataa."
+title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 ---
 
 {{< edit_this_page >}}

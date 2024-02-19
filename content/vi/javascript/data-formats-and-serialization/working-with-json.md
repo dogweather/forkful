@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với JSON"
 aliases:
 - /vi/javascript/working-with-json/
-date:                  2024-01-28T22:10:41.870641-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với JSON"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/working-with-json.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:41.870641-07:00
+description: "JSON, hay JavaScript Object Notation, l\xE0 m\u1ED9t \u0111\u1ECBnh\
+  \ d\u1EA1ng d\u1EEF li\u1EC7u nh\u1EB9 \u0111\u1EC3 l\u01B0u tr\u1EEF v\xE0 truy\u1EC1\
+  n t\u1EA3i d\u1EEF li\u1EC7u. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3\
+  \ v\xEC n\xF3 d\u1EC5 \u0111\u1ECDc/vi\u1EBFt cho con\u2026"
+lastmod: 2024-02-18 23:08:51.159765
+model: gpt-4-0125-preview
+summary: "JSON, hay JavaScript Object Notation, l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
+  ng d\u1EEF li\u1EC7u nh\u1EB9 \u0111\u1EC3 l\u01B0u tr\u1EEF v\xE0 truy\u1EC1n t\u1EA3\
+  i d\u1EEF li\u1EC7u. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 v\xEC n\xF3\
+  \ d\u1EC5 \u0111\u1ECDc/vi\u1EBFt cho con\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Usando una shell interactiva (REPL)"
 aliases:
 - /es/lua/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:16:04.071151-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando una shell interactiva (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/lua/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:16:04.071151-07:00
+description: "REPL significa Bucle de Leer-Evaluar-Imprimir, un entorno interactivo\
+  \ donde puedes probar r\xE1pidamente c\xF3digo. Los programadores lo utilizan para\u2026"
+lastmod: 2024-02-18 23:09:10.121263
+model: gpt-4-0125-preview
+summary: "REPL significa Bucle de Leer-Evaluar-Imprimir, un entorno interactivo donde\
+  \ puedes probar r\xE1pidamente c\xF3digo. Los programadores lo utilizan para\u2026"
+title: Usando una shell interactiva (REPL)
 ---
 
 {{< edit_this_page >}}

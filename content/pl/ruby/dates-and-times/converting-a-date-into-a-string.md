@@ -1,13 +1,16 @@
 ---
-title:                "Konwersja daty na łańcuch znaków"
 aliases:
 - /pl/ruby/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:31.281257-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konwersja daty na łańcuch znaków"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:31.281257-07:00
+description: "Zamiana daty na \u0142a\u0144cuch znak\xF3w (string) to proces przekszta\u0142\
+  cania obiektu daty w czytelny tekst. Programi\u015Bci robi\u0105 to, \u017Ceby u\u0142\
+  atwi\u0107 wy\u015Bwietlanie dat\u2026"
+lastmod: 2024-02-18 23:08:50.136959
+model: gpt-4-1106-preview
+summary: "Zamiana daty na \u0142a\u0144cuch znak\xF3w (string) to proces przekszta\u0142\
+  cania obiektu daty w czytelny tekst. Programi\u015Bci robi\u0105 to, \u017Ceby u\u0142\
+  atwi\u0107 wy\u015Bwietlanie dat\u2026"
+title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 ---
 
 {{< edit_this_page >}}

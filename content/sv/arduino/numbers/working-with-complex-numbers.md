@@ -1,13 +1,16 @@
 ---
-title:                "Att arbeta med komplexa tal"
 aliases:
 - /sv/arduino/working-with-complex-numbers/
-date:                  2024-01-26T04:36:49.107608-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med komplexa tal"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/working-with-complex-numbers.md"
+date: 2024-01-26 04:36:49.107608-07:00
+description: "Komplexa tal har en reell del och en imagin\xE4r del, vanligtvis skrivet\
+  \ som `a + bi`. De \xE4r avg\xF6rande f\xF6r vissa matematikintensiva Arduino-projekt\
+  \ som\u2026"
+lastmod: 2024-02-18 23:08:52.038809
+model: gpt-4-0125-preview
+summary: "Komplexa tal har en reell del och en imagin\xE4r del, vanligtvis skrivet\
+  \ som `a + bi`. De \xE4r avg\xF6rande f\xF6r vissa matematikintensiva Arduino-projekt\
+  \ som\u2026"
+title: Att arbeta med komplexa tal
 ---
 
 {{< edit_this_page >}}

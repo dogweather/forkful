@@ -1,13 +1,16 @@
 ---
-title:                "Nedlasting av en nettside"
 aliases:
 - /no/swift/downloading-a-web-page/
-date:                  2024-01-20T17:45:00.781641-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Nedlasting av en nettside"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/downloading-a-web-page.md"
+date: 2024-01-20 17:45:00.781641-07:00
+description: "Det \xE5 laste ned en nettside betyr \xE5 hente HTML og andre data fra\
+  \ en webserver. Vi programmerere gj\xF8r dette for \xE5 bruke eller bearbeide innholdet,\
+  \ som data\u2026"
+lastmod: 2024-02-18 23:08:54.267866
+model: gpt-4-1106-preview
+summary: "Det \xE5 laste ned en nettside betyr \xE5 hente HTML og andre data fra en\
+  \ webserver. Vi programmerere gj\xF8r dette for \xE5 bruke eller bearbeide innholdet,\
+  \ som data\u2026"
+title: Nedlasting av en nettside
 ---
 
 {{< edit_this_page >}}

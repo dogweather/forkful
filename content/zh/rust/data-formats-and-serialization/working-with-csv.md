@@ -1,14 +1,24 @@
 ---
-title:                "处理CSV文件"
 aliases:
 - /zh/rust/working-with-csv/
-date:                  2024-02-03T19:21:28.017722-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理CSV文件"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:21:28.017722-07:00
+description: "\u5904\u7406 CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\uFF09\u6587\u4EF6\
+  \u6D89\u53CA\u8BFB\u53D6\u548C\u5199\u5165\u5B58\u50A8\u8868\u683C\u6570\u636E\u7684\
+  \u7EAF\u6587\u672C\u6587\u4EF6\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\
+  \u4E86\u5B9E\u73B0\u4E0D\u540C\u7A0B\u5E8F\u3001\u7CFB\u7EDF\u4E4B\u95F4\u7684\u6570\
+  \u636E\u5171\u4EAB\uFF0C\u6216\u8005\u9AD8\u6548\u3001\u53EF\u8BFB\u5730\u5904\u7406\
+  \u5927\u578B\u6570\u636E\u96C6\u3002"
+lastmod: 2024-02-18 23:08:58.961308
+model: gpt-4-0125-preview
+summary: "\u5904\u7406 CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\uFF09\u6587\u4EF6\u6D89\
+  \u53CA\u8BFB\u53D6\u548C\u5199\u5165\u5B58\u50A8\u8868\u683C\u6570\u636E\u7684\u7EAF\
+  \u6587\u672C\u6587\u4EF6\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\
+  \u5B9E\u73B0\u4E0D\u540C\u7A0B\u5E8F\u3001\u7CFB\u7EDF\u4E4B\u95F4\u7684\u6570\u636E\
+  \u5171\u4EAB\uFF0C\u6216\u8005\u9AD8\u6548\u3001\u53EF\u8BFB\u5730\u5904\u7406\u5927\
+  \u578B\u6570\u636E\u96C6\u3002"
+title: "\u5904\u7406CSV\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

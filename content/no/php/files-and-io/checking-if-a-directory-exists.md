@@ -1,14 +1,16 @@
 ---
-title:                "Sjekker om en mappe eksisterer"
 aliases:
 - /no/php/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:10.962410-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sjekker om en mappe eksisterer"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:10.962410-07:00
+description: "\xC5 sjekke om en mappe finnes er en grunnleggende oppgave i PHP-programmering,\
+  \ da det lar deg verifisere tilstedev\xE6relsen av en mappe f\xF8r du utf\xF8rer\u2026"
+lastmod: 2024-02-18 23:08:53.989042
+model: gpt-4-0125-preview
+summary: "\xC5 sjekke om en mappe finnes er en grunnleggende oppgave i PHP-programmering,\
+  \ da det lar deg verifisere tilstedev\xE6relsen av en mappe f\xF8r du utf\xF8rer\u2026"
+title: Sjekker om en mappe eksisterer
 ---
 
 {{< edit_this_page >}}

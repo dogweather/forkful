@@ -1,14 +1,24 @@
 ---
-title:                "编写文本文件"
 aliases:
 - /zh/powershell/writing-a-text-file/
-date:                  2024-02-03T19:28:53.341864-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "编写文本文件"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:28:53.341864-07:00
+description: "\u5728 PowerShell \u4E2D\u5199\u5165\u6587\u672C\u6587\u4EF6\u5305\u62EC\
+  \u521B\u5EFA\u548C\u64CD\u4F5C\u57FA\u4E8E\u6587\u672C\u7684\u6587\u4EF6\uFF0C\u8FD9\
+  \u662F\u65E5\u5FD7\u8BB0\u5F55\u3001\u6570\u636E\u5B58\u50A8\u548C\u914D\u7F6E\u811A\
+  \u672C\u7F16\u5199\u7684\u57FA\u672C\u64CD\u4F5C\u3002\u7A0B\u5E8F\u5458\u501F\u6B64\
+  \u81EA\u52A8\u5316\u7CFB\u7EDF\u4EFB\u52A1\u3001\u6570\u636E\u5206\u6790\u4EE5\u53CA\
+  \u4E0E\u5176\u4ED6\u5E94\u7528\u7A0B\u5E8F\u6216\u811A\u672C\u7684\u96C6\u6210\u3002"
+lastmod: 2024-02-18 23:08:59.348292
+model: gpt-4-0125-preview
+summary: "\u5728 PowerShell \u4E2D\u5199\u5165\u6587\u672C\u6587\u4EF6\u5305\u62EC\
+  \u521B\u5EFA\u548C\u64CD\u4F5C\u57FA\u4E8E\u6587\u672C\u7684\u6587\u4EF6\uFF0C\u8FD9\
+  \u662F\u65E5\u5FD7\u8BB0\u5F55\u3001\u6570\u636E\u5B58\u50A8\u548C\u914D\u7F6E\u811A\
+  \u672C\u7F16\u5199\u7684\u57FA\u672C\u64CD\u4F5C\u3002\u7A0B\u5E8F\u5458\u501F\u6B64\
+  \u81EA\u52A8\u5316\u7CFB\u7EDF\u4EFB\u52A1\u3001\u6570\u636E\u5206\u6790\u4EE5\u53CA\
+  \u4E0E\u5176\u4ED6\u5E94\u7528\u7A0B\u5E8F\u6216\u811A\u672C\u7684\u96C6\u6210\u3002"
+title: "\u7F16\u5199\u6587\u672C\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

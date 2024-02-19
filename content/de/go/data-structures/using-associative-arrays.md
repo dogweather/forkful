@@ -1,14 +1,18 @@
 ---
-title:                "Verwendung von assoziativen Arrays"
 aliases:
 - /de/go/using-associative-arrays/
-date:                  2024-02-03T18:10:39.883120-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verwendung von assoziativen Arrays"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/using-associative-arrays.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:39.883120-07:00
+description: "Assoziative Arrays, in Go als Maps bekannt, erm\xF6glichen es dir, Schl\xFC\
+  ssel-Wert-Paare zu speichern, bei denen jeder einzigartige Schl\xFCssel auf einen\
+  \ Wert\u2026"
+lastmod: 2024-02-18 23:09:04.355247
+model: gpt-4-0125-preview
+summary: "Assoziative Arrays, in Go als Maps bekannt, erm\xF6glichen es dir, Schl\xFC\
+  ssel-Wert-Paare zu speichern, bei denen jeder einzigartige Schl\xFCssel auf einen\
+  \ Wert\u2026"
+title: Verwendung von assoziativen Arrays
 ---
 
 {{< edit_this_page >}}

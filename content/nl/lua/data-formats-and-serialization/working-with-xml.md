@@ -1,15 +1,17 @@
 ---
-title:                "Werken met XML"
 aliases:
 - /nl/lua/working-with-xml/
-date:                  2024-01-28T22:11:34.310039-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/working-with-xml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:34.310039-07:00
+description: "Werken met XML omvat het parseren en manipuleren van XML-documenten\
+  \ met behulp van code. Programmeurs doen dit om gegevens te lezen, schrijven en\
+  \ wijzigen\u2026"
+lastmod: 2024-02-18 23:09:02.017762
+model: gpt-4-0125-preview
+summary: "Werken met XML omvat het parseren en manipuleren van XML-documenten met\
+  \ behulp van code. Programmeurs doen dit om gegevens te lezen, schrijven en wijzigen\u2026"
+title: Werken met XML
 ---
 
 {{< edit_this_page >}}

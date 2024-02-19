@@ -1,13 +1,16 @@
 ---
-title:                "Läsa in kommandoradsargument"
 aliases:
 - /sv/fish-shell/reading-command-line-arguments/
-date:                  2024-01-20T17:55:54.764022-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Läsa in kommandoradsargument"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:54.764022-07:00
+description: "Att l\xE4sa kommandoradsargument handlar om att extrahera anv\xE4ndarinput\
+  \ direkt fr\xE5n terminalen. Programmerare g\xF6r detta f\xF6r att g\xF6ra sina\
+  \ skript interaktiva\u2026"
+lastmod: 2024-02-18 23:08:52.222560
+model: gpt-4-1106-preview
+summary: "Att l\xE4sa kommandoradsargument handlar om att extrahera anv\xE4ndarinput\
+  \ direkt fr\xE5n terminalen. Programmerare g\xF6r detta f\xF6r att g\xF6ra sina\
+  \ skript interaktiva\u2026"
+title: "L\xE4sa in kommandoradsargument"
 ---
 
 {{< edit_this_page >}}

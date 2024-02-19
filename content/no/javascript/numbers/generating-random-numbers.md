@@ -1,13 +1,15 @@
 ---
-title:                "Generering av tilfeldige tall"
 aliases:
 - /no/javascript/generating-random-numbers/
-date:                  2024-01-27T20:34:14.904248-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generering av tilfeldige tall"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/generating-random-numbers.md"
+date: 2024-01-27 20:34:14.904248-07:00
+description: "\xC5 generere tilfeldige tall i JavaScript er en teknikk som brukes\
+  \ for \xE5 skape uforutsigbarhet i applikasjoner, fra spill som trenger tilfeldig\
+  \ fiendeadferd\u2026"
+lastmod: 2024-02-18 23:08:54.305199
+model: gpt-4-0125-preview
+summary: "\xC5 generere tilfeldige tall i JavaScript er en teknikk som brukes for\
+  \ \xE5 skape uforutsigbarhet i applikasjoner, fra spill som trenger tilfeldig fiendeadferd\u2026"
+title: Generering av tilfeldige tall
 ---
 
 {{< edit_this_page >}}

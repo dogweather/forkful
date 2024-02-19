@@ -1,15 +1,20 @@
 ---
-title:                "Phân Tích Cú Pháp HTML"
 aliases:
 - /vi/elixir/parsing-html/
-date:                  2024-01-28T22:03:46.116839-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Phân Tích Cú Pháp HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/parsing-html.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:03:46.116839-07:00
+description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 l\u1ECDc qua\
+  \ m\xE3 HTML \u0111\u1EC3 tr\xEDch xu\u1EA5t d\u1EEF li\u1EC7u ho\u1EB7c chi ti\u1EBF\
+  t m\u1ED9t c\xE1ch l\u1EADp tr\xECnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
+  i\u1EC1u n\xE0y cho c\xE1c nhi\u1EC7m\u2026"
+lastmod: 2024-02-18 23:08:50.366075
+model: gpt-4-0125-preview
+summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 l\u1ECDc qua m\xE3\
+  \ HTML \u0111\u1EC3 tr\xEDch xu\u1EA5t d\u1EEF li\u1EC7u ho\u1EB7c chi ti\u1EBF\
+  t m\u1ED9t c\xE1ch l\u1EADp tr\xECnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
+  i\u1EC1u n\xE0y cho c\xE1c nhi\u1EC7m\u2026"
+title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 ---
 
 {{< edit_this_page >}}

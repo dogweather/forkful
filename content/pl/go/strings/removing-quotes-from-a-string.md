@@ -1,14 +1,18 @@
 ---
-title:                "Usuwanie cudzysłowów z ciągu znaków"
 aliases:
 - /pl/go/removing-quotes-from-a-string/
-date:                  2024-02-03T18:07:30.100266-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usuwanie cudzysłowów z ciągu znaków"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:30.100266-07:00
+description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w w Go polega na eliminacji\
+  \ pocz\u0105tkowych i ko\u0144cowych znak\xF3w cudzys\u0142owu (`\"` lub `'`) z\
+  \ danego ci\u0105gu znak\xF3w. Programi\u015Bci\u2026"
+lastmod: 2024-02-18 23:08:49.083328
+model: gpt-4-0125-preview
+summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w w Go polega na eliminacji\
+  \ pocz\u0105tkowych i ko\u0144cowych znak\xF3w cudzys\u0142owu (`\"` lub `'`) z\
+  \ danego ci\u0105gu znak\xF3w. Programi\u015Bci\u2026"
+title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Läsa en textfil"
 aliases:
 - /sv/go/reading-a-text-file/
-date:                  2024-02-03T18:06:09.117702-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Läsa en textfil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/reading-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:06:09.117702-07:00
+description: "Att l\xE4sa en textfil i Go inneb\xE4r att f\xE5 tillg\xE5ng till och\
+  \ h\xE4mta inneh\xE5ll fr\xE5n en fil som \xE4r lagrad p\xE5 disk f\xF6r bearbetning\
+  \ eller analys. Programmerare\u2026"
+lastmod: 2024-02-18 23:08:51.351608
+model: gpt-4-0125-preview
+summary: "Att l\xE4sa en textfil i Go inneb\xE4r att f\xE5 tillg\xE5ng till och h\xE4\
+  mta inneh\xE5ll fr\xE5n en fil som \xE4r lagrad p\xE5 disk f\xF6r bearbetning eller\
+  \ analys. Programmerare\u2026"
+title: "L\xE4sa en textfil"
 ---
 
 {{< edit_this_page >}}

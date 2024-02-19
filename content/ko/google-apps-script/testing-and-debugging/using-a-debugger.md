@@ -1,14 +1,28 @@
 ---
-title:                "디버거 사용하기"
 aliases:
 - /ko/google-apps-script/using-a-debugger/
-date:                  2024-02-01T22:03:40.781937-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "디버거 사용하기"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/using-a-debugger.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:40.781937-07:00
+description: "Google Apps Script(GAS)\uC5D0\uC11C \uB514\uBC84\uAE45\uC740 Google\
+  \ Apps\uB97C \uC790\uB3D9\uD654\uD558\uAC70\uB098 \uC6F9 \uC560\uD50C\uB9AC\uCF00\
+  \uC774\uC158\uC744 \uAD6C\uCD95\uD558\uAE30 \uC704\uD574 \uC758\uB3C4\uB41C \uC2A4\
+  \uD06C\uB9BD\uD2B8\uC5D0\uC11C \uC624\uB958\uB97C \uC2DD\uBCC4\uD558\uACE0 \uC81C\
+  \uAC70\uD558\uB294 \uACFC\uC815\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB4E4\uC740 \uCF54\uB4DC\uAC00 \uC608\uC0C1\uB300\uB85C \uC2E4\uD589\uB418\uB3C4\
+  \uB85D \uD558\uC5EC \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC758 \uC2E0\uB8B0\uC131\
+  \uACFC \uC131\uB2A5\uC744 \uD5A5\uC0C1\uC2DC\uD0A4\uAE30 \uC704\uD574\u2026"
+lastmod: 2024-02-18 23:09:05.563585
+model: gpt-4-0125-preview
+summary: "Google Apps Script(GAS)\uC5D0\uC11C \uB514\uBC84\uAE45\uC740 Google Apps\uB97C\
+  \ \uC790\uB3D9\uD654\uD558\uAC70\uB098 \uC6F9 \uC560\uD50C\uB9AC\uCF00\uC774\uC158\
+  \uC744 \uAD6C\uCD95\uD558\uAE30 \uC704\uD574 \uC758\uB3C4\uB41C \uC2A4\uD06C\uB9BD\
+  \uD2B8\uC5D0\uC11C \uC624\uB958\uB97C \uC2DD\uBCC4\uD558\uACE0 \uC81C\uAC70\uD558\
+  \uB294 \uACFC\uC815\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\
+  \ \uCF54\uB4DC\uAC00 \uC608\uC0C1\uB300\uB85C \uC2E4\uD589\uB418\uB3C4\uB85D \uD558\
+  \uC5EC \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC758 \uC2E0\uB8B0\uC131\uACFC \uC131\
+  \uB2A5\uC744 \uD5A5\uC0C1\uC2DC\uD0A4\uAE30 \uC704\uD574\u2026"
+title: "\uB514\uBC84\uAC70 \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

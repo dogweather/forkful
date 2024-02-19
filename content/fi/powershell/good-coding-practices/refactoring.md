@@ -1,13 +1,16 @@
 ---
-title:                "Koodin refaktorointi"
 aliases:
 - /fi/powershell/refactoring/
-date:                  2024-01-26T03:37:20.375991-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Koodin refaktorointi"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/refactoring.md"
+date: 2024-01-26 03:37:20.375991-07:00
+description: "Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia uudelleenj\xE4\
+  rjestet\xE4\xE4n muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4, pyrkimyksen\xE4\
+  \ parantaa\u2026"
+lastmod: 2024-02-18 23:09:07.862393
+model: gpt-4-0125-preview
+summary: "Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia uudelleenj\xE4\
+  rjestet\xE4\xE4n muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4, pyrkimyksen\xE4\
+  \ parantaa\u2026"
+title: Koodin refaktorointi
 ---
 
 {{< edit_this_page >}}

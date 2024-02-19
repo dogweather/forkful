@@ -1,14 +1,20 @@
 ---
-title:                "Tải trang web về"
 aliases:
 - /vi/c/downloading-a-web-page/
-date:                  2024-02-03T17:56:23.794694-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tải trang web về"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/downloading-a-web-page.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:23.794694-07:00
+description: "T\u1EA3i m\u1ED9t trang web b\u1EB1ng C bao g\u1ED3m vi\u1EC7c truy\
+  \ c\u1EADp tr\u1EF1c ti\u1EBFp v\xE0o n\u1ED9i dung c\u1EE7a m\u1ED9t trang web\
+  \ tr\xEAn internet v\xE0 l\u01B0u n\xF3 t\u1EA1i m\xE1y c\u1EE5c b\u1ED9 \u0111\u1EC3\
+  \ x\u1EED l\xFD ho\u1EB7c s\u1EED d\u1EE5ng ngo\u1EA1i\u2026"
+lastmod: 2024-02-18 23:08:51.232849
+model: gpt-4-0125-preview
+summary: "T\u1EA3i m\u1ED9t trang web b\u1EB1ng C bao g\u1ED3m vi\u1EC7c truy c\u1EAD\
+  p tr\u1EF1c ti\u1EBFp v\xE0o n\u1ED9i dung c\u1EE7a m\u1ED9t trang web tr\xEAn internet\
+  \ v\xE0 l\u01B0u n\xF3 t\u1EA1i m\xE1y c\u1EE5c b\u1ED9 \u0111\u1EC3 x\u1EED l\xFD\
+  \ ho\u1EB7c s\u1EED d\u1EE5ng ngo\u1EA1i\u2026"
+title: "T\u1EA3i trang web v\u1EC1"
 ---
 
 {{< edit_this_page >}}

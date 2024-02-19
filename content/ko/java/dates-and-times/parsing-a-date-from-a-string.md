@@ -1,14 +1,28 @@
 ---
-title:                "문자열에서 날짜 분석하기"
 aliases:
 - /ko/java/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:14:24.054068-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열에서 날짜 분석하기"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:14:24.054068-07:00
+description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD55C\
+  \uB2E4\uB294 \uAC83\uC740 \uB0A0\uC9DC\uC640 \uC2DC\uAC04\uC758 \uD14D\uC2A4\uD2B8\
+  \ \uD45C\uD604\uC744 `Date` \uAC1D\uCCB4\uB098 \uB354 \uD604\uB300\uC801\uC778 `LocalDateTime`\
+  \ \uAC1D\uCCB4\uB85C \uBCC0\uD658\uD558\uB294 \uAC83\uC744 \uC758\uBBF8\uD569\uB2C8\
+  \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774\uB97C \uD1B5\uD574 \uB0A0\
+  \uC9DC\uB97C \uC870\uC791, \uD3EC\uB9F7, \uBE44\uAD50\uD558\uAC70\uB098 \uD45C\uC900\
+  \uD654\uB41C \uD615\uC2DD\uC73C\uB85C \uC800\uC7A5\uD558\uAE30 \uC704\uD574 \uC774\
+  \ \uC791\uC5C5\uC744 \uC218\uD589\uD558\uB294\uB370, \uC774\uB294\u2026"
+lastmod: 2024-02-18 23:09:06.035584
+model: gpt-4-0125-preview
+summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD55C\uB2E4\
+  \uB294 \uAC83\uC740 \uB0A0\uC9DC\uC640 \uC2DC\uAC04\uC758 \uD14D\uC2A4\uD2B8 \uD45C\
+  \uD604\uC744 `Date` \uAC1D\uCCB4\uB098 \uB354 \uD604\uB300\uC801\uC778 `LocalDateTime`\
+  \ \uAC1D\uCCB4\uB85C \uBCC0\uD658\uD558\uB294 \uAC83\uC744 \uC758\uBBF8\uD569\uB2C8\
+  \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774\uB97C \uD1B5\uD574 \uB0A0\
+  \uC9DC\uB97C \uC870\uC791, \uD3EC\uB9F7, \uBE44\uAD50\uD558\uAC70\uB098 \uD45C\uC900\
+  \uD654\uB41C \uD615\uC2DD\uC73C\uB85C \uC800\uC7A5\uD558\uAE30 \uC704\uD574 \uC774\
+  \ \uC791\uC5C5\uC744 \uC218\uD589\uD558\uB294\uB370, \uC774\uB294\u2026"
+title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uBD84\uC11D\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

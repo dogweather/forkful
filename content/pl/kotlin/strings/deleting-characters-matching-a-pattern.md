@@ -1,13 +1,16 @@
 ---
-title:                "Usuwanie znaków pasujących do wzorca"
 aliases:
 - /pl/kotlin/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:45.221868-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Usuwanie znaków pasujących do wzorca"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:45.221868-07:00
+description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to filtracja tekst\xF3\
+  w, usuwanie niechcianych znak\xF3w. Programi\u015Bci robi\u0105 to, aby wyczy\u015B\
+  ci\u0107 dane, usun\u0105\u0107 b\u0142\u0119dy lub\u2026"
+lastmod: 2024-02-18 23:08:49.544229
+model: gpt-4-1106-preview
+summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to filtracja tekst\xF3w, usuwanie\
+  \ niechcianych znak\xF3w. Programi\u015Bci robi\u0105 to, aby wyczy\u015Bci\u0107\
+  \ dane, usun\u0105\u0107 b\u0142\u0119dy lub\u2026"
+title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 ---
 
 {{< edit_this_page >}}

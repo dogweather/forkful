@@ -1,14 +1,18 @@
 ---
-title:                "Wysyłanie żądania HTTP"
 aliases:
 - /pl/google-apps-script/sending-an-http-request/
-date:                  2024-02-01T22:01:51.941165-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Wysyłanie żądania HTTP"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/sending-an-http-request.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:51.941165-07:00
+description: "Wysy\u0142anie \u017C\u0105dania HTTP w Google Apps Script polega na\
+  \ programowym wywo\u0142aniu zewn\u0119trznego serwera internetowego lub API. Programi\u015B\
+  ci robi\u0105 to, aby pobiera\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.143262
+model: gpt-4-0125-preview
+summary: "Wysy\u0142anie \u017C\u0105dania HTTP w Google Apps Script polega na programowym\
+  \ wywo\u0142aniu zewn\u0119trznego serwera internetowego lub API. Programi\u015B\
+  ci robi\u0105 to, aby pobiera\u0107\u2026"
+title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 ---
 
 {{< edit_this_page >}}

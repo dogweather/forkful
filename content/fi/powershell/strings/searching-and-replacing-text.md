@@ -1,13 +1,15 @@
 ---
-title:                "Tekstin etsiminen ja korvaaminen"
 aliases:
 - /fi/powershell/searching-and-replacing-text/
-date:                  2024-01-20T17:58:21.589017-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tekstin etsiminen ja korvaaminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:21.589017-07:00
+description: "Tekstin etsiminen ja korvaaminen on tapa bongata tietyt merkkijonot\
+  \ ja vaihtaa ne toisiin. Koodarit tekev\xE4t t\xE4t\xE4 automatisoidakseen tyls\xE4\
+  t ja virhealttiit\u2026"
+lastmod: 2024-02-18 23:09:07.834102
+model: gpt-4-1106-preview
+summary: "Tekstin etsiminen ja korvaaminen on tapa bongata tietyt merkkijonot ja vaihtaa\
+  \ ne toisiin. Koodarit tekev\xE4t t\xE4t\xE4 automatisoidakseen tyls\xE4t ja virhealttiit\u2026"
+title: Tekstin etsiminen ja korvaaminen
 ---
 
 {{< edit_this_page >}}

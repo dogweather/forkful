@@ -1,15 +1,18 @@
 ---
-title:                "Att använda associativa arrayer"
 aliases:
 - /sv/typescript/using-associative-arrays/
-date:                  2024-01-30T19:13:22.573258-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda associativa arrayer"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:13:22.573258-07:00
+description: "Associativa arrayer, eller objekt i TypeScript, l\xE5ter dig anv\xE4\
+  nda str\xE4ngar (eller nycklar) f\xF6r att komma \xE5t v\xE4rdepar. Programmerare\
+  \ anv\xE4nder dem f\xF6r mer\u2026"
+lastmod: 2024-02-18 23:08:51.536741
+model: gpt-4-0125-preview
+summary: "Associativa arrayer, eller objekt i TypeScript, l\xE5ter dig anv\xE4nda\
+  \ str\xE4ngar (eller nycklar) f\xF6r att komma \xE5t v\xE4rdepar. Programmerare\
+  \ anv\xE4nder dem f\xF6r mer\u2026"
+title: "Att anv\xE4nda associativa arrayer"
 ---
 
 {{< edit_this_page >}}

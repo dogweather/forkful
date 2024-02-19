@@ -1,14 +1,18 @@
 ---
-title:                "Skriving til standardfeil"
 aliases:
 - /no/arduino/writing-to-standard-error/
-date:                  2024-02-03T19:32:31.047837-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriving til standardfeil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:31.047837-07:00
+description: "\xC5 skrive til standard feil (stderr) i Arduino-programmering inneb\xE6\
+  rer \xE5 dirigere feilmeldinger og diagnostikk til en separat kanal, slik at de\
+  \ ikke\u2026"
+lastmod: 2024-02-18 23:08:54.158419
+model: gpt-4-0125-preview
+summary: "\xC5 skrive til standard feil (stderr) i Arduino-programmering inneb\xE6\
+  rer \xE5 dirigere feilmeldinger og diagnostikk til en separat kanal, slik at de\
+  \ ikke\u2026"
+title: Skriving til standardfeil
 ---
 
 {{< edit_this_page >}}

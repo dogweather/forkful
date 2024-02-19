@@ -1,14 +1,18 @@
 ---
-title:                "Analiza składniowa HTML"
 aliases:
 - /pl/bash/parsing-html/
-date:                  2024-02-03T19:11:40.226667-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analiza składniowa HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:11:40.226667-07:00
+description: "Parsowanie HTML oznacza przeszukiwanie struktury i zawarto\u015Bci pliku\
+  \ HTML w celu wydobycia informacji. Programi\u015Bci robi\u0105 to, aby uzyska\u0107\
+  \ dost\u0119p do danych,\u2026"
+lastmod: 2024-02-18 23:08:49.782008
+model: gpt-4-0125-preview
+summary: "Parsowanie HTML oznacza przeszukiwanie struktury i zawarto\u015Bci pliku\
+  \ HTML w celu wydobycia informacji. Programi\u015Bci robi\u0105 to, aby uzyska\u0107\
+  \ dost\u0119p do danych,\u2026"
+title: "Analiza sk\u0142adniowa HTML"
 ---
 
 {{< edit_this_page >}}

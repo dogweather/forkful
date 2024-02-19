@@ -1,15 +1,20 @@
 ---
-title:                "Nối chuỗi ký tự"
 aliases:
 - /vi/swift/concatenating-strings/
-date:                  2024-01-28T21:57:47.484043-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Nối chuỗi ký tự"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/swift/concatenating-strings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:57:47.484043-07:00
+description: "Gh\xE9p chu\u1ED7i l\xE0 vi\u1EC7c k\u1EBFt h\u1EE3p c\xE1c chu\u1ED7\
+  i ri\xEAng bi\u1EC7t l\u1EA1i v\u1EDBi nhau \u0111\u1EC3 t\u1EA1o ra m\u1ED9t chu\u1ED7\
+  i m\u1EDBi. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y\
+  \ \u0111\u1EC3 k\u1EBFt h\u1EE3p v\u0103n b\u1EA3n m\u1ED9t c\xE1ch linh\u2026"
+lastmod: 2024-02-18 23:08:51.081176
+model: gpt-4-0125-preview
+summary: "Gh\xE9p chu\u1ED7i l\xE0 vi\u1EC7c k\u1EBFt h\u1EE3p c\xE1c chu\u1ED7i ri\xEA\
+  ng bi\u1EC7t l\u1EA1i v\u1EDBi nhau \u0111\u1EC3 t\u1EA1o ra m\u1ED9t chu\u1ED7\
+  i m\u1EDBi. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y\
+  \ \u0111\u1EC3 k\u1EBFt h\u1EE3p v\u0103n b\u1EA3n m\u1ED9t c\xE1ch linh\u2026"
+title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 ---
 
 {{< edit_this_page >}}

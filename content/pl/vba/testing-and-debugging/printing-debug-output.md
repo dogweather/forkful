@@ -1,14 +1,16 @@
 ---
-title:                "Drukowanie informacji wyjściowych debugowania"
 aliases:
 - /pl/vba/printing-debug-output/
-date:                  2024-02-01T21:58:40.783238-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Drukowanie informacji wyjściowych debugowania"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/vba/printing-debug-output.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:40.783238-07:00
+description: "Wypisywanie informacji debugowych w Visual Basic for Applications (VBA)\
+  \ polega na strategicznym umieszczaniu instrukcji wypisywania w kodzie, aby\u2026"
+lastmod: 2024-02-18 23:08:49.436899
+model: gpt-4-0125-preview
+summary: "Wypisywanie informacji debugowych w Visual Basic for Applications (VBA)\
+  \ polega na strategicznym umieszczaniu instrukcji wypisywania w kodzie, aby\u2026"
+title: "Drukowanie informacji wyj\u015Bciowych debugowania"
 ---
 
 {{< edit_this_page >}}

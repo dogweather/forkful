@@ -1,13 +1,17 @@
 ---
-title:                "インタラクティブシェル（REPL）の使用"
 aliases:
 - /ja/rust/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:18:24.997511-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "インタラクティブシェル（REPL）の使用"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:18:24.997511-07:00
+description: "Rust \u306E\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\
+  \u30EB\u3001\u307E\u305F\u306FREPL\uFF08Read-Eval-Print\u30EB\u30FC\u30D7\uFF09\u306F\
+  \u3001Rust\u2026"
+lastmod: 2024-02-18 23:08:54.722825
+model: gpt-4-0125-preview
+summary: "Rust \u306E\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\
+  \u3001\u307E\u305F\u306FREPL\uFF08Read-Eval-Print\u30EB\u30FC\u30D7\uFF09\u306F\u3001\
+  Rust\u2026"
+title: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\uFF08REPL\uFF09\
+  \u306E\u4F7F\u7528"
 ---
 
 {{< edit_this_page >}}

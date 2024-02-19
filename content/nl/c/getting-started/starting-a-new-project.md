@@ -1,14 +1,16 @@
 ---
-title:                "Een nieuw project starten"
 aliases:
 - /nl/c/starting-a-new-project/
-date:                  2024-02-03T18:09:10.956522-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een nieuw project starten"
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/starting-a-new-project.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:09:10.956522-07:00
+description: "Een nieuw project in C starten, betekent het opzetten van een fundamentele\
+  \ code-structuur en omgeving om ontwikkelingstaken effici\xEBnt te beheren.\u2026"
+lastmod: 2024-02-18 23:09:02.373640
+model: gpt-4-0125-preview
+summary: "Een nieuw project in C starten, betekent het opzetten van een fundamentele\
+  \ code-structuur en omgeving om ontwikkelingstaken effici\xEBnt te beheren.\u2026"
+title: Een nieuw project starten
 ---
 
 {{< edit_this_page >}}

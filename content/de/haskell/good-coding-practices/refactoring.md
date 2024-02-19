@@ -1,13 +1,16 @@
 ---
-title:                "Refactoring"
 aliases:
 - /de/haskell/refactoring/
-date:                  2024-01-26T01:18:24.463871-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactoring"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/refactoring.md"
+date: 2024-01-26 01:18:24.463871-07:00
+description: "Das Refactoring ist der Prozess des Feinjustierens Ihres Codes, ohne\
+  \ dessen externes Verhalten zu \xE4ndern. Es geht darum, Ihren Code aufzur\xE4umen\
+  \ und zu\u2026"
+lastmod: 2024-02-18 23:09:04.926055
+model: gpt-4-0125-preview
+summary: "Das Refactoring ist der Prozess des Feinjustierens Ihres Codes, ohne dessen\
+  \ externes Verhalten zu \xE4ndern. Es geht darum, Ihren Code aufzur\xE4umen und\
+  \ zu\u2026"
+title: Refactoring
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Läsa en textfil"
 aliases:
 - /sv/java/reading-a-text-file/
-date:                  2024-01-20T17:54:36.465649-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Läsa en textfil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/reading-a-text-file.md"
+date: 2024-01-20 17:54:36.465649-07:00
+description: "Att l\xE4sa en textfil inneb\xE4r att man h\xE4mtar data fr\xE5n en\
+  \ fil som finns lagrad p\xE5 din dator eller server. Programmerare g\xF6r detta\
+  \ f\xF6r att kunna arbeta med\u2026"
+lastmod: 2024-02-18 23:08:51.685976
+model: gpt-4-1106-preview
+summary: "Att l\xE4sa en textfil inneb\xE4r att man h\xE4mtar data fr\xE5n en fil\
+  \ som finns lagrad p\xE5 din dator eller server. Programmerare g\xF6r detta f\xF6\
+  r att kunna arbeta med\u2026"
+title: "L\xE4sa en textfil"
 ---
 
 {{< edit_this_page >}}

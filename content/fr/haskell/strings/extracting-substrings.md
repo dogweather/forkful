@@ -1,13 +1,16 @@
 ---
-title:                "Extraction de sous-chaînes"
 aliases:
 - /fr/haskell/extracting-substrings/
-date:                  2024-01-20T17:45:56.302157-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extraction de sous-chaînes"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/extracting-substrings.md"
+date: 2024-01-20 17:45:56.302157-07:00
+description: "Extraire des sous-cha\xEEnes, c'est comme prendre un biscuit dans la\
+  \ bo\xEEte : vous choisissez une partie sp\xE9cifique d'une cha\xEEne de caract\xE8\
+  res. Les\u2026"
+lastmod: 2024-02-18 23:09:08.862862
+model: gpt-4-1106-preview
+summary: "Extraire des sous-cha\xEEnes, c'est comme prendre un biscuit dans la bo\xEE\
+  te : vous choisissez une partie sp\xE9cifique d'une cha\xEEne de caract\xE8res.\
+  \ Les\u2026"
+title: "Extraction de sous-cha\xEEnes"
 ---
 
 {{< edit_this_page >}}

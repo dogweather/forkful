@@ -1,14 +1,18 @@
 ---
-title:                "Arbeta med CSV"
 aliases:
 - /sv/kotlin/working-with-csv/
-date:                  2024-02-03T19:20:33.824753-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeta med CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:20:33.824753-07:00
+description: "Att arbeta med CSV (Comma-Separated Values) inneb\xE4r att l\xE4sa fr\xE5\
+  n och skriva data till CSV-filer, ett vanligt format f\xF6r att lagra tabelldata\
+  \ i klartext.\u2026"
+lastmod: 2024-02-18 23:08:51.774922
+model: gpt-4-0125-preview
+summary: "Att arbeta med CSV (Comma-Separated Values) inneb\xE4r att l\xE4sa fr\xE5\
+  n och skriva data till CSV-filer, ett vanligt format f\xF6r att lagra tabelldata\
+  \ i klartext.\u2026"
+title: Arbeta med CSV
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,17 @@
 ---
-title:                "HTML Parsen"
 aliases:
 - /nl/arduino/parsing-html/
-date:                  2024-01-28T22:03:26.234218-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML Parsen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/parsing-html.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:03:26.234218-07:00
+description: "HTML parsen betekent door HTML-code heen zeven om nuttige stukjes te\
+  \ extraheren - zoals het schrapen van een telefoonnummer van een contactpagina.\
+  \ Waarom\u2026"
+lastmod: 2024-02-18 23:09:02.136195
+model: gpt-4-0125-preview
+summary: "HTML parsen betekent door HTML-code heen zeven om nuttige stukjes te extraheren\
+  \ - zoals het schrapen van een telefoonnummer van een contactpagina. Waarom\u2026"
+title: HTML Parsen
 ---
 
 {{< edit_this_page >}}

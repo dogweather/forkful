@@ -1,12 +1,14 @@
 ---
-title:                "Checking if a directory exists"
 aliases:
 - /en/python/checking-if-a-directory-exists/
-date:                  2024-02-03T19:02:30.098252-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Checking if a directory exists"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/checking-if-a-directory-exists.md"
+date: 2024-02-03 19:02:30.098252-07:00
+description: "Checking if a directory exists in Python is about verifying the presence\
+  \ of a folder in the filesystem before performing operations like reading or\u2026"
+lastmod: 2024-02-18 23:09:10.695875
+model: gpt-4-0125-preview
+summary: "Checking if a directory exists in Python is about verifying the presence\
+  \ of a folder in the filesystem before performing operations like reading or\u2026"
+title: Checking if a directory exists
 ---
 
 {{< edit_this_page >}}

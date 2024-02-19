@@ -1,14 +1,16 @@
 ---
-title:                "Removendo aspas de uma string"
 aliases:
 - /pt/google-apps-script/removing-quotes-from-a-string/
-date:                  2024-02-01T22:00:05.316402-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Removendo aspas de uma string"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/google-apps-script/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:05.316402-07:00
+description: "Remover aspas de uma string no Google Apps Script \xE9 sobre eliminar\
+  \ aspas desnecess\xE1rias que podem circundar seus dados de string, geralmente provenientes\u2026"
+lastmod: 2024-02-18 23:08:57.702197
+model: gpt-4-0125-preview
+summary: "Remover aspas de uma string no Google Apps Script \xE9 sobre eliminar aspas\
+  \ desnecess\xE1rias que podem circundar seus dados de string, geralmente provenientes\u2026"
+title: Removendo aspas de uma string
 ---
 
 {{< edit_this_page >}}

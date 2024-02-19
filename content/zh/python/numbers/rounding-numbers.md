@@ -1,13 +1,20 @@
 ---
-title:                "数字取整"
 aliases:
 - /zh/python/rounding-numbers/
-date:                  2024-01-26T03:46:19.471556-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "数字取整"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/rounding-numbers.md"
+date: 2024-01-26 03:46:19.471556-07:00
+description: "\u5C06\u6570\u5B57\u56DB\u820D\u4E94\u5165\u610F\u5473\u7740\u5C06\u5B83\
+  \u4EEC\u8C03\u6574\u5F97\u66F4\u63A5\u8FD1\u4E00\u4E2A\u66F4\u7B80\u5355\u6216\u66F4\
+  \u6709\u610F\u4E49\u7684\u503C\u3002\u7A0B\u5E8F\u5458\u56DB\u820D\u4E94\u5165\u6570\
+  \u5B57\u662F\u4E3A\u4E86\u7B80\u5316\u7ED3\u679C\u3001\u9650\u5236\u663E\u793A\u7684\
+  \u5C0F\u6570\u4F4D\u6570\u6216\u67D0\u4E9B\u6570\u5B66\u76EE\u7684\u3002"
+lastmod: 2024-02-18 23:08:58.786368
+model: gpt-4-0125-preview
+summary: "\u5C06\u6570\u5B57\u56DB\u820D\u4E94\u5165\u610F\u5473\u7740\u5C06\u5B83\
+  \u4EEC\u8C03\u6574\u5F97\u66F4\u63A5\u8FD1\u4E00\u4E2A\u66F4\u7B80\u5355\u6216\u66F4\
+  \u6709\u610F\u4E49\u7684\u503C\u3002\u7A0B\u5E8F\u5458\u56DB\u820D\u4E94\u5165\u6570\
+  \u5B57\u662F\u4E3A\u4E86\u7B80\u5316\u7ED3\u679C\u3001\u9650\u5236\u663E\u793A\u7684\
+  \u5C0F\u6570\u4F4D\u6570\u6216\u67D0\u4E9B\u6570\u5B66\u76EE\u7684\u3002"
+title: "\u6570\u5B57\u53D6\u6574"
 ---
 
 {{< edit_this_page >}}

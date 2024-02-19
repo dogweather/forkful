@@ -1,14 +1,17 @@
 ---
-title:                "Escribir pruebas"
 aliases:
 - /es/go/writing-tests/
-date:                  2024-02-03T18:15:32.977797-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escribir pruebas"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:15:32.977797-07:00
+description: "Escribir pruebas en Go implica crear peque\xF1as piezas de c\xF3digo\
+  \ manejables que validan la funcionalidad y el comportamiento de tu aplicaci\xF3\
+  n. Los\u2026"
+lastmod: 2024-02-18 23:09:09.459729
+model: gpt-4-0125-preview
+summary: "Escribir pruebas en Go implica crear peque\xF1as piezas de c\xF3digo manejables\
+  \ que validan la funcionalidad y el comportamiento de tu aplicaci\xF3n. Los\u2026"
+title: Escribir pruebas
 ---
 
 {{< edit_this_page >}}

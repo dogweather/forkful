@@ -1,13 +1,16 @@
 ---
-title:                "Criando um arquivo temporário"
 aliases:
 - /pt/ruby/creating-a-temporary-file/
-date:                  2024-01-20T17:41:06.378496-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Criando um arquivo temporário"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:06.378496-07:00
+description: "Criar um arquivo tempor\xE1rio \xE9 criar um arquivo que \xE9 necess\xE1\
+  rio apenas enquanto seu programa est\xE1 rodando. Programadores fazem isso para\
+  \ n\xE3o correr o\u2026"
+lastmod: 2024-02-18 23:08:58.685147
+model: gpt-4-1106-preview
+summary: "Criar um arquivo tempor\xE1rio \xE9 criar um arquivo que \xE9 necess\xE1\
+  rio apenas enquanto seu programa est\xE1 rodando. Programadores fazem isso para\
+  \ n\xE3o correr o\u2026"
+title: "Criando um arquivo tempor\xE1rio"
 ---
 
 {{< edit_this_page >}}

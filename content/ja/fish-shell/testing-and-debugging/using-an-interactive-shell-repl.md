@@ -1,13 +1,13 @@
 ---
-title:                "インタラクティブシェル（REPL）の使用"
 aliases:
 - /ja/fish-shell/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:14:17.046743-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "インタラクティブシェル（REPL）の使用"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:14:17.046743-07:00
+description: "REPL\u3001\u3059\u306A\u308F\u3061Read-Eval-Print\u2026"
+lastmod: 2024-02-18 23:08:55.311027
+model: gpt-4-0125-preview
+summary: "REPL\u3001\u3059\u306A\u308F\u3061Read-Eval-Print\u2026"
+title: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\uFF08REPL\uFF09\
+  \u306E\u4F7F\u7528"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,12 @@
 ---
-title:                "处理XML"
 aliases:
 - /zh/swift/working-with-xml/
-date:                  2024-01-26T04:36:10.513673-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/working-with-xml.md"
+date: 2024-01-26 04:36:10.513673-07:00
+description: null
+lastmod: 2024-02-18 23:08:59.463853
+model: gpt-4-0125-preview
+summary: null
+title: "\u5904\u7406XML"
 ---
 
 {{< edit_this_page >}}

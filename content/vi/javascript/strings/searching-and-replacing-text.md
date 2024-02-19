@@ -1,15 +1,14 @@
 ---
-title:                "Tìm kiếm và thay thế văn bản"
 aliases:
 - /vi/javascript/searching-and-replacing-text/
-date:                  2024-01-28T22:07:25.860378-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tìm kiếm và thay thế văn bản"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/searching-and-replacing-text.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:07:25.860378-07:00
+description: ''
+lastmod: 2024-02-18 23:08:51.119891
+model: gpt-4-0125-preview
+summary: ''
+title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 ---
 
 {{< edit_this_page >}}

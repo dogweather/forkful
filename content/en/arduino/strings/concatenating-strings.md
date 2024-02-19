@@ -1,13 +1,14 @@
 ---
-title:                "Concatenating strings"
 aliases:
 - /en/arduino/concatenating-strings/
-date:                  2024-01-20T17:33:50.055851-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenating strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/concatenating-strings.md"
+date: 2024-01-20 17:33:50.055851-07:00
+description: "Concatenating strings means squishing them together end-to-end to make\
+  \ a new one. Programmers do it to merge messages, build commands, or just to display\u2026"
+lastmod: 2024-02-18 23:09:11.307634
+model: gpt-4-1106-preview
+summary: "Concatenating strings means squishing them together end-to-end to make a\
+  \ new one. Programmers do it to merge messages, build commands, or just to display\u2026"
+title: Concatenating strings
 ---
 
 {{< edit_this_page >}}

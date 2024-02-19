@@ -1,14 +1,18 @@
 ---
-title:                "Att skriva en textfil"
 aliases:
 - /sv/java/writing-a-text-file/
-date:                  2024-02-03T19:28:13.497732-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att skriva en textfil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:28:13.497732-07:00
+description: "Att skriva en textfil i Java handlar om att anv\xE4nda spr\xE5kets m\xF6\
+  jligheter f\xF6r att skapa och skriva inneh\xE5ll till filer p\xE5 filsystemet.\
+  \ Programmerare g\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.686942
+model: gpt-4-0125-preview
+summary: "Att skriva en textfil i Java handlar om att anv\xE4nda spr\xE5kets m\xF6\
+  jligheter f\xF6r att skapa och skriva inneh\xE5ll till filer p\xE5 filsystemet.\
+  \ Programmerare g\xF6r\u2026"
+title: Att skriva en textfil
 ---
 
 {{< edit_this_page >}}

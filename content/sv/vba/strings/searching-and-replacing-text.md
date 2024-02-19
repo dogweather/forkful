@@ -1,14 +1,18 @@
 ---
-title:                "Söka och ersätta text"
 aliases:
 - /sv/vba/searching-and-replacing-text/
-date:                  2024-02-01T22:01:21.402020-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Söka och ersätta text"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:21.402020-07:00
+description: "Att s\xF6ka och ers\xE4tta text i Visual Basic for Applications (VBA)\
+  \ \xE4r avg\xF6rande f\xF6r att programmeringsm\xE4ssigt redigera dokument, kalkylblad\
+  \ och databaser.\u2026"
+lastmod: 2024-02-18 23:08:51.610621
+model: gpt-4-0125-preview
+summary: "Att s\xF6ka och ers\xE4tta text i Visual Basic for Applications (VBA) \xE4\
+  r avg\xF6rande f\xF6r att programmeringsm\xE4ssigt redigera dokument, kalkylblad\
+  \ och databaser.\u2026"
+title: "S\xF6ka och ers\xE4tta text"
 ---
 
 {{< edit_this_page >}}

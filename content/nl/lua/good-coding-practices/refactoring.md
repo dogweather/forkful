@@ -1,15 +1,16 @@
 ---
-title:                "Refactoring"
 aliases:
 - /nl/lua/refactoring/
-date:                  2024-01-28T22:05:57.583063-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactoring"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/refactoring.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:05:57.583063-07:00
+description: "Refactoren is de kunst van het aanpassen van bestaande code om de structuur,\
+  \ leesbaarheid en effici\xEBntie ervan te verbeteren, zonder het externe gedrag\u2026"
+lastmod: 2024-02-18 23:09:02.000596
+model: gpt-4-0125-preview
+summary: "Refactoren is de kunst van het aanpassen van bestaande code om de structuur,\
+  \ leesbaarheid en effici\xEBntie ervan te verbeteren, zonder het externe gedrag\u2026"
+title: Refactoring
 ---
 
 {{< edit_this_page >}}

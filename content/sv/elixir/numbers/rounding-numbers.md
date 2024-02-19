@@ -1,13 +1,16 @@
 ---
-title:                "Avrundning av tal"
 aliases:
 - /sv/elixir/rounding-numbers/
-date:                  2024-01-26T03:43:42.915311-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Avrundning av tal"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/rounding-numbers.md"
+date: 2024-01-26 03:43:42.915311-07:00
+description: "Att avrunda tal inneb\xE4r att justera dem till ett n\xE4rliggande v\xE4\
+  rde f\xF6r enkelhetens skull eller f\xF6r att matcha en viss precision. Det \xE4\
+  r anv\xE4ndbart f\xF6r att\u2026"
+lastmod: 2024-02-18 23:08:51.497663
+model: gpt-4-0125-preview
+summary: "Att avrunda tal inneb\xE4r att justera dem till ett n\xE4rliggande v\xE4\
+  rde f\xF6r enkelhetens skull eller f\xF6r att matcha en viss precision. Det \xE4\
+  r anv\xE4ndbart f\xF6r att\u2026"
+title: Avrundning av tal
 ---
 
 {{< edit_this_page >}}

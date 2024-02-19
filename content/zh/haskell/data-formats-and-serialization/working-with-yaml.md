@@ -1,14 +1,26 @@
 ---
-title:                "使用YAML工作"
 aliases:
 - /zh/haskell/working-with-yaml/
-date:                  2024-02-03T19:25:26.997217-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用YAML工作"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:25:26.997217-07:00
+description: "YAML\uFF0C\u5168\u79F0\u4E3A\u201CYAML Ain't Markup Language\u201D\uFF08\
+  YAML\u4E0D\u662F\u6807\u8BB0\u8BED\u8A00\uFF09\uFF0C\u662F\u4E00\u79CD\u5BF9\u4EBA\
+  \u7C7B\u53CB\u597D\u7684\u6570\u636E\u5E8F\u5217\u5316\u6807\u51C6\uFF0C\u53EF\u7528\
+  \u4E8E\u6240\u6709\u7F16\u7A0B\u8BED\u8A00\u3002\u7A0B\u5E8F\u5458\u901A\u5E38\u5728\
+  \u914D\u7F6E\u6587\u4EF6\u548C\u8BED\u8A00\u95F4\u7684\u6570\u636E\u4EA4\u6362\u4E2D\
+  \u4F7F\u7528YAML\uFF0C\u56E0\u4E3A\u5B83\u7684\u53EF\u8BFB\u6027\u597D\u548C\u7ED3\
+  \u6784\u7B80\u5355\u3002"
+lastmod: 2024-02-18 23:08:59.196330
+model: gpt-4-0125-preview
+summary: "YAML\uFF0C\u5168\u79F0\u4E3A\u201CYAML Ain't Markup Language\u201D\uFF08\
+  YAML\u4E0D\u662F\u6807\u8BB0\u8BED\u8A00\uFF09\uFF0C\u662F\u4E00\u79CD\u5BF9\u4EBA\
+  \u7C7B\u53CB\u597D\u7684\u6570\u636E\u5E8F\u5217\u5316\u6807\u51C6\uFF0C\u53EF\u7528\
+  \u4E8E\u6240\u6709\u7F16\u7A0B\u8BED\u8A00\u3002\u7A0B\u5E8F\u5458\u901A\u5E38\u5728\
+  \u914D\u7F6E\u6587\u4EF6\u548C\u8BED\u8A00\u95F4\u7684\u6570\u636E\u4EA4\u6362\u4E2D\
+  \u4F7F\u7528YAML\uFF0C\u56E0\u4E3A\u5B83\u7684\u53EF\u8BFB\u6027\u597D\u548C\u7ED3\
+  \u6784\u7B80\u5355\u3002"
+title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 ---
 
 {{< edit_this_page >}}

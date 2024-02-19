@@ -1,13 +1,16 @@
 ---
-title:                "Sammanslagning av strängar"
 aliases:
 - /sv/typescript/concatenating-strings/
-date:                  2024-01-20T17:35:41.132938-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammanslagning av strängar"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/concatenating-strings.md"
+date: 2024-01-20 17:35:41.132938-07:00
+description: "Konkatenering av str\xE4ngar i programmering inneb\xE4r att du sm\xE4\
+  lter samman tv\xE5 eller flera textv\xE4rden till ett enda str\xE4ngv\xE4rde. Vi\
+  \ g\xF6r detta f\xF6r att bygga\u2026"
+lastmod: 2024-02-18 23:08:51.535777
+model: gpt-4-1106-preview
+summary: "Konkatenering av str\xE4ngar i programmering inneb\xE4r att du sm\xE4lter\
+  \ samman tv\xE5 eller flera textv\xE4rden till ett enda str\xE4ngv\xE4rde. Vi g\xF6\
+  r detta f\xF6r att bygga\u2026"
+title: "Sammanslagning av str\xE4ngar"
 ---
 
 {{< edit_this_page >}}

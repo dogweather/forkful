@@ -1,13 +1,16 @@
 ---
-title:                "Rejestrowanie zdarzeń"
 aliases:
 - /pl/python/logging/
-date:                  2024-01-26T01:09:09.622104-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rejestrowanie zdarzeń"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/logging.md"
+date: 2024-01-26 01:09:09.622104-07:00
+description: "Logowanie to proces rejestrowania zdarze\u0144 aplikacji, podczas dzia\u0142\
+  ania programu, dostarczaj\u0105c \u015Blad okruszk\xF3w do analizy post mortem oraz\
+  \ monitorowania w\u2026"
+lastmod: 2024-02-18 23:08:49.229137
+model: gpt-4-1106-preview
+summary: "Logowanie to proces rejestrowania zdarze\u0144 aplikacji, podczas dzia\u0142\
+  ania programu, dostarczaj\u0105c \u015Blad okruszk\xF3w do analizy post mortem oraz\
+  \ monitorowania w\u2026"
+title: "Rejestrowanie zdarze\u0144"
 ---
 
 {{< edit_this_page >}}

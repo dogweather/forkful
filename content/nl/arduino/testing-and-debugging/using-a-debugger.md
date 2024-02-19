@@ -1,15 +1,16 @@
 ---
-title:                "Een debugger gebruiken"
 aliases:
 - /nl/arduino/using-a-debugger/
-date:                  2024-01-28T22:08:29.337271-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een debugger gebruiken"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:29.337271-07:00
+description: "Een debugger is een tool die je helpt om bugs in je code te verpletteren\
+  \ door je de mogelijkheid te geven om te pauzeren, rond te kijken en te ontdekken\u2026"
+lastmod: 2024-02-18 23:09:02.142722
+model: gpt-4-0125-preview
+summary: "Een debugger is een tool die je helpt om bugs in je code te verpletteren\
+  \ door je de mogelijkheid te geven om te pauzeren, rond te kijken en te ontdekken\u2026"
+title: Een debugger gebruiken
 ---
 
 {{< edit_this_page >}}

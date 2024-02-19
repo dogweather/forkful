@@ -1,14 +1,16 @@
 ---
-title:                "Bruke regulære uttrykk"
 aliases:
 - /no/google-apps-script/using-regular-expressions/
-date:                  2024-02-01T22:05:34.342973-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke regulære uttrykk"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/google-apps-script/using-regular-expressions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:05:34.342973-07:00
+description: "Regul\xE6re uttrykk (regex) er m\xF8nstre brukt til \xE5 matche kombinasjoner\
+  \ av tegn i strenger. Programmerere bruker dem til s\xF8king, redigering eller\u2026"
+lastmod: 2024-02-18 23:08:53.470033
+model: gpt-4-0125-preview
+summary: "Regul\xE6re uttrykk (regex) er m\xF8nstre brukt til \xE5 matche kombinasjoner\
+  \ av tegn i strenger. Programmerere bruker dem til s\xF8king, redigering eller\u2026"
+title: "Bruke regul\xE6re uttrykk"
 ---
 
 {{< edit_this_page >}}

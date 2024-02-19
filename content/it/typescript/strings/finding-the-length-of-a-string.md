@@ -1,13 +1,14 @@
 ---
-title:                "Trovare la lunghezza di una stringa"
 aliases:
 - /it/typescript/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:38.175242-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Trovare la lunghezza di una stringa"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:38.175242-07:00
+description: "Calcolare la lunghezza di una stringa significa contare quanti caratteri\
+  \ contiene. I programmatori lo fanno per validazioni, limitazioni di input e\u2026"
+lastmod: 2024-02-18 23:08:55.631991
+model: gpt-4-1106-preview
+summary: "Calcolare la lunghezza di una stringa significa contare quanti caratteri\
+  \ contiene. I programmatori lo fanno per validazioni, limitazioni di input e\u2026"
+title: Trovare la lunghezza di una stringa
 ---
 
 {{< edit_this_page >}}

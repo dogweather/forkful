@@ -1,14 +1,26 @@
 ---
-title:                "使用正则表达式"
 aliases:
 - /zh/java/using-regular-expressions/
-date:                  2024-02-03T19:17:14.404067-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用正则表达式"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:17:14.404067-07:00
+description: "Java\u4E2D\u7684\u6B63\u5219\u8868\u8FBE\u5F0F\uFF08regex\uFF09\u5141\
+  \u8BB8\u4F60\u5B9A\u4E49\u7279\u5B9A\u6A21\u5F0F\u6765\u5728\u4EE3\u7801\u4E2D\u641C\
+  \u7D22\u3001\u64CD\u4F5C\u6216\u9A8C\u8BC1\u5B57\u7B26\u4E32\u3002\u7A0B\u5E8F\u5458\
+  \u4F7F\u7528\u5B83\u4EEC\u6765\u6267\u884C\u50CF\u89E3\u6790\u65E5\u5FD7\u6587\u4EF6\
+  \u3001\u9A8C\u8BC1\u7528\u6237\u8F93\u5165\u6216\u5728\u6587\u672C\u4E2D\u641C\u7D22\
+  \u7279\u5B9A\u6A21\u5F0F\u7684\u4EFB\u52A1\uFF0C\u4ECE\u800C\u4EE5\u6700\u5C0F\u7684\
+  \u52AA\u529B\u5B9E\u73B0\u590D\u6742\u7684\u5B57\u7B26\u4E32\u5904\u7406\u3002"
+lastmod: 2024-02-18 23:08:59.012001
+model: gpt-4-0125-preview
+summary: "Java\u4E2D\u7684\u6B63\u5219\u8868\u8FBE\u5F0F\uFF08regex\uFF09\u5141\u8BB8\
+  \u4F60\u5B9A\u4E49\u7279\u5B9A\u6A21\u5F0F\u6765\u5728\u4EE3\u7801\u4E2D\u641C\u7D22\
+  \u3001\u64CD\u4F5C\u6216\u9A8C\u8BC1\u5B57\u7B26\u4E32\u3002\u7A0B\u5E8F\u5458\u4F7F\
+  \u7528\u5B83\u4EEC\u6765\u6267\u884C\u50CF\u89E3\u6790\u65E5\u5FD7\u6587\u4EF6\u3001\
+  \u9A8C\u8BC1\u7528\u6237\u8F93\u5165\u6216\u5728\u6587\u672C\u4E2D\u641C\u7D22\u7279\
+  \u5B9A\u6A21\u5F0F\u7684\u4EFB\u52A1\uFF0C\u4ECE\u800C\u4EE5\u6700\u5C0F\u7684\u52AA\
+  \u529B\u5B9E\u73B0\u590D\u6742\u7684\u5B57\u7B26\u4E32\u5904\u7406\u3002"
+title: "\u4F7F\u7528\u6B63\u5219\u8868\u8FBE\u5F0F"
 ---
 
 {{< edit_this_page >}}

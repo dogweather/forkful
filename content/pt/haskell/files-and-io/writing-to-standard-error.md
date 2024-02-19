@@ -1,14 +1,18 @@
 ---
-title:                "Escrevendo para o erro padrão"
 aliases:
 - /pt/haskell/writing-to-standard-error/
-date:                  2024-02-03T19:33:18.089492-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escrevendo para o erro padrão"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:33:18.089492-07:00
+description: "Escrever para o erro padr\xE3o (stderr) em Haskell permite que os programas\
+  \ diferenciem sua sa\xEDda entre resultados normais e mensagens de erro. Isso \xE9\
+  \u2026"
+lastmod: 2024-02-18 23:08:58.215472
+model: gpt-4-0125-preview
+summary: "Escrever para o erro padr\xE3o (stderr) em Haskell permite que os programas\
+  \ diferenciem sua sa\xEDda entre resultados normais e mensagens de erro. Isso \xE9\
+  \u2026"
+title: "Escrevendo para o erro padr\xE3o"
 ---
 
 {{< edit_this_page >}}

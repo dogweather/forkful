@@ -1,13 +1,16 @@
 ---
-title:                "Envoi d'une requête HTTP"
 aliases:
 - /fr/clojure/sending-an-http-request/
-date:                  2024-01-20T17:59:11.431152-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Envoi d'une requête HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/sending-an-http-request.md"
+date: 2024-01-20 17:59:11.431152-07:00
+description: "Envoyer une requ\xEAte HTTP, c'est comme envoyer une lettre num\xE9\
+  rique \xE0 un serveur web pour obtenir des donn\xE9es ou d\xE9clencher une action.\
+  \ Les programmeurs le\u2026"
+lastmod: 2024-02-18 23:09:08.383386
+model: gpt-4-1106-preview
+summary: "Envoyer une requ\xEAte HTTP, c'est comme envoyer une lettre num\xE9rique\
+  \ \xE0 un serveur web pour obtenir des donn\xE9es ou d\xE9clencher une action. Les\
+  \ programmeurs le\u2026"
+title: "Envoi d'une requ\xEAte HTTP"
 ---
 
 {{< edit_this_page >}}

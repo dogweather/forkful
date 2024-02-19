@@ -1,13 +1,15 @@
 ---
-title:                "Å jobbe med XML"
 aliases:
 - /no/cpp/working-with-xml/
-date:                  2024-01-26T04:28:25.436705-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å jobbe med XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/working-with-xml.md"
+date: 2024-01-26 04:28:25.436705-07:00
+description: "\xC5 jobbe med XML betyr analyse, oppretting og manipulering av XML\
+  \ (eXtensible Markup Language)-data. Programmerere h\xE5ndterer XML for \xE5 h\xE5\
+  ndtere strukturert\u2026"
+lastmod: 2024-02-18 23:08:54.251924
+model: gpt-4-0125-preview
+summary: "\xC5 jobbe med XML betyr analyse, oppretting og manipulering av XML (eXtensible\
+  \ Markup Language)-data. Programmerere h\xE5ndterer XML for \xE5 h\xE5ndtere strukturert\u2026"
+title: "\xC5 jobbe med XML"
 ---
 
 {{< edit_this_page >}}

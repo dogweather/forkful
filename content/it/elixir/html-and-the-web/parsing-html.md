@@ -1,12 +1,13 @@
 ---
-title:                "Analisi dell'HTML"
 aliases:
 - /it/elixir/parsing-html/
-date:                  2024-01-20T15:31:09.248361-07:00
-simple_title:         "Analisi dell'HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/parsing-html.md"
+date: 2024-01-20 15:31:09.248361-07:00
+description: "Il parsing HTML consiste nel trasformare il codice HTML in una struttura\
+  \ dati manipolabile, come mappe o liste. I programmatori lo fanno per estrarre\u2026"
+lastmod: 2024-02-18 23:08:55.598759
+summary: "Il parsing HTML consiste nel trasformare il codice HTML in una struttura\
+  \ dati manipolabile, come mappe o liste. I programmatori lo fanno per estrarre\u2026"
+title: Analisi dell'HTML
 ---
 
 {{< edit_this_page >}}

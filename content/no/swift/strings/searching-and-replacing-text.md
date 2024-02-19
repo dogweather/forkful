@@ -1,13 +1,16 @@
 ---
-title:                "Søking og erstatting av tekst"
 aliases:
 - /no/swift/searching-and-replacing-text/
-date:                  2024-01-20T17:58:36.284973-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Søking og erstatting av tekst"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:36.284973-07:00
+description: "S\xF8ke og erstatte tekst lar deg finne og skifte ut ord eller fraser\
+  \ i en streng. Det sparer tid og minimerer feil n\xE5r du jobber med store datamengder\
+  \ eller\u2026"
+lastmod: 2024-02-18 23:08:54.254917
+model: gpt-4-1106-preview
+summary: "S\xF8ke og erstatte tekst lar deg finne og skifte ut ord eller fraser i\
+  \ en streng. Det sparer tid og minimerer feil n\xE5r du jobber med store datamengder\
+  \ eller\u2026"
+title: "S\xF8king og erstatting av tekst"
 ---
 
 {{< edit_this_page >}}

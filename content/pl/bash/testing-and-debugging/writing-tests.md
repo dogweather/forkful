@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie testów"
 aliases:
 - /pl/bash/writing-tests/
-date:                  2024-02-03T19:29:36.706359-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie testów"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:36.706359-07:00
+description: "Pisanie test\xF3w w Bashu obejmuje tworzenie skrypt\xF3w testowych w\
+  \ celu weryfikacji funkcjonalno\u015Bci twoich skrypt\xF3w Bash. Programi\u015B\
+  ci przeprowadzaj\u0105 testy,\u2026"
+lastmod: 2024-02-18 23:08:49.788231
+model: gpt-4-0125-preview
+summary: "Pisanie test\xF3w w Bashu obejmuje tworzenie skrypt\xF3w testowych w celu\
+  \ weryfikacji funkcjonalno\u015Bci twoich skrypt\xF3w Bash. Programi\u015Bci przeprowadzaj\u0105\
+  \ testy,\u2026"
+title: "Pisanie test\xF3w"
 ---
 
 {{< edit_this_page >}}

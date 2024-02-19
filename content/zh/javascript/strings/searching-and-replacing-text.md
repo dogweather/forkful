@@ -1,14 +1,23 @@
 ---
-title:                "搜索和替换文本"
 aliases:
 - /zh/javascript/searching-and-replacing-text/
-date:                  2024-01-20T17:58:39.789831-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "搜索和替换文本"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:39.789831-07:00
+description: "\u5728\u4EE3\u7801\u4E2D\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C\u662F\
+  \u627E\u51FA\u7279\u5B9A\u5B57\u7B26\u6216\u5B57\u7B26\u4E32\u7136\u540E\u5C06\u5176\
+  \u4FEE\u6539\u4E3A\u6240\u9700\u8981\u7684\u5185\u5BB9\u7684\u8FC7\u7A0B\u3002\u7A0B\
+  \u5E8F\u5458\u8FD9\u4E48\u505A\u53EF\u4EE5\u5FEB\u901F\u66F4\u65B0\u53D8\u91CF\u540D\
+  \u3001\u4FEE\u6B63\u9519\u8BEF\u6216\u8005\u6279\u91CF\u66F4\u6539\u4EE3\u7801\u4E2D\
+  \u7684\u67D0\u4E9B\u6587\u5B57\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.466358
+model: gpt-4-1106-preview
+summary: "\u5728\u4EE3\u7801\u4E2D\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C\u662F\
+  \u627E\u51FA\u7279\u5B9A\u5B57\u7B26\u6216\u5B57\u7B26\u4E32\u7136\u540E\u5C06\u5176\
+  \u4FEE\u6539\u4E3A\u6240\u9700\u8981\u7684\u5185\u5BB9\u7684\u8FC7\u7A0B\u3002\u7A0B\
+  \u5E8F\u5458\u8FD9\u4E48\u505A\u53EF\u4EE5\u5FEB\u901F\u66F4\u65B0\u53D8\u91CF\u540D\
+  \u3001\u4FEE\u6B63\u9519\u8BEF\u6216\u8005\u6279\u91CF\u66F4\u6539\u4EE3\u7801\u4E2D\
+  \u7684\u67D0\u4E9B\u6587\u5B57\u3002"
+title: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C"
 ---
 
 {{< edit_this_page >}}

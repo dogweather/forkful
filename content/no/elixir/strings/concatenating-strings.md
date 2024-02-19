@@ -1,13 +1,16 @@
 ---
-title:                "Sammenslåing av strenger"
 aliases:
 - /no/elixir/concatenating-strings/
-date:                  2024-01-27T10:42:41.231494-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sammenslåing av strenger"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/concatenating-strings.md"
+date: 2024-01-27 10:42:41.231494-07:00
+description: "Konkatenere strenger handler om \xE5 sette sammen to eller flere strenger\
+  \ for \xE5 danne en enkelt tekstbit. Du kan trenge \xE5 sl\xE5 sammen tekst for\
+  \ \xE5 generere\u2026"
+lastmod: 2024-02-18 23:08:53.596967
+model: gpt-4-0125-preview
+summary: "Konkatenere strenger handler om \xE5 sette sammen to eller flere strenger\
+  \ for \xE5 danne en enkelt tekstbit. Du kan trenge \xE5 sl\xE5 sammen tekst for\
+  \ \xE5 generere\u2026"
+title: "Sammensl\xE5ing av strenger"
 ---
 
 {{< edit_this_page >}}

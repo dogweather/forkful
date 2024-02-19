@@ -1,13 +1,16 @@
 ---
-title:                "Använda en interaktiv skal (REPL)"
 aliases:
 - /sv/php/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:17:05.962961-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Använda en interaktiv skal (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:17:05.962961-07:00
+description: "En interaktiv skal, eller REPL (Read-Eval-Print Loop), l\xE5ter dig\
+  \ skriva och k\xF6ra PHP-kod p\xE5 flygande fot. Det \xE4r idealiskt f\xF6r experiment,\
+  \ fels\xF6kning\u2026"
+lastmod: 2024-02-18 23:08:51.879838
+model: gpt-4-0125-preview
+summary: "En interaktiv skal, eller REPL (Read-Eval-Print Loop), l\xE5ter dig skriva\
+  \ och k\xF6ra PHP-kod p\xE5 flygande fot. Det \xE4r idealiskt f\xF6r experiment,\
+  \ fels\xF6kning\u2026"
+title: "Anv\xE4nda en interaktiv skal (REPL)"
 ---
 
 {{< edit_this_page >}}

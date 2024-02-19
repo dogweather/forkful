@@ -1,14 +1,16 @@
 ---
-title:                "Removendo aspas de uma string"
 aliases:
 - /pt/go/removing-quotes-from-a-string/
-date:                  2024-02-03T18:07:17.275975-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Removendo aspas de uma string"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:17.275975-07:00
+description: "Remover aspas de uma string em Go \xE9 sobre eliminar as aspas de abertura\
+  \ e fechamento (`\"` ou `'`) de uma determinada string. Programadores frequentemente\u2026"
+lastmod: 2024-02-18 23:08:57.655684
+model: gpt-4-0125-preview
+summary: "Remover aspas de uma string em Go \xE9 sobre eliminar as aspas de abertura\
+  \ e fechamento (`\"` ou `'`) de uma determinada string. Programadores frequentemente\u2026"
+title: Removendo aspas de uma string
 ---
 
 {{< edit_this_page >}}

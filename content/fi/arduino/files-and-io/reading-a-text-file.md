@@ -1,13 +1,16 @@
 ---
-title:                "Tekstitiedoston lukeminen"
 aliases:
 - /fi/arduino/reading-a-text-file/
-date:                  2024-01-20T17:53:36.089833-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tekstitiedoston lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/reading-a-text-file.md"
+date: 2024-01-20 17:53:36.089833-07:00
+description: "Lukemalla tekstitiedostoa Arduino ker\xE4\xE4 ja k\xE4sittelee tietoa.\
+  \ T\xE4m\xE4 on olennaista sensoridatasta aina konfiguraatioasetuksiin; se mahdollistaa\
+  \ dynaamisen\u2026"
+lastmod: 2024-02-18 23:09:07.918109
+model: gpt-4-1106-preview
+summary: "Lukemalla tekstitiedostoa Arduino ker\xE4\xE4 ja k\xE4sittelee tietoa. T\xE4\
+  m\xE4 on olennaista sensoridatasta aina konfiguraatioasetuksiin; se mahdollistaa\
+  \ dynaamisen\u2026"
+title: Tekstitiedoston lukeminen
 ---
 
 {{< edit_this_page >}}

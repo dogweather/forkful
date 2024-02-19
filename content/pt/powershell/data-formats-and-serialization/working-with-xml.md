@@ -1,13 +1,14 @@
 ---
-title:                "Trabalhando com XML"
 aliases:
 - /pt/powershell/working-with-xml/
-date:                  2024-01-26T04:34:19.691946-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/powershell/working-with-xml.md"
+date: 2024-01-26 04:34:19.691946-07:00
+description: "Trabalhar com XML envolve manipular e acessar dados estruturados na\
+  \ Linguagem de Marca\xE7\xE3o Extens\xEDvel (eXtensible Markup Language). Os programadores\u2026"
+lastmod: 2024-02-18 23:08:58.393021
+model: gpt-4-0125-preview
+summary: "Trabalhar com XML envolve manipular e acessar dados estruturados na Linguagem\
+  \ de Marca\xE7\xE3o Extens\xEDvel (eXtensible Markup Language). Os programadores\u2026"
+title: Trabalhando com XML
 ---
 
 {{< edit_this_page >}}

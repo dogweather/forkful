@@ -1,14 +1,20 @@
 ---
-title:                "Tìm độ dài của chuỗi"
 aliases:
 - /vi/google-apps-script/finding-the-length-of-a-string/
-date:                  2024-02-01T21:54:25.972053-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tìm độ dài của chuỗi"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/google-apps-script/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:25.972053-07:00
+description: "Vi\u1EC7c t\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i trong\
+  \ Google Apps Script, m\u1ED9t ng\xF4n ng\u1EEF l\u1EADp tr\xECnh JavaScript d\u1EF1\
+  a tr\xEAn \u0111\xE1m m\xE2y cho ph\xE9p b\u1EA1n t\u1EF1 \u0111\u1ED9ng h\xF3a\
+  \ c\xE1c t\xE1c v\u1EE5 tr\xEAn c\xE1c\u2026"
+lastmod: 2024-02-18 23:08:50.209024
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c t\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i trong Google\
+  \ Apps Script, m\u1ED9t ng\xF4n ng\u1EEF l\u1EADp tr\xECnh JavaScript d\u1EF1a tr\xEA\
+  n \u0111\xE1m m\xE2y cho ph\xE9p b\u1EA1n t\u1EF1 \u0111\u1ED9ng h\xF3a c\xE1c t\xE1\
+  c v\u1EE5 tr\xEAn c\xE1c\u2026"
+title: "T\xECm \u0111\u1ED9 d\xE0i c\u1EE7a chu\u1ED7i"
 ---
 
 {{< edit_this_page >}}

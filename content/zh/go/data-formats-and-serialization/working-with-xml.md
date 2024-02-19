@@ -1,14 +1,27 @@
 ---
-title:                "处理XML"
 aliases:
 - /zh/go/working-with-xml/
-date:                  2024-02-03T18:13:11.274201-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理XML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/working-with-xml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:13:11.274201-07:00
+description: "\u5728 Go \u4E2D\u5904\u7406 XML \u6D89\u53CA\u89E3\u6790\uFF08\u8BFB\
+  \u53D6\uFF09\u548C\u751F\u6210\uFF08\u5199\u5165\uFF09XML \u6587\u6863\u2014\u2014\
+  \u8FD9\u662F\u4E00\u4E2A\u7528\u4E8E\u7ED3\u6784\u5316\u6570\u636E\u4EA4\u6362\u7684\
+  \u6807\u51C6\u683C\u5F0F\u3002\u7A0B\u5E8F\u5458\u4E4B\u6240\u4EE5\u8FD9\u6837\u505A\
+  \uFF0C\u662F\u4E3A\u4E86\u6570\u636E\u5B58\u50A8\u3001\u914D\u7F6E\u8BBE\u7F6E\u6216\
+  \u7CFB\u7EDF\u95F4\u7684\u6570\u636E\u4EA4\u6362\uFF0C\u5C24\u5176\u662F\u5728 XML\
+  \ \u662F\u9996\u9009\u6216\u9057\u7559\u6570\u636E\u683C\u5F0F\u7684\u73AF\u5883\
+  \u4E2D\u3002"
+lastmod: 2024-02-18 23:08:58.732021
+model: gpt-4-0125-preview
+summary: "\u5728 Go \u4E2D\u5904\u7406 XML \u6D89\u53CA\u89E3\u6790\uFF08\u8BFB\u53D6\
+  \uFF09\u548C\u751F\u6210\uFF08\u5199\u5165\uFF09XML \u6587\u6863\u2014\u2014\u8FD9\
+  \u662F\u4E00\u4E2A\u7528\u4E8E\u7ED3\u6784\u5316\u6570\u636E\u4EA4\u6362\u7684\u6807\
+  \u51C6\u683C\u5F0F\u3002\u7A0B\u5E8F\u5458\u4E4B\u6240\u4EE5\u8FD9\u6837\u505A\uFF0C\
+  \u662F\u4E3A\u4E86\u6570\u636E\u5B58\u50A8\u3001\u914D\u7F6E\u8BBE\u7F6E\u6216\u7CFB\
+  \u7EDF\u95F4\u7684\u6570\u636E\u4EA4\u6362\uFF0C\u5C24\u5176\u662F\u5728 XML \u662F\
+  \u9996\u9009\u6216\u9057\u7559\u6570\u636E\u683C\u5F0F\u7684\u73AF\u5883\u4E2D\u3002"
+title: "\u5904\u7406XML"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Extraindo substrings"
 aliases:
 - /pt/typescript/extracting-substrings/
-date:                  2024-01-20T17:46:35.533615-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extraindo substrings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/extracting-substrings.md"
+date: 2024-01-20 17:46:35.533615-07:00
+description: "Extrair substrings significa pegar peda\xE7os de uma string - aquelas\
+  \ sequ\xEAncias de caracteres que todo mundo adora manipular em programa\xE7\xE3\
+  o. Programadores\u2026"
+lastmod: 2024-02-18 23:08:57.874416
+model: gpt-4-1106-preview
+summary: "Extrair substrings significa pegar peda\xE7os de uma string - aquelas sequ\xEA\
+  ncias de caracteres que todo mundo adora manipular em programa\xE7\xE3o. Programadores\u2026"
+title: Extraindo substrings
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Organisera kod i funktioner"
 aliases:
 - /sv/swift/organizing-code-into-functions/
-date:                  2024-01-26T01:16:09.344776-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Organisera kod i funktioner"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/organizing-code-into-functions.md"
+date: 2024-01-26 01:16:09.344776-07:00
+description: "Att gruppera kod i funktioner inneb\xE4r att bryta ner uppgifter i \xE5\
+  teranv\xE4ndbara delar. Det g\xF6r koden ren, mindre felben\xE4gen och enklare att\
+  \ fels\xF6ka eller\u2026"
+lastmod: 2024-02-18 23:08:52.129748
+model: gpt-4-0125-preview
+summary: "Att gruppera kod i funktioner inneb\xE4r att bryta ner uppgifter i \xE5\
+  teranv\xE4ndbara delar. Det g\xF6r koden ren, mindre felben\xE4gen och enklare att\
+  \ fels\xF6ka eller\u2026"
+title: Organisera kod i funktioner
 ---
 
 {{< edit_this_page >}}

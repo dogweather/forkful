@@ -1,15 +1,17 @@
 ---
-title:                "Verwendung von assoziativen Arrays"
 aliases:
 - /de/ruby/using-associative-arrays/
-date:                  2024-01-30T19:12:37.486889-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verwendung von assoziativen Arrays"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:37.486889-07:00
+description: "Assoziative Arrays, bekannter als Hashes in Ruby, erm\xF6glichen die\
+  \ Zuordnung eindeutiger Schl\xFCssel zu Werten. Sie sind unverzichtbar, wenn es\
+  \ darum geht,\u2026"
+lastmod: 2024-02-18 23:09:05.413503
+model: gpt-4-0125-preview
+summary: "Assoziative Arrays, bekannter als Hashes in Ruby, erm\xF6glichen die Zuordnung\
+  \ eindeutiger Schl\xFCssel zu Werten. Sie sind unverzichtbar, wenn es darum geht,\u2026"
+title: Verwendung von assoziativen Arrays
 ---
 
 {{< edit_this_page >}}

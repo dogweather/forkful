@@ -1,14 +1,16 @@
 ---
-title:                "Testien kirjoittaminen"
 aliases:
 - /fi/javascript/writing-tests/
-date:                  2024-02-03T19:31:22.423840-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Testien kirjoittaminen"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:22.423840-07:00
+description: "Testien kirjoittaminen JavaScriptill\xE4 viittaa automatisoitujen skriptien\
+  \ luomiseen, jotka ajavat koodiasi varmistaakseen sen toimivan odotetulla tavalla.\u2026"
+lastmod: 2024-02-18 23:09:08.039439
+model: gpt-4-0125-preview
+summary: "Testien kirjoittaminen JavaScriptill\xE4 viittaa automatisoitujen skriptien\
+  \ luomiseen, jotka ajavat koodiasi varmistaakseen sen toimivan odotetulla tavalla.\u2026"
+title: Testien kirjoittaminen
 ---
 
 {{< edit_this_page >}}

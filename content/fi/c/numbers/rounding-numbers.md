@@ -1,14 +1,18 @@
 ---
-title:                "Lukujen pyöristäminen"
 aliases:
 - /fi/c/rounding-numbers/
-date:                  2024-02-03T18:07:44.632714-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lukujen pyöristäminen"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/rounding-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:44.632714-07:00
+description: "Numeroiden py\xF6rist\xE4minen on prosessi, jossa numeron numerot s\xE4\
+  \xE4det\xE4\xE4n v\xE4hemm\xE4n tarkoiksi tietyin s\xE4\xE4nn\xF6in, joko l\xE4\
+  himp\xE4\xE4n kokonaislukuun tai m\xE4\xE4ritettyyn\u2026"
+lastmod: 2024-02-18 23:09:08.126273
+model: gpt-4-0125-preview
+summary: "Numeroiden py\xF6rist\xE4minen on prosessi, jossa numeron numerot s\xE4\xE4\
+  det\xE4\xE4n v\xE4hemm\xE4n tarkoiksi tietyin s\xE4\xE4nn\xF6in, joko l\xE4himp\xE4\
+  \xE4n kokonaislukuun tai m\xE4\xE4ritettyyn\u2026"
+title: "Lukujen py\xF6rist\xE4minen"
 ---
 
 {{< edit_this_page >}}

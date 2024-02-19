@@ -1,13 +1,22 @@
 ---
-title:                "XML 다루기"
 aliases:
 - /ko/swift/working-with-xml/
-date:                  2024-01-26T04:36:05.594945-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML 다루기"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/swift/working-with-xml.md"
+date: 2024-01-26 04:36:05.594945-07:00
+description: "Swift\uC5D0\uC11C XML\uC744 \uB2E4\uB8EC\uB2E4\uB294 \uAC83\uC740 XML\
+  \ \uB370\uC774\uD130\uB97C \uD30C\uC2F1\uD558\uACE0 \uC0DD\uC131\uD558\uB294 \uAC83\
+  \uC744 \uC758\uBBF8\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\
+  \ \uD2B9\uD788 XML\uC774 \uD45C\uC900 \uD3EC\uB9F7\uC778 \uC2DC\uC2A4\uD15C\uACFC\
+  \ \uD1B5\uD569\uD560 \uB54C \uB370\uC774\uD130 \uAD50\uD658\uC744 \uC704\uD574 \uC774\
+  \ \uC791\uC5C5\uC744 \uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.786376
+model: gpt-4-0125-preview
+summary: "Swift\uC5D0\uC11C XML\uC744 \uB2E4\uB8EC\uB2E4\uB294 \uAC83\uC740 XML \uB370\
+  \uC774\uD130\uB97C \uD30C\uC2F1\uD558\uACE0 \uC0DD\uC131\uD558\uB294 \uAC83\uC744\
+  \ \uC758\uBBF8\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uD2B9\
+  \uD788 XML\uC774 \uD45C\uC900 \uD3EC\uB9F7\uC778 \uC2DC\uC2A4\uD15C\uACFC \uD1B5\
+  \uD569\uD560 \uB54C \uB370\uC774\uD130 \uAD50\uD658\uC744 \uC704\uD574 \uC774 \uC791\
+  \uC5C5\uC744 \uD569\uB2C8\uB2E4."
+title: "XML \uB2E4\uB8E8\uAE30"
 ---
 
 {{< edit_this_page >}}

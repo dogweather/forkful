@@ -1,15 +1,16 @@
 ---
-title:                "Een tekstbestand lezen"
 aliases:
 - /nl/lua/reading-a-text-file/
-date:                  2024-01-28T22:04:48.712798-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tekstbestand lezen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/reading-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:04:48.712798-07:00
+description: "Een tekstbestand lezen betekent het laden van de inhoud in je programma.\
+  \ We doen dit om opgeslagen gegevens te verwerken, analyseren of weergeven, zoals\u2026"
+lastmod: 2024-02-18 23:09:02.010276
+model: gpt-4-0125-preview
+summary: "Een tekstbestand lezen betekent het laden van de inhoud in je programma.\
+  \ We doen dit om opgeslagen gegevens te verwerken, analyseren of weergeven, zoals\u2026"
+title: Een tekstbestand lezen
 ---
 
 {{< edit_this_page >}}

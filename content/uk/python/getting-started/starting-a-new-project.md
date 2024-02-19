@@ -1,13 +1,13 @@
 ---
-title:                "Починаємо новий проект"
 aliases:
 - /uk/python/starting-a-new-project/
-date:                  2024-01-20T18:04:36.553389-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Починаємо новий проект"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/python/starting-a-new-project.md"
+date: 2024-01-20 18:04:36.553389-07:00
+description: ''
+lastmod: 2024-02-18 23:08:59.792944
+model: gpt-4-1106-preview
+summary: ''
+title: "\u041F\u043E\u0447\u0438\u043D\u0430\u0454\u043C\u043E \u043D\u043E\u0432\u0438\
+  \u0439 \u043F\u0440\u043E\u0435\u043A\u0442"
 ---
 
 {{< edit_this_page >}}

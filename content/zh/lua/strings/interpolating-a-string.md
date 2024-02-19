@@ -1,14 +1,15 @@
 ---
-title:                "字符串插值"
 aliases:
 - /zh/lua/interpolating-a-string/
-date:                  2024-01-20T17:51:11.914702-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "字符串插值"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/lua/interpolating-a-string.md"
+date: 2024-01-20 17:51:11.914702-07:00
+description: "String interpolation is replacing placeholders within a string with\
+  \ actual values, a common practice for crafting messages or assembling texts\u2026"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.241508
+model: gpt-4-1106-preview
+summary: "String interpolation is replacing placeholders within a string with actual\
+  \ values, a common practice for crafting messages or assembling texts\u2026"
+title: "\u5B57\u7B26\u4E32\u63D2\u503C"
 ---
 
 {{< edit_this_page >}}

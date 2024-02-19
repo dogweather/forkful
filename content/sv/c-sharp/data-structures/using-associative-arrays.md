@@ -1,15 +1,18 @@
 ---
-title:                "Att använda associativa arrayer"
 aliases:
 - /sv/c-sharp/using-associative-arrays/
-date:                  2024-01-30T19:10:16.994809-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda associativa arrayer"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:16.994809-07:00
+description: "Associativa f\xE4lt, eller ordb\xF6cker i C#, l\xE5ter dig lagra och\
+  \ hantera par av nycklar och v\xE4rden. De \xE4r ditt f\xF6rstahandsval n\xE4r du\
+  \ beh\xF6ver h\xE4mta v\xE4rden\u2026"
+lastmod: 2024-02-18 23:08:51.788347
+model: gpt-4-0125-preview
+summary: "Associativa f\xE4lt, eller ordb\xF6cker i C#, l\xE5ter dig lagra och hantera\
+  \ par av nycklar och v\xE4rden. De \xE4r ditt f\xF6rstahandsval n\xE4r du beh\xF6\
+  ver h\xE4mta v\xE4rden\u2026"
+title: "Att anv\xE4nda associativa arrayer"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Đọc các đối số dòng lệnh"
 aliases:
 - /vi/java/reading-command-line-arguments/
-date:                  2024-01-28T22:05:29.425235-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Đọc các đối số dòng lệnh"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/java/reading-command-line-arguments.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:05:29.425235-07:00
+description: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh trong Java\
+  \ l\xE0 vi\u1EC7c l\u1EA5y input cung c\u1EA5p b\u1EDFi ng\u01B0\u1EDDi d\xF9ng\
+  \ khi h\u1ECD kh\u1EDFi \u0111\u1ED9ng ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1\
+  n t\u1EEB console. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u\u2026"
+lastmod: 2024-02-18 23:08:50.574265
+model: gpt-4-0125-preview
+summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh trong Java\
+  \ l\xE0 vi\u1EC7c l\u1EA5y input cung c\u1EA5p b\u1EDFi ng\u01B0\u1EDDi d\xF9ng\
+  \ khi h\u1ECD kh\u1EDFi \u0111\u1ED9ng ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1\
+  n t\u1EEB console. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u\u2026"
+title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 ---
 
 {{< edit_this_page >}}

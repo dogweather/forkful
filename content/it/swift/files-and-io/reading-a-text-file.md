@@ -1,13 +1,16 @@
 ---
-title:                "Lettura di un file di testo"
 aliases:
 - /it/swift/reading-a-text-file/
-date:                  2024-01-20T17:55:11.034768-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lettura di un file di testo"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/reading-a-text-file.md"
+date: 2024-01-20 17:55:11.034768-07:00
+description: "Leggere un file di testo significa accedere e manipolare le informazioni\
+  \ che sono memorizzate in un file sul tuo computer. I programmatori lo fanno perch\xE9\
+  \u2026"
+lastmod: 2024-02-18 23:08:56.229101
+model: gpt-4-1106-preview
+summary: "Leggere un file di testo significa accedere e manipolare le informazioni\
+  \ che sono memorizzate in un file sul tuo computer. I programmatori lo fanno perch\xE9\
+  \u2026"
+title: Lettura di un file di testo
 ---
 
 {{< edit_this_page >}}

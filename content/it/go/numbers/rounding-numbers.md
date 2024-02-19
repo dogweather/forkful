@@ -1,14 +1,17 @@
 ---
-title:                "Arrotondamento dei numeri"
 aliases:
 - /it/go/rounding-numbers/
-date:                  2024-02-03T18:08:08.678966-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrotondamento dei numeri"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/rounding-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:08.678966-07:00
+description: "L'arrotondamento dei numeri consiste nell'aggiustare il valore di un\
+  \ numero al suo intero pi\xF9 vicino o a un numero specifico di cifre decimali.\
+  \ I\u2026"
+lastmod: 2024-02-18 23:08:55.426834
+model: gpt-4-0125-preview
+summary: "L'arrotondamento dei numeri consiste nell'aggiustare il valore di un numero\
+  \ al suo intero pi\xF9 vicino o a un numero specifico di cifre decimali. I\u2026"
+title: Arrotondamento dei numeri
 ---
 
 {{< edit_this_page >}}

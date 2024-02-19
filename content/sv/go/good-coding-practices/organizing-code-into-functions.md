@@ -1,14 +1,16 @@
 ---
-title:                "Organisering av kod i funktioner"
 aliases:
 - /sv/go/organizing-code-into-functions/
-date:                  2024-02-03T17:59:42.595825-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Organisering av kod i funktioner"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/organizing-code-into-functions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:42.595825-07:00
+description: "Att organisera kod i funktioner i Go inneb\xE4r att man delar upp koden\
+  \ i \xE5teranv\xE4ndbara, modul\xE4ra block som utf\xF6r specifika uppgifter. Detta\u2026"
+lastmod: 2024-02-18 23:08:51.339225
+model: gpt-4-0125-preview
+summary: "Att organisera kod i funktioner i Go inneb\xE4r att man delar upp koden\
+  \ i \xE5teranv\xE4ndbara, modul\xE4ra block som utf\xF6r specifika uppgifter. Detta\u2026"
+title: Organisering av kod i funktioner
 ---
 
 {{< edit_this_page >}}

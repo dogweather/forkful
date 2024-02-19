@@ -1,14 +1,16 @@
 ---
-title:                "Opprette en midlertidig fil"
 aliases:
 - /no/google-apps-script/creating-a-temporary-file/
-date:                  2024-02-01T21:51:51.843648-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Opprette en midlertidig fil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/google-apps-script/creating-a-temporary-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:51.843648-07:00
+description: "\xC5 lage en midlertidig fil i Google Apps Script inneb\xE6rer \xE5\
+  \ generere en fil som er ment for kortvarig bruk, typisk for mellomliggende databehandling,\u2026"
+lastmod: 2024-02-18 23:08:53.502024
+model: gpt-4-0125-preview
+summary: "\xC5 lage en midlertidig fil i Google Apps Script inneb\xE6rer \xE5 generere\
+  \ en fil som er ment for kortvarig bruk, typisk for mellomliggende databehandling,\u2026"
+title: Opprette en midlertidig fil
 ---
 
 {{< edit_this_page >}}

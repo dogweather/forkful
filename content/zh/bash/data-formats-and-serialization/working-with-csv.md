@@ -1,14 +1,26 @@
 ---
-title:                "处理CSV文件"
 aliases:
 - /zh/bash/working-with-csv/
-date:                  2024-02-03T19:18:44.128508-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理CSV文件"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/bash/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:18:44.128508-07:00
+description: "\u5728 Bash \u4E2D\u5904\u7406 CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\
+  \uFF09\u6587\u4EF6\u662F\u5173\u4E8E\u5904\u7406\u548C\u64CD\u4F5C\u4EE5\u7EAF\u6587\
+  \u672C\u683C\u5F0F\u5B58\u50A8\u7684\u8868\u683C\u6570\u636E\u3002\u8FD9\u5BF9\u7A0B\
+  \u5E8F\u5458\u6765\u8BF4\u81F3\u5173\u91CD\u8981\uFF0C\u56E0\u4E3A\u5B83\u5141\u8BB8\
+  \u76F4\u63A5\u4ECE\u547D\u4EE4\u884C\u81EA\u52A8\u5316\u6570\u636E\u8F6C\u6362\u3001\
+  \u5206\u6790\u548C\u96C6\u6210\u4EFB\u52A1\uFF0C\u65E0\u9700\u66F4\u91CD\u91CF\u7EA7\
+  \u7684\u5DE5\u5177\u6216\u7F16\u7A0B\u73AF\u5883\u3002"
+lastmod: 2024-02-18 23:08:59.312277
+model: gpt-4-0125-preview
+summary: "\u5728 Bash \u4E2D\u5904\u7406 CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\uFF09\
+  \u6587\u4EF6\u662F\u5173\u4E8E\u5904\u7406\u548C\u64CD\u4F5C\u4EE5\u7EAF\u6587\u672C\
+  \u683C\u5F0F\u5B58\u50A8\u7684\u8868\u683C\u6570\u636E\u3002\u8FD9\u5BF9\u7A0B\u5E8F\
+  \u5458\u6765\u8BF4\u81F3\u5173\u91CD\u8981\uFF0C\u56E0\u4E3A\u5B83\u5141\u8BB8\u76F4\
+  \u63A5\u4ECE\u547D\u4EE4\u884C\u81EA\u52A8\u5316\u6570\u636E\u8F6C\u6362\u3001\u5206\
+  \u6790\u548C\u96C6\u6210\u4EFB\u52A1\uFF0C\u65E0\u9700\u66F4\u91CD\u91CF\u7EA7\u7684\
+  \u5DE5\u5177\u6216\u7F16\u7A0B\u73AF\u5883\u3002"
+title: "\u5904\u7406CSV\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

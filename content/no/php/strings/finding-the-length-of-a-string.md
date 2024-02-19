@@ -1,13 +1,16 @@
 ---
-title:                "Finn lengden på en streng"
 aliases:
 - /no/php/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:47.154812-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Finn lengden på en streng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:47.154812-07:00
+description: "Strenglengde handler om \xE5 telle antall tegn i en tekst. Vi gj\xF8\
+  r dette for \xE5 validere inndata, bearbeide tekst, og for \xE5 limitere lengden\
+  \ p\xE5 en output."
+lastmod: 2024-02-18 23:08:53.966726
+model: gpt-4-1106-preview
+summary: "Strenglengde handler om \xE5 telle antall tegn i en tekst. Vi gj\xF8r dette\
+  \ for \xE5 validere inndata, bearbeide tekst, og for \xE5 limitere lengden p\xE5\
+  \ en output."
+title: "Finn lengden p\xE5 en streng"
 ---
 
 {{< edit_this_page >}}

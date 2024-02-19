@@ -1,13 +1,14 @@
 ---
-title:                "Usando una shell interactiva (REPL)"
 aliases:
 - /es/elixir/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:13:02.044311-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando una shell interactiva (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:13:02.044311-07:00
+description: "Una shell interactiva, o REPL (Read-Eval-Print Loop, Bucle de Leer-Evaluar-Imprimir),\
+  \ te permite probar fragmentos de c\xF3digo en tiempo real. Los\u2026"
+lastmod: 2024-02-18 23:09:09.650356
+model: gpt-4-0125-preview
+summary: "Una shell interactiva, o REPL (Read-Eval-Print Loop, Bucle de Leer-Evaluar-Imprimir),\
+  \ te permite probar fragmentos de c\xF3digo en tiempo real. Los\u2026"
+title: Usando una shell interactiva (REPL)
 ---
 
 {{< edit_this_page >}}

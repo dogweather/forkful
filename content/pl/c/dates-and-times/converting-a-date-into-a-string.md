@@ -1,14 +1,18 @@
 ---
-title:                "Konwersja daty na ciąg znaków"
 aliases:
 - /pl/c/converting-a-date-into-a-string/
-date:                  2024-02-03T17:54:26.657873-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Konwersja daty na ciąg znaków"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:26.657873-07:00
+description: "Konwersja daty na ci\u0105g znak\xF3w w j\u0119zyku C polega na przekszta\u0142\
+  ceniu struktury daty lub znacznika czasu na format czytelny dla cz\u0142owieka.\
+  \ Programi\u015Bci cz\u0119sto\u2026"
+lastmod: 2024-02-18 23:08:50.092249
+model: gpt-4-0125-preview
+summary: "Konwersja daty na ci\u0105g znak\xF3w w j\u0119zyku C polega na przekszta\u0142\
+  ceniu struktury daty lub znacznika czasu na format czytelny dla cz\u0142owieka.\
+  \ Programi\u015Bci cz\u0119sto\u2026"
+title: "Konwersja daty na ci\u0105g znak\xF3w"
 ---
 
 {{< edit_this_page >}}

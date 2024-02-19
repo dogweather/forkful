@@ -1,14 +1,18 @@
 ---
-title:                "Gör om en sträng till versaler"
 aliases:
 - /sv/typescript/capitalizing-a-string/
-date:                  2024-02-03T19:06:49.371745-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gör om en sträng till versaler"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:49.371745-07:00
+description: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor inneb\xE4r att modifiera\
+  \ den f\xF6rsta karakt\xE4ren av en given str\xE4ng till versal om den \xE4r i gemen,\
+  \ ofta medan resten\u2026"
+lastmod: 2024-02-18 23:08:51.527475
+model: gpt-4-0125-preview
+summary: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor inneb\xE4r att modifiera\
+  \ den f\xF6rsta karakt\xE4ren av en given str\xE4ng till versal om den \xE4r i gemen,\
+  \ ofta medan resten\u2026"
+title: "G\xF6r om en str\xE4ng till versaler"
 ---
 
 {{< edit_this_page >}}

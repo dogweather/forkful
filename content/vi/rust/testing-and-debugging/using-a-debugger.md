@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng bộ gỡ lỗi"
 aliases:
 - /vi/rust/using-a-debugger/
-date:                  2024-01-28T22:09:44.404512-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng bộ gỡ lỗi"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:44.404512-07:00
+description: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i gi\u1ED1ng nh\u01B0\
+  \ vi\u1EC7c b\u1EA1n t\u1EF1 cho m\xECnh m\u1ED9t kh\u1EA3 n\u0103ng nh\xECn xuy\xEA\
+  n th\u1EA5u \u0111\u1EC3 l\xE9n nh\xECn v\xE0o qu\xE1 tr\xECnh th\u1EF1c thi c\u1EE7\
+  a m\xE3 l\u1EC7nh. L\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
+lastmod: 2024-02-18 23:08:50.467088
+model: gpt-4-0125-preview
+summary: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i gi\u1ED1ng nh\u01B0\
+  \ vi\u1EC7c b\u1EA1n t\u1EF1 cho m\xECnh m\u1ED9t kh\u1EA3 n\u0103ng nh\xECn xuy\xEA\
+  n th\u1EA5u \u0111\u1EC3 l\xE9n nh\xECn v\xE0o qu\xE1 tr\xECnh th\u1EF1c thi c\u1EE7\
+  a m\xE3 l\u1EC7nh. L\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
+title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Konvertere en dato til en streng"
 aliases:
 - /no/haskell/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:34.355068-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konvertere en dato til en streng"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:34.355068-07:00
+description: "Omforming fra dato til streng lar oss vise datoer som lesbare tekststrenger.\
+  \ Dette er essensielt for brukergrensesnitt og datalagring i et forst\xE5elig\u2026"
+lastmod: 2024-02-18 23:08:53.945733
+model: gpt-4-1106-preview
+summary: "Omforming fra dato til streng lar oss vise datoer som lesbare tekststrenger.\
+  \ Dette er essensielt for brukergrensesnitt og datalagring i et forst\xE5elig\u2026"
+title: Konvertere en dato til en streng
 ---
 
 {{< edit_this_page >}}

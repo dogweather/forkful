@@ -1,13 +1,23 @@
 ---
-title:                "सबस्ट्रिंग्स निकालना"
 aliases:
 - /hi/arduino/extracting-substrings/
-date:                  2024-01-20T17:45:21.176227-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "सबस्ट्रिंग्स निकालना"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/arduino/extracting-substrings.md"
+date: 2024-01-20 17:45:21.176227-07:00
+description: "Substring \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 \u0915\u093F\
+  \u0938\u0940 string \u0915\u093E \u090F\u0915 \u091B\u094B\u091F\u093E \u0939\u093F\
+  \u0938\u094D\u0938\u093E \u0928\u093F\u0915\u093E\u0932\u0928\u093E\u0964 Programmers\
+  \ \u0907\u0938\u0947 use \u0915\u0930\u0924\u0947 \u0939\u0948\u0902 \u0921\u0947\
+  \u091F\u093E \u0915\u094B analyze \u0915\u0930\u0928\u0947, manipulate \u0915\u0930\
+  \u0928\u0947 \u092F\u093E \u0915\u093F\u0938\u0940 specific text \u0915\u094B\u2026"
+lastmod: 2024-02-18 23:09:03.794632
+model: gpt-4-1106-preview
+summary: "Substring \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 \u0915\u093F\
+  \u0938\u0940 string \u0915\u093E \u090F\u0915 \u091B\u094B\u091F\u093E \u0939\u093F\
+  \u0938\u094D\u0938\u093E \u0928\u093F\u0915\u093E\u0932\u0928\u093E\u0964 Programmers\
+  \ \u0907\u0938\u0947 use \u0915\u0930\u0924\u0947 \u0939\u0948\u0902 \u0921\u0947\
+  \u091F\u093E \u0915\u094B analyze \u0915\u0930\u0928\u0947, manipulate \u0915\u0930\
+  \u0928\u0947 \u092F\u093E \u0915\u093F\u0938\u0940 specific text \u0915\u094B\u2026"
+title: "\u0938\u092C\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917\u094D\u0938 \u0928\
+  \u093F\u0915\u093E\u0932\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

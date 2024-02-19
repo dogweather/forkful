@@ -1,13 +1,16 @@
 ---
-title:                "Rejestrowanie zdarzeń"
 aliases:
 - /pl/swift/logging/
-date:                  2024-01-26T01:08:16.980724-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rejestrowanie zdarzeń"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/logging.md"
+date: 2024-01-26 01:08:16.980724-07:00
+description: "Logowanie to proces rejestrowania zachowa\u0144 aplikacji, b\u0142\u0119\
+  d\xF3w i innych wa\u017Cnych informacji na trwa\u0142ym no\u015Bniku, takim jak\
+  \ plik lub baza danych. Programi\u015Bci\u2026"
+lastmod: 2024-02-18 23:08:49.959197
+model: gpt-4-1106-preview
+summary: "Logowanie to proces rejestrowania zachowa\u0144 aplikacji, b\u0142\u0119\
+  d\xF3w i innych wa\u017Cnych informacji na trwa\u0142ym no\u015Bniku, takim jak\
+  \ plik lub baza danych. Programi\u015Bci\u2026"
+title: "Rejestrowanie zdarze\u0144"
 ---
 
 {{< edit_this_page >}}

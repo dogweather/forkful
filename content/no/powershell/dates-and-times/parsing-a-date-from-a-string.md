@@ -1,14 +1,18 @@
 ---
-title:                "Analysering av en dato fra en streng"
 aliases:
 - /no/powershell/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:15:12.556349-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analysering av en dato fra en streng"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/powershell/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:15:12.556349-07:00
+description: "\xC5 analysere en dato fra en tekststreng handler om \xE5 gjenkjenne\
+  \ og konvertere skrevne datoer i tekstform til en datatype dato som PowerShell kan\
+  \ forst\xE5 og\u2026"
+lastmod: 2024-02-18 23:08:54.109408
+model: gpt-4-0125-preview
+summary: "\xC5 analysere en dato fra en tekststreng handler om \xE5 gjenkjenne og\
+  \ konvertere skrevne datoer i tekstform til en datatype dato som PowerShell kan\
+  \ forst\xE5 og\u2026"
+title: Analysering av en dato fra en streng
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Arbeide med komplekse tall"
 aliases:
 - /no/vba/working-with-complex-numbers/
-date:                  2024-02-01T22:07:42.718758-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeide med komplekse tall"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/vba/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:07:42.718758-07:00
+description: "Arbeid med komplekse tall inneb\xE6rer \xE5 utf\xF8re matematiske operasjoner\
+  \ p\xE5 tall som har b\xE5de en reell del og en imagin\xE6r del. Programmerere tar\
+  \ ofte for seg\u2026"
+lastmod: 2024-02-18 23:08:53.721513
+model: gpt-4-0125-preview
+summary: "Arbeid med komplekse tall inneb\xE6rer \xE5 utf\xF8re matematiske operasjoner\
+  \ p\xE5 tall som har b\xE5de en reell del og en imagin\xE6r del. Programmerere tar\
+  \ ofte for seg\u2026"
+title: Arbeide med komplekse tall
 ---
 
 {{< edit_this_page >}}

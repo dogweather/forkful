@@ -1,14 +1,19 @@
 ---
-title:                "开始一个新项目"
 aliases:
 - /zh/rust/starting-a-new-project/
-date:                  2024-01-20T18:04:24.731366-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "开始一个新项目"
-
-tag:                  "Getting Started"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/starting-a-new-project.md"
+date: 2024-01-20 18:04:24.731366-07:00
+description: "\u65B0\u9879\u76EE\u5C31\u662F\u4F60\u51C6\u5907\u5F00\u53D1\u7684\u8F6F\
+  \u4EF6\u7684\u8D77\u70B9\u3002\u7A0B\u5E8F\u5458\u521B\u5EFA\u65B0\u9879\u76EE\u662F\
+  \u4E3A\u4E86\u7EC4\u7EC7\u4EE3\u7801\u3001\u6D4B\u8BD5\u548C\u6587\u6863\uFF0C\u4ECE\
+  \u96F6\u5F00\u59CB\u6784\u5EFA\u60F3\u6CD5\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:58.941863
+model: gpt-4-1106-preview
+summary: "\u65B0\u9879\u76EE\u5C31\u662F\u4F60\u51C6\u5907\u5F00\u53D1\u7684\u8F6F\
+  \u4EF6\u7684\u8D77\u70B9\u3002\u7A0B\u5E8F\u5458\u521B\u5EFA\u65B0\u9879\u76EE\u662F\
+  \u4E3A\u4E86\u7EC4\u7EC7\u4EE3\u7801\u3001\u6D4B\u8BD5\u548C\u6587\u6863\uFF0C\u4ECE\
+  \u96F6\u5F00\u59CB\u6784\u5EFA\u60F3\u6CD5\u3002"
+title: "\u5F00\u59CB\u4E00\u4E2A\u65B0\u9879\u76EE"
 ---
 
 {{< edit_this_page >}}

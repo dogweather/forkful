@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng mảng liên kết"
 aliases:
 - /vi/arduino/using-associative-arrays/
-date:                  2024-01-30T19:10:32.698227-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng mảng liên kết"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:32.698227-07:00
+description: "Trong th\u1EBF gi\u1EDBi c\u1EE7a Arduino, m\u1EA3ng k\u1EBFt h\u1EE3\
+  p cho ph\xE9p b\u1EA1n gh\xE9p c\xE1c key v\u1EDBi c\xE1c gi\xE1 tr\u1ECB, ki\u1EC3\
+  u nh\u01B0 c\xE1ch b\u1EA1n gh\xE9p \u0111\xF4i t\u1EA5t v\u1EDBi nhau. Ch\xFAng\
+  \ l\xE0 l\u1EF1a ch\u1ECDn t\u1ED1t khi b\u1EA1n\u2026"
+lastmod: 2024-02-18 23:08:50.992285
+model: gpt-4-0125-preview
+summary: "Trong th\u1EBF gi\u1EDBi c\u1EE7a Arduino, m\u1EA3ng k\u1EBFt h\u1EE3p cho\
+  \ ph\xE9p b\u1EA1n gh\xE9p c\xE1c key v\u1EDBi c\xE1c gi\xE1 tr\u1ECB, ki\u1EC3\
+  u nh\u01B0 c\xE1ch b\u1EA1n gh\xE9p \u0111\xF4i t\u1EA5t v\u1EDBi nhau. Ch\xFAng\
+  \ l\xE0 l\u1EF1a ch\u1ECDn t\u1ED1t khi b\u1EA1n\u2026"
+title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 ---
 
 {{< edit_this_page >}}

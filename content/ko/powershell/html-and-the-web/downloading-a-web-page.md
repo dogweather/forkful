@@ -1,14 +1,23 @@
 ---
-title:                "웹 페이지 다운로드하기"
 aliases:
 - /ko/powershell/downloading-a-web-page/
-date:                  2024-01-20T17:44:52.732974-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "웹 페이지 다운로드하기"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/downloading-a-web-page.md"
+date: 2024-01-20 17:44:52.732974-07:00
+description: "\uC6F9 \uD398\uC774\uC9C0\uB97C \uB2E4\uC6B4\uB85C\uB4DC\uD55C\uB2E4\
+  \uB294 \uAC83\uC740 \uC778\uD130\uB137 \uC0C1\uC758 \uC815\uBCF4\uB97C \uB85C\uCEEC\
+  \ \uCEF4\uD4E8\uD130\uB85C \uAC00\uC838\uC624\uB294 \uC791\uC5C5\uC785\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uB370\uC774\uD130 \uBD84\uC11D, \uBAA8\uB2C8\
+  \uD130\uB9C1, \uBC31\uC5C5 \uB610\uB294 \uC790\uB3D9\uD654\uB41C \uD14C\uC2A4\uD2B8\
+  \uB97C \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.552586
+model: gpt-4-1106-preview
+summary: "\uC6F9 \uD398\uC774\uC9C0\uB97C \uB2E4\uC6B4\uB85C\uB4DC\uD55C\uB2E4\uB294\
+  \ \uAC83\uC740 \uC778\uD130\uB137 \uC0C1\uC758 \uC815\uBCF4\uB97C \uB85C\uCEEC \uCEF4\
+  \uD4E8\uD130\uB85C \uAC00\uC838\uC624\uB294 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uD504\
+  \uB85C\uADF8\uB798\uBA38\uB294 \uB370\uC774\uD130 \uBD84\uC11D, \uBAA8\uB2C8\uD130\
+  \uB9C1, \uBC31\uC5C5 \uB610\uB294 \uC790\uB3D9\uD654\uB41C \uD14C\uC2A4\uD2B8\uB97C\
+  \ \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
+title: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

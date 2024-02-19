@@ -1,13 +1,16 @@
 ---
-title:                "Suppression de caractères correspondant à un motif"
 aliases:
 - /fr/powershell/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:57.790307-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Suppression de caractères correspondant à un motif"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:57.790307-07:00
+description: "Supprimer des caract\xE8res selon un motif, c'est utiliser une r\xE8\
+  gle ou un mod\xE8le pour identifier et retirer certains \xE9l\xE9ments d'une cha\xEE\
+  ne de caract\xE8res.\u2026"
+lastmod: 2024-02-18 23:09:09.048092
+model: gpt-4-1106-preview
+summary: "Supprimer des caract\xE8res selon un motif, c'est utiliser une r\xE8gle\
+  \ ou un mod\xE8le pour identifier et retirer certains \xE9l\xE9ments d'une cha\xEE\
+  ne de caract\xE8res.\u2026"
+title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 ---
 
 {{< edit_this_page >}}

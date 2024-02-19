@@ -1,13 +1,15 @@
 ---
-title:                "Trabajando con números complejos"
 aliases:
 - /es/clojure/working-with-complex-numbers/
-date:                  2024-01-26T04:38:32.520940-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con números complejos"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/working-with-complex-numbers.md"
+date: 2024-01-26 04:38:32.520940-07:00
+description: "Los n\xFAmeros complejos extienden los n\xFAmeros reales con una parte\
+  \ adicional, la unidad imaginaria 'i'. Los programadores los utilizan en varios\
+  \ dominios,\u2026"
+lastmod: 2024-02-18 23:09:09.596557
+model: gpt-4-0125-preview
+summary: "Los n\xFAmeros complejos extienden los n\xFAmeros reales con una parte adicional,\
+  \ la unidad imaginaria 'i'. Los programadores los utilizan en varios dominios,\u2026"
+title: "Trabajando con n\xFAmeros complejos"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Usando um depurador"
 aliases:
 - /pt/lua/using-a-debugger/
-date:                  2024-01-26T03:50:18.606575-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando um depurador"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/lua/using-a-debugger.md"
+date: 2024-01-26 03:50:18.606575-07:00
+description: "Um depurador \xE9 uma ferramenta que permite inspecionar e controlar\
+  \ a execu\xE7\xE3o de um programa, facilitando a identifica\xE7\xE3o de onde as\
+  \ coisas d\xE3o errado. Os\u2026"
+lastmod: 2024-02-18 23:08:58.286673
+model: gpt-4-0125-preview
+summary: "Um depurador \xE9 uma ferramenta que permite inspecionar e controlar a execu\xE7\
+  \xE3o de um programa, facilitando a identifica\xE7\xE3o de onde as coisas d\xE3\
+  o errado. Os\u2026"
+title: Usando um depurador
 ---
 
 {{< edit_this_page >}}

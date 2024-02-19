@@ -1,14 +1,23 @@
 ---
-title:                "テキストファイルの読み込み"
 aliases:
 - /ja/ruby/reading-a-text-file/
-date:                  2024-01-20T17:55:12.456499-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "テキストファイルの読み込み"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/reading-a-text-file.md"
+date: 2024-01-20 17:55:12.456499-07:00
+description: "\u30D5\u30A1\u30A4\u30EB\u8AAD\u307F\u8FBC\u307F\u3068\u306F\u3001\u30C6\
+  \u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u306E\u5185\u5BB9\u3092\u30D7\u30ED\u30B0\
+  \u30E9\u30E0\u306B\u53D6\u308A\u8FBC\u3080\u3053\u3068\u3067\u3059\u3002\u30C7\u30FC\
+  \u30BF\u51E6\u7406\u3084\u8A2D\u5B9A\u306E\u8AAD\u307F\u51FA\u3057\u306B\u4F7F\u308F\
+  \u308C\u3001\u3069\u3093\u306A\u30D7\u30ED\u30B0\u30E9\u30E0\u306B\u3082\u57FA\u672C\
+  \u3068\u306A\u308B\u6A5F\u80FD\u3067\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.407183
+model: gpt-4-1106-preview
+summary: "\u30D5\u30A1\u30A4\u30EB\u8AAD\u307F\u8FBC\u307F\u3068\u306F\u3001\u30C6\
+  \u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u306E\u5185\u5BB9\u3092\u30D7\u30ED\u30B0\
+  \u30E9\u30E0\u306B\u53D6\u308A\u8FBC\u3080\u3053\u3068\u3067\u3059\u3002\u30C7\u30FC\
+  \u30BF\u51E6\u7406\u3084\u8A2D\u5B9A\u306E\u8AAD\u307F\u51FA\u3057\u306B\u4F7F\u308F\
+  \u308C\u3001\u3069\u3093\u306A\u30D7\u30ED\u30B0\u30E9\u30E0\u306B\u3082\u57FA\u672C\
+  \u3068\u306A\u308B\u6A5F\u80FD\u3067\u3059\u3002"
+title: "\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u306E\u8AAD\u307F\u8FBC\u307F"
 ---
 
 {{< edit_this_page >}}

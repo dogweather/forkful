@@ -1,13 +1,14 @@
 ---
-title:                "Using associative arrays"
 aliases:
 - /en/arduino/using-associative-arrays/
-date:                  2024-01-30T18:57:34.014358-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using associative arrays"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/using-associative-arrays.md"
+date: 2024-01-30 18:57:34.014358-07:00
+description: "In the world of Arduino, associative arrays let you pair keys with values,\
+  \ kinda like how you'd match socks with their pairs. They're a go-to when you\u2026"
+lastmod: 2024-02-18 23:09:11.308568
+model: gpt-4-0125-preview
+summary: "In the world of Arduino, associative arrays let you pair keys with values,\
+  \ kinda like how you'd match socks with their pairs. They're a go-to when you\u2026"
+title: Using associative arrays
 ---
 
 {{< edit_this_page >}}

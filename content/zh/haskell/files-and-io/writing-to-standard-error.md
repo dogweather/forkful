@@ -1,14 +1,26 @@
 ---
-title:                "写入标准错误"
 aliases:
 - /zh/haskell/writing-to-standard-error/
-date:                  2024-02-03T19:33:17.616669-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "写入标准错误"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:33:17.616669-07:00
+description: "\u5728 Haskell \u4E2D\u5199\u5165\u6807\u51C6\u9519\u8BEF\uFF08stderr\uFF09\
+  \u5141\u8BB8\u7A0B\u5E8F\u533A\u5206\u5B83\u4EEC\u7684\u8F93\u51FA\uFF0C\u628A\u6B63\
+  \u5E38\u7ED3\u679C\u548C\u9519\u8BEF\u6D88\u606F\u5206\u5F00\u3002\u8FD9\u5BF9\u4E8E\
+  \u6307\u793A\u95EE\u9898\u548C\u8C03\u8BD5\u6765\u8BF4\u81F3\u5173\u91CD\u8981\uFF0C\
+  \u800C\u4E0D\u4F1A\u8BA9\u6807\u51CA\u8F93\u51FA\uFF08stdout\uFF09\u53D8\u5F97\u6742\
+  \u4E71\u65E0\u7AE0\uFF0Cstdout \u5F80\u5F80\u643A\u5E26\u7A0B\u5E8F\u7684\u4E3B\u8981\
+  \u6570\u636E\u6216\u7ED3\u679C\u3002"
+lastmod: 2024-02-18 23:08:59.192775
+model: gpt-4-0125-preview
+summary: "\u5728 Haskell \u4E2D\u5199\u5165\u6807\u51C6\u9519\u8BEF\uFF08stderr\uFF09\
+  \u5141\u8BB8\u7A0B\u5E8F\u533A\u5206\u5B83\u4EEC\u7684\u8F93\u51FA\uFF0C\u628A\u6B63\
+  \u5E38\u7ED3\u679C\u548C\u9519\u8BEF\u6D88\u606F\u5206\u5F00\u3002\u8FD9\u5BF9\u4E8E\
+  \u6307\u793A\u95EE\u9898\u548C\u8C03\u8BD5\u6765\u8BF4\u81F3\u5173\u91CD\u8981\uFF0C\
+  \u800C\u4E0D\u4F1A\u8BA9\u6807\u51CA\u8F93\u51FA\uFF08stdout\uFF09\u53D8\u5F97\u6742\
+  \u4E71\u65E0\u7AE0\uFF0Cstdout \u5F80\u5F80\u643A\u5E26\u7A0B\u5E8F\u7684\u4E3B\u8981\
+  \u6570\u636E\u6216\u7ED3\u679C\u3002"
+title: "\u5199\u5165\u6807\u51C6\u9519\u8BEF"
 ---
 
 {{< edit_this_page >}}

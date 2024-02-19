@@ -1,13 +1,16 @@
 ---
-title:                "Skicka en HTTP-förfrågan med Basic-autentisering"
 aliases:
 - /sv/kotlin/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:24.949096-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skicka en HTTP-förfrågan med Basic-autentisering"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:24.949096-07:00
+description: "Skicka en HTTP-f\xF6rfr\xE5gan med basic-autentisering inneb\xE4r att\
+  \ koda ihop anv\xE4ndarnamn och l\xF6senord och skicka med det i en f\xF6rfr\xE5\
+  gans `Authorization`\u2026"
+lastmod: 2024-02-18 23:08:51.749527
+model: gpt-4-1106-preview
+summary: "Skicka en HTTP-f\xF6rfr\xE5gan med basic-autentisering inneb\xE4r att koda\
+  \ ihop anv\xE4ndarnamn och l\xF6senord och skicka med det i en f\xF6rfr\xE5gans\
+  \ `Authorization`\u2026"
+title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 ---
 
 {{< edit_this_page >}}

@@ -1,12 +1,14 @@
 ---
-title:                "Working with YAML"
 aliases:
 - /en/kotlin/working-with-yaml/
-date:                  2024-02-03T19:03:28.960635-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Working with YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/working-with-yaml.md"
+date: 2024-02-03 19:03:28.960635-07:00
+description: "YAML, which stands for YAML Ain't Markup Language, is a highly readable\
+  \ data serialization format often used for configuration files, data storage, and\u2026"
+lastmod: 2024-02-18 23:09:11.033065
+model: gpt-4-0125-preview
+summary: "YAML, which stands for YAML Ain't Markup Language, is a highly readable\
+  \ data serialization format often used for configuration files, data storage, and\u2026"
+title: Working with YAML
 ---
 
 {{< edit_this_page >}}

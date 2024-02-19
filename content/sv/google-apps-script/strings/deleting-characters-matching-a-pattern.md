@@ -1,14 +1,18 @@
 ---
-title:                "Ta bort tecken som matchar ett mönster"
 aliases:
 - /sv/google-apps-script/deleting-characters-matching-a-pattern/
-date:                  2024-02-01T21:52:07.705985-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ta bort tecken som matchar ett mönster"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/google-apps-script/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:07.705985-07:00
+description: "Att ta bort tecken som matchar ett specifikt m\xF6nster \xE4r en teknik\
+  \ som anv\xE4nds f\xF6r att rensa eller formatera str\xE4ngar i programmering. I\
+  \ sammanhanget av\u2026"
+lastmod: 2024-02-18 23:08:51.361066
+model: gpt-4-0125-preview
+summary: "Att ta bort tecken som matchar ett specifikt m\xF6nster \xE4r en teknik\
+  \ som anv\xE4nds f\xF6r att rensa eller formatera str\xE4ngar i programmering. I\
+  \ sammanhanget av\u2026"
+title: "Ta bort tecken som matchar ett m\xF6nster"
 ---
 
 {{< edit_this_page >}}

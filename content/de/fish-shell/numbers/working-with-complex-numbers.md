@@ -1,13 +1,14 @@
 ---
-title:                "Umgang mit komplexen Zahlen"
 aliases:
 - /de/fish-shell/working-with-complex-numbers/
-date:                  2024-01-26T04:39:58.935922-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Umgang mit komplexen Zahlen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/working-with-complex-numbers.md"
+date: 2024-01-26 04:39:58.935922-07:00
+description: "Komplexe Zahlen erweitern die Idee von eindimensionalen Zahlengeraden\
+  \ zu einer zweidimensionalen komplexen Ebene. Programmierer nutzen sie in Bereichen\u2026"
+lastmod: 2024-02-18 23:09:05.317351
+model: gpt-4-0125-preview
+summary: "Komplexe Zahlen erweitern die Idee von eindimensionalen Zahlengeraden zu\
+  \ einer zweidimensionalen komplexen Ebene. Programmierer nutzen sie in Bereichen\u2026"
+title: Umgang mit komplexen Zahlen
 ---
 
 {{< edit_this_page >}}

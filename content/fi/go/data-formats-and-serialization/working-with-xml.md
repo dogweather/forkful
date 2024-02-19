@@ -1,14 +1,16 @@
 ---
-title:                "Työskentely XML:n kanssa"
 aliases:
 - /fi/go/working-with-xml/
-date:                  2024-02-03T18:13:18.646173-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely XML:n kanssa"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/working-with-xml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:13:18.646173-07:00
+description: "XML:n k\xE4sittely Go:ssa kattaa XML-dokumenttien j\xE4sennyksen (lukemisen)\
+  \ ja luonnin (kirjoittaminen) \u2013 vakiomuodon rakenteelliselle tietojenvaihdolle.\u2026"
+lastmod: 2024-02-18 23:09:07.113588
+model: gpt-4-0125-preview
+summary: "XML:n k\xE4sittely Go:ssa kattaa XML-dokumenttien j\xE4sennyksen (lukemisen)\
+  \ ja luonnin (kirjoittaminen) \u2013 vakiomuodon rakenteelliselle tietojenvaihdolle.\u2026"
+title: "Ty\xF6skentely XML:n kanssa"
 ---
 
 {{< edit_this_page >}}

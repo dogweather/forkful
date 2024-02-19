@@ -1,13 +1,16 @@
 ---
-title:                "Extraction de sous-chaînes"
 aliases:
 - /fr/ruby/extracting-substrings/
-date:                  2024-01-20T17:46:39.440956-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extraction de sous-chaînes"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/extracting-substrings.md"
+date: 2024-01-20 17:46:39.440956-07:00
+description: "Extraire des sous-cha\xEEnes en Ruby, c'est comme prendre un morceau\
+  \ de votre baguette pr\xE9f\xE9r\xE9e : vous isolez une part de quelque chose de\
+  \ plus grand. On le\u2026"
+lastmod: 2024-02-18 23:09:09.392859
+model: gpt-4-1106-preview
+summary: "Extraire des sous-cha\xEEnes en Ruby, c'est comme prendre un morceau de\
+  \ votre baguette pr\xE9f\xE9r\xE9e : vous isolez une part de quelque chose de plus\
+  \ grand. On le\u2026"
+title: "Extraction de sous-cha\xEEnes"
 ---
 
 {{< edit_this_page >}}

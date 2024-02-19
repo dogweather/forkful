@@ -1,13 +1,14 @@
 ---
-title:                "Confronto tra due date"
 aliases:
 - /it/arduino/comparing-two-dates/
-date:                  2024-01-20T17:32:24.569574-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Confronto tra due date"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/comparing-two-dates.md"
+date: 2024-01-20 17:32:24.569574-07:00
+description: "Confrontare due date significa stabilire quale sia precedente, successiva\
+  \ o se coincidano. Lo si fa per tracciare intervalli di tempo, gestire eventi e\u2026"
+lastmod: 2024-02-18 23:08:56.145283
+model: gpt-4-1106-preview
+summary: "Confrontare due date significa stabilire quale sia precedente, successiva\
+  \ o se coincidano. Lo si fa per tracciare intervalli di tempo, gestire eventi e\u2026"
+title: Confronto tra due date
 ---
 
 {{< edit_this_page >}}

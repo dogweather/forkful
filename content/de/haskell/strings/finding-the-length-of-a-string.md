@@ -1,13 +1,15 @@
 ---
-title:                "Ermittlung der Zeichenkettenlänge"
 aliases:
 - /de/haskell/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:26.605605-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ermittlung der Zeichenkettenlänge"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:26.605605-07:00
+description: "Die L\xE4nge eines Strings zu finden, bedeutet zu ermitteln, wie viele\
+  \ Zeichen er enth\xE4lt. Programmierer tun das, um Textdaten zu verarbeiten, zu\
+  \ validieren\u2026"
+lastmod: 2024-02-18 23:09:04.907140
+model: gpt-4-1106-preview
+summary: "Die L\xE4nge eines Strings zu finden, bedeutet zu ermitteln, wie viele Zeichen\
+  \ er enth\xE4lt. Programmierer tun das, um Textdaten zu verarbeiten, zu validieren\u2026"
+title: "Ermittlung der Zeichenkettenl\xE4nge"
 ---
 
 {{< edit_this_page >}}

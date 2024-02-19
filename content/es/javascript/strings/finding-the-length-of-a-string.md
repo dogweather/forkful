@@ -1,13 +1,15 @@
 ---
-title:                "Calculando la longitud de una cadena"
 aliases:
 - /es/javascript/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:00.841434-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Calculando la longitud de una cadena"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:00.841434-07:00
+description: "La longitud de una cadena en JavaScript se refiere a la cantidad de\
+  \ caracteres que contiene. Los programadores frecuentemente necesitan esta informaci\xF3\
+  n\u2026"
+lastmod: 2024-02-18 23:09:10.394567
+model: gpt-4-1106-preview
+summary: "La longitud de una cadena en JavaScript se refiere a la cantidad de caracteres\
+  \ que contiene. Los programadores frecuentemente necesitan esta informaci\xF3n\u2026"
+title: Calculando la longitud de una cadena
 ---
 
 {{< edit_this_page >}}

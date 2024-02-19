@@ -1,14 +1,18 @@
 ---
-title:                "Analiza składniowa daty z ciągu znaków"
 aliases:
 - /pl/google-apps-script/parsing-a-date-from-a-string/
-date:                  2024-02-01T21:57:45.722762-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analiza składniowa daty z ciągu znaków"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:45.722762-07:00
+description: "Parsowanie daty ze \u0142a\u0144cucha znak\xF3w polega na przekszta\u0142\
+  ceniu tekstu reprezentuj\u0105cego dat\u0119 na obiekt daty, co umo\u017Cliwia programistom\
+  \ wykonywanie operacji\u2026"
+lastmod: 2024-02-18 23:08:49.158649
+model: gpt-4-0125-preview
+summary: "Parsowanie daty ze \u0142a\u0144cucha znak\xF3w polega na przekszta\u0142\
+  ceniu tekstu reprezentuj\u0105cego dat\u0119 na obiekt daty, co umo\u017Cliwia programistom\
+  \ wykonywanie operacji\u2026"
+title: "Analiza sk\u0142adniowa daty z ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

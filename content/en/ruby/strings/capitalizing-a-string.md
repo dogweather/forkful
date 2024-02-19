@@ -1,12 +1,15 @@
 ---
-title:                "Capitalizing a string"
 aliases:
 - /en/ruby/capitalizing-a-string/
-date:                  2024-02-03T19:02:29.358527-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizing a string"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/capitalizing-a-string.md"
+date: 2024-02-03 19:02:29.358527-07:00
+description: "Capitalizing a string in programming often refers to converting the\
+  \ first character of a string to uppercase and the rest to lowercase. Programmers\
+  \ do\u2026"
+lastmod: 2024-02-18 23:09:11.547189
+model: gpt-4-0125-preview
+summary: "Capitalizing a string in programming often refers to converting the first\
+  \ character of a string to uppercase and the rest to lowercase. Programmers do\u2026"
+title: Capitalizing a string
 ---
 
 {{< edit_this_page >}}

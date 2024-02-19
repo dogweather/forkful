@@ -1,12 +1,14 @@
 ---
-title:                "Utilizzo delle espressioni regolari"
 aliases:
 - /it/cpp/using-regular-expressions/
-date:                  2024-01-19
-simple_title:         "Utilizzo delle espressioni regolari"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/using-regular-expressions.md"
+date: 2024-01-19
+description: "Le espressioni regolari (regexp) servono a trovare pattern di testo\
+  \ con regole specifiche. I programmatori le usano per validazione dati, ricerca\
+  \ e\u2026"
+lastmod: 2024-02-18 23:08:56.163346
+summary: "Le espressioni regolari (regexp) servono a trovare pattern di testo con\
+  \ regole specifiche. I programmatori le usano per validazione dati, ricerca e\u2026"
+title: Utilizzo delle espressioni regolari
 ---
 
 {{< edit_this_page >}}

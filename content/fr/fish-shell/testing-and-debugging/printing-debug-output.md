@@ -1,13 +1,16 @@
 ---
-title:                "Affichage des sorties de débogage"
 aliases:
 - /fr/fish-shell/printing-debug-output/
-date:                  2024-01-20T17:52:19.451321-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Affichage des sorties de débogage"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/printing-debug-output.md"
+date: 2024-01-20 17:52:19.451321-07:00
+description: "L'affichage de sorties de d\xE9bogage, c'est exposer les entrailles\
+  \ de votre code \u2013 voir ce qu'il se passe en temps r\xE9el. Les d\xE9veloppeurs\
+  \ le font pour\u2026"
+lastmod: 2024-02-18 23:09:09.308691
+model: gpt-4-1106-preview
+summary: "L'affichage de sorties de d\xE9bogage, c'est exposer les entrailles de votre\
+  \ code \u2013 voir ce qu'il se passe en temps r\xE9el. Les d\xE9veloppeurs le font\
+  \ pour\u2026"
+title: "Affichage des sorties de d\xE9bogage"
 ---
 
 {{< edit_this_page >}}

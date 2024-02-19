@@ -1,13 +1,16 @@
 ---
-title:                "Trouver la longueur d'une chaîne de caractères"
 aliases:
 - /fr/python/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:34.362131-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Trouver la longueur d'une chaîne de caractères"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:34.362131-07:00
+description: "La longueur d'une cha\xEEne, c'est combien de caract\xE8res elle contient.\
+  \ Les programmeurs la mesurent pour valider des saisies, pour trancher des trucs,\
+  \ ou\u2026"
+lastmod: 2024-02-18 23:09:08.330061
+model: gpt-4-1106-preview
+summary: "La longueur d'une cha\xEEne, c'est combien de caract\xE8res elle contient.\
+  \ Les programmeurs la mesurent pour valider des saisies, pour trancher des trucs,\
+  \ ou\u2026"
+title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

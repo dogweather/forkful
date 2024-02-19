@@ -1,15 +1,20 @@
 ---
-title:                "Ghi log"
 aliases:
 - /vi/powershell/logging/
-date:                  2024-01-28T22:03:02.806981-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ghi log"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/powershell/logging.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:03:02.806981-07:00
+description: "Logging l\xE0 vi\u1EC7c \u0111\u1EC3 l\u1EA1i d\u1EA5u v\u1EBFt qua\
+  \ code c\u1EE7a b\u1EA1n - \u0111\xF3 l\xE0 c\xE1ch b\u1EA1n theo d\xF5i nh\u1EEF\
+  ng g\xEC \u0111ang x\u1EA3y ra khi script c\u1EE7a b\u1EA1n \u0111\u01B0\u1EE3c\
+  \ th\u1EF1c thi t\u1EF1 do. L\u1EADp tr\xECnh vi\xEAn log\u2026"
+lastmod: 2024-02-18 23:08:50.941429
+model: gpt-4-0125-preview
+summary: "Logging l\xE0 vi\u1EC7c \u0111\u1EC3 l\u1EA1i d\u1EA5u v\u1EBFt qua code\
+  \ c\u1EE7a b\u1EA1n - \u0111\xF3 l\xE0 c\xE1ch b\u1EA1n theo d\xF5i nh\u1EEFng g\xEC\
+  \ \u0111ang x\u1EA3y ra khi script c\u1EE7a b\u1EA1n \u0111\u01B0\u1EE3c th\u1EF1\
+  c thi t\u1EF1 do. L\u1EADp tr\xECnh vi\xEAn log\u2026"
+title: Ghi log
 ---
 
 {{< edit_this_page >}}

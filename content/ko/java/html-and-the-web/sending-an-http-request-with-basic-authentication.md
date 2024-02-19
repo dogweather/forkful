@@ -1,14 +1,28 @@
 ---
-title:                "기본 인증을 사용한 HTTP 요청 보내기"
 aliases:
 - /ko/java/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:13.971213-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "기본 인증을 사용한 HTTP 요청 보내기"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:13.971213-07:00
+description: "HTTP \uC694\uCCAD\uC5D0 \uAE30\uBCF8 \uC778\uC99D\uC744 \uCD94\uAC00\
+  \uD558\uB294 \uAC83\uC740 \uC0AC\uC6A9\uC790 \uC774\uB984\uACFC \uBE44\uBC00\uBC88\
+  \uD638\uB85C \uBCF4\uD638\uB41C \uB9AC\uC18C\uC2A4\uC5D0 \uC811\uADFC\uD560 \uB54C\
+  \ \uD544\uC694\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uBCF4\
+  \uC548\uC774 \uD544\uC694\uD55C \uB370\uC774\uD130\uB97C \uC548\uC804\uD558\uAC8C\
+  \ \uC804\uC1A1\uD558\uACE0 \uC778\uC99D\uB41C \uC0AC\uC6A9\uC790\uB9CC \uC815\uBCF4\
+  \uB97C \uBC1B\uC744 \uC218 \uC788\uAC8C \uD558\uAE30 \uC704\uD574 \uC774 \uAE30\uC220\
+  \uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.020506
+model: gpt-4-1106-preview
+summary: "HTTP \uC694\uCCAD\uC5D0 \uAE30\uBCF8 \uC778\uC99D\uC744 \uCD94\uAC00\uD558\
+  \uB294 \uAC83\uC740 \uC0AC\uC6A9\uC790 \uC774\uB984\uACFC \uBE44\uBC00\uBC88\uD638\
+  \uB85C \uBCF4\uD638\uB41C \uB9AC\uC18C\uC2A4\uC5D0 \uC811\uADFC\uD560 \uB54C \uD544\
+  \uC694\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uBCF4\uC548\
+  \uC774 \uD544\uC694\uD55C \uB370\uC774\uD130\uB97C \uC548\uC804\uD558\uAC8C \uC804\
+  \uC1A1\uD558\uACE0 \uC778\uC99D\uB41C \uC0AC\uC6A9\uC790\uB9CC \uC815\uBCF4\uB97C\
+  \ \uBC1B\uC744 \uC218 \uC788\uAC8C \uD558\uAE30 \uC704\uD574 \uC774 \uAE30\uC220\
+  \uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uBCF4\
+  \uB0B4\uAE30"
 ---
 
 {{< edit_this_page >}}

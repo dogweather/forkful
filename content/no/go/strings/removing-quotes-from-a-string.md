@@ -1,14 +1,16 @@
 ---
-title:                "Fjerner anførselstegn fra en streng"
 aliases:
 - /no/go/removing-quotes-from-a-string/
-date:                  2024-02-03T18:07:12.180245-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Fjerner anførselstegn fra en streng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:12.180245-07:00
+description: "\xC5 fjerne anf\xF8rselstegn fra en streng i Go handler om \xE5 eliminere\
+  \ de ledende og avsluttende anf\xF8rselstegnene (`\"` eller `'`) fra en gitt streng.\u2026"
+lastmod: 2024-02-18 23:08:53.423334
+model: gpt-4-0125-preview
+summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i Go handler om \xE5 eliminere\
+  \ de ledende og avsluttende anf\xF8rselstegnene (`\"` eller `'`) fra en gitt streng.\u2026"
+title: "Fjerner anf\xF8rselstegn fra en streng"
 ---
 
 {{< edit_this_page >}}

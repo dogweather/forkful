@@ -1,14 +1,18 @@
 ---
-title:                "Einen String großschreiben"
 aliases:
 - /de/c/capitalizing-a-string/
-date:                  2024-02-03T17:52:52.396867-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Einen String großschreiben"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:52:52.396867-07:00
+description: "Das Gro\xDFschreiben eines Strings in C beinhaltet das Umwandeln des\
+  \ ersten Buchstabens jedes Wortes in einem gegebenen String in Gro\xDFbuchstaben,\
+  \ falls es\u2026"
+lastmod: 2024-02-18 23:09:05.353455
+model: gpt-4-0125-preview
+summary: "Das Gro\xDFschreiben eines Strings in C beinhaltet das Umwandeln des ersten\
+  \ Buchstabens jedes Wortes in einem gegebenen String in Gro\xDFbuchstaben, falls\
+  \ es\u2026"
+title: "Einen String gro\xDFschreiben"
 ---
 
 {{< edit_this_page >}}

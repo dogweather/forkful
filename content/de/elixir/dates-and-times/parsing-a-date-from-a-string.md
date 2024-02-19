@@ -1,16 +1,17 @@
 ---
-title:                "Eine Datumsauswertung aus einem String"
 aliases:
 - /de/elixir/parsing-a-date-from-a-string/
-date:                  2024-01-28T01:59:23.503759-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eine Datumsauswertung aus einem String"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 01:59:23.503759-07:00
+description: "Das Parsen eines Datums aus einem String bedeutet, Text wie \u201E2023-04-05\u201C\
+  \ zu nehmen und ihn in ein Datumformat umzuwandeln, das Ihr Programm verstehen und\u2026"
+lastmod: 2024-02-18 23:09:04.561750
+model: gpt-4-0125-preview
+summary: "Das Parsen eines Datums aus einem String bedeutet, Text wie \u201E2023-04-05\u201C\
+  \ zu nehmen und ihn in ein Datumformat umzuwandeln, das Ihr Programm verstehen und\u2026"
+title: Eine Datumsauswertung aus einem String
 ---
 
 {{< edit_this_page >}}

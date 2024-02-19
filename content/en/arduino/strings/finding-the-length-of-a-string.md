@@ -1,13 +1,14 @@
 ---
-title:                "Finding the length of a string"
 aliases:
 - /en/arduino/finding-the-length-of-a-string/
-date:                  2024-01-20T17:46:49.936306-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Finding the length of a string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:46:49.936306-07:00
+description: "Finding the length of a string means figuring out how many characters\
+  \ it contains. Programmers do it to validate input, loop through characters, align\u2026"
+lastmod: 2024-02-18 23:09:11.306704
+model: gpt-4-1106-preview
+summary: "Finding the length of a string means figuring out how many characters it\
+  \ contains. Programmers do it to validate input, loop through characters, align\u2026"
+title: Finding the length of a string
 ---
 
 {{< edit_this_page >}}

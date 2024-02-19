@@ -1,13 +1,16 @@
 ---
-title:                "Affichage des sorties de débogage"
 aliases:
 - /fr/ruby/printing-debug-output/
-date:                  2024-01-20T17:53:30.417519-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Affichage des sorties de débogage"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/printing-debug-output.md"
+date: 2024-01-20 17:53:30.417519-07:00
+description: "L'impression du d\xE9bogage, c'est afficher des infos pour comprendre\
+  \ ce qui se passe dans le code. On le fait parce que \xE7a aide \xE0 rep\xE9rer\
+  \ les bugs\u2026"
+lastmod: 2024-02-18 23:09:09.410108
+model: gpt-4-1106-preview
+summary: "L'impression du d\xE9bogage, c'est afficher des infos pour comprendre ce\
+  \ qui se passe dans le code. On le fait parce que \xE7a aide \xE0 rep\xE9rer les\
+  \ bugs\u2026"
+title: "Affichage des sorties de d\xE9bogage"
 ---
 
 {{< edit_this_page >}}

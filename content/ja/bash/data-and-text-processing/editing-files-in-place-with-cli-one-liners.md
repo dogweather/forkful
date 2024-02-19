@@ -1,13 +1,13 @@
 ---
-title:                "CLIワンライナーでのファイルのインプレース編集"
 aliases:
 - /ja/bash/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:21:51.519868-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "CLIワンライナーでのファイルのインプレース編集"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:21:51.519868-07:00
+description: "\u2026"
+lastmod: 2024-02-18 23:08:55.070426
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "CLI\u30EF\u30F3\u30E9\u30A4\u30CA\u30FC\u3067\u306E\u30D5\u30A1\u30A4\u30EB\
+  \u306E\u30A4\u30F3\u30D7\u30EC\u30FC\u30B9\u7DE8\u96C6"
 ---
 
 {{< edit_this_page >}}

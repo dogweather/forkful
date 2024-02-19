@@ -1,15 +1,16 @@
 ---
-title:                "Een string met hoofdletters maken"
 aliases:
 - /nl/ruby/capitalizing-a-string/
-date:                  2024-01-28T21:55:34.354798-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string met hoofdletters maken"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/capitalizing-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:55:34.354798-07:00
+description: "Een tekenreeks kapitaliseren betekent het eerste karakter naar hoofdletter\
+  \ omzetten en de rest naar kleine letters. Programmeurs doen dit om de uitvoer te\u2026"
+lastmod: 2024-02-18 23:09:02.401446
+model: gpt-4-0125-preview
+summary: "Een tekenreeks kapitaliseren betekent het eerste karakter naar hoofdletter\
+  \ omzetten en de rest naar kleine letters. Programmeurs doen dit om de uitvoer te\u2026"
+title: Een string met hoofdletters maken
 ---
 
 {{< edit_this_page >}}

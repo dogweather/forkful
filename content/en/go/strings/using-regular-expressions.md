@@ -1,12 +1,14 @@
 ---
-title:                "Using regular expressions"
 aliases:
 - /en/go/using-regular-expressions/
-date:                  2024-02-03T17:50:17.196189-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using regular expressions"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/using-regular-expressions.md"
+date: 2024-02-03 17:50:17.196189-07:00
+description: "Regular expressions (regex) in programming are used to search, match,\
+  \ and manipulate strings based on specific patterns. Programmers use them for tasks\u2026"
+lastmod: 2024-02-18 23:09:10.586496
+model: gpt-4-0125-preview
+summary: "Regular expressions (regex) in programming are used to search, match, and\
+  \ manipulate strings based on specific patterns. Programmers use them for tasks\u2026"
+title: Using regular expressions
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Kompleksilukujen käsittely"
 aliases:
 - /fi/bash/working-with-complex-numbers/
-date:                  2024-01-26T04:37:01.168827-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kompleksilukujen käsittely"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/working-with-complex-numbers.md"
+date: 2024-01-26 04:37:01.168827-07:00
+description: "Kompleksiluvut koostuvat reaalisesta osasta ja imaginaarisesta osasta.\
+  \ Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 aloilla kuten signaalink\xE4sittely, kvanttimekaniikka\
+  \ ja\u2026"
+lastmod: 2024-02-18 23:09:07.795728
+model: gpt-4-0125-preview
+summary: "Kompleksiluvut koostuvat reaalisesta osasta ja imaginaarisesta osasta. Ohjelmoijat\
+  \ k\xE4ytt\xE4v\xE4t niit\xE4 aloilla kuten signaalink\xE4sittely, kvanttimekaniikka\
+  \ ja\u2026"
+title: "Kompleksilukujen k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

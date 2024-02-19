@@ -1,14 +1,28 @@
 ---
-title:                "난수 생성하기"
 aliases:
 - /ko/vba/generating-random-numbers/
-date:                  2024-02-01T21:54:25.283571-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "난수 생성하기"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/vba/generating-random-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:25.283571-07:00
+description: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uB09C\uC218\uB97C \uC0DD\
+  \uC131\uD558\uB294 \uAC83\uC740 \uC8FC\uC0AC\uC704 \uAD74\uB9BC\uC774\uB098 \uB370\
+  \uC774\uD130 \uC0D8\uD50C\uB9C1\uACFC \uAC19\uC774 \uC6B0\uC5F0\uC131 \uB610\uB294\
+  \ \uBCC0\uB3D9\uC131 \uC694\uC18C\uAC00 \uC788\uB294 \uD504\uB85C\uC138\uC2A4\uB97C\
+  \ \uC2DC\uBBAC\uB808\uC774\uC158\uD558\uB294 \uD504\uB85C\uADF8\uB7A8\uC744 \uAC00\
+  \uB2A5\uD558\uAC8C \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\
+  \ \uC608\uCE21 \uAC00\uB2A5\uD55C \uACB0\uACFC\uAC00 \uBE44\uD604\uC2E4\uC801\uC774\
+  \uAC70\uB098 \uB35C \uC720\uC6A9\uD560 \uC218\u2026"
+lastmod: 2024-02-18 23:09:05.945281
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uB09C\uC218\uB97C \uC0DD\
+  \uC131\uD558\uB294 \uAC83\uC740 \uC8FC\uC0AC\uC704 \uAD74\uB9BC\uC774\uB098 \uB370\
+  \uC774\uD130 \uC0D8\uD50C\uB9C1\uACFC \uAC19\uC774 \uC6B0\uC5F0\uC131 \uB610\uB294\
+  \ \uBCC0\uB3D9\uC131 \uC694\uC18C\uAC00 \uC788\uB294 \uD504\uB85C\uC138\uC2A4\uB97C\
+  \ \uC2DC\uBBAC\uB808\uC774\uC158\uD558\uB294 \uD504\uB85C\uADF8\uB7A8\uC744 \uAC00\
+  \uB2A5\uD558\uAC8C \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\
+  \ \uC608\uCE21 \uAC00\uB2A5\uD55C \uACB0\uACFC\uAC00 \uBE44\uD604\uC2E4\uC801\uC774\
+  \uAC70\uB098 \uB35C \uC720\uC6A9\uD560 \uC218\u2026"
+title: "\uB09C\uC218 \uC0DD\uC131\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

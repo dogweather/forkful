@@ -1,13 +1,14 @@
 ---
-title:                "Trouver la longueur d'une chaîne de caractères"
 aliases:
 - /fr/fish-shell/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:11.905892-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Trouver la longueur d'une chaîne de caractères"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:11.905892-07:00
+description: "Trouver la longueur d'une cha\xEEne signifie compter le nombre de caract\xE8\
+  res qu'elle contient. C'est essentiel pour valider des donn\xE9es, trancher des\u2026"
+lastmod: 2024-02-18 23:09:09.293546
+model: gpt-4-1106-preview
+summary: "Trouver la longueur d'une cha\xEEne signifie compter le nombre de caract\xE8\
+  res qu'elle contient. C'est essentiel pour valider des donn\xE9es, trancher des\u2026"
+title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

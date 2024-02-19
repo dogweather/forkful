@@ -1,13 +1,16 @@
 ---
-title:                "Journalisation"
 aliases:
 - /fr/c-sharp/logging/
-date:                  2024-01-26T01:00:59.806423-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Journalisation"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/logging.md"
+date: 2024-01-26 01:00:59.806423-07:00
+description: "En C#, vous pouvez utiliser l'espace de noms int\xE9gr\xE9 `System.Diagnostics`\
+  \ ou des biblioth\xE8ques tierces comme NLog ou log4net. Voici un exemple rapide\
+  \ en\u2026"
+lastmod: 2024-02-18 23:09:08.834845
+model: gpt-4-1106-preview
+summary: "En C#, vous pouvez utiliser l'espace de noms int\xE9gr\xE9 `System.Diagnostics`\
+  \ ou des biblioth\xE8ques tierces comme NLog ou log4net. Voici un exemple rapide\
+  \ en\u2026"
+title: Journalisation
 ---
 
 {{< edit_this_page >}}

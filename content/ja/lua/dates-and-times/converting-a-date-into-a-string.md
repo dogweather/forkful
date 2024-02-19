@@ -1,14 +1,13 @@
 ---
-title:                "日付を文字列に変換する"
 aliases:
 - /ja/lua/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:16.454485-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "日付を文字列に変換する"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/lua/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:16.454485-07:00
+description: ''
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.044378
+model: gpt-4-1106-preview
+summary: ''
+title: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Utilizzo delle espressioni regolari"
 aliases:
 - /it/kotlin/using-regular-expressions/
-date:                  2024-02-03T19:17:31.437453-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo delle espressioni regolari"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:17:31.437453-07:00
+description: "Le espressioni regolari (regex) sono uno strumento potente per l'elaborazione\
+  \ del testo, che permette ai programmatori di cercare, corrispondere e\u2026"
+lastmod: 2024-02-18 23:08:55.836597
+model: gpt-4-0125-preview
+summary: "Le espressioni regolari (regex) sono uno strumento potente per l'elaborazione\
+  \ del testo, che permette ai programmatori di cercare, corrispondere e\u2026"
+title: Utilizzo delle espressioni regolari
 ---
 
 {{< edit_this_page >}}

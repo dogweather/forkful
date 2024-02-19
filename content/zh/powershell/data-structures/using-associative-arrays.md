@@ -1,15 +1,24 @@
 ---
-title:                "使用关联数组"
 aliases:
 - /zh/powershell/using-associative-arrays/
-date:                  2024-01-30T19:12:34.579955-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用关联数组"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:34.579955-07:00
+description: "\u5173\u8054\u6570\u7EC4\uFF0C\u5728 PowerShell \u4E2D\u4E5F\u88AB\u79F0\
+  \u4E3A\u54C8\u5E0C\u8868\u6216\u5B57\u5178\uFF0C\u5141\u8BB8\u60A8\u4EE5\u952E\u503C\
+  \u5BF9\u7684\u65B9\u5F0F\u5B58\u50A8\u6570\u636E\uFF0C\u4F7F\u5F97\u6570\u636E\u68C0\
+  \u7D22\u76F4\u63A5\u4E14\u9AD8\u6548\u3002\u7A0B\u5E8F\u5458\u4F7F\u7528\u5B83\u4EEC\
+  \u6765\u5B58\u50A8\u76F8\u5173\u6570\u636E\uFF0C\u8FD9\u6837\u53EF\u4EE5\u901A\u8FC7\
+  \u952E\u8F7B\u677E\u8BBF\u95EE\u3002"
+lastmod: 2024-02-18 23:08:59.323732
+model: gpt-4-0125-preview
+summary: "\u5173\u8054\u6570\u7EC4\uFF0C\u5728 PowerShell \u4E2D\u4E5F\u88AB\u79F0\
+  \u4E3A\u54C8\u5E0C\u8868\u6216\u5B57\u5178\uFF0C\u5141\u8BB8\u60A8\u4EE5\u952E\u503C\
+  \u5BF9\u7684\u65B9\u5F0F\u5B58\u50A8\u6570\u636E\uFF0C\u4F7F\u5F97\u6570\u636E\u68C0\
+  \u7D22\u76F4\u63A5\u4E14\u9AD8\u6548\u3002\u7A0B\u5E8F\u5458\u4F7F\u7528\u5B83\u4EEC\
+  \u6765\u5B58\u50A8\u76F8\u5173\u6570\u636E\uFF0C\u8FD9\u6837\u53EF\u4EE5\u901A\u8FC7\
+  \u952E\u8F7B\u677E\u8BBF\u95EE\u3002"
+title: "\u4F7F\u7528\u5173\u8054\u6570\u7EC4"
 ---
 
 {{< edit_this_page >}}

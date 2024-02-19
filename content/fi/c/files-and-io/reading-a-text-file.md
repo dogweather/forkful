@@ -1,14 +1,17 @@
 ---
-title:                "Tekstitiedoston lukeminen"
 aliases:
 - /fi/c/reading-a-text-file/
-date:                  2024-02-03T18:05:36.100839-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tekstitiedoston lukeminen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/reading-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:36.100839-07:00
+description: "Tekstitiedoston lukeminen C-kieless\xE4 tarkoittaa tiedoston avaamista\
+  \ j\xE4rjestelm\xE4ss\xE4si tiedon poimimiseksi ja tarpeen mukaan manipuloimiseksi\
+  \ tai\u2026"
+lastmod: 2024-02-18 23:09:08.152960
+model: gpt-4-0125-preview
+summary: "Tekstitiedoston lukeminen C-kieless\xE4 tarkoittaa tiedoston avaamista j\xE4\
+  rjestelm\xE4ss\xE4si tiedon poimimiseksi ja tarpeen mukaan manipuloimiseksi tai\u2026"
+title: Tekstitiedoston lukeminen
 ---
 
 {{< edit_this_page >}}

@@ -1,12 +1,15 @@
 ---
-title:                "Parsing HTML"
 aliases:
 - /en/haskell/parsing-html/
-date:                  2024-02-03T19:02:38.300946-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Parsing HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/parsing-html.md"
+date: 2024-02-03 19:02:38.300946-07:00
+description: "Parsing HTML in Haskell allows you to extract data, manipulate HTML\
+  \ content, or interact with web pages programmatically. This operation is essential\
+  \ for\u2026"
+lastmod: 2024-02-18 23:09:11.093885
+model: gpt-4-0125-preview
+summary: "Parsing HTML in Haskell allows you to extract data, manipulate HTML content,\
+  \ or interact with web pages programmatically. This operation is essential for\u2026"
+title: Parsing HTML
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Kontrollera om en katalog existerar"
 aliases:
 - /sv/c/checking-if-a-directory-exists/
-date:                  2024-02-03T17:53:05.368505-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kontrollera om en katalog existerar"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:05.368505-07:00
+description: "Att kontrollera om en katalog existerar i C inneb\xE4r att man fr\xE5\
+  gar filsystemet f\xF6r att verifiera om en specifik s\xF6kv\xE4g leder till en katalog.\u2026"
+lastmod: 2024-02-18 23:08:52.265933
+model: gpt-4-0125-preview
+summary: "Att kontrollera om en katalog existerar i C inneb\xE4r att man fr\xE5gar\
+  \ filsystemet f\xF6r att verifiera om en specifik s\xF6kv\xE4g leder till en katalog.\u2026"
+title: Kontrollera om en katalog existerar
 ---
 
 {{< edit_this_page >}}

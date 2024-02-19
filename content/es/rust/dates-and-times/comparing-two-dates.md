@@ -1,13 +1,15 @@
 ---
-title:                "Comparación de dos fechas"
 aliases:
 - /es/rust/comparing-two-dates/
-date:                  2024-01-20T17:33:54.215567-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Comparación de dos fechas"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/comparing-two-dates.md"
+date: 2024-01-20 17:33:54.215567-07:00
+description: "Comparar dos fechas es verificar si una es anterior, posterior o la\
+  \ misma que la otra. Los programadores lo hacen para gestionar eventos, expiraciones\
+  \ o\u2026"
+lastmod: 2024-02-18 23:09:09.762570
+model: gpt-4-1106-preview
+summary: "Comparar dos fechas es verificar si una es anterior, posterior o la misma\
+  \ que la otra. Los programadores lo hacen para gestionar eventos, expiraciones o\u2026"
+title: "Comparaci\xF3n de dos fechas"
 ---
 
 {{< edit_this_page >}}

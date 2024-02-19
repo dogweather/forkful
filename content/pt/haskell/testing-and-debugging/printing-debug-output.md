@@ -1,13 +1,16 @@
 ---
-title:                "Exibindo saídas de depuração"
 aliases:
 - /pt/haskell/printing-debug-output/
-date:                  2024-01-20T17:52:41.876850-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Exibindo saídas de depuração"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/printing-debug-output.md"
+date: 2024-01-20 17:52:41.876850-07:00
+description: "A impress\xE3o de sa\xEDda de depura\xE7\xE3o envolve exibir valores\
+  \ intermedi\xE1rios para entender o comportamento do programa. Programadores o fazem\
+  \ para encontrar e\u2026"
+lastmod: 2024-02-18 23:08:58.201724
+model: gpt-4-1106-preview
+summary: "A impress\xE3o de sa\xEDda de depura\xE7\xE3o envolve exibir valores intermedi\xE1\
+  rios para entender o comportamento do programa. Programadores o fazem para encontrar\
+  \ e\u2026"
+title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

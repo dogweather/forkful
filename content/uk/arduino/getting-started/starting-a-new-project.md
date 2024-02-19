@@ -1,13 +1,17 @@
 ---
-title:                "Починаємо новий проект"
 aliases:
 - /uk/arduino/starting-a-new-project/
-date:                  2024-01-20T18:02:38.416096-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Починаємо новий проект"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/arduino/starting-a-new-project.md"
+date: 2024-01-20 18:02:38.416096-07:00
+description: "Starting a new Arduino project means initializing a fresh sketch to\
+  \ build your unique idea. Programmers kick off new projects to solve problems, learn,\
+  \ or\u2026"
+lastmod: 2024-02-18 23:09:00.804176
+model: gpt-4-1106-preview
+summary: "Starting a new Arduino project means initializing a fresh sketch to build\
+  \ your unique idea. Programmers kick off new projects to solve problems, learn,\
+  \ or\u2026"
+title: "\u041F\u043E\u0447\u0438\u043D\u0430\u0454\u043C\u043E \u043D\u043E\u0432\u0438\
+  \u0439 \u043F\u0440\u043E\u0435\u043A\u0442"
 ---
 
 {{< edit_this_page >}}

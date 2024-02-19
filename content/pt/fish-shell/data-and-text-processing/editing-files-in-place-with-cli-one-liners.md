@@ -1,13 +1,16 @@
 ---
-title:                "Editando arquivos in loco com linhas de comando"
 aliases:
 - /pt/fish-shell/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:20:56.437097-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Editando arquivos in loco com linhas de comando"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:20:56.437097-07:00
+description: "Editar arquivos in-loco com linhas de comando \xFAnicas (CLI one-liners)\
+  \ \xE9 sobre fazer mudan\xE7as diretamente nos arquivos a partir da linha de comando,\
+  \ sem\u2026"
+lastmod: 2024-02-18 23:08:58.571454
+model: gpt-4-0125-preview
+summary: "Editar arquivos in-loco com linhas de comando \xFAnicas (CLI one-liners)\
+  \ \xE9 sobre fazer mudan\xE7as diretamente nos arquivos a partir da linha de comando,\
+  \ sem\u2026"
+title: Editando arquivos in loco com linhas de comando
 ---
 
 {{< edit_this_page >}}

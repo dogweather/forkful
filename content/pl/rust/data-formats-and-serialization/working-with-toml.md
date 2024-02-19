@@ -1,13 +1,16 @@
 ---
-title:                "Praca z TOML"
 aliases:
 - /pl/rust/working-with-toml/
-date:                  2024-01-26T04:26:14.821380-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/working-with-toml.md"
+date: 2024-01-26 04:26:14.821380-07:00
+description: "TOML to j\u0119zyk serializacji danych czytelny dla cz\u0142owieka,\
+  \ cz\u0119sto u\u017Cywany do konfiguracji. Programi\u015Bci u\u017Cywaj\u0105 TOML\
+  \ ze wzgl\u0119du na jego prostot\u0119 i\u2026"
+lastmod: 2024-02-18 23:08:49.413182
+model: gpt-4-0125-preview
+summary: "TOML to j\u0119zyk serializacji danych czytelny dla cz\u0142owieka, cz\u0119\
+  sto u\u017Cywany do konfiguracji. Programi\u015Bci u\u017Cywaj\u0105 TOML ze wzgl\u0119\
+  du na jego prostot\u0119 i\u2026"
+title: Praca z TOML
 ---
 
 {{< edit_this_page >}}

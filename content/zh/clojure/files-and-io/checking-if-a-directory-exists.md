@@ -1,14 +1,26 @@
 ---
-title:                "检查目录是否存在"
 aliases:
 - /zh/clojure/checking-if-a-directory-exists/
-date:                  2024-02-03T19:07:07.815037-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "检查目录是否存在"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:07:07.815037-07:00
+description: "\u5728Clojure\u4E2D\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728\u6D89\
+  \u53CA\u4ECE\u60A8\u7684Clojure\u5E94\u7528\u7A0B\u5E8F\u5185\u90E8\u9A8C\u8BC1\u6587\
+  \u4EF6\u7CFB\u7EDF\u76EE\u5F55\u7684\u5B58\u5728\u3002\u8FD9\u9879\u4EFB\u52A1\u5BF9\
+  \u4E8E\u6587\u4EF6\u64CD\u4F5C\u81F3\u5173\u91CD\u8981\uFF0C\u4EE5\u9632\u6B62\u5728\
+  \u8BFB\u53D6\u6216\u5199\u5165\u53EF\u80FD\u4E0D\u5B58\u5728\u7684\u76EE\u5F55\u65F6\
+  \u51FA\u9519\uFF0C\u786E\u4FDD\u4EE3\u7801\u6267\u884C\u7684\u5065\u58EE\u6027\u548C\
+  \u65E0\u8BEF\u3002"
+lastmod: 2024-02-18 23:08:58.841004
+model: gpt-4-0125-preview
+summary: "\u5728Clojure\u4E2D\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728\u6D89\
+  \u53CA\u4ECE\u60A8\u7684Clojure\u5E94\u7528\u7A0B\u5E8F\u5185\u90E8\u9A8C\u8BC1\u6587\
+  \u4EF6\u7CFB\u7EDF\u76EE\u5F55\u7684\u5B58\u5728\u3002\u8FD9\u9879\u4EFB\u52A1\u5BF9\
+  \u4E8E\u6587\u4EF6\u64CD\u4F5C\u81F3\u5173\u91CD\u8981\uFF0C\u4EE5\u9632\u6B62\u5728\
+  \u8BFB\u53D6\u6216\u5199\u5165\u53EF\u80FD\u4E0D\u5B58\u5728\u7684\u76EE\u5F55\u65F6\
+  \u51FA\u9519\uFF0C\u786E\u4FDD\u4EE3\u7801\u6267\u884C\u7684\u5065\u58EE\u6027\u548C\
+  \u65E0\u8BEF\u3002"
+title: "\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Comparer deux dates"
 aliases:
 - /fr/python/comparing-two-dates/
-date:                  2024-01-20T17:34:12.320453-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Comparer deux dates"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/comparing-two-dates.md"
+date: 2024-01-20 17:34:12.320453-07:00
+description: "Comparer deux dates, c'est voir la diff\xE9rence ou la similarit\xE9\
+  \ entre elles. Les programmeurs le font pour trier des \xE9v\xE9nements, valider\
+  \ des p\xE9riodes, ou\u2026"
+lastmod: 2024-02-18 23:09:08.353938
+model: gpt-4-1106-preview
+summary: "Comparer deux dates, c'est voir la diff\xE9rence ou la similarit\xE9 entre\
+  \ elles. Les programmeurs le font pour trier des \xE9v\xE9nements, valider des p\xE9\
+  riodes, ou\u2026"
+title: Comparer deux dates
 ---
 
 {{< edit_this_page >}}

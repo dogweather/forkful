@@ -1,14 +1,16 @@
 ---
-title:                "Einen Debugger verwenden"
 aliases:
 - /de/google-apps-script/using-a-debugger/
-date:                  2024-02-01T22:04:02.788580-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Einen Debugger verwenden"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/google-apps-script/using-a-debugger.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:02.788580-07:00
+description: "Das Debuggen in Google Apps Script (GAS) umfasst den Prozess der Identifikation\
+  \ und Entfernung von Fehlern in Skripten, die dazu bestimmt sind, Google\u2026"
+lastmod: 2024-02-18 23:09:04.419117
+model: gpt-4-0125-preview
+summary: "Das Debuggen in Google Apps Script (GAS) umfasst den Prozess der Identifikation\
+  \ und Entfernung von Fehlern in Skripten, die dazu bestimmt sind, Google\u2026"
+title: Einen Debugger verwenden
 ---
 
 {{< edit_this_page >}}

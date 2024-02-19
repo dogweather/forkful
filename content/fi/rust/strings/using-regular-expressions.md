@@ -1,14 +1,18 @@
 ---
-title:                "Säännöllisten lausekkeiden käyttö"
 aliases:
 - /fi/rust/using-regular-expressions/
-date:                  2024-02-03T19:18:07.896724-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Säännöllisten lausekkeiden käyttö"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:18:07.896724-07:00
+description: "S\xE4\xE4nn\xF6lliset lausekkeet eli regex mahdollistavat kehitt\xE4\
+  jille merkkijonojen haun, vastaavuuden tarkistuksen ja manipuloinnin edistyneill\xE4\
+  \u2026"
+lastmod: 2024-02-18 23:09:07.353250
+model: gpt-4-0125-preview
+summary: "S\xE4\xE4nn\xF6lliset lausekkeet eli regex mahdollistavat kehitt\xE4jille\
+  \ merkkijonojen haun, vastaavuuden tarkistuksen ja manipuloinnin edistyneill\xE4\
+  \u2026"
+title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

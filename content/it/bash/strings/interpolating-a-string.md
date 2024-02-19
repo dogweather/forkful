@@ -1,13 +1,14 @@
 ---
-title:                "Interpolazione di una stringa"
 aliases:
 - /it/bash/interpolating-a-string/
-date:                  2024-01-20T17:50:20.546010-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolazione di una stringa"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/interpolating-a-string.md"
+date: 2024-01-20 17:50:20.546010-07:00
+description: "L'interpolazione di stringhe permette di inserire valori variabili all'interno\
+  \ di una stringa. I programmatori la usano per costruire messaggi dinamici,\u2026"
+lastmod: 2024-02-18 23:08:56.037918
+model: gpt-4-1106-preview
+summary: "L'interpolazione di stringhe permette di inserire valori variabili all'interno\
+  \ di una stringa. I programmatori la usano per costruire messaggi dinamici,\u2026"
+title: Interpolazione di una stringa
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Creating a temporary file"
 aliases:
 - /en/fish-shell/creating-a-temporary-file/
-date:                  2024-01-20T17:40:06.955802-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Creating a temporary file"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:06.955802-07:00
+description: "Creating a temporary file means making a file for short-term use. Programmers\
+  \ do it to store data that's only needed during the execution of a program,\u2026"
+lastmod: 2024-02-18 23:09:11.500168
+model: gpt-4-1106-preview
+summary: "Creating a temporary file means making a file for short-term use. Programmers\
+  \ do it to store data that's only needed during the execution of a program,\u2026"
+title: Creating a temporary file
 ---
 
 {{< edit_this_page >}}

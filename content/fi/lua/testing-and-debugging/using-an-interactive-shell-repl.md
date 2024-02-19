@@ -1,13 +1,15 @@
 ---
-title:                "Interaktiivisen komentotulkin (REPL) käyttö"
 aliases:
 - /fi/lua/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:16:13.026372-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interaktiivisen komentotulkin (REPL) käyttö"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:16:13.026372-07:00
+description: "REPL tarkoittaa Read-Eval-Print Loopia, interaktiivista ymp\xE4rist\xF6\
+  \xE4, jossa voit nopeasti testata koodia. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\
+  \ kokeiluun,\u2026"
+lastmod: 2024-02-18 23:09:07.758743
+model: gpt-4-0125-preview
+summary: "REPL tarkoittaa Read-Eval-Print Loopia, interaktiivista ymp\xE4rist\xF6\xE4\
+  , jossa voit nopeasti testata koodia. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 kokeiluun,\u2026"
+title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,21 @@
 ---
-title:                "文字列の長さを求める"
 aliases:
 - /ja/fish-shell/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:22.198873-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "文字列の長さを求める"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:22.198873-07:00
+description: "\u6587\u5B57\u5217\u306E\u9577\u3055\u3092\u8ABF\u3079\u308B\u306E\u306F\
+  \u3001\u305D\u306E\u6587\u5B57\u6570\u3092\u6570\u3048\u308B\u3053\u3068\u3067\u3059\
+  \u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u30C7\u30FC\u30BF\u51E6\u7406\u3084\
+  \u5165\u529B\u306E\u691C\u8A3C\u306B\u3053\u306E\u60C5\u5831\u3092\u4F7F\u7528\u3057\
+  \u307E\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.299103
+model: gpt-4-1106-preview
+summary: "\u6587\u5B57\u5217\u306E\u9577\u3055\u3092\u8ABF\u3079\u308B\u306E\u306F\
+  \u3001\u305D\u306E\u6587\u5B57\u6570\u3092\u6570\u3048\u308B\u3053\u3068\u3067\u3059\
+  \u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u30C7\u30FC\u30BF\u51E6\u7406\u3084\
+  \u5165\u529B\u306E\u691C\u8A3C\u306B\u3053\u306E\u60C5\u5831\u3092\u4F7F\u7528\u3057\
+  \u307E\u3059\u3002"
+title: "\u6587\u5B57\u5217\u306E\u9577\u3055\u3092\u6C42\u3081\u308B"
 ---
 
 {{< edit_this_page >}}

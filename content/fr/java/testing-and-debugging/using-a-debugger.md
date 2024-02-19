@@ -1,13 +1,14 @@
 ---
-title:                "Utilisation d'un débogueur"
 aliases:
 - /fr/java/using-a-debugger/
-date:                  2024-01-26T03:49:33.070551-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation d'un débogueur"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/using-a-debugger.md"
+date: 2024-01-26 03:49:33.070551-07:00
+description: "Utiliser un d\xE9bogueur signifie employer un outil pour tester et corriger\
+  \ les bugs dans votre code. Les programmeurs le font pour comprendre le flux de\u2026"
+lastmod: 2024-02-18 23:09:08.633457
+model: gpt-4-0125-preview
+summary: "Utiliser un d\xE9bogueur signifie employer un outil pour tester et corriger\
+  \ les bugs dans votre code. Les programmeurs le font pour comprendre le flux de\u2026"
+title: "Utilisation d'un d\xE9bogueur"
 ---
 
 {{< edit_this_page >}}

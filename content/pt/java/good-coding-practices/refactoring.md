@@ -1,13 +1,16 @@
 ---
-title:                "Refatoração"
 aliases:
 - /pt/java/refactoring/
-date:                  2024-01-26T01:40:18.637946-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refatoração"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/refactoring.md"
+date: 2024-01-26 01:40:18.637946-07:00
+description: "Refactoring \xE9 o processo de reestrutura\xE7\xE3o do c\xF3digo de\
+  \ computador existente\u2014mudando a fatora\xE7\xE3o\u2014sem alterar seu comportamento\
+  \ externo. Programadores\u2026"
+lastmod: 2024-02-18 23:08:58.027033
+model: gpt-4-0125-preview
+summary: "Refactoring \xE9 o processo de reestrutura\xE7\xE3o do c\xF3digo de computador\
+  \ existente\u2014mudando a fatora\xE7\xE3o\u2014sem alterar seu comportamento externo.\
+  \ Programadores\u2026"
+title: "Refatora\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

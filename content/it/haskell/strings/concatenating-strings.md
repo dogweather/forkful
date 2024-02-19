@@ -1,13 +1,14 @@
 ---
-title:                "Concatenazione di stringhe"
 aliases:
 - /it/haskell/concatenating-strings/
-date:                  2024-01-20T17:34:59.763620-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenazione di stringhe"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/concatenating-strings.md"
+date: 2024-01-20 17:34:59.763620-07:00
+description: "Concatenare le stringhe significa unire due o pi\xF9 testi in uno. Lo\
+  \ facciamo per costruire messaggi, visualizzare dati o generare codice in modo dinamico."
+lastmod: 2024-02-18 23:08:55.922420
+model: gpt-4-1106-preview
+summary: "Concatenare le stringhe significa unire due o pi\xF9 testi in uno. Lo facciamo\
+  \ per costruire messaggi, visualizzare dati o generare codice in modo dinamico."
+title: Concatenazione di stringhe
 ---
 
 {{< edit_this_page >}}

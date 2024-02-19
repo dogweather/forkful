@@ -1,13 +1,16 @@
 ---
-title:                "Nedlasting av en nettside"
 aliases:
 - /no/arduino/downloading-a-web-page/
-date:                  2024-01-20T17:43:29.550898-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Nedlasting av en nettside"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/downloading-a-web-page.md"
+date: 2024-01-20 17:43:29.550898-07:00
+description: "Lasting av nettsider gj\xF8r at din Arduino kan hente data fra internett;\
+  \ det kan v\xE6re alt fra v\xE6rdata til aksjepriser. Programmerere gj\xF8r dette\
+  \ for \xE5 gi\u2026"
+lastmod: 2024-02-18 23:08:54.141398
+model: gpt-4-1106-preview
+summary: "Lasting av nettsider gj\xF8r at din Arduino kan hente data fra internett;\
+  \ det kan v\xE6re alt fra v\xE6rdata til aksjepriser. Programmerere gj\xF8r dette\
+  \ for \xE5 gi\u2026"
+title: Nedlasting av en nettside
 ---
 
 {{< edit_this_page >}}

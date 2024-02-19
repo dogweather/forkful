@@ -1,13 +1,16 @@
 ---
-title:                "Sammenslåing av strenger"
 aliases:
 - /no/lua/concatenating-strings/
-date:                  2024-01-20T17:35:19.945849-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammenslåing av strenger"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/lua/concatenating-strings.md"
+date: 2024-01-20 17:35:19.945849-07:00
+description: "I koding er det \xE5 sette sammen strenger (concatenating) som \xE5\
+  \ lime sammen ord eller setninger for \xE5 lage nye. Vi gj\xF8r dette for \xE5 kunne\
+  \ lage dynamiske\u2026"
+lastmod: 2024-02-18 23:08:54.007838
+model: gpt-4-1106-preview
+summary: "I koding er det \xE5 sette sammen strenger (concatenating) som \xE5 lime\
+  \ sammen ord eller setninger for \xE5 lage nye. Vi gj\xF8r dette for \xE5 kunne\
+  \ lage dynamiske\u2026"
+title: "Sammensl\xE5ing av strenger"
 ---
 
 {{< edit_this_page >}}

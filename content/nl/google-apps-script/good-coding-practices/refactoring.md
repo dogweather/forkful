@@ -1,14 +1,16 @@
 ---
-title:                "Refactoring"
 aliases:
 - /nl/google-apps-script/refactoring/
-date:                  2024-02-01T22:00:13.178114-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactoring"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/google-apps-script/refactoring.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:13.178114-07:00
+description: "Refactoring in de programmeertaal verwijst naar het proces van het herstructureren\
+  \ van bestaande computercode\u2014het veranderen van de factoring zonder het\u2026"
+lastmod: 2024-02-18 23:09:01.395257
+model: gpt-4-0125-preview
+summary: "Refactoring in de programmeertaal verwijst naar het proces van het herstructureren\
+  \ van bestaande computercode\u2014het veranderen van de factoring zonder het\u2026"
+title: Refactoring
 ---
 
 {{< edit_this_page >}}

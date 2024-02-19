@@ -1,13 +1,16 @@
 ---
-title:                "Sammanslagning av strängar"
 aliases:
 - /sv/ruby/concatenating-strings/
-date:                  2024-01-20T17:35:32.461820-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammanslagning av strängar"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/concatenating-strings.md"
+date: 2024-01-20 17:35:32.461820-07:00
+description: "Att konkatenera str\xE4ngar inneb\xE4r att sammanfoga tv\xE5 eller flera\
+  \ textstycken till en. Programmerare g\xF6r detta f\xF6r att bygga dynamiska texter\
+  \ eller\u2026"
+lastmod: 2024-02-18 23:08:52.285705
+model: gpt-4-1106-preview
+summary: "Att konkatenera str\xE4ngar inneb\xE4r att sammanfoga tv\xE5 eller flera\
+  \ textstycken till en. Programmerare g\xF6r detta f\xF6r att bygga dynamiska texter\
+  \ eller\u2026"
+title: "Sammanslagning av str\xE4ngar"
 ---
 
 {{< edit_this_page >}}

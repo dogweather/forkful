@@ -1,14 +1,18 @@
 ---
-title:                "Tolka HTML"
 aliases:
 - /sv/ruby/parsing-html/
-date:                  2024-02-03T19:13:07.879532-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tolka HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:13:07.879532-07:00
+description: "Att tolka HTML inneb\xE4r att bryta ned en bit HTML-kod f\xF6r att f\xF6\
+  rst\xE5 dess struktur och inneh\xE5ll. Programmerare g\xF6r detta f\xF6r att extrahera\
+  \ data, manipulera\u2026"
+lastmod: 2024-02-18 23:08:52.293255
+model: gpt-4-0125-preview
+summary: "Att tolka HTML inneb\xE4r att bryta ned en bit HTML-kod f\xF6r att f\xF6\
+  rst\xE5 dess struktur och inneh\xE5ll. Programmerare g\xF6r detta f\xF6r att extrahera\
+  \ data, manipulera\u2026"
+title: Tolka HTML
 ---
 
 {{< edit_this_page >}}

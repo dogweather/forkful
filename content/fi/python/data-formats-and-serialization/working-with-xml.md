@@ -1,13 +1,14 @@
 ---
-title:                "XML:n käsittely"
 aliases:
 - /fi/python/working-with-xml/
-date:                  2024-01-26T04:34:49.776731-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML:n käsittely"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/working-with-xml.md"
+date: 2024-01-26 04:34:49.776731-07:00
+description: "\"XML:n k\xE4sittely\" viittaa XML-tiedostojen (eXtensible Markup Language)\
+  \ lukemisen, luomisen ja muokkaamisen prosessiin ohjelmoinnin avulla. Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:07.209761
+model: gpt-4-0125-preview
+summary: "\"XML:n k\xE4sittely\" viittaa XML-tiedostojen (eXtensible Markup Language)\
+  \ lukemisen, luomisen ja muokkaamisen prosessiin ohjelmoinnin avulla. Ohjelmoijat\u2026"
+title: "XML:n k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

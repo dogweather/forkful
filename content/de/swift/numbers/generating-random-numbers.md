@@ -1,13 +1,14 @@
 ---
-title:                "Generierung von Zufallszahlen"
 aliases:
 - /de/swift/generating-random-numbers/
-date:                  2024-01-27T20:35:22.828334-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generierung von Zufallszahlen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/generating-random-numbers.md"
+date: 2024-01-27 20:35:22.828334-07:00
+description: "Die Erzeugung von Zufallszahlen in der Programmierung geht darum, nicht\
+  \ deterministische oder unvorhersehbare numerische Werte zu kreieren. Programmierer\u2026"
+lastmod: 2024-02-18 23:09:05.229868
+model: gpt-4-0125-preview
+summary: "Die Erzeugung von Zufallszahlen in der Programmierung geht darum, nicht\
+  \ deterministische oder unvorhersehbare numerische Werte zu kreieren. Programmierer\u2026"
+title: Generierung von Zufallszahlen
 ---
 
 {{< edit_this_page >}}

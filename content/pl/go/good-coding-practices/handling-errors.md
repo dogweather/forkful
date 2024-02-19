@@ -1,14 +1,18 @@
 ---
-title:                "Obsługa błędów"
 aliases:
 - /pl/go/handling-errors/
-date:                  2024-02-03T17:58:20.765570-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Obsługa błędów"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/handling-errors.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:58:20.765570-07:00
+description: "Obs\u0142uga b\u0142\u0119d\xF3w w Go polega na rozpoznawaniu i reagowaniu\
+  \ na sytuacje wyj\u0105tkowe w programie. Programi\u015Bci zajmuj\u0105 si\u0119\
+  \ obs\u0142ug\u0105 b\u0142\u0119d\xF3w, aby zapewni\u0107, \u017Ce ich\u2026"
+lastmod: 2024-02-18 23:08:49.106581
+model: gpt-4-0125-preview
+summary: "Obs\u0142uga b\u0142\u0119d\xF3w w Go polega na rozpoznawaniu i reagowaniu\
+  \ na sytuacje wyj\u0105tkowe w programie. Programi\u015Bci zajmuj\u0105 si\u0119\
+  \ obs\u0142ug\u0105 b\u0142\u0119d\xF3w, aby zapewni\u0107, \u017Ce ich\u2026"
+title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Virheenjäljitystulosteiden tulostaminen"
 aliases:
 - /fi/arduino/printing-debug-output/
-date:                  2024-01-20T17:51:49.616511-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheenjäljitystulosteiden tulostaminen"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/printing-debug-output.md"
+date: 2024-01-20 17:51:49.616511-07:00
+description: "Debug-tulostus auttaa n\xE4kem\xE4\xE4n mit\xE4 ohjelmassasi tapahtuu.\
+  \ Sit\xE4 k\xE4ytet\xE4\xE4n virheiden etsint\xE4\xE4n ja ohjelman toiminnan ymm\xE4\
+  rt\xE4miseen."
+lastmod: 2024-02-18 23:09:07.901854
+model: gpt-4-1106-preview
+summary: "Debug-tulostus auttaa n\xE4kem\xE4\xE4n mit\xE4 ohjelmassasi tapahtuu. Sit\xE4\
+  \ k\xE4ytet\xE4\xE4n virheiden etsint\xE4\xE4n ja ohjelman toiminnan ymm\xE4rt\xE4\
+  miseen."
+title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 ---
 
 {{< edit_this_page >}}

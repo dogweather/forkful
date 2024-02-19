@@ -1,15 +1,16 @@
 ---
-title:                "Verwendung von assoziativen Arrays"
 aliases:
 - /de/kotlin/using-associative-arrays/
-date:                  2024-01-30T19:11:45.311584-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verwendung von assoziativen Arrays"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:11:45.311584-07:00
+description: "Assoziative Arrays, oder Maps, in Kotlin sind Sammlungen, die Schl\xFC\
+  ssel-Wert-Paare speichern. Programmierer nutzen sie, um Daten effizient zu organisieren\u2026"
+lastmod: 2024-02-18 23:09:04.818701
+model: gpt-4-0125-preview
+summary: "Assoziative Arrays, oder Maps, in Kotlin sind Sammlungen, die Schl\xFCssel-Wert-Paare\
+  \ speichern. Programmierer nutzen sie, um Daten effizient zu organisieren\u2026"
+title: Verwendung von assoziativen Arrays
 ---
 
 {{< edit_this_page >}}

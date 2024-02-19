@@ -1,14 +1,28 @@
 ---
-title:                "JSON과 함께 일하기"
 aliases:
 - /ko/ruby/working-with-json/
-date:                  2024-02-03T19:24:34.364456-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "JSON과 함께 일하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:24:34.364456-07:00
+description: "JSON(JavaScript Object Notation)\uC740 \uD074\uB77C\uC774\uC5B8\uD2B8\
+  \uC640 \uC11C\uBC84 \uAC04\uC758 \uB370\uC774\uD130 \uAD50\uD658\uC744 \uC704\uD574\
+  \ \uC6F9 \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC5D0\uC11C \uB110\uB9AC \uC0AC\uC6A9\
+  \uB418\uB294 \uAC00\uBCBC\uC6B4 \uB370\uC774\uD130 \uAD50\uD658 \uD615\uC2DD\uC785\
+  \uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uC678\uBD80 \uC18C\uC2A4\uB85C\
+  \uBD80\uD130 \uBC1B\uC740 \uB370\uC774\uD130\uB97C \uD30C\uC2F1\uD558\uAC70\uB098\
+  \ API \uC751\uB2F5\uC744 \uC704\uD55C \uB370\uC774\uD130 \uD3EC\uB9F7\uC73C\uB85C\
+  \ JSON\uC744\u2026"
+lastmod: 2024-02-18 23:09:07.059038
+model: gpt-4-0125-preview
+summary: "JSON(JavaScript Object Notation)\uC740 \uD074\uB77C\uC774\uC5B8\uD2B8\uC640\
+  \ \uC11C\uBC84 \uAC04\uC758 \uB370\uC774\uD130 \uAD50\uD658\uC744 \uC704\uD574 \uC6F9\
+  \ \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC5D0\uC11C \uB110\uB9AC \uC0AC\uC6A9\uB418\
+  \uB294 \uAC00\uBCBC\uC6B4 \uB370\uC774\uD130 \uAD50\uD658 \uD615\uC2DD\uC785\uB2C8\
+  \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uC678\uBD80 \uC18C\uC2A4\uB85C\uBD80\
+  \uD130 \uBC1B\uC740 \uB370\uC774\uD130\uB97C \uD30C\uC2F1\uD558\uAC70\uB098 API\
+  \ \uC751\uB2F5\uC744 \uC704\uD55C \uB370\uC774\uD130 \uD3EC\uB9F7\uC73C\uB85C JSON\uC744\
+  \u2026"
+title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

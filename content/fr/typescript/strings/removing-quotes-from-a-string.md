@@ -1,13 +1,16 @@
 ---
-title:                "Retirer les guillemets d'une chaîne"
 aliases:
 - /fr/typescript/removing-quotes-from-a-string/
-date:                  2024-01-26T03:42:22.120580-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Retirer les guillemets d'une chaîne"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:42:22.120580-07:00
+description: "Enlever les guillemets d'une cha\xEEne signifie retirer les caract\xE8\
+  res de guillemets simples (`'`) ou doubles (`\"`) qui d\xE9finissent les litt\xE9\
+  raux de cha\xEEne\u2026"
+lastmod: 2024-02-18 23:09:08.468413
+model: gpt-4-0125-preview
+summary: "Enlever les guillemets d'une cha\xEEne signifie retirer les caract\xE8res\
+  \ de guillemets simples (`'`) ou doubles (`\"`) qui d\xE9finissent les litt\xE9\
+  raux de cha\xEEne\u2026"
+title: "Retirer les guillemets d'une cha\xEEne"
 ---
 
 {{< edit_this_page >}}

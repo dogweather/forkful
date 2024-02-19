@@ -1,14 +1,18 @@
 ---
-title:                "Mettre en majuscule une chaîne"
 aliases:
 - /fr/bash/capitalizing-a-string/
-date:                  2024-02-03T19:04:51.050863-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Mettre en majuscule une chaîne"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:04:51.050863-07:00
+description: "Capitaliser une cha\xEEne dans Bash consiste \xE0 transformer le premier\
+  \ caract\xE8re de la cha\xEEne en majuscule tout en laissant le reste de la cha\xEE\
+  ne inchang\xE9.\u2026"
+lastmod: 2024-02-18 23:09:08.998171
+model: gpt-4-0125-preview
+summary: "Capitaliser une cha\xEEne dans Bash consiste \xE0 transformer le premier\
+  \ caract\xE8re de la cha\xEEne en majuscule tout en laissant le reste de la cha\xEE\
+  ne inchang\xE9.\u2026"
+title: "Mettre en majuscule une cha\xEEne"
 ---
 
 {{< edit_this_page >}}

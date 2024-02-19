@@ -1,14 +1,26 @@
 ---
-title:                "字符串拼接"
 aliases:
 - /zh/vba/concatenating-strings/
-date:                  2024-02-01T21:50:41.146895-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "字符串拼接"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/concatenating-strings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:41.146895-07:00
+description: "\u5728Visual Basic for Applications\uFF08VBA\uFF09\u4E2D\uFF0C\u8FDE\
+  \u63A5\u64CD\u4F5C\u6D89\u53CA\u5C06\u4E24\u4E2A\u6216\u66F4\u591A\u5B57\u7B26\u4E32\
+  \u5408\u5E76\u6210\u4E00\u4E2A\u5355\u4E00\u5B9E\u4F53\u3002\u8FD9\u662F\u7F16\u7A0B\
+  \u4E2D\u7684\u4E00\u4E2A\u57FA\u672C\u4EFB\u52A1\uFF0C\u5BF9\u4E8E\u751F\u6210\u7528\
+  \u6237\u6D88\u606F\u3001\u521B\u5EFASQL\u67E5\u8BE2\u7B49\u81F3\u5173\u91CD\u8981\
+  \uFF0C\u56E0\u4E3A\u5B83\u5141\u8BB8\u52A8\u6001\u521B\u5EFA\u548C\u64CD\u4F5C\u5B57\
+  \u7B26\u4E32\u6570\u636E\u3002"
+lastmod: 2024-02-18 23:08:58.972691
+model: gpt-4-0125-preview
+summary: "\u5728Visual Basic for Applications\uFF08VBA\uFF09\u4E2D\uFF0C\u8FDE\u63A5\
+  \u64CD\u4F5C\u6D89\u53CA\u5C06\u4E24\u4E2A\u6216\u66F4\u591A\u5B57\u7B26\u4E32\u5408\
+  \u5E76\u6210\u4E00\u4E2A\u5355\u4E00\u5B9E\u4F53\u3002\u8FD9\u662F\u7F16\u7A0B\u4E2D\
+  \u7684\u4E00\u4E2A\u57FA\u672C\u4EFB\u52A1\uFF0C\u5BF9\u4E8E\u751F\u6210\u7528\u6237\
+  \u6D88\u606F\u3001\u521B\u5EFASQL\u67E5\u8BE2\u7B49\u81F3\u5173\u91CD\u8981\uFF0C\
+  \u56E0\u4E3A\u5B83\u5141\u8BB8\u52A8\u6001\u521B\u5EFA\u548C\u64CD\u4F5C\u5B57\u7B26\
+  \u4E32\u6570\u636E\u3002"
+title: "\u5B57\u7B26\u4E32\u62FC\u63A5"
 ---
 
 {{< edit_this_page >}}

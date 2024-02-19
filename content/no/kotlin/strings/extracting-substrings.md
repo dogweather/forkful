@@ -1,13 +1,16 @@
 ---
-title:                "Uthenting av delstrenger"
 aliases:
 - /no/kotlin/extracting-substrings/
-date:                  2024-01-20T17:46:11.625885-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Uthenting av delstrenger"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/extracting-substrings.md"
+date: 2024-01-20 17:46:11.625885-07:00
+description: "Hva er ekstrahering av delstrenger? Det er n\xE5r du plukker ut deler\
+  \ av en tekststreng. Hvorfor? Fordi noen ganger trenger du bare et spesifikt stykke\
+  \ av\u2026"
+lastmod: 2024-02-18 23:08:53.841158
+model: gpt-4-1106-preview
+summary: "Hva er ekstrahering av delstrenger? Det er n\xE5r du plukker ut deler av\
+  \ en tekststreng. Hvorfor? Fordi noen ganger trenger du bare et spesifikt stykke\
+  \ av\u2026"
+title: Uthenting av delstrenger
 ---
 
 {{< edit_this_page >}}

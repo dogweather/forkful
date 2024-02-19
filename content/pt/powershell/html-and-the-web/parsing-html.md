@@ -1,14 +1,18 @@
 ---
-title:                "Analisando HTML"
 aliases:
 - /pt/powershell/parsing-html/
-date:                  2024-02-03T19:12:43.228141-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analisando HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/powershell/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:43.228141-07:00
+description: "Analisar HTML no PowerShell \xE9 sobre desmembrar conte\xFAdo HTML para\
+  \ extrair dados espec\xEDficos ou automatizar tarefas relacionadas \xE0 web. Os\
+  \ programadores\u2026"
+lastmod: 2024-02-18 23:08:58.366571
+model: gpt-4-0125-preview
+summary: "Analisar HTML no PowerShell \xE9 sobre desmembrar conte\xFAdo HTML para\
+  \ extrair dados espec\xEDficos ou automatizar tarefas relacionadas \xE0 web. Os\
+  \ programadores\u2026"
+title: Analisando HTML
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Trabalhando com JSON"
 aliases:
 - /pt/fish-shell/working-with-json/
-date:                  2024-02-03T19:22:41.724625-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:22:41.724625-07:00
+description: "Trabalhar com JSON no Fish Shell envolve analisar e gerar dados JSON,\
+  \ uma tarefa comum para configurar aplica\xE7\xF5es, interagir com APIs e otimizar\
+  \ fluxos de\u2026"
+lastmod: 2024-02-18 23:08:58.596841
+model: gpt-4-0125-preview
+summary: "Trabalhar com JSON no Fish Shell envolve analisar e gerar dados JSON, uma\
+  \ tarefa comum para configurar aplica\xE7\xF5es, interagir com APIs e otimizar fluxos\
+  \ de\u2026"
+title: Trabalhando com JSON
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Interpolando uma string"
 aliases:
 - /pt/javascript/interpolating-a-string/
-date:                  2024-01-20T17:51:09.475999-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolando uma string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/interpolating-a-string.md"
+date: 2024-01-20 17:51:09.475999-07:00
+description: "Interpolar strings \xE9 o processo de misturar vari\xE1veis, express\xF5\
+  es e texto dentro de uma string. Programadores fazem isso para tornar o c\xF3digo\
+  \ mais\u2026"
+lastmod: 2024-02-18 23:08:58.518735
+model: gpt-4-1106-preview
+summary: "Interpolar strings \xE9 o processo de misturar vari\xE1veis, express\xF5\
+  es e texto dentro de uma string. Programadores fazem isso para tornar o c\xF3digo\
+  \ mais\u2026"
+title: Interpolando uma string
 ---
 
 {{< edit_this_page >}}

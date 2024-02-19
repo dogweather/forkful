@@ -1,14 +1,28 @@
 ---
-title:                "CSV와 함께 작업하기"
 aliases:
 - /ko/haskell/working-with-csv/
-date:                  2024-02-03T19:19:52.152125-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "CSV와 함께 작업하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:19:52.152125-07:00
+description: "CSV(Comma-Separated Values, \uC27C\uD45C\uB85C \uAD6C\uBD84\uB41C \uAC12\
+  ) \uC791\uC5C5\uC740 \uAC04\uB2E8\uD55C \uD14D\uC2A4\uD2B8 \uAE30\uBC18 \uD615\uC2DD\
+  \uC73C\uB85C \uD45C \uB370\uC774\uD130\uB97C \uC800\uC7A5\uD558\uB294 \uD30C\uC77C\
+  \uC744 \uD30C\uC2F1\uD558\uACE0 \uC0DD\uC131\uD558\uB294 \uAC83\uC744 \uD3EC\uD568\
+  \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC2A4\uD504\uB808\
+  \uB4DC\uC2DC\uD2B8, \uB370\uC774\uD130\uBCA0\uC774\uC2A4\uC5D0\uC11C \uB370\uC774\
+  \uD130\uB97C \uD6A8\uC728\uC801\uC73C\uB85C \uAC00\uC838\uC624\uAC70\uB098 \uB0B4\
+  \uBCF4\uB0B4\uAC70\uB098 \uB2E4\uB978 \uD504\uB85C\uADF8\uB7A8 \uAC04\uC758\u2026"
+lastmod: 2024-02-18 23:09:06.322376
+model: gpt-4-0125-preview
+summary: "CSV(Comma-Separated Values, \uC27C\uD45C\uB85C \uAD6C\uBD84\uB41C \uAC12\
+  ) \uC791\uC5C5\uC740 \uAC04\uB2E8\uD55C \uD14D\uC2A4\uD2B8 \uAE30\uBC18 \uD615\uC2DD\
+  \uC73C\uB85C \uD45C \uB370\uC774\uD130\uB97C \uC800\uC7A5\uD558\uB294 \uD30C\uC77C\
+  \uC744 \uD30C\uC2F1\uD558\uACE0 \uC0DD\uC131\uD558\uB294 \uAC83\uC744 \uD3EC\uD568\
+  \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC2A4\uD504\uB808\
+  \uB4DC\uC2DC\uD2B8, \uB370\uC774\uD130\uBCA0\uC774\uC2A4\uC5D0\uC11C \uB370\uC774\
+  \uD130\uB97C \uD6A8\uC728\uC801\uC73C\uB85C \uAC00\uC838\uC624\uAC70\uB098 \uB0B4\
+  \uBCF4\uB0B4\uAC70\uB098 \uB2E4\uB978 \uD504\uB85C\uADF8\uB7A8 \uAC04\uC758\u2026"
+title: "CSV\uC640 \uD568\uAED8 \uC791\uC5C5\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

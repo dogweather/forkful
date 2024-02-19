@@ -1,15 +1,20 @@
 ---
-title:                "In ra thông tin gỡ lỗi"
 aliases:
 - /vi/javascript/printing-debug-output/
-date:                  2024-01-28T22:04:58.815004-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "In ra thông tin gỡ lỗi"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/printing-debug-output.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:04:58.815004-07:00
+description: "Vi\u1EC7c in th\xF4ng tin g\u1EE1 l\u1ED7i trong JavaScript li\xEAn\
+  \ quan \u0111\u1EBFn vi\u1EC7c hi\u1EC3n th\u1ECB c\xE1c bi\u1EBFn, l\u1ED7i, ho\u1EB7\
+  c b\u1EA5t k\u1EF3 th\xF4ng tin n\xE0o kh\xE1c gi\xFAp hi\u1EC3u r\xF5 nh\u1EEF\
+  ng g\xEC m\xE3 c\u1EE7a b\u1EA1n \u0111ang\u2026"
+lastmod: 2024-02-18 23:08:51.139010
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c in th\xF4ng tin g\u1EE1 l\u1ED7i trong JavaScript li\xEAn quan\
+  \ \u0111\u1EBFn vi\u1EC7c hi\u1EC3n th\u1ECB c\xE1c bi\u1EBFn, l\u1ED7i, ho\u1EB7\
+  c b\u1EA5t k\u1EF3 th\xF4ng tin n\xE0o kh\xE1c gi\xFAp hi\u1EC3u r\xF5 nh\u1EEF\
+  ng g\xEC m\xE3 c\u1EE7a b\u1EA1n \u0111ang\u2026"
+title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

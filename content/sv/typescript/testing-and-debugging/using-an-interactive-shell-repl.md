@@ -1,13 +1,15 @@
 ---
-title:                "Använda en interaktiv skal (REPL)"
 aliases:
 - /sv/typescript/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:18:45.538609-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Använda en interaktiv skal (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:18:45.538609-07:00
+description: "En Read-Eval-Print-Loop (REPL) \xE4r en programmeringsmilj\xF6 som tar\
+  \ emot enskilda anv\xE4ndarinmatningar, exekverar dem och returnerar resultatet\
+  \ till\u2026"
+lastmod: 2024-02-18 23:08:51.545038
+model: gpt-4-0125-preview
+summary: "En Read-Eval-Print-Loop (REPL) \xE4r en programmeringsmilj\xF6 som tar emot\
+  \ enskilda anv\xE4ndarinmatningar, exekverar dem och returnerar resultatet till\u2026"
+title: "Anv\xE4nda en interaktiv skal (REPL)"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Tests Schrijven"
 aliases:
 - /nl/go/writing-tests/
-date:                  2024-02-03T18:14:55.822608-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tests Schrijven"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:14:55.822608-07:00
+description: "Tests schrijven in Go betekent kleine, beheersbare stukken code cre\xEB\
+  ren die de functionaliteit en het gedrag van je applicatie valideren. Programmeurs\u2026"
+lastmod: 2024-02-18 23:09:01.342470
+model: gpt-4-0125-preview
+summary: "Tests schrijven in Go betekent kleine, beheersbare stukken code cre\xEB\
+  ren die de functionaliteit en het gedrag van je applicatie valideren. Programmeurs\u2026"
+title: Tests Schrijven
 ---
 
 {{< edit_this_page >}}

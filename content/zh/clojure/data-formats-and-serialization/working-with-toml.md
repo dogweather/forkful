@@ -1,13 +1,25 @@
 ---
-title:                "使用TOML"
 aliases:
 - /zh/clojure/working-with-toml/
-date:                  2024-01-26T04:20:44.675538-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/working-with-toml.md"
+date: 2024-01-26 04:20:44.675538-07:00
+description: "\u4F7F\u7528TOML\u610F\u5473\u7740\u4F60\u6B63\u5728\u5904\u7406\u6570\
+  \u636E\u91C7\u7528\u4E86\"Tom\u7684\u660E\u663E\u7684\u3001\u6700\u5C0F\u5316\u8BED\
+  \u8A00\"\uFF08Tom's Obvious, Minimal Language\uFF09\u683C\u5F0F\uFF0C\u8FD9\u79CD\
+  \u683C\u5F0F\u56E0\u5176\u6613\u4E8E\u9605\u8BFB\u800C\u88AB\u5E7F\u6CDB\u7528\u4E8E\
+  \u914D\u7F6E\u6587\u4EF6\u3002\u7A0B\u5E8F\u5458\u4F7F\u7528\u5B83\u6765\u8FDB\u884C\
+  \u76F4\u63A5\u660E\u4E86\u7684\u914D\u7F6E\u7BA1\u7406\uFF0C\u5B83\u642D\u8F7D\u4E86\
+  \u4EBA\u6027\u53CB\u597D\u7684\u8BED\u6CD5\uFF0C\u53EF\u4EE5\u5373\u63D2\u5373\u7528\
+  \u3002"
+lastmod: 2024-02-18 23:08:58.849275
+model: gpt-4-0125-preview
+summary: "\u4F7F\u7528TOML\u610F\u5473\u7740\u4F60\u6B63\u5728\u5904\u7406\u6570\u636E\
+  \u91C7\u7528\u4E86\"Tom\u7684\u660E\u663E\u7684\u3001\u6700\u5C0F\u5316\u8BED\u8A00\
+  \"\uFF08Tom's Obvious, Minimal Language\uFF09\u683C\u5F0F\uFF0C\u8FD9\u79CD\u683C\
+  \u5F0F\u56E0\u5176\u6613\u4E8E\u9605\u8BFB\u800C\u88AB\u5E7F\u6CDB\u7528\u4E8E\u914D\
+  \u7F6E\u6587\u4EF6\u3002\u7A0B\u5E8F\u5458\u4F7F\u7528\u5B83\u6765\u8FDB\u884C\u76F4\
+  \u63A5\u660E\u4E86\u7684\u914D\u7F6E\u7BA1\u7406\uFF0C\u5B83\u642D\u8F7D\u4E86\u4EBA\
+  \u6027\u53CB\u597D\u7684\u8BED\u6CD5\uFF0C\u53EF\u4EE5\u5373\u63D2\u5373\u7528\u3002"
+title: "\u4F7F\u7528TOML"
 ---
 
 {{< edit_this_page >}}

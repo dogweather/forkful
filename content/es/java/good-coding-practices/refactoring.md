@@ -1,13 +1,16 @@
 ---
-title:                "Refactorización"
 aliases:
 - /es/java/refactoring/
-date:                  2024-01-26T01:38:25.812753-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactorización"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/refactoring.md"
+date: 2024-01-26 01:38:25.812753-07:00
+description: "La refactorizaci\xF3n es el proceso de reestructuraci\xF3n del c\xF3\
+  digo inform\xE1tico existente\u2014cambiando la facturaci\xF3n\u2014sin alterar\
+  \ su comportamiento externo. Los\u2026"
+lastmod: 2024-02-18 23:09:09.853873
+model: gpt-4-0125-preview
+summary: "La refactorizaci\xF3n es el proceso de reestructuraci\xF3n del c\xF3digo\
+  \ inform\xE1tico existente\u2014cambiando la facturaci\xF3n\u2014sin alterar su\
+  \ comportamiento externo. Los\u2026"
+title: "Refactorizaci\xF3n"
 ---
 
 {{< edit_this_page >}}

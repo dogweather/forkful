@@ -1,15 +1,17 @@
 ---
-title:                "Utilisation des tableaux associatifs"
 aliases:
 - /fr/ruby/using-associative-arrays/
-date:                  2024-01-30T19:12:54.615524-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation des tableaux associatifs"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:54.615524-07:00
+description: "Les tableaux associatifs, plus commun\xE9ment appel\xE9s hash en Ruby,\
+  \ permettent d'associer des cl\xE9s uniques \xE0 des valeurs. Ils sont indispensables\
+  \ lorsque\u2026"
+lastmod: 2024-02-18 23:09:09.397215
+model: gpt-4-0125-preview
+summary: "Les tableaux associatifs, plus commun\xE9ment appel\xE9s hash en Ruby, permettent\
+  \ d'associer des cl\xE9s uniques \xE0 des valeurs. Ils sont indispensables lorsque\u2026"
+title: Utilisation des tableaux associatifs
 ---
 
 {{< edit_this_page >}}

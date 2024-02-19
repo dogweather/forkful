@@ -1,15 +1,17 @@
 ---
-title:                "Een HTTP-verzoek verzenden"
 aliases:
 - /nl/bash/sending-an-http-request/
-date:                  2024-01-28T22:08:04.920468-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een HTTP-verzoek verzenden"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/sending-an-http-request.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:04.920468-07:00
+description: "Een HTTP-verzoek versturen is een manier om te communiceren met web\
+  \ servers om data op te halen of formulieren in te dienen. Programmeurs doen dit\
+  \ om te\u2026"
+lastmod: 2024-02-18 23:09:02.036321
+model: gpt-4-0125-preview
+summary: "Een HTTP-verzoek versturen is een manier om te communiceren met web servers\
+  \ om data op te halen of formulieren in te dienen. Programmeurs doen dit om te\u2026"
+title: Een HTTP-verzoek verzenden
 ---
 
 {{< edit_this_page >}}

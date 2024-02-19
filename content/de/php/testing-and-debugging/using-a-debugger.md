@@ -1,13 +1,16 @@
 ---
-title:                "Einsatz eines Debuggers"
 aliases:
 - /de/php/using-a-debugger/
-date:                  2024-01-26T03:50:39.876341-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Einsatz eines Debuggers"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/using-a-debugger.md"
+date: 2024-01-26 03:50:39.876341-07:00
+description: "Ein Debugger ist ein Werkzeug, das Programmierern hilft zu verstehen,\
+  \ was ihr Code tats\xE4chlich macht, w\xE4hrend er ausgef\xFChrt wird. Es ist die\
+  \ Lupe, die uns\u2026"
+lastmod: 2024-02-18 23:09:04.966957
+model: gpt-4-0125-preview
+summary: "Ein Debugger ist ein Werkzeug, das Programmierern hilft zu verstehen, was\
+  \ ihr Code tats\xE4chlich macht, w\xE4hrend er ausgef\xFChrt wird. Es ist die Lupe,\
+  \ die uns\u2026"
+title: Einsatz eines Debuggers
 ---
 
 {{< edit_this_page >}}

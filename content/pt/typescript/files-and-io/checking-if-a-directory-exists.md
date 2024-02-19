@@ -1,14 +1,17 @@
 ---
-title:                "Verificando se um diretório existe"
 aliases:
 - /pt/typescript/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:43.948977-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verificando se um diretório existe"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:43.948977-07:00
+description: "Verificar se um diret\xF3rio existe em TypeScript \xE9 essencial para\
+  \ tarefas de gerenciamento de arquivos, como ler ou escrever dados em arquivos,\
+  \ garantindo\u2026"
+lastmod: 2024-02-18 23:08:57.899113
+model: gpt-4-0125-preview
+summary: "Verificar se um diret\xF3rio existe em TypeScript \xE9 essencial para tarefas\
+  \ de gerenciamento de arquivos, como ler ou escrever dados em arquivos, garantindo\u2026"
+title: "Verificando se um diret\xF3rio existe"
 ---
 
 {{< edit_this_page >}}

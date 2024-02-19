@@ -1,15 +1,16 @@
 ---
-title:                "Tekst zoeken en vervangen"
 aliases:
 - /nl/ruby/searching-and-replacing-text/
-date:                  2024-01-28T22:07:22.197976-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tekst zoeken en vervangen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/searching-and-replacing-text.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:07:22.197976-07:00
+description: "Zoeken en vervangen van tekst is het verwisselen van specifieke woorden\
+  \ of zinnen met alternatieven in een string. Programmeurs doen dit om gegevens bij\u2026"
+lastmod: 2024-02-18 23:09:02.403630
+model: gpt-4-0125-preview
+summary: "Zoeken en vervangen van tekst is het verwisselen van specifieke woorden\
+  \ of zinnen met alternatieven in een string. Programmeurs doen dit om gegevens bij\u2026"
+title: Tekst zoeken en vervangen
 ---
 
 {{< edit_this_page >}}

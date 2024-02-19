@@ -1,15 +1,16 @@
 ---
-title:                "Quotes verwijderen uit een string"
 aliases:
 - /nl/fish-shell/removing-quotes-from-a-string/
-date:                  2024-01-28T22:06:10.928067-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Quotes verwijderen uit een string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:06:10.928067-07:00
+description: "Het verwijderen van aanhalingstekens uit een string gaat over het strippen\
+  \ van die lastige enkele (' ') of dubbele (\" \") aanhalingstekens van je\u2026"
+lastmod: 2024-02-18 23:09:02.309751
+model: gpt-4-0125-preview
+summary: "Het verwijderen van aanhalingstekens uit een string gaat over het strippen\
+  \ van die lastige enkele (' ') of dubbele (\" \") aanhalingstekens van je\u2026"
+title: Quotes verwijderen uit een string
 ---
 
 {{< edit_this_page >}}

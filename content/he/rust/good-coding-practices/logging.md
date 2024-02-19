@@ -1,13 +1,13 @@
 ---
-title:                "רישום פעולות (לוגים)"
 aliases:
 - /he/rust/logging/
-date:                  2024-01-26T01:10:07.085599-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "רישום פעולות (לוגים)"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/rust/logging.md"
+date: 2024-01-26 01:10:07.085599-07:00
+description: null
+lastmod: 2024-02-18 23:08:52.621927
+model: gpt-4-1106-preview
+summary: null
+title: "\u05E8\u05D9\u05E9\u05D5\u05DD \u05E4\u05E2\u05D5\u05DC\u05D5\u05EA (\u05DC\
+  \u05D5\u05D2\u05D9\u05DD)"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Wysyłanie zapytania http z podstawową autoryzacją"
 aliases:
 - /pl/lua/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:19.055460-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wysyłanie zapytania http z podstawową autoryzacją"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:19.055460-07:00
+description: "Wysy\u0142anie \u017C\u0105dania HTTP z uwierzytelnianiem podstawowym\
+  \ to spos\xF3b na zapewnienie dost\u0119pu do zasob\xF3w wymagaj\u0105cych potwierdzenia\
+  \ to\u017Csamo\u015Bci. Programi\u015Bci\u2026"
+lastmod: 2024-02-18 23:08:49.739436
+model: gpt-4-1106-preview
+summary: "Wysy\u0142anie \u017C\u0105dania HTTP z uwierzytelnianiem podstawowym to\
+  \ spos\xF3b na zapewnienie dost\u0119pu do zasob\xF3w wymagaj\u0105cych potwierdzenia\
+  \ to\u017Csamo\u015Bci. Programi\u015Bci\u2026"
+title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 ---
 
 {{< edit_this_page >}}

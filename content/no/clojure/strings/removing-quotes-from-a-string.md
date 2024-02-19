@@ -1,13 +1,15 @@
 ---
-title:                "Fjerne anførselstegn fra en streng"
 aliases:
 - /no/clojure/removing-quotes-from-a-string/
-date:                  2024-01-26T03:38:45.831893-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Fjerne anførselstegn fra en streng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:38:45.831893-07:00
+description: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 kvitte seg med\
+  \ de irriterende doble eller enkle anf\xF8rselstegnene som omslutter teksten din.\
+  \ Programmerere\u2026"
+lastmod: 2024-02-18 23:08:53.553255
+model: gpt-4-0125-preview
+summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 kvitte seg med de\
+  \ irriterende doble eller enkle anf\xF8rselstegnene som omslutter teksten din. Programmerere\u2026"
+title: "Fjerne anf\xF8rselstegn fra en streng"
 ---
 
 {{< edit_this_page >}}

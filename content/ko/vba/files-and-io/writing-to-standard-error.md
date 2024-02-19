@@ -1,14 +1,28 @@
 ---
-title:                "표준 오류에 쓰기"
 aliases:
 - /ko/vba/writing-to-standard-error/
-date:                  2024-02-01T22:09:11.217438-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "표준 오류에 쓰기"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/vba/writing-to-standard-error.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:09:11.217438-07:00
+description: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uD45C\uC900 \uC624\uB958\
+  \uB85C\uC758 \uAE30\uB85D\uC740 \uD45C\uC900 \uCD9C\uB825\uACFC \uBD84\uB9AC\uD558\
+  \uC5EC \uC624\uB958 \uBA54\uC2DC\uC9C0\uB098 \uC9C4\uB2E8 \uC815\uBCF4\uB97C \uC8FC\
+  \uB85C \uCF58\uC194\uC774\uB098 \uB85C\uADF8 \uD30C\uC77C\uB85C \uC804\uB2EC\uD558\
+  \uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB4E4\uC740 \uC774\uB7EC\uD55C \uBC29\uBC95\uC73C\uB85C \uC815\uADDC \uD504\uB85C\
+  \uADF8\uB7A8 \uCD9C\uB825\uACFC \uC624\uB958 \uBA54\uC2DC\uC9C0\uB97C \uBD84\uB9AC\
+  \uD568\uC73C\uB85C\uC368\u2026"
+lastmod: 2024-02-18 23:09:05.980064
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uD45C\uC900 \uC624\uB958\
+  \uB85C\uC758 \uAE30\uB85D\uC740 \uD45C\uC900 \uCD9C\uB825\uACFC \uBD84\uB9AC\uD558\
+  \uC5EC \uC624\uB958 \uBA54\uC2DC\uC9C0\uB098 \uC9C4\uB2E8 \uC815\uBCF4\uB97C \uC8FC\
+  \uB85C \uCF58\uC194\uC774\uB098 \uB85C\uADF8 \uD30C\uC77C\uB85C \uC804\uB2EC\uD558\
+  \uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB4E4\uC740 \uC774\uB7EC\uD55C \uBC29\uBC95\uC73C\uB85C \uC815\uADDC \uD504\uB85C\
+  \uADF8\uB7A8 \uCD9C\uB825\uACFC \uC624\uB958 \uBA54\uC2DC\uC9C0\uB97C \uBD84\uB9AC\
+  \uD568\uC73C\uB85C\uC368\u2026"
+title: "\uD45C\uC900 \uC624\uB958\uC5D0 \uC4F0\uAE30"
 ---
 
 {{< edit_this_page >}}

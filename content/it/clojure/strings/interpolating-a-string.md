@@ -1,13 +1,14 @@
 ---
-title:                "Interpolazione di una stringa"
 aliases:
 - /it/clojure/interpolating-a-string/
-date:                  2024-01-20T17:50:32.143689-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolazione di una stringa"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/interpolating-a-string.md"
+date: 2024-01-20 17:50:32.143689-07:00
+description: "Interpolare una stringa significa inserire dinamicamente valori specifici\
+  \ all'interno di una stringa predefinita. I programmatori lo usano per creare\u2026"
+lastmod: 2024-02-18 23:08:55.548176
+model: gpt-4-1106-preview
+summary: "Interpolare una stringa significa inserire dinamicamente valori specifici\
+  \ all'interno di una stringa predefinita. I programmatori lo usano per creare\u2026"
+title: Interpolazione di una stringa
 ---
 
 {{< edit_this_page >}}

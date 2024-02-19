@@ -1,13 +1,14 @@
 ---
-title:                "Å jobbe med komplekse tall"
 aliases:
 - /no/kotlin/working-with-complex-numbers/
-date:                  2024-01-26T04:42:52.970110-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å jobbe med komplekse tall"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/working-with-complex-numbers.md"
+date: 2024-01-26 04:42:52.970110-07:00
+description: "Komplekse tall utvider v\xE5rt tallsystem til \xE5 inkludere kvadratroten\
+  \ av negative tall, hvor den 'imagin\xE6re' enheten i er lik kvadratroten av -1.\u2026"
+lastmod: 2024-02-18 23:08:53.846137
+model: gpt-4-0125-preview
+summary: "Komplekse tall utvider v\xE5rt tallsystem til \xE5 inkludere kvadratroten\
+  \ av negative tall, hvor den 'imagin\xE6re' enheten i er lik kvadratroten av -1.\u2026"
+title: "\xC5 jobbe med komplekse tall"
 ---
 
 {{< edit_this_page >}}

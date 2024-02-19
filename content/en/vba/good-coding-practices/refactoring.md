@@ -1,12 +1,14 @@
 ---
-title:                "Refactoring"
 aliases:
 - /en/vba/refactoring/
-date:                  2024-02-01T21:30:34.124491-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactoring"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/vba/refactoring.md"
+date: 2024-02-01 21:30:34.124491-07:00
+description: "Refactoring in programming involves modifying the structure of code\
+  \ without changing its behavior, to improve aspects like readability, maintainability,\u2026"
+lastmod: 2024-02-18 23:09:10.898239
+model: gpt-4-0125-preview
+summary: "Refactoring in programming involves modifying the structure of code without\
+  \ changing its behavior, to improve aspects like readability, maintainability,\u2026"
+title: Refactoring
 ---
 
 {{< edit_this_page >}}

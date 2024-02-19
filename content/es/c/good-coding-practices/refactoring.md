@@ -1,14 +1,16 @@
 ---
-title:                "Refactorización"
 aliases:
 - /es/c/refactoring/
-date:                  2024-02-03T18:06:45.177129-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactorización"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/refactoring.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:06:45.177129-07:00
+description: "Refactorizar en programaci\xF3n implica reestructurar el c\xF3digo existente\
+  \ sin cambiar su comportamiento externo, con el objetivo de mejorar atributos no\u2026"
+lastmod: 2024-02-18 23:09:10.511486
+model: gpt-4-0125-preview
+summary: "Refactorizar en programaci\xF3n implica reestructurar el c\xF3digo existente\
+  \ sin cambiar su comportamiento externo, con el objetivo de mejorar atributos no\u2026"
+title: "Refactorizaci\xF3n"
 ---
 
 {{< edit_this_page >}}

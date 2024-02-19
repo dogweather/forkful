@@ -1,14 +1,17 @@
 ---
-title:                "Alimerkkijonojen erottaminen"
 aliases:
 - /fi/vba/extracting-substrings/
-date:                  2024-02-01T21:53:44.625538-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Alimerkkijonojen erottaminen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/extracting-substrings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:44.625538-07:00
+description: "Merkkijonojen alijonojen erottaminen Visual Basic for Applicationsissa\
+  \ (VBA) sis\xE4lt\xE4\xE4 tiettyjen osien erist\xE4misen merkkijonosta annettujen\
+  \ kriteerien\u2026"
+lastmod: 2024-02-18 23:09:07.397790
+model: gpt-4-0125-preview
+summary: "Merkkijonojen alijonojen erottaminen Visual Basic for Applicationsissa (VBA)\
+  \ sis\xE4lt\xE4\xE4 tiettyjen osien erist\xE4misen merkkijonosta annettujen kriteerien\u2026"
+title: Alimerkkijonojen erottaminen
 ---
 
 {{< edit_this_page >}}

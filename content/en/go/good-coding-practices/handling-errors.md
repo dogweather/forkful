@@ -1,12 +1,14 @@
 ---
-title:                "Handling errors"
 aliases:
 - /en/go/handling-errors/
-date:                  2024-02-03T17:50:09.115308-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Handling errors"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/handling-errors.md"
+date: 2024-02-03 17:50:09.115308-07:00
+description: "Handling errors in Go involves recognizing and responding to error conditions\
+  \ in your program. Programmers engage in error handling to ensure their\u2026"
+lastmod: 2024-02-18 23:09:10.604206
+model: gpt-4-0125-preview
+summary: "Handling errors in Go involves recognizing and responding to error conditions\
+  \ in your program. Programmers engage in error handling to ensure their\u2026"
+title: Handling errors
 ---
 
 {{< edit_this_page >}}

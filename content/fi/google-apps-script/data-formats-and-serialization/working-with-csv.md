@@ -1,14 +1,17 @@
 ---
-title:                "Työskentely CSV:n kanssa"
 aliases:
 - /fi/google-apps-script/working-with-csv/
-date:                  2024-02-01T22:05:45.467398-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely CSV:n kanssa"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/working-with-csv.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:05:45.467398-07:00
+description: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely Google Apps\
+  \ Scriptill\xE4 sis\xE4lt\xE4\xE4 tekstimuotoisten tiedostojen lukemisen, muokkaamisen\
+  \ ja\u2026"
+lastmod: 2024-02-18 23:09:07.162346
+model: gpt-4-0125-preview
+summary: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely Google Apps Scriptill\xE4\
+  \ sis\xE4lt\xE4\xE4 tekstimuotoisten tiedostojen lukemisen, muokkaamisen ja\u2026"
+title: "Ty\xF6skentely CSV:n kanssa"
 ---
 
 {{< edit_this_page >}}

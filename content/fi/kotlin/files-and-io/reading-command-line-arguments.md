@@ -1,13 +1,16 @@
 ---
-title:                "Komennoriviparametrien lukeminen"
 aliases:
 - /fi/kotlin/reading-command-line-arguments/
-date:                  2024-01-20T17:56:17.180147-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Komennoriviparametrien lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:17.180147-07:00
+description: "Komennon riviargumentit ovat komentorivilt\xE4 ohjelmiin sy\xF6tett\xE4\
+  vi\xE4 tiedonpaloja. Niit\xE4 k\xE4ytet\xE4\xE4n, koska ne mahdollistavat k\xE4\
+  ytt\xE4j\xE4n tarpeisiin mukautuvat\u2026"
+lastmod: 2024-02-18 23:09:07.591629
+model: gpt-4-1106-preview
+summary: "Komennon riviargumentit ovat komentorivilt\xE4 ohjelmiin sy\xF6tett\xE4\
+  vi\xE4 tiedonpaloja. Niit\xE4 k\xE4ytet\xE4\xE4n, koska ne mahdollistavat k\xE4\
+  ytt\xE4j\xE4n tarpeisiin mukautuvat\u2026"
+title: Komennoriviparametrien lukeminen
 ---
 
 {{< edit_this_page >}}

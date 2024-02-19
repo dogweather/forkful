@@ -1,14 +1,23 @@
 ---
-title:                "새 프로젝트 시작하기"
 aliases:
 - /ko/javascript/starting-a-new-project/
-date:                  2024-01-20T18:04:04.553974-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "새 프로젝트 시작하기"
-
-tag:                  "Getting Started"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/starting-a-new-project.md"
+date: 2024-01-20 18:04:04.553974-07:00
+description: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294\
+  \ \uAC74 \uAE68\uB057\uD55C \uCE94\uBC84\uC2A4\uC5D0 \uADF8\uB9BC\uC744 \uADF8\uB9AC\
+  \uB294 \uAC83 \uAC19\uC544\uC694. \uAC1C\uBC1C\uC790\uB4E4\uC740 \uC0C8\uB85C\uC6B4\
+  \ \uC544\uC774\uB514\uC5B4\uB098 \uD574\uACB0\uCC45\uC744 \uD604\uC2E4\uB85C \uB9CC\
+  \uB4E4\uAE30 \uC704\uD574\uC11C \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD574\
+  \uC694."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.813391
+model: gpt-4-1106-preview
+summary: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294 \uAC74\
+  \ \uAE68\uB057\uD55C \uCE94\uBC84\uC2A4\uC5D0 \uADF8\uB9BC\uC744 \uADF8\uB9AC\uB294\
+  \ \uAC83 \uAC19\uC544\uC694. \uAC1C\uBC1C\uC790\uB4E4\uC740 \uC0C8\uB85C\uC6B4 \uC544\
+  \uC774\uB514\uC5B4\uB098 \uD574\uACB0\uCC45\uC744 \uD604\uC2E4\uB85C \uB9CC\uB4E4\
+  \uAE30 \uC704\uD574\uC11C \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD574\uC694\
+  ."
+title: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

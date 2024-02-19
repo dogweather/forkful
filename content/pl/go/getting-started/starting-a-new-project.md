@@ -1,14 +1,18 @@
 ---
-title:                "Rozpoczynanie nowego projektu"
 aliases:
 - /pl/go/starting-a-new-project/
-date:                  2024-02-03T18:09:39.405400-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rozpoczynanie nowego projektu"
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/starting-a-new-project.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:09:39.405400-07:00
+description: "Rozpocz\u0119cie nowego projektu w Go wi\u0105\u017Ce si\u0119 z przygotowaniem\
+  \ obszaru roboczego i zainicjowaniem go przy pomocy niezb\u0119dnych modu\u0142\xF3\
+  w Go. Programi\u015Bci robi\u0105 to\u2026"
+lastmod: 2024-02-18 23:08:49.098628
+model: gpt-4-0125-preview
+summary: "Rozpocz\u0119cie nowego projektu w Go wi\u0105\u017Ce si\u0119 z przygotowaniem\
+  \ obszaru roboczego i zainicjowaniem go przy pomocy niezb\u0119dnych modu\u0142\xF3\
+  w Go. Programi\u015Bci robi\u0105 to\u2026"
+title: Rozpoczynanie nowego projektu
 ---
 
 {{< edit_this_page >}}

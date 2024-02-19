@@ -1,13 +1,16 @@
 ---
-title:                "Obsługa błędów"
 aliases:
 - /pl/lua/handling-errors/
-date:                  2024-01-26T00:55:36.277720-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Obsługa błędów"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/handling-errors.md"
+date: 2024-01-26 00:55:36.277720-07:00
+description: "Obs\u0142uga b\u0142\u0119d\xF3w w programowaniu polega na oczekiwaniu\
+  \ nieoczekiwanego. To sztuka planowania na wypadek gdyby co\u015B posz\u0142o nie\
+  \ tak, aby\u015B m\xF3g\u0142 utrzyma\u0107 swoj\u0105\u2026"
+lastmod: 2024-02-18 23:08:49.747266
+model: gpt-4-1106-preview
+summary: "Obs\u0142uga b\u0142\u0119d\xF3w w programowaniu polega na oczekiwaniu nieoczekiwanego.\
+  \ To sztuka planowania na wypadek gdyby co\u015B posz\u0142o nie tak, aby\u015B\
+  \ m\xF3g\u0142 utrzyma\u0107 swoj\u0105\u2026"
+title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,16 @@
 ---
-title:                "Usando arrays associativos"
 aliases:
 - /pt/swift/using-associative-arrays/
-date:                  2024-01-30T19:13:10.230636-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando arrays associativos"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:13:10.230636-07:00
+description: "Arrays associativos, conhecidos como dicion\xE1rios em Swift, permitem\
+  \ armazenar e gerenciar dados em pares chave-valor. Programadores os usam para organizar\u2026"
+lastmod: 2024-02-18 23:08:58.484337
+model: gpt-4-0125-preview
+summary: "Arrays associativos, conhecidos como dicion\xE1rios em Swift, permitem armazenar\
+  \ e gerenciar dados em pares chave-valor. Programadores os usam para organizar\u2026"
+title: Usando arrays associativos
 ---
 
 {{< edit_this_page >}}

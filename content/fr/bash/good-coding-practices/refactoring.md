@@ -1,13 +1,14 @@
 ---
-title:                "Refactoring"
 aliases:
 - /fr/bash/refactoring/
-date:                  2024-01-26T01:16:29.756507-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactoring"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/refactoring.md"
+date: 2024-01-26 01:16:29.756507-07:00
+description: "Le refactoring est le processus de restructuration du code informatique\
+  \ existant sans en changer le comportement externe. C'est une pratique essentielle\u2026"
+lastmod: 2024-02-18 23:09:09.028467
+model: gpt-4-0125-preview
+summary: "Le refactoring est le processus de restructuration du code informatique\
+  \ existant sans en changer le comportement externe. C'est une pratique essentielle\u2026"
+title: Refactoring
 ---
 
 {{< edit_this_page >}}

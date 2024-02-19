@@ -1,13 +1,16 @@
 ---
-title:                "Ta bort citattecken från en sträng"
 aliases:
 - /sv/python/removing-quotes-from-a-string/
-date:                  2024-01-26T03:42:19.207881-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ta bort citattecken från en sträng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:42:19.207881-07:00
+description: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r vanligtvis att\
+  \ man avl\xE4gsnar \xF6verfl\xF6diga dubbla (\") eller enkla (') citationstecken.\
+  \ Programmerare g\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.410577
+model: gpt-4-0125-preview
+summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r vanligtvis att man\
+  \ avl\xE4gsnar \xF6verfl\xF6diga dubbla (\") eller enkla (') citationstecken. Programmerare\
+  \ g\xF6r\u2026"
+title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

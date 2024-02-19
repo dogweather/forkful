@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với CSV"
 aliases:
 - /vi/haskell/working-with-csv/
-date:                  2024-01-28T22:10:11.948902-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với CSV"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/haskell/working-with-csv.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:11.948902-07:00
+description: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Gi\xE1 tr\u1ECB T\xE1ch b\u1EB1ng D\u1EA5\
+  u ph\u1EA9y) c\xF3 ngh\u0129a l\xE0 \u0111\u1ECDc v\xE0 ghi d\u1EEF li\u1EC7u d\u01B0\
+  \u1EDBi d\u1EA1ng b\u1EA3ng. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng CSV do\
+  \ t\xEDnh \u0111\u01A1n gi\u1EA3n v\xE0 s\u1EF1 h\u1ED7 tr\u1EE3 r\u1ED9ng\u2026"
+lastmod: 2024-02-18 23:08:50.769324
+model: gpt-4-0125-preview
+summary: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Gi\xE1 tr\u1ECB T\xE1ch b\u1EB1ng D\u1EA5\
+  u ph\u1EA9y) c\xF3 ngh\u0129a l\xE0 \u0111\u1ECDc v\xE0 ghi d\u1EEF li\u1EC7u d\u01B0\
+  \u1EDBi d\u1EA1ng b\u1EA3ng. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng CSV do\
+  \ t\xEDnh \u0111\u01A1n gi\u1EA3n v\xE0 s\u1EF1 h\u1ED7 tr\u1EE3 r\u1ED9ng\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 ---
 
 {{< edit_this_page >}}

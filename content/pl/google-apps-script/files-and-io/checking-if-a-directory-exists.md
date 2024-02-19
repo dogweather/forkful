@@ -1,14 +1,18 @@
 ---
-title:                "Sprawdzanie, czy katalog istnieje"
 aliases:
 - /pl/google-apps-script/checking-if-a-directory-exists/
-date:                  2024-02-01T21:50:33.094944-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sprawdzanie, czy katalog istnieje"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:33.094944-07:00
+description: "Sprawdzanie, czy katalog istnieje w Google Apps Script, polega na weryfikacji\
+  \ obecno\u015Bci folderu w Google Drive. Programi\u015Bci cz\u0119sto wykonuj\u0105\
+  \ to\u2026"
+lastmod: 2024-02-18 23:08:49.164551
+model: gpt-4-0125-preview
+summary: "Sprawdzanie, czy katalog istnieje w Google Apps Script, polega na weryfikacji\
+  \ obecno\u015Bci folderu w Google Drive. Programi\u015Bci cz\u0119sto wykonuj\u0105\
+  \ to\u2026"
+title: Sprawdzanie, czy katalog istnieje
 ---
 
 {{< edit_this_page >}}

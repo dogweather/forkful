@@ -1,14 +1,16 @@
 ---
-title:                "Verificando se um diretório existe"
 aliases:
 - /pt/google-apps-script/checking-if-a-directory-exists/
-date:                  2024-02-01T21:48:46.037737-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verificando se um diretório existe"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/google-apps-script/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:48:46.037737-07:00
+description: "Verificar se um diret\xF3rio existe no Google Apps Script envolve confirmar\
+  \ a presen\xE7a de uma pasta dentro do Google Drive. Programadores frequentemente\u2026"
+lastmod: 2024-02-18 23:08:57.732512
+model: gpt-4-0125-preview
+summary: "Verificar se um diret\xF3rio existe no Google Apps Script envolve confirmar\
+  \ a presen\xE7a de uma pasta dentro do Google Drive. Programadores frequentemente\u2026"
+title: "Verificando se um diret\xF3rio existe"
 ---
 
 {{< edit_this_page >}}

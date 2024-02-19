@@ -1,15 +1,16 @@
 ---
-title:                "Een debugger gebruiken"
 aliases:
 - /nl/clojure/using-a-debugger/
-date:                  2024-01-28T22:08:51.727157-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een debugger gebruiken"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/clojure/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:51.727157-07:00
+description: "Een debugger gebruiken betekent dat je jezelf uitrust met een vergrootglas\
+  \ om je code nauwkeurig te onderzoeken. Programmeurs doen dit om fouten te\u2026"
+lastmod: 2024-02-18 23:09:01.484739
+model: gpt-4-0125-preview
+summary: "Een debugger gebruiken betekent dat je jezelf uitrust met een vergrootglas\
+  \ om je code nauwkeurig te onderzoeken. Programmeurs doen dit om fouten te\u2026"
+title: Een debugger gebruiken
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Arbeta med CSV"
 aliases:
 - /sv/lua/working-with-csv/
-date:                  2024-02-03T19:20:47.990254-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeta med CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/lua/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:20:47.990254-07:00
+description: "Att arbeta med CSV (Comma-Separated Values) filer inneb\xE4r att tolka\
+  \ och generera textdata organiserad i rader och kolumner, d\xE4r komman anv\xE4\
+  nds f\xF6r att\u2026"
+lastmod: 2024-02-18 23:08:51.940298
+model: gpt-4-0125-preview
+summary: "Att arbeta med CSV (Comma-Separated Values) filer inneb\xE4r att tolka och\
+  \ generera textdata organiserad i rader och kolumner, d\xE4r komman anv\xE4nds f\xF6\
+  r att\u2026"
+title: Arbeta med CSV
 ---
 
 {{< edit_this_page >}}

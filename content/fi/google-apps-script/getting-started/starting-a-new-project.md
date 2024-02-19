@@ -1,14 +1,18 @@
 ---
-title:                "Uuden projektin aloittaminen"
 aliases:
 - /fi/google-apps-script/starting-a-new-project/
-date:                  2024-02-01T22:02:55.945859-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Uuden projektin aloittaminen"
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/starting-a-new-project.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:02:55.945859-07:00
+description: "Uuden projektin aloittaminen Google Apps Scriptiss\xE4 (GAS) tarkoittaa\
+  \ komentosarjatiedoston alustamista Google-ekosysteemiss\xE4 (Google Drive, Docs,\
+  \ Sheets\u2026"
+lastmod: 2024-02-18 23:09:07.136016
+model: gpt-4-0125-preview
+summary: "Uuden projektin aloittaminen Google Apps Scriptiss\xE4 (GAS) tarkoittaa\
+  \ komentosarjatiedoston alustamista Google-ekosysteemiss\xE4 (Google Drive, Docs,\
+  \ Sheets\u2026"
+title: Uuden projektin aloittaminen
 ---
 
 {{< edit_this_page >}}

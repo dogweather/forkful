@@ -1,13 +1,16 @@
 ---
-title:                "Iniciando um novo projeto"
 aliases:
 - /pt/kotlin/starting-a-new-project/
-date:                  2024-01-20T18:03:54.669989-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Iniciando um novo projeto"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/starting-a-new-project.md"
+date: 2024-01-20 18:03:54.669989-07:00
+description: "Iniciar um projeto novo \xE9 como montar o quebra-cabe\xE7a do zero\
+  \ \u2013 voc\xEA tem um monte de pe\xE7as (ideias) e precisa junt\xE1-las. Programadores\
+  \ fazem isso para\u2026"
+lastmod: 2024-02-18 23:08:58.101721
+model: gpt-4-1106-preview
+summary: "Iniciar um projeto novo \xE9 como montar o quebra-cabe\xE7a do zero \u2013\
+  \ voc\xEA tem um monte de pe\xE7as (ideias) e precisa junt\xE1-las. Programadores\
+  \ fazem isso para\u2026"
+title: Iniciando um novo projeto
 ---
 
 {{< edit_this_page >}}

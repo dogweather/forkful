@@ -1,13 +1,16 @@
 ---
-title:                "Hantering av fel"
 aliases:
 - /sv/typescript/handling-errors/
-date:                  2024-01-26T00:58:40.021875-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Hantering av fel"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/handling-errors.md"
+date: 2024-01-26 00:58:40.021875-07:00
+description: "Att hantera fel handlar om att f\xF6rv\xE4nta sig det ov\xE4ntade; det\
+  \ \xE4r hur vi hanterar n\xE4r saker g\xE5r fel i v\xE5r kod. Vi g\xF6r det f\xF6\
+  r att undvika krascher och f\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.550611
+model: gpt-4-1106-preview
+summary: "Att hantera fel handlar om att f\xF6rv\xE4nta sig det ov\xE4ntade; det \xE4\
+  r hur vi hanterar n\xE4r saker g\xE5r fel i v\xE5r kod. Vi g\xF6r det f\xF6r att\
+  \ undvika krascher och f\xF6r\u2026"
+title: Hantering av fel
 ---
 
 {{< edit_this_page >}}

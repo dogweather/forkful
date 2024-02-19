@@ -1,13 +1,16 @@
 ---
-title:                "Recherche et remplacement de texte"
 aliases:
 - /fr/php/searching-and-replacing-text/
-date:                  2024-01-20T17:58:12.834467-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Recherche et remplacement de texte"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/php/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:12.834467-07:00
+description: "Chercher et remplacer du texte, c'est un peu comme jouer \xE0 cache-cache\
+  \ puis redessiner ce qui \xE9tait cach\xE9. Les programmeurs le font pour mettre\
+  \ \xE0 jour des\u2026"
+lastmod: 2024-02-18 23:09:08.905703
+model: gpt-4-1106-preview
+summary: "Chercher et remplacer du texte, c'est un peu comme jouer \xE0 cache-cache\
+  \ puis redessiner ce qui \xE9tait cach\xE9. Les programmeurs le font pour mettre\
+  \ \xE0 jour des\u2026"
+title: Recherche et remplacement de texte
 ---
 
 {{< edit_this_page >}}

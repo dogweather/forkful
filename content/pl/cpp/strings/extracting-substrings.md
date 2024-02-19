@@ -1,13 +1,16 @@
 ---
-title:                "Wycinanie podłańcuchów"
 aliases:
 - /pl/cpp/extracting-substrings/
-date:                  2024-01-20T17:45:25.531448-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wycinanie podłańcuchów"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/extracting-substrings.md"
+date: 2024-01-20 17:45:25.531448-07:00
+description: "Wyodr\u0119bnianie podci\u0105g\xF3w to proces wycinania fragment\xF3\
+  w z wi\u0119kszego ci\u0105gu znak\xF3w. Programi\u015Bci robi\u0105 to, aby manipulowa\u0107\
+  \ i analizowa\u0107 tekst, weryfikowa\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.899036
+model: gpt-4-1106-preview
+summary: "Wyodr\u0119bnianie podci\u0105g\xF3w to proces wycinania fragment\xF3w z\
+  \ wi\u0119kszego ci\u0105gu znak\xF3w. Programi\u015Bci robi\u0105 to, aby manipulowa\u0107\
+  \ i analizowa\u0107 tekst, weryfikowa\u0107\u2026"
+title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 ---
 
 {{< edit_this_page >}}

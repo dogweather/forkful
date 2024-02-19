@@ -1,15 +1,26 @@
 ---
-title:                "使用关联数组"
 aliases:
 - /zh/fish-shell/using-associative-arrays/
-date:                  2024-01-30T19:11:05.473628-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用关联数组"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:11:05.473628-07:00
+description: "\u5173\u8054\u6570\u7EC4\u6216\u54C8\u5E0C\u6620\u5C04\u5141\u8BB8\u60A8\
+  \u4EE5\u952E\u503C\u5BF9\u7684\u5F62\u5F0F\u5B58\u50A8\u6570\u636E\uFF0C\u8FD9\u4F7F\
+  \u5F97\u901A\u8FC7\u952E\u7EC4\u7EC7\u548C\u68C0\u7D22\u4FE1\u606F\u53D8\u5F97\u66F4\
+  \u52A0\u5BB9\u6613\u3002\u5F53\u60A8\u9700\u8981\u4E00\u79CD\u6BD4\u5217\u8868\u66F4\
+  \u6709\u7ED3\u6784\u7684\u65B9\u5F0F\u6765\u5904\u7406\u6570\u636E\u65F6\uFF0C\u5B83\
+  \u4EEC\u975E\u5E38\u65B9\u4FBF\uFF0C\u5C24\u5176\u662F\u5728\u914D\u7F6E\u4EE5\u53CA\
+  \u5904\u7406\u4E00\u7CFB\u5217\u5C5E\u6027\u65F6\u3002"
+lastmod: 2024-02-18 23:08:59.510991
+model: gpt-4-0125-preview
+summary: "\u5173\u8054\u6570\u7EC4\u6216\u54C8\u5E0C\u6620\u5C04\u5141\u8BB8\u60A8\
+  \u4EE5\u952E\u503C\u5BF9\u7684\u5F62\u5F0F\u5B58\u50A8\u6570\u636E\uFF0C\u8FD9\u4F7F\
+  \u5F97\u901A\u8FC7\u952E\u7EC4\u7EC7\u548C\u68C0\u7D22\u4FE1\u606F\u53D8\u5F97\u66F4\
+  \u52A0\u5BB9\u6613\u3002\u5F53\u60A8\u9700\u8981\u4E00\u79CD\u6BD4\u5217\u8868\u66F4\
+  \u6709\u7ED3\u6784\u7684\u65B9\u5F0F\u6765\u5904\u7406\u6570\u636E\u65F6\uFF0C\u5B83\
+  \u4EEC\u975E\u5E38\u65B9\u4FBF\uFF0C\u5C24\u5176\u662F\u5728\u914D\u7F6E\u4EE5\u53CA\
+  \u5904\u7406\u4E00\u7CFB\u5217\u5C5E\u6027\u65F6\u3002"
+title: "\u4F7F\u7528\u5173\u8054\u6570\u7EC4"
 ---
 
 {{< edit_this_page >}}

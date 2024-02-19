@@ -1,13 +1,16 @@
 ---
-title:                "Koodin refaktorointi"
 aliases:
 - /fi/python/refactoring/
-date:                  2024-01-26T03:37:24.863446-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Koodin refaktorointi"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/refactoring.md"
+date: 2024-01-26 03:37:24.863446-07:00
+description: "Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia rakennetaan\
+  \ uudelleen\u2014muutetaan faktorointia\u2014muuttamatta sen ulkoista k\xE4ytt\xE4\
+  ytymist\xE4.\u2026"
+lastmod: 2024-02-18 23:09:07.192596
+model: gpt-4-0125-preview
+summary: "Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia rakennetaan\
+  \ uudelleen\u2014muutetaan faktorointia\u2014muuttamatta sen ulkoista k\xE4ytt\xE4\
+  ytymist\xE4.\u2026"
+title: Koodin refaktorointi
 ---
 
 {{< edit_this_page >}}

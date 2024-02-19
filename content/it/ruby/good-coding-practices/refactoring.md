@@ -1,13 +1,14 @@
 ---
-title:                "Rifattorizzazione"
 aliases:
 - /it/ruby/refactoring/
-date:                  2024-01-26T03:36:49.163251-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rifattorizzazione"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/refactoring.md"
+date: 2024-01-26 03:36:49.163251-07:00
+description: "Il Refactoring \xE8 il processo di ristrutturazione del codice informatico\
+  \ esistente senza cambiarne il comportamento esterno. I programmatori eseguono il\u2026"
+lastmod: 2024-02-18 23:08:56.391072
+model: gpt-4-0125-preview
+summary: "Il Refactoring \xE8 il processo di ristrutturazione del codice informatico\
+  \ esistente senza cambiarne il comportamento esterno. I programmatori eseguono il\u2026"
+title: Rifattorizzazione
 ---
 
 {{< edit_this_page >}}

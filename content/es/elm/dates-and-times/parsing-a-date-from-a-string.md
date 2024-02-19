@@ -1,14 +1,16 @@
 ---
-title:                "Analizando una fecha a partir de una cadena de texto"
 aliases:
 - /es/elm/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:14:01.758356-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analizando una fecha a partir de una cadena de texto"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:14:01.758356-07:00
+description: "Analizar una fecha de una cadena en Elm implica convertir informaci\xF3\
+  n textual que representa fechas y horas en un formato que Elm pueda entender y\u2026"
+lastmod: 2024-02-18 23:09:09.901038
+model: gpt-4-0125-preview
+summary: "Analizar una fecha de una cadena en Elm implica convertir informaci\xF3\
+  n textual que representa fechas y horas en un formato que Elm pueda entender y\u2026"
+title: Analizando una fecha a partir de una cadena de texto
 ---
 
 {{< edit_this_page >}}

@@ -1,12 +1,14 @@
 ---
-title:                "Reading command line arguments"
 aliases:
 - /en/c/reading-command-line-arguments/
-date:                  2024-02-03T17:50:02.171992-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Reading command line arguments"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/reading-command-line-arguments.md"
+date: 2024-02-03 17:50:02.171992-07:00
+description: "In C programming, reading command line arguments allows programs to\
+  \ accept inputs right from the terminal, enhancing flexibility and usability.\u2026"
+lastmod: 2024-02-18 23:09:11.537617
+model: gpt-4-0125-preview
+summary: "In C programming, reading command line arguments allows programs to accept\
+  \ inputs right from the terminal, enhancing flexibility and usability.\u2026"
+title: Reading command line arguments
 ---
 
 {{< edit_this_page >}}

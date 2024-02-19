@@ -1,16 +1,34 @@
 ---
-title:                "वर्तमान तारीख प्राप्त करना"
 aliases:
 - /hi/elixir/getting-the-current-date/
-date:                  2024-02-03T19:10:29.755687-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "वर्तमान तारीख प्राप्त करना"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elixir/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
-  - 2024-02-05, dogweather, reviewed and corrected
-lastmod:              2024-02-05
+- 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-05, dogweather, reviewed and corrected
+date: 2024-02-03 19:10:29.755687-07:00
+description: "Elixir \u092E\u0947\u0902 \u0935\u0930\u094D\u0924\u092E\u093E\u0928\
+  \ \u0924\u093E\u0930\u0940\u0916 \u092A\u094D\u0930\u093E\u092A\u094D\u0924 \u0915\
+  \u0930\u0928\u093E \u0938\u093F\u0938\u094D\u091F\u092E \u0915\u0940 \u0924\u093E\
+  \u0930\u0940\u0916 \u0914\u0930 \u0938\u092E\u092F \u0915\u0940 \u091C\u093E\u0928\
+  \u0915\u093E\u0930\u0940 \u0924\u0915 \u092A\u0939\u0941\u0901\u091A\u0928\u0947\
+  \ \u0915\u093E \u0915\u093E\u092E \u0936\u093E\u092E\u093F\u0932 \u0939\u0948, \u091C\
+  \u094B \u0932\u0949\u0917\u093F\u0902\u0917, \u0921\u093E\u091F\u093E \u0938\u094D\
+  \u091F\u0948\u092E\u094D\u092A\u093F\u0902\u0917 \u092F\u093E \u0915\u093F\u0938\
+  \u0940 \u092D\u0940 \u0915\u093E\u0930\u094D\u092F\u0915\u094D\u0937\u092E\u0924\
+  \u093E \u0915\u0947\u2026"
+lastmod: 2024-02-18 23:09:02.822532
+model: gpt-4-0125-preview
+summary: "Elixir \u092E\u0947\u0902 \u0935\u0930\u094D\u0924\u092E\u093E\u0928 \u0924\
+  \u093E\u0930\u0940\u0916 \u092A\u094D\u0930\u093E\u092A\u094D\u0924 \u0915\u0930\
+  \u0928\u093E \u0938\u093F\u0938\u094D\u091F\u092E \u0915\u0940 \u0924\u093E\u0930\
+  \u0940\u0916 \u0914\u0930 \u0938\u092E\u092F \u0915\u0940 \u091C\u093E\u0928\u0915\
+  \u093E\u0930\u0940 \u0924\u0915 \u092A\u0939\u0941\u0901\u091A\u0928\u0947 \u0915\
+  \u093E \u0915\u093E\u092E \u0936\u093E\u092E\u093F\u0932 \u0939\u0948, \u091C\u094B\
+  \ \u0932\u0949\u0917\u093F\u0902\u0917, \u0921\u093E\u091F\u093E \u0938\u094D\u091F\
+  \u0948\u092E\u094D\u092A\u093F\u0902\u0917 \u092F\u093E \u0915\u093F\u0938\u0940\
+  \ \u092D\u0940 \u0915\u093E\u0930\u094D\u092F\u0915\u094D\u0937\u092E\u0924\u093E\
+  \ \u0915\u0947\u2026"
+title: "\u0935\u0930\u094D\u0924\u092E\u093E\u0928 \u0924\u093E\u0930\u0940\u0916\
+  \ \u092A\u094D\u0930\u093E\u092A\u094D\u0924 \u0915\u0930\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

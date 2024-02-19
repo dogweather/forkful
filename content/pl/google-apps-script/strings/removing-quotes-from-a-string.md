@@ -1,14 +1,18 @@
 ---
-title:                "Usuwanie cudzysłowów z ciągu znaków"
 aliases:
 - /pl/google-apps-script/removing-quotes-from-a-string/
-date:                  2024-02-01T22:00:51.702813-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usuwanie cudzysłowów z ciągu znaków"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:51.702813-07:00
+description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w w Google Apps Script\
+  \ dotyczy eliminacji niepotrzebnych znak\xF3w cudzys\u0142owia, kt\xF3re mog\u0105\
+  \ otacza\u0107 dane Twojego ci\u0105gu,\u2026"
+lastmod: 2024-02-18 23:08:49.132983
+model: gpt-4-0125-preview
+summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w w Google Apps Script\
+  \ dotyczy eliminacji niepotrzebnych znak\xF3w cudzys\u0142owia, kt\xF3re mog\u0105\
+  \ otacza\u0107 dane Twojego ci\u0105gu,\u2026"
+title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

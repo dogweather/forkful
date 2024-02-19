@@ -1,14 +1,18 @@
 ---
-title:                "Escrevendo no erro padrão"
 aliases:
 - /pt/go/writing-to-standard-error/
-date:                  2024-02-03T18:15:15.929272-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escrevendo no erro padrão"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:15:15.929272-07:00
+description: "Escrever no erro padr\xE3o (stderr) em Go envolve direcionar mensagens\
+  \ de erro ou diagn\xF3sticos que n\xE3o s\xE3o destinados ao fluxo de sa\xEDda principal.\
+  \ Os\u2026"
+lastmod: 2024-02-18 23:08:57.686272
+model: gpt-4-0125-preview
+summary: "Escrever no erro padr\xE3o (stderr) em Go envolve direcionar mensagens de\
+  \ erro ou diagn\xF3sticos que n\xE3o s\xE3o destinados ao fluxo de sa\xEDda principal.\
+  \ Os\u2026"
+title: "Escrevendo no erro padr\xE3o"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,20 @@
 ---
-title:                "处理XML"
 aliases:
 - /zh/java/working-with-xml/
-date:                  2024-01-26T04:32:39.557927-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/working-with-xml.md"
+date: 2024-01-26 04:32:39.557927-07:00
+description: "\u4F7F\u7528Java\u5904\u7406XML\u6D89\u53CA\u5230\u89E3\u6790\u3001\u67E5\
+  \u8BE2\u548C\u64CD\u4F5CXML\u6587\u6863\u3002\u7A0B\u5E8F\u5458\u4E4B\u6240\u4EE5\
+  \u8FD9\u6837\u505A\uFF0C\u662F\u4E3A\u4E86\u6570\u636E\u4EA4\u6362\u3001\u914D\u7F6E\
+  \u7BA1\u7406\uFF0C\u4EE5\u53CA\u8BB8\u591A\u9057\u7559\u7CFB\u7EDF\u548CAPI\u4F7F\
+  \u7528XML\u8FDB\u884C\u901A\u4FE1\u3002"
+lastmod: 2024-02-18 23:08:59.042847
+model: gpt-4-0125-preview
+summary: "\u4F7F\u7528Java\u5904\u7406XML\u6D89\u53CA\u5230\u89E3\u6790\u3001\u67E5\
+  \u8BE2\u548C\u64CD\u4F5CXML\u6587\u6863\u3002\u7A0B\u5E8F\u5458\u4E4B\u6240\u4EE5\
+  \u8FD9\u6837\u505A\uFF0C\u662F\u4E3A\u4E86\u6570\u636E\u4EA4\u6362\u3001\u914D\u7F6E\
+  \u7BA1\u7406\uFF0C\u4EE5\u53CA\u8BB8\u591A\u9057\u7559\u7CFB\u7EDF\u548CAPI\u4F7F\
+  \u7528XML\u8FDB\u884C\u901A\u4FE1\u3002"
+title: "\u5904\u7406XML"
 ---
 
 {{< edit_this_page >}}

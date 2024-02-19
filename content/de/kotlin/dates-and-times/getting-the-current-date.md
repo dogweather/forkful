@@ -1,14 +1,16 @@
 ---
-title:                "Den aktuellen Datum abrufen"
 aliases:
 - /de/kotlin/getting-the-current-date/
-date:                  2024-02-03T19:10:16.655169-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Den aktuellen Datum abrufen"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:10:16.655169-07:00
+description: "In der Programmierung ist das Abrufen des aktuellen Datums eine grundlegende\
+  \ Aufgabe, die es Entwicklern erm\xF6glicht, auf das aktuelle Datum zuzugreifen,\u2026"
+lastmod: 2024-02-18 23:09:04.837679
+model: gpt-4-0125-preview
+summary: "In der Programmierung ist das Abrufen des aktuellen Datums eine grundlegende\
+  \ Aufgabe, die es Entwicklern erm\xF6glicht, auf das aktuelle Datum zuzugreifen,\u2026"
+title: Den aktuellen Datum abrufen
 ---
 
 {{< edit_this_page >}}

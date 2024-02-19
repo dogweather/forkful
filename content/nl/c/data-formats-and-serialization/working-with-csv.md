@@ -1,14 +1,16 @@
 ---
-title:                "Werken met CSV"
 aliases:
 - /nl/c/working-with-csv/
-date:                  2024-02-03T18:11:54.473087-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:11:54.473087-07:00
+description: "In de wereld van het programmeren omvat het werken met CSV (Comma-Separated\
+  \ Values) bestanden het lezen van en schrijven naar tekstbestanden die zijn\u2026"
+lastmod: 2024-02-18 23:09:02.398149
+model: gpt-4-0125-preview
+summary: "In de wereld van het programmeren omvat het werken met CSV (Comma-Separated\
+  \ Values) bestanden het lezen van en schrijven naar tekstbestanden die zijn\u2026"
+title: Werken met CSV
 ---
 
 {{< edit_this_page >}}

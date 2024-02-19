@@ -1,14 +1,17 @@
 ---
-title:                "Verifica se una directory esiste"
 aliases:
 - /it/swift/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:39.569191-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verifica se una directory esiste"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:39.569191-07:00
+description: "Verificare se una directory esiste nel filesystem \xE8 essenziale per\
+  \ gestire le strutture dei file all'interno delle tue applicazioni Swift. Questo\
+  \ compito\u2026"
+lastmod: 2024-02-18 23:08:56.226178
+model: gpt-4-0125-preview
+summary: "Verificare se una directory esiste nel filesystem \xE8 essenziale per gestire\
+  \ le strutture dei file all'interno delle tue applicazioni Swift. Questo compito\u2026"
+title: Verifica se una directory esiste
 ---
 
 {{< edit_this_page >}}

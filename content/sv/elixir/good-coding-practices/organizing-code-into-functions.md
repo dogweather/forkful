@@ -1,13 +1,16 @@
 ---
-title:                "Att organisera kod i funktioner"
 aliases:
 - /sv/elixir/organizing-code-into-functions/
-date:                  2024-01-26T01:10:03.726106-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Att organisera kod i funktioner"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/organizing-code-into-functions.md"
+date: 2024-01-26 01:10:03.726106-07:00
+description: "Att organisera kod i funktioner inneb\xE4r att gruppera relaterade operationer\
+  \ i \xE5teranv\xE4ndbara block. Vi g\xF6r det f\xF6r att f\xF6rb\xE4ttra l\xE4sbarheten\
+  \ och\u2026"
+lastmod: 2024-02-18 23:08:51.507729
+model: gpt-4-1106-preview
+summary: "Att organisera kod i funktioner inneb\xE4r att gruppera relaterade operationer\
+  \ i \xE5teranv\xE4ndbara block. Vi g\xF6r det f\xF6r att f\xF6rb\xE4ttra l\xE4sbarheten\
+  \ och\u2026"
+title: Att organisera kod i funktioner
 ---
 
 {{< edit_this_page >}}

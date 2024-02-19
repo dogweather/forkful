@@ -1,13 +1,16 @@
 ---
-title:                "Debuggerin käyttö"
 aliases:
 - /fi/haskell/using-a-debugger/
-date:                  2024-01-26T03:50:13.140023-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Debuggerin käyttö"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/using-a-debugger.md"
+date: 2024-01-26 03:50:13.140023-07:00
+description: "Debuggerin k\xE4ytt\xE4minen tarkoittaa koodisi syv\xE4llist\xE4 tutkimista\
+  \ ty\xF6kaluilla, jotka on suunniteltu tarkastelemaan, keskeytt\xE4m\xE4\xE4n ja\
+  \ manipuloimaan ohjelmaa\u2026"
+lastmod: 2024-02-18 23:09:07.670991
+model: gpt-4-0125-preview
+summary: "Debuggerin k\xE4ytt\xE4minen tarkoittaa koodisi syv\xE4llist\xE4 tutkimista\
+  \ ty\xF6kaluilla, jotka on suunniteltu tarkastelemaan, keskeytt\xE4m\xE4\xE4n ja\
+  \ manipuloimaan ohjelmaa\u2026"
+title: "Debuggerin k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

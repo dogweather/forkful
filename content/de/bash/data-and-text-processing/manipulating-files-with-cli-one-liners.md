@@ -1,13 +1,14 @@
 ---
-title:                "Dateimanipulation mit CLI-One-Linern"
 aliases:
 - /de/bash/manipulating-files-with-cli-one-liners/
-date:                  2024-01-27T16:20:58.500349-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Dateimanipulation mit CLI-One-Linern"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/manipulating-files-with-cli-one-liners.md"
+date: 2024-01-27 16:20:58.500349-07:00
+description: "Dateimanipulation mit CLI (Command Line Interface) One-Linern beinhaltet\
+  \ die Verwendung von Bash-Skripten oder -Befehlen, um Aktionen an Dateien wie\u2026"
+lastmod: 2024-02-18 23:09:05.048592
+model: gpt-4-0125-preview
+summary: "Dateimanipulation mit CLI (Command Line Interface) One-Linern beinhaltet\
+  \ die Verwendung von Bash-Skripten oder -Befehlen, um Aktionen an Dateien wie\u2026"
+title: Dateimanipulation mit CLI-One-Linern
 ---
 
 {{< edit_this_page >}}

@@ -1,12 +1,14 @@
 ---
-title:                "Working with XML"
 aliases:
 - /en/google-apps-script/working-with-xml/
-date:                  2024-02-01T21:12:04.833629-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Working with XML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/google-apps-script/working-with-xml.md"
+date: 2024-02-01 21:12:04.833629-07:00
+description: "Working with XML in Google Apps Script allows programmers to parse,\
+  \ manipulate, and generate XML data, essential for web services and configurations.\u2026"
+lastmod: 2024-02-18 23:09:10.663717
+model: gpt-4-0125-preview
+summary: "Working with XML in Google Apps Script allows programmers to parse, manipulate,\
+  \ and generate XML data, essential for web services and configurations.\u2026"
+title: Working with XML
 ---
 
 {{< edit_this_page >}}

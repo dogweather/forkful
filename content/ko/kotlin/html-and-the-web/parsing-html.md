@@ -1,14 +1,28 @@
 ---
-title:                "HTML 파싱"
 aliases:
 - /ko/kotlin/parsing-html/
-date:                  2024-02-03T19:12:41.250459-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML 파싱"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:41.250459-07:00
+description: "HTML \uD30C\uC2F1\uC740 \uC6F9 \uD398\uC774\uC9C0\uC758 \uB9C8\uD06C\
+  \uC5C5\uC744 \uD504\uB85C\uADF8\uB7A8\uC774 \uC774\uD574\uD558\uACE0 \uC870\uC791\
+  \uD560 \uC218 \uC788\uB294 \uAC83\uC73C\uB85C \uBD84\uD574\uD558\uB294 \uAC83\uC744\
+  \ \uC758\uBBF8\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB370\
+  \uC774\uD130\uB97C \uCD94\uCD9C\uD558\uAC70\uB098, \uC6F9 \uC0C1\uD638\uC791\uC6A9\
+  \uC744 \uC790\uB3D9\uD654\uD558\uAC70\uB098, \uC2DC\uC2A4\uD15C \uAC04\uC5D0 \uCF58\
+  \uD150\uCE20\uB97C \uC774\uC804\uD558\uAE30 \uC704\uD574 HTML\uC744 \uD30C\uC2F1\
+  \uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.146200
+model: gpt-4-0125-preview
+summary: "HTML \uD30C\uC2F1\uC740 \uC6F9 \uD398\uC774\uC9C0\uC758 \uB9C8\uD06C\uC5C5\
+  \uC744 \uD504\uB85C\uADF8\uB7A8\uC774 \uC774\uD574\uD558\uACE0 \uC870\uC791\uD560\
+  \ \uC218 \uC788\uB294 \uAC83\uC73C\uB85C \uBD84\uD574\uD558\uB294 \uAC83\uC744 \uC758\
+  \uBBF8\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB370\uC774\
+  \uD130\uB97C \uCD94\uCD9C\uD558\uAC70\uB098, \uC6F9 \uC0C1\uD638\uC791\uC6A9\uC744\
+  \ \uC790\uB3D9\uD654\uD558\uAC70\uB098, \uC2DC\uC2A4\uD15C \uAC04\uC5D0 \uCF58\uD150\
+  \uCE20\uB97C \uC774\uC804\uD558\uAE30 \uC704\uD574 HTML\uC744 \uD30C\uC2F1\uD569\
+  \uB2C8\uB2E4."
+title: "HTML \uD30C\uC2F1"
 ---
 
 {{< edit_this_page >}}

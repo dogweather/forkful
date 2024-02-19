@@ -1,13 +1,14 @@
 ---
-title:                "Bruke et interaktivt skall (REPL)"
 aliases:
 - /no/clojure/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:13:18.298276-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke et interaktivt skall (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:13:18.298276-07:00
+description: "REPL, eller Read-Eval-Print Loop, er et programmeringsmilj\xF8 for dynamisk\
+  \ testing av Clojure-kode stykke for stykke. Kodeutviklere bruker det for\u2026"
+lastmod: 2024-02-18 23:08:53.566023
+model: gpt-4-0125-preview
+summary: "REPL, eller Read-Eval-Print Loop, er et programmeringsmilj\xF8 for dynamisk\
+  \ testing av Clojure-kode stykke for stykke. Kodeutviklere bruker det for\u2026"
+title: Bruke et interaktivt skall (REPL)
 ---
 
 {{< edit_this_page >}}

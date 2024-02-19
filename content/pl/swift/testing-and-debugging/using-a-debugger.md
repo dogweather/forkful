@@ -1,13 +1,16 @@
 ---
-title:                "Korzystanie z debugera"
 aliases:
 - /pl/swift/using-a-debugger/
-date:                  2024-01-26T04:10:50.973196-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z debugera"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/using-a-debugger.md"
+date: 2024-01-26 04:10:50.973196-07:00
+description: "U\u017Cycie debugera oznacza wykorzystanie specjalistycznych narz\u0119\
+  dzi do testowania i inspekcji twojego kodu podczas jego wykonania. To wa\u017Cne,\
+  \ poniewa\u017C pozwala\u2026"
+lastmod: 2024-02-18 23:08:49.957410
+model: gpt-4-0125-preview
+summary: "U\u017Cycie debugera oznacza wykorzystanie specjalistycznych narz\u0119\
+  dzi do testowania i inspekcji twojego kodu podczas jego wykonania. To wa\u017Cne,\
+  \ poniewa\u017C pozwala\u2026"
+title: Korzystanie z debugera
 ---
 
 {{< edit_this_page >}}

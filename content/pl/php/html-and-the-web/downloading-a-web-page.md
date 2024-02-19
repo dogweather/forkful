@@ -1,13 +1,16 @@
 ---
-title:                "Pobieranie strony internetowej"
 aliases:
 - /pl/php/downloading-a-web-page/
-date:                  2024-01-20T17:44:28.395010-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Pobieranie strony internetowej"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/downloading-a-web-page.md"
+date: 2024-01-20 17:44:28.395010-07:00
+description: "(Po co i dlaczego?) Pobieranie strony internetowej to proces \u015B\
+  ci\u0105gania jej zawarto\u015Bci, by przetworzy\u0107 je lokalnie. Programi\u015B\
+  ci robi\u0105 to, aby odczyta\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.693590
+model: gpt-4-1106-preview
+summary: "(Po co i dlaczego?) Pobieranie strony internetowej to proces \u015Bci\u0105\
+  gania jej zawarto\u015Bci, by przetworzy\u0107 je lokalnie. Programi\u015Bci robi\u0105\
+  \ to, aby odczyta\u0107\u2026"
+title: Pobieranie strony internetowej
 ---
 
 {{< edit_this_page >}}

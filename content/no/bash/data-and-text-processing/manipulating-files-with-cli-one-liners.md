@@ -1,13 +1,16 @@
 ---
-title:                "Manipulering av filer med CLI-enkeltkommandoer"
 aliases:
 - /no/bash/manipulating-files-with-cli-one-liners/
-date:                  2024-01-27T16:20:59.504230-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulering av filer med CLI-enkeltkommandoer"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/manipulating-files-with-cli-one-liners.md"
+date: 2024-01-27 16:20:59.504230-07:00
+description: "Manipulering av filer med CLI (kommandolinjegrensesnitt) en-linjers\
+  \ kommandoer involverer bruk av Bash-skript eller kommandoer for \xE5 utf\xF8re\
+  \ handlinger p\xE5\u2026"
+lastmod: 2024-02-18 23:08:54.053135
+model: gpt-4-0125-preview
+summary: "Manipulering av filer med CLI (kommandolinjegrensesnitt) en-linjers kommandoer\
+  \ involverer bruk av Bash-skript eller kommandoer for \xE5 utf\xF8re handlinger\
+  \ p\xE5\u2026"
+title: Manipulering av filer med CLI-enkeltkommandoer
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Att använda en debugger"
 aliases:
 - /sv/ruby/using-a-debugger/
-date:                  2024-01-26T04:09:53.031444-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda en debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/using-a-debugger.md"
+date: 2024-01-26 04:09:53.031444-07:00
+description: "Att anv\xE4nda en debugger i Ruby ger programmerare en superkraft att\
+  \ pausa sin kod, inspektera variabler och stega igenom sin kod rad f\xF6r rad. Folk\
+  \ g\xF6r det\u2026"
+lastmod: 2024-02-18 23:08:52.299601
+model: gpt-4-0125-preview
+summary: "Att anv\xE4nda en debugger i Ruby ger programmerare en superkraft att pausa\
+  \ sin kod, inspektera variabler och stega igenom sin kod rad f\xF6r rad. Folk g\xF6\
+  r det\u2026"
+title: "Att anv\xE4nda en debugger"
 ---
 
 {{< edit_this_page >}}

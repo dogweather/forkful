@@ -1,15 +1,22 @@
 ---
-title:                "Đọc một tệp văn bản"
 aliases:
 - /vi/kotlin/reading-a-text-file/
-date:                  2024-01-28T22:04:53.200525-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Đọc một tệp văn bản"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/kotlin/reading-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:04:53.200525-07:00
+description: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n c\xF3 ngh\u0129a l\xE0\
+  \ k\xE9o d\u1EEF li\u1EC7u t\u1EEB m\u1ED9t t\u1EC7p v\xE0o ch\u01B0\u01A1ng tr\xEC\
+  nh c\u1EE7a b\u1EA1n, th\u01B0\u1EDDng l\xE0 t\u1EEBng d\xF2ng m\u1ED9t. L\u1EAD\
+  p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 x\u1EED l\xFD ho\u1EB7\
+  c ph\xE2n\u2026"
+lastmod: 2024-02-18 23:08:50.670477
+model: gpt-4-0125-preview
+summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n c\xF3 ngh\u0129a l\xE0\
+  \ k\xE9o d\u1EEF li\u1EC7u t\u1EEB m\u1ED9t t\u1EC7p v\xE0o ch\u01B0\u01A1ng tr\xEC\
+  nh c\u1EE7a b\u1EA1n, th\u01B0\u1EDDng l\xE0 t\u1EEBng d\xF2ng m\u1ED9t. L\u1EAD\
+  p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 x\u1EED l\xFD ho\u1EB7\
+  c ph\xE2n\u2026"
+title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 ---
 
 {{< edit_this_page >}}

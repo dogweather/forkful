@@ -1,14 +1,16 @@
 ---
-title:                "Suchen und Ersetzen von Text"
 aliases:
 - /de/google-apps-script/searching-and-replacing-text/
-date:                  2024-02-01T22:01:05.386295-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Suchen und Ersetzen von Text"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/google-apps-script/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:05.386295-07:00
+description: "Das Suchen und Ersetzen von Text in Google Apps Script beinhaltet das\
+  \ programmatische Identifizieren spezifischer Zeichenketten in einem Dokument, einer\u2026"
+lastmod: 2024-02-18 23:09:04.395562
+model: gpt-4-0125-preview
+summary: "Das Suchen und Ersetzen von Text in Google Apps Script beinhaltet das programmatische\
+  \ Identifizieren spezifischer Zeichenketten in einem Dokument, einer\u2026"
+title: Suchen und Ersetzen von Text
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,13 @@
 ---
-title:                "חילוץ תת-מחרוזות"
 aliases:
 - /he/ruby/extracting-substrings/
-date:                  2024-01-20T17:46:43.020249-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "חילוץ תת-מחרוזות"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/ruby/extracting-substrings.md"
+date: 2024-01-20 17:46:43.020249-07:00
+description: null
+lastmod: 2024-02-18 23:08:53.377660
+model: gpt-4-1106-preview
+summary: null
+title: "\u05D7\u05D9\u05DC\u05D5\u05E5 \u05EA\u05EA-\u05DE\u05D7\u05E8\u05D5\u05D6\
+  \u05D5\u05EA"
 ---
 
 {{< edit_this_page >}}

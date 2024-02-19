@@ -1,14 +1,18 @@
 ---
-title:                "Escribiendo en el error estándar"
 aliases:
 - /es/typescript/writing-to-standard-error/
-date:                  2024-02-03T19:34:29.624815-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escribiendo en el error estándar"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:34:29.624815-07:00
+description: "En TypeScript, escribir en el error est\xE1ndar (stderr) es un proceso\
+  \ de enviar mensajes de error o registros directamente al flujo de salida de error\
+  \ del\u2026"
+lastmod: 2024-02-18 23:09:09.720825
+model: gpt-4-0125-preview
+summary: "En TypeScript, escribir en el error est\xE1ndar (stderr) es un proceso de\
+  \ enviar mensajes de error o registros directamente al flujo de salida de error\
+  \ del\u2026"
+title: "Escribiendo en el error est\xE1ndar"
 ---
 
 {{< edit_this_page >}}

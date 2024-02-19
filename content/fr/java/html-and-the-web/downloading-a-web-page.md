@@ -1,13 +1,16 @@
 ---
-title:                "Téléchargement d'une page web"
 aliases:
 - /fr/java/downloading-a-web-page/
-date:                  2024-01-20T17:44:18.791304-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Téléchargement d'une page web"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/downloading-a-web-page.md"
+date: 2024-01-20 17:44:18.791304-07:00
+description: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via\
+  \ HTTP. Les programmeurs font \xE7a pour analyser des donn\xE9es, surveiller des\
+  \ changements ou\u2026"
+lastmod: 2024-02-18 23:09:08.627165
+model: gpt-4-1106-preview
+summary: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via HTTP.\
+  \ Les programmeurs font \xE7a pour analyser des donn\xE9es, surveiller des changements\
+  \ ou\u2026"
+title: "T\xE9l\xE9chargement d'une page web"
 ---
 
 {{< edit_this_page >}}

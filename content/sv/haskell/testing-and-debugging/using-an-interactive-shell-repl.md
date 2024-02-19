@@ -1,13 +1,16 @@
 ---
-title:                "Använda en interaktiv skal (REPL)"
 aliases:
 - /sv/haskell/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:14:55.960533-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Använda en interaktiv skal (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:14:55.960533-07:00
+description: "En interaktiv skal, eller REPL (Read-Eval-Print Loop), i Haskell l\xE5\
+  ter dig k\xF6ra kodsnuttar live. Det \xE4r en lekplats f\xF6r snabb feedback, testning\
+  \ av\u2026"
+lastmod: 2024-02-18 23:08:51.838677
+model: gpt-4-0125-preview
+summary: "En interaktiv skal, eller REPL (Read-Eval-Print Loop), i Haskell l\xE5ter\
+  \ dig k\xF6ra kodsnuttar live. Det \xE4r en lekplats f\xF6r snabb feedback, testning\
+  \ av\u2026"
+title: "Anv\xE4nda en interaktiv skal (REPL)"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Läsa in kommandoradsargument"
 aliases:
 - /sv/typescript/reading-command-line-arguments/
-date:                  2024-01-20T17:57:10.723284-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Läsa in kommandoradsargument"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/reading-command-line-arguments.md"
+date: 2024-01-20 17:57:10.723284-07:00
+description: "Att l\xE4sa in kommandoradsargument \xE4r metoden att f\xE5nga anv\xE4\
+  ndarinput fr\xE5n konsolen i ditt program. Programmerare g\xF6r det f\xF6r att till\xE5\
+  ta anv\xE4ndare att\u2026"
+lastmod: 2024-02-18 23:08:51.558322
+model: gpt-4-1106-preview
+summary: "Att l\xE4sa in kommandoradsargument \xE4r metoden att f\xE5nga anv\xE4ndarinput\
+  \ fr\xE5n konsolen i ditt program. Programmerare g\xF6r det f\xF6r att till\xE5\
+  ta anv\xE4ndare att\u2026"
+title: "L\xE4sa in kommandoradsargument"
 ---
 
 {{< edit_this_page >}}

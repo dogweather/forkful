@@ -1,13 +1,16 @@
 ---
-title:                "Arredondamento de números"
 aliases:
 - /pt/arduino/rounding-numbers/
-date:                  2024-01-26T03:43:00.718458-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arredondamento de números"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/rounding-numbers.md"
+date: 2024-01-26 03:43:00.718458-07:00
+description: "Arredondar n\xFAmeros \xE9 cortar um decimal para o seu valor inteiro\
+  \ mais pr\xF3ximo ou para um n\xFAmero determinado de casas decimais. Os programadores\
+  \ arredondam\u2026"
+lastmod: 2024-02-18 23:08:58.405121
+model: gpt-4-0125-preview
+summary: "Arredondar n\xFAmeros \xE9 cortar um decimal para o seu valor inteiro mais\
+  \ pr\xF3ximo ou para um n\xFAmero determinado de casas decimais. Os programadores\
+  \ arredondam\u2026"
+title: "Arredondamento de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

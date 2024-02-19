@@ -1,13 +1,15 @@
 ---
-title:                "Concatenazione di stringhe"
 aliases:
 - /it/elixir/concatenating-strings/
-date:                  2024-01-27T10:42:41.349557-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Concatenazione di stringhe"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/concatenating-strings.md"
+date: 2024-01-27 10:42:41.349557-07:00
+description: "Concatenare le stringhe significa unire due o pi\xF9 stringhe insieme\
+  \ per formare un unico pezzo di testo. Potresti aver bisogno di unire testo per\
+  \ generare\u2026"
+lastmod: 2024-02-18 23:08:55.593181
+model: gpt-4-0125-preview
+summary: "Concatenare le stringhe significa unire due o pi\xF9 stringhe insieme per\
+  \ formare un unico pezzo di testo. Potresti aver bisogno di unire testo per generare\u2026"
+title: Concatenazione di stringhe
 ---
 
 {{< edit_this_page >}}

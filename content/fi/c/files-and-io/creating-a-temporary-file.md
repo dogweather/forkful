@@ -1,14 +1,18 @@
 ---
-title:                "Tilapäisen tiedoston luominen"
 aliases:
 - /fi/c/creating-a-temporary-file/
-date:                  2024-02-03T17:55:19.548604-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tilapäisen tiedoston luominen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/creating-a-temporary-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:19.548604-07:00
+description: "V\xE4liaikaistiedoston luominen C:ss\xE4 tarkoittaa tiedoston generointia,\
+  \ joka on tarkoitettu lyhytaikaiseen k\xE4ytt\xF6\xF6n, yleens\xE4 datank\xE4sittelyn\
+  \ tai s\xE4ilytyksen\u2026"
+lastmod: 2024-02-18 23:09:08.155278
+model: gpt-4-0125-preview
+summary: "V\xE4liaikaistiedoston luominen C:ss\xE4 tarkoittaa tiedoston generointia,\
+  \ joka on tarkoitettu lyhytaikaiseen k\xE4ytt\xF6\xF6n, yleens\xE4 datank\xE4sittelyn\
+  \ tai s\xE4ilytyksen\u2026"
+title: "Tilap\xE4isen tiedoston luominen"
 ---
 
 {{< edit_this_page >}}

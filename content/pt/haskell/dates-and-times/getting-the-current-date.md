@@ -1,14 +1,17 @@
 ---
-title:                "Obtendo a data atual"
 aliases:
 - /pt/haskell/getting-the-current-date/
-date:                  2024-02-03T19:09:32.341210-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Obtendo a data atual"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:09:32.341210-07:00
+description: "Obter a data atual em Haskell envolve obter o tempo atual do sistema\
+  \ e transform\xE1-lo em um formato de data leg\xEDvel. Os programadores fazem isso\
+  \ para\u2026"
+lastmod: 2024-02-18 23:08:58.209512
+model: gpt-4-0125-preview
+summary: "Obter a data atual em Haskell envolve obter o tempo atual do sistema e transform\xE1\
+  -lo em um formato de data leg\xEDvel. Os programadores fazem isso para\u2026"
+title: Obtendo a data atual
 ---
 
 {{< edit_this_page >}}

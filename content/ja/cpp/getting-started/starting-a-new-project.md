@@ -1,14 +1,23 @@
 ---
-title:                "新しいプロジェクトを始める"
 aliases:
 - /ja/cpp/starting-a-new-project/
-date:                  2024-01-20T18:03:01.483346-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "新しいプロジェクトを始める"
-
-tag:                  "Getting Started"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/starting-a-new-project.md"
+date: 2024-01-20 18:03:01.483346-07:00
+description: "\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u65B0\u3057\u304F\u59CB\u3081\
+  \u308B\u3068\u306F\u3001\u30BC\u30ED\u304B\u3089\u30B3\u30FC\u30C9\u3092\u66F8\u304F\
+  \u3053\u3068\u3067\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u65B0\u3057\
+  \u3044\u30A2\u30A4\u30C7\u30A2\u3092\u8A66\u3057\u305F\u308A\u3001\u65B0\u6280\u8853\
+  \u3092\u5B66\u3093\u3060\u308A\u3001\u554F\u984C\u3092\u89E3\u6C7A\u3059\u308B\u305F\
+  \u3081\u306B\u3053\u308C\u3092\u884C\u3044\u307E\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.191255
+model: gpt-4-1106-preview
+summary: "\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u65B0\u3057\u304F\u59CB\u3081\
+  \u308B\u3068\u306F\u3001\u30BC\u30ED\u304B\u3089\u30B3\u30FC\u30C9\u3092\u66F8\u304F\
+  \u3053\u3068\u3067\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u65B0\u3057\
+  \u3044\u30A2\u30A4\u30C7\u30A2\u3092\u8A66\u3057\u305F\u308A\u3001\u65B0\u6280\u8853\
+  \u3092\u5B66\u3093\u3060\u308A\u3001\u554F\u984C\u3092\u89E3\u6C7A\u3059\u308B\u305F\
+  \u3081\u306B\u3053\u308C\u3092\u884C\u3044\u307E\u3059\u3002"
+title: "\u65B0\u3057\u3044\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u59CB\u3081\u308B"
 ---
 
 {{< edit_this_page >}}

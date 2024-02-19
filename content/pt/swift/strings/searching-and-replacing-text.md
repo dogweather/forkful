@@ -1,13 +1,16 @@
 ---
-title:                "Pesquisando e substituindo texto"
 aliases:
 - /pt/swift/searching-and-replacing-text/
-date:                  2024-01-20T17:58:46.043728-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Pesquisando e substituindo texto"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:46.043728-07:00
+description: "Procurar e substituir texto \xE9 basicamente mudar uma string por outra\
+  \ em um bloco de texto. Programadores fazem isso para atualizar dados, corrigir\
+  \ erros,\u2026"
+lastmod: 2024-02-18 23:08:58.476852
+model: gpt-4-1106-preview
+summary: "Procurar e substituir texto \xE9 basicamente mudar uma string por outra\
+  \ em um bloco de texto. Programadores fazem isso para atualizar dados, corrigir\
+  \ erros,\u2026"
+title: Pesquisando e substituindo texto
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Escribiendo al error estándar"
 aliases:
 - /es/c/writing-to-standard-error/
-date:                  2024-02-03T18:14:56.311221-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escribiendo al error estándar"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:14:56.311221-07:00
+description: "Escribir en el error est\xE1ndar en C implica dirigir los mensajes de\
+  \ error y la informaci\xF3n de diagn\xF3stico a un flujo separado del resultado\
+  \ principal del\u2026"
+lastmod: 2024-02-18 23:09:10.521105
+model: gpt-4-0125-preview
+summary: "Escribir en el error est\xE1ndar en C implica dirigir los mensajes de error\
+  \ y la informaci\xF3n de diagn\xF3stico a un flujo separado del resultado principal\
+  \ del\u2026"
+title: "Escribiendo al error est\xE1ndar"
 ---
 
 {{< edit_this_page >}}

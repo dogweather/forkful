@@ -1,13 +1,16 @@
 ---
-title:                "Convertendo uma data em uma string"
 aliases:
 - /pt/fish-shell/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:24.416687-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Convertendo uma data em uma string"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:24.416687-07:00
+description: "Converter uma data em uma string \xE9 transformar a representa\xE7\xE3\
+  o de tempo (normalmente n\xFAmeros) em texto leg\xEDvel. Fazemos isso para facilitar\
+  \ a leitura,\u2026"
+lastmod: 2024-02-18 23:08:58.587084
+model: gpt-4-1106-preview
+summary: "Converter uma data em uma string \xE9 transformar a representa\xE7\xE3o\
+  \ de tempo (normalmente n\xFAmeros) em texto leg\xEDvel. Fazemos isso para facilitar\
+  \ a leitura,\u2026"
+title: Convertendo uma data em uma string
 ---
 
 {{< edit_this_page >}}

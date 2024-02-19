@@ -1,12 +1,15 @@
 ---
-title:                "Lavorare con YAML"
 aliases:
 - /it/cpp/working-with-yaml/
-date:                  2024-01-19
-simple_title:         "Lavorare con YAML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/working-with-yaml.md"
+date: 2024-01-19
+description: "Lavorare con YAML significa manipolare un linguaggio di serializzazione\
+  \ dati che punta sulla leggibilit\xE0 umana. I programmatori lo usano perch\xE9\
+  \ \xE8 comodo\u2026"
+lastmod: 2024-02-18 23:08:56.191880
+summary: "Lavorare con YAML significa manipolare un linguaggio di serializzazione\
+  \ dati che punta sulla leggibilit\xE0 umana. I programmatori lo usano perch\xE9\
+  \ \xE8 comodo\u2026"
+title: Lavorare con YAML
 ---
 
 {{< edit_this_page >}}

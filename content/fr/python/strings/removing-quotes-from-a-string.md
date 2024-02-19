@@ -1,13 +1,16 @@
 ---
-title:                "Retirer les guillemets d'une chaîne"
 aliases:
 - /fr/python/removing-quotes-from-a-string/
-date:                  2024-01-26T03:41:09.482167-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Retirer les guillemets d'une chaîne"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:41:09.482167-07:00
+description: "Supprimer les guillemets d'une cha\xEEne signifie g\xE9n\xE9ralement\
+  \ se d\xE9barrasser des guillemets doubles (\") ou simples (') superflus. Les programmeurs\
+  \ font cela\u2026"
+lastmod: 2024-02-18 23:09:08.326714
+model: gpt-4-0125-preview
+summary: "Supprimer les guillemets d'une cha\xEEne signifie g\xE9n\xE9ralement se\
+  \ d\xE9barrasser des guillemets doubles (\") ou simples (') superflus. Les programmeurs\
+  \ font cela\u2026"
+title: "Retirer les guillemets d'une cha\xEEne"
 ---
 
 {{< edit_this_page >}}

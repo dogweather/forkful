@@ -1,13 +1,16 @@
 ---
-title:                "Interpolacja łańcuchów znaków"
 aliases:
 - /pl/haskell/interpolating-a-string/
-date:                  2024-01-20T17:50:52.523618-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolacja łańcuchów znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/interpolating-a-string.md"
+date: 2024-01-20 17:50:52.523618-07:00
+description: "Interpolacja ci\u0105gu znak\xF3w polega na wstawianiu warto\u015Bci\
+  \ zmiennych bezpo\u015Brednio w stringu. Programi\u015Bci robi\u0105 to, aby generowa\u0107\
+  \ dynamiczne teksty z danych,\u2026"
+lastmod: 2024-02-18 23:08:49.640026
+model: gpt-4-1106-preview
+summary: "Interpolacja ci\u0105gu znak\xF3w polega na wstawianiu warto\u015Bci zmiennych\
+  \ bezpo\u015Brednio w stringu. Programi\u015Bci robi\u0105 to, aby generowa\u0107\
+  \ dynamiczne teksty z danych,\u2026"
+title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 ---
 
 {{< edit_this_page >}}

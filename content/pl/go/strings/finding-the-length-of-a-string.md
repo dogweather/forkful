@@ -1,14 +1,18 @@
 ---
-title:                "Znajdowanie długości łańcucha"
 aliases:
 - /pl/go/finding-the-length-of-a-string/
-date:                  2024-02-03T17:57:04.445716-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Znajdowanie długości łańcucha"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:04.445716-07:00
+description: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w w Go polega na okre\u015B\
+  leniu liczby znak\xF3w, kt\xF3re zawiera. Programi\u015Bci regularnie wykonuj\u0105\
+  \ t\u0119 operacj\u0119, aby efektywnie\u2026"
+lastmod: 2024-02-18 23:08:49.086856
+model: gpt-4-0125-preview
+summary: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w w Go polega na okre\u015B\
+  leniu liczby znak\xF3w, kt\xF3re zawiera. Programi\u015Bci regularnie wykonuj\u0105\
+  \ t\u0119 operacj\u0119, aby efektywnie\u2026"
+title: "Znajdowanie d\u0142ugo\u015Bci \u0142a\u0144cucha"
 ---
 
 {{< edit_this_page >}}

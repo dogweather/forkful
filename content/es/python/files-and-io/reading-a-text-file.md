@@ -1,13 +1,15 @@
 ---
-title:                "Lectura de un archivo de texto"
 aliases:
 - /es/python/reading-a-text-file/
-date:                  2024-01-20T17:55:04.530214-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lectura de un archivo de texto"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/reading-a-text-file.md"
+date: 2024-01-20 17:55:04.530214-07:00
+description: "Leer un archivo de texto en Python es b\xE1sicamente acceder y obtener\
+  \ el contenido de un archivo `.txt` en tu c\xF3digo. Los programadores lo hacen\
+  \ para\u2026"
+lastmod: 2024-02-18 23:09:09.575344
+model: gpt-4-1106-preview
+summary: "Leer un archivo de texto en Python es b\xE1sicamente acceder y obtener el\
+  \ contenido de un archivo `.txt` en tu c\xF3digo. Los programadores lo hacen para\u2026"
+title: Lectura de un archivo de texto
 ---
 
 {{< edit_this_page >}}

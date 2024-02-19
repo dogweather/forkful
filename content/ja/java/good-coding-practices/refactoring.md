@@ -1,13 +1,12 @@
 ---
-title:                "リファクタリング"
 aliases:
 - /ja/java/refactoring/
-date:                  2024-01-26T01:40:17.336462-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "リファクタリング"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/refactoring.md"
+date: 2024-01-26 01:40:17.336462-07:00
+description: "\u2026"
+lastmod: 2024-02-18 23:08:54.809467
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u30EA\u30D5\u30A1\u30AF\u30BF\u30EA\u30F3\u30B0"
 ---
 
 {{< edit_this_page >}}

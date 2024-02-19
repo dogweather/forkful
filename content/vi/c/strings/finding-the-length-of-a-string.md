@@ -1,14 +1,20 @@
 ---
-title:                "Tìm kiếm độ dài của một chuỗi"
 aliases:
 - /vi/c/finding-the-length-of-a-string/
-date:                  2024-02-03T17:57:02.729104-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tìm kiếm độ dài của một chuỗi"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:02.729104-07:00
+description: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i trong\
+  \ C bao g\u1ED3m vi\u1EC7c x\xE1c \u0111\u1ECBnh s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1\
+  \ tr\u01B0\u1EDBc k\xFD t\u1EF1 k\u1EBFt th\xFAc chu\u1ED7i NULL `\\0`. C\xE1c l\u1EAD\
+  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3\u2026"
+lastmod: 2024-02-18 23:08:51.223854
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i trong\
+  \ C bao g\u1ED3m vi\u1EC7c x\xE1c \u0111\u1ECBnh s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1\
+  \ tr\u01B0\u1EDBc k\xFD t\u1EF1 k\u1EBFt th\xFAc chu\u1ED7i NULL `\\0`. C\xE1c l\u1EAD\
+  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3\u2026"
+title: "T\xECm ki\u1EBFm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Verificando se um diretório existe"
 aliases:
 - /pt/arduino/checking-if-a-directory-exists/
-date:                  2024-02-03T19:06:40.543879-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verificando se um diretório existe"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:40.543879-07:00
+description: "No contexto da programa\xE7\xE3o Arduino, verificar se um diret\xF3\
+  rio existe em um cart\xE3o SD ou m\xF3dulo de armazenamento similar permite que\
+  \ voc\xEA leia ou escreva\u2026"
+lastmod: 2024-02-18 23:08:58.423352
+model: gpt-4-0125-preview
+summary: "No contexto da programa\xE7\xE3o Arduino, verificar se um diret\xF3rio existe\
+  \ em um cart\xE3o SD ou m\xF3dulo de armazenamento similar permite que voc\xEA leia\
+  \ ou escreva\u2026"
+title: "Verificando se um diret\xF3rio existe"
 ---
 
 {{< edit_this_page >}}

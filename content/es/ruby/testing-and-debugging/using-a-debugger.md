@@ -1,13 +1,16 @@
 ---
-title:                "Usando un depurador"
 aliases:
 - /es/ruby/using-a-debugger/
-date:                  2024-01-26T04:09:30.774007-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando un depurador"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/using-a-debugger.md"
+date: 2024-01-26 04:09:30.774007-07:00
+description: "Utilizar un depurador en Ruby otorga a los programadores un superpoder\
+  \ para pausar su c\xF3digo, inspeccionar variables y avanzar a trav\xE9s de su c\xF3\
+  digo l\xEDnea\u2026"
+lastmod: 2024-02-18 23:09:10.557356
+model: gpt-4-0125-preview
+summary: "Utilizar un depurador en Ruby otorga a los programadores un superpoder para\
+  \ pausar su c\xF3digo, inspeccionar variables y avanzar a trav\xE9s de su c\xF3\
+  digo l\xEDnea\u2026"
+title: Usando un depurador
 ---
 
 {{< edit_this_page >}}

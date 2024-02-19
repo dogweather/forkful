@@ -1,13 +1,15 @@
 ---
-title:                "Lectura de un archivo de texto"
 aliases:
 - /es/kotlin/reading-a-text-file/
-date:                  2024-01-20T17:54:52.766937-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lectura de un archivo de texto"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/reading-a-text-file.md"
+date: 2024-01-20 17:54:52.766937-07:00
+description: "Leer un archivo de texto en Kotlin es acceder y manipular el contenido\
+  \ de un archivo almacenado en el disco. Los programadores lo hacen para trabajar\
+  \ con\u2026"
+lastmod: 2024-02-18 23:09:09.955058
+model: gpt-4-1106-preview
+summary: "Leer un archivo de texto en Kotlin es acceder y manipular el contenido de\
+  \ un archivo almacenado en el disco. Los programadores lo hacen para trabajar con\u2026"
+title: Lectura de un archivo de texto
 ---
 
 {{< edit_this_page >}}

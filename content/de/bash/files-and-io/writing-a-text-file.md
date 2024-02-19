@@ -1,14 +1,16 @@
 ---
-title:                "Eine Textdatei schreiben"
 aliases:
 - /de/bash/writing-a-text-file/
-date:                  2024-02-03T19:27:05.788788-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eine Textdatei schreiben"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:05.788788-07:00
+description: "Das Schreiben einer Textdatei in Bash erlaubt es, die Datenspeicherung,\
+  \ das Logging, Konfigurationseinstellungen und mehr zu automatisieren. Es ist eine\u2026"
+lastmod: 2024-02-18 23:09:05.073841
+model: gpt-4-0125-preview
+summary: "Das Schreiben einer Textdatei in Bash erlaubt es, die Datenspeicherung,\
+  \ das Logging, Konfigurationseinstellungen und mehr zu automatisieren. Es ist eine\u2026"
+title: Eine Textdatei schreiben
 ---
 
 {{< edit_this_page >}}

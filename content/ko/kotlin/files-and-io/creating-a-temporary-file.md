@@ -1,14 +1,25 @@
 ---
-title:                "임시 파일 생성하기"
 aliases:
 - /ko/kotlin/creating-a-temporary-file/
-date:                  2024-01-20T17:41:00.702946-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "임시 파일 생성하기"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:00.702946-07:00
+description: "\uC784\uC2DC \uD30C\uC77C\uC744 \uB9CC\uB4DC\uB294 \uAC83\uC740 \uB370\
+  \uC774\uD130\uB97C \uC77C\uC2DC\uC801\uC73C\uB85C \uC800\uC7A5\uD558\uAE30 \uC704\
+  \uD55C \uD30C\uC77C\uC744 \uC0DD\uC131\uD558\uB294 \uACFC\uC815\uC785\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB370\uC774\uD130\uB97C \uC784\uC2DC\
+  \uB85C \uCC98\uB9AC\uD558\uAC70\uB098, \uD070 \uD30C\uC77C\uB4E4\uC744 \uBD84\uD560\
+  \uD574\uC11C \uC791\uC5C5\uD560 \uB54C \uC784\uC2DC \uD30C\uC77C\uC744 \uC0AC\uC6A9\
+  \uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.182547
+model: gpt-4-1106-preview
+summary: "\uC784\uC2DC \uD30C\uC77C\uC744 \uB9CC\uB4DC\uB294 \uAC83\uC740 \uB370\uC774\
+  \uD130\uB97C \uC77C\uC2DC\uC801\uC73C\uB85C \uC800\uC7A5\uD558\uAE30 \uC704\uD55C\
+  \ \uD30C\uC77C\uC744 \uC0DD\uC131\uD558\uB294 \uACFC\uC815\uC785\uB2C8\uB2E4. \uD504\
+  \uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB370\uC774\uD130\uB97C \uC784\uC2DC\uB85C\
+  \ \uCC98\uB9AC\uD558\uAC70\uB098, \uD070 \uD30C\uC77C\uB4E4\uC744 \uBD84\uD560\uD574\
+  \uC11C \uC791\uC5C5\uD560 \uB54C \uC784\uC2DC \uD30C\uC77C\uC744 \uC0AC\uC6A9\uD569\
+  \uB2C8\uB2E4."
+title: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,17 @@
 ---
-title:                "Werken met complexe getallen"
 aliases:
 - /nl/python/working-with-complex-numbers/
-date:                  2024-01-28T22:12:35.460269-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met complexe getallen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/python/working-with-complex-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:35.460269-07:00
+description: "Complexe getallen zijn een set van getallen in de vorm `a + bi`, waar\
+  \ `a` en `b` re\xEBle getallen zijn, en `i` de imaginaire eenheid is (`i^2 = -1`).\
+  \ In\u2026"
+lastmod: 2024-02-18 23:09:01.426709
+model: gpt-4-0125-preview
+summary: "Complexe getallen zijn een set van getallen in de vorm `a + bi`, waar `a`\
+  \ en `b` re\xEBle getallen zijn, en `i` de imaginaire eenheid is (`i^2 = -1`). In\u2026"
+title: Werken met complexe getallen
 ---
 
 {{< edit_this_page >}}

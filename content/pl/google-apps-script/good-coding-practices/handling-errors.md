@@ -1,14 +1,18 @@
 ---
-title:                "Obsługa błędów"
 aliases:
 - /pl/google-apps-script/handling-errors/
-date:                  2024-02-01T21:55:03.249739-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Obsługa błędów"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/handling-errors.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:03.249739-07:00
+description: "Obs\u0142uga b\u0142\u0119d\xF3w w Google Apps Script dotyczy przewidywania,\
+  \ przechwytywania i reagowania na wyj\u0105tki lub b\u0142\u0119dy, kt\xF3re wyst\u0119\
+  puj\u0105 podczas wykonywania skryptu.\u2026"
+lastmod: 2024-02-18 23:08:49.156316
+model: gpt-4-0125-preview
+summary: "Obs\u0142uga b\u0142\u0119d\xF3w w Google Apps Script dotyczy przewidywania,\
+  \ przechwytywania i reagowania na wyj\u0105tki lub b\u0142\u0119dy, kt\xF3re wyst\u0119\
+  puj\u0105 podczas wykonywania skryptu.\u2026"
+title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 ---
 
 {{< edit_this_page >}}

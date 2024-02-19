@@ -1,14 +1,16 @@
 ---
-title:                "Quotes uit een string verwijderen"
 aliases:
 - /nl/c/removing-quotes-from-a-string/
-date:                  2024-02-03T18:07:26.868427-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Quotes uit een string verwijderen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:26.868427-07:00
+description: "Het verwijderen van aanhalingstekens uit een string in C omvat het extraheren\
+  \ van de tekstuele inhoud zonder de omsluitende enkele (' ') of dubbele (\" \")\u2026"
+lastmod: 2024-02-18 23:09:02.359129
+model: gpt-4-0125-preview
+summary: "Het verwijderen van aanhalingstekens uit een string in C omvat het extraheren\
+  \ van de tekstuele inhoud zonder de omsluitende enkele (' ') of dubbele (\" \")\u2026"
+title: Quotes uit een string verwijderen
 ---
 
 {{< edit_this_page >}}

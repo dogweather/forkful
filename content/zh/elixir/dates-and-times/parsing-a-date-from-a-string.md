@@ -1,16 +1,27 @@
 ---
-title:                "从字符串解析日期"
 aliases:
 - /zh/elixir/parsing-a-date-from-a-string/
-date:                  2024-01-28T02:05:00.426314-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "从字符串解析日期"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 02:05:00.426314-07:00
+description: "\u4ECE\u5B57\u7B26\u4E32\u4E2D\u89E3\u6790\u65E5\u671F\uFF0C\u662F\u6307\
+  \u5C06\u6587\u672C\uFF08\u5982\u201C2023-04-05\u201D\uFF09\u8F6C\u6362\u6210\u7A0B\
+  \u5E8F\u80FD\u7406\u89E3\u548C\u64CD\u4F5C\u7684\u65E5\u671F\u683C\u5F0F\u3002\u7A0B\
+  \u5E8F\u5458\u4E4B\u6240\u4EE5\u8FD9\u4E48\u505A\uFF0C\u662F\u56E0\u4E3A\u65E5\u671F\
+  \u683C\u5F0F\u591A\u79CD\u591A\u6837\uFF0C\u4ED6\u4EEC\u9700\u8981\u4E00\u81F4\u6027\
+  \u6765\u6BD4\u8F83\u3001\u6392\u5E8F\u6216\u6B63\u786E\u5B58\u50A8\u8FD9\u4E9B\u65E5\
+  \u671F\u3002"
+lastmod: 2024-02-18 23:08:58.874046
+model: gpt-4-0125-preview
+summary: "\u4ECE\u5B57\u7B26\u4E32\u4E2D\u89E3\u6790\u65E5\u671F\uFF0C\u662F\u6307\
+  \u5C06\u6587\u672C\uFF08\u5982\u201C2023-04-05\u201D\uFF09\u8F6C\u6362\u6210\u7A0B\
+  \u5E8F\u80FD\u7406\u89E3\u548C\u64CD\u4F5C\u7684\u65E5\u671F\u683C\u5F0F\u3002\u7A0B\
+  \u5E8F\u5458\u4E4B\u6240\u4EE5\u8FD9\u4E48\u505A\uFF0C\u662F\u56E0\u4E3A\u65E5\u671F\
+  \u683C\u5F0F\u591A\u79CD\u591A\u6837\uFF0C\u4ED6\u4EEC\u9700\u8981\u4E00\u81F4\u6027\
+  \u6765\u6BD4\u8F83\u3001\u6392\u5E8F\u6216\u6B63\u786E\u5B58\u50A8\u8FD9\u4E9B\u65E5\
+  \u671F\u3002"
+title: "\u4ECE\u5B57\u7B26\u4E32\u89E3\u6790\u65E5\u671F"
 ---
 
 {{< edit_this_page >}}

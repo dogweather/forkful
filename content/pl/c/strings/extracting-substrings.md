@@ -1,14 +1,18 @@
 ---
-title:                "Wydobywanie podciągów"
 aliases:
 - /pl/c/extracting-substrings/
-date:                  2024-02-03T17:56:36.015924-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Wydobywanie podciągów"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/extracting-substrings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:36.015924-07:00
+description: "Wyodr\u0119bnianie podci\u0105g\xF3w w C polega na tworzeniu mniejszego\
+  \ \u0142a\u0144cucha znak\xF3w (podci\u0105gu) z wi\u0119kszego \u0142a\u0144cucha\
+  \ na podstawie okre\u015Blonych kryteri\xF3w, takich jak\u2026"
+lastmod: 2024-02-18 23:08:50.068046
+model: gpt-4-0125-preview
+summary: "Wyodr\u0119bnianie podci\u0105g\xF3w w C polega na tworzeniu mniejszego\
+  \ \u0142a\u0144cucha znak\xF3w (podci\u0105gu) z wi\u0119kszego \u0142a\u0144cucha\
+  \ na podstawie okre\u015Blonych kryteri\xF3w, takich jak\u2026"
+title: "Wydobywanie podci\u0105g\xF3w"
 ---
 
 {{< edit_this_page >}}

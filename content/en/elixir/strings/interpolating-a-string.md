@@ -1,13 +1,14 @@
 ---
-title:                "Interpolating a string"
 aliases:
 - /en/elixir/interpolating-a-string/
-date:                  2024-01-20T17:50:37.743188-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolating a string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/interpolating-a-string.md"
+date: 2024-01-20 17:50:37.743188-07:00
+description: "String interpolation lets you insert variables or computations into\
+  \ a string. It's handy for building strings dynamically without the mess of\u2026"
+lastmod: 2024-02-18 23:09:10.751798
+model: gpt-4-1106-preview
+summary: "String interpolation lets you insert variables or computations into a string.\
+  \ It's handy for building strings dynamically without the mess of\u2026"
+title: Interpolating a string
 ---
 
 {{< edit_this_page >}}

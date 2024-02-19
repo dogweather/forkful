@@ -1,13 +1,16 @@
 ---
-title:                "Zaokrąglanie liczb"
 aliases:
 - /pl/kotlin/rounding-numbers/
-date:                  2024-01-26T03:45:43.964278-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zaokrąglanie liczb"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/rounding-numbers.md"
+date: 2024-01-26 03:45:43.964278-07:00
+description: "Zaokr\u0105glanie liczb oznacza dostosowywanie ich do najbli\u017Cszej\
+  \ liczby ca\u0142kowitej lub do okre\u015Blonego stopnia precyzji. Programi\u015B\
+  ci robi\u0105 to, aby poprawi\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.554770
+model: gpt-4-0125-preview
+summary: "Zaokr\u0105glanie liczb oznacza dostosowywanie ich do najbli\u017Cszej liczby\
+  \ ca\u0142kowitej lub do okre\u015Blonego stopnia precyzji. Programi\u015Bci robi\u0105\
+  \ to, aby poprawi\u0107\u2026"
+title: "Zaokr\u0105glanie liczb"
 ---
 
 {{< edit_this_page >}}

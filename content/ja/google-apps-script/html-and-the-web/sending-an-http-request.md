@@ -1,14 +1,30 @@
 ---
-title:                "HTTPリクエストの送信"
 aliases:
 - /ja/google-apps-script/sending-an-http-request/
-date:                  2024-02-01T22:01:48.746182-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTTPリクエストの送信"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/google-apps-script/sending-an-http-request.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:48.746182-07:00
+description: "Google Apps Script\u3067HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u3092\u9001\
+  \u4FE1\u3059\u308B\u3053\u3068\u306F\u3001\u5916\u90E8\u306EWeb\u30B5\u30FC\u30D0\
+  \u30FC\u3084API\u306B\u30D7\u30ED\u30B0\u30E9\u30E0\u3067\u901A\u4FE1\u3092\u884C\
+  \u3046\u3053\u3068\u3092\u610F\u5473\u3057\u307E\u3059\u3002\u30D7\u30ED\u30B0\u30E9\
+  \u30DE\u30FC\u306F\u3053\u308C\u3092\u884C\u3046\u3053\u3068\u3067\u3001\u30C7\u30FC\
+  \u30BF\u3092\u53D6\u5F97\u3057\u305F\u308A\u9001\u4FE1\u3057\u305F\u308A\u3057\u3001\
+  \u5E83\u5927\u306AWeb\u30EA\u30BD\u30FC\u30B9\u3084\u6A5F\u80FD\u3092\u76F4\u63A5\
+  Google Apps Script\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u306B\u7D71\u5408\u3057\u307E\
+  \u3059\u3002"
+lastmod: 2024-02-18 23:08:54.519394
+model: gpt-4-0125-preview
+summary: "Google Apps Script\u3067HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u3092\u9001\u4FE1\
+  \u3059\u308B\u3053\u3068\u306F\u3001\u5916\u90E8\u306EWeb\u30B5\u30FC\u30D0\u30FC\
+  \u3084API\u306B\u30D7\u30ED\u30B0\u30E9\u30E0\u3067\u901A\u4FE1\u3092\u884C\u3046\
+  \u3053\u3068\u3092\u610F\u5473\u3057\u307E\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\
+  \u30FC\u306F\u3053\u308C\u3092\u884C\u3046\u3053\u3068\u3067\u3001\u30C7\u30FC\u30BF\
+  \u3092\u53D6\u5F97\u3057\u305F\u308A\u9001\u4FE1\u3057\u305F\u308A\u3057\u3001\u5E83\
+  \u5927\u306AWeb\u30EA\u30BD\u30FC\u30B9\u3084\u6A5F\u80FD\u3092\u76F4\u63A5Google\
+  \ Apps Script\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u306B\u7D71\u5408\u3057\u307E\u3059\
+  \u3002"
+title: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u306E\u9001\u4FE1"
 ---
 
 {{< edit_this_page >}}

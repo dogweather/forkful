@@ -1,15 +1,17 @@
 ---
-title:                "Karakters verwijderen die overeenkomen met een patroon"
 aliases:
 - /nl/rust/deleting-characters-matching-a-pattern/
-date:                  2024-01-28T21:59:02.878533-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Karakters verwijderen die overeenkomen met een patroon"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:02.878533-07:00
+description: "Karakters die een patroon matchen verwijderen in een string betekent\
+  \ het vinden en weghalen van specifieke reeksen tekens. Programmeurs doen dit om\
+  \ tekst\u2026"
+lastmod: 2024-02-18 23:09:01.601796
+model: gpt-4-0125-preview
+summary: "Karakters die een patroon matchen verwijderen in een string betekent het\
+  \ vinden en weghalen van specifieke reeksen tekens. Programmeurs doen dit om tekst\u2026"
+title: Karakters verwijderen die overeenkomen met een patroon
 ---
 
 {{< edit_this_page >}}

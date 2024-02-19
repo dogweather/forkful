@@ -1,14 +1,28 @@
 ---
-title:                "표준 에러에 쓰기"
 aliases:
 - /ko/powershell/writing-to-standard-error/
-date:                  2024-02-03T19:34:15.163773-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "표준 에러에 쓰기"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:34:15.163773-07:00
+description: "PowerShell\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(stderr)\uC5D0 \uC4F0\
+  \uAE30\uB294 \uC624\uB958 \uBA54\uC2DC\uC9C0\uB098 \uC9C4\uB2E8\uC744 \uD45C\uC900\
+  \ \uCD9C\uB825(stdout) \uC2A4\uD2B8\uB9BC\uACFC \uAD6C\uBCC4\uB418\uB294 stderr\
+  \ \uC2A4\uD2B8\uB9BC\uC5D0 \uC9C1\uC811 \uBCF4\uB0B4\uB294 \uAC83\uC744 \uD3EC\uD568\
+  \uD569\uB2C8\uB2E4. \uC774 \uBD84\uB9AC\uB294 \uC2A4\uD06C\uB9BD\uD2B8\uC758 \uCD9C\
+  \uB825\uC744 \uB354 \uC815\uD655\uD558\uAC8C \uC81C\uC5B4\uD560 \uC218 \uC788\uAC8C\
+  \ \uD574\uC8FC\uC5B4 \uAC1C\uBC1C\uC790\uAC00 \uC815\uC0C1 \uBA54\uC2DC\uC9C0\uC640\
+  \ \uC624\uB958 \uBA54\uC2DC\uC9C0\uB97C\u2026"
+lastmod: 2024-02-18 23:09:06.580103
+model: gpt-4-0125-preview
+summary: "PowerShell\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(stderr)\uC5D0 \uC4F0\uAE30\
+  \uB294 \uC624\uB958 \uBA54\uC2DC\uC9C0\uB098 \uC9C4\uB2E8\uC744 \uD45C\uC900 \uCD9C\
+  \uB825(stdout) \uC2A4\uD2B8\uB9BC\uACFC \uAD6C\uBCC4\uB418\uB294 stderr \uC2A4\uD2B8\
+  \uB9BC\uC5D0 \uC9C1\uC811 \uBCF4\uB0B4\uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\
+  \uB2E4. \uC774 \uBD84\uB9AC\uB294 \uC2A4\uD06C\uB9BD\uD2B8\uC758 \uCD9C\uB825\uC744\
+  \ \uB354 \uC815\uD655\uD558\uAC8C \uC81C\uC5B4\uD560 \uC218 \uC788\uAC8C \uD574\uC8FC\
+  \uC5B4 \uAC1C\uBC1C\uC790\uAC00 \uC815\uC0C1 \uBA54\uC2DC\uC9C0\uC640 \uC624\uB958\
+  \ \uBA54\uC2DC\uC9C0\uB97C\u2026"
+title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,21 @@
 ---
-title:                "Lấy ngày hiện tại"
 aliases:
 - /vi/c-sharp/getting-the-current-date/
-date:                  2024-01-28T22:01:30.803332-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lấy ngày hiện tại"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/getting-the-current-date.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:30.803332-07:00
+description: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong C# bao g\u1ED3m vi\u1EC7c\
+  \ n\u1EAFm b\u1EAFt th\u1EDDi \u0111i\u1EC3m hi\u1EC7n t\u1EA1i t\u1EEB \u0111\u1ED3\
+  ng h\u1ED3 h\u1EC7 th\u1ED1ng c\u1EE7a b\u1EA1n. \u0110i\u1EC1u n\xE0y r\u1EA5t\
+  \ h\u1EEFu \xEDch cho vi\u1EC7c \u0111\xE1nh d\u1EA5u th\u1EDDi gian, nh\u1EADt\
+  \ k\xFD,\u2026"
+lastmod: 2024-02-18 23:08:50.709925
+model: gpt-4-0125-preview
+summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong C# bao g\u1ED3m vi\u1EC7c n\u1EAF\
+  m b\u1EAFt th\u1EDDi \u0111i\u1EC3m hi\u1EC7n t\u1EA1i t\u1EEB \u0111\u1ED3ng h\u1ED3\
+  \ h\u1EC7 th\u1ED1ng c\u1EE7a b\u1EA1n. \u0110i\u1EC1u n\xE0y r\u1EA5t h\u1EEFu\
+  \ \xEDch cho vi\u1EC7c \u0111\xE1nh d\u1EA5u th\u1EDDi gian, nh\u1EADt k\xFD,\u2026"
+title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 ---
 
 {{< edit_this_page >}}

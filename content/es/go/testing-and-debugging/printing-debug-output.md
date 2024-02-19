@@ -1,14 +1,18 @@
 ---
-title:                "Imprimiendo salida de depuración"
 aliases:
 - /es/go/printing-debug-output/
-date:                  2024-02-03T18:05:13.473899-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Imprimiendo salida de depuración"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/printing-debug-output.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:13.473899-07:00
+description: "En programaci\xF3n inform\xE1tica, \"Imprimir salida de depuraci\xF3\
+  n\" implica producir mensajes informativos detallados que ayudan a los desarrolladores\
+  \ a\u2026"
+lastmod: 2024-02-18 23:09:09.458551
+model: gpt-4-0125-preview
+summary: "En programaci\xF3n inform\xE1tica, \"Imprimir salida de depuraci\xF3n\"\
+  \ implica producir mensajes informativos detallados que ayudan a los desarrolladores\
+  \ a\u2026"
+title: "Imprimiendo salida de depuraci\xF3n"
 ---
 
 {{< edit_this_page >}}

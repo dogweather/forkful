@@ -1,14 +1,28 @@
 ---
-title:                "현재 날짜 가져오기"
 aliases:
 - /ko/java/getting-the-current-date/
-date:                  2024-02-03T19:09:48.853364-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "현재 날짜 가져오기"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:09:48.853364-07:00
+description: "Java\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uC5BB\uB294 \uAC83\
+  \uC740 \uD504\uB85C\uADF8\uB798\uBA38\uAC00 \uB85C\uAE45, \uB0A0\uC9DC \uACC4\uC0B0\
+  , \uC2DC\uAC04 \uAE30\uBC18 \uC870\uAC74 \uB4F1\uC758 \uC791\uC5C5\uC5D0 \uB0A0\uC9DC\
+  \ \uAC1D\uCCB4\uB97C \uC870\uC791\uD560 \uC218 \uC788\uAC8C \uD574\uC8FC\uB294 \uAE30\
+  \uBCF8\uC801\uC778 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uCD94\uC801, \uC2A4\uCF00\uC904\
+  \uB9C1 \uBC0F \uC2DC\uAC04 \uB370\uC774\uD130 \uBD84\uC11D\uC774 \uC911\uC694\uD55C\
+  \ \uC751\uC6A9 \uD504\uB85C\uADF8\uB7A8\uC5D0\uC11C \uD544\uC218\uC801\uC785\uB2C8\
+  \uB2E4."
+lastmod: 2024-02-18 23:09:06.037238
+model: gpt-4-0125-preview
+summary: "Java\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uC5BB\uB294 \uAC83\uC740\
+  \ \uD504\uB85C\uADF8\uB798\uBA38\uAC00 \uB85C\uAE45, \uB0A0\uC9DC \uACC4\uC0B0,\
+  \ \uC2DC\uAC04 \uAE30\uBC18 \uC870\uAC74 \uB4F1\uC758 \uC791\uC5C5\uC5D0 \uB0A0\uC9DC\
+  \ \uAC1D\uCCB4\uB97C \uC870\uC791\uD560 \uC218 \uC788\uAC8C \uD574\uC8FC\uB294 \uAE30\
+  \uBCF8\uC801\uC778 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uCD94\uC801, \uC2A4\uCF00\uC904\
+  \uB9C1 \uBC0F \uC2DC\uAC04 \uB370\uC774\uD130 \uBD84\uC11D\uC774 \uC911\uC694\uD55C\
+  \ \uC751\uC6A9 \uD504\uB85C\uADF8\uB7A8\uC5D0\uC11C \uD544\uC218\uC801\uC785\uB2C8\
+  \uB2E4."
+title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
 ---
 
 {{< edit_this_page >}}

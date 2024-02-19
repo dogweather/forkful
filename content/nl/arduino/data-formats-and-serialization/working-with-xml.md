@@ -1,15 +1,16 @@
 ---
-title:                "Werken met XML"
 aliases:
 - /nl/arduino/working-with-xml/
-date:                  2024-01-28T22:11:09.192811-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/working-with-xml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:09.192811-07:00
+description: "Werken met XML op Arduino omvat het parsen en manipuleren van XML-gegevens,\
+  \ die meestal afkomstig zijn van web-API's of configuratiebestanden.\u2026"
+lastmod: 2024-02-18 23:09:02.163338
+model: gpt-4-0125-preview
+summary: "Werken met XML op Arduino omvat het parsen en manipuleren van XML-gegevens,\
+  \ die meestal afkomstig zijn van web-API's of configuratiebestanden.\u2026"
+title: Werken met XML
 ---
 
 {{< edit_this_page >}}

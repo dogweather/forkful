@@ -1,13 +1,16 @@
 ---
-title:                "Usuwanie cudzysłowów z ciągu znaków"
 aliases:
 - /pl/bash/removing-quotes-from-a-string/
-date:                  2024-01-26T03:37:51.337569-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usuwanie cudzysłowów z ciągu znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:37:51.337569-07:00
+description: "Usuni\u0119cie cudzys\u0142ow\xF3w z ci\u0105gu polega na usuni\u0119\
+  ciu znak\xF3w cudzys\u0142owu, kt\xF3re otaczaj\u0105 ci\u0105g znak\xF3w. Programi\u015B\
+  ci cz\u0119sto chc\u0105 to robi\u0107, aby oczy\u015Bci\u0107 dane\u2026"
+lastmod: 2024-02-18 23:08:49.770137
+model: gpt-4-0125-preview
+summary: "Usuni\u0119cie cudzys\u0142ow\xF3w z ci\u0105gu polega na usuni\u0119ciu\
+  \ znak\xF3w cudzys\u0142owu, kt\xF3re otaczaj\u0105 ci\u0105g znak\xF3w. Programi\u015B\
+  ci cz\u0119sto chc\u0105 to robi\u0107, aby oczy\u015Bci\u0107 dane\u2026"
+title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

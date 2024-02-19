@@ -1,15 +1,18 @@
 ---
-title:                "Tests Schrijven"
 aliases:
 - /nl/lua/writing-tests/
-date:                  2024-01-28T22:13:20.414469-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tests Schrijven"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/writing-tests.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:13:20.414469-07:00
+description: "Het schrijven van tests betekent het cre\xEBren van code die automatisch\
+  \ jouw andere code op fouten controleert. Programmeurs doen dit om bugs vroegtijdig\
+  \ te\u2026"
+lastmod: 2024-02-18 23:09:01.995241
+model: gpt-4-0125-preview
+summary: "Het schrijven van tests betekent het cre\xEBren van code die automatisch\
+  \ jouw andere code op fouten controleert. Programmeurs doen dit om bugs vroegtijdig\
+  \ te\u2026"
+title: Tests Schrijven
 ---
 
 {{< edit_this_page >}}

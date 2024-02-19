@@ -1,13 +1,16 @@
 ---
-title:                "Comparando duas datas"
 aliases:
 - /pt/javascript/comparing-two-dates/
-date:                  2024-01-20T17:33:16.539600-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Comparando duas datas"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/comparing-two-dates.md"
+date: 2024-01-20 17:33:16.539600-07:00
+description: "Comparar datas \xE9 verificar se s\xE3o iguais, qual \xE9 anterior ou\
+  \ posterior. Programadores fazem isso para agendamentos, valida\xE7\xF5es e cronogramas\
+  \ de eventos."
+lastmod: 2024-02-18 23:08:58.544489
+model: gpt-4-1106-preview
+summary: "Comparar datas \xE9 verificar se s\xE3o iguais, qual \xE9 anterior ou posterior.\
+  \ Programadores fazem isso para agendamentos, valida\xE7\xF5es e cronogramas de\
+  \ eventos."
+title: Comparando duas datas
 ---
 
 {{< edit_this_page >}}

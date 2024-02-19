@@ -1,14 +1,18 @@
 ---
-title:                "Obliczanie daty w przyszłości lub przeszłości"
 aliases:
 - /pl/vba/calculating-a-date-in-the-future-or-past/
-date:                  2024-02-01T21:49:31.039455-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/vba/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:31.039455-07:00
+description: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci polega\
+  \ na okre\u015Bleniu daty, kt\xF3ra jest okre\u015Blon\u0105 liczb\u0119 dni, miesi\u0119\
+  cy lub lat dalej od danej daty.\u2026"
+lastmod: 2024-02-18 23:08:49.448413
+model: gpt-4-0125-preview
+summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci polega\
+  \ na okre\u015Bleniu daty, kt\xF3ra jest okre\u015Blon\u0105 liczb\u0119 dni, miesi\u0119\
+  cy lub lat dalej od danej daty.\u2026"
+title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 ---
 
 {{< edit_this_page >}}

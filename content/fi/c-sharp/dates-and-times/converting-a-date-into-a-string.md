@@ -1,13 +1,16 @@
 ---
-title:                "Päivämäärän muuntaminen merkkijonoksi"
 aliases:
 - /fi/c-sharp/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:17.497638-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:17.497638-07:00
+description: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuttaminen merkkijonoksi tarkoittaa `DateTime`-olioiden\
+  \ esitt\xE4mist\xE4 luettavassa muodossa. Koodaajat tekev\xE4t t\xE4m\xE4n, jotta\
+  \ p\xE4iv\xE4m\xE4\xE4r\xE4tietoja\u2026"
+lastmod: 2024-02-18 23:09:07.633180
+model: gpt-4-1106-preview
+summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuttaminen merkkijonoksi tarkoittaa `DateTime`-olioiden\
+  \ esitt\xE4mist\xE4 luettavassa muodossa. Koodaajat tekev\xE4t t\xE4m\xE4n, jotta\
+  \ p\xE4iv\xE4m\xE4\xE4r\xE4tietoja\u2026"
+title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 ---
 
 {{< edit_this_page >}}

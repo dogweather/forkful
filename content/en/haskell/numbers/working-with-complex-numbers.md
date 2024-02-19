@@ -1,13 +1,14 @@
 ---
-title:                "Working with complex numbers"
 aliases:
 - /en/haskell/working-with-complex-numbers/
-date:                  2024-01-25T02:59:41.358296-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Working with complex numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/working-with-complex-numbers.md"
+date: 2024-01-25 02:59:41.358296-07:00
+description: "Complex numbers, consisting of a real and imaginary part, are essential\
+  \ in various computational fields like engineering, physics, and signal processing.\u2026"
+lastmod: 2024-02-18 23:09:11.090131
+model: gpt-4-1106-preview
+summary: "Complex numbers, consisting of a real and imaginary part, are essential\
+  \ in various computational fields like engineering, physics, and signal processing.\u2026"
+title: Working with complex numbers
 ---
 
 {{< edit_this_page >}}

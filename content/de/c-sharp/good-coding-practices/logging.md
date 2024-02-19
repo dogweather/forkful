@@ -1,13 +1,15 @@
 ---
-title:                "Protokollierung"
 aliases:
 - /de/c-sharp/logging/
-date:                  2024-01-26T01:00:15.006700-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Protokollierung"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/logging.md"
+date: 2024-01-26 01:00:15.006700-07:00
+description: "Logging ist der Vorgang des Aufzeichnens von Anwendungsereignissen und\
+  \ Datenausgaben w\xE4hrend der Laufzeit. Programmierer verwenden Logging, um Fehler\
+  \ zu\u2026"
+lastmod: 2024-02-18 23:09:04.878243
+model: gpt-4-1106-preview
+summary: "Logging ist der Vorgang des Aufzeichnens von Anwendungsereignissen und Datenausgaben\
+  \ w\xE4hrend der Laufzeit. Programmierer verwenden Logging, um Fehler zu\u2026"
+title: Protokollierung
 ---
 
 {{< edit_this_page >}}

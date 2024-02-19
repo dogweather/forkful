@@ -1,14 +1,17 @@
 ---
-title:                "Tekstitiedoston kirjoittaminen"
 aliases:
 - /fi/fish-shell/writing-a-text-file/
-date:                  2024-02-03T19:27:56.092973-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tekstitiedoston kirjoittaminen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:56.092973-07:00
+description: "Tekstitiedostoon kirjoittaminen Fish Shelliss\xE4 mahdollistaa datan\
+  \ pysyv\xE4n tallentamisen, mik\xE4 helpottaa tiedon noutamista tai manipulointia\
+  \ joko samalla\u2026"
+lastmod: 2024-02-18 23:09:08.104303
+model: gpt-4-0125-preview
+summary: "Tekstitiedostoon kirjoittaminen Fish Shelliss\xE4 mahdollistaa datan pysyv\xE4\
+  n tallentamisen, mik\xE4 helpottaa tiedon noutamista tai manipulointia joko samalla\u2026"
+title: Tekstitiedoston kirjoittaminen
 ---
 
 {{< edit_this_page >}}

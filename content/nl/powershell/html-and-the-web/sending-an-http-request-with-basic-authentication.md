@@ -1,15 +1,18 @@
 ---
-title:                "Een HTTP-verzoek verzenden met basisauthenticatie"
 aliases:
 - /nl/powershell/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-28T22:08:16.438387-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een HTTP-verzoek verzenden met basisauthenticatie"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/powershell/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:16.438387-07:00
+description: "Een HTTP-verzoek verzenden met basisauthenticatie is wanneer je programma\
+  \ contact maakt met een webserver en zegt: \"H\xE9, ik ben het,\" met behulp van\
+  \ een\u2026"
+lastmod: 2024-02-18 23:09:02.091453
+model: gpt-4-0125-preview
+summary: "Een HTTP-verzoek verzenden met basisauthenticatie is wanneer je programma\
+  \ contact maakt met een webserver en zegt: \"H\xE9, ik ben het,\" met behulp van\
+  \ een\u2026"
+title: Een HTTP-verzoek verzenden met basisauthenticatie
 ---
 
 {{< edit_this_page >}}

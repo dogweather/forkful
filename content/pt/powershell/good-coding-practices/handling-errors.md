@@ -1,13 +1,16 @@
 ---
-title:                "Tratamento de erros"
 aliases:
 - /pt/powershell/handling-errors/
-date:                  2024-01-26T00:56:40.804817-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tratamento de erros"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/powershell/handling-errors.md"
+date: 2024-01-26 00:56:40.804817-07:00
+description: "Tratar erros no PowerShell significa prever os percal\xE7os e gerenci\xE1\
+  -los de maneira suave. Programadores fazem isso para prevenir falhas e fornecer\
+  \ aos\u2026"
+lastmod: 2024-02-18 23:08:58.376061
+model: gpt-4-1106-preview
+summary: "Tratar erros no PowerShell significa prever os percal\xE7os e gerenci\xE1\
+  -los de maneira suave. Programadores fazem isso para prevenir falhas e fornecer\
+  \ aos\u2026"
+title: Tratamento de erros
 ---
 
 {{< edit_this_page >}}

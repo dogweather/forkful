@@ -1,13 +1,16 @@
 ---
-title:                "Tekstin etsiminen ja korvaaminen"
 aliases:
 - /fi/swift/searching-and-replacing-text/
-date:                  2024-01-20T17:58:54.829623-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tekstin etsiminen ja korvaaminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:54.829623-07:00
+description: "Mik\xE4 ja miksi? Tekstin etsiminen ja korvaaminen tarkoittaa merkkijonojen\
+  \ hakuja ja niiden muuttamista ohjelmassa. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4\
+  t\xE4 p\xE4ivitt\xE4en\u2026"
+lastmod: 2024-02-18 23:09:07.973737
+model: gpt-4-1106-preview
+summary: "Mik\xE4 ja miksi? Tekstin etsiminen ja korvaaminen tarkoittaa merkkijonojen\
+  \ hakuja ja niiden muuttamista ohjelmassa. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4\
+  t\xE4 p\xE4ivitt\xE4en\u2026"
+title: Tekstin etsiminen ja korvaaminen
 ---
 
 {{< edit_this_page >}}

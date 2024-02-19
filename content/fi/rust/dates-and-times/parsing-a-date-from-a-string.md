@@ -1,14 +1,18 @@
 ---
-title:                "Päivämäärän jäsennys merkkijonosta"
 aliases:
 - /fi/rust/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:15:45.256711-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Päivämäärän jäsennys merkkijonosta"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:15:45.256711-07:00
+description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta on yleinen\
+  \ teht\xE4v\xE4, kun k\xE4sitell\xE4\xE4n k\xE4ytt\xE4j\xE4n sy\xF6tett\xE4 tai\
+  \ luetaan tietoja tiedostoista. T\xE4m\xE4 sis\xE4lt\xE4\xE4\u2026"
+lastmod: 2024-02-18 23:09:07.373813
+model: gpt-4-0125-preview
+summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta on yleinen teht\xE4\
+  v\xE4, kun k\xE4sitell\xE4\xE4n k\xE4ytt\xE4j\xE4n sy\xF6tett\xE4 tai luetaan tietoja\
+  \ tiedostoista. T\xE4m\xE4 sis\xE4lt\xE4\xE4\u2026"
+title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 ---
 
 {{< edit_this_page >}}

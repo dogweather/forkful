@@ -1,14 +1,14 @@
 ---
-title:                "JSONを活用する"
 aliases:
 - /ja/php/working-with-json/
-date:                  2024-02-03T19:23:58.755117-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "JSONを活用する"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:58.755117-07:00
+description: "JSON\u3001\u307E\u305F\u306FJavaScript Object\u2026"
+lastmod: 2024-02-18 23:08:55.014551
+model: gpt-4-0125-preview
+summary: "JSON\u3001\u307E\u305F\u306FJavaScript Object\u2026"
+title: "JSON\u3092\u6D3B\u7528\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

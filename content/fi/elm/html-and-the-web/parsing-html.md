@@ -1,14 +1,18 @@
 ---
-title:                "HTML:n jäsennys"
 aliases:
 - /fi/elm/parsing-html/
-date:                  2024-02-03T19:12:08.672307-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML:n jäsennys"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:08.672307-07:00
+description: "HTML:n j\xE4sent\xE4minen Elm-kieless\xE4 tarkoittaa tietojen poimimista\
+  \ HTML-dokumenteista. Ohjelmoijat tekev\xE4t n\xE4in, jotta he voivat k\xE4ytt\xE4\
+  \xE4 web-sis\xE4lt\xF6\xE4 tai\u2026"
+lastmod: 2024-02-18 23:09:07.501239
+model: gpt-4-0125-preview
+summary: "HTML:n j\xE4sent\xE4minen Elm-kieless\xE4 tarkoittaa tietojen poimimista\
+  \ HTML-dokumenteista. Ohjelmoijat tekev\xE4t n\xE4in, jotta he voivat k\xE4ytt\xE4\
+  \xE4 web-sis\xE4lt\xF6\xE4 tai\u2026"
+title: "HTML:n j\xE4sennys"
 ---
 
 {{< edit_this_page >}}

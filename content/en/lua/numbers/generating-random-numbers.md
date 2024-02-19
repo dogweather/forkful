@@ -1,13 +1,14 @@
 ---
-title:                "Generating random numbers"
 aliases:
 - /en/lua/generating-random-numbers/
-date:                  2024-01-27T20:26:07.386846-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generating random numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/generating-random-numbers.md"
+date: 2024-01-27 20:26:07.386846-07:00
+description: "Generating random numbers in programming is about producing unpredictable\
+  \ numerical values that can be used for a variety of purposes such as simulations,\u2026"
+lastmod: 2024-02-18 23:09:11.174439
+model: gpt-4-0125-preview
+summary: "Generating random numbers in programming is about producing unpredictable\
+  \ numerical values that can be used for a variety of purposes such as simulations,\u2026"
+title: Generating random numbers
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng bộ gỡ lỗi"
 aliases:
 - /vi/arduino/using-a-debugger/
-date:                  2024-01-28T22:09:29.661836-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng bộ gỡ lỗi"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:29.661836-07:00
+description: "Debugger l\xE0 m\u1ED9t c\xF4ng c\u1EE5 gi\xFAp b\u1EA1n t\xECm v\xE0\
+  \ s\u1EEDa l\u1ED7i trong m\xE3 c\u1EE7a m\xECnh b\u1EB1ng c\xE1ch cho ph\xE9p b\u1EA1\
+  n d\u1EEBng, kh\xE1m ph\xE1 v\xE0 t\xECm hi\u1EC3u \u0111i\u1EC1u g\xEC \u0111ang\
+  \ th\u1EF1c s\u1EF1 di\u1EC5n ra b\xEAn\u2026"
+lastmod: 2024-02-18 23:08:51.004045
+model: gpt-4-0125-preview
+summary: "Debugger l\xE0 m\u1ED9t c\xF4ng c\u1EE5 gi\xFAp b\u1EA1n t\xECm v\xE0 s\u1EED\
+  a l\u1ED7i trong m\xE3 c\u1EE7a m\xECnh b\u1EB1ng c\xE1ch cho ph\xE9p b\u1EA1n d\u1EEB\
+  ng, kh\xE1m ph\xE1 v\xE0 t\xECm hi\u1EC3u \u0111i\u1EC1u g\xEC \u0111ang th\u1EF1\
+  c s\u1EF1 di\u1EC5n ra b\xEAn\u2026"
+title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

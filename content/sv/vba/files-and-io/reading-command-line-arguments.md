@@ -1,14 +1,18 @@
 ---
-title:                "Läsa kommandoradsargument"
 aliases:
 - /sv/vba/reading-command-line-arguments/
-date:                  2024-02-01T21:59:18.111736-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Läsa kommandoradsargument"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:18.111736-07:00
+description: "Att l\xE4sa kommandoradsargument i Visual Basic for Applications (VBA)\
+  \ inneb\xE4r att man tillg\xE5r parametrar som passerats till ditt program vid k\xF6\
+  rning. Denna\u2026"
+lastmod: 2024-02-18 23:08:51.642985
+model: gpt-4-0125-preview
+summary: "Att l\xE4sa kommandoradsargument i Visual Basic for Applications (VBA) inneb\xE4\
+  r att man tillg\xE5r parametrar som passerats till ditt program vid k\xF6rning.\
+  \ Denna\u2026"
+title: "L\xE4sa kommandoradsargument"
 ---
 
 {{< edit_this_page >}}

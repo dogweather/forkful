@@ -1,14 +1,18 @@
 ---
-title:                "Testien kirjoittaminen"
 aliases:
 - /fi/vba/writing-tests/
-date:                  2024-02-01T22:08:51.491594-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Testien kirjoittaminen"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/writing-tests.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:08:51.491594-07:00
+description: "Ohjelmoinnissa testien kirjoittaminen tarkoittaa tiettyjen menettelyjen\
+  \ luomista koodin toimivuuden ja suorituskyvyn varmistamiseksi, varmistamaan, ett\xE4\
+  \u2026"
+lastmod: 2024-02-18 23:09:07.415033
+model: gpt-4-0125-preview
+summary: "Ohjelmoinnissa testien kirjoittaminen tarkoittaa tiettyjen menettelyjen\
+  \ luomista koodin toimivuuden ja suorituskyvyn varmistamiseksi, varmistamaan, ett\xE4\
+  \u2026"
+title: Testien kirjoittaminen
 ---
 
 {{< edit_this_page >}}

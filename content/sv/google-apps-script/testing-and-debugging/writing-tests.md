@@ -1,14 +1,16 @@
 ---
-title:                "Skriva tester"
 aliases:
 - /sv/google-apps-script/writing-tests/
-date:                  2024-02-01T22:09:31.392926-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriva tester"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/google-apps-script/writing-tests.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:09:31.392926-07:00
+description: "Att skriva tester i Google Apps Script (GAS) handlar om att skapa automatiserade\
+  \ skript f\xF6r att verifiera beteendet hos din kod, och s\xE4kerst\xE4lla att den\u2026"
+lastmod: 2024-02-18 23:08:51.382501
+model: gpt-4-0125-preview
+summary: "Att skriva tester i Google Apps Script (GAS) handlar om att skapa automatiserade\
+  \ skript f\xF6r att verifiera beteendet hos din kod, och s\xE4kerst\xE4lla att den\u2026"
+title: Skriva tester
 ---
 
 {{< edit_this_page >}}

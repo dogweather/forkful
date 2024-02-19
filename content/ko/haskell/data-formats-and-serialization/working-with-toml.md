@@ -1,13 +1,24 @@
 ---
-title:                "프로그래머를 위한 TOML 다루기"
 aliases:
 - /ko/haskell/working-with-toml/
-date:                  2024-01-26T04:23:07.193568-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "프로그래머를 위한 TOML 다루기"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/working-with-toml.md"
+date: 2024-01-26 04:23:07.193568-07:00
+description: "Haskell\uC744 \uC0AC\uC6A9\uD55C TOML \uC791\uC5C5\uC740 TOML(Tom's\
+  \ Obvious, Minimal Language) \uB370\uC774\uD130\uB97C \uD30C\uC2F1\uD558\uACE0 \uC0DD\
+  \uC131\uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC774 \uAC15\uB825\uD55C \uD0C0\uC785 \uBCF4\uC99D\uACFC \uCD5C\
+  \uC18C\uD55C\uC758 \uBB38\uBC95 \uBC88\uAC70\uB85C\uC6C0\uC73C\uB85C \uAD6C\uC131\
+  \ \uD30C\uC77C\uC744 \uC27D\uAC8C \uAD00\uB9AC\uD558\uAC70\uB098 \uB370\uC774\uD130\
+  \ \uAD50\uD658\uC744 \uD560 \uC218 \uC788\uB3C4\uB85D \uD558\uAE30\u2026"
+lastmod: 2024-02-18 23:09:06.323949
+model: gpt-4-0125-preview
+summary: "Haskell\uC744 \uC0AC\uC6A9\uD55C TOML \uC791\uC5C5\uC740 TOML(Tom's Obvious,\
+  \ Minimal Language) \uB370\uC774\uD130\uB97C \uD30C\uC2F1\uD558\uACE0 \uC0DD\uC131\
+  \uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC774 \uAC15\uB825\uD55C \uD0C0\uC785 \uBCF4\uC99D\uACFC \uCD5C\uC18C\
+  \uD55C\uC758 \uBB38\uBC95 \uBC88\uAC70\uB85C\uC6C0\uC73C\uB85C \uAD6C\uC131 \uD30C\
+  \uC77C\uC744 \uC27D\uAC8C \uAD00\uB9AC\uD558\uAC70\uB098 \uB370\uC774\uD130 \uAD50\
+  \uD658\uC744 \uD560 \uC218 \uC788\uB3C4\uB85D \uD558\uAE30\u2026"
+title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE30"
 ---
 
 {{< edit_this_page >}}

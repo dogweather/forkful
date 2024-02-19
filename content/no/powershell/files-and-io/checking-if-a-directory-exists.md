@@ -1,14 +1,18 @@
 ---
-title:                "Sjekker om en mappe eksisterer"
 aliases:
 - /no/powershell/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:10.284376-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sjekker om en mappe eksisterer"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/powershell/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:10.284376-07:00
+description: "I PowerShell er det \xE5 sjekke om en mappe finnes en vanlig oppgave\
+  \ som hjelper skript \xE5 ta beslutninger basert p\xE5 filsystemets struktur\u2014\
+  som \xE5 unng\xE5 feil\u2026"
+lastmod: 2024-02-18 23:08:54.114287
+model: gpt-4-0125-preview
+summary: "I PowerShell er det \xE5 sjekke om en mappe finnes en vanlig oppgave som\
+  \ hjelper skript \xE5 ta beslutninger basert p\xE5 filsystemets struktur\u2014som\
+  \ \xE5 unng\xE5 feil\u2026"
+title: Sjekker om en mappe eksisterer
 ---
 
 {{< edit_this_page >}}

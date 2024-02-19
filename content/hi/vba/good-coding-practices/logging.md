@@ -1,14 +1,28 @@
 ---
-title:                "लॉगिंग"
 aliases:
 - /hi/vba/logging/
-date:                  2024-02-01T21:57:41.545813-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "लॉगिंग"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/vba/logging.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:41.545813-07:00
+description: "Visual Basic for Applications (VBA) \u092E\u0947\u0902 \u0932\u0949\u0917\
+  \u093F\u0902\u0917 \u0915\u093E \u0905\u0930\u094D\u0925 \u0939\u0948 \u0915\u093F\
+  \u0938\u0940 \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E \u0915\u0947\
+  \ \u0930\u0928\u091F\u093E\u0907\u092E \u0935\u094D\u092F\u0935\u0939\u093E\u0930\
+  \ \u0915\u0940 \u091C\u093E\u0928\u0915\u093E\u0930\u0940 \u0915\u094B \u092B\u093E\
+  \u0907\u0932, \u0915\u0902\u0938\u094B\u0932, \u092F\u093E \u0921\u0947\u091F\u093E\
+  \u092C\u0947\u0938 \u092E\u0947\u0902 \u0930\u093F\u0915\u0949\u0930\u094D\u0921\
+  \ \u0915\u0930\u0928\u093E\u0964\u2026"
+lastmod: 2024-02-18 23:09:03.047691
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications (VBA) \u092E\u0947\u0902 \u0932\u0949\u0917\
+  \u093F\u0902\u0917 \u0915\u093E \u0905\u0930\u094D\u0925 \u0939\u0948 \u0915\u093F\
+  \u0938\u0940 \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E \u0915\u0947\
+  \ \u0930\u0928\u091F\u093E\u0907\u092E \u0935\u094D\u092F\u0935\u0939\u093E\u0930\
+  \ \u0915\u0940 \u091C\u093E\u0928\u0915\u093E\u0930\u0940 \u0915\u094B \u092B\u093E\
+  \u0907\u0932, \u0915\u0902\u0938\u094B\u0932, \u092F\u093E \u0921\u0947\u091F\u093E\
+  \u092C\u0947\u0938 \u092E\u0947\u0902 \u0930\u093F\u0915\u0949\u0930\u094D\u0921\
+  \ \u0915\u0930\u0928\u093E\u0964\u2026"
+title: "\u0932\u0949\u0917\u093F\u0902\u0917"
 ---
 
 {{< edit_this_page >}}

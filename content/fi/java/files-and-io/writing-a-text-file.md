@@ -1,14 +1,18 @@
 ---
-title:                "Tekstitiedoston kirjoittaminen"
 aliases:
 - /fi/java/writing-a-text-file/
-date:                  2024-02-03T19:28:25.215622-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tekstitiedoston kirjoittaminen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:28:25.215622-07:00
+description: "Tekstitiedoston kirjoittaminen Javalla liittyy kielen kyvykkyyksien\
+  \ hy\xF6dynt\xE4miseen sis\xE4ll\xF6n luomiseen ja kirjoittamiseen tiedostoj\xE4\
+  rjestelm\xE4n\u2026"
+lastmod: 2024-02-18 23:09:07.477859
+model: gpt-4-0125-preview
+summary: "Tekstitiedoston kirjoittaminen Javalla liittyy kielen kyvykkyyksien hy\xF6\
+  dynt\xE4miseen sis\xE4ll\xF6n luomiseen ja kirjoittamiseen tiedostoj\xE4rjestelm\xE4\
+  n\u2026"
+title: Tekstitiedoston kirjoittaminen
 ---
 
 {{< edit_this_page >}}

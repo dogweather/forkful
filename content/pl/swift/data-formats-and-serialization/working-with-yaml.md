@@ -1,14 +1,16 @@
 ---
-title:                "Praca z YAML"
 aliases:
 - /pl/swift/working-with-yaml/
-date:                  2024-02-03T19:27:03.553010-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:03.553010-07:00
+description: "YAML, co oznacza \"YAML Ain't Markup Language\", jest przyjaznym dla\
+  \ cz\u0142owieka standardem serializacji danych dla wszystkich j\u0119zyk\xF3w programowania.\u2026"
+lastmod: 2024-02-18 23:08:49.972719
+model: gpt-4-0125-preview
+summary: "YAML, co oznacza \"YAML Ain't Markup Language\", jest przyjaznym dla cz\u0142\
+  owieka standardem serializacji danych dla wszystkich j\u0119zyk\xF3w programowania.\u2026"
+title: Praca z YAML
 ---
 
 {{< edit_this_page >}}

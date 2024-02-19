@@ -1,13 +1,14 @@
 ---
-title:                "Eliminazione di caratteri che corrispondono a un pattern"
 aliases:
 - /it/elixir/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:25.353191-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Eliminazione di caratteri che corrispondono a un pattern"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:25.353191-07:00
+description: "Rimuovere i caratteri che corrispondono a un pattern significa selezionare\
+  \ e cancellare specifiche sequenze di caratteri da una stringa. I programmatori\u2026"
+lastmod: 2024-02-18 23:08:55.585967
+model: gpt-4-1106-preview
+summary: "Rimuovere i caratteri che corrispondono a un pattern significa selezionare\
+  \ e cancellare specifiche sequenze di caratteri da una stringa. I programmatori\u2026"
+title: Eliminazione di caratteri che corrispondono a un pattern
 ---
 
 {{< edit_this_page >}}

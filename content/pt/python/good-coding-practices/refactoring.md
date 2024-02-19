@@ -1,13 +1,16 @@
 ---
-title:                "Refatoração"
 aliases:
 - /pt/python/refactoring/
-date:                  2024-01-26T03:37:09.183893-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refatoração"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/refactoring.md"
+date: 2024-01-26 03:37:09.183893-07:00
+description: "Refatora\xE7\xE3o \xE9 o processo de reestruturar c\xF3digo de computador\
+  \ existente\u2014mudando a fatora\xE7\xE3o\u2014sem alterar seu comportamento externo.\
+  \ Programadores fazem\u2026"
+lastmod: 2024-02-18 23:08:57.769295
+model: gpt-4-0125-preview
+summary: "Refatora\xE7\xE3o \xE9 o processo de reestruturar c\xF3digo de computador\
+  \ existente\u2014mudando a fatora\xE7\xE3o\u2014sem alterar seu comportamento externo.\
+  \ Programadores fazem\u2026"
+title: "Refatora\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

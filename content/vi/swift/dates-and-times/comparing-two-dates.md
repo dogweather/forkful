@@ -1,15 +1,20 @@
 ---
-title:                "So sánh hai ngày"
 aliases:
 - /vi/swift/comparing-two-dates/
-date:                  2024-01-28T21:56:53.686331-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "So sánh hai ngày"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/swift/comparing-two-dates.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:53.686331-07:00
+description: "So s\xE1nh hai ng\xE0y gi\u1ED1ng nh\u01B0 h\u1ECFi, \"Con g\xE0 hay\
+  \ qu\u1EA3 tr\u1EE9ng c\xE1i n\xE0o c\xF3 tr\u01B0\u1EDBc?\" nh\u01B0ng v\u1EDB\
+  i ng\xE0y tr\xEAn l\u1ECBch. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u \u0111\
+  \xF3 \u0111\u1EC3 s\u1EAFp x\u1EBFp s\u1EF1 ki\u1EC7n, k\xEDch\u2026"
+lastmod: 2024-02-18 23:08:51.103708
+model: gpt-4-0125-preview
+summary: "So s\xE1nh hai ng\xE0y gi\u1ED1ng nh\u01B0 h\u1ECFi, \"Con g\xE0 hay qu\u1EA3\
+  \ tr\u1EE9ng c\xE1i n\xE0o c\xF3 tr\u01B0\u1EDBc?\" nh\u01B0ng v\u1EDBi ng\xE0y\
+  \ tr\xEAn l\u1ECBch. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u \u0111\xF3\
+  \ \u0111\u1EC3 s\u1EAFp x\u1EBFp s\u1EF1 ki\u1EC7n, k\xEDch\u2026"
+title: "So s\xE1nh hai ng\xE0y"
 ---
 
 {{< edit_this_page >}}

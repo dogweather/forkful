@@ -1,13 +1,16 @@
 ---
-title:                "Generowanie liczb losowych"
 aliases:
 - /pl/elixir/generating-random-numbers/
-date:                  2024-01-27T20:33:18.574106-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generowanie liczb losowych"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/generating-random-numbers.md"
+date: 2024-01-27 20:33:18.574106-07:00
+description: "Generowanie liczb losowych w Elixirze jest podstawowym zadaniem programistycznym,\
+  \ niezb\u0119dnym dla aplikacji potrzebuj\u0105cych nieprzewidywalnych wynik\xF3\
+  w,\u2026"
+lastmod: 2024-02-18 23:08:49.301831
+model: gpt-4-0125-preview
+summary: "Generowanie liczb losowych w Elixirze jest podstawowym zadaniem programistycznym,\
+  \ niezb\u0119dnym dla aplikacji potrzebuj\u0105cych nieprzewidywalnych wynik\xF3\
+  w,\u2026"
+title: Generowanie liczb losowych
 ---
 
 {{< edit_this_page >}}

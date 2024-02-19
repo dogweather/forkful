@@ -1,14 +1,24 @@
 ---
-title:                "字符串拼接"
 aliases:
 - /zh/go/concatenating-strings/
-date:                  2024-02-03T17:53:59.552524-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "字符串拼接"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/concatenating-strings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:59.552524-07:00
+description: "\u5B57\u7B26\u4E32\u8FDE\u63A5\u6D89\u53CA\u5230\u5C06\u4E24\u4E2A\u6216\
+  \u591A\u4E2A\u5B57\u7B26\u4E32\u9996\u5C3E\u76F8\u63A5\uFF0C\u5F62\u6210\u4E00\u4E2A\
+  \u65B0\u7684\u5B57\u7B26\u4E32\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\
+  \u4E86\u52A8\u6001\u751F\u6210\u6587\u672C\uFF0C\u4F8B\u5982\u6784\u5EFA\u6D88\u606F\
+  \u3001\u8DEF\u5F84\u6216\u590D\u6742\u67E5\u8BE2\uFF0C\u4F7F\u7A0B\u5E8F\u66F4\u52A0\
+  \u4EA4\u4E92\u6027\u548C\u54CD\u5E94\u6027\u3002"
+lastmod: 2024-02-18 23:08:58.699905
+model: gpt-4-0125-preview
+summary: "\u5B57\u7B26\u4E32\u8FDE\u63A5\u6D89\u53CA\u5230\u5C06\u4E24\u4E2A\u6216\
+  \u591A\u4E2A\u5B57\u7B26\u4E32\u9996\u5C3E\u76F8\u63A5\uFF0C\u5F62\u6210\u4E00\u4E2A\
+  \u65B0\u7684\u5B57\u7B26\u4E32\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\
+  \u4E86\u52A8\u6001\u751F\u6210\u6587\u672C\uFF0C\u4F8B\u5982\u6784\u5EFA\u6D88\u606F\
+  \u3001\u8DEF\u5F84\u6216\u590D\u6742\u67E5\u8BE2\uFF0C\u4F7F\u7A0B\u5E8F\u66F4\u52A0\
+  \u4EA4\u4E92\u6027\u548C\u54CD\u5E94\u6027\u3002"
+title: "\u5B57\u7B26\u4E32\u62FC\u63A5"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Interpolering av en streng"
 aliases:
 - /no/arduino/interpolating-a-string/
-date:                  2024-01-20T17:50:04.699881-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolering av en streng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/interpolating-a-string.md"
+date: 2024-01-20 17:50:04.699881-07:00
+description: "Interpolering av strenger lar deg sette verdier direkte inn i en tekststreng,\
+  \ noe som er hendig for \xE5 lage dynamisk tekst, som f.eks. sensorverdier eller\u2026"
+lastmod: 2024-02-18 23:08:54.128065
+model: gpt-4-1106-preview
+summary: "Interpolering av strenger lar deg sette verdier direkte inn i en tekststreng,\
+  \ noe som er hendig for \xE5 lage dynamisk tekst, som f.eks. sensorverdier eller\u2026"
+title: Interpolering av en streng
 ---
 
 {{< edit_this_page >}}

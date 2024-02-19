@@ -1,14 +1,24 @@
 ---
-title:                "发送HTTP请求"
 aliases:
 - /zh/c/sending-an-http-request/
-date:                  2024-02-03T18:08:25.059773-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "发送HTTP请求"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/sending-an-http-request.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:25.059773-07:00
+description: "\u53D1\u9001HTTP\u8BF7\u6C42\u5305\u62EC\u521B\u5EFA\u5E76\u5411Web\u670D\
+  \u52A1\u5668\u53D1\u9001\u8BF7\u6C42\uFF0C\u4EE5\u68C0\u7D22\u6216\u63D0\u4EA4\u6570\
+  \u636E\u3002\u7A0B\u5E8F\u5458\u5728C\u8BED\u8A00\u4E2D\u6267\u884C\u6B64\u64CD\u4F5C\
+  \u662F\u4E3A\u4E86\u4E0EWeb API\u4EA4\u4E92\u3001\u4E0B\u8F7D\u7F51\u9875\u6216\u76F4\
+  \u63A5\u4ECE\u5176\u5E94\u7528\u7A0B\u5E8F\u4E2D\u4E0E\u5176\u4ED6\u7F51\u7EDC\u670D\
+  \u52A1\u8FDB\u884C\u901A\u4FE1\u3002"
+lastmod: 2024-02-18 23:08:59.556169
+model: gpt-4-0125-preview
+summary: "\u53D1\u9001HTTP\u8BF7\u6C42\u5305\u62EC\u521B\u5EFA\u5E76\u5411Web\u670D\
+  \u52A1\u5668\u53D1\u9001\u8BF7\u6C42\uFF0C\u4EE5\u68C0\u7D22\u6216\u63D0\u4EA4\u6570\
+  \u636E\u3002\u7A0B\u5E8F\u5458\u5728C\u8BED\u8A00\u4E2D\u6267\u884C\u6B64\u64CD\u4F5C\
+  \u662F\u4E3A\u4E86\u4E0EWeb API\u4EA4\u4E92\u3001\u4E0B\u8F7D\u7F51\u9875\u6216\u76F4\
+  \u63A5\u4ECE\u5176\u5E94\u7528\u7A0B\u5E8F\u4E2D\u4E0E\u5176\u4ED6\u7F51\u7EDC\u670D\
+  \u52A1\u8FDB\u884C\u901A\u4FE1\u3002"
+title: "\u53D1\u9001HTTP\u8BF7\u6C42"
 ---
 
 {{< edit_this_page >}}

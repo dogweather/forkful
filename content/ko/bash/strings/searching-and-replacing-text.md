@@ -1,14 +1,23 @@
 ---
-title:                "텍스트 검색 및 교체"
 aliases:
 - /ko/bash/searching-and-replacing-text/
-date:                  2024-01-20T17:57:22.460847-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "텍스트 검색 및 교체"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:22.460847-07:00
+description: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9\uACFC \uB300\uCCB4\uB294 \uAE30\uC874\
+  \ \uBB38\uC790\uC5F4\uC744 \uCC3E\uC544 \uB2E4\uB978 \uBB38\uC790\uC5F4\uB85C \uBC14\
+  \uAFB8\uB294 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\
+  \uC740 \uCF54\uB4DC \uC218\uC815, \uB370\uC774\uD130 \uC815\uC81C, \uC124\uC815\
+  \ \uBCC0\uACBD \uB4F1 \uB2E4\uC591\uD55C \uC774\uC720\uB85C \uC774 \uC791\uC5C5\uC744\
+  \ \uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.458950
+model: gpt-4-1106-preview
+summary: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9\uACFC \uB300\uCCB4\uB294 \uAE30\uC874 \uBB38\
+  \uC790\uC5F4\uC744 \uCC3E\uC544 \uB2E4\uB978 \uBB38\uC790\uC5F4\uB85C \uBC14\uAFB8\
+  \uB294 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\
+  \ \uCF54\uB4DC \uC218\uC815, \uB370\uC774\uD130 \uC815\uC81C, \uC124\uC815 \uBCC0\
+  \uACBD \uB4F1 \uB2E4\uC591\uD55C \uC774\uC720\uB85C \uC774 \uC791\uC5C5\uC744 \uD569\
+  \uB2C8\uB2E4."
+title: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4"
 ---
 
 {{< edit_this_page >}}

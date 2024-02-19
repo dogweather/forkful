@@ -1,13 +1,16 @@
 ---
-title:                "Beräkna ett datum i framtiden eller förflutenheten"
 aliases:
 - /sv/swift/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:32:09.106086-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Beräkna ett datum i framtiden eller förflutenheten"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:32:09.106086-07:00
+description: "Ber\xE4kning av framtida eller f\xF6rflutna datum \xE4r en process att\
+  \ l\xE4gga till eller dra fr\xE5n ett givet datum. Programmerare g\xF6r detta f\xF6\
+  r att hantera\u2026"
+lastmod: 2024-02-18 23:08:52.137162
+model: gpt-4-1106-preview
+summary: "Ber\xE4kning av framtida eller f\xF6rflutna datum \xE4r en process att l\xE4\
+  gga till eller dra fr\xE5n ett givet datum. Programmerare g\xF6r detta f\xF6r att\
+  \ hantera\u2026"
+title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 ---
 
 {{< edit_this_page >}}

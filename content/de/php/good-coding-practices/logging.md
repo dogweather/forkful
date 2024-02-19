@@ -1,13 +1,14 @@
 ---
-title:                "Protokollierung"
 aliases:
 - /de/php/logging/
-date:                  2024-01-26T01:07:27.182287-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Protokollierung"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/logging.md"
+date: 2024-01-26 01:07:27.182287-07:00
+description: "Logging ist im Grunde genommen wie das F\xFChren eines Tagebuchs f\xFC\
+  r Ihren Code; es ist der Akt des Aufzeichnens von Ereignissen, Fehlern und anderen\u2026"
+lastmod: 2024-02-18 23:09:04.969019
+model: gpt-4-1106-preview
+summary: "Logging ist im Grunde genommen wie das F\xFChren eines Tagebuchs f\xFCr\
+  \ Ihren Code; es ist der Akt des Aufzeichnens von Ereignissen, Fehlern und anderen\u2026"
+title: Protokollierung
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Een datum in de toekomst of het verleden berekenen"
 aliases:
 - /nl/vba/calculating-a-date-in-the-future-or-past/
-date:                  2024-02-01T21:50:28.213938-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een datum in de toekomst of het verleden berekenen"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/vba/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:28.213938-07:00
+description: "Een datum in de toekomst of het verleden berekenen houdt in dat je een\
+  \ datum bepaalt die een gespecificeerd aantal dagen, maanden of jaren vanaf een\u2026"
+lastmod: 2024-02-18 23:09:01.680659
+model: gpt-4-0125-preview
+summary: "Een datum in de toekomst of het verleden berekenen houdt in dat je een datum\
+  \ bepaalt die een gespecificeerd aantal dagen, maanden of jaren vanaf een\u2026"
+title: Een datum in de toekomst of het verleden berekenen
 ---
 
 {{< edit_this_page >}}

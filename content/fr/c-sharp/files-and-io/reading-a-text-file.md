@@ -1,13 +1,14 @@
 ---
-title:                "Lecture d'un fichier texte"
 aliases:
 - /fr/c-sharp/reading-a-text-file/
-date:                  2024-01-20T17:54:06.503662-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lecture d'un fichier texte"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/reading-a-text-file.md"
+date: 2024-01-20 17:54:06.503662-07:00
+description: "Lire un fichier texte, c'est parcourir son contenu avec votre programme.\
+  \ On le fait pour r\xE9cup\xE9rer des donn\xE9es, les analyser ou les transformer."
+lastmod: 2024-02-18 23:09:08.847009
+model: gpt-4-1106-preview
+summary: "Lire un fichier texte, c'est parcourir son contenu avec votre programme.\
+  \ On le fait pour r\xE9cup\xE9rer des donn\xE9es, les analyser ou les transformer."
+title: Lecture d'un fichier texte
 ---
 
 {{< edit_this_page >}}

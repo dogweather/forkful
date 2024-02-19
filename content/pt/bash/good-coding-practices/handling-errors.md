@@ -1,13 +1,15 @@
 ---
-title:                "Tratamento de erros"
 aliases:
 - /pt/bash/handling-errors/
-date:                  2024-01-26T00:50:21.970698-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tratamento de erros"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/handling-errors.md"
+date: 2024-01-26 00:50:21.970698-07:00
+description: "Tratar erros em scripts Bash \xE9 antecipar onde as coisas podem dar\
+  \ errado e lidar com isso de maneira elegante. Por qu\xEA? Bom, isso mant\xE9m seu\
+  \ script\u2026"
+lastmod: 2024-02-18 23:08:58.332812
+model: gpt-4-1106-preview
+summary: "Tratar erros em scripts Bash \xE9 antecipar onde as coisas podem dar errado\
+  \ e lidar com isso de maneira elegante. Por qu\xEA? Bom, isso mant\xE9m seu script\u2026"
+title: Tratamento de erros
 ---
 
 {{< edit_this_page >}}

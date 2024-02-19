@@ -1,13 +1,16 @@
 ---
-title:                "Jobbe med TOML"
 aliases:
 - /no/elixir/working-with-toml/
-date:                  2024-01-26T04:20:53.540368-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Jobbe med TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/working-with-toml.md"
+date: 2024-01-26 04:20:53.540368-07:00
+description: "\xC5 jobbe med TOML betyr \xE5 analysere og generere TOML (Toms Opplagte,\
+  \ Minimale Spr\xE5k) data ved bruk av Elixir. Programmerere bruker det til \xE5\
+  \ h\xE5ndtere\u2026"
+lastmod: 2024-02-18 23:08:53.627410
+model: gpt-4-0125-preview
+summary: "\xC5 jobbe med TOML betyr \xE5 analysere og generere TOML (Toms Opplagte,\
+  \ Minimale Spr\xE5k) data ved bruk av Elixir. Programmerere bruker det til \xE5\
+  \ h\xE5ndtere\u2026"
+title: Jobbe med TOML
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Escribiendo un archivo de texto"
 aliases:
 - /es/clojure/writing-a-text-file/
-date:                  2024-02-03T19:27:22.856652-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escribiendo un archivo de texto"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:22.856652-07:00
+description: "Escribir un archivo de texto en Clojure implica crear o modificar archivos\
+  \ para guardar datos fuera de tu aplicaci\xF3n, lo que permite la persistencia,\u2026"
+lastmod: 2024-02-18 23:09:09.622940
+model: gpt-4-0125-preview
+summary: "Escribir un archivo de texto en Clojure implica crear o modificar archivos\
+  \ para guardar datos fuera de tu aplicaci\xF3n, lo que permite la persistencia,\u2026"
+title: Escribiendo un archivo de texto
 ---
 
 {{< edit_this_page >}}

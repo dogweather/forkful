@@ -1,14 +1,23 @@
 ---
-title:                "打印调试输出"
 aliases:
 - /zh/php/printing-debug-output/
-date:                  2024-01-20T17:53:30.897257-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "打印调试输出"
-
-tag:                  "Testing and Debugging"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/printing-debug-output.md"
+date: 2024-01-20 17:53:30.897257-07:00
+description: "\u5728\u4EE3\u7801\u4E2D\u6253\u5370\u8C03\u8BD5\u8F93\u51FA\u662F\u6307\
+  \u8F93\u51FA\u53D8\u91CF\u3001\u8868\u8FBE\u5F0F\u6216\u7A0B\u5E8F\u72B6\u6001\u4FE1\
+  \u606F\uFF0C\u5E2E\u52A9\u5F00\u53D1\u8005\u7406\u89E3\u548C\u89E3\u51B3\u95EE\u9898\
+  \u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u56E0\u4E3A\u8FD9\u662F\u4E00\u79CD\
+  \u7B80\u5355\u76F4\u63A5\u7684\u65B9\u5F0F\uFF0C\u80FD\u5373\u65F6\u770B\u5230\u7A0B\
+  \u5E8F\u7684\u6267\u884C\u60C5\u51B5\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.218264
+model: gpt-4-1106-preview
+summary: "\u5728\u4EE3\u7801\u4E2D\u6253\u5370\u8C03\u8BD5\u8F93\u51FA\u662F\u6307\
+  \u8F93\u51FA\u53D8\u91CF\u3001\u8868\u8FBE\u5F0F\u6216\u7A0B\u5E8F\u72B6\u6001\u4FE1\
+  \u606F\uFF0C\u5E2E\u52A9\u5F00\u53D1\u8005\u7406\u89E3\u548C\u89E3\u51B3\u95EE\u9898\
+  \u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u56E0\u4E3A\u8FD9\u662F\u4E00\u79CD\
+  \u7B80\u5355\u76F4\u63A5\u7684\u65B9\u5F0F\uFF0C\u80FD\u5373\u65F6\u770B\u5230\u7A0B\
+  \u5E8F\u7684\u6267\u884C\u60C5\u51B5\u3002"
+title: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA"
 ---
 
 {{< edit_this_page >}}

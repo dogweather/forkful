@@ -1,13 +1,16 @@
 ---
-title:                "Descobrindo o comprimento de uma string"
 aliases:
 - /pt/cpp/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:09.986891-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Descobrindo o comprimento de uma string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:09.986891-07:00
+description: "N\xE3o h\xE1 enrola\xE7\xE3o: calcular o tamanho de uma string significa\
+  \ descobrir quantos caracteres ela tem. Fazemos isso para manipular texto com precis\xE3\
+  o, seja\u2026"
+lastmod: 2024-02-18 23:08:58.441023
+model: gpt-4-1106-preview
+summary: "N\xE3o h\xE1 enrola\xE7\xE3o: calcular o tamanho de uma string significa\
+  \ descobrir quantos caracteres ela tem. Fazemos isso para manipular texto com precis\xE3\
+  o, seja\u2026"
+title: Descobrindo o comprimento de uma string
 ---
 
 {{< edit_this_page >}}

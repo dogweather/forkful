@@ -1,15 +1,16 @@
 ---
-title:                "Tekst zoeken en vervangen"
 aliases:
 - /nl/arduino/searching-and-replacing-text/
-date:                  2024-01-28T22:07:04.294119-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tekst zoeken en vervangen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/searching-and-replacing-text.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:07:04.294119-07:00
+description: "Tekst zoeken en vervangen stelt je in staat om specifieke tekens of\
+  \ reeksen te vinden in een tekst en deze te vervangen door iets anders. Programmeurs\u2026"
+lastmod: 2024-02-18 23:09:02.122101
+model: gpt-4-0125-preview
+summary: "Tekst zoeken en vervangen stelt je in staat om specifieke tekens of reeksen\
+  \ te vinden in een tekst en deze te vervangen door iets anders. Programmeurs\u2026"
+title: Tekst zoeken en vervangen
 ---
 
 {{< edit_this_page >}}

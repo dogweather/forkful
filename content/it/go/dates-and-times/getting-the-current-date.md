@@ -1,14 +1,16 @@
 ---
-title:                "Ottenere la data corrente"
 aliases:
 - /it/go/getting-the-current-date/
-date:                  2024-02-03T17:57:37.070681-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ottenere la data corrente"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:37.070681-07:00
+description: "Ottenere la data corrente in Go \xE8 un compito fondamentale per i programmatori,\
+  \ paragonabile alla diffusione di \"Hello, World!\". \xC8 essenziale per compiti\u2026"
+lastmod: 2024-02-18 23:08:55.443396
+model: gpt-4-0125-preview
+summary: "Ottenere la data corrente in Go \xE8 un compito fondamentale per i programmatori,\
+  \ paragonabile alla diffusione di \"Hello, World!\". \xC8 essenziale per compiti\u2026"
+title: Ottenere la data corrente
 ---
 
 {{< edit_this_page >}}

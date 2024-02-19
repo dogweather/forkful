@@ -1,15 +1,22 @@
 ---
-title:                "Kiểm tra xem thư mục có tồn tại không"
 aliases:
 - /vi/bash/checking-if-a-directory-exists/
-date:                  2024-01-28T21:56:05.294820-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kiểm tra xem thư mục có tồn tại không"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/bash/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:05.294820-07:00
+description: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3\
+  n t\u1EA1i kh\xF4ng l\xE0 \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o r\u1EB1ng m\u1ED9\
+  t th\u01B0 m\u1EE5c \u0111\xE3 c\xF3 s\u1EB5n tr\u01B0\u1EDBc khi b\u1EA1n th\u1EED\
+  \ th\u1EF1c hi\u1EC7n m\u1ED9t s\u1ED1 h\xE0nh \u0111\u1ED9ng v\u1EDBi n\xF3, nh\u01B0\
+  \ \u0111\u1ECDc c\xE1c\u2026"
+lastmod: 2024-02-18 23:08:50.901289
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1\
+  i kh\xF4ng l\xE0 \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o r\u1EB1ng m\u1ED9t th\u01B0\
+  \ m\u1EE5c \u0111\xE3 c\xF3 s\u1EB5n tr\u01B0\u1EDBc khi b\u1EA1n th\u1EED th\u1EF1\
+  c hi\u1EC7n m\u1ED9t s\u1ED1 h\xE0nh \u0111\u1ED9ng v\u1EDBi n\xF3, nh\u01B0 \u0111\
+  \u1ECDc c\xE1c\u2026"
+title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Utilizzo delle espressioni regolari"
 aliases:
 - /it/ruby/using-regular-expressions/
-date:                  2024-02-03T19:18:22.752057-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo delle espressioni regolari"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:18:22.752057-07:00
+description: "Le espressioni regolari (regex) in Ruby sono schemi utilizzati per identificare\
+  \ combinazioni di caratteri nelle stringhe, consentendo agli sviluppatori di\u2026"
+lastmod: 2024-02-18 23:08:56.371716
+model: gpt-4-0125-preview
+summary: "Le espressioni regolari (regex) in Ruby sono schemi utilizzati per identificare\
+  \ combinazioni di caratteri nelle stringhe, consentendo agli sviluppatori di\u2026"
+title: Utilizzo delle espressioni regolari
 ---
 
 {{< edit_this_page >}}

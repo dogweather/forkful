@@ -1,15 +1,17 @@
 ---
-title:                "Logboekregistratie"
 aliases:
 - /nl/lua/logging/
-date:                  2024-01-28T22:02:55.216714-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Logboekregistratie"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/logging.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:02:55.216714-07:00
+description: "Loggen is de praktijk van het vastleggen van gebeurtenissen, fouten\
+  \ en andere significante datapunten die zich voordoen binnen de levenscyclus van\
+  \ een\u2026"
+lastmod: 2024-02-18 23:09:01.998512
+model: gpt-4-0125-preview
+summary: "Loggen is de praktijk van het vastleggen van gebeurtenissen, fouten en andere\
+  \ significante datapunten die zich voordoen binnen de levenscyclus van een\u2026"
+title: Logboekregistratie
 ---
 
 {{< edit_this_page >}}

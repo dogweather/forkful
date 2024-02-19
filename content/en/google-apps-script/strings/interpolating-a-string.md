@@ -1,12 +1,14 @@
 ---
-title:                "Interpolating a string"
 aliases:
 - /en/google-apps-script/interpolating-a-string/
-date:                  2024-02-01T21:12:04.828275-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interpolating a string"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/google-apps-script/interpolating-a-string.md"
+date: 2024-02-01 21:12:04.828275-07:00
+description: "String interpolation in Google Apps Script allows for dynamic embedding\
+  \ of expressions within strings, facilitating the creation of more readable and\u2026"
+lastmod: 2024-02-18 23:09:10.625277
+model: gpt-4-0125-preview
+summary: "String interpolation in Google Apps Script allows for dynamic embedding\
+  \ of expressions within strings, facilitating the creation of more readable and\u2026"
+title: Interpolating a string
 ---
 
 {{< edit_this_page >}}

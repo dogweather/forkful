@@ -1,14 +1,18 @@
 ---
-title:                "Arrondissement des nombres"
 aliases:
 - /fr/c/rounding-numbers/
-date:                  2024-02-03T18:07:20.247917-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrondissement des nombres"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/rounding-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:20.247917-07:00
+description: "Arrondir les nombres est le processus d'ajustement des chiffres d'un\
+  \ nombre pour r\xE9duire sa pr\xE9cision selon certaines r\xE8gles, soit vers le\
+  \ nombre entier\u2026"
+lastmod: 2024-02-18 23:09:09.349203
+model: gpt-4-0125-preview
+summary: "Arrondir les nombres est le processus d'ajustement des chiffres d'un nombre\
+  \ pour r\xE9duire sa pr\xE9cision selon certaines r\xE8gles, soit vers le nombre\
+  \ entier\u2026"
+title: Arrondissement des nombres
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Uuden projektin aloittaminen"
 aliases:
 - /fi/php/starting-a-new-project/
-date:                  2024-01-20T18:04:43.108160-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Uuden projektin aloittaminen"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/starting-a-new-project.md"
+date: 2024-01-20 18:04:43.108160-07:00
+description: "Uuden projektin aloittaminen PHP:ss\xE4 on kuin tyhj\xE4lt\xE4 p\xF6\
+  yd\xE4lt\xE4 aloittamista; uutta luovaa prosessia. Koodarit tekev\xE4t sen paketoidakseen\
+  \ ideoita ja\u2026"
+lastmod: 2024-02-18 23:09:07.712250
+model: gpt-4-1106-preview
+summary: "Uuden projektin aloittaminen PHP:ss\xE4 on kuin tyhj\xE4lt\xE4 p\xF6yd\xE4\
+  lt\xE4 aloittamista; uutta luovaa prosessia. Koodarit tekev\xE4t sen paketoidakseen\
+  \ ideoita ja\u2026"
+title: Uuden projektin aloittaminen
 ---
 
 {{< edit_this_page >}}

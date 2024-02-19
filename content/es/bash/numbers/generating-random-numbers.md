@@ -1,13 +1,14 @@
 ---
-title:                "Generación de números aleatorios"
 aliases:
 - /es/bash/generating-random-numbers/
-date:                  2024-01-27T20:32:33.969953-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generación de números aleatorios"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/generating-random-numbers.md"
+date: 2024-01-27 20:32:33.969953-07:00
+description: "Generar n\xFAmeros aleatorios en Bash proporciona una forma de introducir\
+  \ imprevisibilidad en los scripts, lo cual es esencial para tareas como generar\u2026"
+lastmod: 2024-02-18 23:09:10.160649
+model: gpt-4-0125-preview
+summary: "Generar n\xFAmeros aleatorios en Bash proporciona una forma de introducir\
+  \ imprevisibilidad en los scripts, lo cual es esencial para tareas como generar\u2026"
+title: "Generaci\xF3n de n\xFAmeros aleatorios"
 ---
 
 {{< edit_this_page >}}

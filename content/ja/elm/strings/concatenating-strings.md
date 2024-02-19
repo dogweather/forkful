@@ -1,14 +1,23 @@
 ---
-title:                "文字列の連結"
 aliases:
 - /ja/elm/concatenating-strings/
-date:                  2024-01-20T17:35:02.876886-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "文字列の連結"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/concatenating-strings.md"
+date: 2024-01-20 17:35:02.876886-07:00
+description: "\u6587\u5B57\u5217\u306E\u9023\u7D50\uFF08Concatenation\uFF09\u306F\u3001\
+  2\u3064\u4EE5\u4E0A\u306E\u6587\u5B57\u5217\u3092\u3064\u306A\u3052\u308B\u3053\u3068\
+  \u3067\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\u30C7\u30FC\u30BF\
+  \u3092\u7D44\u307F\u5408\u308F\u305B\u305F\u308A\u3001\u30E6\u30FC\u30B6\u30FC\u306B\
+  \u898B\u3084\u3059\u3044\u5F62\u3067\u60C5\u5831\u3092\u8868\u793A\u3059\u308B\u305F\
+  \u3081\u306B\u3053\u308C\u3092\u884C\u3044\u307E\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:54.833508
+model: gpt-4-1106-preview
+summary: "\u6587\u5B57\u5217\u306E\u9023\u7D50\uFF08Concatenation\uFF09\u306F\u3001\
+  2\u3064\u4EE5\u4E0A\u306E\u6587\u5B57\u5217\u3092\u3064\u306A\u3052\u308B\u3053\u3068\
+  \u3067\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\u30C7\u30FC\u30BF\
+  \u3092\u7D44\u307F\u5408\u308F\u305B\u305F\u308A\u3001\u30E6\u30FC\u30B6\u30FC\u306B\
+  \u898B\u3084\u3059\u3044\u5F62\u3067\u60C5\u5831\u3092\u8868\u793A\u3059\u308B\u305F\
+  \u3081\u306B\u3053\u308C\u3092\u884C\u3044\u307E\u3059\u3002"
+title: "\u6587\u5B57\u5217\u306E\u9023\u7D50"
 ---
 
 {{< edit_this_page >}}

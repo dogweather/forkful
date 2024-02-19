@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 aliases:
 - /fi/powershell/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:39:23.851647-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:39:23.851647-07:00
+description: "Muuttamalla merkkijonon pieniksi kirjaimiksi varmistetaan, ett\xE4 tiedon\
+  \ vertailu ja k\xE4sittely on yhdenmukaista, tapahtuipa se sitten k\xE4ytt\xF6liittym\xE4\
+  ss\xE4 tai\u2026"
+lastmod: 2024-02-18 23:09:07.836132
+model: gpt-4-1106-preview
+summary: "Muuttamalla merkkijonon pieniksi kirjaimiksi varmistetaan, ett\xE4 tiedon\
+  \ vertailu ja k\xE4sittely on yhdenmukaista, tapahtuipa se sitten k\xE4ytt\xF6liittym\xE4\
+  ss\xE4 tai\u2026"
+title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 ---
 
 {{< edit_this_page >}}

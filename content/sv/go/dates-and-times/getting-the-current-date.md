@@ -1,14 +1,18 @@
 ---
-title:                "Hämta aktuellt datum"
 aliases:
 - /sv/go/getting-the-current-date/
-date:                  2024-02-03T17:57:37.093910-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Hämta aktuellt datum"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:37.093910-07:00
+description: "Att f\xE5 det aktuella datumet i Go \xE4r en grundl\xE4ggande uppgift\
+  \ f\xF6r programmerare, lika vanlig som \"Hello, World!\" i sin allm\xE4nhet. Det\
+  \ \xE4r avg\xF6rande f\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.344314
+model: gpt-4-0125-preview
+summary: "Att f\xE5 det aktuella datumet i Go \xE4r en grundl\xE4ggande uppgift f\xF6\
+  r programmerare, lika vanlig som \"Hello, World!\" i sin allm\xE4nhet. Det \xE4\
+  r avg\xF6rande f\xF6r\u2026"
+title: "H\xE4mta aktuellt datum"
 ---
 
 {{< edit_this_page >}}

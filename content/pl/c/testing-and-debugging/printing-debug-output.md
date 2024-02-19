@@ -1,14 +1,18 @@
 ---
-title:                "Drukowanie komunikatów debugowania"
 aliases:
 - /pl/c/printing-debug-output/
-date:                  2024-02-03T18:05:19.134146-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Drukowanie komunikatów debugowania"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/printing-debug-output.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:19.134146-07:00
+description: "Drukowanie danych diagnostycznych polega na generowaniu tymczasowych,\
+  \ informacyjnych komunikat\xF3w logowania, kt\xF3re mog\u0105 pom\xF3c programistom\
+  \ zrozumie\u0107\u2026"
+lastmod: 2024-02-18 23:08:50.082896
+model: gpt-4-0125-preview
+summary: "Drukowanie danych diagnostycznych polega na generowaniu tymczasowych, informacyjnych\
+  \ komunikat\xF3w logowania, kt\xF3re mog\u0105 pom\xF3c programistom zrozumie\u0107\
+  \u2026"
+title: "Drukowanie komunikat\xF3w debugowania"
 ---
 
 {{< edit_this_page >}}

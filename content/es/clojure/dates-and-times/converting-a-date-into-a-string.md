@@ -1,13 +1,14 @@
 ---
-title:                "Convirtiendo una fecha en una cadena de texto"
 aliases:
 - /es/clojure/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:20.718303-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Convirtiendo una fecha en una cadena de texto"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:20.718303-07:00
+description: "Convertir una fecha en una cadena de texto permite manejar fechas como\
+  \ texto para almacenarlas o mostrarlas. Los programadores hacen esto para facilitar\u2026"
+lastmod: 2024-02-18 23:09:09.615478
+model: gpt-4-1106-preview
+summary: "Convertir una fecha en una cadena de texto permite manejar fechas como texto\
+  \ para almacenarlas o mostrarlas. Los programadores hacen esto para facilitar\u2026"
+title: Convirtiendo una fecha en una cadena de texto
 ---
 
 {{< edit_this_page >}}

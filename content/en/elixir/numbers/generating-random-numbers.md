@@ -1,13 +1,14 @@
 ---
-title:                "Generating random numbers"
 aliases:
 - /en/elixir/generating-random-numbers/
-date:                  2024-01-27T20:26:18.067755-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generating random numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/generating-random-numbers.md"
+date: 2024-01-27 20:26:18.067755-07:00
+description: "Generating random numbers in Elixir is a fundamental programming task,\
+  \ vital for applications needing unpredictable results such as in generating secure\u2026"
+lastmod: 2024-02-18 23:09:10.761502
+model: gpt-4-0125-preview
+summary: "Generating random numbers in Elixir is a fundamental programming task, vital\
+  \ for applications needing unpredictable results such as in generating secure\u2026"
+title: Generating random numbers
 ---
 
 {{< edit_this_page >}}

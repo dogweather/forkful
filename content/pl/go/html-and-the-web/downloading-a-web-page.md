@@ -1,14 +1,18 @@
 ---
-title:                "Pobieranie strony internetowej"
 aliases:
 - /pl/go/downloading-a-web-page/
-date:                  2024-02-03T17:56:11.579804-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pobieranie strony internetowej"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/downloading-a-web-page.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:11.579804-07:00
+description: "Pobieranie strony internetowej polega na pobraniu tre\u015Bci HTML strony\
+  \ internetowej za po\u015Brednictwem protoko\u0142u HTTP/HTTPS. Programi\u015Bci\
+  \ cz\u0119sto robi\u0105 to w\u2026"
+lastmod: 2024-02-18 23:08:49.096111
+model: gpt-4-0125-preview
+summary: "Pobieranie strony internetowej polega na pobraniu tre\u015Bci HTML strony\
+  \ internetowej za po\u015Brednictwem protoko\u0142u HTTP/HTTPS. Programi\u015Bci\
+  \ cz\u0119sto robi\u0105 to w\u2026"
+title: Pobieranie strony internetowej
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Lavorare con TOML"
 aliases:
 - /it/bash/working-with-toml/
-date:                  2024-01-26T04:19:06.409958-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/working-with-toml.md"
+date: 2024-01-26 04:19:06.409958-07:00
+description: "TOML, acronimo di Tom's Obvious, Minimal Language (Linguaggio Minimo\
+  \ e Ovvio di Tom), \xE8 un formato di serializzazione dei dati. I programmatori\
+  \ lo adorano\u2026"
+lastmod: 2024-02-18 23:08:56.074850
+model: gpt-4-0125-preview
+summary: "TOML, acronimo di Tom's Obvious, Minimal Language (Linguaggio Minimo e Ovvio\
+  \ di Tom), \xE8 un formato di serializzazione dei dati. I programmatori lo adorano\u2026"
+title: Lavorare con TOML
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Skriva till standardfel"
 aliases:
 - /sv/c/writing-to-standard-error/
-date:                  2024-02-03T18:15:14.110246-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriva till standardfel"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:15:14.110246-07:00
+description: "Att skriva till standardfel i C inneb\xE4r att styra felmeddelanden\
+  \ och diagnostisk information till en separat str\xF6m fr\xE5n programmets huvudutdata.\u2026"
+lastmod: 2024-02-18 23:08:52.267987
+model: gpt-4-0125-preview
+summary: "Att skriva till standardfel i C inneb\xE4r att styra felmeddelanden och\
+  \ diagnostisk information till en separat str\xF6m fr\xE5n programmets huvudutdata.\u2026"
+title: Skriva till standardfel
 ---
 
 {{< edit_this_page >}}

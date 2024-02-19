@@ -1,14 +1,20 @@
 ---
-title:                "Ghi nhật ký"
 aliases:
 - /vi/google-apps-script/logging/
-date:                  2024-02-01T21:57:10.623201-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ghi nhật ký"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/google-apps-script/logging.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:10.623201-07:00
+description: "Logging trong l\u1EADp tr\xECnh bao g\u1ED3m vi\u1EC7c ghi l\u1EA1i\
+  \ c\xE1c s\u1EF1 ki\u1EC7n, l\u1ED7i, ho\u1EB7c c\xE1c t\xECnh hu\u1ED1ng \u0111\
+  \xE1ng ch\xFA \xFD trong qu\xE1 tr\xECnh runtime. L\u1EADp tr\xECnh vi\xEAn l\xE0\
+  m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 g\u1EE1\u2026"
+lastmod: 2024-02-18 23:08:50.227377
+model: gpt-4-0125-preview
+summary: "Logging trong l\u1EADp tr\xECnh bao g\u1ED3m vi\u1EC7c ghi l\u1EA1i c\xE1\
+  c s\u1EF1 ki\u1EC7n, l\u1ED7i, ho\u1EB7c c\xE1c t\xECnh hu\u1ED1ng \u0111\xE1ng\
+  \ ch\xFA \xFD trong qu\xE1 tr\xECnh runtime. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
+  i\u1EC1u n\xE0y \u0111\u1EC3 g\u1EE1\u2026"
+title: "Ghi nh\u1EADt k\xFD"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "De huidige datum krijgen"
 aliases:
 - /nl/c/getting-the-current-date/
-date:                  2024-02-03T17:57:24.626092-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "De huidige datum krijgen"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:24.626092-07:00
+description: "Het verkrijgen van de huidige datum in C houdt in dat je toegang krijgt\
+  \ tot de standaard C-bibliotheek om de huidige datum en tijd van het systeem op\
+  \ te\u2026"
+lastmod: 2024-02-18 23:09:02.384694
+model: gpt-4-0125-preview
+summary: "Het verkrijgen van de huidige datum in C houdt in dat je toegang krijgt\
+  \ tot de standaard C-bibliotheek om de huidige datum en tijd van het systeem op\
+  \ te\u2026"
+title: De huidige datum krijgen
 ---
 
 {{< edit_this_page >}}

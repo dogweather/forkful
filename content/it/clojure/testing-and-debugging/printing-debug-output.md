@@ -1,13 +1,15 @@
 ---
-title:                "Stampa dell'output di debug"
 aliases:
 - /it/clojure/printing-debug-output/
-date:                  2024-01-20T17:52:14.983534-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Stampa dell'output di debug"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/printing-debug-output.md"
+date: 2024-01-20 17:52:14.983534-07:00
+description: "Stampare output di debug significa scrivere informazioni a schermo per\
+  \ capire cosa sta succedendo nel tuo codice. I programmatori lo fanno per trovare\
+  \ e\u2026"
+lastmod: 2024-02-18 23:08:55.563378
+model: gpt-4-1106-preview
+summary: "Stampare output di debug significa scrivere informazioni a schermo per capire\
+  \ cosa sta succedendo nel tuo codice. I programmatori lo fanno per trovare e\u2026"
+title: Stampa dell'output di debug
 ---
 
 {{< edit_this_page >}}

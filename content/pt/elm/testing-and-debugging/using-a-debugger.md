@@ -1,13 +1,15 @@
 ---
-title:                "Usando um depurador"
 aliases:
 - /pt/elm/using-a-debugger/
-date:                  2024-01-26T03:48:51.660544-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando um depurador"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/using-a-debugger.md"
+date: 2024-01-26 03:48:51.660544-07:00
+description: "Depurar no Elm envolve identificar e remover erros do seu c\xF3digo.\
+  \ Programadores fazem isso para garantir que suas aplica\xE7\xF5es funcionem corretamente\
+  \ e para\u2026"
+lastmod: 2024-02-18 23:08:58.064905
+model: gpt-4-0125-preview
+summary: "Depurar no Elm envolve identificar e remover erros do seu c\xF3digo. Programadores\
+  \ fazem isso para garantir que suas aplica\xE7\xF5es funcionem corretamente e para\u2026"
+title: Usando um depurador
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,17 @@
 ---
-title:                "Concatenando cadenas de texto"
 aliases:
 - /es/vba/concatenating-strings/
-date:                  2024-02-01T21:50:25.108008-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Concatenando cadenas de texto"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/vba/concatenating-strings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:25.108008-07:00
+description: "La concatenaci\xF3n en Visual Basic para Aplicaciones (VBA) implica\
+  \ unir dos o m\xE1s cadenas en una \xFAnica entidad. Esta es una tarea fundamental\
+  \ en\u2026"
+lastmod: 2024-02-18 23:09:09.787068
+model: gpt-4-0125-preview
+summary: "La concatenaci\xF3n en Visual Basic para Aplicaciones (VBA) implica unir\
+  \ dos o m\xE1s cadenas en una \xFAnica entidad. Esta es una tarea fundamental en\u2026"
+title: Concatenando cadenas de texto
 ---
 
 {{< edit_this_page >}}

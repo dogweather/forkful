@@ -1,13 +1,16 @@
 ---
-title:                "Fehlerbehandlung"
 aliases:
 - /de/clojure/handling-errors/
-date:                  2024-01-26T00:51:59.026553-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Fehlerbehandlung"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/handling-errors.md"
+date: 2024-01-26 00:51:59.026553-07:00
+description: "Fehlerbehandlung geht darum, das Unerwartete in Programmen zu managen\
+  \ \u2013 wie ein T\xFCrsteher, der sich um Unruhestifter k\xFCmmert. Programmierer\
+  \ m\xF6gen es\u2026"
+lastmod: 2024-02-18 23:09:04.514883
+model: gpt-4-1106-preview
+summary: "Fehlerbehandlung geht darum, das Unerwartete in Programmen zu managen \u2013\
+  \ wie ein T\xFCrsteher, der sich um Unruhestifter k\xFCmmert. Programmierer m\xF6\
+  gen es\u2026"
+title: Fehlerbehandlung
 ---
 
 {{< edit_this_page >}}

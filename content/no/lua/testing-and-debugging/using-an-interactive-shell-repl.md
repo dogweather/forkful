@@ -1,13 +1,16 @@
 ---
-title:                "Bruke et interaktivt skall (REPL)"
 aliases:
 - /no/lua/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:16:07.313745-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke et interaktivt skall (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/lua/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:16:07.313745-07:00
+description: "REPL st\xE5r for Read-Eval-Print Loop, et interaktivt milj\xF8 der du\
+  \ raskt kan teste kode. Programmerere bruker det til \xE5 eksperimentere, feils\xF8\
+  ke og l\xE6re seg\u2026"
+lastmod: 2024-02-18 23:08:54.017393
+model: gpt-4-0125-preview
+summary: "REPL st\xE5r for Read-Eval-Print Loop, et interaktivt milj\xF8 der du raskt\
+  \ kan teste kode. Programmerere bruker det til \xE5 eksperimentere, feils\xF8ke\
+  \ og l\xE6re seg\u2026"
+title: Bruke et interaktivt skall (REPL)
 ---
 
 {{< edit_this_page >}}

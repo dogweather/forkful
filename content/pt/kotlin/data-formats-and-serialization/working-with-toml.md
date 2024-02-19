@@ -1,13 +1,16 @@
 ---
-title:                "Trabalhando com TOML"
 aliases:
 - /pt/kotlin/working-with-toml/
-date:                  2024-01-26T04:23:48.474286-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/working-with-toml.md"
+date: 2024-01-26 04:23:48.474286-07:00
+description: "TOML significa Tom's Obvious, Minimal Language (Linguagem \xD3bvia e\
+  \ M\xEDnima do Tom). \xC9 usado para arquivos de configura\xE7\xE3o porque \xE9\
+  \ f\xE1cil de ler e escrever\u2026"
+lastmod: 2024-02-18 23:08:58.139295
+model: gpt-4-0125-preview
+summary: "TOML significa Tom's Obvious, Minimal Language (Linguagem \xD3bvia e M\xED\
+  nima do Tom). \xC9 usado para arquivos de configura\xE7\xE3o porque \xE9 f\xE1cil\
+  \ de ler e escrever\u2026"
+title: Trabalhando com TOML
 ---
 
 {{< edit_this_page >}}

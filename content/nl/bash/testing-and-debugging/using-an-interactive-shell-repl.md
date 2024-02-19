@@ -1,15 +1,16 @@
 ---
-title:                "Het gebruik van een interactieve shell (REPL)"
 aliases:
 - /nl/bash/using-an-interactive-shell-repl/
-date:                  2024-01-28T22:09:00.013842-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Het gebruik van een interactieve shell (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:00.013842-07:00
+description: "REPL staat voor Read-Eval-Print Loop, een eenvoudige, interactieve computerprogrammeeromgeving.\
+  \ Programmeurs gebruiken het om snel code te schrijven en te\u2026"
+lastmod: 2024-02-18 23:09:02.041862
+model: gpt-4-0125-preview
+summary: "REPL staat voor Read-Eval-Print Loop, een eenvoudige, interactieve computerprogrammeeromgeving.\
+  \ Programmeurs gebruiken het om snel code te schrijven en te\u2026"
+title: Het gebruik van een interactieve shell (REPL)
 ---
 
 {{< edit_this_page >}}

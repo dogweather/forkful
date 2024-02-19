@@ -1,14 +1,24 @@
 ---
-title:                "기본 인증을 사용한 HTTP 요청 보내기"
 aliases:
 - /ko/python/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:38.285126-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "기본 인증을 사용한 HTTP 요청 보내기"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:38.285126-07:00
+description: "HTTP \uC694\uCCAD\uC5D0 \uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\
+  \uD558\uB294 \uAC74 \uC6F9 \uC11C\uBE44\uC2A4\uC5D0 \uB85C\uADF8\uC778 \uC815\uBCF4\
+  \uB97C \uC804\uC1A1\uD560 \uB54C \uD544\uC694\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC740 \uC11C\uBC84\uC5D0 \uBCF4\uC548\uB41C \uC815\uBCF4 \uC811\
+  \uADFC \uAD8C\uD55C\uC744 \uC694\uCCAD\uD558\uB294\uB370 \uC774 \uBC29\uC2DD\uC744\
+  \ \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:05.624515
+model: gpt-4-1106-preview
+summary: "HTTP \uC694\uCCAD\uC5D0 \uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD558\
+  \uB294 \uAC74 \uC6F9 \uC11C\uBE44\uC2A4\uC5D0 \uB85C\uADF8\uC778 \uC815\uBCF4\uB97C\
+  \ \uC804\uC1A1\uD560 \uB54C \uD544\uC694\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uC11C\uBC84\uC5D0 \uBCF4\uC548\uB41C \uC815\uBCF4 \uC811\uADFC\
+  \ \uAD8C\uD55C\uC744 \uC694\uCCAD\uD558\uB294\uB370 \uC774 \uBC29\uC2DD\uC744 \uC0AC\
+  \uC6A9\uD569\uB2C8\uB2E4."
+title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uBCF4\
+  \uB0B4\uAE30"
 ---
 
 {{< edit_this_page >}}

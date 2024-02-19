@@ -1,13 +1,15 @@
 ---
-title:                "Starting a new project"
 aliases:
 - /en/php/starting-a-new-project/
-date:                  2024-01-25T02:54:33.067718-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Starting a new project"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/starting-a-new-project.md"
+date: 2024-01-25 02:54:33.067718-07:00
+description: "Kicking off a new PHP project means setting up a foundation to build\
+  \ your web app or script. We do it to start fresh, structure our ideas into code,\
+  \ and\u2026"
+lastmod: 2024-02-18 23:09:11.137802
+model: gpt-4-1106-preview
+summary: "Kicking off a new PHP project means setting up a foundation to build your\
+  \ web app or script. We do it to start fresh, structure our ideas into code, and\u2026"
+title: Starting a new project
 ---
 
 {{< edit_this_page >}}

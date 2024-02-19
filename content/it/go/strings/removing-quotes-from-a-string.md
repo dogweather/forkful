@@ -1,14 +1,17 @@
 ---
-title:                "Rimuovere le virgolette da una stringa"
 aliases:
 - /it/go/removing-quotes-from-a-string/
-date:                  2024-02-03T18:07:12.667822-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rimuovere le virgolette da una stringa"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:12.667822-07:00
+description: "Rimuovere le virgolette da una stringa in Go significa eliminare le\
+  \ virgolette iniziali e finali (`\"` o `'`) da una stringa data. I programmatori\
+  \ spesso\u2026"
+lastmod: 2024-02-18 23:08:55.419809
+model: gpt-4-0125-preview
+summary: "Rimuovere le virgolette da una stringa in Go significa eliminare le virgolette\
+  \ iniziali e finali (`\"` o `'`) da una stringa data. I programmatori spesso\u2026"
+title: Rimuovere le virgolette da una stringa
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Analiza składniowa daty z łańcucha znaków"
 aliases:
 - /pl/powershell/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:15:09.966714-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analiza składniowa daty z łańcucha znaków"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:15:09.966714-07:00
+description: "Parsowanie daty z ci\u0105gu tekstowego polega na rozpoznawaniu i konwersji\
+  \ zapisanych dat w formie tekstowej na typ danych daty, kt\xF3ry PowerShell mo\u017C\
+  e\u2026"
+lastmod: 2024-02-18 23:08:49.838232
+model: gpt-4-0125-preview
+summary: "Parsowanie daty z ci\u0105gu tekstowego polega na rozpoznawaniu i konwersji\
+  \ zapisanych dat w formie tekstowej na typ danych daty, kt\xF3ry PowerShell mo\u017C\
+  e\u2026"
+title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 ---
 
 {{< edit_this_page >}}

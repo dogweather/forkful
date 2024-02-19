@@ -1,13 +1,14 @@
 ---
-title:                "Sending an HTTP request"
 aliases:
 - /en/ruby/sending-an-http-request/
-date:                  2024-01-20T18:00:18.656983-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sending an HTTP request"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/sending-an-http-request.md"
+date: 2024-01-20 18:00:18.656983-07:00
+description: Sending an HTTP request means requesting data from a resource on the
+  web. Programmers do it to interact with APIs, scrape web content, or talk to servers.
+lastmod: 2024-02-18 23:09:11.562790
+model: gpt-4-1106-preview
+summary: Sending an HTTP request means requesting data from a resource on the web.
+  Programmers do it to interact with APIs, scrape web content, or talk to servers.
+title: Sending an HTTP request
 ---
 
 {{< edit_this_page >}}

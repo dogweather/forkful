@@ -1,13 +1,16 @@
 ---
-title:                "Å jobbe med komplekse tall"
 aliases:
 - /no/python/working-with-complex-numbers/
-date:                  2024-01-26T04:45:31.371734-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å jobbe med komplekse tall"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/working-with-complex-numbers.md"
+date: 2024-01-26 04:45:31.371734-07:00
+description: "Komplekse tall er en mengde tall i formen `a + bi`, der `a` og `b` er\
+  \ reelle tall, og `i` er den imagin\xE6re enheten (`i^2 = -1`). I programmering\
+  \ bruker vi\u2026"
+lastmod: 2024-02-18 23:08:53.518675
+model: gpt-4-0125-preview
+summary: "Komplekse tall er en mengde tall i formen `a + bi`, der `a` og `b` er reelle\
+  \ tall, og `i` er den imagin\xE6re enheten (`i^2 = -1`). I programmering bruker\
+  \ vi\u2026"
+title: "\xC5 jobbe med komplekse tall"
 ---
 
 {{< edit_this_page >}}

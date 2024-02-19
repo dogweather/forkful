@@ -1,13 +1,14 @@
 ---
-title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
 aliases:
 - /de/elixir/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:01:28.229106-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:01:28.229106-07:00
+description: "HTTP-Requests mit Basisauthentifizierung erm\xF6glichen gesicherte Zugriffe\
+  \ auf Webressourcen, indem Benutzername und Passwort \xFCbermittelt werden.\u2026"
+lastmod: 2024-02-18 23:09:04.551608
+model: gpt-4-1106-preview
+summary: "HTTP-Requests mit Basisauthentifizierung erm\xF6glichen gesicherte Zugriffe\
+  \ auf Webressourcen, indem Benutzername und Passwort \xFCbermittelt werden.\u2026"
+title: HTTP-Anfragen mit Basisauthentifizierung senden
 ---
 
 {{< edit_this_page >}}

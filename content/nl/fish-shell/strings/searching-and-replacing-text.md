@@ -1,15 +1,17 @@
 ---
-title:                "Zoeken en vervangen van tekst"
 aliases:
 - /nl/fish-shell/searching-and-replacing-text/
-date:                  2024-01-28T22:06:59.744270-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zoeken en vervangen van tekst"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/searching-and-replacing-text.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:06:59.744270-07:00
+description: "Tekst zoeken en vervangen is het vinden van specifieke reeksen en deze\
+  \ omwisselen met iets anders. Programmeurs doen dit om code bij te werken, fouten\
+  \ te\u2026"
+lastmod: 2024-02-18 23:09:02.306521
+model: gpt-4-0125-preview
+summary: "Tekst zoeken en vervangen is het vinden van specifieke reeksen en deze omwisselen\
+  \ met iets anders. Programmeurs doen dit om code bij te werken, fouten te\u2026"
+title: Zoeken en vervangen van tekst
 ---
 
 {{< edit_this_page >}}

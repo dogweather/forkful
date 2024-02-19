@@ -1,13 +1,15 @@
 ---
-title:                "Lesen von Kommandozeilenargumenten"
 aliases:
 - /de/c-sharp/reading-command-line-arguments/
-date:                  2024-01-20T17:55:26.544284-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lesen von Kommandozeilenargumenten"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:26.544284-07:00
+description: "Die Lekt\xFCre von Kommandozeilenargumenten erm\xF6glicht es, dass ein\
+  \ C#-Programm beim Start Zusatzinformationen erh\xE4lt. So passen Programmierer\
+  \ das Verhalten\u2026"
+lastmod: 2024-02-18 23:09:04.887945
+model: gpt-4-1106-preview
+summary: "Die Lekt\xFCre von Kommandozeilenargumenten erm\xF6glicht es, dass ein C#-Programm\
+  \ beim Start Zusatzinformationen erh\xE4lt. So passen Programmierer das Verhalten\u2026"
+title: Lesen von Kommandozeilenargumenten
 ---
 
 {{< edit_this_page >}}

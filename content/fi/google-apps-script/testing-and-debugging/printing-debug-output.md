@@ -1,14 +1,18 @@
 ---
-title:                "Debug-tulosteen tulostaminen"
 aliases:
 - /fi/google-apps-script/printing-debug-output/
-date:                  2024-02-01T21:57:51.986769-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Debug-tulosteen tulostaminen"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/printing-debug-output.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:51.986769-07:00
+description: "Debug-tulosteen tulostaminen sis\xE4lt\xE4\xE4 logilauseiden strategisen\
+  \ sijoittamisen koodiisi n\xE4ytt\xE4m\xE4\xE4n muuttujien arvot, suoritusvirran\
+  \ tai virheviestit\u2026"
+lastmod: 2024-02-18 23:09:07.138436
+model: gpt-4-0125-preview
+summary: "Debug-tulosteen tulostaminen sis\xE4lt\xE4\xE4 logilauseiden strategisen\
+  \ sijoittamisen koodiisi n\xE4ytt\xE4m\xE4\xE4n muuttujien arvot, suoritusvirran\
+  \ tai virheviestit\u2026"
+title: Debug-tulosteen tulostaminen
 ---
 
 {{< edit_this_page >}}

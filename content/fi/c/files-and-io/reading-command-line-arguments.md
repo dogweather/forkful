@@ -1,14 +1,18 @@
 ---
-title:                "Komentorivin argumenttien lukeminen"
 aliases:
 - /fi/c/reading-command-line-arguments/
-date:                  2024-02-03T18:06:13.735712-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Komentorivin argumenttien lukeminen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:06:13.735712-07:00
+description: "C-ohjelmoinnissa komentoriviparametrien lukeminen mahdollistaa sy\xF6\
+  tteiden vastaanottamisen suoraan terminaalista, mik\xE4 lis\xE4\xE4 ohjelmien joustavuutta\
+  \ ja\u2026"
+lastmod: 2024-02-18 23:09:08.150717
+model: gpt-4-0125-preview
+summary: "C-ohjelmoinnissa komentoriviparametrien lukeminen mahdollistaa sy\xF6tteiden\
+  \ vastaanottamisen suoraan terminaalista, mik\xE4 lis\xE4\xE4 ohjelmien joustavuutta\
+  \ ja\u2026"
+title: Komentorivin argumenttien lukeminen
 ---
 
 {{< edit_this_page >}}

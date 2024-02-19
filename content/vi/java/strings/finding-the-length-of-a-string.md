@@ -1,15 +1,20 @@
 ---
-title:                "Tìm chiều dài của một chuỗi ký tự"
 aliases:
 - /vi/java/finding-the-length-of-a-string/
-date:                  2024-01-28T22:00:19.432525-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tìm chiều dài của một chuỗi ký tự"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/java/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:00:19.432525-07:00
+description: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0\
+  \ x\xE1c \u0111\u1ECBnh s\u1ED1 k\xFD t\u1EF1 m\xE0 n\xF3 ch\u1EE9a. L\u1EADp tr\xEC\
+  nh vi\xEAn th\u01B0\u1EDDng l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 x\xE1c th\u1EF1\
+  c \u0111\u1EA7u v\xE0o, l\u1EB7p qua c\xE1c k\xFD t\u1EF1, ho\u1EB7c c\u0103n\u2026"
+lastmod: 2024-02-18 23:08:50.546935
+model: gpt-4-0125-preview
+summary: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 x\xE1\
+  c \u0111\u1ECBnh s\u1ED1 k\xFD t\u1EF1 m\xE0 n\xF3 ch\u1EE9a. L\u1EADp tr\xECnh\
+  \ vi\xEAn th\u01B0\u1EDDng l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 x\xE1c th\u1EF1\
+  c \u0111\u1EA7u v\xE0o, l\u1EB7p qua c\xE1c k\xFD t\u1EF1, ho\u1EB7c c\u0103n\u2026"
+title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 ---
 
 {{< edit_this_page >}}

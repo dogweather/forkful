@@ -1,13 +1,20 @@
 ---
-title:                "检查目录是否存在"
 aliases:
 - /zh/elm/checking-if-a-directory-exists/
-date:                  2024-01-19
-simple_title:         "检查目录是否存在"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/checking-if-a-directory-exists.md"
+date: 2024-01-19
+description: "\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728\u662F\u786E\u8BA4\u6587\
+  \u4EF6\u7CFB\u7EDF\u4E0A\u67D0\u4E2A\u6587\u4EF6\u5939\u662F\u5426\u5728\u7684\u8FC7\
+  \u7A0B\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u907F\u514D\u9519\
+  \u8BEF\uFF0C\u786E\u4FDD\u6587\u4EF6\u64CD\u4F5C\uFF08\u5982\u8BFB\u5199\uFF09\u80FD\
+  \u6B63\u5E38\u8FDB\u884C\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.070994
+summary: "\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728\u662F\u786E\u8BA4\u6587\
+  \u4EF6\u7CFB\u7EDF\u4E0A\u67D0\u4E2A\u6587\u4EF6\u5939\u662F\u5426\u5728\u7684\u8FC7\
+  \u7A0B\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u907F\u514D\u9519\
+  \u8BEF\uFF0C\u786E\u4FDD\u6587\u4EF6\u64CD\u4F5C\uFF08\u5982\u8BFB\u5199\uFF09\u80FD\
+  \u6B63\u5E38\u8FDB\u884C\u3002"
+title: "\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728"
 ---
 
 {{< edit_this_page >}}

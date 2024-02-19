@@ -1,13 +1,16 @@
 ---
-title:                "Komennoriviparametrien lukeminen"
 aliases:
 - /fi/swift/reading-command-line-arguments/
-date:                  2024-01-20T17:56:54.670264-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Komennoriviparametrien lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:54.670264-07:00
+description: "Komennon rivin argumentit ovat ohjelmalle sy\xF6tettyj\xE4 tietoja,\
+  \ joita k\xE4sitell\xE4\xE4n sen k\xE4ynnistyess\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4\
+  t niit\xE4 mukauttaakseen ohjelman\u2026"
+lastmod: 2024-02-18 23:09:08.006658
+model: gpt-4-1106-preview
+summary: "Komennon rivin argumentit ovat ohjelmalle sy\xF6tettyj\xE4 tietoja, joita\
+  \ k\xE4sitell\xE4\xE4n sen k\xE4ynnistyess\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4\
+  \ mukauttaakseen ohjelman\u2026"
+title: Komennoriviparametrien lukeminen
 ---
 
 {{< edit_this_page >}}

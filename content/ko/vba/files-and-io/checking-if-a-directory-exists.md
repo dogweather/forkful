@@ -1,14 +1,29 @@
 ---
-title:                "디렉토리가 존재하는지 확인하기"
 aliases:
 - /ko/vba/checking-if-a-directory-exists/
-date:                  2024-02-01T21:49:10.665224-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "디렉토리가 존재하는지 확인하기"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/vba/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:10.665224-07:00
+description: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uB514\uB809\uD130\uB9AC\
+  \uAC00 \uC874\uC7AC\uD558\uB294\uC9C0 \uD655\uC778\uD558\uAE30\uB294 \uD30C\uC77C\
+  \ \uC2DC\uC2A4\uD15C \uB0B4\uC5D0 \uD3F4\uB354\uC758 \uC874\uC7AC\uB97C \uAC80\uC99D\
+  \uD558\uACE0 \uD30C\uC77C \uC800\uC7A5\uC774\uB098 \uC0C8 \uB514\uB809\uD130\uB9AC\
+  \ \uC0DD\uC131\uACFC \uAC19\uC740 \uC791\uC5C5\uC744 \uC218\uD589\uD558\uAE30 \uC804\
+  \uC5D0 \uC774\uB8E8\uC5B4\uC9D1\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\
+  \uC740 \uB7F0\uD0C0\uC784 \uC624\uB958\uB97C \uD53C\uD558\uACE0 \uCF54\uB4DC\uAC00\
+  \ \uD30C\uC77C \uC2DC\uC2A4\uD15C\uACFC\u2026"
+lastmod: 2024-02-18 23:09:05.976758
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uB514\uB809\uD130\uB9AC\uAC00\
+  \ \uC874\uC7AC\uD558\uB294\uC9C0 \uD655\uC778\uD558\uAE30\uB294 \uD30C\uC77C \uC2DC\
+  \uC2A4\uD15C \uB0B4\uC5D0 \uD3F4\uB354\uC758 \uC874\uC7AC\uB97C \uAC80\uC99D\uD558\
+  \uACE0 \uD30C\uC77C \uC800\uC7A5\uC774\uB098 \uC0C8 \uB514\uB809\uD130\uB9AC \uC0DD\
+  \uC131\uACFC \uAC19\uC740 \uC791\uC5C5\uC744 \uC218\uD589\uD558\uAE30 \uC804\uC5D0\
+  \ \uC774\uB8E8\uC5B4\uC9D1\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\
+  \ \uB7F0\uD0C0\uC784 \uC624\uB958\uB97C \uD53C\uD558\uACE0 \uCF54\uB4DC\uAC00 \uD30C\
+  \uC77C \uC2DC\uC2A4\uD15C\uACFC\u2026"
+title: "\uB514\uB809\uD1A0\uB9AC\uAC00 \uC874\uC7AC\uD558\uB294\uC9C0 \uD655\uC778\
+  \uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

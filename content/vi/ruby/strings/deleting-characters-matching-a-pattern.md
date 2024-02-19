@@ -1,15 +1,20 @@
 ---
-title:                "Xóa các ký tự phù hợp với một mẫu"
 aliases:
 - /vi/ruby/deleting-characters-matching-a-pattern/
-date:                  2024-01-28T21:59:40.357986-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Xóa các ký tự phù hợp với một mẫu"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:40.357986-07:00
+description: "Xo\xE1 c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EAB\
+  u trong chu\u1ED7i l\xE0 vi\u1EC7c xo\xE1 b\u1ECF nh\u1EEFng ph\u1EA7n b\u1EA1n\
+  \ kh\xF4ng c\u1EA7n, nh\u01B0 l\xE0 lo\u1EA1i b\u1ECF hashtag t\u1EEB c\xE1c tweet.\
+  \ L\u1EADp tr\xECnh vi\xEAn l\xE0m vi\u1EC7c n\xE0y \u0111\u1EC3\u2026"
+lastmod: 2024-02-18 23:08:51.264421
+model: gpt-4-0125-preview
+summary: "Xo\xE1 c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu trong\
+  \ chu\u1ED7i l\xE0 vi\u1EC7c xo\xE1 b\u1ECF nh\u1EEFng ph\u1EA7n b\u1EA1n kh\xF4\
+  ng c\u1EA7n, nh\u01B0 l\xE0 lo\u1EA1i b\u1ECF hashtag t\u1EEB c\xE1c tweet. L\u1EAD\
+  p tr\xECnh vi\xEAn l\xE0m vi\u1EC7c n\xE0y \u0111\u1EC3\u2026"
+title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 ---
 
 {{< edit_this_page >}}

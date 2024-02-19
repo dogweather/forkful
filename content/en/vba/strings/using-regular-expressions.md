@@ -1,12 +1,14 @@
 ---
-title:                "Using regular expressions"
 aliases:
 - /en/vba/using-regular-expressions/
-date:                  2024-02-01T21:30:21.737007-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using regular expressions"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/vba/using-regular-expressions.md"
+date: 2024-02-01 21:30:21.737007-07:00
+description: "Regular expressions (regex) in Visual Basic for Applications (VBA) provide\
+  \ a powerful way to search, match, and manipulate strings. Programmers use them\u2026"
+lastmod: 2024-02-18 23:09:10.879963
+model: gpt-4-0125-preview
+summary: "Regular expressions (regex) in Visual Basic for Applications (VBA) provide\
+  \ a powerful way to search, match, and manipulate strings. Programmers use them\u2026"
+title: Using regular expressions
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,16 @@
 ---
-title:                "Reguliere expressies gebruiken"
 aliases:
 - /nl/ruby/using-regular-expressions/
-date:                  2024-01-28T22:09:40.202043-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Reguliere expressies gebruiken"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/using-regular-expressions.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:40.202043-07:00
+description: "Reguliere expressies (regex) zijn patronen die worden gebruikt om combinaties\
+  \ van karakters in strings te vinden. Programmeurs gebruiken ze voor het\u2026"
+lastmod: 2024-02-18 23:09:02.408962
+model: gpt-4-0125-preview
+summary: "Reguliere expressies (regex) zijn patronen die worden gebruikt om combinaties\
+  \ van karakters in strings te vinden. Programmeurs gebruiken ze voor het\u2026"
+title: Reguliere expressies gebruiken
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,21 @@
 ---
-title:                "문자열 연결하기"
 aliases:
 - /ko/bash/concatenating-strings/
-date:                  2024-01-20T17:34:03.421987-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "문자열 연결하기"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/concatenating-strings.md"
+date: 2024-01-20 17:34:03.421987-07:00
+description: "\uBB38\uC790\uC5F4 \uACB0\uD569\uC740 \uBB38\uC790\uC5F4\uC744 \uC11C\
+  \uB85C \uBD99\uC774\uB294 \uAC83\uC744 \uC758\uBBF8\uD569\uB2C8\uB2E4. \uC774\uB97C\
+  \ \uD1B5\uD574 \uAC1C\uBC1C\uC790\uB4E4\uC740 \uB370\uC774\uD130\uB97C \uC870\uD569\
+  \uD558\uACE0, \uBA54\uC2DC\uC9C0\uB97C \uAD6C\uC131\uD558\uBA70, \uB3D9\uC801\uC73C\
+  \uB85C \uCF54\uB4DC\uB97C \uC0DD\uC131\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.468858
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4 \uACB0\uD569\uC740 \uBB38\uC790\uC5F4\uC744 \uC11C\uB85C\
+  \ \uBD99\uC774\uB294 \uAC83\uC744 \uC758\uBBF8\uD569\uB2C8\uB2E4. \uC774\uB97C \uD1B5\
+  \uD574 \uAC1C\uBC1C\uC790\uB4E4\uC740 \uB370\uC774\uD130\uB97C \uC870\uD569\uD558\
+  \uACE0, \uBA54\uC2DC\uC9C0\uB97C \uAD6C\uC131\uD558\uBA70, \uB3D9\uC801\uC73C\uB85C\
+  \ \uCF54\uB4DC\uB97C \uC0DD\uC131\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

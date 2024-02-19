@@ -1,14 +1,21 @@
 ---
-title:                "匹配模式删除字符"
 aliases:
 - /zh/elixir/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:49.786516-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "匹配模式删除字符"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:49.786516-07:00
+description: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u5220\u9664\u5B57\u7B26\u610F\u5473\u7740\
+  \u6839\u636E\u7279\u5B9A\u6A21\u5F0F\u79FB\u9664\u5B57\u7B26\u4E32\u4E2D\u7684\u4E00\
+  \u4E9B\u5143\u7D20\u3002\u8FD9\u901A\u5E38\u7528\u4E8E\u6570\u636E\u6E05\u6D17\uFF0C\
+  \u6BD4\u5982\u53BB\u9664\u65E0\u7528\u7684\u7A7A\u683C\u3001\u6362\u884C\u7B26\u6216\
+  \u8005\u975E\u6CD5\u5B57\u7B26\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:58.852098
+model: gpt-4-1106-preview
+summary: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u5220\u9664\u5B57\u7B26\u610F\u5473\u7740\
+  \u6839\u636E\u7279\u5B9A\u6A21\u5F0F\u79FB\u9664\u5B57\u7B26\u4E32\u4E2D\u7684\u4E00\
+  \u4E9B\u5143\u7D20\u3002\u8FD9\u901A\u5E38\u7528\u4E8E\u6570\u636E\u6E05\u6D17\uFF0C\
+  \u6BD4\u5982\u53BB\u9664\u65E0\u7528\u7684\u7A7A\u683C\u3001\u6362\u884C\u7B26\u6216\
+  \u8005\u975E\u6CD5\u5B57\u7B26\u3002"
+title: "\u5339\u914D\u6A21\u5F0F\u5220\u9664\u5B57\u7B26"
 ---
 
 {{< edit_this_page >}}

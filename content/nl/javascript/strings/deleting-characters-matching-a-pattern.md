@@ -1,15 +1,16 @@
 ---
-title:                "Karakters verwijderen die overeenkomen met een patroon"
 aliases:
 - /nl/javascript/deleting-characters-matching-a-pattern/
-date:                  2024-01-28T21:58:50.704373-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Karakters verwijderen die overeenkomen met een patroon"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/javascript/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:58:50.704373-07:00
+description: "Het verwijderen van tekens op basis van een patroon maakt strings schoon\
+  \ en uniform. Programmeurs doen dit voor formattering, het verwijderen van\u2026"
+lastmod: 2024-02-18 23:09:02.258075
+model: gpt-4-0125-preview
+summary: "Het verwijderen van tekens op basis van een patroon maakt strings schoon\
+  \ en uniform. Programmeurs doen dit voor formattering, het verwijderen van\u2026"
+title: Karakters verwijderen die overeenkomen met een patroon
 ---
 
 {{< edit_this_page >}}

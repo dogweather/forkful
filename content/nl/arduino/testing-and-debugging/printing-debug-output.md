@@ -1,15 +1,17 @@
 ---
-title:                "Debug-output afdrukken"
 aliases:
 - /nl/arduino/printing-debug-output/
-date:                  2024-01-28T22:04:10.168390-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Debug-output afdrukken"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/printing-debug-output.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:04:10.168390-07:00
+description: "Debuguitvoer naar de seri\xEBle monitor printen is een manier om een\
+  \ kijkje te nemen in de geest van een Arduino. Programmeurs doen dit om problemen\
+  \ op te\u2026"
+lastmod: 2024-02-18 23:09:02.140469
+model: gpt-4-0125-preview
+summary: "Debuguitvoer naar de seri\xEBle monitor printen is een manier om een kijkje\
+  \ te nemen in de geest van een Arduino. Programmeurs doen dit om problemen op te\u2026"
+title: Debug-output afdrukken
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Viết hoa một chuỗi"
 aliases:
 - /vi/rust/capitalizing-a-string/
-date:                  2024-01-28T21:56:19.708845-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Viết hoa một chuỗi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/capitalizing-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:19.708845-07:00
+description: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 l\xE0m\
+  \ cho ch\u1EEF c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a m\u1ED7i t\u1EEB tr\u1EDF n\xEA\
+  n in hoa trong khi nh\u1EEFng ch\u1EEF c\xF2n l\u1EA1i gi\u1EEF nguy\xEAn d\u1EA1\
+  ng ch\u1EEF th\u01B0\u1EDDng. L\u1EADp tr\xECnh vi\xEAn\u2026"
+lastmod: 2024-02-18 23:08:50.443027
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 l\xE0m cho\
+  \ ch\u1EEF c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a m\u1ED7i t\u1EEB tr\u1EDF n\xEA\
+  n in hoa trong khi nh\u1EEFng ch\u1EEF c\xF2n l\u1EA1i gi\u1EEF nguy\xEAn d\u1EA1\
+  ng ch\u1EEF th\u01B0\u1EDDng. L\u1EADp tr\xECnh vi\xEAn\u2026"
+title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 ---
 
 {{< edit_this_page >}}

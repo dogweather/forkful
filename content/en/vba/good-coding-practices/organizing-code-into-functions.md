@@ -1,12 +1,14 @@
 ---
-title:                "Organizing code into functions"
 aliases:
 - /en/vba/organizing-code-into-functions/
-date:                  2024-02-01T21:30:28.185169-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Organizing code into functions"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/vba/organizing-code-into-functions.md"
+date: 2024-02-01 21:30:28.185169-07:00
+description: "Organizing code into functions in Visual Basic for Applications (VBA)\
+  \ involves breaking down a program into smaller, manageable pieces known as functions.\u2026"
+lastmod: 2024-02-18 23:09:10.895442
+model: gpt-4-0125-preview
+summary: "Organizing code into functions in Visual Basic for Applications (VBA) involves\
+  \ breaking down a program into smaller, manageable pieces known as functions.\u2026"
+title: Organizing code into functions
 ---
 
 {{< edit_this_page >}}

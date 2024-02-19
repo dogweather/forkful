@@ -1,13 +1,15 @@
 ---
-title:                "Виділення підрядків"
 aliases:
 - /uk/lua/extracting-substrings/
-date:                  2024-01-20T17:46:22.962303-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Виділення підрядків"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/lua/extracting-substrings.md"
+date: 2024-01-20 17:46:22.962303-07:00
+description: "Extracting substrings means pulling out specific parts of a string based\
+  \ on their position. Programmers do it to analyze, manipulate, or validate pieces\u2026"
+lastmod: 2024-02-18 23:09:00.549600
+model: gpt-4-1106-preview
+summary: "Extracting substrings means pulling out specific parts of a string based\
+  \ on their position. Programmers do it to analyze, manipulate, or validate pieces\u2026"
+title: "\u0412\u0438\u0434\u0456\u043B\u0435\u043D\u043D\u044F \u043F\u0456\u0434\u0440\
+  \u044F\u0434\u043A\u0456\u0432"
 ---
 
 {{< edit_this_page >}}

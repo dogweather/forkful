@@ -1,14 +1,20 @@
 ---
-title:                "Sắp xếp mã lập trình vào hàm số"
 aliases:
 - /vi/vba/organizing-code-into-functions/
-date:                  2024-02-01T21:57:15.426751-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sắp xếp mã lập trình vào hàm số"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/organizing-code-into-functions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:15.426751-07:00
+description: "Vi\u1EC7c t\u1ED5 ch\u1EE9c m\xE3 l\u1EC7nh th\xE0nh c\xE1c h\xE0m trong\
+  \ Visual Basic cho \u1EE8ng d\u1EE5ng (VBA) bao g\u1ED3m vi\u1EC7c chia nh\u1ECF\
+  \ ch\u01B0\u01A1ng tr\xECnh th\xE0nh c\xE1c ph\u1EA7n nh\u1ECF h\u01A1n, d\u1EC5\
+  \ qu\u1EA3n l\xFD h\u01A1n \u0111\u01B0\u1EE3c\u2026"
+lastmod: 2024-02-18 23:08:50.515678
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c t\u1ED5 ch\u1EE9c m\xE3 l\u1EC7nh th\xE0nh c\xE1c h\xE0m trong\
+  \ Visual Basic cho \u1EE8ng d\u1EE5ng (VBA) bao g\u1ED3m vi\u1EC7c chia nh\u1ECF\
+  \ ch\u01B0\u01A1ng tr\xECnh th\xE0nh c\xE1c ph\u1EA7n nh\u1ECF h\u01A1n, d\u1EC5\
+  \ qu\u1EA3n l\xFD h\u01A1n \u0111\u01B0\u1EE3c\u2026"
+title: "S\u1EAFp x\u1EBFp m\xE3 l\u1EADp tr\xECnh v\xE0o h\xE0m s\u1ED1"
 ---
 
 {{< edit_this_page >}}

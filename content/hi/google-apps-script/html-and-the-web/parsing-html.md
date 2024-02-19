@@ -1,14 +1,30 @@
 ---
-title:                "HTML पार्स करना"
 aliases:
 - /hi/google-apps-script/parsing-html/
-date:                  2024-02-01T21:58:49.937709-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML पार्स करना"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/google-apps-script/parsing-html.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:49.937709-07:00
+description: "Google Apps Script \u092E\u0947\u0902 HTML \u092A\u093E\u0930\u094D\u0938\
+  \u093F\u0902\u0917 \u0915\u093E \u0905\u0930\u094D\u0925 \u0939\u0948 HTML \u0938\
+  \u093E\u092E\u0917\u094D\u0930\u0940 \u0938\u0947 \u0921\u0947\u091F\u093E \u0928\
+  \u093F\u0915\u093E\u0932\u0928\u093E, \u091C\u094B \u0935\u0947\u092C \u092A\u0943\
+  \u0937\u094D\u0920\u094B\u0902 \u092F\u093E \u0935\u0947\u092C-\u0906\u0927\u093E\
+  \u0930\u093F\u0924 \u0921\u0947\u091F\u093E \u0938\u094D\u0930\u094B\u0924\u094B\
+  \u0902 \u0915\u0947 \u0938\u093E\u0925 \u092C\u093E\u0924\u091A\u0940\u0924 \u0915\
+  \u0930\u0924\u0947 \u0938\u092E\u092F \u0935\u093F\u0936\u0947\u0937 \u0930\u0942\
+  \u092A\u2026"
+lastmod: 2024-02-18 23:09:02.563192
+model: gpt-4-0125-preview
+summary: "Google Apps Script \u092E\u0947\u0902 HTML \u092A\u093E\u0930\u094D\u0938\
+  \u093F\u0902\u0917 \u0915\u093E \u0905\u0930\u094D\u0925 \u0939\u0948 HTML \u0938\
+  \u093E\u092E\u0917\u094D\u0930\u0940 \u0938\u0947 \u0921\u0947\u091F\u093E \u0928\
+  \u093F\u0915\u093E\u0932\u0928\u093E, \u091C\u094B \u0935\u0947\u092C \u092A\u0943\
+  \u0937\u094D\u0920\u094B\u0902 \u092F\u093E \u0935\u0947\u092C-\u0906\u0927\u093E\
+  \u0930\u093F\u0924 \u0921\u0947\u091F\u093E \u0938\u094D\u0930\u094B\u0924\u094B\
+  \u0902 \u0915\u0947 \u0938\u093E\u0925 \u092C\u093E\u0924\u091A\u0940\u0924 \u0915\
+  \u0930\u0924\u0947 \u0938\u092E\u092F \u0935\u093F\u0936\u0947\u0937 \u0930\u0942\
+  \u092A\u2026"
+title: "HTML \u092A\u093E\u0930\u094D\u0938 \u0915\u0930\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Lese en tekstfil"
 aliases:
 - /no/python/reading-a-text-file/
-date:                  2024-01-20T17:54:56.129483-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lese en tekstfil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/reading-a-text-file.md"
+date: 2024-01-20 17:54:56.129483-07:00
+description: "\xC5 lese en tekstfil i Python betyr \xE5 hente tekstdata fra en fil\
+  \ p\xE5 disken din. Programmerere gj\xF8r dette for \xE5 manipulere data, hente\
+  \ innstillinger, eller\u2026"
+lastmod: 2024-02-18 23:08:53.540695
+model: gpt-4-1106-preview
+summary: "\xC5 lese en tekstfil i Python betyr \xE5 hente tekstdata fra en fil p\xE5\
+  \ disken din. Programmerere gj\xF8r dette for \xE5 manipulere data, hente innstillinger,\
+  \ eller\u2026"
+title: Lese en tekstfil
 ---
 
 {{< edit_this_page >}}

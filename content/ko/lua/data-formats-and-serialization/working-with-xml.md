@@ -1,13 +1,25 @@
 ---
-title:                "XML 다루기"
 aliases:
 - /ko/lua/working-with-xml/
-date:                  2024-01-26T04:34:17.071253-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML 다루기"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/lua/working-with-xml.md"
+date: 2024-01-26 04:34:17.071253-07:00
+description: "XML \uC791\uC5C5\uC740 \uCF54\uB4DC\uB97C \uC0AC\uC6A9\uD558\uC5EC XML\
+  \ \uBB38\uC11C\uB97C \uD30C\uC2F1\uD558\uACE0 \uC870\uC791\uD558\uB294 \uAC83\uC744\
+  \ \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB370\
+  \uC774\uD130 \uAD50\uD658 \uBC0F \uC800\uC7A5\uC744 \uC704\uD574 \uB110\uB9AC \uC0AC\
+  \uC6A9\uB418\uB294 \uAD6C\uC870\uD654\uB418\uACE0 \uC774\uC2DD \uAC00\uB2A5\uD55C\
+  \ \uD615\uC2DD\uC5D0\uC11C \uB370\uC774\uD130\uB97C \uC77D\uACE0, \uC4F0\uACE0,\
+  \ \uC218\uC815\uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uD569\uB2C8\uB2E4\
+  ."
+lastmod: 2024-02-18 23:09:06.454506
+model: gpt-4-0125-preview
+summary: "XML \uC791\uC5C5\uC740 \uCF54\uB4DC\uB97C \uC0AC\uC6A9\uD558\uC5EC XML \uBB38\
+  \uC11C\uB97C \uD30C\uC2F1\uD558\uACE0 \uC870\uC791\uD558\uB294 \uAC83\uC744 \uD3EC\
+  \uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB370\uC774\
+  \uD130 \uAD50\uD658 \uBC0F \uC800\uC7A5\uC744 \uC704\uD574 \uB110\uB9AC \uC0AC\uC6A9\
+  \uB418\uB294 \uAD6C\uC870\uD654\uB418\uACE0 \uC774\uC2DD \uAC00\uB2A5\uD55C \uD615\
+  \uC2DD\uC5D0\uC11C \uB370\uC774\uD130\uB97C \uC77D\uACE0, \uC4F0\uACE0, \uC218\uC815\
+  \uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uD569\uB2C8\uB2E4."
+title: "XML \uB2E4\uB8E8\uAE30"
 ---
 
 {{< edit_this_page >}}

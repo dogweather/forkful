@@ -1,13 +1,15 @@
 ---
-title:                "Fehlerbehandlung"
 aliases:
 - /de/bash/handling-errors/
-date:                  2024-01-26T00:36:56.268023-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Fehlerbehandlung"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/handling-errors.md"
+date: 2024-01-26 00:36:56.268023-07:00
+description: "Fehlerbehandlung in Bash-Skripten bedeutet, vorherzusehen, wo Probleme\
+  \ auftreten k\xF6nnten, und diese elegant zu behandeln. Warum? Nun, es h\xE4lt Ihr\
+  \ Skript\u2026"
+lastmod: 2024-02-18 23:09:05.062238
+model: gpt-4-1106-preview
+summary: "Fehlerbehandlung in Bash-Skripten bedeutet, vorherzusehen, wo Probleme auftreten\
+  \ k\xF6nnten, und diese elegant zu behandeln. Warum? Nun, es h\xE4lt Ihr Skript\u2026"
+title: Fehlerbehandlung
 ---
 
 {{< edit_this_page >}}

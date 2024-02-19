@@ -1,14 +1,16 @@
 ---
-title:                "Suchen und Ersetzen von Text"
 aliases:
 - /de/c/searching-and-replacing-text/
-date:                  2024-02-03T18:08:17.276500-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Suchen und Ersetzen von Text"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:17.276500-07:00
+description: "Das Suchen und Ersetzen von Text in C beinhaltet das Identifizieren\
+  \ spezifischer Teilstrings innerhalb eines gr\xF6\xDFeren Strings und deren Substituierung\u2026"
+lastmod: 2024-02-18 23:09:05.355827
+model: gpt-4-0125-preview
+summary: "Das Suchen und Ersetzen von Text in C beinhaltet das Identifizieren spezifischer\
+  \ Teilstrings innerhalb eines gr\xF6\xDFeren Strings und deren Substituierung\u2026"
+title: Suchen und Ersetzen von Text
 ---
 
 {{< edit_this_page >}}

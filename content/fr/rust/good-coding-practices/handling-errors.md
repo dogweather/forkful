@@ -1,13 +1,16 @@
 ---
-title:                "Gestion des erreurs"
 aliases:
 - /fr/rust/handling-errors/
-date:                  2024-01-26T00:57:51.098076-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Gestion des erreurs"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/handling-errors.md"
+date: 2024-01-26 00:57:51.098076-07:00
+description: "La gestion des erreurs consiste \xE0 g\xE9rer les choses quand elles\
+  \ ne se d\xE9roulent pas comme pr\xE9vu. Les programmeurs le font pour g\xE9rer\
+  \ l'inattendu, en\u2026"
+lastmod: 2024-02-18 23:09:08.537196
+model: gpt-4-1106-preview
+summary: "La gestion des erreurs consiste \xE0 g\xE9rer les choses quand elles ne\
+  \ se d\xE9roulent pas comme pr\xE9vu. Les programmeurs le font pour g\xE9rer l'inattendu,\
+  \ en\u2026"
+title: Gestion des erreurs
 ---
 
 {{< edit_this_page >}}

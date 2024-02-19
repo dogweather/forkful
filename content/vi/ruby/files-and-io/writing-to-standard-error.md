@@ -1,15 +1,20 @@
 ---
-title:                "Ghi vào lỗi chuẩn"
 aliases:
 - /vi/ruby/writing-to-standard-error/
-date:                  2024-01-28T22:14:06.452399-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ghi vào lỗi chuẩn"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/writing-to-standard-error.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:14:06.452399-07:00
+description: "L\u1ED7i chu\u1EA9n (`stderr`) l\xE0 m\u1ED9t lu\u1ED3ng t\xE1ch bi\u1EC7\
+  t kh\u1ECFi \u0111\u1EA7u ra chu\u1EA9n (`stdout`) \u0111\u01B0\u1EE3c s\u1EED d\u1EE5\
+  ng ch\u1EE7 y\u1EBFu \u0111\u1EC3 xu\u1EA5t th\xF4ng b\xE1o l\u1ED7i ho\u1EB7c ch\u1EA9\
+  n \u0111o\xE1n. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng\u2026"
+lastmod: 2024-02-18 23:08:51.304045
+model: gpt-4-0125-preview
+summary: "L\u1ED7i chu\u1EA9n (`stderr`) l\xE0 m\u1ED9t lu\u1ED3ng t\xE1ch bi\u1EC7\
+  t kh\u1ECFi \u0111\u1EA7u ra chu\u1EA9n (`stdout`) \u0111\u01B0\u1EE3c s\u1EED d\u1EE5\
+  ng ch\u1EE7 y\u1EBFu \u0111\u1EC3 xu\u1EA5t th\xF4ng b\xE1o l\u1ED7i ho\u1EB7c ch\u1EA9\
+  n \u0111o\xE1n. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng\u2026"
+title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 ---
 
 {{< edit_this_page >}}

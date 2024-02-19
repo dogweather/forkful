@@ -1,14 +1,18 @@
 ---
-title:                "Pobieranie aktualnej daty"
 aliases:
 - /pl/php/getting-the-current-date/
-date:                  2024-02-03T19:10:30.944924-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pobieranie aktualnej daty"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:10:30.944924-07:00
+description: "Pobieranie bie\u017C\u0105cej daty w PHP to podstawowe zadanie, kt\xF3\
+  re umo\u017Cliwia pobieranie i manipulowanie dat\u0105 i czasem systemowym. Jest\
+  \ to kluczowe dla funkcji\u2026"
+lastmod: 2024-02-18 23:08:49.706330
+model: gpt-4-0125-preview
+summary: "Pobieranie bie\u017C\u0105cej daty w PHP to podstawowe zadanie, kt\xF3re\
+  \ umo\u017Cliwia pobieranie i manipulowanie dat\u0105 i czasem systemowym. Jest\
+  \ to kluczowe dla funkcji\u2026"
+title: Pobieranie aktualnej daty
 ---
 
 {{< edit_this_page >}}

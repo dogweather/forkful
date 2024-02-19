@@ -1,14 +1,18 @@
 ---
-title:                "Wyszukiwanie i zamienianie tekstu"
 aliases:
 - /pl/go/searching-and-replacing-text/
-date:                  2024-02-03T18:08:22.342165-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Wyszukiwanie i zamienianie tekstu"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:22.342165-07:00
+description: "Wyszukiwanie i zamiana tekstu w programowaniu u\u0142atwia modyfikacj\u0119\
+  \ i zarz\u0105dzanie ci\u0105gami znak\xF3w, co jest podstawowym zadaniem w manipulacji\
+  \ danymi i\u2026"
+lastmod: 2024-02-18 23:08:49.079819
+model: gpt-4-0125-preview
+summary: "Wyszukiwanie i zamiana tekstu w programowaniu u\u0142atwia modyfikacj\u0119\
+  \ i zarz\u0105dzanie ci\u0105gami znak\xF3w, co jest podstawowym zadaniem w manipulacji\
+  \ danymi i\u2026"
+title: Wyszukiwanie i zamienianie tekstu
 ---
 
 {{< edit_this_page >}}

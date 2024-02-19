@@ -1,15 +1,22 @@
 ---
-title:                "Tìm chiều dài của một chuỗi ký tự"
 aliases:
 - /vi/rust/finding-the-length-of-a-string/
-date:                  2024-01-28T22:00:32.237849-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tìm chiều dài của một chuỗi ký tự"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:00:32.237849-07:00
+description: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i ngh\u0129\
+  a l\xE0 \u0111\u1EBFm s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1 m\xE0 n\xF3 ch\u1EE9\
+  a. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
+  \ x\xE1c th\u1EF1c, \u0111\u1ECBnh d\u1EA1ng, ho\u1EB7c x\u1EED l\xFD d\u1EEF li\u1EC7\
+  u v\u0103n b\u1EA3n\u2026"
+lastmod: 2024-02-18 23:08:50.451929
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i ngh\u0129\
+  a l\xE0 \u0111\u1EBFm s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1 m\xE0 n\xF3 ch\u1EE9\
+  a. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
+  \ x\xE1c th\u1EF1c, \u0111\u1ECBnh d\u1EA1ng, ho\u1EB7c x\u1EED l\xFD d\u1EEF li\u1EC7\
+  u v\u0103n b\u1EA3n\u2026"
+title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 ---
 
 {{< edit_this_page >}}

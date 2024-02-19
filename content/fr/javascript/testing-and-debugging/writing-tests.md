@@ -1,14 +1,18 @@
 ---
-title:                "Rédaction de tests"
 aliases:
 - /fr/javascript/writing-tests/
-date:                  2024-02-03T19:31:16.105872-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rédaction de tests"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:16.105872-07:00
+description: "\xC9crire des tests en JavaScript fait r\xE9f\xE9rence \xE0 la pratique\
+  \ de cr\xE9er des scripts automatis\xE9s qui ex\xE9cutent votre code pour garantir\
+  \ qu'il se comporte\u2026"
+lastmod: 2024-02-18 23:09:09.259873
+model: gpt-4-0125-preview
+summary: "\xC9crire des tests en JavaScript fait r\xE9f\xE9rence \xE0 la pratique\
+  \ de cr\xE9er des scripts automatis\xE9s qui ex\xE9cutent votre code pour garantir\
+  \ qu'il se comporte\u2026"
+title: "R\xE9daction de tests"
 ---
 
 {{< edit_this_page >}}

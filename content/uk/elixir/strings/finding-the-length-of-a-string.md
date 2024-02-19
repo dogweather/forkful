@@ -1,13 +1,17 @@
 ---
-title:                "Визначення довжини рядка"
 aliases:
 - /uk/elixir/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:03.420251-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Визначення довжини рядка"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/elixir/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:03.420251-07:00
+description: "(\u0429\u043E \u0456 \u0447\u043E\u043C\u0443?) Finding the length of\
+  \ a string means counting the number of characters it contains. Programmers do this\
+  \ to validate input, control loops, or\u2026"
+lastmod: 2024-02-18 23:08:59.874615
+model: gpt-4-1106-preview
+summary: "(\u0429\u043E \u0456 \u0447\u043E\u043C\u0443?) Finding the length of a\
+  \ string means counting the number of characters it contains. Programmers do this\
+  \ to validate input, control loops, or\u2026"
+title: "\u0412\u0438\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044F \u0434\u043E\u0432\
+  \u0436\u0438\u043D\u0438 \u0440\u044F\u0434\u043A\u0430"
 ---
 
 {{< edit_this_page >}}

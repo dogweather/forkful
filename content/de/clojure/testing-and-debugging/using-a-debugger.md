@@ -1,13 +1,14 @@
 ---
-title:                "Einsatz eines Debuggers"
 aliases:
 - /de/clojure/using-a-debugger/
-date:                  2024-01-26T03:48:19.590829-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Einsatz eines Debuggers"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/using-a-debugger.md"
+date: 2024-01-26 03:48:19.590829-07:00
+description: "Einen Debugger zu verwenden bedeutet, sich selbst mit einer Lupe auszustatten,\
+  \ um den eigenen Code genau unter die Lupe zu nehmen. Programmierer tun dies,\u2026"
+lastmod: 2024-02-18 23:09:04.511875
+model: gpt-4-0125-preview
+summary: "Einen Debugger zu verwenden bedeutet, sich selbst mit einer Lupe auszustatten,\
+  \ um den eigenen Code genau unter die Lupe zu nehmen. Programmierer tun dies,\u2026"
+title: Einsatz eines Debuggers
 ---
 
 {{< edit_this_page >}}

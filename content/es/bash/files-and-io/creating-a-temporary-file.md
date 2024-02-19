@@ -1,13 +1,16 @@
 ---
-title:                "Creando un archivo temporal"
 aliases:
 - /es/bash/creating-a-temporary-file/
-date:                  2024-01-20T17:39:25.826513-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Creando un archivo temporal"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/creating-a-temporary-file.md"
+date: 2024-01-20 17:39:25.826513-07:00
+description: "Crear un fichero temporal es como hacer una nota adhesiva digital, algo\
+  \ temporal para guardar datos que no necesitas a largo plazo. Los programadores\
+  \ lo\u2026"
+lastmod: 2024-02-18 23:09:10.188698
+model: gpt-4-1106-preview
+summary: "Crear un fichero temporal es como hacer una nota adhesiva digital, algo\
+  \ temporal para guardar datos que no necesitas a largo plazo. Los programadores\
+  \ lo\u2026"
+title: Creando un archivo temporal
 ---
 
 {{< edit_this_page >}}

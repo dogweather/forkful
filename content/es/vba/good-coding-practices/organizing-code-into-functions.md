@@ -1,14 +1,18 @@
 ---
-title:                "Organizando código en funciones"
 aliases:
 - /es/vba/organizing-code-into-functions/
-date:                  2024-02-01T21:56:26.902246-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Organizando código en funciones"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/vba/organizing-code-into-functions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:56:26.902246-07:00
+description: "Organizar el c\xF3digo en funciones en Visual Basic para Aplicaciones\
+  \ (VBA) implica desglosar un programa en piezas m\xE1s peque\xF1as y manejables\
+  \ conocidas como\u2026"
+lastmod: 2024-02-18 23:09:09.803410
+model: gpt-4-0125-preview
+summary: "Organizar el c\xF3digo en funciones en Visual Basic para Aplicaciones (VBA)\
+  \ implica desglosar un programa en piezas m\xE1s peque\xF1as y manejables conocidas\
+  \ como\u2026"
+title: "Organizando c\xF3digo en funciones"
 ---
 
 {{< edit_this_page >}}

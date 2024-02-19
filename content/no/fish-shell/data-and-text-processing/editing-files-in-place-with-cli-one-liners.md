@@ -1,13 +1,16 @@
 ---
-title:                "Redigering av filer på stedet med CLI-enlinjerskommandoer"
 aliases:
 - /no/fish-shell/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:21:06.558328-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Redigering av filer på stedet med CLI-enlinjerskommandoer"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:21:06.558328-07:00
+description: "\xC5 redigere filer p\xE5 stedet med kommandolinje-enlinjere handler\
+  \ om \xE5 gj\xF8re endringer direkte i filer fra kommandolinjen, uten \xE5 \xE5\
+  pne dem i en\u2026"
+lastmod: 2024-02-18 23:08:54.347476
+model: gpt-4-0125-preview
+summary: "\xC5 redigere filer p\xE5 stedet med kommandolinje-enlinjere handler om\
+  \ \xE5 gj\xF8re endringer direkte i filer fra kommandolinjen, uten \xE5 \xE5pne\
+  \ dem i en\u2026"
+title: "Redigering av filer p\xE5 stedet med CLI-enlinjerskommandoer"
 ---
 
 {{< edit_this_page >}}

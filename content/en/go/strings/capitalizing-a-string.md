@@ -1,12 +1,15 @@
 ---
-title:                "Capitalizing a string"
 aliases:
 - /en/go/capitalizing-a-string/
-date:                  2024-02-03T17:50:01.738907-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizing a string"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/capitalizing-a-string.md"
+date: 2024-02-03 17:50:01.738907-07:00
+description: "Capitalizing a string involves transforming the first character of a\
+  \ given string to uppercase if it is in lowercase, making sure the string stands\
+  \ out or\u2026"
+lastmod: 2024-02-18 23:09:10.579646
+model: gpt-4-0125-preview
+summary: "Capitalizing a string involves transforming the first character of a given\
+  \ string to uppercase if it is in lowercase, making sure the string stands out or\u2026"
+title: Capitalizing a string
 ---
 
 {{< edit_this_page >}}

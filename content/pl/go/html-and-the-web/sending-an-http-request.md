@@ -1,14 +1,18 @@
 ---
-title:                "Wysyłanie żądania HTTP"
 aliases:
 - /pl/go/sending-an-http-request/
-date:                  2024-02-03T18:08:47.897900-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Wysyłanie żądania HTTP"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/sending-an-http-request.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:47.897900-07:00
+description: "Wysy\u0142anie \u017C\u0105dania HTTP polega na inicjowaniu po\u0142\
+  \u0105czenia z aplikacji Go do serwera sieciowego, API lub innej us\u0142ugi opartej\
+  \ na protokole HTTP. Programi\u015Bci\u2026"
+lastmod: 2024-02-18 23:08:49.093741
+model: gpt-4-0125-preview
+summary: "Wysy\u0142anie \u017C\u0105dania HTTP polega na inicjowaniu po\u0142\u0105\
+  czenia z aplikacji Go do serwera sieciowego, API lub innej us\u0142ugi opartej na\
+  \ protokole HTTP. Programi\u015Bci\u2026"
+title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 ---
 
 {{< edit_this_page >}}

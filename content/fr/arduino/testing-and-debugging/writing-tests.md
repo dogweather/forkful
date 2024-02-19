@@ -1,14 +1,18 @@
 ---
-title:                "Rédaction de tests"
 aliases:
 - /fr/arduino/writing-tests/
-date:                  2024-02-03T19:29:42.089248-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rédaction de tests"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:42.089248-07:00
+description: "\xC9crire des tests dans l'environnement Arduino fait r\xE9f\xE9rence\
+  \ au processus de cr\xE9ation de tests automatis\xE9s qui valident la fonctionnalit\xE9\
+  \ de votre code\u2026"
+lastmod: 2024-02-18 23:09:09.118150
+model: gpt-4-0125-preview
+summary: "\xC9crire des tests dans l'environnement Arduino fait r\xE9f\xE9rence au\
+  \ processus de cr\xE9ation de tests automatis\xE9s qui valident la fonctionnalit\xE9\
+  \ de votre code\u2026"
+title: "R\xE9daction de tests"
 ---
 
 {{< edit_this_page >}}

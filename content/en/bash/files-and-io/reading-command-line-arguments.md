@@ -1,13 +1,14 @@
 ---
-title:                "Reading command line arguments"
 aliases:
 - /en/bash/reading-command-line-arguments/
-date:                  2024-01-20T17:55:14.838810-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Reading command line arguments"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:14.838810-07:00
+description: Reading command line arguments lets scripts behave differently based
+  on user input. It's how scripts can be versatile and not just one-trick ponies.
+lastmod: 2024-02-18 23:09:11.245307
+model: gpt-4-1106-preview
+summary: Reading command line arguments lets scripts behave differently based on user
+  input. It's how scripts can be versatile and not just one-trick ponies.
+title: Reading command line arguments
 ---
 
 {{< edit_this_page >}}

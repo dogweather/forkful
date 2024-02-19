@@ -1,13 +1,14 @@
 ---
-title:                "Suchen und Ersetzen von Text"
 aliases:
 - /de/elm/searching-and-replacing-text/
-date:                  2024-01-20T17:57:30.337747-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Suchen und Ersetzen von Text"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:30.337747-07:00
+description: "Suchen und Ersetzen von Text erm\xF6glicht es, spezifische Zeichen oder\
+  \ Zeichenfolgen in einem Textblock zu finden und durch andere auszutauschen.\u2026"
+lastmod: 2024-02-18 23:09:04.766325
+model: gpt-4-1106-preview
+summary: "Suchen und Ersetzen von Text erm\xF6glicht es, spezifische Zeichen oder\
+  \ Zeichenfolgen in einem Textblock zu finden und durch andere auszutauschen.\u2026"
+title: Suchen und Ersetzen von Text
 ---
 
 {{< edit_this_page >}}

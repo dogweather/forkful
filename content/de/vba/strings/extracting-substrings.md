@@ -1,14 +1,16 @@
 ---
-title:                "Teilzeichenketten extrahieren"
 aliases:
 - /de/vba/extracting-substrings/
-date:                  2024-02-01T21:53:03.764716-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Teilzeichenketten extrahieren"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/vba/extracting-substrings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:03.764716-07:00
+description: "Das Extrahieren von Teilzeichenketten in Visual Basic f\xFCr Applikationen\
+  \ (VBA) umfasst das Isolieren spezifischer Teile einer Zeichenkette basierend auf\u2026"
+lastmod: 2024-02-18 23:09:04.675882
+model: gpt-4-0125-preview
+summary: "Das Extrahieren von Teilzeichenketten in Visual Basic f\xFCr Applikationen\
+  \ (VBA) umfasst das Isolieren spezifischer Teile einer Zeichenkette basierend auf\u2026"
+title: Teilzeichenketten extrahieren
 ---
 
 {{< edit_this_page >}}

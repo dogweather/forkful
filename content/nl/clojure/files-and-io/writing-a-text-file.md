@@ -1,15 +1,18 @@
 ---
-title:                "Een tekstbestand schrijven"
 aliases:
 - /nl/clojure/writing-a-text-file/
-date:                  2024-01-28T22:12:14.725118-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tekstbestand schrijven"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/clojure/writing-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:14.725118-07:00
+description: "Het schrijven van een tekstbestand omvat het cre\xEBren of wijzigen\
+  \ van tekstgegevens en deze opslaan in een bestand op uw opslagmedium. Programmeurs\
+  \ doen\u2026"
+lastmod: 2024-02-18 23:09:01.500008
+model: gpt-4-0125-preview
+summary: "Het schrijven van een tekstbestand omvat het cre\xEBren of wijzigen van\
+  \ tekstgegevens en deze opslaan in een bestand op uw opslagmedium. Programmeurs\
+  \ doen\u2026"
+title: Een tekstbestand schrijven
 ---
 
 {{< edit_this_page >}}

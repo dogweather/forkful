@@ -1,14 +1,21 @@
 ---
-title:                "部分文字列の抽出"
 aliases:
 - /ja/fish-shell/extracting-substrings/
-date:                  2024-01-20T17:45:47.874348-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "部分文字列の抽出"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/extracting-substrings.md"
+date: 2024-01-20 17:45:47.874348-07:00
+description: "\u6587\u5B57\u5217\u304B\u3089\u7279\u5B9A\u90E8\u5206\u3092\u53D6\u308A\
+  \u51FA\u3059\u306E\u304C\u30B5\u30D6\u30B9\u30C8\u30EA\u30F3\u30B0\u62BD\u51FA\u3067\
+  \u3059\u3002\u30C7\u30FC\u30BF\u306E\u89E3\u6790\u3001\u51E6\u7406\u3001\u7279\u5B9A\
+  \u30D1\u30BF\u30FC\u30F3\u306E\u691C\u7D22\u306A\u3069\u306B\u5FC5\u8981\u3067\u3059\
+  \u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.297239
+model: gpt-4-1106-preview
+summary: "\u6587\u5B57\u5217\u304B\u3089\u7279\u5B9A\u90E8\u5206\u3092\u53D6\u308A\
+  \u51FA\u3059\u306E\u304C\u30B5\u30D6\u30B9\u30C8\u30EA\u30F3\u30B0\u62BD\u51FA\u3067\
+  \u3059\u3002\u30C7\u30FC\u30BF\u306E\u89E3\u6790\u3001\u51E6\u7406\u3001\u7279\u5B9A\
+  \u30D1\u30BF\u30FC\u30F3\u306E\u691C\u7D22\u306A\u3069\u306B\u5FC5\u8981\u3067\u3059\
+  \u3002"
+title: "\u90E8\u5206\u6587\u5B57\u5217\u306E\u62BD\u51FA"
 ---
 
 {{< edit_this_page >}}

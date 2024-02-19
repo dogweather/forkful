@@ -1,15 +1,17 @@
 ---
-title:                "Karakters verwijderen die overeenkomen met een patroon"
 aliases:
 - /nl/kotlin/deleting-characters-matching-a-pattern/
-date:                  2024-01-28T21:58:56.185111-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Karakters verwijderen die overeenkomen met een patroon"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/kotlin/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:58:56.185111-07:00
+description: "Karakters verwijderen die overeenkomen met een patroon gaat over het\
+  \ vinden en verwijderen van specifieke reeksen karakters in een string op basis\
+  \ van\u2026"
+lastmod: 2024-02-18 23:09:01.787995
+model: gpt-4-0125-preview
+summary: "Karakters verwijderen die overeenkomen met een patroon gaat over het vinden\
+  \ en verwijderen van specifieke reeksen karakters in een string op basis van\u2026"
+title: Karakters verwijderen die overeenkomen met een patroon
 ---
 
 {{< edit_this_page >}}

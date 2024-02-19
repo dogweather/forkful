@@ -1,14 +1,18 @@
 ---
-title:                "Lavorare con XML"
 aliases:
 - /it/c/working-with-xml/
-date:                  2024-02-03T18:13:00.841912-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con XML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/working-with-xml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:13:00.841912-07:00
+description: "Lavorare con XML in C coinvolge l'analisi (parsing), l'interrogazione\
+  \ e la manipolazione di documenti XML utilizzando varie librerie. I programmatori\
+  \ si\u2026"
+lastmod: 2024-02-18 23:08:56.364406
+model: gpt-4-0125-preview
+summary: "Lavorare con XML in C coinvolge l'analisi (parsing), l'interrogazione e\
+  \ la manipolazione di documenti XML utilizzando varie librerie. I programmatori\
+  \ si\u2026"
+title: Lavorare con XML
 ---
 
 {{< edit_this_page >}}

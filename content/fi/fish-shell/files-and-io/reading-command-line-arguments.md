@@ -1,13 +1,16 @@
 ---
-title:                "Komennoriviparametrien lukeminen"
 aliases:
 - /fi/fish-shell/reading-command-line-arguments/
-date:                  2024-01-20T17:56:17.063143-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Komennoriviparametrien lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:17.063143-07:00
+description: "Komennon rivin argumentit ovat ohjelmallesi sy\xF6tettyj\xE4 tietoja.\
+  \ Ne mahdollistavat joustavuuden ja mukautettavuuden, jolloin ohjelmasi voi k\xE4\
+  ytt\xE4yty\xE4 eri\u2026"
+lastmod: 2024-02-18 23:09:08.101147
+model: gpt-4-1106-preview
+summary: "Komennon rivin argumentit ovat ohjelmallesi sy\xF6tettyj\xE4 tietoja. Ne\
+  \ mahdollistavat joustavuuden ja mukautettavuuden, jolloin ohjelmasi voi k\xE4ytt\xE4\
+  yty\xE4 eri\u2026"
+title: Komennoriviparametrien lukeminen
 ---
 
 {{< edit_this_page >}}

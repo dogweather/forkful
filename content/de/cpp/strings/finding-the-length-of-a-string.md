@@ -1,13 +1,16 @@
 ---
-title:                "Ermittlung der Zeichenkettenlänge"
 aliases:
 - /de/cpp/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:14.361246-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ermittlung der Zeichenkettenlänge"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:14.361246-07:00
+description: "In C++ ist die L\xE4nge eines Strings die Anzahl der Zeichen, aus denen\
+  \ er besteht. Programmierer m\xFCssen diese oft kennen, um Schleifen korrekt zu\
+  \ steuern,\u2026"
+lastmod: 2024-02-18 23:09:05.179338
+model: gpt-4-1106-preview
+summary: "In C++ ist die L\xE4nge eines Strings die Anzahl der Zeichen, aus denen\
+  \ er besteht. Programmierer m\xFCssen diese oft kennen, um Schleifen korrekt zu\
+  \ steuern,\u2026"
+title: "Ermittlung der Zeichenkettenl\xE4nge"
 ---
 
 {{< edit_this_page >}}

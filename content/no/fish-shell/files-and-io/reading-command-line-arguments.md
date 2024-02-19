@@ -1,13 +1,16 @@
 ---
-title:                "Lese kommandolinjeargumenter"
 aliases:
 - /no/fish-shell/reading-command-line-arguments/
-date:                  2024-01-20T17:55:56.957456-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lese kommandolinjeargumenter"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:56.957456-07:00
+description: "\xC5 lese kommandolinjeargumenter betyr \xE5 hente og bruke data som\
+  \ brukeren skriver inn n\xE5r de kj\xF8rer et skript. Programmerere bruker dette\
+  \ for \xE5 gj\xF8re skript\u2026"
+lastmod: 2024-02-18 23:08:54.366558
+model: gpt-4-1106-preview
+summary: "\xC5 lese kommandolinjeargumenter betyr \xE5 hente og bruke data som brukeren\
+  \ skriver inn n\xE5r de kj\xF8rer et skript. Programmerere bruker dette for \xE5\
+  \ gj\xF8re skript\u2026"
+title: Lese kommandolinjeargumenter
 ---
 
 {{< edit_this_page >}}

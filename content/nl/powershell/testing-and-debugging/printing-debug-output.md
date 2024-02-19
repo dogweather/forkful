@@ -1,15 +1,16 @@
 ---
-title:                "Debug-output afdrukken"
 aliases:
 - /nl/powershell/printing-debug-output/
-date:                  2024-01-28T22:05:06.976620-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Debug-output afdrukken"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/powershell/printing-debug-output.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:05:06.976620-07:00
+description: "Debugoutput afdrukken is als een gesprek voeren met je code. Het gaat\
+  \ over het invoegen van printfuncties om te tonen wat er onder de motorkap van je\u2026"
+lastmod: 2024-02-18 23:09:02.094818
+model: gpt-4-0125-preview
+summary: "Debugoutput afdrukken is als een gesprek voeren met je code. Het gaat over\
+  \ het invoegen van printfuncties om te tonen wat er onder de motorkap van je\u2026"
+title: Debug-output afdrukken
 ---
 
 {{< edit_this_page >}}

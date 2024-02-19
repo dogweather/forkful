@@ -1,14 +1,28 @@
 ---
-title:                "读取文本文件"
 aliases:
 - /zh/google-apps-script/reading-a-text-file/
-date:                  2024-02-01T21:58:47.620882-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "读取文本文件"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/google-apps-script/reading-a-text-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:47.620882-07:00
+description: "\u5728 Google Apps Script (GAS) \u4E2D\u8BFB\u53D6\u6587\u672C\u6587\
+  \u4EF6\u6D89\u53CA\u8BBF\u95EE\u548C\u63D0\u53D6\u5B58\u50A8\u5728 Google Drive\
+  \ \u6216\u5176\u4ED6\u53EF\u8BBF\u95EE\u7684\u4E91\u5B58\u50A8\u4E2D\u7684\u6587\
+  \u4EF6\u7684\u6587\u672C\u6570\u636E\u3002\u7A0B\u5E8F\u5458\u5E38\u5E38\u9700\u8981\
+  \u8BFB\u53D6\u8FD9\u4E9B\u6587\u4EF6\uFF0C\u4EE5\u4FBF\u76F4\u63A5\u5728\u5176 GAS\
+  \ \u9879\u76EE\u4E2D\u5BFC\u5165\u3001\u64CD\u4F5C\u6216\u5206\u6790\u6587\u672C\
+  \u6570\u636E\uFF0C\u5B9E\u73B0\u81EA\u52A8\u5316\u5E76\u4E0E\u8C37\u6B4C\u7684\u4EA7\
+  \u54C1\u5957\u4EF6\u96C6\u6210\u3002"
+lastmod: 2024-02-18 23:08:58.767891
+model: gpt-4-0125-preview
+summary: "\u5728 Google Apps Script (GAS) \u4E2D\u8BFB\u53D6\u6587\u672C\u6587\u4EF6\
+  \u6D89\u53CA\u8BBF\u95EE\u548C\u63D0\u53D6\u5B58\u50A8\u5728 Google Drive \u6216\
+  \u5176\u4ED6\u53EF\u8BBF\u95EE\u7684\u4E91\u5B58\u50A8\u4E2D\u7684\u6587\u4EF6\u7684\
+  \u6587\u672C\u6570\u636E\u3002\u7A0B\u5E8F\u5458\u5E38\u5E38\u9700\u8981\u8BFB\u53D6\
+  \u8FD9\u4E9B\u6587\u4EF6\uFF0C\u4EE5\u4FBF\u76F4\u63A5\u5728\u5176 GAS \u9879\u76EE\
+  \u4E2D\u5BFC\u5165\u3001\u64CD\u4F5C\u6216\u5206\u6790\u6587\u672C\u6570\u636E\uFF0C\
+  \u5B9E\u73B0\u81EA\u52A8\u5316\u5E76\u4E0E\u8C37\u6B4C\u7684\u4EA7\u54C1\u5957\u4EF6\
+  \u96C6\u6210\u3002"
+title: "\u8BFB\u53D6\u6587\u672C\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

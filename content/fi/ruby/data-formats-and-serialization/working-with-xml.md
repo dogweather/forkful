@@ -1,13 +1,15 @@
 ---
-title:                "XML:n käsittely"
 aliases:
 - /fi/ruby/working-with-xml/
-date:                  2024-01-26T04:35:21.127588-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML:n käsittely"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/working-with-xml.md"
+date: 2024-01-26 04:35:21.127588-07:00
+description: "Ty\xF6skentely XML:n parissa tarkoittaa XML-dokumenttien (eXtensible\
+  \ Markup Language) j\xE4sent\xE4mist\xE4, luomista ja manipulointia koodin avulla.\
+  \ Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:08.209319
+model: gpt-4-0125-preview
+summary: "Ty\xF6skentely XML:n parissa tarkoittaa XML-dokumenttien (eXtensible Markup\
+  \ Language) j\xE4sent\xE4mist\xE4, luomista ja manipulointia koodin avulla. Ohjelmoijat\u2026"
+title: "XML:n k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

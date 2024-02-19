@@ -1,15 +1,16 @@
 ---
-title:                "Het huidige datum ophalen"
 aliases:
 - /nl/typescript/getting-the-current-date/
-date:                  2024-01-28T22:01:19.255255-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Het huidige datum ophalen"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/typescript/getting-the-current-date.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:19.255255-07:00
+description: "De huidige datum in je code krijgen betekent het vastleggen van het\
+  \ huidige moment tot op de dag. Programmeurs doen dit om gebeurtenissen te\u2026"
+lastmod: 2024-02-18 23:09:01.584552
+model: gpt-4-0125-preview
+summary: "De huidige datum in je code krijgen betekent het vastleggen van het huidige\
+  \ moment tot op de dag. Programmeurs doen dit om gebeurtenissen te\u2026"
+title: Het huidige datum ophalen
 ---
 
 {{< edit_this_page >}}

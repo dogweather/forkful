@@ -1,14 +1,17 @@
 ---
-title:                "Een webpagina downloaden"
 aliases:
 - /nl/c/downloading-a-web-page/
-date:                  2024-02-03T17:55:49.788099-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een webpagina downloaden"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/downloading-a-web-page.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:49.788099-07:00
+description: "Een webpagina downloaden in C houdt in dat je programmatisch toegang\
+  \ krijgt tot de inhoud van een webpagina via het internet en deze lokaal opslaat\
+  \ voor\u2026"
+lastmod: 2024-02-18 23:09:02.371511
+model: gpt-4-0125-preview
+summary: "Een webpagina downloaden in C houdt in dat je programmatisch toegang krijgt\
+  \ tot de inhoud van een webpagina via het internet en deze lokaal opslaat voor\u2026"
+title: Een webpagina downloaden
 ---
 
 {{< edit_this_page >}}

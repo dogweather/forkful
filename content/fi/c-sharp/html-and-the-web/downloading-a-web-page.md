@@ -1,13 +1,15 @@
 ---
-title:                "Verkkosivun lataaminen"
 aliases:
 - /fi/c-sharp/downloading-a-web-page/
-date:                  2024-01-20T17:43:39.363461-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Verkkosivun lataaminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/downloading-a-web-page.md"
+date: 2024-01-20 17:43:39.363461-07:00
+description: "Web-sivun lataaminen on sen sis\xE4ll\xF6n hakemista internetist\xE4\
+  \ ohjelmallisesti. Ohjelmoijat tekev\xE4t t\xE4m\xE4n tiedon k\xE4sittelyyn, analysointiin\
+  \ tai\u2026"
+lastmod: 2024-02-18 23:09:07.619457
+model: gpt-4-1106-preview
+summary: "Web-sivun lataaminen on sen sis\xE4ll\xF6n hakemista internetist\xE4 ohjelmallisesti.\
+  \ Ohjelmoijat tekev\xE4t t\xE4m\xE4n tiedon k\xE4sittelyyn, analysointiin tai\u2026"
+title: Verkkosivun lataaminen
 ---
 
 {{< edit_this_page >}}

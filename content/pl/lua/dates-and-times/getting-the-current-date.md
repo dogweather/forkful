@@ -1,14 +1,17 @@
 ---
-title:                "Pobieranie aktualnej daty"
 aliases:
 - /pl/lua/getting-the-current-date/
-date:                  2024-02-03T19:10:25.613161-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pobieranie aktualnej daty"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:10:25.613161-07:00
+description: "Pobieranie aktualnej daty w programowaniu jest kluczowym zadaniem dla\
+  \ wielu aplikacji, w tym zapisywania log\xF3w, znakowania czasu zdarze\u0144 czy\
+  \ planowania\u2026"
+lastmod: 2024-02-18 23:08:49.750386
+model: gpt-4-0125-preview
+summary: "Pobieranie aktualnej daty w programowaniu jest kluczowym zadaniem dla wielu\
+  \ aplikacji, w tym zapisywania log\xF3w, znakowania czasu zdarze\u0144 czy planowania\u2026"
+title: Pobieranie aktualnej daty
 ---
 
 {{< edit_this_page >}}

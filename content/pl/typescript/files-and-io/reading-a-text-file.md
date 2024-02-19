@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
 aliases:
 - /pl/typescript/reading-a-text-file/
-date:                  2024-01-20T17:55:35.992376-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie pliku tekstowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/reading-a-text-file.md"
+date: 2024-01-20 17:55:35.992376-07:00
+description: "Czytanie pliku tekstowego to po prostu wczytywanie zawarto\u015Bci pliku\
+  \ do pami\u0119ci komputera. Programi\u015Bci robi\u0105 to, by manipulowa\u0107\
+  \ danymi, dokonywa\u0107 analiz\u2026"
+lastmod: 2024-02-18 23:08:49.365078
+model: gpt-4-1106-preview
+summary: "Czytanie pliku tekstowego to po prostu wczytywanie zawarto\u015Bci pliku\
+  \ do pami\u0119ci komputera. Programi\u015Bci robi\u0105 to, by manipulowa\u0107\
+  \ danymi, dokonywa\u0107 analiz\u2026"
+title: Odczytywanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

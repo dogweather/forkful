@@ -1,14 +1,17 @@
 ---
-title:                "Travailler avec YAML"
 aliases:
 - /fr/java/working-with-yaml/
-date:                  2024-02-03T19:25:43.337495-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Travailler avec YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:25:43.337495-07:00
+description: "YAML, acronyme de \"YAML Ain't Markup Language\" (YAML n'est pas un\
+  \ langage de balisage), est un standard de s\xE9rialisation de donn\xE9es lisible\
+  \ par l'humain\u2026"
+lastmod: 2024-02-18 23:09:08.702585
+model: gpt-4-0125-preview
+summary: "YAML, acronyme de \"YAML Ain't Markup Language\" (YAML n'est pas un langage\
+  \ de balisage), est un standard de s\xE9rialisation de donn\xE9es lisible par l'humain\u2026"
+title: Travailler avec YAML
 ---
 
 {{< edit_this_page >}}

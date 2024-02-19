@@ -1,13 +1,16 @@
 ---
-title:                "Jämföra två datum"
 aliases:
 - /sv/python/comparing-two-dates/
-date:                  2024-01-20T17:33:35.668734-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Jämföra två datum"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/comparing-two-dates.md"
+date: 2024-01-20 17:33:35.668734-07:00
+description: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att avg\xF6ra vilket av dem\
+  \ som \xE4r tidigast eller senast. Programmerare g\xF6r detta f\xF6r att hantera\
+  \ tidsberoende h\xE4ndelser, t.ex.\u2026"
+lastmod: 2024-02-18 23:08:51.433641
+model: gpt-4-1106-preview
+summary: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att avg\xF6ra vilket av dem som\
+  \ \xE4r tidigast eller senast. Programmerare g\xF6r detta f\xF6r att hantera tidsberoende\
+  \ h\xE4ndelser, t.ex.\u2026"
+title: "J\xE4mf\xF6ra tv\xE5 datum"
 ---
 
 {{< edit_this_page >}}

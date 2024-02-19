@@ -1,13 +1,14 @@
 ---
-title:                "Enviando uma requisição HTTP"
 aliases:
 - /pt/arduino/sending-an-http-request/
-date:                  2024-01-20T17:59:05.751068-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando uma requisição HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/sending-an-http-request.md"
+date: 2024-01-20 17:59:05.751068-07:00
+description: "Fazer um pedido HTTP significa pedir ou enviar dados para a web. Programadores\
+  \ fazem isso para que Arduinos interajam com o mundo online, como obter dados\u2026"
+lastmod: 2024-02-18 23:08:58.406973
+model: gpt-4-1106-preview
+summary: "Fazer um pedido HTTP significa pedir ou enviar dados para a web. Programadores\
+  \ fazem isso para que Arduinos interajam com o mundo online, como obter dados\u2026"
+title: "Enviando uma requisi\xE7\xE3o HTTP"
 ---
 
 {{< edit_this_page >}}

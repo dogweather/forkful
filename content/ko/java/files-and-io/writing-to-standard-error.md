@@ -1,14 +1,26 @@
 ---
-title:                "표준 에러에 쓰기"
 aliases:
 - /ko/java/writing-to-standard-error/
-date:                  2024-02-03T19:33:43.302533-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "표준 에러에 쓰기"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:33:43.302533-07:00
+description: "\uD45C\uC900 \uC624\uB958(stderr)\uC5D0 \uAE30\uB85D\uD558\uAE30\uB294\
+  \ \uCF58\uC194\uC774\uB098 \uD130\uBBF8\uB110\uC5D0 \uC5D0\uB7EC \uBA54\uC2DC\uC9C0\
+  \uC640 \uC9C4\uB2E8 \uC815\uBCF4\uB97C \uCD9C\uB825\uD558\uB294 \uACFC\uC815\uC744\
+  \ \uB9D0\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774\uB97C\
+  \ \uD1B5\uD574 \uC5D0\uB7EC \uC815\uBCF4\uB97C \uD45C\uC900 \uCD9C\uB825(stdout)\uACFC\
+  \ \uBD84\uB9AC\uD558\uC5EC \uB514\uBC84\uAE45\uACFC \uB85C\uADF8 \uBD84\uC11D\uC744\
+  \ \uC6A9\uC774\uD558\uAC8C \uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.046293
+model: gpt-4-0125-preview
+summary: "\uD45C\uC900 \uC624\uB958(stderr)\uC5D0 \uAE30\uB85D\uD558\uAE30\uB294 \uCF58\
+  \uC194\uC774\uB098 \uD130\uBBF8\uB110\uC5D0 \uC5D0\uB7EC \uBA54\uC2DC\uC9C0\uC640\
+  \ \uC9C4\uB2E8 \uC815\uBCF4\uB97C \uCD9C\uB825\uD558\uB294 \uACFC\uC815\uC744 \uB9D0\
+  \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774\uB97C \uD1B5\
+  \uD574 \uC5D0\uB7EC \uC815\uBCF4\uB97C \uD45C\uC900 \uCD9C\uB825(stdout)\uACFC \uBD84\
+  \uB9AC\uD558\uC5EC \uB514\uBC84\uAE45\uACFC \uB85C\uADF8 \uBD84\uC11D\uC744 \uC6A9\
+  \uC774\uD558\uAC8C \uD569\uB2C8\uB2E4."
+title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
 ---
 
 {{< edit_this_page >}}

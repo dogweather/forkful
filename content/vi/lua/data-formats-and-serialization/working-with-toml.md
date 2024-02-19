@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với TOML"
 aliases:
 - /vi/lua/working-with-toml/
-date:                  2024-01-28T22:11:27.473273-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/lua/working-with-toml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:27.473273-07:00
+description: "L\xE0m vi\u1EC7c v\u1EDBi TOML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xED\
+  ch c\xFA ph\xE1p v\xE0 t\u1EA1o d\u1EEF li\u1EC7u TOML (Tom's Obvious, Minimal Language)\
+  \ b\u1EB1ng Lua. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng TOML cho c\xE1c t\u1EC7\
+  p\u2026"
+lastmod: 2024-02-18 23:08:50.862461
+model: gpt-4-0125-preview
+summary: "L\xE0m vi\u1EC7c v\u1EDBi TOML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA\
+  \ ph\xE1p v\xE0 t\u1EA1o d\u1EEF li\u1EC7u TOML (Tom's Obvious, Minimal Language)\
+  \ b\u1EB1ng Lua. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng TOML cho c\xE1c t\u1EC7\
+  p\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 ---
 
 {{< edit_this_page >}}

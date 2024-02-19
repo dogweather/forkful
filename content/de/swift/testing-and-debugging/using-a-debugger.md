@@ -1,13 +1,16 @@
 ---
-title:                "Einsatz eines Debuggers"
 aliases:
 - /de/swift/using-a-debugger/
-date:                  2024-01-26T04:10:28.202713-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Einsatz eines Debuggers"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/using-a-debugger.md"
+date: 2024-01-26 04:10:28.202713-07:00
+description: "Ein Debugger wird eingesetzt, um spezialisierte Werkzeuge zu nutzen,\
+  \ mit denen Ihr Code w\xE4hrend der Ausf\xFChrung getestet und inspiziert werden\
+  \ kann. Das\u2026"
+lastmod: 2024-02-18 23:09:05.239152
+model: gpt-4-0125-preview
+summary: "Ein Debugger wird eingesetzt, um spezialisierte Werkzeuge zu nutzen, mit\
+  \ denen Ihr Code w\xE4hrend der Ausf\xFChrung getestet und inspiziert werden kann.\
+  \ Das\u2026"
+title: Einsatz eines Debuggers
 ---
 
 {{< edit_this_page >}}

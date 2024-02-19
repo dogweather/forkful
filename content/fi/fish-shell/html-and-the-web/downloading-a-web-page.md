@@ -1,13 +1,14 @@
 ---
-title:                "Verkkosivun lataaminen"
 aliases:
 - /fi/fish-shell/downloading-a-web-page/
-date:                  2024-01-20T17:43:53.722354-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Verkkosivun lataaminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/downloading-a-web-page.md"
+date: 2024-01-20 17:43:53.722354-07:00
+description: "Ladata web-sivu tarkoittaa, ett\xE4 haet sivun sis\xE4ll\xF6n netist\xE4\
+  . Ohjelmoijat tekev\xE4t t\xE4t\xE4 datan analysointiin, testaukseen tai automatisointiin."
+lastmod: 2024-02-18 23:09:08.082660
+model: gpt-4-1106-preview
+summary: "Ladata web-sivu tarkoittaa, ett\xE4 haet sivun sis\xE4ll\xF6n netist\xE4\
+  . Ohjelmoijat tekev\xE4t t\xE4t\xE4 datan analysointiin, testaukseen tai automatisointiin."
+title: Verkkosivun lataaminen
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Refaktorering"
 aliases:
 - /no/clojure/refactoring/
-date:                  2024-01-26T01:17:27.427776-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refaktorering"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/refactoring.md"
+date: 2024-01-26 01:17:27.427776-07:00
+description: "Refaktorering er prosessen med \xE5 restrukturere eksisterende datakode\
+  \ uten \xE5 endre dens eksterne oppf\xF8rsel, med m\xE5l om \xE5 forbedre ikke-funksjonelle\u2026"
+lastmod: 2024-02-18 23:08:53.572279
+model: gpt-4-0125-preview
+summary: "Refaktorering er prosessen med \xE5 restrukturere eksisterende datakode\
+  \ uten \xE5 endre dens eksterne oppf\xF8rsel, med m\xE5l om \xE5 forbedre ikke-funksjonelle\u2026"
+title: Refaktorering
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Webseite herunterladen"
 aliases:
 - /de/kotlin/downloading-a-web-page/
-date:                  2024-01-20T17:44:44.795003-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Webseite herunterladen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/downloading-a-web-page.md"
+date: 2024-01-20 17:44:44.795003-07:00
+description: "Das Herunterladen einer Webseite bedeutet, ihren Inhalt \xFCber das\
+  \ Internet zu beziehen. Programmierer machen das, um Daten zu sammeln, inhaltliche\
+  \ Analysen\u2026"
+lastmod: 2024-02-18 23:09:04.825170
+model: gpt-4-1106-preview
+summary: "Das Herunterladen einer Webseite bedeutet, ihren Inhalt \xFCber das Internet\
+  \ zu beziehen. Programmierer machen das, um Daten zu sammeln, inhaltliche Analysen\u2026"
+title: Webseite herunterladen
 ---
 
 {{< edit_this_page >}}

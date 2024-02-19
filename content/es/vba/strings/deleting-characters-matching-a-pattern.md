@@ -1,14 +1,16 @@
 ---
-title:                "Eliminando caracteres que coinciden con un patrón"
 aliases:
 - /es/vba/deleting-characters-matching-a-pattern/
-date:                  2024-02-01T21:52:15.352199-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eliminando caracteres que coinciden con un patrón"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/vba/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:15.352199-07:00
+description: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico en\
+  \ Visual Basic para Aplicaciones (VBA) implica identificar y posteriormente eliminar\u2026"
+lastmod: 2024-02-18 23:09:09.777670
+model: gpt-4-0125-preview
+summary: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico en Visual\
+  \ Basic para Aplicaciones (VBA) implica identificar y posteriormente eliminar\u2026"
+title: "Eliminando caracteres que coinciden con un patr\xF3n"
 ---
 
 {{< edit_this_page >}}

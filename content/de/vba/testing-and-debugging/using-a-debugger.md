@@ -1,14 +1,18 @@
 ---
-title:                "Einen Debugger verwenden"
 aliases:
 - /de/vba/using-a-debugger/
-date:                  2024-02-01T22:03:59.994039-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Einen Debugger verwenden"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/vba/using-a-debugger.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:59.994039-07:00
+description: "Die Verwendung eines Debuggers in Visual Basic f\xFCr Anwendungen (VBA)\
+  \ beinhaltet das schrittweise Ausf\xFChren Ihres Codes, um dessen Ausf\xFChrungsfluss\
+  \ und\u2026"
+lastmod: 2024-02-18 23:09:04.694604
+model: gpt-4-0125-preview
+summary: "Die Verwendung eines Debuggers in Visual Basic f\xFCr Anwendungen (VBA)\
+  \ beinhaltet das schrittweise Ausf\xFChren Ihres Codes, um dessen Ausf\xFChrungsfluss\
+  \ und\u2026"
+title: Einen Debugger verwenden
 ---
 
 {{< edit_this_page >}}

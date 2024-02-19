@@ -1,14 +1,18 @@
 ---
-title:                "Escrevendo para o erro padrão"
 aliases:
 - /pt/bash/writing-to-standard-error/
-date:                  2024-02-03T19:32:18.919169-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escrevendo para o erro padrão"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:18.919169-07:00
+description: "Escrever para o erro padr\xE3o (stderr) no Bash \xE9 sobre direcionar\
+  \ mensagens de erro ou qualquer sa\xEDda de diagn\xF3stico importante separadamente\
+  \ da sa\xEDda\u2026"
+lastmod: 2024-02-18 23:08:58.341472
+model: gpt-4-0125-preview
+summary: "Escrever para o erro padr\xE3o (stderr) no Bash \xE9 sobre direcionar mensagens\
+  \ de erro ou qualquer sa\xEDda de diagn\xF3stico importante separadamente da sa\xED\
+  da\u2026"
+title: "Escrevendo para o erro padr\xE3o"
 ---
 
 {{< edit_this_page >}}

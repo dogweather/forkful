@@ -1,14 +1,16 @@
 ---
-title:                "Interpolazione di una stringa"
 aliases:
 - /it/go/interpolating-a-string/
-date:                  2024-02-03T17:59:20.081776-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interpolazione di una stringa"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/interpolating-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:20.081776-07:00
+description: "L'interpolazione di stringhe \xE8 un metodo per costruire stringhe che\
+  \ incorporano variabili, consentendo la creazione di stringhe dinamiche. I programmatori\u2026"
+lastmod: 2024-02-18 23:08:55.417690
+model: gpt-4-0125-preview
+summary: "L'interpolazione di stringhe \xE8 un metodo per costruire stringhe che incorporano\
+  \ variabili, consentendo la creazione di stringhe dinamiche. I programmatori\u2026"
+title: Interpolazione di una stringa
 ---
 
 {{< edit_this_page >}}

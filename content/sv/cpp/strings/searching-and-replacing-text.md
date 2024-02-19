@@ -1,13 +1,16 @@
 ---
-title:                "Sökning och ersättning av text"
 aliases:
 - /sv/cpp/searching-and-replacing-text/
-date:                  2024-01-20T17:57:16.709512-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sökning och ersättning av text"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:16.709512-07:00
+description: "S\xF6k och ers\xE4tt inneb\xE4r att hitta specifik text och byta ut\
+  \ den mot n\xE5got annat. Programmerare anv\xE4nder det f\xF6r att snabbt \xE4ndra\
+  \ kod, data eller dokument,\u2026"
+lastmod: 2024-02-18 23:08:52.069662
+model: gpt-4-1106-preview
+summary: "S\xF6k och ers\xE4tt inneb\xE4r att hitta specifik text och byta ut den\
+  \ mot n\xE5got annat. Programmerare anv\xE4nder det f\xF6r att snabbt \xE4ndra kod,\
+  \ data eller dokument,\u2026"
+title: "S\xF6kning och ers\xE4ttning av text"
 ---
 
 {{< edit_this_page >}}

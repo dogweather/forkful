@@ -1,14 +1,20 @@
 ---
-title:                "HTMLの解析"
 aliases:
 - /ja/vba/parsing-html/
-date:                  2024-02-01T21:57:21.163593-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTMLの解析"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/vba/parsing-html.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:21.163593-07:00
+description: "Visual Basic for Applications (VBA) \u3067 HTML \u3092\u89E3\u6790\u3059\
+  \u308B\u3068\u306F\u3001HTML\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\u304B\u3089\u7279\
+  \u5B9A\u306E\u60C5\u5831\u3092\u62BD\u51FA\u3059\u308B\u3053\u3068\u3067\u3059\u3002\
+  \u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001Microsoft Excel \u3084 Access\u2026"
+lastmod: 2024-02-18 23:08:54.758539
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications (VBA) \u3067 HTML \u3092\u89E3\u6790\u3059\
+  \u308B\u3068\u306F\u3001HTML\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\u304B\u3089\u7279\
+  \u5B9A\u306E\u60C5\u5831\u3092\u62BD\u51FA\u3059\u308B\u3053\u3068\u3067\u3059\u3002\
+  \u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001Microsoft Excel \u3084 Access\u2026"
+title: "HTML\u306E\u89E3\u6790"
 ---
 
 {{< edit_this_page >}}

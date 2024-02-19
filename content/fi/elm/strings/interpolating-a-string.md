@@ -1,13 +1,14 @@
 ---
-title:                "Merkkijonon interpolointi"
 aliases:
 - /fi/elm/interpolating-a-string/
-date:                  2024-01-20T17:50:54.499244-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon interpolointi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/interpolating-a-string.md"
+date: 2024-01-20 17:50:54.499244-07:00
+description: "Mik\xE4 on merkkijonojen interpolointi ja miksi ohjelmoijat k\xE4ytt\xE4\
+  v\xE4t sit\xE4? Merkkijonojen interpoloinnilla tarkoitetaan muuttujien tai lausekkeiden\u2026"
+lastmod: 2024-02-18 23:09:07.488792
+model: gpt-4-1106-preview
+summary: "Mik\xE4 on merkkijonojen interpolointi ja miksi ohjelmoijat k\xE4ytt\xE4\
+  v\xE4t sit\xE4? Merkkijonojen interpoloinnilla tarkoitetaan muuttujien tai lausekkeiden\u2026"
+title: Merkkijonon interpolointi
 ---
 
 {{< edit_this_page >}}

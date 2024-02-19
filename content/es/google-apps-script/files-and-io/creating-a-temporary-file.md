@@ -1,14 +1,16 @@
 ---
-title:                "Creando un archivo temporal"
 aliases:
 - /es/google-apps-script/creating-a-temporary-file/
-date:                  2024-02-01T21:51:30.523930-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Creando un archivo temporal"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/google-apps-script/creating-a-temporary-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:30.523930-07:00
+description: "Crear un archivo temporal en Google Apps Script implica generar un archivo\
+  \ destinado para uso a corto plazo, t\xEDpicamente para procesamiento de datos\u2026"
+lastmod: 2024-02-18 23:09:09.530842
+model: gpt-4-0125-preview
+summary: "Crear un archivo temporal en Google Apps Script implica generar un archivo\
+  \ destinado para uso a corto plazo, t\xEDpicamente para procesamiento de datos\u2026"
+title: Creando un archivo temporal
 ---
 
 {{< edit_this_page >}}

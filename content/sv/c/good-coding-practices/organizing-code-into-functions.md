@@ -1,14 +1,17 @@
 ---
-title:                "Organisering av kod i funktioner"
 aliases:
 - /sv/c/organizing-code-into-functions/
-date:                  2024-02-03T17:59:09.286763-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Organisering av kod i funktioner"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/organizing-code-into-functions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:09.286763-07:00
+description: "Att organisera kod i funktioner i C inneb\xE4r att bryta ner komplexa\
+  \ uppgifter i mindre, \xE5teranv\xE4ndbara kodblock. Denna praxis f\xF6rb\xE4ttrar\
+  \ l\xE4sbarheten,\u2026"
+lastmod: 2024-02-18 23:08:52.256315
+model: gpt-4-0125-preview
+summary: "Att organisera kod i funktioner i C inneb\xE4r att bryta ner komplexa uppgifter\
+  \ i mindre, \xE5teranv\xE4ndbara kodblock. Denna praxis f\xF6rb\xE4ttrar l\xE4sbarheten,\u2026"
+title: Organisering av kod i funktioner
 ---
 
 {{< edit_this_page >}}

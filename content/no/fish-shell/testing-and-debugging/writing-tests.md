@@ -1,14 +1,18 @@
 ---
-title:                "Skrive tester"
 aliases:
 - /no/fish-shell/writing-tests/
-date:                  2024-02-03T19:30:36.842264-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skrive tester"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:30:36.842264-07:00
+description: "\xC5 skrive tester i Fish Shell inneb\xE6rer \xE5 lage skript som automatisk\
+  \ kj\xF8rer koden din for \xE5 validere dens oppf\xF8rsel mot forventede resultater.\
+  \ Denne\u2026"
+lastmod: 2024-02-18 23:08:54.355139
+model: gpt-4-0125-preview
+summary: "\xC5 skrive tester i Fish Shell inneb\xE6rer \xE5 lage skript som automatisk\
+  \ kj\xF8rer koden din for \xE5 validere dens oppf\xF8rsel mot forventede resultater.\
+  \ Denne\u2026"
+title: Skrive tester
 ---
 
 {{< edit_this_page >}}

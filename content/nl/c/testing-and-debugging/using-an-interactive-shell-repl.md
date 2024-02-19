@@ -1,14 +1,16 @@
 ---
-title:                "Gebruik van een interactieve shell (REPL)"
 aliases:
 - /nl/c/using-an-interactive-shell-repl/
-date:                  2024-02-03T18:10:11.639650-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gebruik van een interactieve shell (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:11.639650-07:00
+description: "Een interactieve shell, ook bekend als een Lees-Evalueer-Print-Lus (REPL),\
+  \ stelt programmeurs in staat om expressies of code in te typen en direct\u2026"
+lastmod: 2024-02-18 23:09:02.374754
+model: gpt-4-0125-preview
+summary: "Een interactieve shell, ook bekend als een Lees-Evalueer-Print-Lus (REPL),\
+  \ stelt programmeurs in staat om expressies of code in te typen en direct\u2026"
+title: Gebruik van een interactieve shell (REPL)
 ---
 
 {{< edit_this_page >}}

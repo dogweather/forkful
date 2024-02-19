@@ -1,13 +1,16 @@
 ---
-title:                "Komennoriviparametrien lukeminen"
 aliases:
 - /fi/ruby/reading-command-line-arguments/
-date:                  2024-01-20T17:56:52.050431-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Komennoriviparametrien lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:52.050431-07:00
+description: "Komentoriviparametrit ovat tietoja, jotka siirtyv\xE4t ohjelmaasi k\xE4\
+  ynnistyksen yhteydess\xE4. Niit\xE4 k\xE4ytet\xE4\xE4n muokkaamaan ohjelman toimintaa\
+  \ lennosta ja\u2026"
+lastmod: 2024-02-18 23:09:08.199678
+model: gpt-4-1106-preview
+summary: "Komentoriviparametrit ovat tietoja, jotka siirtyv\xE4t ohjelmaasi k\xE4\
+  ynnistyksen yhteydess\xE4. Niit\xE4 k\xE4ytet\xE4\xE4n muokkaamaan ohjelman toimintaa\
+  \ lennosta ja\u2026"
+title: Komennoriviparametrien lukeminen
 ---
 
 {{< edit_this_page >}}

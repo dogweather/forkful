@@ -1,14 +1,18 @@
 ---
-title:                "Työskentely CSV:n kanssa"
 aliases:
 - /fi/lua/working-with-csv/
-date:                  2024-02-03T19:20:41.407172-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely CSV:n kanssa"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:20:41.407172-07:00
+description: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittelyyn kuuluu tekstidatan\
+  \ j\xE4sent\xE4minen ja tuottaminen riveihin ja sarakkeisiin j\xE4rjestettyn\xE4\
+  , k\xE4ytt\xE4en\u2026"
+lastmod: 2024-02-18 23:09:07.781161
+model: gpt-4-0125-preview
+summary: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittelyyn kuuluu tekstidatan\
+  \ j\xE4sent\xE4minen ja tuottaminen riveihin ja sarakkeisiin j\xE4rjestettyn\xE4\
+  , k\xE4ytt\xE4en\u2026"
+title: "Ty\xF6skentely CSV:n kanssa"
 ---
 
 {{< edit_this_page >}}

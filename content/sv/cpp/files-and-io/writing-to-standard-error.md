@@ -1,14 +1,17 @@
 ---
-title:                "Skriva till standardfel"
 aliases:
 - /sv/cpp/writing-to-standard-error/
-date:                  2024-02-03T19:32:40.595452-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriva till standardfel"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:40.595452-07:00
+description: "Att skriva till standardfelet (`stderr`) i C++ inneb\xE4r att skicka\
+  \ ut felmeddelanden eller diagnostik som \xE4r separata fr\xE5n huvudprogrammets\
+  \ utdata.\u2026"
+lastmod: 2024-02-18 23:08:52.099617
+model: gpt-4-0125-preview
+summary: "Att skriva till standardfelet (`stderr`) i C++ inneb\xE4r att skicka ut\
+  \ felmeddelanden eller diagnostik som \xE4r separata fr\xE5n huvudprogrammets utdata.\u2026"
+title: Skriva till standardfel
 ---
 
 {{< edit_this_page >}}

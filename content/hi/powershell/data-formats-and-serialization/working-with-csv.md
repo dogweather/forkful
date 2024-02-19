@@ -1,14 +1,28 @@
 ---
-title:                "CSV के साथ काम करना"
 aliases:
 - /hi/powershell/working-with-csv/
-date:                  2024-02-03T19:22:00.251481-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "CSV के साथ काम करना"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/powershell/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:22:00.251481-07:00
+description: "CSV (Comma-Separated Values) \u092B\u093C\u093E\u0907\u0932\u094B\u0902\
+  \ \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\u093E \u090F\
+  \u0915 \u0906\u092E \u0915\u093E\u0930\u094D\u092F \u0939\u0948 \u091C\u094B \u0921\
+  \u0947\u091F\u093E \u0915\u094B \u0938\u0902\u0930\u091A\u093F\u0924, \u0924\u093E\
+  \u0932\u093F\u0915\u093E \u0930\u0942\u092A \u092E\u0947\u0902 \u092A\u094D\u0930\
+  \u092C\u0902\u0927\u093F\u0924 \u0914\u0930 \u0938\u0902\u0936\u094B\u0927\u093F\
+  \u0924 \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u0915\u093F\u092F\
+  \u093E \u091C\u093E\u0924\u093E \u0939\u0948\u0964\u2026"
+lastmod: 2024-02-18 23:09:03.779036
+model: gpt-4-0125-preview
+summary: "CSV (Comma-Separated Values) \u092B\u093C\u093E\u0907\u0932\u094B\u0902\
+  \ \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\u093E \u090F\
+  \u0915 \u0906\u092E \u0915\u093E\u0930\u094D\u092F \u0939\u0948 \u091C\u094B \u0921\
+  \u0947\u091F\u093E \u0915\u094B \u0938\u0902\u0930\u091A\u093F\u0924, \u0924\u093E\
+  \u0932\u093F\u0915\u093E \u0930\u0942\u092A \u092E\u0947\u0902 \u092A\u094D\u0930\
+  \u092C\u0902\u0927\u093F\u0924 \u0914\u0930 \u0938\u0902\u0936\u094B\u0927\u093F\
+  \u0924 \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u0915\u093F\u092F\
+  \u093E \u091C\u093E\u0924\u093E \u0939\u0948\u0964\u2026"
+title: "CSV \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

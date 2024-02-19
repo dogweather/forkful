@@ -1,14 +1,16 @@
 ---
-title:                "Escribiendo pruebas"
 aliases:
 - /es/clojure/writing-tests/
-date:                  2024-02-03T19:29:57.963990-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escribiendo pruebas"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:57.963990-07:00
+description: "Escribir pruebas en Clojure, al igual que en otros lenguajes de programaci\xF3\
+  n, implica crear c\xF3digo dedicado para verificar que tu c\xF3digo principal\u2026"
+lastmod: 2024-02-18 23:09:09.606915
+model: gpt-4-0125-preview
+summary: "Escribir pruebas en Clojure, al igual que en otros lenguajes de programaci\xF3\
+  n, implica crear c\xF3digo dedicado para verificar que tu c\xF3digo principal\u2026"
+title: Escribiendo pruebas
 ---
 
 {{< edit_this_page >}}

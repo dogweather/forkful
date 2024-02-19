@@ -1,14 +1,17 @@
 ---
-title:                "Überprüfung, ob ein Verzeichnis existiert"
 aliases:
 - /de/c/checking-if-a-directory-exists/
-date:                  2024-02-03T17:52:35.000398-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:52:35.000398-07:00
+description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in C existiert, beinhaltet\
+  \ die Abfrage des Dateisystems, um zu verifizieren, ob ein spezifischer Pfad zu\
+  \ einem\u2026"
+lastmod: 2024-02-18 23:09:05.390554
+model: gpt-4-0125-preview
+summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in C existiert, beinhaltet die\
+  \ Abfrage des Dateisystems, um zu verifizieren, ob ein spezifischer Pfad zu einem\u2026"
+title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 ---
 
 {{< edit_this_page >}}

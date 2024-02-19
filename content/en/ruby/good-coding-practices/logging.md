@@ -1,13 +1,14 @@
 ---
-title:                "Logging"
 aliases:
 - /en/ruby/logging/
-date:                  2024-01-25T02:04:02.274630-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Logging"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/logging.md"
+date: 2024-01-25 02:04:02.274630-07:00
+description: "Logging in programming is like keeping a diary for your application.\
+  \ It's the systematic recording of events, messages, and data points that give you\u2026"
+lastmod: 2024-02-18 23:09:11.572384
+model: gpt-4-1106-preview
+summary: "Logging in programming is like keeping a diary for your application. It's\
+  \ the systematic recording of events, messages, and data points that give you\u2026"
+title: Logging
 ---
 
 {{< edit_this_page >}}

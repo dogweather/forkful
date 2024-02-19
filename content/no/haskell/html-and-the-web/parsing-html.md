@@ -1,14 +1,17 @@
 ---
-title:                "Analysering av HTML"
 aliases:
 - /no/haskell/parsing-html/
-date:                  2024-02-03T19:12:15.608836-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analysering av HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:15.608836-07:00
+description: "\xC5 parse HTML i Haskell gir deg muligheten til \xE5 trekke ut data,\
+  \ manipulere HTML-innhold eller interagere med nettsider programmatisk. Denne operasjonen\
+  \ er\u2026"
+lastmod: 2024-02-18 23:08:53.932760
+model: gpt-4-0125-preview
+summary: "\xC5 parse HTML i Haskell gir deg muligheten til \xE5 trekke ut data, manipulere\
+  \ HTML-innhold eller interagere med nettsider programmatisk. Denne operasjonen er\u2026"
+title: Analysering av HTML
 ---
 
 {{< edit_this_page >}}

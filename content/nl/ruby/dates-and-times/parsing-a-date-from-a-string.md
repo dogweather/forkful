@@ -1,15 +1,17 @@
 ---
-title:                "Een datum uit een string parsen"
 aliases:
 - /nl/ruby/parsing-a-date-from-a-string/
-date:                  2024-01-28T22:04:45.846938-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een datum uit een string parsen"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:04:45.846938-07:00
+description: "Een datum ontleden betekent een tekenreeks vertalen naar iets wat de\
+  \ computer begrijpt\u2014zoals een echt datumobject. Programmeurs doen dit omdat\
+  \ we vaak\u2026"
+lastmod: 2024-02-18 23:09:02.432773
+model: gpt-4-0125-preview
+summary: "Een datum ontleden betekent een tekenreeks vertalen naar iets wat de computer\
+  \ begrijpt\u2014zoals een echt datumobject. Programmeurs doen dit omdat we vaak\u2026"
+title: Een datum uit een string parsen
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Escribiendo pruebas"
 aliases:
 - /es/rust/writing-tests/
-date:                  2024-02-03T19:31:55.156988-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escribiendo pruebas"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:55.156988-07:00
+description: "Escribir pruebas en Rust implica crear comprobaciones automatizadas\
+  \ para asegurar que tu c\xF3digo funciona como se espera. Los programadores hacen\
+  \ esto para\u2026"
+lastmod: 2024-02-18 23:09:09.752967
+model: gpt-4-0125-preview
+summary: "Escribir pruebas en Rust implica crear comprobaciones automatizadas para\
+  \ asegurar que tu c\xF3digo funciona como se espera. Los programadores hacen esto\
+  \ para\u2026"
+title: Escribiendo pruebas
 ---
 
 {{< edit_this_page >}}

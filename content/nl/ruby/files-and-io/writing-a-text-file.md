@@ -1,15 +1,16 @@
 ---
-title:                "Een tekstbestand schrijven"
 aliases:
 - /nl/ruby/writing-a-text-file/
-date:                  2024-01-28T22:12:33.778109-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tekstbestand schrijven"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/writing-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:33.778109-07:00
+description: "Naar een tekstbestand schrijven in Ruby betekent gegevens opslaan in\
+  \ een bestand op je systeem. Programmeurs doen dit voor gegevenspersistentie, loggen,\u2026"
+lastmod: 2024-02-18 23:09:02.442454
+model: gpt-4-0125-preview
+summary: "Naar een tekstbestand schrijven in Ruby betekent gegevens opslaan in een\
+  \ bestand op je systeem. Programmeurs doen dit voor gegevenspersistentie, loggen,\u2026"
+title: Een tekstbestand schrijven
 ---
 
 {{< edit_this_page >}}

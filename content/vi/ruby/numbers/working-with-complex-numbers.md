@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với số phức"
 aliases:
 - /vi/ruby/working-with-complex-numbers/
-date:                  2024-01-28T22:12:50.221261-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với số phức"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/working-with-complex-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:50.221261-07:00
+description: "S\u1ED1 ph\u1EE9c, g\u1ED3m c\xF3 m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0\
+  \ m\u1ED9t ph\u1EA7n \u1EA3o (nh\u01B0 3+4i), l\xE0 n\u1EC1n t\u1EA3ng trong k\u1EF9\
+  \ thu\u1EADt v\xE0 v\u1EADt l\xFD. L\u1EADp tr\xECnh vi\xEAn l\xE0m vi\u1EC7c v\u1EDB\
+  i ch\xFAng trong c\xE1c m\xF4 ph\u1ECFng, x\u1EED l\xFD\u2026"
+lastmod: 2024-02-18 23:08:51.275540
+model: gpt-4-0125-preview
+summary: "S\u1ED1 ph\u1EE9c, g\u1ED3m c\xF3 m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u1ED9\
+  t ph\u1EA7n \u1EA3o (nh\u01B0 3+4i), l\xE0 n\u1EC1n t\u1EA3ng trong k\u1EF9 thu\u1EAD\
+  t v\xE0 v\u1EADt l\xFD. L\u1EADp tr\xECnh vi\xEAn l\xE0m vi\u1EC7c v\u1EDBi ch\xFA\
+  ng trong c\xE1c m\xF4 ph\u1ECFng, x\u1EED l\xFD\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 ---
 
 {{< edit_this_page >}}

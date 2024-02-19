@@ -1,14 +1,18 @@
 ---
-title:                "Sjekke om en katalog eksisterer"
 aliases:
 - /no/google-apps-script/checking-if-a-directory-exists/
-date:                  2024-02-01T21:49:02.481398-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sjekke om en katalog eksisterer"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/google-apps-script/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:02.481398-07:00
+description: "\xC5 sjekke om en mappe eksisterer i Google Apps Script inneb\xE6rer\
+  \ \xE5 bekrefte tilstedev\xE6relsen av en mappe inne i Google Drive. Programmerere\
+  \ utf\xF8rer ofte\u2026"
+lastmod: 2024-02-18 23:08:53.496745
+model: gpt-4-0125-preview
+summary: "\xC5 sjekke om en mappe eksisterer i Google Apps Script inneb\xE6rer \xE5\
+  \ bekrefte tilstedev\xE6relsen av en mappe inne i Google Drive. Programmerere utf\xF8\
+  rer ofte\u2026"
+title: Sjekke om en katalog eksisterer
 ---
 
 {{< edit_this_page >}}

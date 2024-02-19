@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie testów"
 aliases:
 - /pl/kotlin/writing-tests/
-date:                  2024-02-03T19:31:12.435541-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie testów"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:12.435541-07:00
+description: "Pisanie test\xF3w w Kotlinie polega na tworzeniu fragment\xF3w kodu,\
+  \ kt\xF3re automatycznie weryfikuj\u0105 poprawno\u015B\u0107 funkcjonaln\u0105\
+  \ modu\u0142\xF3w oprogramowania, upewniaj\u0105c\u2026"
+lastmod: 2024-02-18 23:08:49.572596
+model: gpt-4-0125-preview
+summary: "Pisanie test\xF3w w Kotlinie polega na tworzeniu fragment\xF3w kodu, kt\xF3\
+  re automatycznie weryfikuj\u0105 poprawno\u015B\u0107 funkcjonaln\u0105 modu\u0142\
+  \xF3w oprogramowania, upewniaj\u0105c\u2026"
+title: "Pisanie test\xF3w"
 ---
 
 {{< edit_this_page >}}

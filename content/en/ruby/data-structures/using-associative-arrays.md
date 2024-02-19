@@ -1,13 +1,14 @@
 ---
-title:                "Using associative arrays"
 aliases:
 - /en/ruby/using-associative-arrays/
-date:                  2024-01-30T18:57:15.091679-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using associative arrays"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/using-associative-arrays.md"
+date: 2024-01-30 18:57:15.091679-07:00
+description: "Associative arrays, more commonly known as hashes in Ruby, allow pairing\
+  \ unique keys to values. They're indispensable when you need to keep track of\u2026"
+lastmod: 2024-02-18 23:09:11.556815
+model: gpt-4-0125-preview
+summary: "Associative arrays, more commonly known as hashes in Ruby, allow pairing\
+  \ unique keys to values. They're indispensable when you need to keep track of\u2026"
+title: Using associative arrays
 ---
 
 {{< edit_this_page >}}

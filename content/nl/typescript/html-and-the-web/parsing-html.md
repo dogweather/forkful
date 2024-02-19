@@ -1,15 +1,17 @@
 ---
-title:                "HTML Parsen"
 aliases:
 - /nl/typescript/parsing-html/
-date:                  2024-01-28T22:03:49.623689-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML Parsen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/typescript/parsing-html.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:03:49.623689-07:00
+description: "HTML parseren betekent het doorzoeken van HTML-code om informatie te\
+  \ vinden, te extraheren of te manipuleren. Programmeurs doen dit om te interageren\
+  \ met\u2026"
+lastmod: 2024-02-18 23:09:01.570568
+model: gpt-4-0125-preview
+summary: "HTML parseren betekent het doorzoeken van HTML-code om informatie te vinden,\
+  \ te extraheren of te manipuleren. Programmeurs doen dit om te interageren met\u2026"
+title: HTML Parsen
 ---
 
 {{< edit_this_page >}}

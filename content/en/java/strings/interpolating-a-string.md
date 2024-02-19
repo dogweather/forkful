@@ -1,13 +1,14 @@
 ---
-title:                "Interpolating a string"
 aliases:
 - /en/java/interpolating-a-string/
-date:                  2024-01-20T17:50:55.880390-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolating a string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/interpolating-a-string.md"
+date: 2024-01-20 17:50:55.880390-07:00
+description: String interpolation lets you inject variables directly into strings.
+  It makes code cleaner and easier to read by avoiding clunky string concatenation.
+lastmod: 2024-02-18 23:09:10.917436
+model: gpt-4-1106-preview
+summary: String interpolation lets you inject variables directly into strings. It
+  makes code cleaner and easier to read by avoiding clunky string concatenation.
+title: Interpolating a string
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,17 @@
 ---
-title:                "Pobieranie strony internetowej"
 aliases:
 - /pl/c/downloading-a-web-page/
-date:                  2024-02-03T17:56:03.879370-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pobieranie strony internetowej"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/downloading-a-web-page.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:03.879370-07:00
+description: "Pobieranie strony internetowej w C polega na programowym uzyskiwaniu\
+  \ dost\u0119pu do zawarto\u015Bci strony internetowej przez internet i zapisywaniu\
+  \ jej lokalnie\u2026"
+lastmod: 2024-02-18 23:08:50.078609
+model: gpt-4-0125-preview
+summary: "Pobieranie strony internetowej w C polega na programowym uzyskiwaniu dost\u0119\
+  pu do zawarto\u015Bci strony internetowej przez internet i zapisywaniu jej lokalnie\u2026"
+title: Pobieranie strony internetowej
 ---
 
 {{< edit_this_page >}}

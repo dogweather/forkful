@@ -1,15 +1,21 @@
 ---
-title:                "Tạo một tập tin tạm thời"
 aliases:
 - /vi/lua/creating-a-temporary-file/
-date:                  2024-01-28T21:58:47.577706-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tạo một tập tin tạm thời"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/lua/creating-a-temporary-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:58:47.577706-07:00
+description: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi l\xE0 qu\xE1 tr\xECnh\
+  \ t\u1EA1o ra m\u1ED9t t\u1EC7p c\xF3 th\u1EDD l\u01B0\u1EE3ng s\u1ED1ng ng\u1EAF\
+  n \u0111\u1EC3 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u ch\u1EC9 c\u1EA7n thi\u1EBFt\
+  \ trong qu\xE1 tr\xECnh th\u1EF1c thi c\u1EE7a ch\u01B0\u01A1ng tr\xECnh. C\xE1\
+  c\u2026"
+lastmod: 2024-02-18 23:08:50.858187
+model: gpt-4-0125-preview
+summary: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi l\xE0 qu\xE1 tr\xECnh t\u1EA1\
+  o ra m\u1ED9t t\u1EC7p c\xF3 th\u1EDD l\u01B0\u1EE3ng s\u1ED1ng ng\u1EAFn \u0111\
+  \u1EC3 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u ch\u1EC9 c\u1EA7n thi\u1EBFt trong qu\xE1\
+  \ tr\xECnh th\u1EF1c thi c\u1EE7a ch\u01B0\u01A1ng tr\xECnh. C\xE1c\u2026"
+title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 ---
 
 {{< edit_this_page >}}

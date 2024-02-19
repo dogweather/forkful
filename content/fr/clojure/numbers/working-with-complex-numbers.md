@@ -1,13 +1,15 @@
 ---
-title:                "Manipulation des nombres complexes"
 aliases:
 - /fr/clojure/working-with-complex-numbers/
-date:                  2024-01-26T04:38:39.398329-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulation des nombres complexes"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/working-with-complex-numbers.md"
+date: 2024-01-26 04:38:39.398329-07:00
+description: "Les nombres complexes \xE9tendent les nombres r\xE9els avec une partie\
+  \ suppl\xE9mentaire, l'unit\xE9 imaginaire 'i'. Les programmeurs les utilisent dans\
+  \ divers\u2026"
+lastmod: 2024-02-18 23:09:08.380087
+model: gpt-4-0125-preview
+summary: "Les nombres complexes \xE9tendent les nombres r\xE9els avec une partie suppl\xE9\
+  mentaire, l'unit\xE9 imaginaire 'i'. Les programmeurs les utilisent dans divers\u2026"
+title: Manipulation des nombres complexes
 ---
 
 {{< edit_this_page >}}

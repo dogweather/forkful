@@ -1,13 +1,16 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
 aliases:
 - /pl/swift/creating-a-temporary-file/
-date:                  2024-01-20T17:41:17.482508-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tworzenie pliku tymczasowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:17.482508-07:00
+description: "Tworzenie tymczasowego pliku pozwala na przechowywanie danych tymczasowo\
+  \ podczas dzia\u0142ania aplikacji. Programi\u015Bci robi\u0105 to, aby na przyk\u0142\
+  ad unikn\u0105\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.971749
+model: gpt-4-1106-preview
+summary: "Tworzenie tymczasowego pliku pozwala na przechowywanie danych tymczasowo\
+  \ podczas dzia\u0142ania aplikacji. Programi\u015Bci robi\u0105 to, aby na przyk\u0142\
+  ad unikn\u0105\u0107\u2026"
+title: Tworzenie pliku tymczasowego
 ---
 
 {{< edit_this_page >}}

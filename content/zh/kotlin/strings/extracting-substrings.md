@@ -1,14 +1,21 @@
 ---
-title:                "提取子字符串"
 aliases:
 - /zh/kotlin/extracting-substrings/
-date:                  2024-01-20T17:46:17.275729-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "提取子字符串"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/extracting-substrings.md"
+date: 2024-01-20 17:46:17.275729-07:00
+description: "\u4ECE\u5B57\u7B26\u4E32\u4E2D\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32\uFF0C\
+  \u5C31\u662F\u4ECE\u4E00\u4E2A\u8F83\u957F\u7684\u5B57\u7B26\u4E32\u4E2D\u62FF\u51FA\
+  \u4E00\u90E8\u5206\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u4E3B\u8981\u662F\u4E3A\
+  \u4E86\u83B7\u53D6\u6709\u7528\u4FE1\u606F\uFF0C\u6216\u8005\u5BF9\u6570\u636E\u8FDB\
+  \u884C\u7279\u5B9A\u7684\u64CD\u4F5C\u5904\u7406\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.085704
+model: gpt-4-1106-preview
+summary: "\u4ECE\u5B57\u7B26\u4E32\u4E2D\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32\uFF0C\
+  \u5C31\u662F\u4ECE\u4E00\u4E2A\u8F83\u957F\u7684\u5B57\u7B26\u4E32\u4E2D\u62FF\u51FA\
+  \u4E00\u90E8\u5206\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u4E3B\u8981\u662F\u4E3A\
+  \u4E86\u83B7\u53D6\u6709\u7528\u4FE1\u606F\uFF0C\u6216\u8005\u5BF9\u6570\u636E\u8FDB\
+  \u884C\u7279\u5B9A\u7684\u64CD\u4F5C\u5904\u7406\u3002"
+title: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32"
 ---
 
 {{< edit_this_page >}}

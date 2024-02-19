@@ -1,13 +1,16 @@
 ---
-title:                "Refactorización"
 aliases:
 - /es/bash/refactoring/
-date:                  2024-01-26T01:16:25.729033-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactorización"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/refactoring.md"
+date: 2024-01-26 01:16:25.729033-07:00
+description: "La refactorizaci\xF3n es el proceso de reestructurar c\xF3digo inform\xE1\
+  tico existente sin cambiar su comportamiento externo. Es una pr\xE1ctica vital para\
+  \ reducir\u2026"
+lastmod: 2024-02-18 23:09:10.176299
+model: gpt-4-0125-preview
+summary: "La refactorizaci\xF3n es el proceso de reestructurar c\xF3digo inform\xE1\
+  tico existente sin cambiar su comportamiento externo. Es una pr\xE1ctica vital para\
+  \ reducir\u2026"
+title: "Refactorizaci\xF3n"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 aliases:
 - /fi/clojure/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:08.381675-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:08.381675-07:00
+description: Muuttaa merkkijonon kaikki kirjaimet pieniksi. Teemme sen datan yhdenmukaistamiseen,
+  vertailuihin ja haun yksinkertaistamiseen.
+lastmod: 2024-02-18 23:09:07.214730
+model: gpt-4-1106-preview
+summary: Muuttaa merkkijonon kaikki kirjaimet pieniksi. Teemme sen datan yhdenmukaistamiseen,
+  vertailuihin ja haun yksinkertaistamiseen.
+title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,24 @@
 ---
-title:                "パターンに一致する文字を削除する"
 aliases:
 - /ja/php/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:43.869063-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "パターンに一致する文字を削除する"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:43.869063-07:00
+description: "\u30C7\u30FC\u30BF\u3092\u6271\u3046\u969B\u3001\u7279\u5B9A\u306E\u30D1\
+  \u30BF\u30FC\u30F3\u306B\u30DE\u30C3\u30C1\u3059\u308B\u6587\u5B57\u3092\u524A\u9664\
+  \u3059\u308B\u5FC5\u8981\u304C\u3088\u304F\u3042\u308A\u307E\u3059\u3002\u3053\u308C\
+  \u306F\u3001\u7121\u7528\u306A\u8A18\u53F7\u3084\u30B9\u30DA\u30FC\u30B9\u3092\u53D6\
+  \u308A\u9664\u304D\u3001\u30C7\u30FC\u30BF\u306E\u6574\u5F62\u3084\u5206\u6790\u3092\
+  \u5BB9\u6613\u306B\u3059\u308B\u305F\u3081\u3067\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:54.981395
+model: gpt-4-1106-preview
+summary: "\u30C7\u30FC\u30BF\u3092\u6271\u3046\u969B\u3001\u7279\u5B9A\u306E\u30D1\
+  \u30BF\u30FC\u30F3\u306B\u30DE\u30C3\u30C1\u3059\u308B\u6587\u5B57\u3092\u524A\u9664\
+  \u3059\u308B\u5FC5\u8981\u304C\u3088\u304F\u3042\u308A\u307E\u3059\u3002\u3053\u308C\
+  \u306F\u3001\u7121\u7528\u306A\u8A18\u53F7\u3084\u30B9\u30DA\u30FC\u30B9\u3092\u53D6\
+  \u308A\u9664\u304D\u3001\u30C7\u30FC\u30BF\u306E\u6574\u5F62\u3084\u5206\u6790\u3092\
+  \u5BB9\u6613\u306B\u3059\u308B\u305F\u3081\u3067\u3059\u3002"
+title: "\u30D1\u30BF\u30FC\u30F3\u306B\u4E00\u81F4\u3059\u308B\u6587\u5B57\u3092\u524A\
+  \u9664\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

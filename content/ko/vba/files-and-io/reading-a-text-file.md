@@ -1,14 +1,28 @@
 ---
-title:                "텍스트 파일 읽기"
 aliases:
 - /ko/vba/reading-a-text-file/
-date:                  2024-02-01T21:58:54.039881-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "텍스트 파일 읽기"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/vba/reading-a-text-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:54.039881-07:00
+description: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\
+  \uC77C\uC744 \uC77D\uB294 \uAC83\uC740 Office \uC560\uD50C\uB9AC\uCF00\uC774\uC158\
+  \ \uB0B4\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC758 \uB0B4\uC6A9\uC5D0 \uD504\
+  \uB85C\uADF8\uB798\uBC0D \uBC29\uC2DD\uC73C\uB85C \uC811\uADFC\uD558\uC5EC \uCD94\
+  \uCD9C\uD558\uB294 \uC791\uC5C5\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC740 \uC885\uC885 \uD3C9\uBA74 \uD30C\uC77C\uC5D0 \uC800\
+  \uC7A5\uB41C \uB370\uC774\uD130\uB97C \uAC00\uC838\uC624\uAC70\uB098 \uCC98\uB9AC\
+  \uD558\uAE30 \uC704\uD574\u2026"
+lastmod: 2024-02-18 23:09:05.981701
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\
+  \uC77C\uC744 \uC77D\uB294 \uAC83\uC740 Office \uC560\uD50C\uB9AC\uCF00\uC774\uC158\
+  \ \uB0B4\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC758 \uB0B4\uC6A9\uC5D0 \uD504\
+  \uB85C\uADF8\uB798\uBC0D \uBC29\uC2DD\uC73C\uB85C \uC811\uADFC\uD558\uC5EC \uCD94\
+  \uCD9C\uD558\uB294 \uC791\uC5C5\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC740 \uC885\uC885 \uD3C9\uBA74 \uD30C\uC77C\uC5D0 \uC800\
+  \uC7A5\uB41C \uB370\uC774\uD130\uB97C \uAC00\uC838\uC624\uAC70\uB098 \uCC98\uB9AC\
+  \uD558\uAE30 \uC704\uD574\u2026"
+title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
 ---
 
 {{< edit_this_page >}}

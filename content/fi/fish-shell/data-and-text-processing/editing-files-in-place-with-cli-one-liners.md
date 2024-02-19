@@ -1,13 +1,14 @@
 ---
-title:                "Tiedostojen muokkaaminen paikan päällä komentorivin yhden rivin komennoilla"
 aliases:
 - /fi/fish-shell/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:21:19.895288-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tiedostojen muokkaaminen paikan päällä komentorivin yhden rivin komennoilla"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:21:19.895288-07:00
+description: "Tiedostojen suoraan muokkaaminen CLI-yksirivikomennoin tarkoittaa muutosten\
+  \ tekemist\xE4 suoraan tiedostoihin komentorivilt\xE4, ilman niiden avaamista\u2026"
+lastmod: 2024-02-18 23:09:08.079358
+model: gpt-4-0125-preview
+summary: "Tiedostojen suoraan muokkaaminen CLI-yksirivikomennoin tarkoittaa muutosten\
+  \ tekemist\xE4 suoraan tiedostoihin komentorivilt\xE4, ilman niiden avaamista\u2026"
+title: "Tiedostojen muokkaaminen paikan p\xE4\xE4ll\xE4 komentorivin yhden rivin komennoilla"
 ---
 
 {{< edit_this_page >}}

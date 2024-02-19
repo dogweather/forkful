@@ -1,13 +1,16 @@
 ---
-title:                "Conversion d'une date en chaîne de caractères"
 aliases:
 - /fr/arduino/converting-a-date-into-a-string/
-date:                  2024-01-20T17:35:51.305895-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Conversion d'une date en chaîne de caractères"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:35:51.305895-07:00
+description: "Convertir une date en cha\xEEne de caract\xE8res consiste \xE0 transformer\
+  \ une repr\xE9sentation de date (typiquement num\xE9rique) en texte lisible. Les\
+  \ programmeurs\u2026"
+lastmod: 2024-02-18 23:09:09.127206
+model: gpt-4-1106-preview
+summary: "Convertir une date en cha\xEEne de caract\xE8res consiste \xE0 transformer\
+  \ une repr\xE9sentation de date (typiquement num\xE9rique) en texte lisible. Les\
+  \ programmeurs\u2026"
+title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

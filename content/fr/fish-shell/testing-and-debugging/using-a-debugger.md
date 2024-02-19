@@ -1,13 +1,16 @@
 ---
-title:                "Utilisation d'un débogueur"
 aliases:
 - /fr/fish-shell/using-a-debugger/
-date:                  2024-01-26T03:48:39.304563-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation d'un débogueur"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/using-a-debugger.md"
+date: 2024-01-26 03:48:39.304563-07:00
+description: "L'utilisation d'un d\xE9bogueur est essentiellement une question d'\xE9\
+  limination des bugs \u2013 ces erreurs r\xE9pugnantes et chronophages dans votre\
+  \ code. Les\u2026"
+lastmod: 2024-02-18 23:09:09.310845
+model: gpt-4-0125-preview
+summary: "L'utilisation d'un d\xE9bogueur est essentiellement une question d'\xE9\
+  limination des bugs \u2013 ces erreurs r\xE9pugnantes et chronophages dans votre\
+  \ code. Les\u2026"
+title: "Utilisation d'un d\xE9bogueur"
 ---
 
 {{< edit_this_page >}}

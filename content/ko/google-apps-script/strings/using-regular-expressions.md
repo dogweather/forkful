@@ -1,14 +1,26 @@
 ---
-title:                "정규 표현식을 사용하는 방법"
 aliases:
 - /ko/google-apps-script/using-regular-expressions/
-date:                  2024-02-01T22:05:10.457755-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "정규 표현식을 사용하는 방법"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/using-regular-expressions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:05:10.457755-07:00
+description: "\uC815\uADDC \uD45C\uD604\uC2DD(\uC815\uADDC\uC2DD)\uC740 \uBB38\uC790\
+  \uC5F4\uC5D0\uC11C \uBB38\uC790 \uC870\uD569\uC744 \uC77C\uCE58\uC2DC\uD0A4\uAE30\
+  \ \uC704\uD574 \uC0AC\uC6A9\uB418\uB294 \uD328\uD134\uC785\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC740 \uD14D\uC2A4\uD2B8 \uBC0F \uB370\uC774\uD130 \uAC80\
+  \uC0C9, \uD3B8\uC9D1, \uC870\uC791\uC5D0 \uC774\uB97C \uD65C\uC6A9\uD558\uC5EC \uD328\
+  \uD134 \uB9E4\uCE6D \uBC0F \uB370\uC774\uD130 \uD30C\uC2F1 \uC791\uC5C5\uC5D0 \uD544\
+  \uC218\uC801\uC785\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:05.538157
+model: gpt-4-0125-preview
+summary: "\uC815\uADDC \uD45C\uD604\uC2DD(\uC815\uADDC\uC2DD)\uC740 \uBB38\uC790\uC5F4\
+  \uC5D0\uC11C \uBB38\uC790 \uC870\uD569\uC744 \uC77C\uCE58\uC2DC\uD0A4\uAE30 \uC704\
+  \uD574 \uC0AC\uC6A9\uB418\uB294 \uD328\uD134\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC740 \uD14D\uC2A4\uD2B8 \uBC0F \uB370\uC774\uD130 \uAC80\uC0C9\
+  , \uD3B8\uC9D1, \uC870\uC791\uC5D0 \uC774\uB97C \uD65C\uC6A9\uD558\uC5EC \uD328\uD134\
+  \ \uB9E4\uCE6D \uBC0F \uB370\uC774\uD130 \uD30C\uC2F1 \uC791\uC5C5\uC5D0 \uD544\uC218\
+  \uC801\uC785\uB2C8\uB2E4."
+title: "\uC815\uADDC \uD45C\uD604\uC2DD\uC744 \uC0AC\uC6A9\uD558\uB294 \uBC29\uBC95"
 ---
 
 {{< edit_this_page >}}

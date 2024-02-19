@@ -1,13 +1,16 @@
 ---
-title:                "Rifattorizzazione"
 aliases:
 - /it/cpp/refactoring/
-date:                  2024-01-26T01:17:04.364876-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rifattorizzazione"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/refactoring.md"
+date: 2024-01-26 01:17:04.364876-07:00
+description: "Il refactoring \xE8 il processo di modifica della struttura interna\
+  \ di un programma informatico senza alterarne il comportamento esterno. I programmatori\
+  \ lo\u2026"
+lastmod: 2024-02-18 23:08:56.180212
+model: gpt-4-0125-preview
+summary: "Il refactoring \xE8 il processo di modifica della struttura interna di un\
+  \ programma informatico senza alterarne il comportamento esterno. I programmatori\
+  \ lo\u2026"
+title: Rifattorizzazione
 ---
 
 {{< edit_this_page >}}

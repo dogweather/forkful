@@ -1,14 +1,16 @@
 ---
-title:                "Avrundning av nummer"
 aliases:
 - /sv/vba/rounding-numbers/
-date:                  2024-02-01T22:01:44.202805-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Avrundning av nummer"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/rounding-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:44.202805-07:00
+description: "Att avrunda tal i programmering handlar om att approximera ett tal till\
+  \ dess n\xE4rmaste heltal eller till ett visst antal decimalplatser. Programmerare\u2026"
+lastmod: 2024-02-18 23:08:51.621081
+model: gpt-4-0125-preview
+summary: "Att avrunda tal i programmering handlar om att approximera ett tal till\
+  \ dess n\xE4rmaste heltal eller till ett visst antal decimalplatser. Programmerare\u2026"
+title: Avrundning av nummer
 ---
 
 {{< edit_this_page >}}

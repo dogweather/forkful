@@ -1,14 +1,26 @@
 ---
-title:                "文字列の長さを求める"
 aliases:
 - /ja/go/finding-the-length-of-a-string/
-date:                  2024-02-03T17:57:02.561631-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "文字列の長さを求める"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:02.561631-07:00
+description: "Go\u3067\u6587\u5B57\u5217\u306E\u9577\u3055\u3092\u898B\u3064\u3051\
+  \u308B\u3068\u306F\u3001\u305D\u306E\u542B\u3080\u6587\u5B57\u306E\u6570\u3092\u6C7A\
+  \u5B9A\u3059\u308B\u3053\u3068\u3067\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\
+  \u306F\u3001\u691C\u8A3C\u3001\u90E8\u5206\u6587\u5B57\u5217\u306E\u62BD\u51FA\u3001\
+  \u307E\u305F\u306F\u5358\u306B\u30E6\u30FC\u30B6\u30FC\u5165\u529B\u3067\u5236\u7D04\
+  \u3092\u5F37\u5236\u3059\u308B\u305F\u3081\u306B\u3001\u3053\u306E\u64CD\u4F5C\u3092\
+  \u5B9A\u671F\u7684\u306B\u5B9F\u884C\u3057\u307E\u3059\u3002"
+lastmod: 2024-02-18 23:08:54.470514
+model: gpt-4-0125-preview
+summary: "Go\u3067\u6587\u5B57\u5217\u306E\u9577\u3055\u3092\u898B\u3064\u3051\u308B\
+  \u3068\u306F\u3001\u305D\u306E\u542B\u3080\u6587\u5B57\u306E\u6570\u3092\u6C7A\u5B9A\
+  \u3059\u308B\u3053\u3068\u3067\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\
+  \u3001\u691C\u8A3C\u3001\u90E8\u5206\u6587\u5B57\u5217\u306E\u62BD\u51FA\u3001\u307E\
+  \u305F\u306F\u5358\u306B\u30E6\u30FC\u30B6\u30FC\u5165\u529B\u3067\u5236\u7D04\u3092\
+  \u5F37\u5236\u3059\u308B\u305F\u3081\u306B\u3001\u3053\u306E\u64CD\u4F5C\u3092\u5B9A\
+  \u671F\u7684\u306B\u5B9F\u884C\u3057\u307E\u3059\u3002"
+title: "\u6587\u5B57\u5217\u306E\u9577\u3055\u3092\u6C42\u3081\u308B"
 ---
 
 {{< edit_this_page >}}

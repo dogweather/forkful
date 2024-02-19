@@ -1,13 +1,15 @@
 ---
-title:                "Utilizzo di un interprete interattivo (REPL)"
 aliases:
 - /it/haskell/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:14:54.755233-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di un interprete interattivo (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:14:54.755233-07:00
+description: "Un guscio interattivo, o REPL (Read-Eval-Print Loop), in Haskell ti\
+  \ permette di eseguire frammenti di codice dal vivo. \xC8 un campo di gioco per\
+  \ avere\u2026"
+lastmod: 2024-02-18 23:08:55.931717
+model: gpt-4-0125-preview
+summary: "Un guscio interattivo, o REPL (Read-Eval-Print Loop), in Haskell ti permette\
+  \ di eseguire frammenti di codice dal vivo. \xC8 un campo di gioco per avere\u2026"
+title: Utilizzo di un interprete interattivo (REPL)
 ---
 
 {{< edit_this_page >}}

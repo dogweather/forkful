@@ -1,13 +1,14 @@
 ---
-title:                "Zahlen runden"
 aliases:
 - /de/c-sharp/rounding-numbers/
-date:                  2024-01-26T03:43:15.680281-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zahlen runden"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/rounding-numbers.md"
+date: 2024-01-26 03:43:15.680281-07:00
+description: "Zahlen runden bedeutet, sie auf den n\xE4chsten angegebenen Stellenwert\
+  \ anzupassen \u2013 man k\xF6nnte sagen, sie auf eine einfachere Form zu reduzieren.\u2026"
+lastmod: 2024-02-18 23:09:04.866108
+model: gpt-4-0125-preview
+summary: "Zahlen runden bedeutet, sie auf den n\xE4chsten angegebenen Stellenwert\
+  \ anzupassen \u2013 man k\xF6nnte sagen, sie auf eine einfachere Form zu reduzieren.\u2026"
+title: Zahlen runden
 ---
 
 {{< edit_this_page >}}

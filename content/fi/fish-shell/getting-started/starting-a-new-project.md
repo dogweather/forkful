@@ -1,13 +1,16 @@
 ---
-title:                "Uuden projektin aloittaminen"
 aliases:
 - /fi/fish-shell/starting-a-new-project/
-date:                  2024-01-20T18:03:31.491218-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Uuden projektin aloittaminen"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/starting-a-new-project.md"
+date: 2024-01-20 18:03:31.491218-07:00
+description: "Uuden projektin aloittaminen on tyhj\xE4lt\xE4 p\xF6yd\xE4lt\xE4 alkaminen:\
+  \ uusi hakemisto, uusi Git-repo, uudet tiedostot. Koodarit aloittavat projekteja\
+  \ testatakseen\u2026"
+lastmod: 2024-02-18 23:09:08.084857
+model: gpt-4-1106-preview
+summary: "Uuden projektin aloittaminen on tyhj\xE4lt\xE4 p\xF6yd\xE4lt\xE4 alkaminen:\
+  \ uusi hakemisto, uusi Git-repo, uudet tiedostot. Koodarit aloittavat projekteja\
+  \ testatakseen\u2026"
+title: Uuden projektin aloittaminen
 ---
 
 {{< edit_this_page >}}

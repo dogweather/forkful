@@ -1,13 +1,15 @@
 ---
-title:                "Loggføring"
 aliases:
 - /no/elm/logging/
-date:                  2024-01-26T01:02:56.841680-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Loggføring"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/logging.md"
+date: 2024-01-26 01:02:56.841680-07:00
+description: "Logging er i bunn og grunn prosessen med \xE5 registrere hendelser og\
+  \ datautskrifter fra et stykke programvare mens det kj\xF8rer, tenk p\xE5 det som\
+  \ programvarens\u2026"
+lastmod: 2024-02-18 23:08:53.817683
+model: gpt-4-1106-preview
+summary: "Logging er i bunn og grunn prosessen med \xE5 registrere hendelser og datautskrifter\
+  \ fra et stykke programvare mens det kj\xF8rer, tenk p\xE5 det som programvarens\u2026"
+title: "Loggf\xF8ring"
 ---
 
 {{< edit_this_page >}}

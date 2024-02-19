@@ -1,14 +1,16 @@
 ---
-title:                "Arbeide med CSV"
 aliases:
 - /no/c-sharp/working-with-csv/
-date:                  2024-02-03T19:19:43.162345-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeide med CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:19:43.162345-07:00
+description: "CSV-filer (Comma-Separated Values, verdier skilt med komma) er et vanlig\
+  \ datautvekslingsformat som representerer tabelldata i ren tekst ved \xE5 bruke\u2026"
+lastmod: 2024-02-18 23:08:53.915593
+model: gpt-4-0125-preview
+summary: "CSV-filer (Comma-Separated Values, verdier skilt med komma) er et vanlig\
+  \ datautvekslingsformat som representerer tabelldata i ren tekst ved \xE5 bruke\u2026"
+title: Arbeide med CSV
 ---
 
 {{< edit_this_page >}}

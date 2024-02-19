@@ -1,14 +1,18 @@
 ---
-title:                "Beregning av en dato i fremtiden eller fortiden"
 aliases:
 - /no/google-apps-script/calculating-a-date-in-the-future-or-past/
-date:                  2024-02-01T21:49:07.588375-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Beregning av en dato i fremtiden eller fortiden"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/google-apps-script/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:07.588375-07:00
+description: "\xC5 beregne en dato i fremtiden eller fortiden handler om \xE5 manipulere\
+  \ datoomr\xE5der for \xE5 finne datoer utover eller f\xF8r den n\xE5v\xE6rende datoen,\
+  \ henholdsvis.\u2026"
+lastmod: 2024-02-18 23:08:53.495690
+model: gpt-4-0125-preview
+summary: "\xC5 beregne en dato i fremtiden eller fortiden handler om \xE5 manipulere\
+  \ datoomr\xE5der for \xE5 finne datoer utover eller f\xF8r den n\xE5v\xE6rende datoen,\
+  \ henholdsvis.\u2026"
+title: Beregning av en dato i fremtiden eller fortiden
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Calculando uma data no futuro ou passado"
 aliases:
 - /pt/java/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:31:22.608370-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Calculando uma data no futuro ou passado"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:31:22.608370-07:00
+description: "Calcular uma data no futuro ou passado \xE9 simplesmente adicionar ou\
+  \ subtrair dias, meses ou anos \xE0 uma data conhecida. Programadores fazem isso\
+  \ para\u2026"
+lastmod: 2024-02-18 23:08:58.031965
+model: gpt-4-1106-preview
+summary: "Calcular uma data no futuro ou passado \xE9 simplesmente adicionar ou subtrair\
+  \ dias, meses ou anos \xE0 uma data conhecida. Programadores fazem isso para\u2026"
+title: Calculando uma data no futuro ou passado
 ---
 
 {{< edit_this_page >}}

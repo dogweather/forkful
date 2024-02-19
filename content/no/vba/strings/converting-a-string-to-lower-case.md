@@ -1,14 +1,18 @@
 ---
-title:                "Konvertere en streng til små bokstaver"
 aliases:
 - /no/vba/converting-a-string-to-lower-case/
-date:                  2024-02-01T21:51:17.848297-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Konvertere en streng til små bokstaver"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/vba/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:17.848297-07:00
+description: "\xC5 konvertere en streng til sm\xE5 bokstaver inneb\xE6rer \xE5 transformere\
+  \ alle store bokstaver i en streng til deres sm\xE5 bokstav-ekvivalenter. Denne\
+  \ prosessen er\u2026"
+lastmod: 2024-02-18 23:08:53.714177
+model: gpt-4-0125-preview
+summary: "\xC5 konvertere en streng til sm\xE5 bokstaver inneb\xE6rer \xE5 transformere\
+  \ alle store bokstaver i en streng til deres sm\xE5 bokstav-ekvivalenter. Denne\
+  \ prosessen er\u2026"
+title: "Konvertere en streng til sm\xE5 bokstaver"
 ---
 
 {{< edit_this_page >}}

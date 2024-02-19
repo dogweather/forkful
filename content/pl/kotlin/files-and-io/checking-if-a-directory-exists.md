@@ -1,14 +1,18 @@
 ---
-title:                "Sprawdzanie, czy katalog istnieje"
 aliases:
 - /pl/kotlin/checking-if-a-directory-exists/
-date:                  2024-02-03T19:07:42.416439-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sprawdzanie, czy katalog istnieje"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:07:42.416439-07:00
+description: "Sprawdzanie, czy katalog istnieje w Kotlinie, polega na weryfikacji\
+  \ obecno\u015Bci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105. Programi\u015B\
+  ci wykonuj\u0105 to zadanie, aby\u2026"
+lastmod: 2024-02-18 23:08:49.583338
+model: gpt-4-0125-preview
+summary: "Sprawdzanie, czy katalog istnieje w Kotlinie, polega na weryfikacji obecno\u015B\
+  ci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105. Programi\u015Bci wykonuj\u0105\
+  \ to zadanie, aby\u2026"
+title: Sprawdzanie, czy katalog istnieje
 ---
 
 {{< edit_this_page >}}

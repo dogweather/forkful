@@ -1,14 +1,16 @@
 ---
-title:                "Das aktuelle Datum abrufen"
 aliases:
 - /de/google-apps-script/getting-the-current-date/
-date:                  2024-02-01T21:54:30.517120-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Das aktuelle Datum abrufen"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/google-apps-script/getting-the-current-date.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:30.517120-07:00
+description: "Das Abrufen des aktuellen Datums in Google Apps Script handelt vom Abrufen\
+  \ des aktuellen Datums und der Uhrzeit, einer g\xE4ngigen Aufgabe zur\u2026"
+lastmod: 2024-02-18 23:09:04.426219
+model: gpt-4-0125-preview
+summary: "Das Abrufen des aktuellen Datums in Google Apps Script handelt vom Abrufen\
+  \ des aktuellen Datums und der Uhrzeit, einer g\xE4ngigen Aufgabe zur\u2026"
+title: Das aktuelle Datum abrufen
 ---
 
 {{< edit_this_page >}}

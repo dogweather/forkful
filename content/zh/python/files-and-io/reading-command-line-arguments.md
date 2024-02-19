@@ -1,14 +1,21 @@
 ---
-title:                "读取命令行参数"
 aliases:
 - /zh/python/reading-command-line-arguments/
-date:                  2024-01-20T17:56:52.889845-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "读取命令行参数"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:52.889845-07:00
+description: "\u547D\u4EE4\u884C\u53C2\u6570\u8BA9\u6211\u4EEC\u7684\u7A0B\u5E8F\u53EF\
+  \u4EE5\u63A5\u6536\u7528\u6237\u5728\u7EC8\u7AEF\u6216\u547D\u4EE4\u63D0\u793A\u7B26\
+  \u4E2D\u8F93\u5165\u7684\u4FE1\u606F\u3002\u5229\u7528\u8FD9\u4E9B\u53C2\u6570\uFF0C\
+  \u6211\u4EEC\u53EF\u4EE5\u8BA9\u7A0B\u5E8F\u66F4\u52A0\u7075\u6D3B\uFF0C\u6839\u636E\
+  \u7528\u6237\u7684\u9700\u6C42\u6267\u884C\u4E0D\u540C\u7684\u4EFB\u52A1\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:58.804323
+model: gpt-4-1106-preview
+summary: "\u547D\u4EE4\u884C\u53C2\u6570\u8BA9\u6211\u4EEC\u7684\u7A0B\u5E8F\u53EF\
+  \u4EE5\u63A5\u6536\u7528\u6237\u5728\u7EC8\u7AEF\u6216\u547D\u4EE4\u63D0\u793A\u7B26\
+  \u4E2D\u8F93\u5165\u7684\u4FE1\u606F\u3002\u5229\u7528\u8FD9\u4E9B\u53C2\u6570\uFF0C\
+  \u6211\u4EEC\u53EF\u4EE5\u8BA9\u7A0B\u5E8F\u66F4\u52A0\u7075\u6D3B\uFF0C\u6839\u636E\
+  \u7528\u6237\u7684\u9700\u6C42\u6267\u884C\u4E0D\u540C\u7684\u4EFB\u52A1\u3002"
+title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
 ---
 
 {{< edit_this_page >}}

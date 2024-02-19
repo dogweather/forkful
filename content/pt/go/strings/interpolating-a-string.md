@@ -1,14 +1,18 @@
 ---
-title:                "Interpolando uma String"
 aliases:
 - /pt/go/interpolating-a-string/
-date:                  2024-02-03T17:58:26.296088-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interpolando uma String"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/interpolating-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:58:26.296088-07:00
+description: "A interpola\xE7\xE3o de strings \xE9 um m\xE9todo para construir strings\
+  \ que incorporam vari\xE1veis, permitindo a cria\xE7\xE3o din\xE2mica de strings.\
+  \ Programadores fazem isso\u2026"
+lastmod: 2024-02-18 23:08:57.653569
+model: gpt-4-0125-preview
+summary: "A interpola\xE7\xE3o de strings \xE9 um m\xE9todo para construir strings\
+  \ que incorporam vari\xE1veis, permitindo a cria\xE7\xE3o din\xE2mica de strings.\
+  \ Programadores fazem isso\u2026"
+title: Interpolando uma String
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Capitalizando una cadena de texto"
 aliases:
 - /es/python/capitalizing-a-string/
-date:                  2024-02-03T19:06:11.188735-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizando una cadena de texto"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:11.188735-07:00
+description: "Capitalizar una cadena significa convertir el primer car\xE1cter de\
+  \ una cadena a may\xFAscula y el resto a min\xFAsculas. Esta operaci\xF3n es com\xFA\
+  nmente utilizada en\u2026"
+lastmod: 2024-02-18 23:09:09.538032
+model: gpt-4-0125-preview
+summary: "Capitalizar una cadena significa convertir el primer car\xE1cter de una\
+  \ cadena a may\xFAscula y el resto a min\xFAsculas. Esta operaci\xF3n es com\xFA\
+  nmente utilizada en\u2026"
+title: Capitalizando una cadena de texto
 ---
 
 {{< edit_this_page >}}

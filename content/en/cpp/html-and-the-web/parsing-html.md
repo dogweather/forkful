@@ -1,12 +1,13 @@
 ---
-title:                "Parsing HTML"
 aliases:
 - /en/cpp/parsing-html/
-date:                  2024-01-20T15:30:08.873905-07:00
-simple_title:         "Parsing HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/parsing-html.md"
+date: 2024-01-20 15:30:08.873905-07:00
+description: "Parsing HTML means breaking down HTML content into something a program\
+  \ can understand and manipulate. Programmers do this to extract data, manipulate\u2026"
+lastmod: 2024-02-18 23:09:11.353291
+summary: "Parsing HTML means breaking down HTML content into something a program can\
+  \ understand and manipulate. Programmers do this to extract data, manipulate\u2026"
+title: Parsing HTML
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Konvertere en streng til små bokstaver"
 aliases:
 - /no/google-apps-script/converting-a-string-to-lower-case/
-date:                  2024-02-01T21:51:20.203639-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Konvertere en streng til små bokstaver"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/google-apps-script/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:20.203639-07:00
+description: "\xC5 konvertere en streng til sm\xE5 bokstaver i Google Apps Script,\
+  \ et skybasert skriptspr\xE5k for automatisering av oppgaver p\xE5 tvers av Googles\
+  \ produkter, er\u2026"
+lastmod: 2024-02-18 23:08:53.466789
+model: gpt-4-0125-preview
+summary: "\xC5 konvertere en streng til sm\xE5 bokstaver i Google Apps Script, et\
+  \ skybasert skriptspr\xE5k for automatisering av oppgaver p\xE5 tvers av Googles\
+  \ produkter, er\u2026"
+title: "Konvertere en streng til sm\xE5 bokstaver"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Calcolo di una data futura o passata"
 aliases:
 - /it/typescript/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:32:29.412439-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Calcolo di una data futura o passata"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:32:29.412439-07:00
+description: "Calcolare una data nel futuro o nel passato significa semplicemente\
+  \ aggiungere o sottrarre un certo numero di giorni, mesi o anni da una data specifica.\
+  \ I\u2026"
+lastmod: 2024-02-18 23:08:55.653037
+model: gpt-4-1106-preview
+summary: "Calcolare una data nel futuro o nel passato significa semplicemente aggiungere\
+  \ o sottrarre un certo numero di giorni, mesi o anni da una data specifica. I\u2026"
+title: Calcolo di una data futura o passata
 ---
 
 {{< edit_this_page >}}

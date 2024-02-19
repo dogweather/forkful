@@ -1,13 +1,16 @@
 ---
-title:                "Tekstin etsiminen ja korvaaminen"
 aliases:
 - /fi/rust/searching-and-replacing-text/
-date:                  2024-01-20T17:58:53.513971-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tekstin etsiminen ja korvaaminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:53.513971-07:00
+description: "Tekstin hakeminen ja korvaaminen on perustoiminto, jossa etsit\xE4\xE4\
+  n tekstikatkelmia ja korvataan ne toisilla. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4\
+  t\xE4 automatisoidakseen\u2026"
+lastmod: 2024-02-18 23:09:07.348239
+model: gpt-4-1106-preview
+summary: "Tekstin hakeminen ja korvaaminen on perustoiminto, jossa etsit\xE4\xE4n\
+  \ tekstikatkelmia ja korvataan ne toisilla. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4\
+  t\xE4 automatisoidakseen\u2026"
+title: Tekstin etsiminen ja korvaaminen
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Verifica se una directory esiste"
 aliases:
 - /it/bash/checking-if-a-directory-exists/
-date:                  2024-02-03T19:06:41.913627-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verifica se una directory esiste"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:41.913627-07:00
+description: "Nella programmazione Bash, verificare se una directory esiste \xE8 un\
+  \ meccanismo di controllo essenziale usato per verificare la presenza di una directory\u2026"
+lastmod: 2024-02-18 23:08:56.066122
+model: gpt-4-0125-preview
+summary: "Nella programmazione Bash, verificare se una directory esiste \xE8 un meccanismo\
+  \ di controllo essenziale usato per verificare la presenza di una directory\u2026"
+title: Verifica se una directory esiste
 ---
 
 {{< edit_this_page >}}

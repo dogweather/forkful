@@ -1,14 +1,16 @@
 ---
-title:                "Skapa en tillfällig fil"
 aliases:
 - /sv/vba/creating-a-temporary-file/
-date:                  2024-02-01T21:53:43.360693-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skapa en tillfällig fil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/creating-a-temporary-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:43.360693-07:00
+description: "Att skapa en tempor\xE4r fil i Visual Basic for Applications (VBA) inneb\xE4\
+  r att man programmeringsm\xE4ssigt genererar en fil f\xF6r kortvarig anv\xE4ndning,\u2026"
+lastmod: 2024-02-18 23:08:51.647132
+model: gpt-4-0125-preview
+summary: "Att skapa en tempor\xE4r fil i Visual Basic for Applications (VBA) inneb\xE4\
+  r att man programmeringsm\xE4ssigt genererar en fil f\xF6r kortvarig anv\xE4ndning,\u2026"
+title: "Skapa en tillf\xE4llig fil"
 ---
 
 {{< edit_this_page >}}

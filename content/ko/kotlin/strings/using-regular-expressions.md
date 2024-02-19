@@ -1,14 +1,28 @@
 ---
-title:                "정규 표현식 사용하기"
 aliases:
 - /ko/kotlin/using-regular-expressions/
-date:                  2024-02-03T19:17:38.311487-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "정규 표현식 사용하기"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:17:38.311487-07:00
+description: "\uC815\uADDC \uD45C\uD604\uC2DD(regex)\uC740 \uD14D\uC2A4\uD2B8 \uCC98\
+  \uB9AC\uC5D0 \uC788\uC5B4 \uAC15\uB825\uD55C \uB3C4\uAD6C\uB85C, \uD504\uB85C\uADF8\
+  \uB798\uBA38\uAC00 \uACE0\uAE09 \uD328\uD134 \uB9E4\uCE6D \uAE30\uC220\uC744 \uC0AC\
+  \uC6A9\uD558\uC5EC \uBB38\uC790\uC5F4\uC744 \uAC80\uC0C9, \uB9E4\uCE58, \uC870\uC791\
+  \uD560 \uC218 \uC788\uAC8C \uD574\uC90D\uB2C8\uB2E4. Kotlin\uC5D0\uC11C \uC815\uADDC\
+  \ \uD45C\uD604\uC2DD\uC744 \uD65C\uC6A9\uD558\uBA74 \uAC80\uC99D, \uD30C\uC2F1,\
+  \ \uBCC0\uD658\uACFC \uAC19\uC740 \uBCF5\uC7A1\uD55C \uD14D\uC2A4\uD2B8 \uCC98\uB9AC\
+  \ \uC791\uC5C5\uC744 \uD6A8\uC728\uC801\uC73C\uB85C \uC218\uD589\uD560 \uC218\u2026"
+lastmod: 2024-02-18 23:09:06.134515
+model: gpt-4-0125-preview
+summary: "\uC815\uADDC \uD45C\uD604\uC2DD(regex)\uC740 \uD14D\uC2A4\uD2B8 \uCC98\uB9AC\
+  \uC5D0 \uC788\uC5B4 \uAC15\uB825\uD55C \uB3C4\uAD6C\uB85C, \uD504\uB85C\uADF8\uB798\
+  \uBA38\uAC00 \uACE0\uAE09 \uD328\uD134 \uB9E4\uCE6D \uAE30\uC220\uC744 \uC0AC\uC6A9\
+  \uD558\uC5EC \uBB38\uC790\uC5F4\uC744 \uAC80\uC0C9, \uB9E4\uCE58, \uC870\uC791\uD560\
+  \ \uC218 \uC788\uAC8C \uD574\uC90D\uB2C8\uB2E4. Kotlin\uC5D0\uC11C \uC815\uADDC\
+  \ \uD45C\uD604\uC2DD\uC744 \uD65C\uC6A9\uD558\uBA74 \uAC80\uC99D, \uD30C\uC2F1,\
+  \ \uBCC0\uD658\uACFC \uAC19\uC740 \uBCF5\uC7A1\uD55C \uD14D\uC2A4\uD2B8 \uCC98\uB9AC\
+  \ \uC791\uC5C5\uC744 \uD6A8\uC728\uC801\uC73C\uB85C \uC218\uD589\uD560 \uC218\u2026"
+title: "\uC815\uADDC \uD45C\uD604\uC2DD \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

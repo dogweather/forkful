@@ -1,13 +1,16 @@
 ---
-title:                "Wyszukiwanie i zamiana tekstu"
 aliases:
 - /pl/java/searching-and-replacing-text/
-date:                  2024-01-20T17:58:15.864864-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wyszukiwanie i zamiana tekstu"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:15.864864-07:00
+description: "Wyszukiwanie i zamiana tekstu to podstawowe operacje umo\u017Cliwiaj\u0105\
+  ce zmian\u0119 jednego ci\u0105gu znak\xF3w na inny w obr\u0119bie wi\u0119kszego\
+  \ tekstu. Programi\u015Bci robi\u0105 to\u2026"
+lastmod: 2024-02-18 23:08:49.463441
+model: gpt-4-1106-preview
+summary: "Wyszukiwanie i zamiana tekstu to podstawowe operacje umo\u017Cliwiaj\u0105\
+  ce zmian\u0119 jednego ci\u0105gu znak\xF3w na inny w obr\u0119bie wi\u0119kszego\
+  \ tekstu. Programi\u015Bci robi\u0105 to\u2026"
+title: Wyszukiwanie i zamiana tekstu
 ---
 
 {{< edit_this_page >}}

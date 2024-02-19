@@ -1,13 +1,24 @@
 ---
-title:                "프로그래머를 위한 TOML 다루기"
 aliases:
 - /ko/python/working-with-toml/
-date:                  2024-01-26T04:25:41.481485-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "프로그래머를 위한 TOML 다루기"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/working-with-toml.md"
+date: 2024-01-26 04:25:41.481485-07:00
+description: "TOML\uC740 Tom's Obvious, Minimal Language\uC758 \uC57D\uC790\uB85C\
+  , JSON\uC774\uB098 YAML\uACFC \uC720\uC0AC\uD55C \uB370\uC774\uD130 \uC9C1\uB82C\
+  \uD654 \uD615\uC2DD\uC774\uC9C0\uB9CC \uAC04\uACB0\uD568\uACFC \uAC00\uB3C5\uC131\
+  \uC744 \uBAA9\uD45C\uB85C \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\
+  \uC740 TOML\uC744 \uAD6C\uC131 \uD30C\uC77C\uB85C \uC0AC\uC6A9\uD558\uB294\uB370\
+  , \uC774\uB294 \uC791\uC131\uD558\uAE30 \uC27D\uACE0 \uC774\uD574\uD558\uAE30 \uC26C\
+  \uC6B0\uBA70, \uD30C\uC774\uC36C\uACFC \uAC19\uC740\u2026"
+lastmod: 2024-02-18 23:09:05.661369
+model: gpt-4-0125-preview
+summary: "TOML\uC740 Tom's Obvious, Minimal Language\uC758 \uC57D\uC790\uB85C, JSON\uC774\
+  \uB098 YAML\uACFC \uC720\uC0AC\uD55C \uB370\uC774\uD130 \uC9C1\uB82C\uD654 \uD615\
+  \uC2DD\uC774\uC9C0\uB9CC \uAC04\uACB0\uD568\uACFC \uAC00\uB3C5\uC131\uC744 \uBAA9\
+  \uD45C\uB85C \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 TOML\uC744\
+  \ \uAD6C\uC131 \uD30C\uC77C\uB85C \uC0AC\uC6A9\uD558\uB294\uB370, \uC774\uB294 \uC791\
+  \uC131\uD558\uAE30 \uC27D\uACE0 \uC774\uD574\uD558\uAE30 \uC26C\uC6B0\uBA70, \uD30C\
+  \uC774\uC36C\uACFC \uAC19\uC740\u2026"
+title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Utilizzo di un debugger"
 aliases:
 - /it/ruby/using-a-debugger/
-date:                  2024-01-26T04:09:47.739381-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di un debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/using-a-debugger.md"
+date: 2024-01-26 04:09:47.739381-07:00
+description: "Usare un debugger in Ruby fornisce ai programmatori un superpotere:\
+  \ mettere in pausa il loro codice, ispezionare le variabili e passare attraverso\
+  \ il loro\u2026"
+lastmod: 2024-02-18 23:08:56.387347
+model: gpt-4-0125-preview
+summary: "Usare un debugger in Ruby fornisce ai programmatori un superpotere: mettere\
+  \ in pausa il loro codice, ispezionare le variabili e passare attraverso il loro\u2026"
+title: Utilizzo di un debugger
 ---
 
 {{< edit_this_page >}}

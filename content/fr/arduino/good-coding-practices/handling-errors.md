@@ -1,13 +1,16 @@
 ---
-title:                "Gestion des erreurs"
 aliases:
 - /fr/arduino/handling-errors/
-date:                  2024-01-26T00:37:07.489429-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Gestion des erreurs"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/handling-errors.md"
+date: 2024-01-26 00:37:07.489429-07:00
+description: "La gestion des erreurs dans vos programmes intercepte les impr\xE9vus\
+  \ qui tentent de vous mettre des b\xE2tons dans les roues. Vous le faites pour \xE9\
+  viter \xE0\u2026"
+lastmod: 2024-02-18 23:09:09.122631
+model: gpt-4-1106-preview
+summary: "La gestion des erreurs dans vos programmes intercepte les impr\xE9vus qui\
+  \ tentent de vous mettre des b\xE2tons dans les roues. Vous le faites pour \xE9\
+  viter \xE0\u2026"
+title: Gestion des erreurs
 ---
 
 {{< edit_this_page >}}

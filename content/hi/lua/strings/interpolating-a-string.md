@@ -1,13 +1,16 @@
 ---
-title:                "स्ट्रिंग इंटरपोलेशन"
 aliases:
 - /hi/lua/interpolating-a-string/
-date:                  2024-01-20T17:51:12.582555-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "स्ट्रिंग इंटरपोलेशन"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/lua/interpolating-a-string.md"
+date: 2024-01-20 17:51:12.582555-07:00
+description: "Interpolating a string means inserting dynamic values into a static\
+  \ string. Programmers do it to make code flexible and to dynamically create strings\
+  \ that\u2026"
+lastmod: 2024-02-18 23:09:03.550760
+model: gpt-4-1106-preview
+summary: "Interpolating a string means inserting dynamic values into a static string.\
+  \ Programmers do it to make code flexible and to dynamically create strings that\u2026"
+title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0907\u0902\u091F\u0930\u092A\
+  \u094B\u0932\u0947\u0936\u0928"
 ---
 
 {{< edit_this_page >}}

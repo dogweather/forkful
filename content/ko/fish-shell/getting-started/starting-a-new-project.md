@@ -1,14 +1,25 @@
 ---
-title:                "새 프로젝트 시작하기"
 aliases:
 - /ko/fish-shell/starting-a-new-project/
-date:                  2024-01-20T18:03:41.148159-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "새 프로젝트 시작하기"
-
-tag:                  "Getting Started"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/starting-a-new-project.md"
+date: 2024-01-20 18:03:41.148159-07:00
+description: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294\
+  \ \uAC74, \uC5EC\uB7EC\uBD84\uC774 \uC0C8\uB85C\uC6B4 \uC544\uC774\uB514\uC5B4\uB97C\
+  \ \uC2E4\uD604\uD558\uAE30 \uC704\uD574 \uCF54\uB4DC\uC758 \uAE30\uCD08\uB97C \uB2E4\
+  \uC9C0\uB294 \uD589\uC704\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\
+  \uC740 \uCC3D\uC758\uC801\uC778 \uD574\uACB0\uCC45\uC744 \uB9CC\uB4E4\uAC70\uB098\
+  \ \uC790\uC2E0\uC758 \uAE30\uC220\uC744 \uD5A5\uC0C1\uC2DC\uD0A4\uAE30 \uC704\uD574\
+  \ \uC774\uB807\uAC8C \uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.882064
+model: gpt-4-1106-preview
+summary: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294 \uAC74\
+  , \uC5EC\uB7EC\uBD84\uC774 \uC0C8\uB85C\uC6B4 \uC544\uC774\uB514\uC5B4\uB97C \uC2E4\
+  \uD604\uD558\uAE30 \uC704\uD574 \uCF54\uB4DC\uC758 \uAE30\uCD08\uB97C \uB2E4\uC9C0\
+  \uB294 \uD589\uC704\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\
+  \ \uCC3D\uC758\uC801\uC778 \uD574\uACB0\uCC45\uC744 \uB9CC\uB4E4\uAC70\uB098 \uC790\
+  \uC2E0\uC758 \uAE30\uC220\uC744 \uD5A5\uC0C1\uC2DC\uD0A4\uAE30 \uC704\uD574 \uC774\
+  \uB807\uAC8C \uD569\uB2C8\uB2E4."
+title: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

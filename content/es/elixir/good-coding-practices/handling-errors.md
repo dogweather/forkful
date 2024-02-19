@@ -1,13 +1,14 @@
 ---
-title:                "Manejo de errores"
 aliases:
 - /es/elixir/handling-errors/
-date:                  2024-01-26T00:50:41.256863-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Manejo de errores"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/handling-errors.md"
+date: 2024-01-26 00:50:41.256863-07:00
+description: "Manejar errores significa escribir c\xF3digo que pueda lidiar con las\
+  \ cosas cuando salen mal. Los programadores lo hacen para prevenir fallos y para\u2026"
+lastmod: 2024-02-18 23:09:09.656127
+model: gpt-4-1106-preview
+summary: "Manejar errores significa escribir c\xF3digo que pueda lidiar con las cosas\
+  \ cuando salen mal. Los programadores lo hacen para prevenir fallos y para\u2026"
+title: Manejo de errores
 ---
 
 {{< edit_this_page >}}

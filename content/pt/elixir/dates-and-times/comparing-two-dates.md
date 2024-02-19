@@ -1,13 +1,16 @@
 ---
-title:                "Comparando duas datas"
 aliases:
 - /pt/elixir/comparing-two-dates/
-date:                  2024-01-20T17:32:53.849194-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Comparando duas datas"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/comparing-two-dates.md"
+date: 2024-01-20 17:32:53.849194-07:00
+description: "Comparar duas datas \xE9 o processo de verificar as diferen\xE7as entre\
+  \ elas, seja para encontrar qual \xE9 mais recente ou quantificar o intervalo de\
+  \ tempo entre\u2026"
+lastmod: 2024-02-18 23:08:57.856155
+model: gpt-4-1106-preview
+summary: "Comparar duas datas \xE9 o processo de verificar as diferen\xE7as entre\
+  \ elas, seja para encontrar qual \xE9 mais recente ou quantificar o intervalo de\
+  \ tempo entre\u2026"
+title: Comparando duas datas
 ---
 
 {{< edit_this_page >}}

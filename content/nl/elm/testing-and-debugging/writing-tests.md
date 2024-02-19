@@ -1,15 +1,16 @@
 ---
-title:                "Tests Schrijven"
 aliases:
 - /nl/elm/writing-tests/
-date:                  2024-01-28T22:12:53.828008-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tests Schrijven"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elm/writing-tests.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:53.828008-07:00
+description: "Tests schrijven betekent het cre\xEBren van code die controleert of\
+  \ je hoofdcode werkt zoals verwacht. Programmeurs testen om bugs vroeg op te sporen,\u2026"
+lastmod: 2024-02-18 23:09:01.763387
+model: gpt-4-0125-preview
+summary: "Tests schrijven betekent het cre\xEBren van code die controleert of je hoofdcode\
+  \ werkt zoals verwacht. Programmeurs testen om bugs vroeg op te sporen,\u2026"
+title: Tests Schrijven
 ---
 
 {{< edit_this_page >}}

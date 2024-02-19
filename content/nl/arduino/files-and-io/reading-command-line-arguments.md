@@ -1,15 +1,16 @@
 ---
-title:                "Commandoregelargumenten lezen"
 aliases:
 - /nl/arduino/reading-command-line-arguments/
-date:                  2024-01-28T22:05:16.332326-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Commandoregelargumenten lezen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/reading-command-line-arguments.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:05:16.332326-07:00
+description: "Het lezen van command line argumenten betekent het ophalen van de data\
+  \ die naar een programma wordt doorgegeven wanneer je het start vanuit een terminal\u2026"
+lastmod: 2024-02-18 23:09:02.154809
+model: gpt-4-0125-preview
+summary: "Het lezen van command line argumenten betekent het ophalen van de data die\
+  \ naar een programma wordt doorgegeven wanneer je het start vanuit een terminal\u2026"
+title: Commandoregelargumenten lezen
 ---
 
 {{< edit_this_page >}}

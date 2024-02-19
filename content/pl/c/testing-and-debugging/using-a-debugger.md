@@ -1,14 +1,18 @@
 ---
-title:                "Korzystanie z debugera"
 aliases:
 - /pl/c/using-a-debugger/
-date:                  2024-02-03T18:09:59.651462-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z debugera"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/using-a-debugger.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:09:59.651462-07:00
+description: "Debuggery w j\u0119zyku C to specjalistyczne narz\u0119dzia, kt\xF3\
+  re pozwalaj\u0105 programistom krok po kroku przegl\u0105da\u0107 sw\xF3j kod, inspekcjonowa\u0107\
+  \ zmienne i monitorowa\u0107\u2026"
+lastmod: 2024-02-18 23:08:50.084997
+model: gpt-4-0125-preview
+summary: "Debuggery w j\u0119zyku C to specjalistyczne narz\u0119dzia, kt\xF3re pozwalaj\u0105\
+  \ programistom krok po kroku przegl\u0105da\u0107 sw\xF3j kod, inspekcjonowa\u0107\
+  \ zmienne i monitorowa\u0107\u2026"
+title: Korzystanie z debugera
 ---
 
 {{< edit_this_page >}}

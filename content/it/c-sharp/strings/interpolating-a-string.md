@@ -1,13 +1,16 @@
 ---
-title:                "Interpolazione di una stringa"
 aliases:
 - /it/c-sharp/interpolating-a-string/
-date:                  2024-01-20T17:50:39.061408-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolazione di una stringa"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/interpolating-a-string.md"
+date: 2024-01-20 17:50:39.061408-07:00
+description: "L'interpolazione di stringhe in C# serve a inserire valori di variabili\
+  \ dentro a una stringa di testo. La usiamo perch\xE9 rende il codice pi\xF9 chiaro\
+  \ e\u2026"
+lastmod: 2024-02-18 23:08:55.873984
+model: gpt-4-1106-preview
+summary: "L'interpolazione di stringhe in C# serve a inserire valori di variabili\
+  \ dentro a una stringa di testo. La usiamo perch\xE9 rende il codice pi\xF9 chiaro\
+  \ e\u2026"
+title: Interpolazione di una stringa
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Concatenando strings"
 aliases:
 - /pt/elm/concatenating-strings/
-date:                  2024-01-20T17:34:43.441174-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenando strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/concatenating-strings.md"
+date: 2024-01-20 17:34:43.441174-07:00
+description: "Concatenar strings \xE9 juntar dois ou mais textos em um s\xF3. Programadores\
+  \ fazem isso para montar senten\xE7as, mensagens, ou combinar dados de forma din\xE2\
+  mica."
+lastmod: 2024-02-18 23:08:58.052800
+model: gpt-4-1106-preview
+summary: "Concatenar strings \xE9 juntar dois ou mais textos em um s\xF3. Programadores\
+  \ fazem isso para montar senten\xE7as, mensagens, ou combinar dados de forma din\xE2\
+  mica."
+title: Concatenando strings
 ---
 
 {{< edit_this_page >}}

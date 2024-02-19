@@ -1,14 +1,30 @@
 ---
-title:                "使用YAML工作"
 aliases:
 - /zh/google-apps-script/working-with-yaml/
-date:                  2024-02-01T22:07:31.784270-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用YAML工作"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/google-apps-script/working-with-yaml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:07:31.784270-07:00
+description: "YAML\uFF0C\u4EE3\u8868\u201CYAML \u4E0D\u662F\u6807\u8BB0\u8BED\u8A00\
+  \uFF08YAML Ain't Markup Language\uFF09\u201D\uFF0C\u662F\u4E00\u79CD\u4EBA\u7C7B\
+  \u53EF\u8BFB\u7684\u6570\u636E\u5E8F\u5217\u5316\u6807\u51C6\uFF0C\u901A\u5E38\u7528\
+  \u4E8E\u914D\u7F6E\u6587\u4EF6\u548C\u4E0D\u540C\u8BED\u8A00\u95F4\u5177\u6709\u4E0D\
+  \u540C\u6570\u636E\u7ED3\u6784\u7684\u6570\u636E\u4EA4\u6362\u3002\u7A0B\u5E8F\u5458\
+  \u7ECF\u5E38\u5904\u7406YAML\u7684\u539F\u56E0\u662F\u5B83\u7684\u7B80\u5355\u6027\
+  \u548C\u53EF\u8BFB\u6027\uFF0C\u7279\u522B\u662F\u5728\u9700\u8981\u5927\u91CF\u914D\
+  \u7F6E\u6216\u5728\u4E0D\u540C\u7CFB\u7EDF\u95F4\u4F20\u8F93\u7ED3\u6784\u5316\u6570\
+  \u636E\u7684\u9879\u76EE\u4E2D\u3002"
+lastmod: 2024-02-18 23:08:58.770870
+model: gpt-4-0125-preview
+summary: "YAML\uFF0C\u4EE3\u8868\u201CYAML \u4E0D\u662F\u6807\u8BB0\u8BED\u8A00\uFF08\
+  YAML Ain't Markup Language\uFF09\u201D\uFF0C\u662F\u4E00\u79CD\u4EBA\u7C7B\u53EF\
+  \u8BFB\u7684\u6570\u636E\u5E8F\u5217\u5316\u6807\u51C6\uFF0C\u901A\u5E38\u7528\u4E8E\
+  \u914D\u7F6E\u6587\u4EF6\u548C\u4E0D\u540C\u8BED\u8A00\u95F4\u5177\u6709\u4E0D\u540C\
+  \u6570\u636E\u7ED3\u6784\u7684\u6570\u636E\u4EA4\u6362\u3002\u7A0B\u5E8F\u5458\u7ECF\
+  \u5E38\u5904\u7406YAML\u7684\u539F\u56E0\u662F\u5B83\u7684\u7B80\u5355\u6027\u548C\
+  \u53EF\u8BFB\u6027\uFF0C\u7279\u522B\u662F\u5728\u9700\u8981\u5927\u91CF\u914D\u7F6E\
+  \u6216\u5728\u4E0D\u540C\u7CFB\u7EDF\u95F4\u4F20\u8F93\u7ED3\u6784\u5316\u6570\u636E\
+  \u7684\u9879\u76EE\u4E2D\u3002"
+title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 ---
 
 {{< edit_this_page >}}

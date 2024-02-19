@@ -1,14 +1,18 @@
 ---
-title:                "Säännöllisten lausekkeiden käyttö"
 aliases:
 - /fi/vba/using-regular-expressions/
-date:                  2024-02-01T22:04:53.760117-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Säännöllisten lausekkeiden käyttö"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/using-regular-expressions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:53.760117-07:00
+description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Visual Basic for Applicationsissa\
+  \ (VBA) tarjoavat voimakkaan tavan etsi\xE4, vastata ja manipuloida merkkijonoja.\
+  \ Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:07.398919
+model: gpt-4-0125-preview
+summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Visual Basic for Applicationsissa\
+  \ (VBA) tarjoavat voimakkaan tavan etsi\xE4, vastata ja manipuloida merkkijonoja.\
+  \ Ohjelmoijat\u2026"
+title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

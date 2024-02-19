@@ -1,13 +1,24 @@
 ---
-title:                "인터랙티브 셸 (REPL) 사용하기"
 aliases:
 - /ko/c-sharp/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:12:29.225392-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "인터랙티브 셸 (REPL) 사용하기"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:12:29.225392-07:00
+description: "REPL\uC774\uB780 Read-Eval-Print Loop\uC758 \uC57D\uC790\uB85C, C# \uCF54\
+  \uB4DC\uB97C \uC785\uB825\uD558\uC5EC \uC0C1\uD638\uC791\uC6A9\uD558\uBA70 \uC2E4\
+  \uD589\uD560 \uC218 \uC788\uAC8C \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB4E4\uC740 \uBCF5\uC7A1\uD55C \uD504\uB85C\uC81D\uD2B8 \uAD6C\uC131 \uC5C6\uC774\
+  \ C#\uB97C \uBE60\uB974\uAC8C \uC2E4\uD5D8, \uB514\uBC84\uAE45\uD558\uAC70\uB098\
+  \ \uD559\uC2B5\uD558\uB294 \uB370\uC5D0 REPL\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4\
+  ."
+lastmod: 2024-02-18 23:09:06.222330
+model: gpt-4-0125-preview
+summary: "REPL\uC774\uB780 Read-Eval-Print Loop\uC758 \uC57D\uC790\uB85C, C# \uCF54\
+  \uB4DC\uB97C \uC785\uB825\uD558\uC5EC \uC0C1\uD638\uC791\uC6A9\uD558\uBA70 \uC2E4\
+  \uD589\uD560 \uC218 \uC788\uAC8C \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB4E4\uC740 \uBCF5\uC7A1\uD55C \uD504\uB85C\uC81D\uD2B8 \uAD6C\uC131 \uC5C6\uC774\
+  \ C#\uB97C \uBE60\uB974\uAC8C \uC2E4\uD5D8, \uB514\uBC84\uAE45\uD558\uAC70\uB098\
+  \ \uD559\uC2B5\uD558\uB294 \uB370\uC5D0 REPL\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4\
+  ."
+title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

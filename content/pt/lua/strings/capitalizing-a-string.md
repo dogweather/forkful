@@ -1,14 +1,17 @@
 ---
-title:                "Capitalizando uma string"
 aliases:
 - /pt/lua/capitalizing-a-string/
-date:                  2024-02-03T19:05:48.766397-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizando uma string"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/lua/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:48.766397-07:00
+description: "Capitalizar uma string envolve modificar o primeiro caractere de cada\
+  \ palavra em uma frase para mai\xFAscula, garantindo que o restante esteja em min\xFA\
+  scula.\u2026"
+lastmod: 2024-02-18 23:08:58.266166
+model: gpt-4-0125-preview
+summary: "Capitalizar uma string envolve modificar o primeiro caractere de cada palavra\
+  \ em uma frase para mai\xFAscula, garantindo que o restante esteja em min\xFAscula.\u2026"
+title: Capitalizando uma string
 ---
 
 {{< edit_this_page >}}

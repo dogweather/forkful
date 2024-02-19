@@ -1,13 +1,15 @@
 ---
-title:                "Nedlasting av en nettside"
 aliases:
 - /no/php/downloading-a-web-page/
-date:                  2024-01-20T17:44:40.139740-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Nedlasting av en nettside"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/downloading-a-web-page.md"
+date: 2024-01-20 17:44:40.139740-07:00
+description: "\xC5 laste ned en nettside betyr \xE5 hente ned innholdet fra en URL\
+  \ til din lokale enhet. Programmerere gj\xF8r det for \xE5 analysere innholdet,\
+  \ automatisere\u2026"
+lastmod: 2024-02-18 23:08:53.974158
+model: gpt-4-1106-preview
+summary: "\xC5 laste ned en nettside betyr \xE5 hente ned innholdet fra en URL til\
+  \ din lokale enhet. Programmerere gj\xF8r det for \xE5 analysere innholdet, automatisere\u2026"
+title: Nedlasting av en nettside
 ---
 
 {{< edit_this_page >}}

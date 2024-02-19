@@ -1,14 +1,16 @@
 ---
-title:                "Travailler avec des nombres complexes"
 aliases:
 - /fr/go/working-with-complex-numbers/
-date:                  2024-02-03T18:13:59.724797-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Travailler avec des nombres complexes"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:13:59.724797-07:00
+description: "Travailler avec des nombres complexes en programmation implique de manipuler\
+  \ des nombres qui ont \xE0 la fois une partie r\xE9elle et une partie imaginaire,\u2026"
+lastmod: 2024-02-18 23:09:08.224879
+model: gpt-4-0125-preview
+summary: "Travailler avec des nombres complexes en programmation implique de manipuler\
+  \ des nombres qui ont \xE0 la fois une partie r\xE9elle et une partie imaginaire,\u2026"
+title: Travailler avec des nombres complexes
 ---
 
 {{< edit_this_page >}}

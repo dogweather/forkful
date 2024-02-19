@@ -1,14 +1,32 @@
 ---
-title:                "Перевірка наявності директорії"
 aliases:
 - /uk/google-apps-script/checking-if-a-directory-exists/
-date:                  2024-02-01T21:49:50.809410-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Перевірка наявності директорії"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/google-apps-script/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:50.809410-07:00
+description: "\u041F\u0435\u0440\u0435\u0432\u0456\u0440\u043A\u0430 \u0456\u0441\u043D\
+  \u0443\u0432\u0430\u043D\u043D\u044F \u0434\u0438\u0440\u0435\u043A\u0442\u043E\u0440\
+  \u0456\u0457 \u0432 Google Apps Script \u043F\u043E\u043B\u044F\u0433\u0430\u0454\
+  \ \u0443 \u0432\u0435\u0440\u0438\u0444\u0456\u043A\u0430\u0446\u0456\u0457 \u043D\
+  \u0430\u044F\u0432\u043D\u043E\u0441\u0442\u0456 \u043F\u0430\u043F\u043A\u0438\
+  \ \u0432 Google Drive. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0456\u0441\u0442\
+  \u0438 \u0447\u0430\u0441\u0442\u043E \u0432\u0438\u043A\u043E\u043D\u0443\u044E\
+  \u0442\u044C \u0446\u044E \u043F\u0435\u0440\u0435\u0432\u0456\u0440\u043A\u0443\
+  , \u0449\u043E\u0431\u2026"
+lastmod: 2024-02-18 23:08:59.760652
+model: gpt-4-0125-preview
+summary: "\u041F\u0435\u0440\u0435\u0432\u0456\u0440\u043A\u0430 \u0456\u0441\u043D\
+  \u0443\u0432\u0430\u043D\u043D\u044F \u0434\u0438\u0440\u0435\u043A\u0442\u043E\u0440\
+  \u0456\u0457 \u0432 Google Apps Script \u043F\u043E\u043B\u044F\u0433\u0430\u0454\
+  \ \u0443 \u0432\u0435\u0440\u0438\u0444\u0456\u043A\u0430\u0446\u0456\u0457 \u043D\
+  \u0430\u044F\u0432\u043D\u043E\u0441\u0442\u0456 \u043F\u0430\u043F\u043A\u0438\
+  \ \u0432 Google Drive. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0456\u0441\u0442\
+  \u0438 \u0447\u0430\u0441\u0442\u043E \u0432\u0438\u043A\u043E\u043D\u0443\u044E\
+  \u0442\u044C \u0446\u044E \u043F\u0435\u0440\u0435\u0432\u0456\u0440\u043A\u0443\
+  , \u0449\u043E\u0431\u2026"
+title: "\u041F\u0435\u0440\u0435\u0432\u0456\u0440\u043A\u0430 \u043D\u0430\u044F\u0432\
+  \u043D\u043E\u0441\u0442\u0456 \u0434\u0438\u0440\u0435\u043A\u0442\u043E\u0440\u0456\
+  \u0457"
 ---
 
 {{< edit_this_page >}}

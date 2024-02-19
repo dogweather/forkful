@@ -1,13 +1,12 @@
 ---
-title:                "数値の丸め処理"
 aliases:
 - /ja/bash/rounding-numbers/
-date:                  2024-01-26T03:43:10.488564-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "数値の丸め処理"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/rounding-numbers.md"
+date: 2024-01-26 03:43:10.488564-07:00
+description: "\u2026"
+lastmod: 2024-02-18 23:08:55.067921
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u6570\u5024\u306E\u4E38\u3081\u51E6\u7406"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Einen String großschreiben"
 aliases:
 - /de/clojure/capitalizing-a-string/
-date:                  2024-02-03T19:04:50.247898-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Einen String großschreiben"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:04:50.247898-07:00
+description: "Das Kapitalisieren eines Strings beinhaltet die Modifikation des Strings,\
+  \ sodass sein erstes Zeichen gro\xDFgeschrieben wird, w\xE4hrend der Rest des Strings\u2026"
+lastmod: 2024-02-18 23:09:04.489144
+model: gpt-4-0125-preview
+summary: "Das Kapitalisieren eines Strings beinhaltet die Modifikation des Strings,\
+  \ sodass sein erstes Zeichen gro\xDFgeschrieben wird, w\xE4hrend der Rest des Strings\u2026"
+title: "Einen String gro\xDFschreiben"
 ---
 
 {{< edit_this_page >}}

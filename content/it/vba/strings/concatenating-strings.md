@@ -1,14 +1,18 @@
 ---
-title:                "Concatenazione di stringhe"
 aliases:
 - /it/vba/concatenating-strings/
-date:                  2024-02-01T21:50:24.332850-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Concatenazione di stringhe"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/vba/concatenating-strings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:24.332850-07:00
+description: "La concatenazione in Visual Basic for Applications (VBA) implica l'unione\
+  \ di due o pi\xF9 stringhe in un'unica entit\xE0. Questo \xE8 un compito fondamentale\
+  \ nella\u2026"
+lastmod: 2024-02-18 23:08:55.714122
+model: gpt-4-0125-preview
+summary: "La concatenazione in Visual Basic for Applications (VBA) implica l'unione\
+  \ di due o pi\xF9 stringhe in un'unica entit\xE0. Questo \xE8 un compito fondamentale\
+  \ nella\u2026"
+title: Concatenazione di stringhe
 ---
 
 {{< edit_this_page >}}

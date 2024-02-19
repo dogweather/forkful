@@ -1,13 +1,15 @@
 ---
-title:                "Protokollierung"
 aliases:
 - /de/rust/logging/
-date:                  2024-01-26T01:08:00.287664-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Protokollierung"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/logging.md"
+date: 2024-01-26 01:08:00.287664-07:00
+description: "Logging ist wie das F\xFChren eines Tagebuchs f\xFCr Ihre Anwendung;\
+  \ es ist die Praxis, Ereignisse, Fehler und andere relevante Daten w\xE4hrend der\
+  \ Laufzeit\u2026"
+lastmod: 2024-02-18 23:09:04.648275
+model: gpt-4-1106-preview
+summary: "Logging ist wie das F\xFChren eines Tagebuchs f\xFCr Ihre Anwendung; es\
+  \ ist die Praxis, Ereignisse, Fehler und andere relevante Daten w\xE4hrend der Laufzeit\u2026"
+title: Protokollierung
 ---
 
 {{< edit_this_page >}}

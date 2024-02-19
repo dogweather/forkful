@@ -1,15 +1,20 @@
 ---
-title:                "Xóa các ký tự phù hợp với một mẫu"
 aliases:
 - /vi/bash/deleting-characters-matching-a-pattern/
-date:                  2024-01-28T21:59:11.242057-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Xóa các ký tự phù hợp với một mẫu"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/bash/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:11.242057-07:00
+description: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu trong\
+  \ Bash cho ph\xE9p b\u1EA1n thao t\xE1c v\u1EDBi chu\u1ED7i \u0111\u1EC3 ph\xF9\
+  \ h\u1EE3p v\u1EDBi nhu c\u1EA7u c\u1EE7a m\xECnh - nh\u01B0 lo\u1EA1i b\u1ECF c\xE1\
+  c k\xFD t\u1EF1 kh\xF4ng mong mu\u1ED1n ho\u1EB7c l\xE0m\u2026"
+lastmod: 2024-02-18 23:08:50.865629
+model: gpt-4-0125-preview
+summary: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu trong Bash\
+  \ cho ph\xE9p b\u1EA1n thao t\xE1c v\u1EDBi chu\u1ED7i \u0111\u1EC3 ph\xF9 h\u1EE3\
+  p v\u1EDBi nhu c\u1EA7u c\u1EE7a m\xECnh - nh\u01B0 lo\u1EA1i b\u1ECF c\xE1c k\xFD\
+  \ t\u1EF1 kh\xF4ng mong mu\u1ED1n ho\u1EB7c l\xE0m\u2026"
+title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 ---
 
 {{< edit_this_page >}}

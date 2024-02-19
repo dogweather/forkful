@@ -1,15 +1,22 @@
 ---
-title:                "Viết một tệp văn bản"
 aliases:
 - /vi/php/writing-a-text-file/
-date:                  2024-01-28T22:13:06.504693-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Viết một tệp văn bản"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/php/writing-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:13:06.504693-07:00
+description: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong PHP l\xE0\
+  \ \u0111\u1EC3 l\u01B0u d\u1EEF li\u1EC7u v\xE0o m\u1ED9t t\u1EC7p tr\xEAn m\xE1\
+  y ch\u1EE7. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng l\xE0m \u0111i\u1EC1\
+  u n\xE0y \u0111\u1EC3 ghi nh\u1EADt k\xFD d\u1EEF li\u1EC7u, c\xE0i \u0111\u1EB7\
+  t c\u1EA5u\u2026"
+lastmod: 2024-02-18 23:08:50.811179
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong PHP l\xE0\
+  \ \u0111\u1EC3 l\u01B0u d\u1EEF li\u1EC7u v\xE0o m\u1ED9t t\u1EC7p tr\xEAn m\xE1\
+  y ch\u1EE7. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng l\xE0m \u0111i\u1EC1\
+  u n\xE0y \u0111\u1EC3 ghi nh\u1EADt k\xFD d\u1EEF li\u1EC7u, c\xE0i \u0111\u1EB7\
+  t c\u1EA5u\u2026"
+title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 ---
 
 {{< edit_this_page >}}

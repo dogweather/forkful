@@ -1,13 +1,24 @@
 ---
-title:                "XML 다루기"
 aliases:
 - /ko/rust/working-with-xml/
-date:                  2024-01-26T04:35:55.387282-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML 다루기"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/working-with-xml.md"
+date: 2024-01-26 04:35:55.387282-07:00
+description: "XML\uC740 eXtensible Markup Language\uC758 \uC57D\uC5B4\uB85C, JSON\uC758\
+  \ \uC7A5\uD669\uD55C \uC0AC\uCD0C\uACFC \uAC19\uC2B5\uB2C8\uB2E4. \uC5EC\uB7EC\uBD84\
+  \uC740 \uB808\uAC70\uC2DC \uC2DC\uC2A4\uD15C, \uC5D4\uD130\uD504\uB77C\uC774\uC988\
+  \ \uC18C\uD504\uD2B8\uC6E8\uC5B4 \uB610\uB294 JSON \uB300\uC5F4\uC5D0 \uC624\uB974\
+  \uC9C0 \uC54A\uC740 API\uB97C \uB2E4\uB8F0 \uB54C XML\uACFC \uC528\uB984\uD558\uAC8C\
+  \ \uB420 \uAC83\uC785\uB2C8\uB2E4. XML\uC740 \uB370\uC774\uD130 \uAD50\uD658\uC5D0\
+  \uC11C \uC5EC\uC804\uD788 \uADF8\u2026"
+lastmod: 2024-02-18 23:09:05.922080
+model: gpt-4-0125-preview
+summary: "XML\uC740 eXtensible Markup Language\uC758 \uC57D\uC5B4\uB85C, JSON\uC758\
+  \ \uC7A5\uD669\uD55C \uC0AC\uCD0C\uACFC \uAC19\uC2B5\uB2C8\uB2E4. \uC5EC\uB7EC\uBD84\
+  \uC740 \uB808\uAC70\uC2DC \uC2DC\uC2A4\uD15C, \uC5D4\uD130\uD504\uB77C\uC774\uC988\
+  \ \uC18C\uD504\uD2B8\uC6E8\uC5B4 \uB610\uB294 JSON \uB300\uC5F4\uC5D0 \uC624\uB974\
+  \uC9C0 \uC54A\uC740 API\uB97C \uB2E4\uB8F0 \uB54C XML\uACFC \uC528\uB984\uD558\uAC8C\
+  \ \uB420 \uAC83\uC785\uB2C8\uB2E4. XML\uC740 \uB370\uC774\uD130 \uAD50\uD658\uC5D0\
+  \uC11C \uC5EC\uC804\uD788 \uADF8\u2026"
+title: "XML \uB2E4\uB8E8\uAE30"
 ---
 
 {{< edit_this_page >}}

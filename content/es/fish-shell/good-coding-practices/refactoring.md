@@ -1,13 +1,14 @@
 ---
-title:                "Refactorización"
 aliases:
 - /es/fish-shell/refactoring/
-date:                  2024-01-26T01:17:52.228533-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactorización"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/refactoring.md"
+date: 2024-01-26 01:17:52.228533-07:00
+description: "La refactorizaci\xF3n es el proceso de reestructurar c\xF3digo existente\
+  \ sin cambiar su comportamiento externo para mejorar atributos no funcionales. Los\u2026"
+lastmod: 2024-02-18 23:09:10.462407
+model: gpt-4-0125-preview
+summary: "La refactorizaci\xF3n es el proceso de reestructurar c\xF3digo existente\
+  \ sin cambiar su comportamiento externo para mejorar atributos no funcionales. Los\u2026"
+title: "Refactorizaci\xF3n"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonon pituuden selvittäminen"
 aliases:
 - /fi/haskell/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:41.411420-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon pituuden selvittäminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:41.411420-07:00
+description: "Mittaaminen tarkoittaa merkkijonon pituuden selvitt\xE4mist\xE4. Ohjelmoijat\
+  \ tekev\xE4t sen, koska pituuden tiet\xE4minen on kriittist\xE4 kun k\xE4sitell\xE4\
+  \xE4n tekstidataa \u2013\u2026"
+lastmod: 2024-02-18 23:09:07.656887
+model: gpt-4-1106-preview
+summary: "Mittaaminen tarkoittaa merkkijonon pituuden selvitt\xE4mist\xE4. Ohjelmoijat\
+  \ tekev\xE4t sen, koska pituuden tiet\xE4minen on kriittist\xE4 kun k\xE4sitell\xE4\
+  \xE4n tekstidataa \u2013\u2026"
+title: "Merkkijonon pituuden selvitt\xE4minen"
 ---
 
 {{< edit_this_page >}}

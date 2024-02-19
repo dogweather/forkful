@@ -1,13 +1,16 @@
 ---
-title:                "Avrundning av tal"
 aliases:
 - /sv/elm/rounding-numbers/
-date:                  2024-01-26T03:45:31.616300-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Avrundning av tal"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/rounding-numbers.md"
+date: 2024-01-26 03:45:31.616300-07:00
+description: "Att avrunda tal inneb\xE4r att justera ett decimaltal till dess n\xE4\
+  rmaste hela v\xE4rde eller till ett angivet antal decimaler. Programmerare avrundar\
+  \ f\xF6r att\u2026"
+lastmod: 2024-02-18 23:08:51.704980
+model: gpt-4-0125-preview
+summary: "Att avrunda tal inneb\xE4r att justera ett decimaltal till dess n\xE4rmaste\
+  \ hela v\xE4rde eller till ett angivet antal decimaler. Programmerare avrundar f\xF6\
+  r att\u2026"
+title: Avrundning av tal
 ---
 
 {{< edit_this_page >}}

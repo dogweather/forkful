@@ -1,14 +1,17 @@
 ---
-title:                "Arbeta med CSV"
 aliases:
 - /sv/go/working-with-csv/
-date:                  2024-02-03T18:11:51.017004-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeta med CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:11:51.017004-07:00
+description: "Comma-Separated Values (CSV) format \xE4r allest\xE4des n\xE4rvarande\
+  \ f\xF6r datautbyte p\xE5 grund av dess enkelhet och l\xE4tthet att integrera med\
+  \ de flesta\u2026"
+lastmod: 2024-02-18 23:08:51.356795
+model: gpt-4-0125-preview
+summary: "Comma-Separated Values (CSV) format \xE4r allest\xE4des n\xE4rvarande f\xF6\
+  r datautbyte p\xE5 grund av dess enkelhet och l\xE4tthet att integrera med de flesta\u2026"
+title: Arbeta med CSV
 ---
 
 {{< edit_this_page >}}

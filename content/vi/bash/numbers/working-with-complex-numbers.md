@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với số phức"
 aliases:
 - /vi/bash/working-with-complex-numbers/
-date:                  2024-01-28T22:12:22.408850-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với số phức"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/bash/working-with-complex-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:22.408850-07:00
+description: "S\u1ED1 ph\u1EE9c bao g\u1ED3m m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u1ED9\
+  t ph\u1EA7n \u1EA3o. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng\
+  \ trong c\xE1c l\u0129nh v\u1EF1c nh\u01B0 x\u1EED l\xFD t\xEDn hi\u1EC7u, c\u01A1\
+  \ h\u1ECDc l\u01B0\u1EE3ng t\u1EED v\xE0 b\u1EA5t c\u1EE9 khi n\xE0o\u2026"
+lastmod: 2024-02-18 23:08:50.876024
+model: gpt-4-0125-preview
+summary: "S\u1ED1 ph\u1EE9c bao g\u1ED3m m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u1ED9\
+  t ph\u1EA7n \u1EA3o. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng\
+  \ trong c\xE1c l\u0129nh v\u1EF1c nh\u01B0 x\u1EED l\xFD t\xEDn hi\u1EC7u, c\u01A1\
+  \ h\u1ECDc l\u01B0\u1EE3ng t\u1EED v\xE0 b\u1EA5t c\u1EE9 khi n\xE0o\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 ---
 
 {{< edit_this_page >}}

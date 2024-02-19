@@ -1,15 +1,18 @@
 ---
-title:                "Verwendung von assoziativen Arrays"
 aliases:
 - /de/clojure/using-associative-arrays/
-date:                  2024-01-30T19:10:11.491733-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verwendung von assoziativen Arrays"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:11.491733-07:00
+description: "Assoziative Arrays, oder Hash-Maps, in Clojure erm\xF6glichen es Ihnen,\
+  \ Daten mit Schl\xFCssel-Wert-Paaren zu speichern und abzurufen. Sie sind eine erste\
+  \ Wahl\u2026"
+lastmod: 2024-02-18 23:09:04.499613
+model: gpt-4-0125-preview
+summary: "Assoziative Arrays, oder Hash-Maps, in Clojure erm\xF6glichen es Ihnen,\
+  \ Daten mit Schl\xFCssel-Wert-Paaren zu speichern und abzurufen. Sie sind eine erste\
+  \ Wahl\u2026"
+title: Verwendung von assoziativen Arrays
 ---
 
 {{< edit_this_page >}}

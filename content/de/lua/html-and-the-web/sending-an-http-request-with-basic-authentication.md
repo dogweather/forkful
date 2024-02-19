@@ -1,13 +1,15 @@
 ---
-title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
 aliases:
 - /de/lua/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:07.297607-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:07.297607-07:00
+description: "HTTP-Anfragen mit Basic Authentication erm\xF6glichen den Zugang zu\
+  \ gesch\xFCtzten Ressourcen durch \xDCbermittlung von Benutzername und Passwort\
+  \ im Header.\u2026"
+lastmod: 2024-02-18 23:09:05.006995
+model: gpt-4-1106-preview
+summary: "HTTP-Anfragen mit Basic Authentication erm\xF6glichen den Zugang zu gesch\xFC\
+  tzten Ressourcen durch \xDCbermittlung von Benutzername und Passwort im Header.\u2026"
+title: HTTP-Anfragen mit Basisauthentifizierung senden
 ---
 
 {{< edit_this_page >}}

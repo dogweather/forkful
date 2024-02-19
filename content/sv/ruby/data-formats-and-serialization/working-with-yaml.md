@@ -1,14 +1,18 @@
 ---
-title:                "Att Arbeta med YAML"
 aliases:
 - /sv/ruby/working-with-yaml/
-date:                  2024-02-03T19:26:30.853232-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att Arbeta med YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:26:30.853232-07:00
+description: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, anv\xE4nds flitigt\
+  \ i Ruby f\xF6r konfigurationsfiler och data-serialisering p\xE5 grund av sitt l\xE4\
+  ttl\xE4sta format.\u2026"
+lastmod: 2024-02-18 23:08:52.314620
+model: gpt-4-0125-preview
+summary: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, anv\xE4nds flitigt\
+  \ i Ruby f\xF6r konfigurationsfiler och data-serialisering p\xE5 grund av sitt l\xE4\
+  ttl\xE4sta format.\u2026"
+title: Att Arbeta med YAML
 ---
 
 {{< edit_this_page >}}

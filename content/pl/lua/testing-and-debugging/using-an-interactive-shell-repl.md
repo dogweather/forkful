@@ -1,13 +1,16 @@
 ---
-title:                "Korzystanie z interaktywnego shella (REPL)"
 aliases:
 - /pl/lua/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:16:12.385001-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z interaktywnego shella (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:16:12.385001-07:00
+description: "REPL oznacza Read-Eval-Print Loop (P\u0119tla Czytaj-Wykonaj-Wydrukuj),\
+  \ interaktywne \u015Brodowisko, gdzie mo\u017Cna szybko testowa\u0107 kod. Programi\u015B\
+  ci u\u017Cywaj\u0105 go do\u2026"
+lastmod: 2024-02-18 23:08:49.741518
+model: gpt-4-0125-preview
+summary: "REPL oznacza Read-Eval-Print Loop (P\u0119tla Czytaj-Wykonaj-Wydrukuj),\
+  \ interaktywne \u015Brodowisko, gdzie mo\u017Cna szybko testowa\u0107 kod. Programi\u015B\
+  ci u\u017Cywaj\u0105 go do\u2026"
+title: Korzystanie z interaktywnego shella (REPL)
 ---
 
 {{< edit_this_page >}}

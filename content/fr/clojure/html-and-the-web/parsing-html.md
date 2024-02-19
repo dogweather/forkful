@@ -1,12 +1,14 @@
 ---
-title:                "Analyse syntaxique de HTML"
 aliases:
 - /fr/clojure/parsing-html/
-date:                  2024-01-20T15:30:39.019288-07:00
-simple_title:         "Analyse syntaxique de HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/parsing-html.md"
+date: 2024-01-20 15:30:39.019288-07:00
+description: "L'analyse (parsing) du HTML permet de lire et de manipuler le contenu\
+  \ d'une page web. Les programmeurs le font pour extraire des donn\xE9es, automatiser\
+  \ des\u2026"
+lastmod: 2024-02-18 23:09:08.384417
+summary: "L'analyse (parsing) du HTML permet de lire et de manipuler le contenu d'une\
+  \ page web. Les programmeurs le font pour extraire des donn\xE9es, automatiser des\u2026"
+title: Analyse syntaxique de HTML
 ---
 
 {{< edit_this_page >}}

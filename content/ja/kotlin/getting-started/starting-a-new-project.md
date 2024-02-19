@@ -1,14 +1,21 @@
 ---
-title:                "新しいプロジェクトを始める"
 aliases:
 - /ja/kotlin/starting-a-new-project/
-date:                  2024-01-20T18:04:18.221463-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "新しいプロジェクトを始める"
-
-tag:                  "Getting Started"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/starting-a-new-project.md"
+date: 2024-01-20 18:04:18.221463-07:00
+description: "\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u65B0\u3057\u304F\u59CB\u3081\
+  \u308B\u3068\u306F\u3001\u30BC\u30ED\u304B\u3089\u30A2\u30D7\u30EA\u30B1\u30FC\u30B7\
+  \u30E7\u30F3\u3092\u4F5C\u308A\u51FA\u3059\u3053\u3068\u3002\u30D7\u30ED\u30B0\u30E9\
+  \u30DE\u30FC\u306F\u69CB\u60F3\u3092\u73FE\u5B9F\u306B\u5909\u3048\u308B\u305F\u3081\
+  \u306B\u65B0\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u59CB\u3081\u308B\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:54.879945
+model: gpt-4-1106-preview
+summary: "\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u65B0\u3057\u304F\u59CB\u3081\
+  \u308B\u3068\u306F\u3001\u30BC\u30ED\u304B\u3089\u30A2\u30D7\u30EA\u30B1\u30FC\u30B7\
+  \u30E7\u30F3\u3092\u4F5C\u308A\u51FA\u3059\u3053\u3068\u3002\u30D7\u30ED\u30B0\u30E9\
+  \u30DE\u30FC\u306F\u69CB\u60F3\u3092\u73FE\u5B9F\u306B\u5909\u3048\u308B\u305F\u3081\
+  \u306B\u65B0\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u59CB\u3081\u308B\u3002"
+title: "\u65B0\u3057\u3044\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u59CB\u3081\u308B"
 ---
 
 {{< edit_this_page >}}

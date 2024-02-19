@@ -1,14 +1,18 @@
 ---
-title:                "Generowanie liczb losowych"
 aliases:
 - /pl/c/generating-random-numbers/
-date:                  2024-02-03T17:57:18.964016-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generowanie liczb losowych"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/generating-random-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:18.964016-07:00
+description: "Generowanie losowych liczb w j\u0119zyku C polega na tworzeniu warto\u015B\
+  ci, kt\xF3re s\u0105 nieprzewidywalne i pod\u0105\u017Caj\u0105 za okre\u015Blonym\
+  \ rozk\u0142adem, takim jak jednostajny\u2026"
+lastmod: 2024-02-18 23:08:50.075455
+model: gpt-4-0125-preview
+summary: "Generowanie losowych liczb w j\u0119zyku C polega na tworzeniu warto\u015B\
+  ci, kt\xF3re s\u0105 nieprzewidywalne i pod\u0105\u017Caj\u0105 za okre\u015Blonym\
+  \ rozk\u0142adem, takim jak jednostajny\u2026"
+title: Generowanie liczb losowych
 ---
 
 {{< edit_this_page >}}

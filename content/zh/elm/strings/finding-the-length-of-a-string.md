@@ -1,14 +1,19 @@
 ---
-title:                "获取字符串的长度"
 aliases:
 - /zh/elm/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:14.873350-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "获取字符串的长度"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:14.873350-07:00
+description: "\u8BA1\u7B97\u5B57\u7B26\u4E32\u957F\u5EA6\u662F\u6307\u6D4B\u91CF\u5B57\
+  \u7B26\u4E32\u5305\u542B\u591A\u5C11\u5B57\u7B26\u3002\u7A0B\u5E8F\u5458\u9700\u8981\
+  \u8FD9\u4E2A\u64CD\u4F5C\u6765\u9A8C\u8BC1\u8F93\u5165\u3001\u9650\u5236\u6587\u672C\
+  \u3001\u4F18\u5316UI\u663E\u793A\u7B49\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.050683
+model: gpt-4-1106-preview
+summary: "\u8BA1\u7B97\u5B57\u7B26\u4E32\u957F\u5EA6\u662F\u6307\u6D4B\u91CF\u5B57\
+  \u7B26\u4E32\u5305\u542B\u591A\u5C11\u5B57\u7B26\u3002\u7A0B\u5E8F\u5458\u9700\u8981\
+  \u8FD9\u4E2A\u64CD\u4F5C\u6765\u9A8C\u8BC1\u8F93\u5165\u3001\u9650\u5236\u6587\u672C\
+  \u3001\u4F18\u5316UI\u663E\u793A\u7B49\u3002"
+title: "\u83B7\u53D6\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
 ---
 
 {{< edit_this_page >}}

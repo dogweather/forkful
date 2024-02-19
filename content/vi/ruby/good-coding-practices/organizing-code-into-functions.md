@@ -1,15 +1,20 @@
 ---
-title:                "Sắp xếp mã thành các hàm"
 aliases:
 - /vi/ruby/organizing-code-into-functions/
-date:                  2024-01-28T22:03:36.785606-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sắp xếp mã thành các hàm"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/organizing-code-into-functions.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:03:36.785606-07:00
+description: "T\u1ED5 ch\u1EE9c m\xE3 l\u1EC7nh th\xE0nh c\xE1c h\xE0m chia nh\u1ECF\
+  \ k\u1ECBch b\u1EA3n c\u1EE7a b\u1EA1n th\xE0nh c\xE1c kh\u1ED1i c\xF3 th\u1EC3\
+  \ t\xE1i s\u1EED d\u1EE5ng. \u0110i\u1EC1u n\xE0y gi\xFAp cho m\xE3 c\u1EE7a b\u1EA1\
+  n tr\u1EDF n\xEAn g\u1ECDn g\xE0ng, d\u1EC5 qu\u1EA3n l\xFD v\xE0 \xEDt\u2026"
+lastmod: 2024-02-18 23:08:51.291520
+model: gpt-4-0125-preview
+summary: "T\u1ED5 ch\u1EE9c m\xE3 l\u1EC7nh th\xE0nh c\xE1c h\xE0m chia nh\u1ECF k\u1ECB\
+  ch b\u1EA3n c\u1EE7a b\u1EA1n th\xE0nh c\xE1c kh\u1ED1i c\xF3 th\u1EC3 t\xE1i s\u1EED\
+  \ d\u1EE5ng. \u0110i\u1EC1u n\xE0y gi\xFAp cho m\xE3 c\u1EE7a b\u1EA1n tr\u1EDF\
+  \ n\xEAn g\u1ECDn g\xE0ng, d\u1EC5 qu\u1EA3n l\xFD v\xE0 \xEDt\u2026"
+title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 ---
 
 {{< edit_this_page >}}

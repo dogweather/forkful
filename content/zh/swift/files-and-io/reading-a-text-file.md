@@ -1,14 +1,19 @@
 ---
-title:                "阅读文本文件"
 aliases:
 - /zh/swift/reading-a-text-file/
-date:                  2024-01-20T17:55:16.730510-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "阅读文本文件"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/reading-a-text-file.md"
+date: 2024-01-20 17:55:16.730510-07:00
+description: "\u8BFB\u53D6\u6587\u672C\u6587\u4EF6\u610F\u5473\u7740\u4ECE\u6587\u4EF6\
+  \u7CFB\u7EDF\u4E2D\u83B7\u53D6\u6587\u672C\u5185\u5BB9\u3002\u7A0B\u5E8F\u5458\u8FD9\
+  \u4E48\u505A\u4E3B\u8981\u662F\u4E3A\u4E86\u5904\u7406\u4FE1\u606F\uFF0C\u6BD4\u5982\
+  \u914D\u7F6E\u3001\u6570\u636E\u5BFC\u5165\u6216\u8005\u65E5\u5FD7\u5206\u6790\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.457413
+model: gpt-4-1106-preview
+summary: "\u8BFB\u53D6\u6587\u672C\u6587\u4EF6\u610F\u5473\u7740\u4ECE\u6587\u4EF6\
+  \u7CFB\u7EDF\u4E2D\u83B7\u53D6\u6587\u672C\u5185\u5BB9\u3002\u7A0B\u5E8F\u5458\u8FD9\
+  \u4E48\u505A\u4E3B\u8981\u662F\u4E3A\u4E86\u5904\u7406\u4FE1\u606F\uFF0C\u6BD4\u5982\
+  \u914D\u7F6E\u3001\u6570\u636E\u5BFC\u5165\u6216\u8005\u65E5\u5FD7\u5206\u6790\u3002"
+title: "\u9605\u8BFB\u6587\u672C\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

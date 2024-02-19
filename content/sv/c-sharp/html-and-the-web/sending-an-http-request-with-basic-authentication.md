@@ -1,13 +1,16 @@
 ---
-title:                "Skicka en HTTP-förfrågan med Basic-autentisering"
 aliases:
 - /sv/c-sharp/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:01:24.664117-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skicka en HTTP-förfrågan med Basic-autentisering"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:01:24.664117-07:00
+description: "I C# skickar vi HTTP-beg\xE4ran med grundl\xE4ggande autentisering f\xF6\
+  r att s\xE4kert \xF6verf\xF6ra anv\xE4ndarnamn och l\xF6senord till servern. Detta\
+  \ anv\xE4nds f\xF6r att bevisa\u2026"
+lastmod: 2024-02-18 23:08:51.795468
+model: gpt-4-1106-preview
+summary: "I C# skickar vi HTTP-beg\xE4ran med grundl\xE4ggande autentisering f\xF6\
+  r att s\xE4kert \xF6verf\xF6ra anv\xE4ndarnamn och l\xF6senord till servern. Detta\
+  \ anv\xE4nds f\xF6r att bevisa\u2026"
+title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 ---
 
 {{< edit_this_page >}}

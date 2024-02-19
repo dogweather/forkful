@@ -1,13 +1,16 @@
 ---
-title:                "Loggføring"
 aliases:
 - /no/clojure/logging/
-date:                  2024-01-26T01:02:40.692405-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Loggføring"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/logging.md"
+date: 2024-01-26 01:02:40.692405-07:00
+description: "Logging er i prinsippet programvareekvivalenten til en skipslogg; det\
+  \ er en m\xE5te \xE5 registrere hendelser som skjer mens en applikasjon kj\xF8rer.\
+  \ Utviklere\u2026"
+lastmod: 2024-02-18 23:08:53.570508
+model: gpt-4-1106-preview
+summary: "Logging er i prinsippet programvareekvivalenten til en skipslogg; det er\
+  \ en m\xE5te \xE5 registrere hendelser som skjer mens en applikasjon kj\xF8rer.\
+  \ Utviklere\u2026"
+title: "Loggf\xF8ring"
 ---
 
 {{< edit_this_page >}}

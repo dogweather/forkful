@@ -1,13 +1,14 @@
 ---
-title:                "Refactoring : Mode d'emploi"
 aliases:
 - /fr/php/refactoring/
-date:                  2024-01-26T01:47:50.361082-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactoring : Mode d'emploi"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/php/refactoring.md"
+date: 2024-01-26 01:47:50.361082-07:00
+description: "La refactorisation est le processus de restructuration du code informatique\
+  \ existant sans en modifier le comportement externe. Les programmeurs\u2026"
+lastmod: 2024-02-18 23:09:08.931888
+model: gpt-4-0125-preview
+summary: "La refactorisation est le processus de restructuration du code informatique\
+  \ existant sans en modifier le comportement externe. Les programmeurs\u2026"
+title: 'Refactoring : Mode d''emploi'
 ---
 
 {{< edit_this_page >}}

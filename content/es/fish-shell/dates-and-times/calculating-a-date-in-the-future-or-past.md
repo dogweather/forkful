@@ -1,13 +1,15 @@
 ---
-title:                "Calcular una fecha en el futuro o pasado"
 aliases:
 - /es/fish-shell/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:30:55.966440-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Calcular una fecha en el futuro o pasado"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:30:55.966440-07:00
+description: "Calcular una fecha en el futuro o pasado es simplemente modificar una\
+  \ fecha para obtener otra diferente, antes o despu\xE9s. Los programadores lo hacen\
+  \ para\u2026"
+lastmod: 2024-02-18 23:09:10.467718
+model: gpt-4-1106-preview
+summary: "Calcular una fecha en el futuro o pasado es simplemente modificar una fecha\
+  \ para obtener otra diferente, antes o despu\xE9s. Los programadores lo hacen para\u2026"
+title: Calcular una fecha en el futuro o pasado
 ---
 
 {{< edit_this_page >}}

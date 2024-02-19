@@ -1,14 +1,20 @@
 ---
-title:                "Phân Tích HTML"
 aliases:
 - /vi/go/parsing-html/
-date:                  2024-02-03T18:05:43.745544-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Phân Tích HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:43.745544-07:00
+description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong Go bao g\u1ED3m vi\u1EC7c ph\xE2\
+  n t\xEDch n\u1ED9i dung c\u1EE7a c\xE1c t\u1EADp tin HTML \u0111\u1EC3 tr\xEDch\
+  \ xu\u1EA5t d\u1EEF li\u1EC7u, thao t\xE1c c\u1EA5u tr\xFAc, ho\u1EB7c chuy\u1EC3\
+  n \u0111\u1ED5i HTML sang\u2026"
+lastmod: 2024-02-18 23:08:50.167866
+model: gpt-4-0125-preview
+summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong Go bao g\u1ED3m vi\u1EC7c ph\xE2\
+  n t\xEDch n\u1ED9i dung c\u1EE7a c\xE1c t\u1EADp tin HTML \u0111\u1EC3 tr\xEDch\
+  \ xu\u1EA5t d\u1EEF li\u1EC7u, thao t\xE1c c\u1EA5u tr\xFAc, ho\u1EB7c chuy\u1EC3\
+  n \u0111\u1ED5i HTML sang\u2026"
+title: "Ph\xE2n T\xEDch HTML"
 ---
 
 {{< edit_this_page >}}

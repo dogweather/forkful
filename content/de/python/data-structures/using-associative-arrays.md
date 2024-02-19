@@ -1,15 +1,16 @@
 ---
-title:                "Verwendung von assoziativen Arrays"
 aliases:
 - /de/python/using-associative-arrays/
-date:                  2024-01-30T19:12:39.460256-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verwendung von assoziativen Arrays"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:39.460256-07:00
+description: "Assoziative Arrays, in Python als Dictionaries bekannt, ordnen Schl\xFC\
+  ssel Werten zu, was das Abrufen, Modifizieren oder Nachverfolgen von Daten anhand\u2026"
+lastmod: 2024-02-18 23:09:04.454636
+model: gpt-4-0125-preview
+summary: "Assoziative Arrays, in Python als Dictionaries bekannt, ordnen Schl\xFC\
+  ssel Werten zu, was das Abrufen, Modifizieren oder Nachverfolgen von Daten anhand\u2026"
+title: Verwendung von assoziativen Arrays
 ---
 
 {{< edit_this_page >}}

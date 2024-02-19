@@ -1,14 +1,30 @@
 ---
-title:                "XML로 작업하기"
 aliases:
 - /ko/c/working-with-xml/
-date:                  2024-02-03T18:13:29.773466-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML로 작업하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/working-with-xml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:13:29.773466-07:00
+description: "C\uC5D0\uC11C XML\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740 \uB2E4\uC591\
+  \uD55C \uB77C\uC774\uBE0C\uB7EC\uB9AC\uB97C \uC0AC\uC6A9\uD558\uC5EC XML \uBB38\uC11C\
+  \uB97C \uD30C\uC2F1, \uCFFC\uB9AC, \uC870\uC791\uD558\uB294 \uAC83\uC744 \uD3EC\uD568\
+  \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC6F9 \uC11C\uBE44\
+  \uC2A4, \uC124\uC815 \uD30C\uC77C, \uB2E4\uB978 \uC2DC\uC2A4\uD15C \uAC04\uC758\
+  \ \uB370\uC774\uD130 \uAD50\uD658\uC5D0 \uB110\uB9AC \uC0AC\uC6A9\uB418\uAE30 \uB54C\
+  \uBB38\uC5D0 XML\uC744 \uC0AC\uC6A9\uD558\uAC8C \uB418\uBA70, \uAC15\uB825\uD55C\
+  \ \uC5B4\uD50C\uB9AC\uCF00\uC774\uC158 \uAC1C\uBC1C\uC744 \uC704\uD574 XML\uC744\
+  \u2026"
+lastmod: 2024-02-18 23:09:06.995161
+model: gpt-4-0125-preview
+summary: "C\uC5D0\uC11C XML\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740 \uB2E4\uC591\uD55C\
+  \ \uB77C\uC774\uBE0C\uB7EC\uB9AC\uB97C \uC0AC\uC6A9\uD558\uC5EC XML \uBB38\uC11C\
+  \uB97C \uD30C\uC2F1, \uCFFC\uB9AC, \uC870\uC791\uD558\uB294 \uAC83\uC744 \uD3EC\uD568\
+  \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC6F9 \uC11C\uBE44\
+  \uC2A4, \uC124\uC815 \uD30C\uC77C, \uB2E4\uB978 \uC2DC\uC2A4\uD15C \uAC04\uC758\
+  \ \uB370\uC774\uD130 \uAD50\uD658\uC5D0 \uB110\uB9AC \uC0AC\uC6A9\uB418\uAE30 \uB54C\
+  \uBB38\uC5D0 XML\uC744 \uC0AC\uC6A9\uD558\uAC8C \uB418\uBA70, \uAC15\uB825\uD55C\
+  \ \uC5B4\uD50C\uB9AC\uCF00\uC774\uC158 \uAC1C\uBC1C\uC744 \uC704\uD574 XML\uC744\
+  \u2026"
+title: "XML\uB85C \uC791\uC5C5\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

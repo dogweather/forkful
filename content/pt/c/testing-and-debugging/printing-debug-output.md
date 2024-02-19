@@ -1,14 +1,18 @@
 ---
-title:                "Imprimindo saída de depuração"
 aliases:
 - /pt/c/printing-debug-output/
-date:                  2024-02-03T18:05:15.864231-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Imprimindo saída de depuração"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/printing-debug-output.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:15.864231-07:00
+description: "Imprimir sa\xEDda de depura\xE7\xE3o trata de gerar mensagens de log\
+  \ tempor\xE1rias e informativas que podem ajudar os programadores a entender o fluxo\
+  \ e o estado de\u2026"
+lastmod: 2024-02-18 23:08:58.622184
+model: gpt-4-0125-preview
+summary: "Imprimir sa\xEDda de depura\xE7\xE3o trata de gerar mensagens de log tempor\xE1\
+  rias e informativas que podem ajudar os programadores a entender o fluxo e o estado\
+  \ de\u2026"
+title: "Imprimindo sa\xEDda de depura\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

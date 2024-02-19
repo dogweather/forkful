@@ -1,15 +1,16 @@
 ---
-title:                "Tests Schrijven"
 aliases:
 - /nl/swift/writing-tests/
-date:                  2024-01-28T22:13:07.719599-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tests Schrijven"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/swift/writing-tests.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:13:07.719599-07:00
+description: "Tests schrijven is het cre\xEBren van code die controleert of je software\
+  \ werkt zoals gepland. Programmeurs testen om bugs vroeg te vangen, kwaliteit te\u2026"
+lastmod: 2024-02-18 23:09:02.233343
+model: gpt-4-0125-preview
+summary: "Tests schrijven is het cre\xEBren van code die controleert of je software\
+  \ werkt zoals gepland. Programmeurs testen om bugs vroeg te vangen, kwaliteit te\u2026"
+title: Tests Schrijven
 ---
 
 {{< edit_this_page >}}

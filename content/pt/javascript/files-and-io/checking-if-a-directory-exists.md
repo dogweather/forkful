@@ -1,14 +1,18 @@
 ---
-title:                "Verificando se um diretório existe"
 aliases:
 - /pt/javascript/checking-if-a-directory-exists/
-date:                  2024-02-03T19:07:43.569620-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verificando se um diretório existe"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:07:43.569620-07:00
+description: "Verificar se um diret\xF3rio existe em JavaScript \xE9 essencial para\
+  \ tarefas de manipula\xE7\xE3o de arquivos, permitindo que scripts verifiquem a\
+  \ presen\xE7a do\u2026"
+lastmod: 2024-02-18 23:08:58.546341
+model: gpt-4-0125-preview
+summary: "Verificar se um diret\xF3rio existe em JavaScript \xE9 essencial para tarefas\
+  \ de manipula\xE7\xE3o de arquivos, permitindo que scripts verifiquem a presen\xE7\
+  a do\u2026"
+title: "Verificando se um diret\xF3rio existe"
 ---
 
 {{< edit_this_page >}}

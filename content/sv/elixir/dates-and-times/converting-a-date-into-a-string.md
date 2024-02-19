@@ -1,13 +1,16 @@
 ---
-title:                "Omvandla ett datum till en sträng"
 aliases:
 - /sv/elixir/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:30.743919-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Omvandla ett datum till en sträng"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:30.743919-07:00
+description: "Omvandling av datum till str\xE4ng inneb\xE4r att f\xF6r\xE4ndra ett\
+  \ datumobjekt s\xE5 det representeras som text, vilket g\xF6r det l\xE4ttare att\
+  \ l\xE4sa och anv\xE4nda i\u2026"
+lastmod: 2024-02-18 23:08:51.513834
+model: gpt-4-1106-preview
+summary: "Omvandling av datum till str\xE4ng inneb\xE4r att f\xF6r\xE4ndra ett datumobjekt\
+  \ s\xE5 det representeras som text, vilket g\xF6r det l\xE4ttare att l\xE4sa och\
+  \ anv\xE4nda i\u2026"
+title: "Omvandla ett datum till en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

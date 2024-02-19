@@ -1,13 +1,23 @@
 ---
-title:                "프로그래머를 위한 TOML 다루기"
 aliases:
 - /ko/fish-shell/working-with-toml/
-date:                  2024-01-26T04:21:43.926203-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "프로그래머를 위한 TOML 다루기"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/working-with-toml.md"
+date: 2024-01-26 04:21:43.926203-07:00
+description: "TOML\uC740 \uC0AC\uB78C\uC774 \uC77D\uACE0 \uC4F0\uAE30 \uC26C\uC6B0\
+  \uBA70 \uAE30\uACC4\uAC00 \uD30C\uC2F1\uD558\uACE0 \uC0DD\uC131\uD558\uAE30 \uC26C\
+  \uC6B4 \uC124\uC815 \uD30C\uC77C \uD615\uC2DD\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC740 \uAC00\uB3C5\uC131\uC774 \uC911\uC694\uD55C \uD504\uB85C\
+  \uC81D\uD2B8\uC5D0\uC11C \uBA85\uD655\uD558\uACE0 \uACC4\uCE35\uC801\uC778 \uC124\
+  \uC815 \uD30C\uC77C\uC744 \uC704\uD574 TOML\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4\
+  ."
+lastmod: 2024-02-18 23:09:06.917787
+model: gpt-4-0125-preview
+summary: "TOML\uC740 \uC0AC\uB78C\uC774 \uC77D\uACE0 \uC4F0\uAE30 \uC26C\uC6B0\uBA70\
+  \ \uAE30\uACC4\uAC00 \uD30C\uC2F1\uD558\uACE0 \uC0DD\uC131\uD558\uAE30 \uC26C\uC6B4\
+  \ \uC124\uC815 \uD30C\uC77C \uD615\uC2DD\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uAC00\uB3C5\uC131\uC774 \uC911\uC694\uD55C \uD504\uB85C\uC81D\
+  \uD2B8\uC5D0\uC11C \uBA85\uD655\uD558\uACE0 \uACC4\uCE35\uC801\uC778 \uC124\uC815\
+  \ \uD30C\uC77C\uC744 \uC704\uD574 TOML\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE30"
 ---
 
 {{< edit_this_page >}}

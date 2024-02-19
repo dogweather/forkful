@@ -1,14 +1,26 @@
 ---
-title:                "编写测试"
 aliases:
 - /zh/c-sharp/writing-tests/
-date:                  2024-02-03T19:30:18.489334-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "编写测试"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:30:18.489334-07:00
+description: "\u7528 C# \u7F16\u5199\u6D4B\u8BD5\u5305\u62EC\u521B\u5EFA\u81EA\u52A8\
+  \u5316\u811A\u672C\u6765\u9A8C\u8BC1\u60A8\u7684\u4EE3\u7801\u529F\u80FD\uFF0C\u786E\
+  \u4FDD\u5176\u8868\u73B0\u5982\u9884\u671F\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\
+  \u662F\u4E3A\u4E86\u5C3D\u65E9\u6355\u6349\u5230 bug\uFF0C\u4FC3\u8FDB\u4EE3\u7801\
+  \u91CD\u6784\uFF0C\u5E76\u786E\u4FDD\u65B0\u53D8\u66F4\u4E0D\u4F1A\u7834\u574F\u73B0\
+  \u6709\u529F\u80FD\uFF0C\u4ECE\u800C\u63D0\u9AD8\u8F6F\u4EF6\u8D28\u91CF\u548C\u53EF\
+  \u9760\u6027\u3002"
+lastmod: 2024-02-18 23:08:59.135795
+model: gpt-4-0125-preview
+summary: "\u7528 C# \u7F16\u5199\u6D4B\u8BD5\u5305\u62EC\u521B\u5EFA\u81EA\u52A8\u5316\
+  \u811A\u672C\u6765\u9A8C\u8BC1\u60A8\u7684\u4EE3\u7801\u529F\u80FD\uFF0C\u786E\u4FDD\
+  \u5176\u8868\u73B0\u5982\u9884\u671F\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\
+  \u4E3A\u4E86\u5C3D\u65E9\u6355\u6349\u5230 bug\uFF0C\u4FC3\u8FDB\u4EE3\u7801\u91CD\
+  \u6784\uFF0C\u5E76\u786E\u4FDD\u65B0\u53D8\u66F4\u4E0D\u4F1A\u7834\u574F\u73B0\u6709\
+  \u529F\u80FD\uFF0C\u4ECE\u800C\u63D0\u9AD8\u8F6F\u4EF6\u8D28\u91CF\u548C\u53EF\u9760\
+  \u6027\u3002"
+title: "\u7F16\u5199\u6D4B\u8BD5"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,19 @@
 ---
-title:                "打印调试输出"
 aliases:
 - /zh/haskell/printing-debug-output/
-date:                  2024-01-20T17:52:53.373556-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "打印调试输出"
-
-tag:                  "Testing and Debugging"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/printing-debug-output.md"
+date: 2024-01-20 17:52:53.373556-07:00
+description: "\u8C03\u8BD5\u8F93\u51FA\u5C31\u662F\u5728\u7A0B\u5E8F\u8FD0\u884C\u65F6\
+  \u663E\u793A\u53D8\u91CF\u3001\u8868\u8FBE\u5F0F\u7684\u503C\u6216\u8005\u7A0B\u5E8F\
+  \u7684\u72B6\u6001\u4FE1\u606F\uFF0C\u4EE5\u5E2E\u52A9\u7A0B\u5E8F\u5458\u7406\u89E3\
+  \u548C\u89E3\u51B3\u4EE3\u7801\u95EE\u9898\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.172198
+model: gpt-4-1106-preview
+summary: "\u8C03\u8BD5\u8F93\u51FA\u5C31\u662F\u5728\u7A0B\u5E8F\u8FD0\u884C\u65F6\
+  \u663E\u793A\u53D8\u91CF\u3001\u8868\u8FBE\u5F0F\u7684\u503C\u6216\u8005\u7A0B\u5E8F\
+  \u7684\u72B6\u6001\u4FE1\u606F\uFF0C\u4EE5\u5E2E\u52A9\u7A0B\u5E8F\u5458\u7406\u89E3\
+  \u548C\u89E3\u51B3\u4EE3\u7801\u95EE\u9898\u3002"
+title: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA"
 ---
 
 {{< edit_this_page >}}

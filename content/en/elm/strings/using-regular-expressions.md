@@ -1,12 +1,14 @@
 ---
-title:                "Using regular expressions"
 aliases:
 - /en/elm/using-regular-expressions/
-date:                  2024-02-03T19:02:47.206438-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using regular expressions"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/using-regular-expressions.md"
+date: 2024-02-03 19:02:47.206438-07:00
+description: "Regular expressions (regex) in programming are patterns used for matching\
+  \ character combinations in strings. In Elm, just like in other languages,\u2026"
+lastmod: 2024-02-18 23:09:10.962080
+model: gpt-4-0125-preview
+summary: "Regular expressions (regex) in programming are patterns used for matching\
+  \ character combinations in strings. In Elm, just like in other languages,\u2026"
+title: Using regular expressions
 ---
 
 {{< edit_this_page >}}

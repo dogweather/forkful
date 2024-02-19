@@ -1,13 +1,16 @@
 ---
-title:                "Opprette en midlertidig fil"
 aliases:
 - /no/typescript/creating-a-temporary-file/
-date:                  2024-01-20T17:41:48.721078-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Opprette en midlertidig fil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:48.721078-07:00
+description: "\xC5 lage en midlertidig fil er en m\xE5te \xE5 lagre data midlertidig\
+  \ under kj\xF8ring av et program. Programmerere gj\xF8r dette for \xE5 behandle\
+  \ data uten \xE5 p\xE5virke\u2026"
+lastmod: 2024-02-18 23:08:53.663423
+model: gpt-4-1106-preview
+summary: "\xC5 lage en midlertidig fil er en m\xE5te \xE5 lagre data midlertidig under\
+  \ kj\xF8ring av et program. Programmerere gj\xF8r dette for \xE5 behandle data uten\
+  \ \xE5 p\xE5virke\u2026"
+title: Opprette en midlertidig fil
 ---
 
 {{< edit_this_page >}}

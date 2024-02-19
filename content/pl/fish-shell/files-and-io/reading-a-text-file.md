@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
 aliases:
 - /pl/fish-shell/reading-a-text-file/
-date:                  2024-01-20T17:54:16.978763-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie pliku tekstowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/reading-a-text-file.md"
+date: 2024-01-20 17:54:16.978763-07:00
+description: "Czytanie pliku tekstowego to proces wydobywania danych z pliku zapisanego\
+  \ w formacie tekstowym. Programi\u015Bci to robi\u0105, aby obs\u0142ugiwa\u0107\
+  \ konfiguracje,\u2026"
+lastmod: 2024-02-18 23:08:50.053762
+model: gpt-4-1106-preview
+summary: "Czytanie pliku tekstowego to proces wydobywania danych z pliku zapisanego\
+  \ w formacie tekstowym. Programi\u015Bci to robi\u0105, aby obs\u0142ugiwa\u0107\
+  \ konfiguracje,\u2026"
+title: Odczytywanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

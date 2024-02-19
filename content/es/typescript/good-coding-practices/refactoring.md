@@ -1,13 +1,16 @@
 ---
-title:                "Refactorización"
 aliases:
 - /es/typescript/refactoring/
-date:                  2024-01-26T03:36:43.443808-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactorización"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/refactoring.md"
+date: 2024-01-26 03:36:43.443808-07:00
+description: "Refactorizaci\xF3n es el proceso de reestructurar c\xF3digo inform\xE1\
+  tico existente sin cambiar su comportamiento externo. Los programadores lo hacen\
+  \ para hacer\u2026"
+lastmod: 2024-02-18 23:09:09.711867
+model: gpt-4-0125-preview
+summary: "Refactorizaci\xF3n es el proceso de reestructurar c\xF3digo inform\xE1tico\
+  \ existente sin cambiar su comportamiento externo. Los programadores lo hacen para\
+  \ hacer\u2026"
+title: "Refactorizaci\xF3n"
 ---
 
 {{< edit_this_page >}}

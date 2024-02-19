@@ -1,13 +1,16 @@
 ---
-title:                "Rozpoczynanie nowego projektu"
 aliases:
 - /pl/kotlin/starting-a-new-project/
-date:                  2024-01-20T18:03:50.627179-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rozpoczynanie nowego projektu"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/starting-a-new-project.md"
+date: 2024-01-20 18:03:50.627179-07:00
+description: "Rozpocz\u0119cie nowego projektu to stawianie pierwszych krok\xF3w w\
+  \ tworzeniu twojej aplikacji czy systemu. Programi\u015Bci robi\u0105 to, by przekszta\u0142\
+  ci\u0107 pomys\u0142y w\u2026"
+lastmod: 2024-02-18 23:08:49.569745
+model: gpt-4-1106-preview
+summary: "Rozpocz\u0119cie nowego projektu to stawianie pierwszych krok\xF3w w tworzeniu\
+  \ twojej aplikacji czy systemu. Programi\u015Bci robi\u0105 to, by przekszta\u0142\
+  ci\u0107 pomys\u0142y w\u2026"
+title: Rozpoczynanie nowego projektu
 ---
 
 {{< edit_this_page >}}

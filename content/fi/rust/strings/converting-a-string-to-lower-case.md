@@ -1,13 +1,14 @@
 ---
-title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 aliases:
 - /fi/rust/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:39:48.492908-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:39:48.492908-07:00
+description: "\"Mik\xE4 & Miksi?\" Muuttaa merkkijonon pieniksi kirjaimiksi. T\xE4\
+  m\xE4 helpottaa vertailua ja hakua, koska isot ja pienet kirjaimet kohdellaan samoin."
+lastmod: 2024-02-18 23:09:07.350191
+model: gpt-4-1106-preview
+summary: "\"Mik\xE4 & Miksi?\" Muuttaa merkkijonon pieniksi kirjaimiksi. T\xE4m\xE4\
+  \ helpottaa vertailua ja hakua, koska isot ja pienet kirjaimet kohdellaan samoin."
+title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 ---
 
 {{< edit_this_page >}}

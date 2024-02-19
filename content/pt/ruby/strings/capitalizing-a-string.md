@@ -1,14 +1,18 @@
 ---
-title:                "Capitalizando uma string"
 aliases:
 - /pt/ruby/capitalizing-a-string/
-date:                  2024-02-03T19:06:08.633463-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizando uma string"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:08.633463-07:00
+description: "Capitalizar uma string na programa\xE7\xE3o frequentemente se refere\
+  \ a converter a primeira letra de uma string para mai\xFAscula e o restante para\
+  \ min\xFAscula. Os\u2026"
+lastmod: 2024-02-18 23:08:58.646846
+model: gpt-4-0125-preview
+summary: "Capitalizar uma string na programa\xE7\xE3o frequentemente se refere a converter\
+  \ a primeira letra de uma string para mai\xFAscula e o restante para min\xFAscula.\
+  \ Os\u2026"
+title: Capitalizando uma string
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,17 @@
 ---
-title:                "Confrontare due date"
 aliases:
 - /it/go/comparing-two-dates/
-date:                  2024-02-03T17:53:40.162844-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Confrontare due date"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/comparing-two-dates.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:40.162844-07:00
+description: "Comparare due date nella programmazione \xE8 un compito fondamentale\
+  \ che permette agli sviluppatori di valutare la relazione cronologica tra le date.\
+  \ Questi\u2026"
+lastmod: 2024-02-18 23:08:55.445362
+model: gpt-4-0125-preview
+summary: "Comparare due date nella programmazione \xE8 un compito fondamentale che\
+  \ permette agli sviluppatori di valutare la relazione cronologica tra le date. Questi\u2026"
+title: Confrontare due date
 ---
 
 {{< edit_this_page >}}

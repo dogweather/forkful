@@ -1,15 +1,16 @@
 ---
-title:                "Een string met hoofdletters maken"
 aliases:
 - /nl/elixir/capitalizing-a-string/
-date:                  2024-01-28T21:56:17.275013-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string met hoofdletters maken"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elixir/capitalizing-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:17.275013-07:00
+description: "Het kapitaliseren van een string betekent het maken van de eerste letter\
+  \ van een gegeven string in hoofdletters - als het een letter is. Programmeurs doen\u2026"
+lastmod: 2024-02-18 23:09:01.507514
+model: gpt-4-0125-preview
+summary: "Het kapitaliseren van een string betekent het maken van de eerste letter\
+  \ van een gegeven string in hoofdletters - als het een letter is. Programmeurs doen\u2026"
+title: Een string met hoofdletters maken
 ---
 
 {{< edit_this_page >}}

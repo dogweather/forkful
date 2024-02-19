@@ -1,14 +1,16 @@
 ---
-title:                "Scrivere test"
 aliases:
 - /it/c/writing-tests/
-date:                  2024-02-03T18:14:44.763602-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Scrivere test"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:14:44.763602-07:00
+description: "Scrivere test in C comporta la creazione di programmi o funzioni ausiliari\
+  \ pi\xF9 piccoli che verificano automaticamente la funzionalit\xE0 del codice. I\u2026"
+lastmod: 2024-02-18 23:08:56.342322
+model: gpt-4-0125-preview
+summary: "Scrivere test in C comporta la creazione di programmi o funzioni ausiliari\
+  \ pi\xF9 piccoli che verificano automaticamente la funzionalit\xE0 del codice. I\u2026"
+title: Scrivere test
 ---
 
 {{< edit_this_page >}}

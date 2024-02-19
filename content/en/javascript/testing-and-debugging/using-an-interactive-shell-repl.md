@@ -1,13 +1,14 @@
 ---
-title:                "Using an interactive shell (REPL)"
 aliases:
 - /en/javascript/using-an-interactive-shell-repl/
-date:                  2024-01-25T03:39:46.320314-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Using an interactive shell (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/using-an-interactive-shell-repl.md"
+date: 2024-01-25 03:39:46.320314-07:00
+description: "Interactive shells, or REPLs (Read-Eval-Print Loops), let you run code\
+  \ on the fly, testing functions, algorithms, or fiddling with ideas. They're the\u2026"
+lastmod: 2024-02-18 23:09:11.439570
+model: gpt-4-1106-preview
+summary: "Interactive shells, or REPLs (Read-Eval-Print Loops), let you run code on\
+  \ the fly, testing functions, algorithms, or fiddling with ideas. They're the\u2026"
+title: Using an interactive shell (REPL)
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Virheenjäljitystulosteiden tulostaminen"
 aliases:
 - /fi/elm/printing-debug-output/
-date:                  2024-01-20T17:52:12.496761-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheenjäljitystulosteiden tulostaminen"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/printing-debug-output.md"
+date: 2024-01-20 17:52:12.496761-07:00
+description: "Mik\xE4 & Miksi? Debug-tulostus auttaa ohjelmoijia n\xE4kem\xE4\xE4\
+  n, mit\xE4 ohjelmassa tapahtuu. Se on v\xE4ltt\xE4m\xE4t\xF6n, koska se valottaa\
+  \ ohjelman suorituksen tilaa ja\u2026"
+lastmod: 2024-02-18 23:09:07.530222
+model: gpt-4-1106-preview
+summary: "Mik\xE4 & Miksi? Debug-tulostus auttaa ohjelmoijia n\xE4kem\xE4\xE4n, mit\xE4\
+  \ ohjelmassa tapahtuu. Se on v\xE4ltt\xE4m\xE4t\xF6n, koska se valottaa ohjelman\
+  \ suorituksen tilaa ja\u2026"
+title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 ---
 
 {{< edit_this_page >}}

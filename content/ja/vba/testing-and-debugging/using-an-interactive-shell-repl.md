@@ -1,14 +1,15 @@
 ---
-title:                "インタラクティブシェル（REPL）の使用"
 aliases:
 - /ja/vba/using-an-interactive-shell-repl/
-date:                  2024-02-01T22:04:08.031879-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "インタラクティブシェル（REPL）の使用"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/vba/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:08.031879-07:00
+description: "\u5BFE\u8A71\u578B\u30B7\u30A7\u30EB\u3001\u307E\u305F\u306FRead-Eval-Print\u2026"
+lastmod: 2024-02-18 23:08:54.762369
+model: gpt-4-0125-preview
+summary: "\u5BFE\u8A71\u578B\u30B7\u30A7\u30EB\u3001\u307E\u305F\u306FRead-Eval-Print\u2026"
+title: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\uFF08REPL\uFF09\
+  \u306E\u4F7F\u7528"
 ---
 
 {{< edit_this_page >}}

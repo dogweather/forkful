@@ -1,12 +1,14 @@
 ---
-title:                "Using regular expressions"
 aliases:
 - /en/elixir/using-regular-expressions/
-date:                  2024-02-03T19:02:48.155349-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using regular expressions"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/using-regular-expressions.md"
+date: 2024-02-03 19:02:48.155349-07:00
+description: "Regular expressions (regex) in Elixir are used for searching, matching,\
+  \ and manipulating strings based on specific patterns. Programmers leverage regex\u2026"
+lastmod: 2024-02-18 23:09:10.755638
+model: gpt-4-0125-preview
+summary: "Regular expressions (regex) in Elixir are used for searching, matching,\
+  \ and manipulating strings based on specific patterns. Programmers leverage regex\u2026"
+title: Using regular expressions
 ---
 
 {{< edit_this_page >}}

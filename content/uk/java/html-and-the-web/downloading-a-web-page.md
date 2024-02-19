@@ -1,13 +1,15 @@
 ---
-title:                "Завантаження веб-сторінки"
 aliases:
 - /uk/java/downloading-a-web-page/
-date:                  2024-01-20T17:44:20.295670-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Завантаження веб-сторінки"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/java/downloading-a-web-page.md"
+date: 2024-01-20 17:44:20.295670-07:00
+description: "Downloading a web page means grabbing the data from a website's server\
+  \ and making it available on your local machine. Programmers do it for things like\u2026"
+lastmod: 2024-02-18 23:09:00.116602
+model: gpt-4-1106-preview
+summary: "Downloading a web page means grabbing the data from a website's server and\
+  \ making it available on your local machine. Programmers do it for things like\u2026"
+title: "\u0417\u0430\u0432\u0430\u043D\u0442\u0430\u0436\u0435\u043D\u043D\u044F \u0432\
+  \u0435\u0431-\u0441\u0442\u043E\u0440\u0456\u043D\u043A\u0438"
 ---
 
 {{< edit_this_page >}}

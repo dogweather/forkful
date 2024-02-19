@@ -1,15 +1,21 @@
 ---
-title:                "Viết một tệp văn bản"
 aliases:
 - /vi/powershell/writing-a-text-file/
-date:                  2024-01-28T22:13:02.492873-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Viết một tệp văn bản"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/powershell/writing-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:13:02.492873-07:00
+description: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 l\u01B0u tr\u1EEF\
+  \ d\u1EEF li\u1EC7u d\u01B0\u1EDBi d\u1EA1ng v\u0103n b\u1EA3n thu\u1EA7n t\xFA\
+  y tr\xEAn \u0111\u0129a. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7\
+  c n\xE0y cho m\u1EE5c \u0111\xEDch ghi nh\u1EADt k\xFD, c\u1EA5u h\xECnh, ho\u1EB7\
+  c\u2026"
+lastmod: 2024-02-18 23:08:50.954854
+model: gpt-4-0125-preview
+summary: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 l\u01B0u tr\u1EEF d\u1EEF\
+  \ li\u1EC7u d\u01B0\u1EDBi d\u1EA1ng v\u0103n b\u1EA3n thu\u1EA7n t\xFAy tr\xEA\
+  n \u0111\u0129a. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y\
+  \ cho m\u1EE5c \u0111\xEDch ghi nh\u1EADt k\xFD, c\u1EA5u h\xECnh, ho\u1EB7c\u2026"
+title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 ---
 
 {{< edit_this_page >}}

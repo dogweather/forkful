@@ -1,14 +1,23 @@
 ---
-title:                "부분 문자열 추출"
 aliases:
 - /ko/elixir/extracting-substrings/
-date:                  2024-01-20T17:45:56.966584-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "부분 문자열 추출"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/extracting-substrings.md"
+date: 2024-01-20 17:45:56.966584-07:00
+description: "\uC11C\uBE0C\uC2A4\uD2B8\uB9C1 \uCD94\uCD9C\uC774\uB780 \uBB34\uC5C7\
+  \uC77C\uAE4C\uC694? \uAC04\uB2E8\uD788 \uB9D0\uD574\uC11C, \uBB38\uC790\uC5F4 \uC77C\
+  \uBD80\uB97C \uBF51\uC544\uB0B4\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB294 \uD2B9\uC815 \uB370\uC774\uD130\uB97C \uB2E4\uB8F0 \uB54C, \uC815\
+  \uBCF4\uC758 \uC77C\uBD80\uBD84\uB9CC \uD544\uC694\uB85C \uD558\uAE30 \uB54C\uBB38\
+  \uC5D0 \uC774 \uC791\uC5C5\uC744 \uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:05.737964
+model: gpt-4-1106-preview
+summary: "\uC11C\uBE0C\uC2A4\uD2B8\uB9C1 \uCD94\uCD9C\uC774\uB780 \uBB34\uC5C7\uC77C\
+  \uAE4C\uC694? \uAC04\uB2E8\uD788 \uB9D0\uD574\uC11C, \uBB38\uC790\uC5F4 \uC77C\uBD80\
+  \uB97C \uBF51\uC544\uB0B4\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB294 \uD2B9\uC815 \uB370\uC774\uD130\uB97C \uB2E4\uB8F0 \uB54C, \uC815\uBCF4\
+  \uC758 \uC77C\uBD80\uBD84\uB9CC \uD544\uC694\uB85C \uD558\uAE30 \uB54C\uBB38\uC5D0\
+  \ \uC774 \uC791\uC5C5\uC744 \uD569\uB2C8\uB2E4."
+title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C"
 ---
 
 {{< edit_this_page >}}

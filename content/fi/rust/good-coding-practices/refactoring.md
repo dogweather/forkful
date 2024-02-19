@@ -1,13 +1,15 @@
 ---
-title:                "Koodin refaktorointi"
 aliases:
 - /fi/rust/refactoring/
-date:                  2024-01-26T03:36:56.872175-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Koodin refaktorointi"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/refactoring.md"
+date: 2024-01-26 03:36:56.872175-07:00
+description: "Refaktorointi on olemassa olevan tietokonekoodin uudelleenrakentamisen\
+  \ prosessi\u2014muuttamalla faktorointia\u2014muuttamatta sen ulkoista k\xE4ytt\xE4\
+  ytymist\xE4.\u2026"
+lastmod: 2024-02-18 23:09:07.372628
+model: gpt-4-0125-preview
+summary: "Refaktorointi on olemassa olevan tietokonekoodin uudelleenrakentamisen prosessi\u2014\
+  muuttamalla faktorointia\u2014muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4.\u2026"
+title: Koodin refaktorointi
 ---
 
 {{< edit_this_page >}}

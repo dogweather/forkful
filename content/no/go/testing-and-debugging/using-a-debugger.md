@@ -1,14 +1,18 @@
 ---
-title:                "Bruke en feilsøker"
 aliases:
 - /no/go/using-a-debugger/
-date:                  2024-02-03T18:10:28.864624-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke en feilsøker"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/using-a-debugger.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:28.864624-07:00
+description: "\xC5 bruke en debugger i Go-programmering involverer \xE5 benytte verkt\xF8\
+  y eller funksjoner for \xE5 inspisere og endre tilstanden til et kj\xF8rende program\
+  \ for \xE5\u2026"
+lastmod: 2024-02-18 23:08:53.440720
+model: gpt-4-0125-preview
+summary: "\xC5 bruke en debugger i Go-programmering involverer \xE5 benytte verkt\xF8\
+  y eller funksjoner for \xE5 inspisere og endre tilstanden til et kj\xF8rende program\
+  \ for \xE5\u2026"
+title: "Bruke en feils\xF8ker"
 ---
 
 {{< edit_this_page >}}

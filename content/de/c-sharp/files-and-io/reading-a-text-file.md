@@ -1,13 +1,14 @@
 ---
-title:                "Textdatei einlesen"
 aliases:
 - /de/c-sharp/reading-a-text-file/
-date:                  2024-01-20T17:54:00.454383-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Textdatei einlesen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/reading-a-text-file.md"
+date: 2024-01-20 17:54:00.454383-07:00
+description: "Dateien lesen bedeutet, Daten aus einer Textdatei in den Speicher zu\
+  \ laden, damit Code sie verarbeiten kann. Programmierer machen das, um Inhalte zu\u2026"
+lastmod: 2024-02-18 23:09:04.890168
+model: gpt-4-1106-preview
+summary: "Dateien lesen bedeutet, Daten aus einer Textdatei in den Speicher zu laden,\
+  \ damit Code sie verarbeiten kann. Programmierer machen das, um Inhalte zu\u2026"
+title: Textdatei einlesen
 ---
 
 {{< edit_this_page >}}

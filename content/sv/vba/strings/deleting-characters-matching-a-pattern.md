@@ -1,14 +1,17 @@
 ---
-title:                "Ta bort tecken som matchar ett mönster"
 aliases:
 - /sv/vba/deleting-characters-matching-a-pattern/
-date:                  2024-02-01T21:52:28.381955-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ta bort tecken som matchar ett mönster"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:28.381955-07:00
+description: "Att ta bort tecken som matchar ett specifikt m\xF6nster i Visual Basic\
+  \ for Applications (VBA) inneb\xE4r att identifiera och d\xE4refter ta bort tecken\
+  \ eller\u2026"
+lastmod: 2024-02-18 23:08:51.609559
+model: gpt-4-0125-preview
+summary: "Att ta bort tecken som matchar ett specifikt m\xF6nster i Visual Basic for\
+  \ Applications (VBA) inneb\xE4r att identifiera och d\xE4refter ta bort tecken eller\u2026"
+title: "Ta bort tecken som matchar ett m\xF6nster"
 ---
 
 {{< edit_this_page >}}

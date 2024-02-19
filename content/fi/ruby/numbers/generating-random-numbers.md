@@ -1,13 +1,14 @@
 ---
-title:                "Satunnaislukujen generointi"
 aliases:
 - /fi/ruby/generating-random-numbers/
-date:                  2024-01-27T20:35:02.855982-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Satunnaislukujen generointi"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/generating-random-numbers.md"
+date: 2024-01-27 20:35:02.855982-07:00
+description: "Satunnaislukujen tuottaminen Rubylla tarkoittaa sellaisten lukujen luomista,\
+  \ joita ei voida loogisesti ennustaa. T\xE4m\xE4 on olennaista skenaarioissa, kuten\u2026"
+lastmod: 2024-02-18 23:09:08.175925
+model: gpt-4-0125-preview
+summary: "Satunnaislukujen tuottaminen Rubylla tarkoittaa sellaisten lukujen luomista,\
+  \ joita ei voida loogisesti ennustaa. T\xE4m\xE4 on olennaista skenaarioissa, kuten\u2026"
+title: Satunnaislukujen generointi
 ---
 
 {{< edit_this_page >}}

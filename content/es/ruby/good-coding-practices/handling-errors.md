@@ -1,13 +1,15 @@
 ---
-title:                "Manejo de errores"
 aliases:
 - /es/ruby/handling-errors/
-date:                  2024-01-26T00:56:21.556543-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Manejo de errores"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/handling-errors.md"
+date: 2024-01-26 00:56:21.556543-07:00
+description: "El manejo de errores es esperar lo inesperado en el c\xF3digo \u2014\
+  \ gestionar los errores y problemas con gracia sin que se caiga la aplicaci\xF3\
+  n. Los\u2026"
+lastmod: 2024-02-18 23:09:10.560515
+model: gpt-4-1106-preview
+summary: "El manejo de errores es esperar lo inesperado en el c\xF3digo \u2014 gestionar\
+  \ los errores y problemas con gracia sin que se caiga la aplicaci\xF3n. Los\u2026"
+title: Manejo de errores
 ---
 
 {{< edit_this_page >}}

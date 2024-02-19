@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonojen yhdistäminen"
 aliases:
 - /fi/arduino/concatenating-strings/
-date:                  2024-01-20T17:33:52.760012-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonojen yhdistäminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/concatenating-strings.md"
+date: 2024-01-20 17:33:52.760012-07:00
+description: "Yhdist\xE4mme merkkijonoja, jotta saamme yksitt\xE4iset sanat tai palaset\
+  \ muodostamaan j\xE4rkevi\xE4 lauseita tai viestej\xE4. T\xE4m\xE4 on hy\xF6dyllist\xE4\
+  \ dataa v\xE4litett\xE4ess\xE4\u2026"
+lastmod: 2024-02-18 23:09:07.891500
+model: gpt-4-1106-preview
+summary: "Yhdist\xE4mme merkkijonoja, jotta saamme yksitt\xE4iset sanat tai palaset\
+  \ muodostamaan j\xE4rkevi\xE4 lauseita tai viestej\xE4. T\xE4m\xE4 on hy\xF6dyllist\xE4\
+  \ dataa v\xE4litett\xE4ess\xE4\u2026"
+title: "Merkkijonojen yhdist\xE4minen"
 ---
 
 {{< edit_this_page >}}

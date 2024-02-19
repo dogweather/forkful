@@ -1,15 +1,28 @@
 ---
-title:                "연관 배열 사용하기"
 aliases:
 - /ko/bash/using-associative-arrays/
-date:                  2024-01-30T19:10:15.847024-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "연관 배열 사용하기"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:15.847024-07:00
+description: "\uC5F0\uAD00 \uBC30\uC5F4\uC740 \uC815\uC218\uAC00 \uC544\uB2CC \uBB38\
+  \uC790\uC5F4\uC744 \uC778\uB371\uC2A4\uB85C \uC0AC\uC6A9\uD560 \uC218 \uC788\uAC8C\
+  \ \uD574\uC8FC\uB294 \uC288\uD37C \uCC28\uC9C0\uB41C \uBC30\uC5F4\uACFC \uAC19\uC2B5\
+  \uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uBCF4\uB2E4 \uBCF5\uC7A1\
+  \uD55C \uB370\uC774\uD130 \uAD6C\uC870\uB97C \uC704\uD574 \uC0AC\uC6A9\uD558\uBA70\
+  , \uC5F0\uC18D\uC801\uC778 \uB9AC\uC2A4\uD2B8\uC5D0 \uAE54\uB054\uD558\uAC8C \uB4E4\
+  \uC5B4\uB9DE\uC9C0 \uC54A\uB294 \uB370\uC774\uD130\uB97C \uC27D\uAC8C \uB2E4\uB8F0\
+  \ \uC218 \uC788\uAC8C \uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.470349
+model: gpt-4-0125-preview
+summary: "\uC5F0\uAD00 \uBC30\uC5F4\uC740 \uC815\uC218\uAC00 \uC544\uB2CC \uBB38\uC790\
+  \uC5F4\uC744 \uC778\uB371\uC2A4\uB85C \uC0AC\uC6A9\uD560 \uC218 \uC788\uAC8C \uD574\
+  \uC8FC\uB294 \uC288\uD37C \uCC28\uC9C0\uB41C \uBC30\uC5F4\uACFC \uAC19\uC2B5\uB2C8\
+  \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uBCF4\uB2E4 \uBCF5\uC7A1\uD55C\
+  \ \uB370\uC774\uD130 \uAD6C\uC870\uB97C \uC704\uD574 \uC0AC\uC6A9\uD558\uBA70, \uC5F0\
+  \uC18D\uC801\uC778 \uB9AC\uC2A4\uD2B8\uC5D0 \uAE54\uB054\uD558\uAC8C \uB4E4\uC5B4\
+  \uB9DE\uC9C0 \uC54A\uB294 \uB370\uC774\uD130\uB97C \uC27D\uAC8C \uB2E4\uB8F0 \uC218\
+  \ \uC788\uAC8C \uD569\uB2C8\uB2E4."
+title: "\uC5F0\uAD00 \uBC30\uC5F4 \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

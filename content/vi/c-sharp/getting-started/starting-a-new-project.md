@@ -1,15 +1,22 @@
 ---
-title:                "Bắt đầu một dự án mới"
 aliases:
 - /vi/c-sharp/starting-a-new-project/
-date:                  2024-01-28T22:08:13.035416-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bắt đầu một dự án mới"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/starting-a-new-project.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:13.035416-07:00
+description: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n C# m\u1EDBi c\xF3 ngh\u0129\
+  a l\xE0 thi\u1EBFt l\u1EADp m\u1ED9t gi\u1EA3i ph\xE1p m\u1EDBi t\u1EEB \u0111\u1EA7\
+  u v\xE0 c\xE1c t\u1EADp tin d\u1EF1 \xE1n \u0111\u1EC3 c\u1EA5u tr\xFAc m\xE3 c\u1EE7\
+  a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn b\u1EAFt \u0111\u1EA7u nh\u1EEFng d\u1EF1\
+  \ \xE1n\u2026"
+lastmod: 2024-02-18 23:08:50.699193
+model: gpt-4-0125-preview
+summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n C# m\u1EDBi c\xF3 ngh\u0129\
+  a l\xE0 thi\u1EBFt l\u1EADp m\u1ED9t gi\u1EA3i ph\xE1p m\u1EDBi t\u1EEB \u0111\u1EA7\
+  u v\xE0 c\xE1c t\u1EADp tin d\u1EF1 \xE1n \u0111\u1EC3 c\u1EA5u tr\xFAc m\xE3 c\u1EE7\
+  a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn b\u1EAFt \u0111\u1EA7u nh\u1EEFng d\u1EF1\
+  \ \xE1n\u2026"
+title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Trabajando con XML"
 aliases:
 - /es/elm/working-with-xml/
-date:                  2024-01-26T04:30:28.493730-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/working-with-xml.md"
+date: 2024-01-26 04:30:28.493730-07:00
+description: "Trabajar con XML significa analizar, transformar y generar documentos\
+  \ XML en Elm. Se hace para interactuar con muchos servicios web y sistemas heredados\u2026"
+lastmod: 2024-02-18 23:09:09.916769
+model: gpt-4-0125-preview
+summary: "Trabajar con XML significa analizar, transformar y generar documentos XML\
+  \ en Elm. Se hace para interactuar con muchos servicios web y sistemas heredados\u2026"
+title: Trabajando con XML
 ---
 
 {{< edit_this_page >}}

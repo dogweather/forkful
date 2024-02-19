@@ -1,13 +1,16 @@
 ---
-title:                "Manipulation des nombres complexes"
 aliases:
 - /fr/arduino/working-with-complex-numbers/
-date:                  2024-01-26T04:36:37.615153-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulation des nombres complexes"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/working-with-complex-numbers.md"
+date: 2024-01-26 04:36:37.615153-07:00
+description: "Les nombres complexes poss\xE8dent une partie r\xE9elle et une partie\
+  \ imaginaire, g\xE9n\xE9ralement \xE9crites comme `a + bi`. Ils sont essentiels\
+  \ pour certains projets\u2026"
+lastmod: 2024-02-18 23:09:09.108472
+model: gpt-4-0125-preview
+summary: "Les nombres complexes poss\xE8dent une partie r\xE9elle et une partie imaginaire,\
+  \ g\xE9n\xE9ralement \xE9crites comme `a + bi`. Ils sont essentiels pour certains\
+  \ projets\u2026"
+title: Manipulation des nombres complexes
 ---
 
 {{< edit_this_page >}}

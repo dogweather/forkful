@@ -1,13 +1,22 @@
 ---
-title:                "使用TOML"
 aliases:
 - /zh/bash/working-with-toml/
-date:                  2024-01-26T04:19:02.812086-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/bash/working-with-toml.md"
+date: 2024-01-26 04:19:02.812086-07:00
+description: "TOML\uFF0C\u5373Tom's Obvious, Minimal Language\uFF08\u6C64\u59C6\u660E\
+  \u4E86\u3001\u7B80\u7EA6\u7684\u8BED\u8A00\uFF09\uFF0C\u662F\u4E00\u79CD\u6570\u636E\
+  \u5E8F\u5217\u5316\u683C\u5F0F\u3002\u7A0B\u5E8F\u5458\u56E0\u5176\u7B80\u5355\u6613\
+  \u8BFB\u800C\u559C\u7231\u5B83\uFF1B\u5B83\u975E\u5E38\u9002\u5408\u914D\u7F6E\u6587\
+  \u4EF6\uFF0C\u6709\u70B9\u50CFYAML\u7684\u611F\u89C9\uFF0C\u4F46\u5BF9\u4E8E\u4EBA\
+  \u7C7B\u6765\u8BF4\u6BD4JSON\u66F4\u4E0D\u90A3\u4E48\u7E41\u7410\u3002"
+lastmod: 2024-02-18 23:08:59.313157
+model: gpt-4-0125-preview
+summary: "TOML\uFF0C\u5373Tom's Obvious, Minimal Language\uFF08\u6C64\u59C6\u660E\u4E86\
+  \u3001\u7B80\u7EA6\u7684\u8BED\u8A00\uFF09\uFF0C\u662F\u4E00\u79CD\u6570\u636E\u5E8F\
+  \u5217\u5316\u683C\u5F0F\u3002\u7A0B\u5E8F\u5458\u56E0\u5176\u7B80\u5355\u6613\u8BFB\
+  \u800C\u559C\u7231\u5B83\uFF1B\u5B83\u975E\u5E38\u9002\u5408\u914D\u7F6E\u6587\u4EF6\
+  \uFF0C\u6709\u70B9\u50CFYAML\u7684\u611F\u89C9\uFF0C\u4F46\u5BF9\u4E8E\u4EBA\u7C7B\
+  \u6765\u8BF4\u6BD4JSON\u66F4\u4E0D\u90A3\u4E48\u7E41\u7410\u3002"
+title: "\u4F7F\u7528TOML"
 ---
 
 {{< edit_this_page >}}

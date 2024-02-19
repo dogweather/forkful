@@ -1,13 +1,16 @@
 ---
-title:                "Refaktorering"
 aliases:
 - /no/elm/refactoring/
-date:                  2024-01-26T01:17:49.474716-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refaktorering"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/refactoring.md"
+date: 2024-01-26 01:17:49.474716-07:00
+description: "Refaktorering er i bunn og grunn \xE5 gj\xF8re en v\xE5rrengj\xF8ring\
+  \ i koden din \u2013 det handler om \xE5 restrukturere eksisterende kode uten \xE5\
+  \ endre dens eksterne\u2026"
+lastmod: 2024-02-18 23:08:53.819469
+model: gpt-4-0125-preview
+summary: "Refaktorering er i bunn og grunn \xE5 gj\xF8re en v\xE5rrengj\xF8ring i\
+  \ koden din \u2013 det handler om \xE5 restrukturere eksisterende kode uten \xE5\
+  \ endre dens eksterne\u2026"
+title: Refaktorering
 ---
 
 {{< edit_this_page >}}

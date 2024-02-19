@@ -1,13 +1,16 @@
 ---
-title:                "Arredondamento de números"
 aliases:
 - /pt/c-sharp/rounding-numbers/
-date:                  2024-01-26T03:43:40.737426-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arredondamento de números"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/rounding-numbers.md"
+date: 2024-01-26 03:43:40.737426-07:00
+description: "Arredondar n\xFAmeros significa ajust\xE1-los ao valor de lugar mais\
+  \ pr\xF3ximo\u2014pense em simplific\xE1-los. Programadores arredondam para controlar\
+  \ a precis\xE3o,\u2026"
+lastmod: 2024-02-18 23:08:58.152502
+model: gpt-4-0125-preview
+summary: "Arredondar n\xFAmeros significa ajust\xE1-los ao valor de lugar mais pr\xF3\
+  ximo\u2014pense em simplific\xE1-los. Programadores arredondam para controlar a\
+  \ precis\xE3o,\u2026"
+title: "Arredondamento de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Tải trang web"
 aliases:
 - /vi/python/downloading-a-web-page/
-date:                  2024-01-28T21:59:40.674565-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tải trang web"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/python/downloading-a-web-page.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:40.674565-07:00
+description: "T\u1EA3i m\u1ED9t trang web v\u1EC1 c\u01A1 b\u1EA3n l\xE0 vi\u1EC7\
+  c l\u1EA5y d\u1EEF li\u1EC7u t\u1EEB URL b\u1EA1n ch\u1EC9 \u0111\u1ECBnh v\xE0\
+  \ k\xE9o n\xF3 v\u1EC1 m\xE1y t\xEDnh c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEA\
+  n l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 ph\xE2n t\xEDch d\u1EEF li\u1EC7u, theo\u2026"
+lastmod: 2024-02-18 23:08:50.266569
+model: gpt-4-0125-preview
+summary: "T\u1EA3i m\u1ED9t trang web v\u1EC1 c\u01A1 b\u1EA3n l\xE0 vi\u1EC7c l\u1EA5\
+  y d\u1EEF li\u1EC7u t\u1EEB URL b\u1EA1n ch\u1EC9 \u0111\u1ECBnh v\xE0 k\xE9o n\xF3\
+  \ v\u1EC1 m\xE1y t\xEDnh c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
+  i\u1EC1u n\xE0y \u0111\u1EC3 ph\xE2n t\xEDch d\u1EEF li\u1EC7u, theo\u2026"
+title: "T\u1EA3i trang web"
 ---
 
 {{< edit_this_page >}}

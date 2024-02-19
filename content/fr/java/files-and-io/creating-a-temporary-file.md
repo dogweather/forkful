@@ -1,13 +1,16 @@
 ---
-title:                "Création d'un fichier temporaire"
 aliases:
 - /fr/java/creating-a-temporary-file/
-date:                  2024-01-20T17:40:33.673913-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Création d'un fichier temporaire"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:33.673913-07:00
+description: "Cr\xE9er un fichier temporaire en Java, c'est g\xE9n\xE9rer un fichier\
+  \ pour des donn\xE9es \xE9ph\xE9m\xE8res. Les programmeurs le font souvent pour\
+  \ tester des morceaux de\u2026"
+lastmod: 2024-02-18 23:09:08.698710
+model: gpt-4-1106-preview
+summary: "Cr\xE9er un fichier temporaire en Java, c'est g\xE9n\xE9rer un fichier pour\
+  \ des donn\xE9es \xE9ph\xE9m\xE8res. Les programmeurs le font souvent pour tester\
+  \ des morceaux de\u2026"
+title: "Cr\xE9ation d'un fichier temporaire"
 ---
 
 {{< edit_this_page >}}

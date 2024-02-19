@@ -1,13 +1,16 @@
 ---
-title:                "Praca z TOML"
 aliases:
 - /pl/ruby/working-with-toml/
-date:                  2024-01-26T04:25:53.853171-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/working-with-toml.md"
+date: 2024-01-26 04:25:53.853171-07:00
+description: "TOML to format pliku konfiguracyjnego, kt\xF3ry jest \u0142atwy do odczytu\
+  \ dzi\u0119ki swojej jasnej semantyce. Programi\u015Bci u\u017Cywaj\u0105 TOML do\
+  \ zarz\u0105dzania konfiguracjami\u2026"
+lastmod: 2024-02-18 23:08:50.148733
+model: gpt-4-0125-preview
+summary: "TOML to format pliku konfiguracyjnego, kt\xF3ry jest \u0142atwy do odczytu\
+  \ dzi\u0119ki swojej jasnej semantyce. Programi\u015Bci u\u017Cywaj\u0105 TOML do\
+  \ zarz\u0105dzania konfiguracjami\u2026"
+title: Praca z TOML
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Omgjøring av en dato til en streng"
 aliases:
 - /no/go/converting-a-date-into-a-string/
-date:                  2024-02-03T17:54:28.203043-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Omgjøring av en dato til en streng"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:28.203043-07:00
+description: "\xC5 konvertere en dato til en streng i Go inneb\xE6rer \xE5 transformere\
+  \ et `time.Time`-objekt til et leselig strengformat. Programmerere utf\xF8rer ofte\
+  \ denne\u2026"
+lastmod: 2024-02-18 23:08:53.447925
+model: gpt-4-0125-preview
+summary: "\xC5 konvertere en dato til en streng i Go inneb\xE6rer \xE5 transformere\
+  \ et `time.Time`-objekt til et leselig strengformat. Programmerere utf\xF8rer ofte\
+  \ denne\u2026"
+title: "Omgj\xF8ring av en dato til en streng"
 ---
 
 {{< edit_this_page >}}

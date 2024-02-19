@@ -1,13 +1,15 @@
 ---
-title:                "Lendo um arquivo de texto"
 aliases:
 - /pt/cpp/reading-a-text-file/
-date:                  2024-01-20T17:54:01.905559-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lendo um arquivo de texto"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/reading-a-text-file.md"
+date: 2024-01-20 17:54:01.905559-07:00
+description: "Ler um arquivo de texto em C++ \xE9 o processo de acessar e extrair\
+  \ informa\xE7\xF5es de um arquivo armazenado no seu computador. Programadores fazem\
+  \ isso para\u2026"
+lastmod: 2024-02-18 23:08:58.466881
+model: gpt-4-1106-preview
+summary: "Ler um arquivo de texto em C++ \xE9 o processo de acessar e extrair informa\xE7\
+  \xF5es de um arquivo armazenado no seu computador. Programadores fazem isso para\u2026"
+title: Lendo um arquivo de texto
 ---
 
 {{< edit_this_page >}}

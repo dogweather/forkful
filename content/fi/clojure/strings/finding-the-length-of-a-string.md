@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonon pituuden selvittäminen"
 aliases:
 - /fi/clojure/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:03.838360-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon pituuden selvittäminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:03.838360-07:00
+description: "Mittaamme merkkijonojen pituutta, koska haluamme selvitt\xE4\xE4, kuinka\
+  \ monta merkki\xE4 ne sis\xE4lt\xE4v\xE4t tai validoida niiden sis\xE4lt\xF6\xE4\
+  . T\xE4m\xE4 auttaa mm. l\xF6yt\xE4m\xE4\xE4n\u2026"
+lastmod: 2024-02-18 23:09:07.218943
+model: gpt-4-1106-preview
+summary: "Mittaamme merkkijonojen pituutta, koska haluamme selvitt\xE4\xE4, kuinka\
+  \ monta merkki\xE4 ne sis\xE4lt\xE4v\xE4t tai validoida niiden sis\xE4lt\xF6\xE4\
+  . T\xE4m\xE4 auttaa mm. l\xF6yt\xE4m\xE4\xE4n\u2026"
+title: "Merkkijonon pituuden selvitt\xE4minen"
 ---
 
 {{< edit_this_page >}}

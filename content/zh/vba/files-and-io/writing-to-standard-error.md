@@ -1,14 +1,28 @@
 ---
-title:                "写入标准错误"
 aliases:
 - /zh/vba/writing-to-standard-error/
-date:                  2024-02-01T22:09:08.319115-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "写入标准错误"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/writing-to-standard-error.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:09:08.319115-07:00
+description: "\u5728Visual Basic for Applications (VBA) \u4E2D\u5199\u5165\u6807\u51C6\
+  \u9519\u8BEF\u6D89\u53CA\u5C06\u9519\u8BEF\u6D88\u606F\u6216\u8BCA\u65AD\u4FE1\u606F\
+  \u4ECE\u6807\u51C6\u8F93\u51FA\u4E2D\u5206\u79BB\u51FA\u6765\uFF0C\u901A\u5E38\u8F93\
+  \u51FA\u5230\u63A7\u5236\u53F0\u6216\u65E5\u5FD7\u6587\u4EF6\u3002\u7A0B\u5E8F\u5458\
+  \u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u5C06\u5E38\u89C4\u7A0B\u5E8F\u8F93\u51FA\u4E0E\
+  \u9519\u8BEF\u6D88\u606F\u5206\u5F00\uFF0C\u4F7F\u5F97\u7A0B\u5E8F\u8C03\u8BD5\u6216\
+  \u63D0\u793A\u7528\u6237\u51FA\u73B0\u95EE\u9898\u65F6\u4E0D\u4F1A\u6DF7\u6DC6\u4E3B\
+  \u8981\u8F93\u51FA\u3002"
+lastmod: 2024-02-18 23:08:58.997109
+model: gpt-4-0125-preview
+summary: "\u5728Visual Basic for Applications (VBA) \u4E2D\u5199\u5165\u6807\u51C6\
+  \u9519\u8BEF\u6D89\u53CA\u5C06\u9519\u8BEF\u6D88\u606F\u6216\u8BCA\u65AD\u4FE1\u606F\
+  \u4ECE\u6807\u51C6\u8F93\u51FA\u4E2D\u5206\u79BB\u51FA\u6765\uFF0C\u901A\u5E38\u8F93\
+  \u51FA\u5230\u63A7\u5236\u53F0\u6216\u65E5\u5FD7\u6587\u4EF6\u3002\u7A0B\u5E8F\u5458\
+  \u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u5C06\u5E38\u89C4\u7A0B\u5E8F\u8F93\u51FA\u4E0E\
+  \u9519\u8BEF\u6D88\u606F\u5206\u5F00\uFF0C\u4F7F\u5F97\u7A0B\u5E8F\u8C03\u8BD5\u6216\
+  \u63D0\u793A\u7528\u6237\u51FA\u73B0\u95EE\u9898\u65F6\u4E0D\u4F1A\u6DF7\u6DC6\u4E3B\
+  \u8981\u8F93\u51FA\u3002"
+title: "\u5199\u5165\u6807\u51C6\u9519\u8BEF"
 ---
 
 {{< edit_this_page >}}

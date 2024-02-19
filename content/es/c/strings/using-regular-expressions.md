@@ -1,14 +1,16 @@
 ---
-title:                "Usando expresiones regulares"
 aliases:
 - /es/c/using-regular-expressions/
-date:                  2024-02-03T18:10:43.098002-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando expresiones regulares"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:43.098002-07:00
+description: "Las expresiones regulares (regex) ofrecen una manera de buscar, coincidir\
+  \ y manipular cadenas utilizando patrones definidos. Los programadores las\u2026"
+lastmod: 2024-02-18 23:09:10.489294
+model: gpt-4-0125-preview
+summary: "Las expresiones regulares (regex) ofrecen una manera de buscar, coincidir\
+  \ y manipular cadenas utilizando patrones definidos. Los programadores las\u2026"
+title: Usando expresiones regulares
 ---
 
 {{< edit_this_page >}}

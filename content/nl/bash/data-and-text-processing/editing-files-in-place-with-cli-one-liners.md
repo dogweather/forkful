@@ -1,15 +1,16 @@
 ---
-title:                "Bestanden ter plekke bewerken met CLI one-liners"
 aliases:
 - /nl/bash/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-28T22:00:19.709788-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bestanden ter plekke bewerken met CLI one-liners"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/editing-files-in-place-with-cli-one-liners.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:00:19.709788-07:00
+description: "Stel je voor dat je er net achter komt dat je een batch-update moet\
+  \ uitvoeren op verschillende configuratiebestanden op je server. Je zou elk bestand\u2026"
+lastmod: 2024-02-18 23:09:02.035186
+model: gpt-4-0125-preview
+summary: "Stel je voor dat je er net achter komt dat je een batch-update moet uitvoeren\
+  \ op verschillende configuratiebestanden op je server. Je zou elk bestand\u2026"
+title: Bestanden ter plekke bewerken met CLI one-liners
 ---
 
 {{< edit_this_page >}}

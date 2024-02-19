@@ -1,13 +1,15 @@
 ---
-title:                "Creando un archivo temporal"
 aliases:
 - /es/elm/creating-a-temporary-file/
-date:                  2024-01-20T17:40:19.773808-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Creando un archivo temporal"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:19.773808-07:00
+description: "Crear un archivo temporal es generar un archivo que se usa durante una\
+  \ sesi\xF3n de programa y normalmente se borra autom\xE1ticamente. Los programadores\
+  \ lo\u2026"
+lastmod: 2024-02-18 23:09:09.911237
+model: gpt-4-1106-preview
+summary: "Crear un archivo temporal es generar un archivo que se usa durante una sesi\xF3\
+  n de programa y normalmente se borra autom\xE1ticamente. Los programadores lo\u2026"
+title: Creando un archivo temporal
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,24 @@
 ---
-title:                "将日期转换为字符串"
 aliases:
 - /zh/google-apps-script/converting-a-date-into-a-string/
-date:                  2024-02-01T21:51:02.388773-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "将日期转换为字符串"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/google-apps-script/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:02.388773-07:00
+description: "\u5C06\u65E5\u671F\u8F6C\u6362\u6210\u5B57\u7B26\u4E32\u662F\u4E00\u4E2A\
+  \u57FA\u7840\u4EFB\u52A1\uFF0C\u5B83\u4F7F\u7A0B\u5E8F\u5458\u80FD\u591F\u4EE5\u4EBA\
+  \u7C7B\u53EF\u8BFB\u7684\u683C\u5F0F\u64CD\u4F5C\u548C\u663E\u793A\u65E5\u671F\u4FE1\
+  \u606F\u3002\u8FD9\u5BF9\u4E8E\u521B\u5EFA\u7528\u6237\u754C\u9762\u3001\u751F\u6210\
+  \u62A5\u544A\u6216\u5728\u4F7F\u7528Google Apps Script\u5F00\u53D1\u7684\u5E94\u7528\
+  \u7A0B\u5E8F\u4E2D\u8BB0\u5F55\u4FE1\u606F\u81F3\u5173\u91CD\u8981\u3002"
+lastmod: 2024-02-18 23:08:58.762039
+model: gpt-4-0125-preview
+summary: "\u5C06\u65E5\u671F\u8F6C\u6362\u6210\u5B57\u7B26\u4E32\u662F\u4E00\u4E2A\
+  \u57FA\u7840\u4EFB\u52A1\uFF0C\u5B83\u4F7F\u7A0B\u5E8F\u5458\u80FD\u591F\u4EE5\u4EBA\
+  \u7C7B\u53EF\u8BFB\u7684\u683C\u5F0F\u64CD\u4F5C\u548C\u663E\u793A\u65E5\u671F\u4FE1\
+  \u606F\u3002\u8FD9\u5BF9\u4E8E\u521B\u5EFA\u7528\u6237\u754C\u9762\u3001\u751F\u6210\
+  \u62A5\u544A\u6216\u5728\u4F7F\u7528Google Apps Script\u5F00\u53D1\u7684\u5E94\u7528\
+  \u7A0B\u5E8F\u4E2D\u8BB0\u5F55\u4FE1\u606F\u81F3\u5173\u91CD\u8981\u3002"
+title: "\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32"
 ---
 
 {{< edit_this_page >}}

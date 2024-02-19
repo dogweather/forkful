@@ -1,14 +1,16 @@
 ---
-title:                "Analisi di una data da una stringa"
 aliases:
 - /it/bash/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:13:42.153666-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analisi di una data da una stringa"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:13:42.153666-07:00
+description: "Analizzare una data da una stringa in Bash comporta l'estrazione e la\
+  \ conversione delle informazioni sulla data da dati testuali in un formato che Bash\u2026"
+lastmod: 2024-02-18 23:08:56.061416
+model: gpt-4-0125-preview
+summary: "Analizzare una data da una stringa in Bash comporta l'estrazione e la conversione\
+  \ delle informazioni sulla data da dati testuali in un formato che Bash\u2026"
+title: Analisi di una data da una stringa
 ---
 
 {{< edit_this_page >}}

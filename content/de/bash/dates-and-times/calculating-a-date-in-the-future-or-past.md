@@ -1,13 +1,16 @@
 ---
-title:                "Berechnung eines zukünftigen oder vergangenen Datums"
 aliases:
 - /de/bash/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:28:36.215661-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Berechnung eines zukünftigen oder vergangenen Datums"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:28:36.215661-07:00
+description: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums erm\xF6glicht\
+  \ es uns, Zeitintervalle zu bestimmen und automatische Erinnerungen oder Fristen\
+  \ in\u2026"
+lastmod: 2024-02-18 23:09:05.068570
+model: gpt-4-1106-preview
+summary: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums erm\xF6glicht\
+  \ es uns, Zeitintervalle zu bestimmen und automatische Erinnerungen oder Fristen\
+  \ in\u2026"
+title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 ---
 
 {{< edit_this_page >}}

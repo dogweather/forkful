@@ -1,13 +1,16 @@
 ---
-title:                "Interaktiivisen komentotulkin (REPL) käyttö"
 aliases:
 - /fi/bash/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:11:16.702791-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interaktiivisen komentotulkin (REPL) käyttö"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:11:16.702791-07:00
+description: "REPL tarkoittaa Lue-Arvo-Tulosta-Toista -silmukkaa, yksinkertaista,\
+  \ interaktiivista ohjelmointiymp\xE4rist\xF6\xE4. Koodaajat k\xE4ytt\xE4v\xE4t sit\xE4\
+  \ kirjoittaakseen ja\u2026"
+lastmod: 2024-02-18 23:09:07.806235
+model: gpt-4-0125-preview
+summary: "REPL tarkoittaa Lue-Arvo-Tulosta-Toista -silmukkaa, yksinkertaista, interaktiivista\
+  \ ohjelmointiymp\xE4rist\xF6\xE4. Koodaajat k\xE4ytt\xE4v\xE4t sit\xE4 kirjoittaakseen\
+  \ ja\u2026"
+title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

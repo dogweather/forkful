@@ -1,13 +1,14 @@
 ---
-title:                "Löschen von Zeichen, die einem Muster entsprechen"
 aliases:
 - /de/arduino/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:33.742545-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:33.742545-07:00
+description: "Charaktere nach einem Muster l\xF6schen bedeutet, bestimmte Zeichen\
+  \ aus einer Zeichenkette zu entfernen, die einem vorgegebenen Schema entsprechen.\u2026"
+lastmod: 2024-02-18 23:09:05.129525
+model: gpt-4-1106-preview
+summary: "Charaktere nach einem Muster l\xF6schen bedeutet, bestimmte Zeichen aus\
+  \ einer Zeichenkette zu entfernen, die einem vorgegebenen Schema entsprechen.\u2026"
+title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 ---
 
 {{< edit_this_page >}}

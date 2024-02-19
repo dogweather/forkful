@@ -1,14 +1,21 @@
 ---
-title:                "创建临时文件"
 aliases:
 - /zh/javascript/creating-a-temporary-file/
-date:                  2024-01-20T17:40:34.630977-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "创建临时文件"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:34.630977-07:00
+description: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6\u5141\u8BB8\u7A0B\u5E8F\u4E34\u65F6\
+  \u5B58\u50A8\u6570\u636E\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\
+  \u5904\u7406\u5927\u91CF\u6570\u636E\uFF0C\u6D4B\u8BD5\uFF0C\u6216\u8005\u5F53\u6301\
+  \u4E45\u5316\u5B58\u50A8\u4E0D\u65B9\u4FBF\u6216\u4E0D\u5FC5\u8981\u65F6\u4F7F\u7528\
+  \u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.496972
+model: gpt-4-1106-preview
+summary: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6\u5141\u8BB8\u7A0B\u5E8F\u4E34\u65F6\
+  \u5B58\u50A8\u6570\u636E\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\
+  \u5904\u7406\u5927\u91CF\u6570\u636E\uFF0C\u6D4B\u8BD5\uFF0C\u6216\u8005\u5F53\u6301\
+  \u4E45\u5316\u5B58\u50A8\u4E0D\u65B9\u4FBF\u6216\u4E0D\u5FC5\u8981\u65F6\u4F7F\u7528\
+  \u3002"
+title: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

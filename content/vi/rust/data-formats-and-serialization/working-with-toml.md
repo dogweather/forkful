@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với TOML"
 aliases:
 - /vi/rust/working-with-toml/
-date:                  2024-01-28T22:11:04.737421-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/working-with-toml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:04.737421-07:00
+description: "TOML l\xE0 m\u1ED9t ng\xF4n ng\u1EEF tu\u1EA7n t\u1EF1 h\xF3a d\u1EEF\
+  \ li\u1EC7u d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\u1EDDi, th\u01B0\u1EDDng \u0111\
+  \u01B0\u1EE3c s\u1EED d\u1EE5ng cho c\xE1c t\u1EC7p c\u1EA5u h\xECnh. L\u1EADp tr\xEC\
+  nh vi\xEAn s\u1EED d\u1EE5ng TOML v\xEC t\xEDnh \u0111\u01A1n gi\u1EA3n v\xE0\u2026"
+lastmod: 2024-02-18 23:08:50.487736
+model: gpt-4-0125-preview
+summary: "TOML l\xE0 m\u1ED9t ng\xF4n ng\u1EEF tu\u1EA7n t\u1EF1 h\xF3a d\u1EEF li\u1EC7\
+  u d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\u1EDDi, th\u01B0\u1EDDng \u0111\u01B0\u1EE3\
+  c s\u1EED d\u1EE5ng cho c\xE1c t\u1EC7p c\u1EA5u h\xECnh. L\u1EADp tr\xECnh vi\xEA\
+  n s\u1EED d\u1EE5ng TOML v\xEC t\xEDnh \u0111\u01A1n gi\u1EA3n v\xE0\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 ---
 
 {{< edit_this_page >}}

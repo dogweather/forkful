@@ -1,14 +1,18 @@
 ---
-title:                "Scrittura su errore standard"
 aliases:
 - /it/go/writing-to-standard-error/
-date:                  2024-02-03T18:15:15.161927-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Scrittura su errore standard"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:15:15.161927-07:00
+description: "Scrivere su standard error (stderr) in Go comporta l'indirizzare messaggi\
+  \ di errore o diagnostica che non sono destinati al flusso di output principale.\
+  \ I\u2026"
+lastmod: 2024-02-18 23:08:55.449622
+model: gpt-4-0125-preview
+summary: "Scrivere su standard error (stderr) in Go comporta l'indirizzare messaggi\
+  \ di errore o diagnostica che non sono destinati al flusso di output principale.\
+  \ I\u2026"
+title: Scrittura su errore standard
 ---
 
 {{< edit_this_page >}}

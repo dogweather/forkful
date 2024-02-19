@@ -1,14 +1,18 @@
 ---
-title:                "HTML:n jäsennys"
 aliases:
 - /fi/ruby/parsing-html/
-date:                  2024-02-03T19:13:06.150297-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML:n jäsennys"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:13:06.150297-07:00
+description: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-koodinp\xE4tk\xE4n purkamista,\
+  \ jotta ymm\xE4rt\xE4isimme sen rakenteen ja sis\xE4ll\xF6n. Ohjelmoijat tekev\xE4\
+  t t\xE4t\xE4 dataa poimiakseen,\u2026"
+lastmod: 2024-02-18 23:09:08.180209
+model: gpt-4-0125-preview
+summary: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-koodinp\xE4tk\xE4n purkamista,\
+  \ jotta ymm\xE4rt\xE4isimme sen rakenteen ja sis\xE4ll\xF6n. Ohjelmoijat tekev\xE4\
+  t t\xE4t\xE4 dataa poimiakseen,\u2026"
+title: "HTML:n j\xE4sennys"
 ---
 
 {{< edit_this_page >}}

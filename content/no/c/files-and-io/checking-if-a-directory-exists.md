@@ -1,14 +1,18 @@
 ---
-title:                "Sjekke om en mappe eksisterer"
 aliases:
 - /no/c/checking-if-a-directory-exists/
-date:                  2024-02-03T17:52:44.094051-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sjekke om en mappe eksisterer"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:52:44.094051-07:00
+description: "\xC5 sjekke om en mappe eksisterer i C inneb\xE6rer \xE5 foresp\xF8\
+  rre filsystemet for \xE5 verifisere om en spesifikk bane leder til en mappe. Programmerere\
+  \ utf\xF8rer\u2026"
+lastmod: 2024-02-18 23:08:54.409180
+model: gpt-4-0125-preview
+summary: "\xC5 sjekke om en mappe eksisterer i C inneb\xE6rer \xE5 foresp\xF8rre filsystemet\
+  \ for \xE5 verifisere om en spesifikk bane leder til en mappe. Programmerere utf\xF8\
+  rer\u2026"
+title: Sjekke om en mappe eksisterer
 ---
 
 {{< edit_this_page >}}

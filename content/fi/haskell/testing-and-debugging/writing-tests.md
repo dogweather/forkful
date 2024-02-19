@@ -1,14 +1,16 @@
 ---
-title:                "Testien kirjoittaminen"
 aliases:
 - /fi/haskell/writing-tests/
-date:                  2024-02-03T19:30:46.439533-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Testien kirjoittaminen"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:30:46.439533-07:00
+description: "Testien kirjoittaminen Haskellilla koskee funktioidesi toivottujen tulosten\
+  \ varmistamista automatisoitujen tarkistusten kautta. Ohjelmoijat tekev\xE4t sen\u2026"
+lastmod: 2024-02-18 23:09:07.669937
+model: gpt-4-0125-preview
+summary: "Testien kirjoittaminen Haskellilla koskee funktioidesi toivottujen tulosten\
+  \ varmistamista automatisoitujen tarkistusten kautta. Ohjelmoijat tekev\xE4t sen\u2026"
+title: Testien kirjoittaminen
 ---
 
 {{< edit_this_page >}}

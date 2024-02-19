@@ -1,13 +1,16 @@
 ---
-title:                "Łączenie łańcuchów znaków"
 aliases:
 - /pl/swift/concatenating-strings/
-date:                  2024-01-20T17:35:51.847539-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Łączenie łańcuchów znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/concatenating-strings.md"
+date: 2024-01-20 17:35:51.847539-07:00
+description: "\u0141\u0105czenie napis\xF3w to po prostu sklejanie ich w jeden. Programi\u015B\
+  ci robi\u0105 to, \u017Ceby tworzy\u0107 sensowne komunikaty lub dynamicznie budowa\u0107\
+  \ tekst."
+lastmod: 2024-02-18 23:08:49.945084
+model: gpt-4-1106-preview
+summary: "\u0141\u0105czenie napis\xF3w to po prostu sklejanie ich w jeden. Programi\u015B\
+  ci robi\u0105 to, \u017Ceby tworzy\u0107 sensowne komunikaty lub dynamicznie budowa\u0107\
+  \ tekst."
+title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 ---
 
 {{< edit_this_page >}}

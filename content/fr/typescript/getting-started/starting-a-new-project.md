@@ -1,13 +1,16 @@
 ---
-title:                "Lancement d'un nouveau projet"
 aliases:
 - /fr/typescript/starting-a-new-project/
-date:                  2024-01-20T18:04:45.740781-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lancement d'un nouveau projet"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/starting-a-new-project.md"
+date: 2024-01-20 18:04:45.740781-07:00
+description: "Quand on d\xE9marre un nouveau projet en TypeScript, on met en place\
+  \ les bases du code. Les programmeurs font \xE7a pour structurer et organiser leurs\
+  \ id\xE9es\u2026"
+lastmod: 2024-02-18 23:09:08.482584
+model: gpt-4-1106-preview
+summary: "Quand on d\xE9marre un nouveau projet en TypeScript, on met en place les\
+  \ bases du code. Les programmeurs font \xE7a pour structurer et organiser leurs\
+  \ id\xE9es\u2026"
+title: Lancement d'un nouveau projet
 ---
 
 {{< edit_this_page >}}

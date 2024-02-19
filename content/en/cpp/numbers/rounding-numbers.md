@@ -1,13 +1,14 @@
 ---
-title:                "Rounding numbers"
 aliases:
 - /en/cpp/rounding-numbers/
-date:                  2024-01-25T03:00:00.122618-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rounding numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/rounding-numbers.md"
+date: 2024-01-25 03:00:00.122618-07:00
+description: "Rounding numbers means tweaking a value to its nearest integer or specified\
+  \ precision. Devs do it to simplify, conform to real-world constraints, or\u2026"
+lastmod: 2024-02-18 23:09:11.350502
+model: gpt-4-1106-preview
+summary: "Rounding numbers means tweaking a value to its nearest integer or specified\
+  \ precision. Devs do it to simplify, conform to real-world constraints, or\u2026"
+title: Rounding numbers
 ---
 
 {{< edit_this_page >}}

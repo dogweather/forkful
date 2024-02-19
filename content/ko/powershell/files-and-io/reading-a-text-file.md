@@ -1,14 +1,23 @@
 ---
-title:                "텍스트 파일 읽기"
 aliases:
 - /ko/powershell/reading-a-text-file/
-date:                  2024-01-20T17:55:08.945475-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "텍스트 파일 읽기"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/reading-a-text-file.md"
+date: 2024-01-20 17:55:08.945475-07:00
+description: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC77D\uB294 \uAC83\uC740 \uD30C\
+  \uC77C \uC548\uC5D0 \uC788\uB294 \uAE00\uC790\uB4E4\uC744 \uBD88\uB7EC\uC624\uB294\
+  \ \uAC70\uC608\uC694. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC774 \uC774\uAC78 \uD558\
+  \uB824\uB294 \uC774\uC720? \uB370\uC774\uD130\uB97C \uCC98\uB9AC\uD558\uAC70\uB098\
+  , \uC124\uC815\uC744 \uC77D\uAC70\uB098, \uAC04\uB2E8\uD55C \uC785\uB825\uC744 \uBC1B\
+  \uAE30 \uC704\uD574\uC11C\uC8E0."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.581557
+model: gpt-4-1106-preview
+summary: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC77D\uB294 \uAC83\uC740 \uD30C\uC77C\
+  \ \uC548\uC5D0 \uC788\uB294 \uAE00\uC790\uB4E4\uC744 \uBD88\uB7EC\uC624\uB294 \uAC70\
+  \uC608\uC694. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC774 \uC774\uAC78 \uD558\uB824\
+  \uB294 \uC774\uC720? \uB370\uC774\uD130\uB97C \uCC98\uB9AC\uD558\uAC70\uB098, \uC124\
+  \uC815\uC744 \uC77D\uAC70\uB098, \uAC04\uB2E8\uD55C \uC785\uB825\uC744 \uBC1B\uAE30\
+  \ \uC704\uD574\uC11C\uC8E0."
+title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
 ---
 
 {{< edit_this_page >}}

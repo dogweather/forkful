@@ -1,15 +1,17 @@
 ---
-title:                "Afronden van getallen"
 aliases:
 - /nl/cpp/rounding-numbers/
-date:                  2024-01-28T22:06:53.822099-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Afronden van getallen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/cpp/rounding-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:06:53.822099-07:00
+description: "Het afronden van getallen betekent het aanpassen van een waarde naar\
+  \ de dichtstbijzijnde gehele getal of een gespecificeerde precisie. Ontwikkelaars\
+  \ doen\u2026"
+lastmod: 2024-02-18 23:09:02.177200
+model: gpt-4-0125-preview
+summary: "Het afronden van getallen betekent het aanpassen van een waarde naar de\
+  \ dichtstbijzijnde gehele getal of een gespecificeerde precisie. Ontwikkelaars doen\u2026"
+title: Afronden van getallen
 ---
 
 {{< edit_this_page >}}

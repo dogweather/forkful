@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonon interpolointi"
 aliases:
 - /fi/haskell/interpolating-a-string/
-date:                  2024-01-20T17:51:09.685955-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon interpolointi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/interpolating-a-string.md"
+date: 2024-01-20 17:51:09.685955-07:00
+description: "Merkkijonon interpolointi tarkoittaa muuttujien tai lausekkeiden sis\xE4\
+  llytt\xE4mist\xE4 osaksi merkkijonoa. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisen\
+  \ sis\xE4ll\xF6n\u2026"
+lastmod: 2024-02-18 23:09:07.651646
+model: gpt-4-1106-preview
+summary: "Merkkijonon interpolointi tarkoittaa muuttujien tai lausekkeiden sis\xE4\
+  llytt\xE4mist\xE4 osaksi merkkijonoa. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisen\
+  \ sis\xE4ll\xF6n\u2026"
+title: Merkkijonon interpolointi
 ---
 
 {{< edit_this_page >}}

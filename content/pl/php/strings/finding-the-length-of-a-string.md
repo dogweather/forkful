@@ -1,13 +1,16 @@
 ---
-title:                "Znalezienie długości ciągu znaków"
 aliases:
 - /pl/php/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:08.635290-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Znalezienie długości ciągu znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:08.635290-07:00
+description: "D\u0142ugo\u015B\u0107 \u0142a\u0144cucha znak\xF3w to po prostu liczba\
+  \ znak\xF3w w nim zawartych. Programi\u015Bci sprawdzaj\u0105 t\u0119 d\u0142ugo\u015B\
+  \u0107 by weryfikowa\u0107 dane wej\u015Bciowe, ogranicza\u0107 tekst do\u2026"
+lastmod: 2024-02-18 23:08:49.685342
+model: gpt-4-1106-preview
+summary: "D\u0142ugo\u015B\u0107 \u0142a\u0144cucha znak\xF3w to po prostu liczba\
+  \ znak\xF3w w nim zawartych. Programi\u015Bci sprawdzaj\u0105 t\u0119 d\u0142ugo\u015B\
+  \u0107 by weryfikowa\u0107 dane wej\u015Bciowe, ogranicza\u0107 tekst do\u2026"
+title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

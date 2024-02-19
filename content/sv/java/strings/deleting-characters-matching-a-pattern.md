@@ -1,13 +1,16 @@
 ---
-title:                "Ta bort tecken som matchar ett mönster"
 aliases:
 - /sv/java/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:31.165420-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ta bort tecken som matchar ett mönster"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:31.165420-07:00
+description: "Att radera tecken som matchar ett m\xF6nster \xE4r att plocka bort specifika\
+  \ tecken eller sekvenser av tecken fr\xE5n en str\xE4ng. Vi g\xF6r det f\xF6r att\
+  \ rensa data,\u2026"
+lastmod: 2024-02-18 23:08:51.654515
+model: gpt-4-1106-preview
+summary: "Att radera tecken som matchar ett m\xF6nster \xE4r att plocka bort specifika\
+  \ tecken eller sekvenser av tecken fr\xE5n en str\xE4ng. Vi g\xF6r det f\xF6r att\
+  \ rensa data,\u2026"
+title: "Ta bort tecken som matchar ett m\xF6nster"
 ---
 
 {{< edit_this_page >}}

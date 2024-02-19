@@ -1,13 +1,14 @@
 ---
-title:                "Å jobbe med komplekse tall"
 aliases:
 - /no/clojure/working-with-complex-numbers/
-date:                  2024-01-26T04:38:41.961889-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å jobbe med komplekse tall"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/working-with-complex-numbers.md"
+date: 2024-01-26 04:38:41.961889-07:00
+description: "Komplekse tall utvider de reelle tallene med en ekstra del, den imagin\xE6\
+  re enheten 'i'. Programmerere bruker dem i ulike domener, inkludert\u2026"
+lastmod: 2024-02-18 23:08:53.558783
+model: gpt-4-0125-preview
+summary: "Komplekse tall utvider de reelle tallene med en ekstra del, den imagin\xE6\
+  re enheten 'i'. Programmerere bruker dem i ulike domener, inkludert\u2026"
+title: "\xC5 jobbe med komplekse tall"
 ---
 
 {{< edit_this_page >}}

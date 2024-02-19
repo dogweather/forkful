@@ -1,13 +1,14 @@
 ---
-title:                "Utilisation d'une console interactive (REPL)"
 aliases:
 - /fr/clojure/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:13:10.485438-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation d'une console interactive (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:13:10.485438-07:00
+description: "REPL, ou Boucle Lire-\xC9valuer-Afficher, est un environnement de programmation\
+  \ permettant de tester dynamiquement le code Clojure pi\xE8ce par pi\xE8ce. Les\u2026"
+lastmod: 2024-02-18 23:09:08.388504
+model: gpt-4-0125-preview
+summary: "REPL, ou Boucle Lire-\xC9valuer-Afficher, est un environnement de programmation\
+  \ permettant de tester dynamiquement le code Clojure pi\xE8ce par pi\xE8ce. Les\u2026"
+title: Utilisation d'une console interactive (REPL)
 ---
 
 {{< edit_this_page >}}

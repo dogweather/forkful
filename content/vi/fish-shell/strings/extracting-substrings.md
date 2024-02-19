@@ -1,15 +1,20 @@
 ---
-title:                "Trích xuất chuỗi con"
 aliases:
 - /vi/fish-shell/extracting-substrings/
-date:                  2024-01-28T21:59:55.919454-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trích xuất chuỗi con"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/extracting-substrings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:55.919454-07:00
+description: "R\xFAt tr\xEDch chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5y ra c\xE1\
+  c ph\u1EA7n c\u1EE5 th\u1EC3 c\u1EE7a m\u1ED9t chu\u1ED7i. L\u1EADp tr\xECnh vi\xEA\
+  n th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 c\xF4 l\u1EADp d\u1EEF\
+  \ li\u1EC7u, l\xE0m s\u1EA1ch \u0111\u1EA7u v\xE0o, ho\u1EB7c ph\xE2n\u2026"
+lastmod: 2024-02-18 23:08:51.170474
+model: gpt-4-0125-preview
+summary: "R\xFAt tr\xEDch chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5y ra c\xE1\
+  c ph\u1EA7n c\u1EE5 th\u1EC3 c\u1EE7a m\u1ED9t chu\u1ED7i. L\u1EADp tr\xECnh vi\xEA\
+  n th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 c\xF4 l\u1EADp d\u1EEF\
+  \ li\u1EC7u, l\xE0m s\u1EA1ch \u0111\u1EA7u v\xE0o, ho\u1EB7c ph\xE2n\u2026"
+title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 ---
 
 {{< edit_this_page >}}

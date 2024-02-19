@@ -1,13 +1,16 @@
 ---
-title:                "Å jobbe med XML"
 aliases:
 - /no/bash/working-with-xml/
-date:                  2024-01-26T04:27:40.198453-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å jobbe med XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/working-with-xml.md"
+date: 2024-01-26 04:27:40.198453-07:00
+description: "\xC5 jobbe med XML inneb\xE6rer parsing, ekstrahering og manipulering\
+  \ av data i Extensible Markup Language-formatet. Programmere sliter med XML siden\
+  \ det er et\u2026"
+lastmod: 2024-02-18 23:08:54.081634
+model: gpt-4-0125-preview
+summary: "\xC5 jobbe med XML inneb\xE6rer parsing, ekstrahering og manipulering av\
+  \ data i Extensible Markup Language-formatet. Programmere sliter med XML siden det\
+  \ er et\u2026"
+title: "\xC5 jobbe med XML"
 ---
 
 {{< edit_this_page >}}

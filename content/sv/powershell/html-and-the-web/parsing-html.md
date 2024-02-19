@@ -1,14 +1,16 @@
 ---
-title:                "Tolka HTML"
 aliases:
 - /sv/powershell/parsing-html/
-date:                  2024-02-03T19:13:00.178103-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tolka HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:13:00.178103-07:00
+description: "Att analysera HTML med PowerShell handlar om att dissekera HTML-inneh\xE5\
+  ll f\xF6r att extrahera specifika data eller automatisera webbrelaterade uppgifter.\u2026"
+lastmod: 2024-02-18 23:08:52.001792
+model: gpt-4-0125-preview
+summary: "Att analysera HTML med PowerShell handlar om att dissekera HTML-inneh\xE5\
+  ll f\xF6r att extrahera specifika data eller automatisera webbrelaterade uppgifter.\u2026"
+title: Tolka HTML
 ---
 
 {{< edit_this_page >}}

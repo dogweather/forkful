@@ -1,13 +1,15 @@
 ---
-title:                "Extracción de subcadenas"
 aliases:
 - /es/elixir/extracting-substrings/
-date:                  2024-01-20T17:45:30.270259-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extracción de subcadenas"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/extracting-substrings.md"
+date: 2024-01-20 17:45:30.270259-07:00
+description: "Extraer subcadenas es sacar partes espec\xEDficas de un string. Los\
+  \ programadores hacemos esto para manipular y procesar datos de textos como entrada\
+  \ o para\u2026"
+lastmod: 2024-02-18 23:09:09.636690
+model: gpt-4-1106-preview
+summary: "Extraer subcadenas es sacar partes espec\xEDficas de un string. Los programadores\
+  \ hacemos esto para manipular y procesar datos de textos como entrada o para\u2026"
+title: "Extracci\xF3n de subcadenas"
 ---
 
 {{< edit_this_page >}}

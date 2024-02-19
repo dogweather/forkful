@@ -1,14 +1,16 @@
 ---
-title:                "Lavorare con JSON"
 aliases:
 - /it/clojure/working-with-json/
-date:                  2024-02-03T19:22:09.763207-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:22:09.763207-07:00
+description: "Lavorare con il JSON (JavaScript Object Notation) in Clojure comporta\
+  \ l'analisi delle stringhe JSON in strutture dati di Clojure (mappe, vettori) e\u2026"
+lastmod: 2024-02-18 23:08:55.581087
+model: gpt-4-0125-preview
+summary: "Lavorare con il JSON (JavaScript Object Notation) in Clojure comporta l'analisi\
+  \ delle stringhe JSON in strutture dati di Clojure (mappe, vettori) e\u2026"
+title: Lavorare con JSON
 ---
 
 {{< edit_this_page >}}

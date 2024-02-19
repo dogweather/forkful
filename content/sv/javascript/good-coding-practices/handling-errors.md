@@ -1,13 +1,16 @@
 ---
-title:                "Hantering av fel"
 aliases:
 - /sv/javascript/handling-errors/
-date:                  2024-01-26T00:54:40.212050-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Hantering av fel"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/handling-errors.md"
+date: 2024-01-26 00:54:40.212050-07:00
+description: "Felhantering \xE4r hur du hanterar n\xE4r saker g\xE5r snett i din kod.\
+  \ Det \xE4r viktigt eftersom det hj\xE4lper dina program att misslyckas anst\xE4\
+  ndigt och instruerar\u2026"
+lastmod: 2024-02-18 23:08:52.171841
+model: gpt-4-1106-preview
+summary: "Felhantering \xE4r hur du hanterar n\xE4r saker g\xE5r snett i din kod.\
+  \ Det \xE4r viktigt eftersom det hj\xE4lper dina program att misslyckas anst\xE4\
+  ndigt och instruerar\u2026"
+title: Hantering av fel
 ---
 
 {{< edit_this_page >}}

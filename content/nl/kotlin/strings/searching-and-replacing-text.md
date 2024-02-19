@@ -1,15 +1,16 @@
 ---
-title:                "Tekst zoeken en vervangen"
 aliases:
 - /nl/kotlin/searching-and-replacing-text/
-date:                  2024-01-28T22:07:16.730318-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tekst zoeken en vervangen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/kotlin/searching-and-replacing-text.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:07:16.730318-07:00
+description: "Tekst zoeken en vervangen is als verstoppertje spelen met strings, om\
+  \ vervolgens de verstopper te ruilen met iemand anders. Het is een veelvoorkomende\u2026"
+lastmod: 2024-02-18 23:09:01.789087
+model: gpt-4-0125-preview
+summary: "Tekst zoeken en vervangen is als verstoppertje spelen met strings, om vervolgens\
+  \ de verstopper te ruilen met iemand anders. Het is een veelvoorkomende\u2026"
+title: Tekst zoeken en vervangen
 ---
 
 {{< edit_this_page >}}

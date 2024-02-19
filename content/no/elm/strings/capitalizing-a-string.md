@@ -1,14 +1,18 @@
 ---
-title:                "Sette stor bokstav i en streng"
 aliases:
 - /no/elm/capitalizing-a-string/
-date:                  2024-02-03T19:04:55.309989-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sette stor bokstav i en streng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:04:55.309989-07:00
+description: "\xC5 kapitalisere en streng inneb\xE6rer \xE5 omforme det f\xF8rste\
+  \ tegnet i en gitt streng til stor bokstav mens resten holdes i sm\xE5 bokstaver,\
+  \ ofte for\u2026"
+lastmod: 2024-02-18 23:08:53.795141
+model: gpt-4-0125-preview
+summary: "\xC5 kapitalisere en streng inneb\xE6rer \xE5 omforme det f\xF8rste tegnet\
+  \ i en gitt streng til stor bokstav mens resten holdes i sm\xE5 bokstaver, ofte\
+  \ for\u2026"
+title: Sette stor bokstav i en streng
 ---
 
 {{< edit_this_page >}}

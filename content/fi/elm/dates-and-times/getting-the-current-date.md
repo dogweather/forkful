@@ -1,12 +1,15 @@
 ---
-title:                "Nykyisen päivämäärän hankkiminen"
 aliases:
 - /fi/elm/getting-the-current-date/
-date:                  2024-01-20T15:14:14.752219-07:00
-simple_title:         "Nykyisen päivämäärän hankkiminen"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/getting-the-current-date.md"
+date: 2024-01-20 15:14:14.752219-07:00
+description: "Saada nykyinen p\xE4iv\xE4m\xE4\xE4r\xE4 tarkoittaa kellonaikaan sidotun\
+  \ p\xE4iv\xE4m\xE4\xE4r\xE4tiedon hy\xF6dynt\xE4mist\xE4. K\xE4yt\xE4mme t\xE4t\xE4\
+  \ toiminnallisuutta esimerkiksi lokeissa,\u2026"
+lastmod: 2024-02-18 23:09:07.540479
+summary: "Saada nykyinen p\xE4iv\xE4m\xE4\xE4r\xE4 tarkoittaa kellonaikaan sidotun\
+  \ p\xE4iv\xE4m\xE4\xE4r\xE4tiedon hy\xF6dynt\xE4mist\xE4. K\xE4yt\xE4mme t\xE4t\xE4\
+  \ toiminnallisuutta esimerkiksi lokeissa,\u2026"
+title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 ---
 
 {{< edit_this_page >}}

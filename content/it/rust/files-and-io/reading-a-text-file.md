@@ -1,13 +1,14 @@
 ---
-title:                "Lettura di un file di testo"
 aliases:
 - /it/rust/reading-a-text-file/
-date:                  2024-01-20T17:55:26.857450-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lettura di un file di testo"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/reading-a-text-file.md"
+date: 2024-01-20 17:55:26.857450-07:00
+description: "Leggere un file di testo in Rust significa prendere una sequenza di\
+  \ caratteri da un file e usarli nel programma. Lo facciamo principalmente per elaborare\u2026"
+lastmod: 2024-02-18 23:08:55.696975
+model: gpt-4-1106-preview
+summary: "Leggere un file di testo in Rust significa prendere una sequenza di caratteri\
+  \ da un file e usarli nel programma. Lo facciamo principalmente per elaborare\u2026"
+title: Lettura di un file di testo
 ---
 
 {{< edit_this_page >}}

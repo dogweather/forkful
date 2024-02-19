@@ -1,13 +1,15 @@
 ---
-title:                "Å jobbe med XML"
 aliases:
 - /no/clojure/working-with-xml/
-date:                  2024-01-26T04:29:08.275957-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å jobbe med XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/working-with-xml.md"
+date: 2024-01-26 04:29:08.275957-07:00
+description: "XML er et merkespr\xE5k for koding av dokumenter p\xE5 en m\xE5te som\
+  \ er lesbar b\xE5de for mennesker og maskiner. Det er n\xF8kkel i webtjenester,\
+  \ konfigurasjonsfiler\u2026"
+lastmod: 2024-02-18 23:08:53.587840
+model: gpt-4-0125-preview
+summary: "XML er et merkespr\xE5k for koding av dokumenter p\xE5 en m\xE5te som er\
+  \ lesbar b\xE5de for mennesker og maskiner. Det er n\xF8kkel i webtjenester, konfigurasjonsfiler\u2026"
+title: "\xC5 jobbe med XML"
 ---
 
 {{< edit_this_page >}}

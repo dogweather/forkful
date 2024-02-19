@@ -1,14 +1,20 @@
 ---
-title:                "Chuyển đổi một ngày thành chuỗi"
 aliases:
 - /vi/google-apps-script/converting-a-date-into-a-string/
-date:                  2024-02-01T21:51:56.848161-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Chuyển đổi một ngày thành chuỗi"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/google-apps-script/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:56.848161-07:00
+description: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE1ng th\xE0nh chu\u1ED7\
+  i l\xE0 m\u1ED9t nhi\u1EC7m v\u1EE5 c\u01A1 b\u1EA3n gi\xFAp c\xE1c l\u1EADp tr\xEC\
+  nh vi\xEAn c\xF3 th\u1EC3 thao t\xE1c v\xE0 hi\u1EC3n th\u1ECB th\xF4ng tin ng\xE0\
+  y th\xE1ng d\u01B0\u1EDBi d\u1EA1ng c\xF3 th\u1EC3\u2026"
+lastmod: 2024-02-18 23:08:50.233099
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE1ng th\xE0nh chu\u1ED7\
+  i l\xE0 m\u1ED9t nhi\u1EC7m v\u1EE5 c\u01A1 b\u1EA3n gi\xFAp c\xE1c l\u1EADp tr\xEC\
+  nh vi\xEAn c\xF3 th\u1EC3 thao t\xE1c v\xE0 hi\u1EC3n th\u1ECB th\xF4ng tin ng\xE0\
+  y th\xE1ng d\u01B0\u1EDBi d\u1EA1ng c\xF3 th\u1EC3\u2026"
+title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 ---
 
 {{< edit_this_page >}}

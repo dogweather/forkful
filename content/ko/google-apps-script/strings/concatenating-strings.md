@@ -1,14 +1,26 @@
 ---
-title:                "문자열 연결하기"
 aliases:
 - /ko/google-apps-script/concatenating-strings/
-date:                  2024-02-01T21:51:58.211828-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열 연결하기"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/concatenating-strings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:58.211828-07:00
+description: "\uBB38\uC790\uC5F4 \uACB0\uD569\uC740 \uB450 \uAC1C \uC774\uC0C1\uC758\
+  \ \uBB38\uC790\uC5F4\uC744 \uD558\uB098\uC758 \uBB38\uC790\uC5F4\uB85C \uACB0\uD569\
+  \uD558\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB4E4\uC740 \uC774\uB97C \uD1B5\uD574 \uBA54\uC2DC\uC9C0, URL \uB610\uB294 \uC815\
+  \uC801 \uBC0F \uBCC0\uC218 \uB0B4\uC6A9\uC758 \uD63C\uD569\uC774 \uD544\uC694\uD55C\
+  \ \uC5B4\uB5A0\uD55C \uD615\uD0DC\uC758 \uD14D\uC2A4\uD2B8\uB3C4 \uB3D9\uC801\uC73C\
+  \uB85C \uAD6C\uC131\uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:05.541331
+model: gpt-4-0125-preview
+summary: "\uBB38\uC790\uC5F4 \uACB0\uD569\uC740 \uB450 \uAC1C \uC774\uC0C1\uC758 \uBB38\
+  \uC790\uC5F4\uC744 \uD558\uB098\uC758 \uBB38\uC790\uC5F4\uB85C \uACB0\uD569\uD558\
+  \uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\
+  \uC740 \uC774\uB97C \uD1B5\uD574 \uBA54\uC2DC\uC9C0, URL \uB610\uB294 \uC815\uC801\
+  \ \uBC0F \uBCC0\uC218 \uB0B4\uC6A9\uC758 \uD63C\uD569\uC774 \uD544\uC694\uD55C \uC5B4\
+  \uB5A0\uD55C \uD615\uD0DC\uC758 \uD14D\uC2A4\uD2B8\uB3C4 \uB3D9\uC801\uC73C\uB85C\
+  \ \uAD6C\uC131\uD569\uB2C8\uB2E4."
+title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

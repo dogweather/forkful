@@ -1,14 +1,17 @@
 ---
-title:                "Håndtering av feil"
 aliases:
 - /no/vba/handling-errors/
-date:                  2024-02-01T21:55:09.398041-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Håndtering av feil"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/vba/handling-errors.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:09.398041-07:00
+description: "Feilh\xE5ndtering i Visual Basic for Applications (VBA) refererer til\
+  \ prosessen med \xE5 forutse, oppdage og l\xF8se programmerings-, applikasjons-\
+  \ eller\u2026"
+lastmod: 2024-02-18 23:08:53.736099
+model: gpt-4-0125-preview
+summary: "Feilh\xE5ndtering i Visual Basic for Applications (VBA) refererer til prosessen\
+  \ med \xE5 forutse, oppdage og l\xF8se programmerings-, applikasjons- eller\u2026"
+title: "H\xE5ndtering av feil"
 ---
 
 {{< edit_this_page >}}

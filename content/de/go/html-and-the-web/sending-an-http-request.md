@@ -1,14 +1,16 @@
 ---
-title:                "Eine HTTP-Anforderung senden"
 aliases:
 - /de/go/sending-an-http-request/
-date:                  2024-02-03T18:08:36.179364-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eine HTTP-Anforderung senden"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/sending-an-http-request.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:36.179364-07:00
+description: "Das Senden einer HTTP-Anfrage beinhaltet, dass von Ihrer Go-Anwendung\
+  \ ein Aufruf zu einem Webserver, einer API oder einem anderen HTTP-basierten Dienst\u2026"
+lastmod: 2024-02-18 23:09:04.359814
+model: gpt-4-0125-preview
+summary: "Das Senden einer HTTP-Anfrage beinhaltet, dass von Ihrer Go-Anwendung ein\
+  \ Aufruf zu einem Webserver, einer API oder einem anderen HTTP-basierten Dienst\u2026"
+title: Eine HTTP-Anforderung senden
 ---
 
 {{< edit_this_page >}}

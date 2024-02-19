@@ -1,13 +1,14 @@
 ---
-title:                "Zahlen runden"
 aliases:
 - /de/java/rounding-numbers/
-date:                  2024-01-26T03:44:55.168734-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zahlen runden"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/rounding-numbers.md"
+date: 2024-01-26 03:44:55.168734-07:00
+description: "Zahlen runden bedeutet, sie an einen bestimmten Genauigkeitsgrad anzupassen.\
+  \ Programmierer tun dies, um Zahlen f\xFCr die Lesbarkeit zu vereinfachen,\u2026"
+lastmod: 2024-02-18 23:09:04.731634
+model: gpt-4-0125-preview
+summary: "Zahlen runden bedeutet, sie an einen bestimmten Genauigkeitsgrad anzupassen.\
+  \ Programmierer tun dies, um Zahlen f\xFCr die Lesbarkeit zu vereinfachen,\u2026"
+title: Zahlen runden
 ---
 
 {{< edit_this_page >}}

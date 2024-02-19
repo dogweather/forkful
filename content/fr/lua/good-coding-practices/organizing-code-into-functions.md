@@ -1,13 +1,16 @@
 ---
-title:                "Organisation du code en fonctions"
 aliases:
 - /fr/lua/organizing-code-into-functions/
-date:                  2024-01-26T01:11:19.016616-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organisation du code en fonctions"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/lua/organizing-code-into-functions.md"
+date: 2024-01-26 01:11:19.016616-07:00
+description: "Organiser son code en fonctions, c'est fractionner le script en morceaux\
+  \ digestes\u2014comme des blocs LEGO fonctionnels. On le fait pour la clart\xE9\
+  , la\u2026"
+lastmod: 2024-02-18 23:09:08.975672
+model: gpt-4-1106-preview
+summary: "Organiser son code en fonctions, c'est fractionner le script en morceaux\
+  \ digestes\u2014comme des blocs LEGO fonctionnels. On le fait pour la clart\xE9\
+  , la\u2026"
+title: Organisation du code en fonctions
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Viết hoa một chuỗi"
 aliases:
 - /vi/elixir/capitalizing-a-string/
-date:                  2024-01-28T21:56:45.722289-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Viết hoa một chuỗi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/capitalizing-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:45.722289-07:00
+description: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i t\u1EE9c l\xE0 l\xE0m cho\
+  \ ch\u1EEF c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a m\u1ED9t chu\u1ED7i cho tr\u01B0\
+  \u1EDBc tr\u1EDF th\xE0nh ch\u1EEF hoa \u2014 n\u1EBFu \u0111\xF3 l\xE0 m\u1ED9\
+  t ch\u1EEF c\xE1i. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c\u2026"
+lastmod: 2024-02-18 23:08:50.342383
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i t\u1EE9c l\xE0 l\xE0m cho ch\u1EEF\
+  \ c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a m\u1ED9t chu\u1ED7i cho tr\u01B0\u1EDBc\
+  \ tr\u1EDF th\xE0nh ch\u1EEF hoa \u2014 n\u1EBFu \u0111\xF3 l\xE0 m\u1ED9t ch\u1EEF\
+  \ c\xE1i. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c\u2026"
+title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 ---
 
 {{< edit_this_page >}}

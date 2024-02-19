@@ -1,13 +1,14 @@
 ---
-title:                "Fehlerbehandlung"
 aliases:
 - /de/ruby/handling-errors/
-date:                  2024-01-26T00:57:03.472496-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Fehlerbehandlung"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/handling-errors.md"
+date: 2024-01-26 00:57:03.472496-07:00
+description: "Fehlerbehandlung geht darum, in Codes das Unerwartete zu erwarten \u2013\
+  \ Fehler und Probleme anmutig zu managen, ohne dass das Programm abst\xFCrzt. Entwickler\u2026"
+lastmod: 2024-02-18 23:09:05.431190
+model: gpt-4-1106-preview
+summary: "Fehlerbehandlung geht darum, in Codes das Unerwartete zu erwarten \u2013\
+  \ Fehler und Probleme anmutig zu managen, ohne dass das Programm abst\xFCrzt. Entwickler\u2026"
+title: Fehlerbehandlung
 ---
 
 {{< edit_this_page >}}

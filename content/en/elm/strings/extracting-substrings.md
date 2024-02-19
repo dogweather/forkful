@@ -1,13 +1,14 @@
 ---
-title:                "Extracting substrings"
 aliases:
 - /en/elm/extracting-substrings/
-date:                  2024-01-20T17:45:34.263238-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extracting substrings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/extracting-substrings.md"
+date: 2024-01-20 17:45:34.263238-07:00
+description: Extracting substrings means pulling specific parts out of a string. Programmers
+  do it to isolate, manipulate, or analyze pieces of text data.
+lastmod: 2024-02-18 23:09:10.961198
+model: gpt-4-1106-preview
+summary: Extracting substrings means pulling specific parts out of a string. Programmers
+  do it to isolate, manipulate, or analyze pieces of text data.
+title: Extracting substrings
 ---
 
 {{< edit_this_page >}}

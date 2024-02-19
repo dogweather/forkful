@@ -1,13 +1,16 @@
 ---
-title:                "Å bruke en feilsøker"
 aliases:
 - /no/cpp/using-a-debugger/
-date:                  2024-01-26T03:48:08.619722-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å bruke en feilsøker"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/using-a-debugger.md"
+date: 2024-01-26 03:48:08.619722-07:00
+description: "\xC5 bruke en debugger betyr \xE5 starte et verkt\xF8y som lar deg kikke\
+  \ inn i ditt kj\xF8rende program for \xE5 forst\xE5 hva som egentlig skjer. Programmere\
+  \ gj\xF8r dette\u2026"
+lastmod: 2024-02-18 23:08:54.196729
+model: gpt-4-0125-preview
+summary: "\xC5 bruke en debugger betyr \xE5 starte et verkt\xF8y som lar deg kikke\
+  \ inn i ditt kj\xF8rende program for \xE5 forst\xE5 hva som egentlig skjer. Programmere\
+  \ gj\xF8r dette\u2026"
+title: "\xC5 bruke en feils\xF8ker"
 ---
 
 {{< edit_this_page >}}

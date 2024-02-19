@@ -1,13 +1,16 @@
 ---
-title:                "Interaktiivisen komentotulkin (REPL) käyttö"
 aliases:
 - /fi/rust/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:18:21.115907-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interaktiivisen komentotulkin (REPL) käyttö"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:18:21.115907-07:00
+description: "Rustin interaktiivinen kuori eli REPL (Lue-Arvo-Tulosta-Silmukka) mahdollistaa\
+  \ Rust-koodin suorittamisen lennossa, tarjoten v\xE4litt\xF6mi\xE4 tuloksia, mik\xE4\
+  \ on\u2026"
+lastmod: 2024-02-18 23:09:07.365541
+model: gpt-4-0125-preview
+summary: "Rustin interaktiivinen kuori eli REPL (Lue-Arvo-Tulosta-Silmukka) mahdollistaa\
+  \ Rust-koodin suorittamisen lennossa, tarjoten v\xE4litt\xF6mi\xE4 tuloksia, mik\xE4\
+  \ on\u2026"
+title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

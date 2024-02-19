@@ -1,14 +1,18 @@
 ---
-title:                "Capitalizando una cadena de texto"
 aliases:
 - /es/c-sharp/capitalizing-a-string/
-date:                  2024-02-03T19:05:06.106282-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizando una cadena de texto"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:06.106282-07:00
+description: "Capitalizar una cadena en C# implica convertir el primer car\xE1cter\
+  \ de una cadena a may\xFAsculas si ya no lo est\xE1. Esta alteraci\xF3n puede ser\
+  \ crucial para\u2026"
+lastmod: 2024-02-18 23:09:09.964019
+model: gpt-4-0125-preview
+summary: "Capitalizar una cadena en C# implica convertir el primer car\xE1cter de\
+  \ una cadena a may\xFAsculas si ya no lo est\xE1. Esta alteraci\xF3n puede ser crucial\
+  \ para\u2026"
+title: Capitalizando una cadena de texto
 ---
 
 {{< edit_this_page >}}

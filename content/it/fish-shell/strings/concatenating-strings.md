@@ -1,13 +1,14 @@
 ---
-title:                "Concatenazione di stringhe"
 aliases:
 - /it/fish-shell/concatenating-strings/
-date:                  2024-01-20T17:34:54.029043-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenazione di stringhe"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/concatenating-strings.md"
+date: 2024-01-20 17:34:54.029043-07:00
+description: "Concatenare le stringhe significa unirle fine a fine. I programmatori\
+  \ lo fanno per creare messaggi, comandi, o per manipolare dati che devono essere\u2026"
+lastmod: 2024-02-18 23:08:56.285856
+model: gpt-4-1106-preview
+summary: "Concatenare le stringhe significa unirle fine a fine. I programmatori lo\
+  \ fanno per creare messaggi, comandi, o per manipolare dati che devono essere\u2026"
+title: Concatenazione di stringhe
 ---
 
 {{< edit_this_page >}}

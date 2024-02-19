@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng bộ gỡ lỗi"
 aliases:
 - /vi/typescript/using-a-debugger/
-date:                  2024-01-28T22:10:19.502320-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng bộ gỡ lỗi"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/typescript/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:19.502320-07:00
+description: "M\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i l\xE0 c\xF4ng c\u1EE5 cho ph\xE9\
+  p b\u1EA1n xem x\xE9t v\xE0 thay \u0111\u1ED5i n\u1ED9i dung b\xEAn trong m\xE3\
+  \ c\u1EE7a m\xECnh khi n\xF3 \u0111ang ch\u1EA1y. L\u1EADp tr\xECnh vi\xEAn s\u1EED\
+  \ d\u1EE5ng n\xF3 \u0111\u1EC3 t\xECm v\xE0 lo\u1EA1i b\u1ECF\u2026"
+lastmod: 2024-02-18 23:08:50.420386
+model: gpt-4-0125-preview
+summary: "M\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i l\xE0 c\xF4ng c\u1EE5 cho ph\xE9p b\u1EA1\
+  n xem x\xE9t v\xE0 thay \u0111\u1ED5i n\u1ED9i dung b\xEAn trong m\xE3 c\u1EE7a\
+  \ m\xECnh khi n\xF3 \u0111ang ch\u1EA1y. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5\
+  ng n\xF3 \u0111\u1EC3 t\xECm v\xE0 lo\u1EA1i b\u1ECF\u2026"
+title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

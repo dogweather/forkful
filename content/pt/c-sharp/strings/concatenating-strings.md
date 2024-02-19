@@ -1,13 +1,14 @@
 ---
-title:                "Concatenando strings"
 aliases:
 - /pt/c-sharp/concatenating-strings/
-date:                  2024-01-20T17:34:38.280980-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenando strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/concatenating-strings.md"
+date: 2024-01-20 17:34:38.280980-07:00
+description: "Concatenar strings significa juntar duas ou mais sequ\xEAncias de caracteres\
+  \ em uma s\xF3. Programadores fazem isso para construir mensagens, caminhos de\u2026"
+lastmod: 2024-02-18 23:08:58.149605
+model: gpt-4-1106-preview
+summary: "Concatenar strings significa juntar duas ou mais sequ\xEAncias de caracteres\
+  \ em uma s\xF3. Programadores fazem isso para construir mensagens, caminhos de\u2026"
+title: Concatenando strings
 ---
 
 {{< edit_this_page >}}

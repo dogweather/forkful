@@ -1,14 +1,28 @@
 ---
-title:                "YAML로 작업하기"
 aliases:
 - /ko/c/working-with-yaml/
-date:                  2024-02-03T18:13:34.822859-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "YAML로 작업하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:13:34.822859-07:00
+description: "\"YAML Ain't Markup Language\"\uC758 \uC57D\uC790\uC778 YAML\uC740 \uBAA8\
+  \uB4E0 \uC885\uB958\uC758 \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC5D0 \uC0AC\uC6A9\
+  \uD560 \uC218 \uC788\uB294 \uC778\uAC04\uC774 \uC77D\uC744 \uC218 \uC788\uB294 \uB370\
+  \uC774\uD130 \uC9C1\uB82C\uD654 \uD45C\uC900\uC774\uBA70, \uC124\uC815 \uD30C\uC77C\
+  \uBD80\uD130 \uB370\uC774\uD130 \uC800\uC7A5\uAE4C\uC9C0 \uB2E4\uC591\uD55C \uC6A9\
+  \uB3C4\uB85C \uC0AC\uC6A9\uB429\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\
+  \uC740 \uC124\uC815 \uD30C\uC77C\uC774\uB098 \uC5B8\uC5B4 \uBC0F \uC2DC\uC2A4\uD15C\
+  \ \uAC04\uC758 \uB370\uC774\uD130\u2026"
+lastmod: 2024-02-18 23:09:06.988529
+model: gpt-4-0125-preview
+summary: "\"YAML Ain't Markup Language\"\uC758 \uC57D\uC790\uC778 YAML\uC740 \uBAA8\
+  \uB4E0 \uC885\uB958\uC758 \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC5D0 \uC0AC\uC6A9\
+  \uD560 \uC218 \uC788\uB294 \uC778\uAC04\uC774 \uC77D\uC744 \uC218 \uC788\uB294 \uB370\
+  \uC774\uD130 \uC9C1\uB82C\uD654 \uD45C\uC900\uC774\uBA70, \uC124\uC815 \uD30C\uC77C\
+  \uBD80\uD130 \uB370\uC774\uD130 \uC800\uC7A5\uAE4C\uC9C0 \uB2E4\uC591\uD55C \uC6A9\
+  \uB3C4\uB85C \uC0AC\uC6A9\uB429\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\
+  \uC740 \uC124\uC815 \uD30C\uC77C\uC774\uB098 \uC5B8\uC5B4 \uBC0F \uC2DC\uC2A4\uD15C\
+  \ \uAC04\uC758 \uB370\uC774\uD130\u2026"
+title: "YAML\uB85C \uC791\uC5C5\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Rounding numbers"
 aliases:
 - /en/java/rounding-numbers/
-date:                  2024-01-25T03:00:12.757467-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rounding numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/rounding-numbers.md"
+date: 2024-01-25 03:00:12.757467-07:00
+description: "Rounding numbers means adjusting them to a specified degree of precision.\
+  \ Programmers do it to simplify numbers for readability, to meet certain\u2026"
+lastmod: 2024-02-18 23:09:10.926042
+model: gpt-4-1106-preview
+summary: "Rounding numbers means adjusting them to a specified degree of precision.\
+  \ Programmers do it to simplify numbers for readability, to meet certain\u2026"
+title: Rounding numbers
 ---
 
 {{< edit_this_page >}}

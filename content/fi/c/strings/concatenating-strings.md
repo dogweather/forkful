@@ -1,14 +1,18 @@
 ---
-title:                "Merkkijonojen yhdistäminen"
 aliases:
 - /fi/c/concatenating-strings/
-date:                  2024-02-03T17:54:23.901510-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonojen yhdistäminen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/concatenating-strings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:23.901510-07:00
+description: "Merkkijonojen yhdist\xE4minen C-kieless\xE4 tarkoittaa kahden tai useamman\
+  \ merkkijonon liitt\xE4mist\xE4 per\xE4kk\xE4in uuden merkkijonon muodostamiseksi.\
+  \ Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:08.122701
+model: gpt-4-0125-preview
+summary: "Merkkijonojen yhdist\xE4minen C-kieless\xE4 tarkoittaa kahden tai useamman\
+  \ merkkijonon liitt\xE4mist\xE4 per\xE4kk\xE4in uuden merkkijonon muodostamiseksi.\
+  \ Ohjelmoijat\u2026"
+title: "Merkkijonojen yhdist\xE4minen"
 ---
 
 {{< edit_this_page >}}

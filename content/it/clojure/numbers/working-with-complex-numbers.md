@@ -1,13 +1,15 @@
 ---
-title:                "Lavorare con i numeri complessi"
 aliases:
 - /it/clojure/working-with-complex-numbers/
-date:                  2024-01-26T04:39:10.955177-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con i numeri complessi"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/working-with-complex-numbers.md"
+date: 2024-01-26 04:39:10.955177-07:00
+description: "I numeri complessi estendono i numeri reali con una parte aggiuntiva,\
+  \ l'unit\xE0 immaginaria 'i'. I programmatori li utilizzano in vari ambiti, tra\
+  \ cui\u2026"
+lastmod: 2024-02-18 23:08:55.555306
+model: gpt-4-0125-preview
+summary: "I numeri complessi estendono i numeri reali con una parte aggiuntiva, l'unit\xE0\
+  \ immaginaria 'i'. I programmatori li utilizzano in vari ambiti, tra cui\u2026"
+title: Lavorare con i numeri complessi
 ---
 
 {{< edit_this_page >}}

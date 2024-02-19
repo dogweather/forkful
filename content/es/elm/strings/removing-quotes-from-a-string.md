@@ -1,13 +1,14 @@
 ---
-title:                "Eliminando comillas de una cadena"
 aliases:
 - /es/elm/removing-quotes-from-a-string/
-date:                  2024-01-26T03:38:42.166447-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eliminando comillas de una cadena"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:38:42.166447-07:00
+description: "Eliminar comillas de una cadena significa quitar esos signos de comillas\
+  \ dobles o simples adicionales que en realidad no necesitas en el texto procesado.\u2026"
+lastmod: 2024-02-18 23:09:09.877651
+model: gpt-4-0125-preview
+summary: "Eliminar comillas de una cadena significa quitar esos signos de comillas\
+  \ dobles o simples adicionales que en realidad no necesitas en el texto procesado.\u2026"
+title: Eliminando comillas de una cadena
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Een tijdelijk bestand aanmaken"
 aliases:
 - /nl/google-apps-script/creating-a-temporary-file/
-date:                  2024-02-01T21:51:58.644457-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tijdelijk bestand aanmaken"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/google-apps-script/creating-a-temporary-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:58.644457-07:00
+description: "Het cre\xEBren van een tijdelijk bestand in Google Apps Script houdt\
+  \ in dat je een bestand genereert dat bedoeld is voor kortstondig gebruik, doorgaans\
+  \ voor\u2026"
+lastmod: 2024-02-18 23:09:01.407799
+model: gpt-4-0125-preview
+summary: "Het cre\xEBren van een tijdelijk bestand in Google Apps Script houdt in\
+  \ dat je een bestand genereert dat bedoeld is voor kortstondig gebruik, doorgaans\
+  \ voor\u2026"
+title: Een tijdelijk bestand aanmaken
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Conversion d'une date en chaîne de caractères"
 aliases:
 - /fr/ruby/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:15.489083-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Conversion d'une date en chaîne de caractères"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:15.489083-07:00
+description: "Transformer une date en cha\xEEne de caract\xE8res, c'est convertir\
+  \ un objet Date en une repr\xE9sentation textuelle. Les d\xE9veloppeurs le font\
+  \ pour l'affichage \xE0\u2026"
+lastmod: 2024-02-18 23:09:09.419896
+model: gpt-4-1106-preview
+summary: "Transformer une date en cha\xEEne de caract\xE8res, c'est convertir un objet\
+  \ Date en une repr\xE9sentation textuelle. Les d\xE9veloppeurs le font pour l'affichage\
+  \ \xE0\u2026"
+title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

@@ -1,12 +1,14 @@
 ---
-title:                "Writing tests"
 aliases:
 - /en/elixir/writing-tests/
-date:                  2024-02-03T19:03:26.395083-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Writing tests"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/writing-tests.md"
+date: 2024-02-03 19:03:26.395083-07:00
+description: "Writing tests in Elixir involves creating automated scripts to validate\
+  \ the behavior of your code. Programmers do this to assure quality, prevent\u2026"
+lastmod: 2024-02-18 23:09:10.769187
+model: gpt-4-0125-preview
+summary: "Writing tests in Elixir involves creating automated scripts to validate\
+  \ the behavior of your code. Programmers do this to assure quality, prevent\u2026"
+title: Writing tests
 ---
 
 {{< edit_this_page >}}

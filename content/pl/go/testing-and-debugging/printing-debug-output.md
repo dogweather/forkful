@@ -1,14 +1,18 @@
 ---
-title:                "Drukowanie komunikatów debugowania"
 aliases:
 - /pl/go/printing-debug-output/
-date:                  2024-02-03T18:05:27.073231-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Drukowanie komunikatów debugowania"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/printing-debug-output.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:27.073231-07:00
+description: "W programowaniu komputerowym \"Drukowanie wyj\u015Bcia debugowania\"\
+  \ polega na produkowaniu szczeg\xF3\u0142owych komunikat\xF3w informacyjnych, kt\xF3\
+  re pomagaj\u0105 programistom\u2026"
+lastmod: 2024-02-18 23:08:49.100982
+model: gpt-4-0125-preview
+summary: "W programowaniu komputerowym \"Drukowanie wyj\u015Bcia debugowania\" polega\
+  \ na produkowaniu szczeg\xF3\u0142owych komunikat\xF3w informacyjnych, kt\xF3re\
+  \ pomagaj\u0105 programistom\u2026"
+title: "Drukowanie komunikat\xF3w debugowania"
 ---
 
 {{< edit_this_page >}}

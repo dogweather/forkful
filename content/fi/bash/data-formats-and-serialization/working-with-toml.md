@@ -1,13 +1,14 @@
 ---
-title:                "Työskentely TOML:n kanssa"
 aliases:
 - /fi/bash/working-with-toml/
-date:                  2024-01-26T04:18:49.103858-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely TOML:n kanssa"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/working-with-toml.md"
+date: 2024-01-26 04:18:49.103858-07:00
+description: "TOML, lyhenne sanoista Tom's Obvious, Minimal Language, on datan serialisointiformaatti.\
+  \ Ohjelmoijat diggaavat sit\xE4 sen yksinkertaisuuden ja luettavuuden\u2026"
+lastmod: 2024-02-18 23:09:07.829966
+model: gpt-4-0125-preview
+summary: "TOML, lyhenne sanoista Tom's Obvious, Minimal Language, on datan serialisointiformaatti.\
+  \ Ohjelmoijat diggaavat sit\xE4 sen yksinkertaisuuden ja luettavuuden\u2026"
+title: "Ty\xF6skentely TOML:n kanssa"
 ---
 
 {{< edit_this_page >}}

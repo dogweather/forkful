@@ -1,13 +1,16 @@
 ---
-title:                "Creazione di un file temporaneo"
 aliases:
 - /it/haskell/creating-a-temporary-file/
-date:                  2024-01-20T17:40:24.022202-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Creazione di un file temporaneo"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:24.022202-07:00
+description: "Creare un file temporaneo significa generare un file per uso temporaneo,\
+  \ di solito destinato a contenere dati che servono solo durante l'esecuzione di\
+  \ un\u2026"
+lastmod: 2024-02-18 23:08:55.948604
+model: gpt-4-1106-preview
+summary: "Creare un file temporaneo significa generare un file per uso temporaneo,\
+  \ di solito destinato a contenere dati che servono solo durante l'esecuzione di\
+  \ un\u2026"
+title: Creazione di un file temporaneo
 ---
 
 {{< edit_this_page >}}

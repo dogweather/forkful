@@ -1,14 +1,18 @@
 ---
-title:                "Kontrollera om en katalog existerar"
 aliases:
 - /sv/powershell/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:13.191332-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kontrollera om en katalog existerar"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:13.191332-07:00
+description: "I PowerShell \xE4r kontrollen om en katalog finns en vanlig uppgift\
+  \ som hj\xE4lper skript att fatta beslut baserat p\xE5 filsystemets struktur\u2014\
+  till exempel f\xF6r att\u2026"
+lastmod: 2024-02-18 23:08:52.017914
+model: gpt-4-0125-preview
+summary: "I PowerShell \xE4r kontrollen om en katalog finns en vanlig uppgift som\
+  \ hj\xE4lper skript att fatta beslut baserat p\xE5 filsystemets struktur\u2014till\
+  \ exempel f\xF6r att\u2026"
+title: Kontrollera om en katalog existerar
 ---
 
 {{< edit_this_page >}}

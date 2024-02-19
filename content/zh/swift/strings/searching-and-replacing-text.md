@@ -1,14 +1,21 @@
 ---
-title:                "搜索和替换文本"
 aliases:
 - /zh/swift/searching-and-replacing-text/
-date:                  2024-01-20T17:58:50.671069-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "搜索和替换文本"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:50.671069-07:00
+description: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C\uFF0C\u987E\u540D\u601D\u4E49\
+  \uFF0C\u5C31\u662F\u5728\u5B57\u7B26\u4E32\u4E2D\u5BFB\u627E\u7279\u5B9A\u7684\u5185\
+  \u5BB9\u5E76\u7528\u5176\u4ED6\u5185\u5BB9\u66FF\u4EE3\u3002\u7A0B\u5E8F\u5458\u8FD9\
+  \u4E48\u505A\u4E3B\u8981\u662F\u4E3A\u4E86\u81EA\u52A8\u5316\u5730\u4FEE\u6539\u4EE3\
+  \u7801\u3001\u914D\u7F6E\u6587\u4EF6\u6216\u4EFB\u4F55\u6587\u672C\u6570\u636E\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.429339
+model: gpt-4-1106-preview
+summary: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C\uFF0C\u987E\u540D\u601D\u4E49\
+  \uFF0C\u5C31\u662F\u5728\u5B57\u7B26\u4E32\u4E2D\u5BFB\u627E\u7279\u5B9A\u7684\u5185\
+  \u5BB9\u5E76\u7528\u5176\u4ED6\u5185\u5BB9\u66FF\u4EE3\u3002\u7A0B\u5E8F\u5458\u8FD9\
+  \u4E48\u505A\u4E3B\u8981\u662F\u4E3A\u4E86\u81EA\u52A8\u5316\u5730\u4FEE\u6539\u4EE3\
+  \u7801\u3001\u914D\u7F6E\u6587\u4EF6\u6216\u4EFB\u4F55\u6587\u672C\u6570\u636E\u3002"
+title: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C"
 ---
 
 {{< edit_this_page >}}

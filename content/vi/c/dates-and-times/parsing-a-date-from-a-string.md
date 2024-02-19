@@ -1,14 +1,20 @@
 ---
-title:                "Phân tích ngày tháng từ một chuỗi"
 aliases:
 - /vi/c/parsing-a-date-from-a-string/
-date:                  2024-02-03T18:05:44.325563-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Phân tích ngày tháng từ một chuỗi"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:44.325563-07:00
+description: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y t\u1EEB chu\u1ED7i trong C li\xEA\
+  n quan \u0111\u1EBFn vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i c\xE1c bi\u1EC3u di\u1EC5\
+  n v\u0103n b\u1EA3n c\u1EE7a ng\xE0y th\xE0nh \u0111\u1ECBnh d\u1EA1ng m\xE0 ch\u01B0\
+  \u01A1ng tr\xECnh c\xF3 th\u1EC3 thao t\xE1c v\xE0\u2026"
+lastmod: 2024-02-18 23:08:51.245145
+model: gpt-4-0125-preview
+summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y t\u1EEB chu\u1ED7i trong C li\xEA\
+  n quan \u0111\u1EBFn vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i c\xE1c bi\u1EC3u di\u1EC5\
+  n v\u0103n b\u1EA3n c\u1EE7a ng\xE0y th\xE0nh \u0111\u1ECBnh d\u1EA1ng m\xE0 ch\u01B0\
+  \u01A1ng tr\xECnh c\xF3 th\u1EC3 thao t\xE1c v\xE0\u2026"
+title: "Ph\xE2n t\xEDch ng\xE0y th\xE1ng t\u1EEB m\u1ED9t chu\u1ED7i"
 ---
 
 {{< edit_this_page >}}

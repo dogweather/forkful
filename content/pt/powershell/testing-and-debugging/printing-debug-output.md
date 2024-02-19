@@ -1,13 +1,16 @@
 ---
-title:                "Exibindo saídas de depuração"
 aliases:
 - /pt/powershell/printing-debug-output/
-date:                  2024-01-20T17:53:24.489868-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Exibindo saídas de depuração"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/powershell/printing-debug-output.md"
+date: 2024-01-20 17:53:24.489868-07:00
+description: "Depurar \xE9 como procurar uma agulha no palheiro: voc\xEA precisa ver\
+  \ o que seu c\xF3digo est\xE1 realmente fazendo. Programadores imprimem mensagens\
+  \ de depura\xE7\xE3o\u2026"
+lastmod: 2024-02-18 23:08:58.371331
+model: gpt-4-1106-preview
+summary: "Depurar \xE9 como procurar uma agulha no palheiro: voc\xEA precisa ver o\
+  \ que seu c\xF3digo est\xE1 realmente fazendo. Programadores imprimem mensagens\
+  \ de depura\xE7\xE3o\u2026"
+title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

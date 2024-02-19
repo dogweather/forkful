@@ -1,14 +1,18 @@
 ---
-title:                "Travailler avec JSON"
 aliases:
 - /fr/arduino/working-with-json/
-date:                  2024-02-03T19:21:37.470979-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Travailler avec JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:21:37.470979-07:00
+description: "JSON, ou JavaScript Object Notation, est un format l\xE9ger d'\xE9change\
+  \ de donn\xE9es, ce qui le rend parfait pour le stockage de donn\xE9es ou les fichiers\
+  \ de\u2026"
+lastmod: 2024-02-18 23:09:09.138241
+model: gpt-4-0125-preview
+summary: "JSON, ou JavaScript Object Notation, est un format l\xE9ger d'\xE9change\
+  \ de donn\xE9es, ce qui le rend parfait pour le stockage de donn\xE9es ou les fichiers\
+  \ de\u2026"
+title: Travailler avec JSON
 ---
 
 {{< edit_this_page >}}

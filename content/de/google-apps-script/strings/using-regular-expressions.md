@@ -1,14 +1,17 @@
 ---
-title:                "Reguläre Ausdrücke verwenden"
 aliases:
 - /de/google-apps-script/using-regular-expressions/
-date:                  2024-02-01T22:04:32.744356-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Reguläre Ausdrücke verwenden"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/google-apps-script/using-regular-expressions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:32.744356-07:00
+description: "Regul\xE4re Ausdr\xFCcke (regex) sind Muster, die verwendet werden,\
+  \ um Zeichenkombinationen in Zeichenketten zu finden. Programmierer nutzen sie zum\
+  \ Suchen,\u2026"
+lastmod: 2024-02-18 23:09:04.401554
+model: gpt-4-0125-preview
+summary: "Regul\xE4re Ausdr\xFCcke (regex) sind Muster, die verwendet werden, um Zeichenkombinationen\
+  \ in Zeichenketten zu finden. Programmierer nutzen sie zum Suchen,\u2026"
+title: "Regul\xE4re Ausdr\xFCcke verwenden"
 ---
 
 {{< edit_this_page >}}

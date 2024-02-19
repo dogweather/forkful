@@ -1,13 +1,16 @@
 ---
-title:                "Interpolering av en streng"
 aliases:
 - /no/lua/interpolating-a-string/
-date:                  2024-01-20T17:51:33.588686-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolering av en streng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/lua/interpolating-a-string.md"
+date: 2024-01-20 17:51:33.588686-07:00
+description: "Interpolering av en streng involverer \xE5 sette inn verdier inn i en\
+  \ fast tekststreng. Programmerere gj\xF8r dette for \xE5 dynamisk generere tekst,\
+  \ for eksempel\u2026"
+lastmod: 2024-02-18 23:08:54.002413
+model: gpt-4-1106-preview
+summary: "Interpolering av en streng involverer \xE5 sette inn verdier inn i en fast\
+  \ tekststreng. Programmerere gj\xF8r dette for \xE5 dynamisk generere tekst, for\
+  \ eksempel\u2026"
+title: Interpolering av en streng
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Rejestrowanie zdarzeń"
 aliases:
 - /pl/arduino/logging/
-date:                  2024-01-26T00:59:29.046283-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rejestrowanie zdarzeń"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/logging.md"
+date: 2024-01-26 00:59:29.046283-07:00
+description: "\"Logowanie\" to tworzenie zapisu wydarze\u0144, transakcji lub dzia\u0142\
+  a\u0144, kt\xF3re maj\u0105 miejsce w czasie w systemie. Programi\u015Bci u\u017C\
+  ywaj\u0105 go do debugowania,\u2026"
+lastmod: 2024-02-18 23:08:49.875504
+model: gpt-4-1106-preview
+summary: "\"Logowanie\" to tworzenie zapisu wydarze\u0144, transakcji lub dzia\u0142\
+  a\u0144, kt\xF3re maj\u0105 miejsce w czasie w systemie. Programi\u015Bci u\u017C\
+  ywaj\u0105 go do debugowania,\u2026"
+title: "Rejestrowanie zdarze\u0144"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Pobieranie strony internetowej"
 aliases:
 - /pl/elm/downloading-a-web-page/
-date:                  2024-01-20T17:43:48.546941-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Pobieranie strony internetowej"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/downloading-a-web-page.md"
+date: 2024-01-20 17:43:48.546941-07:00
+description: "Pobranie strony internetowej to proces \u015Bci\u0105gania tre\u015B\
+  ci ze zdalnego serwera. Programi\u015Bci robi\u0105 to, aby przetwarza\u0107 dane,\
+  \ pobiera\u0107 aktualizacje lub\u2026"
+lastmod: 2024-02-18 23:08:49.517747
+model: gpt-4-1106-preview
+summary: "Pobranie strony internetowej to proces \u015Bci\u0105gania tre\u015Bci ze\
+  \ zdalnego serwera. Programi\u015Bci robi\u0105 to, aby przetwarza\u0107 dane, pobiera\u0107\
+  \ aktualizacje lub\u2026"
+title: Pobieranie strony internetowej
 ---
 
 {{< edit_this_page >}}

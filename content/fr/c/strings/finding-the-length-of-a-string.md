@@ -1,14 +1,17 @@
 ---
-title:                "Trouver la longueur d'une chaîne"
 aliases:
 - /fr/c/finding-the-length-of-a-string/
-date:                  2024-02-03T17:56:23.721096-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trouver la longueur d'une chaîne"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:23.721096-07:00
+description: "Trouver la longueur d'une cha\xEEne en C revient \xE0 d\xE9terminer\
+  \ le nombre de caract\xE8res avant le terminateur nul `\\0`. Les programmeurs font\
+  \ cela pour\u2026"
+lastmod: 2024-02-18 23:09:09.344375
+model: gpt-4-0125-preview
+summary: "Trouver la longueur d'une cha\xEEne en C revient \xE0 d\xE9terminer le nombre\
+  \ de caract\xE8res avant le terminateur nul `\\0`. Les programmeurs font cela pour\u2026"
+title: "Trouver la longueur d'une cha\xEEne"
 ---
 
 {{< edit_this_page >}}

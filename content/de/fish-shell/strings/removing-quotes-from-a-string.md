@@ -1,13 +1,16 @@
 ---
-title:                "Anführungszeichen aus einem String entfernen"
 aliases:
 - /de/fish-shell/removing-quotes-from-a-string/
-date:                  2024-01-26T03:38:47.927202-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Anführungszeichen aus einem String entfernen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:38:47.927202-07:00
+description: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, diese\
+  \ l\xE4stigen einfachen (' ') oder doppelten (\" \") Anf\xFChrungszeichen von Ihren\
+  \ Textdaten\u2026"
+lastmod: 2024-02-18 23:09:05.310845
+model: gpt-4-0125-preview
+summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, diese\
+  \ l\xE4stigen einfachen (' ') oder doppelten (\" \") Anf\xFChrungszeichen von Ihren\
+  \ Textdaten\u2026"
+title: "Anf\xFChrungszeichen aus einem String entfernen"
 ---
 
 {{< edit_this_page >}}

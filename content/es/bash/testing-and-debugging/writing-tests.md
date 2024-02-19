@@ -1,14 +1,16 @@
 ---
-title:                "Escribiendo pruebas"
 aliases:
 - /es/bash/writing-tests/
-date:                  2024-02-03T19:29:26.468596-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escribiendo pruebas"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:26.468596-07:00
+description: "Escribir pruebas en Bash implica crear scripts de casos de prueba para\
+  \ validar la funcionalidad de tus scripts de Bash. Los programadores realizan pruebas\u2026"
+lastmod: 2024-02-18 23:09:10.171173
+model: gpt-4-0125-preview
+summary: "Escribir pruebas en Bash implica crear scripts de casos de prueba para validar\
+  \ la funcionalidad de tus scripts de Bash. Los programadores realizan pruebas\u2026"
+title: Escribiendo pruebas
 ---
 
 {{< edit_this_page >}}

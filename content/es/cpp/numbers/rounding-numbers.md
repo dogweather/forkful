@@ -1,13 +1,16 @@
 ---
-title:                "Redondeo de números"
 aliases:
 - /es/cpp/rounding-numbers/
-date:                  2024-01-26T03:43:20.393265-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Redondeo de números"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/rounding-numbers.md"
+date: 2024-01-26 03:43:20.393265-07:00
+description: "Redondear n\xFAmeros significa ajustar un valor a su entero m\xE1s cercano\
+  \ o precisi\xF3n especificada. Los desarrolladores lo hacen para simplificar, cumplir\
+  \ con\u2026"
+lastmod: 2024-02-18 23:09:10.303993
+model: gpt-4-0125-preview
+summary: "Redondear n\xFAmeros significa ajustar un valor a su entero m\xE1s cercano\
+  \ o precisi\xF3n especificada. Los desarrolladores lo hacen para simplificar, cumplir\
+  \ con\u2026"
+title: "Redondeo de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

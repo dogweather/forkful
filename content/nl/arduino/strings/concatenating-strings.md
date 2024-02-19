@@ -1,15 +1,16 @@
 ---
-title:                "Samenvoegen van strings"
 aliases:
 - /nl/arduino/concatenating-strings/
-date:                  2024-01-28T21:56:37.755504-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Samenvoegen van strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/concatenating-strings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:37.755504-07:00
+description: "Het aaneenschakelen van strings betekent dat je ze eind-aan-eind samenvoegt\
+  \ om een nieuwe te maken. Programmeurs doen dit om berichten samen te voegen,\u2026"
+lastmod: 2024-02-18 23:09:02.129683
+model: gpt-4-0125-preview
+summary: "Het aaneenschakelen van strings betekent dat je ze eind-aan-eind samenvoegt\
+  \ om een nieuwe te maken. Programmeurs doen dit om berichten samen te voegen,\u2026"
+title: Samenvoegen van strings
 ---
 
 {{< edit_this_page >}}

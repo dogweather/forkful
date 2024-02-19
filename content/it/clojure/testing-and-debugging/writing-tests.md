@@ -1,14 +1,16 @@
 ---
-title:                "Scrivere test"
 aliases:
 - /it/clojure/writing-tests/
-date:                  2024-02-03T19:30:02.320492-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Scrivere test"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:30:02.320492-07:00
+description: "Scrivere test in Clojure, cos\xEC come in altri linguaggi di programmazione,\
+  \ comporta la creazione di codice dedicato per verificare che il tuo codice\u2026"
+lastmod: 2024-02-18 23:08:55.564256
+model: gpt-4-0125-preview
+summary: "Scrivere test in Clojure, cos\xEC come in altri linguaggi di programmazione,\
+  \ comporta la creazione di codice dedicato per verificare che il tuo codice\u2026"
+title: Scrivere test
 ---
 
 {{< edit_this_page >}}

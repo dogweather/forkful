@@ -1,14 +1,18 @@
 ---
-title:                "Descargando una página web"
 aliases:
 - /es/vba/downloading-a-web-page/
-date:                  2024-02-01T21:52:24.618519-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Descargando una página web"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/vba/downloading-a-web-page.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:24.618519-07:00
+description: "Descargar una p\xE1gina web en Visual Basic for Applications (VBA) implica\
+  \ obtener el contenido HTML de una p\xE1gina web desde Internet. Los programadores\
+  \ a\u2026"
+lastmod: 2024-02-18 23:09:09.795175
+model: gpt-4-0125-preview
+summary: "Descargar una p\xE1gina web en Visual Basic for Applications (VBA) implica\
+  \ obtener el contenido HTML de una p\xE1gina web desde Internet. Los programadores\
+  \ a\u2026"
+title: "Descargando una p\xE1gina web"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Textdatei einlesen"
 aliases:
 - /de/arduino/reading-a-text-file/
-date:                  2024-01-20T17:53:43.680592-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Textdatei einlesen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/reading-a-text-file.md"
+date: 2024-01-20 17:53:43.680592-07:00
+description: "Das Lesen einer Textdatei bedeutet, Daten von einer im Speichermedium\
+  \ gespeicherten Datei in dein Programm zu laden. Das machen Programmierer, um\u2026"
+lastmod: 2024-02-18 23:09:05.163837
+model: gpt-4-1106-preview
+summary: "Das Lesen einer Textdatei bedeutet, Daten von einer im Speichermedium gespeicherten\
+  \ Datei in dein Programm zu laden. Das machen Programmierer, um\u2026"
+title: Textdatei einlesen
 ---
 
 {{< edit_this_page >}}

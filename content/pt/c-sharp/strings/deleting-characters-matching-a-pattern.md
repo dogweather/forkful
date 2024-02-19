@@ -1,13 +1,15 @@
 ---
-title:                "Excluindo caracteres que correspondem a um padrão"
 aliases:
 - /pt/c-sharp/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:50.924143-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Excluindo caracteres que correspondem a um padrão"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:50.924143-07:00
+description: "Deletar caracteres que combinam com um padr\xE3o significa filtrar e\
+  \ remover partes indesejadas de uma string baseando-se em crit\xE9rios espec\xED\
+  ficos.\u2026"
+lastmod: 2024-02-18 23:08:58.142152
+model: gpt-4-1106-preview
+summary: "Deletar caracteres que combinam com um padr\xE3o significa filtrar e remover\
+  \ partes indesejadas de uma string baseando-se em crit\xE9rios espec\xEDficos.\u2026"
+title: "Excluindo caracteres que correspondem a um padr\xE3o"
 ---
 
 {{< edit_this_page >}}

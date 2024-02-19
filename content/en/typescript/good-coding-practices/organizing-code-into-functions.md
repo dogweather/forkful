@@ -1,13 +1,15 @@
 ---
-title:                "Organizing code into functions"
 aliases:
 - /en/typescript/organizing-code-into-functions/
-date:                  2024-01-25T03:00:11.560491-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organizing code into functions"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/organizing-code-into-functions.md"
+date: 2024-01-25 03:00:11.560491-07:00
+description: "Organizing code into functions means chunking your code into reusable,\
+  \ modular blocks. We do this to keep things DRY (Don't Repeat Yourself), making\
+  \ code\u2026"
+lastmod: 2024-02-18 23:09:10.812786
+model: gpt-4-1106-preview
+summary: "Organizing code into functions means chunking your code into reusable, modular\
+  \ blocks. We do this to keep things DRY (Don't Repeat Yourself), making code\u2026"
+title: Organizing code into functions
 ---
 
 {{< edit_this_page >}}

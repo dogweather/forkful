@@ -1,13 +1,16 @@
 ---
-title:                "Virheiden käsittely"
 aliases:
 - /fi/clojure/handling-errors/
-date:                  2024-01-26T00:51:03.833169-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheiden käsittely"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/handling-errors.md"
+date: 2024-01-26 00:51:03.833169-07:00
+description: "Virheenk\xE4sittely on ohjelmien odottamattomien tilanteiden hallintaa\u2014\
+  kuin j\xE4rjestyksenvalvoja, joka kohtaa h\xE4irik\xF6it\xE4. Ohjelmoijat pit\xE4\
+  v\xE4t sujuvuudesta;\u2026"
+lastmod: 2024-02-18 23:09:07.236327
+model: gpt-4-1106-preview
+summary: "Virheenk\xE4sittely on ohjelmien odottamattomien tilanteiden hallintaa\u2014\
+  kuin j\xE4rjestyksenvalvoja, joka kohtaa h\xE4irik\xF6it\xE4. Ohjelmoijat pit\xE4\
+  v\xE4t sujuvuudesta;\u2026"
+title: "Virheiden k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

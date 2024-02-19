@@ -1,14 +1,14 @@
 ---
-title:                "处理CSV文件"
 aliases:
 - /zh/cpp/working-with-csv/
-date:                  2024-02-03T19:19:03.313341-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理CSV文件"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:19:03.313341-07:00
+description: '#'
+lastmod: 2024-02-18 23:08:59.425200
+model: gpt-4-0125-preview
+summary: '#'
+title: "\u5904\u7406CSV\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

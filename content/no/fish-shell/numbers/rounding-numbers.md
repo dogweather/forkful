@@ -1,13 +1,14 @@
 ---
-title:                "Avrunding av tall"
 aliases:
 - /no/fish-shell/rounding-numbers/
-date:                  2024-01-26T03:44:05.968619-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Avrunding av tall"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/rounding-numbers.md"
+date: 2024-01-26 03:44:05.968619-07:00
+description: "\xC5 avrunde tall handler om \xE5 kutte av desimalplasser for \xE5 forenkle\
+  \ dataene dine eller passe spesifikke formater. Programmerere gj\xF8r det for brukervennlig\u2026"
+lastmod: 2024-02-18 23:08:54.344567
+model: gpt-4-0125-preview
+summary: "\xC5 avrunde tall handler om \xE5 kutte av desimalplasser for \xE5 forenkle\
+  \ dataene dine eller passe spesifikke formater. Programmerere gj\xF8r det for brukervennlig\u2026"
+title: Avrunding av tall
 ---
 
 {{< edit_this_page >}}

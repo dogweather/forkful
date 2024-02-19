@@ -1,13 +1,16 @@
 ---
-title:                "Zaokrąglanie liczb"
 aliases:
 - /pl/elm/rounding-numbers/
-date:                  2024-01-26T03:44:27.690127-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zaokrąglanie liczb"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/rounding-numbers.md"
+date: 2024-01-26 03:44:27.690127-07:00
+description: "Zaokr\u0105glanie liczb polega na modyfikacji liczby dziesi\u0119tnej\
+  \ do jej najbli\u017Cszej warto\u015Bci ca\u0142kowitej lub do okre\u015Blonej liczby\
+  \ miejsc po przecinku.\u2026"
+lastmod: 2024-02-18 23:08:49.514071
+model: gpt-4-0125-preview
+summary: "Zaokr\u0105glanie liczb polega na modyfikacji liczby dziesi\u0119tnej do\
+  \ jej najbli\u017Cszej warto\u015Bci ca\u0142kowitej lub do okre\u015Blonej liczby\
+  \ miejsc po przecinku.\u2026"
+title: "Zaokr\u0105glanie liczb"
 ---
 
 {{< edit_this_page >}}

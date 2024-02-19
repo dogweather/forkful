@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonojen osien poimiminen"
 aliases:
 - /fi/java/extracting-substrings/
-date:                  2024-01-20T17:45:57.639063-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonojen osien poimiminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/extracting-substrings.md"
+date: 2024-01-20 17:45:57.639063-07:00
+description: "Substringit ovat jonoista irrotettuja osia. Ohjelmoijat k\xE4ytt\xE4\
+  v\xE4t niit\xE4 tiedon k\xE4sittelyyn ja analysointiin - leikaten tarpeelliset palat\
+  \ isommasta\u2026"
+lastmod: 2024-02-18 23:09:07.446399
+model: gpt-4-1106-preview
+summary: "Substringit ovat jonoista irrotettuja osia. Ohjelmoijat k\xE4ytt\xE4v\xE4\
+  t niit\xE4 tiedon k\xE4sittelyyn ja analysointiin - leikaten tarpeelliset palat\
+  \ isommasta\u2026"
+title: Merkkijonojen osien poimiminen
 ---
 
 {{< edit_this_page >}}

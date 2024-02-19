@@ -1,14 +1,18 @@
 ---
-title:                "Ausgabe von Debug-Informationen drucken"
 aliases:
 - /de/go/printing-debug-output/
-date:                  2024-02-03T18:05:17.566695-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ausgabe von Debug-Informationen drucken"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/printing-debug-output.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:17.566695-07:00
+description: "In der Computerprogrammierung bezeichnet \"Drucken von Debug-Ausgaben\"\
+  \ das Erzeugen von detaillierten Informationsnachrichten, die Entwicklern helfen,\
+  \ den\u2026"
+lastmod: 2024-02-18 23:09:04.366689
+model: gpt-4-0125-preview
+summary: "In der Computerprogrammierung bezeichnet \"Drucken von Debug-Ausgaben\"\
+  \ das Erzeugen von detaillierten Informationsnachrichten, die Entwicklern helfen,\
+  \ den\u2026"
+title: Ausgabe von Debug-Informationen drucken
 ---
 
 {{< edit_this_page >}}

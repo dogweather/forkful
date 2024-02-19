@@ -1,14 +1,18 @@
 ---
-title:                "Praca z JSON"
 aliases:
 - /pl/kotlin/working-with-json/
-date:                  2024-02-03T19:23:10.890579-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:10.890579-07:00
+description: "Praca z JSON-em (JavaScript Object Notation) w Kotlinie obejmuje analizowanie\
+  \ i generowanie danych JSON. Programi\u015Bci robi\u0105 to, aby \u0142atwo wymienia\u0107\
+  \ dane\u2026"
+lastmod: 2024-02-18 23:08:49.590506
+model: gpt-4-0125-preview
+summary: "Praca z JSON-em (JavaScript Object Notation) w Kotlinie obejmuje analizowanie\
+  \ i generowanie danych JSON. Programi\u015Bci robi\u0105 to, aby \u0142atwo wymienia\u0107\
+  \ dane\u2026"
+title: Praca z JSON
 ---
 
 {{< edit_this_page >}}

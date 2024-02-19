@@ -1,13 +1,16 @@
 ---
-title:                "Kahden päivämäärän vertailu"
 aliases:
 - /fi/clojure/comparing-two-dates/
-date:                  2024-01-20T17:32:47.779409-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Kahden päivämäärän vertailu"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/comparing-two-dates.md"
+date: 2024-01-20 17:32:47.779409-07:00
+description: "Verrataan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4, ymm\xE4rt\xE4\xE4ksemme\
+  \ kummanko ajanhetki sijoittuu ennen toista. Ohjelmoijille se on t\xE4rke\xE4\xE4\
+  \ ajoitukseen, tapahtumien k\xE4sittelyyn ja\u2026"
+lastmod: 2024-02-18 23:09:07.241770
+model: gpt-4-1106-preview
+summary: "Verrataan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4, ymm\xE4rt\xE4\xE4ksemme kummanko\
+  \ ajanhetki sijoittuu ennen toista. Ohjelmoijille se on t\xE4rke\xE4\xE4 ajoitukseen,\
+  \ tapahtumien k\xE4sittelyyn ja\u2026"
+title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 ---
 
 {{< edit_this_page >}}

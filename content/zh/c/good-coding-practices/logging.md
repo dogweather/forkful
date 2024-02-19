@@ -1,14 +1,24 @@
 ---
-title:                "日志记录"
 aliases:
 - /zh/c/logging/
-date:                  2024-02-03T17:58:58.143358-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "日志记录"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/logging.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:58:58.143358-07:00
+description: "\u5728C\u8BED\u8A00\u4E2D\uFF0C\u65E5\u5FD7\u8BB0\u5F55\u6D89\u53CA\u5728\
+  \u7A0B\u5E8F\u8FD0\u884C\u65F6\u8BB0\u5F55\u7A0B\u5E8F\u6D41\u7A0B\u548C\u663E\u8457\
+  \u4E8B\u4EF6\uFF0C\u63D0\u4F9B\u5176\u884C\u4E3A\u548C\u6027\u80FD\u7684\u53EF\u89C2\
+  \u5BDF\u5BA1\u67E5\u3002\u7A0B\u5E8F\u5458\u5229\u7528\u65E5\u5FD7\u8BB0\u5F55\u8FDB\
+  \u884C\u8C03\u8BD5\uFF0C\u76D1\u63A7\u8F6F\u4EF6\u5065\u5EB7\u72B6\u51B5\uFF0C\u4EE5\
+  \u53CA\u786E\u4FDD\u7CFB\u7EDF\u5B89\u5168\u3002"
+lastmod: 2024-02-18 23:08:59.565696
+model: gpt-4-0125-preview
+summary: "\u5728C\u8BED\u8A00\u4E2D\uFF0C\u65E5\u5FD7\u8BB0\u5F55\u6D89\u53CA\u5728\
+  \u7A0B\u5E8F\u8FD0\u884C\u65F6\u8BB0\u5F55\u7A0B\u5E8F\u6D41\u7A0B\u548C\u663E\u8457\
+  \u4E8B\u4EF6\uFF0C\u63D0\u4F9B\u5176\u884C\u4E3A\u548C\u6027\u80FD\u7684\u53EF\u89C2\
+  \u5BDF\u5BA1\u67E5\u3002\u7A0B\u5E8F\u5458\u5229\u7528\u65E5\u5FD7\u8BB0\u5F55\u8FDB\
+  \u884C\u8C03\u8BD5\uFF0C\u76D1\u63A7\u8F6F\u4EF6\u5065\u5EB7\u72B6\u51B5\uFF0C\u4EE5\
+  \u53CA\u786E\u4FDD\u7CFB\u7EDF\u5B89\u5168\u3002"
+title: "\u65E5\u5FD7\u8BB0\u5F55"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,24 @@
 ---
-title:                "코드를 함수로 구성하기"
 aliases:
 - /ko/elixir/organizing-code-into-functions/
-date:                  2024-01-26T01:10:18.734399-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "코드를 함수로 구성하기"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/organizing-code-into-functions.md"
+date: 2024-01-26 01:10:18.734399-07:00
+description: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uB294 \uAC83\
+  \uC740 \uAD00\uB828 \uC5F0\uC0B0\uB4E4\uC744 \uC7AC\uC0AC\uC6A9 \uAC00\uB2A5\uD55C\
+  \ \uBE14\uB85D\uC73C\uB85C \uCCAD\uD06C\uD654\uD558\uB294 \uAC83\uC744 \uC758\uBBF8\
+  \uD569\uB2C8\uB2E4. \uC6B0\uB9AC\uB294 \uAC00\uB3C5\uC131\uACFC \uC720\uC9C0\uBCF4\
+  \uC218\uC131\uC744 \uB192\uC774\uACE0, \uC911\uBCF5\uC744 \uC904\uC774\uBA70, \uD14C\
+  \uC2A4\uD2B8\uB97C \uAC04\uC18C\uD654\uD558\uAE30 \uC704\uD574 \uC774\uB807\uAC8C\
+  \ \uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:05.763570
+model: gpt-4-1106-preview
+summary: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uB294 \uAC83\uC740\
+  \ \uAD00\uB828 \uC5F0\uC0B0\uB4E4\uC744 \uC7AC\uC0AC\uC6A9 \uAC00\uB2A5\uD55C \uBE14\
+  \uB85D\uC73C\uB85C \uCCAD\uD06C\uD654\uD558\uB294 \uAC83\uC744 \uC758\uBBF8\uD569\
+  \uB2C8\uB2E4. \uC6B0\uB9AC\uB294 \uAC00\uB3C5\uC131\uACFC \uC720\uC9C0\uBCF4\uC218\
+  \uC131\uC744 \uB192\uC774\uACE0, \uC911\uBCF5\uC744 \uC904\uC774\uBA70, \uD14C\uC2A4\
+  \uD2B8\uB97C \uAC04\uC18C\uD654\uD558\uAE30 \uC704\uD574 \uC774\uB807\uAC8C \uD569\
+  \uB2C8\uB2E4."
+title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

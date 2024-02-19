@@ -1,12 +1,14 @@
 ---
-title:                "Capitalizing a string"
 aliases:
 - /en/clojure/capitalizing-a-string/
-date:                  2024-02-03T19:02:43.841401-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizing a string"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/capitalizing-a-string.md"
+date: 2024-02-03 19:02:43.841401-07:00
+description: "Capitalizing a string involves modifying the string so that its first\
+  \ character is uppercase, while the rest of the string remains unchanged. Programmers\u2026"
+lastmod: 2024-02-18 23:09:10.706751
+model: gpt-4-0125-preview
+summary: "Capitalizing a string involves modifying the string so that its first character\
+  \ is uppercase, while the rest of the string remains unchanged. Programmers\u2026"
+title: Capitalizing a string
 ---
 
 {{< edit_this_page >}}

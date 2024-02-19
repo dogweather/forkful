@@ -1,13 +1,16 @@
 ---
-title:                "Skapa en temporär fil"
 aliases:
 - /sv/fish-shell/creating-a-temporary-file/
-date:                  2024-01-20T17:40:05.601096-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skapa en temporär fil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:05.601096-07:00
+description: "Tempor\xE4ra filer \xE4r tempor\xE4ra lagerplatser f\xF6r data som anv\xE4\
+  nds under programk\xF6rningen och som ofta raderas efter\xE5t. Programmerare skapar\
+  \ dem f\xF6r att\u2026"
+lastmod: 2024-02-18 23:08:52.226351
+model: gpt-4-1106-preview
+summary: "Tempor\xE4ra filer \xE4r tempor\xE4ra lagerplatser f\xF6r data som anv\xE4\
+  nds under programk\xF6rningen och som ofta raderas efter\xE5t. Programmerare skapar\
+  \ dem f\xF6r att\u2026"
+title: "Skapa en tempor\xE4r fil"
 ---
 
 {{< edit_this_page >}}

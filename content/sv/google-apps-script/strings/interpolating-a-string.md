@@ -1,14 +1,18 @@
 ---
-title:                "Interpolering av en sträng"
 aliases:
 - /sv/google-apps-script/interpolating-a-string/
-date:                  2024-02-01T21:55:22.951935-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interpolering av en sträng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/google-apps-script/interpolating-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:22.951935-07:00
+description: "Str\xE4nginterpolering i Google Apps Script m\xF6jligg\xF6r dynamisk\
+  \ inb\xE4ddning av uttryck inom str\xE4ngar, vilket underl\xE4ttar skapandet av\
+  \ mer l\xE4sbar och\u2026"
+lastmod: 2024-02-18 23:08:51.363227
+model: gpt-4-0125-preview
+summary: "Str\xE4nginterpolering i Google Apps Script m\xF6jligg\xF6r dynamisk inb\xE4\
+  ddning av uttryck inom str\xE4ngar, vilket underl\xE4ttar skapandet av mer l\xE4\
+  sbar och\u2026"
+title: "Interpolering av en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Nối chuỗi ký tự"
 aliases:
 - /vi/c-sharp/concatenating-strings/
-date:                  2024-01-28T21:57:01.261588-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Nối chuỗi ký tự"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/concatenating-strings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:57:01.261588-07:00
+description: "N\u1ED1i chu\u1ED7i l\xE0 qu\xE1 tr\xECnh gh\xE9p c\xE1c chu\u1ED7i\
+  \ l\u1EA1i v\u1EDBi nhau t\u1EEB \u0111\u1EA7u \u0111\u1EBFn cu\u1ED1i. Ch\xFAng\
+  \ ta th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y v\xEC th\u01B0\u1EDDng xuy\xEAn ch\xFA\
+  ng ta c\u1EA7n k\u1EBFt h\u1EE3p c\xE1c t\u1EEB ho\u1EB7c bi\u1EC3u\u2026"
+lastmod: 2024-02-18 23:08:50.689096
+model: gpt-4-0125-preview
+summary: "N\u1ED1i chu\u1ED7i l\xE0 qu\xE1 tr\xECnh gh\xE9p c\xE1c chu\u1ED7i l\u1EA1\
+  i v\u1EDBi nhau t\u1EEB \u0111\u1EA7u \u0111\u1EBFn cu\u1ED1i. Ch\xFAng ta th\u1EF1\
+  c hi\u1EC7n \u0111i\u1EC1u n\xE0y v\xEC th\u01B0\u1EDDng xuy\xEAn ch\xFAng ta c\u1EA7\
+  n k\u1EBFt h\u1EE3p c\xE1c t\u1EEB ho\u1EB7c bi\u1EC3u\u2026"
+title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 ---
 
 {{< edit_this_page >}}

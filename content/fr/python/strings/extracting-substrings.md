@@ -1,13 +1,16 @@
 ---
-title:                "Extraction de sous-chaînes"
 aliases:
 - /fr/python/extracting-substrings/
-date:                  2024-01-20T17:46:11.015511-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extraction de sous-chaînes"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/extracting-substrings.md"
+date: 2024-01-20 17:46:11.015511-07:00
+description: "Extraire des sous-cha\xEEnes, c'est r\xE9cup\xE9rer des morceaux sp\xE9\
+  cifiques d'une cha\xEEne de caract\xE8res. On le fait pour analyser, manipuler ou\
+  \ transformer des\u2026"
+lastmod: 2024-02-18 23:09:08.327817
+model: gpt-4-1106-preview
+summary: "Extraire des sous-cha\xEEnes, c'est r\xE9cup\xE9rer des morceaux sp\xE9\
+  cifiques d'une cha\xEEne de caract\xE8res. On le fait pour analyser, manipuler ou\
+  \ transformer des\u2026"
+title: "Extraction de sous-cha\xEEnes"
 ---
 
 {{< edit_this_page >}}

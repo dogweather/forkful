@@ -1,13 +1,16 @@
 ---
-title:                "Praca z XML"
 aliases:
 - /pl/cpp/working-with-xml/
-date:                  2024-01-26T04:28:40.573333-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/working-with-xml.md"
+date: 2024-01-26 04:28:40.573333-07:00
+description: "Praca z XML oznacza parsowanie, tworzenie i manipulowanie danymi XML\
+  \ (eXtensible Markup Language). Programi\u015Bci zarz\u0105dzaj\u0105 XML, aby obs\u0142\
+  ugiwa\u0107 wymian\u0119\u2026"
+lastmod: 2024-02-18 23:08:49.935737
+model: gpt-4-0125-preview
+summary: "Praca z XML oznacza parsowanie, tworzenie i manipulowanie danymi XML (eXtensible\
+  \ Markup Language). Programi\u015Bci zarz\u0105dzaj\u0105 XML, aby obs\u0142ugiwa\u0107\
+  \ wymian\u0119\u2026"
+title: Praca z XML
 ---
 
 {{< edit_this_page >}}

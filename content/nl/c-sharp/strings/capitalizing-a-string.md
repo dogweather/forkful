@@ -1,15 +1,17 @@
 ---
-title:                "Een string met hoofdletters maken"
 aliases:
 - /nl/c-sharp/capitalizing-a-string/
-date:                  2024-01-28T21:55:40.393493-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string met hoofdletters maken"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c-sharp/capitalizing-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:55:40.393493-07:00
+description: "Een tekenreeks kapitaliseren in programmeren betekent alle letters in\
+  \ een tekenreeks in hoofdletters omzetten. Het is een vaak voorkomende taak voor\
+  \ het\u2026"
+lastmod: 2024-02-18 23:09:01.833619
+model: gpt-4-0125-preview
+summary: "Een tekenreeks kapitaliseren in programmeren betekent alle letters in een\
+  \ tekenreeks in hoofdletters omzetten. Het is een vaak voorkomende taak voor het\u2026"
+title: Een string met hoofdletters maken
 ---
 
 {{< edit_this_page >}}

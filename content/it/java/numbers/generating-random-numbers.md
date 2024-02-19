@@ -1,13 +1,14 @@
 ---
-title:                "Generazione di numeri casuali"
 aliases:
 - /it/java/generating-random-numbers/
-date:                  2024-01-27T20:34:12.101014-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generazione di numeri casuali"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/java/generating-random-numbers.md"
+date: 2024-01-27 20:34:12.101014-07:00
+description: "Generare numeri casuali consiste nel produrre sequenze o valori singoli\
+  \ imprevedibili all'interno di un intervallo definito. I programmatori utilizzano\u2026"
+lastmod: 2024-02-18 23:08:55.762123
+model: gpt-4-0125-preview
+summary: "Generare numeri casuali consiste nel produrre sequenze o valori singoli\
+  \ imprevedibili all'interno di un intervallo definito. I programmatori utilizzano\u2026"
+title: Generazione di numeri casuali
 ---
 
 {{< edit_this_page >}}

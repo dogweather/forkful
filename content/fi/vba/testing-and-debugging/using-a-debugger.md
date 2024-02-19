@@ -1,14 +1,16 @@
 ---
-title:                "Debuggerin käyttö"
 aliases:
 - /fi/vba/using-a-debugger/
-date:                  2024-02-01T22:04:00.845841-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Debuggerin käyttö"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/using-a-debugger.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:00.845841-07:00
+description: "Debuggerin k\xE4ytt\xE4minen Visual Basic for Applications (VBA) -ohjelmoinnissa\
+  \ k\xE4sitt\xE4\xE4 koodisi suorittamista vaiheittain sen toteutusvirran ja\u2026"
+lastmod: 2024-02-18 23:09:07.416200
+model: gpt-4-0125-preview
+summary: "Debuggerin k\xE4ytt\xE4minen Visual Basic for Applications (VBA) -ohjelmoinnissa\
+  \ k\xE4sitt\xE4\xE4 koodisi suorittamista vaiheittain sen toteutusvirran ja\u2026"
+title: "Debuggerin k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Starting a new project"
 aliases:
 - /en/fish-shell/starting-a-new-project/
-date:                  2024-01-20T18:03:14.094776-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Starting a new project"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/starting-a-new-project.md"
+date: 2024-01-20 18:03:14.094776-07:00
+description: "Starting a new project means initializing a fresh directory with everything\
+  \ you need to get coding. Programmers do this to kick-off development in a\u2026"
+lastmod: 2024-02-18 23:09:11.481787
+model: gpt-4-1106-preview
+summary: "Starting a new project means initializing a fresh directory with everything\
+  \ you need to get coding. Programmers do this to kick-off development in a\u2026"
+title: Starting a new project
 ---
 
 {{< edit_this_page >}}

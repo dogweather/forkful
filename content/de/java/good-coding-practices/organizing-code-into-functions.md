@@ -1,13 +1,16 @@
 ---
-title:                "Code in Funktionen organisieren"
 aliases:
 - /de/java/organizing-code-into-functions/
-date:                  2024-01-26T01:11:06.658918-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Code in Funktionen organisieren"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/organizing-code-into-functions.md"
+date: 2024-01-26 01:11:06.658918-07:00
+description: "Code in Funktionen zu organisieren bedeutet, das Unget\xFCm eines Programms\
+  \ in handliche St\xFCcke zu zerlegen, von denen jedes eine bestimmte Aufgabe erf\xFC\
+  llt.\u2026"
+lastmod: 2024-02-18 23:09:04.742559
+model: gpt-4-1106-preview
+summary: "Code in Funktionen zu organisieren bedeutet, das Unget\xFCm eines Programms\
+  \ in handliche St\xFCcke zu zerlegen, von denen jedes eine bestimmte Aufgabe erf\xFC\
+  llt.\u2026"
+title: Code in Funktionen organisieren
 ---
 
 {{< edit_this_page >}}

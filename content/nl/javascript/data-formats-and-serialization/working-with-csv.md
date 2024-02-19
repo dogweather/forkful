@@ -1,15 +1,16 @@
 ---
-title:                "Werken met CSV"
 aliases:
 - /nl/javascript/working-with-csv/
-date:                  2024-01-28T22:10:06.780424-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met CSV"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/javascript/working-with-csv.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:06.780424-07:00
+description: "Werken met CSV (Comma-Separated Values of komma-gescheiden waarden)\
+  \ in JavaScript betekent meestal het parseren en genereren van tekstgegevens voor\u2026"
+lastmod: 2024-02-18 23:09:02.301147
+model: gpt-4-0125-preview
+summary: "Werken met CSV (Comma-Separated Values of komma-gescheiden waarden) in JavaScript\
+  \ betekent meestal het parseren en genereren van tekstgegevens voor\u2026"
+title: Werken met CSV
 ---
 
 {{< edit_this_page >}}

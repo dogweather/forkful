@@ -1,13 +1,14 @@
 ---
-title:                "Usando un depurador"
 aliases:
 - /es/fish-shell/using-a-debugger/
-date:                  2024-01-26T03:48:34.192288-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando un depurador"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/using-a-debugger.md"
+date: 2024-01-26 03:48:34.192288-07:00
+description: "Usar un depurador se trata de aplastar bugs, esos desagradables y consumidores\
+  \ de tiempo errores en tu c\xF3digo. Los programadores depuran porque quieren\u2026"
+lastmod: 2024-02-18 23:09:10.458155
+model: gpt-4-0125-preview
+summary: "Usar un depurador se trata de aplastar bugs, esos desagradables y consumidores\
+  \ de tiempo errores en tu c\xF3digo. Los programadores depuran porque quieren\u2026"
+title: Usando un depurador
 ---
 
 {{< edit_this_page >}}

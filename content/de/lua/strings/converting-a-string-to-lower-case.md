@@ -1,13 +1,14 @@
 ---
-title:                "Umformung eines Strings in Kleinbuchstaben"
 aliases:
 - /de/lua/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:56.052733-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Umformung eines Strings in Kleinbuchstaben"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:56.052733-07:00
+description: "In Lua bedeutet das Umwandeln eines Strings in Kleinbuchstaben, jeden\
+  \ Buchstaben des Strings in seine entsprechende kleine Form zu konvertieren. Diese\u2026"
+lastmod: 2024-02-18 23:09:04.993429
+model: gpt-4-1106-preview
+summary: "In Lua bedeutet das Umwandeln eines Strings in Kleinbuchstaben, jeden Buchstaben\
+  \ des Strings in seine entsprechende kleine Form zu konvertieren. Diese\u2026"
+title: Umformung eines Strings in Kleinbuchstaben
 ---
 
 {{< edit_this_page >}}

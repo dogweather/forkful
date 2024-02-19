@@ -1,14 +1,20 @@
 ---
-title:                "Nối chuỗi ký tự"
 aliases:
 - /vi/google-apps-script/concatenating-strings/
-date:                  2024-02-01T21:50:36.674719-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Nối chuỗi ký tự"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/google-apps-script/concatenating-strings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:36.674719-07:00
+description: "N\u1ED1i chu\u1ED7i bao g\u1ED3m vi\u1EC7c k\u1EBFt h\u1EE3p hai ho\u1EB7\
+  c nhi\u1EC1u chu\u1ED7i th\xE0nh m\u1ED9t chu\u1ED7i duy nh\u1EA5t. L\u1EADp tr\xEC\
+  nh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 x\xE2y d\u1EF1ng \u0111\
+  \u1ED9ng c\xE1c th\xF4ng \u0111i\u1EC7p, URL, ho\u1EB7c\u2026"
+lastmod: 2024-02-18 23:08:50.210159
+model: gpt-4-0125-preview
+summary: "N\u1ED1i chu\u1ED7i bao g\u1ED3m vi\u1EC7c k\u1EBFt h\u1EE3p hai ho\u1EB7\
+  c nhi\u1EC1u chu\u1ED7i th\xE0nh m\u1ED9t chu\u1ED7i duy nh\u1EA5t. L\u1EADp tr\xEC\
+  nh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 x\xE2y d\u1EF1ng \u0111\
+  \u1ED9ng c\xE1c th\xF4ng \u0111i\u1EC7p, URL, ho\u1EB7c\u2026"
+title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 ---
 
 {{< edit_this_page >}}

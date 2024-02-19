@@ -1,13 +1,16 @@
 ---
-title:                "Redondeo de números"
 aliases:
 - /es/typescript/rounding-numbers/
-date:                  2024-01-26T03:46:56.869208-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Redondeo de números"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/rounding-numbers.md"
+date: 2024-01-26 03:46:56.869208-07:00
+description: "Redondear n\xFAmeros implica ajustar un n\xFAmero a una precisi\xF3\
+  n espec\xEDfica. Los programadores lo hacen para controlar la salida num\xE9rica\
+  \ para mejorar la\u2026"
+lastmod: 2024-02-18 23:09:09.697414
+model: gpt-4-0125-preview
+summary: "Redondear n\xFAmeros implica ajustar un n\xFAmero a una precisi\xF3n espec\xED\
+  fica. Los programadores lo hacen para controlar la salida num\xE9rica para mejorar\
+  \ la\u2026"
+title: "Redondeo de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

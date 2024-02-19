@@ -1,14 +1,21 @@
 ---
-title:                "搜索和替换文本"
 aliases:
 - /zh/haskell/searching-and-replacing-text/
-date:                  2024-01-20T17:57:51.646112-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "搜索和替换文本"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:51.646112-07:00
+description: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C\u5C31\u662F\u627E\u5230\u6307\
+  \u5B9A\u7684\u5B57\u7B26\u4E32\u7136\u540E\u7528\u53E6\u4E00\u4E2A\u5B57\u7B26\u4E32\
+  \u6765\u66FF\u6362\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u5FEB\
+  \u901F\u4FEE\u6539\u4EE3\u7801\u3001\u6570\u636E\u6216\u8005\u914D\u7F6E\u6587\u4EF6\
+  \u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.157148
+model: gpt-4-1106-preview
+summary: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C\u5C31\u662F\u627E\u5230\u6307\
+  \u5B9A\u7684\u5B57\u7B26\u4E32\u7136\u540E\u7528\u53E6\u4E00\u4E2A\u5B57\u7B26\u4E32\
+  \u6765\u66FF\u6362\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u5FEB\
+  \u901F\u4FEE\u6539\u4EE3\u7801\u3001\u6570\u636E\u6216\u8005\u914D\u7F6E\u6587\u4EF6\
+  \u3002"
+title: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C"
 ---
 
 {{< edit_this_page >}}

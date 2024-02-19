@@ -1,13 +1,14 @@
 ---
-title:                "Merkkijonojen yhdistäminen"
 aliases:
 - /fi/elixir/concatenating-strings/
-date:                  2024-01-27T10:43:51.256076-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonojen yhdistäminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/concatenating-strings.md"
+date: 2024-01-27 10:43:51.256076-07:00
+description: "Merkkijonojen yhdist\xE4minen tarkoittaa kahden tai useamman merkkijonon\
+  \ liitt\xE4mist\xE4 yhteen muodostamaan yksi tekstikappale. Saatat tarvita tekstien\u2026"
+lastmod: 2024-02-18 23:09:07.264899
+model: gpt-4-0125-preview
+summary: "Merkkijonojen yhdist\xE4minen tarkoittaa kahden tai useamman merkkijonon\
+  \ liitt\xE4mist\xE4 yhteen muodostamaan yksi tekstikappale. Saatat tarvita tekstien\u2026"
+title: "Merkkijonojen yhdist\xE4minen"
 ---
 
 {{< edit_this_page >}}

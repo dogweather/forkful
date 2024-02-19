@@ -1,13 +1,15 @@
 ---
-title:                "Att arbeta med komplexa tal"
 aliases:
 - /sv/lua/working-with-complex-numbers/
-date:                  2024-01-26T04:43:29.358433-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med komplexa tal"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/lua/working-with-complex-numbers.md"
+date: 2024-01-26 04:43:29.358433-07:00
+description: "Komplexa tal utvidgar id\xE9n om en endimensionell tal-linje till ett\
+  \ tv\xE5dimensionellt plan genom att inkludera en vinkelr\xE4t imagin\xE4r axel.\
+  \ Programmerare\u2026"
+lastmod: 2024-02-18 23:08:51.912773
+model: gpt-4-0125-preview
+summary: "Komplexa tal utvidgar id\xE9n om en endimensionell tal-linje till ett tv\xE5\
+  dimensionellt plan genom att inkludera en vinkelr\xE4t imagin\xE4r axel. Programmerare\u2026"
+title: Att arbeta med komplexa tal
 ---
 
 {{< edit_this_page >}}

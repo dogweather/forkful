@@ -1,14 +1,16 @@
 ---
-title:                "Lavorare con XML"
 aliases:
 - /it/vba/working-with-xml/
-date:                  2024-02-01T22:06:48.241036-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con XML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/vba/working-with-xml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:06:48.241036-07:00
+description: "Lavorare con XML in Visual Basic for Applications (VBA) comporta l'analisi,\
+  \ la creazione e la modifica di documenti XML nel contesto delle applicazioni\u2026"
+lastmod: 2024-02-18 23:08:55.748802
+model: gpt-4-0125-preview
+summary: "Lavorare con XML in Visual Basic for Applications (VBA) comporta l'analisi,\
+  \ la creazione e la modifica di documenti XML nel contesto delle applicazioni\u2026"
+title: Lavorare con XML
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,22 @@
 ---
-title:                "使用关联数组"
 aliases:
 - /zh/clojure/using-associative-arrays/
-date:                  2024-01-30T19:10:50.453708-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用关联数组"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:50.453708-07:00
+description: "\u5728 Clojure \u4E2D\u7684\u5173\u8054\u6570\u7EC4\uFF0C\u6216\u54C8\
+  \u5E0C\u6620\u5C04\uFF0C\u5141\u8BB8\u60A8\u901A\u8FC7\u952E\u503C\u5BF9\u5B58\u50A8\
+  \u548C\u68C0\u7D22\u6570\u636E\u3002\u5B83\u4EEC\u662F\u5904\u7406\u7ED3\u6784\u5316\
+  \u6570\u636E\u7684\u9996\u9009\u65B9\u6CD5\uFF0C\u4F7F\u5F97\u65E0\u9700\u904D\u5386\
+  \u5217\u8868\u5C31\u80FD\u66F4\u5FEB\u5730\u8BBF\u95EE\u7279\u5B9A\u5143\u7D20\u3002"
+lastmod: 2024-02-18 23:08:58.822119
+model: gpt-4-0125-preview
+summary: "\u5728 Clojure \u4E2D\u7684\u5173\u8054\u6570\u7EC4\uFF0C\u6216\u54C8\u5E0C\
+  \u6620\u5C04\uFF0C\u5141\u8BB8\u60A8\u901A\u8FC7\u952E\u503C\u5BF9\u5B58\u50A8\u548C\
+  \u68C0\u7D22\u6570\u636E\u3002\u5B83\u4EEC\u662F\u5904\u7406\u7ED3\u6784\u5316\u6570\
+  \u636E\u7684\u9996\u9009\u65B9\u6CD5\uFF0C\u4F7F\u5F97\u65E0\u9700\u904D\u5386\u5217\
+  \u8868\u5C31\u80FD\u66F4\u5FEB\u5730\u8BBF\u95EE\u7279\u5B9A\u5143\u7D20\u3002"
+title: "\u4F7F\u7528\u5173\u8054\u6570\u7EC4"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Protokollierung"
 aliases:
 - /de/google-apps-script/logging/
-date:                  2024-02-01T21:56:03.803271-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Protokollierung"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/google-apps-script/logging.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:56:03.803271-07:00
+description: "Das Logging in der Programmierung beinhaltet das Erfassen von Ereignissen,\
+  \ Fehlern oder bemerkenswerten Vorkommnissen w\xE4hrend der Laufzeit. Programmierer\u2026"
+lastmod: 2024-02-18 23:09:04.421437
+model: gpt-4-0125-preview
+summary: "Das Logging in der Programmierung beinhaltet das Erfassen von Ereignissen,\
+  \ Fehlern oder bemerkenswerten Vorkommnissen w\xE4hrend der Laufzeit. Programmierer\u2026"
+title: Protokollierung
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Geração de números aleatórios"
 aliases:
 - /pt/rust/generating-random-numbers/
-date:                  2024-01-27T20:35:24.579832-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Geração de números aleatórios"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/generating-random-numbers.md"
+date: 2024-01-27 20:35:24.579832-07:00
+description: "Gerar n\xFAmeros aleat\xF3rios em Rust envolve o uso de bibliotecas\
+  \ para produzir valores num\xE9ricos imprevis\xEDveis, o que \xE9 indispens\xE1\
+  vel para tarefas que v\xE3o\u2026"
+lastmod: 2024-02-18 23:08:57.924007
+model: gpt-4-0125-preview
+summary: "Gerar n\xFAmeros aleat\xF3rios em Rust envolve o uso de bibliotecas para\
+  \ produzir valores num\xE9ricos imprevis\xEDveis, o que \xE9 indispens\xE1vel para\
+  \ tarefas que v\xE3o\u2026"
+title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 ---
 
 {{< edit_this_page >}}

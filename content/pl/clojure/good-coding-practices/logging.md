@@ -1,13 +1,16 @@
 ---
-title:                "Rejestrowanie zdarzeń"
 aliases:
 - /pl/clojure/logging/
-date:                  2024-01-26T01:02:29.105636-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rejestrowanie zdarzeń"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/logging.md"
+date: 2024-01-26 01:02:29.105636-07:00
+description: "Logowanie to w zasadzie oprogramowaniowy odpowiednik dziennika pok\u0142\
+  adowego statku; jest to spos\xF3b na rejestrowanie zdarze\u0144, kt\xF3re maj\u0105\
+  \ miejsce podczas\u2026"
+lastmod: 2024-02-18 23:08:49.270981
+model: gpt-4-1106-preview
+summary: "Logowanie to w zasadzie oprogramowaniowy odpowiednik dziennika pok\u0142\
+  adowego statku; jest to spos\xF3b na rejestrowanie zdarze\u0144, kt\xF3re maj\u0105\
+  \ miejsce podczas\u2026"
+title: "Rejestrowanie zdarze\u0144"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Kahden päivämäärän vertailu"
 aliases:
 - /fi/go/comparing-two-dates/
-date:                  2024-02-03T17:53:50.147260-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kahden päivämäärän vertailu"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/comparing-two-dates.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:50.147260-07:00
+description: "P\xE4iv\xE4m\xE4\xE4rien vertailu ohjelmoinnissa on perustavaa laatua\
+  \ oleva teht\xE4v\xE4, joka mahdollistaa kehitt\xE4jien aikasuhteiden arvioinnin\
+  \ p\xE4iv\xE4m\xE4\xE4rien v\xE4lill\xE4.\u2026"
+lastmod: 2024-02-18 23:09:07.099791
+model: gpt-4-0125-preview
+summary: "P\xE4iv\xE4m\xE4\xE4rien vertailu ohjelmoinnissa on perustavaa laatua oleva\
+  \ teht\xE4v\xE4, joka mahdollistaa kehitt\xE4jien aikasuhteiden arvioinnin p\xE4\
+  iv\xE4m\xE4\xE4rien v\xE4lill\xE4.\u2026"
+title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 ---
 
 {{< edit_this_page >}}

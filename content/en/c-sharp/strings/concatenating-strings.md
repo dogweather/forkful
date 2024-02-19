@@ -1,13 +1,14 @@
 ---
-title:                "Concatenating strings"
 aliases:
 - /en/c-sharp/concatenating-strings/
-date:                  2024-01-20T17:34:24.305814-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenating strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/concatenating-strings.md"
+date: 2024-01-20 17:34:24.305814-07:00
+description: "Concatenation is the process of sticking strings together end-to-end.\
+  \ We do it because often we need to combine words or symbols to create phrases,\u2026"
+lastmod: 2024-02-18 23:09:11.046420
+model: gpt-4-1106-preview
+summary: "Concatenation is the process of sticking strings together end-to-end. We\
+  \ do it because often we need to combine words or symbols to create phrases,\u2026"
+title: Concatenating strings
 ---
 
 {{< edit_this_page >}}

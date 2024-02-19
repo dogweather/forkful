@@ -1,13 +1,16 @@
 ---
-title:                "Manipulering av filer med CLI-enkeltkommandoer"
 aliases:
 - /no/ruby/manipulating-files-with-cli-one-liners/
-date:                  2024-01-27T16:21:16.588308-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulering av filer med CLI-enkeltkommandoer"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/manipulating-files-with-cli-one-liners.md"
+date: 2024-01-27 16:21:16.588308-07:00
+description: "\xC5 manipulere filer med CLI en-linjers i Ruby handler om \xE5 utf\xF8\
+  re vanlige filoperasjoner direkte fra terminalen ved \xE5 bruke Ruby-skript. Det\
+  \ er en\u2026"
+lastmod: 2024-02-18 23:08:54.433599
+model: gpt-4-0125-preview
+summary: "\xC5 manipulere filer med CLI en-linjers i Ruby handler om \xE5 utf\xF8\
+  re vanlige filoperasjoner direkte fra terminalen ved \xE5 bruke Ruby-skript. Det\
+  \ er en\u2026"
+title: Manipulering av filer med CLI-enkeltkommandoer
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Lokitus"
 aliases:
 - /fi/java/logging/
-date:                  2024-01-26T01:07:09.093186-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lokitus"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/logging.md"
+date: 2024-01-26 01:07:09.093186-07:00
+description: "Lokitus on periaatteessa tapahtumien tallentamisen prosessi, jotka tapahtuvat\
+  \ ohjelmiston sis\xE4ll\xE4. Ohjelmoijat lokittavat n\xE4it\xE4 tapahtumia ker\xE4\
+  t\xE4kseen\u2026"
+lastmod: 2024-02-18 23:09:07.464979
+model: gpt-4-1106-preview
+summary: "Lokitus on periaatteessa tapahtumien tallentamisen prosessi, jotka tapahtuvat\
+  \ ohjelmiston sis\xE4ll\xE4. Ohjelmoijat lokittavat n\xE4it\xE4 tapahtumia ker\xE4\
+  t\xE4kseen\u2026"
+title: Lokitus
 ---
 
 {{< edit_this_page >}}

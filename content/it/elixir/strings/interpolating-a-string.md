@@ -1,13 +1,14 @@
 ---
-title:                "Interpolazione di una stringa"
 aliases:
 - /it/elixir/interpolating-a-string/
-date:                  2024-01-20T17:50:31.768803-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolazione di una stringa"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/interpolating-a-string.md"
+date: 2024-01-20 17:50:31.768803-07:00
+description: "L'interpolazione di stringhe permette di inserire valori variabili all'interno\
+  \ di una stringa. I programmatori la utilizzano per rendere il codice pi\xF9\u2026"
+lastmod: 2024-02-18 23:08:55.587687
+model: gpt-4-1106-preview
+summary: "L'interpolazione di stringhe permette di inserire valori variabili all'interno\
+  \ di una stringa. I programmatori la utilizzano per rendere il codice pi\xF9\u2026"
+title: Interpolazione di una stringa
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Rejestrowanie zdarzeń"
 aliases:
 - /pl/fish-shell/logging/
-date:                  2024-01-26T01:03:40.767781-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rejestrowanie zdarzeń"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/logging.md"
+date: 2024-01-26 01:03:40.767781-07:00
+description: "Logowanie to w zasadzie notowanie tego, co robi Twoja aplikacja \u2013\
+  \ rodzaj dziennika, ale dla kodu. Programi\u015Bci u\u017Cywaj\u0105 go, aby \u015B\
+  ledzi\u0107 detale, takie jak\u2026"
+lastmod: 2024-02-18 23:08:50.043140
+model: gpt-4-1106-preview
+summary: "Logowanie to w zasadzie notowanie tego, co robi Twoja aplikacja \u2013 rodzaj\
+  \ dziennika, ale dla kodu. Programi\u015Bci u\u017Cywaj\u0105 go, aby \u015Bledzi\u0107\
+  \ detale, takie jak\u2026"
+title: "Rejestrowanie zdarze\u0144"
 ---
 
 {{< edit_this_page >}}

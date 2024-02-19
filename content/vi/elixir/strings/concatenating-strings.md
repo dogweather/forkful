@@ -1,15 +1,22 @@
 ---
-title:                "Nối chuỗi ký tự"
 aliases:
 - /vi/elixir/concatenating-strings/
-date:                  2024-01-28T21:58:11.333974-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Nối chuỗi ký tự"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/concatenating-strings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:58:11.333974-07:00
+description: "N\u1ED1i chu\u1ED7i l\xE0 vi\u1EC7c k\u1EBFt h\u1EE3p hai ho\u1EB7c\
+  \ nhi\u1EC1u chu\u1ED7i l\u1EA1i v\u1EDBi nhau \u0111\u1EC3 t\u1EA1o th\xE0nh m\u1ED9\
+  t \u0111o\u1EA1n v\u0103n b\u1EA3n \u0111\u01A1n. B\u1EA1n c\xF3 th\u1EC3 c\u1EA7\
+  n gh\xE9p v\u0103n b\u1EA3n \u0111\u1EC3 t\u1EA1o tin nh\u1EAFn cho ng\u01B0\u1EDD\
+  i d\xF9ng,\u2026"
+lastmod: 2024-02-18 23:08:50.359027
+model: gpt-4-0125-preview
+summary: "N\u1ED1i chu\u1ED7i l\xE0 vi\u1EC7c k\u1EBFt h\u1EE3p hai ho\u1EB7c nhi\u1EC1\
+  u chu\u1ED7i l\u1EA1i v\u1EDBi nhau \u0111\u1EC3 t\u1EA1o th\xE0nh m\u1ED9t \u0111\
+  o\u1EA1n v\u0103n b\u1EA3n \u0111\u01A1n. B\u1EA1n c\xF3 th\u1EC3 c\u1EA7n gh\xE9\
+  p v\u0103n b\u1EA3n \u0111\u1EC3 t\u1EA1o tin nh\u1EAFn cho ng\u01B0\u1EDDi d\xF9\
+  ng,\u2026"
+title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 ---
 
 {{< edit_this_page >}}

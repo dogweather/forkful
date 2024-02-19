@@ -1,13 +1,16 @@
 ---
-title:                "Extraindo substrings"
 aliases:
 - /pt/javascript/extracting-substrings/
-date:                  2024-01-20T17:46:06.879237-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extraindo substrings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/extracting-substrings.md"
+date: 2024-01-20 17:46:06.879237-07:00
+description: "Extrair substrings \xE9 pegar partes espec\xEDficas de uma string, tipo\
+  \ cortar s\xF3 um peda\xE7o do texto. Programadores fazem isso para manipular e\
+  \ usar informa\xE7\xF5es\u2026"
+lastmod: 2024-02-18 23:08:58.521506
+model: gpt-4-1106-preview
+summary: "Extrair substrings \xE9 pegar partes espec\xEDficas de uma string, tipo\
+  \ cortar s\xF3 um peda\xE7o do texto. Programadores fazem isso para manipular e\
+  \ usar informa\xE7\xF5es\u2026"
+title: Extraindo substrings
 ---
 
 {{< edit_this_page >}}

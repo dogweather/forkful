@@ -1,13 +1,14 @@
 ---
-title:                "Vergleich von zwei Daten"
 aliases:
 - /de/lua/comparing-two-dates/
-date:                  2024-01-20T17:33:39.091355-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Vergleich von zwei Daten"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/comparing-two-dates.md"
+date: 2024-01-20 17:33:39.091355-07:00
+description: "Datumvergleich bedeutet, zwei Zeitpunkte hinsichtlich ihrer chronologischen\
+  \ Reihenfolge zu vergleichen. Programmierer nutzen dies, um Zeitabl\xE4ufe zu\u2026"
+lastmod: 2024-02-18 23:09:05.020399
+model: gpt-4-1106-preview
+summary: "Datumvergleich bedeutet, zwei Zeitpunkte hinsichtlich ihrer chronologischen\
+  \ Reihenfolge zu vergleichen. Programmierer nutzen dies, um Zeitabl\xE4ufe zu\u2026"
+title: Vergleich von zwei Daten
 ---
 
 {{< edit_this_page >}}

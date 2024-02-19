@@ -1,14 +1,24 @@
 ---
-title:                "字符串大写化"
 aliases:
 - /zh/c-sharp/capitalizing-a-string/
-date:                  2024-02-03T19:05:18.350648-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "字符串大写化"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:18.350648-07:00
+description: "\u5728C#\u4E2D\u5927\u5199\u5B57\u7B26\u4E32\u6D89\u53CA\u5C06\u5B57\
+  \u7B26\u4E32\u7684\u7B2C\u4E00\u4E2A\u5B57\u7B26\u8F6C\u6362\u4E3A\u5927\u5199\uFF08\
+  \u5982\u679C\u5B83\u8FD8\u4E0D\u662F\u5927\u5199\u7684\uFF09\u3002\u8FD9\u79CD\u4FEE\
+  \u6539\u5BF9\u4E8E\u683C\u5F0F\u5316\u8F93\u51FA\u3001\u6267\u884C\u7F16\u7801\u6807\
+  \u51C6\u6216\u4F7F\u7528\u6237\u754C\u9762\u6587\u672C\u66F4\u6613\u8BFB\u81F3\u5173\
+  \u91CD\u8981\u3002"
+lastmod: 2024-02-18 23:08:59.117901
+model: gpt-4-0125-preview
+summary: "\u5728C#\u4E2D\u5927\u5199\u5B57\u7B26\u4E32\u6D89\u53CA\u5C06\u5B57\u7B26\
+  \u4E32\u7684\u7B2C\u4E00\u4E2A\u5B57\u7B26\u8F6C\u6362\u4E3A\u5927\u5199\uFF08\u5982\
+  \u679C\u5B83\u8FD8\u4E0D\u662F\u5927\u5199\u7684\uFF09\u3002\u8FD9\u79CD\u4FEE\u6539\
+  \u5BF9\u4E8E\u683C\u5F0F\u5316\u8F93\u51FA\u3001\u6267\u884C\u7F16\u7801\u6807\u51C6\
+  \u6216\u4F7F\u7528\u6237\u754C\u9762\u6587\u672C\u66F4\u6613\u8BFB\u81F3\u5173\u91CD\
+  \u8981\u3002"
+title: "\u5B57\u7B26\u4E32\u5927\u5199\u5316"
 ---
 
 {{< edit_this_page >}}

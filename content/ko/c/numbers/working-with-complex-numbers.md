@@ -1,14 +1,28 @@
 ---
-title:                "복잡한 숫자로 작업하기"
 aliases:
 - /ko/c/working-with-complex-numbers/
-date:                  2024-02-03T18:14:07.758652-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "복잡한 숫자로 작업하기"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:14:07.758652-07:00
+description: "\uBCF5\uC18C\uC218\uB294 \uC2E4\uC218 \uBD80\uBD84\uACFC \uD5C8\uC218\
+  \ \uBD80\uBD84\uC73C\uB85C \uAD6C\uC131\uB418\uBA70 `a + bi`\uB85C \uD45C\uD604\uB429\
+  \uB2C8\uB2E4. \uC5EC\uAE30\uC11C `i`\uB294 `-1`\uC758 \uC81C\uACF1\uADFC\uC785\uB2C8\
+  \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC804\uAE30\uACF5\uD559, \uC591\
+  \uC790 \uCEF4\uD4E8\uD305, \uC720\uCCB4 \uC5ED\uD559\uACFC \uAC19\uC740 \uB2E4\uC591\
+  \uD55C \uBD84\uC57C\uC5D0\uC11C \uBCF5\uC18C\uC218\uB97C \uB2E4\uB8E8\uBA70, \uADF8\
+  \uB4E4\uC758 \uB3C5\uD2B9\uD55C \uC131\uC9C8\uC744 \uC2DC\uBBAC\uB808\uC774\uC158\
+  , \uC2E0\uD638 \uCC98\uB9AC, \uD2B9\uC815 \uC720\uD615\uC758 \uC218\uD559\u2026"
+lastmod: 2024-02-18 23:09:06.940845
+model: gpt-4-0125-preview
+summary: "\uBCF5\uC18C\uC218\uB294 \uC2E4\uC218 \uBD80\uBD84\uACFC \uD5C8\uC218 \uBD80\
+  \uBD84\uC73C\uB85C \uAD6C\uC131\uB418\uBA70 `a + bi`\uB85C \uD45C\uD604\uB429\uB2C8\
+  \uB2E4. \uC5EC\uAE30\uC11C `i`\uB294 `-1`\uC758 \uC81C\uACF1\uADFC\uC785\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC804\uAE30\uACF5\uD559, \uC591\uC790\
+  \ \uCEF4\uD4E8\uD305, \uC720\uCCB4 \uC5ED\uD559\uACFC \uAC19\uC740 \uB2E4\uC591\uD55C\
+  \ \uBD84\uC57C\uC5D0\uC11C \uBCF5\uC18C\uC218\uB97C \uB2E4\uB8E8\uBA70, \uADF8\uB4E4\
+  \uC758 \uB3C5\uD2B9\uD55C \uC131\uC9C8\uC744 \uC2DC\uBBAC\uB808\uC774\uC158, \uC2E0\
+  \uD638 \uCC98\uB9AC, \uD2B9\uC815 \uC720\uD615\uC758 \uC218\uD559\u2026"
+title: "\uBCF5\uC7A1\uD55C \uC22B\uC790\uB85C \uC791\uC5C5\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Affichage des sorties de débogage"
 aliases:
 - /fr/elixir/printing-debug-output/
-date:                  2024-01-20T17:52:15.302983-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Affichage des sorties de débogage"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/printing-debug-output.md"
+date: 2024-01-20 17:52:15.302983-07:00
+description: "Imprimer des messages de d\xE9bogage, c'est \xE9crire des infos temporaires\
+  \ dans votre console pour comprendre comment votre code Elixir se comporte en direct.\u2026"
+lastmod: 2024-02-18 23:09:08.437193
+model: gpt-4-1106-preview
+summary: "Imprimer des messages de d\xE9bogage, c'est \xE9crire des infos temporaires\
+  \ dans votre console pour comprendre comment votre code Elixir se comporte en direct.\u2026"
+title: "Affichage des sorties de d\xE9bogage"
 ---
 
 {{< edit_this_page >}}

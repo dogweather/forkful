@@ -1,14 +1,23 @@
 ---
-title:                "두 날짜 비교하기"
 aliases:
 - /ko/rust/comparing-two-dates/
-date:                  2024-01-20T17:33:54.704243-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "두 날짜 비교하기"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/comparing-two-dates.md"
+date: 2024-01-20 17:33:54.704243-07:00
+description: "\uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD558\uBA74 \uC5B4\uB290 \uAC83\
+  \uC774 \uB354 \uC774\uB978\uC9C0, \uB2A6\uC740\uC9C0, \uD639\uC740 \uAC19\uC740\uC9C0\
+  \uB97C \uD655\uC778\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB294 \uC720\uD6A8\uC131 \uAC80\uC0AC, \uC774\uBCA4\uD2B8 \uD2B8\uB9AC\uAC70\
+  \uB9C1, \uB370\uC774\uD130 \uC815\uB82C \uB4F1\uC5D0 \uB450 \uB0A0\uC9DC\uB97C \uBE44\
+  \uAD50\uD574\uC57C \uD558\uB294 \uC218\uC694\uAC00 \uC788\uC2B5\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:05.903754
+model: gpt-4-1106-preview
+summary: "\uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD558\uBA74 \uC5B4\uB290 \uAC83\uC774\
+  \ \uB354 \uC774\uB978\uC9C0, \uB2A6\uC740\uC9C0, \uD639\uC740 \uAC19\uC740\uC9C0\
+  \uB97C \uD655\uC778\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB294 \uC720\uD6A8\uC131 \uAC80\uC0AC, \uC774\uBCA4\uD2B8 \uD2B8\uB9AC\uAC70\
+  \uB9C1, \uB370\uC774\uD130 \uC815\uB82C \uB4F1\uC5D0 \uB450 \uB0A0\uC9DC\uB97C \uBE44\
+  \uAD50\uD574\uC57C \uD558\uB294 \uC218\uC694\uAC00 \uC788\uC2B5\uB2C8\uB2E4."
+title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

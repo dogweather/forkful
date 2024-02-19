@@ -1,14 +1,18 @@
 ---
-title:                "Analyser une date depuis une chaîne de caractères"
 aliases:
 - /fr/javascript/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:14:25.593833-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analyser une date depuis une chaîne de caractères"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:14:25.593833-07:00
+description: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res permet\
+  \ aux programmeurs de convertir les repr\xE9sentations textuelles des dates en objets\
+  \ `Date`\u2026"
+lastmod: 2024-02-18 23:09:09.266553
+model: gpt-4-0125-preview
+summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res permet aux\
+  \ programmeurs de convertir les repr\xE9sentations textuelles des dates en objets\
+  \ `Date`\u2026"
+title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

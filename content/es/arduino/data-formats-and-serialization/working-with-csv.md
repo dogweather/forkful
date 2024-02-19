@@ -1,14 +1,16 @@
 ---
-title:                "Trabajando con CSV"
 aliases:
 - /es/arduino/working-with-csv/
-date:                  2024-02-03T19:18:41.660723-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:18:41.660723-07:00
+description: "Trabajar con archivos CSV (Valores Separados por Comas) en Arduino implica\
+  \ leer y escribir en archivos CSV generalmente almacenados en una tarjeta SD, lo\u2026"
+lastmod: 2024-02-18 23:09:10.287179
+model: gpt-4-0125-preview
+summary: "Trabajar con archivos CSV (Valores Separados por Comas) en Arduino implica\
+  \ leer y escribir en archivos CSV generalmente almacenados en una tarjeta SD, lo\u2026"
+title: Trabajando con CSV
 ---
 
 {{< edit_this_page >}}

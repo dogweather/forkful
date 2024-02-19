@@ -1,13 +1,16 @@
 ---
-title:                "Usando um shell interativo (REPL)"
 aliases:
 - /pt/rust/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:18:02.220639-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando um shell interativo (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:18:02.220639-07:00
+description: "Um shell interativo Rust, ou REPL (Read-Eval-Print Loop - Leitura, Avalia\xE7\
+  \xE3o, Impress\xE3o, em la\xE7o), permite que voc\xEA execute c\xF3digo Rust em\
+  \ tempo real,\u2026"
+lastmod: 2024-02-18 23:08:57.930300
+model: gpt-4-0125-preview
+summary: "Um shell interativo Rust, ou REPL (Read-Eval-Print Loop - Leitura, Avalia\xE7\
+  \xE3o, Impress\xE3o, em la\xE7o), permite que voc\xEA execute c\xF3digo Rust em\
+  \ tempo real,\u2026"
+title: Usando um shell interativo (REPL)
 ---
 
 {{< edit_this_page >}}

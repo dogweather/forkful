@@ -1,15 +1,22 @@
 ---
-title:                "Tìm kiếm và thay thế văn bản"
 aliases:
 - /vi/c-sharp/searching-and-replacing-text/
-date:                  2024-01-28T22:07:15.417735-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tìm kiếm và thay thế văn bản"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/searching-and-replacing-text.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:07:15.417735-07:00
+description: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong chu\u1ED7\
+  i gi\xFAp b\u1EA1n c\u1EADp nh\u1EADt d\u1EEF li\u1EC7u m\xE0 kh\xF4ng c\u1EA7n\
+  \ ch\u1EC9nh s\u1EEDa th\u1EE7 c\xF4ng. L\u1EADp tr\xECnh vi\xEAn c\u1EA7n \u0111\
+  i\u1EC1u n\xE0y \u0111\u1EC3 x\u1EED l\xFD s\u1EEDa \u0111\u1ED5i \u0111\u1EA7u\
+  \ v\xE0o\u2026"
+lastmod: 2024-02-18 23:08:50.681203
+model: gpt-4-0125-preview
+summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong chu\u1ED7i\
+  \ gi\xFAp b\u1EA1n c\u1EADp nh\u1EADt d\u1EEF li\u1EC7u m\xE0 kh\xF4ng c\u1EA7n\
+  \ ch\u1EC9nh s\u1EEDa th\u1EE7 c\xF4ng. L\u1EADp tr\xECnh vi\xEAn c\u1EA7n \u0111\
+  i\u1EC1u n\xE0y \u0111\u1EC3 x\u1EED l\xFD s\u1EEDa \u0111\u1ED5i \u0111\u1EA7u\
+  \ v\xE0o\u2026"
+title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 ---
 
 {{< edit_this_page >}}

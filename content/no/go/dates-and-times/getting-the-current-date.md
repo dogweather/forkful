@@ -1,14 +1,18 @@
 ---
-title:                "Få dagens dato"
 aliases:
 - /no/go/getting-the-current-date/
-date:                  2024-02-03T17:57:49.178997-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Få dagens dato"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:49.178997-07:00
+description: "\xC5 hente den n\xE5v\xE6rende datoen i Go er en grunnleggende oppgave\
+  \ for programmerere, p\xE5 linje med \"Hello, World!\" i sin allestedsv\xE6relse.\
+  \ Det er vesentlig for\u2026"
+lastmod: 2024-02-18 23:08:53.446896
+model: gpt-4-0125-preview
+summary: "\xC5 hente den n\xE5v\xE6rende datoen i Go er en grunnleggende oppgave for\
+  \ programmerere, p\xE5 linje med \"Hello, World!\" i sin allestedsv\xE6relse. Det\
+  \ er vesentlig for\u2026"
+title: "F\xE5 dagens dato"
 ---
 
 {{< edit_this_page >}}

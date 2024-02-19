@@ -1,14 +1,19 @@
 ---
-title:                "发出 HTTP 请求"
 aliases:
 - /zh/fish-shell/sending-an-http-request/
-date:                  2024-01-20T17:59:46.758805-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "发出 HTTP 请求"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/sending-an-http-request.md"
+date: 2024-01-20 17:59:46.758805-07:00
+description: "\u53D1\u9001HTTP\u8BF7\u6C42\uFF0C\u5C31\u662F\u5411\u7F51\u7EDC\u670D\
+  \u52A1\u5668\u53D1\u4FE1\u606F\uFF0C\u7B49\u56DE\u5E94\u3002\u7A0B\u5E8F\u5458\u8FD9\
+  \u4E48\u505A\uFF0C\u4E3B\u8981\u662F\u4E3A\u4E86\u548C\u7F51\u4E0A\u670D\u52A1\u4EA4\
+  \u6362\u6570\u636E\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.516436
+model: gpt-4-1106-preview
+summary: "\u53D1\u9001HTTP\u8BF7\u6C42\uFF0C\u5C31\u662F\u5411\u7F51\u7EDC\u670D\u52A1\
+  \u5668\u53D1\u4FE1\u606F\uFF0C\u7B49\u56DE\u5E94\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\
+  \u505A\uFF0C\u4E3B\u8981\u662F\u4E3A\u4E86\u548C\u7F51\u4E0A\u670D\u52A1\u4EA4\u6362\
+  \u6570\u636E\u3002"
+title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 ---
 
 {{< edit_this_page >}}

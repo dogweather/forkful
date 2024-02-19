@@ -1,15 +1,17 @@
 ---
-title:                "De lengte van een string vinden"
 aliases:
 - /nl/c-sharp/finding-the-length-of-a-string/
-date:                  2024-01-28T22:00:08.685040-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "De lengte van een string vinden"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c-sharp/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:00:08.685040-07:00
+description: "Het vinden van een stringlengte betekent het tellen van de tekens. We\
+  \ doen dit om invoer te valideren, door tekens te lopen, bronnen toe te wijzen,\
+  \ of uit\u2026"
+lastmod: 2024-02-18 23:09:01.842281
+model: gpt-4-0125-preview
+summary: "Het vinden van een stringlengte betekent het tellen van de tekens. We doen\
+  \ dit om invoer te valideren, door tekens te lopen, bronnen toe te wijzen, of uit\u2026"
+title: De lengte van een string vinden
 ---
 
 {{< edit_this_page >}}

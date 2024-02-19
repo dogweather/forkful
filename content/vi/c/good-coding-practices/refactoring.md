@@ -1,14 +1,20 @@
 ---
-title:                "Tái cấu trúc"
 aliases:
 - /vi/c/refactoring/
-date:                  2024-02-03T18:07:14.418416-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tái cấu trúc"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/refactoring.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:14.418416-07:00
+description: "T\xE1i c\u1EA5u tr\xFAc trong l\u1EADp tr\xECnh bao g\u1ED3m vi\u1EC7\
+  c c\u1EA5u tr\xFAc l\u1EA1i m\xE3 l\u1EC7nh hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay\
+  \ \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0i c\u1EE7a n\xF3, nh\u1EB1m m\u1EE5c \u0111\
+  \xEDch c\u1EA3i thi\u1EC7n c\xE1c thu\u1ED9c t\xEDnh\u2026"
+lastmod: 2024-02-18 23:08:51.243996
+model: gpt-4-0125-preview
+summary: "T\xE1i c\u1EA5u tr\xFAc trong l\u1EADp tr\xECnh bao g\u1ED3m vi\u1EC7c c\u1EA5\
+  u tr\xFAc l\u1EA1i m\xE3 l\u1EC7nh hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay \u0111\u1ED5\
+  i h\xE0nh vi b\xEAn ngo\xE0i c\u1EE7a n\xF3, nh\u1EB1m m\u1EE5c \u0111\xEDch c\u1EA3\
+  i thi\u1EC7n c\xE1c thu\u1ED9c t\xEDnh\u2026"
+title: "T\xE1i c\u1EA5u tr\xFAc"
 ---
 
 {{< edit_this_page >}}

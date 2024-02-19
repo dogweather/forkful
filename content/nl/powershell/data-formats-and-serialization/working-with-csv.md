@@ -1,15 +1,16 @@
 ---
-title:                "Werken met CSV"
 aliases:
 - /nl/powershell/working-with-csv/
-date:                  2024-01-28T22:10:08.959895-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met CSV"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/powershell/working-with-csv.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:08.959895-07:00
+description: "Werken met CSV (Comma-Separated Values) omvat het omgaan met tekstgegevens\
+  \ die door komma's zijn gesplitst in rijen en kolommen. Programmeurs werken met\u2026"
+lastmod: 2024-02-18 23:09:02.116375
+model: gpt-4-0125-preview
+summary: "Werken met CSV (Comma-Separated Values) omvat het omgaan met tekstgegevens\
+  \ die door komma's zijn gesplitst in rijen en kolommen. Programmeurs werken met\u2026"
+title: Werken met CSV
 ---
 
 {{< edit_this_page >}}

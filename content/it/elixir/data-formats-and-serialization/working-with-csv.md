@@ -1,14 +1,16 @@
 ---
-title:                "Lavorare con i CSV"
 aliases:
 - /it/elixir/working-with-csv/
-date:                  2024-02-03T19:19:39.845347-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con i CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:19:39.845347-07:00
+description: "Lavorare con file CSV (Valori Separati da Virgola) implica la lettura\
+  \ e la scrittura di dati su questi file, una necessit\xE0 comune per compiti che\u2026"
+lastmod: 2024-02-18 23:08:55.622005
+model: gpt-4-0125-preview
+summary: "Lavorare con file CSV (Valori Separati da Virgola) implica la lettura e\
+  \ la scrittura di dati su questi file, una necessit\xE0 comune per compiti che\u2026"
+title: Lavorare con i CSV
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,18 @@
 ---
-title:                "Werken met complexe getallen"
 aliases:
 - /nl/swift/working-with-complex-numbers/
-date:                  2024-01-28T22:12:18.925679-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met complexe getallen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/swift/working-with-complex-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:18.925679-07:00
+description: "Complexe getallen hebben een re\xEBel deel en een imaginair deel (zoals\
+  \ 3 + 4i). Programmeurs gebruiken ze in Swift voor taken zoals signaalverwerking,\
+  \ het\u2026"
+lastmod: 2024-02-18 23:09:02.222507
+model: gpt-4-0125-preview
+summary: "Complexe getallen hebben een re\xEBel deel en een imaginair deel (zoals\
+  \ 3 + 4i). Programmeurs gebruiken ze in Swift voor taken zoals signaalverwerking,\
+  \ het\u2026"
+title: Werken met complexe getallen
 ---
 
 {{< edit_this_page >}}

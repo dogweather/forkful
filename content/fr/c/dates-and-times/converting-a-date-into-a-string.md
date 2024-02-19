@@ -1,14 +1,16 @@
 ---
-title:                "Convertir une date en chaîne de caractères"
 aliases:
 - /fr/c/converting-a-date-into-a-string/
-date:                  2024-02-03T17:53:53.888699-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Convertir une date en chaîne de caractères"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:53.888699-07:00
+description: "Convertir une date en cha\xEEne de caract\xE8res en C implique de traduire\
+  \ une structure de date ou un horodatage en un format lisible par l'homme. Les\u2026"
+lastmod: 2024-02-18 23:09:09.369553
+model: gpt-4-0125-preview
+summary: "Convertir une date en cha\xEEne de caract\xE8res en C implique de traduire\
+  \ une structure de date ou un horodatage en un format lisible par l'homme. Les\u2026"
+title: "Convertir une date en cha\xEEne de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

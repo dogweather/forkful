@@ -1,15 +1,16 @@
 ---
-title:                "Een tekstbestand lezen"
 aliases:
 - /nl/ruby/reading-a-text-file/
-date:                  2024-01-28T22:05:20.772742-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tekstbestand lezen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/reading-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:05:20.772742-07:00
+description: "Het lezen van een tekstbestand betekent het toegang krijgen tot de inhoud\
+  \ van een bestand dat op de schijf is opgeslagen via code. Programmeurs doen dit\u2026"
+lastmod: 2024-02-18 23:09:02.441420
+model: gpt-4-0125-preview
+summary: "Het lezen van een tekstbestand betekent het toegang krijgen tot de inhoud\
+  \ van een bestand dat op de schijf is opgeslagen via code. Programmeurs doen dit\u2026"
+title: Een tekstbestand lezen
 ---
 
 {{< edit_this_page >}}

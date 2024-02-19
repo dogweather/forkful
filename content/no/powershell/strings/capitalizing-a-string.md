@@ -1,14 +1,17 @@
 ---
-title:                "Sette stor bokstav i en streng"
 aliases:
 - /no/powershell/capitalizing-a-string/
-date:                  2024-02-03T19:06:04.268461-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sette stor bokstav i en streng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/powershell/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:04.268461-07:00
+description: "\xC5 sette stor forbokstav i en streng i PowerShell inneb\xE6rer \xE5\
+  \ transformere det f\xF8rste tegnet i en gitt streng til stor bokstav mens resten\
+  \ av strengen\u2026"
+lastmod: 2024-02-18 23:08:54.082624
+model: gpt-4-0125-preview
+summary: "\xC5 sette stor forbokstav i en streng i PowerShell inneb\xE6rer \xE5 transformere\
+  \ det f\xF8rste tegnet i en gitt streng til stor bokstav mens resten av strengen\u2026"
+title: Sette stor bokstav i en streng
 ---
 
 {{< edit_this_page >}}

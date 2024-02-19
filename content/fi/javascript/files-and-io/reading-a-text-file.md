@@ -1,13 +1,15 @@
 ---
-title:                "Tekstitiedoston lukeminen"
 aliases:
 - /fi/javascript/reading-a-text-file/
-date:                  2024-01-20T17:54:56.986985-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tekstitiedoston lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/reading-a-text-file.md"
+date: 2024-01-20 17:54:56.986985-07:00
+description: "Tiedostosta tekstin lukeminen tarkoittaa tiedon ottamista tavallisesta\
+  \ tekstimuodossa olevalta tiedostoltasi. Ohjelmoijat lukevat tiedostoja, koska se\
+  \ on\u2026"
+lastmod: 2024-02-18 23:09:08.054834
+model: gpt-4-1106-preview
+summary: "Tiedostosta tekstin lukeminen tarkoittaa tiedon ottamista tavallisesta tekstimuodossa\
+  \ olevalta tiedostoltasi. Ohjelmoijat lukevat tiedostoja, koska se on\u2026"
+title: Tekstitiedoston lukeminen
 ---
 
 {{< edit_this_page >}}

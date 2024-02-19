@@ -1,13 +1,14 @@
 ---
-title:                "Working with complex numbers"
 aliases:
 - /en/lua/working-with-complex-numbers/
-date:                  2024-01-25T03:00:04.957882-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Working with complex numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/working-with-complex-numbers.md"
+date: 2024-01-25 03:00:04.957882-07:00
+description: "Complex numbers extend the idea of the one-dimensional number line into\
+  \ the two-dimensional plane by including a perpendicular imaginary axis. Programmers\u2026"
+lastmod: 2024-02-18 23:09:11.172557
+model: gpt-4-1106-preview
+summary: "Complex numbers extend the idea of the one-dimensional number line into\
+  \ the two-dimensional plane by including a perpendicular imaginary axis. Programmers\u2026"
+title: Working with complex numbers
 ---
 
 {{< edit_this_page >}}

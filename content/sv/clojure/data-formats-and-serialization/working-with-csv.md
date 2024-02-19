@@ -1,14 +1,16 @@
 ---
-title:                "Arbeta med CSV"
 aliases:
 - /sv/clojure/working-with-csv/
-date:                  2024-02-03T19:19:11.303957-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeta med CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:19:11.303957-07:00
+description: "Att arbeta med CSV-filer (Comma-Separated Values, komma-separerade v\xE4\
+  rden) inneb\xE4r att tolka och generera textdata strukturerad som rader och kolumner,\u2026"
+lastmod: 2024-02-18 23:08:51.483722
+model: gpt-4-0125-preview
+summary: "Att arbeta med CSV-filer (Comma-Separated Values, komma-separerade v\xE4\
+  rden) inneb\xE4r att tolka och generera textdata strukturerad som rader och kolumner,\u2026"
+title: Arbeta med CSV
 ---
 
 {{< edit_this_page >}}

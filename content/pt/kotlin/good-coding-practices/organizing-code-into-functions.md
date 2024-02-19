@@ -1,13 +1,16 @@
 ---
-title:                "Organizando o código em funções"
 aliases:
 - /pt/kotlin/organizing-code-into-functions/
-date:                  2024-01-26T01:11:28.897653-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organizando o código em funções"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/organizing-code-into-functions.md"
+date: 2024-01-26 01:11:28.897653-07:00
+description: "Organizar o c\xF3digo em fun\xE7\xF5es significa dividir seu programa\
+  \ em partes reutiliz\xE1veis, cada uma lidando com uma tarefa espec\xEDfica. Fazemos\
+  \ isso para tornar\u2026"
+lastmod: 2024-02-18 23:08:58.114381
+model: gpt-4-1106-preview
+summary: "Organizar o c\xF3digo em fun\xE7\xF5es significa dividir seu programa em\
+  \ partes reutiliz\xE1veis, cada uma lidando com uma tarefa espec\xEDfica. Fazemos\
+  \ isso para tornar\u2026"
+title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,24 @@
 ---
-title:                "解析HTML"
 aliases:
 - /zh/fish-shell/parsing-html/
-date:                  2024-02-03T19:12:19.559636-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "解析HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:19.559636-07:00
+description: "\u89E3\u6790HTML\u662F\u6307\u4ECEHTML\u5185\u5BB9\u4E2D\u63D0\u53D6\
+  \u6570\u636E\u6216\u4FE1\u606F\u7684\u8FC7\u7A0B\uFF0C\u8FD9\u662F\u5904\u7406\u7F51\
+  \u9875\u6570\u636E\u65F6\u5E38\u89C1\u7684\u4EFB\u52A1\u3002\u7A0B\u5E8F\u5458\u8FDB\
+  \u884C\u8FD9\u9879\u5DE5\u4F5C\u662F\u4E3A\u4E86\u81EA\u52A8\u5316\u4ECE\u7F51\u7AD9\
+  \u63D0\u53D6\u4FE1\u606F\uFF0C\u7528\u4E8E\u7F51\u9875\u6293\u53D6\u3001\u6570\u636E\
+  \u6316\u6398\u6216\u81EA\u52A8\u5316\u6D4B\u8BD5\u7B49\u4EFB\u52A1\u3002"
+lastmod: 2024-02-18 23:08:59.517340
+model: gpt-4-0125-preview
+summary: "\u89E3\u6790HTML\u662F\u6307\u4ECEHTML\u5185\u5BB9\u4E2D\u63D0\u53D6\u6570\
+  \u636E\u6216\u4FE1\u606F\u7684\u8FC7\u7A0B\uFF0C\u8FD9\u662F\u5904\u7406\u7F51\u9875\
+  \u6570\u636E\u65F6\u5E38\u89C1\u7684\u4EFB\u52A1\u3002\u7A0B\u5E8F\u5458\u8FDB\u884C\
+  \u8FD9\u9879\u5DE5\u4F5C\u662F\u4E3A\u4E86\u81EA\u52A8\u5316\u4ECE\u7F51\u7AD9\u63D0\
+  \u53D6\u4FE1\u606F\uFF0C\u7528\u4E8E\u7F51\u9875\u6293\u53D6\u3001\u6570\u636E\u6316\
+  \u6398\u6216\u81EA\u52A8\u5316\u6D4B\u8BD5\u7B49\u4EFB\u52A1\u3002"
+title: "\u89E3\u6790HTML"
 ---
 
 {{< edit_this_page >}}

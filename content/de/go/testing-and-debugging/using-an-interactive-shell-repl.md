@@ -1,14 +1,18 @@
 ---
-title:                "Verwendung einer interaktiven Shell (REPL)"
 aliases:
 - /de/go/using-an-interactive-shell-repl/
-date:                  2024-02-03T18:10:09.841480-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verwendung einer interaktiven Shell (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:09.841480-07:00
+description: "Eine interaktive Shell oder eine Read-Eval-Print-Schleife (REPL) erm\xF6\
+  glicht es Ihnen, in Echtzeit mit Go-Code zu experimentieren, Befehle auszuf\xFC\
+  hren und\u2026"
+lastmod: 2024-02-18 23:09:04.365546
+model: gpt-4-0125-preview
+summary: "Eine interaktive Shell oder eine Read-Eval-Print-Schleife (REPL) erm\xF6\
+  glicht es Ihnen, in Echtzeit mit Go-Code zu experimentieren, Befehle auszuf\xFC\
+  hren und\u2026"
+title: Verwendung einer interaktiven Shell (REPL)
 ---
 
 {{< edit_this_page >}}

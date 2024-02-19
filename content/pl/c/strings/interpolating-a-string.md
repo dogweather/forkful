@@ -1,14 +1,18 @@
 ---
-title:                "Interpolacja ciągu znaków"
 aliases:
 - /pl/c/interpolating-a-string/
-date:                  2024-02-03T17:58:44.845358-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interpolacja ciągu znaków"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/interpolating-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:58:44.845358-07:00
+description: "Interpolacja ci\u0105g\xF3w, w programowaniu, polega na tworzeniu ci\u0105\
+  g\xF3w przez osadzanie wyra\u017Ce\u0144 wewn\u0105trz dos\u0142ownych ci\u0105\
+  g\xF3w znak\xF3w. Programi\u015Bci robi\u0105 to, aby\u2026"
+lastmod: 2024-02-18 23:08:50.064846
+model: gpt-4-0125-preview
+summary: "Interpolacja ci\u0105g\xF3w, w programowaniu, polega na tworzeniu ci\u0105\
+  g\xF3w przez osadzanie wyra\u017Ce\u0144 wewn\u0105trz dos\u0142ownych ci\u0105\
+  g\xF3w znak\xF3w. Programi\u015Bci robi\u0105 to, aby\u2026"
+title: "Interpolacja ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

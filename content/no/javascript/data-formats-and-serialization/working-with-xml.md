@@ -1,13 +1,14 @@
 ---
-title:                "Å jobbe med XML"
 aliases:
 - /no/javascript/working-with-xml/
-date:                  2024-01-26T04:32:37.548223-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å jobbe med XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/working-with-xml.md"
+date: 2024-01-26 04:32:37.548223-07:00
+description: "\xC5 jobbe med XML betyr \xE5 analysere, manipulere og produsere XML-innhold\
+  \ ved hjelp av kode. Programmerere gj\xF8r det fordi XML er mye brukt til\u2026"
+lastmod: 2024-02-18 23:08:54.332715
+model: gpt-4-0125-preview
+summary: "\xC5 jobbe med XML betyr \xE5 analysere, manipulere og produsere XML-innhold\
+  \ ved hjelp av kode. Programmerere gj\xF8r det fordi XML er mye brukt til\u2026"
+title: "\xC5 jobbe med XML"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Interpolacja łańcuchów znaków"
 aliases:
 - /pl/java/interpolating-a-string/
-date:                  2024-01-20T17:51:00.354502-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolacja łańcuchów znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/interpolating-a-string.md"
+date: 2024-01-20 17:51:00.354502-07:00
+description: "Interpolacja \u0142a\u0144cuch\xF3w to proces wstawiania warto\u015B\
+  ci zmiennych do ci\u0105gu znak\xF3w. Programi\u015Bci u\u017Cywaj\u0105 jej dla\
+  \ dynamizmu kodu i uproszczenia generowania\u2026"
+lastmod: 2024-02-18 23:08:49.464335
+model: gpt-4-1106-preview
+summary: "Interpolacja \u0142a\u0144cuch\xF3w to proces wstawiania warto\u015Bci zmiennych\
+  \ do ci\u0105gu znak\xF3w. Programi\u015Bci u\u017Cywaj\u0105 jej dla dynamizmu\
+  \ kodu i uproszczenia generowania\u2026"
+title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Skrive en tekstfil"
 aliases:
 - /no/kotlin/writing-a-text-file/
-date:                  2024-02-03T19:28:25.721030-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skrive en tekstfil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:28:25.721030-07:00
+description: "\xC5 skrive en tekstfil i Kotlin inneb\xE6rer \xE5 lage en fil og legge\
+  \ inn tekstinnhold i den, en vanlig oppgave for lagring av data, logging eller innstillinger\u2026"
+lastmod: 2024-02-18 23:08:53.870200
+model: gpt-4-0125-preview
+summary: "\xC5 skrive en tekstfil i Kotlin inneb\xE6rer \xE5 lage en fil og legge\
+  \ inn tekstinnhold i den, en vanlig oppgave for lagring av data, logging eller innstillinger\u2026"
+title: Skrive en tekstfil
 ---
 
 {{< edit_this_page >}}

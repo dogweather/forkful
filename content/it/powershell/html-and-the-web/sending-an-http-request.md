@@ -1,13 +1,14 @@
 ---
-title:                "Inviare una richiesta http"
 aliases:
 - /it/powershell/sending-an-http-request/
-date:                  2024-01-20T18:00:19.920123-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Inviare una richiesta http"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/sending-an-http-request.md"
+date: 2024-01-20 18:00:19.920123-07:00
+description: Mandare una richiesta HTTP significa chiedere al web qualcosa. I programmatori
+  lo fanno per interagire con API, scaricare dati, o altro ancora.
+lastmod: 2024-02-18 23:08:56.091540
+model: gpt-4-1106-preview
+summary: Mandare una richiesta HTTP significa chiedere al web qualcosa. I programmatori
+  lo fanno per interagire con API, scaricare dati, o altro ancora.
+title: Inviare una richiesta http
 ---
 
 {{< edit_this_page >}}

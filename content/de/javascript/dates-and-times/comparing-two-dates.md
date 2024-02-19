@@ -1,13 +1,14 @@
 ---
-title:                "Vergleich von zwei Daten"
 aliases:
 - /de/javascript/comparing-two-dates/
-date:                  2024-01-20T17:33:30.887383-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Vergleich von zwei Daten"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/comparing-two-dates.md"
+date: 2024-01-20 17:33:30.887383-07:00
+description: "Datenvergleiche checken, ob ein Datum vor, gleich oder nach einem anderen\
+  \ liegt. Das ist wichtig f\xFCr Reservierungen, Fristen, Logs oder\u2026"
+lastmod: 2024-02-18 23:09:05.292036
+model: gpt-4-1106-preview
+summary: "Datenvergleiche checken, ob ein Datum vor, gleich oder nach einem anderen\
+  \ liegt. Das ist wichtig f\xFCr Reservierungen, Fristen, Logs oder\u2026"
+title: Vergleich von zwei Daten
 ---
 
 {{< edit_this_page >}}

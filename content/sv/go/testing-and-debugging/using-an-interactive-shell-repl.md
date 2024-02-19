@@ -1,14 +1,16 @@
 ---
-title:                "Använda en interaktiv skal (REPL)"
 aliases:
 - /sv/go/using-an-interactive-shell-repl/
-date:                  2024-02-03T18:10:23.439501-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Använda en interaktiv skal (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:23.439501-07:00
+description: "En interaktiv skal, eller Read-Eval-Print Loop (REPL), l\xE5ter dig\
+  \ experimentera med Go-kod i realtid, genom att k\xF6ra kommandon och f\xE5 omedelbar\u2026"
+lastmod: 2024-02-18 23:08:51.335080
+model: gpt-4-0125-preview
+summary: "En interaktiv skal, eller Read-Eval-Print Loop (REPL), l\xE5ter dig experimentera\
+  \ med Go-kod i realtid, genom att k\xF6ra kommandon och f\xE5 omedelbar\u2026"
+title: "Anv\xE4nda en interaktiv skal (REPL)"
 ---
 
 {{< edit_this_page >}}

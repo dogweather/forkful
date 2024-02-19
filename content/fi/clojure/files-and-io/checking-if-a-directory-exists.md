@@ -1,14 +1,18 @@
 ---
-title:                "Tarkistetaan, onko hakemisto olemassa"
 aliases:
 - /fi/clojure/checking-if-a-directory-exists/
-date:                  2024-02-03T19:07:10.989993-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tarkistetaan, onko hakemisto olemassa"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:07:10.989993-07:00
+description: "Hakemiston olemassaolon tarkistaminen Clojuressa k\xE4sitt\xE4\xE4 tiedostoj\xE4\
+  rjestelm\xE4n hakemiston l\xE4sn\xE4olon varmistamisen Clojure-sovelluksessasi.\
+  \ T\xE4m\xE4 teht\xE4v\xE4 on\u2026"
+lastmod: 2024-02-18 23:09:07.243926
+model: gpt-4-0125-preview
+summary: "Hakemiston olemassaolon tarkistaminen Clojuressa k\xE4sitt\xE4\xE4 tiedostoj\xE4\
+  rjestelm\xE4n hakemiston l\xE4sn\xE4olon varmistamisen Clojure-sovelluksessasi.\
+  \ T\xE4m\xE4 teht\xE4v\xE4 on\u2026"
+title: Tarkistetaan, onko hakemisto olemassa
 ---
 
 {{< edit_this_page >}}

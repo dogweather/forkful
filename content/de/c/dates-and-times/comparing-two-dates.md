@@ -1,14 +1,16 @@
 ---
-title:                "Zwei Daten vergleichen"
 aliases:
 - /de/c/comparing-two-dates/
-date:                  2024-02-03T17:53:26.395980-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zwei Daten vergleichen"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/comparing-two-dates.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:26.395980-07:00
+description: "Das Vergleichen zweier Daten in C beinhaltet die Bestimmung der chronologischen\
+  \ Beziehung zwischen ihnen \u2013 ob ein Datum dem anderen vorausgeht oder ob sie\u2026"
+lastmod: 2024-02-18 23:09:05.388102
+model: gpt-4-0125-preview
+summary: "Das Vergleichen zweier Daten in C beinhaltet die Bestimmung der chronologischen\
+  \ Beziehung zwischen ihnen \u2013 ob ein Datum dem anderen vorausgeht oder ob sie\u2026"
+title: Zwei Daten vergleichen
 ---
 
 {{< edit_this_page >}}

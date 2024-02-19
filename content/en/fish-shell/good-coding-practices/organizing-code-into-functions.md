@@ -1,16 +1,18 @@
 ---
-title:                "Organizing code into functions"
 aliases:
 - /en/fish-shell/organizing-code-into-functions/
-date:                  2024-01-25T03:00:10.607473-07:00
-lastmod:               2024-01-28
-model:                 gpt-4-1106-preview
-simple_title:         "Organizing code into functions"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/organizing-code-into-functions.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed and added links
+- 2024-01-28, dogweather, reviewed and added links
+date: 2024-01-25 03:00:10.607473-07:00
+description: "Organizing code into functions is about bundling up bits of script to\
+  \ do specific tasks. We do it because it makes code easier to read, test, and reuse\
+  \ \u2014\u2026"
+lastmod: 2024-02-18 23:09:11.486772
+model: gpt-4-1106-preview
+summary: "Organizing code into functions is about bundling up bits of script to do\
+  \ specific tasks. We do it because it makes code easier to read, test, and reuse\
+  \ \u2014\u2026"
+title: Organizing code into functions
 ---
 
 {{< edit_this_page >}}

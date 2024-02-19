@@ -1,13 +1,16 @@
 ---
-title:                "Affichage des sorties de débogage"
 aliases:
 - /fr/haskell/printing-debug-output/
-date:                  2024-01-20T17:52:44.820887-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Affichage des sorties de débogage"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/printing-debug-output.md"
+date: 2024-01-20 17:52:44.820887-07:00
+description: "Imprimer des sorties de d\xE9bogage, c'est afficher des donn\xE9es pendant\
+  \ l'ex\xE9cution pour comprendre ce qui se passe. Les d\xE9veloppeurs le font pour\
+  \ traquer\u2026"
+lastmod: 2024-02-18 23:09:08.878037
+model: gpt-4-1106-preview
+summary: "Imprimer des sorties de d\xE9bogage, c'est afficher des donn\xE9es pendant\
+  \ l'ex\xE9cution pour comprendre ce qui se passe. Les d\xE9veloppeurs le font pour\
+  \ traquer\u2026"
+title: "Affichage des sorties de d\xE9bogage"
 ---
 
 {{< edit_this_page >}}

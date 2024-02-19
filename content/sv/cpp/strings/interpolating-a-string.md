@@ -1,13 +1,16 @@
 ---
-title:                "Interpolera en sträng"
 aliases:
 - /sv/cpp/interpolating-a-string/
-date:                  2024-01-20T17:50:19.840685-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolera en sträng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/interpolating-a-string.md"
+date: 2024-01-20 17:50:19.840685-07:00
+description: "Stringinterpolation inneb\xE4r att blanda in variabler i en textstr\xE4\
+  ng. Det g\xF6r kod l\xE4sbar och flexibel \u2013 vi slipper klumpigt plus-tecken\
+  \ (+) f\xF6r att bygga\u2026"
+lastmod: 2024-02-18 23:08:52.070568
+model: gpt-4-1106-preview
+summary: "Stringinterpolation inneb\xE4r att blanda in variabler i en textstr\xE4\
+  ng. Det g\xF6r kod l\xE4sbar och flexibel \u2013 vi slipper klumpigt plus-tecken\
+  \ (+) f\xF6r att bygga\u2026"
+title: "Interpolera en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

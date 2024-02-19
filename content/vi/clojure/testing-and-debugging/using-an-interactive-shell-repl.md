@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng vỏ tương tác (REPL)"
 aliases:
 - /vi/clojure/using-an-interactive-shell-repl/
-date:                  2024-01-28T22:09:33.866291-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng vỏ tương tác (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/clojure/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:33.866291-07:00
+description: "REPL, hay V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In, l\xE0\
+  \ m\u1ED9t m\xF4i tr\u01B0\u1EDDng l\u1EADp tr\xECnh cho ph\xE9p th\u1EED nghi\u1EC7\
+  m \u0111\u1ED9ng t\u1EEBng \u0111o\u1EA1n m\xE3 Clojure m\u1ED9t c\xE1ch \u0111\u01A1\
+  n l\u1EBB. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3\u2026"
+lastmod: 2024-02-18 23:08:50.316539
+model: gpt-4-0125-preview
+summary: "REPL, hay V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In, l\xE0 m\u1ED9\
+  t m\xF4i tr\u01B0\u1EDDng l\u1EADp tr\xECnh cho ph\xE9p th\u1EED nghi\u1EC7m \u0111\
+  \u1ED9ng t\u1EEBng \u0111o\u1EA1n m\xE3 Clojure m\u1ED9t c\xE1ch \u0111\u01A1n l\u1EBB\
+  . L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3\u2026"
+title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 ---
 
 {{< edit_this_page >}}

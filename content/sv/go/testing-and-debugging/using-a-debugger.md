@@ -1,14 +1,18 @@
 ---
-title:                "Att använda en debugger"
 aliases:
 - /sv/go/using-a-debugger/
-date:                  2024-02-03T18:10:09.034247-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda en debugger"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/using-a-debugger.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:09.034247-07:00
+description: "Att anv\xE4nda en fels\xF6kare i Go-programmering inneb\xE4r att man\
+  \ anv\xE4nder verktyg eller funktioner f\xF6r att inspektera och modifiera tillst\xE5\
+  ndet hos ett k\xF6rande\u2026"
+lastmod: 2024-02-18 23:08:51.338165
+model: gpt-4-0125-preview
+summary: "Att anv\xE4nda en fels\xF6kare i Go-programmering inneb\xE4r att man anv\xE4\
+  nder verktyg eller funktioner f\xF6r att inspektera och modifiera tillst\xE5ndet\
+  \ hos ett k\xF6rande\u2026"
+title: "Att anv\xE4nda en debugger"
 ---
 
 {{< edit_this_page >}}

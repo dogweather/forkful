@@ -1,13 +1,14 @@
 ---
-title:                "Avrunding av tall"
 aliases:
 - /no/bash/rounding-numbers/
-date:                  2024-01-26T03:42:59.130157-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Avrunding av tall"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/rounding-numbers.md"
+date: 2024-01-26 03:42:59.130157-07:00
+description: "\xC5 runde av tall betyr \xE5 kutte av desimalene til en enklere verdi\
+  \ som er god nok for en gitt kontekst. Programmerere runder av tall for \xE5 forenkle\u2026"
+lastmod: 2024-02-18 23:08:54.051208
+model: gpt-4-0125-preview
+summary: "\xC5 runde av tall betyr \xE5 kutte av desimalene til en enklere verdi som\
+  \ er god nok for en gitt kontekst. Programmerere runder av tall for \xE5 forenkle\u2026"
+title: Avrunding av tall
 ---
 
 {{< edit_this_page >}}

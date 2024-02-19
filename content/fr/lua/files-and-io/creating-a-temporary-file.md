@@ -1,13 +1,16 @@
 ---
-title:                "Création d'un fichier temporaire"
 aliases:
 - /fr/lua/creating-a-temporary-file/
-date:                  2024-01-20T17:41:35.373338-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Création d'un fichier temporaire"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/lua/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:35.373338-07:00
+description: "(Quoi et Pourquoi ?) Cr\xE9er un fichier temporaire, c\u2019est comme\
+  \ prendre des notes sur un bout de papier qu\u2019on jette apr\xE8s usage. Les programmeurs\
+  \ en ont\u2026"
+lastmod: 2024-02-18 23:09:08.991310
+model: gpt-4-1106-preview
+summary: "(Quoi et Pourquoi ?) Cr\xE9er un fichier temporaire, c\u2019est comme prendre\
+  \ des notes sur un bout de papier qu\u2019on jette apr\xE8s usage. Les programmeurs\
+  \ en ont\u2026"
+title: "Cr\xE9ation d'un fichier temporaire"
 ---
 
 {{< edit_this_page >}}

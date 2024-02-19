@@ -1,15 +1,22 @@
 ---
-title:                "Làm tròn số"
 aliases:
 - /vi/cpp/rounding-numbers/
-date:                  2024-01-28T22:06:58.276399-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm tròn số"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/cpp/rounding-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:06:58.276399-07:00
+description: "L\xE0m tr\xF2n s\u1ED1 ngh\u0129a l\xE0 \u0111i\u1EC1u ch\u1EC9nh gi\xE1\
+  \ tr\u1ECB t\u1EDBi s\u1ED1 nguy\xEAn g\u1EA7n nh\u1EA5t ho\u1EB7c \u0111\u1ED9\
+  \ ch\xEDnh x\xE1c \u0111\xE3 ch\u1EC9 \u0111\u1ECBnh. L\u1EADp tr\xECnh vi\xEAn\
+  \ th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u01A1n gi\u1EA3\
+  n h\xF3a, ph\xF9 h\u1EE3p\u2026"
+lastmod: 2024-02-18 23:08:51.038591
+model: gpt-4-0125-preview
+summary: "L\xE0m tr\xF2n s\u1ED1 ngh\u0129a l\xE0 \u0111i\u1EC1u ch\u1EC9nh gi\xE1\
+  \ tr\u1ECB t\u1EDBi s\u1ED1 nguy\xEAn g\u1EA7n nh\u1EA5t ho\u1EB7c \u0111\u1ED9\
+  \ ch\xEDnh x\xE1c \u0111\xE3 ch\u1EC9 \u0111\u1ECBnh. L\u1EADp tr\xECnh vi\xEAn\
+  \ th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u01A1n gi\u1EA3\
+  n h\xF3a, ph\xF9 h\u1EE3p\u2026"
+title: "L\xE0m tr\xF2n s\u1ED1"
 ---
 
 {{< edit_this_page >}}

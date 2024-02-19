@@ -1,14 +1,18 @@
 ---
-title:                "HTML:n jäsentäminen"
 aliases:
 - /fi/google-apps-script/parsing-html/
-date:                  2024-02-01T21:57:35.617039-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML:n jäsentäminen"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/parsing-html.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:35.617039-07:00
+description: "HTML:n j\xE4sent\xE4minen Google Apps Scriptiss\xE4 tarkoittaa tietojen\
+  \ poimimista HTML-sis\xE4ll\xF6st\xE4, mik\xE4 on erityisen hy\xF6dyllist\xE4, kun\
+  \ toimitaan verkkosivujen tai\u2026"
+lastmod: 2024-02-18 23:09:07.132445
+model: gpt-4-0125-preview
+summary: "HTML:n j\xE4sent\xE4minen Google Apps Scriptiss\xE4 tarkoittaa tietojen\
+  \ poimimista HTML-sis\xE4ll\xF6st\xE4, mik\xE4 on erityisen hy\xF6dyllist\xE4, kun\
+  \ toimitaan verkkosivujen tai\u2026"
+title: "HTML:n j\xE4sent\xE4minen"
 ---
 
 {{< edit_this_page >}}

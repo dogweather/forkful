@@ -1,13 +1,16 @@
 ---
-title:                "Obliczanie daty w przyszłości lub przeszłości"
 aliases:
 - /pl/rust/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:32:10.522439-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:32:10.522439-07:00
+description: "Obliczanie dat w przysz\u0142o\u015Bci czy przesz\u0142o\u015Bci to\
+  \ ustalenie dnia przed lub po okre\u015Blonym czasie. Programi\u015Bci robi\u0105\
+  \ to, aby zarz\u0105dza\u0107 harmonogramami,\u2026"
+lastmod: 2024-02-18 23:08:49.403156
+model: gpt-4-1106-preview
+summary: "Obliczanie dat w przysz\u0142o\u015Bci czy przesz\u0142o\u015Bci to ustalenie\
+  \ dnia przed lub po okre\u015Blonym czasie. Programi\u015Bci robi\u0105 to, aby\
+  \ zarz\u0105dza\u0107 harmonogramami,\u2026"
+title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 ---
 
 {{< edit_this_page >}}

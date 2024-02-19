@@ -1,14 +1,18 @@
 ---
-title:                "Skriva tester"
 aliases:
 - /sv/lua/writing-tests/
-date:                  2024-02-03T19:31:37.078534-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriva tester"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/lua/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:37.078534-07:00
+description: "Att skriva tester i programmering inneb\xE4r att skapa sm\xE5, separata\
+  \ kodstycken f\xF6r att automatiskt verifiera att olika delar av din applikation\
+  \ fungerar som\u2026"
+lastmod: 2024-02-18 23:08:51.921938
+model: gpt-4-0125-preview
+summary: "Att skriva tester i programmering inneb\xE4r att skapa sm\xE5, separata\
+  \ kodstycken f\xF6r att automatiskt verifiera att olika delar av din applikation\
+  \ fungerar som\u2026"
+title: Skriva tester
 ---
 
 {{< edit_this_page >}}

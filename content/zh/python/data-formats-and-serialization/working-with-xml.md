@@ -1,13 +1,22 @@
 ---
-title:                "处理XML"
 aliases:
 - /zh/python/working-with-xml/
-date:                  2024-01-26T04:35:10.040963-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/working-with-xml.md"
+date: 2024-01-26 04:35:10.040963-07:00
+description: "\u201C\u5904\u7406XML\u201D\u6307\u7684\u662F\u4F7F\u7528\u7F16\u7A0B\
+  \u8BFB\u53D6\u3001\u521B\u5EFA\u548C\u4FEE\u6539XML\uFF08\u53EF\u6269\u5C55\u6807\
+  \u8BB0\u8BED\u8A00\uFF09\u6587\u4EF6\u7684\u8FC7\u7A0B\u3002\u7F16\u7A0B\u8005\u4E4B\
+  \u6240\u4EE5\u8FD9\u6837\u505A\uFF0C\u662F\u56E0\u4E3AXML\u56E0\u5176\u5E73\u53F0\
+  \u65E0\u5173\u6027\u548C\u81EA\u63CF\u8FF0\u683C\u5F0F\u800C\u5E7F\u6CDB\u7528\u4E8E\
+  \u6570\u636E\u4EA4\u6362\u3002"
+lastmod: 2024-02-18 23:08:58.812487
+model: gpt-4-0125-preview
+summary: "\u201C\u5904\u7406XML\u201D\u6307\u7684\u662F\u4F7F\u7528\u7F16\u7A0B\u8BFB\
+  \u53D6\u3001\u521B\u5EFA\u548C\u4FEE\u6539XML\uFF08\u53EF\u6269\u5C55\u6807\u8BB0\
+  \u8BED\u8A00\uFF09\u6587\u4EF6\u7684\u8FC7\u7A0B\u3002\u7F16\u7A0B\u8005\u4E4B\u6240\
+  \u4EE5\u8FD9\u6837\u505A\uFF0C\u662F\u56E0\u4E3AXML\u56E0\u5176\u5E73\u53F0\u65E0\
+  \u5173\u6027\u548C\u81EA\u63CF\u8FF0\u683C\u5F0F\u800C\u5E7F\u6CDB\u7528\u4E8E\u6570\
+  \u636E\u4EA4\u6362\u3002"
+title: "\u5904\u7406XML"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie do standardowego błędu"
 aliases:
 - /pl/arduino/writing-to-standard-error/
-date:                  2024-02-03T19:32:49.675510-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie do standardowego błędu"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:49.675510-07:00
+description: "Pisanie na standardowe wyj\u015Bcie b\u0142\u0119d\xF3w (stderr) w programowaniu\
+  \ Arduino polega na kierowaniu komunikat\xF3w o b\u0142\u0119dach i diagnostyki\
+  \ do osobnego kana\u0142u,\u2026"
+lastmod: 2024-02-18 23:08:49.885287
+model: gpt-4-0125-preview
+summary: "Pisanie na standardowe wyj\u015Bcie b\u0142\u0119d\xF3w (stderr) w programowaniu\
+  \ Arduino polega na kierowaniu komunikat\xF3w o b\u0142\u0119dach i diagnostyki\
+  \ do osobnego kana\u0142u,\u2026"
+title: "Pisanie do standardowego b\u0142\u0119du"
 ---
 
 {{< edit_this_page >}}

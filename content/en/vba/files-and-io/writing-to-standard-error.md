@@ -1,12 +1,14 @@
 ---
-title:                "Writing to standard error"
 aliases:
 - /en/vba/writing-to-standard-error/
-date:                  2024-02-01T21:30:22.654809-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Writing to standard error"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/vba/writing-to-standard-error.md"
+date: 2024-02-01 21:30:22.654809-07:00
+description: "Writing to standard error in Visual Basic for Applications (VBA) involves\
+  \ directing error messages or diagnostics apart from standard output, usually to\u2026"
+lastmod: 2024-02-18 23:09:10.905933
+model: gpt-4-0125-preview
+summary: "Writing to standard error in Visual Basic for Applications (VBA) involves\
+  \ directing error messages or diagnostics apart from standard output, usually to\u2026"
+title: Writing to standard error
 ---
 
 {{< edit_this_page >}}

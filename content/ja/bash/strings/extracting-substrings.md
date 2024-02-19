@@ -1,14 +1,23 @@
 ---
-title:                "部分文字列の抽出"
 aliases:
 - /ja/bash/extracting-substrings/
-date:                  2024-01-20T17:45:02.721397-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "部分文字列の抽出"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/extracting-substrings.md"
+date: 2024-01-20 17:45:02.721397-07:00
+description: "\u30B5\u30D6\u30B9\u30C8\u30EA\u30F3\u30B0\u3092\u629C\u304D\u51FA\u3059\
+  \u3063\u3066\u3044\u3046\u306E\u306F\u6587\u5B57\u5217\u306E\u4E00\u90E8\u3092\u5207\
+  \u308A\u53D6\u308B\u3053\u3068\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u306A\
+  \u305C\u305D\u308C\u3092\u3059\u308B\u304B\uFF1F\u30C7\u30FC\u30BF\u3092\u6271\u3046\
+  \u6642\u306B\u7279\u5B9A\u306E\u60C5\u5831\u3060\u3051\u304C\u5FC5\u8981\u3060\u304B\
+  \u3089\u3060\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.062507
+model: gpt-4-1106-preview
+summary: "\u30B5\u30D6\u30B9\u30C8\u30EA\u30F3\u30B0\u3092\u629C\u304D\u51FA\u3059\
+  \u3063\u3066\u3044\u3046\u306E\u306F\u6587\u5B57\u5217\u306E\u4E00\u90E8\u3092\u5207\
+  \u308A\u53D6\u308B\u3053\u3068\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u306A\
+  \u305C\u305D\u308C\u3092\u3059\u308B\u304B\uFF1F\u30C7\u30FC\u30BF\u3092\u6271\u3046\
+  \u6642\u306B\u7279\u5B9A\u306E\u60C5\u5831\u3060\u3051\u304C\u5FC5\u8981\u3060\u304B\
+  \u3089\u3060\u3002"
+title: "\u90E8\u5206\u6587\u5B57\u5217\u306E\u62BD\u51FA"
 ---
 
 {{< edit_this_page >}}

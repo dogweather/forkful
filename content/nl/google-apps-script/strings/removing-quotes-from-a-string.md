@@ -1,14 +1,17 @@
 ---
-title:                "Quotes uit een string verwijderen"
 aliases:
 - /nl/google-apps-script/removing-quotes-from-a-string/
-date:                  2024-02-01T22:00:05.835365-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Quotes uit een string verwijderen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/google-apps-script/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:05.835365-07:00
+description: "Het verwijderen van aanhalingstekens uit een tekenreeks in Google Apps\
+  \ Script gaat over het elimineren van onnodige aanhalingstekens die mogelijk rond\
+  \ uw\u2026"
+lastmod: 2024-02-18 23:09:01.371989
+model: gpt-4-0125-preview
+summary: "Het verwijderen van aanhalingstekens uit een tekenreeks in Google Apps Script\
+  \ gaat over het elimineren van onnodige aanhalingstekens die mogelijk rond uw\u2026"
+title: Quotes uit een string verwijderen
 ---
 
 {{< edit_this_page >}}

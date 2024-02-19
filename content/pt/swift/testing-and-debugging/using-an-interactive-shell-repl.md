@@ -1,13 +1,16 @@
 ---
-title:                "Usando um shell interativo (REPL)"
 aliases:
 - /pt/swift/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:18:07.720114-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando um shell interativo (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:18:07.720114-07:00
+description: "Usar um shell interativo, ou um Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3\
+  o (REPL), permite programar interativamente. Programadores usam isso para testar\
+  \ trechos\u2026"
+lastmod: 2024-02-18 23:08:58.492595
+model: gpt-4-0125-preview
+summary: "Usar um shell interativo, ou um Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3\
+  o (REPL), permite programar interativamente. Programadores usam isso para testar\
+  \ trechos\u2026"
+title: Usando um shell interativo (REPL)
 ---
 
 {{< edit_this_page >}}

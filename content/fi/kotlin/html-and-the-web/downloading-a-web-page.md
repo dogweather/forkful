@@ -1,13 +1,14 @@
 ---
-title:                "Verkkosivun lataaminen"
 aliases:
 - /fi/kotlin/downloading-a-web-page/
-date:                  2024-01-20T17:44:23.735953-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Verkkosivun lataaminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/downloading-a-web-page.md"
+date: 2024-01-20 17:44:23.735953-07:00
+description: "Verkkosivun lataaminen tarkoittaa sivun sis\xE4ll\xF6n hakemista internetist\xE4\
+  \ omalle laitteelle. Koodarit lataavat sivuja data-analyysiin, sis\xE4ll\xF6n\u2026"
+lastmod: 2024-02-18 23:09:07.573546
+model: gpt-4-1106-preview
+summary: "Verkkosivun lataaminen tarkoittaa sivun sis\xE4ll\xF6n hakemista internetist\xE4\
+  \ omalle laitteelle. Koodarit lataavat sivuja data-analyysiin, sis\xE4ll\xF6n\u2026"
+title: Verkkosivun lataaminen
 ---
 
 {{< edit_this_page >}}

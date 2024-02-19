@@ -1,13 +1,16 @@
 ---
-title:                "Journalisation"
 aliases:
 - /fr/bash/logging/
-date:                  2024-01-26T00:59:09.677598-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Journalisation"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/logging.md"
+date: 2024-01-26 00:59:09.677598-07:00
+description: "La journalisation est une pratique qui consiste \xE0 enregistrer les\
+  \ \xE9v\xE9nements, les erreurs et d'autres informations significatives issues des\
+  \ processus en\u2026"
+lastmod: 2024-02-18 23:09:09.026367
+model: gpt-4-1106-preview
+summary: "La journalisation est une pratique qui consiste \xE0 enregistrer les \xE9\
+  v\xE9nements, les erreurs et d'autres informations significatives issues des processus\
+  \ en\u2026"
+title: Journalisation
 ---
 
 {{< edit_this_page >}}

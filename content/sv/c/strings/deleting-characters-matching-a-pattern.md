@@ -1,14 +1,18 @@
 ---
-title:                "Radera tecken som matchar ett mönster"
 aliases:
 - /sv/c/deleting-characters-matching-a-pattern/
-date:                  2024-02-03T17:55:28.960676-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Radera tecken som matchar ett mönster"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:28.960676-07:00
+description: "Att ta bort tecken som matchar ett specifikt m\xF6nster fr\xE5n str\xE4\
+  ngar i C handlar om att eliminera alla instanser av vissa tecken som passar f\xF6\
+  rdefinierade\u2026"
+lastmod: 2024-02-18 23:08:52.233304
+model: gpt-4-0125-preview
+summary: "Att ta bort tecken som matchar ett specifikt m\xF6nster fr\xE5n str\xE4\
+  ngar i C handlar om att eliminera alla instanser av vissa tecken som passar f\xF6\
+  rdefinierade\u2026"
+title: "Radera tecken som matchar ett m\xF6nster"
 ---
 
 {{< edit_this_page >}}

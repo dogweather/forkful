@@ -1,14 +1,18 @@
 ---
-title:                "Att Arbeta med YAML"
 aliases:
 - /sv/google-apps-script/working-with-yaml/
-date:                  2024-02-01T22:07:29.694093-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att Arbeta med YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/google-apps-script/working-with-yaml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:07:29.694093-07:00
+description: "YAML, som st\xE5r f\xF6r \"YAML Ain't Markup Language\", \xE4r en standard\
+  \ f\xF6r serialisering av data som \xE4r l\xE4slig f\xF6r m\xE4nniskor och anv\xE4\
+  nds ofta f\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.400606
+model: gpt-4-0125-preview
+summary: "YAML, som st\xE5r f\xF6r \"YAML Ain't Markup Language\", \xE4r en standard\
+  \ f\xF6r serialisering av data som \xE4r l\xE4slig f\xF6r m\xE4nniskor och anv\xE4\
+  nds ofta f\xF6r\u2026"
+title: Att Arbeta med YAML
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Praca z XML"
 aliases:
 - /pl/python/working-with-xml/
-date:                  2024-01-26T04:34:59.617139-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/working-with-xml.md"
+date: 2024-01-26 04:34:59.617139-07:00
+description: "\"Praca z XML\" odnosi si\u0119 do procesu odczytu, tworzenia i modyfikacji\
+  \ plik\xF3w XML (eXtensible Markup Language) za pomoc\u0105 programowania. Programi\u015B\
+  ci robi\u0105\u2026"
+lastmod: 2024-02-18 23:08:49.247080
+model: gpt-4-0125-preview
+summary: "\"Praca z XML\" odnosi si\u0119 do procesu odczytu, tworzenia i modyfikacji\
+  \ plik\xF3w XML (eXtensible Markup Language) za pomoc\u0105 programowania. Programi\u015B\
+  ci robi\u0105\u2026"
+title: Praca z XML
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Analisi del HTML"
 aliases:
 - /it/c/parsing-html/
-date:                  2024-02-03T17:59:48.550173-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analisi del HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:48.550173-07:00
+description: "L'analisi del HTML in C implica l'esaminare documenti HTML per estrarre\
+  \ dati, strutture o parti specifiche in modo efficiente, spesso come precursore\u2026"
+lastmod: 2024-02-18 23:08:56.336154
+model: gpt-4-0125-preview
+summary: "L'analisi del HTML in C implica l'esaminare documenti HTML per estrarre\
+  \ dati, strutture o parti specifiche in modo efficiente, spesso come precursore\u2026"
+title: Analisi del HTML
 ---
 
 {{< edit_this_page >}}

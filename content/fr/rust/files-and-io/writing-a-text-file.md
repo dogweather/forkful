@@ -1,14 +1,17 @@
 ---
-title:                "Rédiger un fichier texte"
 aliases:
 - /fr/rust/writing-a-text-file/
-date:                  2024-02-03T19:29:19.384858-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rédiger un fichier texte"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:19.384858-07:00
+description: "\xC9crire un fichier texte en Rust implique de cr\xE9er, \xE9crire et\
+  \ potentiellement ajouter des donn\xE9es \xE0 un fichier sur le syst\xE8me de fichiers.\
+  \ Les programmeurs\u2026"
+lastmod: 2024-02-18 23:09:08.549507
+model: gpt-4-0125-preview
+summary: "\xC9crire un fichier texte en Rust implique de cr\xE9er, \xE9crire et potentiellement\
+  \ ajouter des donn\xE9es \xE0 un fichier sur le syst\xE8me de fichiers. Les programmeurs\u2026"
+title: "R\xE9diger un fichier texte"
 ---
 
 {{< edit_this_page >}}

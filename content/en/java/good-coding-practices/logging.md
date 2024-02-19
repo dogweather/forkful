@@ -1,13 +1,14 @@
 ---
-title:                "Logging"
 aliases:
 - /en/java/logging/
-date:                  2024-01-25T02:03:39.164834-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Logging"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/logging.md"
+date: 2024-01-25 02:03:39.164834-07:00
+description: "Logging is essentially the process of recording events that occur within\
+  \ a software application. Programmers log these events to capture runtime\u2026"
+lastmod: 2024-02-18 23:09:10.937247
+model: gpt-4-1106-preview
+summary: "Logging is essentially the process of recording events that occur within\
+  \ a software application. Programmers log these events to capture runtime\u2026"
+title: Logging
 ---
 
 {{< edit_this_page >}}

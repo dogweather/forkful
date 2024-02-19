@@ -1,15 +1,20 @@
 ---
-title:                "In ra thông tin gỡ lỗi"
 aliases:
 - /vi/ruby/printing-debug-output/
-date:                  2024-01-28T22:04:37.304676-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "In ra thông tin gỡ lỗi"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/printing-debug-output.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:04:37.304676-07:00
+description: "In \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\u1ED7i trong Ruby gi\u1ED1\
+  ng nh\u01B0 vi\u1EC7c \u0111\u1EC3 l\u1EA1i d\u1EA5u v\u1EBFt trong m\xE3 c\u1EE7\
+  a b\u1EA1n \u0111\u1EC3 theo d\xF5i gi\xE1 tr\u1ECB c\u1EE7a bi\u1EBFn v\xE0 d\xF2\
+  ng ch\u1EA3y c\u1EE7a ch\u01B0\u01A1ng tr\xECnh. C\xE1c l\u1EADp tr\xECnh\u2026"
+lastmod: 2024-02-18 23:08:51.288267
+model: gpt-4-0125-preview
+summary: "In \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\u1ED7i trong Ruby gi\u1ED1ng\
+  \ nh\u01B0 vi\u1EC7c \u0111\u1EC3 l\u1EA1i d\u1EA5u v\u1EBFt trong m\xE3 c\u1EE7\
+  a b\u1EA1n \u0111\u1EC3 theo d\xF5i gi\xE1 tr\u1ECB c\u1EE7a bi\u1EBFn v\xE0 d\xF2\
+  ng ch\u1EA3y c\u1EE7a ch\u01B0\u01A1ng tr\xECnh. C\xE1c l\u1EADp tr\xECnh\u2026"
+title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Escribir en el error estándar"
 aliases:
 - /es/vba/writing-to-standard-error/
-date:                  2024-02-01T22:09:07.731731-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escribir en el error estándar"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/vba/writing-to-standard-error.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:09:07.731731-07:00
+description: "Escribir en el error est\xE1ndar en Visual Basic para Aplicaciones (VBA)\
+  \ implica dirigir mensajes de error o diagn\xF3sticos aparte de la salida est\xE1\
+  ndar,\u2026"
+lastmod: 2024-02-18 23:09:09.816349
+model: gpt-4-0125-preview
+summary: "Escribir en el error est\xE1ndar en Visual Basic para Aplicaciones (VBA)\
+  \ implica dirigir mensajes de error o diagn\xF3sticos aparte de la salida est\xE1\
+  ndar,\u2026"
+title: "Escribir en el error est\xE1ndar"
 ---
 
 {{< edit_this_page >}}

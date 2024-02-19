@@ -1,13 +1,16 @@
 ---
-title:                "Organisering av kode i funksjoner"
 aliases:
 - /no/c-sharp/organizing-code-into-functions/
-date:                  2024-01-26T01:09:23.840515-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organisering av kode i funksjoner"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/organizing-code-into-functions.md"
+date: 2024-01-26 01:09:23.840515-07:00
+description: "\xC5 organisere kode i funksjoner er som \xE5 sortere LEGO-klosser i\
+  \ bokser \u2013 det gj\xF8r det enklere \xE5 finne og bruke dem. Vi gj\xF8r dette\
+  \ for \xE5 unng\xE5 gjentakelse,\u2026"
+lastmod: 2024-02-18 23:08:53.899161
+model: gpt-4-1106-preview
+summary: "\xC5 organisere kode i funksjoner er som \xE5 sortere LEGO-klosser i bokser\
+  \ \u2013 det gj\xF8r det enklere \xE5 finne og bruke dem. Vi gj\xF8r dette for \xE5\
+  \ unng\xE5 gjentakelse,\u2026"
+title: Organisering av kode i funksjoner
 ---
 
 {{< edit_this_page >}}

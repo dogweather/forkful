@@ -1,13 +1,16 @@
 ---
-title:                "Exibindo saídas de depuração"
 aliases:
 - /pt/fish-shell/printing-debug-output/
-date:                  2024-01-20T17:52:43.651320-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Exibindo saídas de depuração"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/printing-debug-output.md"
+date: 2024-01-20 17:52:43.651320-07:00
+description: "A impress\xE3o de sa\xEDdas de depura\xE7\xE3o ajuda a entender o que\
+  \ um script est\xE1 fazendo e onde pode estar o problema. Programadores recorrem\
+  \ a isso quando o\u2026"
+lastmod: 2024-02-18 23:08:58.578101
+model: gpt-4-1106-preview
+summary: "A impress\xE3o de sa\xEDdas de depura\xE7\xE3o ajuda a entender o que um\
+  \ script est\xE1 fazendo e onde pode estar o problema. Programadores recorrem a\
+  \ isso quando o\u2026"
+title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

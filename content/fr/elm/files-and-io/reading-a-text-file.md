@@ -1,13 +1,15 @@
 ---
-title:                "Lecture d'un fichier texte"
 aliases:
 - /fr/elm/reading-a-text-file/
-date:                  2024-01-20T17:54:43.380497-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lecture d'un fichier texte"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/reading-a-text-file.md"
+date: 2024-01-20 17:54:43.380497-07:00
+description: "Lire un fichier texte, c'est r\xE9cup\xE9rer les donn\xE9es \xE9crites\
+  \ dedans. On le fait pour acc\xE9der et manipuler ces donn\xE9es, comme charger\
+  \ des configurations,\u2026"
+lastmod: 2024-02-18 23:09:08.753618
+model: gpt-4-1106-preview
+summary: "Lire un fichier texte, c'est r\xE9cup\xE9rer les donn\xE9es \xE9crites dedans.\
+  \ On le fait pour acc\xE9der et manipuler ces donn\xE9es, comme charger des configurations,\u2026"
+title: Lecture d'un fichier texte
 ---
 
 {{< edit_this_page >}}

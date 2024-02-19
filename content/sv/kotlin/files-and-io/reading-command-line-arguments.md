@@ -1,13 +1,16 @@
 ---
-title:                "Läsa in kommandoradsargument"
 aliases:
 - /sv/kotlin/reading-command-line-arguments/
-date:                  2024-01-20T17:56:16.894419-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Läsa in kommandoradsargument"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:16.894419-07:00
+description: "Kommandoradsargument l\xE5ter program veta vad anv\xE4ndaren vill direkt\
+  \ vid start. De anv\xE4nds f\xF6r att skr\xE4ddarsy programk\xF6rningen utan en\
+  \ massa fr\xE5gor efter\u2026"
+lastmod: 2024-02-18 23:08:51.767068
+model: gpt-4-1106-preview
+summary: "Kommandoradsargument l\xE5ter program veta vad anv\xE4ndaren vill direkt\
+  \ vid start. De anv\xE4nds f\xF6r att skr\xE4ddarsy programk\xF6rningen utan en\
+  \ massa fr\xE5gor efter\u2026"
+title: "L\xE4sa in kommandoradsargument"
 ---
 
 {{< edit_this_page >}}

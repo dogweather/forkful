@@ -1,13 +1,16 @@
 ---
-title:                "Koodin järjestäminen funktioihin"
 aliases:
 - /fi/swift/organizing-code-into-functions/
-date:                  2024-01-26T01:11:55.630004-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Koodin järjestäminen funktioihin"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/organizing-code-into-functions.md"
+date: 2024-01-26 01:11:55.630004-07:00
+description: "Koodin j\xE4rjest\xE4minen funktioihin on teht\xE4vien pilkkominen uudelleenk\xE4\
+  ytett\xE4viksi osiksi. T\xE4m\xE4 tekee koodista siistimm\xE4n, v\xE4hemm\xE4n virhealttiin\
+  \ ja\u2026"
+lastmod: 2024-02-18 23:09:07.995691
+model: gpt-4-1106-preview
+summary: "Koodin j\xE4rjest\xE4minen funktioihin on teht\xE4vien pilkkominen uudelleenk\xE4\
+  ytett\xE4viksi osiksi. T\xE4m\xE4 tekee koodista siistimm\xE4n, v\xE4hemm\xE4n virhealttiin\
+  \ ja\u2026"
+title: "Koodin j\xE4rjest\xE4minen funktioihin"
 ---
 
 {{< edit_this_page >}}

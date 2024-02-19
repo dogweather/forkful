@@ -1,13 +1,14 @@
 ---
-title:                "Working with complex numbers"
 aliases:
 - /en/java/working-with-complex-numbers/
-date:                  2024-01-25T03:00:04.580827-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Working with complex numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/working-with-complex-numbers.md"
+date: 2024-01-25 03:00:04.580827-07:00
+description: "Complex numbers expand the real number line through the addition of\
+  \ an imaginary unit, `i`, where `i^2 = -1`. They're crucial in fields like engineering,\u2026"
+lastmod: 2024-02-18 23:09:10.925086
+model: gpt-4-1106-preview
+summary: "Complex numbers expand the real number line through the addition of an imaginary\
+  \ unit, `i`, where `i^2 = -1`. They're crucial in fields like engineering,\u2026"
+title: Working with complex numbers
 ---
 
 {{< edit_this_page >}}

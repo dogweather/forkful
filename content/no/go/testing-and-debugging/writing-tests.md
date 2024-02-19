@@ -1,14 +1,18 @@
 ---
-title:                "Skrive tester"
 aliases:
 - /no/go/writing-tests/
-date:                  2024-02-03T18:15:05.890740-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skrive tester"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:15:05.890740-07:00
+description: "\xC5 skrive tester i Go inneb\xE6rer \xE5 lage sm\xE5, h\xE5ndterbare\
+  \ deler av kode som validerer funksjonaliteten og oppf\xF8rselen til din applikasjon.\
+  \ Programmerere\u2026"
+lastmod: 2024-02-18 23:08:53.439684
+model: gpt-4-0125-preview
+summary: "\xC5 skrive tester i Go inneb\xE6rer \xE5 lage sm\xE5, h\xE5ndterbare deler\
+  \ av kode som validerer funksjonaliteten og oppf\xF8rselen til din applikasjon.\
+  \ Programmerere\u2026"
+title: Skrive tester
 ---
 
 {{< edit_this_page >}}

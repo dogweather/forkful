@@ -1,14 +1,17 @@
 ---
-title:                "HTML:n jäsennys"
 aliases:
 - /fi/powershell/parsing-html/
-date:                  2024-02-03T19:12:41.403086-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML:n jäsennys"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:41.403086-07:00
+description: "HTML:n j\xE4sent\xE4minen PowerShelliss\xE4 tarkoittaa HTML-sis\xE4\
+  ll\xF6n purkamista erityisten tietojen poimimiseksi tai webiin liittyvien teht\xE4\
+  vien\u2026"
+lastmod: 2024-02-18 23:09:07.850363
+model: gpt-4-0125-preview
+summary: "HTML:n j\xE4sent\xE4minen PowerShelliss\xE4 tarkoittaa HTML-sis\xE4ll\xF6\
+  n purkamista erityisten tietojen poimimiseksi tai webiin liittyvien teht\xE4vien\u2026"
+title: "HTML:n j\xE4sennys"
 ---
 
 {{< edit_this_page >}}

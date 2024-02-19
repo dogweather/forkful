@@ -1,14 +1,19 @@
 ---
-title:                "阅读文本文件"
 aliases:
 - /zh/typescript/reading-a-text-file/
-date:                  2024-01-20T17:55:15.620596-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "阅读文本文件"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/reading-a-text-file.md"
+date: 2024-01-20 17:55:15.620596-07:00
+description: "\u8BFB\u53D6\u6587\u672C\u6587\u4EF6\u5C31\u662F\u4ECE\u6587\u4EF6\u4E2D\
+  \u63D0\u53D6\u6570\u636E\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\
+  \u5904\u7406\u3001\u5206\u6790\u6216\u663E\u793A\u5B58\u50A8\u5728\u6587\u4EF6\u4E2D\
+  \u7684\u4FE1\u606F\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:58.919408
+model: gpt-4-1106-preview
+summary: "\u8BFB\u53D6\u6587\u672C\u6587\u4EF6\u5C31\u662F\u4ECE\u6587\u4EF6\u4E2D\
+  \u63D0\u53D6\u6570\u636E\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\
+  \u5904\u7406\u3001\u5206\u6790\u6216\u663E\u793A\u5B58\u50A8\u5728\u6587\u4EF6\u4E2D\
+  \u7684\u4FE1\u606F\u3002"
+title: "\u9605\u8BFB\u6587\u672C\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

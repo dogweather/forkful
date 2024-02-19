@@ -1,13 +1,16 @@
 ---
-title:                "Wysyłanie żądania HTTP"
 aliases:
 - /pl/elm/sending-an-http-request/
-date:                  2024-01-20T17:59:51.558220-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wysyłanie żądania HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/sending-an-http-request.md"
+date: 2024-01-20 17:59:51.558220-07:00
+description: "W Elm, wysy\u0142anie zapytania HTTP to spos\xF3b na po\u0142\u0105\
+  czenie si\u0119 z serwerem i pobranie lub wys\u0142anie danych. Programi\u015Bci\
+  \ robi\u0105 to, aby ich aplikacje mog\u0142y\u2026"
+lastmod: 2024-02-18 23:08:49.515944
+model: gpt-4-1106-preview
+summary: "W Elm, wysy\u0142anie zapytania HTTP to spos\xF3b na po\u0142\u0105czenie\
+  \ si\u0119 z serwerem i pobranie lub wys\u0142anie danych. Programi\u015Bci robi\u0105\
+  \ to, aby ich aplikacje mog\u0142y\u2026"
+title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 ---
 
 {{< edit_this_page >}}

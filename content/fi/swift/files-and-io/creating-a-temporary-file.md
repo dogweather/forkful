@@ -1,13 +1,16 @@
 ---
-title:                "Väliaikaistiedoston luominen"
 aliases:
 - /fi/swift/creating-a-temporary-file/
-date:                  2024-01-20T17:41:14.664471-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Väliaikaistiedoston luominen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:14.664471-07:00
+description: "Tilap\xE4istiedosto on v\xE4liaikainen s\xE4il\xF6 tietoja varten, kuin\
+  \ kertak\xE4ytt\xF6astia koodille. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 turvallisen\
+  \ testiymp\xE4rist\xF6n luomiseen,\u2026"
+lastmod: 2024-02-18 23:09:08.011007
+model: gpt-4-1106-preview
+summary: "Tilap\xE4istiedosto on v\xE4liaikainen s\xE4il\xF6 tietoja varten, kuin\
+  \ kertak\xE4ytt\xF6astia koodille. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 turvallisen\
+  \ testiymp\xE4rist\xF6n luomiseen,\u2026"
+title: "V\xE4liaikaistiedoston luominen"
 ---
 
 {{< edit_this_page >}}

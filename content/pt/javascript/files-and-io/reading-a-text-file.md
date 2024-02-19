@@ -1,13 +1,15 @@
 ---
-title:                "Lendo um arquivo de texto"
 aliases:
 - /pt/javascript/reading-a-text-file/
-date:                  2024-01-20T17:54:36.677633-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lendo um arquivo de texto"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/reading-a-text-file.md"
+date: 2024-01-20 17:54:36.677633-07:00
+description: "Ler um arquivo de texto em JavaScript significa acessar o conte\xFA\
+  do guardado em um arquivo `.txt` - uma tarefa b\xE1sica e crucial. Programadores\
+  \ fazem isso\u2026"
+lastmod: 2024-02-18 23:08:58.549439
+model: gpt-4-1106-preview
+summary: "Ler um arquivo de texto em JavaScript significa acessar o conte\xFAdo guardado\
+  \ em um arquivo `.txt` - uma tarefa b\xE1sica e crucial. Programadores fazem isso\u2026"
+title: Lendo um arquivo de texto
 ---
 
 {{< edit_this_page >}}

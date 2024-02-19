@@ -1,13 +1,22 @@
 ---
-title:                "生成随机数"
 aliases:
 - /zh/clojure/generating-random-numbers/
-date:                  2024-01-27T20:32:43.522821-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "生成随机数"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/generating-random-numbers.md"
+date: 2024-01-27 20:32:43.522821-07:00
+description: "\u5728\u7F16\u7A0B\u4E2D\u751F\u6210\u968F\u673A\u6570\u662F\u6307\u521B\
+  \u5EFA\u903B\u8F91\u4E0A\u65E0\u6CD5\u9884\u5148\u9884\u6D4B\u7684\u503C\u3002\u7A0B\
+  \u5E8F\u5458\u51FA\u4E8E\u5404\u79CD\u539F\u56E0\u8FD9\u6837\u505A\uFF0C\u5305\u62EC\
+  \u751F\u6210\u552F\u4E00\u6807\u8BC6\u7B26\u3001\u5728\u6E38\u620F\u5F00\u53D1\u4E2D\
+  \u6A21\u62DF\u573A\u666F\uFF0C\u6216\u4ECE\u6570\u636E\u4E2D\u9009\u62E9\u968F\u673A\
+  \u6837\u672C\u8FDB\u884C\u5206\u6790\u3002"
+lastmod: 2024-02-18 23:08:58.824684
+model: gpt-4-0125-preview
+summary: "\u5728\u7F16\u7A0B\u4E2D\u751F\u6210\u968F\u673A\u6570\u662F\u6307\u521B\
+  \u5EFA\u903B\u8F91\u4E0A\u65E0\u6CD5\u9884\u5148\u9884\u6D4B\u7684\u503C\u3002\u7A0B\
+  \u5E8F\u5458\u51FA\u4E8E\u5404\u79CD\u539F\u56E0\u8FD9\u6837\u505A\uFF0C\u5305\u62EC\
+  \u751F\u6210\u552F\u4E00\u6807\u8BC6\u7B26\u3001\u5728\u6E38\u620F\u5F00\u53D1\u4E2D\
+  \u6A21\u62DF\u573A\u666F\uFF0C\u6216\u4ECE\u6570\u636E\u4E2D\u9009\u62E9\u968F\u673A\
+  \u6837\u672C\u8FDB\u884C\u5206\u6790\u3002"
+title: "\u751F\u6210\u968F\u673A\u6570"
 ---
 
 {{< edit_this_page >}}

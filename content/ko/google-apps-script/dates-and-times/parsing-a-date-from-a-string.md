@@ -1,14 +1,30 @@
 ---
-title:                "문자열에서 날짜 분석하기"
 aliases:
 - /ko/google-apps-script/parsing-a-date-from-a-string/
-date:                  2024-02-01T21:57:52.401073-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열에서 날짜 분석하기"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:52.401073-07:00
+description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD55C\
+  \uB2E4\uB294 \uAC83\uC740 \uB0A0\uC9DC\uB97C \uB098\uD0C0\uB0B4\uB294 \uD14D\uC2A4\
+  \uD2B8\uB97C \uB0A0\uC9DC \uAC1D\uCCB4\uB85C \uBCC0\uD658\uD558\uC5EC \uD504\uB85C\
+  \uADF8\uB798\uBA38\uAC00 \uBE44\uAD50, \uC0B0\uC220 \uC5F0\uC0B0 \uBC0F \uD615\uC2DD\
+  \ \uC9C0\uC815\uACFC \uAC19\uC740 \uB0A0\uC9DC \uAD00\uB828 \uC791\uC5C5\uC744 \uC218\
+  \uD589\uD560 \uC218 \uC788\uAC8C \uD558\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4\
+  . \uC774\uB294 \uC0AC\uC6A9\uC790 \uC785\uB825 \uCC98\uB9AC, \uC678\uBD80 \uC18C\
+  \uC2A4\uC5D0\uC11C \uB370\uC774\uD130 \uCC98\uB9AC, \uB2E4\uC591\uD55C \uD615\uC2DD\
+  \uC758 \uB0A0\uC9DC \uAD00\uB9AC\uC5D0\u2026"
+lastmod: 2024-02-18 23:09:05.572517
+model: gpt-4-0125-preview
+summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD55C\uB2E4\
+  \uB294 \uAC83\uC740 \uB0A0\uC9DC\uB97C \uB098\uD0C0\uB0B4\uB294 \uD14D\uC2A4\uD2B8\
+  \uB97C \uB0A0\uC9DC \uAC1D\uCCB4\uB85C \uBCC0\uD658\uD558\uC5EC \uD504\uB85C\uADF8\
+  \uB798\uBA38\uAC00 \uBE44\uAD50, \uC0B0\uC220 \uC5F0\uC0B0 \uBC0F \uD615\uC2DD \uC9C0\
+  \uC815\uACFC \uAC19\uC740 \uB0A0\uC9DC \uAD00\uB828 \uC791\uC5C5\uC744 \uC218\uD589\
+  \uD560 \uC218 \uC788\uAC8C \uD558\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uC774\
+  \uB294 \uC0AC\uC6A9\uC790 \uC785\uB825 \uCC98\uB9AC, \uC678\uBD80 \uC18C\uC2A4\uC5D0\
+  \uC11C \uB370\uC774\uD130 \uCC98\uB9AC, \uB2E4\uC591\uD55C \uD615\uC2DD\uC758 \uB0A0\
+  \uC9DC \uAD00\uB9AC\uC5D0\u2026"
+title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uBD84\uC11D\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

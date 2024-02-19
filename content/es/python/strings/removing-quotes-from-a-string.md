@@ -1,13 +1,16 @@
 ---
-title:                "Eliminando comillas de una cadena"
 aliases:
 - /es/python/removing-quotes-from-a-string/
-date:                  2024-01-26T03:41:21.789340-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eliminando comillas de una cadena"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:41:21.789340-07:00
+description: "Eliminar comillas de una cadena generalmente significa deshacerse de\
+  \ las comillas dobles (\") o simples (') innecesarias. Los programadores hacen esto\
+  \ para\u2026"
+lastmod: 2024-02-18 23:09:09.543308
+model: gpt-4-0125-preview
+summary: "Eliminar comillas de una cadena generalmente significa deshacerse de las\
+  \ comillas dobles (\") o simples (') innecesarias. Los programadores hacen esto\
+  \ para\u2026"
+title: Eliminando comillas de una cadena
 ---
 
 {{< edit_this_page >}}

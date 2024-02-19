@@ -1,14 +1,18 @@
 ---
-title:                "Lukujen pyöristäminen"
 aliases:
 - /fi/google-apps-script/rounding-numbers/
-date:                  2024-02-01T22:03:14.762723-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lukujen pyöristäminen"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/rounding-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:14.762723-07:00
+description: "Py\xF6rist\xE4minen, perusk\xE4site tietokoneohjelmoinnissa, tarkoittaa\
+  \ luvun s\xE4\xE4t\xE4mist\xE4 l\xE4himp\xE4\xE4n kokonaislukuun tai tiettyyn m\xE4\
+  \xE4r\xE4\xE4n desimaalipaikkoja.\u2026"
+lastmod: 2024-02-18 23:09:07.129008
+model: gpt-4-0125-preview
+summary: "Py\xF6rist\xE4minen, perusk\xE4site tietokoneohjelmoinnissa, tarkoittaa\
+  \ luvun s\xE4\xE4t\xE4mist\xE4 l\xE4himp\xE4\xE4n kokonaislukuun tai tiettyyn m\xE4\
+  \xE4r\xE4\xE4n desimaalipaikkoja.\u2026"
+title: "Lukujen py\xF6rist\xE4minen"
 ---
 
 {{< edit_this_page >}}

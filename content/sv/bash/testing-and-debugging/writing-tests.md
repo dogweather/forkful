@@ -1,14 +1,18 @@
 ---
-title:                "Skriva tester"
 aliases:
 - /sv/bash/writing-tests/
-date:                  2024-02-03T19:29:44.742859-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriva tester"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:44.742859-07:00
+description: "Att skriva tester i Bash inneb\xE4r att skapa testfall f\xF6r att validera\
+  \ funktionaliteten hos dina Bash-skript. Programmerare genomf\xF6r tester f\xF6\
+  r att\u2026"
+lastmod: 2024-02-18 23:08:51.964839
+model: gpt-4-0125-preview
+summary: "Att skriva tester i Bash inneb\xE4r att skapa testfall f\xF6r att validera\
+  \ funktionaliteten hos dina Bash-skript. Programmerare genomf\xF6r tester f\xF6\
+  r att\u2026"
+title: Skriva tester
 ---
 
 {{< edit_this_page >}}

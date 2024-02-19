@@ -1,14 +1,16 @@
 ---
-title:                "Scrivere test"
 aliases:
 - /it/kotlin/writing-tests/
-date:                  2024-02-03T19:31:02.263834-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Scrivere test"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:02.263834-07:00
+description: "Scrivere test in Kotlin implica la creazione di frammenti di codice\
+  \ che validano automaticamente la correttezza funzionale dei moduli software,\u2026"
+lastmod: 2024-02-18 23:08:55.849156
+model: gpt-4-0125-preview
+summary: "Scrivere test in Kotlin implica la creazione di frammenti di codice che\
+  \ validano automaticamente la correttezza funzionale dei moduli software,\u2026"
+title: Scrivere test
 ---
 
 {{< edit_this_page >}}

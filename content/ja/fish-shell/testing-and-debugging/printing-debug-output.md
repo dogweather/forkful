@@ -1,14 +1,21 @@
 ---
-title:                "デバッグ出力を表示する"
 aliases:
 - /ja/fish-shell/printing-debug-output/
-date:                  2024-01-20T17:52:32.150595-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "デバッグ出力を表示する"
-
-tag:                  "Testing and Debugging"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/printing-debug-output.md"
+date: 2024-01-20 17:52:32.150595-07:00
+description: "\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u304C\u30C7\u30D0\u30C3\u30B0\u51FA\
+  \u529B\u3092\u5370\u5237\u3059\u308B\u3068\u304D\u3001\u305D\u308C\u306F\u30B3\u30FC\
+  \u30C9\u306E\u632F\u308B\u821E\u3044\u3092\u5206\u304B\u308A\u3084\u3059\u304F\u8FFD\
+  \u8DE1\u3059\u308B\u305F\u3081\u3067\u3059\u3002\u554F\u984C\u89E3\u6C7A\u306E\u624B\
+  \u304C\u304B\u308A\u306B\u306A\u308A\u307E\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.311810
+model: gpt-4-1106-preview
+summary: "\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u304C\u30C7\u30D0\u30C3\u30B0\u51FA\
+  \u529B\u3092\u5370\u5237\u3059\u308B\u3068\u304D\u3001\u305D\u308C\u306F\u30B3\u30FC\
+  \u30C9\u306E\u632F\u308B\u821E\u3044\u3092\u5206\u304B\u308A\u3084\u3059\u304F\u8FFD\
+  \u8DE1\u3059\u308B\u305F\u3081\u3067\u3059\u3002\u554F\u984C\u89E3\u6C7A\u306E\u624B\
+  \u304C\u304B\u308A\u306B\u306A\u308A\u307E\u3059\u3002"
+title: "\u30C7\u30D0\u30C3\u30B0\u51FA\u529B\u3092\u8868\u793A\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Zeichenketten verknüpfen"
 aliases:
 - /de/clojure/concatenating-strings/
-date:                  2024-01-20T17:34:19.896197-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Zeichenketten verknüpfen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/concatenating-strings.md"
+date: 2024-01-20 17:34:19.896197-07:00
+description: "In Clojure und anderen Sprachen bedeutet das Verketten von Strings,\
+  \ dass wir sie aneinanderreihen, um einen neuen, l\xE4ngeren String zu bilden. Das\
+  \ ist\u2026"
+lastmod: 2024-02-18 23:09:04.498507
+model: gpt-4-1106-preview
+summary: "In Clojure und anderen Sprachen bedeutet das Verketten von Strings, dass\
+  \ wir sie aneinanderreihen, um einen neuen, l\xE4ngeren String zu bilden. Das ist\u2026"
+title: "Zeichenketten verkn\xFCpfen"
 ---
 
 {{< edit_this_page >}}

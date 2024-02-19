@@ -1,13 +1,16 @@
 ---
-title:                "Konwersja ciągu znaków na małe litery"
 aliases:
 - /pl/arduino/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:37:48.703655-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konwersja ciągu znaków na małe litery"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:37:48.703655-07:00
+description: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery oznacza zmian\u0119\
+  \ wszystkich wielkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki. Robimy\
+  \ to, by ujednolici\u0107 dane przed\u2026"
+lastmod: 2024-02-18 23:08:49.857518
+model: gpt-4-1106-preview
+summary: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery oznacza zmian\u0119\
+  \ wszystkich wielkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki. Robimy\
+  \ to, by ujednolici\u0107 dane przed\u2026"
+title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 ---
 
 {{< edit_this_page >}}

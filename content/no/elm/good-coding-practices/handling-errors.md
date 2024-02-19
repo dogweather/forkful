@@ -1,13 +1,16 @@
 ---
-title:                "Feilhåndtering"
 aliases:
 - /no/elm/handling-errors/
-date:                  2024-01-26T00:52:19.701117-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Feilhåndtering"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/handling-errors.md"
+date: 2024-01-26 00:52:19.701117-07:00
+description: "\xC5 h\xE5ndtere feil betyr \xE5 skrive kode som kan forutse og h\xE5\
+  ndtere n\xE5r ting g\xE5r galt. Utviklere gj\xF8r dette for \xE5 forhindre krasj,\
+  \ beskytte dataintegritet og\u2026"
+lastmod: 2024-02-18 23:08:53.818590
+model: gpt-4-1106-preview
+summary: "\xC5 h\xE5ndtere feil betyr \xE5 skrive kode som kan forutse og h\xE5ndtere\
+  \ n\xE5r ting g\xE5r galt. Utviklere gj\xF8r dette for \xE5 forhindre krasj, beskytte\
+  \ dataintegritet og\u2026"
+title: "Feilh\xE5ndtering"
 ---
 
 {{< edit_this_page >}}

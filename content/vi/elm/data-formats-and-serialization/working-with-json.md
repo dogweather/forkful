@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với JSON"
 aliases:
 - /vi/elm/working-with-json/
-date:                  2024-01-28T22:10:27.820988-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với JSON"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elm/working-with-json.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:27.820988-07:00
+description: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
+  ng v\u0103n b\u1EA3n cho vi\u1EC7c trao \u0111\u1ED5i d\u1EEF li\u1EC7u, t\u01B0\
+  \u01A1ng t\u1EF1 nh\u01B0 XML nh\u01B0ng nh\u1EB9 h\u01A1n v\xE0 d\u1EC5 \u0111\u1ECD\
+  c h\u01A1n. C\xE1c l\u1EADp tr\xECnh vi\xEAn Elm\u2026"
+lastmod: 2024-02-18 23:08:50.627886
+model: gpt-4-0125-preview
+summary: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
+  ng v\u0103n b\u1EA3n cho vi\u1EC7c trao \u0111\u1ED5i d\u1EEF li\u1EC7u, t\u01B0\
+  \u01A1ng t\u1EF1 nh\u01B0 XML nh\u01B0ng nh\u1EB9 h\u01A1n v\xE0 d\u1EC5 \u0111\u1ECD\
+  c h\u01A1n. C\xE1c l\u1EADp tr\xECnh vi\xEAn Elm\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 ---
 
 {{< edit_this_page >}}

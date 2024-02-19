@@ -1,13 +1,15 @@
 ---
-title:                "Hantering av fel"
 aliases:
 - /sv/php/handling-errors/
-date:                  2024-01-26T00:55:36.541894-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Hantering av fel"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/handling-errors.md"
+date: 2024-01-26 00:55:36.541894-07:00
+description: "Felhantering i PHP handlar om att hantera och svara p\xE5 tillst\xE5\
+  nd som st\xF6r det normala programfl\xF6det, som till exempel saknade filer eller\
+  \ felaktig\u2026"
+lastmod: 2024-02-18 23:08:51.885469
+model: gpt-4-1106-preview
+summary: "Felhantering i PHP handlar om att hantera och svara p\xE5 tillst\xE5nd som\
+  \ st\xF6r det normala programfl\xF6det, som till exempel saknade filer eller felaktig\u2026"
+title: Hantering av fel
 ---
 
 {{< edit_this_page >}}

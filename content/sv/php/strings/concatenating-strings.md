@@ -1,13 +1,16 @@
 ---
-title:                "Sammanslagning av strängar"
 aliases:
 - /sv/php/concatenating-strings/
-date:                  2024-01-20T17:35:11.498685-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammanslagning av strängar"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/concatenating-strings.md"
+date: 2024-01-20 17:35:11.498685-07:00
+description: "\"Sammanslagning av str\xE4ngar\" inneb\xE4r att kombinera flera textstycken\
+  \ till ett. Programmerare g\xF6r det f\xF6r att manipulera textdata, skapa dynamiskt\
+  \ inneh\xE5ll\u2026"
+lastmod: 2024-02-18 23:08:51.870514
+model: gpt-4-1106-preview
+summary: "\"Sammanslagning av str\xE4ngar\" inneb\xE4r att kombinera flera textstycken\
+  \ till ett. Programmerare g\xF6r det f\xF6r att manipulera textdata, skapa dynamiskt\
+  \ inneh\xE5ll\u2026"
+title: "Sammanslagning av str\xE4ngar"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Konvertere en dato til en streng"
 aliases:
 - /no/cpp/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:29.708905-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konvertere en dato til en streng"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:29.708905-07:00
+description: "Konvertering av en dato til en streng inneb\xE6rer \xE5 endre datotypen\
+  \ fra \u2018date\u2019 (dato) til \u2018string\u2019 (tekststreng) for visning eller\
+  \ lagring. Dette gj\xF8res for\u2026"
+lastmod: 2024-02-18 23:08:54.237947
+model: gpt-4-1106-preview
+summary: "Konvertering av en dato til en streng inneb\xE6rer \xE5 endre datotypen\
+  \ fra \u2018date\u2019 (dato) til \u2018string\u2019 (tekststreng) for visning eller\
+  \ lagring. Dette gj\xF8res for\u2026"
+title: Konvertere en dato til en streng
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonojen yhdistäminen"
 aliases:
 - /fi/powershell/concatenating-strings/
-date:                  2024-01-20T17:35:17.906022-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonojen yhdistäminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/concatenating-strings.md"
+date: 2024-01-20 17:35:17.906022-07:00
+description: "Yhdist\xE4mme merkkijonoja luodaksemme uusia, kokonaisia tekstej\xE4\
+  . T\xE4m\xE4 on tarpeen, kun ker\xE4\xE4mme eri l\xE4hteist\xE4 tulevia tietoja\
+  \ tai haluamme muodostaa\u2026"
+lastmod: 2024-02-18 23:09:07.841353
+model: gpt-4-1106-preview
+summary: "Yhdist\xE4mme merkkijonoja luodaksemme uusia, kokonaisia tekstej\xE4. T\xE4\
+  m\xE4 on tarpeen, kun ker\xE4\xE4mme eri l\xE4hteist\xE4 tulevia tietoja tai haluamme\
+  \ muodostaa\u2026"
+title: "Merkkijonojen yhdist\xE4minen"
 ---
 
 {{< edit_this_page >}}

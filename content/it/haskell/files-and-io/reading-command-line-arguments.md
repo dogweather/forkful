@@ -1,13 +1,14 @@
 ---
-title:                "Lettura degli argomenti della riga di comando"
 aliases:
 - /it/haskell/reading-command-line-arguments/
-date:                  2024-01-20T17:56:30.018207-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lettura degli argomenti della riga di comando"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:30.018207-07:00
+description: "Leggere gli argomenti da riga di comando significa estrarre le informazioni\
+  \ passate al tuo programma quando viene eseguito da terminale. \xC8 cruciale per\u2026"
+lastmod: 2024-02-18 23:08:55.944876
+model: gpt-4-1106-preview
+summary: "Leggere gli argomenti da riga di comando significa estrarre le informazioni\
+  \ passate al tuo programma quando viene eseguito da terminale. \xC8 cruciale per\u2026"
+title: Lettura degli argomenti della riga di comando
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Lokiointi"
 aliases:
 - /fi/vba/logging/
-date:                  2024-02-01T21:56:15.127049-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lokiointi"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/logging.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:56:15.127049-07:00
+description: "Logging Visual Basic for Applications (VBA) -ymp\xE4rist\xF6ss\xE4 tarkoittaa\
+  \ ohjelman suoritusk\xE4ytt\xE4ytymisen tallentamista tiedostoon, konsoliin tai\
+  \ tietokantaan.\u2026"
+lastmod: 2024-02-18 23:09:07.418493
+model: gpt-4-0125-preview
+summary: "Logging Visual Basic for Applications (VBA) -ymp\xE4rist\xF6ss\xE4 tarkoittaa\
+  \ ohjelman suoritusk\xE4ytt\xE4ytymisen tallentamista tiedostoon, konsoliin tai\
+  \ tietokantaan.\u2026"
+title: Lokiointi
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Enviando una solicitud http"
 aliases:
 - /es/fish-shell/sending-an-http-request/
-date:                  2024-01-20T17:59:43.511164-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando una solicitud http"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/sending-an-http-request.md"
+date: 2024-01-20 17:59:43.511164-07:00
+description: "Enviar una solicitud HTTP significa pedirle a un servidor web que te\
+  \ brinde algo, como una p\xE1gina web o datos de una API. Los programadores lo hacen\
+  \ para\u2026"
+lastmod: 2024-02-18 23:09:10.449671
+model: gpt-4-1106-preview
+summary: "Enviar una solicitud HTTP significa pedirle a un servidor web que te brinde\
+  \ algo, como una p\xE1gina web o datos de una API. Los programadores lo hacen para\u2026"
+title: Enviando una solicitud http
 ---
 
 {{< edit_this_page >}}

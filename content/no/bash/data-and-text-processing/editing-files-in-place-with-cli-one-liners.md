@@ -1,13 +1,16 @@
 ---
-title:                "Redigering av filer på stedet med CLI-enlinjerskommandoer"
 aliases:
 - /no/bash/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:20:46.270942-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Redigering av filer på stedet med CLI-enlinjerskommandoer"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:20:46.270942-07:00
+description: "Tenk deg at du nettopp har funnet ut at du trenger \xE5 gj\xF8re en\
+  \ masseoppdatering p\xE5 flere konfigurasjonsfiler som ligger p\xE5 serveren din.\
+  \ Du kunne ha \xE5pnet\u2026"
+lastmod: 2024-02-18 23:08:54.054172
+model: gpt-4-0125-preview
+summary: "Tenk deg at du nettopp har funnet ut at du trenger \xE5 gj\xF8re en masseoppdatering\
+  \ p\xE5 flere konfigurasjonsfiler som ligger p\xE5 serveren din. Du kunne ha \xE5\
+  pnet\u2026"
+title: "Redigering av filer p\xE5 stedet med CLI-enlinjerskommandoer"
 ---
 
 {{< edit_this_page >}}

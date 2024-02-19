@@ -1,13 +1,16 @@
 ---
-title:                "Praca z XML"
 aliases:
 - /pl/fish-shell/working-with-xml/
-date:                  2024-01-26T04:30:57.863462-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/working-with-xml.md"
+date: 2024-01-26 04:30:57.863462-07:00
+description: "Praca z XML oznacza manipulowanie danymi w powszechnym, strukturyzowanym\
+  \ formacie, u\u017Cywanym w konfiguracjach, komunikacji i wielu innych. Programi\u015B\
+  ci\u2026"
+lastmod: 2024-02-18 23:08:50.060609
+model: gpt-4-0125-preview
+summary: "Praca z XML oznacza manipulowanie danymi w powszechnym, strukturyzowanym\
+  \ formacie, u\u017Cywanym w konfiguracjach, komunikacji i wielu innych. Programi\u015B\
+  ci\u2026"
+title: Praca z XML
 ---
 
 {{< edit_this_page >}}

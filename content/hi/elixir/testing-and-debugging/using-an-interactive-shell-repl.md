@@ -1,13 +1,27 @@
 ---
-title:                "इंटरैक्टिव शेल (REPL) का उपयोग"
 aliases:
 - /hi/elixir/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:14:03.436753-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "इंटरैक्टिव शेल (REPL) का उपयोग"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elixir/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:14:03.436753-07:00
+description: "\u090F\u0915 \u0907\u0902\u091F\u0930\u0947\u0915\u094D\u091F\u093F\u0935\
+  \ \u0936\u0947\u0932, \u092F\u093E REPL (Read-Eval-Print Loop), \u0906\u092A\u0915\
+  \u094B \u0930\u093F\u092F\u0932-\u091F\u093E\u0907\u092E \u092E\u0947\u0902 \u0915\
+  \u094B\u0921 \u0938\u094D\u0928\u093F\u092A\u0947\u091F\u094D\u0938 \u0915\u094B\
+  \ \u0906\u091C\u092E\u093E\u0928\u0947 \u0926\u0947\u0924\u093E \u0939\u0948\u0964\
+  \ Elixir \u0915\u0947 \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u0930\
+  \ IEx (\u0907\u0902\u091F\u0930\u0947\u0915\u094D\u091F\u093F\u0935 \u090F\u0932\
+  \u093F\u0915\u094D\u0938\u093F\u0930) \u0928\u093E\u092E\u0915\u2026"
+lastmod: 2024-02-18 23:09:02.805855
+model: gpt-4-0125-preview
+summary: "\u090F\u0915 \u0907\u0902\u091F\u0930\u0947\u0915\u094D\u091F\u093F\u0935\
+  \ \u0936\u0947\u0932, \u092F\u093E REPL (Read-Eval-Print Loop), \u0906\u092A\u0915\
+  \u094B \u0930\u093F\u092F\u0932-\u091F\u093E\u0907\u092E \u092E\u0947\u0902 \u0915\
+  \u094B\u0921 \u0938\u094D\u0928\u093F\u092A\u0947\u091F\u094D\u0938 \u0915\u094B\
+  \ \u0906\u091C\u092E\u093E\u0928\u0947 \u0926\u0947\u0924\u093E \u0939\u0948\u0964\
+  \ Elixir \u0915\u0947 \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u0930\
+  \ IEx (\u0907\u0902\u091F\u0930\u0947\u0915\u094D\u091F\u093F\u0935 \u090F\u0932\
+  \u093F\u0915\u094D\u0938\u093F\u0930) \u0928\u093E\u092E\u0915\u2026"
+title: "\u0907\u0902\u091F\u0930\u0948\u0915\u094D\u091F\u093F\u0935 \u0936\u0947\u0932\
+  \ (REPL) \u0915\u093E \u0909\u092A\u092F\u094B\u0917"
 ---
 
 {{< edit_this_page >}}

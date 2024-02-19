@@ -1,14 +1,18 @@
 ---
-title:                "Obtenir la date actuelle"
 aliases:
 - /fr/kotlin/getting-the-current-date/
-date:                  2024-02-03T19:10:08.147127-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Obtenir la date actuelle"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:10:08.147127-07:00
+description: "En programmation, obtenir la date actuelle est une t\xE2che fondamentale\
+  \ qui permet aux d\xE9veloppeurs d'acc\xE9der, d'afficher ou de manipuler la date\
+  \ actuelle\u2026"
+lastmod: 2024-02-18 23:09:08.792515
+model: gpt-4-0125-preview
+summary: "En programmation, obtenir la date actuelle est une t\xE2che fondamentale\
+  \ qui permet aux d\xE9veloppeurs d'acc\xE9der, d'afficher ou de manipuler la date\
+  \ actuelle\u2026"
+title: Obtenir la date actuelle
 ---
 
 {{< edit_this_page >}}

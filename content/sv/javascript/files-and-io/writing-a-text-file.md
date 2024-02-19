@@ -1,14 +1,18 @@
 ---
-title:                "Att skriva en textfil"
 aliases:
 - /sv/javascript/writing-a-text-file/
-date:                  2024-02-03T19:28:15.708907-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att skriva en textfil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:28:15.708907-07:00
+description: "Att skriva en textfil i JavaScript handlar ofta om att skapa och spara\
+  \ data i ett enkelt, l\xE4sbart format f\xF6r loggning, export av anv\xE4ndarinmatning\
+  \ eller\u2026"
+lastmod: 2024-02-18 23:08:52.182494
+model: gpt-4-0125-preview
+summary: "Att skriva en textfil i JavaScript handlar ofta om att skapa och spara data\
+  \ i ett enkelt, l\xE4sbart format f\xF6r loggning, export av anv\xE4ndarinmatning\
+  \ eller\u2026"
+title: Att skriva en textfil
 ---
 
 {{< edit_this_page >}}

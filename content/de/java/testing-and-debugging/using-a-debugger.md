@@ -1,13 +1,14 @@
 ---
-title:                "Einsatz eines Debuggers"
 aliases:
 - /de/java/using-a-debugger/
-date:                  2024-01-26T03:49:30.157433-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Einsatz eines Debuggers"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/using-a-debugger.md"
+date: 2024-01-26 03:49:30.157433-07:00
+description: "Ein Debugger wird verwendet, um ein Werkzeug zum Testen und Beheben\
+  \ von Fehlern im Code einzusetzen. Programmierer tun dies, um den Ablauf ihrer\u2026"
+lastmod: 2024-02-18 23:09:04.741559
+model: gpt-4-0125-preview
+summary: "Ein Debugger wird verwendet, um ein Werkzeug zum Testen und Beheben von\
+  \ Fehlern im Code einzusetzen. Programmierer tun dies, um den Ablauf ihrer\u2026"
+title: Einsatz eines Debuggers
 ---
 
 {{< edit_this_page >}}

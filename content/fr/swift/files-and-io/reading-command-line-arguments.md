@@ -1,13 +1,15 @@
 ---
-title:                "Lecture des arguments de ligne de commande"
 aliases:
 - /fr/swift/reading-command-line-arguments/
-date:                  2024-01-20T17:56:44.882574-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lecture des arguments de ligne de commande"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:44.882574-07:00
+description: "Lire les arguments de la ligne de commande, c'est r\xE9cup\xE9rer des\
+  \ valeurs fournies lors de l'ex\xE9cution d'un programme en console. Les programmeurs\
+  \ utilisent\u2026"
+lastmod: 2024-02-18 23:09:09.225879
+model: gpt-4-1106-preview
+summary: "Lire les arguments de la ligne de commande, c'est r\xE9cup\xE9rer des valeurs\
+  \ fournies lors de l'ex\xE9cution d'un programme en console. Les programmeurs utilisent\u2026"
+title: Lecture des arguments de ligne de commande
 ---
 
 {{< edit_this_page >}}

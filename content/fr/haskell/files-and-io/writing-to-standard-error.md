@@ -1,14 +1,18 @@
 ---
-title:                "Écrire sur l'erreur standard"
 aliases:
 - /fr/haskell/writing-to-standard-error/
-date:                  2024-02-03T19:33:17.804092-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Écrire sur l'erreur standard"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:33:17.804092-07:00
+description: "\xC9crire dans l'erreur standard (stderr) en Haskell permet aux programmes\
+  \ de diff\xE9rencier leur sortie entre les r\xE9sultats normaux et les messages\
+  \ d'erreur.\u2026"
+lastmod: 2024-02-18 23:09:08.893489
+model: gpt-4-0125-preview
+summary: "\xC9crire dans l'erreur standard (stderr) en Haskell permet aux programmes\
+  \ de diff\xE9rencier leur sortie entre les r\xE9sultats normaux et les messages\
+  \ d'erreur.\u2026"
+title: "\xC9crire sur l'erreur standard"
 ---
 
 {{< edit_this_page >}}

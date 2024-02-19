@@ -1,14 +1,20 @@
 ---
-title:                "Ghi vào lỗi chuẩn"
 aliases:
 - /vi/vba/writing-to-standard-error/
-date:                  2024-02-01T22:09:25.932372-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ghi vào lỗi chuẩn"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/writing-to-standard-error.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:09:25.932372-07:00
+description: "Ghi v\xE0o l\u1ED7i chu\u1EA9n trong Visual Basic for Applications (VBA)\
+  \ li\xEAn quan \u0111\u1EBFn vi\u1EC7c h\u01B0\u1EDBng c\xE1c th\xF4ng b\xE1o l\u1ED7\
+  i ho\u1EB7c ch\u1EA9n \u0111o\xE1n ra kh\u1ECFi \u0111\u1EA7u ra chu\u1EA9n, th\u01B0\
+  \u1EDDng l\xE0 t\u1EDBi\u2026"
+lastmod: 2024-02-18 23:08:50.528111
+model: gpt-4-0125-preview
+summary: "Ghi v\xE0o l\u1ED7i chu\u1EA9n trong Visual Basic for Applications (VBA)\
+  \ li\xEAn quan \u0111\u1EBFn vi\u1EC7c h\u01B0\u1EDBng c\xE1c th\xF4ng b\xE1o l\u1ED7\
+  i ho\u1EB7c ch\u1EA9n \u0111o\xE1n ra kh\u1ECFi \u0111\u1EA7u ra chu\u1EA9n, th\u01B0\
+  \u1EDDng l\xE0 t\u1EDBi\u2026"
+title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 ---
 
 {{< edit_this_page >}}

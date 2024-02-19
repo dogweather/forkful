@@ -1,13 +1,27 @@
 ---
-title:                "TOML के साथ काम करना"
 aliases:
 - /hi/typescript/working-with-toml/
-date:                  2024-01-26T04:28:01.472786-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "TOML के साथ काम करना"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/working-with-toml.md"
+date: 2024-01-26 04:28:01.472786-07:00
+description: "TOML, \u091C\u093F\u0938\u0915\u093E \u092A\u0942\u0930\u093E \u0928\
+  \u093E\u092E Tom's Obvious, Minimal Language \u0939\u0948, JSON \u092F\u093E YAML\
+  \ \u0915\u0947 \u0938\u092E\u093E\u0928 \u090F\u0915 \u0921\u0947\u091F\u093E \u0938\
+  \u0940\u0930\u093F\u092F\u0932\u093E\u0907\u091C\u0947\u0936\u0928 \u092A\u094D\u0930\
+  \u093E\u0930\u0942\u092A \u0939\u0948\u0964 \u092A\u094D\u0930\u094B\u0917\u094D\
+  \u0930\u093E\u092E\u0930\u094D\u0938 \u0907\u0938\u0947 \u0907\u0938\u0915\u0940\
+  \ \u092E\u093E\u0928\u0935 \u092A\u0922\u093C\u0928\u0947 \u092F\u094B\u0917\u094D\
+  \u092F\u0924\u093E \u0914\u0930\u2026"
+lastmod: 2024-02-18 23:09:02.921915
+model: gpt-4-0125-preview
+summary: "TOML, \u091C\u093F\u0938\u0915\u093E \u092A\u0942\u0930\u093E \u0928\u093E\
+  \u092E Tom's Obvious, Minimal Language \u0939\u0948, JSON \u092F\u093E YAML \u0915\
+  \u0947 \u0938\u092E\u093E\u0928 \u090F\u0915 \u0921\u0947\u091F\u093E \u0938\u0940\
+  \u0930\u093F\u092F\u0932\u093E\u0907\u091C\u0947\u0936\u0928 \u092A\u094D\u0930\u093E\
+  \u0930\u0942\u092A \u0939\u0948\u0964 \u092A\u094D\u0930\u094B\u0917\u094D\u0930\
+  \u093E\u092E\u0930\u094D\u0938 \u0907\u0938\u0947 \u0907\u0938\u0915\u0940 \u092E\
+  \u093E\u0928\u0935 \u092A\u0922\u093C\u0928\u0947 \u092F\u094B\u0917\u094D\u092F\
+  \u0924\u093E \u0914\u0930\u2026"
+title: "TOML \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\
+  \u093E"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,17 @@
 ---
-title:                "Kirjoittaminen standardivirheeseen"
 aliases:
 - /fi/powershell/writing-to-standard-error/
-date:                  2024-02-03T19:34:36.484239-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kirjoittaminen standardivirheeseen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:34:36.484239-07:00
+description: "Standardivirheeseen (stderr) kirjoittaminen PowerShellissa tarkoittaa\
+  \ virhesanomien tai diagnostiikkatietojen l\xE4hett\xE4mist\xE4 suoraan stderr-virtaan,\
+  \ joka on\u2026"
+lastmod: 2024-02-18 23:09:07.871675
+model: gpt-4-0125-preview
+summary: "Standardivirheeseen (stderr) kirjoittaminen PowerShellissa tarkoittaa virhesanomien\
+  \ tai diagnostiikkatietojen l\xE4hett\xE4mist\xE4 suoraan stderr-virtaan, joka on\u2026"
+title: Kirjoittaminen standardivirheeseen
 ---
 
 {{< edit_this_page >}}

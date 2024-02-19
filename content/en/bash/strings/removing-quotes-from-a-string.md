@@ -1,13 +1,14 @@
 ---
-title:                "Removing quotes from a string"
 aliases:
 - /en/bash/removing-quotes-from-a-string/
-date:                  2024-01-25T20:50:21.839687-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Removing quotes from a string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/removing-quotes-from-a-string.md"
+date: 2024-01-25 20:50:21.839687-07:00
+description: "Removing quotes from a string involves stripping away the quotation\
+  \ marks that enclose the string. Programmers often want to do this to sanitize input\u2026"
+lastmod: 2024-02-18 23:09:11.215875
+model: gpt-4-1106-preview
+summary: "Removing quotes from a string involves stripping away the quotation marks\
+  \ that enclose the string. Programmers often want to do this to sanitize input\u2026"
+title: Removing quotes from a string
 ---
 
 {{< edit_this_page >}}

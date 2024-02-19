@@ -1,13 +1,20 @@
 ---
-title:                "인터랙티브 셸 (REPL) 사용하기"
 aliases:
 - /ko/lua/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:16:10.860261-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "인터랙티브 셸 (REPL) 사용하기"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/lua/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:16:10.860261-07:00
+description: "REPL\uC740 Read-Eval-Print Loop\uC758 \uC57D\uC790\uB85C, \uCF54\uB4DC\
+  \uB97C \uBE60\uB974\uAC8C \uD14C\uC2A4\uD2B8\uD560 \uC218 \uC788\uB294 \uC0C1\uD638\
+  \uC791\uC6A9 \uD658\uACBD\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\
+  \uC774 \uC2E4\uD5D8, \uB514\uBC84\uAE45 \uBC0F \uC5B8\uC5B4\uC758 \uD2B9\uC774\uC810\
+  \uC744 \uBC30\uC6B0\uAE30 \uC704\uD574 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.418885
+model: gpt-4-0125-preview
+summary: "REPL\uC740 Read-Eval-Print Loop\uC758 \uC57D\uC790\uB85C, \uCF54\uB4DC\uB97C\
+  \ \uBE60\uB974\uAC8C \uD14C\uC2A4\uD2B8\uD560 \uC218 \uC788\uB294 \uC0C1\uD638\uC791\
+  \uC6A9 \uD658\uACBD\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC774\
+  \ \uC2E4\uD5D8, \uB514\uBC84\uAE45 \uBC0F \uC5B8\uC5B4\uC758 \uD2B9\uC774\uC810\uC744\
+  \ \uBC30\uC6B0\uAE30 \uC704\uD574 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

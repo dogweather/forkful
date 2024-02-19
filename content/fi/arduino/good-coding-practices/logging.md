@@ -1,13 +1,16 @@
 ---
-title:                "Lokitus"
 aliases:
 - /fi/arduino/logging/
-date:                  2024-01-26T00:59:29.100907-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lokitus"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/logging.md"
+date: 2024-01-26 00:59:29.100907-07:00
+description: "\"Lokin pit\xE4minen\" tarkoittaa tapahtumien, transaktioiden tai toimintojen\
+  \ kirjaamista, jotka tapahtuvat ajan kuluessa j\xE4rjestelm\xE4ss\xE4. Ohjelmoijat\
+  \ k\xE4ytt\xE4v\xE4t\u2026"
+lastmod: 2024-02-18 23:09:07.906078
+model: gpt-4-1106-preview
+summary: "\"Lokin pit\xE4minen\" tarkoittaa tapahtumien, transaktioiden tai toimintojen\
+  \ kirjaamista, jotka tapahtuvat ajan kuluessa j\xE4rjestelm\xE4ss\xE4. Ohjelmoijat\
+  \ k\xE4ytt\xE4v\xE4t\u2026"
+title: Lokitus
 ---
 
 {{< edit_this_page >}}

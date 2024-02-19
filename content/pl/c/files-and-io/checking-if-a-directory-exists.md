@@ -1,14 +1,18 @@
 ---
-title:                "Sprawdzanie, czy katalog istnieje"
 aliases:
 - /pl/c/checking-if-a-directory-exists/
-date:                  2024-02-03T17:52:48.671090-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sprawdzanie, czy katalog istnieje"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:52:48.671090-07:00
+description: "Sprawdzanie, czy katalog istnieje w j\u0119zyku C, polega na zapytaniu\
+  \ systemu plik\xF3w, aby zweryfikowa\u0107, czy okre\u015Blona \u015Bcie\u017Cka\
+  \ prowadzi do katalogu.\u2026"
+lastmod: 2024-02-18 23:08:50.095623
+model: gpt-4-0125-preview
+summary: "Sprawdzanie, czy katalog istnieje w j\u0119zyku C, polega na zapytaniu systemu\
+  \ plik\xF3w, aby zweryfikowa\u0107, czy okre\u015Blona \u015Bcie\u017Cka prowadzi\
+  \ do katalogu.\u2026"
+title: Sprawdzanie, czy katalog istnieje
 ---
 
 {{< edit_this_page >}}

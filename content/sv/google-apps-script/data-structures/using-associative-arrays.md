@@ -1,14 +1,18 @@
 ---
-title:                "Använda associativa arrayer"
 aliases:
 - /sv/google-apps-script/using-associative-arrays/
-date:                  2024-02-01T22:04:24.173640-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Använda associativa arrayer"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/google-apps-script/using-associative-arrays.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:24.173640-07:00
+description: "Associativa arrayer, k\xE4nda som objekt i Google Apps Script (en variant\
+  \ av JavaScript), l\xE5ter programmerare skapa samlingar av nyckel-v\xE4rde-par.\
+  \ Denna\u2026"
+lastmod: 2024-02-18 23:08:51.370776
+model: gpt-4-0125-preview
+summary: "Associativa arrayer, k\xE4nda som objekt i Google Apps Script (en variant\
+  \ av JavaScript), l\xE5ter programmerare skapa samlingar av nyckel-v\xE4rde-par.\
+  \ Denna\u2026"
+title: "Anv\xE4nda associativa arrayer"
 ---
 
 {{< edit_this_page >}}

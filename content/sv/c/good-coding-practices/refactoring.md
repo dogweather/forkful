@@ -1,14 +1,18 @@
 ---
-title:                "Refaktorisering"
 aliases:
 - /sv/c/refactoring/
-date:                  2024-02-03T18:07:30.947845-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refaktorisering"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/refactoring.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:30.947845-07:00
+description: "Refaktorering inom programmering inneb\xE4r att man omstrukturerar befintlig\
+  \ kod utan att \xE4ndra dess externa beteende, med m\xE5let att f\xF6rb\xE4ttra\
+  \ icke-\u2026"
+lastmod: 2024-02-18 23:08:52.259436
+model: gpt-4-0125-preview
+summary: "Refaktorering inom programmering inneb\xE4r att man omstrukturerar befintlig\
+  \ kod utan att \xE4ndra dess externa beteende, med m\xE5let att f\xF6rb\xE4ttra\
+  \ icke-\u2026"
+title: Refaktorisering
 ---
 
 {{< edit_this_page >}}

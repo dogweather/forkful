@@ -1,13 +1,16 @@
 ---
-title:                "Omvandla ett datum till en sträng"
 aliases:
 - /sv/javascript/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:27.556243-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Omvandla ett datum till en sträng"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:27.556243-07:00
+description: "Att konvertera ett datum till en str\xE4ng inneb\xE4r att omvandla datum\
+  \ data fr\xE5n ett format som datorer f\xF6rst\xE5r till text som \xE4r l\xE4sbart\
+  \ f\xF6r m\xE4nniskor.\u2026"
+lastmod: 2024-02-18 23:08:52.175766
+model: gpt-4-1106-preview
+summary: "Att konvertera ett datum till en str\xE4ng inneb\xE4r att omvandla datum\
+  \ data fr\xE5n ett format som datorer f\xF6rst\xE5r till text som \xE4r l\xE4sbart\
+  \ f\xF6r m\xE4nniskor.\u2026"
+title: "Omvandla ett datum till en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

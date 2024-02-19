@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie argumentów linii poleceń"
 aliases:
 - /pl/clojure/reading-command-line-arguments/
-date:                  2024-01-20T17:55:49.075368-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie argumentów linii poleceń"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:49.075368-07:00
+description: "Czytanie argument\xF3w linii polece\u0144 to spos\xF3b na przekazanie\
+  \ parametr\xF3w do aplikacji. Programi\u015Bci robi\u0105 to, by obs\u0142ugiwa\u0107\
+  \ r\xF3\u017Cne scenariusze dzia\u0142ania\u2026"
+lastmod: 2024-02-18 23:08:49.279716
+model: gpt-4-1106-preview
+summary: "Czytanie argument\xF3w linii polece\u0144 to spos\xF3b na przekazanie parametr\xF3\
+  w do aplikacji. Programi\u015Bci robi\u0105 to, by obs\u0142ugiwa\u0107 r\xF3\u017C\
+  ne scenariusze dzia\u0142ania\u2026"
+title: "Odczytywanie argument\xF3w linii polece\u0144"
 ---
 
 {{< edit_this_page >}}

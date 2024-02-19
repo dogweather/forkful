@@ -1,13 +1,15 @@
 ---
-title:                "Umformung eines Strings in Kleinbuchstaben"
 aliases:
 - /de/haskell/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:43.201264-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Umformung eines Strings in Kleinbuchstaben"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:43.201264-07:00
+description: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet einfach, alle\
+  \ Gro\xDFbuchstaben in eine Zeichenkette in ihre kleinen Pendants zu \xFCberf\xFC\
+  hren.\u2026"
+lastmod: 2024-02-18 23:09:04.902978
+model: gpt-4-1106-preview
+summary: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet einfach, alle Gro\xDF\
+  buchstaben in eine Zeichenkette in ihre kleinen Pendants zu \xFCberf\xFChren.\u2026"
+title: Umformung eines Strings in Kleinbuchstaben
 ---
 
 {{< edit_this_page >}}

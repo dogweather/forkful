@@ -1,15 +1,16 @@
 ---
-title:                "Utilisation des tableaux associatifs"
 aliases:
 - /fr/arduino/using-associative-arrays/
-date:                  2024-01-30T19:10:22.726335-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation des tableaux associatifs"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:22.726335-07:00
+description: "Dans le domaine de l'Arduino, les tableaux associatifs vous permettent\
+  \ d'associer des clefs \xE0 des valeurs, un peu comme si vous associez des chaussettes\u2026"
+lastmod: 2024-02-18 23:09:09.107352
+model: gpt-4-0125-preview
+summary: "Dans le domaine de l'Arduino, les tableaux associatifs vous permettent d'associer\
+  \ des clefs \xE0 des valeurs, un peu comme si vous associez des chaussettes\u2026"
+title: Utilisation des tableaux associatifs
 ---
 
 {{< edit_this_page >}}

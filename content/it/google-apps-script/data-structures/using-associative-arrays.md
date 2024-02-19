@@ -1,14 +1,16 @@
 ---
-title:                "Utilizzo di array associativi"
 aliases:
 - /it/google-apps-script/using-associative-arrays/
-date:                  2024-02-01T22:04:08.108194-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di array associativi"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/google-apps-script/using-associative-arrays.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:08.108194-07:00
+description: "Gli array associativi, noti come oggetti in Google Apps Script (una\
+  \ variante di JavaScript), consentono ai programmatori di creare collezioni di coppie\u2026"
+lastmod: 2024-02-18 23:08:55.469945
+model: gpt-4-0125-preview
+summary: "Gli array associativi, noti come oggetti in Google Apps Script (una variante\
+  \ di JavaScript), consentono ai programmatori di creare collezioni di coppie\u2026"
+title: Utilizzo di array associativi
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Arbeiten mit YAML"
 aliases:
 - /de/typescript/working-with-yaml/
-date:                  2024-02-03T19:26:56.764311-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeiten mit YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:26:56.764311-07:00
+description: "YAML, eine zur Datenserialisierung entworfene Sprache, die benutzerfreundlich\
+  \ sein soll, wird oft f\xFCr Konfigurationsdateien, Interprozesskommunikation und\u2026"
+lastmod: 2024-02-18 23:09:04.618347
+model: gpt-4-0125-preview
+summary: "YAML, eine zur Datenserialisierung entworfene Sprache, die benutzerfreundlich\
+  \ sein soll, wird oft f\xFCr Konfigurationsdateien, Interprozesskommunikation und\u2026"
+title: Arbeiten mit YAML
 ---
 
 {{< edit_this_page >}}

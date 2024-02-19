@@ -1,12 +1,14 @@
 ---
-title:                "Writing a text file"
 aliases:
 - /en/go/writing-a-text-file/
-date:                  2024-02-03T17:50:11.072930-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Writing a text file"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/writing-a-text-file.md"
+date: 2024-02-03 17:50:11.072930-07:00
+description: "Writing a text file in Go involves creating and writing strings of data\
+  \ into a new or existing text file. Programmers do this to persist data, such as\u2026"
+lastmod: 2024-02-18 23:09:10.614973
+model: gpt-4-0125-preview
+summary: "Writing a text file in Go involves creating and writing strings of data\
+  \ into a new or existing text file. Programmers do this to persist data, such as\u2026"
+title: Writing a text file
 ---
 
 {{< edit_this_page >}}

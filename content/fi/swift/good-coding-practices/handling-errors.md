@@ -1,13 +1,14 @@
 ---
-title:                "Virheiden käsittely"
 aliases:
 - /fi/swift/handling-errors/
-date:                  2024-01-26T00:58:06.022705-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheiden käsittely"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/handling-errors.md"
+date: 2024-01-26 00:58:06.022705-07:00
+description: "Virheenk\xE4sittely Swiftiss\xE4 tarkoittaa ongelmien ennakointia ja\
+  \ ratkaisemista, jotka ilmaantuvat koodisi ajon aikana. Teemme niin kaaoksen\u2026"
+lastmod: 2024-02-18 23:09:07.997713
+model: gpt-4-1106-preview
+summary: "Virheenk\xE4sittely Swiftiss\xE4 tarkoittaa ongelmien ennakointia ja ratkaisemista,\
+  \ jotka ilmaantuvat koodisi ajon aikana. Teemme niin kaaoksen\u2026"
+title: "Virheiden k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

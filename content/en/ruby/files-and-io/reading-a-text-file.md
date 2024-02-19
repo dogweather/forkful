@@ -1,13 +1,15 @@
 ---
-title:                "Reading a text file"
 aliases:
 - /en/ruby/reading-a-text-file/
-date:                  2024-01-20T17:54:51.421325-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Reading a text file"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/reading-a-text-file.md"
+date: 2024-01-20 17:54:51.421325-07:00
+description: "Reading a text file means accessing the content of a file stored on\
+  \ disk through code. Programmers do it to process, analyze, or display data within\
+  \ their\u2026"
+lastmod: 2024-02-18 23:09:11.583096
+model: gpt-4-1106-preview
+summary: "Reading a text file means accessing the content of a file stored on disk\
+  \ through code. Programmers do it to process, analyze, or display data within their\u2026"
+title: Reading a text file
 ---
 
 {{< edit_this_page >}}

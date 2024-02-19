@@ -1,13 +1,16 @@
 ---
-title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 aliases:
 - /fi/c-sharp/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:01:04.734396-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:01:04.734396-07:00
+description: "L\xE4hett\xE4ess\xE4mme HTTP-pyynn\xF6n perusautentikaation kera, liit\xE4\
+  mme k\xE4ytt\xE4j\xE4n tunnistetiedot pyynt\xF6\xF6mme. Ohjelmoijat tekev\xE4t t\xE4\
+  m\xE4n turvatakseen p\xE4\xE4syn\u2026"
+lastmod: 2024-02-18 23:09:07.620473
+model: gpt-4-1106-preview
+summary: "L\xE4hett\xE4ess\xE4mme HTTP-pyynn\xF6n perusautentikaation kera, liit\xE4\
+  mme k\xE4ytt\xE4j\xE4n tunnistetiedot pyynt\xF6\xF6mme. Ohjelmoijat tekev\xE4t t\xE4\
+  m\xE4n turvatakseen p\xE4\xE4syn\u2026"
+title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 ---
 
 {{< edit_this_page >}}

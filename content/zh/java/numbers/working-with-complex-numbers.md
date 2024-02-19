@@ -1,13 +1,22 @@
 ---
-title:                "处理复数"
 aliases:
 - /zh/java/working-with-complex-numbers/
-date:                  2024-01-26T04:43:49.640006-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理复数"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/working-with-complex-numbers.md"
+date: 2024-01-26 04:43:49.640006-07:00
+description: "\u901A\u8FC7\u589E\u52A0\u4E00\u4E2A\u865A\u6570\u5355\u4F4D `i`\uFF08\
+  \u5176\u4E2D `i^2 = -1`\uFF09\uFF0C\u590D\u6570\u6269\u5C55\u4E86\u5B9E\u6570\u7EBF\
+  \u3002\u5728\u5DE5\u7A0B\u5B66\u3001\u7269\u7406\u5B66\u4EE5\u53CA\u9AD8\u7EA7\u6570\
+  \u5B66\u7B49\u9886\u57DF\uFF0C\u590D\u6570\u81F3\u5173\u91CD\u8981\uFF0C\u56E0\u4E3A\
+  \u5B83\u4EEC\u80FD\u591F\u6A21\u62DF\u5B9E\u6570\u65E0\u6CD5\u5904\u7406\u7684\u73B0\
+  \u8C61\uFF0C\u5982\u7535\u6D41\u548C\u4FE1\u53F7\u5904\u7406\u3002"
+lastmod: 2024-02-18 23:08:59.015558
+model: gpt-4-0125-preview
+summary: "\u901A\u8FC7\u589E\u52A0\u4E00\u4E2A\u865A\u6570\u5355\u4F4D `i`\uFF08\u5176\
+  \u4E2D `i^2 = -1`\uFF09\uFF0C\u590D\u6570\u6269\u5C55\u4E86\u5B9E\u6570\u7EBF\u3002\
+  \u5728\u5DE5\u7A0B\u5B66\u3001\u7269\u7406\u5B66\u4EE5\u53CA\u9AD8\u7EA7\u6570\u5B66\
+  \u7B49\u9886\u57DF\uFF0C\u590D\u6570\u81F3\u5173\u91CD\u8981\uFF0C\u56E0\u4E3A\u5B83\
+  \u4EEC\u80FD\u591F\u6A21\u62DF\u5B9E\u6570\u65E0\u6CD5\u5904\u7406\u7684\u73B0\u8C61\
+  \uFF0C\u5982\u7535\u6D41\u548C\u4FE1\u53F7\u5904\u7406\u3002"
+title: "\u5904\u7406\u590D\u6570"
 ---
 
 {{< edit_this_page >}}

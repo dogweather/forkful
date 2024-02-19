@@ -1,13 +1,16 @@
 ---
-title:                "Exibindo saídas de depuração"
 aliases:
 - /pt/bash/printing-debug-output/
-date:                  2024-01-20T17:51:53.599532-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Exibindo saídas de depuração"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/printing-debug-output.md"
+date: 2024-01-20 17:51:53.599532-07:00
+description: "Imprimir sa\xEDdas de debug \xE9 basicamente escrever informa\xE7\xF5\
+  es sobre o que est\xE1 acontecendo dentro do c\xF3digo enquanto ele \xE9 executado.\
+  \ Programadores fazem\u2026"
+lastmod: 2024-02-18 23:08:58.328180
+model: gpt-4-1106-preview
+summary: "Imprimir sa\xEDdas de debug \xE9 basicamente escrever informa\xE7\xF5es\
+  \ sobre o que est\xE1 acontecendo dentro do c\xF3digo enquanto ele \xE9 executado.\
+  \ Programadores fazem\u2026"
+title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

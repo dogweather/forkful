@@ -1,14 +1,18 @@
 ---
-title:                "Zamiana liter na wielkie w ciągu znaków"
 aliases:
 - /pl/c/capitalizing-a-string/
-date:                  2024-02-03T17:53:49.159489-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zamiana liter na wielkie w ciągu znaków"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:49.159489-07:00
+description: "Zamiana ci\u0105gu na wielkie litery w j\u0119zyku C obejmuje przekszta\u0142\
+  cenie pierwszej litery ka\u017Cdego s\u0142owa w danym ci\u0105gu na wielk\u0105\
+  \ liter\u0119, je\u015Bli jest to ma\u0142a\u2026"
+lastmod: 2024-02-18 23:08:50.061592
+model: gpt-4-0125-preview
+summary: "Zamiana ci\u0105gu na wielkie litery w j\u0119zyku C obejmuje przekszta\u0142\
+  cenie pierwszej litery ka\u017Cdego s\u0142owa w danym ci\u0105gu na wielk\u0105\
+  \ liter\u0119, je\u015Bli jest to ma\u0142a\u2026"
+title: "Zamiana liter na wielkie w ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

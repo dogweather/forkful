@@ -1,15 +1,18 @@
 ---
-title:                "Samenvoegen van strings"
 aliases:
 - /nl/clojure/concatenating-strings/
-date:                  2024-01-28T21:56:47.250482-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Samenvoegen van strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/clojure/concatenating-strings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:47.250482-07:00
+description: "Stringconcatenatie betekent het eind-aan-eind samenvoegen van strings\
+  \ - \"hallo\" + \"wereld\" wordt \"hallowereld\". Programmeurs doen dit om tekst\
+  \ samen te\u2026"
+lastmod: 2024-02-18 23:09:01.470733
+model: gpt-4-0125-preview
+summary: "Stringconcatenatie betekent het eind-aan-eind samenvoegen van strings -\
+  \ \"hallo\" + \"wereld\" wordt \"hallowereld\". Programmeurs doen dit om tekst samen\
+  \ te\u2026"
+title: Samenvoegen van strings
 ---
 
 {{< edit_this_page >}}

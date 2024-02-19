@@ -1,15 +1,17 @@
 ---
-title:                "Werken met complexe getallen"
 aliases:
 - /nl/bash/working-with-complex-numbers/
-date:                  2024-01-28T22:12:07.599494-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met complexe getallen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/working-with-complex-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:07.599494-07:00
+description: "Complexe getallen bestaan uit een re\xEBel deel en een imaginair deel.\
+  \ Programmeurs gebruiken ze in velden zoals signaalverwerking, kwantummechanica,\
+  \ en\u2026"
+lastmod: 2024-02-18 23:09:02.030685
+model: gpt-4-0125-preview
+summary: "Complexe getallen bestaan uit een re\xEBel deel en een imaginair deel. Programmeurs\
+  \ gebruiken ze in velden zoals signaalverwerking, kwantummechanica, en\u2026"
+title: Werken met complexe getallen
 ---
 
 {{< edit_this_page >}}

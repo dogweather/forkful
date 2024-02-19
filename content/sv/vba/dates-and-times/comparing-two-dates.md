@@ -1,14 +1,18 @@
 ---
-title:                "Jämföra två datum"
 aliases:
 - /sv/vba/comparing-two-dates/
-date:                  2024-02-01T21:50:16.315792-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Jämföra två datum"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/comparing-two-dates.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:16.315792-07:00
+description: "Att j\xE4mf\xF6ra tv\xE5 datum i Visual Basic for Applications (VBA)\
+  \ inneb\xE4r att best\xE4mma deras kronologiska f\xF6rh\xE5llande till varandra.\
+  \ Programmerare g\xF6r detta f\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.639745
+model: gpt-4-0125-preview
+summary: "Att j\xE4mf\xF6ra tv\xE5 datum i Visual Basic for Applications (VBA) inneb\xE4\
+  r att best\xE4mma deras kronologiska f\xF6rh\xE5llande till varandra. Programmerare\
+  \ g\xF6r detta f\xF6r\u2026"
+title: "J\xE4mf\xF6ra tv\xE5 datum"
 ---
 
 {{< edit_this_page >}}

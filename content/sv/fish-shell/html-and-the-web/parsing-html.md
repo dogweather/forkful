@@ -1,14 +1,16 @@
 ---
-title:                "Tolka HTML"
 aliases:
 - /sv/fish-shell/parsing-html/
-date:                  2024-02-03T19:12:19.925987-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tolka HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:19.925987-07:00
+description: "Att tolka (parse:a) HTML handlar om att extrahera data eller information\
+  \ fr\xE5n HTML-inneh\xE5ll, en vanlig uppgift n\xE4r man arbetar med webbdata. Programmerare\u2026"
+lastmod: 2024-02-18 23:08:52.205444
+model: gpt-4-0125-preview
+summary: "Att tolka (parse:a) HTML handlar om att extrahera data eller information\
+  \ fr\xE5n HTML-inneh\xE5ll, en vanlig uppgift n\xE4r man arbetar med webbdata. Programmerare\u2026"
+title: Tolka HTML
 ---
 
 {{< edit_this_page >}}

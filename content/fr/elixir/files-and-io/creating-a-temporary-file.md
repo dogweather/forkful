@@ -1,13 +1,16 @@
 ---
-title:                "Création d'un fichier temporaire"
 aliases:
 - /fr/elixir/creating-a-temporary-file/
-date:                  2024-01-20T17:39:56.412545-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Création d'un fichier temporaire"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/creating-a-temporary-file.md"
+date: 2024-01-20 17:39:56.412545-07:00
+description: "Cr\xE9er un fichier temporaire, c'est g\xE9n\xE9rer un fichier destin\xE9\
+  \ \xE0 un usage court terme, souvent pour manipuler des donn\xE9es transitoires.\
+  \ Les programmeurs le\u2026"
+lastmod: 2024-02-18 23:09:08.456295
+model: gpt-4-1106-preview
+summary: "Cr\xE9er un fichier temporaire, c'est g\xE9n\xE9rer un fichier destin\xE9\
+  \ \xE0 un usage court terme, souvent pour manipuler des donn\xE9es transitoires.\
+  \ Les programmeurs le\u2026"
+title: "Cr\xE9ation d'un fichier temporaire"
 ---
 
 {{< edit_this_page >}}

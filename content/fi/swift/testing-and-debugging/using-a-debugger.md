@@ -1,13 +1,16 @@
 ---
-title:                "Debuggerin käyttö"
 aliases:
 - /fi/swift/using-a-debugger/
-date:                  2024-01-26T04:10:45.257896-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Debuggerin käyttö"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/using-a-debugger.md"
+date: 2024-01-26 04:10:45.257896-07:00
+description: "Debuggerin k\xE4ytt\xE4minen tarkoittaa erikoistuneiden ty\xF6kalujen\
+  \ hy\xF6dynt\xE4mist\xE4 koodisi testaamiseen ja tarkasteluun sen suorituksen aikana.\
+  \ Se on iso juttu,\u2026"
+lastmod: 2024-02-18 23:09:07.994656
+model: gpt-4-0125-preview
+summary: "Debuggerin k\xE4ytt\xE4minen tarkoittaa erikoistuneiden ty\xF6kalujen hy\xF6\
+  dynt\xE4mist\xE4 koodisi testaamiseen ja tarkasteluun sen suorituksen aikana. Se\
+  \ on iso juttu,\u2026"
+title: "Debuggerin k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

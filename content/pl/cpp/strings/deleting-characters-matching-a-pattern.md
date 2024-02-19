@@ -1,13 +1,16 @@
 ---
-title:                "Usuwanie znaków pasujących do wzorca"
 aliases:
 - /pl/cpp/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:48.198353-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Usuwanie znaków pasujących do wzorca"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:48.198353-07:00
+description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to po prostu czyszczenie\
+  \ tekst\xF3w z niepotrzebnych fragment\xF3w. Programi\u015Bci robi\u0105 to, by\
+  \ u\u0142atwi\u0107 przetwarzanie danych,\u2026"
+lastmod: 2024-02-18 23:08:49.894480
+model: gpt-4-1106-preview
+summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to po prostu czyszczenie tekst\xF3\
+  w z niepotrzebnych fragment\xF3w. Programi\u015Bci robi\u0105 to, by u\u0142atwi\u0107\
+  \ przetwarzanie danych,\u2026"
+title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 ---
 
 {{< edit_this_page >}}

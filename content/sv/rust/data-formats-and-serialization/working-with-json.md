@@ -1,14 +1,16 @@
 ---
-title:                "Arbeta med JSON"
 aliases:
 - /sv/rust/working-with-json/
-date:                  2024-02-03T19:24:05.488051-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeta med JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:24:05.488051-07:00
+description: "Att arbeta med JSON (JavaScript Object Notation) i Rust handlar om att\
+  \ tolka JSON-data till Rusts datastrukturer och serialisera Rusts datastrukturer\u2026"
+lastmod: 2024-02-18 23:08:51.604665
+model: gpt-4-0125-preview
+summary: "Att arbeta med JSON (JavaScript Object Notation) i Rust handlar om att tolka\
+  \ JSON-data till Rusts datastrukturer och serialisera Rusts datastrukturer\u2026"
+title: Arbeta med JSON
 ---
 
 {{< edit_this_page >}}

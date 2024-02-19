@@ -1,13 +1,14 @@
 ---
-title:                "Eliminando comillas de una cadena"
 aliases:
 - /es/clojure/removing-quotes-from-a-string/
-date:                  2024-01-26T03:38:35.026792-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eliminando comillas de una cadena"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:38:35.026792-07:00
+description: "Eliminar las comillas de una cadena significa deshacerse de esos molestos\
+  \ caracteres de comillas dobles o simples que envuelven tu texto. Los\u2026"
+lastmod: 2024-02-18 23:09:09.590366
+model: gpt-4-0125-preview
+summary: "Eliminar las comillas de una cadena significa deshacerse de esos molestos\
+  \ caracteres de comillas dobles o simples que envuelven tu texto. Los\u2026"
+title: Eliminando comillas de una cadena
 ---
 
 {{< edit_this_page >}}

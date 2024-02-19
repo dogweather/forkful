@@ -1,14 +1,16 @@
 ---
-title:                "Zeichen löschen, die einem Muster entsprechen"
 aliases:
 - /de/go/deleting-characters-matching-a-pattern/
-date:                  2024-02-03T17:55:31.213254-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zeichen löschen, die einem Muster entsprechen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:31.213254-07:00
+description: "Das L\xF6schen von Zeichen, die einem spezifischen Muster entsprechen,\
+  \ bezieht sich auf das Entfernen bestimmter Zeichen oder Zeichenfolgen aus\u2026"
+lastmod: 2024-02-18 23:09:04.344665
+model: gpt-4-0125-preview
+summary: "Das L\xF6schen von Zeichen, die einem spezifischen Muster entsprechen, bezieht\
+  \ sich auf das Entfernen bestimmter Zeichen oder Zeichenfolgen aus\u2026"
+title: "Zeichen l\xF6schen, die einem Muster entsprechen"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Czytanie argumentów z linii poleceń"
 aliases:
 - /pl/vba/reading-command-line-arguments/
-date:                  2024-02-01T22:01:25.082124-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Czytanie argumentów z linii poleceń"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/vba/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:25.082124-07:00
+description: "Odczytywanie argument\xF3w linii komend w Visual Basic for Applications\
+  \ (VBA) polega na dost\u0119pie do parametr\xF3w przekazanych do programu podczas\
+  \ jego\u2026"
+lastmod: 2024-02-18 23:08:49.450774
+model: gpt-4-0125-preview
+summary: "Odczytywanie argument\xF3w linii komend w Visual Basic for Applications\
+  \ (VBA) polega na dost\u0119pie do parametr\xF3w przekazanych do programu podczas\
+  \ jego\u2026"
+title: "Czytanie argument\xF3w z linii polece\u0144"
 ---
 
 {{< edit_this_page >}}

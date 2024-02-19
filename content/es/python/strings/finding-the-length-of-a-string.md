@@ -1,13 +1,14 @@
 ---
-title:                "Calculando la longitud de una cadena"
 aliases:
 - /es/python/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:10.626473-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Calculando la longitud de una cadena"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:10.626473-07:00
+description: "Contar los caracteres en una cadena permite saber su longitud. Es fundamental,\
+  \ por ejemplo, para validar entradas de usuario, limitar textos de un tweet o\u2026"
+lastmod: 2024-02-18 23:09:09.546415
+model: gpt-4-1106-preview
+summary: "Contar los caracteres en una cadena permite saber su longitud. Es fundamental,\
+  \ por ejemplo, para validar entradas de usuario, limitar textos de un tweet o\u2026"
+title: Calculando la longitud de una cadena
 ---
 
 {{< edit_this_page >}}

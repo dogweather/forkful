@@ -1,15 +1,22 @@
 ---
-title:                "Chuyển đổi một ngày thành chuỗi"
 aliases:
 - /vi/ruby/converting-a-date-into-a-string/
-date:                  2024-01-28T21:58:16.030021-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Chuyển đổi một ngày thành chuỗi"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:58:16.030021-07:00
+description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh m\u1ED9t chu\u1ED7\
+  i chuy\u1EC3n \u0111\u1ED5i \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y th\xE0nh v\u0103\
+  n b\u1EA3n m\xE0 ch\xFAng ta c\xF3 th\u1EC3 \u0111\u1ECDc v\xE0 s\u1EED d\u1EE5\
+  ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 hi\u1EC3\
+  n th\u1ECB\u2026"
+lastmod: 2024-02-18 23:08:51.298301
+model: gpt-4-0125-preview
+summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh m\u1ED9t chu\u1ED7i\
+  \ chuy\u1EC3n \u0111\u1ED5i \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y th\xE0nh v\u0103\
+  n b\u1EA3n m\xE0 ch\xFAng ta c\xF3 th\u1EC3 \u0111\u1ECDc v\xE0 s\u1EED d\u1EE5\
+  ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 hi\u1EC3\
+  n th\u1ECB\u2026"
+title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 ---
 
 {{< edit_this_page >}}

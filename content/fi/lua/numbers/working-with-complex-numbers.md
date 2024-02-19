@@ -1,13 +1,14 @@
 ---
-title:                "Kompleksilukujen käsittely"
 aliases:
 - /fi/lua/working-with-complex-numbers/
-date:                  2024-01-26T04:43:17.953657-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kompleksilukujen käsittely"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/working-with-complex-numbers.md"
+date: 2024-01-26 04:43:17.953657-07:00
+description: "Kompleksiluvut laajentavat yksiulotteisen lukusuoran ideaa kaksiulotteiseen\
+  \ tasoon sis\xE4llytt\xE4m\xE4ll\xE4 pystysuoran imagin\xE4\xE4riakselin. Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:07.750846
+model: gpt-4-0125-preview
+summary: "Kompleksiluvut laajentavat yksiulotteisen lukusuoran ideaa kaksiulotteiseen\
+  \ tasoon sis\xE4llytt\xE4m\xE4ll\xE4 pystysuoran imagin\xE4\xE4riakselin. Ohjelmoijat\u2026"
+title: "Kompleksilukujen k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

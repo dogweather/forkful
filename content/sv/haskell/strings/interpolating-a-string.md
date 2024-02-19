@@ -1,13 +1,15 @@
 ---
-title:                "Interpolera en sträng"
 aliases:
 - /sv/haskell/interpolating-a-string/
-date:                  2024-01-20T17:50:57.947780-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolera en sträng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/interpolating-a-string.md"
+date: 2024-01-20 17:50:57.947780-07:00
+description: "Stringinterpolering l\xE5ter dig spr\xE4nga in variabler direkt i en\
+  \ str\xE4ng. Programmerare anv\xE4nder det f\xF6r att skapa dynamisk text snabbt\
+  \ och smidigt."
+lastmod: 2024-02-18 23:08:51.823997
+model: gpt-4-1106-preview
+summary: "Stringinterpolering l\xE5ter dig spr\xE4nga in variabler direkt i en str\xE4\
+  ng. Programmerare anv\xE4nder det f\xF6r att skapa dynamisk text snabbt och smidigt."
+title: "Interpolera en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

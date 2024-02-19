@@ -1,14 +1,18 @@
 ---
-title:                "Laste ned en nettside"
 aliases:
 - /no/go/downloading-a-web-page/
-date:                  2024-02-03T17:56:06.302738-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Laste ned en nettside"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/downloading-a-web-page.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:06.302738-07:00
+description: "\xC5 laste ned en nettside handler om \xE5 hente HTML-innholdet p\xE5\
+  \ en nettside via HTTP/HTTPS-protokollen. Programmerere gj\xF8r ofte dette for web\
+  \ scraping,\u2026"
+lastmod: 2024-02-18 23:08:53.434513
+model: gpt-4-0125-preview
+summary: "\xC5 laste ned en nettside handler om \xE5 hente HTML-innholdet p\xE5 en\
+  \ nettside via HTTP/HTTPS-protokollen. Programmerere gj\xF8r ofte dette for web\
+  \ scraping,\u2026"
+title: Laste ned en nettside
 ---
 
 {{< edit_this_page >}}

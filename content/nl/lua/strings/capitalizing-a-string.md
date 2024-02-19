@@ -1,15 +1,16 @@
 ---
-title:                "Een string met hoofdletters maken"
 aliases:
 - /nl/lua/capitalizing-a-string/
-date:                  2024-01-28T21:56:09.093862-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string met hoofdletters maken"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/capitalizing-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:09.093862-07:00
+description: "Het kapitaliseren van een tekenreeks betekent het met een hoofdletter\
+  \ schrijven van de eerste letter van elk woord. Programmeurs doen dit voor\u2026"
+lastmod: 2024-02-18 23:09:01.972842
+model: gpt-4-0125-preview
+summary: "Het kapitaliseren van een tekenreeks betekent het met een hoofdletter schrijven\
+  \ van de eerste letter van elk woord. Programmeurs doen dit voor\u2026"
+title: Een string met hoofdletters maken
 ---
 
 {{< edit_this_page >}}

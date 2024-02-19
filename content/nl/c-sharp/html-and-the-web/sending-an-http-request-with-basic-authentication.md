@@ -1,15 +1,16 @@
 ---
-title:                "Een HTTP-verzoek verzenden met basisauthenticatie"
 aliases:
 - /nl/c-sharp/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-28T22:07:47.213583-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een HTTP-verzoek verzenden met basisauthenticatie"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c-sharp/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:07:47.213583-07:00
+description: "We sturen een HTTP-verzoek met basisauthenticatie om toegang te krijgen\
+  \ tot beschermde bronnen door gebruikersgegevens in de aanvraagheader op te nemen.\u2026"
+lastmod: 2024-02-18 23:09:01.852045
+model: gpt-4-0125-preview
+summary: "We sturen een HTTP-verzoek met basisauthenticatie om toegang te krijgen\
+  \ tot beschermde bronnen door gebruikersgegevens in de aanvraagheader op te nemen.\u2026"
+title: Een HTTP-verzoek verzenden met basisauthenticatie
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,17 @@
 ---
-title:                "Reguliere expressies gebruiken"
 aliases:
 - /nl/bash/using-regular-expressions/
-date:                  2024-01-28T22:09:15.121981-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Reguliere expressies gebruiken"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/using-regular-expressions.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:15.121981-07:00
+description: "Reguliere expressies (regex) zijn patronen die zoekcriteria voor tekst\
+  \ defini\xEBren. Programmeurs gebruiken ze voor het matchen, vervangen of extraheren\
+  \ van\u2026"
+lastmod: 2024-02-18 23:09:02.026416
+model: gpt-4-0125-preview
+summary: "Reguliere expressies (regex) zijn patronen die zoekcriteria voor tekst defini\xEB\
+  ren. Programmeurs gebruiken ze voor het matchen, vervangen of extraheren van\u2026"
+title: Reguliere expressies gebruiken
 ---
 
 {{< edit_this_page >}}

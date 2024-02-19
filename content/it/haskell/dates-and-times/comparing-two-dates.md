@@ -1,13 +1,14 @@
 ---
-title:                "Confronto tra due date"
 aliases:
 - /it/haskell/comparing-two-dates/
-date:                  2024-01-20T17:33:09.503368-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Confronto tra due date"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/comparing-two-dates.md"
+date: 2024-01-20 17:33:09.503368-07:00
+description: "In Haskell, confrontare due date significa verificare se una \xE8 prima,\
+  \ dopo o allo stesso momento dell'altra. Questo \xE8 utile per ordinare eventi\u2026"
+lastmod: 2024-02-18 23:08:55.941956
+model: gpt-4-1106-preview
+summary: "In Haskell, confrontare due date significa verificare se una \xE8 prima,\
+  \ dopo o allo stesso momento dell'altra. Questo \xE8 utile per ordinare eventi\u2026"
+title: Confronto tra due date
 ---
 
 {{< edit_this_page >}}

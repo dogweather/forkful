@@ -1,13 +1,15 @@
 ---
-title:                "Creating a temporary file"
 aliases:
 - /en/ruby/creating-a-temporary-file/
-date:                  2024-01-20T17:40:58.724651-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Creating a temporary file"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:58.724651-07:00
+description: "In Ruby, creating a temporary file helps protect sensitive data and\
+  \ manage fleeting storage needs. Programmers use it for secure, short-term file\
+  \ handling\u2026"
+lastmod: 2024-02-18 23:09:11.585040
+model: gpt-4-1106-preview
+summary: "In Ruby, creating a temporary file helps protect sensitive data and manage\
+  \ fleeting storage needs. Programmers use it for secure, short-term file handling\u2026"
+title: Creating a temporary file
 ---
 
 {{< edit_this_page >}}

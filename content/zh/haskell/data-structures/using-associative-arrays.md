@@ -1,16 +1,25 @@
 ---
-title:                "使用关联数组"
 aliases:
 - /zh/haskell/using-associative-arrays/
-date:                  2024-01-30T19:11:34.148054-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用关联数组"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, dogweather, reviewed
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, dogweather, reviewed
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:11:34.148054-07:00
+description: "Haskell \u4E2D\u7684\u5173\u8054\u6570\u7EC4\u6216\u5B57\u5178\uFF0C\
+  \u5176\u6838\u5FC3\u529F\u80FD\u662F\u4E3A\u4E86\u5B9E\u73B0\u952E\u503C\u5BF9\u7684\
+  \u5FEB\u901F\u67E5\u627E\u548C\u9AD8\u6548\u6570\u636E\u7BA1\u7406\u3002\u7A0B\u5E8F\
+  \u5458\u4F7F\u7528\u5B83\u4EEC\u6765\u5904\u7406\u6210\u5BF9\u5143\u7D20\u7684\u96C6\
+  \u5408\uFF0C\u4E0E\u5217\u8868\u76F8\u6BD4\uFF0C\u67E5\u627E\u5143\u7D20\u8F7B\u800C\
+  \u6613\u4E3E\u3002"
+lastmod: 2024-02-18 23:08:59.163815
+model: gpt-4-0125-preview
+summary: "Haskell \u4E2D\u7684\u5173\u8054\u6570\u7EC4\u6216\u5B57\u5178\uFF0C\u5176\
+  \u6838\u5FC3\u529F\u80FD\u662F\u4E3A\u4E86\u5B9E\u73B0\u952E\u503C\u5BF9\u7684\u5FEB\
+  \u901F\u67E5\u627E\u548C\u9AD8\u6548\u6570\u636E\u7BA1\u7406\u3002\u7A0B\u5E8F\u5458\
+  \u4F7F\u7528\u5B83\u4EEC\u6765\u5904\u7406\u6210\u5BF9\u5143\u7D20\u7684\u96C6\u5408\
+  \uFF0C\u4E0E\u5217\u8868\u76F8\u6BD4\uFF0C\u67E5\u627E\u5143\u7D20\u8F7B\u800C\u6613\
+  \u4E3E\u3002"
+title: "\u4F7F\u7528\u5173\u8054\u6570\u7EC4"
 ---
 
 {{< edit_this_page >}}

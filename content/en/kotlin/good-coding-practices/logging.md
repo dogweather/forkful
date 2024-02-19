@@ -1,13 +1,14 @@
 ---
-title:                "Logging"
 aliases:
 - /en/kotlin/logging/
-date:                  2024-01-25T02:03:33.459956-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Logging"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/logging.md"
+date: 2024-01-25 02:03:33.459956-07:00
+description: "Logging, at its core, is the practice of recording events and data from\
+  \ a software application to an external output, like a file or console. Programmers\u2026"
+lastmod: 2024-02-18 23:09:11.019487
+model: gpt-4-1106-preview
+summary: "Logging, at its core, is the practice of recording events and data from\
+  \ a software application to an external output, like a file or console. Programmers\u2026"
+title: Logging
 ---
 
 {{< edit_this_page >}}

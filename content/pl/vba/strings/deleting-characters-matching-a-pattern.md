@@ -1,14 +1,18 @@
 ---
-title:                "Usuwanie znaków pasujących do wzorca"
 aliases:
 - /pl/vba/deleting-characters-matching-a-pattern/
-date:                  2024-02-01T21:52:35.715519-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usuwanie znaków pasujących do wzorca"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/vba/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:35.715519-07:00
+description: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca w Visual\
+  \ Basic for Applications (VBA) polega na identyfikowaniu, a nast\u0119pnie usuwaniu\
+  \ znak\xF3w lub ci\u0105g\xF3w,\u2026"
+lastmod: 2024-02-18 23:08:49.416280
+model: gpt-4-0125-preview
+summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca w Visual Basic\
+  \ for Applications (VBA) polega na identyfikowaniu, a nast\u0119pnie usuwaniu znak\xF3\
+  w lub ci\u0105g\xF3w,\u2026"
+title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 ---
 
 {{< edit_this_page >}}

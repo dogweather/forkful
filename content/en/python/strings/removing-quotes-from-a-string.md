@@ -1,13 +1,15 @@
 ---
-title:                "Removing quotes from a string"
 aliases:
 - /en/python/removing-quotes-from-a-string/
-date:                  2024-01-25T20:49:59.300234-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Removing quotes from a string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/removing-quotes-from-a-string.md"
+date: 2024-01-25 20:49:59.300234-07:00
+description: "Removing quotes from a string usually means stripping away extraneous\
+  \ double (\") or single (') quotation marks. Programmers do this to sanitize input\
+  \ or\u2026"
+lastmod: 2024-02-18 23:09:10.669658
+model: gpt-4-1106-preview
+summary: "Removing quotes from a string usually means stripping away extraneous double\
+  \ (\") or single (') quotation marks. Programmers do this to sanitize input or\u2026"
+title: Removing quotes from a string
 ---
 
 {{< edit_this_page >}}

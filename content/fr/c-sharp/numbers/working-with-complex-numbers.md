@@ -1,13 +1,16 @@
 ---
-title:                "Manipulation des nombres complexes"
 aliases:
 - /fr/c-sharp/working-with-complex-numbers/
-date:                  2024-01-26T04:38:47.914926-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulation des nombres complexes"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/working-with-complex-numbers.md"
+date: 2024-01-26 04:38:47.914926-07:00
+description: "Les nombres complexes \xE9largissent notre syst\xE8me de nombres pour\
+  \ inclure les nombres imaginaires, nous permettant de r\xE9soudre des \xE9quations\
+  \ qui n'ont pas\u2026"
+lastmod: 2024-02-18 23:09:08.820979
+model: gpt-4-0125-preview
+summary: "Les nombres complexes \xE9largissent notre syst\xE8me de nombres pour inclure\
+  \ les nombres imaginaires, nous permettant de r\xE9soudre des \xE9quations qui n'ont\
+  \ pas\u2026"
+title: Manipulation des nombres complexes
 ---
 
 {{< edit_this_page >}}

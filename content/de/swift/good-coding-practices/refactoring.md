@@ -1,13 +1,14 @@
 ---
-title:                "Refactoring"
 aliases:
 - /de/swift/refactoring/
-date:                  2024-01-26T03:36:37.835050-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactoring"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/refactoring.md"
+date: 2024-01-26 03:36:37.835050-07:00
+description: "Refactoring ist der Prozess des Umstrukturierens vorhandenen Computer-Codes,\
+  \ ohne dessen externes Verhalten zu \xE4ndern. Programmierer machen dies, um den\u2026"
+lastmod: 2024-02-18 23:09:05.243136
+model: gpt-4-0125-preview
+summary: "Refactoring ist der Prozess des Umstrukturierens vorhandenen Computer-Codes,\
+  \ ohne dessen externes Verhalten zu \xE4ndern. Programmierer machen dies, um den\u2026"
+title: Refactoring
 ---
 
 {{< edit_this_page >}}

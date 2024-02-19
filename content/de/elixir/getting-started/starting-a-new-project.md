@@ -1,13 +1,14 @@
 ---
-title:                "Einen neuen Projekt starten"
 aliases:
 - /de/elixir/starting-a-new-project/
-date:                  2024-01-20T18:03:18.498913-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Einen neuen Projekt starten"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/starting-a-new-project.md"
+date: 2024-01-20 18:03:18.498913-07:00
+description: "Ein neues Projekt zu starten bedeutet, eine frische Codebasis zu initialisieren,\
+  \ in der wir unsere Ideen umsetzen k\xF6nnen. Programmierer beginnen neue\u2026"
+lastmod: 2024-02-18 23:09:04.552600
+model: gpt-4-1106-preview
+summary: "Ein neues Projekt zu starten bedeutet, eine frische Codebasis zu initialisieren,\
+  \ in der wir unsere Ideen umsetzen k\xF6nnen. Programmierer beginnen neue\u2026"
+title: Einen neuen Projekt starten
 ---
 
 {{< edit_this_page >}}

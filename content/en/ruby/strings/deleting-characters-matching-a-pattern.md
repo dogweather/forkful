@@ -1,13 +1,15 @@
 ---
-title:                "Deleting characters matching a pattern"
 aliases:
 - /en/ruby/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:52.715524-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Deleting characters matching a pattern"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:52.715524-07:00
+description: "Deleting characters matching a pattern in strings is about surgically\
+  \ removing bits you don't need, like stripping hashtags from tweets. Programmers\
+  \ do it\u2026"
+lastmod: 2024-02-18 23:09:11.548170
+model: gpt-4-1106-preview
+summary: "Deleting characters matching a pattern in strings is about surgically removing\
+  \ bits you don't need, like stripping hashtags from tweets. Programmers do it\u2026"
+title: Deleting characters matching a pattern
 ---
 
 {{< edit_this_page >}}

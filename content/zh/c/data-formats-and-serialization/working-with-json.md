@@ -1,14 +1,24 @@
 ---
-title:                "处理JSON数据"
 aliases:
 - /zh/c/working-with-json/
-date:                  2024-02-03T18:11:53.548631-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理JSON数据"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:11:53.548631-07:00
+description: "\u5728C\u8BED\u8A00\u4E2D\u64CD\u4F5CJSON\uFF08JavaScript\u5BF9\u8C61\
+  \u8868\u793A\u6CD5\uFF09\u5305\u62EC\u89E3\u6790\u3001\u751F\u6210\u548C\u64CD\u7EB5\
+  JSON\u6570\u636E\u7ED3\u6784\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\
+  \u4E86\u5B9E\u73B0\u4E0EWeb\u670D\u52A1\u7684\u901A\u8BAF\u3001\u6570\u636E\u5B58\
+  \u50A8\u6216\u4EE5\u8F7B\u91CF\u7EA7\u548C\u4EBA\u7C7B\u53EF\u8BFB\u7684\u683C\u5F0F\
+  \u914D\u7F6E\u6587\u4EF6\u3002"
+lastmod: 2024-02-18 23:08:59.580232
+model: gpt-4-0125-preview
+summary: "\u5728C\u8BED\u8A00\u4E2D\u64CD\u4F5CJSON\uFF08JavaScript\u5BF9\u8C61\u8868\
+  \u793A\u6CD5\uFF09\u5305\u62EC\u89E3\u6790\u3001\u751F\u6210\u548C\u64CD\u7EB5JSON\u6570\
+  \u636E\u7ED3\u6784\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u5B9E\
+  \u73B0\u4E0EWeb\u670D\u52A1\u7684\u901A\u8BAF\u3001\u6570\u636E\u5B58\u50A8\u6216\
+  \u4EE5\u8F7B\u91CF\u7EA7\u548C\u4EBA\u7C7B\u53EF\u8BFB\u7684\u683C\u5F0F\u914D\u7F6E\
+  \u6587\u4EF6\u3002"
+title: "\u5904\u7406JSON\u6570\u636E"
 ---
 
 {{< edit_this_page >}}

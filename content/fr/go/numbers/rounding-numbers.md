@@ -1,14 +1,18 @@
 ---
-title:                "Arrondissement des nombres"
 aliases:
 - /fr/go/rounding-numbers/
-date:                  2024-02-03T18:07:36.151911-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arrondissement des nombres"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/rounding-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:36.151911-07:00
+description: "Arrondir les nombres consiste \xE0 ajuster la valeur d\u2019un nombre\
+  \ \xE0 son nombre entier le plus proche ou \xE0 un nombre sp\xE9cifique de d\xE9\
+  cimales. Les programmeurs\u2026"
+lastmod: 2024-02-18 23:09:08.226209
+model: gpt-4-0125-preview
+summary: "Arrondir les nombres consiste \xE0 ajuster la valeur d\u2019un nombre \xE0\
+  \ son nombre entier le plus proche ou \xE0 un nombre sp\xE9cifique de d\xE9cimales.\
+  \ Les programmeurs\u2026"
+title: Arrondissement des nombres
 ---
 
 {{< edit_this_page >}}

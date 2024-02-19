@@ -1,15 +1,16 @@
 ---
-title:                "Interpolating a string"
 aliases:
 - /en/python/interpolating-a-string/
-date:                  2024-01-20T17:51:28.373461-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolating a string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/interpolating-a-string.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
+- 2024-01-28, dogweather, reviewed
+date: 2024-01-20 17:51:28.373461-07:00
+description: "String interpolation is the method of embedding expressions within string\
+  \ literals. Programmers use it to dynamically insert values into strings, which\u2026"
+lastmod: 2024-02-18 23:09:10.667670
+model: gpt-4-1106-preview
+summary: "String interpolation is the method of embedding expressions within string\
+  \ literals. Programmers use it to dynamically insert values into strings, which\u2026"
+title: Interpolating a string
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonojen yhdistäminen"
 aliases:
 - /fi/typescript/concatenating-strings/
-date:                  2024-01-20T17:35:39.169899-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonojen yhdistäminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/concatenating-strings.md"
+date: 2024-01-20 17:35:39.169899-07:00
+description: "Yksinkertaisesti sanottuna, merkkijonojen yhdist\xE4minen tarkoittaa\
+  \ niiden liitt\xE4mist\xE4 per\xE4kk\xE4in uudeksi merkkijonoksi. Koodarit tekev\xE4\
+  t t\xE4t\xE4, koska se\u2026"
+lastmod: 2024-02-18 23:09:07.309971
+model: gpt-4-1106-preview
+summary: "Yksinkertaisesti sanottuna, merkkijonojen yhdist\xE4minen tarkoittaa niiden\
+  \ liitt\xE4mist\xE4 per\xE4kk\xE4in uudeksi merkkijonoksi. Koodarit tekev\xE4t t\xE4\
+  t\xE4, koska se\u2026"
+title: "Merkkijonojen yhdist\xE4minen"
 ---
 
 {{< edit_this_page >}}

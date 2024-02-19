@@ -1,14 +1,17 @@
 ---
-title:                "Een debugger gebruiken"
 aliases:
 - /nl/vba/using-a-debugger/
-date:                  2024-02-01T22:04:24.294701-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een debugger gebruiken"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/vba/using-a-debugger.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:24.294701-07:00
+description: "Een debugger gebruiken in Visual Basic for Applications (VBA) houdt\
+  \ in dat je je code stap voor stap uitvoert om de uitvoeringsstroom en de status\
+  \ van\u2026"
+lastmod: 2024-02-18 23:09:01.670963
+model: gpt-4-0125-preview
+summary: "Een debugger gebruiken in Visual Basic for Applications (VBA) houdt in dat\
+  \ je je code stap voor stap uitvoert om de uitvoeringsstroom en de status van\u2026"
+title: Een debugger gebruiken
 ---
 
 {{< edit_this_page >}}

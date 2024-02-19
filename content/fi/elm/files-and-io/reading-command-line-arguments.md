@@ -1,13 +1,16 @@
 ---
-title:                "Komennoriviparametrien lukeminen"
 aliases:
 - /fi/elm/reading-command-line-arguments/
-date:                  2024-01-20T17:55:53.139027-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Komennoriviparametrien lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:53.139027-07:00
+description: "Komennon rivin argumenttien lukeminen tarkoittaa sy\xF6tteiden vastaanottamista\
+  \ k\xE4ynnistyksen yhteydess\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4 toimintoa,\
+  \ koska se\u2026"
+lastmod: 2024-02-18 23:09:07.545550
+model: gpt-4-1106-preview
+summary: "Komennon rivin argumenttien lukeminen tarkoittaa sy\xF6tteiden vastaanottamista\
+  \ k\xE4ynnistyksen yhteydess\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4 toimintoa,\
+  \ koska se\u2026"
+title: Komennoriviparametrien lukeminen
 ---
 
 {{< edit_this_page >}}

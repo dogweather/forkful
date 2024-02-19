@@ -1,14 +1,17 @@
 ---
-title:                "Convertire una data in una stringa"
 aliases:
 - /it/go/converting-a-date-into-a-string/
-date:                  2024-02-03T17:54:23.566928-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Convertire una data in una stringa"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:23.566928-07:00
+description: "Convertire una data in una stringa in Go comporta la trasformazione\
+  \ di un oggetto `time.Time` in un formato di stringa leggibile. I programmatori\
+  \ spesso\u2026"
+lastmod: 2024-02-18 23:08:55.444408
+model: gpt-4-0125-preview
+summary: "Convertire una data in una stringa in Go comporta la trasformazione di un\
+  \ oggetto `time.Time` in un formato di stringa leggibile. I programmatori spesso\u2026"
+title: Convertire una data in una stringa
 ---
 
 {{< edit_this_page >}}

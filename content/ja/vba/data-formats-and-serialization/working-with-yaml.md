@@ -1,14 +1,28 @@
 ---
-title:                "YAMLとの作業"
 aliases:
 - /ja/vba/working-with-yaml/
-date:                  2024-02-01T22:08:31.153136-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "YAMLとの作業"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/vba/working-with-yaml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:08:31.153136-07:00
+description: "YAML\uFF08\"YAML Ain't Markup Language\"\u306E\u7565\uFF09\u306F\u3001\
+  \u8A2D\u5B9A\u30D5\u30A1\u30A4\u30EB\u306B\u4E00\u822C\u7684\u306B\u4F7F\u7528\u3055\
+  \u308C\u308B\u4EBA\u9593\u304C\u8AAD\u307F\u53D6\u308A\u53EF\u80FD\u306A\u30C7\u30FC\
+  \u30BF\u30B7\u30EA\u30A2\u30E9\u30A4\u30BC\u30FC\u30B7\u30E7\u30F3\u8A00\u8A9E\u3067\
+  \u3059\u3002\u305D\u306E\u30B7\u30F3\u30D7\u30EB\u3055\u3068\u8AAD\u307F\u3084\u3059\
+  \u3055\u304B\u3089\u3001\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u591A\u304F\u306E\
+  \u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u74B0\u5883\u306B\u304A\u3044\u3066\u3001\
+  \u7279\u306BVisual Basic for\u2026"
+lastmod: 2024-02-18 23:08:54.780555
+model: gpt-4-0125-preview
+summary: "YAML\uFF08\"YAML Ain't Markup Language\"\u306E\u7565\uFF09\u306F\u3001\u8A2D\
+  \u5B9A\u30D5\u30A1\u30A4\u30EB\u306B\u4E00\u822C\u7684\u306B\u4F7F\u7528\u3055\u308C\
+  \u308B\u4EBA\u9593\u304C\u8AAD\u307F\u53D6\u308A\u53EF\u80FD\u306A\u30C7\u30FC\u30BF\
+  \u30B7\u30EA\u30A2\u30E9\u30A4\u30BC\u30FC\u30B7\u30E7\u30F3\u8A00\u8A9E\u3067\u3059\
+  \u3002\u305D\u306E\u30B7\u30F3\u30D7\u30EB\u3055\u3068\u8AAD\u307F\u3084\u3059\u3055\
+  \u304B\u3089\u3001\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u591A\u304F\u306E\u30D7\
+  \u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u74B0\u5883\u306B\u304A\u3044\u3066\u3001\u7279\
+  \u306BVisual Basic for\u2026"
+title: "YAML\u3068\u306E\u4F5C\u696D"
 ---
 
 {{< edit_this_page >}}

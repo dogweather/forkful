@@ -1,13 +1,26 @@
 ---
-title:                "使用TOML"
 aliases:
 - /zh/python/working-with-toml/
-date:                  2024-01-26T04:25:52.199371-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/working-with-toml.md"
+date: 2024-01-26 04:25:52.199371-07:00
+description: "TOML\uFF0C\u4EE3\u8868Tom's Obvious, Minimal Language\uFF08\u6C64\u59C6\
+  \u7684\u660E\u663E\u3001\u6700\u7B80\u8BED\u8A00\uFF09\uFF0C\u662F\u4E00\u79CD\u7C7B\
+  \u4F3C\u4E8EJSON\u6216YAML\u7684\u6570\u636E\u5E8F\u5217\u5316\u683C\u5F0F\uFF0C\
+  \u4F46\u5B83\u65E8\u5728\u7B80\u5355\u548C\u6613\u8BFB\u3002\u7A0B\u5E8F\u5458\u4F7F\
+  \u7528TOML\u8FDB\u884C\u914D\u7F6E\u6587\u4EF6\u7F16\u5199\uFF0C\u56E0\u4E3A\u5B83\
+  \u6613\u4E8E\u7F16\u5199\u548C\u7406\u89E3\uFF0C\u5E76\u4E14\u80FD\u591F\u6574\u9F50\
+  \u5730\u6620\u5C04\u5230\u50CFPython\u8FD9\u6837\u7684\u7F16\u7A0B\u8BED\u8A00\u4E2D\
+  \u7684\u6570\u636E\u7ED3\u6784\u4E0A\u3002"
+lastmod: 2024-02-18 23:08:58.811589
+model: gpt-4-0125-preview
+summary: "TOML\uFF0C\u4EE3\u8868Tom's Obvious, Minimal Language\uFF08\u6C64\u59C6\u7684\
+  \u660E\u663E\u3001\u6700\u7B80\u8BED\u8A00\uFF09\uFF0C\u662F\u4E00\u79CD\u7C7B\u4F3C\
+  \u4E8EJSON\u6216YAML\u7684\u6570\u636E\u5E8F\u5217\u5316\u683C\u5F0F\uFF0C\u4F46\
+  \u5B83\u65E8\u5728\u7B80\u5355\u548C\u6613\u8BFB\u3002\u7A0B\u5E8F\u5458\u4F7F\u7528\
+  TOML\u8FDB\u884C\u914D\u7F6E\u6587\u4EF6\u7F16\u5199\uFF0C\u56E0\u4E3A\u5B83\u6613\
+  \u4E8E\u7F16\u5199\u548C\u7406\u89E3\uFF0C\u5E76\u4E14\u80FD\u591F\u6574\u9F50\u5730\
+  \u6620\u5C04\u5230\u50CFPython\u8FD9\u6837\u7684\u7F16\u7A0B\u8BED\u8A00\u4E2D\u7684\
+  \u6570\u636E\u7ED3\u6784\u4E0A\u3002"
+title: "\u4F7F\u7528TOML"
 ---
 
 {{< edit_this_page >}}

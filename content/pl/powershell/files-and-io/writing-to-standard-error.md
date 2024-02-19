@@ -1,12 +1,15 @@
 ---
-title:                "Pisanie do standardowego błędu"
 aliases:
 - /pl/powershell/writing-to-standard-error/
-date:                  2024-01-19
-simple_title:         "Pisanie do standardowego błędu"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/writing-to-standard-error.md"
+date: 2024-01-19
+description: "W PowerShellu zapis do strumienia b\u0142\u0119d\xF3w (standard error)\
+  \ pozwala odseparowa\u0107 normalne wyniki dzia\u0142ania skryptu od komunikat\xF3\
+  w o b\u0142\u0119dach. Programi\u015Bci\u2026"
+lastmod: 2024-02-18 23:08:49.845013
+summary: "W PowerShellu zapis do strumienia b\u0142\u0119d\xF3w (standard error) pozwala\
+  \ odseparowa\u0107 normalne wyniki dzia\u0142ania skryptu od komunikat\xF3w o b\u0142\
+  \u0119dach. Programi\u015Bci\u2026"
+title: "Pisanie do standardowego b\u0142\u0119du"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Lesen von Kommandozeilenargumenten"
 aliases:
 - /de/elixir/reading-command-line-arguments/
-date:                  2024-01-20T17:56:12.750245-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lesen von Kommandozeilenargumenten"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:12.750245-07:00
+description: "Kommandozeilenargumente sind Infos, die du deinem Elixir-Programm beim\
+  \ Start \xFCbergibst. Wir nutzen sie, um das Verhalten unserer Programme dynamisch\u2026"
+lastmod: 2024-02-18 23:09:04.568184
+model: gpt-4-1106-preview
+summary: "Kommandozeilenargumente sind Infos, die du deinem Elixir-Programm beim Start\
+  \ \xFCbergibst. Wir nutzen sie, um das Verhalten unserer Programme dynamisch\u2026"
+title: Lesen von Kommandozeilenargumenten
 ---
 
 {{< edit_this_page >}}

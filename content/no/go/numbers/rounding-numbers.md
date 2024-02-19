@@ -1,14 +1,18 @@
 ---
-title:                "Avrunding av tall"
 aliases:
 - /no/go/rounding-numbers/
-date:                  2024-02-03T18:07:56.438089-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Avrunding av tall"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/rounding-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:56.438089-07:00
+description: "Avrunding av tall handler om \xE5 justere verdien av et tall til det\
+  \ n\xE6rmeste hele tallet eller til et spesifikt antall desimaler. Programmerere\
+  \ gj\xF8r dette\u2026"
+lastmod: 2024-02-18 23:08:53.430483
+model: gpt-4-0125-preview
+summary: "Avrunding av tall handler om \xE5 justere verdien av et tall til det n\xE6\
+  rmeste hele tallet eller til et spesifikt antall desimaler. Programmerere gj\xF8\
+  r dette\u2026"
+title: Avrunding av tall
 ---
 
 {{< edit_this_page >}}

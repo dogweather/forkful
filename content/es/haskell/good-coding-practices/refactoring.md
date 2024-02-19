@@ -1,13 +1,16 @@
 ---
-title:                "Refactorización"
 aliases:
 - /es/haskell/refactoring/
-date:                  2024-01-26T01:37:21.580167-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactorización"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/refactoring.md"
+date: 2024-01-26 01:37:21.580167-07:00
+description: "La refactorizaci\xF3n es el proceso de ajustar tu c\xF3digo sin cambiar\
+  \ su comportamiento externo. Se trata de limpiar y organizar tu acto para hacer\
+  \ el c\xF3digo\u2026"
+lastmod: 2024-02-18 23:09:10.036939
+model: gpt-4-0125-preview
+summary: "La refactorizaci\xF3n es el proceso de ajustar tu c\xF3digo sin cambiar\
+  \ su comportamiento externo. Se trata de limpiar y organizar tu acto para hacer\
+  \ el c\xF3digo\u2026"
+title: "Refactorizaci\xF3n"
 ---
 
 {{< edit_this_page >}}

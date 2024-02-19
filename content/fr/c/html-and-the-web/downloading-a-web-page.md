@@ -1,14 +1,16 @@
 ---
-title:                "Téléchargement d'une page web"
 aliases:
 - /fr/c/downloading-a-web-page/
-date:                  2024-02-03T17:55:43.813371-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Téléchargement d'une page web"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/downloading-a-web-page.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:43.813371-07:00
+description: "T\xE9l\xE9charger une page web en C implique d'acc\xE9der programmatiquement\
+  \ au contenu d'une page web sur Internet et de le sauvegarder localement pour un\u2026"
+lastmod: 2024-02-18 23:09:09.354137
+model: gpt-4-0125-preview
+summary: "T\xE9l\xE9charger une page web en C implique d'acc\xE9der programmatiquement\
+  \ au contenu d'une page web sur Internet et de le sauvegarder localement pour un\u2026"
+title: "T\xE9l\xE9chargement d'une page web"
 ---
 
 {{< edit_this_page >}}

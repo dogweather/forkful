@@ -1,13 +1,16 @@
 ---
-title:                "Skrive ut feilsøkingsdata"
 aliases:
 - /no/arduino/printing-debug-output/
-date:                  2024-01-20T17:51:54.266485-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skrive ut feilsøkingsdata"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/printing-debug-output.md"
+date: 2024-01-20 17:51:54.266485-07:00
+description: "\xC5 skrive ut feils\xF8kingsdata (\"debug output\") handler om \xE5\
+  \ vise programdata og -tilstander til skjermen for \xE5 forst\xE5 hva koden faktisk\
+  \ gj\xF8r. Programmerere\u2026"
+lastmod: 2024-02-18 23:08:54.144368
+model: gpt-4-1106-preview
+summary: "\xC5 skrive ut feils\xF8kingsdata (\"debug output\") handler om \xE5 vise\
+  \ programdata og -tilstander til skjermen for \xE5 forst\xE5 hva koden faktisk gj\xF8\
+  r. Programmerere\u2026"
+title: "Skrive ut feils\xF8kingsdata"
 ---
 
 {{< edit_this_page >}}

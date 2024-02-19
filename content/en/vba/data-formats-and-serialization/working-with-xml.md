@@ -1,12 +1,14 @@
 ---
-title:                "Working with XML"
 aliases:
 - /en/vba/working-with-xml/
-date:                  2024-02-01T21:30:06.903873-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Working with XML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/vba/working-with-xml.md"
+date: 2024-02-01 21:30:06.903873-07:00
+description: "Working with XML in Visual Basic for Applications (VBA) involves parsing,\
+  \ creating, and modifying XML documents within the context of Microsoft Office\u2026"
+lastmod: 2024-02-18 23:09:10.913528
+model: gpt-4-0125-preview
+summary: "Working with XML in Visual Basic for Applications (VBA) involves parsing,\
+  \ creating, and modifying XML documents within the context of Microsoft Office\u2026"
+title: Working with XML
 ---
 
 {{< edit_this_page >}}

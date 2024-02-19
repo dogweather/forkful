@@ -1,13 +1,15 @@
 ---
-title:                "Usando um depurador"
 aliases:
 - /pt/swift/using-a-debugger/
-date:                  2024-01-26T04:10:45.849699-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando um depurador"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/using-a-debugger.md"
+date: 2024-01-26 04:10:45.849699-07:00
+description: "Usar um depurador significa utilizar ferramentas especializadas para\
+  \ testar e inspecionar seu c\xF3digo \xE0 medida que ele \xE9 executado. Isso \xE9\
+  \ importante\u2026"
+lastmod: 2024-02-18 23:08:58.495437
+model: gpt-4-0125-preview
+summary: "Usar um depurador significa utilizar ferramentas especializadas para testar\
+  \ e inspecionar seu c\xF3digo \xE0 medida que ele \xE9 executado. Isso \xE9 importante\u2026"
+title: Usando um depurador
 ---
 
 {{< edit_this_page >}}

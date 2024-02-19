@@ -1,13 +1,16 @@
 ---
-title:                "Enviando una solicitud http"
 aliases:
 - /es/powershell/sending-an-http-request/
-date:                  2024-01-20T18:00:25.981787-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando una solicitud http"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/powershell/sending-an-http-request.md"
+date: 2024-01-20 18:00:25.981787-07:00
+description: "Enviar una solicitud HTTP permite a tu programa hablar con otros sistemas\
+  \ a trav\xE9s de la web; es como enviar un mensaje que pide datos o que ejecute\
+  \ una\u2026"
+lastmod: 2024-02-18 23:09:10.212139
+model: gpt-4-1106-preview
+summary: "Enviar una solicitud HTTP permite a tu programa hablar con otros sistemas\
+  \ a trav\xE9s de la web; es como enviar un mensaje que pide datos o que ejecute\
+  \ una\u2026"
+title: Enviando una solicitud http
 ---
 
 {{< edit_this_page >}}

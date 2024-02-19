@@ -1,13 +1,12 @@
 ---
-title:                "טיפול בשגיאות"
 aliases:
 - /he/elm/handling-errors/
-date:                  2024-01-26T00:52:44.938146-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "טיפול בשגיאות"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/handling-errors.md"
+date: 2024-01-26 00:52:44.938146-07:00
+description: null
+lastmod: 2024-02-18 23:08:52.761219
+model: gpt-4-1106-preview
+summary: null
+title: "\u05D8\u05D9\u05E4\u05D5\u05DC \u05D1\u05E9\u05D2\u05D9\u05D0\u05D5\u05EA"
 ---
 
 {{< edit_this_page >}}

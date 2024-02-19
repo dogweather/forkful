@@ -1,13 +1,16 @@
 ---
-title:                "Opprette en midlertidig fil"
 aliases:
 - /no/c-sharp/creating-a-temporary-file/
-date:                  2024-01-20T17:40:07.580006-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Opprette en midlertidig fil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:07.580006-07:00
+description: "Midlertidige filer er kortlivet dataoppbevaring p\xE5 disk. Vi lager\
+  \ dem for sikker og flyktig datah\xE5ndtering, ofte ved h\xE5ndtering av store datamengder\
+  \ eller\u2026"
+lastmod: 2024-02-18 23:08:53.912568
+model: gpt-4-1106-preview
+summary: "Midlertidige filer er kortlivet dataoppbevaring p\xE5 disk. Vi lager dem\
+  \ for sikker og flyktig datah\xE5ndtering, ofte ved h\xE5ndtering av store datamengder\
+  \ eller\u2026"
+title: Opprette en midlertidig fil
 ---
 
 {{< edit_this_page >}}

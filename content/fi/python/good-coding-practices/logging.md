@@ -1,13 +1,14 @@
 ---
-title:                "Lokitus"
 aliases:
 - /fi/python/logging/
-date:                  2024-01-26T01:08:25.680327-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lokitus"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/logging.md"
+date: 2024-01-26 01:08:25.680327-07:00
+description: "Lokitusta tarkoittaa sovelluksen tapahtumien tallentamista ohjelman\
+  \ suorituksen aikana, tarjoten j\xE4ljityspolkua j\xE4lkianalyysiin ja reaaliaikaiseen\u2026"
+lastmod: 2024-02-18 23:09:07.190584
+model: gpt-4-1106-preview
+summary: "Lokitusta tarkoittaa sovelluksen tapahtumien tallentamista ohjelman suorituksen\
+  \ aikana, tarjoten j\xE4ljityspolkua j\xE4lkianalyysiin ja reaaliaikaiseen\u2026"
+title: Lokitus
 ---
 
 {{< edit_this_page >}}

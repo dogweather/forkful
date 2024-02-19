@@ -1,13 +1,14 @@
 ---
-title:                "Refactoring"
 aliases:
 - /de/powershell/refactoring/
-date:                  2024-01-26T03:37:22.479279-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactoring"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/refactoring.md"
+date: 2024-01-26 03:37:22.479279-07:00
+description: "Refactoring ist der Prozess der Umstrukturierung bestehenden Computer-Codes,\
+  \ ohne sein externes Verhalten zu \xE4ndern, mit dem Ziel, nichtfunktionale\u2026"
+lastmod: 2024-02-18 23:09:05.109967
+model: gpt-4-0125-preview
+summary: "Refactoring ist der Prozess der Umstrukturierung bestehenden Computer-Codes,\
+  \ ohne sein externes Verhalten zu \xE4ndern, mit dem Ziel, nichtfunktionale\u2026"
+title: Refactoring
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Rejestrowanie"
 aliases:
 - /pl/vba/logging/
-date:                  2024-02-01T21:56:16.190176-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rejestrowanie"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/vba/logging.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:56:16.190176-07:00
+description: "Logowanie w Visual Basic for Applications (VBA) polega na rejestrowaniu\
+  \ informacji o zachowaniu programu w czasie jego dzia\u0142ania do pliku, konsoli\
+  \ lub\u2026"
+lastmod: 2024-02-18 23:08:49.441003
+model: gpt-4-0125-preview
+summary: "Logowanie w Visual Basic for Applications (VBA) polega na rejestrowaniu\
+  \ informacji o zachowaniu programu w czasie jego dzia\u0142ania do pliku, konsoli\
+  \ lub\u2026"
+title: Rejestrowanie
 ---
 
 {{< edit_this_page >}}

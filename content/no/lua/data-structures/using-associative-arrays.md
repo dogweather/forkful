@@ -1,15 +1,18 @@
 ---
-title:                "Bruke associative tabeller"
 aliases:
 - /no/lua/using-associative-arrays/
-date:                  2024-01-30T19:12:05.402289-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke associative tabeller"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/lua/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:05.402289-07:00
+description: "Assosiative tabeller er som hemmelige h\xE5ndtrykk for data i Lua\u2014\
+  istedenfor bare tall som f\xF8lger trofast etter indeks, kan n\xF8klene dine v\xE6\
+  re hva som helst,\u2026"
+lastmod: 2024-02-18 23:08:54.008791
+model: gpt-4-0125-preview
+summary: "Assosiative tabeller er som hemmelige h\xE5ndtrykk for data i Lua\u2014\
+  istedenfor bare tall som f\xF8lger trofast etter indeks, kan n\xF8klene dine v\xE6\
+  re hva som helst,\u2026"
+title: Bruke associative tabeller
 ---
 
 {{< edit_this_page >}}

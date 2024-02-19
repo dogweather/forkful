@@ -1,13 +1,16 @@
 ---
-title:                "Création d'un fichier temporaire"
 aliases:
 - /fr/fish-shell/creating-a-temporary-file/
-date:                  2024-01-20T17:40:21.176089-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Création d'un fichier temporaire"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:21.176089-07:00
+description: "Cr\xE9er un fichier temporaire c'est un peu comme prendre des notes\
+  \ sur une napkin; \xE7a sert \xE0 stocker des infos de fa\xE7on \xE9ph\xE9m\xE8\
+  re. Les d\xE9veloppeurs font \xE7a\u2026"
+lastmod: 2024-02-18 23:09:09.327695
+model: gpt-4-1106-preview
+summary: "Cr\xE9er un fichier temporaire c'est un peu comme prendre des notes sur\
+  \ une napkin; \xE7a sert \xE0 stocker des infos de fa\xE7on \xE9ph\xE9m\xE8re. Les\
+  \ d\xE9veloppeurs font \xE7a\u2026"
+title: "Cr\xE9ation d'un fichier temporaire"
 ---
 
 {{< edit_this_page >}}

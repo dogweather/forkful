@@ -1,14 +1,29 @@
 ---
-title:                "디렉토리가 존재하는지 확인하기"
 aliases:
 - /ko/python/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:23.655155-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "디렉토리가 존재하는지 확인하기"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:23.655155-07:00
+description: "Python\uC5D0\uC11C \uB514\uB809\uD1A0\uB9AC\uAC00 \uC874\uC7AC\uD558\
+  \uB294\uC9C0 \uD655\uC778\uD558\uB294 \uAC83\uC740 \uD30C\uC77C\uC744 \uC77D\uAC70\
+  \uB098 \uC4F0\uB294 \uB4F1\uC758 \uC791\uC5C5\uC744 \uC218\uD589\uD558\uAE30 \uC804\
+  \uC5D0 \uD30C\uC77C \uC2DC\uC2A4\uD15C\uC5D0\uC11C \uD3F4\uB354\uC758 \uC874\uC7AC\
+  \uB97C \uAC80\uC99D\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uC774\uB97C \uD1B5\uD574 `FileNotFoundError`\uC640 \uAC19\uC740\
+  \ \uC624\uB958\uB97C \uD53C\uD558\uACE0, \uB514\uB809\uD1A0\uB9AC\uC640 \uC0C1\uD638\
+  \uC791\uC6A9\uC744 \uC2DC\uB3C4\uD560 \uB54C\u2026"
+lastmod: 2024-02-18 23:09:05.647312
+model: gpt-4-0125-preview
+summary: "Python\uC5D0\uC11C \uB514\uB809\uD1A0\uB9AC\uAC00 \uC874\uC7AC\uD558\uB294\
+  \uC9C0 \uD655\uC778\uD558\uB294 \uAC83\uC740 \uD30C\uC77C\uC744 \uC77D\uAC70\uB098\
+  \ \uC4F0\uB294 \uB4F1\uC758 \uC791\uC5C5\uC744 \uC218\uD589\uD558\uAE30 \uC804\uC5D0\
+  \ \uD30C\uC77C \uC2DC\uC2A4\uD15C\uC5D0\uC11C \uD3F4\uB354\uC758 \uC874\uC7AC\uB97C\
+  \ \uAC80\uC99D\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB4E4\uC740 \uC774\uB97C \uD1B5\uD574 `FileNotFoundError`\uC640 \uAC19\uC740 \uC624\
+  \uB958\uB97C \uD53C\uD558\uACE0, \uB514\uB809\uD1A0\uB9AC\uC640 \uC0C1\uD638\uC791\
+  \uC6A9\uC744 \uC2DC\uB3C4\uD560 \uB54C\u2026"
+title: "\uB514\uB809\uD1A0\uB9AC\uAC00 \uC874\uC7AC\uD558\uB294\uC9C0 \uD655\uC778\
+  \uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

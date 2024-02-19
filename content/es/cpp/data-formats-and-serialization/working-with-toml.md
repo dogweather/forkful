@@ -1,13 +1,16 @@
 ---
-title:                "Trabajando con TOML"
 aliases:
 - /es/cpp/working-with-toml/
-date:                  2024-01-26T04:19:31.050141-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/working-with-toml.md"
+date: 2024-01-26 04:19:31.050141-07:00
+description: "TOML (Lenguaje M\xEDnimo y Obvio de Tom) es un formato de serializaci\xF3\
+  n de datos f\xE1cil de leer debido a su sem\xE1ntica clara. Los programadores utilizan\
+  \ TOML\u2026"
+lastmod: 2024-02-18 23:09:10.337542
+model: gpt-4-0125-preview
+summary: "TOML (Lenguaje M\xEDnimo y Obvio de Tom) es un formato de serializaci\xF3\
+  n de datos f\xE1cil de leer debido a su sem\xE1ntica clara. Los programadores utilizan\
+  \ TOML\u2026"
+title: Trabajando con TOML
 ---
 
 {{< edit_this_page >}}

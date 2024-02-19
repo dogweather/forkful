@@ -1,15 +1,17 @@
 ---
-title:                "Een string omzetten naar kleine letters"
 aliases:
 - /nl/cpp/converting-a-string-to-lower-case/
-date:                  2024-01-28T21:58:02.446353-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string omzetten naar kleine letters"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/cpp/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:58:02.446353-07:00
+description: "Een string naar kleine letters omzetten betekent dat alle hoofdletters\
+  \ worden getransformeerd naar hun kleine letter equivalenten. Programmeurs doen\
+  \ dit\u2026"
+lastmod: 2024-02-18 23:09:02.168628
+model: gpt-4-0125-preview
+summary: "Een string naar kleine letters omzetten betekent dat alle hoofdletters worden\
+  \ getransformeerd naar hun kleine letter equivalenten. Programmeurs doen dit\u2026"
+title: Een string omzetten naar kleine letters
 ---
 
 {{< edit_this_page >}}

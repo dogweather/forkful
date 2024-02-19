@@ -1,12 +1,14 @@
 ---
-title:                "Working with JSON"
 aliases:
 - /en/c/working-with-json/
-date:                  2024-02-03T17:50:20.822608-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Working with JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/working-with-json.md"
+date: 2024-02-03 17:50:20.822608-07:00
+description: "Working with JSON (JavaScript Object Notation) in C involves parsing,\
+  \ generating, and manipulating JSON data structures. Programmers do this to enable\u2026"
+lastmod: 2024-02-18 23:09:11.543422
+model: gpt-4-0125-preview
+summary: "Working with JSON (JavaScript Object Notation) in C involves parsing, generating,\
+  \ and manipulating JSON data structures. Programmers do this to enable\u2026"
+title: Working with JSON
 ---
 
 {{< edit_this_page >}}

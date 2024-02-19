@@ -1,15 +1,21 @@
 ---
-title:                "Chỉnh sửa file tại chỗ với câu lệnh CLI ngắn gọn"
 aliases:
 - /vi/powershell/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-28T22:00:42.696159-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Chỉnh sửa file tại chỗ với câu lệnh CLI ngắn gọn"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/powershell/editing-files-in-place-with-cli-one-liners.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:00:42.696159-07:00
+description: "S\u1EEDa \u0111\u1ED5i t\u1EC7p t\u1EA1i ch\u1ED7 v\u1EDBi c\xE1c d\xF2\
+  ng l\u1EC7nh CLI b\u1EB1ng PowerShell l\xE0 v\u1EC1 vi\u1EC7c th\u1EF1c hi\u1EC7\
+  n ch\u1EC9nh s\u1EEDa tr\u1EF1c ti\u1EBFp c\xE1c t\u1EC7p t\u1EEB d\xF2ng l\u1EC7\
+  nh, kh\xF4ng c\u1EA7n m\u1EDF ch\xFAng trong m\u1ED9t\u2026"
+lastmod: 2024-02-18 23:08:50.929475
+model: gpt-4-0125-preview
+summary: "S\u1EEDa \u0111\u1ED5i t\u1EC7p t\u1EA1i ch\u1ED7 v\u1EDBi c\xE1c d\xF2\
+  ng l\u1EC7nh CLI b\u1EB1ng PowerShell l\xE0 v\u1EC1 vi\u1EC7c th\u1EF1c hi\u1EC7\
+  n ch\u1EC9nh s\u1EEDa tr\u1EF1c ti\u1EBFp c\xE1c t\u1EC7p t\u1EEB d\xF2ng l\u1EC7\
+  nh, kh\xF4ng c\u1EA7n m\u1EDF ch\xFAng trong m\u1ED9t\u2026"
+title: "Ch\u1EC9nh s\u1EEDa file t\u1EA1i ch\u1ED7 v\u1EDBi c\xE2u l\u1EC7nh CLI ng\u1EAF\
+  n g\u1ECDn"
 ---
 
 {{< edit_this_page >}}

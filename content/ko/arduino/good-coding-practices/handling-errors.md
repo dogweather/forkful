@@ -1,13 +1,24 @@
 ---
-title:                "에러 처리하기"
 aliases:
 - /ko/arduino/handling-errors/
-date:                  2024-01-26T00:50:13.043757-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "에러 처리하기"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/handling-errors.md"
+date: 2024-01-26 00:50:13.043757-07:00
+description: "\uD504\uB85C\uADF8\uB7A8\uC5D0\uC11C\uC758 \uC5D0\uB7EC \uCC98\uB9AC\
+  \uB294 \uB73B\uD558\uC9C0 \uC54A\uAC8C \uC5EC\uB7EC\uBD84\uC744 \uB118\uC5B4\uB728\
+  \uB9AC\uB824\uB294 \uAC83\uB4E4\uC744 \uC7A1\uC544\uB0B4\uB294 \uACFC\uC815\uC785\
+  \uB2C8\uB2E4. \uC608\uC0C1\uCE58 \uBABB\uD55C \uC77C\uC774 \uBC1C\uC0DD\uD588\uC744\
+  \ \uB54C \uC544\uB450\uC774\uB178\uAC00 \uBA5C\uD2B8\uB2E4\uC6B4\uC5D0 \uBE60\uC9C0\
+  \uC9C0 \uC54A\uB3C4\uB85D \uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\
+  \uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.630538
+model: gpt-4-1106-preview
+summary: "\uD504\uB85C\uADF8\uB7A8\uC5D0\uC11C\uC758 \uC5D0\uB7EC \uCC98\uB9AC\uB294\
+  \ \uB73B\uD558\uC9C0 \uC54A\uAC8C \uC5EC\uB7EC\uBD84\uC744 \uB118\uC5B4\uB728\uB9AC\
+  \uB824\uB294 \uAC83\uB4E4\uC744 \uC7A1\uC544\uB0B4\uB294 \uACFC\uC815\uC785\uB2C8\
+  \uB2E4. \uC608\uC0C1\uCE58 \uBABB\uD55C \uC77C\uC774 \uBC1C\uC0DD\uD588\uC744 \uB54C\
+  \ \uC544\uB450\uC774\uB178\uAC00 \uBA5C\uD2B8\uB2E4\uC6B4\uC5D0 \uBE60\uC9C0\uC9C0\
+  \ \uC54A\uB3C4\uB85D \uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\uB2C8\
+  \uB2E4."
+title: "\uC5D0\uB7EC \uCC98\uB9AC\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

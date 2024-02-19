@@ -1,13 +1,16 @@
 ---
-title:                "अस्थायी फाइल बनाना"
 aliases:
 - /hi/python/creating-a-temporary-file/
-date:                  2024-01-20T17:41:16.053021-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "अस्थायी फाइल बनाना"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/python/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:16.053021-07:00
+description: "Temporary file, yaani asthayi file, ek aisi file hai jo aapko data ke\
+  \ short-term storage ke liye chahiye hoti hai. Programmers ise test data, caching,\
+  \ ya\u2026"
+lastmod: 2024-02-18 23:09:02.683024
+model: gpt-4-1106-preview
+summary: "Temporary file, yaani asthayi file, ek aisi file hai jo aapko data ke short-term\
+  \ storage ke liye chahiye hoti hai. Programmers ise test data, caching, ya\u2026"
+title: "\u0905\u0938\u094D\u0925\u093E\u092F\u0940 \u092B\u093E\u0907\u0932 \u092C\
+  \u0928\u093E\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

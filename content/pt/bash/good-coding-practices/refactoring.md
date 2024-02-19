@@ -1,13 +1,16 @@
 ---
-title:                "Refatoração"
 aliases:
 - /pt/bash/refactoring/
-date:                  2024-01-26T01:16:25.257638-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refatoração"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/refactoring.md"
+date: 2024-01-26 01:16:25.257638-07:00
+description: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o c\xF3digo de computador\
+  \ existente sem alterar seu comportamento externo. \xC9 uma pr\xE1tica vital para\
+  \ reduzir a\u2026"
+lastmod: 2024-02-18 23:08:58.333689
+model: gpt-4-0125-preview
+summary: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o c\xF3digo de computador\
+  \ existente sem alterar seu comportamento externo. \xC9 uma pr\xE1tica vital para\
+  \ reduzir a\u2026"
+title: "Refatora\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

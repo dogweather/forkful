@@ -1,14 +1,16 @@
 ---
-title:                "Läsa kommandoradsargument"
 aliases:
 - /sv/google-apps-script/reading-command-line-arguments/
-date:                  2024-02-01T21:59:18.812642-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Läsa kommandoradsargument"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/google-apps-script/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:18.812642-07:00
+description: "Att l\xE4sa kommandoradsargument i Google Apps Script \xE4r en smula\
+  \ missvisande eftersom Google Apps Script, till skillnad fr\xE5n traditionella\u2026"
+lastmod: 2024-02-18 23:08:51.395275
+model: gpt-4-0125-preview
+summary: "Att l\xE4sa kommandoradsargument i Google Apps Script \xE4r en smula missvisande\
+  \ eftersom Google Apps Script, till skillnad fr\xE5n traditionella\u2026"
+title: "L\xE4sa kommandoradsargument"
 ---
 
 {{< edit_this_page >}}

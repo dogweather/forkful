@@ -1,15 +1,20 @@
 ---
-title:                "Trích xuất chuỗi con"
 aliases:
 - /vi/lua/extracting-substrings/
-date:                  2024-01-28T21:59:50.926513-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trích xuất chuỗi con"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/lua/extracting-substrings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:50.926513-07:00
+description: "Vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con \u0111\u1ED3ng ngh\u0129\
+  a v\u1EDBi vi\u1EC7c k\xE9o m\u1ED9t \u0111o\u1EA1n c\u1EE5 th\u1EC3 ra kh\u1ECF\
+  i m\u1ED9t chu\u1ED7i. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111\
+  i\u1EC1u n\xE0y \u0111\u1EC3 c\xF4 l\u1EADp, ph\xE2n t\xEDch, ho\u1EB7c\u2026"
+lastmod: 2024-02-18 23:08:50.824893
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con \u0111\u1ED3ng ngh\u0129\
+  a v\u1EDBi vi\u1EC7c k\xE9o m\u1ED9t \u0111o\u1EA1n c\u1EE5 th\u1EC3 ra kh\u1ECF\
+  i m\u1ED9t chu\u1ED7i. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111\
+  i\u1EC1u n\xE0y \u0111\u1EC3 c\xF4 l\u1EADp, ph\xE2n t\xEDch, ho\u1EB7c\u2026"
+title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 ---
 
 {{< edit_this_page >}}

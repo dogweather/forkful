@@ -1,14 +1,30 @@
 ---
-title:                "코드를 함수로 구성하기"
 aliases:
 - /ko/google-apps-script/organizing-code-into-functions/
-date:                  2024-02-01T21:57:25.448207-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "코드를 함수로 구성하기"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/organizing-code-into-functions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:25.448207-07:00
+description: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uB294 \uAC83\
+  \uC740 Google Apps Script \uCF54\uB4DC\uB97C \uB17C\uB9AC\uC801\uC778 \uC138\uADF8\
+  \uBA3C\uD2B8\uB85C \uBD84\uB9AC\uD558\uC5EC \uAC01\uAC01 \uD2B9\uC815 \uC791\uC5C5\
+  \uC744 \uC218\uD589\uD558\uB294 \uB3C5\uB9BD\uB41C \uBE14\uB85D\uC73C\uB85C \uAD6C\
+  \uC870\uD654\uD558\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC740 \uCF54\uB4DC\uC758 \uAC00\uB3C5\uC131, \uC720\uC9C0\uBCF4\
+  \uC218\uC131 \uBC0F \uC7AC\uC0AC\uC6A9\uC131\uC744 \uD5A5\uC0C1\uC2DC\uD0A4\uACE0\
+  \ \uBCF5\uC7A1\uD55C \uC2A4\uD06C\uB9BD\uD2B8\uB97C \uB354 \uC27D\uAC8C \uC774\uD574\
+  \uD558\uACE0\u2026"
+lastmod: 2024-02-18 23:09:05.565314
+model: gpt-4-0125-preview
+summary: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uB294 \uAC83\uC740\
+  \ Google Apps Script \uCF54\uB4DC\uB97C \uB17C\uB9AC\uC801\uC778 \uC138\uADF8\uBA3C\
+  \uD2B8\uB85C \uBD84\uB9AC\uD558\uC5EC \uAC01\uAC01 \uD2B9\uC815 \uC791\uC5C5\uC744\
+  \ \uC218\uD589\uD558\uB294 \uB3C5\uB9BD\uB41C \uBE14\uB85D\uC73C\uB85C \uAD6C\uC870\
+  \uD654\uD558\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uCF54\uB4DC\uC758 \uAC00\uB3C5\uC131, \uC720\uC9C0\uBCF4\uC218\
+  \uC131 \uBC0F \uC7AC\uC0AC\uC6A9\uC131\uC744 \uD5A5\uC0C1\uC2DC\uD0A4\uACE0 \uBCF5\
+  \uC7A1\uD55C \uC2A4\uD06C\uB9BD\uD2B8\uB97C \uB354 \uC27D\uAC8C \uC774\uD574\uD558\
+  \uACE0\u2026"
+title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

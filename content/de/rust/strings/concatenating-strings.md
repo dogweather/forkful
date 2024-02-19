@@ -1,13 +1,15 @@
 ---
-title:                "Zeichenketten verknüpfen"
 aliases:
 - /de/rust/concatenating-strings/
-date:                  2024-01-20T17:35:46.730033-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Zeichenketten verknüpfen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/concatenating-strings.md"
+date: 2024-01-20 17:35:46.730033-07:00
+description: "Stringverkettung bedeutet, zwei oder mehr Strings zu einem einzigen\
+  \ zusammenzuf\xFCgen. Programmierer machen das, um dynamische Texte zu erzeugen\
+  \ oder Daten\u2026"
+lastmod: 2024-02-18 23:09:04.633084
+model: gpt-4-1106-preview
+summary: "Stringverkettung bedeutet, zwei oder mehr Strings zu einem einzigen zusammenzuf\xFC\
+  gen. Programmierer machen das, um dynamische Texte zu erzeugen oder Daten\u2026"
+title: "Zeichenketten verkn\xFCpfen"
 ---
 
 {{< edit_this_page >}}

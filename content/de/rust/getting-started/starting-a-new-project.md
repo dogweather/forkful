@@ -1,13 +1,14 @@
 ---
-title:                "Einen neuen Projekt starten"
 aliases:
 - /de/rust/starting-a-new-project/
-date:                  2024-01-20T18:04:32.148669-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Einen neuen Projekt starten"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/starting-a-new-project.md"
+date: 2024-01-20 18:04:32.148669-07:00
+description: "Ein neues Projekt anzufangen bedeutet, von Grund auf mit einer frischen\
+  \ Codebasis zu beginnen. Programmierer starten neue Projekte, um Ideen umzusetzen,\u2026"
+lastmod: 2024-02-18 23:09:04.642179
+model: gpt-4-1106-preview
+summary: "Ein neues Projekt anzufangen bedeutet, von Grund auf mit einer frischen\
+  \ Codebasis zu beginnen. Programmierer starten neue Projekte, um Ideen umzusetzen,\u2026"
+title: Einen neuen Projekt starten
 ---
 
 {{< edit_this_page >}}

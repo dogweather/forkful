@@ -1,13 +1,16 @@
 ---
-title:                "Skapa en temporär fil"
 aliases:
 - /sv/javascript/creating-a-temporary-file/
-date:                  2024-01-20T17:40:41.434751-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skapa en temporär fil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:41.434751-07:00
+description: "Skapa en tempor\xE4r fil \xE4r som att l\xE4gga upp en tempor\xE4r hylla\
+  \ f\xF6r data. Vi g\xF6r det f\xF6r att hantera information som beh\xF6ver existera\
+  \ under en kort period,\u2026"
+lastmod: 2024-02-18 23:08:52.183511
+model: gpt-4-1106-preview
+summary: "Skapa en tempor\xE4r fil \xE4r som att l\xE4gga upp en tempor\xE4r hylla\
+  \ f\xF6r data. Vi g\xF6r det f\xF6r att hantera information som beh\xF6ver existera\
+  \ under en kort period,\u2026"
+title: "Skapa en tempor\xE4r fil"
 ---
 
 {{< edit_this_page >}}

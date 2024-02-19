@@ -1,13 +1,14 @@
 ---
-title:                "Trabajando con TOML"
 aliases:
 - /es/ruby/working-with-toml/
-date:                  2024-01-26T04:25:32.271561-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/working-with-toml.md"
+date: 2024-01-26 04:25:32.271561-07:00
+description: "TOML es un formato de archivo de configuraci\xF3n que es f\xE1cil de\
+  \ leer debido a su clara sem\xE1ntica. Los programadores usan TOML para gestionar\u2026"
+lastmod: 2024-02-18 23:09:10.577687
+model: gpt-4-0125-preview
+summary: "TOML es un formato de archivo de configuraci\xF3n que es f\xE1cil de leer\
+  \ debido a su clara sem\xE1ntica. Los programadores usan TOML para gestionar\u2026"
+title: Trabajando con TOML
 ---
 
 {{< edit_this_page >}}

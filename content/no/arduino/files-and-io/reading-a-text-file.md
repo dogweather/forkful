@@ -1,13 +1,15 @@
 ---
-title:                "Lese en tekstfil"
 aliases:
 - /no/arduino/reading-a-text-file/
-date:                  2024-01-20T17:53:51.432702-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lese en tekstfil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/reading-a-text-file.md"
+date: 2024-01-20 17:53:51.432702-07:00
+description: "\xC5 lese en tekstfil betyr \xE5 hente innhold fra en fil lagret p\xE5\
+  \ lagringsmediet, for eksempel et SD-kort, s\xE5 du kan bruke dataene i programmet\
+  \ ditt.\u2026"
+lastmod: 2024-02-18 23:08:54.159755
+model: gpt-4-1106-preview
+summary: "\xC5 lese en tekstfil betyr \xE5 hente innhold fra en fil lagret p\xE5 lagringsmediet,\
+  \ for eksempel et SD-kort, s\xE5 du kan bruke dataene i programmet ditt.\u2026"
+title: Lese en tekstfil
 ---
 
 {{< edit_this_page >}}

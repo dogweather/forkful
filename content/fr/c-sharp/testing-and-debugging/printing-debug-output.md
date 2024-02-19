@@ -1,13 +1,16 @@
 ---
-title:                "Affichage des sorties de débogage"
 aliases:
 - /fr/c-sharp/printing-debug-output/
-date:                  2024-01-20T17:52:29.187512-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Affichage des sorties de débogage"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/printing-debug-output.md"
+date: 2024-01-20 17:52:29.187512-07:00
+description: "Afficher des sorties de d\xE9bogage, c'est comme laisser des petites\
+  \ notes dans votre code pour vous dire ce qui se passe. Les d\xE9veloppeurs font\
+  \ \xE7a pour\u2026"
+lastmod: 2024-02-18 23:09:08.830586
+model: gpt-4-1106-preview
+summary: "Afficher des sorties de d\xE9bogage, c'est comme laisser des petites notes\
+  \ dans votre code pour vous dire ce qui se passe. Les d\xE9veloppeurs font \xE7\
+  a pour\u2026"
+title: "Affichage des sorties de d\xE9bogage"
 ---
 
 {{< edit_this_page >}}

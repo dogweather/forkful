@@ -1,15 +1,20 @@
 ---
-title:                "Ghi log"
 aliases:
 - /vi/elm/logging/
-date:                  2024-01-28T22:03:22.320565-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ghi log"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elm/logging.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:03:22.320565-07:00
+description: "Ghi l\u1EA1i (Logging) c\u01A1 b\u1EA3n l\xE0 qu\xE1 tr\xECnh ghi l\u1EA1\
+  i c\xE1c s\u1EF1 ki\u1EC7n v\xE0 d\u1EEF li\u1EC7u \u0111\u1EA7u ra t\u1EEB m\u1ED9\
+  t ph\u1EA7n m\u1EC1m khi n\xF3 \u0111ang ch\u1EA1y, coi n\xF3 nh\u01B0 nh\u1EAD\
+  t k\xFD c\u1EE7a ph\u1EA7n m\u1EC1m. L\u1EADp tr\xECnh\u2026"
+lastmod: 2024-02-18 23:08:50.610984
+model: gpt-4-0125-preview
+summary: "Ghi l\u1EA1i (Logging) c\u01A1 b\u1EA3n l\xE0 qu\xE1 tr\xECnh ghi l\u1EA1\
+  i c\xE1c s\u1EF1 ki\u1EC7n v\xE0 d\u1EEF li\u1EC7u \u0111\u1EA7u ra t\u1EEB m\u1ED9\
+  t ph\u1EA7n m\u1EC1m khi n\xF3 \u0111ang ch\u1EA1y, coi n\xF3 nh\u01B0 nh\u1EAD\
+  t k\xFD c\u1EE7a ph\u1EA7n m\u1EC1m. L\u1EADp tr\xECnh\u2026"
+title: Ghi log
 ---
 
 {{< edit_this_page >}}

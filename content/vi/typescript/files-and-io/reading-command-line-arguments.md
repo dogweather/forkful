@@ -1,15 +1,20 @@
 ---
-title:                "Đọc các đối số dòng lệnh"
 aliases:
 - /vi/typescript/reading-command-line-arguments/
-date:                  2024-01-28T22:05:32.501734-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Đọc các đối số dòng lệnh"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/typescript/reading-command-line-arguments.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:05:32.501734-07:00
+description: "C\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh cho ph\xE9p ng\u01B0\u1EDD\
+  i d\xF9ng truy\u1EC1n d\u1EEF li\u1EC7u v\xE0o ch\u01B0\u01A1ng tr\xECnh khi h\u1ECD\
+  \ ch\u1EA1y n\xF3. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng \u0111\
+  \u1EC3 t\xF9y ch\u1EC9nh h\xE0nh vi c\u1EE7a ch\u01B0\u01A1ng\u2026"
+lastmod: 2024-02-18 23:08:50.432409
+model: gpt-4-0125-preview
+summary: "C\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh cho ph\xE9p ng\u01B0\u1EDD\
+  i d\xF9ng truy\u1EC1n d\u1EEF li\u1EC7u v\xE0o ch\u01B0\u01A1ng tr\xECnh khi h\u1ECD\
+  \ ch\u1EA1y n\xF3. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng \u0111\
+  \u1EC3 t\xF9y ch\u1EC9nh h\xE0nh vi c\u1EE7a ch\u01B0\u01A1ng\u2026"
+title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 ---
 
 {{< edit_this_page >}}

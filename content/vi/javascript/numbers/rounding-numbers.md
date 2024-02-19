@@ -1,15 +1,20 @@
 ---
-title:                "Làm tròn số"
 aliases:
 - /vi/javascript/rounding-numbers/
-date:                  2024-01-28T22:06:52.640869-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm tròn số"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/rounding-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:06:52.640869-07:00
+description: "L\xE0m tr\xF2n l\xE0 vi\u1EC7c c\u1EAFt b\u1ECF ph\u1EA7n th\u1EEBa\
+  \ sau m\u1ED9t \u0111i\u1EC3m nh\u1EA5t \u0111\u1ECBnh trong s\u1ED1. L\u1EADp tr\xEC\
+  nh vi\xEAn l\xE0m tr\xF2n \u0111\u1EC3 ki\u1EC3m so\xE1t \u0111\u1ED9 ch\xEDnh x\xE1\
+  c, qu\u1EA3n l\xFD b\u1ED9 nh\u1EDB, ho\u1EB7c t\u1EA1o ra \u0111\u1EA7u ra\u2026"
+lastmod: 2024-02-18 23:08:51.130392
+model: gpt-4-0125-preview
+summary: "L\xE0m tr\xF2n l\xE0 vi\u1EC7c c\u1EAFt b\u1ECF ph\u1EA7n th\u1EEBa sau\
+  \ m\u1ED9t \u0111i\u1EC3m nh\u1EA5t \u0111\u1ECBnh trong s\u1ED1. L\u1EADp tr\xEC\
+  nh vi\xEAn l\xE0m tr\xF2n \u0111\u1EC3 ki\u1EC3m so\xE1t \u0111\u1ED9 ch\xEDnh x\xE1\
+  c, qu\u1EA3n l\xFD b\u1ED9 nh\u1EDB, ho\u1EB7c t\u1EA1o ra \u0111\u1EA7u ra\u2026"
+title: "L\xE0m tr\xF2n s\u1ED1"
 ---
 
 {{< edit_this_page >}}

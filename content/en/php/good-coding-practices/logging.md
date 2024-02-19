@@ -1,13 +1,15 @@
 ---
-title:                "Logging"
 aliases:
 - /en/php/logging/
-date:                  2024-01-25T02:03:11.630198-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Logging"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/logging.md"
+date: 2024-01-25 02:03:11.630198-07:00
+description: "Logging is basically akin to keeping a diary for your code; it's the\
+  \ act of recording events, errors, and other significant data points that happen\
+  \ when\u2026"
+lastmod: 2024-02-18 23:09:11.143560
+model: gpt-4-1106-preview
+summary: "Logging is basically akin to keeping a diary for your code; it's the act\
+  \ of recording events, errors, and other significant data points that happen when\u2026"
+title: Logging
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,16 @@
 ---
-title:                "Tests Schrijven"
 aliases:
 - /nl/javascript/writing-tests/
-date:                  2024-01-28T22:12:58.054077-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tests Schrijven"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/javascript/writing-tests.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:58.054077-07:00
+description: "Tests schrijven in programmering controleert of code zich gedraagt zoals\
+  \ verwacht\u2014als een quiz voor je functies. Programmeurs schrijven tests om bugs\u2026"
+lastmod: 2024-02-18 23:09:02.279904
+model: gpt-4-0125-preview
+summary: "Tests schrijven in programmering controleert of code zich gedraagt zoals\
+  \ verwacht\u2014als een quiz voor je functies. Programmeurs schrijven tests om bugs\u2026"
+title: Tests Schrijven
 ---
 
 {{< edit_this_page >}}

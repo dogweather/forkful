@@ -1,14 +1,28 @@
 ---
-title:                "TOML과 함께 작업하기"
 aliases:
 - /ko/go/working-with-toml/
-date:                  2024-02-03T18:12:56.522896-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "TOML과 함께 작업하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/working-with-toml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:12:56.522896-07:00
+description: "TOML(Tom's Obvious, Minimal Language)\uC740 \uB2E8\uC21C\uD55C \uAD6C\
+  \uBB38\uC73C\uB85C \uC778\uD574 \uC77D\uAE30 \uC26C\uC6B4 \uC124\uC815 \uD30C\uC77C\
+  \ \uD615\uC2DD\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uADF8\
+  \uAC83\uC758 \uBA85\uD655\uC131\uACFC \uB370\uC774\uD130 \uAD6C\uC870\uB85C\uC758\
+  \ \uC9C1\uAD00\uC801\uC778 \uB9E4\uD551 \uB54C\uBB38\uC5D0 \uC560\uD50C\uB9AC\uCF00\
+  \uC774\uC158 \uC124\uC815\uACFC \uC758\uC874\uC131\uC744 \uAD6C\uC131\uD558\uAE30\
+  \ \uC704\uD574 TOML\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4. \uC774\uAC83\uC740 \uB9CE\
+  \uC740 Go\u2026"
+lastmod: 2024-02-18 23:09:05.522556
+model: gpt-4-0125-preview
+summary: "TOML(Tom's Obvious, Minimal Language)\uC740 \uB2E8\uC21C\uD55C \uAD6C\uBB38\
+  \uC73C\uB85C \uC778\uD574 \uC77D\uAE30 \uC26C\uC6B4 \uC124\uC815 \uD30C\uC77C \uD615\
+  \uC2DD\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uADF8\uAC83\
+  \uC758 \uBA85\uD655\uC131\uACFC \uB370\uC774\uD130 \uAD6C\uC870\uB85C\uC758 \uC9C1\
+  \uAD00\uC801\uC778 \uB9E4\uD551 \uB54C\uBB38\uC5D0 \uC560\uD50C\uB9AC\uCF00\uC774\
+  \uC158 \uC124\uC815\uACFC \uC758\uC874\uC131\uC744 \uAD6C\uC131\uD558\uAE30 \uC704\
+  \uD574 TOML\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4. \uC774\uAC83\uC740 \uB9CE\uC740\
+  \ Go\u2026"
+title: "TOML\uACFC \uD568\uAED8 \uC791\uC5C5\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

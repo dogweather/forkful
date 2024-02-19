@@ -1,14 +1,18 @@
 ---
-title:                "Få det aktuella datumet"
 aliases:
 - /sv/c-sharp/getting-the-current-date/
-date:                  2024-02-03T19:09:25.562023-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Få det aktuella datumet"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:09:25.562023-07:00
+description: "Att f\xE5 det aktuella datumet i C# inneb\xE4r att h\xE4mta aktuella\
+  \ datum- och tidsuppgifter fr\xE5n systemet. Programmerare beh\xF6ver ofta tillg\xE5\
+  ng till denna\u2026"
+lastmod: 2024-02-18 23:08:51.806029
+model: gpt-4-0125-preview
+summary: "Att f\xE5 det aktuella datumet i C# inneb\xE4r att h\xE4mta aktuella datum-\
+  \ och tidsuppgifter fr\xE5n systemet. Programmerare beh\xF6ver ofta tillg\xE5ng\
+  \ till denna\u2026"
+title: "F\xE5 det aktuella datumet"
 ---
 
 {{< edit_this_page >}}

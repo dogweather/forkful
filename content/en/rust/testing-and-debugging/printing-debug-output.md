@@ -1,13 +1,15 @@
 ---
-title:                "Printing debug output"
 aliases:
 - /en/rust/printing-debug-output/
-date:                  2024-01-20T17:53:24.504452-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Printing debug output"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/printing-debug-output.md"
+date: 2024-01-20 17:53:24.504452-07:00
+description: "Printing debug output lets you peek at your program's state without\
+  \ a full-blown debugger. It's quick, dirty, and perfect for tracing pesky bugs when\
+  \ you\u2026"
+lastmod: 2024-02-18 23:09:10.851188
+model: gpt-4-1106-preview
+summary: "Printing debug output lets you peek at your program's state without a full-blown\
+  \ debugger. It's quick, dirty, and perfect for tracing pesky bugs when you\u2026"
+title: Printing debug output
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Interpolando uma string"
 aliases:
 - /pt/lua/interpolating-a-string/
-date:                  2024-01-20T17:51:08.674992-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolando uma string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/lua/interpolating-a-string.md"
+date: 2024-01-20 17:51:08.674992-07:00
+description: "Interpolar uma string \xE9 o ato de integrar vari\xE1veis e express\xF5\
+  es dentro de uma string. Programadores fazem isso porque \xE9 uma maneira din\xE2\
+  mica e flex\xEDvel\u2026"
+lastmod: 2024-02-18 23:08:58.269014
+model: gpt-4-1106-preview
+summary: "Interpolar uma string \xE9 o ato de integrar vari\xE1veis e express\xF5\
+  es dentro de uma string. Programadores fazem isso porque \xE9 uma maneira din\xE2\
+  mica e flex\xEDvel\u2026"
+title: Interpolando uma string
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng mảng liên kết"
 aliases:
 - /vi/java/using-associative-arrays/
-date:                  2024-01-30T19:12:00.545444-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng mảng liên kết"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/java/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:00.545444-07:00
+description: "Trong Java, c\xE1c m\u1EA3ng k\u1EBFt h\u1EE3p, hay b\u1EA3n \u0111\u1ED3\
+  , cho ph\xE9p b\u1EA1n l\u01B0u tr\u1EEF c\xE1c c\u1EB7p kh\xF3a-gi\xE1 tr\u1ECB\
+  \ \u0111\u1EC3 tra c\u1EE9u v\xE0 thao t\xE1c d\u1EEF li\u1EC7u m\u1ED9t c\xE1ch\
+  \ hi\u1EC7u qu\u1EA3. L\u1EADp tr\xECnh vi\xEAn s\u1EED\u2026"
+lastmod: 2024-02-18 23:08:50.549057
+model: gpt-4-0125-preview
+summary: "Trong Java, c\xE1c m\u1EA3ng k\u1EBFt h\u1EE3p, hay b\u1EA3n \u0111\u1ED3\
+  , cho ph\xE9p b\u1EA1n l\u01B0u tr\u1EEF c\xE1c c\u1EB7p kh\xF3a-gi\xE1 tr\u1ECB\
+  \ \u0111\u1EC3 tra c\u1EE9u v\xE0 thao t\xE1c d\u1EEF li\u1EC7u m\u1ED9t c\xE1ch\
+  \ hi\u1EC7u qu\u1EA3. L\u1EADp tr\xECnh vi\xEAn s\u1EED\u2026"
+title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 ---
 
 {{< edit_this_page >}}

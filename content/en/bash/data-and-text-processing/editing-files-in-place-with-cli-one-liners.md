@@ -1,13 +1,14 @@
 ---
-title:                "Editing files in-place with CLI one-liners"
 aliases:
 - /en/bash/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:14:22.581240-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Editing files in-place with CLI one-liners"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:14:22.581240-07:00
+description: "Imagine you've just found out you need to make a batch update to several\
+  \ configuration files sitting on your server. You could open each file, make the\u2026"
+lastmod: 2024-02-18 23:09:11.225653
+model: gpt-4-0125-preview
+summary: "Imagine you've just found out you need to make a batch update to several\
+  \ configuration files sitting on your server. You could open each file, make the\u2026"
+title: Editing files in-place with CLI one-liners
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "HTTP-pyynnön lähettäminen"
 aliases:
 - /fi/python/sending-an-http-request/
-date:                  2024-01-20T18:00:33.683038-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-pyynnön lähettäminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/sending-an-http-request.md"
+date: 2024-01-20 18:00:33.683038-07:00
+description: "L\xE4het\xE4mme HTTP-pyynt\xF6j\xE4 kommunikoidaksemme web-palvelimien\
+  \ kanssa. Koodarit tekev\xE4t sen hakeakseen tietoa, l\xE4hett\xE4\xE4kseen dataa\
+  \ ja interaktoidakseen\u2026"
+lastmod: 2024-02-18 23:09:07.180196
+model: gpt-4-1106-preview
+summary: "L\xE4het\xE4mme HTTP-pyynt\xF6j\xE4 kommunikoidaksemme web-palvelimien kanssa.\
+  \ Koodarit tekev\xE4t sen hakeakseen tietoa, l\xE4hett\xE4\xE4kseen dataa ja interaktoidakseen\u2026"
+title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Sette stor bokstav i en streng"
 aliases:
 - /no/javascript/capitalizing-a-string/
-date:                  2024-02-03T19:05:46.098714-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sette stor bokstav i en streng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:46.098714-07:00
+description: "\xC5 kapitalisere en streng betyr \xE5 konvertere den f\xF8rste bokstaven\
+  \ i strengen til stor bokstav mens de gjenv\xE6rende bokstavene forblir som de er.\
+  \ Denne\u2026"
+lastmod: 2024-02-18 23:08:54.293369
+model: gpt-4-0125-preview
+summary: "\xC5 kapitalisere en streng betyr \xE5 konvertere den f\xF8rste bokstaven\
+  \ i strengen til stor bokstav mens de gjenv\xE6rende bokstavene forblir som de er.\
+  \ Denne\u2026"
+title: Sette stor bokstav i en streng
 ---
 
 {{< edit_this_page >}}

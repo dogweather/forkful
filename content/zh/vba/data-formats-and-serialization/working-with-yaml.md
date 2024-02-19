@@ -1,14 +1,27 @@
 ---
-title:                "使用YAML工作"
 aliases:
 - /zh/vba/working-with-yaml/
-date:                  2024-02-01T22:07:44.459019-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用YAML工作"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/working-with-yaml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:07:44.459019-07:00
+description: "YAML\uFF0C\u4EE3\u8868\u201CYAML\u4E0D\u662F\u6807\u8BB0\u8BED\u8A00\
+  \u201D\uFF0C\u662F\u4E00\u79CD\u6613\u4E8E\u9605\u8BFB\u7684\u6570\u636E\u5E8F\u5217\
+  \u5316\u8BED\u8A00\uFF0C\u5E38\u7528\u4E8E\u914D\u7F6E\u6587\u4EF6\u3002\u7A0B\u5E8F\
+  \u5458\u7ECF\u5E38\u4F7F\u7528\u5B83\uFF0C\u56E0\u4E3A\u5B83\u5728\u5404\u79CD\u7F16\
+  \u7A0B\u73AF\u5883\u4E2D\u7B80\u5355\u6613\u8BFB\uFF0C\u5305\u62EC\u5728Visual Basic\
+  \ for Applications\uFF08VBA\uFF09\u7684\u811A\u672C\u9886\u57DF\u5185\uFF0C\u4EE5\
+  \u589E\u5F3A\u4E92\u64CD\u4F5C\u6027\u3001\u6570\u636E\u5B58\u50A8\u548C\u4EA4\u6362\
+  \u3002"
+lastmod: 2024-02-18 23:08:59.001090
+model: gpt-4-0125-preview
+summary: "YAML\uFF0C\u4EE3\u8868\u201CYAML\u4E0D\u662F\u6807\u8BB0\u8BED\u8A00\u201D\
+  \uFF0C\u662F\u4E00\u79CD\u6613\u4E8E\u9605\u8BFB\u7684\u6570\u636E\u5E8F\u5217\u5316\
+  \u8BED\u8A00\uFF0C\u5E38\u7528\u4E8E\u914D\u7F6E\u6587\u4EF6\u3002\u7A0B\u5E8F\u5458\
+  \u7ECF\u5E38\u4F7F\u7528\u5B83\uFF0C\u56E0\u4E3A\u5B83\u5728\u5404\u79CD\u7F16\u7A0B\
+  \u73AF\u5883\u4E2D\u7B80\u5355\u6613\u8BFB\uFF0C\u5305\u62EC\u5728Visual Basic for\
+  \ Applications\uFF08VBA\uFF09\u7684\u811A\u672C\u9886\u57DF\u5185\uFF0C\u4EE5\u589E\
+  \u5F3A\u4E92\u64CD\u4F5C\u6027\u3001\u6570\u636E\u5B58\u50A8\u548C\u4EA4\u6362\u3002"
+title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 ---
 
 {{< edit_this_page >}}

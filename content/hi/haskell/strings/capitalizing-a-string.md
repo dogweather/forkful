@@ -1,14 +1,29 @@
 ---
-title:                "स्ट्रिंग को कैपिटलाइज करना"
 aliases:
 - /hi/haskell/capitalizing-a-string/
-date:                  2024-02-03T19:05:51.839516-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "स्ट्रिंग को कैपिटलाइज करना"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:51.839516-07:00
+description: "\u0915\u093F\u0938\u0940 \u0936\u092C\u094D\u0926 \u0915\u094B Capitalize\
+  \ \u0915\u0930\u0928\u0947 \u0915\u093E \u0905\u0930\u094D\u0925 \u0939\u0948, \u0926\
+  \u093F\u090F \u0917\u090F \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\
+  \u0947 \u092A\u0939\u0932\u0947 \u0905\u0915\u094D\u0937\u0930 \u0915\u094B \u092C\
+  \u0921\u093C\u0947 \u0905\u0915\u094D\u0937\u0930 (uppercase) \u092E\u0947\u0902\
+  \ \u092C\u0926\u0932\u0928\u093E, \u0938\u093E\u0925 \u0939\u0940 \u092C\u093E\u0915\
+  \u0940 \u0905\u0915\u094D\u0937\u0930\u094B\u0902 \u0915\u094B \u091B\u094B\u091F\
+  \u0947 \u0905\u0915\u094D\u0937\u0930\u094B\u0902\u2026"
+lastmod: 2024-02-18 23:09:03.392348
+model: gpt-4-0125-preview
+summary: "\u0915\u093F\u0938\u0940 \u0936\u092C\u094D\u0926 \u0915\u094B Capitalize\
+  \ \u0915\u0930\u0928\u0947 \u0915\u093E \u0905\u0930\u094D\u0925 \u0939\u0948, \u0926\
+  \u093F\u090F \u0917\u090F \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\
+  \u0947 \u092A\u0939\u0932\u0947 \u0905\u0915\u094D\u0937\u0930 \u0915\u094B \u092C\
+  \u0921\u093C\u0947 \u0905\u0915\u094D\u0937\u0930 (uppercase) \u092E\u0947\u0902\
+  \ \u092C\u0926\u0932\u0928\u093E, \u0938\u093E\u0925 \u0939\u0940 \u092C\u093E\u0915\
+  \u0940 \u0905\u0915\u094D\u0937\u0930\u094B\u0902 \u0915\u094B \u091B\u094B\u091F\
+  \u0947 \u0905\u0915\u094D\u0937\u0930\u094B\u0902\u2026"
+title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u094B \u0915\u0948\
+  \u092A\u093F\u091F\u0932\u093E\u0907\u091C \u0915\u0930\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

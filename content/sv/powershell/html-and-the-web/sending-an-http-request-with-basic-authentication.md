@@ -1,13 +1,16 @@
 ---
-title:                "Skicka en HTTP-förfrågan med Basic-autentisering"
 aliases:
 - /sv/powershell/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:13.500169-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skicka en HTTP-förfrågan med Basic-autentisering"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:13.500169-07:00
+description: "HTTP-f\xF6rfr\xE5gningar med grundl\xE4ggande autentisering inneb\xE4\
+  r att man skickar anv\xE4ndarnamn och l\xF6senord i klartext, kodat i Base64, f\xF6\
+  r att bevisa sin\u2026"
+lastmod: 2024-02-18 23:08:52.003733
+model: gpt-4-1106-preview
+summary: "HTTP-f\xF6rfr\xE5gningar med grundl\xE4ggande autentisering inneb\xE4r att\
+  \ man skickar anv\xE4ndarnamn och l\xF6senord i klartext, kodat i Base64, f\xF6\
+  r att bevisa sin\u2026"
+title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Comparing two dates"
 aliases:
 - /en/bash/comparing-two-dates/
-date:                  2024-01-20T17:32:13.470189-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Comparing two dates"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/comparing-two-dates.md"
+date: 2024-01-20 17:32:13.470189-07:00
+description: "Comparing two dates lets you figure out which one's earlier, later,\
+  \ or if they're the same moment in time. Programmers do this to sort events, trigger\u2026"
+lastmod: 2024-02-18 23:09:11.242372
+model: gpt-4-1106-preview
+summary: "Comparing two dates lets you figure out which one's earlier, later, or if\
+  \ they're the same moment in time. Programmers do this to sort events, trigger\u2026"
+title: Comparing two dates
 ---
 
 {{< edit_this_page >}}

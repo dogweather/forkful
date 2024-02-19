@@ -1,13 +1,16 @@
 ---
-title:                "Organizzare il codice in funzioni"
 aliases:
 - /it/python/organizing-code-into-functions/
-date:                  2024-01-26T01:16:11.990763-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Organizzare il codice in funzioni"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/python/organizing-code-into-functions.md"
+date: 2024-01-26 01:16:11.990763-07:00
+description: "Organizzare il codice in funzioni consiste nel suddividere il codice\
+  \ in blocchi riutilizzabili con scopi specifici. Lo facciamo per rendere il codice\
+  \ pi\xF9\u2026"
+lastmod: 2024-02-18 23:08:55.526535
+model: gpt-4-0125-preview
+summary: "Organizzare il codice in funzioni consiste nel suddividere il codice in\
+  \ blocchi riutilizzabili con scopi specifici. Lo facciamo per rendere il codice\
+  \ pi\xF9\u2026"
+title: Organizzare il codice in funzioni
 ---
 
 {{< edit_this_page >}}

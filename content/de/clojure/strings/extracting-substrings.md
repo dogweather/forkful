@@ -1,13 +1,14 @@
 ---
-title:                "Teilstrings extrahieren"
 aliases:
 - /de/clojure/extracting-substrings/
-date:                  2024-01-20T17:45:30.285772-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Teilstrings extrahieren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/extracting-substrings.md"
+date: 2024-01-20 17:45:30.285772-07:00
+description: "\"Was & Warum?\" Das Extrahieren von Teilstrings bedeutet, Teile eines\
+  \ Strings herauszuschneiden und zu verwenden. Programmierer machen dies, um spezifische\u2026"
+lastmod: 2024-02-18 23:09:04.495275
+model: gpt-4-1106-preview
+summary: "\"Was & Warum?\" Das Extrahieren von Teilstrings bedeutet, Teile eines Strings\
+  \ herauszuschneiden und zu verwenden. Programmierer machen dies, um spezifische\u2026"
+title: Teilstrings extrahieren
 ---
 
 {{< edit_this_page >}}

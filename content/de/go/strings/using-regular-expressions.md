@@ -1,14 +1,18 @@
 ---
-title:                "Reguläre Ausdrücke verwenden"
 aliases:
 - /de/go/using-regular-expressions/
-date:                  2024-02-03T18:11:11.270779-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Reguläre Ausdrücke verwenden"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:11:11.270779-07:00
+description: "Regul\xE4re Ausdr\xFCcke (regex) werden in der Programmierung verwendet,\
+  \ um nach Mustern zu suchen, \xDCbereinstimmungen zu finden und Zeichenketten basierend\
+  \ auf\u2026"
+lastmod: 2024-02-18 23:09:04.351721
+model: gpt-4-0125-preview
+summary: "Regul\xE4re Ausdr\xFCcke (regex) werden in der Programmierung verwendet,\
+  \ um nach Mustern zu suchen, \xDCbereinstimmungen zu finden und Zeichenketten basierend\
+  \ auf\u2026"
+title: "Regul\xE4re Ausdr\xFCcke verwenden"
 ---
 
 {{< edit_this_page >}}

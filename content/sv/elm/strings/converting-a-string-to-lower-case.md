@@ -1,13 +1,16 @@
 ---
-title:                "Konvertera en sträng till gemener"
 aliases:
 - /sv/elm/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:29.235770-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konvertera en sträng till gemener"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:29.235770-07:00
+description: "Att konvertera en str\xE4ng till gemener inneb\xE4r att omvandla alla\
+  \ bokst\xE4ver i str\xE4ngen till sm\xE5 bokst\xE4ver. Programmerare anv\xE4nder\
+  \ det f\xF6r enhetlighet i\u2026"
+lastmod: 2024-02-18 23:08:51.697651
+model: gpt-4-1106-preview
+summary: "Att konvertera en str\xE4ng till gemener inneb\xE4r att omvandla alla bokst\xE4\
+  ver i str\xE4ngen till sm\xE5 bokst\xE4ver. Programmerare anv\xE4nder det f\xF6\
+  r enhetlighet i\u2026"
+title: "Konvertera en str\xE4ng till gemener"
 ---
 
 {{< edit_this_page >}}

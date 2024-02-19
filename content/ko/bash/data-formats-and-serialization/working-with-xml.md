@@ -1,13 +1,24 @@
 ---
-title:                "XML 다루기"
 aliases:
 - /ko/bash/working-with-xml/
-date:                  2024-01-26T04:27:51.800827-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML 다루기"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/working-with-xml.md"
+date: 2024-01-26 04:27:51.800827-07:00
+description: "XML\uC744 \uB2E4\uB8EC\uB2E4\uB294 \uAC83\uC740 Extensible Markup Language\
+  \ \uD615\uC2DD\uC758 \uB370\uC774\uD130\uB97C \uD30C\uC2F1\uD558\uACE0, \uCD94\uCD9C\
+  \uD558\uBA70, \uC870\uC791\uD558\uB294 \uAC83\uC744 \uC758\uBBF8\uD569\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC124\uC815, API \uB4F1\uC744 \uC704\
+  \uD55C \uAD11\uBC94\uC704\uD55C \uB370\uC774\uD130 \uAD50\uD658 \uD615\uC2DD\uC73C\
+  \uB85C \uC0AC\uC6A9\uB418\uAE30 \uB54C\uBB38\uC5D0 XML\uACFC \uC528\uB984\uD569\uB2C8\
+  \uB2E4."
+lastmod: 2024-02-18 23:09:06.523627
+model: gpt-4-0125-preview
+summary: "XML\uC744 \uB2E4\uB8EC\uB2E4\uB294 \uAC83\uC740 Extensible Markup Language\
+  \ \uD615\uC2DD\uC758 \uB370\uC774\uD130\uB97C \uD30C\uC2F1\uD558\uACE0, \uCD94\uCD9C\
+  \uD558\uBA70, \uC870\uC791\uD558\uB294 \uAC83\uC744 \uC758\uBBF8\uD569\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC124\uC815, API \uB4F1\uC744 \uC704\
+  \uD55C \uAD11\uBC94\uC704\uD55C \uB370\uC774\uD130 \uAD50\uD658 \uD615\uC2DD\uC73C\
+  \uB85C \uC0AC\uC6A9\uB418\uAE30 \uB54C\uBB38\uC5D0 XML\uACFC \uC528\uB984\uD569\uB2C8\
+  \uB2E4."
+title: "XML \uB2E4\uB8E8\uAE30"
 ---
 
 {{< edit_this_page >}}

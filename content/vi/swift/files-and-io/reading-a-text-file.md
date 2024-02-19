@@ -1,15 +1,21 @@
 ---
-title:                "Đọc một tệp văn bản"
 aliases:
 - /vi/swift/reading-a-text-file/
-date:                  2024-01-28T22:05:18.674562-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Đọc một tệp văn bản"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/swift/reading-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:05:18.674562-07:00
+description: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Swift c\xF3\
+  \ ngh\u0129a l\xE0 l\u1EA5y n\u1ED9i dung t\u1EEB m\u1ED9t t\u1EC7p l\u01B0u tr\u1EEF\
+  \ tr\xEAn \u0111\u0129a. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u\
+  \ n\xE0y \u0111\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi d\u1EEF li\u1EC7u \u0111\xE3 l\u01B0\
+  u nh\u01B0\u2026"
+lastmod: 2024-02-18 23:08:51.109138
+model: gpt-4-0125-preview
+summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Swift c\xF3 ngh\u0129\
+  a l\xE0 l\u1EA5y n\u1ED9i dung t\u1EEB m\u1ED9t t\u1EC7p l\u01B0u tr\u1EEF tr\xEA\
+  n \u0111\u0129a. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\
+  \u1EC3 l\xE0m vi\u1EC7c v\u1EDBi d\u1EEF li\u1EC7u \u0111\xE3 l\u01B0u nh\u01B0\u2026"
+title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 ---
 
 {{< edit_this_page >}}

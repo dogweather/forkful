@@ -1,14 +1,26 @@
 ---
-title:                "JSON 작업하기"
 aliases:
 - /ko/go/working-with-json/
-date:                  2024-02-03T18:12:18.532687-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "JSON 작업하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:12:18.532687-07:00
+description: "Go\uC5D0\uC11C JSON(JavaScript Object Notation)\uC744 \uB2E4\uB8E8\uB294\
+  \ \uAC83\uC740 Go \uB370\uC774\uD130 \uAD6C\uC870\uC640 JSON \uD615\uC2DD \uAC04\
+  \uC758 \uB370\uC774\uD130\uB97C \uC778\uCF54\uB529\uD558\uACE0 \uB514\uCF54\uB529\
+  \uD558\uB294 \uC791\uC5C5\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uC774 \uC791\uC5C5\
+  \uC740 \uC6F9 \uC11C\uBE44\uC2A4\uC640 API\uC5D0\uC11C \uBCF4\uD3B8\uC801\uC774\uBA70\
+  , JSON\uC740 \uAC00\uBCBC\uC6B4, \uD14D\uC2A4\uD2B8 \uAE30\uBC18, \uC5B8\uC5B4 \uB3C5\
+  \uB9BD\uC801 \uB370\uC774\uD130 \uAD50\uD658\u2026"
+lastmod: 2024-02-18 23:09:05.519183
+model: gpt-4-0125-preview
+summary: "Go\uC5D0\uC11C JSON(JavaScript Object Notation)\uC744 \uB2E4\uB8E8\uB294\
+  \ \uAC83\uC740 Go \uB370\uC774\uD130 \uAD6C\uC870\uC640 JSON \uD615\uC2DD \uAC04\
+  \uC758 \uB370\uC774\uD130\uB97C \uC778\uCF54\uB529\uD558\uACE0 \uB514\uCF54\uB529\
+  \uD558\uB294 \uC791\uC5C5\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uC774 \uC791\uC5C5\
+  \uC740 \uC6F9 \uC11C\uBE44\uC2A4\uC640 API\uC5D0\uC11C \uBCF4\uD3B8\uC801\uC774\uBA70\
+  , JSON\uC740 \uAC00\uBCBC\uC6B4, \uD14D\uC2A4\uD2B8 \uAE30\uBC18, \uC5B8\uC5B4 \uB3C5\
+  \uB9BD\uC801 \uB370\uC774\uD130 \uAD50\uD658\u2026"
+title: "JSON \uC791\uC5C5\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

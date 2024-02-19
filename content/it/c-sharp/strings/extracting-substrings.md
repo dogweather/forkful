@@ -1,13 +1,14 @@
 ---
-title:                "Estrazione di sottostringhe"
 aliases:
 - /it/c-sharp/extracting-substrings/
-date:                  2024-01-20T17:45:37.947278-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Estrazione di sottostringhe"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/extracting-substrings.md"
+date: 2024-01-20 17:45:37.947278-07:00
+description: "(Estrarre sottostringhe: Cosa e Perch\xE9?) Estrarre sottostringhe \xE8\
+  \ prelevare pezzi specifici di una stringa. I programmatori fanno ci\xF2 per manipolare\u2026"
+lastmod: 2024-02-18 23:08:55.876934
+model: gpt-4-1106-preview
+summary: "(Estrarre sottostringhe: Cosa e Perch\xE9?) Estrarre sottostringhe \xE8\
+  \ prelevare pezzi specifici di una stringa. I programmatori fanno ci\xF2 per manipolare\u2026"
+title: Estrazione di sottostringhe
 ---
 
 {{< edit_this_page >}}

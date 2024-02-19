@@ -1,14 +1,16 @@
 ---
-title:                "Fouten afhandelen"
 aliases:
 - /nl/go/handling-errors/
-date:                  2024-02-03T17:58:27.696470-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Fouten afhandelen"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/handling-errors.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:58:27.696470-07:00
+description: "Foutafhandeling in Go houdt in het herkennen en reageren op foutcondities\
+  \ in je programma. Programmeurs doen aan foutafhandeling om ervoor te zorgen dat\u2026"
+lastmod: 2024-02-18 23:09:01.346796
+model: gpt-4-0125-preview
+summary: "Foutafhandeling in Go houdt in het herkennen en reageren op foutcondities\
+  \ in je programma. Programmeurs doen aan foutafhandeling om ervoor te zorgen dat\u2026"
+title: Fouten afhandelen
 ---
 
 {{< edit_this_page >}}

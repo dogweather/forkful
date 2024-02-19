@@ -1,13 +1,16 @@
 ---
-title:                "Att arbeta med XML"
 aliases:
 - /sv/kotlin/working-with-xml/
-date:                  2024-01-26T04:33:20.516165-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/working-with-xml.md"
+date: 2024-01-26 04:33:20.516165-07:00
+description: "Att arbeta med XML inneb\xE4r att tolka, skapa och manipulera XML-dokument\
+  \ \u2013 ett m\xE4rkspr\xE5k f\xF6r lagring och \xF6verf\xF6ring av data. Programmerare\
+  \ g\xF6r detta\u2026"
+lastmod: 2024-02-18 23:08:51.776963
+model: gpt-4-0125-preview
+summary: "Att arbeta med XML inneb\xE4r att tolka, skapa och manipulera XML-dokument\
+  \ \u2013 ett m\xE4rkspr\xE5k f\xF6r lagring och \xF6verf\xF6ring av data. Programmerare\
+  \ g\xF6r detta\u2026"
+title: Att arbeta med XML
 ---
 
 {{< edit_this_page >}}

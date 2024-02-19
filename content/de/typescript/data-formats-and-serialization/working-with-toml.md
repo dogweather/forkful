@@ -1,13 +1,16 @@
 ---
-title:                "Arbeiten mit TOML"
 aliases:
 - /de/typescript/working-with-toml/
-date:                  2024-01-26T04:27:04.148803-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeiten mit TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/working-with-toml.md"
+date: 2024-01-26 04:27:04.148803-07:00
+description: "TOML, die Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprache,\
+  \ ist ein Daten-Serialisierungsformat \xE4hnlich zu JSON oder YAML. Programmierer\
+  \ nutzen es\u2026"
+lastmod: 2024-02-18 23:09:04.621716
+model: gpt-4-0125-preview
+summary: "TOML, die Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprache, ist\
+  \ ein Daten-Serialisierungsformat \xE4hnlich zu JSON oder YAML. Programmierer nutzen\
+  \ es\u2026"
+title: Arbeiten mit TOML
 ---
 
 {{< edit_this_page >}}

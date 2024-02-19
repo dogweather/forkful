@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với YAML"
 aliases:
 - /vi/javascript/working-with-yaml/
-date:                  2024-01-28T22:12:11.479201-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với YAML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/working-with-yaml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:11.479201-07:00
+description: "YAML (YAML ain't Markup Language), hay c\xF2n g\u1ECDi l\xE0 YAML, l\xE0\
+  \ m\u1ED9t ti\xEAu chu\u1EA9n h\xF3a d\u1EEF li\u1EC7u th\xE2n thi\u1EC7n v\u1EDB\
+  i con ng\u01B0\u1EDDi d\xE0nh cho t\u1EA5t c\u1EA3 c\xE1c ng\xF4n ng\u1EEF l\u1EAD\
+  p tr\xECnh. L\u1EADp\u2026"
+lastmod: 2024-02-18 23:08:51.158690
+model: gpt-4-0125-preview
+summary: "YAML (YAML ain't Markup Language), hay c\xF2n g\u1ECDi l\xE0 YAML, l\xE0\
+  \ m\u1ED9t ti\xEAu chu\u1EA9n h\xF3a d\u1EEF li\u1EC7u th\xE2n thi\u1EC7n v\u1EDB\
+  i con ng\u01B0\u1EDDi d\xE0nh cho t\u1EA5t c\u1EA3 c\xE1c ng\xF4n ng\u1EEF l\u1EAD\
+  p tr\xECnh. L\u1EADp\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 ---
 
 {{< edit_this_page >}}

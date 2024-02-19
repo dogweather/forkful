@@ -1,14 +1,28 @@
 ---
-title:                "Працюємо з TOML"
 aliases:
 - /uk/google-apps-script/working-with-toml/
-date:                  2024-02-01T22:06:47.788091-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Працюємо з TOML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/google-apps-script/working-with-toml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:06:47.788091-07:00
+description: "TOML, \u0449\u043E \u043E\u0437\u043D\u0430\u0447\u0430\u0454 Tom's\
+  \ Obvious, Minimal Language (\u041E\u0447\u0435\u0432\u0438\u0434\u043D\u0430, \u041C\
+  \u0456\u043D\u0456\u043C\u0430\u043B\u0456\u0441\u0442\u0438\u0447\u043D\u0430 \u041C\
+  \u043E\u0432\u0430 \u0422\u043E\u043C\u0430), \u2014 \u0446\u0435 \u0444\u043E\u0440\
+  \u043C\u0430\u0442 \u0444\u0430\u0439\u043B\u0443 \u043A\u043E\u043D\u0444\u0456\
+  \u0433\u0443\u0440\u0430\u0446\u0456\u0457, \u044F\u043A\u0438\u0439 \u043B\u0435\
+  \u0433\u043A\u043E \u0447\u0438\u0442\u0430\u0442\u0438 \u0447\u0435\u0440\u0435\
+  \u0437 \u0439\u043E\u0433\u043E\u2026"
+lastmod: 2024-02-18 23:08:59.771659
+model: gpt-4-0125-preview
+summary: "TOML, \u0449\u043E \u043E\u0437\u043D\u0430\u0447\u0430\u0454 Tom's Obvious,\
+  \ Minimal Language (\u041E\u0447\u0435\u0432\u0438\u0434\u043D\u0430, \u041C\u0456\
+  \u043D\u0456\u043C\u0430\u043B\u0456\u0441\u0442\u0438\u0447\u043D\u0430 \u041C\u043E\
+  \u0432\u0430 \u0422\u043E\u043C\u0430), \u2014 \u0446\u0435 \u0444\u043E\u0440\u043C\
+  \u0430\u0442 \u0444\u0430\u0439\u043B\u0443 \u043A\u043E\u043D\u0444\u0456\u0433\
+  \u0443\u0440\u0430\u0446\u0456\u0457, \u044F\u043A\u0438\u0439 \u043B\u0435\u0433\
+  \u043A\u043E \u0447\u0438\u0442\u0430\u0442\u0438 \u0447\u0435\u0440\u0435\u0437\
+  \ \u0439\u043E\u0433\u043E\u2026"
+title: "\u041F\u0440\u0430\u0446\u044E\u0454\u043C\u043E \u0437 TOML"
 ---
 
 {{< edit_this_page >}}

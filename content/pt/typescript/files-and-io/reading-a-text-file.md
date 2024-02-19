@@ -1,13 +1,15 @@
 ---
-title:                "Lendo um arquivo de texto"
 aliases:
 - /pt/typescript/reading-a-text-file/
-date:                  2024-01-20T17:55:22.814581-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lendo um arquivo de texto"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/reading-a-text-file.md"
+date: 2024-01-20 17:55:22.814581-07:00
+description: "Ler um arquivo de texto significa acessar e interpretar o conte\xFA\
+  do de um arquivo salvado como texto no seu computador. Programadores fazem isso\
+  \ para\u2026"
+lastmod: 2024-02-18 23:08:57.902641
+model: gpt-4-1106-preview
+summary: "Ler um arquivo de texto significa acessar e interpretar o conte\xFAdo de\
+  \ um arquivo salvado como texto no seu computador. Programadores fazem isso para\u2026"
+title: Lendo um arquivo de texto
 ---
 
 {{< edit_this_page >}}

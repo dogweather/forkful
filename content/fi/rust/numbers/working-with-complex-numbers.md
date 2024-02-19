@@ -1,13 +1,14 @@
 ---
-title:                "Kompleksilukujen käsittely"
 aliases:
 - /fi/rust/working-with-complex-numbers/
-date:                  2024-01-26T04:45:36.042858-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kompleksilukujen käsittely"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/working-with-complex-numbers.md"
+date: 2024-01-26 04:45:36.042858-07:00
+description: "Kompleksiluvuilla on reaaliosa ja imaginaariosa, ja ne ovat keskeisi\xE4\
+  \ monilla aloilla, kuten insin\xF6\xF6ritieteiss\xE4, fysiikassa ja tietokonegrafiikassa.\u2026"
+lastmod: 2024-02-18 23:09:07.357410
+model: gpt-4-0125-preview
+summary: "Kompleksiluvuilla on reaaliosa ja imaginaariosa, ja ne ovat keskeisi\xE4\
+  \ monilla aloilla, kuten insin\xF6\xF6ritieteiss\xE4, fysiikassa ja tietokonegrafiikassa.\u2026"
+title: "Kompleksilukujen k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

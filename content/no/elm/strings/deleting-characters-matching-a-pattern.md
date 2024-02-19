@@ -1,13 +1,16 @@
 ---
-title:                "Slette tegn som matcher et mønster"
 aliases:
 - /no/elm/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:58.077726-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Slette tegn som matcher et mønster"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:58.077726-07:00
+description: "I Elm handler det om \xE5 slette tegn som matcher et m\xF8nster for\
+  \ \xE5 rense data eller formatere strenger for spesifikke brukstilfeller. Det hjelper\
+  \ \xE5 holde\u2026"
+lastmod: 2024-02-18 23:08:53.796125
+model: gpt-4-1106-preview
+summary: "I Elm handler det om \xE5 slette tegn som matcher et m\xF8nster for \xE5\
+  \ rense data eller formatere strenger for spesifikke brukstilfeller. Det hjelper\
+  \ \xE5 holde\u2026"
+title: "Slette tegn som matcher et m\xF8nster"
 ---
 
 {{< edit_this_page >}}

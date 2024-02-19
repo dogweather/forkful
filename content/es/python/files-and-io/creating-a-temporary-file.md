@@ -1,13 +1,16 @@
 ---
-title:                "Creando un archivo temporal"
 aliases:
 - /es/python/creating-a-temporary-file/
-date:                  2024-01-20T17:41:07.600063-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Creando un archivo temporal"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:07.600063-07:00
+description: "Crear archivos temporales es pr\xE1ctica com\xFAn en programaci\xF3\
+  n para guardar datos que solo necesitas durante la ejecuci\xF3n de tu script. Se\
+  \ hace para no dejar\u2026"
+lastmod: 2024-02-18 23:09:09.577525
+model: gpt-4-1106-preview
+summary: "Crear archivos temporales es pr\xE1ctica com\xFAn en programaci\xF3n para\
+  \ guardar datos que solo necesitas durante la ejecuci\xF3n de tu script. Se hace\
+  \ para no dejar\u2026"
+title: Creando un archivo temporal
 ---
 
 {{< edit_this_page >}}

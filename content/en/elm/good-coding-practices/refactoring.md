@@ -1,13 +1,16 @@
 ---
-title:                "Refactoring"
 aliases:
 - /en/elm/refactoring/
-date:                  2024-01-25T02:12:15.719110-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Refactoring"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/refactoring.md"
+date: 2024-01-25 02:12:15.719110-07:00
+description: "Refactoring is essentially spring cleaning your code base\u2014it's\
+  \ about restructuring existing code without changing its external behavior. Programmers\
+  \ do it\u2026"
+lastmod: 2024-02-18 23:09:10.980215
+model: gpt-4-1106-preview
+summary: "Refactoring is essentially spring cleaning your code base\u2014it's about\
+  \ restructuring existing code without changing its external behavior. Programmers\
+  \ do it\u2026"
+title: Refactoring
 ---
 
 {{< edit_this_page >}}

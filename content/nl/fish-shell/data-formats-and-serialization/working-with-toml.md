@@ -1,15 +1,16 @@
 ---
-title:                "Werken met TOML"
 aliases:
 - /nl/fish-shell/working-with-toml/
-date:                  2024-01-28T22:10:44.692781-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/working-with-toml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:44.692781-07:00
+description: "TOML is een configuratiebestandsformaat, makkelijk voor mensen om te\
+  \ lezen en schrijven en eenvoudig voor machines om te parsen en genereren. Programmeurs\u2026"
+lastmod: 2024-02-18 23:09:02.351320
+model: gpt-4-0125-preview
+summary: "TOML is een configuratiebestandsformaat, makkelijk voor mensen om te lezen\
+  \ en schrijven en eenvoudig voor machines om te parsen en genereren. Programmeurs\u2026"
+title: Werken met TOML
 ---
 
 {{< edit_this_page >}}

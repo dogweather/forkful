@@ -1,13 +1,14 @@
 ---
-title:                "Ermittlung der Zeichenkettenlänge"
 aliases:
 - /de/swift/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:08.011373-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ermittlung der Zeichenkettenlänge"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:08.011373-07:00
+description: "In Swift bestimmt die L\xE4nge eines Strings, wie viele Zeichen er enth\xE4\
+  lt. Das ist wichtig, weil viele Programmieraufgaben, wie die Validierung von Eingaben\u2026"
+lastmod: 2024-02-18 23:09:05.224363
+model: gpt-4-1106-preview
+summary: "In Swift bestimmt die L\xE4nge eines Strings, wie viele Zeichen er enth\xE4\
+  lt. Das ist wichtig, weil viele Programmieraufgaben, wie die Validierung von Eingaben\u2026"
+title: "Ermittlung der Zeichenkettenl\xE4nge"
 ---
 
 {{< edit_this_page >}}

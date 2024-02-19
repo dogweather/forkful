@@ -1,14 +1,18 @@
 ---
-title:                "Escrevendo para o erro padrão"
 aliases:
 - /pt/swift/writing-to-standard-error/
-date:                  2024-02-03T19:34:44.498816-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escrevendo para o erro padrão"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:34:44.498816-07:00
+description: "Escrever no erro padr\xE3o (stderr) trata de direcionar as mensagens\
+  \ de erro ou diagn\xF3sticos do seu programa para uma sa\xEDda separada, distinta\
+  \ da sa\xEDda\u2026"
+lastmod: 2024-02-18 23:08:58.506966
+model: gpt-4-0125-preview
+summary: "Escrever no erro padr\xE3o (stderr) trata de direcionar as mensagens de\
+  \ erro ou diagn\xF3sticos do seu programa para uma sa\xEDda separada, distinta da\
+  \ sa\xEDda\u2026"
+title: "Escrevendo para o erro padr\xE3o"
 ---
 
 {{< edit_this_page >}}

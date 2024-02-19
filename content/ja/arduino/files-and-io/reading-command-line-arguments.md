@@ -1,14 +1,22 @@
 ---
-title:                "コマンドライン引数の読み取り"
 aliases:
 - /ja/arduino/reading-command-line-arguments/
-date:                  2024-01-20T17:55:52.851001-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "コマンドライン引数の読み取り"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:52.851001-07:00
+description: "\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u5F15\u6570\u3063\u3066\u4F55\
+  \uFF1F \u30D7\u30ED\u30B0\u30E9\u30E0\u8D77\u52D5\u6642\u306B\u5916\u90E8\u304B\u3089\
+  \u4E0E\u3048\u308B\u8FFD\u52A0\u60C5\u5831\u3060\u3088\u3002\u4F55\u3067\u4F7F\u3046\
+  \u306E\uFF1F \u81EA\u52D5\u5316\u3068\u304B\u30AB\u30B9\u30BF\u30DE\u30A4\u30BA\u306E\
+  \u305F\u3081\u306B\u306D\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.166714
+model: gpt-4-1106-preview
+summary: "\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u5F15\u6570\u3063\u3066\u4F55\
+  \uFF1F \u30D7\u30ED\u30B0\u30E9\u30E0\u8D77\u52D5\u6642\u306B\u5916\u90E8\u304B\u3089\
+  \u4E0E\u3048\u308B\u8FFD\u52A0\u60C5\u5831\u3060\u3088\u3002\u4F55\u3067\u4F7F\u3046\
+  \u306E\uFF1F \u81EA\u52D5\u5316\u3068\u304B\u30AB\u30B9\u30BF\u30DE\u30A4\u30BA\u306E\
+  \u305F\u3081\u306B\u306D\u3002"
+title: "\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u5F15\u6570\u306E\u8AAD\u307F\u53D6\
+  \u308A"
 ---
 
 {{< edit_this_page >}}

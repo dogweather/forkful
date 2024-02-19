@@ -1,13 +1,15 @@
 ---
-title:                "Avrunding av tall"
 aliases:
 - /no/elm/rounding-numbers/
-date:                  2024-01-26T03:45:27.594801-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Avrunding av tall"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/rounding-numbers.md"
+date: 2024-01-26 03:45:27.594801-07:00
+description: "\xC5 avrunde tall er \xE5 justere et desimaltall til n\xE6rmeste hele\
+  \ verdi eller til et spesifisert antall desimaler. Programmerere avrunder for \xE5\
+  \ redusere\u2026"
+lastmod: 2024-02-18 23:08:53.805982
+model: gpt-4-0125-preview
+summary: "\xC5 avrunde tall er \xE5 justere et desimaltall til n\xE6rmeste hele verdi\
+  \ eller til et spesifisert antall desimaler. Programmerere avrunder for \xE5 redusere\u2026"
+title: Avrunding av tall
 ---
 
 {{< edit_this_page >}}

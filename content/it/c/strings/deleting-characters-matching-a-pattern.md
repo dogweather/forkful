@@ -1,14 +1,16 @@
 ---
-title:                "Eliminazione dei caratteri corrispondenti a un pattern"
 aliases:
 - /it/c/deleting-characters-matching-a-pattern/
-date:                  2024-02-03T17:55:16.354024-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eliminazione dei caratteri corrispondenti a un pattern"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:16.354024-07:00
+description: "Eliminare i caratteri che corrispondono a uno specifico pattern dalle\
+  \ stringhe in C consiste nel rimuovere tutte le istanze di certi caratteri che\u2026"
+lastmod: 2024-02-18 23:08:56.321529
+model: gpt-4-0125-preview
+summary: "Eliminare i caratteri che corrispondono a uno specifico pattern dalle stringhe\
+  \ in C consiste nel rimuovere tutte le istanze di certi caratteri che\u2026"
+title: Eliminazione dei caratteri corrispondenti a un pattern
 ---
 
 {{< edit_this_page >}}

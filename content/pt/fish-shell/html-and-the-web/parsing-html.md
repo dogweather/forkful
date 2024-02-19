@@ -1,14 +1,18 @@
 ---
-title:                "Analisando HTML"
 aliases:
 - /pt/fish-shell/parsing-html/
-date:                  2024-02-03T19:12:13.600128-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analisando HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:13.600128-07:00
+description: "Analisar HTML \xE9 sobre extrair dados ou informa\xE7\xF5es de conte\xFA\
+  do HTML, uma tarefa comum ao lidar com dados da web. Programadores fazem isso para\
+  \ automatizar\u2026"
+lastmod: 2024-02-18 23:08:58.573409
+model: gpt-4-0125-preview
+summary: "Analisar HTML \xE9 sobre extrair dados ou informa\xE7\xF5es de conte\xFA\
+  do HTML, uma tarefa comum ao lidar com dados da web. Programadores fazem isso para\
+  \ automatizar\u2026"
+title: Analisando HTML
 ---
 
 {{< edit_this_page >}}

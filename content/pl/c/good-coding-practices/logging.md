@@ -1,14 +1,18 @@
 ---
-title:                "Logowanie"
 aliases:
 - /pl/c/logging/
-date:                  2024-02-03T17:59:03.742225-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Logowanie"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/logging.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:03.742225-07:00
+description: "Logowanie w C polega na rejestrowaniu przep\u0142ywu i znacz\u0105cych\
+  \ zdarze\u0144 programu podczas jego wykonania, zapewniaj\u0105c namacalny przegl\u0105\
+  d jego zachowania i\u2026"
+lastmod: 2024-02-18 23:08:50.087039
+model: gpt-4-0125-preview
+summary: "Logowanie w C polega na rejestrowaniu przep\u0142ywu i znacz\u0105cych zdarze\u0144\
+  \ programu podczas jego wykonania, zapewniaj\u0105c namacalny przegl\u0105d jego\
+  \ zachowania i\u2026"
+title: Logowanie
 ---
 
 {{< edit_this_page >}}

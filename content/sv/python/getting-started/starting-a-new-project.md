@@ -1,13 +1,16 @@
 ---
-title:                "Att påbörja ett nytt projekt"
 aliases:
 - /sv/python/starting-a-new-project/
-date:                  2024-01-20T18:04:28.668383-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Att påbörja ett nytt projekt"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/starting-a-new-project.md"
+date: 2024-01-20 18:04:28.668383-07:00
+description: "Att starta ett nytt projekt \xE4r som att \xF6ppna ett blankt blad \u2013\
+  \ det \xE4r h\xE4r all kod b\xF6rjar sitt liv. Programmerare g\xF6r detta f\xF6\
+  r att omvandla id\xE9er till\u2026"
+lastmod: 2024-02-18 23:08:51.422457
+model: gpt-4-1106-preview
+summary: "Att starta ett nytt projekt \xE4r som att \xF6ppna ett blankt blad \u2013\
+  \ det \xE4r h\xE4r all kod b\xF6rjar sitt liv. Programmerare g\xF6r detta f\xF6\
+  r att omvandla id\xE9er till\u2026"
+title: "Att p\xE5b\xF6rja ett nytt projekt"
 ---
 
 {{< edit_this_page >}}

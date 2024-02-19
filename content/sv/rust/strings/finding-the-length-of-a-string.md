@@ -1,13 +1,16 @@
 ---
-title:                "Hitta längden på en sträng"
 aliases:
 - /sv/rust/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:17.820823-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Hitta längden på en sträng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:17.820823-07:00
+description: "I Rust ger `len()` l\xE4ngden p\xE5 en str\xE4ng, det vill s\xE4ga hur\
+  \ m\xE5nga bytes den \xE4r. Vi beh\xF6ver veta storleken f\xF6r att hantera textdata\
+  \ effektivt - som att\u2026"
+lastmod: 2024-02-18 23:08:51.575365
+model: gpt-4-1106-preview
+summary: "I Rust ger `len()` l\xE4ngden p\xE5 en str\xE4ng, det vill s\xE4ga hur m\xE5\
+  nga bytes den \xE4r. Vi beh\xF6ver veta storleken f\xF6r att hantera textdata effektivt\
+  \ - som att\u2026"
+title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

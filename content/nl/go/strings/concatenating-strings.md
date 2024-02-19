@@ -1,14 +1,17 @@
 ---
-title:                "Strings samenvoegen"
 aliases:
 - /nl/go/concatenating-strings/
-date:                  2024-02-03T17:54:00.477216-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Strings samenvoegen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/concatenating-strings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:00.477216-07:00
+description: "Het samenvoegen van strings betreft het aaneenrijgen van twee of meer\
+  \ strings om een nieuwe string te vormen. Programmeurs doen dit om dynamisch tekst\
+  \ te\u2026"
+lastmod: 2024-02-18 23:09:01.329163
+model: gpt-4-0125-preview
+summary: "Het samenvoegen van strings betreft het aaneenrijgen van twee of meer strings\
+  \ om een nieuwe string te vormen. Programmeurs doen dit om dynamisch tekst te\u2026"
+title: Strings samenvoegen
 ---
 
 {{< edit_this_page >}}

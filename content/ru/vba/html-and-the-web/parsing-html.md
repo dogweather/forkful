@@ -1,14 +1,27 @@
 ---
-title:                "Анализ HTML"
 aliases:
 - /ru/vba/parsing-html/
-date:                  2024-02-01T21:57:12.623272-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Анализ HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/vba/parsing-html.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:12.623272-07:00
+description: "\u0420\u0430\u0437\u0431\u043E\u0440 (\u043F\u0430\u0440\u0441\u0438\
+  \u043D\u0433) HTML \u0441 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\
+  \u0430\u043D\u0438\u0435\u043C Visual Basic for Applications (VBA) \u0432\u043A\u043B\
+  \u044E\u0447\u0430\u0435\u0442 \u0432 \u0441\u0435\u0431\u044F \u0438\u0437\u0432\
+  \u043B\u0435\u0447\u0435\u043D\u0438\u0435 \u043E\u043F\u0440\u0435\u0434\u0435\u043B\
+  \u0435\u043D\u043D\u043E\u0439 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\
+  \u0438 \u0438\u0437 HTML-\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0430\
+  .\u2026"
+lastmod: 2024-02-18 23:08:56.784118
+model: gpt-4-0125-preview
+summary: "\u0420\u0430\u0437\u0431\u043E\u0440 (\u043F\u0430\u0440\u0441\u0438\u043D\
+  \u0433) HTML \u0441 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\
+  \u043D\u0438\u0435\u043C Visual Basic for Applications (VBA) \u0432\u043A\u043B\u044E\
+  \u0447\u0430\u0435\u0442 \u0432 \u0441\u0435\u0431\u044F \u0438\u0437\u0432\u043B\
+  \u0435\u0447\u0435\u043D\u0438\u0435 \u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0435\
+  \u043D\u043D\u043E\u0439 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u0438\
+  \ \u0438\u0437 HTML-\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0430.\u2026"
+title: "\u0410\u043D\u0430\u043B\u0438\u0437 HTML"
 ---
 
 {{< edit_this_page >}}

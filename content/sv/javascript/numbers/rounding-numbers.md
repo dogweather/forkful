@@ -1,13 +1,16 @@
 ---
-title:                "Avrundning av tal"
 aliases:
 - /sv/javascript/rounding-numbers/
-date:                  2024-01-26T03:45:42.849436-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Avrundning av tal"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/rounding-numbers.md"
+date: 2024-01-26 03:45:42.849436-07:00
+description: "Avrundning inneb\xE4r att sk\xE4ra av \"bruset\" efter en viss punkt\
+  \ i ett tal. Programmerare avrundar f\xF6r att kontrollera precision, hantera minne\
+  \ eller g\xF6ra\u2026"
+lastmod: 2024-02-18 23:08:52.159827
+model: gpt-4-0125-preview
+summary: "Avrundning inneb\xE4r att sk\xE4ra av \"bruset\" efter en viss punkt i ett\
+  \ tal. Programmerare avrundar f\xF6r att kontrollera precision, hantera minne eller\
+  \ g\xF6ra\u2026"
+title: Avrundning av tal
 ---
 
 {{< edit_this_page >}}

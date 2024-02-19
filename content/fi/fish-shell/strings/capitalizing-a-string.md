@@ -1,14 +1,18 @@
 ---
-title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 aliases:
 - /fi/fish-shell/capitalizing-a-string/
-date:                  2024-02-03T19:05:34.866104-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:34.866104-07:00
+description: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa sen muokkaamista\
+  \ siten, ett\xE4 ensimm\xE4inen kirjain on isolla ja loput merkkijonosta ovat pienell\xE4\
+  . T\xE4m\xE4\u2026"
+lastmod: 2024-02-18 23:09:08.063645
+model: gpt-4-0125-preview
+summary: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa sen muokkaamista siten,\
+  \ ett\xE4 ensimm\xE4inen kirjain on isolla ja loput merkkijonosta ovat pienell\xE4\
+  . T\xE4m\xE4\u2026"
+title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,17 @@
 ---
-title:                "Lendo argumentos da linha de comando"
 aliases:
 - /pt/go/reading-command-line-arguments/
-date:                  2024-02-03T18:06:13.036628-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lendo argumentos da linha de comando"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:06:13.036628-07:00
+description: "Ler argumentos de linha de comando em Go envolve extrair os argumentos\
+  \ fornecidos a um programa durante sua invoca\xE7\xE3o a partir do terminal ou prompt\
+  \ de\u2026"
+lastmod: 2024-02-18 23:08:57.685219
+model: gpt-4-0125-preview
+summary: "Ler argumentos de linha de comando em Go envolve extrair os argumentos fornecidos\
+  \ a um programa durante sua invoca\xE7\xE3o a partir do terminal ou prompt de\u2026"
+title: Lendo argumentos da linha de comando
 ---
 
 {{< edit_this_page >}}

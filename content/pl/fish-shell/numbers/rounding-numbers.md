@@ -1,13 +1,16 @@
 ---
-title:                "Zaokrąglanie liczb"
 aliases:
 - /pl/fish-shell/rounding-numbers/
-date:                  2024-01-26T03:44:22.228952-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zaokrąglanie liczb"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/rounding-numbers.md"
+date: 2024-01-26 03:44:22.228952-07:00
+description: "Zaokr\u0105glanie liczb polega na ucinaniu miejsc dziesi\u0119tnych,\
+  \ aby upraszcza\u0107 dane lub dostosowa\u0107 je do konkretnych format\xF3w. Programi\u015B\
+  ci robi\u0105 to dla\u2026"
+lastmod: 2024-02-18 23:08:50.029706
+model: gpt-4-0125-preview
+summary: "Zaokr\u0105glanie liczb polega na ucinaniu miejsc dziesi\u0119tnych, aby\
+  \ upraszcza\u0107 dane lub dostosowa\u0107 je do konkretnych format\xF3w. Programi\u015B\
+  ci robi\u0105 to dla\u2026"
+title: "Zaokr\u0105glanie liczb"
 ---
 
 {{< edit_this_page >}}

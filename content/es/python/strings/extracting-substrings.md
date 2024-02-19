@@ -1,13 +1,16 @@
 ---
-title:                "Extracción de subcadenas"
 aliases:
 - /es/python/extracting-substrings/
-date:                  2024-01-20T17:46:30.103527-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extracción de subcadenas"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/extracting-substrings.md"
+date: 2024-01-20 17:46:30.103527-07:00
+description: "Extraer subcadenas es el proceso de seleccionar y copiar un conjunto\
+  \ de caracteres espec\xEDficos de una cadena de texto m\xE1s grande. Los programadores\
+  \ lo\u2026"
+lastmod: 2024-02-18 23:09:09.544301
+model: gpt-4-1106-preview
+summary: "Extraer subcadenas es el proceso de seleccionar y copiar un conjunto de\
+  \ caracteres espec\xEDficos de una cadena de texto m\xE1s grande. Los programadores\
+  \ lo\u2026"
+title: "Extracci\xF3n de subcadenas"
 ---
 
 {{< edit_this_page >}}

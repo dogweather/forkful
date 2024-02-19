@@ -1,13 +1,14 @@
 ---
-title:                "Einen neuen Projekt starten"
 aliases:
 - /de/bash/starting-a-new-project/
-date:                  2024-01-20T18:02:55.356081-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Einen neuen Projekt starten"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/starting-a-new-project.md"
+date: 2024-01-20 18:02:55.356081-07:00
+description: "Ein neues Projekt zu starten bedeutet, eine frische Codebasis zu erschaffen,\
+  \ um deine brillanten Ideen Wirklichkeit werden zu lassen. Programmierer\u2026"
+lastmod: 2024-02-18 23:09:05.055140
+model: gpt-4-1106-preview
+summary: "Ein neues Projekt zu starten bedeutet, eine frische Codebasis zu erschaffen,\
+  \ um deine brillanten Ideen Wirklichkeit werden zu lassen. Programmierer\u2026"
+title: Einen neuen Projekt starten
 ---
 
 {{< edit_this_page >}}

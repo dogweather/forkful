@@ -1,13 +1,14 @@
 ---
-title:                "Iniciando um novo projeto"
 aliases:
 - /pt/lua/starting-a-new-project/
-date:                  2024-01-20T18:04:07.457618-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Iniciando um novo projeto"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/lua/starting-a-new-project.md"
+date: 2024-01-20 18:04:07.457618-07:00
+description: "Iniciar um novo projeto \xE9 como abrir um livro em branco, pronto para\
+  \ ser preenchido com c\xF3digo. Programadores embarcam nessa jornada para resolver\u2026"
+lastmod: 2024-02-18 23:08:58.282889
+model: gpt-4-1106-preview
+summary: "Iniciar um novo projeto \xE9 como abrir um livro em branco, pronto para\
+  \ ser preenchido com c\xF3digo. Programadores embarcam nessa jornada para resolver\u2026"
+title: Iniciando um novo projeto
 ---
 
 {{< edit_this_page >}}

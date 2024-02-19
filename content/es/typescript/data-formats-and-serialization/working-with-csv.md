@@ -1,14 +1,18 @@
 ---
-title:                "Trabajando con CSV"
 aliases:
 - /es/typescript/working-with-csv/
-date:                  2024-02-03T19:21:19.699380-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:21:19.699380-07:00
+description: "Trabajar con CSV (Valores Separados por Comas) implica la lectura y\
+  \ escritura de archivos CSV, un formato com\xFAn de intercambio de datos utilizado\
+  \ debido a\u2026"
+lastmod: 2024-02-18 23:09:09.727728
+model: gpt-4-0125-preview
+summary: "Trabajar con CSV (Valores Separados por Comas) implica la lectura y escritura\
+  \ de archivos CSV, un formato com\xFAn de intercambio de datos utilizado debido\
+  \ a\u2026"
+title: Trabajando con CSV
 ---
 
 {{< edit_this_page >}}

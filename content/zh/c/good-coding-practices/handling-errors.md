@@ -1,14 +1,24 @@
 ---
-title:                "处理错误"
 aliases:
 - /zh/c/handling-errors/
-date:                  2024-02-03T17:58:20.180923-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理错误"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/handling-errors.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:58:20.180923-07:00
+description: "\u5728 C \u8BED\u8A00\u4E2D\u5904\u7406\u9519\u8BEF\u6D89\u53CA\u5230\
+  \u68C0\u6D4B\u548C\u54CD\u5E94\u7A0B\u5E8F\u6267\u884C\u8FC7\u7A0B\u4E2D\u51FA\u73B0\
+  \u7684\u5F02\u5E38\u60C5\u51B5\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\
+  \u4E86\u9632\u6B62\u7A0B\u5E8F\u51FA\u73B0\u9519\u8BEF\u3001\u5D29\u6E83\u548C\u4E0D\
+  \u53EF\u9884\u6D4B\u7684\u884C\u4E3A\uFF0C\u786E\u4FDD\u8F6F\u4EF6\u5728\u5404\u79CD\
+  \u60C5\u51B5\u4E0B\u90FD\u80FD\u53EF\u9760\u3001\u9AD8\u6548\u5730\u5DE5\u4F5C\u3002"
+lastmod: 2024-02-18 23:08:59.566622
+model: gpt-4-0125-preview
+summary: "\u5728 C \u8BED\u8A00\u4E2D\u5904\u7406\u9519\u8BEF\u6D89\u53CA\u5230\u68C0\
+  \u6D4B\u548C\u54CD\u5E94\u7A0B\u5E8F\u6267\u884C\u8FC7\u7A0B\u4E2D\u51FA\u73B0\u7684\
+  \u5F02\u5E38\u60C5\u51B5\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\
+  \u9632\u6B62\u7A0B\u5E8F\u51FA\u73B0\u9519\u8BEF\u3001\u5D29\u6E83\u548C\u4E0D\u53EF\
+  \u9884\u6D4B\u7684\u884C\u4E3A\uFF0C\u786E\u4FDD\u8F6F\u4EF6\u5728\u5404\u79CD\u60C5\
+  \u51B5\u4E0B\u90FD\u80FD\u53EF\u9760\u3001\u9AD8\u6548\u5730\u5DE5\u4F5C\u3002"
+title: "\u5904\u7406\u9519\u8BEF"
 ---
 
 {{< edit_this_page >}}

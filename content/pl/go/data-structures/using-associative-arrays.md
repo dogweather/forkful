@@ -1,14 +1,18 @@
 ---
-title:                "Używanie tablic asocjacyjnych"
 aliases:
 - /pl/go/using-associative-arrays/
-date:                  2024-02-03T18:10:57.459625-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Używanie tablic asocjacyjnych"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/using-associative-arrays.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:57.459625-07:00
+description: "Tablice asocjacyjne, znane w Go jako mapy, pozwalaj\u0105 przechowywa\u0107\
+  \ pary klucz-warto\u015B\u0107, gdzie ka\u017Cdy unikalny klucz odpowiada warto\u015B\
+  ci. Programi\u015Bci u\u017Cywaj\u0105\u2026"
+lastmod: 2024-02-18 23:08:49.089169
+model: gpt-4-0125-preview
+summary: "Tablice asocjacyjne, znane w Go jako mapy, pozwalaj\u0105 przechowywa\u0107\
+  \ pary klucz-warto\u015B\u0107, gdzie ka\u017Cdy unikalny klucz odpowiada warto\u015B\
+  ci. Programi\u015Bci u\u017Cywaj\u0105\u2026"
+title: "U\u017Cywanie tablic asocjacyjnych"
 ---
 
 {{< edit_this_page >}}

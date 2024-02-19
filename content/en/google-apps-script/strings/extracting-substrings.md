@@ -1,12 +1,14 @@
 ---
-title:                "Extracting substrings"
 aliases:
 - /en/google-apps-script/extracting-substrings/
-date:                  2024-02-01T21:11:56.433402-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Extracting substrings"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/google-apps-script/extracting-substrings.md"
+date: 2024-02-01 21:11:56.433402-07:00
+description: "Extracting substrings involves taking a portion of a string - essentially\
+  \ creating a new string from part of an existing one. Programmers do this for a\u2026"
+lastmod: 2024-02-18 23:09:10.628313
+model: gpt-4-0125-preview
+summary: "Extracting substrings involves taking a portion of a string - essentially\
+  \ creating a new string from part of an existing one. Programmers do this for a\u2026"
+title: Extracting substrings
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Erstellung einer temporären Datei"
 aliases:
 - /de/python/creating-a-temporary-file/
-date:                  2024-01-20T17:40:55.011294-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Erstellung einer temporären Datei"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:55.011294-07:00
+description: "Tempor\xE4re Dateien sind kurzlebige Datenbeh\xE4lter, die w\xE4hrend\
+  \ der Laufzeit eines Programms f\xFCr Datentransfer, Zwischenspeicherungen oder\
+  \ Sicherheitszwecke\u2026"
+lastmod: 2024-02-18 23:09:04.482657
+model: gpt-4-1106-preview
+summary: "Tempor\xE4re Dateien sind kurzlebige Datenbeh\xE4lter, die w\xE4hrend der\
+  \ Laufzeit eines Programms f\xFCr Datentransfer, Zwischenspeicherungen oder Sicherheitszwecke\u2026"
+title: "Erstellung einer tempor\xE4ren Datei"
 ---
 
 {{< edit_this_page >}}

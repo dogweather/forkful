@@ -1,13 +1,16 @@
 ---
-title:                "Fjerne anførselstegn fra en streng"
 aliases:
 - /no/powershell/removing-quotes-from-a-string/
-date:                  2024-01-26T03:41:37.397621-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Fjerne anførselstegn fra en streng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/powershell/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:41:37.397621-07:00
+description: "\xC5 fjerne anf\xF8rselstegn fra en streng i PowerShell fjerner enkle\
+  \ (`'`) eller doble (`\"`) anf\xF8rselstegn som er lagt rundt teksten din. Programmerere\
+  \ trenger\u2026"
+lastmod: 2024-02-18 23:08:54.087385
+model: gpt-4-0125-preview
+summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i PowerShell fjerner enkle (`'`)\
+  \ eller doble (`\"`) anf\xF8rselstegn som er lagt rundt teksten din. Programmerere\
+  \ trenger\u2026"
+title: "Fjerne anf\xF8rselstegn fra en streng"
 ---
 
 {{< edit_this_page >}}

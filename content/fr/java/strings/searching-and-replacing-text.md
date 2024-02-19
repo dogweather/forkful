@@ -1,13 +1,16 @@
 ---
-title:                "Recherche et remplacement de texte"
 aliases:
 - /fr/java/searching-and-replacing-text/
-date:                  2024-01-20T17:58:18.107817-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Recherche et remplacement de texte"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:18.107817-07:00
+description: "Chercher et remplacer du texte, c'est trouver des bouts de cha\xEEnes\
+  \ et les transformer. Les programmeurs le font pour corriger des donn\xE9es, formater\
+  \ ou\u2026"
+lastmod: 2024-02-18 23:09:08.611968
+model: gpt-4-1106-preview
+summary: "Chercher et remplacer du texte, c'est trouver des bouts de cha\xEEnes et\
+  \ les transformer. Les programmeurs le font pour corriger des donn\xE9es, formater\
+  \ ou\u2026"
+title: Recherche et remplacement de texte
 ---
 
 {{< edit_this_page >}}

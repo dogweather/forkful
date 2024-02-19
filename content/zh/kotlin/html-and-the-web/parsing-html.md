@@ -1,13 +1,18 @@
 ---
-title:                "解析HTML"
 aliases:
 - /zh/kotlin/parsing-html/
-date:                  2024-01-20T15:32:34.351161-07:00
-simple_title:         "解析HTML"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/parsing-html.md"
+date: 2024-01-20 15:32:34.351161-07:00
+description: "\u89E3\u6790HTML\u6307\u7684\u662F\u4ECEHTML\u6587\u6863\u63D0\u53D6\
+  \u6570\u636E\u6216\u4FE1\u606F\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u4E3B\u8981\
+  \u662F\u4E3A\u4E86\u81EA\u52A8\u5316\u5904\u7406\u7F51\u9875\u5185\u5BB9\uFF0C\u6BD4\
+  \u5982\u6293\u53D6\u6570\u636E\u6216\u8005\u6D4B\u8BD5\u7F51\u7AD9\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.093396
+summary: "\u89E3\u6790HTML\u6307\u7684\u662F\u4ECEHTML\u6587\u6863\u63D0\u53D6\u6570\
+  \u636E\u6216\u4FE1\u606F\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u4E3B\u8981\u662F\
+  \u4E3A\u4E86\u81EA\u52A8\u5316\u5904\u7406\u7F51\u9875\u5185\u5BB9\uFF0C\u6BD4\u5982\
+  \u6293\u53D6\u6570\u636E\u6216\u8005\u6D4B\u8BD5\u7F51\u7AD9\u3002"
+title: "\u89E3\u6790HTML"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Att starta ett nytt projekt"
 aliases:
 - /sv/vba/starting-a-new-project/
-date:                  2024-02-01T22:03:02.462655-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att starta ett nytt projekt"
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/starting-a-new-project.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:02.462655-07:00
+description: "Att starta ett nytt projekt i Visual Basic for Applications (VBA) inneb\xE4\
+  r att man inr\xE4ttar en milj\xF6 inom ett v\xE4rdprogram, som Excel, f\xF6r att\
+  \ automatisera\u2026"
+lastmod: 2024-02-18 23:08:51.627408
+model: gpt-4-0125-preview
+summary: "Att starta ett nytt projekt i Visual Basic for Applications (VBA) inneb\xE4\
+  r att man inr\xE4ttar en milj\xF6 inom ett v\xE4rdprogram, som Excel, f\xF6r att\
+  \ automatisera\u2026"
+title: Att starta ett nytt projekt
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,32 @@
 ---
-title:                "Видалення символів, що відповідають патерну"
 aliases:
 - /uk/vba/deleting-characters-matching-a-pattern/
-date:                  2024-02-01T21:53:01.279858-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Видалення символів, що відповідають патерну"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/vba/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:01.279858-07:00
+description: "\u0412\u0438\u0434\u0430\u043B\u0435\u043D\u043D\u044F \u0441\u0438\u043C\
+  \u0432\u043E\u043B\u0456\u0432, \u044F\u043A\u0456 \u0432\u0456\u0434\u043F\u043E\
+  \u0432\u0456\u0434\u0430\u044E\u0442\u044C \u043F\u0435\u0432\u043D\u043E\u043C\u0443\
+  \ \u0448\u0430\u0431\u043B\u043E\u043D\u0443 \u0432 Visual Basic for Applications\
+  \ (VBA), \u0432\u043A\u043B\u044E\u0447\u0430\u0454 \u0432 \u0441\u0435\u0431\u0435\
+  \ \u0456\u0434\u0435\u043D\u0442\u0438\u0444\u0456\u043A\u0430\u0446\u0456\u044E\
+  \ \u0442\u0430 \u043F\u043E\u0434\u0430\u043B\u044C\u0448\u0435 \u0432\u0438\u0434\
+  \u0430\u043B\u0435\u043D\u043D\u044F \u0441\u0438\u043C\u0432\u043E\u043B\u0456\u0432\
+  \u2026"
+lastmod: 2024-02-18 23:09:00.013148
+model: gpt-4-0125-preview
+summary: "\u0412\u0438\u0434\u0430\u043B\u0435\u043D\u043D\u044F \u0441\u0438\u043C\
+  \u0432\u043E\u043B\u0456\u0432, \u044F\u043A\u0456 \u0432\u0456\u0434\u043F\u043E\
+  \u0432\u0456\u0434\u0430\u044E\u0442\u044C \u043F\u0435\u0432\u043D\u043E\u043C\u0443\
+  \ \u0448\u0430\u0431\u043B\u043E\u043D\u0443 \u0432 Visual Basic for Applications\
+  \ (VBA), \u0432\u043A\u043B\u044E\u0447\u0430\u0454 \u0432 \u0441\u0435\u0431\u0435\
+  \ \u0456\u0434\u0435\u043D\u0442\u0438\u0444\u0456\u043A\u0430\u0446\u0456\u044E\
+  \ \u0442\u0430 \u043F\u043E\u0434\u0430\u043B\u044C\u0448\u0435 \u0432\u0438\u0434\
+  \u0430\u043B\u0435\u043D\u043D\u044F \u0441\u0438\u043C\u0432\u043E\u043B\u0456\u0432\
+  \u2026"
+title: "\u0412\u0438\u0434\u0430\u043B\u0435\u043D\u043D\u044F \u0441\u0438\u043C\u0432\
+  \u043E\u043B\u0456\u0432, \u0449\u043E \u0432\u0456\u0434\u043F\u043E\u0432\u0456\
+  \u0434\u0430\u044E\u0442\u044C \u043F\u0430\u0442\u0435\u0440\u043D\u0443"
 ---
 
 {{< edit_this_page >}}

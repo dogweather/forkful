@@ -1,14 +1,17 @@
 ---
-title:                "Analisi di una data da una stringa"
 aliases:
 - /it/arduino/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:13:19.468012-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analisi di una data da una stringa"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:13:19.468012-07:00
+description: "Effettuare il parsing di una data da una stringa in Arduino comporta\
+  \ l'estrazione e la conversione delle componenti della data (anno, mese, giorno)\
+  \ da una\u2026"
+lastmod: 2024-02-18 23:08:56.142292
+model: gpt-4-0125-preview
+summary: "Effettuare il parsing di una data da una stringa in Arduino comporta l'estrazione\
+  \ e la conversione delle componenti della data (anno, mese, giorno) da una\u2026"
+title: Analisi di una data da una stringa
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Converting a date into a string"
 aliases:
 - /en/typescript/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:38.018725-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Converting a date into a string"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:38.018725-07:00
+description: Converting a date to a string changes the date object into a text format.
+  Programmers do this for readability, storage, or to display dates to users.
+lastmod: 2024-02-18 23:09:10.818643
+model: gpt-4-1106-preview
+summary: Converting a date to a string changes the date object into a text format.
+  Programmers do this for readability, storage, or to display dates to users.
+title: Converting a date into a string
 ---
 
 {{< edit_this_page >}}

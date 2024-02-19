@@ -1,13 +1,14 @@
 ---
-title:                "Refaktorering"
 aliases:
 - /no/arduino/refactoring/
-date:                  2024-01-26T01:16:45.741107-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refaktorering"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/refactoring.md"
+date: 2024-01-26 01:16:45.741107-07:00
+description: "*Refactoring* er prosessen med \xE5 omarbeide koden din for \xE5 forbedre\
+  \ strukturen og lesbarheten uten \xE5 endre den eksterne oppf\xF8rselen eller\u2026"
+lastmod: 2024-02-18 23:08:54.150598
+model: gpt-4-0125-preview
+summary: "*Refactoring* er prosessen med \xE5 omarbeide koden din for \xE5 forbedre\
+  \ strukturen og lesbarheten uten \xE5 endre den eksterne oppf\xF8rselen eller\u2026"
+title: Refaktorering
 ---
 
 {{< edit_this_page >}}

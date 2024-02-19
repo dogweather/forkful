@@ -1,14 +1,18 @@
 ---
-title:                "Praca z YAML"
 aliases:
 - /pl/cpp/working-with-yaml/
-date:                  2024-02-03T19:24:49.006159-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:24:49.006159-07:00
+description: "YAML, co oznacza YAML Ain't Markup Language, jest czytelnym dla cz\u0142\
+  owieka formatem serializacji danych. Programi\u015Bci u\u017Cywaj\u0105 go do plik\xF3\
+  w konfiguracyjnych,\u2026"
+lastmod: 2024-02-18 23:08:49.931790
+model: gpt-4-0125-preview
+summary: "YAML, co oznacza YAML Ain't Markup Language, jest czytelnym dla cz\u0142\
+  owieka formatem serializacji danych. Programi\u015Bci u\u017Cywaj\u0105 go do plik\xF3\
+  w konfiguracyjnych,\u2026"
+title: Praca z YAML
 ---
 
 {{< edit_this_page >}}

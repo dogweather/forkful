@@ -1,13 +1,15 @@
 ---
-title:                "Estrazione di sottostringhe"
 aliases:
 - /it/powershell/extracting-substrings/
-date:                  2024-01-20T17:46:21.782112-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Estrazione di sottostringhe"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/extracting-substrings.md"
+date: 2024-01-20 17:46:21.782112-07:00
+description: "Estrarre sottostringhe significa selezionare una parte specifica di\
+  \ una stringa di testo. I programmatori lo fanno per manipolare e analizzare dati,\
+  \ per\u2026"
+lastmod: 2024-02-18 23:08:56.081930
+model: gpt-4-1106-preview
+summary: "Estrarre sottostringhe significa selezionare una parte specifica di una\
+  \ stringa di testo. I programmatori lo fanno per manipolare e analizzare dati, per\u2026"
+title: Estrazione di sottostringhe
 ---
 
 {{< edit_this_page >}}

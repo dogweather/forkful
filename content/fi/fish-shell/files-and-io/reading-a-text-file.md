@@ -1,13 +1,14 @@
 ---
-title:                "Tekstitiedoston lukeminen"
 aliases:
 - /fi/fish-shell/reading-a-text-file/
-date:                  2024-01-20T17:54:22.624348-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tekstitiedoston lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/reading-a-text-file.md"
+date: 2024-01-20 17:54:22.624348-07:00
+description: "Tekstitiedoston lukeminen tarkoittaa tiedoston sis\xE4ll\xF6n hakemista\
+  \ ohjelmallisesti. Ohjelmoijat tekev\xE4t sit\xE4 datan prosessoimiseen, konfiguraatioiden\u2026"
+lastmod: 2024-02-18 23:09:08.103278
+model: gpt-4-1106-preview
+summary: "Tekstitiedoston lukeminen tarkoittaa tiedoston sis\xE4ll\xF6n hakemista\
+  \ ohjelmallisesti. Ohjelmoijat tekev\xE4t sit\xE4 datan prosessoimiseen, konfiguraatioiden\u2026"
+title: Tekstitiedoston lukeminen
 ---
 
 {{< edit_this_page >}}

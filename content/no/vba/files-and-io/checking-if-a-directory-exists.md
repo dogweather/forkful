@@ -1,14 +1,18 @@
 ---
-title:                "Sjekke om en katalog eksisterer"
 aliases:
 - /no/vba/checking-if-a-directory-exists/
-date:                  2024-02-01T21:50:54.016266-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sjekke om en katalog eksisterer"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/vba/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:54.016266-07:00
+description: "\xC5 sjekke om en mappe eksisterer i Visual Basic for Applications (VBA)\
+  \ handler om \xE5 verifisere tilstedev\xE6relsen av en mappe i filsystemet f\xF8\
+  r man utf\xF8rer\u2026"
+lastmod: 2024-02-18 23:08:53.743416
+model: gpt-4-0125-preview
+summary: "\xC5 sjekke om en mappe eksisterer i Visual Basic for Applications (VBA)\
+  \ handler om \xE5 verifisere tilstedev\xE6relsen av en mappe i filsystemet f\xF8\
+  r man utf\xF8rer\u2026"
+title: Sjekke om en katalog eksisterer
 ---
 
 {{< edit_this_page >}}

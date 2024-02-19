@@ -1,14 +1,16 @@
 ---
-title:                "Obtenir la date actuelle"
 aliases:
 - /fr/cpp/getting-the-current-date/
-date:                  2024-02-03T19:09:07.117094-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Obtenir la date actuelle"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:09:07.117094-07:00
+description: "La r\xE9cup\xE9ration de la date actuelle en C++ est une t\xE2che fondamentale\
+  \ pour les programmes qui doivent traiter ou afficher des dates bas\xE9es sur l'horloge\u2026"
+lastmod: 2024-02-18 23:09:09.172452
+model: gpt-4-0125-preview
+summary: "La r\xE9cup\xE9ration de la date actuelle en C++ est une t\xE2che fondamentale\
+  \ pour les programmes qui doivent traiter ou afficher des dates bas\xE9es sur l'horloge\u2026"
+title: Obtenir la date actuelle
 ---
 
 {{< edit_this_page >}}

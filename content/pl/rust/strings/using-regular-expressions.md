@@ -1,14 +1,18 @@
 ---
-title:                "Korzystanie z wyrażeń regularnych"
 aliases:
 - /pl/rust/using-regular-expressions/
-date:                  2024-02-03T19:18:52.039532-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z wyrażeń regularnych"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:18:52.039532-07:00
+description: "Wyra\u017Cenia regularne, czyli regex, pozwalaj\u0105 programistom wyszukiwa\u0107\
+  , dopasowywa\u0107 i manipulowa\u0107 ci\u0105gami znak\xF3w, wykorzystuj\u0105\
+  c zaawansowane techniki\u2026"
+lastmod: 2024-02-18 23:08:49.380223
+model: gpt-4-0125-preview
+summary: "Wyra\u017Cenia regularne, czyli regex, pozwalaj\u0105 programistom wyszukiwa\u0107\
+  , dopasowywa\u0107 i manipulowa\u0107 ci\u0105gami znak\xF3w, wykorzystuj\u0105\
+  c zaawansowane techniki\u2026"
+title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 ---
 
 {{< edit_this_page >}}

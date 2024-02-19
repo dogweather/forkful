@@ -1,13 +1,16 @@
 ---
-title:                "Att påbörja ett nytt projekt"
 aliases:
 - /sv/java/starting-a-new-project/
-date:                  2024-01-20T18:03:45.831156-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Att påbörja ett nytt projekt"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/starting-a-new-project.md"
+date: 2024-01-20 18:03:45.831156-07:00
+description: "Att starta ett nytt projekt i Java \xE4r som att \xF6ppna en ny, blank\
+  \ dagbok; potentialen \xE4r o\xE4ndlig. Programmerare startar nya projekt f\xF6\
+  r att omvandla id\xE9er\u2026"
+lastmod: 2024-02-18 23:08:51.670078
+model: gpt-4-1106-preview
+summary: "Att starta ett nytt projekt i Java \xE4r som att \xF6ppna en ny, blank dagbok;\
+  \ potentialen \xE4r o\xE4ndlig. Programmerare startar nya projekt f\xF6r att omvandla\
+  \ id\xE9er\u2026"
+title: "Att p\xE5b\xF6rja ett nytt projekt"
 ---
 
 {{< edit_this_page >}}

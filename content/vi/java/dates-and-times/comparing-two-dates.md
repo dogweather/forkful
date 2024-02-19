@@ -1,15 +1,20 @@
 ---
-title:                "So sánh hai ngày"
 aliases:
 - /vi/java/comparing-two-dates/
-date:                  2024-01-28T21:56:57.013409-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "So sánh hai ngày"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/java/comparing-two-dates.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:57.013409-07:00
+description: "So s\xE1nh hai ng\xE0y t\u1EE9c l\xE0 t\xECm ra xem m\u1ED9t ng\xE0\
+  y \u0111\u1EBFn tr\u01B0\u1EDBc, sau, hay tr\xF9ng kh\u1EDBp v\u1EDBi ng\xE0y n\xE0\
+  o \u0111\xF3. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
+  \ x\u1EED l\xFD l\u1ECBch tr\xECnh, h\u1EA1n ch\xF3t, s\u1EAFp\u2026"
+lastmod: 2024-02-18 23:08:50.570986
+model: gpt-4-0125-preview
+summary: "So s\xE1nh hai ng\xE0y t\u1EE9c l\xE0 t\xECm ra xem m\u1ED9t ng\xE0y \u0111\
+  \u1EBFn tr\u01B0\u1EDBc, sau, hay tr\xF9ng kh\u1EDBp v\u1EDBi ng\xE0y n\xE0o \u0111\
+  \xF3. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 x\u1EED\
+  \ l\xFD l\u1ECBch tr\xECnh, h\u1EA1n ch\xF3t, s\u1EAFp\u2026"
+title: "So s\xE1nh hai ng\xE0y"
 ---
 
 {{< edit_this_page >}}

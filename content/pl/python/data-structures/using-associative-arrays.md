@@ -1,15 +1,18 @@
 ---
-title:                "Korzystanie z tablic asocjacyjnych"
 aliases:
 - /pl/python/using-associative-arrays/
-date:                  2024-01-30T19:12:51.192241-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z tablic asocjacyjnych"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:51.192241-07:00
+description: "Tablice asocjacyjne, znane w Pythonie jako s\u0142owniki, mapuj\u0105\
+  \ klucze na warto\u015Bci, co u\u0142atwia pobieranie, modyfikowanie lub \u015B\
+  ledzenie danych za pomoc\u0105\u2026"
+lastmod: 2024-02-18 23:08:49.215318
+model: gpt-4-0125-preview
+summary: "Tablice asocjacyjne, znane w Pythonie jako s\u0142owniki, mapuj\u0105 klucze\
+  \ na warto\u015Bci, co u\u0142atwia pobieranie, modyfikowanie lub \u015Bledzenie\
+  \ danych za pomoc\u0105\u2026"
+title: Korzystanie z tablic asocjacyjnych
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Lấy ngày hiện tại"
 aliases:
 - /vi/bash/getting-the-current-date/
-date:                  2024-01-28T22:01:41.450135-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lấy ngày hiện tại"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/bash/getting-the-current-date.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:41.450135-07:00
+description: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong bash l\xE0 vi\u1EC7c l\u1EA5\
+  y ng\xE0y v\xE0 gi\u1EDD c\u1EE7a h\u1EC7 th\u1ED1ng. L\u1EADp tr\xECnh vi\xEAn\
+  \ c\u1EA7n n\xF3 cho vi\u1EC7c ghi nh\u1EADt k\xFD, \u0111\xE1nh d\u1EA5u th\u1EDD\
+  i gian, ho\u1EB7c l\xEAn l\u1ECBch c\xE1c t\xE1c\u2026"
+lastmod: 2024-02-18 23:08:50.896973
+model: gpt-4-0125-preview
+summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong bash l\xE0 vi\u1EC7c l\u1EA5y\
+  \ ng\xE0y v\xE0 gi\u1EDD c\u1EE7a h\u1EC7 th\u1ED1ng. L\u1EADp tr\xECnh vi\xEAn\
+  \ c\u1EA7n n\xF3 cho vi\u1EC7c ghi nh\u1EADt k\xFD, \u0111\xE1nh d\u1EA5u th\u1EDD\
+  i gian, ho\u1EB7c l\xEAn l\u1ECBch c\xE1c t\xE1c\u2026"
+title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 ---
 
 {{< edit_this_page >}}

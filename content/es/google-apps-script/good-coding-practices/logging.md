@@ -1,14 +1,18 @@
 ---
-title:                "Registro de Información"
 aliases:
 - /es/google-apps-script/logging/
-date:                  2024-02-01T21:55:50.041102-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Registro de Información"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/google-apps-script/logging.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:50.041102-07:00
+description: "El registro (logging) en programaci\xF3n implica grabar eventos, errores\
+  \ u ocurrencias notables durante el tiempo de ejecuci\xF3n. Los programadores lo\
+  \ hacen\u2026"
+lastmod: 2024-02-18 23:09:09.515029
+model: gpt-4-0125-preview
+summary: "El registro (logging) en programaci\xF3n implica grabar eventos, errores\
+  \ u ocurrencias notables durante el tiempo de ejecuci\xF3n. Los programadores lo\
+  \ hacen\u2026"
+title: "Registro de Informaci\xF3n"
 ---
 
 {{< edit_this_page >}}

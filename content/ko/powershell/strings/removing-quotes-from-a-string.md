@@ -1,13 +1,26 @@
 ---
-title:                "문자열에서 따옴표 제거하기"
 aliases:
 - /ko/powershell/removing-quotes-from-a-string/
-date:                  2024-01-26T03:41:47.290549-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열에서 따옴표 제거하기"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:41:47.290549-07:00
+description: "PowerShell\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C\
+  \uB97C \uC81C\uAC70\uD558\uBA74 \uD14D\uC2A4\uD2B8 \uC8FC\uC704\uC5D0 \uC788\uB294\
+  \ \uB2E8\uC77C(`'`) \uB610\uB294 \uC774\uC911(`\"`) \uB530\uC634\uD45C\uB97C \uC81C\
+  \uAC70\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uD2B9\uD788\
+  \ \uC0AC\uC6A9\uC790 \uC785\uB825\uC774\uB098 \uD30C\uC77C \uD30C\uC2F1\uC744 \uB2E4\
+  \uB8F0 \uB54C \uCC98\uB9AC, \uBE44\uAD50 \uB610\uB294 \uCD9C\uB825 \uBAA9\uC801\uC73C\
+  \uB85C \uBB38\uC790\uC5F4\uC744 \uC815\uB9AC\uD560 \uD544\uC694\uAC00 \uC790\uC8FC\
+  \ \uC788\uC2B5\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.532507
+model: gpt-4-0125-preview
+summary: "PowerShell\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C\
+  \uB97C \uC81C\uAC70\uD558\uBA74 \uD14D\uC2A4\uD2B8 \uC8FC\uC704\uC5D0 \uC788\uB294\
+  \ \uB2E8\uC77C(`'`) \uB610\uB294 \uC774\uC911(`\"`) \uB530\uC634\uD45C\uB97C \uC81C\
+  \uAC70\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uD2B9\uD788\
+  \ \uC0AC\uC6A9\uC790 \uC785\uB825\uC774\uB098 \uD30C\uC77C \uD30C\uC2F1\uC744 \uB2E4\
+  \uB8F0 \uB54C \uCC98\uB9AC, \uBE44\uAD50 \uB610\uB294 \uCD9C\uB825 \uBAA9\uC801\uC73C\
+  \uB85C \uBB38\uC790\uC5F4\uC744 \uC815\uB9AC\uD560 \uD544\uC694\uAC00 \uC790\uC8FC\
+  \ \uC788\uC2B5\uB2C8\uB2E4."
+title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C \uC81C\uAC70\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

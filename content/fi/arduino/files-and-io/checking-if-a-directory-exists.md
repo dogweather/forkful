@@ -1,14 +1,16 @@
 ---
-title:                "Tarkistetaan, onko hakemisto olemassa"
 aliases:
 - /fi/arduino/checking-if-a-directory-exists/
-date:                  2024-02-03T19:06:55.115619-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tarkistetaan, onko hakemisto olemassa"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:55.115619-07:00
+description: "Arduino-ohjelmoinnin kontekstissa kansion olemassaolon tarkistus SD-kortilla\
+  \ tai vastaavassa tallennusmoduulissa mahdollistaa tiedostojen lukemisen tai\u2026"
+lastmod: 2024-02-18 23:09:07.914776
+model: gpt-4-0125-preview
+summary: "Arduino-ohjelmoinnin kontekstissa kansion olemassaolon tarkistus SD-kortilla\
+  \ tai vastaavassa tallennusmoduulissa mahdollistaa tiedostojen lukemisen tai\u2026"
+title: Tarkistetaan, onko hakemisto olemassa
 ---
 
 {{< edit_this_page >}}

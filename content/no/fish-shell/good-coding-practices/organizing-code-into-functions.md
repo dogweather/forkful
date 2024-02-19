@@ -1,16 +1,19 @@
 ---
-title:                "Organisering av kode i funksjoner"
 aliases:
 - /no/fish-shell/organizing-code-into-functions/
-date:                  2024-01-28T23:01:33.081296-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Organisering av kode i funksjoner"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/organizing-code-into-functions.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed and added links
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed and added links
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 23:01:33.081296-07:00
+description: "\xC5 organisere kode i funksjoner handler om \xE5 samle biter av skript\
+  \ for \xE5 utf\xF8re spesifikke oppgaver. Vi gj\xF8r det fordi det gj\xF8r koden\
+  \ lettere \xE5 lese, teste\u2026"
+lastmod: 2024-02-18 23:08:54.357121
+model: gpt-4-0125-preview
+summary: "\xC5 organisere kode i funksjoner handler om \xE5 samle biter av skript\
+  \ for \xE5 utf\xF8re spesifikke oppgaver. Vi gj\xF8r det fordi det gj\xF8r koden\
+  \ lettere \xE5 lese, teste\u2026"
+title: Organisering av kode i funksjoner
 ---
 
 {{< edit_this_page >}}

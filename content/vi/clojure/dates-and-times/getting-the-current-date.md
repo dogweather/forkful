@@ -1,15 +1,20 @@
 ---
-title:                "Lấy ngày hiện tại"
 aliases:
 - /vi/clojure/getting-the-current-date/
-date:                  2024-01-28T22:01:44.530543-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lấy ngày hiện tại"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/clojure/getting-the-current-date.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:44.530543-07:00
+description: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Clojure c\xF3 ngh\u0129a l\xE0\
+  \ l\u1EA5y ng\xE0y l\u1ECBch hi\u1EC7n t\u1EA1i m\xE0 ch\u01B0\u01A1ng tr\xECnh\
+  \ c\u1EE7a b\u1EA1n \u0111ang ch\u1EA1y. L\u1EADp tr\xECnh vi\xEAn l\u1EA5y ng\xE0\
+  y \u0111\u1EC3 \u0111\xF3ng d\u1EA5u th\u1EDDi gian cho\u2026"
+lastmod: 2024-02-18 23:08:50.326295
+model: gpt-4-0125-preview
+summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Clojure c\xF3 ngh\u0129a l\xE0\
+  \ l\u1EA5y ng\xE0y l\u1ECBch hi\u1EC7n t\u1EA1i m\xE0 ch\u01B0\u01A1ng tr\xECnh\
+  \ c\u1EE7a b\u1EA1n \u0111ang ch\u1EA1y. L\u1EADp tr\xECnh vi\xEAn l\u1EA5y ng\xE0\
+  y \u0111\u1EC3 \u0111\xF3ng d\u1EA5u th\u1EDDi gian cho\u2026"
+title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 ---
 
 {{< edit_this_page >}}

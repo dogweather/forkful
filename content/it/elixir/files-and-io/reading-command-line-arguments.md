@@ -1,13 +1,15 @@
 ---
-title:                "Lettura degli argomenti della riga di comando"
 aliases:
 - /it/elixir/reading-command-line-arguments/
-date:                  2024-01-20T17:55:35.941248-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lettura degli argomenti della riga di comando"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:35.941248-07:00
+description: "Leggere gli argomenti della riga di comando significa acquisire dati\
+  \ inseriti dall'utente quando avvia il tuo programmino da terminale. I programmatori\
+  \ lo\u2026"
+lastmod: 2024-02-18 23:08:55.615199
+model: gpt-4-1106-preview
+summary: "Leggere gli argomenti della riga di comando significa acquisire dati inseriti\
+  \ dall'utente quando avvia il tuo programmino da terminale. I programmatori lo\u2026"
+title: Lettura degli argomenti della riga di comando
 ---
 
 {{< edit_this_page >}}

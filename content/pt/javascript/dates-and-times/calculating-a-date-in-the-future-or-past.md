@@ -1,13 +1,15 @@
 ---
-title:                "Calculando uma data no futuro ou passado"
 aliases:
 - /pt/javascript/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:31:29.301278-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Calculando uma data no futuro ou passado"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:31:29.301278-07:00
+description: "Calcular datas no futuro ou no passado significa ajustar um ponto de\
+  \ partida temporal para obter uma nova data. Programadores realizam este processo\
+  \ para\u2026"
+lastmod: 2024-02-18 23:08:58.545368
+model: gpt-4-1106-preview
+summary: "Calcular datas no futuro ou no passado significa ajustar um ponto de partida\
+  \ temporal para obter uma nova data. Programadores realizam este processo para\u2026"
+title: Calculando uma data no futuro ou passado
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Sprawdzanie, czy katalog istnieje"
 aliases:
 - /pl/go/checking-if-a-directory-exists/
-date:                  2024-02-03T17:53:10.983749-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sprawdzanie, czy katalog istnieje"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:10.983749-07:00
+description: "Sprawdzenie, czy katalog istnieje w Go, jest kluczowe dla aplikacji\
+  \ interaktywnie wsp\xF3\u0142pracuj\u0105cych z systemem plik\xF3w, aby unikn\u0105\
+  \u0107 b\u0142\u0119d\xF3w przy pr\xF3bie\u2026"
+lastmod: 2024-02-18 23:08:49.114537
+model: gpt-4-0125-preview
+summary: "Sprawdzenie, czy katalog istnieje w Go, jest kluczowe dla aplikacji interaktywnie\
+  \ wsp\xF3\u0142pracuj\u0105cych z systemem plik\xF3w, aby unikn\u0105\u0107 b\u0142\
+  \u0119d\xF3w przy pr\xF3bie\u2026"
+title: Sprawdzanie, czy katalog istnieje
 ---
 
 {{< edit_this_page >}}

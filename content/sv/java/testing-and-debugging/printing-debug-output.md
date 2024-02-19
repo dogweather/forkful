@@ -1,13 +1,16 @@
 ---
-title:                "Skriva ut felsökningsdata"
 aliases:
 - /sv/java/printing-debug-output/
-date:                  2024-01-20T17:52:50.930075-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skriva ut felsökningsdata"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/printing-debug-output.md"
+date: 2024-01-20 17:52:50.930075-07:00
+description: "Att printa debug-output inneb\xE4r att skriva ut information till konsolen\
+  \ f\xF6r att f\xF6rst\xE5 vad som h\xE4nder i koden. Programmerare g\xF6r det f\xF6\
+  r att sp\xE5ra buggar\u2026"
+lastmod: 2024-02-18 23:08:51.671863
+model: gpt-4-1106-preview
+summary: "Att printa debug-output inneb\xE4r att skriva ut information till konsolen\
+  \ f\xF6r att f\xF6rst\xE5 vad som h\xE4nder i koden. Programmerare g\xF6r det f\xF6\
+  r att sp\xE5ra buggar\u2026"
+title: "Skriva ut fels\xF6kningsdata"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Đọc các đối số dòng lệnh"
 aliases:
 - /vi/ruby/reading-command-line-arguments/
-date:                  2024-01-28T22:06:29.781501-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Đọc các đối số dòng lệnh"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/reading-command-line-arguments.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:06:29.781501-07:00
+description: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh trong Ruby\
+  \ cho ph\xE9p c\xE1c k\u1ECBch b\u1EA3n nh\u1EADn \u0111\u1EA7u v\xE0o ngay khi\
+  \ ch\xFAng \u0111\u01B0\u1EE3c ch\u1EA1y, nh\u01B0 c\u1EA5u h\xECnh t\xF9y ch\u1ECD\
+  n ho\u1EB7c truy\u1EC1n d\u1EEF li\u1EC7u. C\xE1c l\u1EADp tr\xECnh\u2026"
+lastmod: 2024-02-18 23:08:51.302793
+model: gpt-4-0125-preview
+summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh trong Ruby\
+  \ cho ph\xE9p c\xE1c k\u1ECBch b\u1EA3n nh\u1EADn \u0111\u1EA7u v\xE0o ngay khi\
+  \ ch\xFAng \u0111\u01B0\u1EE3c ch\u1EA1y, nh\u01B0 c\u1EA5u h\xECnh t\xF9y ch\u1ECD\
+  n ho\u1EB7c truy\u1EC1n d\u1EEF li\u1EC7u. C\xE1c l\u1EADp tr\xECnh\u2026"
+title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Stampa dell'output di debug"
 aliases:
 - /it/bash/printing-debug-output/
-date:                  2024-01-20T17:51:58.591684-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Stampa dell'output di debug"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/printing-debug-output.md"
+date: 2024-01-20 17:51:58.591684-07:00
+description: "La stampa dei messaggi di debug serve per monitorare cosa sta succedendo\
+  \ nel tuo script. Programmatori lo fanno per trovare e risolvere i bug pi\xF9\u2026"
+lastmod: 2024-02-18 23:08:56.055009
+model: gpt-4-1106-preview
+summary: "La stampa dei messaggi di debug serve per monitorare cosa sta succedendo\
+  \ nel tuo script. Programmatori lo fanno per trovare e risolvere i bug pi\xF9\u2026"
+title: Stampa dell'output di debug
 ---
 
 {{< edit_this_page >}}

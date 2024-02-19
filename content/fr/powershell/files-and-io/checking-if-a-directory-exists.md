@@ -1,14 +1,18 @@
 ---
-title:                "Vérifier si un répertoire existe"
 aliases:
 - /fr/powershell/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:03.646255-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Vérifier si un répertoire existe"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:03.646255-07:00
+description: "Dans PowerShell, v\xE9rifier si un r\xE9pertoire existe est une t\xE2\
+  che courante qui aide les scripts \xE0 prendre des d\xE9cisions bas\xE9es sur la\
+  \ structure du syst\xE8me\u2026"
+lastmod: 2024-02-18 23:09:09.084176
+model: gpt-4-0125-preview
+summary: "Dans PowerShell, v\xE9rifier si un r\xE9pertoire existe est une t\xE2che\
+  \ courante qui aide les scripts \xE0 prendre des d\xE9cisions bas\xE9es sur la structure\
+  \ du syst\xE8me\u2026"
+title: "V\xE9rifier si un r\xE9pertoire existe"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Arbeider med TOML"
 aliases:
 - /no/vba/working-with-toml/
-date:                  2024-02-01T22:06:37.111190-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeider med TOML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/vba/working-with-toml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:06:37.111190-07:00
+description: "TOML, som st\xE5r for Toms Opplagte, Minimale Spr\xE5k, er et data-serieliseringsformat\
+  \ som hovedsakelig brukes for konfigurasjonsfiler. Programmerere benytter\u2026"
+lastmod: 2024-02-18 23:08:53.752882
+model: gpt-4-0125-preview
+summary: "TOML, som st\xE5r for Toms Opplagte, Minimale Spr\xE5k, er et data-serieliseringsformat\
+  \ som hovedsakelig brukes for konfigurasjonsfiler. Programmerere benytter\u2026"
+title: Arbeider med TOML
 ---
 
 {{< edit_this_page >}}

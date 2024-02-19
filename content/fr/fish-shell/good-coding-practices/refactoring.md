@@ -1,13 +1,14 @@
 ---
-title:                "Refactoring"
 aliases:
 - /fr/fish-shell/refactoring/
-date:                  2024-01-26T01:18:04.666224-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactoring"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/refactoring.md"
+date: 2024-01-26 01:18:04.666224-07:00
+description: "La refactorisation est le processus de restructuration du code existant\
+  \ sans changer son comportement externe afin d'am\xE9liorer les attributs non\u2026"
+lastmod: 2024-02-18 23:09:09.315151
+model: gpt-4-0125-preview
+summary: "La refactorisation est le processus de restructuration du code existant\
+  \ sans changer son comportement externe afin d'am\xE9liorer les attributs non\u2026"
+title: Refactoring
 ---
 
 {{< edit_this_page >}}

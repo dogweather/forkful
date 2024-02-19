@@ -1,13 +1,14 @@
 ---
-title:                "Refactoring"
 aliases:
 - /de/php/refactoring/
-date:                  2024-01-26T01:47:56.352907-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactoring"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/refactoring.md"
+date: 2024-01-26 01:47:56.352907-07:00
+description: "Refactoring ist der Prozess der Umstrukturierung bestehenden Computer-Codes,\
+  \ ohne dessen \xE4u\xDFeres Verhalten zu ver\xE4ndern. Programmierer f\xFChren ein\u2026"
+lastmod: 2024-02-18 23:09:04.971088
+model: gpt-4-0125-preview
+summary: "Refactoring ist der Prozess der Umstrukturierung bestehenden Computer-Codes,\
+  \ ohne dessen \xE4u\xDFeres Verhalten zu ver\xE4ndern. Programmierer f\xFChren ein\u2026"
+title: Refactoring
 ---
 
 {{< edit_this_page >}}

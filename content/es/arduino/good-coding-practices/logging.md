@@ -1,13 +1,14 @@
 ---
-title:                "Registro de Actividades en Programación"
 aliases:
 - /es/arduino/logging/
-date:                  2024-01-26T00:58:29.919223-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registro de Actividades en Programación"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/logging.md"
+date: 2024-01-26 00:58:29.919223-07:00
+description: "\"Registrar\" es mantener un registro de eventos, transacciones o actividades\
+  \ que suceden con el tiempo en un sistema. Los programadores lo utilizan para\u2026"
+lastmod: 2024-02-18 23:09:10.267811
+model: gpt-4-1106-preview
+summary: "\"Registrar\" es mantener un registro de eventos, transacciones o actividades\
+  \ que suceden con el tiempo en un sistema. Los programadores lo utilizan para\u2026"
+title: "Registro de Actividades en Programaci\xF3n"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Interpolacja łańcuchów znaków"
 aliases:
 - /pl/arduino/interpolating-a-string/
-date:                  2024-01-20T17:50:08.130580-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolacja łańcuchów znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/interpolating-a-string.md"
+date: 2024-01-20 17:50:08.130580-07:00
+description: "Interpolacja ci\u0105gu znak\xF3w umo\u017Cliwia wstawianie zmiennych\
+  \ bezpo\u015Brednio w tekst. U\u017Cywamy jej, by u\u0142atwi\u0107 tworzenie dynamicznych\
+  \ wiadomo\u015Bci i formatowa\u0107 je\u2026"
+lastmod: 2024-02-18 23:08:49.856620
+model: gpt-4-1106-preview
+summary: "Interpolacja ci\u0105gu znak\xF3w umo\u017Cliwia wstawianie zmiennych bezpo\u015B\
+  rednio w tekst. U\u017Cywamy jej, by u\u0142atwi\u0107 tworzenie dynamicznych wiadomo\u015B\
+  ci i formatowa\u0107 je\u2026"
+title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 ---
 
 {{< edit_this_page >}}

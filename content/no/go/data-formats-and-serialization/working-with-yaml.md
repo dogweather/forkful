@@ -1,14 +1,17 @@
 ---
-title:                "Å Arbeide med YAML"
 aliases:
 - /no/go/working-with-yaml/
-date:                  2024-02-03T18:13:45.965929-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å Arbeide med YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:13:45.965929-07:00
+description: "\xC5 jobbe med YAML i Go inneb\xE6rer \xE5 analysere YAML (YAML Ain't\
+  \ Markup Language) filer, en menneskevennlig standard for dataserielisering, inn\
+  \ i Go\u2026"
+lastmod: 2024-02-18 23:08:53.457299
+model: gpt-4-0125-preview
+summary: "\xC5 jobbe med YAML i Go inneb\xE6rer \xE5 analysere YAML (YAML Ain't Markup\
+  \ Language) filer, en menneskevennlig standard for dataserielisering, inn i Go\u2026"
+title: "\xC5 Arbeide med YAML"
 ---
 
 {{< edit_this_page >}}

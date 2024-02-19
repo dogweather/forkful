@@ -1,14 +1,18 @@
 ---
-title:                "Utilisation des expressions régulières"
 aliases:
 - /fr/arduino/using-regular-expressions/
-date:                  2024-02-03T19:15:56.125232-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation des expressions régulières"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:15:56.125232-07:00
+description: "Les expressions r\xE9guli\xE8res (regex) sont des s\xE9quences de caract\xE8\
+  res qui d\xE9finissent des mod\xE8les de recherche, principalement utilis\xE9es\
+  \ pour la\u2026"
+lastmod: 2024-02-18 23:09:09.104116
+model: gpt-4-0125-preview
+summary: "Les expressions r\xE9guli\xE8res (regex) sont des s\xE9quences de caract\xE8\
+  res qui d\xE9finissent des mod\xE8les de recherche, principalement utilis\xE9es\
+  \ pour la\u2026"
+title: "Utilisation des expressions r\xE9guli\xE8res"
 ---
 
 {{< edit_this_page >}}

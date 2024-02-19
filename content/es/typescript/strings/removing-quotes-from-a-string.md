@@ -1,13 +1,14 @@
 ---
-title:                "Eliminando comillas de una cadena"
 aliases:
 - /es/typescript/removing-quotes-from-a-string/
-date:                  2024-01-26T03:42:09.443511-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eliminando comillas de una cadena"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:42:09.443511-07:00
+description: "Eliminar comillas de una cadena significa quitar los caracteres de comillas\
+  \ simples (`'`) o dobles (`\"`) que rodean y definen literales de cadena en el\u2026"
+lastmod: 2024-02-18 23:09:09.689823
+model: gpt-4-0125-preview
+summary: "Eliminar comillas de una cadena significa quitar los caracteres de comillas\
+  \ simples (`'`) o dobles (`\"`) que rodean y definen literales de cadena en el\u2026"
+title: Eliminando comillas de una cadena
 ---
 
 {{< edit_this_page >}}

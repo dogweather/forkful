@@ -1,13 +1,16 @@
 ---
-title:                "Conversione di una data in una stringa"
 aliases:
 - /it/arduino/converting-a-date-into-a-string/
-date:                  2024-01-20T17:35:57.079623-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Conversione di una data in una stringa"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:35:57.079623-07:00
+description: "Convertire una data in una stringa significa trasformare il modo in\
+  \ cui una data \xE8 memorizzata (spesso un numero) in un formato di testo leggibile\
+  \ e\u2026"
+lastmod: 2024-02-18 23:08:56.144395
+model: gpt-4-1106-preview
+summary: "Convertire una data in una stringa significa trasformare il modo in cui\
+  \ una data \xE8 memorizzata (spesso un numero) in un formato di testo leggibile\
+  \ e\u2026"
+title: Conversione di una data in una stringa
 ---
 
 {{< edit_this_page >}}

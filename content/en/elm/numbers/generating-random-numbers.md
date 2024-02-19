@@ -1,13 +1,14 @@
 ---
-title:                "Generating random numbers"
 aliases:
 - /en/elm/generating-random-numbers/
-date:                  2024-01-27T20:26:19.358617-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generating random numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/generating-random-numbers.md"
+date: 2024-01-27 20:26:19.358617-07:00
+description: "Generating random numbers in Elm involves creating unpredictable numerical\
+  \ values that are essential for applications like games, simulations, and\u2026"
+lastmod: 2024-02-18 23:09:10.967745
+model: gpt-4-0125-preview
+summary: "Generating random numbers in Elm involves creating unpredictable numerical\
+  \ values that are essential for applications like games, simulations, and\u2026"
+title: Generating random numbers
 ---
 
 {{< edit_this_page >}}

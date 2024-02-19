@@ -1,14 +1,28 @@
 ---
-title:                "문자열을 소문자로 변환하기"
 aliases:
 - /ko/google-apps-script/converting-a-string-to-lower-case/
-date:                  2024-02-01T21:51:20.479369-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열을 소문자로 변환하기"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:20.479369-07:00
+description: "Google Apps Script\uC5D0\uC11C \uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\
+  \uC790\uB85C \uBCC0\uD658\uD558\uB294 \uAC83\uC740 Google \uC81C\uD488\uC5D0\uC11C\
+  \ \uC791\uC5C5\uC744 \uC790\uB3D9\uD654\uD558\uAE30 \uC704\uD55C \uD074\uB77C\uC6B0\
+  \uB4DC \uAE30\uBC18 \uC2A4\uD06C\uB9BD\uD2B8 \uC5B8\uC5B4\uC5D0\uC11C \uD45C\uC900\
+  \ \uD14D\uC2A4\uD2B8 \uB370\uC774\uD130\uB97C \uBAA9\uD45C\uB85C \uD558\uB294 \uAE30\
+  \uBCF8\uC801\uC778 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB4E4\uC740 \uC0AC\uC6A9\uC790 \uC785\uB825, \uB370\uC774\uD130 \uCC98\uB9AC, \uB610\
+  \uB294 \uBB38\uC790\uC5F4\uC744 \uBE44\uAD50\uD560 \uB54C\u2026"
+lastmod: 2024-02-18 23:09:05.532990
+model: gpt-4-0125-preview
+summary: "Google Apps Script\uC5D0\uC11C \uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\
+  \uB85C \uBCC0\uD658\uD558\uB294 \uAC83\uC740 Google \uC81C\uD488\uC5D0\uC11C \uC791\
+  \uC5C5\uC744 \uC790\uB3D9\uD654\uD558\uAE30 \uC704\uD55C \uD074\uB77C\uC6B0\uB4DC\
+  \ \uAE30\uBC18 \uC2A4\uD06C\uB9BD\uD2B8 \uC5B8\uC5B4\uC5D0\uC11C \uD45C\uC900 \uD14D\
+  \uC2A4\uD2B8 \uB370\uC774\uD130\uB97C \uBAA9\uD45C\uB85C \uD558\uB294 \uAE30\uBCF8\
+  \uC801\uC778 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\
+  \uC740 \uC0AC\uC6A9\uC790 \uC785\uB825, \uB370\uC774\uD130 \uCC98\uB9AC, \uB610\uB294\
+  \ \uBB38\uC790\uC5F4\uC744 \uBE44\uAD50\uD560 \uB54C\u2026"
+title: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

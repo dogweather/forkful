@@ -1,15 +1,16 @@
 ---
-title:                "Gebruik van associatieve arrays"
 aliases:
 - /nl/clojure/using-associative-arrays/
-date:                  2024-01-30T19:10:10.912667-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gebruik van associatieve arrays"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/clojure/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:10.912667-07:00
+description: "Associatieve arrays, of hashmap's, in Clojure stellen je in staat om\
+  \ data op te slaan en op te halen met sleutel-waardeparen. Ze zijn een voor de hand\u2026"
+lastmod: 2024-02-18 23:09:01.471799
+model: gpt-4-0125-preview
+summary: "Associatieve arrays, of hashmap's, in Clojure stellen je in staat om data\
+  \ op te slaan en op te halen met sleutel-waardeparen. Ze zijn een voor de hand\u2026"
+title: Gebruik van associatieve arrays
 ---
 
 {{< edit_this_page >}}

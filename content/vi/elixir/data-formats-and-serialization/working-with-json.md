@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với JSON"
 aliases:
 - /vi/elixir/working-with-json/
-date:                  2024-01-28T22:10:34.982147-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với JSON"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/working-with-json.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:34.982147-07:00
+description: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
+  ng trao \u0111\u1ED5i d\u1EEF li\u1EC7u nh\u1EB9, d\u1EC5 \u0111\u1ECDc v\xE0 vi\u1EBF\
+  t cho con ng\u01B0\u1EDDi c\u0169ng nh\u01B0 d\u1EC5 d\xE0ng ph\xE2n t\xEDch v\xE0\
+  \ t\u1EA1o ra b\u1EDFi m\xE1y m\xF3c.\u2026"
+lastmod: 2024-02-18 23:08:50.392430
+model: gpt-4-0125-preview
+summary: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
+  ng trao \u0111\u1ED5i d\u1EEF li\u1EC7u nh\u1EB9, d\u1EC5 \u0111\u1ECDc v\xE0 vi\u1EBF\
+  t cho con ng\u01B0\u1EDDi c\u0169ng nh\u01B0 d\u1EC5 d\xE0ng ph\xE2n t\xEDch v\xE0\
+  \ t\u1EA1o ra b\u1EDFi m\xE1y m\xF3c.\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 ---
 
 {{< edit_this_page >}}

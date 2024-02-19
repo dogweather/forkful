@@ -1,13 +1,16 @@
 ---
-title:                "Envoi d'une requête HTTP"
 aliases:
 - /fr/kotlin/sending-an-http-request/
-date:                  2024-01-20T18:00:12.137575-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Envoi d'une requête HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/sending-an-http-request.md"
+date: 2024-01-20 18:00:12.137575-07:00
+description: "Envoyer une requ\xEAte HTTP, c'est demander des donn\xE9es \xE0 un serveur\
+  \ web. Les programmeurs en ont besoin pour les applications qui bouffent de l'info\
+  \ en\u2026"
+lastmod: 2024-02-18 23:09:08.777414
+model: gpt-4-1106-preview
+summary: "Envoyer une requ\xEAte HTTP, c'est demander des donn\xE9es \xE0 un serveur\
+  \ web. Les programmeurs en ont besoin pour les applications qui bouffent de l'info\
+  \ en\u2026"
+title: "Envoi d'une requ\xEAte HTTP"
 ---
 
 {{< edit_this_page >}}

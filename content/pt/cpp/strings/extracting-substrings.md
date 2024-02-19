@@ -1,13 +1,15 @@
 ---
-title:                "Extraindo substrings"
 aliases:
 - /pt/cpp/extracting-substrings/
-date:                  2024-01-20T17:45:15.732749-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extraindo substrings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/extracting-substrings.md"
+date: 2024-01-20 17:45:15.732749-07:00
+description: "Extrair substrings \xE9 pegar peda\xE7os de uma string. Programadores\
+  \ fazem isso para analisar, manipular ou validar dados de texto, como processar\
+  \ uma entrada\u2026"
+lastmod: 2024-02-18 23:08:58.439074
+model: gpt-4-1106-preview
+summary: "Extrair substrings \xE9 pegar peda\xE7os de uma string. Programadores fazem\
+  \ isso para analisar, manipular ou validar dados de texto, como processar uma entrada\u2026"
+title: Extraindo substrings
 ---
 
 {{< edit_this_page >}}

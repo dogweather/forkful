@@ -1,14 +1,28 @@
 ---
-title:                "텍스트 검색 및 교체"
 aliases:
 - /ko/vba/searching-and-replacing-text/
-date:                  2024-02-01T22:01:28.522707-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "텍스트 검색 및 교체"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/vba/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:28.522707-07:00
+description: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uAC80\
+  \uC0C9 \uBC0F \uAD50\uCCB4\uB294 \uD504\uB85C\uADF8\uB798\uBC0D\uC801\uC73C\uB85C\
+  \ \uBB38\uC11C, \uC2A4\uD504\uB808\uB4DC\uC2DC\uD2B8 \uBC0F \uB370\uC774\uD130\uBCA0\
+  \uC774\uC2A4\uB97C \uD3B8\uC9D1\uD558\uB294 \uB370 \uD544\uC218\uC801\uC785\uB2C8\
+  \uB2E4. \uC774 \uAE30\uB2A5\uC744 \uD1B5\uD574 \uD504\uB85C\uADF8\uB798\uBA38\uB294\
+  \ \uB300\uB7C9 \uD3B8\uC9D1\uC744 \uC790\uB3D9\uD654\uD558\uC5EC \uC624\uB958\uB97C\
+  \ \uC218\uC815\uD558\uAC70\uB098 \uB9CE\uC740 \uB370\uC774\uD130\uC14B \uC804\uCCB4\
+  \uC5D0 \uAC78\uCCD0 \uC815\uBCF4\uB97C\u2026"
+lastmod: 2024-02-18 23:09:05.927000
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uAC80\
+  \uC0C9 \uBC0F \uAD50\uCCB4\uB294 \uD504\uB85C\uADF8\uB798\uBC0D\uC801\uC73C\uB85C\
+  \ \uBB38\uC11C, \uC2A4\uD504\uB808\uB4DC\uC2DC\uD2B8 \uBC0F \uB370\uC774\uD130\uBCA0\
+  \uC774\uC2A4\uB97C \uD3B8\uC9D1\uD558\uB294 \uB370 \uD544\uC218\uC801\uC785\uB2C8\
+  \uB2E4. \uC774 \uAE30\uB2A5\uC744 \uD1B5\uD574 \uD504\uB85C\uADF8\uB798\uBA38\uB294\
+  \ \uB300\uB7C9 \uD3B8\uC9D1\uC744 \uC790\uB3D9\uD654\uD558\uC5EC \uC624\uB958\uB97C\
+  \ \uC218\uC815\uD558\uAC70\uB098 \uB9CE\uC740 \uB370\uC774\uD130\uC14B \uC804\uCCB4\
+  \uC5D0 \uAC78\uCCD0 \uC815\uBCF4\uB97C\u2026"
+title: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4"
 ---
 
 {{< edit_this_page >}}

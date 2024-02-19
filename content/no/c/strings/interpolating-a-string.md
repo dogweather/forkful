@@ -1,14 +1,18 @@
 ---
-title:                "Interpolering av en streng"
 aliases:
 - /no/c/interpolating-a-string/
-date:                  2024-02-03T17:58:19.057644-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interpolering av en streng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/interpolating-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:58:19.057644-07:00
+description: "Strenginterpolering, i programmering, inneb\xE6rer konstruksjonen av\
+  \ strenger ved \xE5 bygge inn uttrykk innenfor litterale strenger. Programm\xF8\
+  rer gj\xF8r dette\u2026"
+lastmod: 2024-02-18 23:08:54.379386
+model: gpt-4-0125-preview
+summary: "Strenginterpolering, i programmering, inneb\xE6rer konstruksjonen av strenger\
+  \ ved \xE5 bygge inn uttrykk innenfor litterale strenger. Programm\xF8rer gj\xF8\
+  r dette\u2026"
+title: Interpolering av en streng
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Avvio di un nuovo progetto"
 aliases:
 - /it/python/starting-a-new-project/
-date:                  2024-01-20T18:04:26.791036-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Avvio di un nuovo progetto"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/python/starting-a-new-project.md"
+date: 2024-01-20 18:04:26.791036-07:00
+description: "Iniziare un nuovo progetto in Python significa creare un ambiente dal\
+  \ nulla dove il tuo codice vivr\xE0 e respirer\xE0. Programmatore lo fa per organizzare\
+  \ il\u2026"
+lastmod: 2024-02-18 23:08:55.521925
+model: gpt-4-1106-preview
+summary: "Iniziare un nuovo progetto in Python significa creare un ambiente dal nulla\
+  \ dove il tuo codice vivr\xE0 e respirer\xE0. Programmatore lo fa per organizzare\
+  \ il\u2026"
+title: Avvio di un nuovo progetto
 ---
 
 {{< edit_this_page >}}

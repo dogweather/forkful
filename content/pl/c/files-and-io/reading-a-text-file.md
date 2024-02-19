@@ -1,14 +1,18 @@
 ---
-title:                "Czytanie pliku tekstowego"
 aliases:
 - /pl/c/reading-a-text-file/
-date:                  2024-02-03T18:06:13.830910-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Czytanie pliku tekstowego"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/reading-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:06:13.830910-07:00
+description: "Czytanie pliku tekstowego w j\u0119zyku C polega na otwarciu pliku w\
+  \ systemie w celu wydobycia informacji oraz ich manipulowania lub wy\u015Bwietlania\
+  \ zgodnie z\u2026"
+lastmod: 2024-02-18 23:08:50.098854
+model: gpt-4-0125-preview
+summary: "Czytanie pliku tekstowego w j\u0119zyku C polega na otwarciu pliku w systemie\
+  \ w celu wydobycia informacji oraz ich manipulowania lub wy\u015Bwietlania zgodnie\
+  \ z\u2026"
+title: Czytanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

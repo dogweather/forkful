@@ -1,14 +1,18 @@
 ---
-title:                "Verificando se um diretório existe"
 aliases:
 - /pt/go/checking-if-a-directory-exists/
-date:                  2024-02-03T17:53:02.026260-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verificando se um diretório existe"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:02.026260-07:00
+description: "Verificar se um diret\xF3rio existe em Go \xE9 cr\xEDtico para aplica\xE7\
+  \xF5es que interagem com o sistema de arquivos, para evitar erros ao tentar acessar\
+  \ ou modificar\u2026"
+lastmod: 2024-02-18 23:08:57.684114
+model: gpt-4-0125-preview
+summary: "Verificar se um diret\xF3rio existe em Go \xE9 cr\xEDtico para aplica\xE7\
+  \xF5es que interagem com o sistema de arquivos, para evitar erros ao tentar acessar\
+  \ ou modificar\u2026"
+title: "Verificando se um diret\xF3rio existe"
 ---
 
 {{< edit_this_page >}}

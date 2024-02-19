@@ -1,14 +1,24 @@
 ---
-title:                "使用正则表达式"
 aliases:
 - /zh/typescript/using-regular-expressions/
-date:                  2024-02-03T19:18:39.134896-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用正则表达式"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:18:39.134896-07:00
+description: "\u6B63\u5219\u8868\u8FBE\u5F0F\uFF0C\u6216\u79F0regex\uFF0C\u662F\u7F16\
+  \u7A0B\u4E2D\u4E00\u79CD\u5F3A\u5927\u7684\u6A21\u5F0F\u5339\u914D\u548C\u641C\u7D22\
+  \u5DE5\u5177\u3002\u7A0B\u5E8F\u5458\u4F7F\u7528\u6B63\u5219\u8868\u8FBE\u5F0F\u6765\
+  \u6267\u884C\u4EFB\u52A1\uFF0C\u5982\u9A8C\u8BC1\u7528\u6237\u8F93\u5165\u3001\u641C\
+  \u7D22\u6587\u672C\u6216\u64CD\u4F5C\u5B57\u7B26\u4E32\uFF0C\u56E0\u4E3A\u5B83\u65E2\
+  \u9AD8\u6548\u53C8\u591A\u529F\u80FD\u3002"
+lastmod: 2024-02-18 23:08:58.895039
+model: gpt-4-0125-preview
+summary: "\u6B63\u5219\u8868\u8FBE\u5F0F\uFF0C\u6216\u79F0regex\uFF0C\u662F\u7F16\u7A0B\
+  \u4E2D\u4E00\u79CD\u5F3A\u5927\u7684\u6A21\u5F0F\u5339\u914D\u548C\u641C\u7D22\u5DE5\
+  \u5177\u3002\u7A0B\u5E8F\u5458\u4F7F\u7528\u6B63\u5219\u8868\u8FBE\u5F0F\u6765\u6267\
+  \u884C\u4EFB\u52A1\uFF0C\u5982\u9A8C\u8BC1\u7528\u6237\u8F93\u5165\u3001\u641C\u7D22\
+  \u6587\u672C\u6216\u64CD\u4F5C\u5B57\u7B26\u4E32\uFF0C\u56E0\u4E3A\u5B83\u65E2\u9AD8\
+  \u6548\u53C8\u591A\u529F\u80FD\u3002"
+title: "\u4F7F\u7528\u6B63\u5219\u8868\u8FBE\u5F0F"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Å jobbe med komplekse tall"
 aliases:
 - /no/c-sharp/working-with-complex-numbers/
-date:                  2024-01-26T04:38:19.282988-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å jobbe med komplekse tall"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/working-with-complex-numbers.md"
+date: 2024-01-26 04:38:19.282988-07:00
+description: "Komplekse tall utvider v\xE5rt tallsystem til \xE5 inkludere imagin\xE6\
+  re tall, noe som gj\xF8r det mulig \xE5 l\xF8se ligninger som ikke har reelle l\xF8\
+  sninger.\u2026"
+lastmod: 2024-02-18 23:08:53.887869
+model: gpt-4-0125-preview
+summary: "Komplekse tall utvider v\xE5rt tallsystem til \xE5 inkludere imagin\xE6\
+  re tall, noe som gj\xF8r det mulig \xE5 l\xF8se ligninger som ikke har reelle l\xF8\
+  sninger.\u2026"
+title: "\xC5 jobbe med komplekse tall"
 ---
 
 {{< edit_this_page >}}

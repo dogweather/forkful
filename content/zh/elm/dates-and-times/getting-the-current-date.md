@@ -1,13 +1,18 @@
 ---
-title:                "获取当前日期"
 aliases:
 - /zh/elm/getting-the-current-date/
-date:                  2024-01-20T15:14:08.177241-07:00
-simple_title:         "获取当前日期"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/getting-the-current-date.md"
+date: 2024-01-20 15:14:08.177241-07:00
+description: "\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u662F\u8BFB\u53D6\u7CFB\u7EDF\u65F6\
+  \u949F\u4EE5\u786E\u5B9A\u73B0\u5728\u7684\u65E5\u671F\u548C\u65F6\u95F4\u3002\u7A0B\
+  \u5E8F\u5458\u5E38\u5E38\u9700\u8981\u8FD9\u529F\u80FD\u6765\u8BB0\u5F55\u4E8B\u4EF6\
+  \uFF0C\u8BA1\u7B97\u95F4\u9694\u6216\u5C55\u793A\u5B9E\u65F6\u6570\u636E\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.067793
+summary: "\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u662F\u8BFB\u53D6\u7CFB\u7EDF\u65F6\
+  \u949F\u4EE5\u786E\u5B9A\u73B0\u5728\u7684\u65E5\u671F\u548C\u65F6\u95F4\u3002\u7A0B\
+  \u5E8F\u5458\u5E38\u5E38\u9700\u8981\u8FD9\u529F\u80FD\u6765\u8BB0\u5F55\u4E8B\u4EF6\
+  \uFF0C\u8BA1\u7B97\u95F4\u9694\u6216\u5C55\u793A\u5B9E\u65F6\u6570\u636E\u3002"
+title: "\u83B7\u53D6\u5F53\u524D\u65E5\u671F"
 ---
 
 {{< edit_this_page >}}

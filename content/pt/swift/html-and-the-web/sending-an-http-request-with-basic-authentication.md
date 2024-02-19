@@ -1,13 +1,16 @@
 ---
-title:                "Enviando uma requisição HTTP com autenticação básica"
 aliases:
 - /pt/swift/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:45.784615-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando uma requisição HTTP com autenticação básica"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:45.784615-07:00
+description: "Em Swift, enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1\
+  sica significa passar um usu\xE1rio e senha para acessar um recurso protegido na\
+  \ web. Programadores\u2026"
+lastmod: 2024-02-18 23:08:58.490744
+model: gpt-4-1106-preview
+summary: "Em Swift, enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1\
+  sica significa passar um usu\xE1rio e senha para acessar um recurso protegido na\
+  \ web. Programadores\u2026"
+title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,27 @@
 ---
-title:                "パターンに一致する文字の削除"
 aliases:
 - /ja/google-apps-script/deleting-characters-matching-a-pattern/
-date:                  2024-02-01T21:52:10.960617-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "パターンに一致する文字の削除"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/google-apps-script/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:10.960617-07:00
+description: "\u7279\u5B9A\u306E\u30D1\u30BF\u30FC\u30F3\u306B\u4E00\u81F4\u3059\u308B\
+  \u6587\u5B57\u3092\u524A\u9664\u3059\u308B\u6280\u8853\u306F\u3001\u30D7\u30ED\u30B0\
+  \u30E9\u30DF\u30F3\u30B0\u306B\u304A\u3044\u3066\u6587\u5B57\u5217\u3092\u30AF\u30EC\
+  \u30F3\u30B8\u30F3\u30B0\u307E\u305F\u306F\u30D5\u30A9\u30FC\u30DE\u30C3\u30C8\u3059\
+  \u308B\u305F\u3081\u306B\u4F7F\u7528\u3055\u308C\u307E\u3059\u3002Google Apps Script\
+  \ \u306E\u6587\u8108\u3067\u306F\u3001Google \u30B5\u30FC\u30D3\u30B9\uFF08Sheets\
+  \ \u3084 Docs\u2026"
+lastmod: 2024-02-18 23:08:54.506542
+model: gpt-4-0125-preview
+summary: "\u7279\u5B9A\u306E\u30D1\u30BF\u30FC\u30F3\u306B\u4E00\u81F4\u3059\u308B\
+  \u6587\u5B57\u3092\u524A\u9664\u3059\u308B\u6280\u8853\u306F\u3001\u30D7\u30ED\u30B0\
+  \u30E9\u30DF\u30F3\u30B0\u306B\u304A\u3044\u3066\u6587\u5B57\u5217\u3092\u30AF\u30EC\
+  \u30F3\u30B8\u30F3\u30B0\u307E\u305F\u306F\u30D5\u30A9\u30FC\u30DE\u30C3\u30C8\u3059\
+  \u308B\u305F\u3081\u306B\u4F7F\u7528\u3055\u308C\u307E\u3059\u3002Google Apps Script\
+  \ \u306E\u6587\u8108\u3067\u306F\u3001Google \u30B5\u30FC\u30D3\u30B9\uFF08Sheets\
+  \ \u3084 Docs\u2026"
+title: "\u30D1\u30BF\u30FC\u30F3\u306B\u4E00\u81F4\u3059\u308B\u6587\u5B57\u306E\u524A\
+  \u9664"
 ---
 
 {{< edit_this_page >}}

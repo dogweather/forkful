@@ -1,13 +1,14 @@
 ---
-title:                "Eliminazione di caratteri che corrispondono a un pattern"
 aliases:
 - /it/clojure/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:51.982600-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Eliminazione di caratteri che corrispondono a un pattern"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:51.982600-07:00
+description: "Tagliare via i caratteri seguendo una certa regola \xE8 come fare pulizia\
+  \ nel testo, togliendo ci\xF2 che non serve. I programmatori lo fanno per semplificare\u2026"
+lastmod: 2024-02-18 23:08:55.546429
+model: gpt-4-1106-preview
+summary: "Tagliare via i caratteri seguendo una certa regola \xE8 come fare pulizia\
+  \ nel testo, togliendo ci\xF2 che non serve. I programmatori lo fanno per semplificare\u2026"
+title: Eliminazione di caratteri che corrispondono a un pattern
 ---
 
 {{< edit_this_page >}}

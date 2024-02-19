@@ -1,13 +1,16 @@
 ---
-title:                "Wyszukiwanie i zamiana tekstu"
 aliases:
 - /pl/arduino/searching-and-replacing-text/
-date:                  2024-01-20T17:57:29.944599-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wyszukiwanie i zamiana tekstu"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:29.944599-07:00
+description: "Szukanie i zamiana tekstu to zamiana jednego ci\u0105gu znak\xF3w na\
+  \ inny. Programi\u015Bci wykorzystuj\u0105 t\u0119 technik\u0119, by automatycznie\
+  \ korygowa\u0107 b\u0142\u0119dy, aktualizowa\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.855746
+model: gpt-4-1106-preview
+summary: "Szukanie i zamiana tekstu to zamiana jednego ci\u0105gu znak\xF3w na inny.\
+  \ Programi\u015Bci wykorzystuj\u0105 t\u0119 technik\u0119, by automatycznie korygowa\u0107\
+  \ b\u0142\u0119dy, aktualizowa\u0107\u2026"
+title: Wyszukiwanie i zamiana tekstu
 ---
 
 {{< edit_this_page >}}

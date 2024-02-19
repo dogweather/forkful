@@ -1,13 +1,16 @@
 ---
-title:                "Organisering av kode i funksjoner"
 aliases:
 - /no/cpp/organizing-code-into-functions/
-date:                  2024-01-26T01:10:10.997260-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organisering av kode i funksjoner"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/organizing-code-into-functions.md"
+date: 2024-01-26 01:10:10.997260-07:00
+description: "\xC5 dele opp koden i funksjoner betyr at du hugger koden din opp i\
+  \ mindre, gjenbrukbare deler. Vi gj\xF8r det for \xE5 unng\xE5 gjentagelser, gj\xF8\
+  re koden v\xE5r lesbar,\u2026"
+lastmod: 2024-02-18 23:08:54.197775
+model: gpt-4-1106-preview
+summary: "\xC5 dele opp koden i funksjoner betyr at du hugger koden din opp i mindre,\
+  \ gjenbrukbare deler. Vi gj\xF8r det for \xE5 unng\xE5 gjentagelser, gj\xF8re koden\
+  \ v\xE5r lesbar,\u2026"
+title: Organisering av kode i funksjoner
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,16 @@
 ---
-title:                "Debug-output afdrukken"
 aliases:
 - /nl/elixir/printing-debug-output/
-date:                  2024-01-28T22:04:31.776699-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Debug-output afdrukken"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elixir/printing-debug-output.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:04:31.776699-07:00
+description: "Het afdrukken van debugoutput in Elixir omvat het weergeven van tussentijdse\
+  \ resultaten of variabele waarden in de console. Programmeurs doen dit om\u2026"
+lastmod: 2024-02-18 23:09:01.529455
+model: gpt-4-0125-preview
+summary: "Het afdrukken van debugoutput in Elixir omvat het weergeven van tussentijdse\
+  \ resultaten of variabele waarden in de console. Programmeurs doen dit om\u2026"
+title: Debug-output afdrukken
 ---
 
 {{< edit_this_page >}}

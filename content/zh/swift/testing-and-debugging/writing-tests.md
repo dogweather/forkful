@@ -1,14 +1,26 @@
 ---
-title:                "编写测试"
 aliases:
 - /zh/swift/writing-tests/
-date:                  2024-02-03T19:31:58.489122-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "编写测试"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:58.489122-07:00
+description: "\u4F7F\u7528 Swift \u7F16\u5199\u6D4B\u8BD5\u6D89\u53CA\u521B\u5EFA\u5E76\
+  \u6267\u884C\u4EE3\u7801\uFF0C\u4EE5\u9A8C\u8BC1\u5E94\u7528\u7A0B\u5E8F\u4E2D\u5176\
+  \u4ED6\u4EE3\u7801\u5355\u5143\u7684\u6B63\u786E\u6027\u3002\u7A0B\u5E8F\u5458\u4E4B\
+  \u6240\u4EE5\u8FD9\u6837\u505A\uFF0C\u662F\u4E3A\u4E86\u786E\u4FDD\u53EF\u9760\u6027\
+  \uFF0C\u65E9\u671F\u53D1\u73B0\u5F00\u53D1\u5468\u671F\u4E2D\u7684\u9519\u8BEF\uFF0C\
+  \u5E76\u4FC3\u8FDB\u672A\u6765\u7684\u4EE3\u7801\u91CD\u6784\u800C\u4E0D\u5F15\u53D1\
+  \u610F\u5916\u540E\u679C\u3002"
+lastmod: 2024-02-18 23:08:59.445346
+model: gpt-4-0125-preview
+summary: "\u4F7F\u7528 Swift \u7F16\u5199\u6D4B\u8BD5\u6D89\u53CA\u521B\u5EFA\u5E76\
+  \u6267\u884C\u4EE3\u7801\uFF0C\u4EE5\u9A8C\u8BC1\u5E94\u7528\u7A0B\u5E8F\u4E2D\u5176\
+  \u4ED6\u4EE3\u7801\u5355\u5143\u7684\u6B63\u786E\u6027\u3002\u7A0B\u5E8F\u5458\u4E4B\
+  \u6240\u4EE5\u8FD9\u6837\u505A\uFF0C\u662F\u4E3A\u4E86\u786E\u4FDD\u53EF\u9760\u6027\
+  \uFF0C\u65E9\u671F\u53D1\u73B0\u5F00\u53D1\u5468\u671F\u4E2D\u7684\u9519\u8BEF\uFF0C\
+  \u5E76\u4FC3\u8FDB\u672A\u6765\u7684\u4EE3\u7801\u91CD\u6784\u800C\u4E0D\u5F15\u53D1\
+  \u610F\u5916\u540E\u679C\u3002"
+title: "\u7F16\u5199\u6D4B\u8BD5"
 ---
 
 {{< edit_this_page >}}

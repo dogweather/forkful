@@ -1,14 +1,18 @@
 ---
-title:                "Korzystanie z interaktywnej powłoki (REPL)"
 aliases:
 - /pl/go/using-an-interactive-shell-repl/
-date:                  2024-02-03T18:10:42.246940-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z interaktywnej powłoki (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:42.246940-07:00
+description: "Interaktywna pow\u0142oka, czyli p\u0119tla czytaj-wykonaj-wypisz (REPL),\
+  \ pozwala eksperymentowa\u0107 z kodem Go w czasie rzeczywistym, wykonuj\u0105c\
+  \ komendy i otrzymuj\u0105c\u2026"
+lastmod: 2024-02-18 23:08:49.099794
+model: gpt-4-0125-preview
+summary: "Interaktywna pow\u0142oka, czyli p\u0119tla czytaj-wykonaj-wypisz (REPL),\
+  \ pozwala eksperymentowa\u0107 z kodem Go w czasie rzeczywistym, wykonuj\u0105c\
+  \ komendy i otrzymuj\u0105c\u2026"
+title: "Korzystanie z interaktywnej pow\u0142oki (REPL)"
 ---
 
 {{< edit_this_page >}}

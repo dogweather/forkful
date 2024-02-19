@@ -1,14 +1,18 @@
 ---
-title:                "Vérifier si un répertoire existe"
 aliases:
 - /fr/c/checking-if-a-directory-exists/
-date:                  2024-02-03T17:52:36.273929-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Vérifier si un répertoire existe"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:52:36.273929-07:00
+description: "V\xE9rifier si un r\xE9pertoire existe en C implique d'interroger le\
+  \ syst\xE8me de fichiers pour v\xE9rifier si un chemin sp\xE9cifique m\xE8ne \xE0\
+  \ un r\xE9pertoire. Les\u2026"
+lastmod: 2024-02-18 23:09:09.373197
+model: gpt-4-0125-preview
+summary: "V\xE9rifier si un r\xE9pertoire existe en C implique d'interroger le syst\xE8\
+  me de fichiers pour v\xE9rifier si un chemin sp\xE9cifique m\xE8ne \xE0 un r\xE9\
+  pertoire. Les\u2026"
+title: "V\xE9rifier si un r\xE9pertoire existe"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,30 @@
 ---
-title:                "표준 에러에 쓰기"
 aliases:
 - /ko/elm/writing-to-standard-error/
-date:                  2024-02-03T19:33:18.973205-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "표준 에러에 쓰기"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:33:18.973205-07:00
+description: "\uD45C\uC900 \uC5D0\uB7EC(stderr)\uB85C \uC4F0\uAE30\uB294 \uBA54\uC778\
+  \ \uD504\uB85C\uADF8\uB7A8 \uCD9C\uB825(\uD45C\uC900 \uCD9C\uB825, stdout)\uACFC\
+  \ \uBCC4\uB3C4\uB85C \uC5D0\uB7EC \uBA54\uC2DC\uC9C0\uC640 \uC9C4\uB2E8\uC744 \uB9AC\
+  \uB514\uB809\uC158\uD558\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC740 \uC5D0\uB7EC \uCC98\uB9AC\uC640 \uB85C\uAE45\uC744\
+  \ \uB354 \uAD00\uB9AC\uD558\uAE30 \uC27D\uAC8C \uB9CC\uB4E4\uAE30 \uC704\uD574,\
+  \ \uD2B9\uD788 \uB514\uBC84\uAE45\uACFC \uBAA8\uB2C8\uD130\uB9C1\uC744 \uC704\uD574\
+  \ \uCD9C\uB825 \uAD6C\uBD84\uC774 \uC911\uC694\uD55C \uD658\uACBD\uC5D0\uC11C \uC774\
+  \uB807\uAC8C\u2026"
+lastmod: 2024-02-18 23:09:06.110613
+model: gpt-4-0125-preview
+summary: "\uD45C\uC900 \uC5D0\uB7EC(stderr)\uB85C \uC4F0\uAE30\uB294 \uBA54\uC778\
+  \ \uD504\uB85C\uADF8\uB7A8 \uCD9C\uB825(\uD45C\uC900 \uCD9C\uB825, stdout)\uACFC\
+  \ \uBCC4\uB3C4\uB85C \uC5D0\uB7EC \uBA54\uC2DC\uC9C0\uC640 \uC9C4\uB2E8\uC744 \uB9AC\
+  \uB514\uB809\uC158\uD558\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC740 \uC5D0\uB7EC \uCC98\uB9AC\uC640 \uB85C\uAE45\uC744\
+  \ \uB354 \uAD00\uB9AC\uD558\uAE30 \uC27D\uAC8C \uB9CC\uB4E4\uAE30 \uC704\uD574,\
+  \ \uD2B9\uD788 \uB514\uBC84\uAE45\uACFC \uBAA8\uB2C8\uD130\uB9C1\uC744 \uC704\uD574\
+  \ \uCD9C\uB825 \uAD6C\uBD84\uC774 \uC911\uC694\uD55C \uD658\uACBD\uC5D0\uC11C \uC774\
+  \uB807\uAC8C\u2026"
+title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
 ---
 
 {{< edit_this_page >}}

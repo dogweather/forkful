@@ -1,13 +1,15 @@
 ---
-title:                "Att arbeta med XML"
 aliases:
 - /sv/elixir/working-with-xml/
-date:                  2024-01-26T04:29:59.344024-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/working-with-xml.md"
+date: 2024-01-26 04:29:59.344024-07:00
+description: "Att arbeta med XML i Elixir inneb\xE4r att tolka, skapa och manipulera\
+  \ XML-data. Programmerare tar sig an XML eftersom det \xE4r utbrett inom webbtj\xE4\
+  nster,\u2026"
+lastmod: 2024-02-18 23:08:51.526515
+model: gpt-4-0125-preview
+summary: "Att arbeta med XML i Elixir inneb\xE4r att tolka, skapa och manipulera XML-data.\
+  \ Programmerare tar sig an XML eftersom det \xE4r utbrett inom webbtj\xE4nster,\u2026"
+title: Att arbeta med XML
 ---
 
 {{< edit_this_page >}}

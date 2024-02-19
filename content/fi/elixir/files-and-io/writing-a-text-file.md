@@ -1,14 +1,16 @@
 ---
-title:                "Tekstitiedoston kirjoittaminen"
 aliases:
 - /fi/elixir/writing-a-text-file/
-date:                  2024-02-03T19:27:43.847714-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tekstitiedoston kirjoittaminen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:43.847714-07:00
+description: "Tiedostoon kirjoittaminen Elixirilla on olennainen taito kehitt\xE4\
+  jille, sill\xE4 se mahdollistaa datan pysyvyyden, lokitiedon kirjaamisen tai ihmisluettavan\u2026"
+lastmod: 2024-02-18 23:09:07.293433
+model: gpt-4-0125-preview
+summary: "Tiedostoon kirjoittaminen Elixirilla on olennainen taito kehitt\xE4jille,\
+  \ sill\xE4 se mahdollistaa datan pysyvyyden, lokitiedon kirjaamisen tai ihmisluettavan\u2026"
+title: Tekstitiedoston kirjoittaminen
 ---
 
 {{< edit_this_page >}}

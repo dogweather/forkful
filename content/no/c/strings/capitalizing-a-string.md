@@ -1,14 +1,17 @@
 ---
-title:                "Sette stor bokstav i en streng"
 aliases:
 - /no/c/capitalizing-a-string/
-date:                  2024-02-03T17:52:48.116673-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sette stor bokstav i en streng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:52:48.116673-07:00
+description: "\xC5 gj\xF8re om en streng til store bokstaver i C inneb\xE6rer \xE5\
+  \ konvertere f\xF8rste tegn i hvert ord i en gitt streng til stor bokstav hvis det\
+  \ er en liten\u2026"
+lastmod: 2024-02-18 23:08:54.376178
+model: gpt-4-0125-preview
+summary: "\xC5 gj\xF8re om en streng til store bokstaver i C inneb\xE6rer \xE5 konvertere\
+  \ f\xF8rste tegn i hvert ord i en gitt streng til stor bokstav hvis det er en liten\u2026"
+title: Sette stor bokstav i en streng
 ---
 
 {{< edit_this_page >}}

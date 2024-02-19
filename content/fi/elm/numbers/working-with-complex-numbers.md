@@ -1,13 +1,15 @@
 ---
-title:                "Kompleksilukujen käsittely"
 aliases:
 - /fi/elm/working-with-complex-numbers/
-date:                  2024-01-26T04:39:26.918818-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kompleksilukujen käsittely"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/working-with-complex-numbers.md"
+date: 2024-01-26 04:39:26.918818-07:00
+description: "Kompleksiluvut ovat reaalilukujen ja imaginaarilukujen yhdistelmi\xE4\
+  , kuten `a + bi`, miss\xE4 `i` on -1:n neli\xF6juuri. Ne ovat avainasemassa aloilla\
+  \ kuten\u2026"
+lastmod: 2024-02-18 23:09:07.497100
+model: gpt-4-0125-preview
+summary: "Kompleksiluvut ovat reaalilukujen ja imaginaarilukujen yhdistelmi\xE4, kuten\
+  \ `a + bi`, miss\xE4 `i` on -1:n neli\xF6juuri. Ne ovat avainasemassa aloilla kuten\u2026"
+title: "Kompleksilukujen k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

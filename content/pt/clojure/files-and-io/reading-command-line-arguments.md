@@ -1,13 +1,14 @@
 ---
-title:                "Lendo argumentos da linha de comando"
 aliases:
 - /pt/clojure/reading-command-line-arguments/
-date:                  2024-01-20T17:55:35.370171-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lendo argumentos da linha de comando"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:35.370171-07:00
+description: "Ler argumentos de linha de comando \xE9 pegar entrada diretamente de\
+  \ quem executou o programa. Fazemos isso para personalizar a execu\xE7\xE3o ou passar\u2026"
+lastmod: 2024-02-18 23:08:57.817856
+model: gpt-4-1106-preview
+summary: "Ler argumentos de linha de comando \xE9 pegar entrada diretamente de quem\
+  \ executou o programa. Fazemos isso para personalizar a execu\xE7\xE3o ou passar\u2026"
+title: Lendo argumentos da linha de comando
 ---
 
 {{< edit_this_page >}}

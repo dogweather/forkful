@@ -1,13 +1,14 @@
 ---
-title:                "Iniciando un nuevo proyecto"
 aliases:
 - /es/swift/starting-a-new-project/
-date:                  2024-01-20T18:04:24.262092-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Iniciando un nuevo proyecto"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/starting-a-new-project.md"
+date: 2024-01-20 18:04:24.262092-07:00
+description: "Iniciar un nuevo proyecto en Swift es crear desde cero un espacio de\
+  \ trabajo para dar vida a tus ideas. Los programadores inician proyectos para resolver\u2026"
+lastmod: 2024-02-18 23:09:10.358811
+model: gpt-4-1106-preview
+summary: "Iniciar un nuevo proyecto en Swift es crear desde cero un espacio de trabajo\
+  \ para dar vida a tus ideas. Los programadores inician proyectos para resolver\u2026"
+title: Iniciando un nuevo proyecto
 ---
 
 {{< edit_this_page >}}

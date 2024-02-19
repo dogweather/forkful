@@ -1,13 +1,16 @@
 ---
-title:                "Enviando una solicitud http"
 aliases:
 - /es/elm/sending-an-http-request/
-date:                  2024-01-20T17:59:54.220058-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando una solicitud http"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/sending-an-http-request.md"
+date: 2024-01-20 17:59:54.220058-07:00
+description: "Mandar una petici\xF3n HTTP es como enviar un mensaje a otra computadora\
+  \ pidi\xE9ndole informaci\xF3n o para que realice una acci\xF3n. Los programadores\
+  \ lo hacen\u2026"
+lastmod: 2024-02-18 23:09:09.887259
+model: gpt-4-1106-preview
+summary: "Mandar una petici\xF3n HTTP es como enviar un mensaje a otra computadora\
+  \ pidi\xE9ndole informaci\xF3n o para que realice una acci\xF3n. Los programadores\
+  \ lo hacen\u2026"
+title: Enviando una solicitud http
 ---
 
 {{< edit_this_page >}}

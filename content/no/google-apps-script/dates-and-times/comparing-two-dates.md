@@ -1,14 +1,16 @@
 ---
-title:                "Sammenligning av to datoer"
 aliases:
 - /no/google-apps-script/comparing-two-dates/
-date:                  2024-02-01T21:50:08.282100-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sammenligning av to datoer"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/google-apps-script/comparing-two-dates.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:08.282100-07:00
+description: "\xC5 sammenligne to datoer i Google Apps Script, en avledning av JavaScript\
+  \ tilpasset for Googles apppakke, er en vesentlig oppgave for utviklere som\u2026"
+lastmod: 2024-02-18 23:08:53.494607
+model: gpt-4-0125-preview
+summary: "\xC5 sammenligne to datoer i Google Apps Script, en avledning av JavaScript\
+  \ tilpasset for Googles apppakke, er en vesentlig oppgave for utviklere som\u2026"
+title: Sammenligning av to datoer
 ---
 
 {{< edit_this_page >}}

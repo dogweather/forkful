@@ -1,14 +1,17 @@
 ---
-title:                "Att Arbeta med CSV"
 aliases:
 - /sv/google-apps-script/working-with-csv/
-date:                  2024-02-01T22:05:23.713105-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att Arbeta med CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/google-apps-script/working-with-csv.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:05:23.713105-07:00
+description: "Att arbeta med CSV-filer (Comma-Separated Values) i Google Apps Script\
+  \ inneb\xE4r att l\xE4sa, modifiera och skriva textfiler d\xE4r varje rad representerar\
+  \ en\u2026"
+lastmod: 2024-02-18 23:08:51.402749
+model: gpt-4-0125-preview
+summary: "Att arbeta med CSV-filer (Comma-Separated Values) i Google Apps Script inneb\xE4\
+  r att l\xE4sa, modifiera och skriva textfiler d\xE4r varje rad representerar en\u2026"
+title: Att Arbeta med CSV
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Creazione di un file temporaneo"
 aliases:
 - /it/rust/creating-a-temporary-file/
-date:                  2024-01-20T17:41:25.229969-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Creazione di un file temporaneo"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:25.229969-07:00
+description: "La creazione di un file temporaneo \xE8 il processo di generazione di\
+  \ un file che si intende utilizzare per un breve periodo di tempo. In Rust, i\u2026"
+lastmod: 2024-02-18 23:08:55.698778
+model: gpt-4-1106-preview
+summary: "La creazione di un file temporaneo \xE8 il processo di generazione di un\
+  \ file che si intende utilizzare per un breve periodo di tempo. In Rust, i\u2026"
+title: Creazione di un file temporaneo
 ---
 
 {{< edit_this_page >}}

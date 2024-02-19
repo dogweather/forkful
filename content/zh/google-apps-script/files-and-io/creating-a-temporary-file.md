@@ -1,14 +1,28 @@
 ---
-title:                "创建临时文件"
 aliases:
 - /zh/google-apps-script/creating-a-temporary-file/
-date:                  2024-02-01T21:51:58.933852-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "创建临时文件"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/google-apps-script/creating-a-temporary-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:58.933852-07:00
+description: "\u5728 Google Apps \u811A\u672C\u4E2D\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6\
+  \u6D89\u53CA\u751F\u6210\u4E00\u4E2A\u77ED\u671F\u4F7F\u7528\u7684\u6587\u4EF6\uFF0C\
+  \u901A\u5E38\u7528\u4E8E\u4E2D\u95F4\u6570\u636E\u5904\u7406\u3001\u8C03\u8BD5\u6216\
+  \u7F13\u5B58\u76EE\u7684\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\
+  \u4E34\u65F6\u7BA1\u7406\u6570\u636E\uFF0C\u800C\u4E0D\u4F1A\u4F7F\u6C38\u4E45\u5B58\
+  \u50A8\u7A7A\u95F4\u6742\u4E71\u65E0\u7AE0\uFF0C\u6216\u8005\u5728\u5F53\u524D\u8FC7\
+  \u7A0B\u7684\u8303\u56F4\u4E4B\u5916\uFF0C\u6570\u636E\u7684\u6C38\u4E45\u6027\u662F\
+  \u4E0D\u5FC5\u8981\u7684\u3002"
+lastmod: 2024-02-18 23:08:58.769847
+model: gpt-4-0125-preview
+summary: "\u5728 Google Apps \u811A\u672C\u4E2D\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6\
+  \u6D89\u53CA\u751F\u6210\u4E00\u4E2A\u77ED\u671F\u4F7F\u7528\u7684\u6587\u4EF6\uFF0C\
+  \u901A\u5E38\u7528\u4E8E\u4E2D\u95F4\u6570\u636E\u5904\u7406\u3001\u8C03\u8BD5\u6216\
+  \u7F13\u5B58\u76EE\u7684\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\
+  \u4E34\u65F6\u7BA1\u7406\u6570\u636E\uFF0C\u800C\u4E0D\u4F1A\u4F7F\u6C38\u4E45\u5B58\
+  \u50A8\u7A7A\u95F4\u6742\u4E71\u65E0\u7AE0\uFF0C\u6216\u8005\u5728\u5F53\u524D\u8FC7\
+  \u7A0B\u7684\u8303\u56F4\u4E4B\u5916\uFF0C\u6570\u636E\u7684\u6C38\u4E45\u6027\u662F\
+  \u4E0D\u5FC5\u8981\u7684\u3002"
+title: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

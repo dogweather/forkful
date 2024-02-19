@@ -1,15 +1,16 @@
 ---
-title:                "Starting a new project"
 aliases:
 - /en/haskell/starting-a-new-project/
-date:                  2024-01-20T18:03:42.182088-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Starting a new project"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/starting-a-new-project.md"
 changelog:
-  - 2024-01-21, dogweather, Reviewed for accuracy
+- 2024-01-21, dogweather, Reviewed for accuracy
+date: 2024-01-20 18:03:42.182088-07:00
+description: "Every project starts with a single step. For programmers, that means\
+  \ setting up the initial structure and writing kick-off code. We do this to transform\u2026"
+lastmod: 2024-02-18 23:09:11.096847
+model: gpt-4-1106-preview
+summary: "Every project starts with a single step. For programmers, that means setting\
+  \ up the initial structure and writing kick-off code. We do this to transform\u2026"
+title: Starting a new project
 ---
 
 {{< edit_this_page >}}

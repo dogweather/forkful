@@ -1,13 +1,16 @@
 ---
-title:                "Feilhåndtering"
 aliases:
 - /no/kotlin/handling-errors/
-date:                  2024-01-26T00:55:33.131050-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Feilhåndtering"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/handling-errors.md"
+date: 2024-01-26 00:55:33.131050-07:00
+description: "H\xE5ndtering av feil er hvordan koden din takler problemer som oppst\xE5\
+  r under utf\xF8relse\u2014som \xE5 fange en kurveball uten \xE5 miste den. Programmerere\
+  \ gj\xF8r dette\u2026"
+lastmod: 2024-02-18 23:08:53.859828
+model: gpt-4-1106-preview
+summary: "H\xE5ndtering av feil er hvordan koden din takler problemer som oppst\xE5\
+  r under utf\xF8relse\u2014som \xE5 fange en kurveball uten \xE5 miste den. Programmerere\
+  \ gj\xF8r dette\u2026"
+title: "Feilh\xE5ndtering"
 ---
 
 {{< edit_this_page >}}

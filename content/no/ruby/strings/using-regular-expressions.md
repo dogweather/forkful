@@ -1,14 +1,18 @@
 ---
-title:                "Bruke regulære uttrykk"
 aliases:
 - /no/ruby/using-regular-expressions/
-date:                  2024-02-03T19:18:18.139022-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke regulære uttrykk"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:18:18.139022-07:00
+description: "Regul\xE6re uttrykk (regex) i Ruby er m\xF8nstre som brukes til \xE5\
+  \ matche tegnkombinasjoner i strenger, noe som gj\xF8r det mulig for utviklere \xE5\
+  \ s\xF8ke etter, matche\u2026"
+lastmod: 2024-02-18 23:08:54.427167
+model: gpt-4-0125-preview
+summary: "Regul\xE6re uttrykk (regex) i Ruby er m\xF8nstre som brukes til \xE5 matche\
+  \ tegnkombinasjoner i strenger, noe som gj\xF8r det mulig for utviklere \xE5 s\xF8\
+  ke etter, matche\u2026"
+title: "Bruke regul\xE6re uttrykk"
 ---
 
 {{< edit_this_page >}}

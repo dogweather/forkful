@@ -1,15 +1,16 @@
 ---
-title:                "Een nieuw project starten"
 aliases:
 - /nl/lua/starting-a-new-project/
-date:                  2024-01-28T22:08:36.712082-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een nieuw project starten"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/starting-a-new-project.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:36.712082-07:00
+description: "Een nieuw project starten betekent dat je de basis legt voor jouw briljante\
+  \ idee. Programmeurs trappen af om concepten om te zetten in code die praktisch\u2026"
+lastmod: 2024-02-18 23:09:01.992074
+model: gpt-4-0125-preview
+summary: "Een nieuw project starten betekent dat je de basis legt voor jouw briljante\
+  \ idee. Programmeurs trappen af om concepten om te zetten in code die praktisch\u2026"
+title: Een nieuw project starten
 ---
 
 {{< edit_this_page >}}

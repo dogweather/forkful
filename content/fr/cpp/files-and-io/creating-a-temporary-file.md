@@ -1,13 +1,16 @@
 ---
-title:                "Création d'un fichier temporaire"
 aliases:
 - /fr/cpp/creating-a-temporary-file/
-date:                  2024-01-20T17:39:34.484350-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Création d'un fichier temporaire"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/creating-a-temporary-file.md"
+date: 2024-01-20 17:39:34.484350-07:00
+description: "Cr\xE9er un fichier temporaire permet de stocker des donn\xE9es de fa\xE7\
+  on \xE9ph\xE9m\xE8re pendant l'ex\xE9cution d'un programme. On le fait pour manipuler\
+  \ des donn\xE9es sans\u2026"
+lastmod: 2024-02-18 23:09:09.182514
+model: gpt-4-1106-preview
+summary: "Cr\xE9er un fichier temporaire permet de stocker des donn\xE9es de fa\xE7\
+  on \xE9ph\xE9m\xE8re pendant l'ex\xE9cution d'un programme. On le fait pour manipuler\
+  \ des donn\xE9es sans\u2026"
+title: "Cr\xE9ation d'un fichier temporaire"
 ---
 
 {{< edit_this_page >}}

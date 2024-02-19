@@ -1,14 +1,18 @@
 ---
-title:                "Skriva tester"
 aliases:
 - /sv/python/writing-tests/
-date:                  2024-02-03T19:31:45.815007-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriva tester"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:45.815007-07:00
+description: "Att skriva tester i Python inneb\xE4r att skapa automatiserade skript\
+  \ f\xF6r att validera korrektheten i din kod. Programmerare g\xF6r detta f\xF6r\
+  \ att s\xE4kerst\xE4lla\u2026"
+lastmod: 2024-02-18 23:08:51.425188
+model: gpt-4-0125-preview
+summary: "Att skriva tester i Python inneb\xE4r att skapa automatiserade skript f\xF6\
+  r att validera korrektheten i din kod. Programmerare g\xF6r detta f\xF6r att s\xE4\
+  kerst\xE4lla\u2026"
+title: Skriva tester
 ---
 
 {{< edit_this_page >}}

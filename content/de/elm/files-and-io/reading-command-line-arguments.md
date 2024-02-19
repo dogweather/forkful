@@ -1,13 +1,15 @@
 ---
-title:                "Lesen von Kommandozeilenargumenten"
 aliases:
 - /de/elm/reading-command-line-arguments/
-date:                  2024-01-20T17:55:47.164635-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lesen von Kommandozeilenargumenten"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:47.164635-07:00
+description: "Kommandozeilenargumente lesen bedeutet, Parameter von der Shell ins\
+  \ Programm zu \xFCbertragen. Programmierer nutzen es, um Einstellungen zu steuern\
+  \ oder\u2026"
+lastmod: 2024-02-18 23:09:04.797741
+model: gpt-4-1106-preview
+summary: "Kommandozeilenargumente lesen bedeutet, Parameter von der Shell ins Programm\
+  \ zu \xFCbertragen. Programmierer nutzen es, um Einstellungen zu steuern oder\u2026"
+title: Lesen von Kommandozeilenargumenten
 ---
 
 {{< edit_this_page >}}

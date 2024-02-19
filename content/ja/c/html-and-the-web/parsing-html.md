@@ -1,14 +1,14 @@
 ---
-title:                "HTMLの解析"
 aliases:
 - /ja/c/parsing-html/
-date:                  2024-02-03T18:00:11.512161-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTMLの解析"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:00:11.512161-07:00
+description: "\u2026"
+lastmod: 2024-02-18 23:08:55.347397
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "HTML\u306E\u89E3\u6790"
 ---
 
 {{< edit_this_page >}}

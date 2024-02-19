@@ -1,14 +1,18 @@
 ---
-title:                "Työskentely JSONin kanssa"
 aliases:
 - /fi/c/working-with-json/
-date:                  2024-02-03T18:11:57.197941-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely JSONin kanssa"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:11:57.197941-07:00
+description: "JSON:n (JavaScript Object Notation) k\xE4sittely C-kieless\xE4 sis\xE4\
+  lt\xE4\xE4 JSON-tietorakenteiden j\xE4sent\xE4misen, luomisen ja manipuloinnin.\
+  \ Ohjelmoijat tekev\xE4t n\xE4in\u2026"
+lastmod: 2024-02-18 23:09:08.157660
+model: gpt-4-0125-preview
+summary: "JSON:n (JavaScript Object Notation) k\xE4sittely C-kieless\xE4 sis\xE4lt\xE4\
+  \xE4 JSON-tietorakenteiden j\xE4sent\xE4misen, luomisen ja manipuloinnin. Ohjelmoijat\
+  \ tekev\xE4t n\xE4in\u2026"
+title: "Ty\xF6skentely JSONin kanssa"
 ---
 
 {{< edit_this_page >}}

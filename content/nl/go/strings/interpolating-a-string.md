@@ -1,14 +1,16 @@
 ---
-title:                "Een string interpoleren"
 aliases:
 - /nl/go/interpolating-a-string/
-date:                  2024-02-03T17:58:27.563476-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string interpoleren"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/interpolating-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:58:27.563476-07:00
+description: "Stringinterpolatie is een methode om strings te construeren die variabelen\
+  \ bevatten, waardoor dynamische stringcreatie mogelijk is. Programmeurs doen dit\u2026"
+lastmod: 2024-02-18 23:09:01.322569
+model: gpt-4-0125-preview
+summary: "Stringinterpolatie is een methode om strings te construeren die variabelen\
+  \ bevatten, waardoor dynamische stringcreatie mogelijk is. Programmeurs doen dit\u2026"
+title: Een string interpoleren
 ---
 
 {{< edit_this_page >}}

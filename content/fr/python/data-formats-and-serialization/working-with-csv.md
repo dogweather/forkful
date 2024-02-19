@@ -1,14 +1,18 @@
 ---
-title:                "Travailler avec CSV"
 aliases:
 - /fr/python/working-with-csv/
-date:                  2024-02-03T19:20:52.487284-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Travailler avec CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:20:52.487284-07:00
+description: "Travailler avec les CSV (Valeurs S\xE9par\xE9es par des Virgules) implique\
+  \ la lecture et l'\xE9criture de donn\xE9es dans des fichiers CSV, un format courant\
+  \ pour le\u2026"
+lastmod: 2024-02-18 23:09:08.365056
+model: gpt-4-0125-preview
+summary: "Travailler avec les CSV (Valeurs S\xE9par\xE9es par des Virgules) implique\
+  \ la lecture et l'\xE9criture de donn\xE9es dans des fichiers CSV, un format courant\
+  \ pour le\u2026"
+title: Travailler avec CSV
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Refactoring"
 aliases:
 - /de/elixir/refactoring/
-date:                  2024-01-26T01:17:30.267966-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactoring"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/refactoring.md"
+date: 2024-01-26 01:17:30.267966-07:00
+description: "Das Refactoring ist der Prozess der Umstrukturierung bestehenden Codes,\
+  \ ohne dessen externes Verhalten zu \xE4ndern. Es zielt darauf ab, nichtfunktionale\u2026"
+lastmod: 2024-02-18 23:09:04.560618
+model: gpt-4-0125-preview
+summary: "Das Refactoring ist der Prozess der Umstrukturierung bestehenden Codes,\
+  \ ohne dessen externes Verhalten zu \xE4ndern. Es zielt darauf ab, nichtfunktionale\u2026"
+title: Refactoring
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,14 @@
 ---
-title:                "文字列から日付をパースする"
 aliases:
 - /ja/powershell/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:15:30.498522-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "文字列から日付をパースする"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/powershell/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:15:30.498522-07:00
+description: "\u2026"
+lastmod: 2024-02-18 23:08:55.123600
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u6587\u5B57\u5217\u304B\u3089\u65E5\u4ED8\u3092\u30D1\u30FC\u30B9\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

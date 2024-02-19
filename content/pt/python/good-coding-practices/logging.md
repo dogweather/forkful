@@ -1,13 +1,16 @@
 ---
-title:                "Registro de Logs"
 aliases:
 - /pt/python/logging/
-date:                  2024-01-26T01:07:43.561422-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registro de Logs"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/logging.md"
+date: 2024-01-26 01:07:43.561422-07:00
+description: "O logging \xE9 o processo de registrar eventos da aplica\xE7\xE3o enquanto\
+  \ um programa est\xE1 em execu\xE7\xE3o, fornecendo um rastro de migalhas para an\xE1\
+  lise post-mortem\u2026"
+lastmod: 2024-02-18 23:08:57.767424
+model: gpt-4-1106-preview
+summary: "O logging \xE9 o processo de registrar eventos da aplica\xE7\xE3o enquanto\
+  \ um programa est\xE1 em execu\xE7\xE3o, fornecendo um rastro de migalhas para an\xE1\
+  lise post-mortem\u2026"
+title: Registro de Logs
 ---
 
 {{< edit_this_page >}}

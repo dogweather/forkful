@@ -1,13 +1,14 @@
 ---
-title:                "Zeichenketten interpolieren"
 aliases:
 - /de/arduino/interpolating-a-string/
-date:                  2024-01-20T17:49:59.973310-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Zeichenketten interpolieren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/interpolating-a-string.md"
+date: 2024-01-20 17:49:59.973310-07:00
+description: "String-Interpolation erm\xF6glicht es, Variablenwerte in einen String\
+  \ \"einzubetten\". Das erleichtert die dynamische Erzeugung von Text und die Datenanzeige\u2026"
+lastmod: 2024-02-18 23:09:05.131496
+model: gpt-4-1106-preview
+summary: "String-Interpolation erm\xF6glicht es, Variablenwerte in einen String \"\
+  einzubetten\". Das erleichtert die dynamische Erzeugung von Text und die Datenanzeige\u2026"
+title: Zeichenketten interpolieren
 ---
 
 {{< edit_this_page >}}

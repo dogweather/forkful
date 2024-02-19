@@ -1,13 +1,16 @@
 ---
-title:                "Drukowanie komunikatów debugowania"
 aliases:
 - /pl/java/printing-debug-output/
-date:                  2024-01-20T17:52:43.593339-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Drukowanie komunikatów debugowania"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/printing-debug-output.md"
+date: 2024-01-20 17:52:43.593339-07:00
+description: "Drukowanie informacji debugowych to spos\xF3b na wypisywanie danych\
+  \ pomagaj\u0105cych zrozumie\u0107 dzia\u0142anie kodu. Robimy to, aby szybko znale\u017A\
+  \u0107 i naprawi\u0107 b\u0142\u0119dy."
+lastmod: 2024-02-18 23:08:49.480476
+model: gpt-4-1106-preview
+summary: "Drukowanie informacji debugowych to spos\xF3b na wypisywanie danych pomagaj\u0105\
+  cych zrozumie\u0107 dzia\u0142anie kodu. Robimy to, aby szybko znale\u017A\u0107\
+  \ i naprawi\u0107 b\u0142\u0119dy."
+title: "Drukowanie komunikat\xF3w debugowania"
 ---
 
 {{< edit_this_page >}}

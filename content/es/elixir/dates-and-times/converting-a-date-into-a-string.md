@@ -1,13 +1,14 @@
 ---
-title:                "Convirtiendo una fecha en una cadena de texto"
 aliases:
 - /es/elixir/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:22.271759-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Convirtiendo una fecha en una cadena de texto"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:22.271759-07:00
+description: "Convertir una fecha a una cadena de texto implica transformar un objeto\
+  \ de fecha, que la computadora comprende, en una serie de caracteres legibles para\u2026"
+lastmod: 2024-02-18 23:09:09.664647
+model: gpt-4-1106-preview
+summary: "Convertir una fecha a una cadena de texto implica transformar un objeto\
+  \ de fecha, que la computadora comprende, en una serie de caracteres legibles para\u2026"
+title: Convirtiendo una fecha en una cadena de texto
 ---
 
 {{< edit_this_page >}}

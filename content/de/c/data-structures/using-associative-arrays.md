@@ -1,14 +1,16 @@
 ---
-title:                "Verwendung von assoziativen Arrays"
 aliases:
 - /de/c/using-associative-arrays/
-date:                  2024-02-03T18:10:35.977817-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verwendung von assoziativen Arrays"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/using-associative-arrays.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:35.977817-07:00
+description: "Assoziative Arrays, in anderen Sprachen auch als Maps oder W\xF6rterb\xFC\
+  cher bekannt, sind Schl\xFCssel-Wert-Paare, die f\xFCr effiziente Datenabfrage und\u2026"
+lastmod: 2024-02-18 23:09:05.365028
+model: gpt-4-0125-preview
+summary: "Assoziative Arrays, in anderen Sprachen auch als Maps oder W\xF6rterb\xFC\
+  cher bekannt, sind Schl\xFCssel-Wert-Paare, die f\xFCr effiziente Datenabfrage und\u2026"
+title: Verwendung von assoziativen Arrays
 ---
 
 {{< edit_this_page >}}

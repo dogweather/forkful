@@ -1,14 +1,17 @@
 ---
-title:                "Pisanie testów"
 aliases:
 - /pl/cpp/writing-tests/
-date:                  2024-02-03T19:30:06.853562-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie testów"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:30:06.853562-07:00
+description: "Pisanie test\xF3w w C++ polega na tworzeniu ma\u0142ych, samodzielnych\
+  \ program\xF3w, kt\xF3re automatycznie weryfikuj\u0105 zachowanie fragment\xF3w\
+  \ twojej bazy kodu.\u2026"
+lastmod: 2024-02-18 23:08:49.915010
+model: gpt-4-0125-preview
+summary: "Pisanie test\xF3w w C++ polega na tworzeniu ma\u0142ych, samodzielnych program\xF3\
+  w, kt\xF3re automatycznie weryfikuj\u0105 zachowanie fragment\xF3w twojej bazy kodu.\u2026"
+title: "Pisanie test\xF3w"
 ---
 
 {{< edit_this_page >}}

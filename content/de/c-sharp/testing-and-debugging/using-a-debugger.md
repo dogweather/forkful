@@ -1,13 +1,15 @@
 ---
-title:                "Einsatz eines Debuggers"
 aliases:
 - /de/c-sharp/using-a-debugger/
-date:                  2024-01-26T03:48:09.939683-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Einsatz eines Debuggers"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/using-a-debugger.md"
+date: 2024-01-26 03:48:09.939683-07:00
+description: "Die Verwendung eines Debuggers bedeutet, spezialisierte Werkzeuge zu\
+  \ nutzen, um Code zu testen und zu diagnostizieren. Programmierer tun dies, um Bugs\
+  \ zu\u2026"
+lastmod: 2024-02-18 23:09:04.876234
+model: gpt-4-0125-preview
+summary: "Die Verwendung eines Debuggers bedeutet, spezialisierte Werkzeuge zu nutzen,\
+  \ um Code zu testen und zu diagnostizieren. Programmierer tun dies, um Bugs zu\u2026"
+title: Einsatz eines Debuggers
 ---
 
 {{< edit_this_page >}}

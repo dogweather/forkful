@@ -1,14 +1,28 @@
 ---
-title:                "텍스트 검색 및 교체"
 aliases:
 - /ko/go/searching-and-replacing-text/
-date:                  2024-02-03T18:08:24.485282-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "텍스트 검색 및 교체"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:24.485282-07:00
+description: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uBB38\uC790\uC5F4 \uAC80\
+  \uC0C9 \uBC0F \uB300\uCCB4\uB294 \uB370\uC774\uD130 \uC870\uC791 \uBC0F \uC18C\uD504\
+  \uD2B8\uC6E8\uC5B4 \uAC1C\uBC1C\uC5D0\uC11C \uAE30\uBCF8\uC801\uC778 \uC791\uC5C5\
+  \uC73C\uB85C, \uBB38\uC790\uC5F4\uC758 \uC218\uC815 \uBC0F \uAD00\uB9AC\uB97C \uC6A9\
+  \uC774\uD558\uAC8C \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\
+  \ \uC774\uB7EC\uD55C \uC791\uC5C5\uC744 \uC218\uD589\uD558\uC5EC \uD14D\uC2A4\uD2B8\
+  \ \uB370\uC774\uD130\uB97C \uD6A8\uC728\uC801\uC73C\uB85C \uC5C5\uB370\uC774\uD2B8\
+  , \uC815\uB9AC\uD558\uAC70\uB098 \uBCC0\uD658\uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:05.454541
+model: gpt-4-0125-preview
+summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uBB38\uC790\uC5F4 \uAC80\uC0C9\
+  \ \uBC0F \uB300\uCCB4\uB294 \uB370\uC774\uD130 \uC870\uC791 \uBC0F \uC18C\uD504\uD2B8\
+  \uC6E8\uC5B4 \uAC1C\uBC1C\uC5D0\uC11C \uAE30\uBCF8\uC801\uC778 \uC791\uC5C5\uC73C\
+  \uB85C, \uBB38\uC790\uC5F4\uC758 \uC218\uC815 \uBC0F \uAD00\uB9AC\uB97C \uC6A9\uC774\
+  \uD558\uAC8C \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774\
+  \uB7EC\uD55C \uC791\uC5C5\uC744 \uC218\uD589\uD558\uC5EC \uD14D\uC2A4\uD2B8 \uB370\
+  \uC774\uD130\uB97C \uD6A8\uC728\uC801\uC73C\uB85C \uC5C5\uB370\uC774\uD2B8, \uC815\
+  \uB9AC\uD558\uAC70\uB098 \uBCC0\uD658\uD569\uB2C8\uB2E4."
+title: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4"
 ---
 
 {{< edit_this_page >}}

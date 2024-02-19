@@ -1,13 +1,16 @@
 ---
-title:                "Fehlerbehandlung"
 aliases:
 - /de/swift/handling-errors/
-date:                  2024-01-26T00:57:20.604419-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Fehlerbehandlung"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/handling-errors.md"
+date: 2024-01-26 00:57:20.604419-07:00
+description: "Fehlerbehandlung in Swift bedeutet, auf Probleme zu reagieren, die auftreten,\
+  \ wenn Ihr Code ausgef\xFChrt wird. Wir tun dies, um das Chaos zu kontrollieren\
+  \ \u2013\u2026"
+lastmod: 2024-02-18 23:09:05.242156
+model: gpt-4-1106-preview
+summary: "Fehlerbehandlung in Swift bedeutet, auf Probleme zu reagieren, die auftreten,\
+  \ wenn Ihr Code ausgef\xFChrt wird. Wir tun dies, um das Chaos zu kontrollieren\
+  \ \u2013\u2026"
+title: Fehlerbehandlung
 ---
 
 {{< edit_this_page >}}

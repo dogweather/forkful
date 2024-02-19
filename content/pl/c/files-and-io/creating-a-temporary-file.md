@@ -1,14 +1,18 @@
 ---
-title:                "Tworzenie tymczasowego pliku"
 aliases:
 - /pl/c/creating-a-temporary-file/
-date:                  2024-02-03T17:55:19.951180-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tworzenie tymczasowego pliku"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/creating-a-temporary-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:19.951180-07:00
+description: "Tworzenie tymczasowego pliku w j\u0119zyku C polega na generowaniu pliku,\
+  \ kt\xF3ry ma by\u0107 u\u017Cywany przez kr\xF3tki czas, zazwyczaj jako przestrze\u0144\
+  \ robocza dla\u2026"
+lastmod: 2024-02-18 23:08:50.101023
+model: gpt-4-0125-preview
+summary: "Tworzenie tymczasowego pliku w j\u0119zyku C polega na generowaniu pliku,\
+  \ kt\xF3ry ma by\u0107 u\u017Cywany przez kr\xF3tki czas, zazwyczaj jako przestrze\u0144\
+  \ robocza dla\u2026"
+title: Tworzenie tymczasowego pliku
 ---
 
 {{< edit_this_page >}}

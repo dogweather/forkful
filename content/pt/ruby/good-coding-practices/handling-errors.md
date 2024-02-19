@@ -1,13 +1,16 @@
 ---
-title:                "Tratamento de erros"
 aliases:
 - /pt/ruby/handling-errors/
-date:                  2024-01-26T00:57:05.478681-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tratamento de erros"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/handling-errors.md"
+date: 2024-01-26 00:57:05.478681-07:00
+description: "O tratamento de erros \xE9 sobre esperar o inesperado no c\xF3digo \u2014\
+  \ gerenciar erros e problemas de forma graciosa sem falhar. Os programadores fazem\
+  \ isso para\u2026"
+lastmod: 2024-02-18 23:08:58.673021
+model: gpt-4-1106-preview
+summary: "O tratamento de erros \xE9 sobre esperar o inesperado no c\xF3digo \u2014\
+  \ gerenciar erros e problemas de forma graciosa sem falhar. Os programadores fazem\
+  \ isso para\u2026"
+title: Tratamento de erros
 ---
 
 {{< edit_this_page >}}

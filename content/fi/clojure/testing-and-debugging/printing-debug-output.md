@@ -1,13 +1,16 @@
 ---
-title:                "Virheenjäljitystulosteiden tulostaminen"
 aliases:
 - /fi/clojure/printing-debug-output/
-date:                  2024-01-20T17:52:37.337410-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheenjäljitystulosteiden tulostaminen"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/printing-debug-output.md"
+date: 2024-01-20 17:52:37.337410-07:00
+description: "Printtaus debuggaustarkoituksiin on virheiden j\xE4ljityst\xE4 koodista\
+  \ tulostusten avulla. Koodarit k\xE4ytt\xE4v\xE4t sit\xE4, koska se auttaa ymm\xE4\
+  rt\xE4m\xE4\xE4n, miss\xE4 homma\u2026"
+lastmod: 2024-02-18 23:09:07.231228
+model: gpt-4-1106-preview
+summary: "Printtaus debuggaustarkoituksiin on virheiden j\xE4ljityst\xE4 koodista\
+  \ tulostusten avulla. Koodarit k\xE4ytt\xE4v\xE4t sit\xE4, koska se auttaa ymm\xE4\
+  rt\xE4m\xE4\xE4n, miss\xE4 homma\u2026"
+title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 ---
 
 {{< edit_this_page >}}

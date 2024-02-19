@@ -1,14 +1,28 @@
 ---
-title:                "使用JSON进行编程"
 aliases:
 - /zh/lua/working-with-json/
-date:                  2024-02-03T19:23:31.789988-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用JSON进行编程"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/lua/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:31.789988-07:00
+description: "\u5728Lua\u4E2D\u5904\u7406JSON\u6D89\u53CA\u5230\u5C06JSON\u683C\u5F0F\
+  \u5316\u7684\u5B57\u7B26\u4E32\u89E3\u6790\u6210Lua\u8868\u683C\uFF0C\u53CD\u4E4B\
+  \u4EA6\u7136\uFF0C\u8FD9\u4F7F\u5F97\u5728Lua\u5E94\u7528\u7A0B\u5E8F\u548CWeb\u670D\
+  \u52A1\u6216\u5916\u90E8API\u4E4B\u95F4\u7684\u6570\u636E\u4EA4\u6362\u53D8\u5F97\
+  \u7B80\u5355\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u5229\u7528\
+  JSON\u8F7B\u91CF\u7EA7\u548C\u6613\u4E8E\u89E3\u6790\u7684\u683C\u5F0F\uFF0C\u4EE5\
+  \u5B9E\u73B0\u6570\u636E\u5B58\u50A8\u3001\u914D\u7F6E\u6216API\u901A\u4FE1\u7684\
+  \u6548\u7387\u3002"
+lastmod: 2024-02-18 23:08:59.272425
+model: gpt-4-0125-preview
+summary: "\u5728Lua\u4E2D\u5904\u7406JSON\u6D89\u53CA\u5230\u5C06JSON\u683C\u5F0F\u5316\
+  \u7684\u5B57\u7B26\u4E32\u89E3\u6790\u6210Lua\u8868\u683C\uFF0C\u53CD\u4E4B\u4EA6\
+  \u7136\uFF0C\u8FD9\u4F7F\u5F97\u5728Lua\u5E94\u7528\u7A0B\u5E8F\u548CWeb\u670D\u52A1\
+  \u6216\u5916\u90E8API\u4E4B\u95F4\u7684\u6570\u636E\u4EA4\u6362\u53D8\u5F97\u7B80\
+  \u5355\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u5229\u7528JSON\u8F7B\
+  \u91CF\u7EA7\u548C\u6613\u4E8E\u89E3\u6790\u7684\u683C\u5F0F\uFF0C\u4EE5\u5B9E\u73B0\
+  \u6570\u636E\u5B58\u50A8\u3001\u914D\u7F6E\u6216API\u901A\u4FE1\u7684\u6548\u7387\
+  \u3002"
+title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 ---
 
 {{< edit_this_page >}}

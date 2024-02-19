@@ -1,13 +1,15 @@
 ---
-title:                "Utilizzo di un interprete interattivo (REPL)"
 aliases:
 - /it/php/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:16:31.301948-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di un interprete interattivo (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/php/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:16:31.301948-07:00
+description: "Una shell interattiva, o REPL (Read-Eval-Print Loop), ti permette di\
+  \ scrivere ed eseguire codice PHP al volo. \xC8 ideale per la sperimentazione, il\
+  \ debug o\u2026"
+lastmod: 2024-02-18 23:08:55.972299
+model: gpt-4-0125-preview
+summary: "Una shell interattiva, o REPL (Read-Eval-Print Loop), ti permette di scrivere\
+  \ ed eseguire codice PHP al volo. \xC8 ideale per la sperimentazione, il debug o\u2026"
+title: Utilizzo di un interprete interattivo (REPL)
 ---
 
 {{< edit_this_page >}}

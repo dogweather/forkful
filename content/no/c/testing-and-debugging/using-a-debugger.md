@@ -1,14 +1,18 @@
 ---
-title:                "Bruke en feilsøker"
 aliases:
 - /no/c/using-a-debugger/
-date:                  2024-02-03T18:09:58.657848-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke en feilsøker"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/using-a-debugger.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:09:58.657848-07:00
+description: "Debuggere i C er spesialiserte verkt\xF8y som lar utviklere g\xE5 gjennom\
+  \ koden sin trinn for trinn, inspisere variabler og f\xF8lge utf\xF8relsesflyten.\
+  \ Denne\u2026"
+lastmod: 2024-02-18 23:08:54.399011
+model: gpt-4-0125-preview
+summary: "Debuggere i C er spesialiserte verkt\xF8y som lar utviklere g\xE5 gjennom\
+  \ koden sin trinn for trinn, inspisere variabler og f\xF8lge utf\xF8relsesflyten.\
+  \ Denne\u2026"
+title: "Bruke en feils\xF8ker"
 ---
 
 {{< edit_this_page >}}

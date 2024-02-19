@@ -1,13 +1,16 @@
 ---
-title:                "Hitta längden på en sträng"
 aliases:
 - /sv/typescript/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:33.764544-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Hitta längden på en sträng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:33.764544-07:00
+description: "L\xE4ngden p\xE5 en str\xE4ng \xE4r antalet tecken den inneh\xE5ller.\
+  \ Programmerare m\xE5ste ofta veta detta f\xF6r att validera inmatning, skapa substr\xE4\
+  ngar eller j\xE4mf\xF6ra\u2026"
+lastmod: 2024-02-18 23:08:51.534902
+model: gpt-4-1106-preview
+summary: "L\xE4ngden p\xE5 en str\xE4ng \xE4r antalet tecken den inneh\xE5ller. Programmerare\
+  \ m\xE5ste ofta veta detta f\xF6r att validera inmatning, skapa substr\xE4ngar eller\
+  \ j\xE4mf\xF6ra\u2026"
+title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

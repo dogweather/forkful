@@ -1,14 +1,18 @@
 ---
-title:                "Omvandla en sträng till gemener"
 aliases:
 - /sv/go/converting-a-string-to-lower-case/
-date:                  2024-02-03T17:54:54.150774-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Omvandla en sträng till gemener"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:54.150774-07:00
+description: "Att konvertera en str\xE4ng till gemener \xE4r en grundl\xE4ggande operation\
+  \ som m\xF6jligg\xF6r enhetlighet och konsekvens i textbehandling, viktigt f\xF6\
+  r uppgifter som\u2026"
+lastmod: 2024-02-18 23:08:51.319607
+model: gpt-4-0125-preview
+summary: "Att konvertera en str\xE4ng till gemener \xE4r en grundl\xE4ggande operation\
+  \ som m\xF6jligg\xF6r enhetlighet och konsekvens i textbehandling, viktigt f\xF6\
+  r uppgifter som\u2026"
+title: "Omvandla en str\xE4ng till gemener"
 ---
 
 {{< edit_this_page >}}

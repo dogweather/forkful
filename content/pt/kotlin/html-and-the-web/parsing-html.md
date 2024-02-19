@@ -1,12 +1,15 @@
 ---
-title:                "Análise de HTML"
 aliases:
 - /pt/kotlin/parsing-html/
-date:                  2024-01-20T15:32:56.837266-07:00
-simple_title:         "Análise de HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/parsing-html.md"
+date: 2024-01-20 15:32:56.837266-07:00
+description: "Analisar (parsear) HTML \xE9 o processo de converter c\xF3digo HTML\
+  \ em uma estrutura de dados compreens\xEDvel para a sua aplica\xE7\xE3o. Programadores\
+  \ fazem isso para\u2026"
+lastmod: 2024-02-18 23:08:58.098890
+summary: "Analisar (parsear) HTML \xE9 o processo de converter c\xF3digo HTML em uma\
+  \ estrutura de dados compreens\xEDvel para a sua aplica\xE7\xE3o. Programadores\
+  \ fazem isso para\u2026"
+title: "An\xE1lise de HTML"
 ---
 
 {{< edit_this_page >}}

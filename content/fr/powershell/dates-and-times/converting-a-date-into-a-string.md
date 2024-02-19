@@ -1,13 +1,16 @@
 ---
-title:                "Conversion d'une date en chaîne de caractères"
 aliases:
 - /fr/powershell/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:14.985642-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Conversion d'une date en chaîne de caractères"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:14.985642-07:00
+description: "Convertir une date en cha\xEEne de caract\xE8res permet de la formater\
+  \ pour l'affichage ou le stockage. Les programmeurs font \xE7a pour la lisibilit\xE9\
+  \ et pour\u2026"
+lastmod: 2024-02-18 23:09:09.080959
+model: gpt-4-1106-preview
+summary: "Convertir une date en cha\xEEne de caract\xE8res permet de la formater pour\
+  \ l'affichage ou le stockage. Les programmeurs font \xE7a pour la lisibilit\xE9\
+  \ et pour\u2026"
+title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Zaokrąglanie liczb"
 aliases:
 - /pl/swift/rounding-numbers/
-date:                  2024-01-26T03:47:00.747181-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zaokrąglanie liczb"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/rounding-numbers.md"
+date: 2024-01-26 03:47:00.747181-07:00
+description: "Zaokr\u0105glanie liczb oznacza przybli\u017Cenie warto\u015Bci numerycznej\
+  \ do okre\u015Blonej precyzji, zwykle w celu usuni\u0119cia niechcianych miejsc\
+  \ po przecinku. Programi\u015Bci\u2026"
+lastmod: 2024-02-18 23:08:49.947887
+model: gpt-4-0125-preview
+summary: "Zaokr\u0105glanie liczb oznacza przybli\u017Cenie warto\u015Bci numerycznej\
+  \ do okre\u015Blonej precyzji, zwykle w celu usuni\u0119cia niechcianych miejsc\
+  \ po przecinku. Programi\u015Bci\u2026"
+title: "Zaokr\u0105glanie liczb"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,29 @@
 ---
-title:                "सहयोगी अरेज़ का उपयोग करना"
 aliases:
 - /hi/cpp/using-associative-arrays/
-date:                  2024-01-30T19:11:08.996748-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "सहयोगी अरेज़ का उपयोग करना"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:11:08.996748-07:00
+description: "\u0938\u0940++ \u092E\u0947\u0902, \u0938\u0939\u093E\u092F\u0915 \u092E\
+  \u093E\u0930\u094D\u0917\u0926\u0930\u094D\u0936\u093F\u0915\u093E\u090F\u0902,\
+  \ \u091C\u093F\u0938\u0947 `std::map` \u092F\u093E `std::unordered_map` \u0915\u0947\
+  \ \u0930\u0942\u092A \u092E\u0947\u0902 \u091C\u093E\u0928\u093E \u091C\u093E\u0924\
+  \u093E \u0939\u0948, \u0938\u0930\u0923\u0940 \u0938\u0942\u091A\u0915\u093E\u0902\
+  \u0915\u094B\u0902 \u0914\u0930 \u0935\u093E\u0938\u094D\u0924\u0935\u093F\u0915\
+  \ \u0935\u093F\u0936\u094D\u0935 \u0921\u0947\u091F\u093E \u0915\u0947 \u092C\u0940\
+  \u091A \u0915\u0940 \u0916\u093E\u0908 \u0915\u094B\u2026"
+lastmod: 2024-02-18 23:09:03.876257
+model: gpt-4-0125-preview
+summary: "\u0938\u0940++ \u092E\u0947\u0902, \u0938\u0939\u093E\u092F\u0915 \u092E\
+  \u093E\u0930\u094D\u0917\u0926\u0930\u094D\u0936\u093F\u0915\u093E\u090F\u0902,\
+  \ \u091C\u093F\u0938\u0947 `std::map` \u092F\u093E `std::unordered_map` \u0915\u0947\
+  \ \u0930\u0942\u092A \u092E\u0947\u0902 \u091C\u093E\u0928\u093E \u091C\u093E\u0924\
+  \u093E \u0939\u0948, \u0938\u0930\u0923\u0940 \u0938\u0942\u091A\u0915\u093E\u0902\
+  \u0915\u094B\u0902 \u0914\u0930 \u0935\u093E\u0938\u094D\u0924\u0935\u093F\u0915\
+  \ \u0935\u093F\u0936\u094D\u0935 \u0921\u0947\u091F\u093E \u0915\u0947 \u092C\u0940\
+  \u091A \u0915\u0940 \u0916\u093E\u0908 \u0915\u094B\u2026"
+title: "\u0938\u0939\u092F\u094B\u0917\u0940 \u0905\u0930\u0947\u091C\u093C \u0915\
+  \u093E \u0909\u092A\u092F\u094B\u0917 \u0915\u0930\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

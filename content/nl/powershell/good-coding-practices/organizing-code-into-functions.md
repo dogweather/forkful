@@ -1,15 +1,16 @@
 ---
-title:                "Code organiseren in functies"
 aliases:
 - /nl/powershell/organizing-code-into-functions/
-date:                  2024-01-28T22:03:00.012065-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Code organiseren in functies"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/powershell/organizing-code-into-functions.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:03:00.012065-07:00
+description: "Code organiseren in functies gaat over het verpakken van codeblokken\
+  \ die specifieke taken uitvoeren en deze een naam geven. Dit wordt gedaan om code\u2026"
+lastmod: 2024-02-18 23:09:02.098019
+model: gpt-4-0125-preview
+summary: "Code organiseren in functies gaat over het verpakken van codeblokken die\
+  \ specifieke taken uitvoeren en deze een naam geven. Dit wordt gedaan om code\u2026"
+title: Code organiseren in functies
 ---
 
 {{< edit_this_page >}}

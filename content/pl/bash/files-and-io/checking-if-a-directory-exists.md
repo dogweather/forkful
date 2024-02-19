@@ -1,14 +1,17 @@
 ---
-title:                "Sprawdzanie, czy katalog istnieje"
 aliases:
 - /pl/bash/checking-if-a-directory-exists/
-date:                  2024-02-03T19:06:50.545586-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sprawdzanie, czy katalog istnieje"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:50.545586-07:00
+description: "W programowaniu Bash sprawdzanie, czy katalog istnieje, jest kluczowym\
+  \ mechanizmem kontrolnym wykorzystywanym do weryfikacji obecno\u015Bci katalogu\
+  \ przed\u2026"
+lastmod: 2024-02-18 23:08:49.799443
+model: gpt-4-0125-preview
+summary: "W programowaniu Bash sprawdzanie, czy katalog istnieje, jest kluczowym mechanizmem\
+  \ kontrolnym wykorzystywanym do weryfikacji obecno\u015Bci katalogu przed\u2026"
+title: Sprawdzanie, czy katalog istnieje
 ---
 
 {{< edit_this_page >}}

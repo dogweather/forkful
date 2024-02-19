@@ -1,14 +1,17 @@
 ---
-title:                "Pisanie pliku tekstowego"
 aliases:
 - /pl/arduino/writing-a-text-file/
-date:                  2024-02-03T19:27:04.902029-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie pliku tekstowego"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:04.902029-07:00
+description: "Zapisywanie pliku tekstowego w Arduino polega na zapisywaniu danych\
+  \ na karcie SD lub podobnym module pami\u0119ci, cz\u0119sto w celach rejestracji\
+  \ danych.\u2026"
+lastmod: 2024-02-18 23:08:49.887239
+model: gpt-4-0125-preview
+summary: "Zapisywanie pliku tekstowego w Arduino polega na zapisywaniu danych na karcie\
+  \ SD lub podobnym module pami\u0119ci, cz\u0119sto w celach rejestracji danych.\u2026"
+title: Pisanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

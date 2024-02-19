@@ -1,14 +1,20 @@
 ---
-title:                "Tạo một tệp tạm thời"
 aliases:
 - /vi/go/creating-a-temporary-file/
-date:                  2024-02-03T17:55:53.842860-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tạo một tệp tạm thời"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/creating-a-temporary-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:53.842860-07:00
+description: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong Go cho\
+  \ ph\xE9p t\u1EA1o ra m\u1ED9t t\u1EC7p kh\xF4ng l\u01B0u tr\u1EEF l\xE2u d\xE0\
+  i, \u0111\u01B0\u1EE3c thi\u1EBFt k\u1EBF \u0111\u1EC3 s\u1EED d\u1EE5ng trong th\u1EDD\
+  i gian ng\u1EAFn, ch\u1EE7 y\u1EBFu l\xE0 cho c\xE1c nhi\u1EC7m\u2026"
+lastmod: 2024-02-18 23:08:50.192921
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong Go cho ph\xE9\
+  p t\u1EA1o ra m\u1ED9t t\u1EC7p kh\xF4ng l\u01B0u tr\u1EEF l\xE2u d\xE0i, \u0111\
+  \u01B0\u1EE3c thi\u1EBFt k\u1EBF \u0111\u1EC3 s\u1EED d\u1EE5ng trong th\u1EDDi\
+  \ gian ng\u1EAFn, ch\u1EE7 y\u1EBFu l\xE0 cho c\xE1c nhi\u1EC7m\u2026"
+title: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi"
 ---
 
 {{< edit_this_page >}}

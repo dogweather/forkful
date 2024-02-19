@@ -1,12 +1,14 @@
 ---
-title:                "Writing tests"
 aliases:
 - /en/python/writing-tests/
-date:                  2024-02-03T19:03:27.970246-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Writing tests"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/writing-tests.md"
+date: 2024-02-03 19:03:27.970246-07:00
+description: "Writing tests in Python involves creating automated scripts to validate\
+  \ the correctness of your code. Programmers do this to ensure that their functions\u2026"
+lastmod: 2024-02-18 23:09:10.684908
+model: gpt-4-0125-preview
+summary: "Writing tests in Python involves creating automated scripts to validate\
+  \ the correctness of your code. Programmers do this to ensure that their functions\u2026"
+title: Writing tests
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,30 @@
 ---
-title:                "문자열에서 따옴표 제거하기"
 aliases:
 - /ko/vba/removing-quotes-from-a-string/
-date:                  2024-02-01T22:00:33.092116-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열에서 따옴표 제거하기"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/vba/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:33.092116-07:00
+description: "VBA\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C\uB97C\
+  \ \uC81C\uAC70\uD558\uB294 \uAC83\uC740 \uBB38\uC790\uC5F4 \uB0B4\uC5D0 \uD3EC\uD568\
+  \uB418\uAC70\uB098 \uC0BD\uC785\uB420 \uC218 \uC788\uB294 \uB2E8\uC77C(`'`) \uB610\
+  \uB294 \uC774\uC911(`\"`) \uB530\uC634\uD45C \uC778\uC2A4\uD134\uC2A4\uB97C \uC81C\
+  \uAC70\uD558\uB294 \uC791\uC5C5\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uC774 \uC791\
+  \uC5C5\uC740 \uB370\uC774\uD130 \uC0B4\uADE0\uC744 \uC704\uD574 \uD544\uC218\uC801\
+  \uC774\uBA70, \uB370\uC774\uD130\uBCA0\uC774\uC2A4 \uCFFC\uB9AC, JSON \uD30C\uC2F1\
+  \ \uB610\uB294 \uB2E8\uC21C\uD788 \uC5B4\uD50C\uB9AC\uCF00\uC774\uC158 \uC778\uD130\
+  \uD398\uC774\uC2A4\u2026"
+lastmod: 2024-02-18 23:09:05.931946
+model: gpt-4-0125-preview
+summary: "VBA\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C\uB97C\
+  \ \uC81C\uAC70\uD558\uB294 \uAC83\uC740 \uBB38\uC790\uC5F4 \uB0B4\uC5D0 \uD3EC\uD568\
+  \uB418\uAC70\uB098 \uC0BD\uC785\uB420 \uC218 \uC788\uB294 \uB2E8\uC77C(`'`) \uB610\
+  \uB294 \uC774\uC911(`\"`) \uB530\uC634\uD45C \uC778\uC2A4\uD134\uC2A4\uB97C \uC81C\
+  \uAC70\uD558\uB294 \uC791\uC5C5\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uC774 \uC791\
+  \uC5C5\uC740 \uB370\uC774\uD130 \uC0B4\uADE0\uC744 \uC704\uD574 \uD544\uC218\uC801\
+  \uC774\uBA70, \uB370\uC774\uD130\uBCA0\uC774\uC2A4 \uCFFC\uB9AC, JSON \uD30C\uC2F1\
+  \ \uB610\uB294 \uB2E8\uC21C\uD788 \uC5B4\uD50C\uB9AC\uCF00\uC774\uC158 \uC778\uD130\
+  \uD398\uC774\uC2A4\u2026"
+title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C \uC81C\uAC70\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,16 +1,19 @@
 ---
-title:                "Korzystanie z tablic asocjacyjnych"
 aliases:
 - /pl/haskell/using-associative-arrays/
-date:                  2024-01-30T19:11:33.533292-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z tablic asocjacyjnych"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, dogweather, reviewed
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, dogweather, reviewed
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:11:33.533292-07:00
+description: "Tablice asocjacyjne, czyli s\u0142owniki, w Haskellu s\u0142u\u017C\u0105\
+  \ do mapowania kluczy na warto\u015Bci w celu szybkiego wyszukiwania i efektywnego\
+  \ zarz\u0105dzania danymi.\u2026"
+lastmod: 2024-02-18 23:08:49.646421
+model: gpt-4-0125-preview
+summary: "Tablice asocjacyjne, czyli s\u0142owniki, w Haskellu s\u0142u\u017C\u0105\
+  \ do mapowania kluczy na warto\u015Bci w celu szybkiego wyszukiwania i efektywnego\
+  \ zarz\u0105dzania danymi.\u2026"
+title: Korzystanie z tablic asocjacyjnych
 ---
 
 {{< edit_this_page >}}

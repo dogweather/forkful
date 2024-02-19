@@ -1,13 +1,16 @@
 ---
-title:                "Skicka en HTTP-förfrågan med Basic-autentisering"
 aliases:
 - /sv/ruby/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:39.753224-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skicka en HTTP-förfrågan med Basic-autentisering"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:39.753224-07:00
+description: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering\
+  \ betyder att du f\xF6rmedlar anv\xE4ndarnamn och l\xF6senord s\xE4kert f\xF6r att\
+  \ f\xE5 tillg\xE5ng till en resurs\u2026"
+lastmod: 2024-02-18 23:08:52.295066
+model: gpt-4-1106-preview
+summary: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering betyder\
+  \ att du f\xF6rmedlar anv\xE4ndarnamn och l\xF6senord s\xE4kert f\xF6r att f\xE5\
+  \ tillg\xE5ng till en resurs\u2026"
+title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 ---
 
 {{< edit_this_page >}}

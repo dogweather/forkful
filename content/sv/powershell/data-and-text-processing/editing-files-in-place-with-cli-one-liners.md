@@ -1,13 +1,16 @@
 ---
-title:                "Redigera filer på plats med kommandoradsenradare"
 aliases:
 - /sv/powershell/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:20:54.320777-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Redigera filer på plats med kommandoradsenradare"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:20:54.320777-07:00
+description: "Att redigera filer direkt med CLI enradskommandon i PowerShell handlar\
+  \ om att g\xF6ra direkta \xE4ndringar i filer fr\xE5n kommandoraden, utan att beh\xF6\
+  va \xF6ppna dem\u2026"
+lastmod: 2024-02-18 23:08:51.999830
+model: gpt-4-0125-preview
+summary: "Att redigera filer direkt med CLI enradskommandon i PowerShell handlar om\
+  \ att g\xF6ra direkta \xE4ndringar i filer fr\xE5n kommandoraden, utan att beh\xF6\
+  va \xF6ppna dem\u2026"
+title: "Redigera filer p\xE5 plats med kommandoradsenradare"
 ---
 
 {{< edit_this_page >}}

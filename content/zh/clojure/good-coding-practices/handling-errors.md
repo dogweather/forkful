@@ -1,13 +1,22 @@
 ---
-title:                "处理错误"
 aliases:
 - /zh/clojure/handling-errors/
-date:                  2024-01-26T00:51:06.516307-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "处理错误"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/handling-errors.md"
+date: 2024-01-26 00:51:06.516307-07:00
+description: "\u9519\u8BEF\u5904\u7406\u5C31\u662F\u7BA1\u7406\u7A0B\u5E8F\u4E2D\u7684\
+  \u610F\u5916\u60C5\u51B5\u2014\u2014\u5C31\u50CF\u95E8\u536B\u5904\u7406\u95F9\u4E8B\
+  \u8005\u4E00\u6837\u3002\u7A0B\u5E8F\u5458\u559C\u6B22\u4E00\u5207\u987A\u5229\uFF1B\
+  \u9519\u8BEF\u5904\u7406\u6709\u52A9\u4E8E\u63A7\u5236\u9EBB\u70E6\u4E8B\uFF0C\u786E\
+  \u4FDD\u4ED6\u4EEC\u7684\u4EE3\u7801\u5728\u9762\u5BF9\u610F\u5916\u65F6\u4E0D\u4F1A\
+  \u8DCC\u8DE4\u3002"
+lastmod: 2024-02-18 23:08:58.834793
+model: gpt-4-1106-preview
+summary: "\u9519\u8BEF\u5904\u7406\u5C31\u662F\u7BA1\u7406\u7A0B\u5E8F\u4E2D\u7684\
+  \u610F\u5916\u60C5\u51B5\u2014\u2014\u5C31\u50CF\u95E8\u536B\u5904\u7406\u95F9\u4E8B\
+  \u8005\u4E00\u6837\u3002\u7A0B\u5E8F\u5458\u559C\u6B22\u4E00\u5207\u987A\u5229\uFF1B\
+  \u9519\u8BEF\u5904\u7406\u6709\u52A9\u4E8E\u63A7\u5236\u9EBB\u70E6\u4E8B\uFF0C\u786E\
+  \u4FDD\u4ED6\u4EEC\u7684\u4EE3\u7801\u5728\u9762\u5BF9\u610F\u5916\u65F6\u4E0D\u4F1A\
+  \u8DCC\u8DE4\u3002"
+title: "\u5904\u7406\u9519\u8BEF"
 ---
 
 {{< edit_this_page >}}

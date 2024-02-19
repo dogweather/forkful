@@ -1,13 +1,16 @@
 ---
-title:                "Använda en interaktiv skal (REPL)"
 aliases:
 - /sv/swift/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:18:29.765702-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Använda en interaktiv skal (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:18:29.765702-07:00
+description: "Att anv\xE4nda ett interaktivt skal, eller en L\xE4s-Utv\xE4rdera-Skriv\
+  \ Ut-Loop (REPL), l\xE5ter dig koda interaktivt. Programmerare anv\xE4nder det f\xF6\
+  r att snabbt testa\u2026"
+lastmod: 2024-02-18 23:08:52.126076
+model: gpt-4-0125-preview
+summary: "Att anv\xE4nda ett interaktivt skal, eller en L\xE4s-Utv\xE4rdera-Skriv\
+  \ Ut-Loop (REPL), l\xE5ter dig koda interaktivt. Programmerare anv\xE4nder det f\xF6\
+  r att snabbt testa\u2026"
+title: "Anv\xE4nda en interaktiv skal (REPL)"
 ---
 
 {{< edit_this_page >}}

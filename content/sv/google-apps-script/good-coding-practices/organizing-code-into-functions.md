@@ -1,14 +1,17 @@
 ---
-title:                "Att organisera kod i funktioner"
 aliases:
 - /sv/google-apps-script/organizing-code-into-functions/
-date:                  2024-02-01T21:56:29.451533-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att organisera kod i funktioner"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/google-apps-script/organizing-code-into-functions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:56:29.451533-07:00
+description: "Att organisera kod i funktioner handlar om att strukturera din Google\
+  \ Apps Script-kod genom att separera logiska segment till distinkta block, d\xE4\
+  r varje\u2026"
+lastmod: 2024-02-18 23:08:51.384657
+model: gpt-4-0125-preview
+summary: "Att organisera kod i funktioner handlar om att strukturera din Google Apps\
+  \ Script-kod genom att separera logiska segment till distinkta block, d\xE4r varje\u2026"
+title: Att organisera kod i funktioner
 ---
 
 {{< edit_this_page >}}

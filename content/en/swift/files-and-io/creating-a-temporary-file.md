@@ -1,13 +1,16 @@
 ---
-title:                "Creating a temporary file"
 aliases:
 - /en/swift/creating-a-temporary-file/
-date:                  2024-01-20T17:41:10.668868-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Creating a temporary file"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:10.668868-07:00
+description: "Creating a temporary file is making a short-lived file for storing data\
+  \ that\u2019s not needed long-term. Programmers do this to handle data that\u2019\
+  s only\u2026"
+lastmod: 2024-02-18 23:09:11.415534
+model: gpt-4-1106-preview
+summary: "Creating a temporary file is making a short-lived file for storing data\
+  \ that\u2019s not needed long-term. Programmers do this to handle data that\u2019\
+  s only\u2026"
+title: Creating a temporary file
 ---
 
 {{< edit_this_page >}}

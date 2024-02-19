@@ -1,13 +1,16 @@
 ---
-title:                "XML:n käsittely"
 aliases:
 - /fi/kotlin/working-with-xml/
-date:                  2024-01-26T04:33:00.303210-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML:n käsittely"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/working-with-xml.md"
+date: 2024-01-26 04:33:00.303210-07:00
+description: "XML:n k\xE4sittelyyn kuuluu XML-dokumenttien j\xE4sent\xE4minen, luominen\
+  \ ja manipulointi \u2013 merkint\xE4kieli datan tallennukseen ja siirtoon. Ohjelmoijat\
+  \ tekev\xE4t\u2026"
+lastmod: 2024-02-18 23:09:07.601372
+model: gpt-4-0125-preview
+summary: "XML:n k\xE4sittelyyn kuuluu XML-dokumenttien j\xE4sent\xE4minen, luominen\
+  \ ja manipulointi \u2013 merkint\xE4kieli datan tallennukseen ja siirtoon. Ohjelmoijat\
+  \ tekev\xE4t\u2026"
+title: "XML:n k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,23 @@
 ---
-title:                "一時ファイルの作成"
 aliases:
 - /ja/typescript/creating-a-temporary-file/
-date:                  2024-01-20T17:41:36.389026-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "一時ファイルの作成"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:36.389026-07:00
+description: "\u4E00\u6642\u30D5\u30A1\u30A4\u30EB\u3092\u3064\u304F\u308B\u306E\u306F\
+  \u3001\u30C7\u30FC\u30BF\u3092\u4E00\u6642\u7684\u306B\u4FDD\u5B58\u3059\u308B\u305F\
+  \u3081\u3067\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u30C7\u30FC\u30BF\
+  \u306E\u51E6\u7406\u3092\u3059\u308B\u9593\u3001\u885D\u7A81\u3084\u30E1\u30E2\u30EA\
+  \u306E\u7121\u99C4\u9063\u3044\u907F\u3051\u308B\u305F\u3081\u306B\u305D\u308C\u3092\
+  \u3084\u308A\u307E\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:54.700374
+model: gpt-4-1106-preview
+summary: "\u4E00\u6642\u30D5\u30A1\u30A4\u30EB\u3092\u3064\u304F\u308B\u306E\u306F\
+  \u3001\u30C7\u30FC\u30BF\u3092\u4E00\u6642\u7684\u306B\u4FDD\u5B58\u3059\u308B\u305F\
+  \u3081\u3067\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u30C7\u30FC\u30BF\
+  \u306E\u51E6\u7406\u3092\u3059\u308B\u9593\u3001\u885D\u7A81\u3084\u30E1\u30E2\u30EA\
+  \u306E\u7121\u99C4\u9063\u3044\u907F\u3051\u308B\u305F\u3081\u306B\u305D\u308C\u3092\
+  \u3084\u308A\u307E\u3059\u3002"
+title: "\u4E00\u6642\u30D5\u30A1\u30A4\u30EB\u306E\u4F5C\u6210"
 ---
 
 {{< edit_this_page >}}

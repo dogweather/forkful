@@ -1,13 +1,14 @@
 ---
-title:                "Concatenazione di stringhe"
 aliases:
 - /it/bash/concatenating-strings/
-date:                  2024-01-20T17:34:11.132443-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenazione di stringhe"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/concatenating-strings.md"
+date: 2024-01-20 17:34:11.132443-07:00
+description: "Concatenare stringhe significa unirle in una sola. \xC8 utile per costruire\
+  \ messaggi, comandi, o lavorare con percorsi di file."
+lastmod: 2024-02-18 23:08:56.042872
+model: gpt-4-1106-preview
+summary: "Concatenare stringhe significa unirle in una sola. \xC8 utile per costruire\
+  \ messaggi, comandi, o lavorare con percorsi di file."
+title: Concatenazione di stringhe
 ---
 
 {{< edit_this_page >}}

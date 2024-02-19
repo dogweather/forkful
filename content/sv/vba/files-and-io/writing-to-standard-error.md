@@ -1,14 +1,16 @@
 ---
-title:                "Skriva till standardfel"
 aliases:
 - /sv/vba/writing-to-standard-error/
-date:                  2024-02-01T22:09:21.716832-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriva till standardfel"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/writing-to-standard-error.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:09:21.716832-07:00
+description: "Att skriva till standardfel i Visual Basic for Applications (VBA) inneb\xE4\
+  r att dirigera felmeddelanden eller diagnostik bort fr\xE5n standardutmatningen,\u2026"
+lastmod: 2024-02-18 23:08:51.644030
+model: gpt-4-0125-preview
+summary: "Att skriva till standardfel i Visual Basic for Applications (VBA) inneb\xE4\
+  r att dirigera felmeddelanden eller diagnostik bort fr\xE5n standardutmatningen,\u2026"
+title: Skriva till standardfel
 ---
 
 {{< edit_this_page >}}

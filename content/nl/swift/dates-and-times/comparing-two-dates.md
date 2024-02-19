@@ -1,15 +1,16 @@
 ---
-title:                "Twee datums vergelijken"
 aliases:
 - /nl/swift/comparing-two-dates/
-date:                  2024-01-28T21:56:49.517361-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Twee datums vergelijken"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/swift/comparing-two-dates.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:49.517361-07:00
+description: "Twee datums vergelijken is als vragen, \"Wie was er eerst, de kip of\
+  \ het ei?\" maar dan met kalenderdatums. Programmeurs doen dit om evenementen te\u2026"
+lastmod: 2024-02-18 23:09:02.242852
+model: gpt-4-0125-preview
+summary: "Twee datums vergelijken is als vragen, \"Wie was er eerst, de kip of het\
+  \ ei?\" maar dan met kalenderdatums. Programmeurs doen dit om evenementen te\u2026"
+title: Twee datums vergelijken
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Utilizzo di un interprete interattivo (REPL)"
 aliases:
 - /it/typescript/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:18:29.873282-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di un interprete interattivo (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:18:29.873282-07:00
+description: "Un Read-Eval-Print-Loop (REPL) \xE8 un ambiente di programmazione che\
+  \ prende singoli input dall'utente, li esegue e restituisce il risultato all'utente.\
+  \ I\u2026"
+lastmod: 2024-02-18 23:08:55.641773
+model: gpt-4-0125-preview
+summary: "Un Read-Eval-Print-Loop (REPL) \xE8 un ambiente di programmazione che prende\
+  \ singoli input dall'utente, li esegue e restituisce il risultato all'utente. I\u2026"
+title: Utilizzo di un interprete interattivo (REPL)
 ---
 
 {{< edit_this_page >}}

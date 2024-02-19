@@ -1,13 +1,14 @@
 ---
-title:                "Att arbeta med XML"
 aliases:
 - /sv/c-sharp/working-with-xml/
-date:                  2024-01-26T04:29:10.377899-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/working-with-xml.md"
+date: 2024-01-26 04:29:10.377899-07:00
+description: "XML (eXtensible Markup Language) handlar om att strukturera data i ett\
+  \ l\xE4sbart format. Programmerare jonglerar med XML f\xF6r konfiguration, datautbyte\u2026"
+lastmod: 2024-02-18 23:08:51.820090
+model: gpt-4-0125-preview
+summary: "XML (eXtensible Markup Language) handlar om att strukturera data i ett l\xE4\
+  sbart format. Programmerare jonglerar med XML f\xF6r konfiguration, datautbyte\u2026"
+title: Att arbeta med XML
 ---
 
 {{< edit_this_page >}}

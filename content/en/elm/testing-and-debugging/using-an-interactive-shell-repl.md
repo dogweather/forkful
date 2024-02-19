@@ -1,15 +1,17 @@
 ---
-title:                "Using an interactive shell (REPL)"
 aliases:
 - /en/elm/using-an-interactive-shell-repl/
-date:                  2024-01-25T03:39:27.205304-07:00
-lastmod:               2024-01-31
-model:                 gpt-4-1106-preview
-simple_title:         "Using an interactive shell (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-01-31, dogweather, reviewed
+- 2024-01-31, dogweather, reviewed
+date: 2024-01-25 03:39:27.205304-07:00
+description: "The Read-Eval-Print Loop (REPL) is a simple, interactive programming\
+  \ environment that takes single user inputs, evaluates them, and returns the result\
+  \ to\u2026"
+lastmod: 2024-02-18 23:09:10.973491
+model: gpt-4-1106-preview
+summary: "The Read-Eval-Print Loop (REPL) is a simple, interactive programming environment\
+  \ that takes single user inputs, evaluates them, and returns the result to\u2026"
+title: Using an interactive shell (REPL)
 ---
 
 {{< edit_this_page >}}

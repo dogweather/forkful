@@ -1,14 +1,18 @@
 ---
-title:                "Usando expressões regulares"
 aliases:
 - /pt/lua/using-regular-expressions/
-date:                  2024-02-03T19:17:29.132573-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando expressões regulares"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/lua/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:17:29.132573-07:00
+description: "Express\xF5es regulares em programa\xE7\xE3o permitem a correspond\xEA\
+  ncia e manipula\xE7\xE3o de strings baseadas em padr\xF5es espec\xEDficos. Programadores\
+  \ as usam para\u2026"
+lastmod: 2024-02-18 23:08:58.272607
+model: gpt-4-0125-preview
+summary: "Express\xF5es regulares em programa\xE7\xE3o permitem a correspond\xEAncia\
+  \ e manipula\xE7\xE3o de strings baseadas em padr\xF5es espec\xEDficos. Programadores\
+  \ as usam para\u2026"
+title: "Usando express\xF5es regulares"
 ---
 
 {{< edit_this_page >}}

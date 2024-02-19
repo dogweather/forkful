@@ -1,13 +1,16 @@
 ---
-title:                "Verkkosivun lataaminen"
 aliases:
 - /fi/rust/downloading-a-web-page/
-date:                  2024-01-20T17:44:53.258137-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Verkkosivun lataaminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/downloading-a-web-page.md"
+date: 2024-01-20 17:44:53.258137-07:00
+description: "Web-sivun lataaminen tarkoittaa sivun sis\xE4ll\xF6n noutamista internetist\xE4\
+  . Ohjelmoijat tekev\xE4t t\xE4t\xE4 esimerkiksi datan ker\xE4\xE4miseen, sis\xE4\
+  ll\xF6n analysointiin tai\u2026"
+lastmod: 2024-02-18 23:09:07.362532
+model: gpt-4-1106-preview
+summary: "Web-sivun lataaminen tarkoittaa sivun sis\xE4ll\xF6n noutamista internetist\xE4\
+  . Ohjelmoijat tekev\xE4t t\xE4t\xE4 esimerkiksi datan ker\xE4\xE4miseen, sis\xE4\
+  ll\xF6n analysointiin tai\u2026"
+title: Verkkosivun lataaminen
 ---
 
 {{< edit_this_page >}}

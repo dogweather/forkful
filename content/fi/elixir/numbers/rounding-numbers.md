@@ -1,13 +1,16 @@
 ---
-title:                "Numerojen pyöristäminen"
 aliases:
 - /fi/elixir/rounding-numbers/
-date:                  2024-01-26T03:44:01.585967-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Numerojen pyöristäminen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/rounding-numbers.md"
+date: 2024-01-26 03:44:01.585967-07:00
+description: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE4\
+  \ l\xE4helle arvoon yksinkertaistamisen tai tietyn tarkkuuden saavuttamisen vuoksi.\
+  \ Se on hy\xF6dyllist\xE4\u2026"
+lastmod: 2024-02-18 23:09:07.268130
+model: gpt-4-0125-preview
+summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE4\
+  \ l\xE4helle arvoon yksinkertaistamisen tai tietyn tarkkuuden saavuttamisen vuoksi.\
+  \ Se on hy\xF6dyllist\xE4\u2026"
+title: "Numerojen py\xF6rist\xE4minen"
 ---
 
 {{< edit_this_page >}}

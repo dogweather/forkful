@@ -1,14 +1,24 @@
 ---
-title:                "查找字符串的长度"
 aliases:
 - /zh/go/finding-the-length-of-a-string/
-date:                  2024-02-03T17:57:21.197982-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "查找字符串的长度"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:21.197982-07:00
+description: "\u5728 Go \u4E2D\u627E\u5230\u4E00\u4E2A\u5B57\u7B26\u4E32\u7684\u957F\
+  \u5EA6\u662F\u5173\u4E8E\u786E\u5B9A\u5B83\u5305\u542B\u7684\u5B57\u7B26\u6570\u91CF\
+  \u3002\u7A0B\u5E8F\u5458\u5E38\u5E38\u6267\u884C\u8FD9\u4E2A\u64CD\u4F5C\u6765\u6709\
+  \u6548\u5730\u64CD\u7EB5\u5B57\u7B26\u4E32\uFF0C\u65E0\u8BBA\u662F\u8FDB\u884C\u9A8C\
+  \u8BC1\u3001\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32\uFF0C\u8FD8\u662F\u7B80\u5355\u5730\
+  \u5BF9\u7528\u6237\u8F93\u5165\u5B9E\u65BD\u9650\u5236\u3002"
+lastmod: 2024-02-18 23:08:58.698989
+model: gpt-4-0125-preview
+summary: "\u5728 Go \u4E2D\u627E\u5230\u4E00\u4E2A\u5B57\u7B26\u4E32\u7684\u957F\u5EA6\
+  \u662F\u5173\u4E8E\u786E\u5B9A\u5B83\u5305\u542B\u7684\u5B57\u7B26\u6570\u91CF\u3002\
+  \u7A0B\u5E8F\u5458\u5E38\u5E38\u6267\u884C\u8FD9\u4E2A\u64CD\u4F5C\u6765\u6709\u6548\
+  \u5730\u64CD\u7EB5\u5B57\u7B26\u4E32\uFF0C\u65E0\u8BBA\u662F\u8FDB\u884C\u9A8C\u8BC1\
+  \u3001\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32\uFF0C\u8FD8\u662F\u7B80\u5355\u5730\u5BF9\
+  \u7528\u6237\u8F93\u5165\u5B9E\u65BD\u9650\u5236\u3002"
+title: "\u67E5\u627E\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
 ---
 
 {{< edit_this_page >}}

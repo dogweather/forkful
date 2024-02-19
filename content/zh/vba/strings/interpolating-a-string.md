@@ -1,14 +1,26 @@
 ---
-title:                "字符串插值"
 aliases:
 - /zh/vba/interpolating-a-string/
-date:                  2024-02-01T21:55:35.519632-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "字符串插值"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/interpolating-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:35.519632-07:00
+description: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u7684\u5B57\u7B26\u4E32\
+  \u63D2\u503C\u6307\u7684\u662F\u5C06\u53D8\u91CF\u6216\u8868\u8FBE\u5F0F\u5D4C\u5165\
+  \u5230\u5B57\u7B26\u4E32\u6587\u5B57\u4E2D\u7684\u8FC7\u7A0B\uFF0C\u5141\u8BB8\u52A8\
+  \u6001\u5730\u5F62\u6210\u5B57\u7B26\u4E32\u3002\u7A0B\u5E8F\u5458\u5229\u7528\u8FD9\
+  \u9879\u6280\u672F\u521B\u5EFA\u66F4\u53EF\u8BFB\u548C\u53EF\u7EF4\u62A4\u7684\u4EE3\
+  \u7801\uFF0C\u7279\u522B\u662F\u5728\u751F\u6210\u57FA\u4E8E\u53D8\u91CF\u5185\u5BB9\
+  \u7684\u6D88\u606F\u6216\u8F93\u51FA\u65F6\u3002"
+lastmod: 2024-02-18 23:08:58.966922
+model: gpt-4-0125-preview
+summary: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u7684\u5B57\u7B26\u4E32\
+  \u63D2\u503C\u6307\u7684\u662F\u5C06\u53D8\u91CF\u6216\u8868\u8FBE\u5F0F\u5D4C\u5165\
+  \u5230\u5B57\u7B26\u4E32\u6587\u5B57\u4E2D\u7684\u8FC7\u7A0B\uFF0C\u5141\u8BB8\u52A8\
+  \u6001\u5730\u5F62\u6210\u5B57\u7B26\u4E32\u3002\u7A0B\u5E8F\u5458\u5229\u7528\u8FD9\
+  \u9879\u6280\u672F\u521B\u5EFA\u66F4\u53EF\u8BFB\u548C\u53EF\u7EF4\u62A4\u7684\u4EE3\
+  \u7801\uFF0C\u7279\u522B\u662F\u5728\u751F\u6210\u57FA\u4E8E\u53D8\u91CF\u5185\u5BB9\
+  \u7684\u6D88\u606F\u6216\u8F93\u51FA\u65F6\u3002"
+title: "\u5B57\u7B26\u4E32\u63D2\u503C"
 ---
 
 {{< edit_this_page >}}

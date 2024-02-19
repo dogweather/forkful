@@ -1,13 +1,16 @@
 ---
-title:                "Päivämäärän muuntaminen merkkijonoksi"
 aliases:
 - /fi/lua/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:02.532785-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:02.532785-07:00
+description: "Muuntaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi tarkoittaa\
+  \ p\xE4iv\xE4m\xE4\xE4r\xE4-arvon esitt\xE4mist\xE4 tekstimuodossa. Ohjelmoijat\
+  \ tekev\xE4t t\xE4m\xE4n esitt\xE4\xE4kseen p\xE4iv\xE4m\xE4\xE4r\xE4n\u2026"
+lastmod: 2024-02-18 23:09:07.769432
+model: gpt-4-1106-preview
+summary: "Muuntaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi tarkoittaa p\xE4\
+  iv\xE4m\xE4\xE4r\xE4-arvon esitt\xE4mist\xE4 tekstimuodossa. Ohjelmoijat tekev\xE4\
+  t t\xE4m\xE4n esitt\xE4\xE4kseen p\xE4iv\xE4m\xE4\xE4r\xE4n\u2026"
+title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,28 @@
 ---
-title:                "使用交互式Shell（REPL）"
 aliases:
 - /zh/google-apps-script/using-an-interactive-shell-repl/
-date:                  2024-02-01T22:03:57.465242-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用交互式Shell（REPL）"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/google-apps-script/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:57.465242-07:00
+description: "\u4EA4\u4E92\u5F0Fshell\uFF0C\u6216\u8005\u8BF4\u8BFB\u53D6-\u6C42\u503C\
+  -\u6253\u5370\u5FAA\u73AF\uFF08REPL\uFF09\uFF0C\u662F\u4E00\u4E2A\u7B80\u5355\u7684\
+  \u4EA4\u4E91\u7F16\u7A0B\u73AF\u5883\uFF0C\u5B83\u63A5\u6536\u7528\u6237\u7684\u5355\
+  \u4E2A\u8F93\u5165\uFF08\u8868\u8FBE\u5F0F\uFF09\uFF0C\u5BF9\u5176\u8FDB\u884C\u6C42\
+  \u503C\uFF0C\u5E76\u5C06\u7ED3\u679C\u8FD4\u56DE\u7ED9\u7528\u6237\u3002\u7A0B\u5E8F\
+  \u5458\u4F7F\u7528REPL\u8FDB\u884C\u5FEB\u901F\u539F\u578B\u8BBE\u8BA1\u3001\u8C03\
+  \u8BD5\u4EE5\u53CA\u4EE5\u4EA4\u4E92\u65B9\u5F0F\u5B66\u4E60\u7F16\u7A0B\u8BED\u8A00\
+  \u7684\u8BED\u6CD5\u548C\u884C\u4E3A\u3002"
+lastmod: 2024-02-18 23:08:58.752028
+model: gpt-4-0125-preview
+summary: "\u4EA4\u4E92\u5F0Fshell\uFF0C\u6216\u8005\u8BF4\u8BFB\u53D6-\u6C42\u503C\
+  -\u6253\u5370\u5FAA\u73AF\uFF08REPL\uFF09\uFF0C\u662F\u4E00\u4E2A\u7B80\u5355\u7684\
+  \u4EA4\u4E91\u7F16\u7A0B\u73AF\u5883\uFF0C\u5B83\u63A5\u6536\u7528\u6237\u7684\u5355\
+  \u4E2A\u8F93\u5165\uFF08\u8868\u8FBE\u5F0F\uFF09\uFF0C\u5BF9\u5176\u8FDB\u884C\u6C42\
+  \u503C\uFF0C\u5E76\u5C06\u7ED3\u679C\u8FD4\u56DE\u7ED9\u7528\u6237\u3002\u7A0B\u5E8F\
+  \u5458\u4F7F\u7528REPL\u8FDB\u884C\u5FEB\u901F\u539F\u578B\u8BBE\u8BA1\u3001\u8C03\
+  \u8BD5\u4EE5\u53CA\u4EE5\u4EA4\u4E92\u65B9\u5F0F\u5B66\u4E60\u7F16\u7A0B\u8BED\u8A00\
+  \u7684\u8BED\u6CD5\u548C\u884C\u4E3A\u3002"
+title: "\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uFF09"
 ---
 
 {{< edit_this_page >}}

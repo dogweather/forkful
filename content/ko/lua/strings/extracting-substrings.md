@@ -1,14 +1,21 @@
 ---
-title:                "부분 문자열 추출"
 aliases:
 - /ko/lua/extracting-substrings/
-date:                  2024-01-20T17:46:04.775553-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "부분 문자열 추출"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/lua/extracting-substrings.md"
+date: 2024-01-20 17:46:04.775553-07:00
+description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\
+  \uCD9C\uD558\uAE30\uB294 \uD544\uC694\uD55C \uC815\uBCF4\uB97C \uC5BB\uAE30 \uC704\
+  \uD574 \uBB38\uC790\uC5F4\uC758 \uD2B9\uC815 \uBD80\uBD84\uC744 \uBF51\uC544\uB0B4\
+  \uB294 \uAC83\uC785\uB2C8\uB2E4. \uB370\uC774\uD130 \uCC98\uB9AC\uB098 \uD14D\uC2A4\
+  \uD2B8 \uBD84\uC11D\uC5D0\uC11C \uC911\uC694\uD55C \uBD80\uBD84\uC774\uC8E0."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.399991
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C\
+  \uD558\uAE30\uB294 \uD544\uC694\uD55C \uC815\uBCF4\uB97C \uC5BB\uAE30 \uC704\uD574\
+  \ \uBB38\uC790\uC5F4\uC758 \uD2B9\uC815 \uBD80\uBD84\uC744 \uBF51\uC544\uB0B4\uB294\
+  \ \uAC83\uC785\uB2C8\uB2E4. \uB370\uC774\uD130 \uCC98\uB9AC\uB098 \uD14D\uC2A4\uD2B8\
+  \ \uBD84\uC11D\uC5D0\uC11C \uC911\uC694\uD55C \uBD80\uBD84\uC774\uC8E0."
+title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,28 @@
 ---
-title:                "JSONを活用する"
 aliases:
 - /ja/python/working-with-json/
-date:                  2024-02-03T19:24:31.496858-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "JSONを活用する"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:24:31.496858-07:00
+description: "JSON\uFF08JavaScript Object Notation\uFF09\u3092\u6271\u3046\u3068\u3044\
+  \u3046\u3053\u3068\u306F\u3001JSON\u5F62\u5F0F\u306E\u6587\u5B57\u5217\u3092Python\u30AA\
+  \u30D6\u30B8\u30A7\u30AF\u30C8\u306B\u89E3\u6790\u3057\u305F\u308A\u3001\u305D\u306E\
+  \u9006\u3092\u884C\u3063\u305F\u308A\u3059\u308B\u3053\u3068\u3092\u610F\u5473\u3057\
+  \u307E\u3059\u3002\u3053\u308C\u306F\u3001JSON\u304C\u30B5\u30FC\u30D0\u30FC\u3068\
+  \u30AF\u30E9\u30A4\u30A2\u30F3\u30C8\u9593\u306E\u30C7\u30FC\u30BF\u4EA4\u63DB\u306E\
+  \u5171\u901A\u8A00\u8A9E\u3067\u3042\u308B\u305F\u3081\u3001Web\u3084API\u306E\u958B\
+  \u767A\u306B\u4E0D\u53EF\u6B20\u3067\u3059\u3002"
+lastmod: 2024-02-18 23:08:54.583804
+model: gpt-4-0125-preview
+summary: "JSON\uFF08JavaScript Object Notation\uFF09\u3092\u6271\u3046\u3068\u3044\
+  \u3046\u3053\u3068\u306F\u3001JSON\u5F62\u5F0F\u306E\u6587\u5B57\u5217\u3092Python\u30AA\
+  \u30D6\u30B8\u30A7\u30AF\u30C8\u306B\u89E3\u6790\u3057\u305F\u308A\u3001\u305D\u306E\
+  \u9006\u3092\u884C\u3063\u305F\u308A\u3059\u308B\u3053\u3068\u3092\u610F\u5473\u3057\
+  \u307E\u3059\u3002\u3053\u308C\u306F\u3001JSON\u304C\u30B5\u30FC\u30D0\u30FC\u3068\
+  \u30AF\u30E9\u30A4\u30A2\u30F3\u30C8\u9593\u306E\u30C7\u30FC\u30BF\u4EA4\u63DB\u306E\
+  \u5171\u901A\u8A00\u8A9E\u3067\u3042\u308B\u305F\u3081\u3001Web\u3084API\u306E\u958B\
+  \u767A\u306B\u4E0D\u53EF\u6B20\u3067\u3059\u3002"
+title: "JSON\u3092\u6D3B\u7528\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

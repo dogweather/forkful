@@ -1,14 +1,16 @@
 ---
-title:                "Twee datums vergelijken"
 aliases:
 - /nl/c/comparing-two-dates/
-date:                  2024-02-03T17:53:49.577855-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Twee datums vergelijken"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/comparing-two-dates.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:49.577855-07:00
+description: "Datums vergelijken in C houdt in dat wordt bepaald hoe de chronologische\
+  \ relatie tussen twee datums is - of de ene datum voor de andere komt of dat ze\u2026"
+lastmod: 2024-02-18 23:09:02.386958
+model: gpt-4-0125-preview
+summary: "Datums vergelijken in C houdt in dat wordt bepaald hoe de chronologische\
+  \ relatie tussen twee datums is - of de ene datum voor de andere komt of dat ze\u2026"
+title: Twee datums vergelijken
 ---
 
 {{< edit_this_page >}}

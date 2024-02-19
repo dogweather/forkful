@@ -1,14 +1,16 @@
 ---
-title:                "Arbeiten mit CSV"
 aliases:
 - /de/elm/working-with-csv/
-date:                  2024-02-03T19:19:14.836434-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeiten mit CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:19:14.836434-07:00
+description: "Die Arbeit mit CSV (Comma Separated Values) umfasst das Parsen und Generieren\
+  \ von Dateien, die tabellarische Daten in einem einfachen, Klartext-Format\u2026"
+lastmod: 2024-02-18 23:09:04.805134
+model: gpt-4-0125-preview
+summary: "Die Arbeit mit CSV (Comma Separated Values) umfasst das Parsen und Generieren\
+  \ von Dateien, die tabellarische Daten in einem einfachen, Klartext-Format\u2026"
+title: Arbeiten mit CSV
 ---
 
 {{< edit_this_page >}}

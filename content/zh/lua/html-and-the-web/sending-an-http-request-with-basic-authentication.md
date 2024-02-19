@@ -1,14 +1,21 @@
 ---
-title:                "使用基本认证发送 HTTP 请求"
 aliases:
 - /zh/lua/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:22.448414-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "使用基本认证发送 HTTP 请求"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/lua/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:22.448414-07:00
+description: "\u53D1\u9001\u5E26\u57FA\u672C\u8BA4\u8BC1\u7684HTTP\u8BF7\u6C42\u5141\
+  \u8BB8\u4F60\u901A\u8FC7\u7528\u6237\u540D\u548C\u5BC6\u7801\u4FDD\u62A4\u7684\u65B9\
+  \u5F0F\uFF0C\u4ECE\u670D\u52A1\u5668\u83B7\u53D6\u6570\u636E\u3002\u7A0B\u5E8F\u5458\
+  \u8FD9\u4E48\u505A\u6765\u786E\u4FDD\u6570\u636E\u7684\u4F20\u8F93\u662F\u5B89\u5168\
+  \u7684\uFF0C\u53EA\u6709\u6388\u6743\u7528\u6237\u624D\u80FD\u8BBF\u95EE\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.253455
+model: gpt-4-1106-preview
+summary: "\u53D1\u9001\u5E26\u57FA\u672C\u8BA4\u8BC1\u7684HTTP\u8BF7\u6C42\u5141\u8BB8\
+  \u4F60\u901A\u8FC7\u7528\u6237\u540D\u548C\u5BC6\u7801\u4FDD\u62A4\u7684\u65B9\u5F0F\
+  \uFF0C\u4ECE\u670D\u52A1\u5668\u83B7\u53D6\u6570\u636E\u3002\u7A0B\u5E8F\u5458\u8FD9\
+  \u4E48\u505A\u6765\u786E\u4FDD\u6570\u636E\u7684\u4F20\u8F93\u662F\u5B89\u5168\u7684\
+  \uFF0C\u53EA\u6709\u6388\u6743\u7528\u6237\u624D\u80FD\u8BBF\u95EE\u3002"
+title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
 ---
 
 {{< edit_this_page >}}

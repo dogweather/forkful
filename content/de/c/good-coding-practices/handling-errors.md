@@ -1,14 +1,18 @@
 ---
-title:                "Fehlerbehandlung"
 aliases:
 - /de/c/handling-errors/
-date:                  2024-02-03T17:58:04.012275-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Fehlerbehandlung"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/handling-errors.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:58:04.012275-07:00
+description: "Die Fehlerbehandlung in C umfasst das Erkennen und Reagieren auf anomale\
+  \ Bedingungen, die w\xE4hrend der Programmausf\xFChrung auftreten. Programmierer\
+  \ tun\u2026"
+lastmod: 2024-02-18 23:09:05.382204
+model: gpt-4-0125-preview
+summary: "Die Fehlerbehandlung in C umfasst das Erkennen und Reagieren auf anomale\
+  \ Bedingungen, die w\xE4hrend der Programmausf\xFChrung auftreten. Programmierer\
+  \ tun\u2026"
+title: Fehlerbehandlung
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,26 @@
 ---
-title:                "字符串大写化"
 aliases:
 - /zh/ruby/capitalizing-a-string/
-date:                  2024-02-03T19:06:12.534608-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "字符串大写化"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:12.534608-07:00
+description: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u5927\u5199\u5316\u4E00\u4E2A\u5B57\u7B26\
+  \u4E32\u901A\u5E38\u662F\u6307\u5C06\u4E00\u4E2A\u5B57\u7B26\u4E32\u7684\u7B2C\u4E00\
+  \u4E2A\u5B57\u7B26\u8F6C\u6362\u4E3A\u5927\u5199\uFF0C\u5176\u4F59\u7684\u8F6C\u4E3A\
+  \u5C0F\u5199\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u51FA\u4E8E\u9075\u5FAA\
+  \u547D\u540D\u89C4\u8303\u3001\u4F7F\u8F93\u51FA\u66F4\u6613\u4E8E\u9605\u8BFB\u6216\
+  \u786E\u4FDD\u6570\u636E\u4E00\u81F4\u6027\u4EE5\u7528\u4E8E\u6BD4\u8F83\u548C\u5B58\
+  \u50A8\u7B49\u539F\u56E0\u3002"
+lastmod: 2024-02-18 23:08:59.584455
+model: gpt-4-0125-preview
+summary: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u5927\u5199\u5316\u4E00\u4E2A\u5B57\u7B26\
+  \u4E32\u901A\u5E38\u662F\u6307\u5C06\u4E00\u4E2A\u5B57\u7B26\u4E32\u7684\u7B2C\u4E00\
+  \u4E2A\u5B57\u7B26\u8F6C\u6362\u4E3A\u5927\u5199\uFF0C\u5176\u4F59\u7684\u8F6C\u4E3A\
+  \u5C0F\u5199\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u51FA\u4E8E\u9075\u5FAA\
+  \u547D\u540D\u89C4\u8303\u3001\u4F7F\u8F93\u51FA\u66F4\u6613\u4E8E\u9605\u8BFB\u6216\
+  \u786E\u4FDD\u6570\u636E\u4E00\u81F4\u6027\u4EE5\u7528\u4E8E\u6BD4\u8F83\u548C\u5B58\
+  \u50A8\u7B49\u539F\u56E0\u3002"
+title: "\u5B57\u7B26\u4E32\u5927\u5199\u5316"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Skicka en http-förfrågan"
 aliases:
 - /sv/java/sending-an-http-request/
-date:                  2024-01-20T18:00:00.820896-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skicka en http-förfrågan"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/sending-an-http-request.md"
+date: 2024-01-20 18:00:00.820896-07:00
+description: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att du som programmerare fr\xE5\
+  gar en server om information eller ber den utf\xF6ra en \xE5tg\xE4rd. Det \xE4r\
+  \ kritiskt f\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.666412
+model: gpt-4-1106-preview
+summary: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att du som programmerare fr\xE5\
+  gar en server om information eller ber den utf\xF6ra en \xE5tg\xE4rd. Det \xE4r\
+  \ kritiskt f\xF6r\u2026"
+title: "Skicka en http-f\xF6rfr\xE5gan"
 ---
 
 {{< edit_this_page >}}

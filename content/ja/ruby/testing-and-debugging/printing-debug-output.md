@@ -1,14 +1,23 @@
 ---
-title:                "デバッグ出力を表示する"
 aliases:
 - /ja/ruby/printing-debug-output/
-date:                  2024-01-20T17:53:47.525459-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "デバッグ出力を表示する"
-
-tag:                  "Testing and Debugging"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/printing-debug-output.md"
+date: 2024-01-20 17:53:47.525459-07:00
+description: "\u30D7\u30ED\u30B0\u30E9\u30E0\u306E\u30D0\u30B0\u3092\u898B\u3064\u3051\
+  \u308B\u305F\u3081\u3001\u30B3\u30FC\u30C9\u5B9F\u884C\u6642\u306E\u5909\u6570\u3084\
+  \u7D50\u679C\u3092\u8868\u793A\u3059\u308B\u306E\u304C\u30C7\u30D0\u30C3\u30B0\u51FA\
+  \u529B\u3067\u3059\u3002\u306A\u305C\u3084\u308B\u306E\uFF1F\u30A8\u30E9\u30FC\u3084\
+  \u4E88\u671F\u305B\u306C\u6319\u52D5\u306E\u539F\u56E0\u3092\u63A2\u308A\u3001\u7D20\
+  \u65E9\u304F\u5BFE\u51E6\u3059\u308B\u305F\u3081\u3067\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.393732
+model: gpt-4-1106-preview
+summary: "\u30D7\u30ED\u30B0\u30E9\u30E0\u306E\u30D0\u30B0\u3092\u898B\u3064\u3051\
+  \u308B\u305F\u3081\u3001\u30B3\u30FC\u30C9\u5B9F\u884C\u6642\u306E\u5909\u6570\u3084\
+  \u7D50\u679C\u3092\u8868\u793A\u3059\u308B\u306E\u304C\u30C7\u30D0\u30C3\u30B0\u51FA\
+  \u529B\u3067\u3059\u3002\u306A\u305C\u3084\u308B\u306E\uFF1F\u30A8\u30E9\u30FC\u3084\
+  \u4E88\u671F\u305B\u306C\u6319\u52D5\u306E\u539F\u56E0\u3092\u63A2\u308A\u3001\u7D20\
+  \u65E9\u304F\u5BFE\u51E6\u3059\u308B\u305F\u3081\u3067\u3059\u3002"
+title: "\u30C7\u30D0\u30C3\u30B0\u51FA\u529B\u3092\u8868\u793A\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

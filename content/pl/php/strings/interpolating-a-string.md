@@ -1,13 +1,16 @@
 ---
-title:                "Interpolacja łańcuchów znaków"
 aliases:
 - /pl/php/interpolating-a-string/
-date:                  2024-01-20T17:51:29.281309-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolacja łańcuchów znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/interpolating-a-string.md"
+date: 2024-01-20 17:51:29.281309-07:00
+description: "Interpolacja string\xF3w to wstawianie zmiennych do napis\xF3w w kodzie,\
+  \ aby dynamicznie budowa\u0107 tekst. Programi\u015Bci u\u017Cywaj\u0105 jej, by\
+  \ kod by\u0142 bardziej elastyczny\u2026"
+lastmod: 2024-02-18 23:08:49.680499
+model: gpt-4-1106-preview
+summary: "Interpolacja string\xF3w to wstawianie zmiennych do napis\xF3w w kodzie,\
+  \ aby dynamicznie budowa\u0107 tekst. Programi\u015Bci u\u017Cywaj\u0105 jej, by\
+  \ kod by\u0142 bardziej elastyczny\u2026"
+title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 ---
 
 {{< edit_this_page >}}

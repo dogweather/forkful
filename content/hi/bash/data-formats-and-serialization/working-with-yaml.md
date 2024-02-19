@@ -1,14 +1,31 @@
 ---
-title:                "YAML के साथ काम करना"
 aliases:
 - /hi/bash/working-with-yaml/
-date:                  2024-02-03T19:25:46.474084-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "YAML के साथ काम करना"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/bash/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:25:46.474084-07:00
+description: "YAML, \u091C\u093F\u0938\u0915\u093E \u092A\u0942\u0930\u093E \u0928\
+  \u093E\u092E YAML Ain't Markup Language \u0939\u0948, \u090F\u0915 \u092E\u093E\u0928\
+  \u0935-\u092A\u0920\u0928\u0940\u092F \u0921\u0947\u091F\u093E \u0938\u0940\u0930\
+  \u093F\u092F\u0932\u093E\u0907\u091C\u093C\u0947\u0936\u0928 \u092E\u093E\u0928\u0915\
+  \ \u0939\u0948 \u091C\u093F\u0938\u0947 \u0915\u0949\u0928\u094D\u092B\u093C\u093F\
+  \u0917\u0930\u0947\u0936\u0928 \u092B\u093C\u093E\u0907\u0932\u094B\u0902 \u0915\
+  \u0947 \u0932\u093F\u090F \u0914\u0930 \u0909\u0928 \u0905\u092A\u094D\u0932\u093F\
+  \u0915\u0947\u0936\u0928\u094D\u0938 \u092E\u0947\u0902 \u0921\u0947\u091F\u093E\
+  \u2026"
+lastmod: 2024-02-18 23:09:03.694344
+model: gpt-4-0125-preview
+summary: "YAML, \u091C\u093F\u0938\u0915\u093E \u092A\u0942\u0930\u093E \u0928\u093E\
+  \u092E YAML Ain't Markup Language \u0939\u0948, \u090F\u0915 \u092E\u093E\u0928\u0935\
+  -\u092A\u0920\u0928\u0940\u092F \u0921\u0947\u091F\u093E \u0938\u0940\u0930\u093F\
+  \u092F\u0932\u093E\u0907\u091C\u093C\u0947\u0936\u0928 \u092E\u093E\u0928\u0915\
+  \ \u0939\u0948 \u091C\u093F\u0938\u0947 \u0915\u0949\u0928\u094D\u092B\u093C\u093F\
+  \u0917\u0930\u0947\u0936\u0928 \u092B\u093C\u093E\u0907\u0932\u094B\u0902 \u0915\
+  \u0947 \u0932\u093F\u090F \u0914\u0930 \u0909\u0928 \u0905\u092A\u094D\u0932\u093F\
+  \u0915\u0947\u0936\u0928\u094D\u0938 \u092E\u0947\u0902 \u0921\u0947\u091F\u093E\
+  \u2026"
+title: "YAML \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\
+  \u093E"
 ---
 
 {{< edit_this_page >}}

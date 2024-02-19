@@ -1,14 +1,18 @@
 ---
-title:                "Sjekker om en mappe eksisterer"
 aliases:
 - /no/typescript/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:45.957614-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sjekker om en mappe eksisterer"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:45.957614-07:00
+description: "\xC5 sjekke om en mappe eksisterer i TypeScript er essensielt for filh\xE5\
+  ndteringsoppgaver, slik som \xE5 lese fra eller skrive data til filer, og sikre\
+  \ at\u2026"
+lastmod: 2024-02-18 23:08:53.658842
+model: gpt-4-0125-preview
+summary: "\xC5 sjekke om en mappe eksisterer i TypeScript er essensielt for filh\xE5\
+  ndteringsoppgaver, slik som \xE5 lese fra eller skrive data til filer, og sikre\
+  \ at\u2026"
+title: Sjekker om en mappe eksisterer
 ---
 
 {{< edit_this_page >}}

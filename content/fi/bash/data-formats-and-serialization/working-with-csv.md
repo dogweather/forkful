@@ -1,14 +1,17 @@
 ---
-title:                "Työskentely CSV:n kanssa"
 aliases:
 - /fi/bash/working-with-csv/
-date:                  2024-02-03T19:19:10.063566-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely CSV:n kanssa"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:19:10.063566-07:00
+description: "CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely Bashissa koskee\
+  \ tekstimuodossa tallennettujen taulukkomuotoisten tietojen k\xE4sittely\xE4 ja\
+  \ manipulointia.\u2026"
+lastmod: 2024-02-18 23:09:07.828910
+model: gpt-4-0125-preview
+summary: "CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely Bashissa koskee tekstimuodossa\
+  \ tallennettujen taulukkomuotoisten tietojen k\xE4sittely\xE4 ja manipulointia.\u2026"
+title: "Ty\xF6skentely CSV:n kanssa"
 ---
 
 {{< edit_this_page >}}

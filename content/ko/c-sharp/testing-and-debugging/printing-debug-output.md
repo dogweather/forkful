@@ -1,14 +1,23 @@
 ---
-title:                "디버그 출력을 찍어보기"
 aliases:
 - /ko/c-sharp/printing-debug-output/
-date:                  2024-01-20T17:52:31.906330-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "디버그 출력을 찍어보기"
-
-tag:                  "Testing and Debugging"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/printing-debug-output.md"
+date: 2024-01-20 17:52:31.906330-07:00
+description: "\uD504\uB85C\uADF8\uB798\uBC0D\uD560 \uB54C \uBC84\uADF8\uB97C \uCC3E\
+  \uAC70\uB098 \uB85C\uC9C1\uC744 \uC774\uD574\uD558\uAE30 \uC704\uD574 \uB514\uBC84\
+  \uADF8 \uCD9C\uB825\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4. \uC774 \uC815\uBCF4\uB294\
+  \ \uAC1C\uBC1C\uC790\uAC00 \uCF54\uB4DC\uAC00 \uC5B4\uB5BB\uAC8C \uC2E4\uD589\uB418\
+  \uB294\uC9C0 \uBCFC \uC218 \uC788\uAC8C \uD574\uC8FC\uBA70, \uBB38\uC81C \uD574\uACB0\
+  \uC744 \uB354 \uC27D\uAC8C \uB9CC\uB4E4\uC5B4 \uC90D\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.223734
+model: gpt-4-1106-preview
+summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uD560 \uB54C \uBC84\uADF8\uB97C \uCC3E\uAC70\
+  \uB098 \uB85C\uC9C1\uC744 \uC774\uD574\uD558\uAE30 \uC704\uD574 \uB514\uBC84\uADF8\
+  \ \uCD9C\uB825\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4. \uC774 \uC815\uBCF4\uB294 \uAC1C\
+  \uBC1C\uC790\uAC00 \uCF54\uB4DC\uAC00 \uC5B4\uB5BB\uAC8C \uC2E4\uD589\uB418\uB294\
+  \uC9C0 \uBCFC \uC218 \uC788\uAC8C \uD574\uC8FC\uBA70, \uBB38\uC81C \uD574\uACB0\uC744\
+  \ \uB354 \uC27D\uAC8C \uB9CC\uB4E4\uC5B4 \uC90D\uB2C8\uB2E4."
+title: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC744 \uCC0D\uC5B4\uBCF4\uAE30"
 ---
 
 {{< edit_this_page >}}

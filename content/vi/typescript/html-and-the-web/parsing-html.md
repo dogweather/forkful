@@ -1,15 +1,20 @@
 ---
-title:                "Phân Tích Cú Pháp HTML"
 aliases:
 - /vi/typescript/parsing-html/
-date:                  2024-01-28T22:04:06.440217-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Phân Tích Cú Pháp HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/typescript/parsing-html.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:04:06.440217-07:00
+description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 l\u1ECDc qua\
+  \ m\xE3 HTML \u0111\u1EC3 t\xECm ki\u1EBFm, tr\xEDch xu\u1EA5t ho\u1EB7c thao t\xE1\
+  c th\xF4ng tin. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
+  \ t\u01B0\u01A1ng t\xE1c v\u1EDBi n\u1ED9i dung\u2026"
+lastmod: 2024-02-18 23:08:50.412645
+model: gpt-4-0125-preview
+summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 l\u1ECDc qua m\xE3\
+  \ HTML \u0111\u1EC3 t\xECm ki\u1EBFm, tr\xEDch xu\u1EA5t ho\u1EB7c thao t\xE1c th\xF4\
+  ng tin. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u01B0\
+  \u01A1ng t\xE1c v\u1EDBi n\u1ED9i dung\u2026"
+title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 ---
 
 {{< edit_this_page >}}

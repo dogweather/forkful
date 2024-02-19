@@ -1,14 +1,23 @@
 ---
-title:                "提取子字符串"
 aliases:
 - /zh/elixir/extracting-substrings/
-date:                  2024-01-20T17:45:31.086019-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "提取子字符串"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/extracting-substrings.md"
+date: 2024-01-20 17:45:31.086019-07:00
+description: "\u4EC0\u4E48\u662F\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32\uFF1F\u5C31\u662F\
+  \u4ECE\u4E00\u4E2A\u957F\u5B57\u7B26\u4E32\u4E2D\u62BD\u51FA\u90E8\u5206\u5185\u5BB9\
+  \u3002\u4E3A\u4EC0\u4E48\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\uFF1F\u6709\u65F6\u5019\
+  \u6211\u4EEC\u53EA\u9700\u8981\u4FE1\u606F\u7684\u7247\u6BB5\uFF0C\u6BD4\u5982\u7528\
+  \u6237\u8F93\u5165\uFF0C\u6570\u636E\u5206\u6790\uFF0C\u6216\u53EA\u662F\u7B80\u5355\
+  \u5730\u5C55\u793A\u90E8\u5206\u4FE1\u606F\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:58.856278
+model: gpt-4-1106-preview
+summary: "\u4EC0\u4E48\u662F\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32\uFF1F\u5C31\u662F\
+  \u4ECE\u4E00\u4E2A\u957F\u5B57\u7B26\u4E32\u4E2D\u62BD\u51FA\u90E8\u5206\u5185\u5BB9\
+  \u3002\u4E3A\u4EC0\u4E48\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\uFF1F\u6709\u65F6\u5019\
+  \u6211\u4EEC\u53EA\u9700\u8981\u4FE1\u606F\u7684\u7247\u6BB5\uFF0C\u6BD4\u5982\u7528\
+  \u6237\u8F93\u5165\uFF0C\u6570\u636E\u5206\u6790\uFF0C\u6216\u53EA\u662F\u7B80\u5355\
+  \u5730\u5C55\u793A\u90E8\u5206\u4FE1\u606F\u3002"
+title: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32"
 ---
 
 {{< edit_this_page >}}

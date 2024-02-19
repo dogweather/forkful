@@ -1,14 +1,18 @@
 ---
-title:                "Travailler avec JSON"
 aliases:
 - /fr/lua/working-with-json/
-date:                  2024-02-03T19:23:23.127090-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Travailler avec JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/lua/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:23.127090-07:00
+description: "Travailler avec JSON en Lua implique de parser des cha\xEEnes format\xE9\
+  es en JSON en tables Lua et inversement, permettant un \xE9change de donn\xE9es\
+  \ facile entre\u2026"
+lastmod: 2024-02-18 23:09:08.993639
+model: gpt-4-0125-preview
+summary: "Travailler avec JSON en Lua implique de parser des cha\xEEnes format\xE9\
+  es en JSON en tables Lua et inversement, permettant un \xE9change de donn\xE9es\
+  \ facile entre\u2026"
+title: Travailler avec JSON
 ---
 
 {{< edit_this_page >}}

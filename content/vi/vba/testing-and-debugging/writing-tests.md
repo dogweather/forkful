@@ -1,14 +1,20 @@
 ---
-title:                "Viết kiểm thử"
 aliases:
 - /vi/vba/writing-tests/
-date:                  2024-02-01T22:09:21.835147-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Viết kiểm thử"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/writing-tests.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:09:21.835147-07:00
+description: "Vi\u1EC7c vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra trong l\u1EADp tr\xEC\
+  nh bao g\u1ED3m vi\u1EC7c t\u1EA1o ra c\xE1c th\u1EE7 t\u1EE5c c\u1EE5 th\u1EC3\
+  \ \u0111\u1EC3 x\xE1c th\u1EF1c t\xEDnh n\u0103ng v\xE0 hi\u1EC7u su\u1EA5t c\u1EE7\
+  a c\xE1c \u0111o\u1EA1n m\xE3 c\u1EE7a b\u1EA1n, \u0111\u1EA3m b\u1EA3o\u2026"
+lastmod: 2024-02-18 23:08:50.513433
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra trong l\u1EADp tr\xECnh\
+  \ bao g\u1ED3m vi\u1EC7c t\u1EA1o ra c\xE1c th\u1EE7 t\u1EE5c c\u1EE5 th\u1EC3 \u0111\
+  \u1EC3 x\xE1c th\u1EF1c t\xEDnh n\u0103ng v\xE0 hi\u1EC7u su\u1EA5t c\u1EE7a c\xE1\
+  c \u0111o\u1EA1n m\xE3 c\u1EE7a b\u1EA1n, \u0111\u1EA3m b\u1EA3o\u2026"
+title: "Vi\u1EBFt ki\u1EC3m th\u1EED"
 ---
 
 {{< edit_this_page >}}

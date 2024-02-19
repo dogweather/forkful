@@ -1,13 +1,16 @@
 ---
-title:                "Conversione di una data in una stringa"
 aliases:
 - /it/fish-shell/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:43.428965-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Conversione di una data in una stringa"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:43.428965-07:00
+description: "Convertire una data in una stringa permette di manipolare e visualizzare\
+  \ il dato in un formato leggibile e personalizzabile. I programmatori fanno ci\xF2\
+  \ per\u2026"
+lastmod: 2024-02-18 23:08:56.306713
+model: gpt-4-1106-preview
+summary: "Convertire una data in una stringa permette di manipolare e visualizzare\
+  \ il dato in un formato leggibile e personalizzabile. I programmatori fanno ci\xF2\
+  \ per\u2026"
+title: Conversione di una data in una stringa
 ---
 
 {{< edit_this_page >}}

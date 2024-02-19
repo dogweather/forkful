@@ -1,14 +1,18 @@
 ---
-title:                "Tolka HTML"
 aliases:
 - /sv/rust/parsing-html/
-date:                  2024-02-03T19:12:56.952104-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tolka HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:56.952104-07:00
+description: "Att tolka HTML i Rust handlar om att extrahera data fr\xE5n HTML-dokument,\
+  \ vilket \xE4r v\xE4sentligt f\xF6r webbskrapning, dataextraktion eller att bygga\
+  \ webb-\u2026"
+lastmod: 2024-02-18 23:08:51.581707
+model: gpt-4-0125-preview
+summary: "Att tolka HTML i Rust handlar om att extrahera data fr\xE5n HTML-dokument,\
+  \ vilket \xE4r v\xE4sentligt f\xF6r webbskrapning, dataextraktion eller att bygga\
+  \ webb-\u2026"
+title: Tolka HTML
 ---
 
 {{< edit_this_page >}}

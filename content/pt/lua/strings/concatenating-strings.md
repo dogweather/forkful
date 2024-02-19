@@ -1,13 +1,16 @@
 ---
-title:                "Concatenando strings"
 aliases:
 - /pt/lua/concatenating-strings/
-date:                  2024-01-20T17:35:22.020836-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenando strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/lua/concatenating-strings.md"
+date: 2024-01-20 17:35:22.020836-07:00
+description: "Concatenar strings \xE9 basicamente juntar textos diferentes em um s\xF3\
+  . Programadores fazem isso para construir mensagens, caminhos de arquivos, e sempre\
+  \ que\u2026"
+lastmod: 2024-02-18 23:08:58.274457
+model: gpt-4-1106-preview
+summary: "Concatenar strings \xE9 basicamente juntar textos diferentes em um s\xF3\
+  . Programadores fazem isso para construir mensagens, caminhos de arquivos, e sempre\
+  \ que\u2026"
+title: Concatenando strings
 ---
 
 {{< edit_this_page >}}

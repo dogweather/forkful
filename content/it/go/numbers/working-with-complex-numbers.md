@@ -1,14 +1,16 @@
 ---
-title:                "Lavorare con i numeri complessi"
 aliases:
 - /it/go/working-with-complex-numbers/
-date:                  2024-02-03T18:14:02.243526-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con i numeri complessi"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:14:02.243526-07:00
+description: "Lavorare con numeri complessi nella programmazione implica la manipolazione\
+  \ di numeri che hanno sia una parte reale che una immaginaria, tipicamente\u2026"
+lastmod: 2024-02-18 23:08:55.425865
+model: gpt-4-0125-preview
+summary: "Lavorare con numeri complessi nella programmazione implica la manipolazione\
+  \ di numeri che hanno sia una parte reale che una immaginaria, tipicamente\u2026"
+title: Lavorare con i numeri complessi
 ---
 
 {{< edit_this_page >}}

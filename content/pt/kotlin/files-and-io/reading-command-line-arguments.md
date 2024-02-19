@@ -1,13 +1,15 @@
 ---
-title:                "Lendo argumentos da linha de comando"
 aliases:
 - /pt/kotlin/reading-command-line-arguments/
-date:                  2024-01-20T17:56:27.077350-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lendo argumentos da linha de comando"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:27.077350-07:00
+description: "Ler argumentos da linha de comando significa acessar os dados que os\
+  \ usu\xE1rios inserem ao executar seu programa. Programadores fazem isso para tornar\
+  \ os\u2026"
+lastmod: 2024-02-18 23:08:58.131212
+model: gpt-4-1106-preview
+summary: "Ler argumentos da linha de comando significa acessar os dados que os usu\xE1\
+  rios inserem ao executar seu programa. Programadores fazem isso para tornar os\u2026"
+title: Lendo argumentos da linha de comando
 ---
 
 {{< edit_this_page >}}

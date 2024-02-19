@@ -1,14 +1,20 @@
 ---
-title:                "Kiểm tra nếu một thư mục tồn tại"
 aliases:
 - /vi/google-apps-script/checking-if-a-directory-exists/
-date:                  2024-02-01T21:49:28.478214-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kiểm tra nếu một thư mục tồn tại"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/google-apps-script/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:28.478214-07:00
+description: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3\
+  n t\u1EA1i trong Google Apps Script \u0111\u1EC1 c\u1EADp \u0111\u1EBFn vi\u1EC7\
+  c x\xE1c minh s\u1EF1 hi\u1EC7n di\u1EC7n c\u1EE7a m\u1ED9t th\u01B0 m\u1EE5c b\xEA\
+  n trong Google Drive. C\xE1c l\u1EADp\u2026"
+lastmod: 2024-02-18 23:08:50.236573
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1\
+  i trong Google Apps Script \u0111\u1EC1 c\u1EADp \u0111\u1EBFn vi\u1EC7c x\xE1c\
+  \ minh s\u1EF1 hi\u1EC7n di\u1EC7n c\u1EE7a m\u1ED9t th\u01B0 m\u1EE5c b\xEAn trong\
+  \ Google Drive. C\xE1c l\u1EADp\u2026"
+title: "Ki\u1EC3m tra n\u1EBFu m\u1ED9t th\u01B0 m\u1EE5c t\u1ED3n t\u1EA1i"
 ---
 
 {{< edit_this_page >}}

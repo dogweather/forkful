@@ -1,14 +1,17 @@
 ---
-title:                "Sende en HTTP-forespørsel"
 aliases:
 - /no/go/sending-an-http-request/
-date:                  2024-02-03T18:08:50.168257-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sende en HTTP-forespørsel"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/sending-an-http-request.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:50.168257-07:00
+description: "\xC5 sende en HTTP-foresp\xF8rsel inneb\xE6rer \xE5 initiere et kall\
+  \ fra din Go-applikasjon til en webserver, API eller en hvilken som helst annen\
+  \ HTTP-basert\u2026"
+lastmod: 2024-02-18 23:08:53.432495
+model: gpt-4-0125-preview
+summary: "\xC5 sende en HTTP-foresp\xF8rsel inneb\xE6rer \xE5 initiere et kall fra\
+  \ din Go-applikasjon til en webserver, API eller en hvilken som helst annen HTTP-basert\u2026"
+title: "Sende en HTTP-foresp\xF8rsel"
 ---
 
 {{< edit_this_page >}}

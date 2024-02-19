@@ -1,13 +1,14 @@
 ---
-title:                "Searching and replacing text"
 aliases:
 - /en/php/searching-and-replacing-text/
-date:                  2024-01-20T17:58:27.807114-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Searching and replacing text"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:27.807114-07:00
+description: "Searching and replacing text is how you find specific strings in content\
+  \ and swap them out for something else. Programmers do this to update data, fix\u2026"
+lastmod: 2024-02-18 23:09:11.122507
+model: gpt-4-1106-preview
+summary: "Searching and replacing text is how you find specific strings in content\
+  \ and swap them out for something else. Programmers do this to update data, fix\u2026"
+title: Searching and replacing text
 ---
 
 {{< edit_this_page >}}

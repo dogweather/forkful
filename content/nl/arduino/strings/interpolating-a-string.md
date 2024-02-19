@@ -1,15 +1,16 @@
 ---
-title:                "Een string interpoleren"
 aliases:
 - /nl/arduino/interpolating-a-string/
-date:                  2024-01-28T22:02:01.075148-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string interpoleren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/interpolating-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:02:01.075148-07:00
+description: "String interpolatie betreft het mengen van variabelen met tekst. Programmeurs\
+  \ doen dit om strings on-the-fly te bouwen, waardoor de output dynamisch en\u2026"
+lastmod: 2024-02-18 23:09:02.123163
+model: gpt-4-0125-preview
+summary: "String interpolatie betreft het mengen van variabelen met tekst. Programmeurs\
+  \ doen dit om strings on-the-fly te bouwen, waardoor de output dynamisch en\u2026"
+title: Een string interpoleren
 ---
 
 {{< edit_this_page >}}

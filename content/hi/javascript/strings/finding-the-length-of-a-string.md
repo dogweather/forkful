@@ -1,13 +1,25 @@
 ---
-title:                "स्ट्रिंग की लंबाई ज्ञात करना"
 aliases:
 - /hi/javascript/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:41.300108-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "स्ट्रिंग की लंबाई ज्ञात करना"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:41.300108-07:00
+description: "String \u0915\u0940 length \u092A\u0924\u093E \u0915\u0930\u0928\u093E\
+  \ \u092E\u0924\u0932\u092C \u0939\u094B\u0924\u093E \u0939\u0948 \u0915\u093F \u092A\
+  \u0924\u093E \u0915\u0930\u0947\u0902 \u0915\u093F string \u092E\u0947\u0902 \u0915\
+  \u093F\u0924\u0928\u0947 characters \u0939\u0948\u0902\u0964 \u092F\u0947 \u091C\
+  \u093E\u0928\u0928\u093E \u091C\u093C\u0930\u0942\u0930\u0940 \u0939\u0948 \u0915\
+  \u094D\u092F\u094B\u0902\u0915\u093F \u0907\u0938\u0938\u0947 \u0939\u092E text\
+  \ processing, validation \u0914\u0930\u2026"
+lastmod: 2024-02-18 23:09:04.027466
+model: gpt-4-1106-preview
+summary: "String \u0915\u0940 length \u092A\u0924\u093E \u0915\u0930\u0928\u093E \u092E\
+  \u0924\u0932\u092C \u0939\u094B\u0924\u093E \u0939\u0948 \u0915\u093F \u092A\u0924\
+  \u093E \u0915\u0930\u0947\u0902 \u0915\u093F string \u092E\u0947\u0902 \u0915\u093F\
+  \u0924\u0928\u0947 characters \u0939\u0948\u0902\u0964 \u092F\u0947 \u091C\u093E\
+  \u0928\u0928\u093E \u091C\u093C\u0930\u0942\u0930\u0940 \u0939\u0948 \u0915\u094D\
+  \u092F\u094B\u0902\u0915\u093F \u0907\u0938\u0938\u0947 \u0939\u092E text processing,\
+  \ validation \u0914\u0930\u2026"
+title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u0940 \u0932\u0902\
+  \u092C\u093E\u0908 \u091C\u094D\u091E\u093E\u0924 \u0915\u0930\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Estrazione di sottostringhe"
 aliases:
 - /it/google-apps-script/extracting-substrings/
-date:                  2024-02-01T21:52:54.882865-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Estrazione di sottostringhe"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/google-apps-script/extracting-substrings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:54.882865-07:00
+description: "Estrarre sottosequenze di stringhe implica prendere una porzione di\
+  \ una stringa - creando essenzialmente una nuova stringa a partire da una esistente.\
+  \ I\u2026"
+lastmod: 2024-02-18 23:08:55.465851
+model: gpt-4-0125-preview
+summary: "Estrarre sottosequenze di stringhe implica prendere una porzione di una\
+  \ stringa - creando essenzialmente una nuova stringa a partire da una esistente.\
+  \ I\u2026"
+title: Estrazione di sottostringhe
 ---
 
 {{< edit_this_page >}}

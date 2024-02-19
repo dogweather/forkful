@@ -1,13 +1,16 @@
 ---
-title:                "Att arbeta med komplexa tal"
 aliases:
 - /sv/elixir/working-with-complex-numbers/
-date:                  2024-01-26T04:39:15.192483-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med komplexa tal"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/working-with-complex-numbers.md"
+date: 2024-01-26 04:39:15.192483-07:00
+description: "Komplexa tal har en reell del och en imagin\xE4r del (som `3 + 4i`).\
+  \ De anv\xE4nds inom ingenj\xF6rsarbete, fysik och vissa dataproblem. Programmerare\
+  \ arbetar med\u2026"
+lastmod: 2024-02-18 23:08:51.496781
+model: gpt-4-0125-preview
+summary: "Komplexa tal har en reell del och en imagin\xE4r del (som `3 + 4i`). De\
+  \ anv\xE4nds inom ingenj\xF6rsarbete, fysik och vissa dataproblem. Programmerare\
+  \ arbetar med\u2026"
+title: Att arbeta med komplexa tal
 ---
 
 {{< edit_this_page >}}

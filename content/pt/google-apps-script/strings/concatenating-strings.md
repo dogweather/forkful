@@ -1,14 +1,18 @@
 ---
-title:                "Concatenando strings"
 aliases:
 - /pt/google-apps-script/concatenating-strings/
-date:                  2024-02-01T21:50:08.108299-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Concatenando strings"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/google-apps-script/concatenating-strings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:08.108299-07:00
+description: "Concatenar strings envolve combinar duas ou mais strings em uma \xFA\
+  nica string. Programadores fazem isso para construir dinamicamente mensagens, URLs,\
+  \ ou\u2026"
+lastmod: 2024-02-18 23:08:57.706684
+model: gpt-4-0125-preview
+summary: "Concatenar strings envolve combinar duas ou mais strings em uma \xFAnica\
+  \ string. Programadores fazem isso para construir dinamicamente mensagens, URLs,\
+  \ ou\u2026"
+title: Concatenando strings
 ---
 
 {{< edit_this_page >}}

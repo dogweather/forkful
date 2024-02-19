@@ -1,14 +1,21 @@
 ---
-title:                "发出 HTTP 请求"
 aliases:
 - /zh/haskell/sending-an-http-request/
-date:                  2024-01-20T17:59:50.035462-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "发出 HTTP 请求"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/sending-an-http-request.md"
+date: 2024-01-20 17:59:50.035462-07:00
+description: "\u53D1\u9001HTTP\u8BF7\u6C42\u662FWeb\u7F16\u7A0B\u4E2D\u7684\u4E00\u9879\
+  \u57FA\u672C\u64CD\u4F5C\uFF0C\u5B83\u5141\u8BB8\u4F60\u4ECE\u670D\u52A1\u5668\u83B7\
+  \u53D6\u6216\u53D1\u9001\u6570\u636E\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u4E3B\
+  \u8981\u662F\u4E3A\u4E86\u4E0E\u8FDC\u7A0B\u670D\u52A1\u4EA4\u4E92\uFF0C\u83B7\u53D6\
+  \u6240\u9700\u4FE1\u606F\u6216\u89E6\u53D1\u7279\u5B9A\u64CD\u4F5C\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.167065
+model: gpt-4-1106-preview
+summary: "\u53D1\u9001HTTP\u8BF7\u6C42\u662FWeb\u7F16\u7A0B\u4E2D\u7684\u4E00\u9879\
+  \u57FA\u672C\u64CD\u4F5C\uFF0C\u5B83\u5141\u8BB8\u4F60\u4ECE\u670D\u52A1\u5668\u83B7\
+  \u53D6\u6216\u53D1\u9001\u6570\u636E\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u4E3B\
+  \u8981\u662F\u4E3A\u4E86\u4E0E\u8FDC\u7A0B\u670D\u52A1\u4EA4\u4E92\uFF0C\u83B7\u53D6\
+  \u6240\u9700\u4FE1\u606F\u6216\u89E6\u53D1\u7279\u5B9A\u64CD\u4F5C\u3002"
+title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 ---
 
 {{< edit_this_page >}}

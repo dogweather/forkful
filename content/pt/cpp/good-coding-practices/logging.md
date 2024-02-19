@@ -1,13 +1,16 @@
 ---
-title:                "Registro de Logs"
 aliases:
 - /pt/cpp/logging/
-date:                  2024-01-26T01:00:09.045190-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registro de Logs"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/logging.md"
+date: 2024-01-26 01:00:09.045190-07:00
+description: "A \"logging\" em programa\xE7\xE3o \xE9 o processo de registrar eventos,\
+  \ estados e informa\xE7\xF5es em um arquivo ou em outro meio de sa\xEDda. Os programadores\
+  \ fazem logs\u2026"
+lastmod: 2024-02-18 23:08:58.456097
+model: gpt-4-1106-preview
+summary: "A \"logging\" em programa\xE7\xE3o \xE9 o processo de registrar eventos,\
+  \ estados e informa\xE7\xF5es em um arquivo ou em outro meio de sa\xEDda. Os programadores\
+  \ fazem logs\u2026"
+title: Registro de Logs
 ---
 
 {{< edit_this_page >}}

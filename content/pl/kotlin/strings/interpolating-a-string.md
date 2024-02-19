@@ -1,13 +1,16 @@
 ---
-title:                "Interpolacja łańcuchów znaków"
 aliases:
 - /pl/kotlin/interpolating-a-string/
-date:                  2024-01-20T17:51:28.612652-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolacja łańcuchów znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/interpolating-a-string.md"
+date: 2024-01-20 17:51:28.612652-07:00
+description: "Interpolacja string\xF3w to proces wstawiania dynamicznie wyliczanych\
+  \ warto\u015Bci do \u0142a\u0144cuch\xF3w znakowych. Programi\u015Bci u\u017Cywaj\u0105\
+  \ tego, aby u\u0142atwi\u0107 sobie budowanie\u2026"
+lastmod: 2024-02-18 23:08:49.545977
+model: gpt-4-1106-preview
+summary: "Interpolacja string\xF3w to proces wstawiania dynamicznie wyliczanych warto\u015B\
+  ci do \u0142a\u0144cuch\xF3w znakowych. Programi\u015Bci u\u017Cywaj\u0105 tego,\
+  \ aby u\u0142atwi\u0107 sobie budowanie\u2026"
+title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 ---
 
 {{< edit_this_page >}}

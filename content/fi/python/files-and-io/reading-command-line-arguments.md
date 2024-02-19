@@ -1,13 +1,16 @@
 ---
-title:                "Komennoriviparametrien lukeminen"
 aliases:
 - /fi/python/reading-command-line-arguments/
-date:                  2024-01-20T17:56:54.404931-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Komennoriviparametrien lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:54.404931-07:00
+description: "Mit\xE4 ja miksi? Komentoriviparametrien lukeminen mahdollistaa k\xE4\
+  ytt\xE4j\xE4n antamien arvojen vastaanottamisen suoraan ohjelmaasi. T\xE4t\xE4 tehd\xE4\
+  \xE4n, koska se\u2026"
+lastmod: 2024-02-18 23:09:07.200246
+model: gpt-4-1106-preview
+summary: "Mit\xE4 ja miksi? Komentoriviparametrien lukeminen mahdollistaa k\xE4ytt\xE4\
+  j\xE4n antamien arvojen vastaanottamisen suoraan ohjelmaasi. T\xE4t\xE4 tehd\xE4\
+  \xE4n, koska se\u2026"
+title: Komennoriviparametrien lukeminen
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,26 @@
 ---
-title:                "새 프로젝트 시작하기"
 aliases:
 - /ko/google-apps-script/starting-a-new-project/
-date:                  2024-02-01T22:03:47.649985-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "새 프로젝트 시작하기"
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/starting-a-new-project.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:47.649985-07:00
+description: "Google Apps Script(GAS)\uC5D0\uC11C \uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C\
+  \ \uC2DC\uC791\uD55C\uB2E4\uB294 \uAC83\uC740 Google \uC0DD\uD0DC\uACC4(Google \uB4DC\
+  \uB77C\uC774\uBE0C, \uBB38\uC11C, \uC2A4\uD504\uB808\uB4DC\uC2DC\uD2B8 \uB4F1) \uB0B4\
+  \uC5D0\uC11C \uC2A4\uD06C\uB9BD\uD2B8 \uD30C\uC77C\uC744 \uCD08\uAE30\uD654\uD558\
+  \uC5EC \uC791\uC5C5\uC744 \uC790\uB3D9\uD654\uD558\uAC70\uB098 Google Apps \uAE30\
+  \uB2A5\uC744 \uD655\uC7A5\uD558\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uD504\
+  \uB85C\uADF8\uB798\uBA38\uB4E4\uC740\u2026"
+lastmod: 2024-02-18 23:09:05.556648
+model: gpt-4-0125-preview
+summary: "Google Apps Script(GAS)\uC5D0\uC11C \uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C\
+  \ \uC2DC\uC791\uD55C\uB2E4\uB294 \uAC83\uC740 Google \uC0DD\uD0DC\uACC4(Google \uB4DC\
+  \uB77C\uC774\uBE0C, \uBB38\uC11C, \uC2A4\uD504\uB808\uB4DC\uC2DC\uD2B8 \uB4F1) \uB0B4\
+  \uC5D0\uC11C \uC2A4\uD06C\uB9BD\uD2B8 \uD30C\uC77C\uC744 \uCD08\uAE30\uD654\uD558\
+  \uC5EC \uC791\uC5C5\uC744 \uC790\uB3D9\uD654\uD558\uAC70\uB098 Google Apps \uAE30\
+  \uB2A5\uC744 \uD655\uC7A5\uD558\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uD504\
+  \uB85C\uADF8\uB798\uBA38\uB4E4\uC740\u2026"
+title: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

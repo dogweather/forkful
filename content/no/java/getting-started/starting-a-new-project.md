@@ -1,13 +1,15 @@
 ---
-title:                "Å starte et nytt prosjekt"
 aliases:
 - /no/java/starting-a-new-project/
-date:                  2024-01-20T18:03:49.865769-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Å starte et nytt prosjekt"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/starting-a-new-project.md"
+date: 2024-01-20 18:03:49.865769-07:00
+description: "N\xE5r du begynner et nytt prosjekt, starter du med en blank slate for\
+  \ \xE5 kode noe fra bunnen av. Programmerere gj\xF8r dette for \xE5 l\xF8se et nytt\
+  \ problem,\u2026"
+lastmod: 2024-02-18 23:08:53.771412
+model: gpt-4-1106-preview
+summary: "N\xE5r du begynner et nytt prosjekt, starter du med en blank slate for \xE5\
+  \ kode noe fra bunnen av. Programmerere gj\xF8r dette for \xE5 l\xF8se et nytt problem,\u2026"
+title: "\xC5 starte et nytt prosjekt"
 ---
 
 {{< edit_this_page >}}

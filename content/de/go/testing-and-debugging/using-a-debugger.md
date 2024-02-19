@@ -1,14 +1,16 @@
 ---
-title:                "Verwenden eines Debuggers"
 aliases:
 - /de/go/using-a-debugger/
-date:                  2024-02-03T18:10:16.367454-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verwenden eines Debuggers"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/using-a-debugger.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:16.367454-07:00
+description: "Die Verwendung eines Debuggers in der Go-Programmierung beinhaltet den\
+  \ Einsatz von Tools oder Funktionen, um den Zustand eines laufenden Programms zu\u2026"
+lastmod: 2024-02-18 23:09:04.368984
+model: gpt-4-0125-preview
+summary: "Die Verwendung eines Debuggers in der Go-Programmierung beinhaltet den Einsatz\
+  \ von Tools oder Funktionen, um den Zustand eines laufenden Programms zu\u2026"
+title: Verwenden eines Debuggers
 ---
 
 {{< edit_this_page >}}

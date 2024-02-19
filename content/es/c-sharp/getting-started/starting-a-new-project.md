@@ -1,13 +1,15 @@
 ---
-title:                "Iniciando un nuevo proyecto"
 aliases:
 - /es/c-sharp/starting-a-new-project/
-date:                  2024-01-20T18:03:00.191685-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Iniciando un nuevo proyecto"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/starting-a-new-project.md"
+date: 2024-01-20 18:03:00.191685-07:00
+description: "Crear un nuevo proyecto en C# es como iniciar la construcci\xF3n de\
+  \ un edificio: configuras la base y decides la estructura. Programadores lo hacen\
+  \ para\u2026"
+lastmod: 2024-02-18 23:09:09.982722
+model: gpt-4-1106-preview
+summary: "Crear un nuevo proyecto en C# es como iniciar la construcci\xF3n de un edificio:\
+  \ configuras la base y decides la estructura. Programadores lo hacen para\u2026"
+title: Iniciando un nuevo proyecto
 ---
 
 {{< edit_this_page >}}

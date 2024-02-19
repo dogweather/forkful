@@ -1,13 +1,16 @@
 ---
-title:                "Obliczanie daty w przyszłości lub przeszłości"
 aliases:
 - /pl/javascript/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:31:28.786415-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:31:28.786415-07:00
+description: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to\
+  \ proces ustalania daty, kt\xF3ra b\u0119dzie mia\u0142a miejsce za okre\u015Blon\u0105\
+  \ liczb\u0119 dni, miesi\u0119cy, czy lat od\u2026"
+lastmod: 2024-02-18 23:08:50.006791
+model: gpt-4-1106-preview
+summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to proces\
+  \ ustalania daty, kt\xF3ra b\u0119dzie mia\u0142a miejsce za okre\u015Blon\u0105\
+  \ liczb\u0119 dni, miesi\u0119cy, czy lat od\u2026"
+title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 ---
 
 {{< edit_this_page >}}

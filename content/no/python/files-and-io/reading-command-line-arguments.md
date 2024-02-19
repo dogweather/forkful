@@ -1,13 +1,16 @@
 ---
-title:                "Lese kommandolinjeargumenter"
 aliases:
 - /no/python/reading-command-line-arguments/
-date:                  2024-01-20T17:56:49.590353-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lese kommandolinjeargumenter"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:49.590353-07:00
+description: "Kommandolinjeargumenter lar brukere gi inndata direkte til et program\
+  \ n\xE5r de kj\xF8rer det fra en terminal. Programmerere henter disse argumentene\
+  \ for \xE5\u2026"
+lastmod: 2024-02-18 23:08:53.539002
+model: gpt-4-1106-preview
+summary: "Kommandolinjeargumenter lar brukere gi inndata direkte til et program n\xE5\
+  r de kj\xF8rer det fra en terminal. Programmerere henter disse argumentene for \xE5\
+  \u2026"
+title: Lese kommandolinjeargumenter
 ---
 
 {{< edit_this_page >}}

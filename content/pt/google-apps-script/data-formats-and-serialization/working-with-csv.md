@@ -1,14 +1,16 @@
 ---
-title:                "Trabalhando com CSV"
 aliases:
 - /pt/google-apps-script/working-with-csv/
-date:                  2024-02-01T22:05:22.348840-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/google-apps-script/working-with-csv.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:05:22.348840-07:00
+description: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgulas) no Google\
+  \ Apps Script envolve ler, modificar e escrever arquivos de texto simples onde cada\u2026"
+lastmod: 2024-02-18 23:08:57.741488
+model: gpt-4-0125-preview
+summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgulas) no Google\
+  \ Apps Script envolve ler, modificar e escrever arquivos de texto simples onde cada\u2026"
+title: Trabalhando com CSV
 ---
 
 {{< edit_this_page >}}

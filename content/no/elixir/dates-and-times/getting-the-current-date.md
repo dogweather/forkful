@@ -1,16 +1,19 @@
 ---
-title:                "Få dagens dato"
 aliases:
 - /no/elixir/getting-the-current-date/
-date:                  2024-02-03T19:09:27.907362-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Få dagens dato"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
-  - 2024-02-05, dogweather, reviewed and corrected
-lastmod:              2024-02-05
+- 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-05, dogweather, reviewed and corrected
+date: 2024-02-03 19:09:27.907362-07:00
+description: "\xC5 f\xE5 den gjeldende datoen i Elixir involverer \xE5 f\xE5 tilgang\
+  \ til systemets dato- og tidsinformasjon, en vanlig oppgave for logging, datostempling,\
+  \ eller\u2026"
+lastmod: 2024-02-18 23:08:53.614894
+model: gpt-4-0125-preview
+summary: "\xC5 f\xE5 den gjeldende datoen i Elixir involverer \xE5 f\xE5 tilgang til\
+  \ systemets dato- og tidsinformasjon, en vanlig oppgave for logging, datostempling,\
+  \ eller\u2026"
+title: "F\xE5 dagens dato"
 ---
 
 {{< edit_this_page >}}

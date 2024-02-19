@@ -1,14 +1,28 @@
 ---
-title:                "문자열에서 날짜 분석하기"
 aliases:
 - /ko/php/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:15:37.537457-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열에서 날짜 분석하기"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:15:37.537457-07:00
+description: "PHP\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uD30C\uC2F1\
+  \uD558\uAE30\uB294 \uB0A0\uC9DC \uBC0F/\uB610\uB294 \uC2DC\uAC04\uC744 \uD45C\uD604\
+  \uD558\uB294 \uD14D\uC2A4\uD2B8\uB97C PHP `DateTime` \uAC1D\uCCB4\uB098 \uB2E4\uB978\
+  \ \uB0A0\uC9DC/\uC2DC\uAC04 \uD615\uC2DD\uC73C\uB85C \uBCC0\uD658\uD558\uB294 \uC791\
+  \uC5C5\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uC774\uB294 \uC0AC\uC6A9\uC790 \uC785\uB825\
+  \uC774\uB098 \uC678\uBD80 \uC18C\uC2A4\uC5D0\uC11C \uC628 \uB370\uC774\uD130\uB97C\
+  \ \uB2E4\uB8F0 \uB54C, \uB370\uC774\uD130 \uC720\uD6A8\uC131 \uAC80\uC0AC, \uC870\
+  \uC791, \uC800\uC7A5 \uBC0F \uD45C\uC2DC\uB97C \uC704\uD574\u2026"
+lastmod: 2024-02-18 23:09:06.367448
+model: gpt-4-0125-preview
+summary: "PHP\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uD30C\uC2F1\
+  \uD558\uAE30\uB294 \uB0A0\uC9DC \uBC0F/\uB610\uB294 \uC2DC\uAC04\uC744 \uD45C\uD604\
+  \uD558\uB294 \uD14D\uC2A4\uD2B8\uB97C PHP `DateTime` \uAC1D\uCCB4\uB098 \uB2E4\uB978\
+  \ \uB0A0\uC9DC/\uC2DC\uAC04 \uD615\uC2DD\uC73C\uB85C \uBCC0\uD658\uD558\uB294 \uC791\
+  \uC5C5\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uC774\uB294 \uC0AC\uC6A9\uC790 \uC785\uB825\
+  \uC774\uB098 \uC678\uBD80 \uC18C\uC2A4\uC5D0\uC11C \uC628 \uB370\uC774\uD130\uB97C\
+  \ \uB2E4\uB8F0 \uB54C, \uB370\uC774\uD130 \uC720\uD6A8\uC131 \uAC80\uC0AC, \uC870\
+  \uC791, \uC800\uC7A5 \uBC0F \uD45C\uC2DC\uB97C \uC704\uD574\u2026"
+title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uBD84\uC11D\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

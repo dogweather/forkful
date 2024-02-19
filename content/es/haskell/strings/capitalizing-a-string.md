@@ -1,14 +1,16 @@
 ---
-title:                "Capitalizando una cadena de texto"
 aliases:
 - /es/haskell/capitalizing-a-string/
-date:                  2024-02-03T19:05:18.589695-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizando una cadena de texto"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:18.589695-07:00
+description: "Capitalizar una cadena implica transformar la primera letra de una cadena\
+  \ dada a may\xFAscula mientras se asegura de que el resto de las letras permanezcan\u2026"
+lastmod: 2024-02-18 23:09:10.009687
+model: gpt-4-0125-preview
+summary: "Capitalizar una cadena implica transformar la primera letra de una cadena\
+  \ dada a may\xFAscula mientras se asegura de que el resto de las letras permanezcan\u2026"
+title: Capitalizando una cadena de texto
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Å sende en HTTP-forespørsel"
 aliases:
 - /no/typescript/sending-an-http-request/
-date:                  2024-01-20T18:01:05.092869-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Å sende en HTTP-forespørsel"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/sending-an-http-request.md"
+date: 2024-01-20 18:01:05.092869-07:00
+description: "\xC5 sende en HTTP-foresp\xF8rsel er m\xE5ten nettlesere og servere\
+  \ snakker med hverandre p\xE5; du sp\xF8r etter data, den returnerer data. Programmerere\
+  \ gj\xF8r dette for\u2026"
+lastmod: 2024-02-18 23:08:53.642017
+model: gpt-4-1106-preview
+summary: "\xC5 sende en HTTP-foresp\xF8rsel er m\xE5ten nettlesere og servere snakker\
+  \ med hverandre p\xE5; du sp\xF8r etter data, den returnerer data. Programmerere\
+  \ gj\xF8r dette for\u2026"
+title: "\xC5 sende en HTTP-foresp\xF8rsel"
 ---
 
 {{< edit_this_page >}}

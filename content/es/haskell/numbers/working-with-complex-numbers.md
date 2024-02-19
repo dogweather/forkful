@@ -1,13 +1,16 @@
 ---
-title:                "Trabajando con números complejos"
 aliases:
 - /es/haskell/working-with-complex-numbers/
-date:                  2024-01-26T04:41:14.464216-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con números complejos"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/working-with-complex-numbers.md"
+date: 2024-01-26 04:41:14.464216-07:00
+description: "Los n\xFAmeros complejos, que constan de una parte real y una parte\
+  \ imaginaria, son esenciales en varios campos computacionales como la ingenier\xED\
+  a, la f\xEDsica\u2026"
+lastmod: 2024-02-18 23:09:10.021490
+model: gpt-4-0125-preview
+summary: "Los n\xFAmeros complejos, que constan de una parte real y una parte imaginaria,\
+  \ son esenciales en varios campos computacionales como la ingenier\xEDa, la f\xED\
+  sica\u2026"
+title: "Trabajando con n\xFAmeros complejos"
 ---
 
 {{< edit_this_page >}}

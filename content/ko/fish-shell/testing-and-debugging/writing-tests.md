@@ -1,14 +1,30 @@
 ---
-title:                "테스트 작성하기"
 aliases:
 - /ko/fish-shell/writing-tests/
-date:                  2024-02-03T19:31:06.254903-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "테스트 작성하기"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:06.254903-07:00
+description: "Fish Shell\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uC791\uC131\uD55C\uB2E4\
+  \uB294 \uAC83\uC740 \uCF54\uB4DC\uB97C \uC790\uB3D9\uC73C\uB85C \uC2E4\uD589\uD558\
+  \uC5EC \uC608\uC0C1 \uACB0\uACFC\uC640 \uBE44\uAD50\uD574 \uADF8 \uB3D9\uC791\uC744\
+  \ \uAC80\uC99D\uD558\uB294 \uC2A4\uD06C\uB9BD\uD2B8\uB97C \uB9CC\uB4DC\uB294 \uAC83\
+  \uC744 \uB9D0\uD569\uB2C8\uB2E4. \uC774\uB7EC\uD55C \uC2E4\uCC9C\uC740 \uC178 \uC2A4\
+  \uD06C\uB9BD\uD2B8\uAC00 \uC758\uB3C4\uD55C \uB300\uB85C \uC791\uB3D9\uD558\uB294\
+  \uC9C0 \uD655\uC778\uD558\uACE0, \uC624\uB958\uB97C \uC870\uAE30\uC5D0 \uD3EC\uCC29\
+  \uD558\uBA70, \uC720\uC9C0 \uAD00\uB9AC\uB97C \uB354 \uC27D\uAC8C \uB9CC\uB4E4\uAE30\
+  \ \uB54C\uBB38\uC5D0\u2026"
+lastmod: 2024-02-18 23:09:06.886832
+model: gpt-4-0125-preview
+summary: "Fish Shell\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uC791\uC131\uD55C\uB2E4\
+  \uB294 \uAC83\uC740 \uCF54\uB4DC\uB97C \uC790\uB3D9\uC73C\uB85C \uC2E4\uD589\uD558\
+  \uC5EC \uC608\uC0C1 \uACB0\uACFC\uC640 \uBE44\uAD50\uD574 \uADF8 \uB3D9\uC791\uC744\
+  \ \uAC80\uC99D\uD558\uB294 \uC2A4\uD06C\uB9BD\uD2B8\uB97C \uB9CC\uB4DC\uB294 \uAC83\
+  \uC744 \uB9D0\uD569\uB2C8\uB2E4. \uC774\uB7EC\uD55C \uC2E4\uCC9C\uC740 \uC178 \uC2A4\
+  \uD06C\uB9BD\uD2B8\uAC00 \uC758\uB3C4\uD55C \uB300\uB85C \uC791\uB3D9\uD558\uB294\
+  \uC9C0 \uD655\uC778\uD558\uACE0, \uC624\uB958\uB97C \uC870\uAE30\uC5D0 \uD3EC\uCC29\
+  \uD558\uBA70, \uC720\uC9C0 \uAD00\uB9AC\uB97C \uB354 \uC27D\uAC8C \uB9CC\uB4E4\uAE30\
+  \ \uB54C\uBB38\uC5D0\u2026"
+title: "\uD14C\uC2A4\uD2B8 \uC791\uC131\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

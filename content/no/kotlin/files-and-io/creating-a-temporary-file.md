@@ -1,13 +1,16 @@
 ---
-title:                "Opprette en midlertidig fil"
 aliases:
 - /no/kotlin/creating-a-temporary-file/
-date:                  2024-01-20T17:40:54.004169-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Opprette en midlertidig fil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:54.004169-07:00
+description: "Midlertidige filer er kortvarige datalagringselementer som skapes under\
+  \ kj\xF8ring av programmer. Programmerere lager dem for \xE5 h\xE5ndtere store datastr\xF8\
+  mmer,\u2026"
+lastmod: 2024-02-18 23:08:53.871150
+model: gpt-4-1106-preview
+summary: "Midlertidige filer er kortvarige datalagringselementer som skapes under\
+  \ kj\xF8ring av programmer. Programmerere lager dem for \xE5 h\xE5ndtere store datastr\xF8\
+  mmer,\u2026"
+title: Opprette en midlertidig fil
 ---
 
 {{< edit_this_page >}}

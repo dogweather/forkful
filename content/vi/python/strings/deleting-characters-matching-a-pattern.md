@@ -1,15 +1,20 @@
 ---
-title:                "Xóa các ký tự phù hợp với một mẫu"
 aliases:
 - /vi/python/deleting-characters-matching-a-pattern/
-date:                  2024-01-28T21:59:16.125781-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Xóa các ký tự phù hợp với một mẫu"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/python/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:16.125781-07:00
+description: "Trong l\u1EADp tr\xECnh, vi\u1EC7c x\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDB\
+  p v\u1EDBi m\u1ED9t m\u1EABu ngh\u0129a l\xE0 t\xECm c\xE1c chu\u1ED7i k\xFD t\u1EF1\
+  \ ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t quy t\u1EAFc c\u1EE5 th\u1EC3\u2014m\u1ED9t\
+  \ m\u1EABu\u2014v\xE0 lo\u1EA1i b\u1ECF ch\xFAng kh\u1ECFi chu\u1ED7i. C\xE1c\u2026"
+lastmod: 2024-02-18 23:08:50.250286
+model: gpt-4-0125-preview
+summary: "Trong l\u1EADp tr\xECnh, vi\u1EC7c x\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDB\
+  p v\u1EDBi m\u1ED9t m\u1EABu ngh\u0129a l\xE0 t\xECm c\xE1c chu\u1ED7i k\xFD t\u1EF1\
+  \ ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t quy t\u1EAFc c\u1EE5 th\u1EC3\u2014m\u1ED9t\
+  \ m\u1EABu\u2014v\xE0 lo\u1EA1i b\u1ECF ch\xFAng kh\u1ECFi chu\u1ED7i. C\xE1c\u2026"
+title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 ---
 
 {{< edit_this_page >}}

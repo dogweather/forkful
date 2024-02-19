@@ -1,12 +1,14 @@
 ---
-title:                "Extracting substrings"
 aliases:
 - /en/vba/extracting-substrings/
-date:                  2024-02-01T21:30:17.130436-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Extracting substrings"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/vba/extracting-substrings.md"
+date: 2024-02-01 21:30:17.130436-07:00
+description: "Extracting substrings in Visual Basic for Applications (VBA) involves\
+  \ isolating specific parts of a string based on given criteria. Programmers do this\u2026"
+lastmod: 2024-02-18 23:09:10.879033
+model: gpt-4-0125-preview
+summary: "Extracting substrings in Visual Basic for Applications (VBA) involves isolating\
+  \ specific parts of a string based on given criteria. Programmers do this\u2026"
+title: Extracting substrings
 ---
 
 {{< edit_this_page >}}

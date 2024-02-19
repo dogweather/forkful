@@ -1,14 +1,16 @@
 ---
-title:                "Schreiben auf Standardfehler"
 aliases:
 - /de/clojure/writing-to-standard-error/
-date:                  2024-02-03T19:32:48.040040-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Schreiben auf Standardfehler"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:48.040040-07:00
+description: "Das Schreiben auf den Standardfehler (stderr) bezieht sich darauf, Fehlermeldungen\
+  \ und Diagnosen an den stderr-Stream zu leiten, getrennt von der\u2026"
+lastmod: 2024-02-18 23:09:04.524501
+model: gpt-4-0125-preview
+summary: "Das Schreiben auf den Standardfehler (stderr) bezieht sich darauf, Fehlermeldungen\
+  \ und Diagnosen an den stderr-Stream zu leiten, getrennt von der\u2026"
+title: Schreiben auf Standardfehler
 ---
 
 {{< edit_this_page >}}

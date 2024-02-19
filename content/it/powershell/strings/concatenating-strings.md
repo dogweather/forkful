@@ -1,13 +1,16 @@
 ---
-title:                "Concatenazione di stringhe"
 aliases:
 - /it/powershell/concatenating-strings/
-date:                  2024-01-20T17:35:41.130191-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenazione di stringhe"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/concatenating-strings.md"
+date: 2024-01-20 17:35:41.130191-07:00
+description: "Unire le stringhe, o concatenazione, significa attaccare una stringa\
+  \ alla fine di un'altra. Lo facciamo per creare messaggi completi, percorsi di file,\
+  \ o\u2026"
+lastmod: 2024-02-18 23:08:56.084931
+model: gpt-4-1106-preview
+summary: "Unire le stringhe, o concatenazione, significa attaccare una stringa alla\
+  \ fine di un'altra. Lo facciamo per creare messaggi completi, percorsi di file,\
+  \ o\u2026"
+title: Concatenazione di stringhe
 ---
 
 {{< edit_this_page >}}

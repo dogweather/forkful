@@ -1,14 +1,28 @@
 ---
-title:                "使用JSON进行编程"
 aliases:
 - /zh/fish-shell/working-with-json/
-date:                  2024-02-03T19:22:42.235067-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用JSON进行编程"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:22:42.235067-07:00
+description: "\u5728 Fish Shell \u4E2D\u5904\u7406 JSON \u6D89\u53CA\u89E3\u6790\u548C\
+  \u751F\u6210 JSON \u6570\u636E\uFF0C\u8FD9\u5BF9\u4E8E\u914D\u7F6E\u5E94\u7528\u7A0B\
+  \u5E8F\u3001API \u4EA4\u4E92\u548C\u7B80\u5316\u547D\u4EE4\u884C\u5DE5\u4F5C\u6D41\
+  \u7A0B\u662F\u4E00\u4E2A\u5E38\u89C1\u7684\u4EFB\u52A1\u3002\u9274\u4E8E JSON \u5728\
+  \ Web \u548C\u5E94\u7528\u5F00\u53D1\u4E2D\u7684\u666E\u904D\u6027\uFF0C\u5728 shell\
+  \ \u4E2D\u76F4\u63A5\u638C\u63E1\u5176\u64CD\u4F5C\u53EF\u4EE5\u663E\u8457\u63D0\
+  \u9AD8\u7A0B\u5E8F\u5458\u7684\u81EA\u52A8\u5316\u548C\u6570\u636E\u5904\u7406\u6548\
+  \u7387\u3002"
+lastmod: 2024-02-18 23:08:59.538856
+model: gpt-4-0125-preview
+summary: "\u5728 Fish Shell \u4E2D\u5904\u7406 JSON \u6D89\u53CA\u89E3\u6790\u548C\
+  \u751F\u6210 JSON \u6570\u636E\uFF0C\u8FD9\u5BF9\u4E8E\u914D\u7F6E\u5E94\u7528\u7A0B\
+  \u5E8F\u3001API \u4EA4\u4E92\u548C\u7B80\u5316\u547D\u4EE4\u884C\u5DE5\u4F5C\u6D41\
+  \u7A0B\u662F\u4E00\u4E2A\u5E38\u89C1\u7684\u4EFB\u52A1\u3002\u9274\u4E8E JSON \u5728\
+  \ Web \u548C\u5E94\u7528\u5F00\u53D1\u4E2D\u7684\u666E\u904D\u6027\uFF0C\u5728 shell\
+  \ \u4E2D\u76F4\u63A5\u638C\u63E1\u5176\u64CD\u4F5C\u53EF\u4EE5\u663E\u8457\u63D0\
+  \u9AD8\u7A0B\u5E8F\u5458\u7684\u81EA\u52A8\u5316\u548C\u6570\u636E\u5904\u7406\u6548\
+  \u7387\u3002"
+title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 ---
 
 {{< edit_this_page >}}

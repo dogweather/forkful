@@ -1,15 +1,20 @@
 ---
-title:                "Sinh số ngẫu nhiên"
 aliases:
 - /vi/haskell/generating-random-numbers/
-date:                  2024-01-28T22:01:08.213766-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sinh số ngẫu nhiên"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/haskell/generating-random-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:08.213766-07:00
+description: "Vi\u1EC7c sinh s\u1ED1 ng\u1EABu nhi\xEAn trong Haskell bao g\u1ED3\
+  m vi\u1EC7c t\u1EA1o ra nh\u1EEFng con s\u1ED1 kh\xF4ng th\u1EC3 d\u1EF1 \u0111\
+  o\xE1n theo ti\xEAu chu\u1EA9n con ng\u01B0\u1EDDi. \u0110i\u1EC1u n\xE0y c\u1EF1\
+  c k\u1EF3 quan tr\u1ECDng trong c\xE1c\u2026"
+lastmod: 2024-02-18 23:08:50.740350
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c sinh s\u1ED1 ng\u1EABu nhi\xEAn trong Haskell bao g\u1ED3m vi\u1EC7\
+  c t\u1EA1o ra nh\u1EEFng con s\u1ED1 kh\xF4ng th\u1EC3 d\u1EF1 \u0111o\xE1n theo\
+  \ ti\xEAu chu\u1EA9n con ng\u01B0\u1EDDi. \u0110i\u1EC1u n\xE0y c\u1EF1c k\u1EF3\
+  \ quan tr\u1ECDng trong c\xE1c\u2026"
+title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Koodin järjestäminen funktioihin"
 aliases:
 - /fi/arduino/organizing-code-into-functions/
-date:                  2024-01-26T01:09:15.744244-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Koodin järjestäminen funktioihin"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/organizing-code-into-functions.md"
+date: 2024-01-26 01:09:15.744244-07:00
+description: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa sen hajottamista uudelleenk\xE4\
+  ytett\xE4viin osiin, joista jokainen hoitaa tietyn teht\xE4v\xE4n. Ohjelmoijat tekev\xE4\
+  t\u2026"
+lastmod: 2024-02-18 23:09:07.905015
+model: gpt-4-1106-preview
+summary: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa sen hajottamista uudelleenk\xE4\
+  ytett\xE4viin osiin, joista jokainen hoitaa tietyn teht\xE4v\xE4n. Ohjelmoijat tekev\xE4\
+  t\u2026"
+title: "Koodin j\xE4rjest\xE4minen funktioihin"
 ---
 
 {{< edit_this_page >}}

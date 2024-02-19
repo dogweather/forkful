@@ -1,13 +1,16 @@
 ---
-title:                "Datum in einen String umwandeln"
 aliases:
 - /de/python/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:27.605106-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Datum in einen String umwandeln"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:27.605106-07:00
+description: "Die Umwandlung eines Datums in einen String bedeutet einfach, ein Datum\
+  \ von einem Format, das von einem Computer verstanden wird, in Text umzuwandeln,\
+  \ den\u2026"
+lastmod: 2024-02-18 23:09:04.474225
+model: gpt-4-1106-preview
+summary: "Die Umwandlung eines Datums in einen String bedeutet einfach, ein Datum\
+  \ von einem Format, das von einem Computer verstanden wird, in Text umzuwandeln,\
+  \ den\u2026"
+title: Datum in einen String umwandeln
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Починаємо новий проект"
 aliases:
 - /uk/java/starting-a-new-project/
-date:                  2024-01-20T18:04:09.824858-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Починаємо новий проект"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/java/starting-a-new-project.md"
+date: 2024-01-20 18:04:09.824858-07:00
+description: "Starting a new Java project means setting up a space where your code\
+  \ will live and grow. Programmers do it to solve problems, create tools, or just\
+  \ for\u2026"
+lastmod: 2024-02-18 23:09:00.119614
+model: gpt-4-1106-preview
+summary: "Starting a new Java project means setting up a space where your code will\
+  \ live and grow. Programmers do it to solve problems, create tools, or just for\u2026"
+title: "\u041F\u043E\u0447\u0438\u043D\u0430\u0454\u043C\u043E \u043D\u043E\u0432\u0438\
+  \u0439 \u043F\u0440\u043E\u0435\u043A\u0442"
 ---
 
 {{< edit_this_page >}}

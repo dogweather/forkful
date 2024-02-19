@@ -1,13 +1,15 @@
 ---
-title:                "Eliminazione di caratteri che corrispondono a un pattern"
 aliases:
 - /it/powershell/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:53.591916-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Eliminazione di caratteri che corrispondono a un pattern"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:53.591916-07:00
+description: "Cancellare caratteri seguendo un pattern \xE8 semplicemente filtrare\
+  \ il testo per rimuovere caratteri indesiderati. Questo serve a pulire i dati o\
+  \ a\u2026"
+lastmod: 2024-02-18 23:08:56.077625
+model: gpt-4-1106-preview
+summary: "Cancellare caratteri seguendo un pattern \xE8 semplicemente filtrare il\
+  \ testo per rimuovere caratteri indesiderati. Questo serve a pulire i dati o a\u2026"
+title: Eliminazione di caratteri che corrispondono a un pattern
 ---
 
 {{< edit_this_page >}}

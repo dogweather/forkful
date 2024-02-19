@@ -1,14 +1,14 @@
 ---
-title:                "連想配列の使用"
 aliases:
 - /ja/vba/using-associative-arrays/
-date:                  2024-02-01T22:05:38.193716-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "連想配列の使用"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/vba/using-associative-arrays.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:05:38.193716-07:00
+description: "Visual Basic for Applications (VBA)\u2026"
+lastmod: 2024-02-18 23:08:54.753745
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications (VBA)\u2026"
+title: "\u9023\u60F3\u914D\u5217\u306E\u4F7F\u7528"
 ---
 
 {{< edit_this_page >}}

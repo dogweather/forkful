@@ -1,13 +1,14 @@
 ---
-title:                "Interpolering av en streng"
 aliases:
 - /no/elixir/interpolating-a-string/
-date:                  2024-01-20T17:50:39.324365-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolering av en streng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/interpolating-a-string.md"
+date: 2024-01-20 17:50:39.324365-07:00
+description: "Strenginterpolering lar oss sette variabler eller beregnede verdier\
+  \ inn i tekst. Vi bruker det for \xE5 bygge dynamiske strenger enkelt."
+lastmod: 2024-02-18 23:08:53.591579
+model: gpt-4-1106-preview
+summary: "Strenginterpolering lar oss sette variabler eller beregnede verdier inn\
+  \ i tekst. Vi bruker det for \xE5 bygge dynamiske strenger enkelt."
+title: Interpolering av en streng
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với JSON"
 aliases:
 - /vi/rust/working-with-json/
-date:                  2024-01-28T22:11:07.154309-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với JSON"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/working-with-json.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:07.154309-07:00
+description: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
+  ng v\u0103n b\u1EA3n \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng cho vi\u1EC7c trao \u0111\
+  \u1ED5i d\u1EEF li\u1EC7u. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 v\xEC\
+  \ s\u1EF1 \u0111\u01A1n gi\u1EA3n v\xE0 kh\u1EA3 n\u0103ng\u2026"
+lastmod: 2024-02-18 23:08:50.485549
+model: gpt-4-0125-preview
+summary: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
+  ng v\u0103n b\u1EA3n \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng cho vi\u1EC7c trao \u0111\
+  \u1ED5i d\u1EEF li\u1EC7u. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 v\xEC\
+  \ s\u1EF1 \u0111\u01A1n gi\u1EA3n v\xE0 kh\u1EA3 n\u0103ng\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 ---
 
 {{< edit_this_page >}}

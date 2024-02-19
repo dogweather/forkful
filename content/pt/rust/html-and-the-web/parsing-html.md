@@ -1,14 +1,18 @@
 ---
-title:                "Analisando HTML"
 aliases:
 - /pt/rust/parsing-html/
-date:                  2024-02-03T19:12:57.660825-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analisando HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:57.660825-07:00
+description: "Analisar HTML em Rust trata-se de extrair dados de documentos HTML,\
+  \ o que \xE9 essencial para web scraping, extra\xE7\xE3o de dados ou constru\xE7\
+  \xE3o de web crawlers.\u2026"
+lastmod: 2024-02-18 23:08:57.926114
+model: gpt-4-0125-preview
+summary: "Analisar HTML em Rust trata-se de extrair dados de documentos HTML, o que\
+  \ \xE9 essencial para web scraping, extra\xE7\xE3o de dados ou constru\xE7\xE3o\
+  \ de web crawlers.\u2026"
+title: Analisando HTML
 ---
 
 {{< edit_this_page >}}

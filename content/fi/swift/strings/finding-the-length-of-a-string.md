@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonon pituuden selvittäminen"
 aliases:
 - /fi/swift/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:29.771155-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon pituuden selvittäminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:29.771155-07:00
+description: "\"Mik\xE4 & Miksi?\" Stringin pituuden selvitt\xE4minen tarkoittaa merkkien\
+  \ m\xE4\xE4r\xE4n laskemista siin\xE4. Koodarit tekev\xE4t t\xE4m\xE4n validoidakseen\
+  \ sy\xF6tteen, rajatakseen\u2026"
+lastmod: 2024-02-18 23:09:07.979944
+model: gpt-4-1106-preview
+summary: "\"Mik\xE4 & Miksi?\" Stringin pituuden selvitt\xE4minen tarkoittaa merkkien\
+  \ m\xE4\xE4r\xE4n laskemista siin\xE4. Koodarit tekev\xE4t t\xE4m\xE4n validoidakseen\
+  \ sy\xF6tteen, rajatakseen\u2026"
+title: "Merkkijonon pituuden selvitt\xE4minen"
 ---
 
 {{< edit_this_page >}}

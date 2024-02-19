@@ -1,13 +1,14 @@
 ---
-title:                "Eliminando caracteres que coinciden con un patrón"
 aliases:
 - /es/elm/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:08.167177-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Eliminando caracteres que coinciden con un patrón"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:08.167177-07:00
+description: "Eliminar caracteres que coinciden con un patr\xF3n implica reconocer\
+  \ secuencias espec\xEDficas y removerlas de un texto. Lo hacemos para limpiar datos,\u2026"
+lastmod: 2024-02-18 23:09:09.873652
+model: gpt-4-1106-preview
+summary: "Eliminar caracteres que coinciden con un patr\xF3n implica reconocer secuencias\
+  \ espec\xEDficas y removerlas de un texto. Lo hacemos para limpiar datos,\u2026"
+title: "Eliminando caracteres que coinciden con un patr\xF3n"
 ---
 
 {{< edit_this_page >}}

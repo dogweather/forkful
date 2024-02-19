@@ -1,14 +1,19 @@
 ---
-title:                "Phân Tích Cú Pháp HTML"
 aliases:
 - /vi/vba/parsing-html/
-date:                  2024-02-01T21:57:31.632145-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Phân Tích Cú Pháp HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/parsing-html.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:31.632145-07:00
+description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong Visual Basic for Applications\
+  \ (VBA) bao g\u1ED3m vi\u1EC7c tr\xEDch xu\u1EA5t th\xF4ng tin c\u1EE5 th\u1EC3\
+  \ t\u1EEB m\u1ED9t t\xE0i li\u1EC7u HTML. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0\
+  m\u2026"
+lastmod: 2024-02-18 23:08:50.506684
+model: gpt-4-0125-preview
+summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong Visual Basic for Applications (VBA)\
+  \ bao g\u1ED3m vi\u1EC7c tr\xEDch xu\u1EA5t th\xF4ng tin c\u1EE5 th\u1EC3 t\u1EEB\
+  \ m\u1ED9t t\xE0i li\u1EC7u HTML. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
+title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 ---
 
 {{< edit_this_page >}}

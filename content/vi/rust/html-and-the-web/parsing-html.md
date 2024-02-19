@@ -1,15 +1,20 @@
 ---
-title:                "Phân Tích Cú Pháp HTML"
 aliases:
 - /vi/rust/parsing-html/
-date:                  2024-01-28T22:04:19.871187-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Phân Tích Cú Pháp HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/parsing-html.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:04:19.871187-07:00
+description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML l\xE0 h\xE0nh \u0111\u1ED9ng l\u1EA5\
+  y m\u1ED9t chu\u1ED7i HTML v\xE0 ph\xE2n t\xE1ch n\xF3 th\xE0nh m\u1ED9t c\u1EA5\
+  u tr\xFAc d\u1EEF li\u1EC7u m\xE0 ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1n c\xF3\
+  \ th\u1EC3 hi\u1EC3u v\xE0 thao t\xE1c. L\u1EADp\u2026"
+lastmod: 2024-02-18 23:08:50.459480
+model: gpt-4-0125-preview
+summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML l\xE0 h\xE0nh \u0111\u1ED9ng l\u1EA5\
+  y m\u1ED9t chu\u1ED7i HTML v\xE0 ph\xE2n t\xE1ch n\xF3 th\xE0nh m\u1ED9t c\u1EA5\
+  u tr\xFAc d\u1EEF li\u1EC7u m\xE0 ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1n c\xF3\
+  \ th\u1EC3 hi\u1EC3u v\xE0 thao t\xE1c. L\u1EADp\u2026"
+title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 ---
 
 {{< edit_this_page >}}

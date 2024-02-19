@@ -1,14 +1,20 @@
 ---
-title:                "In đầu ra debug"
 aliases:
 - /vi/c/printing-debug-output/
-date:                  2024-02-03T18:06:32.670977-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "In đầu ra debug"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/printing-debug-output.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:06:32.670977-07:00
+description: "Vi\u1EC7c in th\xF4ng \u0111i\u1EC7p g\u1EE1 l\u1ED7i l\xE0 vi\u1EC7\
+  c t\u1EA1o ra nh\u1EEFng th\xF4ng b\xE1o nh\u1EADt k\xFD t\u1EA1m th\u1EDDi, mang\
+  \ t\xEDnh th\xF4ng tin gi\xFAp l\u1EADp tr\xECnh vi\xEAn hi\u1EC3u \u0111\u01B0\u1EE3\
+  c d\xF2ng ch\u1EA3y v\xE0 tr\u1EA1ng th\xE1i c\u1EE7a\u2026"
+lastmod: 2024-02-18 23:08:51.237448
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c in th\xF4ng \u0111i\u1EC7p g\u1EE1 l\u1ED7i l\xE0 vi\u1EC7c t\u1EA1\
+  o ra nh\u1EEFng th\xF4ng b\xE1o nh\u1EADt k\xFD t\u1EA1m th\u1EDDi, mang t\xEDnh\
+  \ th\xF4ng tin gi\xFAp l\u1EADp tr\xECnh vi\xEAn hi\u1EC3u \u0111\u01B0\u1EE3c d\xF2\
+  ng ch\u1EA3y v\xE0 tr\u1EA1ng th\xE1i c\u1EE7a\u2026"
+title: "In \u0111\u1EA7u ra debug"
 ---
 
 {{< edit_this_page >}}

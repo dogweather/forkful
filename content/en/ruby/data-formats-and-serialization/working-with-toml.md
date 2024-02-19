@@ -1,13 +1,14 @@
 ---
-title:                "Working with TOML"
 aliases:
 - /en/ruby/working-with-toml/
-date:                  2024-01-25T03:39:32.458446-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Working with TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/working-with-toml.md"
+date: 2024-01-25 03:39:32.458446-07:00
+description: "TOML is a config file format that's easy to read due to its clear semantics.\
+  \ Programmers use TOML to manage app configs and data serialization without the\u2026"
+lastmod: 2024-02-18 23:09:11.588883
+model: gpt-4-1106-preview
+summary: "TOML is a config file format that's easy to read due to its clear semantics.\
+  \ Programmers use TOML to manage app configs and data serialization without the\u2026"
+title: Working with TOML
 ---
 
 {{< edit_this_page >}}

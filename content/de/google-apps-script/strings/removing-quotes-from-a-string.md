@@ -1,14 +1,17 @@
 ---
-title:                "Anführungszeichen aus einem String entfernen"
 aliases:
 - /de/google-apps-script/removing-quotes-from-a-string/
-date:                  2024-02-01T22:00:18.536276-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Anführungszeichen aus einem String entfernen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/google-apps-script/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:18.536276-07:00
+description: "Das Entfernen von Anf\xFChrungszeichen aus einem String in Google Apps\
+  \ Script dreht sich darum, unn\xF6tige Anf\xFChrungszeichen, die Ihre String-Daten\
+  \ umgeben\u2026"
+lastmod: 2024-02-18 23:09:04.399173
+model: gpt-4-0125-preview
+summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String in Google Apps Script\
+  \ dreht sich darum, unn\xF6tige Anf\xFChrungszeichen, die Ihre String-Daten umgeben\u2026"
+title: "Anf\xFChrungszeichen aus einem String entfernen"
 ---
 
 {{< edit_this_page >}}

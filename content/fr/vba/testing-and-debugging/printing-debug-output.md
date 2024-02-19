@@ -1,14 +1,18 @@
 ---
-title:                "Affichage du débogage"
 aliases:
 - /fr/vba/printing-debug-output/
-date:                  2024-02-01T21:58:23.737007-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Affichage du débogage"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/vba/printing-debug-output.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:23.737007-07:00
+description: "Imprimer des sorties de d\xE9bogage dans Visual Basic pour Applications\
+  \ (VBA) implique de placer strat\xE9giquement des instructions print dans votre\
+  \ code pour\u2026"
+lastmod: 2024-02-18 23:09:08.581837
+model: gpt-4-0125-preview
+summary: "Imprimer des sorties de d\xE9bogage dans Visual Basic pour Applications\
+  \ (VBA) implique de placer strat\xE9giquement des instructions print dans votre\
+  \ code pour\u2026"
+title: "Affichage du d\xE9bogage"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,21 @@
 ---
-title:                "获取字符串的长度"
 aliases:
 - /zh/powershell/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:02.883863-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "获取字符串的长度"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:02.883863-07:00
+description: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u8BA1\u7B97\u5B57\u7B26\u4E32\u7684\u957F\
+  \u5EA6\u5C31\u662F\u786E\u5B9A\u5176\u5305\u542B\u591A\u5C11\u4E2A\u5B57\u7B26\u3002\
+  \u7A0B\u5E8F\u5458\u9700\u8981\u77E5\u9053\u5B57\u7B26\u4E32\u7684\u957F\u5EA6\uFF0C\
+  \u4EE5\u4FBF\u8FDB\u884C\u6587\u672C\u5904\u7406\uFF0C\u5982\u622A\u53D6\u3001\u6BD4\
+  \u8F83\u3001\u9A8C\u8BC1\u8F93\u5165\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.322030
+model: gpt-4-1106-preview
+summary: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u8BA1\u7B97\u5B57\u7B26\u4E32\u7684\u957F\
+  \u5EA6\u5C31\u662F\u786E\u5B9A\u5176\u5305\u542B\u591A\u5C11\u4E2A\u5B57\u7B26\u3002\
+  \u7A0B\u5E8F\u5458\u9700\u8981\u77E5\u9053\u5B57\u7B26\u4E32\u7684\u957F\u5EA6\uFF0C\
+  \u4EE5\u4FBF\u8FDB\u884C\u6587\u672C\u5904\u7406\uFF0C\u5982\u622A\u53D6\u3001\u6BD4\
+  \u8F83\u3001\u9A8C\u8BC1\u8F93\u5165\u3002"
+title: "\u83B7\u53D6\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,26 @@
 ---
-title:                "处理CSV文件"
 aliases:
 - /zh/elm/working-with-csv/
-date:                  2024-02-03T19:19:43.362529-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理CSV文件"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:19:43.362529-07:00
+description: "\u5904\u7406 CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\uFF09\u6D89\u53CA\
+  \u5230\u89E3\u6790\u548C\u751F\u6210\u5B58\u50A8\u8868\u683C\u6570\u636E\u7684\u7B80\
+  \u5355\u660E\u6587\u683C\u5F0F\u7684\u6587\u4EF6\u3002\u7A0B\u5E8F\u5458\u901A\u5E38\
+  \u5B9E\u8DF5\u8FD9\u4E00\u70B9\uFF0C\u4EE5\u4FBF\u5728\u4E0D\u540C\u7684\u5E94\u7528\
+  \u7A0B\u5E8F\u4E4B\u95F4\u8F7B\u677E\u5730\u4EA4\u6362\u6570\u636E\uFF0C\u6216\u8005\
+  \u5728 Elm \u4E2D\u4EE5\u7C7B\u578B\u5B89\u5168\u7684\u65B9\u5F0F\u9AD8\u6548\u5904\
+  \u7406\u5927\u6570\u636E\u96C6\u3002"
+lastmod: 2024-02-18 23:08:59.077777
+model: gpt-4-0125-preview
+summary: "\u5904\u7406 CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\uFF09\u6D89\u53CA\u5230\
+  \u89E3\u6790\u548C\u751F\u6210\u5B58\u50A8\u8868\u683C\u6570\u636E\u7684\u7B80\u5355\
+  \u660E\u6587\u683C\u5F0F\u7684\u6587\u4EF6\u3002\u7A0B\u5E8F\u5458\u901A\u5E38\u5B9E\
+  \u8DF5\u8FD9\u4E00\u70B9\uFF0C\u4EE5\u4FBF\u5728\u4E0D\u540C\u7684\u5E94\u7528\u7A0B\
+  \u5E8F\u4E4B\u95F4\u8F7B\u677E\u5730\u4EA4\u6362\u6570\u636E\uFF0C\u6216\u8005\u5728\
+  \ Elm \u4E2D\u4EE5\u7C7B\u578B\u5B89\u5168\u7684\u65B9\u5F0F\u9AD8\u6548\u5904\u7406\
+  \u5927\u6570\u636E\u96C6\u3002"
+title: "\u5904\u7406CSV\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

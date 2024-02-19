@@ -1,14 +1,18 @@
 ---
-title:                "Praca z JSON"
 aliases:
 - /pl/cpp/working-with-json/
-date:                  2024-02-03T19:21:56.795905-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:21:56.795905-07:00
+description: "JSON (JavaScript Object Notation) to lekki format s\u0142u\u017C\u0105\
+  cy do przechowywania i transportowania danych, co czyni go doskona\u0142ym medium\
+  \ do wymiany danych\u2026"
+lastmod: 2024-02-18 23:08:49.932803
+model: gpt-4-0125-preview
+summary: "JSON (JavaScript Object Notation) to lekki format s\u0142u\u017C\u0105cy\
+  \ do przechowywania i transportowania danych, co czyni go doskona\u0142ym medium\
+  \ do wymiany danych\u2026"
+title: Praca z JSON
 ---
 
 {{< edit_this_page >}}

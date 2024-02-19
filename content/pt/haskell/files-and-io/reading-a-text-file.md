@@ -1,13 +1,14 @@
 ---
-title:                "Lendo um arquivo de texto"
 aliases:
 - /pt/haskell/reading-a-text-file/
-date:                  2024-01-20T17:54:23.433679-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lendo um arquivo de texto"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/reading-a-text-file.md"
+date: 2024-01-20 17:54:23.433679-07:00
+description: "Ler um arquivo de texto significa acessar o conte\xFAdo armazenado.\
+  \ Programadores fazem isso para manipular, analisar ou exibir dados."
+lastmod: 2024-02-18 23:08:58.216478
+model: gpt-4-1106-preview
+summary: "Ler um arquivo de texto significa acessar o conte\xFAdo armazenado. Programadores\
+  \ fazem isso para manipular, analisar ou exibir dados."
+title: Lendo um arquivo de texto
 ---
 
 {{< edit_this_page >}}

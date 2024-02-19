@@ -1,15 +1,17 @@
 ---
-title:                "Tests Schrijven"
 aliases:
 - /nl/cpp/writing-tests/
-date:                  2024-01-28T22:12:39.406062-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tests Schrijven"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/cpp/writing-tests.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:39.406062-07:00
+description: "Het schrijven van tests controleert of je code doet wat het moet doen,\
+  \ en vangt bugs vroeg op. Programmeurs testen om tijd, hoofdpijn te besparen en\
+  \ om\u2026"
+lastmod: 2024-02-18 23:09:02.186894
+model: gpt-4-0125-preview
+summary: "Het schrijven van tests controleert of je code doet wat het moet doen, en\
+  \ vangt bugs vroeg op. Programmeurs testen om tijd, hoofdpijn te besparen en om\u2026"
+title: Tests Schrijven
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Génération de nombres aléatoires"
 aliases:
 - /fr/arduino/generating-random-numbers/
-date:                  2024-01-27T20:32:41.674315-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Génération de nombres aléatoires"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/generating-random-numbers.md"
+date: 2024-01-27 20:32:41.674315-07:00
+description: "G\xE9n\xE9rer des nombres al\xE9atoires dans les projets Arduino consiste\
+  \ \xE0 produire des valeurs con\xE7ues pour \xEAtre impr\xE9visibles, ce qui est\
+  \ crucial pour des\u2026"
+lastmod: 2024-02-18 23:09:09.110619
+model: gpt-4-0125-preview
+summary: "G\xE9n\xE9rer des nombres al\xE9atoires dans les projets Arduino consiste\
+  \ \xE0 produire des valeurs con\xE7ues pour \xEAtre impr\xE9visibles, ce qui est\
+  \ crucial pour des\u2026"
+title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 ---
 
 {{< edit_this_page >}}

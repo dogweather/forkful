@@ -1,14 +1,18 @@
 ---
-title:                "Rédaction de tests"
 aliases:
 - /fr/java/writing-tests/
-date:                  2024-02-03T19:30:45.157987-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rédaction de tests"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:30:45.157987-07:00
+description: "\xC9crire des tests en Java consiste \xE0 v\xE9rifier que votre code\
+  \ se comporte comme pr\xE9vu dans diverses conditions. Les programmeurs \xE9crivent\
+  \ des tests pour\u2026"
+lastmod: 2024-02-18 23:09:08.632386
+model: gpt-4-0125-preview
+summary: "\xC9crire des tests en Java consiste \xE0 v\xE9rifier que votre code se\
+  \ comporte comme pr\xE9vu dans diverses conditions. Les programmeurs \xE9crivent\
+  \ des tests pour\u2026"
+title: "R\xE9daction de tests"
 ---
 
 {{< edit_this_page >}}

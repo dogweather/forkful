@@ -1,13 +1,14 @@
 ---
-title:                "Trabalhando com XML"
 aliases:
 - /pt/ruby/working-with-xml/
-date:                  2024-01-26T04:35:15.556873-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/working-with-xml.md"
+date: 2024-01-26 04:35:15.556873-07:00
+description: "Trabalhar com XML significa fazer o parsing, gerar e manipular documentos\
+  \ XML (eXtensible Markup Language) usando c\xF3digo. Programadores fazem isso para\u2026"
+lastmod: 2024-02-18 23:08:58.690329
+model: gpt-4-0125-preview
+summary: "Trabalhar com XML significa fazer o parsing, gerar e manipular documentos\
+  \ XML (eXtensible Markup Language) usando c\xF3digo. Programadores fazem isso para\u2026"
+title: Trabalhando com XML
 ---
 
 {{< edit_this_page >}}

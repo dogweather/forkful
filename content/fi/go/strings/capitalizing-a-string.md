@@ -1,14 +1,17 @@
 ---
-title:                "Merkkijonon suuraakkostaminen"
 aliases:
 - /fi/go/capitalizing-a-string/
-date:                  2024-02-03T17:52:56.976210-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonon suuraakkostaminen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:52:56.976210-07:00
+description: "Merkkijonon alkukirjaimen muuttaminen suuraakkoseksi k\xE4sitt\xE4\xE4\
+  \ annetun merkkijonon ensimm\xE4isen merkin muuttamisen suuraakkoseksi, jos se on\
+  \ pienaakkonen,\u2026"
+lastmod: 2024-02-18 23:09:07.064920
+model: gpt-4-0125-preview
+summary: "Merkkijonon alkukirjaimen muuttaminen suuraakkoseksi k\xE4sitt\xE4\xE4 annetun\
+  \ merkkijonon ensimm\xE4isen merkin muuttamisen suuraakkoseksi, jos se on pienaakkonen,\u2026"
+title: Merkkijonon suuraakkostaminen
 ---
 
 {{< edit_this_page >}}

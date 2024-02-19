@@ -1,14 +1,26 @@
 ---
-title:                "HTTP 요청 보내기"
 aliases:
 - /ko/vba/sending-an-http-request/
-date:                  2024-02-01T22:02:19.638091-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTTP 요청 보내기"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/vba/sending-an-http-request.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:02:19.638091-07:00
+description: "Visual Basic for Applications(VBA)\uC5D0\uC11C HTTP \uC694\uCCAD\uC744\
+  \ \uBCF4\uB0B4\uB294 \uAC83\uC740 HTTP\uB97C \uD1B5\uD574 \uC6F9 \uC790\uC6D0\uC774\
+  \uB098 \uC6F9 \uC11C\uBE44\uC2A4\uC5D0 \uD504\uB85C\uADF8\uB798\uBC0D \uBC29\uC2DD\
+  \uC73C\uB85C \uC811\uADFC\uD558\uC5EC \uB370\uC774\uD130\uB97C \uAC00\uC838\uC624\
+  \uAC70\uB098 \uC628\uB77C\uC778 API\uC640 \uC0C1\uD638 \uC791\uC6A9\uD558\uAC70\uB098\
+  , Excel, Access \uB610\uB294 \uB9DE\uCDA4\uD615 VBA \uC194\uB8E8\uC158\uACFC \uAC19\
+  \uC740\u2026"
+lastmod: 2024-02-18 23:09:05.946826
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C HTTP \uC694\uCCAD\uC744 \uBCF4\
+  \uB0B4\uB294 \uAC83\uC740 HTTP\uB97C \uD1B5\uD574 \uC6F9 \uC790\uC6D0\uC774\uB098\
+  \ \uC6F9 \uC11C\uBE44\uC2A4\uC5D0 \uD504\uB85C\uADF8\uB798\uBC0D \uBC29\uC2DD\uC73C\
+  \uB85C \uC811\uADFC\uD558\uC5EC \uB370\uC774\uD130\uB97C \uAC00\uC838\uC624\uAC70\
+  \uB098 \uC628\uB77C\uC778 API\uC640 \uC0C1\uD638 \uC791\uC6A9\uD558\uAC70\uB098\
+  , Excel, Access \uB610\uB294 \uB9DE\uCDA4\uD615 VBA \uC194\uB8E8\uC158\uACFC \uAC19\
+  \uC740\u2026"
+title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
 ---
 
 {{< edit_this_page >}}

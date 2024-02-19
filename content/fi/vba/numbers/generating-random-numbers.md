@@ -1,14 +1,16 @@
 ---
-title:                "Sattumanvaraisten numeroiden generointi"
 aliases:
 - /fi/vba/generating-random-numbers/
-date:                  2024-02-01T21:54:28.218677-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sattumanvaraisten numeroiden generointi"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/generating-random-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:28.218677-07:00
+description: "Satunnaislukujen tuottaminen Visual Basic for Applications (VBA) -ohjelmissa\
+  \ mahdollistaa prosessien, joissa on sattumanvaraisuuden tai muuttuvuuden\u2026"
+lastmod: 2024-02-18 23:09:07.405789
+model: gpt-4-0125-preview
+summary: "Satunnaislukujen tuottaminen Visual Basic for Applications (VBA) -ohjelmissa\
+  \ mahdollistaa prosessien, joissa on sattumanvaraisuuden tai muuttuvuuden\u2026"
+title: Sattumanvaraisten numeroiden generointi
 ---
 
 {{< edit_this_page >}}

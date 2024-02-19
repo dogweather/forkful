@@ -1,13 +1,14 @@
 ---
-title:                "Utilizzo di un interprete interattivo (REPL)"
 aliases:
 - /it/python/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:17:03.274420-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di un interprete interattivo (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/python/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:17:03.274420-07:00
+description: "Un REPL, o Ciclo Leggi-Valuta-Stampa, \xE8 un ambiente di programmazione\
+  \ che accetta input singoli dall'utente, li esegue e restituisce il risultato\u2026"
+lastmod: 2024-02-18 23:08:55.522850
+model: gpt-4-0125-preview
+summary: "Un REPL, o Ciclo Leggi-Valuta-Stampa, \xE8 un ambiente di programmazione\
+  \ che accetta input singoli dall'utente, li esegue e restituisce il risultato\u2026"
+title: Utilizzo di un interprete interattivo (REPL)
 ---
 
 {{< edit_this_page >}}

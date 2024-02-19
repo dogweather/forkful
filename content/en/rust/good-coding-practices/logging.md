@@ -1,13 +1,14 @@
 ---
-title:                "Logging"
 aliases:
 - /en/rust/logging/
-date:                  2024-01-25T02:03:37.482118-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Logging"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/logging.md"
+date: 2024-01-25 02:03:37.482118-07:00
+description: "Logging is like keeping a journal for your application; it's the practice\
+  \ of recording events, errors, and other pertinent data during runtime. Developers\u2026"
+lastmod: 2024-02-18 23:09:10.855024
+model: gpt-4-1106-preview
+summary: "Logging is like keeping a journal for your application; it's the practice\
+  \ of recording events, errors, and other pertinent data during runtime. Developers\u2026"
+title: Logging
 ---
 
 {{< edit_this_page >}}

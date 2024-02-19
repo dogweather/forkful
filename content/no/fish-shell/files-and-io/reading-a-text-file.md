@@ -1,13 +1,16 @@
 ---
-title:                "Lese en tekstfil"
 aliases:
 - /no/fish-shell/reading-a-text-file/
-date:                  2024-01-20T17:54:07.617406-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lese en tekstfil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/reading-a-text-file.md"
+date: 2024-01-20 17:54:07.617406-07:00
+description: "Lesing av tekstfiler lar deg hente data lagret p\xE5 din disk. Programmerere\
+  \ gj\xF8r dette for \xE5 bearbeide data, konfigurere systemer eller bare for \xE5\
+  \ hente\u2026"
+lastmod: 2024-02-18 23:08:54.368445
+model: gpt-4-1106-preview
+summary: "Lesing av tekstfiler lar deg hente data lagret p\xE5 din disk. Programmerere\
+  \ gj\xF8r dette for \xE5 bearbeide data, konfigurere systemer eller bare for \xE5\
+  \ hente\u2026"
+title: Lese en tekstfil
 ---
 
 {{< edit_this_page >}}

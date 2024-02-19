@@ -1,12 +1,14 @@
 ---
-title:                "Capitalizing a string"
 aliases:
 - /en/google-apps-script/capitalizing-a-string/
-date:                  2024-02-01T21:06:44.010778-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizing a string"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/google-apps-script/capitalizing-a-string.md"
+date: 2024-02-01 21:06:44.010778-07:00
+description: "Capitalizing a string involves modifying the input so that the first\
+  \ character is uppercase while the rest remain lowercase, commonly used for formatting\u2026"
+lastmod: 2024-02-18 23:09:10.622315
+model: gpt-4-0125-preview
+summary: "Capitalizing a string involves modifying the input so that the first character\
+  \ is uppercase while the rest remain lowercase, commonly used for formatting\u2026"
+title: Capitalizing a string
 ---
 
 {{< edit_this_page >}}

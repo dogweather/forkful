@@ -1,14 +1,17 @@
 ---
-title:                "Sammensetting av strenger"
 aliases:
 - /no/vba/concatenating-strings/
-date:                  2024-02-01T21:50:39.432917-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sammensetting av strenger"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/vba/concatenating-strings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:39.432917-07:00
+description: "Konkatenering i Visual Basic for Applications (VBA) inneb\xE6rer \xE5\
+  \ sette sammen to eller flere strenger til en enkelt enhet. Dette er en fundamental\
+  \ oppgave\u2026"
+lastmod: 2024-02-18 23:08:53.719464
+model: gpt-4-0125-preview
+summary: "Konkatenering i Visual Basic for Applications (VBA) inneb\xE6rer \xE5 sette\
+  \ sammen to eller flere strenger til en enkelt enhet. Dette er en fundamental oppgave\u2026"
+title: Sammensetting av strenger
 ---
 
 {{< edit_this_page >}}

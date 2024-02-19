@@ -1,13 +1,15 @@
 ---
-title:                "Rounding numbers"
 aliases:
 - /en/ruby/rounding-numbers/
-date:                  2024-01-25T03:00:01.692945-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rounding numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/rounding-numbers.md"
+date: 2024-01-25 03:00:01.692945-07:00
+description: "Rounding numbers means adjusting them to the nearest whole number or\
+  \ to a specified degree of precision. Programmers round numbers to simplify, to\
+  \ match\u2026"
+lastmod: 2024-02-18 23:09:11.558701
+model: gpt-4-1106-preview
+summary: "Rounding numbers means adjusting them to the nearest whole number or to\
+  \ a specified degree of precision. Programmers round numbers to simplify, to match\u2026"
+title: Rounding numbers
 ---
 
 {{< edit_this_page >}}

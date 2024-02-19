@@ -1,14 +1,16 @@
 ---
-title:                "Inviare una richiesta HTTP"
 aliases:
 - /it/c/sending-an-http-request/
-date:                  2024-02-03T18:08:22.906309-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Inviare una richiesta HTTP"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/sending-an-http-request.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:22.906309-07:00
+description: "Inviare una richiesta HTTP implica creare e inviare una richiesta a\
+  \ un server web per recuperare o inviare dati. I programmatori lo fanno in C per\u2026"
+lastmod: 2024-02-18 23:08:56.335164
+model: gpt-4-0125-preview
+summary: "Inviare una richiesta HTTP implica creare e inviare una richiesta a un server\
+  \ web per recuperare o inviare dati. I programmatori lo fanno in C per\u2026"
+title: Inviare una richiesta HTTP
 ---
 
 {{< edit_this_page >}}

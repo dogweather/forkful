@@ -1,14 +1,26 @@
 ---
-title:                "字符串大写化"
 aliases:
 - /zh/vba/capitalizing-a-string/
-date:                  2024-02-01T21:49:20.288118-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "字符串大写化"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/capitalizing-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:20.288118-07:00
+description: "\u5728Visual Basic for Applications\uFF08VBA\uFF09\u4E2D\u4F7F\u5B57\
+  \u7B26\u4E32\u9996\u5B57\u6BCD\u5927\u5199\u6D89\u53CA\u5C06\u5B57\u7B26\u4E32\u4E2D\
+  \u6BCF\u4E2A\u5355\u8BCD\u7684\u9996\u4E2A\u5B57\u7B26\u8F6C\u6362\u4E3A\u5927\u5199\
+  \uFF0C\u540C\u65F6\u786E\u4FDD\u5176\u4F59\u5B57\u7B26\u4E3A\u5C0F\u5199\u3002\u7A0B\
+  \u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u6570\u636E\u89C4\u8303\u5316\uFF0C\
+  \u63D0\u9AD8\u53EF\u8BFB\u6027\uFF0C\u5E76\u786E\u4FDD\u6587\u672C\u6570\u636E\u8F93\
+  \u5165\u6216\u663E\u793A\u7684\u4E00\u81F4\u6027\u3002"
+lastmod: 2024-02-18 23:08:58.963899
+model: gpt-4-0125-preview
+summary: "\u5728Visual Basic for Applications\uFF08VBA\uFF09\u4E2D\u4F7F\u5B57\u7B26\
+  \u4E32\u9996\u5B57\u6BCD\u5927\u5199\u6D89\u53CA\u5C06\u5B57\u7B26\u4E32\u4E2D\u6BCF\
+  \u4E2A\u5355\u8BCD\u7684\u9996\u4E2A\u5B57\u7B26\u8F6C\u6362\u4E3A\u5927\u5199\uFF0C\
+  \u540C\u65F6\u786E\u4FDD\u5176\u4F59\u5B57\u7B26\u4E3A\u5C0F\u5199\u3002\u7A0B\u5E8F\
+  \u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u6570\u636E\u89C4\u8303\u5316\uFF0C\u63D0\
+  \u9AD8\u53EF\u8BFB\u6027\uFF0C\u5E76\u786E\u4FDD\u6587\u672C\u6570\u636E\u8F93\u5165\
+  \u6216\u663E\u793A\u7684\u4E00\u81F4\u6027\u3002"
+title: "\u5B57\u7B26\u4E32\u5927\u5199\u5316"
 ---
 
 {{< edit_this_page >}}

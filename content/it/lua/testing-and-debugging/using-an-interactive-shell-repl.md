@@ -1,13 +1,14 @@
 ---
-title:                "Utilizzo di un interprete interattivo (REPL)"
 aliases:
 - /it/lua/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:16:28.635415-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di un interprete interattivo (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/lua/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:16:28.635415-07:00
+description: "REPL sta per Read-Eval-Print Loop (Ciclo Leggi-Valuta-Stampa), un ambiente\
+  \ interattivo dove si pu\xF2 testare rapidamente del codice. I programmatori lo\u2026"
+lastmod: 2024-02-18 23:08:56.012258
+model: gpt-4-0125-preview
+summary: "REPL sta per Read-Eval-Print Loop (Ciclo Leggi-Valuta-Stampa), un ambiente\
+  \ interattivo dove si pu\xF2 testare rapidamente del codice. I programmatori lo\u2026"
+title: Utilizzo di un interprete interattivo (REPL)
 ---
 
 {{< edit_this_page >}}

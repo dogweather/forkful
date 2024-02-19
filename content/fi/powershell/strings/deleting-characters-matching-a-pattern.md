@@ -1,13 +1,14 @@
 ---
-title:                "Merkkien poistaminen hakemalla osumia kaavaan"
 aliases:
 - /fi/powershell/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:43:04.314656-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:43:04.314656-07:00
+description: "Pattern matching on poistaa hahmoja merkkijonosta, jotka vastaavat tietty\xE4\
+  \ kaavaa. Ohjelmoijat tekev\xE4t sen, koska se auttaa puhdistamaan ja muokkaamaan\u2026"
+lastmod: 2024-02-18 23:09:07.833102
+model: gpt-4-1106-preview
+summary: "Pattern matching on poistaa hahmoja merkkijonosta, jotka vastaavat tietty\xE4\
+  \ kaavaa. Ohjelmoijat tekev\xE4t sen, koska se auttaa puhdistamaan ja muokkaamaan\u2026"
+title: Merkkien poistaminen hakemalla osumia kaavaan
 ---
 
 {{< edit_this_page >}}

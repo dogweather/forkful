@@ -1,13 +1,16 @@
 ---
-title:                "Manipulation des nombres complexes"
 aliases:
 - /fr/elm/working-with-complex-numbers/
-date:                  2024-01-26T04:39:22.981520-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulation des nombres complexes"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/working-with-complex-numbers.md"
+date: 2024-01-26 04:39:22.981520-07:00
+description: "Les nombres complexes sont une combinaison de nombres r\xE9els et imaginaires,\
+  \ comme `a + bi` o\xF9 `i` est la racine carr\xE9e de -1. Ils sont cl\xE9s dans\
+  \ des\u2026"
+lastmod: 2024-02-18 23:09:08.726985
+model: gpt-4-0125-preview
+summary: "Les nombres complexes sont une combinaison de nombres r\xE9els et imaginaires,\
+  \ comme `a + bi` o\xF9 `i` est la racine carr\xE9e de -1. Ils sont cl\xE9s dans\
+  \ des\u2026"
+title: Manipulation des nombres complexes
 ---
 
 {{< edit_this_page >}}

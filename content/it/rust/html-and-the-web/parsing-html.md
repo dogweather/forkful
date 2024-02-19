@@ -1,14 +1,18 @@
 ---
-title:                "Analisi del HTML"
 aliases:
 - /it/rust/parsing-html/
-date:                  2024-02-03T19:12:53.217281-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analisi del HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:53.217281-07:00
+description: "L'analisi di HTML in Rust \xE8 il processo di estrazione dati da documenti\
+  \ HTML, essenziale per il web scraping, l'estrazione di dati o la costruzione di\
+  \ web\u2026"
+lastmod: 2024-02-18 23:08:55.678177
+model: gpt-4-0125-preview
+summary: "L'analisi di HTML in Rust \xE8 il processo di estrazione dati da documenti\
+  \ HTML, essenziale per il web scraping, l'estrazione di dati o la costruzione di\
+  \ web\u2026"
+title: Analisi del HTML
 ---
 
 {{< edit_this_page >}}

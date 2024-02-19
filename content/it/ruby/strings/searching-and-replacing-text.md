@@ -1,13 +1,14 @@
 ---
-title:                "Ricerca e sostituzione del testo"
 aliases:
 - /it/ruby/searching-and-replacing-text/
-date:                  2024-01-20T17:58:29.391221-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ricerca e sostituzione del testo"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:29.391221-07:00
+description: "Ricercare e sostituire testo significa trovare specifiche stringhe in\
+  \ un testo e cambiarle con altre. I programmatori lo fanno per correggere errori,\u2026"
+lastmod: 2024-02-18 23:08:56.367298
+model: gpt-4-1106-preview
+summary: "Ricercare e sostituire testo significa trovare specifiche stringhe in un\
+  \ testo e cambiarle con altre. I programmatori lo fanno per correggere errori,\u2026"
+title: Ricerca e sostituzione del testo
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Å starte et nytt prosjekt"
 aliases:
 - /no/haskell/starting-a-new-project/
-date:                  2024-01-20T18:04:14.762933-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Å starte et nytt prosjekt"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/starting-a-new-project.md"
+date: 2024-01-20 18:04:14.762933-07:00
+description: "\xC5 starte et nytt prosjekt handler om \xE5 skape en ren skifer for\
+  \ \xE5 utvikle programvare. Programmerere gj\xF8r dette for \xE5 realisere nye ideer,\
+  \ l\xF8se problemer,\u2026"
+lastmod: 2024-02-18 23:08:53.935574
+model: gpt-4-1106-preview
+summary: "\xC5 starte et nytt prosjekt handler om \xE5 skape en ren skifer for \xE5\
+  \ utvikle programvare. Programmerere gj\xF8r dette for \xE5 realisere nye ideer,\
+  \ l\xF8se problemer,\u2026"
+title: "\xC5 starte et nytt prosjekt"
 ---
 
 {{< edit_this_page >}}

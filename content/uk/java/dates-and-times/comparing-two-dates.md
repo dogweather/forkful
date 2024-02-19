@@ -1,13 +1,16 @@
 ---
-title:                "Порівняння двох дат"
 aliases:
 - /uk/java/comparing-two-dates/
-date:                  2024-01-20T17:33:06.605217-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Порівняння двох дат"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/java/comparing-two-dates.md"
+date: 2024-01-20 17:33:06.605217-07:00
+description: "Comparing two dates lets you figure out their chronological sequence\
+  \ \u2013 which one comes before or after, or if they're the same moment in time.\
+  \ Programmers\u2026"
+lastmod: 2024-02-18 23:09:00.140727
+model: gpt-4-1106-preview
+summary: "Comparing two dates lets you figure out their chronological sequence \u2013\
+  \ which one comes before or after, or if they're the same moment in time. Programmers\u2026"
+title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u0432\u043E\
+  \u0445 \u0434\u0430\u0442"
 ---
 
 {{< edit_this_page >}}

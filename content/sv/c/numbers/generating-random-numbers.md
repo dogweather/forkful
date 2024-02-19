@@ -1,14 +1,18 @@
 ---
-title:                "Generera slumpmässiga nummer"
 aliases:
 - /sv/c/generating-random-numbers/
-date:                  2024-02-03T17:57:23.494405-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generera slumpmässiga nummer"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/generating-random-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:23.494405-07:00
+description: "Att generera slumpm\xE4ssiga nummer i C inneb\xE4r att skapa v\xE4rden\
+  \ som \xE4r of\xF6ruts\xE4gbara och f\xF6ljer en specifik distribution, s\xE5som\
+  \ uniform eller normal. Denna\u2026"
+lastmod: 2024-02-18 23:08:52.245764
+model: gpt-4-0125-preview
+summary: "Att generera slumpm\xE4ssiga nummer i C inneb\xE4r att skapa v\xE4rden som\
+  \ \xE4r of\xF6ruts\xE4gbara och f\xF6ljer en specifik distribution, s\xE5som uniform\
+  \ eller normal. Denna\u2026"
+title: "Generera slumpm\xE4ssiga nummer"
 ---
 
 {{< edit_this_page >}}

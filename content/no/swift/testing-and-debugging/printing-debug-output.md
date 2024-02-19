@@ -1,13 +1,16 @@
 ---
-title:                "Skrive ut feilsøkingsdata"
 aliases:
 - /no/swift/printing-debug-output/
-date:                  2024-01-20T17:53:32.458244-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skrive ut feilsøkingsdata"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/printing-debug-output.md"
+date: 2024-01-20 17:53:32.458244-07:00
+description: "\xC5 skrive ut debug-informasjon inneb\xE6rer \xE5 vise verdier og meldinger\
+  \ under kj\xF8ring av programmet, for \xE5 forst\xE5 hva som skjer \"under hetta\"\
+  . Vi gj\xF8r dette\u2026"
+lastmod: 2024-02-18 23:08:54.271450
+model: gpt-4-1106-preview
+summary: "\xC5 skrive ut debug-informasjon inneb\xE6rer \xE5 vise verdier og meldinger\
+  \ under kj\xF8ring av programmet, for \xE5 forst\xE5 hva som skjer \"under hetta\"\
+  . Vi gj\xF8r dette\u2026"
+title: "Skrive ut feils\xF8kingsdata"
 ---
 
 {{< edit_this_page >}}

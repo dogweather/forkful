@@ -1,14 +1,18 @@
 ---
-title:                "Impression de sortie de débogage"
 aliases:
 - /fr/c/printing-debug-output/
-date:                  2024-02-03T18:05:12.048431-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Impression de sortie de débogage"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/printing-debug-output.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:12.048431-07:00
+description: "L'impression de sorties de d\xE9bogage consiste \xE0 g\xE9n\xE9rer des\
+  \ messages de journal temporaires et informatifs qui peuvent aider les programmeurs\
+  \ \xE0 comprendre\u2026"
+lastmod: 2024-02-18 23:09:09.359004
+model: gpt-4-0125-preview
+summary: "L'impression de sorties de d\xE9bogage consiste \xE0 g\xE9n\xE9rer des messages\
+  \ de journal temporaires et informatifs qui peuvent aider les programmeurs \xE0\
+  \ comprendre\u2026"
+title: "Impression de sortie de d\xE9bogage"
 ---
 
 {{< edit_this_page >}}

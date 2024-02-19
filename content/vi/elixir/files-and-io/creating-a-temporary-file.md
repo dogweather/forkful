@@ -1,15 +1,20 @@
 ---
-title:                "Tạo một tập tin tạm thời"
 aliases:
 - /vi/elixir/creating-a-temporary-file/
-date:                  2024-01-28T21:58:41.538253-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tạo một tập tin tạm thời"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/creating-a-temporary-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:58:41.538253-07:00
+description: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi c\xF3 ngh\u0129a l\xE0\
+  \ t\u1EA1o m\u1ED9t t\u1EC7p b\u1EA1n s\u1EBD lo\u1EA1i b\u1ECF sau m\u1ED9t th\u1EDD\
+  i gian s\u1EED d\u1EE5ng ng\u1EAFn. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
+  n \u0111i\u1EC1u n\xE0y cho vi\u1EC7c l\u01B0u tr\u1EEF t\u1EA1m\u2026"
+lastmod: 2024-02-18 23:08:50.390308
+model: gpt-4-0125-preview
+summary: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi c\xF3 ngh\u0129a l\xE0 t\u1EA1\
+  o m\u1ED9t t\u1EC7p b\u1EA1n s\u1EBD lo\u1EA1i b\u1ECF sau m\u1ED9t th\u1EDDi gian\
+  \ s\u1EED d\u1EE5ng ng\u1EAFn. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
+  n \u0111i\u1EC1u n\xE0y cho vi\u1EC7c l\u01B0u tr\u1EEF t\u1EA1m\u2026"
+title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 ---
 
 {{< edit_this_page >}}

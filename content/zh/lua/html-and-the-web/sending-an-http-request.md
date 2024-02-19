@@ -1,14 +1,19 @@
 ---
-title:                "发出 HTTP 请求"
 aliases:
 - /zh/lua/sending-an-http-request/
-date:                  2024-01-20T18:00:05.469025-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "发出 HTTP 请求"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/lua/sending-an-http-request.md"
+date: 2024-01-20 18:00:05.469025-07:00
+description: "\u53D1\u9001HTTP\u8BF7\u6C42\u8BA9\u4F60\u4ECE\u7F51\u4E0A\u83B7\u53D6\
+  \u6216\u53D1\u9001\u4FE1\u606F\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u6765\u4EA4\
+  \u4E92\u5E94\u7528\u6570\u636E\uFF0C\u6BD4\u5982\u81EA\u52A8\u5316\u4EFB\u52A1\u6216\
+  \u8005\u4F7F\u7528\u7F51\u7EDCAPI\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.250842
+model: gpt-4-1106-preview
+summary: "\u53D1\u9001HTTP\u8BF7\u6C42\u8BA9\u4F60\u4ECE\u7F51\u4E0A\u83B7\u53D6\u6216\
+  \u53D1\u9001\u4FE1\u606F\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u6765\u4EA4\u4E92\
+  \u5E94\u7528\u6570\u636E\uFF0C\u6BD4\u5982\u81EA\u52A8\u5316\u4EFB\u52A1\u6216\u8005\
+  \u4F7F\u7528\u7F51\u7EDCAPI\u3002"
+title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 ---
 
 {{< edit_this_page >}}

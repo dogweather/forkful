@@ -1,15 +1,21 @@
 ---
-title:                "Viết hoa một chuỗi"
 aliases:
 - /vi/arduino/capitalizing-a-string/
-date:                  2024-01-28T21:56:17.622860-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Viết hoa một chuỗi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/capitalizing-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:17.622860-07:00
+description: "Bi\u1EBFn m\u1ED7i k\xFD t\u1EF1 c\u1EE7a m\u1ED9t chu\u1ED7i th\xE0\
+  nh ch\u1EEF hoa c\xF3 ngh\u0129a l\xE0 l\xE0m cho m\u1ECDi k\xFD t\u1EF1 \u0111\u1EC1\
+  u tr\u1EDF th\xE0nh ch\u1EEF in hoa. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
+  i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u1EA1t \u0111\u01B0\u1EE3c s\u1EF1 nh\u1EA5\
+  t\u2026"
+lastmod: 2024-02-18 23:08:50.964828
+model: gpt-4-0125-preview
+summary: "Bi\u1EBFn m\u1ED7i k\xFD t\u1EF1 c\u1EE7a m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF\
+  \ hoa c\xF3 ngh\u0129a l\xE0 l\xE0m cho m\u1ECDi k\xFD t\u1EF1 \u0111\u1EC1u tr\u1EDF\
+  \ th\xE0nh ch\u1EEF in hoa. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1\
+  u n\xE0y \u0111\u1EC3 \u0111\u1EA1t \u0111\u01B0\u1EE3c s\u1EF1 nh\u1EA5t\u2026"
+title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 ---
 
 {{< edit_this_page >}}

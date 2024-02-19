@@ -1,14 +1,14 @@
 ---
-title:                "ロギング"
 aliases:
 - /ja/go/logging/
-date:                  2024-02-03T17:59:25.015320-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "ロギング"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/logging.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:25.015320-07:00
+description: "\u2026"
+lastmod: 2024-02-18 23:08:54.486863
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u30ED\u30AE\u30F3\u30B0"
 ---
 
 {{< edit_this_page >}}

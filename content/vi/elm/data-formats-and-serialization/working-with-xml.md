@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với XML"
 aliases:
 - /vi/elm/working-with-xml/
-date:                  2024-01-28T22:12:34.722114-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elm/working-with-xml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:34.722114-07:00
+description: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch\
+  \ c\xFA ph\xE1p, bi\u1EBFn \u0111\u1ED5i, v\xE0 t\u1EA1o ra c\xE1c t\xE0i li\u1EC7\
+  u XML trong Elm. Vi\u1EC7c n\xE0y \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n \u0111\
+  \u1EC3 t\u01B0\u01A1ng t\xE1c v\u1EDBi nhi\u1EC1u d\u1ECBch v\u1EE5\u2026"
+lastmod: 2024-02-18 23:08:50.631138
+model: gpt-4-0125-preview
+summary: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA\
+  \ ph\xE1p, bi\u1EBFn \u0111\u1ED5i, v\xE0 t\u1EA1o ra c\xE1c t\xE0i li\u1EC7u XML\
+  \ trong Elm. Vi\u1EC7c n\xE0y \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n \u0111\u1EC3\
+  \ t\u01B0\u01A1ng t\xE1c v\u1EDBi nhi\u1EC1u d\u1ECBch v\u1EE5\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 ---
 
 {{< edit_this_page >}}

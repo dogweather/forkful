@@ -1,14 +1,28 @@
 ---
-title:                "使用JSON进行编程"
 aliases:
 - /zh/elixir/working-with-json/
-date:                  2024-02-03T19:22:16.841176-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用JSON进行编程"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:22:16.841176-07:00
+description: "\u5904\u7406JSON\u5305\u62EC\u5C06JSON\u683C\u5F0F\u7684\u5B57\u7B26\
+  \u4E32\u89E3\u6790\u6210Elixir\u53EF\u4EE5\u64CD\u4F5C\u7684\u6570\u636E\u7ED3\u6784\
+  \uFF0C\u4EE5\u53CA\u5C06Elixir\u6570\u636E\u7ED3\u6784\u5E8F\u5217\u5316\u56DEJSON\u5B57\
+  \u7B26\u4E32\u3002\u8FD9\u5BF9\u4E8EWeb\u5F00\u53D1\u3001APIs\u548C\u914D\u7F6E\u6587\
+  \u4EF6\u6765\u8BF4\u81F3\u5173\u91CD\u8981\uFF0C\u56E0\u4E3AJSON\u662F\u4E00\u79CD\
+  \u8F7B\u91CF\u7EA7\u7684\u3001\u57FA\u4E8E\u6587\u672C\u7684\u3001\u4E0E\u8BED\u8A00\
+  \u65E0\u5173\u7684\u6570\u636E\u4EA4\u6362\u683C\u5F0F\uFF0C\u56E0\u5176\u7B80\u5355\
+  \u6027\u548C\u6613\u8BFB\u6027\u800C\u5E7F\u6CDB\u4F7F\u7528\u3002"
+lastmod: 2024-02-18 23:08:58.885053
+model: gpt-4-0125-preview
+summary: "\u5904\u7406JSON\u5305\u62EC\u5C06JSON\u683C\u5F0F\u7684\u5B57\u7B26\u4E32\
+  \u89E3\u6790\u6210Elixir\u53EF\u4EE5\u64CD\u4F5C\u7684\u6570\u636E\u7ED3\u6784\uFF0C\
+  \u4EE5\u53CA\u5C06Elixir\u6570\u636E\u7ED3\u6784\u5E8F\u5217\u5316\u56DEJSON\u5B57\
+  \u7B26\u4E32\u3002\u8FD9\u5BF9\u4E8EWeb\u5F00\u53D1\u3001APIs\u548C\u914D\u7F6E\u6587\
+  \u4EF6\u6765\u8BF4\u81F3\u5173\u91CD\u8981\uFF0C\u56E0\u4E3AJSON\u662F\u4E00\u79CD\
+  \u8F7B\u91CF\u7EA7\u7684\u3001\u57FA\u4E8E\u6587\u672C\u7684\u3001\u4E0E\u8BED\u8A00\
+  \u65E0\u5173\u7684\u6570\u636E\u4EA4\u6362\u683C\u5F0F\uFF0C\u56E0\u5176\u7B80\u5355\
+  \u6027\u548C\u6613\u8BFB\u6027\u800C\u5E7F\u6CDB\u4F7F\u7528\u3002"
+title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 ---
 
 {{< edit_this_page >}}

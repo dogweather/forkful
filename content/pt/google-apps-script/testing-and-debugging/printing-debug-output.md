@@ -1,14 +1,18 @@
 ---
-title:                "Imprimindo a saída de depuração"
 aliases:
 - /pt/google-apps-script/printing-debug-output/
-date:                  2024-02-01T21:57:52.924566-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Imprimindo a saída de depuração"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/google-apps-script/printing-debug-output.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:52.924566-07:00
+description: "Imprimir sa\xEDdas de depura\xE7\xE3o envolve colocar estrategicamente\
+  \ declara\xE7\xF5es de registro no seu c\xF3digo para exibir valores de vari\xE1\
+  veis, fluxo de execu\xE7\xE3o ou\u2026"
+lastmod: 2024-02-18 23:08:57.718862
+model: gpt-4-0125-preview
+summary: "Imprimir sa\xEDdas de depura\xE7\xE3o envolve colocar estrategicamente declara\xE7\
+  \xF5es de registro no seu c\xF3digo para exibir valores de vari\xE1veis, fluxo de\
+  \ execu\xE7\xE3o ou\u2026"
+title: "Imprimindo a sa\xEDda de depura\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

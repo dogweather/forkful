@@ -1,14 +1,18 @@
 ---
-title:                "Tolka HTML"
 aliases:
 - /sv/arduino/parsing-html/
-date:                  2024-02-03T19:11:31.045771-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tolka HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:11:31.045771-07:00
+description: "Att tolka HTML i Arduino-projekt handlar om att extrahera information\
+  \ fr\xE5n webbsidor. Programmerare g\xF6r detta f\xF6r att m\xF6jligg\xF6ra f\xF6\
+  r deras Arduino-enheter\u2026"
+lastmod: 2024-02-18 23:08:52.042397
+model: gpt-4-0125-preview
+summary: "Att tolka HTML i Arduino-projekt handlar om att extrahera information fr\xE5\
+  n webbsidor. Programmerare g\xF6r detta f\xF6r att m\xF6jligg\xF6ra f\xF6r deras\
+  \ Arduino-enheter\u2026"
+title: Tolka HTML
 ---
 
 {{< edit_this_page >}}

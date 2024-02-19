@@ -1,14 +1,28 @@
 ---
-title:                "JSON과 함께 일하기"
 aliases:
 - /ko/elixir/working-with-json/
-date:                  2024-02-03T19:22:16.887488-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "JSON과 함께 일하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:22:16.887488-07:00
+description: "JSON\uC744 \uC0AC\uC6A9\uD558\uB294 \uC791\uC5C5\uC740 JSON \uD615\uC2DD\
+  \uC758 \uBB38\uC790\uC5F4\uC744 Elixir\uAC00 \uC870\uC791\uD560 \uC218 \uC788\uB294\
+  \ \uB370\uC774\uD130 \uAD6C\uC870\uB85C \uD30C\uC2F1\uD558\uACE0, Elixir \uB370\uC774\
+  \uD130 \uAD6C\uC870\uB97C \uB2E4\uC2DC JSON \uBB38\uC790\uC5F4\uB85C \uC9C1\uB82C\
+  \uD654\uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uC774\uB294 JSON\uC774\
+  \ \uB2E8\uC21C\uD558\uACE0 \uC778\uAC04\uC774 \uC77D\uAE30 \uC26C\uC6B4 \uACBD\uB7C9\
+  \uC758 \uD14D\uC2A4\uD2B8 \uAE30\uBC18 \uC5B8\uC5B4 \uB3C5\uB9BD\uC801\uC778 \uB370\
+  \uC774\uD130 \uAD50\uD658\u2026"
+lastmod: 2024-02-18 23:09:05.788520
+model: gpt-4-0125-preview
+summary: "JSON\uC744 \uC0AC\uC6A9\uD558\uB294 \uC791\uC5C5\uC740 JSON \uD615\uC2DD\
+  \uC758 \uBB38\uC790\uC5F4\uC744 Elixir\uAC00 \uC870\uC791\uD560 \uC218 \uC788\uB294\
+  \ \uB370\uC774\uD130 \uAD6C\uC870\uB85C \uD30C\uC2F1\uD558\uACE0, Elixir \uB370\uC774\
+  \uD130 \uAD6C\uC870\uB97C \uB2E4\uC2DC JSON \uBB38\uC790\uC5F4\uB85C \uC9C1\uB82C\
+  \uD654\uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uC774\uB294 JSON\uC774\
+  \ \uB2E8\uC21C\uD558\uACE0 \uC778\uAC04\uC774 \uC77D\uAE30 \uC26C\uC6B4 \uACBD\uB7C9\
+  \uC758 \uD14D\uC2A4\uD2B8 \uAE30\uBC18 \uC5B8\uC5B4 \uB3C5\uB9BD\uC801\uC778 \uB370\
+  \uC774\uD130 \uAD50\uD658\u2026"
+title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

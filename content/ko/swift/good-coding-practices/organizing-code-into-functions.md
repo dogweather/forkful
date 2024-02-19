@@ -1,13 +1,22 @@
 ---
-title:                "코드를 함수로 구성하기"
 aliases:
 - /ko/swift/organizing-code-into-functions/
-date:                  2024-01-26T01:11:59.617865-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "코드를 함수로 구성하기"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/swift/organizing-code-into-functions.md"
+date: 2024-01-26 01:11:59.617865-07:00
+description: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uADF8\uB8F9\uD654\uD558\uB294\
+  \ \uAC83\uC740 \uC791\uC5C5\uC744 \uC7AC\uC0AC\uC6A9 \uAC00\uB2A5\uD55C \uC870\uAC01\
+  \uC73C\uB85C \uB098\uB204\uB294 \uAC83\uC785\uB2C8\uB2E4. \uC774\uAC83\uC740 \uCF54\
+  \uB4DC\uB97C \uAE54\uB054\uD558\uAC8C \uD558\uACE0 \uC624\uB958 \uAC00\uB2A5\uC131\
+  \uC744 \uC904\uC774\uBA70, \uB514\uBC84\uADF8\uB098 \uB9AC\uD329\uD1A0\uB9C1\uC744\
+  \ \uC6A9\uC774\uD558\uAC8C \uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.756845
+model: gpt-4-1106-preview
+summary: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uADF8\uB8F9\uD654\uD558\uB294 \uAC83\
+  \uC740 \uC791\uC5C5\uC744 \uC7AC\uC0AC\uC6A9 \uAC00\uB2A5\uD55C \uC870\uAC01\uC73C\
+  \uB85C \uB098\uB204\uB294 \uAC83\uC785\uB2C8\uB2E4. \uC774\uAC83\uC740 \uCF54\uB4DC\
+  \uB97C \uAE54\uB054\uD558\uAC8C \uD558\uACE0 \uC624\uB958 \uAC00\uB2A5\uC131\uC744\
+  \ \uC904\uC774\uBA70, \uB514\uBC84\uADF8\uB098 \uB9AC\uD329\uD1A0\uB9C1\uC744 \uC6A9\
+  \uC774\uD558\uAC8C \uD569\uB2C8\uB2E4."
+title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

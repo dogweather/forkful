@@ -1,13 +1,16 @@
 ---
-title:                "Lavorare con XML"
 aliases:
 - /it/bash/working-with-xml/
-date:                  2024-01-26T04:27:35.065879-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/working-with-xml.md"
+date: 2024-01-26 04:27:35.065879-07:00
+description: "Lavorare con XML comporta l'analisi, l'estrazione e la manipolazione\
+  \ dei dati nel formato Extensible Markup Language. I programmatori si scontrano\
+  \ con XML\u2026"
+lastmod: 2024-02-18 23:08:56.075747
+model: gpt-4-0125-preview
+summary: "Lavorare con XML comporta l'analisi, l'estrazione e la manipolazione dei\
+  \ dati nel formato Extensible Markup Language. I programmatori si scontrano con\
+  \ XML\u2026"
+title: Lavorare con XML
 ---
 
 {{< edit_this_page >}}

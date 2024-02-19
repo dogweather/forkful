@@ -1,13 +1,14 @@
 ---
-title:                "XML:n käsittely"
 aliases:
 - /fi/rust/working-with-xml/
-date:                  2024-01-26T04:35:29.618764-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML:n käsittely"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/working-with-xml.md"
+date: 2024-01-26 04:35:29.618764-07:00
+description: "XML, lyhenne sanoista eXtensible Markup Language, on kuin JSONin sanavalmis\
+  \ serkku. Joudut painimaan XML:n kanssa, kun ty\xF6skentelet perint\xF6j\xE4rjestelmien,\u2026"
+lastmod: 2024-02-18 23:09:07.389994
+model: gpt-4-0125-preview
+summary: "XML, lyhenne sanoista eXtensible Markup Language, on kuin JSONin sanavalmis\
+  \ serkku. Joudut painimaan XML:n kanssa, kun ty\xF6skentelet perint\xF6j\xE4rjestelmien,\u2026"
+title: "XML:n k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

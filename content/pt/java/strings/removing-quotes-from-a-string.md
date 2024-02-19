@@ -1,13 +1,16 @@
 ---
-title:                "Removendo aspas de uma string"
 aliases:
 - /pt/java/removing-quotes-from-a-string/
-date:                  2024-01-26T03:39:54.009709-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Removendo aspas de uma string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:39:54.009709-07:00
+description: "Remover aspas de uma string significa eliminar quaisquer marcas de cita\xE7\
+  \xE3o\u2014simples (' '), duplas (\" \") ou ambas\u2014dos dados de texto. Programadores\
+  \ fazem\u2026"
+lastmod: 2024-02-18 23:08:58.006914
+model: gpt-4-0125-preview
+summary: "Remover aspas de uma string significa eliminar quaisquer marcas de cita\xE7\
+  \xE3o\u2014simples (' '), duplas (\" \") ou ambas\u2014dos dados de texto. Programadores\
+  \ fazem\u2026"
+title: Removendo aspas de uma string
 ---
 
 {{< edit_this_page >}}

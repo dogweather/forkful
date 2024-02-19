@@ -1,13 +1,16 @@
 ---
-title:                "Exibindo saídas de depuração"
 aliases:
 - /pt/javascript/printing-debug-output/
-date:                  2024-01-20T17:52:55.390003-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Exibindo saídas de depuração"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/printing-debug-output.md"
+date: 2024-01-20 17:52:55.390003-07:00
+description: "Debugar \xE9 tipo um GPS para desenvolvedores: ajuda a encontrar onde\
+  \ as coisas d\xE3o errado. Imprimir sa\xEDdas de debug \xE9 deixar migalhas de p\xE3\
+  o pelo c\xF3digo,\u2026"
+lastmod: 2024-02-18 23:08:58.534824
+model: gpt-4-1106-preview
+summary: "Debugar \xE9 tipo um GPS para desenvolvedores: ajuda a encontrar onde as\
+  \ coisas d\xE3o errado. Imprimir sa\xEDdas de debug \xE9 deixar migalhas de p\xE3\
+  o pelo c\xF3digo,\u2026"
+title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

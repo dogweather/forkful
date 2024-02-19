@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với XML"
 aliases:
 - /vi/fish-shell/working-with-xml/
-date:                  2024-01-28T22:11:25.993575-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/working-with-xml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:25.993575-07:00
+description: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 thao t\xE1c d\u1EEF\
+  \ li\u1EC7u trong m\u1ED9t \u0111\u1ECBnh d\u1EA1ng c\xF3 c\u1EA5u tr\xFAc, ph\u1ED5\
+  \ bi\u1EBFn \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng trong c\u1EA5u h\xECnh, giao ti\u1EBF\
+  p v\xE0 nhi\u1EC1u h\u01A1n n\u1EEFa. L\u1EADp tr\xECnh\u2026"
+lastmod: 2024-02-18 23:08:51.213373
+model: gpt-4-0125-preview
+summary: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 thao t\xE1c d\u1EEF\
+  \ li\u1EC7u trong m\u1ED9t \u0111\u1ECBnh d\u1EA1ng c\xF3 c\u1EA5u tr\xFAc, ph\u1ED5\
+  \ bi\u1EBFn \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng trong c\u1EA5u h\xECnh, giao ti\u1EBF\
+  p v\xE0 nhi\u1EC1u h\u01A1n n\u1EEFa. L\u1EADp tr\xECnh\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 ---
 
 {{< edit_this_page >}}

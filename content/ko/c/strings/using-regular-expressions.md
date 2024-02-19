@@ -1,14 +1,30 @@
 ---
-title:                "정규 표현식 사용하기"
 aliases:
 - /ko/c/using-regular-expressions/
-date:                  2024-02-03T18:11:08.458161-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "정규 표현식 사용하기"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:11:08.458161-07:00
+description: "\uC815\uADDC \uD45C\uD604\uC2DD(regex)\uC740 \uC815\uC758\uB41C \uD328\
+  \uD134\uC744 \uC0AC\uC6A9\uD558\uC5EC \uBB38\uC790\uC5F4\uC744 \uAC80\uC0C9, \uB9E4\
+  \uCE6D, \uC870\uC791\uD558\uB294 \uBC29\uBC95\uC744 \uC81C\uACF5\uD569\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC785\uB825\uAC12\uC758 \uC720\uD6A8\
+  \uC131 \uAC80\uC0AC, \uD14D\uC2A4\uD2B8 \uB370\uC774\uD130 \uD30C\uC2F1, \uD070\
+  \ \uD14D\uC2A4\uD2B8 \uD30C\uC77C \uB0B4\uC758 \uD328\uD134 \uCC3E\uAE30\uC640 \uAC19\
+  \uC740 \uC791\uC5C5\uC744 \uC704\uD574 \uC815\uADDC \uD45C\uD604\uC2DD\uC744 \uAD11\
+  \uBC94\uC704\uD558\uAC8C \uC0AC\uC6A9\uD558\uBA70, \uC774\uB85C \uC778\uD574 C \uC5B8\
+  \uC5B4\uB97C \uD3EC\uD568\uD55C\u2026"
+lastmod: 2024-02-18 23:09:06.933759
+model: gpt-4-0125-preview
+summary: "\uC815\uADDC \uD45C\uD604\uC2DD(regex)\uC740 \uC815\uC758\uB41C \uD328\uD134\
+  \uC744 \uC0AC\uC6A9\uD558\uC5EC \uBB38\uC790\uC5F4\uC744 \uAC80\uC0C9, \uB9E4\uCE6D\
+  , \uC870\uC791\uD558\uB294 \uBC29\uBC95\uC744 \uC81C\uACF5\uD569\uB2C8\uB2E4. \uD504\
+  \uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC785\uB825\uAC12\uC758 \uC720\uD6A8\uC131\
+  \ \uAC80\uC0AC, \uD14D\uC2A4\uD2B8 \uB370\uC774\uD130 \uD30C\uC2F1, \uD070 \uD14D\
+  \uC2A4\uD2B8 \uD30C\uC77C \uB0B4\uC758 \uD328\uD134 \uCC3E\uAE30\uC640 \uAC19\uC740\
+  \ \uC791\uC5C5\uC744 \uC704\uD574 \uC815\uADDC \uD45C\uD604\uC2DD\uC744 \uAD11\uBC94\
+  \uC704\uD558\uAC8C \uC0AC\uC6A9\uD558\uBA70, \uC774\uB85C \uC778\uD574 C \uC5B8\uC5B4\
+  \uB97C \uD3EC\uD568\uD55C\u2026"
+title: "\uC815\uADDC \uD45C\uD604\uC2DD \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

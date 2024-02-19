@@ -1,13 +1,15 @@
 ---
-title:                "Generazione di numeri casuali"
 aliases:
 - /it/haskell/generating-random-numbers/
-date:                  2024-01-27T20:33:58.051813-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generazione di numeri casuali"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/generating-random-numbers.md"
+date: 2024-01-27 20:33:58.051813-07:00
+description: "Generare numeri casuali in Haskell comporta la creazione di numeri che\
+  \ sono imprevedibili secondo gli standard umani. Questo \xE8 critico in scenari\
+  \ che\u2026"
+lastmod: 2024-02-18 23:08:55.926175
+model: gpt-4-0125-preview
+summary: "Generare numeri casuali in Haskell comporta la creazione di numeri che sono\
+  \ imprevedibili secondo gli standard umani. Questo \xE8 critico in scenari che\u2026"
+title: Generazione di numeri casuali
 ---
 
 {{< edit_this_page >}}

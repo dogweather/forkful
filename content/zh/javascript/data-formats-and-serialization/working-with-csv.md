@@ -1,14 +1,28 @@
 ---
-title:                "处理CSV文件"
 aliases:
 - /zh/javascript/working-with-csv/
-date:                  2024-02-03T19:20:41.197207-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理CSV文件"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:20:41.197207-07:00
+description: "\u5728JavaScript\u4E2D\u5904\u7406CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\
+  \uFF09\u6D89\u53CA\u89E3\u6790\u6216\u751F\u6210CSV\u6587\u4EF6\uFF0C\u4EE5\u4FBF\
+  \u4ECE\u5916\u90E8\u6E90\u6444\u53D6\u8868\u683C\u6570\u636E\u6216\u4E3A\u5176\u4ED6\
+  \u7A0B\u5E8F\u5BFC\u51FA\u6570\u636E\u4F7F\u7528\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\
+  \u505A\u662F\u56E0\u4E3A\u5B83\u4F7F\u5F97\u5E94\u7528\u3001\u6570\u636E\u5E93\u548C\
+  \u7CFB\u7EDF\u4E4B\u95F4\u7684\u6570\u636E\u4EA4\u6362\u65E2\u7B80\u5355\u53C8\u8F7B\
+  \u91CF\uFF0C\u5BF9\u4E8E\u50CFJSON\u8FD9\u6837\u66F4\u590D\u6742\u7684\u683C\u5F0F\
+  \u53EF\u80FD\u662F\u8FC7\u5EA6\u7684\u3002"
+lastmod: 2024-02-18 23:08:59.499789
+model: gpt-4-0125-preview
+summary: "\u5728JavaScript\u4E2D\u5904\u7406CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\
+  \uFF09\u6D89\u53CA\u89E3\u6790\u6216\u751F\u6210CSV\u6587\u4EF6\uFF0C\u4EE5\u4FBF\
+  \u4ECE\u5916\u90E8\u6E90\u6444\u53D6\u8868\u683C\u6570\u636E\u6216\u4E3A\u5176\u4ED6\
+  \u7A0B\u5E8F\u5BFC\u51FA\u6570\u636E\u4F7F\u7528\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\
+  \u505A\u662F\u56E0\u4E3A\u5B83\u4F7F\u5F97\u5E94\u7528\u3001\u6570\u636E\u5E93\u548C\
+  \u7CFB\u7EDF\u4E4B\u95F4\u7684\u6570\u636E\u4EA4\u6362\u65E2\u7B80\u5355\u53C8\u8F7B\
+  \u91CF\uFF0C\u5BF9\u4E8E\u50CFJSON\u8FD9\u6837\u66F4\u590D\u6742\u7684\u683C\u5F0F\
+  \u53EF\u80FD\u662F\u8FC7\u5EA6\u7684\u3002"
+title: "\u5904\u7406CSV\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

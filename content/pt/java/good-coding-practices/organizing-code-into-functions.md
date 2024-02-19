@@ -1,13 +1,15 @@
 ---
-title:                "Organizando o código em funções"
 aliases:
 - /pt/java/organizing-code-into-functions/
-date:                  2024-01-26T01:10:52.237096-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organizando o código em funções"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/organizing-code-into-functions.md"
+date: 2024-01-26 01:10:52.237096-07:00
+description: "Organizar o c\xF3digo em fun\xE7\xF5es significa dividir a fera de um\
+  \ programa em peda\xE7os gerenci\xE1veis, cada um realizando uma tarefa distinta.\
+  \ Os programadores\u2026"
+lastmod: 2024-02-18 23:08:58.024380
+model: gpt-4-1106-preview
+summary: "Organizar o c\xF3digo em fun\xE7\xF5es significa dividir a fera de um programa\
+  \ em peda\xE7os gerenci\xE1veis, cada um realizando uma tarefa distinta. Os programadores\u2026"
+title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 ---
 
 {{< edit_this_page >}}

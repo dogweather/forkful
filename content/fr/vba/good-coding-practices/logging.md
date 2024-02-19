@@ -1,14 +1,16 @@
 ---
-title:                "Journalisation"
 aliases:
 - /fr/vba/logging/
-date:                  2024-02-01T21:55:48.461722-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Journalisation"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/vba/logging.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:48.461722-07:00
+description: "La journalisation dans Visual Basic pour Applications (VBA) implique\
+  \ l'enregistrement d'informations sur le comportement d'un programme lors de son\u2026"
+lastmod: 2024-02-18 23:09:08.586700
+model: gpt-4-0125-preview
+summary: "La journalisation dans Visual Basic pour Applications (VBA) implique l'enregistrement\
+  \ d'informations sur le comportement d'un programme lors de son\u2026"
+title: Journalisation
 ---
 
 {{< edit_this_page >}}

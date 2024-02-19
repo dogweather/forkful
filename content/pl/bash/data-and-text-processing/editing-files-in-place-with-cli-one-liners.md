@@ -1,13 +1,16 @@
 ---
-title:                "Edycja plików w miejscu przy użyciu jednolinijkowców CLI"
 aliases:
 - /pl/bash/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:21:39.062889-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Edycja plików w miejscu przy użyciu jednolinijkowców CLI"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:21:39.062889-07:00
+description: "Wyobra\u017A sobie, \u017Ce w\u0142a\u015Bnie dowiedzia\u0142e\u015B\
+  \ si\u0119, \u017Ce musisz przeprowadzi\u0107 masow\u0105 aktualizacj\u0119 kilku\
+  \ plik\xF3w konfiguracyjnych znajduj\u0105cych si\u0119 na twoim serwerze.\u2026"
+lastmod: 2024-02-18 23:08:49.779887
+model: gpt-4-0125-preview
+summary: "Wyobra\u017A sobie, \u017Ce w\u0142a\u015Bnie dowiedzia\u0142e\u015B si\u0119\
+  , \u017Ce musisz przeprowadzi\u0107 masow\u0105 aktualizacj\u0119 kilku plik\xF3\
+  w konfiguracyjnych znajduj\u0105cych si\u0119 na twoim serwerze.\u2026"
+title: "Edycja plik\xF3w w miejscu przy u\u017Cyciu jednolinijkowc\xF3w CLI"
 ---
 
 {{< edit_this_page >}}

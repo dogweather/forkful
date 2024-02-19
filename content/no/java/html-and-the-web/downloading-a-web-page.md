@@ -1,13 +1,16 @@
 ---
-title:                "Nedlasting av en nettside"
 aliases:
 - /no/java/downloading-a-web-page/
-date:                  2024-01-20T17:44:06.246817-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Nedlasting av en nettside"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/downloading-a-web-page.md"
+date: 2024-01-20 17:44:06.246817-07:00
+description: "Last ned en nettside inneb\xE6rer \xE5 hente HTML-innholdet fra URL-en\
+  \ og lagre det lokalt. Programmerere gj\xF8r dette for datainnhenting, web scraping,\
+  \ eller\u2026"
+lastmod: 2024-02-18 23:08:53.769623
+model: gpt-4-1106-preview
+summary: "Last ned en nettside inneb\xE6rer \xE5 hente HTML-innholdet fra URL-en og\
+  \ lagre det lokalt. Programmerere gj\xF8r dette for datainnhenting, web scraping,\
+  \ eller\u2026"
+title: Nedlasting av en nettside
 ---
 
 {{< edit_this_page >}}

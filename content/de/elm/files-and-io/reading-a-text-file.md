@@ -1,13 +1,14 @@
 ---
-title:                "Textdatei einlesen"
 aliases:
 - /de/elm/reading-a-text-file/
-date:                  2024-01-20T17:54:16.074143-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Textdatei einlesen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/reading-a-text-file.md"
+date: 2024-01-20 17:54:16.074143-07:00
+description: "Das Einlesen einer Textdatei erm\xF6glicht es Programmen, Textinformationen\
+  \ zu verarbeiten \u2013 vom simplen Konfigurationsfile bis zur gro\xDFen Datenanalyse.\u2026"
+lastmod: 2024-02-18 23:09:04.799829
+model: gpt-4-1106-preview
+summary: "Das Einlesen einer Textdatei erm\xF6glicht es Programmen, Textinformationen\
+  \ zu verarbeiten \u2013 vom simplen Konfigurationsfile bis zur gro\xDFen Datenanalyse.\u2026"
+title: Textdatei einlesen
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Travailler avec XML"
 aliases:
 - /fr/go/working-with-xml/
-date:                  2024-02-03T18:13:06.925317-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Travailler avec XML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/working-with-xml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:13:06.925317-07:00
+description: "Travailler avec XML en Go implique d'analyser (lire) et de g\xE9n\xE9\
+  rer (\xE9crire) des documents XML \u2013 un format standard pour l'\xE9change de\
+  \ donn\xE9es structur\xE9es.\u2026"
+lastmod: 2024-02-18 23:09:08.265601
+model: gpt-4-0125-preview
+summary: "Travailler avec XML en Go implique d'analyser (lire) et de g\xE9n\xE9rer\
+  \ (\xE9crire) des documents XML \u2013 un format standard pour l'\xE9change de donn\xE9\
+  es structur\xE9es.\u2026"
+title: Travailler avec XML
 ---
 
 {{< edit_this_page >}}

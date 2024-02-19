@@ -1,12 +1,14 @@
 ---
-title:                "Using a debugger"
 aliases:
 - /en/vba/using-a-debugger/
-date:                  2024-02-01T21:30:22.659018-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using a debugger"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/vba/using-a-debugger.md"
+date: 2024-02-01 21:30:22.659018-07:00
+description: "Using a debugger in Visual Basic for Applications (VBA) involves running\
+  \ your code step-by-step to inspect its execution flow and variable states. This\u2026"
+lastmod: 2024-02-18 23:09:10.894492
+model: gpt-4-0125-preview
+summary: "Using a debugger in Visual Basic for Applications (VBA) involves running\
+  \ your code step-by-step to inspect its execution flow and variable states. This\u2026"
+title: Using a debugger
 ---
 
 {{< edit_this_page >}}

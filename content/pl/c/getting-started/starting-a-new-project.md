@@ -1,14 +1,16 @@
 ---
-title:                "Rozpoczynanie nowego projektu"
 aliases:
 - /pl/c/starting-a-new-project/
-date:                  2024-02-03T18:09:16.986069-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rozpoczynanie nowego projektu"
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/starting-a-new-project.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:09:16.986069-07:00
+description: "Rozpocz\u0119cie nowego projektu w C wymaga ustawienia podstawowej struktury\
+  \ kodu i \u015Brodowiska, aby efektywnie zarz\u0105dza\u0107 zadaniami programistycznymi.\u2026"
+lastmod: 2024-02-18 23:08:50.080745
+model: gpt-4-0125-preview
+summary: "Rozpocz\u0119cie nowego projektu w C wymaga ustawienia podstawowej struktury\
+  \ kodu i \u015Brodowiska, aby efektywnie zarz\u0105dza\u0107 zadaniami programistycznymi.\u2026"
+title: Rozpoczynanie nowego projektu
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,23 @@
 ---
-title:                "웹 페이지 다운로드하기"
 aliases:
 - /ko/haskell/downloading-a-web-page/
-date:                  2024-01-20T17:44:30.523884-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "웹 페이지 다운로드하기"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/downloading-a-web-page.md"
+date: 2024-01-20 17:44:30.523884-07:00
+description: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uB294 \uC778\uD130\
+  \uB137\uC758 \uD2B9\uC815 \uD398\uC774\uC9C0 \uB0B4\uC6A9\uC744 \uAC00\uC838\uC624\
+  \uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC790\
+  \uB3D9\uD654\uB41C \uB370\uC774\uD130 \uC218\uC9D1, \uC6F9 \uC2A4\uD06C\uB798\uD551\
+  \ \uB610\uB294 \uC624\uD504\uB77C\uC778\uC73C\uB85C \uD398\uC774\uC9C0\uB97C \uBD84\
+  \uC11D\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.285008
+model: gpt-4-1106-preview
+summary: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uB294 \uC778\uD130\uB137\
+  \uC758 \uD2B9\uC815 \uD398\uC774\uC9C0 \uB0B4\uC6A9\uC744 \uAC00\uC838\uC624\uB294\
+  \ \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC790\uB3D9\
+  \uD654\uB41C \uB370\uC774\uD130 \uC218\uC9D1, \uC6F9 \uC2A4\uD06C\uB798\uD551 \uB610\
+  \uB294 \uC624\uD504\uB77C\uC778\uC73C\uB85C \uD398\uC774\uC9C0\uB97C \uBD84\uC11D\
+  \uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
+title: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

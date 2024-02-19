@@ -1,13 +1,16 @@
 ---
-title:                "Omvandla ett datum till en sträng"
 aliases:
 - /sv/c-sharp/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:09.684219-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Omvandla ett datum till en sträng"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:09.684219-07:00
+description: "Att konvertera ett datum till en str\xE4ng inneb\xE4r att man byter\
+  \ formatet fr\xE5n ett `DateTime` objekt till en textrepresentation. Programmerare\
+  \ g\xF6r detta f\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.807047
+model: gpt-4-1106-preview
+summary: "Att konvertera ett datum till en str\xE4ng inneb\xE4r att man byter formatet\
+  \ fr\xE5n ett `DateTime` objekt till en textrepresentation. Programmerare g\xF6\
+  r detta f\xF6r\u2026"
+title: "Omvandla ett datum till en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

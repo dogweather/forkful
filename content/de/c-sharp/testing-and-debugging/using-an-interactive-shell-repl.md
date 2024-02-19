@@ -1,13 +1,14 @@
 ---
-title:                "Nutzung einer interaktiven Shell (REPL)"
 aliases:
 - /de/c-sharp/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:12:11.714086-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Nutzung einer interaktiven Shell (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:12:11.714086-07:00
+description: "Ein REPL oder Read-Eval-Print Loop erm\xF6glicht es Ihnen, C#-Code zu\
+  \ tippen und diesen interaktiv auszuf\xFChren. Programmierer nutzen es f\xFCr schnelle\u2026"
+lastmod: 2024-02-18 23:09:04.873186
+model: gpt-4-0125-preview
+summary: "Ein REPL oder Read-Eval-Print Loop erm\xF6glicht es Ihnen, C#-Code zu tippen\
+  \ und diesen interaktiv auszuf\xFChren. Programmierer nutzen es f\xFCr schnelle\u2026"
+title: Nutzung einer interaktiven Shell (REPL)
 ---
 
 {{< edit_this_page >}}

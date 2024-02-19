@@ -1,13 +1,14 @@
 ---
-title:                "Rounding numbers"
 aliases:
 - /en/clojure/rounding-numbers/
-date:                  2024-01-25T03:00:40.655499-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rounding numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/rounding-numbers.md"
+date: 2024-01-25 03:00:40.655499-07:00
+description: "Rounding numbers is about tweaking a number to the nearest whole, or\
+  \ to a certain decimal precision. We round numbers to simplify them for human\u2026"
+lastmod: 2024-02-18 23:09:10.718465
+model: gpt-4-1106-preview
+summary: "Rounding numbers is about tweaking a number to the nearest whole, or to\
+  \ a certain decimal precision. We round numbers to simplify them for human\u2026"
+title: Rounding numbers
 ---
 
 {{< edit_this_page >}}

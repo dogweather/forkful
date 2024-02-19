@@ -1,13 +1,16 @@
 ---
-title:                "Zeichenketten verknüpfen"
 aliases:
 - /de/haskell/concatenating-strings/
-date:                  2024-01-20T17:34:59.074995-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Zeichenketten verknüpfen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/concatenating-strings.md"
+date: 2024-01-20 17:34:59.074995-07:00
+description: "String-Konkatenation verklebt einfach zwei Textst\xFCcke zu einem l\xE4\
+  ngeren. Programmierer*innen nutzen das, um Nutzerdaten zu verarbeiten, Nachrichten\
+  \ zu\u2026"
+lastmod: 2024-02-18 23:09:04.908097
+model: gpt-4-1106-preview
+summary: "String-Konkatenation verklebt einfach zwei Textst\xFCcke zu einem l\xE4\
+  ngeren. Programmierer*innen nutzen das, um Nutzerdaten zu verarbeiten, Nachrichten\
+  \ zu\u2026"
+title: "Zeichenketten verkn\xFCpfen"
 ---
 
 {{< edit_this_page >}}

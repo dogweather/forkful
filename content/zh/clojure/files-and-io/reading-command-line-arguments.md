@@ -1,14 +1,19 @@
 ---
-title:                "读取命令行参数"
 aliases:
 - /zh/clojure/reading-command-line-arguments/
-date:                  2024-01-20T17:55:34.101376-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "读取命令行参数"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:34.101376-07:00
+description: "\u547D\u4EE4\u884C\u53C2\u6570\u5141\u8BB8\u7528\u6237\u5F71\u54CD\u7A0B\
+  \u5E8F\u7684\u884C\u4E3A\u3002\u7A0B\u5E8F\u5458\u8BFB\u53D6\u5B83\u4EEC\uFF0C\u56E0\
+  \u4E3A\u8FD9\u6837\u53EF\u4EE5\u7075\u6D3B\u63A7\u5236\u7A0B\u5E8F\uFF0C\u5728\u6267\
+  \u884C\u65F6\u52A8\u6001\u4F20\u9012\u4FE1\u606F\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:58.841927
+model: gpt-4-1106-preview
+summary: "\u547D\u4EE4\u884C\u53C2\u6570\u5141\u8BB8\u7528\u6237\u5F71\u54CD\u7A0B\
+  \u5E8F\u7684\u884C\u4E3A\u3002\u7A0B\u5E8F\u5458\u8BFB\u53D6\u5B83\u4EEC\uFF0C\u56E0\
+  \u4E3A\u8FD9\u6837\u53EF\u4EE5\u7075\u6D3B\u63A7\u5236\u7A0B\u5E8F\uFF0C\u5728\u6267\
+  \u884C\u65F6\u52A8\u6001\u4F20\u9012\u4FE1\u606F\u3002"
+title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
 ---
 
 {{< edit_this_page >}}

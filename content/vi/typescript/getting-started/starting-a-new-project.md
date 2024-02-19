@@ -1,15 +1,20 @@
 ---
-title:                "Bắt đầu một dự án mới"
 aliases:
 - /vi/typescript/starting-a-new-project/
-date:                  2024-01-28T22:08:40.295460-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bắt đầu một dự án mới"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/typescript/starting-a-new-project.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:40.295460-07:00
+description: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi b\u1EB1ng TypeScript\
+  \ ch\xEDnh l\xE0 vi\u1EC7c thi\u1EBFt l\u1EADp m\u1ED9t n\u1EC1n t\u1EA3ng v\u1EEF\
+  ng ch\u1EAFc \u0111\u1EC3 l\u1EADp tr\xECnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn kh\u1EDF\
+  i x\u01B0\u1EDBng d\u1EF1 \xE1n m\u1EDBi \u0111\u1EC3 bi\u1EBFn nh\u1EEFng \xFD\u2026"
+lastmod: 2024-02-18 23:08:50.415917
+model: gpt-4-0125-preview
+summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi b\u1EB1ng TypeScript\
+  \ ch\xEDnh l\xE0 vi\u1EC7c thi\u1EBFt l\u1EADp m\u1ED9t n\u1EC1n t\u1EA3ng v\u1EEF\
+  ng ch\u1EAFc \u0111\u1EC3 l\u1EADp tr\xECnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn kh\u1EDF\
+  i x\u01B0\u1EDBng d\u1EF1 \xE1n m\u1EDBi \u0111\u1EC3 bi\u1EBFn nh\u1EEFng \xFD\u2026"
+title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 ---
 
 {{< edit_this_page >}}

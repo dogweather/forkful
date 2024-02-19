@@ -1,13 +1,16 @@
 ---
-title:                "Bruke et interaktivt skall (REPL)"
 aliases:
 - /no/python/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:17:09.593979-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke et interaktivt skall (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:17:09.593979-07:00
+description: "En REPL, eller Lese-Evaluer-Skriv-L\xF8kke, er et programmeringsmilj\xF8\
+  \ som tar enkeltbrukerinnskrivelser, utf\xF8rer dem og returnerer resultatet til\
+  \ brukeren.\u2026"
+lastmod: 2024-02-18 23:08:53.525985
+model: gpt-4-0125-preview
+summary: "En REPL, eller Lese-Evaluer-Skriv-L\xF8kke, er et programmeringsmilj\xF8\
+  \ som tar enkeltbrukerinnskrivelser, utf\xF8rer dem og returnerer resultatet til\
+  \ brukeren.\u2026"
+title: Bruke et interaktivt skall (REPL)
 ---
 
 {{< edit_this_page >}}

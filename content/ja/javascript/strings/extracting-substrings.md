@@ -1,14 +1,25 @@
 ---
-title:                "部分文字列の抽出"
 aliases:
 - /ja/javascript/extracting-substrings/
-date:                  2024-01-20T17:46:25.671922-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "部分文字列の抽出"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/extracting-substrings.md"
+date: 2024-01-20 17:46:25.671922-07:00
+description: "JavaScript\u3067\u306F\u3001\u6587\u5B57\u5217\u304B\u3089\u7279\u5B9A\
+  \u306E\u90E8\u5206\u3092\u53D6\u308A\u51FA\u3059\u64CD\u4F5C\u3092\u300C\u30B5\u30D6\
+  \u30B9\u30C8\u30EA\u30F3\u30B0\uFF08\u90E8\u5206\u6587\u5B57\u5217\uFF09\u306E\u62BD\
+  \u51FA\u300D\u3068\u547C\u3073\u307E\u3059\u3002\u3053\u306E\u6280\u8853\u306F\u3001\
+  \u30E6\u30FC\u30B6\u30FC\u5165\u529B\u306E\u51E6\u7406\u3084\u30C7\u30FC\u30BF\u306E\
+  \u5F62\u5F0F\u3092\u5909\u66F4\u3059\u308B\u969B\u306B\u983B\u7E41\u306B\u4F7F\u308F\
+  \u308C\u307E\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.258855
+model: gpt-4-1106-preview
+summary: "JavaScript\u3067\u306F\u3001\u6587\u5B57\u5217\u304B\u3089\u7279\u5B9A\u306E\
+  \u90E8\u5206\u3092\u53D6\u308A\u51FA\u3059\u64CD\u4F5C\u3092\u300C\u30B5\u30D6\u30B9\
+  \u30C8\u30EA\u30F3\u30B0\uFF08\u90E8\u5206\u6587\u5B57\u5217\uFF09\u306E\u62BD\u51FA\
+  \u300D\u3068\u547C\u3073\u307E\u3059\u3002\u3053\u306E\u6280\u8853\u306F\u3001\u30E6\
+  \u30FC\u30B6\u30FC\u5165\u529B\u306E\u51E6\u7406\u3084\u30C7\u30FC\u30BF\u306E\u5F62\
+  \u5F0F\u3092\u5909\u66F4\u3059\u308B\u969B\u306B\u983B\u7E41\u306B\u4F7F\u308F\u308C\
+  \u307E\u3059\u3002"
+title: "\u90E8\u5206\u6587\u5B57\u5217\u306E\u62BD\u51FA"
 ---
 
 {{< edit_this_page >}}

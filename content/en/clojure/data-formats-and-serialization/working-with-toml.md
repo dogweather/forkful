@@ -1,13 +1,14 @@
 ---
-title:                "Working with TOML"
 aliases:
 - /en/clojure/working-with-toml/
-date:                  2024-01-25T03:39:30.881912-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Working with TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/working-with-toml.md"
+date: 2024-01-25 03:39:30.881912-07:00
+description: "Working with TOML means you're handling data in a Minimal \"Tom's Obvious,\
+  \ Minimal Language\" format, popular for config files due to its easy readability.\u2026"
+lastmod: 2024-02-18 23:09:10.746891
+model: gpt-4-1106-preview
+summary: "Working with TOML means you're handling data in a Minimal \"Tom's Obvious,\
+  \ Minimal Language\" format, popular for config files due to its easy readability.\u2026"
+title: Working with TOML
 ---
 
 {{< edit_this_page >}}

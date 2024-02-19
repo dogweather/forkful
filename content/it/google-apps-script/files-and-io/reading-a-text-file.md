@@ -1,14 +1,16 @@
 ---
-title:                "Leggere un file di testo"
 aliases:
 - /it/google-apps-script/reading-a-text-file/
-date:                  2024-02-01T21:58:28.316061-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Leggere un file di testo"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/google-apps-script/reading-a-text-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:28.316061-07:00
+description: "Leggere un file di testo in Google Apps Script (GAS) comporta l'accesso\
+  \ ed estrazione di dati testuali da file memorizzati su Google Drive o altri sistemi\u2026"
+lastmod: 2024-02-18 23:08:55.496879
+model: gpt-4-0125-preview
+summary: "Leggere un file di testo in Google Apps Script (GAS) comporta l'accesso\
+  \ ed estrazione di dati testuali da file memorizzati su Google Drive o altri sistemi\u2026"
+title: Leggere un file di testo
 ---
 
 {{< edit_this_page >}}

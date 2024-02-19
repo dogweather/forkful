@@ -1,13 +1,22 @@
 ---
-title:                "使用TOML"
 aliases:
 - /zh/fish-shell/working-with-toml/
-date:                  2024-01-26T04:21:37.496676-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/working-with-toml.md"
+date: 2024-01-26 04:21:37.496676-07:00
+description: "TOML \u662F\u4E00\u79CD\u914D\u7F6E\u6587\u4EF6\u683C\u5F0F\uFF0C\u5BF9\
+  \u4EBA\u7C7B\u6765\u8BF4\u6613\u4E8E\u8BFB\u5199\uFF0C\u5BF9\u673A\u5668\u6765\u8BF4\
+  \u6613\u4E8E\u89E3\u6790\u548C\u751F\u6210\u3002\u5F53\u9879\u76EE\u4E2D\u53EF\u8BFB\
+  \u6027\u81F3\u5173\u91CD\u8981\u65F6\uFF0C\u7A0B\u5E8F\u5458\u4F1A\u4F7F\u7528 TOML\
+  \ \u6765\u5904\u7406\u6E05\u6670\u3001\u5C42\u6B21\u5206\u660E\u7684\u914D\u7F6E\
+  \u6587\u4EF6\u3002"
+lastmod: 2024-02-18 23:08:59.540757
+model: gpt-4-0125-preview
+summary: "TOML \u662F\u4E00\u79CD\u914D\u7F6E\u6587\u4EF6\u683C\u5F0F\uFF0C\u5BF9\u4EBA\
+  \u7C7B\u6765\u8BF4\u6613\u4E8E\u8BFB\u5199\uFF0C\u5BF9\u673A\u5668\u6765\u8BF4\u6613\
+  \u4E8E\u89E3\u6790\u548C\u751F\u6210\u3002\u5F53\u9879\u76EE\u4E2D\u53EF\u8BFB\u6027\
+  \u81F3\u5173\u91CD\u8981\u65F6\uFF0C\u7A0B\u5E8F\u5458\u4F1A\u4F7F\u7528 TOML \u6765\
+  \u5904\u7406\u6E05\u6670\u3001\u5C42\u6B21\u5206\u660E\u7684\u914D\u7F6E\u6587\u4EF6\
+  \u3002"
+title: "\u4F7F\u7528TOML"
 ---
 
 {{< edit_this_page >}}

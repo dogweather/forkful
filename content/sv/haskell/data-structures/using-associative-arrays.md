@@ -1,16 +1,17 @@
 ---
-title:                "Att använda associativa arrayer"
 aliases:
 - /sv/haskell/using-associative-arrays/
-date:                  2024-01-30T19:12:16.726260-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda associativa arrayer"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, dogweather, reviewed
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, dogweather, reviewed
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:16.726260-07:00
+description: "Associerande arrayer, eller ordb\xF6cker, i Haskell handlar om att mappa\
+  \ nycklar till v\xE4rden f\xF6r snabb uppslagning och effektiv datahantering. Programmerare\u2026"
+lastmod: 2024-02-18 23:08:51.830577
+model: gpt-4-0125-preview
+summary: "Associerande arrayer, eller ordb\xF6cker, i Haskell handlar om att mappa\
+  \ nycklar till v\xE4rden f\xF6r snabb uppslagning och effektiv datahantering. Programmerare\u2026"
+title: "Att anv\xE4nda associativa arrayer"
 ---
 
 {{< edit_this_page >}}

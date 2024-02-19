@@ -1,13 +1,16 @@
 ---
-title:                "Slette tegn som matcher et mønster"
 aliases:
 - /no/powershell/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:43:20.603847-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Slette tegn som matcher et mønster"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/powershell/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:43:20.603847-07:00
+description: "Sletting av tegn som matcher et m\xF8nster gj\xF8r at vi kan finrense\
+  \ tekst ved \xE5 ta vekk u\xF8nskede deler, som ekstrategn eller kode. Programmerere\
+  \ gj\xF8r dette\u2026"
+lastmod: 2024-02-18 23:08:54.083677
+model: gpt-4-1106-preview
+summary: "Sletting av tegn som matcher et m\xF8nster gj\xF8r at vi kan finrense tekst\
+  \ ved \xE5 ta vekk u\xF8nskede deler, som ekstrategn eller kode. Programmerere gj\xF8\
+  r dette\u2026"
+title: "Slette tegn som matcher et m\xF8nster"
 ---
 
 {{< edit_this_page >}}

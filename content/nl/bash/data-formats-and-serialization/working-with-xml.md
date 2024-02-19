@@ -1,15 +1,16 @@
 ---
-title:                "Werken met XML"
 aliases:
 - /nl/bash/working-with-xml/
-date:                  2024-01-28T22:11:04.068587-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/working-with-xml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:04.068587-07:00
+description: "Werken met XML houdt in: het parsen, extraheren en manipuleren van gegevens\
+  \ in het Extensible Markup Language-formaat. Programmeurs worstelen met XML,\u2026"
+lastmod: 2024-02-18 23:09:02.069461
+model: gpt-4-0125-preview
+summary: "Werken met XML houdt in: het parsen, extraheren en manipuleren van gegevens\
+  \ in het Extensible Markup Language-formaat. Programmeurs worstelen met XML,\u2026"
+title: Werken met XML
 ---
 
 {{< edit_this_page >}}

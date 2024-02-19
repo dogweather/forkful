@@ -1,15 +1,20 @@
 ---
-title:                "Nội suy chuỗi ký tự"
 aliases:
 - /vi/typescript/interpolating-a-string/
-date:                  2024-01-28T22:02:38.755164-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Nội suy chuỗi ký tự"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/typescript/interpolating-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:02:38.755164-07:00
+description: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n nh\xFAng c\xE1c bi\u1EBF\
+  n v\xE0 bi\u1EC3u th\u1EE9c v\xE0o trong chu\u1ED7i. N\xF3 gi\xFAp cho code c\u1EE7\
+  a b\u1EA1n d\u1EC5 \u0111\u1ECDc v\xE0 linh ho\u1EA1t - kh\xF4ng c\u1EA7n d\u1EA5\
+  u c\u1ED9ng, kh\xF4ng r\u1EAFc r\u1ED1i,\u2026"
+lastmod: 2024-02-18 23:08:50.399687
+model: gpt-4-0125-preview
+summary: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n nh\xFAng c\xE1c bi\u1EBFn v\xE0\
+  \ bi\u1EC3u th\u1EE9c v\xE0o trong chu\u1ED7i. N\xF3 gi\xFAp cho code c\u1EE7a b\u1EA1\
+  n d\u1EC5 \u0111\u1ECDc v\xE0 linh ho\u1EA1t - kh\xF4ng c\u1EA7n d\u1EA5u c\u1ED9\
+  ng, kh\xF4ng r\u1EAFc r\u1ED1i,\u2026"
+title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 ---
 
 {{< edit_this_page >}}

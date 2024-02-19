@@ -1,13 +1,16 @@
 ---
-title:                "Erstellung einer temporären Datei"
 aliases:
 - /de/elm/creating-a-temporary-file/
-date:                  2024-01-20T17:40:41.685455-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Erstellung einer temporären Datei"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:41.685455-07:00
+description: "Das Erstellen einer tempor\xE4ren Datei bedeutet, eine Datei zu generieren,\
+  \ die f\xFCr die kurzfristige Verwendung vorgesehen ist. Programmierer nutzen sie\
+  \ f\xFCr\u2026"
+lastmod: 2024-02-18 23:09:04.802026
+model: gpt-4-1106-preview
+summary: "Das Erstellen einer tempor\xE4ren Datei bedeutet, eine Datei zu generieren,\
+  \ die f\xFCr die kurzfristige Verwendung vorgesehen ist. Programmierer nutzen sie\
+  \ f\xFCr\u2026"
+title: "Erstellung einer tempor\xE4ren Datei"
 ---
 
 {{< edit_this_page >}}

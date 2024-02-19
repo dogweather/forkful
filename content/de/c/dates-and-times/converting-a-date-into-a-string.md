@@ -1,14 +1,16 @@
 ---
-title:                "Ein Datum in einen String umwandeln"
 aliases:
 - /de/c/converting-a-date-into-a-string/
-date:                  2024-02-03T17:53:50.811772-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ein Datum in einen String umwandeln"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:50.811772-07:00
+description: "Die Umwandlung eines Datums in einen String in C beinhaltet die \xDC\
+  bersetzung einer Datenstruktur oder eines Zeitstempels in ein menschenlesbares Format.\u2026"
+lastmod: 2024-02-18 23:09:05.386912
+model: gpt-4-0125-preview
+summary: "Die Umwandlung eines Datums in einen String in C beinhaltet die \xDCbersetzung\
+  \ einer Datenstruktur oder eines Zeitstempels in ein menschenlesbares Format.\u2026"
+title: Ein Datum in einen String umwandeln
 ---
 
 {{< edit_this_page >}}

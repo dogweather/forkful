@@ -1,13 +1,20 @@
 ---
-title:                "处理复数"
 aliases:
 - /zh/cpp/working-with-complex-numbers/
-date:                  2024-01-26T04:38:01.498001-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理复数"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/working-with-complex-numbers.md"
+date: 2024-01-26 04:38:01.498001-07:00
+description: "\u590D\u6570\u901A\u8FC7\u6DFB\u52A0\u4E00\u4E2A\u865A\u6570\u5355\u4F4D\
+  \u201Ci\u201D\u6765\u6269\u5C55\u5B9E\u6570\uFF0C\u5176\u4E2D i^2 = -1\u3002\u7A0B\
+  \u5E8F\u5458\u4EEC\u4F7F\u7528\u5B83\u4EEC\u8FDB\u884C\u4EFF\u771F\u3001\u4FE1\u53F7\
+  \u5904\u7406\u4EE5\u53CA\u89E3\u51B3\u9700\u8981\u5728\u4E24\u4E2A\u7EF4\u5EA6\u4E2D\
+  \u5DE5\u4F5C\u7684\u6570\u5B66\u95EE\u9898\u3002"
+lastmod: 2024-02-18 23:08:59.400215
+model: gpt-4-0125-preview
+summary: "\u590D\u6570\u901A\u8FC7\u6DFB\u52A0\u4E00\u4E2A\u865A\u6570\u5355\u4F4D\
+  \u201Ci\u201D\u6765\u6269\u5C55\u5B9E\u6570\uFF0C\u5176\u4E2D i^2 = -1\u3002\u7A0B\
+  \u5E8F\u5458\u4EEC\u4F7F\u7528\u5B83\u4EEC\u8FDB\u884C\u4EFF\u771F\u3001\u4FE1\u53F7\
+  \u5904\u7406\u4EE5\u53CA\u89E3\u51B3\u9700\u8981\u5728\u4E24\u4E2A\u7EF4\u5EA6\u4E2D\
+  \u5DE5\u4F5C\u7684\u6570\u5B66\u95EE\u9898\u3002"
+title: "\u5904\u7406\u590D\u6570"
 ---
 
 {{< edit_this_page >}}

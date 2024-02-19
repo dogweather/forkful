@@ -1,13 +1,15 @@
 ---
-title:                "Lavorare con XML"
 aliases:
 - /it/typescript/working-with-xml/
-date:                  2024-01-26T04:36:09.367418-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/working-with-xml.md"
+date: 2024-01-26 04:36:09.367418-07:00
+description: "Lavorare con XML significa analizzare, manipolare e scrivere dati XML\
+  \ utilizzando la programmazione. I programmatori gestiscono XML per lo scambio di\
+  \ dati\u2026"
+lastmod: 2024-02-18 23:08:55.663974
+model: gpt-4-0125-preview
+summary: "Lavorare con XML significa analizzare, manipolare e scrivere dati XML utilizzando\
+  \ la programmazione. I programmatori gestiscono XML per lo scambio di dati\u2026"
+title: Lavorare con XML
 ---
 
 {{< edit_this_page >}}

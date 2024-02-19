@@ -1,13 +1,16 @@
 ---
-title:                "Verkkosivun lataaminen"
 aliases:
 - /fi/typescript/downloading-a-web-page/
-date:                  2024-01-20T17:45:04.567289-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Verkkosivun lataaminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/downloading-a-web-page.md"
+date: 2024-01-20 17:45:04.567289-07:00
+description: "Web-sivun lataaminen tarkoittaa sivun datan siirt\xE4mist\xE4 palvelimelta\
+  \ omalle koneelle. Ohjelmoijat tekev\xE4t t\xE4t\xE4 data-analyysin, testauksen\
+  \ tai sis\xE4ll\xF6n\u2026"
+lastmod: 2024-02-18 23:09:07.317435
+model: gpt-4-1106-preview
+summary: "Web-sivun lataaminen tarkoittaa sivun datan siirt\xE4mist\xE4 palvelimelta\
+  \ omalle koneelle. Ohjelmoijat tekev\xE4t t\xE4t\xE4 data-analyysin, testauksen\
+  \ tai sis\xE4ll\xF6n\u2026"
+title: Verkkosivun lataaminen
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,22 @@
 ---
-title:                "Nối chuỗi ký tự"
 aliases:
 - /vi/rust/concatenating-strings/
-date:                  2024-01-28T21:57:48.259364-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Nối chuỗi ký tự"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/concatenating-strings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:57:48.259364-07:00
+description: "N\u1ED1i chu\u1ED7i l\xE0 vi\u1EC7c gh\xE9p c\xE1c chu\u1ED7i l\u1EA1\
+  i v\u1EDBi nhau t\u1EEB \u0111\u1EA7u \u0111\u1EBFn cu\u1ED1i \u0111\u1EC3 t\u1EA1\
+  o th\xE0nh m\u1ED9t c\xE1i m\u1EDBi. Ch\xFAng ta th\u1EF1c hi\u1EC7n \u0111i\u1EC1\
+  u n\xE0y \u0111\u1EC3 x\xE2y d\u1EF1ng th\xF4ng \u0111i\u1EC7p, t\u1EA1o ra \u0111\
+  \u1EA7u ra,\u2026"
+lastmod: 2024-02-18 23:08:50.452997
+model: gpt-4-0125-preview
+summary: "N\u1ED1i chu\u1ED7i l\xE0 vi\u1EC7c gh\xE9p c\xE1c chu\u1ED7i l\u1EA1i v\u1EDB\
+  i nhau t\u1EEB \u0111\u1EA7u \u0111\u1EBFn cu\u1ED1i \u0111\u1EC3 t\u1EA1o th\xE0\
+  nh m\u1ED9t c\xE1i m\u1EDBi. Ch\xFAng ta th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0\
+  y \u0111\u1EC3 x\xE2y d\u1EF1ng th\xF4ng \u0111i\u1EC7p, t\u1EA1o ra \u0111\u1EA7\
+  u ra,\u2026"
+title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 ---
 
 {{< edit_this_page >}}

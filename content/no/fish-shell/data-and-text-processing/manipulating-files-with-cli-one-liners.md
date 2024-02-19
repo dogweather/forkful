@@ -1,13 +1,16 @@
 ---
-title:                "Manipulering av filer med CLI-enkeltkommandoer"
 aliases:
 - /no/fish-shell/manipulating-files-with-cli-one-liners/
-date:                  2024-01-27T16:20:59.095345-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulering av filer med CLI-enkeltkommandoer"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/manipulating-files-with-cli-one-liners.md"
+date: 2024-01-27 16:20:59.095345-07:00
+description: "I programmeringsverdenen, spesielt n\xE5r man h\xE5ndterer Linux- eller\
+  \ Unix-milj\xF8er, er manipulering av filer direkte fra kommandolinjegrensesnittet\
+  \ (CLI) ikke\u2026"
+lastmod: 2024-02-18 23:08:54.346383
+model: gpt-4-0125-preview
+summary: "I programmeringsverdenen, spesielt n\xE5r man h\xE5ndterer Linux- eller\
+  \ Unix-milj\xF8er, er manipulering av filer direkte fra kommandolinjegrensesnittet\
+  \ (CLI) ikke\u2026"
+title: Manipulering av filer med CLI-enkeltkommandoer
 ---
 
 {{< edit_this_page >}}

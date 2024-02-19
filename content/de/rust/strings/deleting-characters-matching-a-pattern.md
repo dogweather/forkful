@@ -1,13 +1,15 @@
 ---
-title:                "Löschen von Zeichen, die einem Muster entsprechen"
 aliases:
 - /de/rust/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:43:04.202690-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:43:04.202690-07:00
+description: "Zeichen, die einem Muster entsprechen, zu l\xF6schen, bedeutet, aus\
+  \ einem Text gezielt bestimmte Elemente zu entfernen. Programmierer nutzen diese\
+  \ Operation,\u2026"
+lastmod: 2024-02-18 23:09:04.624899
+model: gpt-4-1106-preview
+summary: "Zeichen, die einem Muster entsprechen, zu l\xF6schen, bedeutet, aus einem\
+  \ Text gezielt bestimmte Elemente zu entfernen. Programmierer nutzen diese Operation,\u2026"
+title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 ---
 
 {{< edit_this_page >}}

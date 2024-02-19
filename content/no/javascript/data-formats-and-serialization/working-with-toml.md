@@ -1,13 +1,16 @@
 ---
-title:                "Jobbe med TOML"
 aliases:
 - /no/javascript/working-with-toml/
-date:                  2024-01-26T04:23:29.999267-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Jobbe med TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/working-with-toml.md"
+date: 2024-01-26 04:23:29.999267-07:00
+description: "TOML, forkortelse for Tom's Obvious, Minimal Language, definerer hvordan\
+  \ man strukturerer konfigurasjonsfiler. Programmerere jobber med TOML fordi det\
+  \ er\u2026"
+lastmod: 2024-02-18 23:08:54.331826
+model: gpt-4-0125-preview
+summary: "TOML, forkortelse for Tom's Obvious, Minimal Language, definerer hvordan\
+  \ man strukturerer konfigurasjonsfiler. Programmerere jobber med TOML fordi det\
+  \ er\u2026"
+title: Jobbe med TOML
 ---
 
 {{< edit_this_page >}}

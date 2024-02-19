@@ -1,13 +1,16 @@
 ---
-title:                "Registro de Logs"
 aliases:
 - /pt/swift/logging/
-date:                  2024-01-26T01:09:09.404601-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registro de Logs"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/logging.md"
+date: 2024-01-26 01:09:09.404601-07:00
+description: "O registro de logs \xE9 o processo de gravar comportamentos, erros e\
+  \ outras informa\xE7\xF5es importantes de uma aplica\xE7\xE3o em um meio persistente,\
+  \ como um arquivo\u2026"
+lastmod: 2024-02-18 23:08:58.497230
+model: gpt-4-1106-preview
+summary: "O registro de logs \xE9 o processo de gravar comportamentos, erros e outras\
+  \ informa\xE7\xF5es importantes de uma aplica\xE7\xE3o em um meio persistente, como\
+  \ um arquivo\u2026"
+title: Registro de Logs
 ---
 
 {{< edit_this_page >}}

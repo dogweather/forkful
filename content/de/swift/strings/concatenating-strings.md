@@ -1,13 +1,14 @@
 ---
-title:                "Zeichenketten verknüpfen"
 aliases:
 - /de/swift/concatenating-strings/
-date:                  2024-01-20T17:35:38.699307-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Zeichenketten verknüpfen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/concatenating-strings.md"
+date: 2024-01-20 17:35:38.699307-07:00
+description: "String-Konkatenation verbindet Textst\xFCcke zu einem Ganzen. Entwickler\
+  \ nutzen das, um dynamische Nachrichten zu bilden oder Text aus verschiedenen Quellen\u2026"
+lastmod: 2024-02-18 23:09:05.225440
+model: gpt-4-1106-preview
+summary: "String-Konkatenation verbindet Textst\xFCcke zu einem Ganzen. Entwickler\
+  \ nutzen das, um dynamische Nachrichten zu bilden oder Text aus verschiedenen Quellen\u2026"
+title: "Zeichenketten verkn\xFCpfen"
 ---
 
 {{< edit_this_page >}}

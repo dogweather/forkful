@@ -1,14 +1,18 @@
 ---
-title:                "Lendo argumentos da linha de comando"
 aliases:
 - /pt/vba/reading-command-line-arguments/
-date:                  2024-02-01T21:59:12.473652-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lendo argumentos da linha de comando"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/vba/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:12.473652-07:00
+description: "Ler argumentos da linha de comando em Visual Basic para Aplica\xE7\xF5\
+  es (VBA) envolve acessar par\xE2metros passados ao seu programa durante a execu\xE7\
+  \xE3o. Esta\u2026"
+lastmod: 2024-02-18 23:08:57.991227
+model: gpt-4-0125-preview
+summary: "Ler argumentos da linha de comando em Visual Basic para Aplica\xE7\xF5es\
+  \ (VBA) envolve acessar par\xE2metros passados ao seu programa durante a execu\xE7\
+  \xE3o. Esta\u2026"
+title: Lendo argumentos da linha de comando
 ---
 
 {{< edit_this_page >}}

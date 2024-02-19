@@ -1,14 +1,17 @@
 ---
-title:                "Stampa dell'output di debug"
 aliases:
 - /it/google-apps-script/printing-debug-output/
-date:                  2024-02-01T21:57:56.257025-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Stampa dell'output di debug"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/google-apps-script/printing-debug-output.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:56.257025-07:00
+description: "Stampare l'output di debug comporta il posizionamento strategico di\
+  \ istruzioni di log nel codice per visualizzare i valori delle variabili, il flusso\
+  \ di\u2026"
+lastmod: 2024-02-18 23:08:55.480673
+model: gpt-4-0125-preview
+summary: "Stampare l'output di debug comporta il posizionamento strategico di istruzioni\
+  \ di log nel codice per visualizzare i valori delle variabili, il flusso di\u2026"
+title: Stampa dell'output di debug
 ---
 
 {{< edit_this_page >}}

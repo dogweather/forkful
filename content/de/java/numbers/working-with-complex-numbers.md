@@ -1,13 +1,14 @@
 ---
-title:                "Umgang mit komplexen Zahlen"
 aliases:
 - /de/java/working-with-complex-numbers/
-date:                  2024-01-26T04:42:07.865425-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Umgang mit komplexen Zahlen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/working-with-complex-numbers.md"
+date: 2024-01-26 04:42:07.865425-07:00
+description: "Komplexe Zahlen erweitern die reelle Zahlengerade durch Hinzuf\xFCgen\
+  \ einer imagin\xE4ren Einheit, `i`, wobei `i^2 = -1` gilt. Sie sind von entscheidender\u2026"
+lastmod: 2024-02-18 23:09:04.730623
+model: gpt-4-0125-preview
+summary: "Komplexe Zahlen erweitern die reelle Zahlengerade durch Hinzuf\xFCgen einer\
+  \ imagin\xE4ren Einheit, `i`, wobei `i^2 = -1` gilt. Sie sind von entscheidender\u2026"
+title: Umgang mit komplexen Zahlen
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,23 @@
 ---
-title:                "阅读文本文件"
 aliases:
 - /zh/php/reading-a-text-file/
-date:                  2024-01-20T17:54:56.363348-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "阅读文本文件"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/reading-a-text-file.md"
+date: 2024-01-20 17:54:56.363348-07:00
+description: "\u5728PHP\u4E2D\u8BFB\u6587\u672C\u6587\u4EF6\uFF0C\u5C31\u662F\u5C06\
+  \u6587\u4EF6\u5185\u5BB9\u52A0\u8F7D\u8FDB\u5185\u5B58\u3002\u8FD9\u901A\u5E38\u7528\
+  \u4E8E\u6570\u636E\u8BFB\u53D6\u3001\u914D\u7F6E\u52A0\u8F7D\u7B49\u3002\u4E3A\u4EC0\
+  \u4E48\u9700\u8981\uFF1F\u56E0\u4E3A\u7A0B\u5E8F\u8981\u7528\u6570\u636E\uFF0C\u800C\
+  \u4E14\u7ECF\u5E38\u9700\u8981\u5904\u7406\u5B58\u50A8\u5728\u6587\u4EF6\u4E2D\u7684\
+  \u6570\u636E\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.231698
+model: gpt-4-1106-preview
+summary: "\u5728PHP\u4E2D\u8BFB\u6587\u672C\u6587\u4EF6\uFF0C\u5C31\u662F\u5C06\u6587\
+  \u4EF6\u5185\u5BB9\u52A0\u8F7D\u8FDB\u5185\u5B58\u3002\u8FD9\u901A\u5E38\u7528\u4E8E\
+  \u6570\u636E\u8BFB\u53D6\u3001\u914D\u7F6E\u52A0\u8F7D\u7B49\u3002\u4E3A\u4EC0\u4E48\
+  \u9700\u8981\uFF1F\u56E0\u4E3A\u7A0B\u5E8F\u8981\u7528\u6570\u636E\uFF0C\u800C\u4E14\
+  \u7ECF\u5E38\u9700\u8981\u5904\u7406\u5B58\u50A8\u5728\u6587\u4EF6\u4E2D\u7684\u6570\
+  \u636E\u3002"
+title: "\u9605\u8BFB\u6587\u672C\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Att hitta längden på en sträng"
 aliases:
 - /sv/vba/finding-the-length-of-a-string/
-date:                  2024-02-01T21:53:50.637153-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att hitta längden på en sträng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:50.637153-07:00
+description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Visual Basic for Applications\
+  \ (VBA) handlar om att best\xE4mma antalet tecken den inneh\xE5ller. Programmerare\
+  \ utf\xF6r ofta denna\u2026"
+lastmod: 2024-02-18 23:08:51.616909
+model: gpt-4-0125-preview
+summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Visual Basic for Applications\
+  \ (VBA) handlar om att best\xE4mma antalet tecken den inneh\xE5ller. Programmerare\
+  \ utf\xF6r ofta denna\u2026"
+title: "Att hitta l\xE4ngden p\xE5 en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

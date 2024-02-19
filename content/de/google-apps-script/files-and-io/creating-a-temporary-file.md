@@ -1,14 +1,18 @@
 ---
-title:                "Erstellung einer temporären Datei"
 aliases:
 - /de/google-apps-script/creating-a-temporary-file/
-date:                  2024-02-01T21:51:43.038471-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Erstellung einer temporären Datei"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/google-apps-script/creating-a-temporary-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:43.038471-07:00
+description: "Das Erstellen einer tempor\xE4ren Datei in Google Apps Script beinhaltet\
+  \ die Generierung einer Datei, die f\xFCr den kurzfristigen Gebrauch vorgesehen\
+  \ ist,\u2026"
+lastmod: 2024-02-18 23:09:04.437040
+model: gpt-4-0125-preview
+summary: "Das Erstellen einer tempor\xE4ren Datei in Google Apps Script beinhaltet\
+  \ die Generierung einer Datei, die f\xFCr den kurzfristigen Gebrauch vorgesehen\
+  \ ist,\u2026"
+title: "Erstellung einer tempor\xE4ren Datei"
 ---
 
 {{< edit_this_page >}}

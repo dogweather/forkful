@@ -1,13 +1,14 @@
 ---
-title:                "Organizacja kodu w funkcje"
 aliases:
 - /pl/python/organizing-code-into-functions/
-date:                  2024-01-26T01:11:37.918310-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organizacja kodu w funkcje"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/organizing-code-into-functions.md"
+date: 2024-01-26 01:11:37.918310-07:00
+description: "Organizacja kodu w funkcje polega na podziale kodu na wielokrotnie u\u017C\
+  ywalne bloki o okre\u015Blonych celach. Robimy to, aby kod by\u0142 bardziej przejrzysty,\u2026"
+lastmod: 2024-02-18 23:08:49.228207
+model: gpt-4-1106-preview
+summary: "Organizacja kodu w funkcje polega na podziale kodu na wielokrotnie u\u017C\
+  ywalne bloki o okre\u015Blonych celach. Robimy to, aby kod by\u0142 bardziej przejrzysty,\u2026"
+title: Organizacja kodu w funkcje
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,30 @@
 ---
-title:                "인터랙티브 셸(REPL) 사용하기"
 aliases:
 - /ko/google-apps-script/using-an-interactive-shell-repl/
-date:                  2024-02-01T22:04:10.708649-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "인터랙티브 셸(REPL) 사용하기"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:10.708649-07:00
+description: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\uB294 \uC77D\uAE30-\uD3C9\
+  \uAC00-\uCD9C\uB825 \uB8E8\uD504(REPL)\uB294 \uB2E8\uC77C \uC0AC\uC6A9\uC790 \uC785\
+  \uB825(\uD45C\uD604\uC2DD)\uC744 \uBC1B\uC544 \uD3C9\uAC00\uD558\uACE0 \uC0AC\uC6A9\
+  \uC790\uC5D0\uAC8C \uACB0\uACFC\uB97C \uBC18\uD658\uD558\uB294 \uAC04\uB2E8\uD55C\
+  \ \uC778\uD130\uB799\uD2F0\uBE0C \uD504\uB85C\uADF8\uB798\uBC0D \uD658\uACBD\uC785\
+  \uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 REPL\uC744 \uC0AC\uC6A9\
+  \uD558\uC5EC \uBE60\uB978 \uD504\uB85C\uD1A0\uD0C0\uC774\uD551, \uB514\uBC84\uAE45\
+  \ \uBC0F \uD504\uB85C\uADF8\uB798\uBC0D \uC5B8\uC5B4\uC758 \uBB38\uBC95\uACFC \uB3D9\
+  \uC791\uC744 \uC778\uD130\uB799\uD2F0\uBE0C\uD558\uAC8C\u2026"
+lastmod: 2024-02-18 23:09:05.558435
+model: gpt-4-0125-preview
+summary: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\uB294 \uC77D\uAE30-\uD3C9\uAC00\
+  -\uCD9C\uB825 \uB8E8\uD504(REPL)\uB294 \uB2E8\uC77C \uC0AC\uC6A9\uC790 \uC785\uB825\
+  (\uD45C\uD604\uC2DD)\uC744 \uBC1B\uC544 \uD3C9\uAC00\uD558\uACE0 \uC0AC\uC6A9\uC790\
+  \uC5D0\uAC8C \uACB0\uACFC\uB97C \uBC18\uD658\uD558\uB294 \uAC04\uB2E8\uD55C \uC778\
+  \uD130\uB799\uD2F0\uBE0C \uD504\uB85C\uADF8\uB798\uBC0D \uD658\uACBD\uC785\uB2C8\
+  \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 REPL\uC744 \uC0AC\uC6A9\uD558\
+  \uC5EC \uBE60\uB978 \uD504\uB85C\uD1A0\uD0C0\uC774\uD551, \uB514\uBC84\uAE45 \uBC0F\
+  \ \uD504\uB85C\uADF8\uB798\uBC0D \uC5B8\uC5B4\uC758 \uBB38\uBC95\uACFC \uB3D9\uC791\
+  \uC744 \uC778\uD130\uB799\uD2F0\uBE0C\uD558\uAC8C\u2026"
+title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178(REPL) \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,17 @@
 ---
-title:                "Assosiatiivisten taulukoiden käyttö"
 aliases:
 - /fi/kotlin/using-associative-arrays/
-date:                  2024-01-30T19:11:39.647937-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Assosiatiivisten taulukoiden käyttö"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:11:39.647937-07:00
+description: "Assosiatiiviset taulukot eli mapit Kotlinissa ovat kokoelmia, jotka\
+  \ tallentavat avain-arvo -pareja. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 dataan\
+  \ tehokkaasti\u2026"
+lastmod: 2024-02-18 23:09:07.567447
+model: gpt-4-0125-preview
+summary: "Assosiatiiviset taulukot eli mapit Kotlinissa ovat kokoelmia, jotka tallentavat\
+  \ avain-arvo -pareja. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 dataan tehokkaasti\u2026"
+title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

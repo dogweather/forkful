@@ -1,13 +1,16 @@
 ---
-title:                "Organizacja kodu w funkcje"
 aliases:
 - /pl/arduino/organizing-code-into-functions/
-date:                  2024-01-26T01:08:39.068763-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organizacja kodu w funkcje"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/organizing-code-into-functions.md"
+date: 2024-01-26 01:08:39.068763-07:00
+description: "Organizacja kodu w funkcje oznacza podzielenie kodu na wielokrotnie\
+  \ u\u017Cywalne bloki, z kt\xF3rych ka\u017Cdy wykonuje okre\u015Blone zadanie.\
+  \ Programi\u015Bci robi\u0105 to, aby\u2026"
+lastmod: 2024-02-18 23:08:49.874571
+model: gpt-4-1106-preview
+summary: "Organizacja kodu w funkcje oznacza podzielenie kodu na wielokrotnie u\u017C\
+  ywalne bloki, z kt\xF3rych ka\u017Cdy wykonuje okre\u015Blone zadanie. Programi\u015B\
+  ci robi\u0105 to, aby\u2026"
+title: Organizacja kodu w funkcje
 ---
 
 {{< edit_this_page >}}

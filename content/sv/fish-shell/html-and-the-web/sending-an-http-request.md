@@ -1,13 +1,16 @@
 ---
-title:                "Skicka en http-förfrågan"
 aliases:
 - /sv/fish-shell/sending-an-http-request/
-date:                  2024-01-20T17:59:39.117412-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skicka en http-förfrågan"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/sending-an-http-request.md"
+date: 2024-01-20 17:59:39.117412-07:00
+description: "Att skicka en HTTP-f\xF6rfr\xE5gan inneb\xE4r att be en webbserver om\
+  \ data eller tj\xE4nster. Programmerare g\xF6r detta f\xF6r att interagera med webbapplikationer,\
+  \ h\xE4mta\u2026"
+lastmod: 2024-02-18 23:08:52.204503
+model: gpt-4-1106-preview
+summary: "Att skicka en HTTP-f\xF6rfr\xE5gan inneb\xE4r att be en webbserver om data\
+  \ eller tj\xE4nster. Programmerare g\xF6r detta f\xF6r att interagera med webbapplikationer,\
+  \ h\xE4mta\u2026"
+title: "Skicka en http-f\xF6rfr\xE5gan"
 ---
 
 {{< edit_this_page >}}

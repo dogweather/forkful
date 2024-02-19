@@ -1,14 +1,18 @@
 ---
-title:                "Hitta längden på en sträng"
 aliases:
 - /sv/c/finding-the-length-of-a-string/
-date:                  2024-02-03T17:56:34.949014-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Hitta längden på en sträng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:34.949014-07:00
+description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i C inneb\xE4r att best\xE4\
+  mma antalet tecken f\xF6re det nollterminerande tecknet `\\0`. Programmerare g\xF6\
+  r detta f\xF6r att korrekt\u2026"
+lastmod: 2024-02-18 23:08:52.240608
+model: gpt-4-0125-preview
+summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i C inneb\xE4r att best\xE4mma antalet\
+  \ tecken f\xF6re det nollterminerande tecknet `\\0`. Programmerare g\xF6r detta\
+  \ f\xF6r att korrekt\u2026"
+title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

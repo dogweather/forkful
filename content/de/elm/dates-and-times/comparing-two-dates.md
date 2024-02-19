@@ -1,13 +1,16 @@
 ---
-title:                "Vergleich von zwei Daten"
 aliases:
 - /de/elm/comparing-two-dates/
-date:                  2024-01-20T17:32:54.544929-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Vergleich von zwei Daten"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/comparing-two-dates.md"
+date: 2024-01-20 17:32:54.544929-07:00
+description: "Das Vergleichen von zwei Daten entscheidet, welches Datum fr\xFCher\
+  \ oder sp\xE4ter ist oder ob sie gleich sind. Programmierer nutzen das, um Zeitabl\xE4\
+  ufe zu\u2026"
+lastmod: 2024-02-18 23:09:04.794649
+model: gpt-4-1106-preview
+summary: "Das Vergleichen von zwei Daten entscheidet, welches Datum fr\xFCher oder\
+  \ sp\xE4ter ist oder ob sie gleich sind. Programmierer nutzen das, um Zeitabl\xE4\
+  ufe zu\u2026"
+title: Vergleich von zwei Daten
 ---
 
 {{< edit_this_page >}}

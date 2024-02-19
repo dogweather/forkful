@@ -1,13 +1,16 @@
 ---
-title:                "Registrazione Eventi (Logging)"
 aliases:
 - /it/arduino/logging/
-date:                  2024-01-26T00:59:18.755393-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registrazione Eventi (Logging)"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/logging.md"
+date: 2024-01-26 00:59:18.755393-07:00
+description: "\"Logging\" significa mantenere un registro degli eventi, delle transazioni\
+  \ o delle attivit\xE0 che si verificano nel tempo in un sistema. I programmatori\
+  \ lo\u2026"
+lastmod: 2024-02-18 23:08:56.139480
+model: gpt-4-1106-preview
+summary: "\"Logging\" significa mantenere un registro degli eventi, delle transazioni\
+  \ o delle attivit\xE0 che si verificano nel tempo in un sistema. I programmatori\
+  \ lo\u2026"
+title: Registrazione Eventi (Logging)
 ---
 
 {{< edit_this_page >}}

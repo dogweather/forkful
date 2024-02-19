@@ -1,14 +1,18 @@
 ---
-title:                "Skriva tester"
 aliases:
 - /sv/typescript/writing-tests/
-date:                  2024-02-03T19:32:25.576066-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriva tester"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:25.576066-07:00
+description: "Att skriva tester i TypeScript inneb\xE4r att man skapar automatiska\
+  \ skript f\xF6r att verifiera funktionaliteten och korrektheten i koden. Programmerare\
+  \ g\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.546892
+model: gpt-4-0125-preview
+summary: "Att skriva tester i TypeScript inneb\xE4r att man skapar automatiska skript\
+  \ f\xF6r att verifiera funktionaliteten och korrektheten i koden. Programmerare\
+  \ g\xF6r\u2026"
+title: Skriva tester
 ---
 
 {{< edit_this_page >}}

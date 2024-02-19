@@ -1,13 +1,14 @@
 ---
-title:                "Rimuovere le virgolette da una stringa"
 aliases:
 - /it/elm/removing-quotes-from-a-string/
-date:                  2024-01-26T03:38:50.584641-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rimuovere le virgolette da una stringa"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:38:50.584641-07:00
+description: "Rimuovere le virgolette da una stringa significa sbarazzarsi di quei\
+  \ segni di virgolettatura doppia o singola extra di cui non hai effettivamente bisogno\u2026"
+lastmod: 2024-02-18 23:08:55.794780
+model: gpt-4-0125-preview
+summary: "Rimuovere le virgolette da una stringa significa sbarazzarsi di quei segni\
+  \ di virgolettatura doppia o singola extra di cui non hai effettivamente bisogno\u2026"
+title: Rimuovere le virgolette da una stringa
 ---
 
 {{< edit_this_page >}}

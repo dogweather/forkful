@@ -1,13 +1,16 @@
 ---
-title:                "Interpolera en sträng"
 aliases:
 - /sv/bash/interpolating-a-string/
-date:                  2024-01-20T17:50:21.085085-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolera en sträng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/interpolating-a-string.md"
+date: 2024-01-20 17:50:21.085085-07:00
+description: "Interpolering av str\xE4ngar till\xE5ter dig att infoga variabler eller\
+  \ uttryck i en str\xE4ng. Programmerare anv\xE4nder det f\xF6r att skapa dynamiska\
+  \ meddelanden och\u2026"
+lastmod: 2024-02-18 23:08:51.945859
+model: gpt-4-1106-preview
+summary: "Interpolering av str\xE4ngar till\xE5ter dig att infoga variabler eller\
+  \ uttryck i en str\xE4ng. Programmerare anv\xE4nder det f\xF6r att skapa dynamiska\
+  \ meddelanden och\u2026"
+title: "Interpolera en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

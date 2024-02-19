@@ -1,14 +1,17 @@
 ---
-title:                "Criando um arquivo temporário"
 aliases:
 - /pt/vba/creating-a-temporary-file/
-date:                  2024-02-01T21:52:02.205436-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Criando um arquivo temporário"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/vba/creating-a-temporary-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:02.205436-07:00
+description: "Criar um arquivo tempor\xE1rio em Visual Basic for Applications (VBA)\
+  \ envolve gerar programaticamente um arquivo para uso de curto prazo, tipicamente\
+  \ para\u2026"
+lastmod: 2024-02-18 23:08:57.995676
+model: gpt-4-0125-preview
+summary: "Criar um arquivo tempor\xE1rio em Visual Basic for Applications (VBA) envolve\
+  \ gerar programaticamente um arquivo para uso de curto prazo, tipicamente para\u2026"
+title: "Criando um arquivo tempor\xE1rio"
 ---
 
 {{< edit_this_page >}}

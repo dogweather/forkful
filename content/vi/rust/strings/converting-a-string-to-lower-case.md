@@ -1,15 +1,20 @@
 ---
-title:                "Chuyển đổi chuỗi thành chữ thường"
 aliases:
 - /vi/rust/converting-a-string-to-lower-case/
-date:                  2024-01-28T21:58:16.296907-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Chuyển đổi chuỗi thành chữ thường"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:58:16.296907-07:00
+description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\
+  \u1EDDng c\xF3 ngh\u0129a l\xE0 bi\u1EBFn m\u1ED7i ch\u1EEF trong chu\u1ED7i th\xE0\
+  nh ch\u1EEF c\xE1i nh\u1ECF. \u0110i\u1EC1u n\xE0y r\u1EA5t ti\u1EC7n l\u1EE3i cho\
+  \ vi\u1EC7c so s\xE1nh kh\xF4ng ph\xE2n bi\u1EC7t ki\u1EC3u\u2026"
+lastmod: 2024-02-18 23:08:50.447317
+model: gpt-4-0125-preview
+summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\
+  \u1EDDng c\xF3 ngh\u0129a l\xE0 bi\u1EBFn m\u1ED7i ch\u1EEF trong chu\u1ED7i th\xE0\
+  nh ch\u1EEF c\xE1i nh\u1ECF. \u0110i\u1EC1u n\xE0y r\u1EA5t ti\u1EC7n l\u1EE3i cho\
+  \ vi\u1EC7c so s\xE1nh kh\xF4ng ph\xE2n bi\u1EC7t ki\u1EC3u\u2026"
+title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 ---
 
 {{< edit_this_page >}}

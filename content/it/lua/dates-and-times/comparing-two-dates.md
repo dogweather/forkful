@@ -1,13 +1,15 @@
 ---
-title:                "Confronto tra due date"
 aliases:
 - /it/lua/comparing-two-dates/
-date:                  2024-01-20T17:33:46.797489-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Confronto tra due date"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/lua/comparing-two-dates.md"
+date: 2024-01-20 17:33:46.797489-07:00
+description: "Confrontare due date significa stabilire qual \xE8 la pi\xF9 recente\
+  \ o se sono uguali. I programmatori fanno ci\xF2 per validare scadenze, calcolare\
+  \ differenze\u2026"
+lastmod: 2024-02-18 23:08:56.022880
+model: gpt-4-1106-preview
+summary: "Confrontare due date significa stabilire qual \xE8 la pi\xF9 recente o se\
+  \ sono uguali. I programmatori fanno ci\xF2 per validare scadenze, calcolare differenze\u2026"
+title: Confronto tra due date
 ---
 
 {{< edit_this_page >}}

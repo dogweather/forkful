@@ -1,13 +1,14 @@
 ---
-title:                "Searching and replacing text"
 aliases:
 - /en/cpp/searching-and-replacing-text/
-date:                  2024-01-20T17:57:17.022353-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Searching and replacing text"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:17.022353-07:00
+description: "Searching and replacing text is finding specific strings within a larger\
+  \ string and swapping them out for something else. Programmers use it for tasks\u2026"
+lastmod: 2024-02-18 23:09:11.340896
+model: gpt-4-1106-preview
+summary: "Searching and replacing text is finding specific strings within a larger\
+  \ string and swapping them out for something else. Programmers use it for tasks\u2026"
+title: Searching and replacing text
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Manejo de errores"
 aliases:
 - /es/bash/handling-errors/
-date:                  2024-01-26T00:37:18.314422-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Manejo de errores"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/handling-errors.md"
+date: 2024-01-26 00:37:18.314422-07:00
+description: "Manejar errores en scripts de Bash consiste en anticipar d\xF3nde pueden\
+  \ surgir problemas y abordarlos de manera elegante. \xBFPor qu\xE9? Bueno, mantiene\
+  \ tu\u2026"
+lastmod: 2024-02-18 23:09:10.175291
+model: gpt-4-1106-preview
+summary: "Manejar errores en scripts de Bash consiste en anticipar d\xF3nde pueden\
+  \ surgir problemas y abordarlos de manera elegante. \xBFPor qu\xE9? Bueno, mantiene\
+  \ tu\u2026"
+title: Manejo de errores
 ---
 
 {{< edit_this_page >}}

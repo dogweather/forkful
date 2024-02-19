@@ -1,14 +1,28 @@
 ---
-title:                "YAML로 작업하기"
 aliases:
 - /ko/google-apps-script/working-with-yaml/
-date:                  2024-02-01T22:07:14.248154-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "YAML로 작업하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/working-with-yaml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:07:14.248154-07:00
+description: "\"YAML Ain't Markup Language\"\uC758 \uC57D\uC790\uC778 YAML\uC740 \uCEF4\
+  \uD4E8\uD130 \uC5B8\uC5B4\uAC04 \uB370\uC774\uD130 \uAD50\uD658 \uBC0F \uC124\uC815\
+  \ \uD30C\uC77C\uC5D0 \uC8FC\uB85C \uC0AC\uC6A9\uB418\uB294 \uC778\uAC04\uC774 \uC77D\
+  \uC744 \uC218 \uC788\uB294 \uB370\uC774\uD130 \uC9C1\uB82C\uD654 \uD45C\uC900\uC785\
+  \uB2C8\uB2E4. \uD2B9\uD788, \uB9CE\uC740 \uC124\uC815\uC744 \uC694\uAD6C\uD558\uB294\
+  \ \uD504\uB85C\uC81D\uD2B8\uB098 \uB2E4\uB978 \uC2DC\uC2A4\uD15C \uAC04\uC5D0 \uAD6C\
+  \uC870\uD654\uB41C \uB370\uC774\uD130\uB97C \uC804\uC1A1\uD560 \uB54C \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC774\u2026"
+lastmod: 2024-02-18 23:09:05.591456
+model: gpt-4-0125-preview
+summary: "\"YAML Ain't Markup Language\"\uC758 \uC57D\uC790\uC778 YAML\uC740 \uCEF4\
+  \uD4E8\uD130 \uC5B8\uC5B4\uAC04 \uB370\uC774\uD130 \uAD50\uD658 \uBC0F \uC124\uC815\
+  \ \uD30C\uC77C\uC5D0 \uC8FC\uB85C \uC0AC\uC6A9\uB418\uB294 \uC778\uAC04\uC774 \uC77D\
+  \uC744 \uC218 \uC788\uB294 \uB370\uC774\uD130 \uC9C1\uB82C\uD654 \uD45C\uC900\uC785\
+  \uB2C8\uB2E4. \uD2B9\uD788, \uB9CE\uC740 \uC124\uC815\uC744 \uC694\uAD6C\uD558\uB294\
+  \ \uD504\uB85C\uC81D\uD2B8\uB098 \uB2E4\uB978 \uC2DC\uC2A4\uD15C \uAC04\uC5D0 \uAD6C\
+  \uC870\uD654\uB41C \uB370\uC774\uD130\uB97C \uC804\uC1A1\uD560 \uB54C \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC774\u2026"
+title: "YAML\uB85C \uC791\uC5C5\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

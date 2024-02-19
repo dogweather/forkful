@@ -1,14 +1,16 @@
 ---
-title:                "Gebruik van een interactieve shell (REPL)"
 aliases:
 - /nl/vba/using-an-interactive-shell-repl/
-date:                  2024-02-01T22:03:48.538506-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gebruik van een interactieve shell (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/vba/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:48.538506-07:00
+description: "Een interactieve shell, of Read-Eval-Print Loop (REPL), stelt gebruikers\
+  \ in staat om commando's in te voeren, uit te voeren en de resultaten in real-time\u2026"
+lastmod: 2024-02-18 23:09:01.667682
+model: gpt-4-0125-preview
+summary: "Een interactieve shell, of Read-Eval-Print Loop (REPL), stelt gebruikers\
+  \ in staat om commando's in te voeren, uit te voeren en de resultaten in real-time\u2026"
+title: Gebruik van een interactieve shell (REPL)
 ---
 
 {{< edit_this_page >}}

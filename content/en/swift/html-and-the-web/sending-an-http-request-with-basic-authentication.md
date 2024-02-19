@@ -1,13 +1,15 @@
 ---
-title:                "Sending an HTTP request with basic authentication"
 aliases:
 - /en/swift/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:40.647124-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sending an HTTP request with basic authentication"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:40.647124-07:00
+description: "Sending an HTTP request with basic authentication involves attaching\
+  \ a username and password to a request for gated web content. Programmers do this\
+  \ to\u2026"
+lastmod: 2024-02-18 23:09:11.396428
+model: gpt-4-1106-preview
+summary: "Sending an HTTP request with basic authentication involves attaching a username\
+  \ and password to a request for gated web content. Programmers do this to\u2026"
+title: Sending an HTTP request with basic authentication
 ---
 
 {{< edit_this_page >}}

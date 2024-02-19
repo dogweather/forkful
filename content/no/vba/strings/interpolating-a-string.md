@@ -1,14 +1,18 @@
 ---
-title:                "Interpolering av en streng"
 aliases:
 - /no/vba/interpolating-a-string/
-date:                  2024-02-01T21:55:28.728130-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interpolering av en streng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/vba/interpolating-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:28.728130-07:00
+description: "Strenginterpolering i Visual Basic for Applications (VBA) refererer\
+  \ til prosessen med \xE5 inneby variabler eller uttrykk innenfor en strengliteral,\
+  \ noe som\u2026"
+lastmod: 2024-02-18 23:08:53.713115
+model: gpt-4-0125-preview
+summary: "Strenginterpolering i Visual Basic for Applications (VBA) refererer til\
+  \ prosessen med \xE5 inneby variabler eller uttrykk innenfor en strengliteral, noe\
+  \ som\u2026"
+title: Interpolering av en streng
 ---
 
 {{< edit_this_page >}}

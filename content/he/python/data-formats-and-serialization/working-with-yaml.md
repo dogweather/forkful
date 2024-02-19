@@ -1,14 +1,28 @@
 ---
-title:                "עבודה עם YAML"
 aliases:
 - /he/python/working-with-yaml/
-date:                  2024-02-03T19:27:28.650344-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "עבודה עם YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:28.650344-07:00
+description: "YAML, \u05E9\u05E2\u05D5\u05DE\u05D3 \u05DC-YAML Ain't Markup Language,\
+  \ \u05D4\u05D5\u05D0 \u05E4\u05D5\u05E8\u05DE\u05D8 \u05E9\u05D9\u05E8\u05D9\u05D0\
+  \u05DC\u05D9\u05D6\u05E6\u05D9\u05D4 \u05E9\u05DC \u05E0\u05EA\u05D5\u05E0\u05D9\
+  \u05DD \u05E7\u05E8\u05D9\u05D0 \u05DC\u05D0\u05D3\u05DD. \u05EA\u05DB\u05E0\u05EA\
+  \u05D9\u05DD \u05DE\u05E9\u05EA\u05DE\u05E9\u05D9\u05DD \u05D1-YAML \u05E2\u05D1\
+  \u05D5\u05E8 \u05E7\u05D5\u05D1\u05E6\u05D9 \u05E7\u05D5\u05E0\u05E4\u05D9\u05D2\
+  \u05D5\u05E8\u05E6\u05D9\u05D4, \u05D4\u05D5\u05D3\u05E2\u05D5\u05EA \u05D1\u05D9\
+  \u05DF-\u05EA\u05D4\u05DC\u05D9\u05DB\u05D9\u05DD,\u2026"
+lastmod: 2024-02-18 23:08:52.458127
+model: gpt-4-0125-preview
+summary: "YAML, \u05E9\u05E2\u05D5\u05DE\u05D3 \u05DC-YAML Ain't Markup Language,\
+  \ \u05D4\u05D5\u05D0 \u05E4\u05D5\u05E8\u05DE\u05D8 \u05E9\u05D9\u05E8\u05D9\u05D0\
+  \u05DC\u05D9\u05D6\u05E6\u05D9\u05D4 \u05E9\u05DC \u05E0\u05EA\u05D5\u05E0\u05D9\
+  \u05DD \u05E7\u05E8\u05D9\u05D0 \u05DC\u05D0\u05D3\u05DD. \u05EA\u05DB\u05E0\u05EA\
+  \u05D9\u05DD \u05DE\u05E9\u05EA\u05DE\u05E9\u05D9\u05DD \u05D1-YAML \u05E2\u05D1\
+  \u05D5\u05E8 \u05E7\u05D5\u05D1\u05E6\u05D9 \u05E7\u05D5\u05E0\u05E4\u05D9\u05D2\
+  \u05D5\u05E8\u05E6\u05D9\u05D4, \u05D4\u05D5\u05D3\u05E2\u05D5\u05EA \u05D1\u05D9\
+  \u05DF-\u05EA\u05D4\u05DC\u05D9\u05DB\u05D9\u05DD,\u2026"
+title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD YAML"
 ---
 
 {{< edit_this_page >}}

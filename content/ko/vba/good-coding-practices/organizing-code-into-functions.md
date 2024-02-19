@@ -1,14 +1,28 @@
 ---
-title:                "코드를 함수로 구성하기"
 aliases:
 - /ko/vba/organizing-code-into-functions/
-date:                  2024-02-01T21:57:26.502384-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "코드를 함수로 구성하기"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/vba/organizing-code-into-functions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:26.502384-07:00
+description: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uCF54\uB4DC\uB97C \uD568\
+  \uC218\uB85C \uAD6C\uC131\uD558\uB294 \uAC83\uC740 \uD504\uB85C\uADF8\uB7A8\uC744\
+  \ \uD568\uC218\uB77C\uACE0 \uD558\uB294 \uC791\uACE0 \uAD00\uB9AC\uD558\uAE30 \uC26C\
+  \uC6B4 \uBD80\uBD84\uC73C\uB85C \uB098\uB204\uB294 \uC791\uC5C5\uC744 \uB9D0\uD569\
+  \uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uCF54\uB4DC\uC758 \uAC00\
+  \uB3C5\uC131\uC744 \uB192\uC774\uACE0, \uCF54\uB4DC\uB97C \uD6A8\uC728\uC801\uC73C\
+  \uB85C \uC7AC\uC0AC\uC6A9\uD558\uBA70, \uB514\uBC84\uAE45 \uBC0F \uC720\uC9C0\uBCF4\
+  \uC218 \uACFC\uC815\uC744\u2026"
+lastmod: 2024-02-18 23:09:05.961816
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uCF54\uB4DC\uB97C \uD568\
+  \uC218\uB85C \uAD6C\uC131\uD558\uB294 \uAC83\uC740 \uD504\uB85C\uADF8\uB7A8\uC744\
+  \ \uD568\uC218\uB77C\uACE0 \uD558\uB294 \uC791\uACE0 \uAD00\uB9AC\uD558\uAE30 \uC26C\
+  \uC6B4 \uBD80\uBD84\uC73C\uB85C \uB098\uB204\uB294 \uC791\uC5C5\uC744 \uB9D0\uD569\
+  \uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uCF54\uB4DC\uC758 \uAC00\
+  \uB3C5\uC131\uC744 \uB192\uC774\uACE0, \uCF54\uB4DC\uB97C \uD6A8\uC728\uC801\uC73C\
+  \uB85C \uC7AC\uC0AC\uC6A9\uD558\uBA70, \uB514\uBC84\uAE45 \uBC0F \uC720\uC9C0\uBCF4\
+  \uC218 \uACFC\uC815\uC744\u2026"
+title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

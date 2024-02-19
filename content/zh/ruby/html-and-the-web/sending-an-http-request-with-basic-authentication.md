@@ -1,14 +1,19 @@
 ---
-title:                "使用基本认证发送 HTTP 请求"
 aliases:
 - /zh/ruby/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:33.023213-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "使用基本认证发送 HTTP 请求"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:33.023213-07:00
+description: "\u53D1\u9001\u5E26\u6709\u57FA\u672C\u8BA4\u8BC1\u7684HTTP\u8BF7\u6C42\
+  \uFF0C\u5C31\u50CF\u662F\u7ED9\u7F51\u7EDC\u8BF7\u6C42\u8D34\u4E0A\u8EAB\u4EFD\u6807\
+  \u7B7E\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u4E3B\u8981\u4E3A\u4E86\u5B89\u5168\
+  \u5730\u8BBF\u95EE\u53D7\u4FDD\u62A4\u7684\u7F51\u7EDC\u8D44\u6E90\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.600726
+model: gpt-4-1106-preview
+summary: "\u53D1\u9001\u5E26\u6709\u57FA\u672C\u8BA4\u8BC1\u7684HTTP\u8BF7\u6C42\uFF0C\
+  \u5C31\u50CF\u662F\u7ED9\u7F51\u7EDC\u8BF7\u6C42\u8D34\u4E0A\u8EAB\u4EFD\u6807\u7B7E\
+  \u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u4E3B\u8981\u4E3A\u4E86\u5B89\u5168\u5730\
+  \u8BBF\u95EE\u53D7\u4FDD\u62A4\u7684\u7F51\u7EDC\u8D44\u6E90\u3002"
+title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
 ---
 
 {{< edit_this_page >}}

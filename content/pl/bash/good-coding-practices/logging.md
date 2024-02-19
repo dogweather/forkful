@@ -1,13 +1,16 @@
 ---
-title:                "Rejestrowanie zdarzeń"
 aliases:
 - /pl/bash/logging/
-date:                  2024-01-26T01:00:15.712620-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rejestrowanie zdarzeń"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/logging.md"
+date: 2024-01-26 01:00:15.712620-07:00
+description: "Logowanie to praktyka rejestrowania zdarze\u0144, b\u0142\u0119d\xF3\
+  w i innych istotnych informacji z dzia\u0142aj\u0105cych proces\xF3w programu do\
+  \ pliku lub strumienia wyj\u015Bciowego.\u2026"
+lastmod: 2024-02-18 23:08:49.791394
+model: gpt-4-1106-preview
+summary: "Logowanie to praktyka rejestrowania zdarze\u0144, b\u0142\u0119d\xF3w i\
+  \ innych istotnych informacji z dzia\u0142aj\u0105cych proces\xF3w programu do pliku\
+  \ lub strumienia wyj\u015Bciowego.\u2026"
+title: "Rejestrowanie zdarze\u0144"
 ---
 
 {{< edit_this_page >}}

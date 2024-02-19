@@ -1,14 +1,16 @@
 ---
-title:                "Een debugger gebruiken"
 aliases:
 - /nl/go/using-a-debugger/
-date:                  2024-02-03T18:10:12.372901-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een debugger gebruiken"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/using-a-debugger.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:12.372901-07:00
+description: "Bij het programmeren in Go gebruikmaken van een debugger houdt in dat\
+  \ je tools of functies gebruikt om de staat van een draaiend programma te inspecteren\u2026"
+lastmod: 2024-02-18 23:09:01.343573
+model: gpt-4-0125-preview
+summary: "Bij het programmeren in Go gebruikmaken van een debugger houdt in dat je\
+  \ tools of functies gebruikt om de staat van een draaiend programma te inspecteren\u2026"
+title: Een debugger gebruiken
 ---
 
 {{< edit_this_page >}}

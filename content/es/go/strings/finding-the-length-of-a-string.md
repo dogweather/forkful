@@ -1,14 +1,17 @@
 ---
-title:                "Encontrando la longitud de una cadena"
 aliases:
 - /es/go/finding-the-length-of-a-string/
-date:                  2024-02-03T17:56:40.243373-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Encontrando la longitud de una cadena"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:40.243373-07:00
+description: "Encontrar la longitud de una cadena en Go consiste en determinar el\
+  \ n\xFAmero de caracteres que contiene. Los programadores realizan rutinariamente\
+  \ esta\u2026"
+lastmod: 2024-02-18 23:09:09.444295
+model: gpt-4-0125-preview
+summary: "Encontrar la longitud de una cadena en Go consiste en determinar el n\xFA\
+  mero de caracteres que contiene. Los programadores realizan rutinariamente esta\u2026"
+title: Encontrando la longitud de una cadena
 ---
 
 {{< edit_this_page >}}

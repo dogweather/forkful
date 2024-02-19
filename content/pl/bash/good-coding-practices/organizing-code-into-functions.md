@@ -1,13 +1,16 @@
 ---
-title:                "Organizacja kodu w funkcje"
 aliases:
 - /pl/bash/organizing-code-into-functions/
-date:                  2024-01-26T01:08:48.444438-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organizacja kodu w funkcje"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/organizing-code-into-functions.md"
+date: 2024-01-26 01:08:48.444438-07:00
+description: "Podzielenie kodu na funkcje polega na rozk\u0142adaniu skrypt\xF3w na\
+  \ mniejsze, wielokrotnie u\u017Cywalne bloki, kt\xF3re realizuj\u0105 okre\u015B\
+  lone zadania. Sprawia to, \u017Ce kod\u2026"
+lastmod: 2024-02-18 23:08:49.790420
+model: gpt-4-1106-preview
+summary: "Podzielenie kodu na funkcje polega na rozk\u0142adaniu skrypt\xF3w na mniejsze,\
+  \ wielokrotnie u\u017Cywalne bloki, kt\xF3re realizuj\u0105 okre\u015Blone zadania.\
+  \ Sprawia to, \u017Ce kod\u2026"
+title: Organizacja kodu w funkcje
 ---
 
 {{< edit_this_page >}}

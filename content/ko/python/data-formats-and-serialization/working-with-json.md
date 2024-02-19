@@ -1,14 +1,26 @@
 ---
-title:                "JSON과 함께 일하기"
 aliases:
 - /ko/python/working-with-json/
-date:                  2024-02-03T19:24:34.682835-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "JSON과 함께 일하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:24:34.682835-07:00
+description: "JSON(JavaScript Object Notation)\uC744 \uC0AC\uC6A9\uD558\uB294 \uAC83\
+  \uC740 JSON \uD615\uC2DD\uC758 \uBB38\uC790\uC5F4\uC744 \uD30C\uC774\uC36C \uAC1D\
+  \uCCB4\uB85C \uD30C\uC2F1\uD558\uACE0 \uADF8 \uBC18\uB300\uC758 \uACFC\uC815\uC744\
+  \ \uD3EC\uD568\uD569\uB2C8\uB2E4. \uC774\uB294 \uC6F9\uACFC API \uAC1C\uBC1C\uC5D0\
+  \ \uC788\uC5B4 \uD575\uC2EC\uC801\uC778\uB370, JSON\uC774 \uC11C\uBC84\uC640 \uD074\
+  \uB77C\uC774\uC5B8\uD2B8 \uAC04\uC5D0 \uB370\uC774\uD130\uB97C \uAD50\uD658\uD558\
+  \uB294 \uACF5\uC6A9\uC5B4 \uC5ED\uD560\uC744 \uD558\uAE30\u2026"
+lastmod: 2024-02-18 23:09:05.658109
+model: gpt-4-0125-preview
+summary: "JSON(JavaScript Object Notation)\uC744 \uC0AC\uC6A9\uD558\uB294 \uAC83\uC740\
+  \ JSON \uD615\uC2DD\uC758 \uBB38\uC790\uC5F4\uC744 \uD30C\uC774\uC36C \uAC1D\uCCB4\
+  \uB85C \uD30C\uC2F1\uD558\uACE0 \uADF8 \uBC18\uB300\uC758 \uACFC\uC815\uC744 \uD3EC\
+  \uD568\uD569\uB2C8\uB2E4. \uC774\uB294 \uC6F9\uACFC API \uAC1C\uBC1C\uC5D0 \uC788\
+  \uC5B4 \uD575\uC2EC\uC801\uC778\uB370, JSON\uC774 \uC11C\uBC84\uC640 \uD074\uB77C\
+  \uC774\uC5B8\uD2B8 \uAC04\uC5D0 \uB370\uC774\uD130\uB97C \uAD50\uD658\uD558\uB294\
+  \ \uACF5\uC6A9\uC5B4 \uC5ED\uD560\uC744 \uD558\uAE30\u2026"
+title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

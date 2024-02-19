@@ -1,14 +1,18 @@
 ---
-title:                "Työskentely YAML:n parissa"
 aliases:
 - /fi/vba/working-with-yaml/
-date:                  2024-02-01T22:07:41.327534-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely YAML:n parissa"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/working-with-yaml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:07:41.327534-07:00
+description: "YAML, joka tarkoittaa \"YAML Ain't Markup Language\" (YAML ei ole merkkauskieli),\
+  \ on ihmisen luettavissa oleva datan serialisointikieli, jota k\xE4ytet\xE4\xE4\
+  n\u2026"
+lastmod: 2024-02-18 23:09:07.434658
+model: gpt-4-0125-preview
+summary: "YAML, joka tarkoittaa \"YAML Ain't Markup Language\" (YAML ei ole merkkauskieli),\
+  \ on ihmisen luettavissa oleva datan serialisointikieli, jota k\xE4ytet\xE4\xE4\
+  n\u2026"
+title: "Ty\xF6skentely YAML:n parissa"
 ---
 
 {{< edit_this_page >}}

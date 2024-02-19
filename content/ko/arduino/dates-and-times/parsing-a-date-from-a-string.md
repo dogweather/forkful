@@ -1,14 +1,30 @@
 ---
-title:                "문자열에서 날짜 분석하기"
 aliases:
 - /ko/arduino/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:13:29.267114-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열에서 날짜 분석하기"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:13:29.267114-07:00
+description: "\uC544\uB450\uC774\uB178\uC5D0\uC11C \uBB38\uC790\uC5F4\uB85C\uBD80\uD130\
+  \ \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD55C\uB2E4\uB294 \uAC83\uC740 \uD14D\uC2A4\uD2B8\
+  \ \uD45C\uD604\uC73C\uB85C\uBD80\uD130 \uB0A0\uC9DC \uAD6C\uC131\uC694\uC18C(\uB144\
+  , \uC6D4, \uC77C)\uB97C \uCD94\uCD9C\uD558\uACE0 \uBCC0\uD658\uD558\uC5EC \uC2A4\
+  \uCF00\uCE58 \uB0B4\uC5D0\uC11C \uC2DC\uAC04 \uC720\uC9C0, \uBE44\uAD50 \uB610\uB294\
+  \ \uC870\uC791\uC5D0 \uC0AC\uC6A9\uD560 \uC218 \uC788\uB294 \uD615\uC2DD\uC73C\uB85C\
+  \ \uB9CC\uB4DC\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uC2E4\uC2DC\uAC04 \uC2DC\uACC4, \uB85C\uAC70 \uB610\uB294 \uC6F9\
+  \ API\uC640 \uC0AC\uC6A9\uC790\u2026"
+lastmod: 2024-02-18 23:09:06.633821
+model: gpt-4-0125-preview
+summary: "\uC544\uB450\uC774\uB178\uC5D0\uC11C \uBB38\uC790\uC5F4\uB85C\uBD80\uD130\
+  \ \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD55C\uB2E4\uB294 \uAC83\uC740 \uD14D\uC2A4\uD2B8\
+  \ \uD45C\uD604\uC73C\uB85C\uBD80\uD130 \uB0A0\uC9DC \uAD6C\uC131\uC694\uC18C(\uB144\
+  , \uC6D4, \uC77C)\uB97C \uCD94\uCD9C\uD558\uACE0 \uBCC0\uD658\uD558\uC5EC \uC2A4\
+  \uCF00\uCE58 \uB0B4\uC5D0\uC11C \uC2DC\uAC04 \uC720\uC9C0, \uBE44\uAD50 \uB610\uB294\
+  \ \uC870\uC791\uC5D0 \uC0AC\uC6A9\uD560 \uC218 \uC788\uB294 \uD615\uC2DD\uC73C\uB85C\
+  \ \uB9CC\uB4DC\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uC2E4\uC2DC\uAC04 \uC2DC\uACC4, \uB85C\uAC70 \uB610\uB294 \uC6F9\
+  \ API\uC640 \uC0AC\uC6A9\uC790\u2026"
+title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uBD84\uC11D\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

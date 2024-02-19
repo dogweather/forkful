@@ -1,13 +1,14 @@
 ---
-title:                "Descargando una página web"
 aliases:
 - /es/swift/downloading-a-web-page/
-date:                  2024-01-20T17:44:50.561381-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Descargando una página web"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/downloading-a-web-page.md"
+date: 2024-01-20 17:44:50.561381-07:00
+description: "Descargar una p\xE1gina web es traer el contenido de una URL a tu aplicaci\xF3\
+  n. Lo hacemos para procesar, mostrar o analizar datos en nuestras apps."
+lastmod: 2024-02-18 23:09:10.356729
+model: gpt-4-1106-preview
+summary: "Descargar una p\xE1gina web es traer el contenido de una URL a tu aplicaci\xF3\
+  n. Lo hacemos para procesar, mostrar o analizar datos en nuestras apps."
+title: "Descargando una p\xE1gina web"
 ---
 
 {{< edit_this_page >}}

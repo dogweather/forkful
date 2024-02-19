@@ -1,15 +1,16 @@
 ---
-title:                "Afronden van getallen"
 aliases:
 - /nl/fish-shell/rounding-numbers/
-date:                  2024-01-28T22:06:30.968097-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Afronden van getallen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/rounding-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:06:30.968097-07:00
+description: "Afronden van getallen gaat over het afsnijden van decimalen om je gegevens\
+  \ te vereenvoudigen of aan specifieke formaten te voldoen. Programmeurs doen dit\u2026"
+lastmod: 2024-02-18 23:09:02.317322
+model: gpt-4-0125-preview
+summary: "Afronden van getallen gaat over het afsnijden van decimalen om je gegevens\
+  \ te vereenvoudigen of aan specifieke formaten te voldoen. Programmeurs doen dit\u2026"
+title: Afronden van getallen
 ---
 
 {{< edit_this_page >}}

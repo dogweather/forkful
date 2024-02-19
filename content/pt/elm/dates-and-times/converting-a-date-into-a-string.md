@@ -1,13 +1,15 @@
 ---
-title:                "Convertendo uma data em uma string"
 aliases:
 - /pt/elm/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:29.633276-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Convertendo uma data em uma string"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:29.633276-07:00
+description: "Converter datas em strings permite mostrar datas de forma leg\xEDvel\
+  \ e formatada. Programadores fazem isso para facilitar a intera\xE7\xE3o com usu\xE1\
+  rios, armazenar\u2026"
+lastmod: 2024-02-18 23:08:58.071616
+model: gpt-4-1106-preview
+summary: "Converter datas em strings permite mostrar datas de forma leg\xEDvel e formatada.\
+  \ Programadores fazem isso para facilitar a intera\xE7\xE3o com usu\xE1rios, armazenar\u2026"
+title: Convertendo uma data em uma string
 ---
 
 {{< edit_this_page >}}

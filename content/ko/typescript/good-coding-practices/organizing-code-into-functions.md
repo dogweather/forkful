@@ -1,13 +1,26 @@
 ---
-title:                "코드를 함수로 구성하기"
 aliases:
 - /ko/typescript/organizing-code-into-functions/
-date:                  2024-01-26T01:16:28.959593-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "코드를 함수로 구성하기"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/organizing-code-into-functions.md"
+date: 2024-01-26 01:16:28.959593-07:00
+description: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD55C\uB2E4\uB294\
+  \ \uAC83\uC740 \uCF54\uB4DC\uB97C \uC7AC\uC0AC\uC6A9 \uAC00\uB2A5\uD558\uACE0 \uBAA8\
+  \uB4C8\uD654\uB41C \uBE14\uB85D\uC73C\uB85C \uB098\uB204\uB294 \uAC83\uC744 \uC758\
+  \uBBF8\uD569\uB2C8\uB2E4. \uC6B0\uB9AC\uB294 \uC774\uAC83\uC744 DRY(Don't Repeat\
+  \ Yourself, \uBC18\uBCF5\uD558\uC9C0 \uB9C8\uB77C)\uB97C \uC720\uC9C0\uD558\uAE30\
+  \ \uC704\uD574, \uCF54\uB4DC\uB97C \uB354 \uAE68\uB057\uD558\uACE0 \uC77D\uAE30\
+  \ \uC27D\uAC8C, \uB514\uBC84\uADF8\uD558\uAE30 \uC27D\uAC8C \uB9CC\uB4E4\uAE30 \uC704\
+  \uD574\uC11C \uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:05.828000
+model: gpt-4-0125-preview
+summary: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD55C\uB2E4\uB294 \uAC83\
+  \uC740 \uCF54\uB4DC\uB97C \uC7AC\uC0AC\uC6A9 \uAC00\uB2A5\uD558\uACE0 \uBAA8\uB4C8\
+  \uD654\uB41C \uBE14\uB85D\uC73C\uB85C \uB098\uB204\uB294 \uAC83\uC744 \uC758\uBBF8\
+  \uD569\uB2C8\uB2E4. \uC6B0\uB9AC\uB294 \uC774\uAC83\uC744 DRY(Don't Repeat Yourself,\
+  \ \uBC18\uBCF5\uD558\uC9C0 \uB9C8\uB77C)\uB97C \uC720\uC9C0\uD558\uAE30 \uC704\uD574\
+  , \uCF54\uB4DC\uB97C \uB354 \uAE68\uB057\uD558\uACE0 \uC77D\uAE30 \uC27D\uAC8C,\
+  \ \uB514\uBC84\uADF8\uD558\uAE30 \uC27D\uAC8C \uB9CC\uB4E4\uAE30 \uC704\uD574\uC11C\
+  \ \uD569\uB2C8\uB2E4."
+title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

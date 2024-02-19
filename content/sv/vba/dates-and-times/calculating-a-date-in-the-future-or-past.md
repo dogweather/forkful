@@ -1,14 +1,18 @@
 ---
-title:                "Beräkning av ett datum i framtiden eller förflutet"
 aliases:
 - /sv/vba/calculating-a-date-in-the-future-or-past/
-date:                  2024-02-01T21:49:21.719927-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Beräkning av ett datum i framtiden eller förflutet"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:21.719927-07:00
+description: "Att ber\xE4kna ett datum i framtiden eller f\xF6rflutet inneb\xE4r att\
+  \ best\xE4mma ett datum som \xE4r ett angivet antal dagar, m\xE5nader eller \xE5\
+  r bort fr\xE5n ett givet\u2026"
+lastmod: 2024-02-18 23:08:51.640861
+model: gpt-4-0125-preview
+summary: "Att ber\xE4kna ett datum i framtiden eller f\xF6rflutet inneb\xE4r att best\xE4\
+  mma ett datum som \xE4r ett angivet antal dagar, m\xE5nader eller \xE5r bort fr\xE5\
+  n ett givet\u2026"
+title: "Ber\xE4kning av ett datum i framtiden eller f\xF6rflutet"
 ---
 
 {{< edit_this_page >}}

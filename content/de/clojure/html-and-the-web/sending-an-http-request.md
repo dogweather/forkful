@@ -1,13 +1,14 @@
 ---
-title:                "Einen HTTP-Request senden"
 aliases:
 - /de/clojure/sending-an-http-request/
-date:                  2024-01-20T17:59:17.918755-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Einen HTTP-Request senden"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/sending-an-http-request.md"
+date: 2024-01-20 17:59:17.918755-07:00
+description: HTTP-Anfragen sind der Weg, wie deine Anwendung mit dem Web spricht.
+  Programmierer nutzen sie, um Daten zu holen, zu sendeln, und mit APIs zu interagieren.
+lastmod: 2024-02-18 23:09:04.503796
+model: gpt-4-1106-preview
+summary: HTTP-Anfragen sind der Weg, wie deine Anwendung mit dem Web spricht. Programmierer
+  nutzen sie, um Daten zu holen, zu sendeln, und mit APIs zu interagieren.
+title: Einen HTTP-Request senden
 ---
 
 {{< edit_this_page >}}

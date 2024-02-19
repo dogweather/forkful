@@ -1,14 +1,30 @@
 ---
-title:                "Чтение аргументов командной строки"
 aliases:
 - /ru/vba/reading-command-line-arguments/
-date:                  2024-02-01T21:59:38.689136-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Чтение аргументов командной строки"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/vba/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:38.689136-07:00
+description: "\u0421\u0447\u0438\u0442\u044B\u0432\u0430\u043D\u0438\u0435 \u0430\u0440\
+  \u0433\u0443\u043C\u0435\u043D\u0442\u043E\u0432 \u043A\u043E\u043C\u0430\u043D\u0434\
+  \u043D\u043E\u0439 \u0441\u0442\u0440\u043E\u043A\u0438 \u0432 Visual Basic for\
+  \ Applications (VBA) \u0441\u0432\u044F\u0437\u0430\u043D\u043E \u0441 \u0434\u043E\
+  \u0441\u0442\u0443\u043F\u043E\u043C \u043A \u043F\u0430\u0440\u0430\u043C\u0435\
+  \u0442\u0440\u0430\u043C, \u043F\u0435\u0440\u0435\u0434\u0430\u0432\u0430\u0435\
+  \u043C\u044B\u043C \u0432 \u0432\u0430\u0448\u0443 \u043F\u0440\u043E\u0433\u0440\
+  \u0430\u043C\u043C\u0443 \u043F\u0440\u0438 \u0435\u0451\u2026"
+lastmod: 2024-02-18 23:08:56.805853
+model: gpt-4-0125-preview
+summary: "\u0421\u0447\u0438\u0442\u044B\u0432\u0430\u043D\u0438\u0435 \u0430\u0440\
+  \u0433\u0443\u043C\u0435\u043D\u0442\u043E\u0432 \u043A\u043E\u043C\u0430\u043D\u0434\
+  \u043D\u043E\u0439 \u0441\u0442\u0440\u043E\u043A\u0438 \u0432 Visual Basic for\
+  \ Applications (VBA) \u0441\u0432\u044F\u0437\u0430\u043D\u043E \u0441 \u0434\u043E\
+  \u0441\u0442\u0443\u043F\u043E\u043C \u043A \u043F\u0430\u0440\u0430\u043C\u0435\
+  \u0442\u0440\u0430\u043C, \u043F\u0435\u0440\u0435\u0434\u0430\u0432\u0430\u0435\
+  \u043C\u044B\u043C \u0432 \u0432\u0430\u0448\u0443 \u043F\u0440\u043E\u0433\u0440\
+  \u0430\u043C\u043C\u0443 \u043F\u0440\u0438 \u0435\u0451\u2026"
+title: "\u0427\u0442\u0435\u043D\u0438\u0435 \u0430\u0440\u0433\u0443\u043C\u0435\u043D\
+  \u0442\u043E\u0432 \u043A\u043E\u043C\u0430\u043D\u0434\u043D\u043E\u0439 \u0441\
+  \u0442\u0440\u043E\u043A\u0438"
 ---
 
 {{< edit_this_page >}}

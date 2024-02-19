@@ -1,13 +1,16 @@
 ---
-title:                "Att använda en debugger"
 aliases:
 - /sv/arduino/using-a-debugger/
-date:                  2024-01-26T03:47:31.783593-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda en debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/using-a-debugger.md"
+date: 2024-01-26 03:47:31.783593-07:00
+description: "En debugger \xE4r ett verktyg som hj\xE4lper dig att krossa buggar i\
+  \ din kod genom att l\xE5ta dig pausa, rota runt och ta reda p\xE5 vad som verkligen\
+  \ p\xE5g\xE5r under\u2026"
+lastmod: 2024-02-18 23:08:52.047932
+model: gpt-4-0125-preview
+summary: "En debugger \xE4r ett verktyg som hj\xE4lper dig att krossa buggar i din\
+  \ kod genom att l\xE5ta dig pausa, rota runt och ta reda p\xE5 vad som verkligen\
+  \ p\xE5g\xE5r under\u2026"
+title: "Att anv\xE4nda en debugger"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Organisation du code en fonctions"
 aliases:
 - /fr/arduino/organizing-code-into-functions/
-date:                  2024-01-26T01:08:47.221061-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organisation du code en fonctions"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/organizing-code-into-functions.md"
+date: 2024-01-26 01:08:47.221061-07:00
+description: "Organiser son code en fonctions signifie le d\xE9couper en blocs r\xE9\
+  utilisables, chaque bloc ex\xE9cutant une t\xE2che sp\xE9cifique. Les programmeurs\
+  \ le font pour\u2026"
+lastmod: 2024-02-18 23:09:09.120410
+model: gpt-4-1106-preview
+summary: "Organiser son code en fonctions signifie le d\xE9couper en blocs r\xE9utilisables,\
+  \ chaque bloc ex\xE9cutant une t\xE2che sp\xE9cifique. Les programmeurs le font\
+  \ pour\u2026"
+title: Organisation du code en fonctions
 ---
 
 {{< edit_this_page >}}

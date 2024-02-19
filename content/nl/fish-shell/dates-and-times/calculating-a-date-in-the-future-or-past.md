@@ -1,15 +1,16 @@
 ---
-title:                "Een datum in de toekomst of het verleden berekenen"
 aliases:
 - /nl/fish-shell/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-28T21:55:28.935075-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een datum in de toekomst of het verleden berekenen"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:55:28.935075-07:00
+description: "Het berekenen van een toekomstige of verleden datum houdt in dat je\
+  \ met datums speelt om erachter te komen welke dag het was of zal zijn. Programmeurs\u2026"
+lastmod: 2024-02-18 23:09:02.340733
+model: gpt-4-0125-preview
+summary: "Het berekenen van een toekomstige of verleden datum houdt in dat je met\
+  \ datums speelt om erachter te komen welke dag het was of zal zijn. Programmeurs\u2026"
+title: Een datum in de toekomst of het verleden berekenen
 ---
 
 {{< edit_this_page >}}

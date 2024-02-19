@@ -1,14 +1,18 @@
 ---
-title:                "Ta bort citattecken från en sträng"
 aliases:
 - /sv/vba/removing-quotes-from-a-string/
-date:                  2024-02-01T22:00:33.126710-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ta bort citattecken från en sträng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:33.126710-07:00
+description: "Att ta bort citationstecken fr\xE5n en str\xE4ng i VBA inneb\xE4r att\
+  \ ta bort f\xF6rekomster av enkla (`'`) eller dubbla (`\"`) citationstecken som\
+  \ kan inkapsla eller\u2026"
+lastmod: 2024-02-18 23:08:51.613707
+model: gpt-4-0125-preview
+summary: "Att ta bort citationstecken fr\xE5n en str\xE4ng i VBA inneb\xE4r att ta\
+  \ bort f\xF6rekomster av enkla (`'`) eller dubbla (`\"`) citationstecken som kan\
+  \ inkapsla eller\u2026"
+title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

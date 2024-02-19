@@ -1,14 +1,18 @@
 ---
-title:                "Gör om en sträng till versaler"
 aliases:
 - /sv/vba/capitalizing-a-string/
-date:                  2024-02-01T21:49:29.826256-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gör om en sträng till versaler"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/capitalizing-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:29.826256-07:00
+description: "Att skriva om en str\xE4ng med stora bokst\xE4ver i Visual Basic for\
+  \ Applications (VBA) inneb\xE4r att konvertera det f\xF6rsta tecknet i varje ord\
+  \ i en str\xE4ng till\u2026"
+lastmod: 2024-02-18 23:08:51.608483
+model: gpt-4-0125-preview
+summary: "Att skriva om en str\xE4ng med stora bokst\xE4ver i Visual Basic for Applications\
+  \ (VBA) inneb\xE4r att konvertera det f\xF6rsta tecknet i varje ord i en str\xE4\
+  ng till\u2026"
+title: "G\xF6r om en str\xE4ng till versaler"
 ---
 
 {{< edit_this_page >}}

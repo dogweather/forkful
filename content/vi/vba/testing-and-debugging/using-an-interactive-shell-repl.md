@@ -1,14 +1,20 @@
 ---
-title:                "Sử dụng vỏ tương tác (REPL)"
 aliases:
 - /vi/vba/using-an-interactive-shell-repl/
-date:                  2024-02-01T22:04:24.780742-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng vỏ tương tác (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:24.780742-07:00
+description: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c, ho\u1EB7c V\xF2ng l\u1EB7p \u0110\
+  \u1ECDc-\u0110\xE1nh gi\xE1-In (REPL), cho ph\xE9p ng\u01B0\u1EDDi d\xF9ng nh\u1EAD\
+  p l\u1EC7nh, th\u1EF1c thi ch\xFAng v\xE0 xem k\u1EBFt qu\u1EA3 ngay l\u1EADp t\u1EE9\
+  c. L\u1EADp tr\xECnh vi\xEAn s\u1EED\u2026"
+lastmod: 2024-02-18 23:08:50.511210
+model: gpt-4-0125-preview
+summary: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c, ho\u1EB7c V\xF2ng l\u1EB7p \u0110\
+  \u1ECDc-\u0110\xE1nh gi\xE1-In (REPL), cho ph\xE9p ng\u01B0\u1EDDi d\xF9ng nh\u1EAD\
+  p l\u1EC7nh, th\u1EF1c thi ch\xFAng v\xE0 xem k\u1EBFt qu\u1EA3 ngay l\u1EADp t\u1EE9\
+  c. L\u1EADp tr\xECnh vi\xEAn s\u1EED\u2026"
+title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 ---
 
 {{< edit_this_page >}}

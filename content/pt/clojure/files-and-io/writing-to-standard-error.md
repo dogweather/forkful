@@ -1,14 +1,18 @@
 ---
-title:                "Escrevendo para o erro padrão"
 aliases:
 - /pt/clojure/writing-to-standard-error/
-date:                  2024-02-03T19:32:50.328758-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escrevendo para o erro padrão"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:50.328758-07:00
+description: "Escrever para o erro padr\xE3o (stderr) consiste em direcionar mensagens\
+  \ de erro e diagn\xF3sticos para o stream stderr, separando-os da sa\xEDda padr\xE3\
+  o (stdout).\u2026"
+lastmod: 2024-02-18 23:08:57.818801
+model: gpt-4-0125-preview
+summary: "Escrever para o erro padr\xE3o (stderr) consiste em direcionar mensagens\
+  \ de erro e diagn\xF3sticos para o stream stderr, separando-os da sa\xEDda padr\xE3\
+  o (stdout).\u2026"
+title: "Escrevendo para o erro padr\xE3o"
 ---
 
 {{< edit_this_page >}}

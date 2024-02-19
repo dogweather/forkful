@@ -1,13 +1,16 @@
 ---
-title:                "Hitta längden på en sträng"
 aliases:
 - /sv/powershell/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:00.096380-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Hitta längden på en sträng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:00.096380-07:00
+description: "Hitta str\xE4ngl\xE4ngd inneb\xE4r att r\xE4kna antalet tecken i en\
+  \ str\xE4ng. Programmerare g\xF6r detta f\xF6r att validera indata, hantera textdata\
+  \ och optimera prestanda."
+lastmod: 2024-02-18 23:08:51.993200
+model: gpt-4-1106-preview
+summary: "Hitta str\xE4ngl\xE4ngd inneb\xE4r att r\xE4kna antalet tecken i en str\xE4\
+  ng. Programmerare g\xF6r detta f\xF6r att validera indata, hantera textdata och\
+  \ optimera prestanda."
+title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

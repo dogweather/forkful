@@ -1,12 +1,14 @@
 ---
-title:                "Using regular expressions"
 aliases:
 - /en/lua/using-regular-expressions/
-date:                  2024-02-03T19:03:19.668689-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using regular expressions"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/using-regular-expressions.md"
+date: 2024-02-03 19:03:19.668689-07:00
+description: "Regular expressions in programming allow for pattern matching and manipulation\
+  \ of strings based on specific patterns. Programmers use them for tasks like\u2026"
+lastmod: 2024-02-18 23:09:11.168713
+model: gpt-4-0125-preview
+summary: "Regular expressions in programming allow for pattern matching and manipulation\
+  \ of strings based on specific patterns. Programmers use them for tasks like\u2026"
+title: Using regular expressions
 ---
 
 {{< edit_this_page >}}

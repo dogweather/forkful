@@ -1,13 +1,14 @@
 ---
-title:                "Working with TOML"
 aliases:
 - /en/bash/working-with-toml/
-date:                  2024-01-25T03:39:28.278121-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Working with TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/working-with-toml.md"
+date: 2024-01-25 03:39:28.278121-07:00
+description: "TOML, short for Tom's Obvious, Minimal Language, is a data serialization\
+  \ format. Programmers dig it for its simplicity and readability; it's primo for\u2026"
+lastmod: 2024-02-18 23:09:11.253156
+model: gpt-4-1106-preview
+summary: "TOML, short for Tom's Obvious, Minimal Language, is a data serialization\
+  \ format. Programmers dig it for its simplicity and readability; it's primo for\u2026"
+title: Working with TOML
 ---
 
 {{< edit_this_page >}}

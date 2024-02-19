@@ -1,14 +1,28 @@
 ---
-title:                "打印调试输出"
 aliases:
 - /zh/vba/printing-debug-output/
-date:                  2024-02-01T21:58:47.894178-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "打印调试输出"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/printing-debug-output.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:47.894178-07:00
+description: "\u5728 Visual Basic for Applications\uFF08VBA\uFF09\u4E2D\u6253\u5370\
+  \u8C03\u8BD5\u8F93\u51FA\u6D89\u53CA\u5728\u4EE3\u7801\u4E2D\u7B56\u7565\u6027\u5730\
+  \u653E\u7F6E\u6253\u5370\u8BED\u53E5\uFF0C\u4EE5\u663E\u793A\u53D8\u91CF\u503C\u3001\
+  \u6267\u884C\u6D41\u7A0B\u6216\u81EA\u5B9A\u4E49\u8C03\u8BD5\u6D88\u606F\u3002\u8FD9\
+  \u4E00\u6280\u672F\u5BF9\u4E8E\u8C03\u8BD5\u81F3\u5173\u91CD\u8981\uFF0C\u4F7F\u7A0B\
+  \u5E8F\u5458\u80FD\u591F\u7406\u89E3\u5176\u4EE3\u7801\u5728\u8FD0\u884C\u65F6\u7684\
+  \u884C\u4E3A\uFF0C\u5E76\u8BC6\u522B\u4EFB\u4F55\u610F\u5916\u884C\u4E3A\u6216\u9519\
+  \u8BEF\u3002"
+lastmod: 2024-02-18 23:08:58.983592
+model: gpt-4-0125-preview
+summary: "\u5728 Visual Basic for Applications\uFF08VBA\uFF09\u4E2D\u6253\u5370\u8C03\
+  \u8BD5\u8F93\u51FA\u6D89\u53CA\u5728\u4EE3\u7801\u4E2D\u7B56\u7565\u6027\u5730\u653E\
+  \u7F6E\u6253\u5370\u8BED\u53E5\uFF0C\u4EE5\u663E\u793A\u53D8\u91CF\u503C\u3001\u6267\
+  \u884C\u6D41\u7A0B\u6216\u81EA\u5B9A\u4E49\u8C03\u8BD5\u6D88\u606F\u3002\u8FD9\u4E00\
+  \u6280\u672F\u5BF9\u4E8E\u8C03\u8BD5\u81F3\u5173\u91CD\u8981\uFF0C\u4F7F\u7A0B\u5E8F\
+  \u5458\u80FD\u591F\u7406\u89E3\u5176\u4EE3\u7801\u5728\u8FD0\u884C\u65F6\u7684\u884C\
+  \u4E3A\uFF0C\u5E76\u8BC6\u522B\u4EFB\u4F55\u610F\u5916\u884C\u4E3A\u6216\u9519\u8BEF\
+  \u3002"
+title: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA"
 ---
 
 {{< edit_this_page >}}

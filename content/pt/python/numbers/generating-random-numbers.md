@@ -1,13 +1,16 @@
 ---
-title:                "Geração de números aleatórios"
 aliases:
 - /pt/python/generating-random-numbers/
-date:                  2024-01-27T20:34:53.990766-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Geração de números aleatórios"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/generating-random-numbers.md"
+date: 2024-01-27 20:34:53.990766-07:00
+description: "Gerar n\xFAmeros aleat\xF3rios envolve criar n\xFAmeros que n\xE3o podem\
+  \ ser previstos de maneira razo\xE1vel melhor do que por acaso, o que \xE9 essencial\
+  \ para o\u2026"
+lastmod: 2024-02-18 23:08:57.757097
+model: gpt-4-0125-preview
+summary: "Gerar n\xFAmeros aleat\xF3rios envolve criar n\xFAmeros que n\xE3o podem\
+  \ ser previstos de maneira razo\xE1vel melhor do que por acaso, o que \xE9 essencial\
+  \ para o\u2026"
+title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 ---
 
 {{< edit_this_page >}}

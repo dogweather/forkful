@@ -1,12 +1,15 @@
 ---
-title:                "Przetwarzanie HTML"
 aliases:
 - /pl/typescript/parsing-html/
-date:                  2024-01-20T15:34:39.122013-07:00
-simple_title:         "Przetwarzanie HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/parsing-html.md"
+date: 2024-01-20 15:34:39.122013-07:00
+description: "Parsing HTML to proces analizy kodu HTML, by zrozumie\u0107 jego struktur\u0119\
+  \ i wyodr\u0119bni\u0107 z niego dane. Programi\u015Bci robi\u0105 to, \u017Ceby\
+  \ manipulowa\u0107 tym kodem lub\u2026"
+lastmod: 2024-02-18 23:08:49.345853
+summary: "Parsing HTML to proces analizy kodu HTML, by zrozumie\u0107 jego struktur\u0119\
+  \ i wyodr\u0119bni\u0107 z niego dane. Programi\u015Bci robi\u0105 to, \u017Ceby\
+  \ manipulowa\u0107 tym kodem lub\u2026"
+title: Przetwarzanie HTML
 ---
 
 {{< edit_this_page >}}

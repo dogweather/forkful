@@ -1,14 +1,18 @@
 ---
-title:                "Capitalizando uma string"
 aliases:
 - /pt/elixir/capitalizing-a-string/
-date:                  2024-02-03T19:04:43.830932-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizando uma string"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:04:43.830932-07:00
+description: "Capitalizar uma string envolve converter a primeira letra da string\
+  \ para mai\xFAscula enquanto garante que as restantes letras estejam em min\xFA\
+  scula. Essa\u2026"
+lastmod: 2024-02-18 23:08:57.827778
+model: gpt-4-0125-preview
+summary: "Capitalizar uma string envolve converter a primeira letra da string para\
+  \ mai\xFAscula enquanto garante que as restantes letras estejam em min\xFAscula.\
+  \ Essa\u2026"
+title: Capitalizando uma string
 ---
 
 {{< edit_this_page >}}

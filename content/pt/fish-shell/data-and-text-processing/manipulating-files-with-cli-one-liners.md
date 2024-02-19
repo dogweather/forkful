@@ -1,13 +1,16 @@
 ---
-title:                "Manipulando arquivos com one-liners de CLI"
 aliases:
 - /pt/fish-shell/manipulating-files-with-cli-one-liners/
-date:                  2024-01-27T16:21:08.488922-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulando arquivos com one-liners de CLI"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/manipulating-files-with-cli-one-liners.md"
+date: 2024-01-27 16:21:08.488922-07:00
+description: "No mundo da programa\xE7\xE3o, especialmente ao lidar com ambientes\
+  \ Linux ou Unix, manipular arquivos diretamente da interface de linha de comando\
+  \ (CLI) n\xE3o \xE9\u2026"
+lastmod: 2024-02-18 23:08:58.570333
+model: gpt-4-0125-preview
+summary: "No mundo da programa\xE7\xE3o, especialmente ao lidar com ambientes Linux\
+  \ ou Unix, manipular arquivos diretamente da interface de linha de comando (CLI)\
+  \ n\xE3o \xE9\u2026"
+title: Manipulando arquivos com one-liners de CLI
 ---
 
 {{< edit_this_page >}}

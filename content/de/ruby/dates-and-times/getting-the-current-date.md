@@ -1,14 +1,16 @@
 ---
-title:                "Den aktuellen Datum abrufen"
 aliases:
 - /de/ruby/getting-the-current-date/
-date:                  2024-02-03T19:10:30.493722-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Den aktuellen Datum abrufen"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:10:30.493722-07:00
+description: "Das Abrufen des aktuellen Datums ist eine grundlegende Aufgabe in nahezu\
+  \ jedem Programmierprojekt - vom Protokollieren von Aktivit\xE4ten in einer Anwendung\u2026"
+lastmod: 2024-02-18 23:09:05.434399
+model: gpt-4-0125-preview
+summary: "Das Abrufen des aktuellen Datums ist eine grundlegende Aufgabe in nahezu\
+  \ jedem Programmierprojekt - vom Protokollieren von Aktivit\xE4ten in einer Anwendung\u2026"
+title: Den aktuellen Datum abrufen
 ---
 
 {{< edit_this_page >}}

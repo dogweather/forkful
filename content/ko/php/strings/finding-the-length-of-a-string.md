@@ -1,14 +1,21 @@
 ---
-title:                "문자열의 길이 찾기"
 aliases:
 - /ko/php/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:56.974962-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "문자열의 길이 찾기"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:56.974962-07:00
+description: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCE21\uC815\uC740 \uBB38\uC790\uC5F4\
+  \uC5D0 \uC788\uB294 \uBB38\uC790 \uC218\uB97C \uCE74\uC6B4\uD2B8\uD569\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uAC00 \uB370\uC774\uD130 \uCC98\uB9AC, \uC785\uB825\
+  \ \uAC80\uC99D, \uB610\uB294 UI \uB514\uC790\uC778\uC744 \uC870\uC728\uD560 \uB54C\
+  \ \uC774 \uC815\uBCF4\uAC00 \uD544\uC694\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.338915
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCE21\uC815\uC740 \uBB38\uC790\uC5F4\uC5D0\
+  \ \uC788\uB294 \uBB38\uC790 \uC218\uB97C \uCE74\uC6B4\uD2B8\uD569\uB2C8\uB2E4. \uD504\
+  \uB85C\uADF8\uB798\uBA38\uAC00 \uB370\uC774\uD130 \uCC98\uB9AC, \uC785\uB825 \uAC80\
+  \uC99D, \uB610\uB294 UI \uB514\uC790\uC778\uC744 \uC870\uC728\uD560 \uB54C \uC774\
+  \ \uC815\uBCF4\uAC00 \uD544\uC694\uD569\uB2C8\uB2E4."
+title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Työskentely JSON:n kanssa"
 aliases:
 - /fi/kotlin/working-with-json/
-date:                  2024-02-03T19:23:06.492430-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely JSON:n kanssa"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:06.492430-07:00
+description: "Ty\xF6skentely JSONin (JavaScript Object Notation) kanssa Kotlinitssa\
+  \ liittyy JSON-datamuodon j\xE4sennys- ja luontitoimiin. Ohjelmoijat tekev\xE4t\
+  \ t\xE4m\xE4n\u2026"
+lastmod: 2024-02-18 23:09:07.598130
+model: gpt-4-0125-preview
+summary: "Ty\xF6skentely JSONin (JavaScript Object Notation) kanssa Kotlinitssa liittyy\
+  \ JSON-datamuodon j\xE4sennys- ja luontitoimiin. Ohjelmoijat tekev\xE4t t\xE4m\xE4\
+  n\u2026"
+title: "Ty\xF6skentely JSON:n kanssa"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,17 @@
 ---
-title:                "Fouten afhandelen"
 aliases:
 - /nl/vba/handling-errors/
-date:                  2024-02-01T21:55:20.886291-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Fouten afhandelen"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/vba/handling-errors.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:20.886291-07:00
+description: "Foutafhandeling in Visual Basic for Applications (VBA) verwijst naar\
+  \ het proces van anticiperen, detecteren en oplossen van programmeer-, applicatie-\
+  \ of\u2026"
+lastmod: 2024-02-18 23:09:01.674166
+model: gpt-4-0125-preview
+summary: "Foutafhandeling in Visual Basic for Applications (VBA) verwijst naar het\
+  \ proces van anticiperen, detecteren en oplossen van programmeer-, applicatie- of\u2026"
+title: Fouten afhandelen
 ---
 
 {{< edit_this_page >}}

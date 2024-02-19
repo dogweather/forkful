@@ -1,13 +1,15 @@
 ---
-title:                "Utilizzo di un interprete interattivo (REPL)"
 aliases:
 - /it/clojure/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:12:51.678926-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di un interprete interattivo (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:12:51.678926-07:00
+description: "REPL, ovvero Read-Eval-Print Loop (Ciclo Leggi-Valuta-Stampa), \xE8\
+  \ un ambiente di programmazione per testare dinamicamente codice Clojure pezzo per\
+  \ pezzo. I\u2026"
+lastmod: 2024-02-18 23:08:55.562457
+model: gpt-4-0125-preview
+summary: "REPL, ovvero Read-Eval-Print Loop (Ciclo Leggi-Valuta-Stampa), \xE8 un ambiente\
+  \ di programmazione per testare dinamicamente codice Clojure pezzo per pezzo. I\u2026"
+title: Utilizzo di un interprete interattivo (REPL)
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,15 @@
 ---
-title:                "基本認証を使用してHTTPリクエストを送信する"
 aliases:
 - /ja/c/sending-an-http-request-with-basic-authentication/
-date:                  2024-02-03T18:09:38.287168-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "基本認証を使用してHTTPリクエストを送信する"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:09:38.287168-07:00
+description: "\u2026"
+lastmod: 2024-02-18 23:08:55.349176
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u57FA\u672C\u8A8D\u8A3C\u3092\u4F7F\u7528\u3057\u3066HTTP\u30EA\u30AF\u30A8\
+  \u30B9\u30C8\u3092\u9001\u4FE1\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

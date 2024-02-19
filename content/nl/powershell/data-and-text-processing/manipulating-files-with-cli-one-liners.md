@@ -1,15 +1,16 @@
 ---
-title:                "Bestanden manipuleren met CLI one-liners"
 aliases:
 - /nl/powershell/manipulating-files-with-cli-one-liners/
-date:                  2024-01-28T22:03:24.100952-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bestanden manipuleren met CLI one-liners"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/powershell/manipulating-files-with-cli-one-liners.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:03:24.100952-07:00
+description: "Bestanden manipuleren met CLI one-liners in PowerShell gaat over het\
+  \ snel wijzigen, verplaatsen of verkrijgen van bestandsgegevens direct vanaf de\u2026"
+lastmod: 2024-02-18 23:09:02.086045
+model: gpt-4-0125-preview
+summary: "Bestanden manipuleren met CLI one-liners in PowerShell gaat over het snel\
+  \ wijzigen, verplaatsen of verkrijgen van bestandsgegevens direct vanaf de\u2026"
+title: Bestanden manipuleren met CLI one-liners
 ---
 
 {{< edit_this_page >}}

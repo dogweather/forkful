@@ -1,13 +1,15 @@
 ---
-title:                "Gestion des erreurs"
 aliases:
 - /fr/java/handling-errors/
-date:                  2024-01-26T00:53:12.922871-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Gestion des erreurs"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/handling-errors.md"
+date: 2024-01-26 00:53:12.922871-07:00
+description: "G\xE9rer les erreurs signifie \xE9crire du code qui anticipe et traite\
+  \ les probl\xE8mes susceptibles de survenir. Les programmeurs le font pour rendre\
+  \ les\u2026"
+lastmod: 2024-02-18 23:09:08.636480
+model: gpt-4-1106-preview
+summary: "G\xE9rer les erreurs signifie \xE9crire du code qui anticipe et traite les\
+  \ probl\xE8mes susceptibles de survenir. Les programmeurs le font pour rendre les\u2026"
+title: Gestion des erreurs
 ---
 
 {{< edit_this_page >}}

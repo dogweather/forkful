@@ -1,15 +1,20 @@
 ---
-title:                "Phân tích ngày từ chuỗi kí tự"
 aliases:
 - /vi/javascript/parsing-a-date-from-a-string/
-date:                  2024-01-28T22:04:40.478475-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Phân tích ngày từ chuỗi kí tự"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:04:40.478475-07:00
+description: "Ph\xE2n t\xEDch c\xFA ph\xE1p m\u1ED9t ng\xE0y t\u1EEB m\u1ED9t chu\u1ED7\
+  i c\xF3 ngh\u0129a l\xE0 chuy\u1EC3n \u0111\u1ED5i v\u0103n b\u1EA3n th\u1EC3 hi\u1EC7\
+  n m\u1ED9t ng\xE0y th\xE0nh m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y. L\u1EAD\
+  p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y b\u1EDFi v\xEC n\xF3\u2026"
+lastmod: 2024-02-18 23:08:51.146575
+model: gpt-4-0125-preview
+summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p m\u1ED9t ng\xE0y t\u1EEB m\u1ED9t chu\u1ED7\
+  i c\xF3 ngh\u0129a l\xE0 chuy\u1EC3n \u0111\u1ED5i v\u0103n b\u1EA3n th\u1EC3 hi\u1EC7\
+  n m\u1ED9t ng\xE0y th\xE0nh m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y. L\u1EAD\
+  p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y b\u1EDFi v\xEC n\xF3\u2026"
+title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 ---
 
 {{< edit_this_page >}}

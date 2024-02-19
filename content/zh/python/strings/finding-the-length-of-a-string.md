@@ -1,14 +1,23 @@
 ---
-title:                "获取字符串的长度"
 aliases:
 - /zh/python/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:09.756981-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "获取字符串的长度"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:09.756981-07:00
+description: "\u5728Python\u4E2D\uFF0C\u83B7\u53D6\u5B57\u7B26\u4E32\u957F\u5EA6\u7684\
+  \u64CD\u4F5C\u5C31\u662F\u786E\u5B9A\u5B57\u7B26\u4E32\u4E2D\u5B57\u7B26\u7684\u6570\
+  \u76EE\u3002\u4E3A\u4E86\u5224\u65AD\u7528\u6237\u8F93\u5165\u7684\u5408\u6CD5\u6027\
+  \u3001\u88C1\u526A\u6216\u683C\u5F0F\u5316\u8F93\u51FA\u7B49\uFF0C\u7A0B\u5E8F\u5458\
+  \u7ECF\u5E38\u9700\u8981\u77E5\u9053\u5B57\u7B26\u4E32\u7684\u5177\u4F53\u957F\u5EA6\
+  \u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:58.782945
+model: gpt-4-1106-preview
+summary: "\u5728Python\u4E2D\uFF0C\u83B7\u53D6\u5B57\u7B26\u4E32\u957F\u5EA6\u7684\
+  \u64CD\u4F5C\u5C31\u662F\u786E\u5B9A\u5B57\u7B26\u4E32\u4E2D\u5B57\u7B26\u7684\u6570\
+  \u76EE\u3002\u4E3A\u4E86\u5224\u65AD\u7528\u6237\u8F93\u5165\u7684\u5408\u6CD5\u6027\
+  \u3001\u88C1\u526A\u6216\u683C\u5F0F\u5316\u8F93\u51FA\u7B49\uFF0C\u7A0B\u5E8F\u5458\
+  \u7ECF\u5E38\u9700\u8981\u77E5\u9053\u5B57\u7B26\u4E32\u7684\u5177\u4F53\u957F\u5EA6\
+  \u3002"
+title: "\u83B7\u53D6\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
 ---
 
 {{< edit_this_page >}}

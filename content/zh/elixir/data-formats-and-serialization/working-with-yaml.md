@@ -1,14 +1,28 @@
 ---
-title:                "使用YAML工作"
 aliases:
 - /zh/elixir/working-with-yaml/
-date:                  2024-02-03T19:25:11.326988-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用YAML工作"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:25:11.326988-07:00
+description: "YAML\uFF0C\u5168\u79F0\u662FYAML Ain't Markup Language\uFF08YAML\u4E0D\
+  \u662F\u6807\u8BB0\u8BED\u8A00\uFF09\uFF0C\u662F\u4E00\u79CD\u4EBA\u7C7B\u53EF\u8BFB\
+  \u7684\u6570\u636E\u5E8F\u5217\u5316\u6807\u51C6\uFF0C\u901A\u5E38\u7528\u4E8E\u914D\
+  \u7F6E\u6587\u4EF6\u548C\u5728\u5177\u6709\u4E0D\u540C\u6570\u636E\u7ED3\u6784\u7684\
+  \u8BED\u8A00\u4E4B\u95F4\u7684\u6570\u636E\u4EA4\u6362\u3002\u7A0B\u5E8F\u5458\u4E4B\
+  \u6240\u4EE5\u4F7F\u7528\u5B83\uFF0C\u662F\u56E0\u4E3A\u5B83\u7684\u7B80\u5355\u6027\
+  \u4EE5\u53CA\u5B83\u80FD\u591F\u8F7B\u677E\u8868\u793A\u590D\u6742\u7684\u5C42\u6B21\
+  \u6570\u636E\u3002"
+lastmod: 2024-02-18 23:08:58.884015
+model: gpt-4-0125-preview
+summary: "YAML\uFF0C\u5168\u79F0\u662FYAML Ain't Markup Language\uFF08YAML\u4E0D\u662F\
+  \u6807\u8BB0\u8BED\u8A00\uFF09\uFF0C\u662F\u4E00\u79CD\u4EBA\u7C7B\u53EF\u8BFB\u7684\
+  \u6570\u636E\u5E8F\u5217\u5316\u6807\u51C6\uFF0C\u901A\u5E38\u7528\u4E8E\u914D\u7F6E\
+  \u6587\u4EF6\u548C\u5728\u5177\u6709\u4E0D\u540C\u6570\u636E\u7ED3\u6784\u7684\u8BED\
+  \u8A00\u4E4B\u95F4\u7684\u6570\u636E\u4EA4\u6362\u3002\u7A0B\u5E8F\u5458\u4E4B\u6240\
+  \u4EE5\u4F7F\u7528\u5B83\uFF0C\u662F\u56E0\u4E3A\u5B83\u7684\u7B80\u5355\u6027\u4EE5\
+  \u53CA\u5B83\u80FD\u591F\u8F7B\u677E\u8868\u793A\u590D\u6742\u7684\u5C42\u6B21\u6570\
+  \u636E\u3002"
+title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 ---
 
 {{< edit_this_page >}}

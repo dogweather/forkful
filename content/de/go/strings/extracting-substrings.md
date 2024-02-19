@@ -1,14 +1,16 @@
 ---
-title:                "Teilstrings extrahieren"
 aliases:
 - /de/go/extracting-substrings/
-date:                  2024-02-03T17:56:37.060729-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Teilstrings extrahieren"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/extracting-substrings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:37.060729-07:00
+description: "Das Extrahieren von Teilzeichenketten beinhaltet das Abrufen spezifischer\
+  \ Teile einer Zeichenkette basierend auf ihren Positionen. Programmierer f\xFChren\u2026"
+lastmod: 2024-02-18 23:09:04.350542
+model: gpt-4-0125-preview
+summary: "Das Extrahieren von Teilzeichenketten beinhaltet das Abrufen spezifischer\
+  \ Teile einer Zeichenkette basierend auf ihren Positionen. Programmierer f\xFChren\u2026"
+title: Teilstrings extrahieren
 ---
 
 {{< edit_this_page >}}

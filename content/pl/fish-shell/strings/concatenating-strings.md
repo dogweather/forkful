@@ -1,13 +1,16 @@
 ---
-title:                "Łączenie łańcuchów znaków"
 aliases:
 - /pl/fish-shell/concatenating-strings/
-date:                  2024-01-20T17:34:35.722202-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Łączenie łańcuchów znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/concatenating-strings.md"
+date: 2024-01-20 17:34:35.722202-07:00
+description: "Konkatenacja to fancy termin na \u0142\u0105czenie string\xF3w, tworzenie\
+  \ z nich d\u0142u\u017Cszego ci\u0105gu znak\xF3w. Programi\u015Bci to robi\u0105\
+  , gdy potrzebuj\u0105 zbudowa\u0107 warto\u015Bci, takie\u2026"
+lastmod: 2024-02-18 23:08:50.026836
+model: gpt-4-1106-preview
+summary: "Konkatenacja to fancy termin na \u0142\u0105czenie string\xF3w, tworzenie\
+  \ z nich d\u0142u\u017Cszego ci\u0105gu znak\xF3w. Programi\u015Bci to robi\u0105\
+  , gdy potrzebuj\u0105 zbudowa\u0107 warto\u015Bci, takie\u2026"
+title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 ---
 
 {{< edit_this_page >}}

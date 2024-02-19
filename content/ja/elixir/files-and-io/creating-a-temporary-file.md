@@ -1,14 +1,23 @@
 ---
-title:                "一時ファイルの作成"
 aliases:
 - /ja/elixir/creating-a-temporary-file/
-date:                  2024-01-20T17:40:24.974801-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "一時ファイルの作成"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:24.974801-07:00
+description: "\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u3067\u306F\u3001\u4E00\u6642\
+  \u7684\u306A\u30D5\u30A1\u30A4\u30EB\u3092\u4F5C\u308B\u3053\u3068\u304C\u3088\u304F\
+  \u3042\u308A\u307E\u3059\u3002\u3053\u308C\u306F\u3001\u30C7\u30FC\u30BF\u306E\u4E00\
+  \u6642\u4FDD\u5B58\u3001\u51E6\u7406\u306E\u9014\u4E2D\u7D50\u679C\u306E\u4FDD\u6301\
+  \u3001\u30A2\u30D7\u30EA\u306E\u8A2D\u5B9A\u306A\u3069\u306E\u76EE\u7684\u3067\u4F7F\
+  \u3044\u307E\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:54.661059
+model: gpt-4-1106-preview
+summary: "\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u3067\u306F\u3001\u4E00\u6642\
+  \u7684\u306A\u30D5\u30A1\u30A4\u30EB\u3092\u4F5C\u308B\u3053\u3068\u304C\u3088\u304F\
+  \u3042\u308A\u307E\u3059\u3002\u3053\u308C\u306F\u3001\u30C7\u30FC\u30BF\u306E\u4E00\
+  \u6642\u4FDD\u5B58\u3001\u51E6\u7406\u306E\u9014\u4E2D\u7D50\u679C\u306E\u4FDD\u6301\
+  \u3001\u30A2\u30D7\u30EA\u306E\u8A2D\u5B9A\u306A\u3069\u306E\u76EE\u7684\u3067\u4F7F\
+  \u3044\u307E\u3059\u3002"
+title: "\u4E00\u6642\u30D5\u30A1\u30A4\u30EB\u306E\u4F5C\u6210"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,16 @@
 ---
-title:                "Gebruik van associatieve arrays"
 aliases:
 - /nl/java/using-associative-arrays/
-date:                  2024-01-30T19:11:48.086970-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gebruik van associatieve arrays"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/java/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:11:48.086970-07:00
+description: "In Java laten associatieve arrays, of maps, je sleutel-waardeparen opslaan\
+  \ voor effici\xEBnte gegevensopzoeking en -manipulatie. Programmeurs gebruiken ze\u2026"
+lastmod: 2024-02-18 23:09:01.705037
+model: gpt-4-0125-preview
+summary: "In Java laten associatieve arrays, of maps, je sleutel-waardeparen opslaan\
+  \ voor effici\xEBnte gegevensopzoeking en -manipulatie. Programmeurs gebruiken ze\u2026"
+title: Gebruik van associatieve arrays
 ---
 
 {{< edit_this_page >}}

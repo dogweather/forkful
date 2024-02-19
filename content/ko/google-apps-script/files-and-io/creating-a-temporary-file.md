@@ -1,14 +1,29 @@
 ---
-title:                "임시 파일 생성하기"
 aliases:
 - /ko/google-apps-script/creating-a-temporary-file/
-date:                  2024-02-01T21:52:17.700089-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "임시 파일 생성하기"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/creating-a-temporary-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:17.700089-07:00
+description: "Google Apps Script\uC5D0\uC11C \uC784\uC2DC \uD30C\uC77C\uC744 \uC0DD\
+  \uC131\uD558\uB294 \uAC83\uC740 \uC77C\uBC18\uC801\uC73C\uB85C \uC911\uAC04 \uB370\
+  \uC774\uD130 \uCC98\uB9AC, \uB514\uBC84\uAE45 \uB610\uB294 \uCE90\uC2DC \uBAA9\uC801\
+  \uC744 \uC704\uD574 \uB2E8\uAE30\uAC04 \uC0AC\uC6A9\uC744 \uC758\uB3C4\uD55C \uD30C\
+  \uC77C\uC744 \uC0DD\uC131\uD558\uB294 \uAC83\uC744 \uC758\uBBF8\uD569\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC774 \uC774 \uC791\uC5C5\uC744 \uC218\uD589\
+  \uD558\uB294 \uC774\uC720\uB294 \uC601\uAD6C \uC800\uC7A5 \uACF5\uAC04\uC744 \uBD88\
+  \uD544\uC694\uD558\uAC8C \uC0AC\uC6A9\uD558\uC9C0 \uC54A\uAC70\uB098 \uD604\uC7AC\
+  \u2026"
+lastmod: 2024-02-18 23:09:05.589764
+model: gpt-4-0125-preview
+summary: "Google Apps Script\uC5D0\uC11C \uC784\uC2DC \uD30C\uC77C\uC744 \uC0DD\uC131\
+  \uD558\uB294 \uAC83\uC740 \uC77C\uBC18\uC801\uC73C\uB85C \uC911\uAC04 \uB370\uC774\
+  \uD130 \uCC98\uB9AC, \uB514\uBC84\uAE45 \uB610\uB294 \uCE90\uC2DC \uBAA9\uC801\uC744\
+  \ \uC704\uD574 \uB2E8\uAE30\uAC04 \uC0AC\uC6A9\uC744 \uC758\uB3C4\uD55C \uD30C\uC77C\
+  \uC744 \uC0DD\uC131\uD558\uB294 \uAC83\uC744 \uC758\uBBF8\uD569\uB2C8\uB2E4. \uD504\
+  \uB85C\uADF8\uB798\uBA38\uB4E4\uC774 \uC774 \uC791\uC5C5\uC744 \uC218\uD589\uD558\
+  \uB294 \uC774\uC720\uB294 \uC601\uAD6C \uC800\uC7A5 \uACF5\uAC04\uC744 \uBD88\uD544\
+  \uC694\uD558\uAC8C \uC0AC\uC6A9\uD558\uC9C0 \uC54A\uAC70\uB098 \uD604\uC7AC\u2026"
+title: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

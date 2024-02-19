@@ -1,15 +1,16 @@
 ---
-title:                "Werken met CSV"
 aliases:
 - /nl/clojure/working-with-csv/
-date:                  2024-01-28T22:10:02.630943-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met CSV"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/clojure/working-with-csv.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:02.630943-07:00
+description: "Werken met CSV (Comma-Separated Values), oftewel komma-gescheiden waarden,\
+  \ betekent het verwerken van tabelgegevens opgeslagen in een platte-tekstformaat.\u2026"
+lastmod: 2024-02-18 23:09:01.504260
+model: gpt-4-0125-preview
+summary: "Werken met CSV (Comma-Separated Values), oftewel komma-gescheiden waarden,\
+  \ betekent het verwerken van tabelgegevens opgeslagen in een platte-tekstformaat.\u2026"
+title: Werken met CSV
 ---
 
 {{< edit_this_page >}}

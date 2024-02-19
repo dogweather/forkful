@@ -1,13 +1,14 @@
 ---
-title:                "Concatenación de cadenas de texto"
 aliases:
 - /es/arduino/concatenating-strings/
-date:                  2024-01-20T17:34:06.997156-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenación de cadenas de texto"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/concatenating-strings.md"
+date: 2024-01-20 17:34:06.997156-07:00
+description: "Concatenar cadenas significa juntar dos o m\xE1s textos en uno solo.\
+  \ Los programadores lo hacen para construir mensajes, combinar datos y presentar\u2026"
+lastmod: 2024-02-18 23:09:10.252950
+model: gpt-4-1106-preview
+summary: "Concatenar cadenas significa juntar dos o m\xE1s textos en uno solo. Los\
+  \ programadores lo hacen para construir mensajes, combinar datos y presentar\u2026"
+title: "Concatenaci\xF3n de cadenas de texto"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Å starte et nytt prosjekt"
 aliases:
 - /no/google-apps-script/starting-a-new-project/
-date:                  2024-02-01T22:02:54.722496-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å starte et nytt prosjekt"
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/google-apps-script/starting-a-new-project.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:02:54.722496-07:00
+description: "\xC5 starte et nytt prosjekt i Google Apps Script (GAS) inneb\xE6rer\
+  \ \xE5 initialisere en scriptfil innenfor Google-\xF8kosystemet (Google Drive, Docs,\
+  \ Ark, etc.) for\u2026"
+lastmod: 2024-02-18 23:08:53.481501
+model: gpt-4-0125-preview
+summary: "\xC5 starte et nytt prosjekt i Google Apps Script (GAS) inneb\xE6rer \xE5\
+  \ initialisere en scriptfil innenfor Google-\xF8kosystemet (Google Drive, Docs,\
+  \ Ark, etc.) for\u2026"
+title: "\xC5 starte et nytt prosjekt"
 ---
 
 {{< edit_this_page >}}

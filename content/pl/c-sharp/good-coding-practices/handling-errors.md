@@ -1,13 +1,16 @@
 ---
-title:                "Obsługa błędów"
 aliases:
 - /pl/c-sharp/handling-errors/
-date:                  2024-01-26T00:51:04.246132-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Obsługa błędów"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/handling-errors.md"
+date: 2024-01-26 00:51:04.246132-07:00
+description: "Obs\u0142uga b\u0142\u0119d\xF3w w C# polega na zarz\u0105dzaniu tym,\
+  \ czego si\u0119 nie spodziewamy \u2014 jak potkni\u0119cie si\u0119 o sznur\xF3\
+  wki. Programy mog\u0105 potyka\u0107 si\u0119 o z\u0142e dane lub\u2026"
+lastmod: 2024-02-18 23:08:49.617907
+model: gpt-4-1106-preview
+summary: "Obs\u0142uga b\u0142\u0119d\xF3w w C# polega na zarz\u0105dzaniu tym, czego\
+  \ si\u0119 nie spodziewamy \u2014 jak potkni\u0119cie si\u0119 o sznur\xF3wki. Programy\
+  \ mog\u0105 potyka\u0107 si\u0119 o z\u0142e dane lub\u2026"
+title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 ---
 
 {{< edit_this_page >}}

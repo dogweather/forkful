@@ -1,13 +1,15 @@
 ---
-title:                "Generating random numbers"
 aliases:
 - /en/fish-shell/generating-random-numbers/
-date:                  2024-01-27T20:26:06.071881-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generating random numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/generating-random-numbers.md"
+date: 2024-01-27 20:26:06.071881-07:00
+description: "Generating random numbers is a fundamental task in programming, used\
+  \ for everything from data sampling to game development. In Fish Shell, making use\
+  \ of\u2026"
+lastmod: 2024-02-18 23:09:11.474863
+model: gpt-4-0125-preview
+summary: "Generating random numbers is a fundamental task in programming, used for\
+  \ everything from data sampling to game development. In Fish Shell, making use of\u2026"
+title: Generating random numbers
 ---
 
 {{< edit_this_page >}}

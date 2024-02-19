@@ -1,15 +1,18 @@
 ---
-title:                "Bruke associative tabeller"
 aliases:
 - /no/typescript/using-associative-arrays/
-date:                  2024-01-30T19:13:36.962345-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke associative tabeller"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:13:36.962345-07:00
+description: "Assosiative arrays, eller objekter i TypeScript, lar deg bruke strenger\
+  \ (eller n\xF8kler) for \xE5 f\xE5 tilgang til verdi-par. Programmerere bruker dem\
+  \ for mer\u2026"
+lastmod: 2024-02-18 23:08:53.638347
+model: gpt-4-0125-preview
+summary: "Assosiative arrays, eller objekter i TypeScript, lar deg bruke strenger\
+  \ (eller n\xF8kler) for \xE5 f\xE5 tilgang til verdi-par. Programmerere bruker dem\
+  \ for mer\u2026"
+title: Bruke associative tabeller
 ---
 
 {{< edit_this_page >}}

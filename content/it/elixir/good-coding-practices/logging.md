@@ -1,13 +1,16 @@
 ---
-title:                "Registrazione Eventi (Logging)"
 aliases:
 - /it/elixir/logging/
-date:                  2024-01-26T01:02:22.069138-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registrazione Eventi (Logging)"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/logging.md"
+date: 2024-01-26 01:02:22.069138-07:00
+description: "Il logging nello sviluppo software \xE8 la tecnica di registrazione\
+  \ degli eventi che si verificano mentre un programma \xE8 in esecuzione, tipicamente\
+  \ su un\u2026"
+lastmod: 2024-02-18 23:08:55.606614
+model: gpt-4-1106-preview
+summary: "Il logging nello sviluppo software \xE8 la tecnica di registrazione degli\
+  \ eventi che si verificano mentre un programma \xE8 in esecuzione, tipicamente su\
+  \ un\u2026"
+title: Registrazione Eventi (Logging)
 ---
 
 {{< edit_this_page >}}

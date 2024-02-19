@@ -1,13 +1,16 @@
 ---
-title:                "Imprimiendo salida de depuración"
 aliases:
 - /es/arduino/printing-debug-output/
-date:                  2024-01-20T17:52:07.101421-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Imprimiendo salida de depuración"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/printing-debug-output.md"
+date: 2024-01-20 17:52:07.101421-07:00
+description: "La impresi\xF3n de mensajes de depuraci\xF3n ayuda a entender qu\xE9\
+  \ est\xE1 pasando dentro del c\xF3digo al ejecutarlo. Los programadores usan esta\
+  \ t\xE9cnica para\u2026"
+lastmod: 2024-02-18 23:09:10.263533
+model: gpt-4-1106-preview
+summary: "La impresi\xF3n de mensajes de depuraci\xF3n ayuda a entender qu\xE9 est\xE1\
+  \ pasando dentro del c\xF3digo al ejecutarlo. Los programadores usan esta t\xE9\
+  cnica para\u2026"
+title: "Imprimiendo salida de depuraci\xF3n"
 ---
 
 {{< edit_this_page >}}

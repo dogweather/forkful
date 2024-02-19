@@ -1,13 +1,16 @@
 ---
-title:                "Enviando uma requisição HTTP"
 aliases:
 - /pt/clojure/sending-an-http-request/
-date:                  2024-01-20T17:59:29.490386-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando uma requisição HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/sending-an-http-request.md"
+date: 2024-01-20 17:59:29.490386-07:00
+description: "Enviar uma solicita\xE7\xE3o HTTP \xE9 como fazer uma pergunta a um\
+  \ site e esperar uma resposta. Programadores fazem isso para interagir com APIs,\
+  \ coletar dados ou\u2026"
+lastmod: 2024-02-18 23:08:57.799633
+model: gpt-4-1106-preview
+summary: "Enviar uma solicita\xE7\xE3o HTTP \xE9 como fazer uma pergunta a um site\
+  \ e esperar uma resposta. Programadores fazem isso para interagir com APIs, coletar\
+  \ dados ou\u2026"
+title: "Enviando uma requisi\xE7\xE3o HTTP"
 ---
 
 {{< edit_this_page >}}

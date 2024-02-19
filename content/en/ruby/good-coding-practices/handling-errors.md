@@ -1,15 +1,18 @@
 ---
-title:                "Handling errors"
 aliases:
 - /en/ruby/handling-errors/
-date:                  2024-01-21T21:19:07.187007-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Handling errors"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/handling-errors.md"
 changelog:
-  - 2024-01-21, dogweather, Reviewed for accuracy
+- 2024-01-21, dogweather, Reviewed for accuracy
+date: 2024-01-21 21:19:07.187007-07:00
+description: "Error handling is about expecting the unexpected in code \u2014 managing\
+  \ mistakes and problems gracefully without crashing. Programmers do it to control\
+  \ the\u2026"
+lastmod: 2024-02-18 23:09:11.573421
+model: gpt-4-1106-preview
+summary: "Error handling is about expecting the unexpected in code \u2014 managing\
+  \ mistakes and problems gracefully without crashing. Programmers do it to control\
+  \ the\u2026"
+title: Handling errors
 ---
 
 {{< edit_this_page >}}

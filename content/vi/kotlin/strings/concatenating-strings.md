@@ -1,15 +1,20 @@
 ---
-title:                "Nối chuỗi ký tự"
 aliases:
 - /vi/kotlin/concatenating-strings/
-date:                  2024-01-28T21:57:02.719062-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Nối chuỗi ký tự"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/kotlin/concatenating-strings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:57:02.719062-07:00
+description: "N\u1ED1i chu\u1ED7i gi\u1ED1ng nh\u01B0 l\xE0m m\u1ED9t chi\u1EBFc sandwich,\
+  \ nh\u01B0ng thay v\xEC b\xE1nh m\xEC v\xE0 nh\xE2n, b\u1EA1n \u0111ang x\u1EBF\
+  p ch\u1ED3ng c\xE1c t\u1EEB l\u1EA1i v\u1EDBi nhau \u0111\u1EC3 t\u1EA1o th\xE0\
+  nh m\u1ED9t c\xE2u ho\u1EB7c m\u1ED9t c\u1EE5m t\u1EEB.\u2026"
+lastmod: 2024-02-18 23:08:50.641926
+model: gpt-4-0125-preview
+summary: "N\u1ED1i chu\u1ED7i gi\u1ED1ng nh\u01B0 l\xE0m m\u1ED9t chi\u1EBFc sandwich,\
+  \ nh\u01B0ng thay v\xEC b\xE1nh m\xEC v\xE0 nh\xE2n, b\u1EA1n \u0111ang x\u1EBF\
+  p ch\u1ED3ng c\xE1c t\u1EEB l\u1EA1i v\u1EDBi nhau \u0111\u1EC3 t\u1EA1o th\xE0\
+  nh m\u1ED9t c\xE2u ho\u1EB7c m\u1ED9t c\u1EE5m t\u1EEB.\u2026"
+title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Kompleksilukujen käsittely"
 aliases:
 - /fi/typescript/working-with-complex-numbers/
-date:                  2024-01-26T04:46:17.702589-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kompleksilukujen käsittely"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/working-with-complex-numbers.md"
+date: 2024-01-26 04:46:17.702589-07:00
+description: "Kompleksiluvut, jotka koostuvat reaaliosasta ja imagin\xE4\xE4riosasta\
+  \ (yleens\xE4 kirjoitettu muodossa a + bi), mahdollistavat laskutoimitukset, jotka\
+  \ ovat\u2026"
+lastmod: 2024-02-18 23:09:07.312129
+model: gpt-4-0125-preview
+summary: "Kompleksiluvut, jotka koostuvat reaaliosasta ja imagin\xE4\xE4riosasta (yleens\xE4\
+  \ kirjoitettu muodossa a + bi), mahdollistavat laskutoimitukset, jotka ovat\u2026"
+title: "Kompleksilukujen k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

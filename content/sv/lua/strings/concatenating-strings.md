@@ -1,13 +1,16 @@
 ---
-title:                "Sammanslagning av strängar"
 aliases:
 - /sv/lua/concatenating-strings/
-date:                  2024-01-20T17:35:11.043801-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammanslagning av strängar"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/lua/concatenating-strings.md"
+date: 2024-01-20 17:35:11.043801-07:00
+description: "I programmering \xE4r att sammanfoga str\xE4ngar processen att kombinera\
+  \ flera str\xE4ngar till en enda. Programmerare g\xF6r detta f\xF6r att dynamiskt\
+  \ bygga text, som\u2026"
+lastmod: 2024-02-18 23:08:51.910857
+model: gpt-4-1106-preview
+summary: "I programmering \xE4r att sammanfoga str\xE4ngar processen att kombinera\
+  \ flera str\xE4ngar till en enda. Programmerare g\xF6r detta f\xF6r att dynamiskt\
+  \ bygga text, som\u2026"
+title: "Sammanslagning av str\xE4ngar"
 ---
 
 {{< edit_this_page >}}

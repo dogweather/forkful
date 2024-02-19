@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonosta lainausmerkkien poistaminen"
 aliases:
 - /fi/elixir/removing-quotes-from-a-string/
-date:                  2024-01-26T03:38:44.138035-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonosta lainausmerkkien poistaminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:38:44.138035-07:00
+description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa ylim\xE4\xE4r\xE4\
+  isten \"kuorien\" riisumista saadakseen puhtaan tekstin esiin. Ohjelmoijat tekev\xE4\
+  t t\xE4m\xE4n\u2026"
+lastmod: 2024-02-18 23:09:07.260781
+model: gpt-4-0125-preview
+summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa ylim\xE4\xE4r\xE4isten\
+  \ \"kuorien\" riisumista saadakseen puhtaan tekstin esiin. Ohjelmoijat tekev\xE4\
+  t t\xE4m\xE4n\u2026"
+title: Merkkijonosta lainausmerkkien poistaminen
 ---
 
 {{< edit_this_page >}}

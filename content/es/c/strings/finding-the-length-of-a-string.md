@@ -1,14 +1,17 @@
 ---
-title:                "Encontrando la longitud de una cadena"
 aliases:
 - /es/c/finding-the-length-of-a-string/
-date:                  2024-02-03T17:56:29.076204-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Encontrando la longitud de una cadena"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:29.076204-07:00
+description: "Encontrar la longitud de una cadena en C implica determinar el n\xFA\
+  mero de caracteres antes del terminador nulo `\\0`. Los programadores hacen esto\
+  \ para\u2026"
+lastmod: 2024-02-18 23:09:10.490459
+model: gpt-4-0125-preview
+summary: "Encontrar la longitud de una cadena en C implica determinar el n\xFAmero\
+  \ de caracteres antes del terminador nulo `\\0`. Los programadores hacen esto para\u2026"
+title: Encontrando la longitud de una cadena
 ---
 
 {{< edit_this_page >}}

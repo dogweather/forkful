@@ -1,13 +1,16 @@
 ---
-title:                "Skriva ut felsökningsdata"
 aliases:
 - /sv/elixir/printing-debug-output/
-date:                  2024-01-20T17:52:30.326612-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skriva ut felsökningsdata"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/printing-debug-output.md"
+date: 2024-01-20 17:52:30.326612-07:00
+description: "Att skriva ut debug-information i Elixir hj\xE4lper utvecklare att f\xF6\
+  rst\xE5 vad deras kod g\xF6r i realtid och varf\xF6r den beter sig p\xE5 ett visst\
+  \ s\xE4tt. Det \xE4r en\u2026"
+lastmod: 2024-02-18 23:08:51.504974
+model: gpt-4-1106-preview
+summary: "Att skriva ut debug-information i Elixir hj\xE4lper utvecklare att f\xF6\
+  rst\xE5 vad deras kod g\xF6r i realtid och varf\xF6r den beter sig p\xE5 ett visst\
+  \ s\xE4tt. Det \xE4r en\u2026"
+title: "Skriva ut fels\xF6kningsdata"
 ---
 
 {{< edit_this_page >}}

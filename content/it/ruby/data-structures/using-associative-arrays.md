@@ -1,15 +1,16 @@
 ---
-title:                "Utilizzo di array associativi"
 aliases:
 - /it/ruby/using-associative-arrays/
-date:                  2024-01-30T19:12:29.931349-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di array associativi"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:29.931349-07:00
+description: "Gli array associativi, pi\xF9 comunemente noti come hash in Ruby, consentono\
+  \ di accoppiare chiavi uniche a valori. Sono indispensabili quando \xE8 necessario\u2026"
+lastmod: 2024-02-18 23:08:56.374386
+model: gpt-4-0125-preview
+summary: "Gli array associativi, pi\xF9 comunemente noti come hash in Ruby, consentono\
+  \ di accoppiare chiavi uniche a valori. Sono indispensabili quando \xE8 necessario\u2026"
+title: Utilizzo di array associativi
 ---
 
 {{< edit_this_page >}}

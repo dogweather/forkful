@@ -1,13 +1,16 @@
 ---
-title:                "Calculando la longitud de una cadena"
 aliases:
 - /es/rust/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:19.021037-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Calculando la longitud de una cadena"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:19.021037-07:00
+description: "Encontrar la longitud de una cadena de texto en Rust nos dice cu\xE1\
+  ntos bytes ocupa. Esto importa al trabajar con textos: validar entradas, limitar\
+  \ tama\xF1o,\u2026"
+lastmod: 2024-02-18 23:09:09.739317
+model: gpt-4-1106-preview
+summary: "Encontrar la longitud de una cadena de texto en Rust nos dice cu\xE1ntos\
+  \ bytes ocupa. Esto importa al trabajar con textos: validar entradas, limitar tama\xF1\
+  o,\u2026"
+title: Calculando la longitud de una cadena
 ---
 
 {{< edit_this_page >}}

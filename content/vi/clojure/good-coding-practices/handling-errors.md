@@ -1,15 +1,20 @@
 ---
-title:                "Xử lý lỗi"
 aliases:
 - /vi/clojure/handling-errors/
-date:                  2024-01-28T22:01:42.268671-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Xử lý lỗi"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/clojure/handling-errors.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:42.268671-07:00
+description: "X\u1EED l\xFD l\u1ED7i l\xE0 v\u1EC1 vi\u1EC7c qu\u1EA3n l\xFD nh\u1EEF\
+  ng t\xECnh hu\u1ED1ng kh\xF4ng mong \u0111\u1EE3i trong ch\u01B0\u01A1ng tr\xEC\
+  nh - gi\u1ED1ng nh\u01B0 m\u1ED9t v\u1EC7 s\u0129 gi\u1EA3i quy\u1EBFt r\u1EAFc\
+  \ r\u1ED1i. L\u1EADp tr\xECnh vi\xEAn th\xEDch s\u1EF1 tr\u01A1n\u2026"
+lastmod: 2024-02-18 23:08:50.323011
+model: gpt-4-0125-preview
+summary: "X\u1EED l\xFD l\u1ED7i l\xE0 v\u1EC1 vi\u1EC7c qu\u1EA3n l\xFD nh\u1EEF\
+  ng t\xECnh hu\u1ED1ng kh\xF4ng mong \u0111\u1EE3i trong ch\u01B0\u01A1ng tr\xEC\
+  nh - gi\u1ED1ng nh\u01B0 m\u1ED9t v\u1EC7 s\u0129 gi\u1EA3i quy\u1EBFt r\u1EAFc\
+  \ r\u1ED1i. L\u1EADp tr\xECnh vi\xEAn th\xEDch s\u1EF1 tr\u01A1n\u2026"
+title: "X\u1EED l\xFD l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

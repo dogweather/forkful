@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonon pituuden selvittäminen"
 aliases:
 - /fi/powershell/finding-the-length-of-a-string/
-date:                  2024-01-20T17:48:13.302475-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon pituuden selvittäminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:48:13.302475-07:00
+description: "Merkkijonon pituuden selvitt\xE4misess\xE4 saadaan tietoon kuinka monta\
+  \ merkki\xE4 merkkijonossa on. T\xE4m\xE4 on hy\xF6dyllist\xE4 esimerkiksi datan\
+  \ validoinnissa, tekstin\u2026"
+lastmod: 2024-02-18 23:09:07.840357
+model: gpt-4-1106-preview
+summary: "Merkkijonon pituuden selvitt\xE4misess\xE4 saadaan tietoon kuinka monta\
+  \ merkki\xE4 merkkijonossa on. T\xE4m\xE4 on hy\xF6dyllist\xE4 esimerkiksi datan\
+  \ validoinnissa, tekstin\u2026"
+title: "Merkkijonon pituuden selvitt\xE4minen"
 ---
 
 {{< edit_this_page >}}

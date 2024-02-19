@@ -1,13 +1,16 @@
 ---
-title:                "Łączenie łańcuchów znaków"
 aliases:
 - /pl/arduino/concatenating-strings/
-date:                  2024-01-20T17:34:16.557369-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Łączenie łańcuchów znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/concatenating-strings.md"
+date: 2024-01-20 17:34:16.557369-07:00
+description: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w, czyli konkatenacja,\
+  \ to proces tworzenia jednego \u0142a\u0144cucha z dw\xF3ch lub wi\u0119cej istniej\u0105\
+  cych. Programi\u015Bci robi\u0105 to, by sk\u0142ada\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.862260
+model: gpt-4-1106-preview
+summary: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w, czyli konkatenacja,\
+  \ to proces tworzenia jednego \u0142a\u0144cucha z dw\xF3ch lub wi\u0119cej istniej\u0105\
+  cych. Programi\u015Bci robi\u0105 to, by sk\u0142ada\u0107\u2026"
+title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 ---
 
 {{< edit_this_page >}}

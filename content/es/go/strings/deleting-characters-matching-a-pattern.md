@@ -1,14 +1,18 @@
 ---
-title:                "Eliminando caracteres que coinciden con un patrón"
 aliases:
 - /es/go/deleting-characters-matching-a-pattern/
-date:                  2024-02-03T17:55:35.124580-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eliminando caracteres que coinciden con un patrón"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:35.124580-07:00
+description: "Eliminar caracteres que coincidan con un patr\xF3n espec\xEDfico se\
+  \ trata de eliminar ciertos caracteres o secuencias de caracteres de cadenas, basado\
+  \ en reglas\u2026"
+lastmod: 2024-02-18 23:09:09.436307
+model: gpt-4-0125-preview
+summary: "Eliminar caracteres que coincidan con un patr\xF3n espec\xEDfico se trata\
+  \ de eliminar ciertos caracteres o secuencias de caracteres de cadenas, basado en\
+  \ reglas\u2026"
+title: "Eliminando caracteres que coinciden con un patr\xF3n"
 ---
 
 {{< edit_this_page >}}

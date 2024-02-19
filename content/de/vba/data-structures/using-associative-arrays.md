@@ -1,14 +1,18 @@
 ---
-title:                "Verwendung von assoziativen Arrays"
 aliases:
 - /de/vba/using-associative-arrays/
-date:                  2024-02-01T22:04:25.389715-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verwendung von assoziativen Arrays"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/vba/using-associative-arrays.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:25.389715-07:00
+description: "Assoziative Arrays, oft auch als W\xF6rterb\xFCcher in Visual Basic\
+  \ f\xFCr Anwendungen (VBA) bekannt, erm\xF6glichen es Programmierern, Sammlungen\
+  \ von Schl\xFCssel-Wert-\u2026"
+lastmod: 2024-02-18 23:09:04.680517
+model: gpt-4-0125-preview
+summary: "Assoziative Arrays, oft auch als W\xF6rterb\xFCcher in Visual Basic f\xFC\
+  r Anwendungen (VBA) bekannt, erm\xF6glichen es Programmierern, Sammlungen von Schl\xFC\
+  ssel-Wert-\u2026"
+title: Verwendung von assoziativen Arrays
 ---
 
 {{< edit_this_page >}}

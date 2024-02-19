@@ -1,13 +1,14 @@
 ---
-title:                "Merkkijonojen osien poimiminen"
 aliases:
 - /fi/clojure/extracting-substrings/
-date:                  2024-01-20T17:45:32.720898-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonojen osien poimiminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/extracting-substrings.md"
+date: 2024-01-20 17:45:32.720898-07:00
+description: "Merkkijonojen poimiminen tarkoittaa osan ottamista isommasta merkkijonosta.\
+  \ Ohjelmoijat tekev\xE4t n\xE4in datan muokkaamiseksi tai hy\xF6dyllisen informaation\u2026"
+lastmod: 2024-02-18 23:09:07.216707
+model: gpt-4-1106-preview
+summary: "Merkkijonojen poimiminen tarkoittaa osan ottamista isommasta merkkijonosta.\
+  \ Ohjelmoijat tekev\xE4t n\xE4in datan muokkaamiseksi tai hy\xF6dyllisen informaation\u2026"
+title: Merkkijonojen osien poimiminen
 ---
 
 {{< edit_this_page >}}

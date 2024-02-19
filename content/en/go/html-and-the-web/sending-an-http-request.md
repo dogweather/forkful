@@ -1,12 +1,14 @@
 ---
-title:                "Sending an HTTP request"
 aliases:
 - /en/go/sending-an-http-request/
-date:                  2024-02-03T17:50:13.554198-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sending an HTTP request"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/sending-an-http-request.md"
+date: 2024-02-03 17:50:13.554198-07:00
+description: "Sending an HTTP request involves initiating a call from your Go application\
+  \ to a web server, API, or any other HTTP-based service. Programmers do this to\u2026"
+lastmod: 2024-02-18 23:09:10.593269
+model: gpt-4-0125-preview
+summary: "Sending an HTTP request involves initiating a call from your Go application\
+  \ to a web server, API, or any other HTTP-based service. Programmers do this to\u2026"
+title: Sending an HTTP request
 ---
 
 {{< edit_this_page >}}

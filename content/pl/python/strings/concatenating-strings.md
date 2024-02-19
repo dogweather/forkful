@@ -1,13 +1,16 @@
 ---
-title:                "Łączenie łańcuchów znaków"
 aliases:
 - /pl/python/concatenating-strings/
-date:                  2024-01-20T17:35:49.050839-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Łączenie łańcuchów znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/concatenating-strings.md"
+date: 2024-01-20 17:35:49.050839-07:00
+description: "\u0141\u0105czenie ci\u0105g\xF3w znak\xF3w (string\xF3w) to proces\
+  \ tworzenia jednego ci\u0105gu ze dwojga lub wi\u0119cej. Programi\u015Bci u\u017C\
+  ywaj\u0105 tej techniki do budowania komunikat\xF3w,\u2026"
+lastmod: 2024-02-18 23:08:49.214264
+model: gpt-4-1106-preview
+summary: "\u0141\u0105czenie ci\u0105g\xF3w znak\xF3w (string\xF3w) to proces tworzenia\
+  \ jednego ci\u0105gu ze dwojga lub wi\u0119cej. Programi\u015Bci u\u017Cywaj\u0105\
+  \ tej techniki do budowania komunikat\xF3w,\u2026"
+title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 ---
 
 {{< edit_this_page >}}

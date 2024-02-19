@@ -1,13 +1,16 @@
 ---
-title:                "Søking og erstatting av tekst"
 aliases:
 - /no/ruby/searching-and-replacing-text/
-date:                  2024-01-20T17:58:45.246700-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Søking og erstatting av tekst"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:45.246700-07:00
+description: "(\"Hva & Hvorfor?\") Teksts\xF8k og -erstattning lar oss finne og bytte\
+  \ ut spesifikke ord eller fraser i en streng. Programmerere bruker dette til \xE5\
+  \ endre\u2026"
+lastmod: 2024-02-18 23:08:54.422656
+model: gpt-4-1106-preview
+summary: "(\"Hva & Hvorfor?\") Teksts\xF8k og -erstattning lar oss finne og bytte\
+  \ ut spesifikke ord eller fraser i en streng. Programmerere bruker dette til \xE5\
+  \ endre\u2026"
+title: "S\xF8king og erstatting av tekst"
 ---
 
 {{< edit_this_page >}}

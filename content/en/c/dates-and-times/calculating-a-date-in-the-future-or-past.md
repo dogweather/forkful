@@ -1,12 +1,16 @@
 ---
-title:                "Calculating a date in the future or past"
 aliases:
 - /en/c/calculating-a-date-in-the-future-or-past/
-date:                  2024-02-03T17:50:20.086094-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Calculating a date in the future or past"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/calculating-a-date-in-the-future-or-past.md"
+date: 2024-02-03 17:50:20.086094-07:00
+description: "Calculating a date in the future or past involves determining a specific\
+  \ date by adding or subtracting a certain number of days, months, or years from\
+  \ a\u2026"
+lastmod: 2024-02-18 23:09:11.535679
+model: gpt-4-0125-preview
+summary: "Calculating a date in the future or past involves determining a specific\
+  \ date by adding or subtracting a certain number of days, months, or years from\
+  \ a\u2026"
+title: Calculating a date in the future or past
 ---
 
 {{< edit_this_page >}}

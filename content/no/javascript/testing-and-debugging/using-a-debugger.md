@@ -1,13 +1,16 @@
 ---
-title:                "Å bruke en feilsøker"
 aliases:
 - /no/javascript/using-a-debugger/
-date:                  2024-01-26T03:50:03.182181-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å bruke en feilsøker"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/using-a-debugger.md"
+date: 2024-01-26 03:50:03.182181-07:00
+description: "\xC5 bruke en feils\xF8ker betyr \xE5 tappe inn i spesialiserte verkt\xF8\
+  y som lar deg titte under panseret p\xE5 koden din, og se den kj\xF8re steg for\
+  \ steg. Programmerere\u2026"
+lastmod: 2024-02-18 23:08:54.313235
+model: gpt-4-0125-preview
+summary: "\xC5 bruke en feils\xF8ker betyr \xE5 tappe inn i spesialiserte verkt\xF8\
+  y som lar deg titte under panseret p\xE5 koden din, og se den kj\xF8re steg for\
+  \ steg. Programmerere\u2026"
+title: "\xC5 bruke en feils\xF8ker"
 ---
 
 {{< edit_this_page >}}

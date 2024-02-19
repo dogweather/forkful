@@ -1,14 +1,17 @@
 ---
-title:                "Analisi del HTML"
 aliases:
 - /it/python/parsing-html/
-date:                  2024-02-03T19:12:44.583237-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analisi del HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/python/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:44.583237-07:00
+description: "L'analisi (parsing) di HTML comporta l'analisi del codice HTML di una\
+  \ pagina web per estrarre informazioni o elementi specifici, un compito comune per\
+  \ lo\u2026"
+lastmod: 2024-02-18 23:08:55.519259
+model: gpt-4-0125-preview
+summary: "L'analisi (parsing) di HTML comporta l'analisi del codice HTML di una pagina\
+  \ web per estrarre informazioni o elementi specifici, un compito comune per lo\u2026"
+title: Analisi del HTML
 ---
 
 {{< edit_this_page >}}

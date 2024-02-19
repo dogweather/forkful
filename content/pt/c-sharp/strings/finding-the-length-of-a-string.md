@@ -1,13 +1,16 @@
 ---
-title:                "Descobrindo o comprimento de uma string"
 aliases:
 - /pt/c-sharp/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:19.241124-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Descobrindo o comprimento de uma string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:19.241124-07:00
+description: "Saber o comprimento de uma string \xE9 descobrir o n\xFAmero de caracteres\
+  \ que ela cont\xE9m. Programadores fazem isso para validar entradas, limitar conte\xFA\
+  do, ou\u2026"
+lastmod: 2024-02-18 23:08:58.148693
+model: gpt-4-1106-preview
+summary: "Saber o comprimento de uma string \xE9 descobrir o n\xFAmero de caracteres\
+  \ que ela cont\xE9m. Programadores fazem isso para validar entradas, limitar conte\xFA\
+  do, ou\u2026"
+title: Descobrindo o comprimento de uma string
 ---
 
 {{< edit_this_page >}}

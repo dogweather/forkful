@@ -1,14 +1,25 @@
 ---
-title:                "새 프로젝트 시작하기"
 aliases:
 - /ko/java/starting-a-new-project/
-date:                  2024-01-20T18:03:43.102396-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "새 프로젝트 시작하기"
-
-tag:                  "Getting Started"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/starting-a-new-project.md"
+date: 2024-01-20 18:03:43.102396-07:00
+description: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294\
+  \ \uAC83\uC740 \uBE48 \uCE94\uBC84\uC2A4\uC5D0 \uADF8\uB9BC\uC744 \uADF8\uB9AC\uAE30\
+  \ \uC2DC\uC791\uD558\uB294 \uAC83\uACFC \uBE44\uC2B7\uD574\uC694. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB294 \uC0C8\uB85C\uC6B4 \uC544\uC774\uB514\uC5B4\uB97C \uD604\uC2E4\
+  \uB85C \uB9CC\uB4E4\uAC70\uB098, \uAE30\uC220\uC744 \uBC30\uC6B0\uACE0 \uD14C\uC2A4\
+  \uD2B8\uD558\uAE30 \uC704\uD574 \uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uB9CC\uB4ED\
+  \uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.021980
+model: gpt-4-1106-preview
+summary: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294 \uAC83\
+  \uC740 \uBE48 \uCE94\uBC84\uC2A4\uC5D0 \uADF8\uB9BC\uC744 \uADF8\uB9AC\uAE30 \uC2DC\
+  \uC791\uD558\uB294 \uAC83\uACFC \uBE44\uC2B7\uD574\uC694. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB294 \uC0C8\uB85C\uC6B4 \uC544\uC774\uB514\uC5B4\uB97C \uD604\uC2E4\uB85C\
+  \ \uB9CC\uB4E4\uAC70\uB098, \uAE30\uC220\uC744 \uBC30\uC6B0\uACE0 \uD14C\uC2A4\uD2B8\
+  \uD558\uAE30 \uC704\uD574 \uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uB9CC\uB4ED\uB2C8\
+  \uB2E4."
+title: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

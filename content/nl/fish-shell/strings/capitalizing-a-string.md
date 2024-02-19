@@ -1,15 +1,17 @@
 ---
-title:                "Een string met hoofdletters maken"
 aliases:
 - /nl/fish-shell/capitalizing-a-string/
-date:                  2024-01-28T21:55:27.477782-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string met hoofdletters maken"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/capitalizing-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:55:27.477782-07:00
+description: "Een string met hoofdletters schrijven betekent alle karakters omzetten\
+  \ naar hoofdletters. Programmeurs doen dit voor consistentie, leesbaarheid, of om\
+  \ aan\u2026"
+lastmod: 2024-02-18 23:09:02.304324
+model: gpt-4-0125-preview
+summary: "Een string met hoofdletters schrijven betekent alle karakters omzetten naar\
+  \ hoofdletters. Programmeurs doen dit voor consistentie, leesbaarheid, of om aan\u2026"
+title: Een string met hoofdletters maken
 ---
 
 {{< edit_this_page >}}

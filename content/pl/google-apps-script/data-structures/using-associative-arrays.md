@@ -1,14 +1,18 @@
 ---
-title:                "Korzystanie z tablic asocjacyjnych"
 aliases:
 - /pl/google-apps-script/using-associative-arrays/
-date:                  2024-02-01T22:04:22.869553-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z tablic asocjacyjnych"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/using-associative-arrays.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:22.869553-07:00
+description: "Tablice asocjacyjne, znane jako obiekty w Google Apps Script (odmiana\
+  \ JavaScript), umo\u017Cliwiaj\u0105 programistom tworzenie kolekcji par klucz-warto\u015B\
+  \u0107.\u2026"
+lastmod: 2024-02-18 23:08:49.138669
+model: gpt-4-0125-preview
+summary: "Tablice asocjacyjne, znane jako obiekty w Google Apps Script (odmiana JavaScript),\
+  \ umo\u017Cliwiaj\u0105 programistom tworzenie kolekcji par klucz-warto\u015B\u0107\
+  .\u2026"
+title: Korzystanie z tablic asocjacyjnych
 ---
 
 {{< edit_this_page >}}

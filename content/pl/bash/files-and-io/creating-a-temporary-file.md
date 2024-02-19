@@ -1,13 +1,16 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
 aliases:
 - /pl/bash/creating-a-temporary-file/
-date:                  2024-01-20T17:39:41.259093-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tworzenie pliku tymczasowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/creating-a-temporary-file.md"
+date: 2024-01-20 17:39:41.259093-07:00
+description: "Tworzenie tymczasowego pliku to spos\xF3b na zapis tymczasowych danych\
+  \ potrzebnych podczas dzia\u0142ania skryptu czy programu. Programi\u015Bci robi\u0105\
+  \ to, by nie\u2026"
+lastmod: 2024-02-18 23:08:49.804348
+model: gpt-4-1106-preview
+summary: "Tworzenie tymczasowego pliku to spos\xF3b na zapis tymczasowych danych potrzebnych\
+  \ podczas dzia\u0142ania skryptu czy programu. Programi\u015Bci robi\u0105 to, by\
+  \ nie\u2026"
+title: Tworzenie pliku tymczasowego
 ---
 
 {{< edit_this_page >}}

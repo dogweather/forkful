@@ -1,12 +1,14 @@
 ---
-title:                "Writing to standard error"
 aliases:
 - /en/arduino/writing-to-standard-error/
-date:                  2024-02-03T19:03:44.248510-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Writing to standard error"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/writing-to-standard-error.md"
+date: 2024-02-03 19:03:44.248510-07:00
+description: "Writing to standard error (stderr) in Arduino programming involves directing\
+  \ error messages and diagnostics to a separate channel, ensuring they don't mix\u2026"
+lastmod: 2024-02-18 23:09:11.331166
+model: gpt-4-0125-preview
+summary: "Writing to standard error (stderr) in Arduino programming involves directing\
+  \ error messages and diagnostics to a separate channel, ensuring they don't mix\u2026"
+title: Writing to standard error
 ---
 
 {{< edit_this_page >}}

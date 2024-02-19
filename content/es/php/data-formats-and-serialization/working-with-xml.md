@@ -1,13 +1,14 @@
 ---
-title:                "Trabajando con XML"
 aliases:
 - /es/php/working-with-xml/
-date:                  2024-01-26T04:33:38.274788-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/working-with-xml.md"
+date: 2024-01-26 04:33:38.274788-07:00
+description: "XML es un lenguaje de marcado utilizado para almacenar y transportar\
+  \ datos. Los programadores trabajan con XML para permitir la interoperabilidad entre\u2026"
+lastmod: 2024-02-18 23:09:10.100548
+model: gpt-4-0125-preview
+summary: "XML es un lenguaje de marcado utilizado para almacenar y transportar datos.\
+  \ Los programadores trabajan con XML para permitir la interoperabilidad entre\u2026"
+title: Trabajando con XML
 ---
 
 {{< edit_this_page >}}

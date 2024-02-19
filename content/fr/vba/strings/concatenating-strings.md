@@ -1,14 +1,18 @@
 ---
-title:                "Concaténation de chaînes"
 aliases:
 - /fr/vba/concatenating-strings/
-date:                  2024-02-01T21:51:18.947942-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Concaténation de chaînes"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/vba/concatenating-strings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:18.947942-07:00
+description: "La concat\xE9nation dans Visual Basic pour Applications (VBA) consiste\
+  \ \xE0 joindre deux ou plusieurs cha\xEEnes de caract\xE8res en une seule entit\xE9\
+  . Ceci est une\u2026"
+lastmod: 2024-02-18 23:09:08.568605
+model: gpt-4-0125-preview
+summary: "La concat\xE9nation dans Visual Basic pour Applications (VBA) consiste \xE0\
+  \ joindre deux ou plusieurs cha\xEEnes de caract\xE8res en une seule entit\xE9.\
+  \ Ceci est une\u2026"
+title: "Concat\xE9nation de cha\xEEnes"
 ---
 
 {{< edit_this_page >}}

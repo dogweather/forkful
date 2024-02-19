@@ -1,14 +1,16 @@
 ---
-title:                "Escrevendo um arquivo de texto"
 aliases:
 - /pt/javascript/writing-a-text-file/
-date:                  2024-02-03T19:28:18.931963-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escrevendo um arquivo de texto"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:28:18.931963-07:00
+description: "Escrever um arquivo de texto em JavaScript geralmente est\xE1 relacionado\
+  \ a criar e salvar dados em um formato simples e leg\xEDvel para fins de registro\u2026"
+lastmod: 2024-02-18 23:08:58.550433
+model: gpt-4-0125-preview
+summary: "Escrever um arquivo de texto em JavaScript geralmente est\xE1 relacionado\
+  \ a criar e salvar dados em um formato simples e leg\xEDvel para fins de registro\u2026"
+title: Escrevendo um arquivo de texto
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Opprette en midlertidig fil"
 aliases:
 - /no/fish-shell/creating-a-temporary-file/
-date:                  2024-01-20T17:40:52.183395-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Opprette en midlertidig fil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:52.183395-07:00
+description: "Temporary files er midlertidige lagringssteder for data som kun trengs\
+  \ under kj\xF8ring av et script eller program. Disse brukes for \xE5 unng\xE5 \xE5\
+  \ forstyrre\u2026"
+lastmod: 2024-02-18 23:08:54.370357
+model: gpt-4-1106-preview
+summary: "Temporary files er midlertidige lagringssteder for data som kun trengs under\
+  \ kj\xF8ring av et script eller program. Disse brukes for \xE5 unng\xE5 \xE5 forstyrre\u2026"
+title: Opprette en midlertidig fil
 ---
 
 {{< edit_this_page >}}

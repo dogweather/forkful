@@ -1,13 +1,26 @@
 ---
-title:                "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
 aliases:
 - /hi/kotlin/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:56.724686-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:56.724686-07:00
+description: "String \u0915\u094B lower case \u092E\u0947\u0902 convert \u0915\u0930\
+  \u0928\u093E \u092E\u0924\u0932\u092C \u0909\u0938\u0915\u0947 \u0939\u0930 character\
+  \ \u0915\u094B \u091B\u094B\u091F\u0947 \u0905\u0915\u094D\u0937\u0930\u094B\u0902\
+  \ \u092E\u0947\u0902 \u092C\u0926\u0932\u0928\u093E \u0939\u0948\u0964 \u092F\u0939\
+  \ \u0915\u093E\u092E \u0905\u0915\u094D\u0938\u0930 \u0907\u0938\u0932\u093F\u090F\
+  \ \u0915\u093F\u092F\u093E \u091C\u093E\u0924\u093E \u0939\u0948 \u0924\u093E\u0915\
+  \u093F text \u0915\u0940 comparison uniform\u2026"
+lastmod: 2024-02-18 23:09:03.244644
+model: gpt-4-1106-preview
+summary: "String \u0915\u094B lower case \u092E\u0947\u0902 convert \u0915\u0930\u0928\
+  \u093E \u092E\u0924\u0932\u092C \u0909\u0938\u0915\u0947 \u0939\u0930 character\
+  \ \u0915\u094B \u091B\u094B\u091F\u0947 \u0905\u0915\u094D\u0937\u0930\u094B\u0902\
+  \ \u092E\u0947\u0902 \u092C\u0926\u0932\u0928\u093E \u0939\u0948\u0964 \u092F\u0939\
+  \ \u0915\u093E\u092E \u0905\u0915\u094D\u0938\u0930 \u0907\u0938\u0932\u093F\u090F\
+  \ \u0915\u093F\u092F\u093E \u091C\u093E\u0924\u093E \u0939\u0948 \u0924\u093E\u0915\
+  \u093F text \u0915\u0940 comparison uniform\u2026"
+title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u094B \u091B\u094B\
+  \u091F\u0947 \u0905\u0915\u094D\u0937\u0930\u094B\u0902 \u092E\u0947\u0902 \u092A\
+  \u0930\u093F\u0935\u0930\u094D\u0924\u093F\u0924 \u0915\u0930\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

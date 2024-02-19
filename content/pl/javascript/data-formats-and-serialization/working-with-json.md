@@ -1,14 +1,16 @@
 ---
-title:                "Praca z JSON"
 aliases:
 - /pl/javascript/working-with-json/
-date:                  2024-02-03T19:23:11.318015-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:11.318015-07:00
+description: "JSON (JavaScript Object Notation) to lekki format wymiany danych, \u0142\
+  atwy do odczytania i zapisania dla ludzi oraz do analizy i generowania dla maszyn.\u2026"
+lastmod: 2024-02-18 23:08:50.014642
+model: gpt-4-0125-preview
+summary: "JSON (JavaScript Object Notation) to lekki format wymiany danych, \u0142\
+  atwy do odczytania i zapisania dla ludzi oraz do analizy i generowania dla maszyn.\u2026"
+title: Praca z JSON
 ---
 
 {{< edit_this_page >}}

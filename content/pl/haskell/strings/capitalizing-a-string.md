@@ -1,14 +1,18 @@
 ---
-title:                "Zamiana liter na wielkie w łańcuchu znaków"
 aliases:
 - /pl/haskell/capitalizing-a-string/
-date:                  2024-02-03T19:05:26.277432-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zamiana liter na wielkie w łańcuchu znaków"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:26.277432-07:00
+description: "Capitalizacja ci\u0105gu polega na przekszta\u0142ceniu pierwszej litery\
+  \ danego ci\u0105gu na wielk\u0105 liter\u0119, przy jednoczesnym zapewnieniu, \u017C\
+  e reszta liter pozostanie\u2026"
+lastmod: 2024-02-18 23:08:49.637261
+model: gpt-4-0125-preview
+summary: "Capitalizacja ci\u0105gu polega na przekszta\u0142ceniu pierwszej litery\
+  \ danego ci\u0105gu na wielk\u0105 liter\u0119, przy jednoczesnym zapewnieniu, \u017C\
+  e reszta liter pozostanie\u2026"
+title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

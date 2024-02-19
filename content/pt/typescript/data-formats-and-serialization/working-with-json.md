@@ -1,14 +1,17 @@
 ---
-title:                "Trabalhando com JSON"
 aliases:
 - /pt/typescript/working-with-json/
-date:                  2024-02-03T19:24:30.577599-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:24:30.577599-07:00
+description: "Trabalhar com JSON (JavaScript Object Notation) envolve analisar dados\
+  \ JSON para e de um formato utiliz\xE1vel em TypeScript. Programadores fazem isso\
+  \ para\u2026"
+lastmod: 2024-02-18 23:08:57.906965
+model: gpt-4-0125-preview
+summary: "Trabalhar com JSON (JavaScript Object Notation) envolve analisar dados JSON\
+  \ para e de um formato utiliz\xE1vel em TypeScript. Programadores fazem isso para\u2026"
+title: Trabalhando com JSON
 ---
 
 {{< edit_this_page >}}

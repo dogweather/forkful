@@ -1,16 +1,19 @@
 ---
-title:                "Obtendo a data atual"
 aliases:
 - /pt/elixir/getting-the-current-date/
-date:                  2024-02-03T19:09:25.137812-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Obtendo a data atual"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
-  - 2024-02-05, dogweather, reviewed and corrected
-lastmod:              2024-02-05
+- 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-05, dogweather, reviewed and corrected
+date: 2024-02-03 19:09:25.137812-07:00
+description: "Obter a data atual em Elixir envolve acessar as informa\xE7\xF5es de\
+  \ data e hora do sistema, uma tarefa comum para registro em log, marca\xE7\xE3o\
+  \ de data ou qualquer\u2026"
+lastmod: 2024-02-18 23:08:57.854191
+model: gpt-4-0125-preview
+summary: "Obter a data atual em Elixir envolve acessar as informa\xE7\xF5es de data\
+  \ e hora do sistema, uma tarefa comum para registro em log, marca\xE7\xE3o de data\
+  \ ou qualquer\u2026"
+title: Obtendo a data atual
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Att Arbeta med JSON"
 aliases:
 - /sv/go/working-with-json/
-date:                  2024-02-03T18:12:11.366892-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att Arbeta med JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:12:11.366892-07:00
+description: "Att arbeta med JSON (JavaScript Object Notation) i Go inneb\xE4r att\
+  \ koda om och avkoda data mellan Go datastrukturer och JSON-format. Denna uppgift\
+  \ \xE4r\u2026"
+lastmod: 2024-02-18 23:08:51.355773
+model: gpt-4-0125-preview
+summary: "Att arbeta med JSON (JavaScript Object Notation) i Go inneb\xE4r att koda\
+  \ om och avkoda data mellan Go datastrukturer och JSON-format. Denna uppgift \xE4\
+  r\u2026"
+title: Att Arbeta med JSON
 ---
 
 {{< edit_this_page >}}

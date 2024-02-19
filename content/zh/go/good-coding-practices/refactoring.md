@@ -1,14 +1,26 @@
 ---
-title:                "重构"
 aliases:
 - /zh/go/refactoring/
-date:                  2024-02-03T18:07:08.531977-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "重构"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/refactoring.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:08.531977-07:00
+description: "\u7F16\u7A0B\u4E2D\u7684\u91CD\u6784\u6D89\u53CA\u91CD\u7EC4\u73B0\u6709\
+  \u7684\u8BA1\u7B97\u673A\u4EE3\u7801\u2014\u2014\u6539\u53D8\u4EE3\u7801\u7684\u6784\
+  \u9020\u2014\u2014\u800C\u4E0D\u6539\u53D8\u5176\u5916\u90E8\u884C\u4E3A\u3002\u7A0B\
+  \u5E8F\u5458\u8FDB\u884C\u8FD9\u4E00\u8FC7\u7A0B\u4EE5\u63D0\u9AD8\u4EE3\u7801\u7684\
+  \u53EF\u8BFB\u6027\u3001\u964D\u4F4E\u590D\u6742\u6027\u5E76\u589E\u5F3A\u53EF\u7EF4\
+  \u62A4\u6027\uFF0C\u6700\u7EC8\u4F7F\u8F6F\u4EF6\u66F4\u5BB9\u6613\u7406\u89E3\u548C\
+  \u4FEE\u6539\u3002"
+lastmod: 2024-02-18 23:08:58.716431
+model: gpt-4-0125-preview
+summary: "\u7F16\u7A0B\u4E2D\u7684\u91CD\u6784\u6D89\u53CA\u91CD\u7EC4\u73B0\u6709\
+  \u7684\u8BA1\u7B97\u673A\u4EE3\u7801\u2014\u2014\u6539\u53D8\u4EE3\u7801\u7684\u6784\
+  \u9020\u2014\u2014\u800C\u4E0D\u6539\u53D8\u5176\u5916\u90E8\u884C\u4E3A\u3002\u7A0B\
+  \u5E8F\u5458\u8FDB\u884C\u8FD9\u4E00\u8FC7\u7A0B\u4EE5\u63D0\u9AD8\u4EE3\u7801\u7684\
+  \u53EF\u8BFB\u6027\u3001\u964D\u4F4E\u590D\u6742\u6027\u5E76\u589E\u5F3A\u53EF\u7EF4\
+  \u62A4\u6027\uFF0C\u6700\u7EC8\u4F7F\u8F6F\u4EF6\u66F4\u5BB9\u6613\u7406\u89E3\u548C\
+  \u4FEE\u6539\u3002"
+title: "\u91CD\u6784"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Starting a new project"
 aliases:
 - /en/rust/starting-a-new-project/
-date:                  2024-01-20T18:04:28.935864-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Starting a new project"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/starting-a-new-project.md"
+date: 2024-01-20 18:04:28.935864-07:00
+description: "Starting a new project in Rust means setting up a basic structure so\
+  \ your code has a place to live. Programmers kick off new projects to solve problems,\u2026"
+lastmod: 2024-02-18 23:09:10.849225
+model: gpt-4-1106-preview
+summary: "Starting a new project in Rust means setting up a basic structure so your\
+  \ code has a place to live. Programmers kick off new projects to solve problems,\u2026"
+title: Starting a new project
 ---
 
 {{< edit_this_page >}}

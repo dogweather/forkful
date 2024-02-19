@@ -1,13 +1,14 @@
 ---
-title:                "Sending an HTTP request"
 aliases:
 - /en/swift/sending-an-http-request/
-date:                  2024-01-20T18:01:01.729578-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sending an HTTP request"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/sending-an-http-request.md"
+date: 2024-01-20 18:01:01.729578-07:00
+description: "Sending an HTTP request is about knocking on a web server's door, asking\
+  \ for data or serving some. Programmers do it to interact with APIs, download\u2026"
+lastmod: 2024-02-18 23:09:11.393577
+model: gpt-4-1106-preview
+summary: "Sending an HTTP request is about knocking on a web server's door, asking\
+  \ for data or serving some. Programmers do it to interact with APIs, download\u2026"
+title: Sending an HTTP request
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Lukujen pyöristäminen"
 aliases:
 - /fi/vba/rounding-numbers/
-date:                  2024-02-01T22:02:17.890727-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lukujen pyöristäminen"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/rounding-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:02:17.890727-07:00
+description: "Numeroiden py\xF6rist\xE4minen ohjelmoinnissa tarkoittaa numeron likim\xE4\
+  \xE4r\xE4ist\xE4 py\xF6rist\xE4mist\xE4 l\xE4himp\xE4\xE4n kokonaislukuun tai tiettyyn\
+  \ desimaalipaikkojen m\xE4\xE4r\xE4\xE4n.\u2026"
+lastmod: 2024-02-18 23:09:07.404648
+model: gpt-4-0125-preview
+summary: "Numeroiden py\xF6rist\xE4minen ohjelmoinnissa tarkoittaa numeron likim\xE4\
+  \xE4r\xE4ist\xE4 py\xF6rist\xE4mist\xE4 l\xE4himp\xE4\xE4n kokonaislukuun tai tiettyyn\
+  \ desimaalipaikkojen m\xE4\xE4r\xE4\xE4n.\u2026"
+title: "Lukujen py\xF6rist\xE4minen"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Deleting characters matching a pattern"
 aliases:
 - /en/cpp/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:34.742692-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Deleting characters matching a pattern"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:34.742692-07:00
+description: "Deleting characters matching a pattern means stripping out specific\
+  \ sequences from a string. Programmers do this for cleanup, data formatting, or\
+  \ to meet\u2026"
+lastmod: 2024-02-18 23:09:11.339949
+model: gpt-4-1106-preview
+summary: "Deleting characters matching a pattern means stripping out specific sequences\
+  \ from a string. Programmers do this for cleanup, data formatting, or to meet\u2026"
+title: Deleting characters matching a pattern
 ---
 
 {{< edit_this_page >}}

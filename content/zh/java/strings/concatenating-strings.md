@@ -1,14 +1,21 @@
 ---
-title:                "字符串拼接"
 aliases:
 - /zh/java/concatenating-strings/
-date:                  2024-01-20T17:35:07.995034-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "字符串拼接"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/concatenating-strings.md"
+date: 2024-01-20 17:35:07.995034-07:00
+description: "\u5B57\u7B26\u4E32\u8FDE\u63A5\u5C31\u662F\u5C06\u4E24\u4E2A\u6216\u591A\
+  \u4E2A\u5B57\u7B26\u4E32\u62FC\u63A5\u6210\u4E00\u4E2A\u3002\u7A0B\u5E8F\u5458\u8FD9\
+  \u4E48\u505A\u662F\u4E3A\u4E86\u5408\u6210\u590D\u6742\u7684\u4FE1\u606F\uFF0C\u6216\
+  \u662F\u5C06\u6570\u636E\u6574\u7406\u6210\u6613\u4E8E\u9605\u8BFB\u548C\u5904\u7406\
+  \u7684\u683C\u5F0F\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.013760
+model: gpt-4-1106-preview
+summary: "\u5B57\u7B26\u4E32\u8FDE\u63A5\u5C31\u662F\u5C06\u4E24\u4E2A\u6216\u591A\
+  \u4E2A\u5B57\u7B26\u4E32\u62FC\u63A5\u6210\u4E00\u4E2A\u3002\u7A0B\u5E8F\u5458\u8FD9\
+  \u4E48\u505A\u662F\u4E3A\u4E86\u5408\u6210\u590D\u6742\u7684\u4FE1\u606F\uFF0C\u6216\
+  \u662F\u5C06\u6570\u636E\u6574\u7406\u6210\u6613\u4E8E\u9605\u8BFB\u548C\u5904\u7406\
+  \u7684\u683C\u5F0F\u3002"
+title: "\u5B57\u7B26\u4E32\u62FC\u63A5"
 ---
 
 {{< edit_this_page >}}

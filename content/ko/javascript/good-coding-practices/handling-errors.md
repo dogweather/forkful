@@ -1,13 +1,26 @@
 ---
-title:                "에러 처리하기"
 aliases:
 - /ko/javascript/handling-errors/
-date:                  2024-01-26T00:55:38.897077-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "에러 처리하기"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/handling-errors.md"
+date: 2024-01-26 00:55:38.897077-07:00
+description: "\uC5D0\uB7EC \uCC98\uB9AC(Error handling)\uB780 \uCF54\uB4DC\uAC00 \uC608\
+  \uC0C1\uCE58 \uBABB\uD55C \uBC29\uD5A5\uC73C\uB85C \uD758\uB7EC\uAC14\uC744 \uB54C\
+  \ \uC774\uB97C \uAD00\uB9AC\uD558\uB294 \uBC29\uBC95\uC785\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB7A8\uC774 \uC6B0\uC544\uD558\uAC8C \uC2E4\uD328(fail gracefully)\uD558\uB3C4\
+  \uB85D \uB3D5\uACE0 \uC0AC\uC6A9\uC790\uC5D0\uAC8C \uBA85\uD655\uD55C \uC9C0\uC2DC\
+  \uC0AC\uD56D\uC744 \uC81C\uACF5\uD558\uAE30 \uB54C\uBB38\uC5D0 \uC911\uC694\uD569\
+  \uB2C8\uB2E4. \uADF8\uB0E5 \uCDA9\uB3CC\uD558\uACE0 \uBD88\uD0C0\uB294 \uB300\uC2E0\
+  \ \uB9D0\uC774\uC8E0."
+lastmod: 2024-02-18 23:09:06.824337
+model: gpt-4-1106-preview
+summary: "\uC5D0\uB7EC \uCC98\uB9AC(Error handling)\uB780 \uCF54\uB4DC\uAC00 \uC608\
+  \uC0C1\uCE58 \uBABB\uD55C \uBC29\uD5A5\uC73C\uB85C \uD758\uB7EC\uAC14\uC744 \uB54C\
+  \ \uC774\uB97C \uAD00\uB9AC\uD558\uB294 \uBC29\uBC95\uC785\uB2C8\uB2E4. \uD504\uB85C\
+  \uADF8\uB7A8\uC774 \uC6B0\uC544\uD558\uAC8C \uC2E4\uD328(fail gracefully)\uD558\uB3C4\
+  \uB85D \uB3D5\uACE0 \uC0AC\uC6A9\uC790\uC5D0\uAC8C \uBA85\uD655\uD55C \uC9C0\uC2DC\
+  \uC0AC\uD56D\uC744 \uC81C\uACF5\uD558\uAE30 \uB54C\uBB38\uC5D0 \uC911\uC694\uD569\
+  \uB2C8\uB2E4. \uADF8\uB0E5 \uCDA9\uB3CC\uD558\uACE0 \uBD88\uD0C0\uB294 \uB300\uC2E0\
+  \ \uB9D0\uC774\uC8E0."
+title: "\uC5D0\uB7EC \uCC98\uB9AC\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

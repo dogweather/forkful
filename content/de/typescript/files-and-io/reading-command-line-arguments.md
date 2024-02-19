@@ -1,13 +1,15 @@
 ---
-title:                "Lesen von Kommandozeilenargumenten"
 aliases:
 - /de/typescript/reading-command-line-arguments/
-date:                  2024-01-20T17:57:09.140786-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lesen von Kommandozeilenargumenten"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/reading-command-line-arguments.md"
+date: 2024-01-20 17:57:09.140786-07:00
+description: "Kommandozeilenargumente sind die Parameter, die einem Programm \xFC\
+  bergeben werden, wenn es gestartet wird. Programmierer nutzen sie, um das Verhalten\
+  \ ihrer\u2026"
+lastmod: 2024-02-18 23:09:04.612961
+model: gpt-4-1106-preview
+summary: "Kommandozeilenargumente sind die Parameter, die einem Programm \xFCbergeben\
+  \ werden, wenn es gestartet wird. Programmierer nutzen sie, um das Verhalten ihrer\u2026"
+title: Lesen von Kommandozeilenargumenten
 ---
 
 {{< edit_this_page >}}

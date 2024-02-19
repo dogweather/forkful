@@ -1,14 +1,17 @@
 ---
-title:                "Obtenir la date actuelle"
 aliases:
 - /fr/go/getting-the-current-date/
-date:                  2024-02-03T17:57:36.146722-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Obtenir la date actuelle"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:36.146722-07:00
+description: "Obtenir la date actuelle en Go est une t\xE2che fondamentale pour les\
+  \ programmeurs, au m\xEAme titre que \"Hello, World!\" en raison de son omnipr\xE9\
+  sence. C'est\u2026"
+lastmod: 2024-02-18 23:09:08.247564
+model: gpt-4-0125-preview
+summary: "Obtenir la date actuelle en Go est une t\xE2che fondamentale pour les programmeurs,\
+  \ au m\xEAme titre que \"Hello, World!\" en raison de son omnipr\xE9sence. C'est\u2026"
+title: Obtenir la date actuelle
 ---
 
 {{< edit_this_page >}}

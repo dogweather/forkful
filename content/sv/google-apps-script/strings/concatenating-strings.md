@@ -1,14 +1,18 @@
 ---
-title:                "Konkatenering av strängar"
 aliases:
 - /sv/google-apps-script/concatenating-strings/
-date:                  2024-02-01T21:50:25.823031-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Konkatenering av strängar"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/google-apps-script/concatenating-strings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:25.823031-07:00
+description: "Att konkatenera str\xE4ngar inneb\xE4r att kombinera tv\xE5 eller flera\
+  \ str\xE4ngar till en enda str\xE4ng. Programmerare g\xF6r detta f\xF6r att dynamiskt\
+  \ konstruera\u2026"
+lastmod: 2024-02-18 23:08:51.369755
+model: gpt-4-0125-preview
+summary: "Att konkatenera str\xE4ngar inneb\xE4r att kombinera tv\xE5 eller flera\
+  \ str\xE4ngar till en enda str\xE4ng. Programmerare g\xF6r detta f\xF6r att dynamiskt\
+  \ konstruera\u2026"
+title: "Konkatenering av str\xE4ngar"
 ---
 
 {{< edit_this_page >}}

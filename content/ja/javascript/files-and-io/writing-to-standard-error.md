@@ -1,14 +1,14 @@
 ---
-title:                "標準エラーへの書き込み"
 aliases:
 - /ja/javascript/writing-to-standard-error/
-date:                  2024-02-03T19:33:39.756639-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "標準エラーへの書き込み"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:33:39.756639-07:00
+description: "\u2026"
+lastmod: 2024-02-18 23:08:55.284117
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u6A19\u6E96\u30A8\u30E9\u30FC\u3078\u306E\u66F8\u304D\u8FBC\u307F"
 ---
 
 {{< edit_this_page >}}

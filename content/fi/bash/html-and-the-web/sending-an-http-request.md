@@ -1,13 +1,16 @@
 ---
-title:                "HTTP-pyynnön lähettäminen"
 aliases:
 - /fi/bash/sending-an-http-request/
-date:                  2024-01-20T17:59:15.006325-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-pyynnön lähettäminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/sending-an-http-request.md"
+date: 2024-01-20 17:59:15.006325-07:00
+description: "HTTP-pyynt\xF6 on verkkoresurssin (yleens\xE4 web-sivun tai API:n) hakemiskutsu.\
+  \ Ohjelmoijat l\xE4hett\xE4v\xE4t n\xE4it\xE4 pyynt\xF6j\xE4 tietojen noutamiseksi,\
+  \ l\xE4hett\xE4miseksi,\u2026"
+lastmod: 2024-02-18 23:09:07.801190
+model: gpt-4-1106-preview
+summary: "HTTP-pyynt\xF6 on verkkoresurssin (yleens\xE4 web-sivun tai API:n) hakemiskutsu.\
+  \ Ohjelmoijat l\xE4hett\xE4v\xE4t n\xE4it\xE4 pyynt\xF6j\xE4 tietojen noutamiseksi,\
+  \ l\xE4hett\xE4miseksi,\u2026"
+title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 ---
 
 {{< edit_this_page >}}

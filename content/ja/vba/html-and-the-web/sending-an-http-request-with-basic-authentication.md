@@ -1,14 +1,15 @@
 ---
-title:                "基本認証を用いたHTTPリクエストの送信"
 aliases:
 - /ja/vba/sending-an-http-request-with-basic-authentication/
-date:                  2024-02-01T22:02:51.315074-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "基本認証を用いたHTTPリクエストの送信"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/vba/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:02:51.315074-07:00
+description: "Visual Basic for\u2026"
+lastmod: 2024-02-18 23:08:54.760420
+model: gpt-4-0125-preview
+summary: "Visual Basic for\u2026"
+title: "\u57FA\u672C\u8A8D\u8A3C\u3092\u7528\u3044\u305FHTTP\u30EA\u30AF\u30A8\u30B9\
+  \u30C8\u306E\u9001\u4FE1"
 ---
 
 {{< edit_this_page >}}

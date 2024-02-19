@@ -1,13 +1,14 @@
 ---
-title:                "Removing quotes from a string"
 aliases:
 - /en/rust/removing-quotes-from-a-string/
-date:                  2024-01-25T20:50:00.647365-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Removing quotes from a string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/removing-quotes-from-a-string.md"
+date: 2024-01-25 20:50:00.647365-07:00
+description: "Removing quotes from a string in Rust is about stripping away unnecessary\
+  \ extra quote characters that might be wrapped around your text data. Programmers\u2026"
+lastmod: 2024-02-18 23:09:10.836871
+model: gpt-4-1106-preview
+summary: "Removing quotes from a string in Rust is about stripping away unnecessary\
+  \ extra quote characters that might be wrapped around your text data. Programmers\u2026"
+title: Removing quotes from a string
 ---
 
 {{< edit_this_page >}}

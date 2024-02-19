@@ -1,13 +1,14 @@
 ---
-title:                "Lavorare con i numeri complessi"
 aliases:
 - /it/cpp/working-with-complex-numbers/
-date:                  2024-01-26T04:37:49.451948-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con i numeri complessi"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/working-with-complex-numbers.md"
+date: 2024-01-26 04:37:49.451948-07:00
+description: "I numeri complessi estendono i numeri reali aggiungendo un'unit\xE0\
+  \ immaginaria, rappresentata come 'i', dove i^2 = -1. I programmatori li usano per\u2026"
+lastmod: 2024-02-18 23:08:56.166823
+model: gpt-4-0125-preview
+summary: "I numeri complessi estendono i numeri reali aggiungendo un'unit\xE0 immaginaria,\
+  \ rappresentata come 'i', dove i^2 = -1. I programmatori li usano per\u2026"
+title: Lavorare con i numeri complessi
 ---
 
 {{< edit_this_page >}}

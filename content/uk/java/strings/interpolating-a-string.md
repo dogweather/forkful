@@ -1,13 +1,16 @@
 ---
-title:                "Інтерполяція рядків"
 aliases:
 - /uk/java/interpolating-a-string/
-date:                  2024-01-20T17:51:18.282491-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Інтерполяція рядків"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/java/interpolating-a-string.md"
+date: 2024-01-20 17:51:18.282491-07:00
+description: "Interpolating a string means splicing variables into text. We do it\
+  \ to build dynamic strings \u2013 think personalized messages or live data displays\
+  \ in your\u2026"
+lastmod: 2024-02-18 23:09:00.095971
+model: gpt-4-1106-preview
+summary: "Interpolating a string means splicing variables into text. We do it to build\
+  \ dynamic strings \u2013 think personalized messages or live data displays in your\u2026"
+title: "\u0406\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0456\u044F \u0440\
+  \u044F\u0434\u043A\u0456\u0432"
 ---
 
 {{< edit_this_page >}}

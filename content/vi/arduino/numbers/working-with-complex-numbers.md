@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với số phức"
 aliases:
 - /vi/arduino/working-with-complex-numbers/
-date:                  2024-01-28T22:12:20.770940-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với số phức"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/working-with-complex-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:20.770940-07:00
+description: "S\u1ED1 ph\u1EE9c c\xF3 m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u1ED9t\
+  \ ph\u1EA7n \u1EA3o, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c vi\u1EBFt l\xE0 `a + bi`.\
+  \ Ch\xFAng r\u1EA5t quan tr\u1ECDng cho m\u1ED9t s\u1ED1 d\u1EF1 \xE1n Arduino n\u1EB7\
+  ng v\u1EC1 to\xE1n h\u1ECDc li\xEAn quan \u0111\u1EBFn x\u1EED l\xFD\u2026"
+lastmod: 2024-02-18 23:08:50.993395
+model: gpt-4-0125-preview
+summary: "S\u1ED1 ph\u1EE9c c\xF3 m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u1ED9t ph\u1EA7\
+  n \u1EA3o, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c vi\u1EBFt l\xE0 `a + bi`. Ch\xFA\
+  ng r\u1EA5t quan tr\u1ECDng cho m\u1ED9t s\u1ED1 d\u1EF1 \xE1n Arduino n\u1EB7ng\
+  \ v\u1EC1 to\xE1n h\u1ECDc li\xEAn quan \u0111\u1EBFn x\u1EED l\xFD\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 ---
 
 {{< edit_this_page >}}

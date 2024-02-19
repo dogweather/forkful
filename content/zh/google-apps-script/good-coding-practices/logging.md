@@ -1,14 +1,26 @@
 ---
-title:                "日志记录"
 aliases:
 - /zh/google-apps-script/logging/
-date:                  2024-02-01T21:56:15.013458-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "日志记录"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/google-apps-script/logging.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:56:15.013458-07:00
+description: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u65E5\u5FD7\u8BB0\u5F55\u6D89\u53CA\u5728\
+  \u8FD0\u884C\u65F6\u8BB0\u5F55\u4E8B\u4EF6\u3001\u9519\u8BEF\u6216\u503C\u5F97\u6CE8\
+  \u610F\u7684\u53D1\u751F\u60C5\u51B5\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\
+  \u4E3A\u4E86\u8C03\u8BD5\u95EE\u9898\u3001\u76D1\u63A7\u6027\u80FD\u4EE5\u53CA\u4FDD\
+  \u7559\u64CD\u4F5C\u6570\u636E\u7684\u8BB0\u5F55\uFF0C\u8FD9\u5BF9\u4E8E\u7EF4\u62A4\
+  \u548C\u7406\u89E3\u751F\u4EA7\u4E2D\u8F6F\u4EF6\u7684\u884C\u4E3A\u81F3\u5173\u91CD\
+  \u8981\u3002"
+lastmod: 2024-02-18 23:08:58.756993
+model: gpt-4-0125-preview
+summary: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u65E5\u5FD7\u8BB0\u5F55\u6D89\u53CA\u5728\
+  \u8FD0\u884C\u65F6\u8BB0\u5F55\u4E8B\u4EF6\u3001\u9519\u8BEF\u6216\u503C\u5F97\u6CE8\
+  \u610F\u7684\u53D1\u751F\u60C5\u51B5\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\
+  \u4E3A\u4E86\u8C03\u8BD5\u95EE\u9898\u3001\u76D1\u63A7\u6027\u80FD\u4EE5\u53CA\u4FDD\
+  \u7559\u64CD\u4F5C\u6570\u636E\u7684\u8BB0\u5F55\uFF0C\u8FD9\u5BF9\u4E8E\u7EF4\u62A4\
+  \u548C\u7406\u89E3\u751F\u4EA7\u4E2D\u8F6F\u4EF6\u7684\u884C\u4E3A\u81F3\u5173\u91CD\
+  \u8981\u3002"
+title: "\u65E5\u5FD7\u8BB0\u5F55"
 ---
 
 {{< edit_this_page >}}

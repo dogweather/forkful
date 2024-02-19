@@ -1,13 +1,15 @@
 ---
-title:                "Comparando duas datas"
 aliases:
 - /pt/php/comparing-two-dates/
-date:                  2024-01-20T17:33:26.692030-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Comparando duas datas"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/comparing-two-dates.md"
+date: 2024-01-20 17:33:26.692030-07:00
+description: "Comparar duas datas \xE9 o processo de avaliar a diferen\xE7a entre\
+  \ elas ou determinar qual precede a outra. Programadores fazem isso para manipular\
+  \ eventos\u2026"
+lastmod: 2024-02-18 23:08:58.253269
+model: gpt-4-1106-preview
+summary: "Comparar duas datas \xE9 o processo de avaliar a diferen\xE7a entre elas\
+  \ ou determinar qual precede a outra. Programadores fazem isso para manipular eventos\u2026"
+title: Comparando duas datas
 ---
 
 {{< edit_this_page >}}

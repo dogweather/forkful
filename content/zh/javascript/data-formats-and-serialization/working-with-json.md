@@ -1,14 +1,24 @@
 ---
-title:                "使用JSON进行编程"
 aliases:
 - /zh/javascript/working-with-json/
-date:                  2024-02-03T19:23:26.887828-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用JSON进行编程"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:26.887828-07:00
+description: "JSON\uFF08JavaScript \u5BF9\u8C61\u8868\u793A\u6CD5\uFF09\u662F\u4E00\
+  \u79CD\u8F7B\u91CF\u7EA7\u7684\u6570\u636E\u4EA4\u6362\u683C\u5F0F\uFF0C\u6613\u4E8E\
+  \u4EBA\u9605\u8BFB\u548C\u7F16\u5199\uFF0C\u4E5F\u4FBF\u4E8E\u673A\u5668\u89E3\u6790\
+  \u548C\u751F\u6210\u3002\u7A0B\u5E8F\u5458\u7528\u5B83\u6765\u5B58\u50A8\u548C\u4F20\
+  \u8F93\u7F51\u7EDC\u5E94\u7528\u4E2D\u7684\u6570\u636E\uFF0C\u4F7F\u5176\u6210\u4E3A\
+  \u73B0\u4EE3 API \u548C\u7F51\u7EDC\u670D\u52A1\u901A\u4FE1\u7684\u652F\u67F1\u3002"
+lastmod: 2024-02-18 23:08:59.498841
+model: gpt-4-0125-preview
+summary: "JSON\uFF08JavaScript \u5BF9\u8C61\u8868\u793A\u6CD5\uFF09\u662F\u4E00\u79CD\
+  \u8F7B\u91CF\u7EA7\u7684\u6570\u636E\u4EA4\u6362\u683C\u5F0F\uFF0C\u6613\u4E8E\u4EBA\
+  \u9605\u8BFB\u548C\u7F16\u5199\uFF0C\u4E5F\u4FBF\u4E8E\u673A\u5668\u89E3\u6790\u548C\
+  \u751F\u6210\u3002\u7A0B\u5E8F\u5458\u7528\u5B83\u6765\u5B58\u50A8\u548C\u4F20\u8F93\
+  \u7F51\u7EDC\u5E94\u7528\u4E2D\u7684\u6570\u636E\uFF0C\u4F7F\u5176\u6210\u4E3A\u73B0\
+  \u4EE3 API \u548C\u7F51\u7EDC\u670D\u52A1\u901A\u4FE1\u7684\u652F\u67F1\u3002"
+title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 ---
 
 {{< edit_this_page >}}

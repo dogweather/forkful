@@ -1,14 +1,21 @@
 ---
-title:                "搜索和替换文本"
 aliases:
 - /zh/lua/searching-and-replacing-text/
-date:                  2024-01-20T17:58:21.760606-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "搜索和替换文本"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/lua/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:21.760606-07:00
+description: "\u641C\u7D22\u5E76\u66FF\u6362\u6587\u672C\u5C31\u662F\u627E\u5230\u5B57\
+  \u7B26\u4E32\u4E2D\u7279\u5B9A\u7684\u8BCD\u6C47\u5E76\u7528\u5176\u4ED6\u6587\u5B57\
+  \u66FF\u4EE3\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u4E3A\u4E86\u7F16\u8F91\u4EE3\
+  \u7801\u3001\u5904\u7406\u6570\u636E\u6216\u81EA\u52A8\u5316\u6587\u672C\u4EFB\u52A1\
+  \u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.240707
+model: gpt-4-1106-preview
+summary: "\u641C\u7D22\u5E76\u66FF\u6362\u6587\u672C\u5C31\u662F\u627E\u5230\u5B57\
+  \u7B26\u4E32\u4E2D\u7279\u5B9A\u7684\u8BCD\u6C47\u5E76\u7528\u5176\u4ED6\u6587\u5B57\
+  \u66FF\u4EE3\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u4E3A\u4E86\u7F16\u8F91\u4EE3\
+  \u7801\u3001\u5904\u7406\u6570\u636E\u6216\u81EA\u52A8\u5316\u6587\u672C\u4EFB\u52A1\
+  \u3002"
+title: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C"
 ---
 
 {{< edit_this_page >}}

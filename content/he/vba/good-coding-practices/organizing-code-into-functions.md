@@ -1,14 +1,31 @@
 ---
-title:                "ארגון קוד לתוך פונקציות"
 aliases:
 - /he/vba/organizing-code-into-functions/
-date:                  2024-02-01T21:57:07.532023-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "ארגון קוד לתוך פונקציות"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/vba/organizing-code-into-functions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:07.532023-07:00
+description: "\u05D0\u05E8\u05D2\u05D5\u05DF \u05D4\u05E7\u05D5\u05D3 \u05DC\u05EA\
+  \u05D5\u05DA \u05E4\u05D5\u05E0\u05E7\u05E6\u05D9\u05D5\u05EA \u05D1-Visual Basic\
+  \ for Applications (VBA) \u05DB\u05D5\u05DC\u05DC \u05E9\u05D1\u05D9\u05E8\u05D4\
+  \ \u05E9\u05DC \u05EA\u05D5\u05DB\u05E0\u05D9\u05EA \u05DC\u05D7\u05DC\u05E7\u05D9\
+  \u05DD \u05E7\u05D8\u05E0\u05D9\u05DD \u05D5\u05E0\u05D9\u05EA\u05E0\u05D9\u05DD\
+  \ \u05DC\u05E0\u05D9\u05D4\u05D5\u05DC \u05D4\u05D9\u05D3\u05D5\u05E2\u05D9\u05DD\
+  \ \u05DB\u05E4\u05D5\u05E0\u05E7\u05E6\u05D9\u05D5\u05EA. \u05DE\u05EA\u05DB\u05E0\
+  \u05EA\u05D9\u05DD \u05E2\u05D5\u05E9\u05D9\u05DD \u05D6\u05D0\u05EA \u05DB\u05D3\
+  \u05D9\u2026"
+lastmod: 2024-02-18 23:08:52.668082
+model: gpt-4-0125-preview
+summary: "\u05D0\u05E8\u05D2\u05D5\u05DF \u05D4\u05E7\u05D5\u05D3 \u05DC\u05EA\u05D5\
+  \u05DA \u05E4\u05D5\u05E0\u05E7\u05E6\u05D9\u05D5\u05EA \u05D1-Visual Basic for\
+  \ Applications (VBA) \u05DB\u05D5\u05DC\u05DC \u05E9\u05D1\u05D9\u05E8\u05D4 \u05E9\
+  \u05DC \u05EA\u05D5\u05DB\u05E0\u05D9\u05EA \u05DC\u05D7\u05DC\u05E7\u05D9\u05DD\
+  \ \u05E7\u05D8\u05E0\u05D9\u05DD \u05D5\u05E0\u05D9\u05EA\u05E0\u05D9\u05DD \u05DC\
+  \u05E0\u05D9\u05D4\u05D5\u05DC \u05D4\u05D9\u05D3\u05D5\u05E2\u05D9\u05DD \u05DB\
+  \u05E4\u05D5\u05E0\u05E7\u05E6\u05D9\u05D5\u05EA. \u05DE\u05EA\u05DB\u05E0\u05EA\
+  \u05D9\u05DD \u05E2\u05D5\u05E9\u05D9\u05DD \u05D6\u05D0\u05EA \u05DB\u05D3\u05D9\
+  \u2026"
+title: "\u05D0\u05E8\u05D2\u05D5\u05DF \u05E7\u05D5\u05D3 \u05DC\u05EA\u05D5\u05DA\
+  \ \u05E4\u05D5\u05E0\u05E7\u05E6\u05D9\u05D5\u05EA"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Визначення довжини рядка"
 aliases:
 - /uk/c-sharp/finding-the-length-of-a-string/
-date:                  2024-01-20T17:46:55.844354-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Визначення довжини рядка"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c-sharp/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:46:55.844354-07:00
+description: "Finding the length of a string means determining how many characters\
+  \ it contains. Programmers often need this to validate input, loop through characters,\u2026"
+lastmod: 2024-02-18 23:09:00.325945
+model: gpt-4-1106-preview
+summary: "Finding the length of a string means determining how many characters it\
+  \ contains. Programmers often need this to validate input, loop through characters,\u2026"
+title: "\u0412\u0438\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044F \u0434\u043E\u0432\
+  \u0436\u0438\u043D\u0438 \u0440\u044F\u0434\u043A\u0430"
 ---
 
 {{< edit_this_page >}}

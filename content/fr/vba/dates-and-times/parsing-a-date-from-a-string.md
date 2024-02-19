@@ -1,14 +1,17 @@
 ---
-title:                "Analyser une date à partir d'une chaîne de caractères"
 aliases:
 - /fr/vba/parsing-a-date-from-a-string/
-date:                  2024-02-01T21:57:36.661036-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analyser une date à partir d'une chaîne de caractères"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/vba/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:36.661036-07:00
+description: "L'analyse d'une date \xE0 partir d'une cha\xEEne en Visual Basic pour\
+  \ Applications (VBA) consiste \xE0 convertir un texte qui repr\xE9sente une date\
+  \ en un type de\u2026"
+lastmod: 2024-02-18 23:09:08.590311
+model: gpt-4-0125-preview
+summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne en Visual Basic pour Applications\
+  \ (VBA) consiste \xE0 convertir un texte qui repr\xE9sente une date en un type de\u2026"
+title: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

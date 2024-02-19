@@ -1,13 +1,16 @@
 ---
-title:                "Konwersja ciągu znaków na małe litery"
 aliases:
 - /pl/elm/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:07.856487-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konwersja ciągu znaków na małe litery"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:07.856487-07:00
+description: "Konwersja tekstu do ma\u0142ych liter polega na zmianie wszystkich wielkich\
+  \ liter w ci\u0105gu znak\xF3w na ich ma\u0142e odpowiedniki. Programi\u015Bci u\u017C\
+  ywaj\u0105 tej operacji, by\u2026"
+lastmod: 2024-02-18 23:08:49.506476
+model: gpt-4-1106-preview
+summary: "Konwersja tekstu do ma\u0142ych liter polega na zmianie wszystkich wielkich\
+  \ liter w ci\u0105gu znak\xF3w na ich ma\u0142e odpowiedniki. Programi\u015Bci u\u017C\
+  ywaj\u0105 tej operacji, by\u2026"
+title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 ---
 
 {{< edit_this_page >}}

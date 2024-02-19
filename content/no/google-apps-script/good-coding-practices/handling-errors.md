@@ -1,14 +1,18 @@
 ---
-title:                "Håndtering av feil"
 aliases:
 - /no/google-apps-script/handling-errors/
-date:                  2024-02-01T21:55:02.798996-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Håndtering av feil"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/google-apps-script/handling-errors.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:02.798996-07:00
+description: "Feilh\xE5ndtering i Google Apps Script handler om \xE5 forutse, fange\
+  \ opp, og svare p\xE5 unntak eller feil som oppst\xE5r under kj\xF8ring av skriptet.\
+  \ Programmerere\u2026"
+lastmod: 2024-02-18 23:08:53.489206
+model: gpt-4-0125-preview
+summary: "Feilh\xE5ndtering i Google Apps Script handler om \xE5 forutse, fange opp,\
+  \ og svare p\xE5 unntak eller feil som oppst\xE5r under kj\xF8ring av skriptet.\
+  \ Programmerere\u2026"
+title: "H\xE5ndtering av feil"
 ---
 
 {{< edit_this_page >}}

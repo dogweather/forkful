@@ -1,13 +1,16 @@
 ---
-title:                "Redondeo de números"
 aliases:
 - /es/clojure/rounding-numbers/
-date:                  2024-01-26T03:43:37.386810-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Redondeo de números"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/rounding-numbers.md"
+date: 2024-01-26 03:43:37.386810-07:00
+description: "Redondear n\xFAmeros trata de ajustar un n\xFAmero al entero m\xE1s\
+  \ cercano, o a una cierta precisi\xF3n decimal. Redondeamos los n\xFAmeros para\
+  \ simplificarlos para la\u2026"
+lastmod: 2024-02-18 23:09:09.597611
+model: gpt-4-0125-preview
+summary: "Redondear n\xFAmeros trata de ajustar un n\xFAmero al entero m\xE1s cercano,\
+  \ o a una cierta precisi\xF3n decimal. Redondeamos los n\xFAmeros para simplificarlos\
+  \ para la\u2026"
+title: "Redondeo de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Teilstrings extrahieren"
 aliases:
 - /de/python/extracting-substrings/
-date:                  2024-01-20T17:46:18.649037-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Teilstrings extrahieren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/extracting-substrings.md"
+date: 2024-01-20 17:46:18.649037-07:00
+description: "Das Herausziehen von Teilstrings (Substrings) hilft dabei, spezifische\
+  \ Daten aus gr\xF6\xDFeren Textmengen zu gewinnen. Programmierer nutzen diese Technik\u2026"
+lastmod: 2024-02-18 23:09:04.450529
+model: gpt-4-1106-preview
+summary: "Das Herausziehen von Teilstrings (Substrings) hilft dabei, spezifische Daten\
+  \ aus gr\xF6\xDFeren Textmengen zu gewinnen. Programmierer nutzen diese Technik\u2026"
+title: Teilstrings extrahieren
 ---
 
 {{< edit_this_page >}}

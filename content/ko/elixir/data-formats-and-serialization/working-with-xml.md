@@ -1,13 +1,22 @@
 ---
-title:                "XML 다루기"
 aliases:
 - /ko/elixir/working-with-xml/
-date:                  2024-01-26T04:30:04.375123-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML 다루기"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/working-with-xml.md"
+date: 2024-01-26 04:30:04.375123-07:00
+description: "\uC5D8\uB9AD\uC11C\uC5D0\uC11C XML\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740\
+  \ XML \uB370\uC774\uD130\uC758 \uD30C\uC2F1, \uC0DD\uC131, \uC870\uC791\uC744 \uC758\
+  \uBBF8\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC6F9 \uC11C\
+  \uBE44\uC2A4, \uC124\uC815 \uD30C\uC77C, \uADF8\uB9AC\uACE0 \uB808\uAC70\uC2DC \uC2DC\
+  \uC2A4\uD15C\uC5D0\uC11C \uB110\uB9AC \uC0AC\uC6A9\uB418\uAE30 \uB54C\uBB38\uC5D0\
+  \ XML\uC744 \uB2E4\uB8F9\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:05.793169
+model: gpt-4-0125-preview
+summary: "\uC5D8\uB9AD\uC11C\uC5D0\uC11C XML\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740\
+  \ XML \uB370\uC774\uD130\uC758 \uD30C\uC2F1, \uC0DD\uC131, \uC870\uC791\uC744 \uC758\
+  \uBBF8\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC6F9 \uC11C\
+  \uBE44\uC2A4, \uC124\uC815 \uD30C\uC77C, \uADF8\uB9AC\uACE0 \uB808\uAC70\uC2DC \uC2DC\
+  \uC2A4\uD15C\uC5D0\uC11C \uB110\uB9AC \uC0AC\uC6A9\uB418\uAE30 \uB54C\uBB38\uC5D0\
+  \ XML\uC744 \uB2E4\uB8F9\uB2C8\uB2E4."
+title: "XML \uB2E4\uB8E8\uAE30"
 ---
 
 {{< edit_this_page >}}

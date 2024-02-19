@@ -1,14 +1,16 @@
 ---
-title:                "Eliminazione dei caratteri corrispondenti a un pattern"
 aliases:
 - /it/go/deleting-characters-matching-a-pattern/
-date:                  2024-02-03T17:55:32.866535-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Eliminazione dei caratteri corrispondenti a un pattern"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:32.866535-07:00
+description: "Eliminare caratteri che corrispondono a un pattern specifico consiste\
+  \ nel rimuovere certi caratteri o sequenze di caratteri da stringhe, basandosi su\u2026"
+lastmod: 2024-02-18 23:08:55.415647
+model: gpt-4-0125-preview
+summary: "Eliminare caratteri che corrispondono a un pattern specifico consiste nel\
+  \ rimuovere certi caratteri o sequenze di caratteri da stringhe, basandosi su\u2026"
+title: Eliminazione dei caratteri corrispondenti a un pattern
 ---
 
 {{< edit_this_page >}}

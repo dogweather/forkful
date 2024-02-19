@@ -1,14 +1,24 @@
 ---
-title:                "使用JSON工作"
 aliases:
 - /zh/google-apps-script/working-with-json/
-date:                  2024-02-01T22:05:55.716976-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用JSON工作"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/google-apps-script/working-with-json.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:05:55.716976-07:00
+description: "JSON\uFF0C\u6216 JavaScript \u5BF9\u8C61\u8868\u793A\u6CD5\uFF0C\u662F\
+  \u4E00\u79CD\u7528\u4E8E\u5B58\u50A8\u548C\u4F20\u8F93\u6570\u636E\u7684\u8F7B\u91CF\
+  \u7EA7\u683C\u5F0F\uFF0C\u975E\u5E38\u9002\u5408\u670D\u52A1\u5668\u5230\u5BA2\u6237\
+  \u7AEF\u901A\u4FE1\u548C\u914D\u7F6E\u6587\u4EF6\u3002\u7A0B\u5E8F\u5458\u5728 Google\
+  \ Apps Script \u4E2D\u5229\u7528\u5B83\uFF0C\u56E0\u4E3A\u5B83\u5728\u8C37\u6B4C\
+  \u670D\u52A1\uFF08\u5982 Sheets, Docs,\u2026"
+lastmod: 2024-02-18 23:08:58.771934
+model: gpt-4-0125-preview
+summary: "JSON\uFF0C\u6216 JavaScript \u5BF9\u8C61\u8868\u793A\u6CD5\uFF0C\u662F\u4E00\
+  \u79CD\u7528\u4E8E\u5B58\u50A8\u548C\u4F20\u8F93\u6570\u636E\u7684\u8F7B\u91CF\u7EA7\
+  \u683C\u5F0F\uFF0C\u975E\u5E38\u9002\u5408\u670D\u52A1\u5668\u5230\u5BA2\u6237\u7AEF\
+  \u901A\u4FE1\u548C\u914D\u7F6E\u6587\u4EF6\u3002\u7A0B\u5E8F\u5458\u5728 Google\
+  \ Apps Script \u4E2D\u5229\u7528\u5B83\uFF0C\u56E0\u4E3A\u5B83\u5728\u8C37\u6B4C\
+  \u670D\u52A1\uFF08\u5982 Sheets, Docs,\u2026"
+title: "\u4F7F\u7528JSON\u5DE5\u4F5C"
 ---
 
 {{< edit_this_page >}}

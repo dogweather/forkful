@@ -1,14 +1,24 @@
 ---
-title:                "计算未来或过去的日期"
 aliases:
 - /zh/vba/calculating-a-date-in-the-future-or-past/
-date:                  2024-02-01T21:48:48.857672-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "计算未来或过去的日期"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:48:48.857672-07:00
+description: "\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u65E5\u671F\u6D89\u53CA\
+  \u5230\u786E\u5B9A\u4E00\u4E2A\u4E0E\u7ED9\u5B9A\u65E5\u671F\u76F8\u9694\u7279\u5B9A\
+  \u5929\u6570\u3001\u6708\u6570\u6216\u5E74\u6570\u7684\u65E5\u671F\u3002\u7A0B\u5E8F\
+  \u5458\u7ECF\u5E38\u9700\u8981\u8FD9\u9879\u529F\u80FD\u6765\u81EA\u52A8\u5316\u63D0\
+  \u9192\u3001\u8BA2\u9605\u3001\u5230\u671F\u65E5\u671F\u548C\u5404\u79CD\u5E94\u7528\
+  \u7A0B\u5E8F\u4E2D\u7684\u8BA1\u5212\u4EFB\u52A1\u3002"
+lastmod: 2024-02-18 23:08:58.994210
+model: gpt-4-0125-preview
+summary: "\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u65E5\u671F\u6D89\u53CA\
+  \u5230\u786E\u5B9A\u4E00\u4E2A\u4E0E\u7ED9\u5B9A\u65E5\u671F\u76F8\u9694\u7279\u5B9A\
+  \u5929\u6570\u3001\u6708\u6570\u6216\u5E74\u6570\u7684\u65E5\u671F\u3002\u7A0B\u5E8F\
+  \u5458\u7ECF\u5E38\u9700\u8981\u8FD9\u9879\u529F\u80FD\u6765\u81EA\u52A8\u5316\u63D0\
+  \u9192\u3001\u8BA2\u9605\u3001\u5230\u671F\u65E5\u671F\u548C\u5404\u79CD\u5E94\u7528\
+  \u7A0B\u5E8F\u4E2D\u7684\u8BA1\u5212\u4EFB\u52A1\u3002"
+title: "\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u65E5\u671F"
 ---
 
 {{< edit_this_page >}}

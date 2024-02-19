@@ -1,14 +1,30 @@
 ---
-title:                "HTML 파싱"
 aliases:
 - /ko/php/parsing-html/
-date:                  2024-02-03T19:12:49.120168-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML 파싱"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:49.120168-07:00
+description: "PHP\uC5D0\uC11C HTML\uC744 \uD30C\uC2F1\uD558\uB294 \uAC83\uC740 HTML\
+  \ \uBB38\uC11C\uC5D0\uC11C \uD2B9\uC815 \uC815\uBCF4\uB97C \uCD94\uCD9C\uD558\uB294\
+  \ \uACFC\uC815\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uAC1C\uBC1C\uC790\uB4E4\uC740 \uC774\
+  \ \uC791\uC5C5\uC744 \uB370\uC774\uD130 \uCD94\uCD9C \uC790\uB3D9\uD654, \uC6F9\
+  \ \uC2A4\uD06C\uB798\uD551 \uB610\uB294 \uB2E4\uC591\uD55C \uC6F9 \uD398\uC774\uC9C0\
+  \uC758 \uCF58\uD150\uCE20\uB97C \uC790\uC2E0\uC758 \uC560\uD50C\uB9AC\uCF00\uC774\
+  \uC158 \uB0B4\uC5D0\uC11C \uD1B5\uD569\uD558\uC5EC \uC218\uB3D9 \uAC1C\uC785 \uC5C6\
+  \uC774 \uAE30\uB2A5\uC744 \uD5A5\uC0C1\uC2DC\uD0A4\uAE30 \uC704\uD574 \uC218\uD589\
+  \uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.349310
+model: gpt-4-0125-preview
+summary: "PHP\uC5D0\uC11C HTML\uC744 \uD30C\uC2F1\uD558\uB294 \uAC83\uC740 HTML \uBB38\
+  \uC11C\uC5D0\uC11C \uD2B9\uC815 \uC815\uBCF4\uB97C \uCD94\uCD9C\uD558\uB294 \uACFC\
+  \uC815\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uAC1C\uBC1C\uC790\uB4E4\uC740 \uC774 \uC791\
+  \uC5C5\uC744 \uB370\uC774\uD130 \uCD94\uCD9C \uC790\uB3D9\uD654, \uC6F9 \uC2A4\uD06C\
+  \uB798\uD551 \uB610\uB294 \uB2E4\uC591\uD55C \uC6F9 \uD398\uC774\uC9C0\uC758 \uCF58\
+  \uD150\uCE20\uB97C \uC790\uC2E0\uC758 \uC560\uD50C\uB9AC\uCF00\uC774\uC158 \uB0B4\
+  \uC5D0\uC11C \uD1B5\uD569\uD558\uC5EC \uC218\uB3D9 \uAC1C\uC785 \uC5C6\uC774 \uAE30\
+  \uB2A5\uC744 \uD5A5\uC0C1\uC2DC\uD0A4\uAE30 \uC704\uD574 \uC218\uD589\uD569\uB2C8\
+  \uB2E4."
+title: "HTML \uD30C\uC2F1"
 ---
 
 {{< edit_this_page >}}

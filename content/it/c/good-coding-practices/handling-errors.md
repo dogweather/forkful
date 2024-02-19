@@ -1,14 +1,16 @@
 ---
-title:                "Gestione degli errori"
 aliases:
 - /it/c/handling-errors/
-date:                  2024-02-03T17:58:02.536018-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gestione degli errori"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/handling-errors.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:58:02.536018-07:00
+description: "Gestire gli errori in C comporta il rilevamento e la risposta a condizioni\
+  \ anomale che si verificano durante l'esecuzione del programma. I programmatori\u2026"
+lastmod: 2024-02-18 23:08:56.346389
+model: gpt-4-0125-preview
+summary: "Gestire gli errori in C comporta il rilevamento e la risposta a condizioni\
+  \ anomale che si verificano durante l'esecuzione del programma. I programmatori\u2026"
+title: Gestione degli errori
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Obsługa błędów"
 aliases:
 - /pl/python/handling-errors/
-date:                  2024-01-26T00:57:09.081207-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Obsługa błędów"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/handling-errors.md"
+date: 2024-01-26 00:57:09.081207-07:00
+description: "Obs\u0142uga b\u0142\u0119d\xF3w w Pythonie (lub w dowolnym j\u0119\
+  zyku programowania) wi\u0105\u017Ce si\u0119 z oczekiwaniem na nieoczekiwane \u2013\
+  \ to sztuka eleganckiego radzenia sobie, gdy w\u2026"
+lastmod: 2024-02-18 23:08:49.230112
+model: gpt-4-1106-preview
+summary: "Obs\u0142uga b\u0142\u0119d\xF3w w Pythonie (lub w dowolnym j\u0119zyku\
+  \ programowania) wi\u0105\u017Ce si\u0119 z oczekiwaniem na nieoczekiwane \u2013\
+  \ to sztuka eleganckiego radzenia sobie, gdy w\u2026"
+title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 ---
 
 {{< edit_this_page >}}

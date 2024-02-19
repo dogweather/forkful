@@ -1,14 +1,16 @@
 ---
-title:                "Att Arbeta med YAML"
 aliases:
 - /sv/arduino/working-with-yaml/
-date:                  2024-02-03T19:25:01.159986-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att Arbeta med YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:25:01.159986-07:00
+description: "YAML (YAML Ain't Markup Language) \xE4r en standard f\xF6r serialisering\
+  \ av data som \xE4r l\xE4sbar f\xF6r m\xE4nniskor och kan anv\xE4ndas f\xF6r konfigurationsfiler,\u2026"
+lastmod: 2024-02-18 23:08:52.063316
+model: gpt-4-0125-preview
+summary: "YAML (YAML Ain't Markup Language) \xE4r en standard f\xF6r serialisering\
+  \ av data som \xE4r l\xE4sbar f\xF6r m\xE4nniskor och kan anv\xE4ndas f\xF6r konfigurationsfiler,\u2026"
+title: Att Arbeta med YAML
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,26 @@
 ---
-title:                "处理CSV的工作"
 aliases:
 - /zh/go/working-with-csv/
-date:                  2024-02-03T18:11:40.675323-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "处理CSV的工作"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:11:40.675323-07:00
+description: "\u9017\u53F7\u5206\u9694\u503C\uFF08CSV\uFF09\u683C\u5F0F\u56E0\u5176\
+  \u7B80\u5355\u6027\u53CA\u4E0E\u5927\u591A\u6570\u7F16\u7A0B\u8BED\u8A00\uFF08\u5305\
+  \u62ECGo\uFF09\u7684\u6613\u96C6\u6210\u6027\u800C\u88AB\u5E7F\u6CDB\u7528\u4E8E\
+  \u6570\u636E\u4EA4\u6362\u3002\u7A0B\u5E8F\u5458\u7ECF\u5E38\u5904\u7406CSV\u6587\
+  \u4EF6\uFF0C\u7528\u4E8E\u6570\u636E\u8FC1\u79FB\u3001\u62A5\u544A\u751F\u6210\u6216\
+  \u6570\u636E\u5206\u6790\uFF0C\u8FD9\u4F7F\u5F97\u7406\u89E3CSV\u64CD\u4F5C\u5728\
+  \u8F6F\u4EF6\u5F00\u53D1\u5DE5\u5177\u7BB1\u4E2D\u81F3\u5173\u91CD\u8981\u3002"
+lastmod: 2024-02-18 23:08:58.729996
+model: gpt-4-0125-preview
+summary: "\u9017\u53F7\u5206\u9694\u503C\uFF08CSV\uFF09\u683C\u5F0F\u56E0\u5176\u7B80\
+  \u5355\u6027\u53CA\u4E0E\u5927\u591A\u6570\u7F16\u7A0B\u8BED\u8A00\uFF08\u5305\u62EC\
+  Go\uFF09\u7684\u6613\u96C6\u6210\u6027\u800C\u88AB\u5E7F\u6CDB\u7528\u4E8E\u6570\
+  \u636E\u4EA4\u6362\u3002\u7A0B\u5E8F\u5458\u7ECF\u5E38\u5904\u7406CSV\u6587\u4EF6\
+  \uFF0C\u7528\u4E8E\u6570\u636E\u8FC1\u79FB\u3001\u62A5\u544A\u751F\u6210\u6216\u6570\
+  \u636E\u5206\u6790\uFF0C\u8FD9\u4F7F\u5F97\u7406\u89E3CSV\u64CD\u4F5C\u5728\u8F6F\
+  \u4EF6\u5F00\u53D1\u5DE5\u5177\u7BB1\u4E2D\u81F3\u5173\u91CD\u8981\u3002"
+title: "\u5904\u7406CSV\u7684\u5DE5\u4F5C"
 ---
 
 {{< edit_this_page >}}

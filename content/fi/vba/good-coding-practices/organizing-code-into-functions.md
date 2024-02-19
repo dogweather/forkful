@@ -1,14 +1,18 @@
 ---
-title:                "Koodin järjestäminen funktioihin"
 aliases:
 - /fi/vba/organizing-code-into-functions/
-date:                  2024-02-01T21:56:48.087391-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Koodin järjestäminen funktioihin"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/organizing-code-into-functions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:56:48.087391-07:00
+description: "Koodin j\xE4rjest\xE4minen funktioihin Visual Basic for Applications\
+  \ (VBA) -ohjelmistossa tarkoittaa ohjelman pilkkomista pienempiin, hallittaviin\
+  \ osiin, joita\u2026"
+lastmod: 2024-02-18 23:09:07.417344
+model: gpt-4-0125-preview
+summary: "Koodin j\xE4rjest\xE4minen funktioihin Visual Basic for Applications (VBA)\
+  \ -ohjelmistossa tarkoittaa ohjelman pilkkomista pienempiin, hallittaviin osiin,\
+  \ joita\u2026"
+title: "Koodin j\xE4rjest\xE4minen funktioihin"
 ---
 
 {{< edit_this_page >}}

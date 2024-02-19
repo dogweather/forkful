@@ -1,15 +1,18 @@
 ---
-title:                "Bruke associative tabeller"
 aliases:
 - /no/swift/using-associative-arrays/
-date:                  2024-01-30T19:13:30.968796-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke associative tabeller"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:13:30.968796-07:00
+description: "Assosiative tabeller, kjent som ordb\xF8ker i Swift, lar deg lagre og\
+  \ h\xE5ndtere data som n\xF8kkel-verdi-par. Programmerere bruker dem til \xE5 organisere\
+  \ data\u2026"
+lastmod: 2024-02-18 23:08:54.262501
+model: gpt-4-0125-preview
+summary: "Assosiative tabeller, kjent som ordb\xF8ker i Swift, lar deg lagre og h\xE5\
+  ndtere data som n\xF8kkel-verdi-par. Programmerere bruker dem til \xE5 organisere\
+  \ data\u2026"
+title: Bruke associative tabeller
 ---
 
 {{< edit_this_page >}}

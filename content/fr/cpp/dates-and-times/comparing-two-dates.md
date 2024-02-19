@@ -1,13 +1,14 @@
 ---
-title:                "Comparer deux dates"
 aliases:
 - /fr/cpp/comparing-two-dates/
-date:                  2024-01-20T17:32:37.045179-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Comparer deux dates"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/comparing-two-dates.md"
+date: 2024-01-20 17:32:37.045179-07:00
+description: "Comparer deux dates, c'est v\xE9rifier laquelle vient avant ou apr\xE8\
+  s l'autre, ou si elles sont identiques. Les programmeurs font cela pour trier des\u2026"
+lastmod: 2024-02-18 23:09:09.174532
+model: gpt-4-1106-preview
+summary: "Comparer deux dates, c'est v\xE9rifier laquelle vient avant ou apr\xE8s\
+  \ l'autre, ou si elles sont identiques. Les programmeurs font cela pour trier des\u2026"
+title: Comparer deux dates
 ---
 
 {{< edit_this_page >}}

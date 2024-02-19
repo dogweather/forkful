@@ -1,13 +1,15 @@
 ---
-title:                "Concatenación de cadenas de texto"
 aliases:
 - /es/swift/concatenating-strings/
-date:                  2024-01-20T17:35:47.845237-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenación de cadenas de texto"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/concatenating-strings.md"
+date: 2024-01-20 17:35:47.845237-07:00
+description: "Concatenar cadenas significa unir dos o m\xE1s strings en uno solo.\
+  \ Hacemos esto para construir mensajes, combinar datos o simplemente para formatear\
+  \ la\u2026"
+lastmod: 2024-02-18 23:09:10.349012
+model: gpt-4-1106-preview
+summary: "Concatenar cadenas significa unir dos o m\xE1s strings en uno solo. Hacemos\
+  \ esto para construir mensajes, combinar datos o simplemente para formatear la\u2026"
+title: "Concatenaci\xF3n de cadenas de texto"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Utilizzare un shell interattivo (REPL)"
 aliases:
 - /it/google-apps-script/using-an-interactive-shell-repl/
-date:                  2024-02-01T22:03:39.630592-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzare un shell interattivo (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/google-apps-script/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:39.630592-07:00
+description: "Una shell interattiva, o Loop di Lettura-Valutazione-Stampa (REPL dall'inglese\
+  \ Read-Eval-Print Loop), \xE8 un ambiente di programmazione semplice e\u2026"
+lastmod: 2024-02-18 23:08:55.479560
+model: gpt-4-0125-preview
+summary: "Una shell interattiva, o Loop di Lettura-Valutazione-Stampa (REPL dall'inglese\
+  \ Read-Eval-Print Loop), \xE8 un ambiente di programmazione semplice e\u2026"
+title: Utilizzare un shell interattivo (REPL)
 ---
 
 {{< edit_this_page >}}

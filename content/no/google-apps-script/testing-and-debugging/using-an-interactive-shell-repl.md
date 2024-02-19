@@ -1,14 +1,16 @@
 ---
-title:                "Å bruke et interaktivt skall (REPL)"
 aliases:
 - /no/google-apps-script/using-an-interactive-shell-repl/
-date:                  2024-02-01T22:04:02.293163-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å bruke et interaktivt skall (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/google-apps-script/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:02.293163-07:00
+description: "Et interaktivt skall, eller Lese-Evaluere-Skrive L\xF8kke (REPL), er\
+  \ et enkelt, interaktivt programmeringsmilj\xF8 som tar enkelte brukerinndata (uttrykk),\u2026"
+lastmod: 2024-02-18 23:08:53.482632
+model: gpt-4-0125-preview
+summary: "Et interaktivt skall, eller Lese-Evaluere-Skrive L\xF8kke (REPL), er et\
+  \ enkelt, interaktivt programmeringsmilj\xF8 som tar enkelte brukerinndata (uttrykk),\u2026"
+title: "\xC5 bruke et interaktivt skall (REPL)"
 ---
 
 {{< edit_this_page >}}

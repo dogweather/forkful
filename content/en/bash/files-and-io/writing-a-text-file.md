@@ -1,12 +1,14 @@
 ---
-title:                "Writing a text file"
 aliases:
 - /en/bash/writing-a-text-file/
-date:                  2024-02-03T19:03:24.379648-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Writing a text file"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/writing-a-text-file.md"
+date: 2024-02-03 19:03:24.379648-07:00
+description: "Writing a text file in Bash allows you to automate data storage, logging,\
+  \ configuration settings, and more. It's a fundamental skill for shell scripting,\u2026"
+lastmod: 2024-02-18 23:09:11.248133
+model: gpt-4-0125-preview
+summary: "Writing a text file in Bash allows you to automate data storage, logging,\
+  \ configuration settings, and more. It's a fundamental skill for shell scripting,\u2026"
+title: Writing a text file
 ---
 
 {{< edit_this_page >}}

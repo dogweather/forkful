@@ -1,14 +1,30 @@
 ---
-title:                "स्ट्रिंग से एक तारीख पार्स करना"
 aliases:
 - /hi/vba/parsing-a-date-from-a-string/
-date:                  2024-02-01T21:59:05.507406-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "स्ट्रिंग से एक तारीख पार्स करना"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/vba/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:05.507406-07:00
+description: "Visual Basic for Applications (VBA) \u092E\u0947\u0902 \u090F\u0915\
+  \ \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0938\u0947 \u0924\u093E\u0930\
+  \u0940\u0916 \u092A\u093E\u0930\u094D\u0938 \u0915\u0930\u0928\u093E \u091F\u0947\
+  \u0915\u094D\u0938\u094D\u091F, \u091C\u094B \u090F\u0915 \u0924\u093E\u0930\u0940\
+  \u0916 \u0915\u094B \u0926\u0930\u094D\u0936\u093E\u0924\u093E \u0939\u0948, \u0915\
+  \u094B \u090F\u0915 \u0924\u093E\u0930\u0940\u0916 \u0921\u0947\u091F\u093E \u092A\
+  \u094D\u0930\u0915\u093E\u0930 \u092E\u0947\u0902 \u092C\u0926\u0932\u0928\u0947\
+  \ \u0915\u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902\u2026"
+lastmod: 2024-02-18 23:09:03.053479
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications (VBA) \u092E\u0947\u0902 \u090F\u0915 \u0938\
+  \u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0938\u0947 \u0924\u093E\u0930\u0940\
+  \u0916 \u092A\u093E\u0930\u094D\u0938 \u0915\u0930\u0928\u093E \u091F\u0947\u0915\
+  \u094D\u0938\u094D\u091F, \u091C\u094B \u090F\u0915 \u0924\u093E\u0930\u0940\u0916\
+  \ \u0915\u094B \u0926\u0930\u094D\u0936\u093E\u0924\u093E \u0939\u0948, \u0915\u094B\
+  \ \u090F\u0915 \u0924\u093E\u0930\u0940\u0916 \u0921\u0947\u091F\u093E \u092A\u094D\
+  \u0930\u0915\u093E\u0930 \u092E\u0947\u0902 \u092C\u0926\u0932\u0928\u0947 \u0915\
+  \u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902\u2026"
+title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0938\u0947 \u090F\u0915\
+  \ \u0924\u093E\u0930\u0940\u0916 \u092A\u093E\u0930\u094D\u0938 \u0915\u0930\u0928\
+  \u093E"
 ---
 
 {{< edit_this_page >}}

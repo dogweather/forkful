@@ -1,13 +1,16 @@
 ---
-title:                "Vergleich von zwei Daten"
 aliases:
 - /de/ruby/comparing-two-dates/
-date:                  2024-01-20T17:33:48.428377-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Vergleich von zwei Daten"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/comparing-two-dates.md"
+date: 2024-01-20 17:33:48.428377-07:00
+description: "Das Vergleichen von zwei Daten zeigt uns, welches Datum fr\xFCher oder\
+  \ sp\xE4ter ist. Programmierer nutzen dies f\xFCr Funktionalit\xE4ten wie G\xFC\
+  ltigkeitspr\xFCfungen,\u2026"
+lastmod: 2024-02-18 23:09:05.436471
+model: gpt-4-1106-preview
+summary: "Das Vergleichen von zwei Daten zeigt uns, welches Datum fr\xFCher oder sp\xE4\
+  ter ist. Programmierer nutzen dies f\xFCr Funktionalit\xE4ten wie G\xFCltigkeitspr\xFC\
+  fungen,\u2026"
+title: Vergleich von zwei Daten
 ---
 
 {{< edit_this_page >}}

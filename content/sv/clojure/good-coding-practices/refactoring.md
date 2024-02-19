@@ -1,13 +1,14 @@
 ---
-title:                "Refaktorisering"
 aliases:
 - /sv/clojure/refactoring/
-date:                  2024-01-26T01:17:47.351911-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refaktorisering"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/refactoring.md"
+date: 2024-01-26 01:17:47.351911-07:00
+description: "Refaktorisering \xE4r processen att omstrukturera befintlig dator kod\
+  \ utan att \xE4ndra dess yttre beteende, syftande till att f\xF6rb\xE4ttra icke-funktionella\u2026"
+lastmod: 2024-02-18 23:08:51.470023
+model: gpt-4-0125-preview
+summary: "Refaktorisering \xE4r processen att omstrukturera befintlig dator kod utan\
+  \ att \xE4ndra dess yttre beteende, syftande till att f\xF6rb\xE4ttra icke-funktionella\u2026"
+title: Refaktorisering
 ---
 
 {{< edit_this_page >}}

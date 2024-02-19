@@ -1,14 +1,18 @@
 ---
-title:                "Analiza składniowa HTML"
 aliases:
 - /pl/c/parsing-html/
-date:                  2024-02-03T17:59:56.537442-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analiza składniowa HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:56.537442-07:00
+description: "Parsowanie HTML w C polega na analizowaniu dokument\xF3w HTML w celu\
+  \ efektywnego wydobycia danych, struktury lub konkretnych cz\u0119\u015Bci, cz\u0119\
+  sto jako preludium do\u2026"
+lastmod: 2024-02-18 23:08:50.077552
+model: gpt-4-0125-preview
+summary: "Parsowanie HTML w C polega na analizowaniu dokument\xF3w HTML w celu efektywnego\
+  \ wydobycia danych, struktury lub konkretnych cz\u0119\u015Bci, cz\u0119sto jako\
+  \ preludium do\u2026"
+title: "Analiza sk\u0142adniowa HTML"
 ---
 
 {{< edit_this_page >}}

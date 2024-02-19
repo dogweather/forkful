@@ -1,13 +1,14 @@
 ---
-title:                "Estrazione di sottostringhe"
 aliases:
 - /it/swift/extracting-substrings/
-date:                  2024-01-20T17:46:50.440239-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Estrazione di sottostringhe"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/extracting-substrings.md"
+date: 2024-01-20 17:46:50.440239-07:00
+description: "Estrarre delle sottostringhe significa prelevare una porzione specifica\
+  \ di una stringa di testo. I programmatori lo fanno per manipolare, cercare, o\u2026"
+lastmod: 2024-02-18 23:08:56.202211
+model: gpt-4-1106-preview
+summary: "Estrarre delle sottostringhe significa prelevare una porzione specifica\
+  \ di una stringa di testo. I programmatori lo fanno per manipolare, cercare, o\u2026"
+title: Estrazione di sottostringhe
 ---
 
 {{< edit_this_page >}}

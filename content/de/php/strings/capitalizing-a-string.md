@@ -1,14 +1,18 @@
 ---
-title:                "Einen String großschreiben"
 aliases:
 - /de/php/capitalizing-a-string/
-date:                  2024-02-03T19:05:56.366719-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Einen String großschreiben"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:56.366719-07:00
+description: "Das Gro\xDFschreiben eines Strings beinhaltet die Modifikation des ersten\
+  \ Zeichens eines gegebenen Textes in Gro\xDFbuchstaben, um sicherzustellen, dass\
+  \ S\xE4tze,\u2026"
+lastmod: 2024-02-18 23:09:04.944259
+model: gpt-4-0125-preview
+summary: "Das Gro\xDFschreiben eines Strings beinhaltet die Modifikation des ersten\
+  \ Zeichens eines gegebenen Textes in Gro\xDFbuchstaben, um sicherzustellen, dass\
+  \ S\xE4tze,\u2026"
+title: "Einen String gro\xDFschreiben"
 ---
 
 {{< edit_this_page >}}

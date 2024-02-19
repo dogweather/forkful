@@ -1,14 +1,18 @@
 ---
-title:                "Calculando uma data no futuro ou passado"
 aliases:
 - /pt/c/calculating-a-date-in-the-future-or-past/
-date:                  2024-02-03T17:52:47.088080-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Calculando uma data no futuro ou passado"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:52:47.088080-07:00
+description: "Calcular uma data no futuro ou passado envolve determinar uma data espec\xED\
+  fica adicionando ou subtraindo um certo n\xFAmero de dias, meses ou anos de uma\
+  \ data\u2026"
+lastmod: 2024-02-18 23:08:58.633593
+model: gpt-4-0125-preview
+summary: "Calcular uma data no futuro ou passado envolve determinar uma data espec\xED\
+  fica adicionando ou subtraindo um certo n\xFAmero de dias, meses ou anos de uma\
+  \ data\u2026"
+title: Calculando uma data no futuro ou passado
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Removendo aspas de uma string"
 aliases:
 - /pt/rust/removing-quotes-from-a-string/
-date:                  2024-01-26T03:42:07.682803-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Removendo aspas de uma string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:42:07.682803-07:00
+description: "Remover aspas de uma string no Rust \xE9 sobre eliminar caracteres de\
+  \ aspas extras desnecess\xE1rios que podem estar envolvendo seus dados de texto.\u2026"
+lastmod: 2024-02-18 23:08:57.915700
+model: gpt-4-0125-preview
+summary: "Remover aspas de uma string no Rust \xE9 sobre eliminar caracteres de aspas\
+  \ extras desnecess\xE1rios que podem estar envolvendo seus dados de texto.\u2026"
+title: Removendo aspas de uma string
 ---
 
 {{< edit_this_page >}}

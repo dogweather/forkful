@@ -1,13 +1,16 @@
 ---
-title:                "Manipulando arquivos com one-liners de CLI"
 aliases:
 - /pt/ruby/manipulating-files-with-cli-one-liners/
-date:                  2024-01-27T16:21:38.799797-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulando arquivos com one-liners de CLI"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/manipulating-files-with-cli-one-liners.md"
+date: 2024-01-27 16:21:38.799797-07:00
+description: "Manipular arquivos com one-liners CLI em Ruby trata de realizar opera\xE7\
+  \xF5es comuns com arquivos diretamente do seu terminal usando scripts Ruby. \xC9\
+  \ um m\xE9todo\u2026"
+lastmod: 2024-02-18 23:08:58.660561
+model: gpt-4-0125-preview
+summary: "Manipular arquivos com one-liners CLI em Ruby trata de realizar opera\xE7\
+  \xF5es comuns com arquivos diretamente do seu terminal usando scripts Ruby. \xC9\
+  \ um m\xE9todo\u2026"
+title: Manipulando arquivos com one-liners de CLI
 ---
 
 {{< edit_this_page >}}

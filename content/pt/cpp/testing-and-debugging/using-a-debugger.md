@@ -1,13 +1,15 @@
 ---
-title:                "Usando um depurador"
 aliases:
 - /pt/cpp/using-a-debugger/
-date:                  2024-01-26T03:48:22.062943-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando um depurador"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/using-a-debugger.md"
+date: 2024-01-26 03:48:22.062943-07:00
+description: "Usar um depurador significa ativar uma ferramenta que permite espiar\
+  \ dentro do seu programa em execu\xE7\xE3o para entender o que realmente est\xE1\
+  \ acontecendo.\u2026"
+lastmod: 2024-02-18 23:08:58.454215
+model: gpt-4-0125-preview
+summary: "Usar um depurador significa ativar uma ferramenta que permite espiar dentro\
+  \ do seu programa em execu\xE7\xE3o para entender o que realmente est\xE1 acontecendo.\u2026"
+title: Usando um depurador
 ---
 
 {{< edit_this_page >}}

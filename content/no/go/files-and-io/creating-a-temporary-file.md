@@ -1,14 +1,16 @@
 ---
-title:                "Oppretting av en midlertidig fil"
 aliases:
 - /no/go/creating-a-temporary-file/
-date:                  2024-02-03T17:55:26.241847-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Oppretting av en midlertidig fil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/creating-a-temporary-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:26.241847-07:00
+description: "\xC5 lage en midlertidig fil i Go muliggj\xF8r genereringen av en ikke-persistent\
+  \ fil designet for kortvarig bruk, hovedsakelig for oppgaver som \xE5 lagre\u2026"
+lastmod: 2024-02-18 23:08:53.456273
+model: gpt-4-0125-preview
+summary: "\xC5 lage en midlertidig fil i Go muliggj\xF8r genereringen av en ikke-persistent\
+  \ fil designet for kortvarig bruk, hovedsakelig for oppgaver som \xE5 lagre\u2026"
+title: Oppretting av en midlertidig fil
 ---
 
 {{< edit_this_page >}}

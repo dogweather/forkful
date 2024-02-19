@@ -1,14 +1,25 @@
 ---
-title:                "使用调试器"
 aliases:
 - /zh/google-apps-script/using-a-debugger/
-date:                  2024-02-01T22:03:40.605609-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用调试器"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/google-apps-script/using-a-debugger.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:40.605609-07:00
+description: "\u5728 Google Apps Script (GAS) \u4E2D\u8FDB\u884C\u8C03\u8BD5\u6D89\
+  \u53CA\u5230\u8BC6\u522B\u548C\u79FB\u9664\u65E8\u5728\u81EA\u52A8\u5316 Google\
+  \ \u5E94\u7528\u6216\u6784\u5EFA\u7F51\u7EDC\u5E94\u7528\u7684\u811A\u672C\u4E2D\
+  \u7684\u9519\u8BEF\u7684\u8FC7\u7A0B\u3002\u7A0B\u5E8F\u5458\u8FDB\u884C\u8C03\u8BD5\
+  \u4EE5\u786E\u4FDD\u4ED6\u4EEC\u7684\u4EE3\u7801\u5982\u9884\u671F\u90A3\u6837\u6267\
+  \u884C\uFF0C\u4ECE\u800C\u63D0\u5347\u5E94\u7528\u7684\u53EF\u9760\u6027\u548C\u6027\
+  \u80FD\u3002"
+lastmod: 2024-02-18 23:08:58.755010
+model: gpt-4-0125-preview
+summary: "\u5728 Google Apps Script (GAS) \u4E2D\u8FDB\u884C\u8C03\u8BD5\u6D89\u53CA\
+  \u5230\u8BC6\u522B\u548C\u79FB\u9664\u65E8\u5728\u81EA\u52A8\u5316 Google \u5E94\
+  \u7528\u6216\u6784\u5EFA\u7F51\u7EDC\u5E94\u7528\u7684\u811A\u672C\u4E2D\u7684\u9519\
+  \u8BEF\u7684\u8FC7\u7A0B\u3002\u7A0B\u5E8F\u5458\u8FDB\u884C\u8C03\u8BD5\u4EE5\u786E\
+  \u4FDD\u4ED6\u4EEC\u7684\u4EE3\u7801\u5982\u9884\u671F\u90A3\u6837\u6267\u884C\uFF0C\
+  \u4ECE\u800C\u63D0\u5347\u5E94\u7528\u7684\u53EF\u9760\u6027\u548C\u6027\u80FD\u3002"
+title: "\u4F7F\u7528\u8C03\u8BD5\u5668"
 ---
 
 {{< edit_this_page >}}

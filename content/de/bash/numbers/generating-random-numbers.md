@@ -1,13 +1,15 @@
 ---
-title:                "Generierung von Zufallszahlen"
 aliases:
 - /de/bash/generating-random-numbers/
-date:                  2024-01-27T20:33:00.721556-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generierung von Zufallszahlen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/generating-random-numbers.md"
+date: 2024-01-27 20:33:00.721556-07:00
+description: "Das Generieren von Zufallszahlen in Bash bietet eine M\xF6glichkeit,\
+  \ Unvorhersehbarkeit in Skripten einzuf\xFChren, was f\xFCr Aufgaben wie das Generieren\
+  \ von\u2026"
+lastmod: 2024-02-18 23:09:05.047512
+model: gpt-4-0125-preview
+summary: "Das Generieren von Zufallszahlen in Bash bietet eine M\xF6glichkeit, Unvorhersehbarkeit\
+  \ in Skripten einzuf\xFChren, was f\xFCr Aufgaben wie das Generieren von\u2026"
+title: Generierung von Zufallszahlen
 ---
 
 {{< edit_this_page >}}

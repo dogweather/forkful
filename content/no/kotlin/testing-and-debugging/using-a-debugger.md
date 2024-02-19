@@ -1,13 +1,15 @@
 ---
-title:                "Å bruke en feilsøker"
 aliases:
 - /no/kotlin/using-a-debugger/
-date:                  2024-01-26T03:49:55.933864-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å bruke en feilsøker"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/using-a-debugger.md"
+date: 2024-01-26 03:49:55.933864-07:00
+description: "\xC5 dykke ned i en feils\xF8ker handler om \xE5 steg-for-steg g\xE5\
+  \ gjennom koden din, se tannhjulene dreie og fange de irriterende feilene p\xE5\
+  \ fersk gjerning.\u2026"
+lastmod: 2024-02-18 23:08:53.856909
+model: gpt-4-0125-preview
+summary: "\xC5 dykke ned i en feils\xF8ker handler om \xE5 steg-for-steg g\xE5 gjennom\
+  \ koden din, se tannhjulene dreie og fange de irriterende feilene p\xE5 fersk gjerning.\u2026"
+title: "\xC5 bruke en feils\xF8ker"
 ---
 
 {{< edit_this_page >}}

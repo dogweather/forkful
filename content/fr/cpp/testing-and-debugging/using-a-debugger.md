@@ -1,13 +1,16 @@
 ---
-title:                "Utilisation d'un débogueur"
 aliases:
 - /fr/cpp/using-a-debugger/
-date:                  2024-01-26T03:47:50.117202-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation d'un débogueur"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/using-a-debugger.md"
+date: 2024-01-26 03:47:50.117202-07:00
+description: "Utiliser un d\xE9bogueur signifie lancer un outil qui vous permet de\
+  \ jeter un \u0153il \xE0 l'int\xE9rieur de votre programme en cours d'ex\xE9cution\
+  \ pour comprendre ce\u2026"
+lastmod: 2024-02-18 23:09:09.165856
+model: gpt-4-0125-preview
+summary: "Utiliser un d\xE9bogueur signifie lancer un outil qui vous permet de jeter\
+  \ un \u0153il \xE0 l'int\xE9rieur de votre programme en cours d'ex\xE9cution pour\
+  \ comprendre ce\u2026"
+title: "Utilisation d'un d\xE9bogueur"
 ---
 
 {{< edit_this_page >}}

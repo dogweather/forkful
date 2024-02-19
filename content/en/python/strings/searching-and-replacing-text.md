@@ -1,13 +1,14 @@
 ---
-title:                "Searching and replacing text"
 aliases:
 - /en/python/searching-and-replacing-text/
-date:                  2024-01-20T17:58:42.437495-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Searching and replacing text"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:42.437495-07:00
+description: "Searching and replacing text is about finding strings in a block of\
+  \ text and changing them to something else. Programmers do it for editing code,\u2026"
+lastmod: 2024-02-18 23:09:10.666674
+model: gpt-4-1106-preview
+summary: "Searching and replacing text is about finding strings in a block of text\
+  \ and changing them to something else. Programmers do it for editing code,\u2026"
+title: Searching and replacing text
 ---
 
 {{< edit_this_page >}}

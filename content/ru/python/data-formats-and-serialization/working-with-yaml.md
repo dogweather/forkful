@@ -1,15 +1,28 @@
 ---
-title:                "Работа с YAML"
 aliases:
 - /ru/python/working-with-yaml/
-date:                  2024-01-29T00:04:59.020340-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Работа с YAML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/python/working-with-yaml.md"
 changelog:
-  - 2024-01-29, gpt-4-0125-preview, translated from English
+- 2024-01-29, gpt-4-0125-preview, translated from English
+date: 2024-01-29 00:04:59.020340-07:00
+description: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 YAML \u043F\u043E\u0434\u0440\
+  \u0430\u0437\u0443\u043C\u0435\u0432\u0430\u0435\u0442 \u0440\u0430\u0437\u0431\u043E\
+  \u0440 \u0438 \u0433\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u044E \u0434\u043E\
+  \u043A\u0443\u043C\u0435\u043D\u0442\u043E\u0432 YAML (Yet Another Markup Language\
+  \ - \u0415\u0449\u0435 \u041E\u0434\u0438\u043D \u042F\u0437\u044B\u043A \u0420\u0430\
+  \u0437\u043C\u0435\u0442\u043A\u0438) \u043D\u0430 Python. \u041F\u0440\u043E\u0433\
+  \u0440\u0430\u043C\u043C\u0438\u0441\u0442\u044B \u0434\u0435\u043B\u0430\u044E\u0442\
+  \ \u044D\u0442\u043E\u2026"
+lastmod: 2024-02-18 23:08:56.557268
+model: gpt-4-0125-preview
+summary: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 YAML \u043F\u043E\u0434\u0440\
+  \u0430\u0437\u0443\u043C\u0435\u0432\u0430\u0435\u0442 \u0440\u0430\u0437\u0431\u043E\
+  \u0440 \u0438 \u0433\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u044E \u0434\u043E\
+  \u043A\u0443\u043C\u0435\u043D\u0442\u043E\u0432 YAML (Yet Another Markup Language\
+  \ - \u0415\u0449\u0435 \u041E\u0434\u0438\u043D \u042F\u0437\u044B\u043A \u0420\u0430\
+  \u0437\u043C\u0435\u0442\u043A\u0438) \u043D\u0430 Python. \u041F\u0440\u043E\u0433\
+  \u0440\u0430\u043C\u043C\u0438\u0441\u0442\u044B \u0434\u0435\u043B\u0430\u044E\u0442\
+  \ \u044D\u0442\u043E\u2026"
+title: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 YAML"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Tekstitiedoston lukeminen"
 aliases:
 - /fi/google-apps-script/reading-a-text-file/
-date:                  2024-02-01T21:58:24.650408-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tekstitiedoston lukeminen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/reading-a-text-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:24.650408-07:00
+description: "Tekstitiedoston lukeminen Google Apps Scriptill\xE4 (GAS) sis\xE4lt\xE4\
+  \xE4 p\xE4\xE4syn hankkimisen ja tekstidatasta tiedon poimimisen tiedostoista, jotka\
+  \ on tallennettu\u2026"
+lastmod: 2024-02-18 23:09:07.156468
+model: gpt-4-0125-preview
+summary: "Tekstitiedoston lukeminen Google Apps Scriptill\xE4 (GAS) sis\xE4lt\xE4\xE4\
+  \ p\xE4\xE4syn hankkimisen ja tekstidatasta tiedon poimimisen tiedostoista, jotka\
+  \ on tallennettu\u2026"
+title: Tekstitiedoston lukeminen
 ---
 
 {{< edit_this_page >}}

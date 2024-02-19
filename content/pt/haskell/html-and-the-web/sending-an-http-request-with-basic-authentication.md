@@ -1,13 +1,15 @@
 ---
-title:                "Enviando uma requisição HTTP com autenticação básica"
 aliases:
 - /pt/haskell/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:01:47.344354-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando uma requisição HTTP com autenticação básica"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:01:47.344354-07:00
+description: "Realizar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica\
+  \ consiste em enviar um cabe\xE7alho com credenciais codificadas em base64 para\
+  \ acessar recursos\u2026"
+lastmod: 2024-02-18 23:08:58.198925
+model: gpt-4-1106-preview
+summary: "Realizar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica consiste\
+  \ em enviar um cabe\xE7alho com credenciais codificadas em base64 para acessar recursos\u2026"
+title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 ---
 
 {{< edit_this_page >}}

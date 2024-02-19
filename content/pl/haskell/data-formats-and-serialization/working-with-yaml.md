@@ -1,14 +1,18 @@
 ---
-title:                "Praca z YAML"
 aliases:
 - /pl/haskell/working-with-yaml/
-date:                  2024-02-03T19:25:37.542117-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:25:37.542117-07:00
+description: "YAML, skr\xF3t od \"YAML Ain't Markup Language\", jest przyjaznym dla\
+  \ cz\u0142owieka standardem serializacji danych, kt\xF3ry mo\u017Ce by\u0107 u\u017C\
+  ywany we wszystkich j\u0119zykach\u2026"
+lastmod: 2024-02-18 23:08:49.672799
+model: gpt-4-0125-preview
+summary: "YAML, skr\xF3t od \"YAML Ain't Markup Language\", jest przyjaznym dla cz\u0142\
+  owieka standardem serializacji danych, kt\xF3ry mo\u017Ce by\u0107 u\u017Cywany\
+  \ we wszystkich j\u0119zykach\u2026"
+title: Praca z YAML
 ---
 
 {{< edit_this_page >}}

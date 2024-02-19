@@ -1,13 +1,14 @@
 ---
-title:                "Scaricare una pagina web"
 aliases:
 - /it/typescript/downloading-a-web-page/
-date:                  2024-01-20T17:45:02.267495-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Scaricare una pagina web"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/downloading-a-web-page.md"
+date: 2024-01-20 17:45:02.267495-07:00
+description: "Scaricare una pagina web significa acquisire il suo contenuto HTML per\
+  \ poterlo elaborare o analizzare. I programmatori lo fanno per raccogliere dati,\u2026"
+lastmod: 2024-02-18 23:08:55.639167
+model: gpt-4-1106-preview
+summary: "Scaricare una pagina web significa acquisire il suo contenuto HTML per poterlo\
+  \ elaborare o analizzare. I programmatori lo fanno per raccogliere dati,\u2026"
+title: Scaricare una pagina web
 ---
 
 {{< edit_this_page >}}

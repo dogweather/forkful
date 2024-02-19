@@ -1,13 +1,14 @@
 ---
-title:                "Fehlerbehandlung"
 aliases:
 - /de/arduino/handling-errors/
-date:                  2024-01-26T00:24:08.954582-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Fehlerbehandlung"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/handling-errors.md"
+date: 2024-01-26 00:24:08.954582-07:00
+description: "Die Fehlerbehandlung in Ihren Programmen f\xE4ngt die unvorhergesehenen\
+  \ Dinge auf, die versuchen, Ihnen ein Bein zu stellen. Sie tun dies, um zu verhindern,\u2026"
+lastmod: 2024-02-18 23:09:05.153234
+model: gpt-4-1106-preview
+summary: "Die Fehlerbehandlung in Ihren Programmen f\xE4ngt die unvorhergesehenen\
+  \ Dinge auf, die versuchen, Ihnen ein Bein zu stellen. Sie tun dies, um zu verhindern,\u2026"
+title: Fehlerbehandlung
 ---
 
 {{< edit_this_page >}}

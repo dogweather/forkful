@@ -1,14 +1,17 @@
 ---
-title:                "Sända en HTTP-förfrågan med grundläggande autentisering"
 aliases:
 - /sv/c/sending-an-http-request-with-basic-authentication/
-date:                  2024-02-03T18:09:19.741445-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sända en HTTP-förfrågan med grundläggande autentisering"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:09:19.741445-07:00
+description: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering i C\
+  \ inneb\xE4r att man skapar en HTTP-beg\xE4ran som inkluderar en autentiseringsheader\
+  \ med\u2026"
+lastmod: 2024-02-18 23:08:52.250045
+model: gpt-4-0125-preview
+summary: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering i C inneb\xE4\
+  r att man skapar en HTTP-beg\xE4ran som inkluderar en autentiseringsheader med\u2026"
+title: "S\xE4nda en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,20 @@
 ---
-title:                "Sử dụng mảng liên kết"
 aliases:
 - /vi/vba/using-associative-arrays/
-date:                  2024-02-01T22:04:58.537789-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng mảng liên kết"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/using-associative-arrays.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:58.537789-07:00
+description: "C\xE1c m\u1EA3ng k\u1EBFt h\u1EE3p, th\u01B0\u1EDDng \u0111\u01B0\u1EE3\
+  c bi\u1EBFt \u0111\u1EBFn nh\u01B0 b\u1ED9 t\u1EEB \u0111i\u1EC3n trong Visual Basic\
+  \ cho \u1EE8ng d\u1EE5ng (VBA), cho ph\xE9p c\xE1c l\u1EADp tr\xECnh vi\xEAn t\u1EA1\
+  o ra c\xE1c b\u1ED9 s\u01B0u t\u1EADp c\u1EE7a c\xE1c c\u1EB7p\u2026"
+lastmod: 2024-02-18 23:08:50.501131
+model: gpt-4-0125-preview
+summary: "C\xE1c m\u1EA3ng k\u1EBFt h\u1EE3p, th\u01B0\u1EDDng \u0111\u01B0\u1EE3\
+  c bi\u1EBFt \u0111\u1EBFn nh\u01B0 b\u1ED9 t\u1EEB \u0111i\u1EC3n trong Visual Basic\
+  \ cho \u1EE8ng d\u1EE5ng (VBA), cho ph\xE9p c\xE1c l\u1EADp tr\xECnh vi\xEAn t\u1EA1\
+  o ra c\xE1c b\u1ED9 s\u01B0u t\u1EADp c\u1EE7a c\xE1c c\u1EB7p\u2026"
+title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 ---
 
 {{< edit_this_page >}}

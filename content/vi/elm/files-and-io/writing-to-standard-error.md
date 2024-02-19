@@ -1,15 +1,20 @@
 ---
-title:                "Ghi vào lỗi chuẩn"
 aliases:
 - /vi/elm/writing-to-standard-error/
-date:                  2024-01-28T22:13:44.247449-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ghi vào lỗi chuẩn"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elm/writing-to-standard-error.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:13:44.247449-07:00
+description: "Vi\u1EBFt l\u1ED7i chu\u1EA9n (stderr) l\xE0 xu\u1EA5t th\xF4ng b\xE1\
+  o l\u1ED7i v\xE0 ch\u1EA9n \u0111o\xE1n ri\xEAng bi\u1EC7t kh\u1ECFi \u0111\u1EA7\
+  u ra th\xF4ng th\u01B0\u1EDDng. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
+  n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 g\u1EE1 l\u1ED7i v\xE0 theo\u2026"
+lastmod: 2024-02-18 23:08:50.622505
+model: gpt-4-0125-preview
+summary: "Vi\u1EBFt l\u1ED7i chu\u1EA9n (stderr) l\xE0 xu\u1EA5t th\xF4ng b\xE1o l\u1ED7\
+  i v\xE0 ch\u1EA9n \u0111o\xE1n ri\xEAng bi\u1EC7t kh\u1ECFi \u0111\u1EA7u ra th\xF4\
+  ng th\u01B0\u1EDDng. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111\
+  i\u1EC1u n\xE0y \u0111\u1EC3 g\u1EE1 l\u1ED7i v\xE0 theo\u2026"
+title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 ---
 
 {{< edit_this_page >}}

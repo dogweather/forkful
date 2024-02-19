@@ -1,13 +1,16 @@
 ---
-title:                "Ta bort citattecken från en sträng"
 aliases:
 - /sv/swift/removing-quotes-from-a-string/
-date:                  2024-01-26T03:42:02.072834-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ta bort citattecken från en sträng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:42:02.072834-07:00
+description: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att ta bort\
+  \ alla citatmarkeringar som omsluter inneh\xE5llet. Vi g\xF6r detta f\xF6r att rensa\
+  \ indata, f\xF6rbereda\u2026"
+lastmod: 2024-02-18 23:08:52.112949
+model: gpt-4-0125-preview
+summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att ta bort alla\
+  \ citatmarkeringar som omsluter inneh\xE5llet. Vi g\xF6r detta f\xF6r att rensa\
+  \ indata, f\xF6rbereda\u2026"
+title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

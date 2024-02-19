@@ -1,13 +1,16 @@
 ---
-title:                "Å bruke en feilsøker"
 aliases:
 - /no/elixir/using-a-debugger/
-date:                  2024-01-26T03:48:17.287774-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å bruke en feilsøker"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/using-a-debugger.md"
+date: 2024-01-26 03:48:17.287774-07:00
+description: "\xC5 bruke en debugger i Elixir inneb\xE6rer \xE5 stegge gjennom koden\
+  \ din, inspisere variabler og spore flyter for \xE5 knuse feil. Programmerere gj\xF8\
+  r dette for \xE5\u2026"
+lastmod: 2024-02-18 23:08:53.609202
+model: gpt-4-0125-preview
+summary: "\xC5 bruke en debugger i Elixir inneb\xE6rer \xE5 stegge gjennom koden din,\
+  \ inspisere variabler og spore flyter for \xE5 knuse feil. Programmerere gj\xF8\
+  r dette for \xE5\u2026"
+title: "\xC5 bruke en feils\xF8ker"
 ---
 
 {{< edit_this_page >}}

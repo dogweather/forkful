@@ -1,15 +1,16 @@
 ---
-title:                "Tests Schrijven"
 aliases:
 - /nl/python/writing-tests/
-date:                  2024-01-28T22:13:17.675957-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tests Schrijven"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/python/writing-tests.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:13:17.675957-07:00
+description: "Testen schrijven betekent code maken om te controleren of andere code\
+  \ goed werkt. We doen dit om bugs te vangen, betrouwbaarheid te garanderen en updates\u2026"
+lastmod: 2024-02-18 23:09:01.437722
+model: gpt-4-0125-preview
+summary: "Testen schrijven betekent code maken om te controleren of andere code goed\
+  \ werkt. We doen dit om bugs te vangen, betrouwbaarheid te garanderen en updates\u2026"
+title: Tests Schrijven
 ---
 
 {{< edit_this_page >}}

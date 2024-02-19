@@ -1,14 +1,18 @@
 ---
-title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
 aliases:
 - /fi/vba/calculating-a-date-in-the-future-or-past/
-date:                  2024-02-01T21:49:14.736870-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:14.736870-07:00
+description: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen\
+  \ liittyy p\xE4iv\xE4m\xE4\xE4r\xE4n m\xE4\xE4ritt\xE4miseen, joka on m\xE4\xE4\
+  r\xE4tyn lukum\xE4\xE4r\xE4n p\xE4ivi\xE4, kuukausia tai vuosia pois\u2026"
+lastmod: 2024-02-18 23:09:07.426698
+model: gpt-4-0125-preview
+summary: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen liittyy\
+  \ p\xE4iv\xE4m\xE4\xE4r\xE4n m\xE4\xE4ritt\xE4miseen, joka on m\xE4\xE4r\xE4tyn\
+  \ lukum\xE4\xE4r\xE4n p\xE4ivi\xE4, kuukausia tai vuosia pois\u2026"
+title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 ---
 
 {{< edit_this_page >}}

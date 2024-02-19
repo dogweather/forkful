@@ -1,12 +1,14 @@
 ---
-title:                "Writing tests"
 aliases:
 - /en/swift/writing-tests/
-date:                  2024-02-03T19:03:34.797441-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Writing tests"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/writing-tests.md"
+date: 2024-02-03 19:03:34.797441-07:00
+description: "Writing tests in Swift involves creating and executing code that verifies\
+  \ the correctness of other code units in your application. Programmers do it to\u2026"
+lastmod: 2024-02-18 23:09:11.400281
+model: gpt-4-0125-preview
+summary: "Writing tests in Swift involves creating and executing code that verifies\
+  \ the correctness of other code units in your application. Programmers do it to\u2026"
+title: Writing tests
 ---
 
 {{< edit_this_page >}}

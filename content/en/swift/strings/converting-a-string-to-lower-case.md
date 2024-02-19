@@ -1,13 +1,14 @@
 ---
-title:                "Converting a string to lower case"
 aliases:
 - /en/swift/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:39:29.247998-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Converting a string to lower case"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:39:29.247998-07:00
+description: "Converting a string to lowercase means swapping any uppercase letters\
+  \ to their lowercase counterparts. Programmers do this for consistency, often for\u2026"
+lastmod: 2024-02-18 23:09:11.383799
+model: gpt-4-1106-preview
+summary: "Converting a string to lowercase means swapping any uppercase letters to\
+  \ their lowercase counterparts. Programmers do this for consistency, often for\u2026"
+title: Converting a string to lower case
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Convertir une chaîne en minuscules"
 aliases:
 - /fr/vba/converting-a-string-to-lower-case/
-date:                  2024-02-01T21:51:06.951748-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Convertir une chaîne en minuscules"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/vba/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:06.951748-07:00
+description: "Convertir une cha\xEEne en minuscules implique de transformer tous les\
+  \ caract\xE8res majuscules d'une cha\xEEne en leurs \xE9quivalents minuscules. Ce\
+  \ processus est\u2026"
+lastmod: 2024-02-18 23:09:08.562578
+model: gpt-4-0125-preview
+summary: "Convertir une cha\xEEne en minuscules implique de transformer tous les caract\xE8\
+  res majuscules d'une cha\xEEne en leurs \xE9quivalents minuscules. Ce processus\
+  \ est\u2026"
+title: "Convertir une cha\xEEne en minuscules"
 ---
 
 {{< edit_this_page >}}

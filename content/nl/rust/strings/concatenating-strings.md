@@ -1,15 +1,16 @@
 ---
-title:                "Samenvoegen van strings"
 aliases:
 - /nl/rust/concatenating-strings/
-date:                  2024-01-28T21:57:31.504079-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Samenvoegen van strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/concatenating-strings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:57:31.504079-07:00
+description: "Stringconcatenatie is het aan elkaar plakken van strings om een nieuwe\
+  \ te maken. We doen dit om berichten te construeren, output te genereren of dynamisch\u2026"
+lastmod: 2024-02-18 23:09:01.610328
+model: gpt-4-0125-preview
+summary: "Stringconcatenatie is het aan elkaar plakken van strings om een nieuwe te\
+  \ maken. We doen dit om berichten te construeren, output te genereren of dynamisch\u2026"
+title: Samenvoegen van strings
 ---
 
 {{< edit_this_page >}}

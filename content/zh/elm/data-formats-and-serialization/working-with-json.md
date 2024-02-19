@@ -1,14 +1,24 @@
 ---
-title:                "使用JSON进行编程"
 aliases:
 - /zh/elm/working-with-json/
-date:                  2024-02-03T19:22:52.886221-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用JSON进行编程"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:22:52.886221-07:00
+description: "\u5728Elm\u4E2D\u5904\u7406JSON\u5173\u4E4E\u4E8E\u5C06JSON\u6570\u636E\
+  \u89E3\u7801\u4E3AElm\u7C7B\u578B\u4EE5\u53CA\u5C06Elm\u503C\u7F16\u7801\u56DEJSON\u3002\
+  \u8FD9\u4E00\u8FC7\u7A0B\u5BF9\u4E8E\u7F51\u7EDC\u5E94\u7528\u7A0B\u5E8F\u4E0EAPI\u548C\
+  \u5916\u90E8\u6570\u636E\u6E90\u4EA4\u4E92\u81F3\u5173\u91CD\u8981\uFF0C\u5141\u8BB8\
+  \u5728\u5BA2\u6237\u7AEF\uFF08Elm\uFF09\u4E0E\u670D\u52A1\u5668\u6216\u5176\u4ED6\
+  \u670D\u52A1\u4E4B\u95F4\u65E0\u7F1D\u5730\u4EA4\u6362\u6570\u636E\u3002"
+lastmod: 2024-02-18 23:08:59.076803
+model: gpt-4-0125-preview
+summary: "\u5728Elm\u4E2D\u5904\u7406JSON\u5173\u4E4E\u4E8E\u5C06JSON\u6570\u636E\u89E3\
+  \u7801\u4E3AElm\u7C7B\u578B\u4EE5\u53CA\u5C06Elm\u503C\u7F16\u7801\u56DEJSON\u3002\
+  \u8FD9\u4E00\u8FC7\u7A0B\u5BF9\u4E8E\u7F51\u7EDC\u5E94\u7528\u7A0B\u5E8F\u4E0EAPI\u548C\
+  \u5916\u90E8\u6570\u636E\u6E90\u4EA4\u4E92\u81F3\u5173\u91CD\u8981\uFF0C\u5141\u8BB8\
+  \u5728\u5BA2\u6237\u7AEF\uFF08Elm\uFF09\u4E0E\u670D\u52A1\u5668\u6216\u5176\u4ED6\
+  \u670D\u52A1\u4E4B\u95F4\u65E0\u7F1D\u5730\u4EA4\u6362\u6570\u636E\u3002"
+title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Generazione di numeri casuali"
 aliases:
 - /it/swift/generating-random-numbers/
-date:                  2024-01-27T20:35:25.921645-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generazione di numeri casuali"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/generating-random-numbers.md"
+date: 2024-01-27 20:35:25.921645-07:00
+description: "La generazione di numeri casuali nella programmazione riguarda la creazione\
+  \ di valori numerici non deterministici o imprevedibili. I programmatori\u2026"
+lastmod: 2024-02-18 23:08:56.208778
+model: gpt-4-0125-preview
+summary: "La generazione di numeri casuali nella programmazione riguarda la creazione\
+  \ di valori numerici non deterministici o imprevedibili. I programmatori\u2026"
+title: Generazione di numeri casuali
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,22 @@
 ---
-title:                "기본 인증을 사용한 HTTP 요청 보내기"
 aliases:
 - /ko/elixir/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:01:37.018214-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "기본 인증을 사용한 HTTP 요청 보내기"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:01:37.018214-07:00
+description: "HTTP \uC694\uCCAD\uC5D0 \uAE30\uBCF8 \uC778\uC99D(Basic Authentication)\uC744\
+  \ \uCD94\uAC00\uD558\uC5EC \uC11C\uBC84\uC5D0 \uBCF4\uB0C5\uB2C8\uB2E4. \uBCF4\uC548\
+  \uC774 \uD544\uC694\uD55C \uB370\uC774\uD130\uC5D0 \uC811\uADFC\uD560 \uB54C \uC778\
+  \uC99D \uC815\uBCF4\uB97C \uC804\uB2EC\uD558\uAE30 \uC704\uD574 \uC0AC\uC6A9\uD569\
+  \uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:05.754780
+model: gpt-4-1106-preview
+summary: "HTTP \uC694\uCCAD\uC5D0 \uAE30\uBCF8 \uC778\uC99D(Basic Authentication)\uC744\
+  \ \uCD94\uAC00\uD558\uC5EC \uC11C\uBC84\uC5D0 \uBCF4\uB0C5\uB2C8\uB2E4. \uBCF4\uC548\
+  \uC774 \uD544\uC694\uD55C \uB370\uC774\uD130\uC5D0 \uC811\uADFC\uD560 \uB54C \uC778\
+  \uC99D \uC815\uBCF4\uB97C \uC804\uB2EC\uD558\uAE30 \uC704\uD574 \uC0AC\uC6A9\uD569\
+  \uB2C8\uB2E4."
+title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uBCF4\
+  \uB0B4\uAE30"
 ---
 
 {{< edit_this_page >}}

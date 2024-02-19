@@ -1,13 +1,14 @@
 ---
-title:                "Using an interactive shell (REPL)"
 aliases:
 - /en/typescript/using-an-interactive-shell-repl/
-date:                  2024-01-25T03:40:13.920163-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Using an interactive shell (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/using-an-interactive-shell-repl.md"
+date: 2024-01-25 03:40:13.920163-07:00
+description: "A Read-Eval-Print-Loop (REPL) is a programming environment that takes\
+  \ single user inputs, executes them, and returns the result to the user. Programmers\u2026"
+lastmod: 2024-02-18 23:09:10.808893
+model: gpt-4-1106-preview
+summary: "A Read-Eval-Print-Loop (REPL) is a programming environment that takes single\
+  \ user inputs, executes them, and returns the result to the user. Programmers\u2026"
+title: Using an interactive shell (REPL)
 ---
 
 {{< edit_this_page >}}

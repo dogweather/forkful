@@ -1,13 +1,16 @@
 ---
-title:                "Å jobbe med XML"
 aliases:
 - /no/ruby/working-with-xml/
-date:                  2024-01-26T04:35:18.429329-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Å jobbe med XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/working-with-xml.md"
+date: 2024-01-26 04:35:18.429329-07:00
+description: "\xC5 jobbe med XML betyr \xE5 parse, generere og manipulere XML (eXtensible\
+  \ Markup Language)-dokumenter ved hjelp av kode. Programmerere gj\xF8r dette for\
+  \ \xE5\u2026"
+lastmod: 2024-02-18 23:08:54.461767
+model: gpt-4-0125-preview
+summary: "\xC5 jobbe med XML betyr \xE5 parse, generere og manipulere XML (eXtensible\
+  \ Markup Language)-dokumenter ved hjelp av kode. Programmerere gj\xF8r dette for\
+  \ \xE5\u2026"
+title: "\xC5 jobbe med XML"
 ---
 
 {{< edit_this_page >}}

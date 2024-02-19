@@ -1,13 +1,16 @@
 ---
-title:                "Exibindo saídas de depuração"
 aliases:
 - /pt/rust/printing-debug-output/
-date:                  2024-01-20T17:53:20.529372-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Exibindo saídas de depuração"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/printing-debug-output.md"
+date: 2024-01-20 17:53:20.529372-07:00
+description: "Imprimir sa\xEDdas de debug \xE9 simplesmente mostrar na tela o estado\
+  \ de vari\xE1veis ou o fluxo do c\xF3digo. Programadores fazem isso para entender\
+  \ e corrigir\u2026"
+lastmod: 2024-02-18 23:08:57.931313
+model: gpt-4-1106-preview
+summary: "Imprimir sa\xEDdas de debug \xE9 simplesmente mostrar na tela o estado de\
+  \ vari\xE1veis ou o fluxo do c\xF3digo. Programadores fazem isso para entender e\
+  \ corrigir\u2026"
+title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

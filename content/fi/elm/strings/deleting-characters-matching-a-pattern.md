@@ -1,13 +1,16 @@
 ---
-title:                "Merkkien poistaminen hakemalla osumia kaavaan"
 aliases:
 - /fi/elm/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:51.858781-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:51.858781-07:00
+description: "Poistamme merkkijonoista merkkej\xE4, jotka vastaavat tietty\xE4 mallia,\
+  \ siivotaan data tai muokataan teksti\xE4. T\xE4m\xE4 on hy\xF6dyllist\xE4, kun\
+  \ halutaan puhdistaa\u2026"
+lastmod: 2024-02-18 23:09:07.486837
+model: gpt-4-1106-preview
+summary: "Poistamme merkkijonoista merkkej\xE4, jotka vastaavat tietty\xE4 mallia,\
+  \ siivotaan data tai muokataan teksti\xE4. T\xE4m\xE4 on hy\xF6dyllist\xE4, kun\
+  \ halutaan puhdistaa\u2026"
+title: Merkkien poistaminen hakemalla osumia kaavaan
 ---
 
 {{< edit_this_page >}}

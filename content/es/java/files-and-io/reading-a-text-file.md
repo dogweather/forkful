@@ -1,13 +1,16 @@
 ---
-title:                "Lectura de un archivo de texto"
 aliases:
 - /es/java/reading-a-text-file/
-date:                  2024-01-20T17:54:42.987996-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lectura de un archivo de texto"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/reading-a-text-file.md"
+date: 2024-01-20 17:54:42.987996-07:00
+description: "Leer un archivo de texto en Java significa extraer la informaci\xF3\
+  n contenida en \xE9l. Los programadores lo hacen para trabajar con datos, configuraciones\
+  \ o\u2026"
+lastmod: 2024-02-18 23:09:09.863793
+model: gpt-4-1106-preview
+summary: "Leer un archivo de texto en Java significa extraer la informaci\xF3n contenida\
+  \ en \xE9l. Los programadores lo hacen para trabajar con datos, configuraciones\
+  \ o\u2026"
+title: Lectura de un archivo de texto
 ---
 
 {{< edit_this_page >}}

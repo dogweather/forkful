@@ -1,14 +1,18 @@
 ---
-title:                "Sprawdzanie, czy katalog istnieje"
 aliases:
 - /pl/java/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:11.212983-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sprawdzanie, czy katalog istnieje"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:11.212983-07:00
+description: "Sprawdzanie, czy katalog istnieje w Javie, to podstawowe zadanie polegaj\u0105\
+  ce na weryfikacji obecno\u015Bci katalogu w systemie plik\xF3w przed odczytem z\
+  \ niego,\u2026"
+lastmod: 2024-02-18 23:08:49.492215
+model: gpt-4-0125-preview
+summary: "Sprawdzanie, czy katalog istnieje w Javie, to podstawowe zadanie polegaj\u0105\
+  ce na weryfikacji obecno\u015Bci katalogu w systemie plik\xF3w przed odczytem z\
+  \ niego,\u2026"
+title: Sprawdzanie, czy katalog istnieje
 ---
 
 {{< edit_this_page >}}

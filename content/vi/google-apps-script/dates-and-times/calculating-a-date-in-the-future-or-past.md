@@ -1,14 +1,21 @@
 ---
-title:                "Tính toán một ngày trong tương lai hoặc quá khứ"
 aliases:
 - /vi/google-apps-script/calculating-a-date-in-the-future-or-past/
-date:                  2024-02-01T21:49:38.924364-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tính toán một ngày trong tương lai hoặc quá khứ"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/google-apps-script/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:49:38.924364-07:00
+description: "Vi\u1EC7c t\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai\
+  \ ho\u1EB7c qu\xE1 kh\u1EE9 li\xEAn quan \u0111\u1EBFn vi\u1EC7c thao t\xE1c v\u1EDB\
+  i c\xE1c \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y \u0111\u1EC3 t\xECm ra c\xE1c ng\xE0\
+  y n\u1EB1m ngo\xE0i ho\u1EB7c tr\u01B0\u1EDBc ng\xE0y hi\u1EC7n\u2026"
+lastmod: 2024-02-18 23:08:50.235409
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c t\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7\
+  c qu\xE1 kh\u1EE9 li\xEAn quan \u0111\u1EBFn vi\u1EC7c thao t\xE1c v\u1EDBi c\xE1\
+  c \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y \u0111\u1EC3 t\xECm ra c\xE1c ng\xE0y n\u1EB1\
+  m ngo\xE0i ho\u1EB7c tr\u01B0\u1EDBc ng\xE0y hi\u1EC7n\u2026"
+title: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1\
+  \ kh\u1EE9"
 ---
 
 {{< edit_this_page >}}

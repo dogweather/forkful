@@ -1,14 +1,17 @@
 ---
-title:                "Een tijdelijk bestand aanmaken"
 aliases:
 - /nl/c/creating-a-temporary-file/
-date:                  2024-02-03T17:55:25.757161-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tijdelijk bestand aanmaken"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/creating-a-temporary-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:25.757161-07:00
+description: "Een tijdelijk bestand in C cre\xEBren betekent het genereren van een\
+  \ bestand dat bedoeld is om voor een korte duur gebruikt te worden, meestal als\
+  \ kladruimte\u2026"
+lastmod: 2024-02-18 23:09:02.394895
+model: gpt-4-0125-preview
+summary: "Een tijdelijk bestand in C cre\xEBren betekent het genereren van een bestand\
+  \ dat bedoeld is om voor een korte duur gebruikt te worden, meestal als kladruimte\u2026"
+title: Een tijdelijk bestand aanmaken
 ---
 
 {{< edit_this_page >}}

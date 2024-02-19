@@ -1,15 +1,16 @@
 ---
-title:                "Utilisation des tableaux associatifs"
 aliases:
 - /fr/java/using-associative-arrays/
-date:                  2024-01-30T19:11:48.058066-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation des tableaux associatifs"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:11:48.058066-07:00
+description: "En Java, les tableaux associatifs ou les maps, vous permettent de stocker\
+  \ des paires cl\xE9-valeur pour une recherche et une manipulation efficaces des\u2026"
+lastmod: 2024-02-18 23:09:08.620648
+model: gpt-4-0125-preview
+summary: "En Java, les tableaux associatifs ou les maps, vous permettent de stocker\
+  \ des paires cl\xE9-valeur pour une recherche et une manipulation efficaces des\u2026"
+title: Utilisation des tableaux associatifs
 ---
 
 {{< edit_this_page >}}

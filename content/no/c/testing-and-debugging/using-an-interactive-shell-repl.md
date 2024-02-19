@@ -1,14 +1,17 @@
 ---
-title:                "Bruk av interaktiv shell (REPL)"
 aliases:
 - /no/c/using-an-interactive-shell-repl/
-date:                  2024-02-03T18:10:12.657813-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruk av interaktiv shell (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:12.657813-07:00
+description: "Et interaktivt skall, ogs\xE5 kjent som en Les-Evaluer-Skriv L\xF8kke\
+  \ (REPL), lar programmerere taste inn uttrykk eller kode og umiddelbart se resultater,\
+  \ noe\u2026"
+lastmod: 2024-02-18 23:08:54.395989
+model: gpt-4-0125-preview
+summary: "Et interaktivt skall, ogs\xE5 kjent som en Les-Evaluer-Skriv L\xF8kke (REPL),\
+  \ lar programmerere taste inn uttrykk eller kode og umiddelbart se resultater, noe\u2026"
+title: Bruk av interaktiv shell (REPL)
 ---
 
 {{< edit_this_page >}}

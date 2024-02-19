@@ -1,12 +1,15 @@
 ---
-title:                "Arbeta med csv"
 aliases:
 - /sv/swift/working-with-csv/
-date:                  2024-01-19
-simple_title:         "Arbeta med csv"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/working-with-csv.md"
+date: 2024-01-19
+description: "CSV, \"Comma-Separated Values\", \xE4r textfiler d\xE4r data separeras\
+  \ med kommatecken. Programmerare anv\xE4nder CSV f\xF6r enkelheten att lagra och\
+  \ utbyta data mellan\u2026"
+lastmod: 2024-02-18 23:08:52.145781
+summary: "CSV, \"Comma-Separated Values\", \xE4r textfiler d\xE4r data separeras med\
+  \ kommatecken. Programmerare anv\xE4nder CSV f\xF6r enkelheten att lagra och utbyta\
+  \ data mellan\u2026"
+title: Arbeta med csv
 ---
 
 {{< edit_this_page >}}

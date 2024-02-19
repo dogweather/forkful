@@ -1,13 +1,16 @@
 ---
-title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 aliases:
 - /fi/arduino/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:00:50.771459-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:00:50.771459-07:00
+description: "HTTP-pyynt\xF6 perusautentikoinnilla l\xE4hett\xE4\xE4 tietoa palvelimelle\
+  \ suojattuna. Se on turvallinen tapa p\xE4\xE4st\xE4 k\xE4siksi API:hin tai palveluun,\
+  \ joka vaatii\u2026"
+lastmod: 2024-02-18 23:09:07.899894
+model: gpt-4-1106-preview
+summary: "HTTP-pyynt\xF6 perusautentikoinnilla l\xE4hett\xE4\xE4 tietoa palvelimelle\
+  \ suojattuna. Se on turvallinen tapa p\xE4\xE4st\xE4 k\xE4siksi API:hin tai palveluun,\
+  \ joka vaatii\u2026"
+title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 ---
 
 {{< edit_this_page >}}

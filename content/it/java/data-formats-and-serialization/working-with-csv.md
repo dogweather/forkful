@@ -1,14 +1,18 @@
 ---
-title:                "Lavorare con i CSV"
 aliases:
 - /it/java/working-with-csv/
-date:                  2024-02-03T19:20:34.667076-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con i CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/java/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:20:34.667076-07:00
+description: "Lavorare con file CSV comporta la lettura da e la scrittura su file\
+  \ di Valori Separati da Virgola (CSV), un formato popolare per lo scambio di dati\
+  \ perch\xE9\u2026"
+lastmod: 2024-02-18 23:08:55.787418
+model: gpt-4-0125-preview
+summary: "Lavorare con file CSV comporta la lettura da e la scrittura su file di Valori\
+  \ Separati da Virgola (CSV), un formato popolare per lo scambio di dati perch\xE9\
+  \u2026"
+title: Lavorare con i CSV
 ---
 
 {{< edit_this_page >}}

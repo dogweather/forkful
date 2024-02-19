@@ -1,14 +1,28 @@
 ---
-title:                "CSV와 함께 작업하기"
 aliases:
 - /ko/fish-shell/working-with-csv/
-date:                  2024-02-03T19:19:53.311092-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "CSV와 함께 작업하기"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:19:53.311092-07:00
+description: "CSV(Comma Separated Values, \uC27C\uD45C\uB85C \uAD6C\uBD84\uB41C \uAC12\
+  ) \uD30C\uC77C \uC791\uC5C5\uC740 \uD30C\uC2F1, \uC870\uC791 \uBC0F \uB370\uC774\
+  \uD130 \uAD50\uD658\uC5D0 \uB110\uB9AC \uC0AC\uC6A9\uB418\uB294 \uD0ED \uD615\uC2DD\
+  \uC758 \uB370\uC774\uD130 \uC0DD\uC131\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\
+  \uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774\uB7EC\uD55C \uC791\uC5C5\uC744 \uD1B5\
+  \uD574 \uB370\uC774\uD130\uB97C \uD6A8\uC728\uC801\uC73C\uB85C \uCC98\uB9AC\uD558\
+  \uACE0 \uBD84\uC11D\uD558\uBA70, \uC791\uC5C5\uC744 \uC790\uB3D9\uD654\uD558\uAC70\
+  \uB098 \uB2E4\uB978 \uC2DC\uC2A4\uD15C\uACFC\u2026"
+lastmod: 2024-02-18 23:09:06.916270
+model: gpt-4-0125-preview
+summary: "CSV(Comma Separated Values, \uC27C\uD45C\uB85C \uAD6C\uBD84\uB41C \uAC12\
+  ) \uD30C\uC77C \uC791\uC5C5\uC740 \uD30C\uC2F1, \uC870\uC791 \uBC0F \uB370\uC774\
+  \uD130 \uAD50\uD658\uC5D0 \uB110\uB9AC \uC0AC\uC6A9\uB418\uB294 \uD0ED \uD615\uC2DD\
+  \uC758 \uB370\uC774\uD130 \uC0DD\uC131\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\
+  \uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774\uB7EC\uD55C \uC791\uC5C5\uC744 \uD1B5\
+  \uD574 \uB370\uC774\uD130\uB97C \uD6A8\uC728\uC801\uC73C\uB85C \uCC98\uB9AC\uD558\
+  \uACE0 \uBD84\uC11D\uD558\uBA70, \uC791\uC5C5\uC744 \uC790\uB3D9\uD654\uD558\uAC70\
+  \uB098 \uB2E4\uB978 \uC2DC\uC2A4\uD15C\uACFC\u2026"
+title: "CSV\uC640 \uD568\uAED8 \uC791\uC5C5\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

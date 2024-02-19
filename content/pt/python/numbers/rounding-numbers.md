@@ -1,13 +1,16 @@
 ---
-title:                "Arredondamento de números"
 aliases:
 - /pt/python/rounding-numbers/
-date:                  2024-01-26T03:46:14.077472-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arredondamento de números"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/rounding-numbers.md"
+date: 2024-01-26 03:46:14.077472-07:00
+description: "Arredondar n\xFAmeros significa ajust\xE1-los para que fiquem mais pr\xF3\
+  ximos de um valor mais simples ou significativo. Programadores arredondam n\xFA\
+  meros para\u2026"
+lastmod: 2024-02-18 23:08:57.756207
+model: gpt-4-0125-preview
+summary: "Arredondar n\xFAmeros significa ajust\xE1-los para que fiquem mais pr\xF3\
+  ximos de um valor mais simples ou significativo. Programadores arredondam n\xFA\
+  meros para\u2026"
+title: "Arredondamento de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

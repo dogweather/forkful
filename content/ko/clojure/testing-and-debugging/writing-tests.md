@@ -1,14 +1,30 @@
 ---
-title:                "테스트 작성하기"
 aliases:
 - /ko/clojure/writing-tests/
-date:                  2024-02-03T19:30:19.061521-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "테스트 작성하기"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:30:19.061521-07:00
+description: "Clojure\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uC791\uC131\uD558\uB294\
+  \ \uAC83\uC740 \uB2E4\uB978 \uD504\uB85C\uADF8\uB798\uBC0D \uC5B8\uC5B4\uC5D0\uC11C\
+  \uCC98\uB7FC, \uC8FC \uCF54\uB4DC\uBCA0\uC774\uC2A4\uAC00 \uC608\uC0C1\uB300\uB85C\
+  \ \uC791\uB3D9\uD558\uB294\uC9C0 \uAC80\uC99D\uD558\uAE30 \uC704\uD574 \uC804\uC6A9\
+  \ \uCF54\uB4DC\uB97C \uC0DD\uC131\uD558\uB294 \uACFC\uC815\uC744 \uD3EC\uD568\uD569\
+  \uB2C8\uB2E4. \uC774\uB294 \uC815\uD655\uC131\uC744 \uBCF4\uC7A5\uD558\uACE0 \uB9AC\
+  \uD329\uD1A0\uB9C1\uC744 \uC6A9\uC774\uD558\uAC8C \uD558\uBA70 \uCF54\uB4DC \uC548\
+  \uC815\uC131\uC744 \uD5A5\uC0C1\uC2DC\uD0A4\uB294 \uB370 \uB3C4\uC6C0\uC774 \uB429\
+  \uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:05.695560
+model: gpt-4-0125-preview
+summary: "Clojure\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uC791\uC131\uD558\uB294 \uAC83\
+  \uC740 \uB2E4\uB978 \uD504\uB85C\uADF8\uB798\uBC0D \uC5B8\uC5B4\uC5D0\uC11C\uCC98\
+  \uB7FC, \uC8FC \uCF54\uB4DC\uBCA0\uC774\uC2A4\uAC00 \uC608\uC0C1\uB300\uB85C \uC791\
+  \uB3D9\uD558\uB294\uC9C0 \uAC80\uC99D\uD558\uAE30 \uC704\uD574 \uC804\uC6A9 \uCF54\
+  \uB4DC\uB97C \uC0DD\uC131\uD558\uB294 \uACFC\uC815\uC744 \uD3EC\uD568\uD569\uB2C8\
+  \uB2E4. \uC774\uB294 \uC815\uD655\uC131\uC744 \uBCF4\uC7A5\uD558\uACE0 \uB9AC\uD329\
+  \uD1A0\uB9C1\uC744 \uC6A9\uC774\uD558\uAC8C \uD558\uBA70 \uCF54\uB4DC \uC548\uC815\
+  \uC131\uC744 \uD5A5\uC0C1\uC2DC\uD0A4\uB294 \uB370 \uB3C4\uC6C0\uC774 \uB429\uB2C8\
+  \uB2E4."
+title: "\uD14C\uC2A4\uD2B8 \uC791\uC131\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

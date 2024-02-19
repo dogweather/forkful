@@ -1,13 +1,14 @@
 ---
-title:                "Sending an HTTP request with basic authentication"
 aliases:
 - /en/powershell/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:23.036437-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sending an HTTP request with basic authentication"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/powershell/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:23.036437-07:00
+description: "Sending an HTTP request with basic authentication is when your program\
+  \ reaches out to a web server and says \"Hey, it's me,\" using a username and password.\u2026"
+lastmod: 2024-02-18 23:09:11.273666
+model: gpt-4-1106-preview
+summary: "Sending an HTTP request with basic authentication is when your program reaches\
+  \ out to a web server and says \"Hey, it's me,\" using a username and password.\u2026"
+title: Sending an HTTP request with basic authentication
 ---
 
 {{< edit_this_page >}}

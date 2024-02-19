@@ -1,12 +1,14 @@
 ---
-title:                "Searching and replacing text"
 aliases:
 - /en/go/searching-and-replacing-text/
-date:                  2024-02-03T17:50:01.808204-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Searching and replacing text"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/searching-and-replacing-text.md"
+date: 2024-02-03 17:50:01.808204-07:00
+description: "Searching and replacing text in programming facilitates the modification\
+  \ and management of strings, which is a fundamental task in data manipulation and\u2026"
+lastmod: 2024-02-18 23:09:10.581617
+model: gpt-4-0125-preview
+summary: "Searching and replacing text in programming facilitates the modification\
+  \ and management of strings, which is a fundamental task in data manipulation and\u2026"
+title: Searching and replacing text
 ---
 
 {{< edit_this_page >}}

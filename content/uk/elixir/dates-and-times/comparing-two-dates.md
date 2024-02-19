@@ -1,13 +1,15 @@
 ---
-title:                "Порівняння двох дат"
 aliases:
 - /uk/elixir/comparing-two-dates/
-date:                  2024-01-20T17:32:37.842708-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Порівняння двох дат"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/elixir/comparing-two-dates.md"
+date: 2024-01-20 17:32:37.842708-07:00
+description: "Comparing two dates means checking how they relate to each other\u2014\
+  are they the same, is one earlier, or is it later. Programmers need this for scheduling\u2026"
+lastmod: 2024-02-18 23:08:59.898290
+model: gpt-4-1106-preview
+summary: "Comparing two dates means checking how they relate to each other\u2014are\
+  \ they the same, is one earlier, or is it later. Programmers need this for scheduling\u2026"
+title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u0432\u043E\
+  \u0445 \u0434\u0430\u0442"
 ---
 
 {{< edit_this_page >}}

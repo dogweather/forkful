@@ -1,14 +1,17 @@
 ---
-title:                "Rédaction de tests"
 aliases:
 - /fr/clojure/writing-tests/
-date:                  2024-02-03T19:29:57.989081-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rédaction de tests"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:57.989081-07:00
+description: "\xC9crire des tests en Clojure, tout comme dans d'autres langages de\
+  \ programmation, implique de cr\xE9er du code d\xE9di\xE9 pour v\xE9rifier que votre\
+  \ code principal\u2026"
+lastmod: 2024-02-18 23:09:08.390676
+model: gpt-4-0125-preview
+summary: "\xC9crire des tests en Clojure, tout comme dans d'autres langages de programmation,\
+  \ implique de cr\xE9er du code d\xE9di\xE9 pour v\xE9rifier que votre code principal\u2026"
+title: "R\xE9daction de tests"
 ---
 
 {{< edit_this_page >}}

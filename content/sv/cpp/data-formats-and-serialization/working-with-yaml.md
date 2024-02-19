@@ -1,14 +1,18 @@
 ---
-title:                "Att Arbeta med YAML"
 aliases:
 - /sv/cpp/working-with-yaml/
-date:                  2024-02-03T19:24:39.236977-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att Arbeta med YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:24:39.236977-07:00
+description: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r ett l\xE4\
+  sbart data-serialiseringsformat f\xF6r m\xE4nniskor. Programmerare anv\xE4nder det\
+  \ f\xF6r konfigurationsfiler,\u2026"
+lastmod: 2024-02-18 23:08:52.103439
+model: gpt-4-0125-preview
+summary: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r ett l\xE4sbart\
+  \ data-serialiseringsformat f\xF6r m\xE4nniskor. Programmerare anv\xE4nder det f\xF6\
+  r konfigurationsfiler,\u2026"
+title: Att Arbeta med YAML
 ---
 
 {{< edit_this_page >}}

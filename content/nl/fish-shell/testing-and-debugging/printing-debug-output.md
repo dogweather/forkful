@@ -1,15 +1,17 @@
 ---
-title:                "Debug-output afdrukken"
 aliases:
 - /nl/fish-shell/printing-debug-output/
-date:                  2024-01-28T22:04:24.862576-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Debug-output afdrukken"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/printing-debug-output.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:04:24.862576-07:00
+description: "Debug-output afdrukken betekent extra informatie uitspugen om je te\
+  \ helpen begrijpen wat je code doet. Programmeurs doen dit om bugs gemakkelijker\
+  \ te\u2026"
+lastmod: 2024-02-18 23:09:02.328772
+model: gpt-4-0125-preview
+summary: "Debug-output afdrukken betekent extra informatie uitspugen om je te helpen\
+  \ begrijpen wat je code doet. Programmeurs doen dit om bugs gemakkelijker te\u2026"
+title: Debug-output afdrukken
 ---
 
 {{< edit_this_page >}}

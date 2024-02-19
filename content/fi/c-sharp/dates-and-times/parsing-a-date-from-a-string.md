@@ -1,14 +1,18 @@
 ---
-title:                "Päivämäärän jäsennys merkkijonosta"
 aliases:
 - /fi/c-sharp/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:13:53.948286-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Päivämäärän jäsennys merkkijonosta"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:13:53.948286-07:00
+description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta C#:ssa tarkoittaa\
+  \ p\xE4iv\xE4m\xE4\xE4rien ja aikojen tekstiesitysten muuntamista `DateTime`-objektiksi.\
+  \ T\xE4m\xE4 on v\xE4ltt\xE4m\xE4t\xF6nt\xE4\u2026"
+lastmod: 2024-02-18 23:09:07.630783
+model: gpt-4-0125-preview
+summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta C#:ssa tarkoittaa p\xE4\
+  iv\xE4m\xE4\xE4rien ja aikojen tekstiesitysten muuntamista `DateTime`-objektiksi.\
+  \ T\xE4m\xE4 on v\xE4ltt\xE4m\xE4t\xF6nt\xE4\u2026"
+title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 ---
 
 {{< edit_this_page >}}

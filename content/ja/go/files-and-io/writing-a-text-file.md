@@ -1,14 +1,14 @@
 ---
-title:                "テキストファイルの作成"
 aliases:
 - /ja/go/writing-a-text-file/
-date:                  2024-02-03T18:15:17.043594-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "テキストファイルの作成"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:15:17.043594-07:00
+description: "\u2026"
+lastmod: 2024-02-18 23:08:54.498927
+model: gpt-4-0125-preview
+summary: "\u2026"
+title: "\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u306E\u4F5C\u6210"
 ---
 
 {{< edit_this_page >}}

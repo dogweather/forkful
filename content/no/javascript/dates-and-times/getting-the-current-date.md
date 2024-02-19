@@ -1,14 +1,16 @@
 ---
-title:                "Få dagens dato"
 aliases:
 - /no/javascript/getting-the-current-date/
-date:                  2024-02-03T19:09:51.705003-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Få dagens dato"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:09:51.705003-07:00
+description: "\xC5 hente den gjeldende datoen i JavaScript er en grunnleggende oppgave\
+  \ som involverer \xE5 hente og muligens manipulere dagens dato og tid. Programmerere\u2026"
+lastmod: 2024-02-18 23:08:54.318906
+model: gpt-4-0125-preview
+summary: "\xC5 hente den gjeldende datoen i JavaScript er en grunnleggende oppgave\
+  \ som involverer \xE5 hente og muligens manipulere dagens dato og tid. Programmerere\u2026"
+title: "F\xE5 dagens dato"
 ---
 
 {{< edit_this_page >}}

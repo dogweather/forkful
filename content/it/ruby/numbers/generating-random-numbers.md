@@ -1,13 +1,14 @@
 ---
-title:                "Generazione di numeri casuali"
 aliases:
 - /it/ruby/generating-random-numbers/
-date:                  2024-01-27T20:34:50.133702-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generazione di numeri casuali"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/generating-random-numbers.md"
+date: 2024-01-27 20:34:50.133702-07:00
+description: "Generare numeri casuali in Ruby comporta la creazione di numeri che\
+  \ non possono essere previsti logicamente, fondamentale per scenari come le simulazioni,\u2026"
+lastmod: 2024-02-18 23:08:56.377139
+model: gpt-4-0125-preview
+summary: "Generare numeri casuali in Ruby comporta la creazione di numeri che non\
+  \ possono essere previsti logicamente, fondamentale per scenari come le simulazioni,\u2026"
+title: Generazione di numeri casuali
 ---
 
 {{< edit_this_page >}}

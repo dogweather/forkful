@@ -1,13 +1,16 @@
 ---
-title:                "Läsa in kommandoradsargument"
 aliases:
 - /sv/javascript/reading-command-line-arguments/
-date:                  2024-01-20T17:56:32.490887-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Läsa in kommandoradsargument"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:32.490887-07:00
+description: "L\xE4sning av kommandoradsargument handlar om att snappa upp de extra\
+  \ inputs som skickas till ditt program n\xE4r det k\xF6rs i terminalen. Programmerare\
+  \ g\xF6r detta\u2026"
+lastmod: 2024-02-18 23:08:52.179574
+model: gpt-4-1106-preview
+summary: "L\xE4sning av kommandoradsargument handlar om att snappa upp de extra inputs\
+  \ som skickas till ditt program n\xE4r det k\xF6rs i terminalen. Programmerare g\xF6\
+  r detta\u2026"
+title: "L\xE4sa in kommandoradsargument"
 ---
 
 {{< edit_this_page >}}

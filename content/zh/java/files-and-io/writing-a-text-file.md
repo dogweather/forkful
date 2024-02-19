@@ -1,14 +1,24 @@
 ---
-title:                "编写文本文件"
 aliases:
 - /zh/java/writing-a-text-file/
-date:                  2024-02-03T19:28:10.548851-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "编写文本文件"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:28:10.548851-07:00
+description: "\u5728Java\u4E2D\u5199\u5165\u6587\u672C\u6587\u4EF6\u662F\u5173\u4E8E\
+  \u4F7F\u7528\u8BED\u8A00\u7684\u80FD\u529B\u6765\u521B\u5EFA\u548C\u5199\u5165\u6587\
+  \u4EF6\u7CFB\u7EDF\u4E2D\u7684\u6587\u4EF6\u3002\u7A0B\u5E8F\u5458\u51FA\u4E8E\u5404\
+  \u79CD\u539F\u56E0\u8FD9\u6837\u505A\uFF0C\u5982\u65E5\u5FD7\u8BB0\u5F55\u3001\u5BFC\
+  \u51FA\u6570\u636E\u6216\u4E3A\u4E86\u4EE5\u540E\u68C0\u7D22\u4FDD\u5B58\u5E94\u7528\
+  \u7A0B\u5E8F\u72B6\u6001\u3002"
+lastmod: 2024-02-18 23:08:59.037231
+model: gpt-4-0125-preview
+summary: "\u5728Java\u4E2D\u5199\u5165\u6587\u672C\u6587\u4EF6\u662F\u5173\u4E8E\u4F7F\
+  \u7528\u8BED\u8A00\u7684\u80FD\u529B\u6765\u521B\u5EFA\u548C\u5199\u5165\u6587\u4EF6\
+  \u7CFB\u7EDF\u4E2D\u7684\u6587\u4EF6\u3002\u7A0B\u5E8F\u5458\u51FA\u4E8E\u5404\u79CD\
+  \u539F\u56E0\u8FD9\u6837\u505A\uFF0C\u5982\u65E5\u5FD7\u8BB0\u5F55\u3001\u5BFC\u51FA\
+  \u6570\u636E\u6216\u4E3A\u4E86\u4EE5\u540E\u68C0\u7D22\u4FDD\u5B58\u5E94\u7528\u7A0B\
+  \u5E8F\u72B6\u6001\u3002"
+title: "\u7F16\u5199\u6587\u672C\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

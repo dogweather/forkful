@@ -1,14 +1,21 @@
 ---
-title:                "字符串拼接"
 aliases:
 - /zh/swift/concatenating-strings/
-date:                  2024-01-20T17:36:01.796129-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "字符串拼接"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/concatenating-strings.md"
+date: 2024-01-20 17:36:01.796129-07:00
+description: "\u5B57\u7B26\u4E32\u62FC\u63A5\u5C31\u662F\u5C06\u4E24\u4E2A\u6216\u591A\
+  \u4E2A\u5B57\u7B26\u4E32\u5408\u5E76\u6210\u4E00\u4E2A\u65B0\u7684\u5B57\u7B26\u4E32\
+  \u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u52A8\u6001\u5730\u521B\
+  \u5EFA\u6570\u636E\u5C55\u793A\uFF0C\u6216\u8005\u662F\u4E3A\u4E86\u5728\u4EE3\u7801\
+  \u4E2D\u6784\u5EFA\u5177\u4F53\u7684\u4FE1\u606F\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.435256
+model: gpt-4-1106-preview
+summary: "\u5B57\u7B26\u4E32\u62FC\u63A5\u5C31\u662F\u5C06\u4E24\u4E2A\u6216\u591A\
+  \u4E2A\u5B57\u7B26\u4E32\u5408\u5E76\u6210\u4E00\u4E2A\u65B0\u7684\u5B57\u7B26\u4E32\
+  \u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u52A8\u6001\u5730\u521B\
+  \u5EFA\u6570\u636E\u5C55\u793A\uFF0C\u6216\u8005\u662F\u4E3A\u4E86\u5728\u4EE3\u7801\
+  \u4E2D\u6784\u5EFA\u5177\u4F53\u7684\u4FE1\u606F\u3002"
+title: "\u5B57\u7B26\u4E32\u62FC\u63A5"
 ---
 
 {{< edit_this_page >}}

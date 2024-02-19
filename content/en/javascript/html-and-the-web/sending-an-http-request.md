@@ -1,13 +1,14 @@
 ---
-title:                "Sending an HTTP request"
 aliases:
 - /en/javascript/sending-an-http-request/
-date:                  2024-01-20T17:59:48.745761-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sending an HTTP request"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/sending-an-http-request.md"
+date: 2024-01-20 17:59:48.745761-07:00
+description: "Sending an HTTP request is how your JavaScript code talks to a server.\
+  \ It's done to exchange data, fetch resources, or send data to the server for\u2026"
+lastmod: 2024-02-18 23:09:11.434821
+model: gpt-4-1106-preview
+summary: "Sending an HTTP request is how your JavaScript code talks to a server. It's\
+  \ done to exchange data, fetch resources, or send data to the server for\u2026"
+title: Sending an HTTP request
 ---
 
 {{< edit_this_page >}}

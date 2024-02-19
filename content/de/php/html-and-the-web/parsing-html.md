@@ -1,14 +1,16 @@
 ---
-title:                "HTML parsen"
 aliases:
 - /de/php/parsing-html/
-date:                  2024-02-03T19:12:34.273976-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML parsen"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:34.273976-07:00
+description: "HTML in PHP zu parsen, bedeutet, spezifische Informationen aus HTML-Dokumenten\
+  \ zu extrahieren. Programmierer f\xFChren diese Aufgabe aus, um die\u2026"
+lastmod: 2024-02-18 23:09:04.959748
+model: gpt-4-0125-preview
+summary: "HTML in PHP zu parsen, bedeutet, spezifische Informationen aus HTML-Dokumenten\
+  \ zu extrahieren. Programmierer f\xFChren diese Aufgabe aus, um die\u2026"
+title: HTML parsen
 ---
 
 {{< edit_this_page >}}

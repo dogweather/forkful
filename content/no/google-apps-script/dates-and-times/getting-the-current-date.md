@@ -1,14 +1,18 @@
 ---
-title:                "Få den gjeldende datoen"
 aliases:
 - /no/google-apps-script/getting-the-current-date/
-date:                  2024-02-01T21:54:28.008327-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Få den gjeldende datoen"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/google-apps-script/getting-the-current-date.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:28.008327-07:00
+description: "\xC5 f\xE5 tak i dagens dato i Google Apps Script handler om \xE5 hente\
+  \ den levende datoen og tiden, en vanlig oppgave for automatisering, logging og\
+  \ tidsstempling\u2026"
+lastmod: 2024-02-18 23:08:53.492484
+model: gpt-4-0125-preview
+summary: "\xC5 f\xE5 tak i dagens dato i Google Apps Script handler om \xE5 hente\
+  \ den levende datoen og tiden, en vanlig oppgave for automatisering, logging og\
+  \ tidsstempling\u2026"
+title: "F\xE5 den gjeldende datoen"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Sending an HTTP request"
 aliases:
 - /en/lua/sending-an-http-request/
-date:                  2024-01-20T18:00:16.334061-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sending an HTTP request"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/sending-an-http-request.md"
+date: 2024-01-20 18:00:16.334061-07:00
+description: "Sending an HTTP request means asking a remote server for data or action.\
+  \ Programmers do this to interact with web services, fetch resources, or\u2026"
+lastmod: 2024-02-18 23:09:11.175396
+model: gpt-4-1106-preview
+summary: "Sending an HTTP request means asking a remote server for data or action.\
+  \ Programmers do this to interact with web services, fetch resources, or\u2026"
+title: Sending an HTTP request
 ---
 
 {{< edit_this_page >}}

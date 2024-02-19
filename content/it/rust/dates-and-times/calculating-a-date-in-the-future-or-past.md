@@ -1,13 +1,16 @@
 ---
-title:                "Calcolo di una data futura o passata"
 aliases:
 - /it/rust/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:32:00.589273-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Calcolo di una data futura o passata"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:32:00.589273-07:00
+description: "Calcolare una data nel futuro o nel passato significa trovare una data\
+  \ che \xE8 un certo numero di giorni, mesi o anni distante da una data di partenza.\
+  \ I\u2026"
+lastmod: 2024-02-18 23:08:55.693143
+model: gpt-4-1106-preview
+summary: "Calcolare una data nel futuro o nel passato significa trovare una data che\
+  \ \xE8 un certo numero di giorni, mesi o anni distante da una data di partenza.\
+  \ I\u2026"
+title: Calcolo di una data futura o passata
 ---
 
 {{< edit_this_page >}}

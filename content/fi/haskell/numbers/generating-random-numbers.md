@@ -1,13 +1,16 @@
 ---
-title:                "Satunnaislukujen generointi"
 aliases:
 - /fi/haskell/generating-random-numbers/
-date:                  2024-01-27T20:33:55.505046-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Satunnaislukujen generointi"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/generating-random-numbers.md"
+date: 2024-01-27 20:33:55.505046-07:00
+description: "Satunnaislukujen generointi Haskellissa tarkoittaa ennustamattomien\
+  \ lukujen luomista ihmisten mittapuiden mukaan. T\xE4m\xE4 on kriittist\xE4 skenaarioissa,\
+  \ jotka\u2026"
+lastmod: 2024-02-18 23:09:07.662056
+model: gpt-4-0125-preview
+summary: "Satunnaislukujen generointi Haskellissa tarkoittaa ennustamattomien lukujen\
+  \ luomista ihmisten mittapuiden mukaan. T\xE4m\xE4 on kriittist\xE4 skenaarioissa,\
+  \ jotka\u2026"
+title: Satunnaislukujen generointi
 ---
 
 {{< edit_this_page >}}

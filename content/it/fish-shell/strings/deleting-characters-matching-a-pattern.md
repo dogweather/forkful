@@ -1,13 +1,15 @@
 ---
-title:                "Eliminazione di caratteri che corrispondono a un pattern"
 aliases:
 - /it/fish-shell/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:16.753444-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Eliminazione di caratteri che corrispondono a un pattern"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:16.753444-07:00
+description: "Rimuovere caratteri che corrispondono a un modello significa filtrare\
+  \ il testo per eliminare specifici caratteri o sequenze di caratteri. Lo facciamo\
+  \ per\u2026"
+lastmod: 2024-02-18 23:08:56.278579
+model: gpt-4-1106-preview
+summary: "Rimuovere caratteri che corrispondono a un modello significa filtrare il\
+  \ testo per eliminare specifici caratteri o sequenze di caratteri. Lo facciamo per\u2026"
+title: Eliminazione di caratteri che corrispondono a un pattern
 ---
 
 {{< edit_this_page >}}

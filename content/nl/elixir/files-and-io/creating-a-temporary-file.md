@@ -1,15 +1,17 @@
 ---
-title:                "Een tijdelijk bestand aanmaken"
 aliases:
 - /nl/elixir/creating-a-temporary-file/
-date:                  2024-01-28T21:58:05.926269-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tijdelijk bestand aanmaken"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elixir/creating-a-temporary-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:58:05.926269-07:00
+description: "Een tijdelijk bestand cre\xEBren betekent het maken van een bestand\
+  \ dat je weggooit na kort gebruik. Programmeurs doen dit voor tijdelijke opslag\
+  \ of wanneer\u2026"
+lastmod: 2024-02-18 23:09:01.547710
+model: gpt-4-0125-preview
+summary: "Een tijdelijk bestand cre\xEBren betekent het maken van een bestand dat\
+  \ je weggooit na kort gebruik. Programmeurs doen dit voor tijdelijke opslag of wanneer\u2026"
+title: Een tijdelijk bestand aanmaken
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Skriva ut felsökningsutdata"
 aliases:
 - /sv/c/printing-debug-output/
-date:                  2024-02-03T18:05:16.178503-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriva ut felsökningsutdata"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/printing-debug-output.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:16.178503-07:00
+description: "Att skriva ut fels\xF6kningsmeddelanden handlar om att generera tillf\xE4\
+  lliga, informativa loggmeddelanden som kan hj\xE4lpa programmerare att f\xF6rst\xE5\
+  \ fl\xF6det och\u2026"
+lastmod: 2024-02-18 23:08:52.253260
+model: gpt-4-0125-preview
+summary: "Att skriva ut fels\xF6kningsmeddelanden handlar om att generera tillf\xE4\
+  lliga, informativa loggmeddelanden som kan hj\xE4lpa programmerare att f\xF6rst\xE5\
+  \ fl\xF6det och\u2026"
+title: "Skriva ut fels\xF6kningsutdata"
 ---
 
 {{< edit_this_page >}}

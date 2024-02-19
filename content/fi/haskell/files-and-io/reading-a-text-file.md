@@ -1,13 +1,14 @@
 ---
-title:                "Tekstitiedoston lukeminen"
 aliases:
 - /fi/haskell/reading-a-text-file/
-date:                  2024-01-20T17:54:20.714393-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tekstitiedoston lukeminen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/reading-a-text-file.md"
+date: 2024-01-20 17:54:20.714393-07:00
+description: "Tekstin lukeminen tiedostosta on yksinkertaisesti tiedon hakemista levylt\xE4\
+  . Ohjelmoijat tekev\xE4t t\xE4t\xE4 datan k\xE4sittelyn, analysoinnin tai tulosten\u2026"
+lastmod: 2024-02-18 23:09:07.685014
+model: gpt-4-1106-preview
+summary: "Tekstin lukeminen tiedostosta on yksinkertaisesti tiedon hakemista levylt\xE4\
+  . Ohjelmoijat tekev\xE4t t\xE4t\xE4 datan k\xE4sittelyn, analysoinnin tai tulosten\u2026"
+title: Tekstitiedoston lukeminen
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,19 @@
 ---
-title:                "字符串拼接"
 aliases:
 - /zh/bash/concatenating-strings/
-date:                  2024-01-20T17:34:09.588915-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "字符串拼接"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/bash/concatenating-strings.md"
+date: 2024-01-20 17:34:09.588915-07:00
+description: "\u4E32\u8054\u5B57\u7B26\u4E32\u5C31\u662F\u5C06\u591A\u4E2A\u5B57\u7B26\
+  \u4E32\u8FDE\u63A5\u6210\u4E00\u4E2A\u5B57\u7B26\u4E32\u3002\u7A0B\u5E8F\u5458\u8FD9\
+  \u6837\u505A\u6765\u5408\u5E76\u6587\u672C\uFF0C\u6784\u9020\u547D\u4EE4\u6216\u751F\
+  \u6210\u8F93\u51FA\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.283507
+model: gpt-4-1106-preview
+summary: "\u4E32\u8054\u5B57\u7B26\u4E32\u5C31\u662F\u5C06\u591A\u4E2A\u5B57\u7B26\
+  \u4E32\u8FDE\u63A5\u6210\u4E00\u4E2A\u5B57\u7B26\u4E32\u3002\u7A0B\u5E8F\u5458\u8FD9\
+  \u6837\u505A\u6765\u5408\u5E76\u6587\u672C\uFF0C\u6784\u9020\u547D\u4EE4\u6216\u751F\
+  \u6210\u8F93\u51FA\u3002"
+title: "\u5B57\u7B26\u4E32\u62FC\u63A5"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Creando un archivo temporal"
 aliases:
 - /es/clojure/creating-a-temporary-file/
-date:                  2024-01-20T17:39:54.162274-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Creando un archivo temporal"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/creating-a-temporary-file.md"
+date: 2024-01-20 17:39:54.162274-07:00
+description: "Crear un archivo temporal significa fabricar un fichero dise\xF1ado\
+  \ para ser usado brevemente, usualmente como espacio de trabajo temporal. Los programadores\u2026"
+lastmod: 2024-02-18 23:09:09.624015
+model: gpt-4-1106-preview
+summary: "Crear un archivo temporal significa fabricar un fichero dise\xF1ado para\
+  \ ser usado brevemente, usualmente como espacio de trabajo temporal. Los programadores\u2026"
+title: Creando un archivo temporal
 ---
 
 {{< edit_this_page >}}

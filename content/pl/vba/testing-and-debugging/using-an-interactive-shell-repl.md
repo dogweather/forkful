@@ -1,14 +1,18 @@
 ---
-title:                "Korzystanie z interaktywnej powłoki (REPL)"
 aliases:
 - /pl/vba/using-an-interactive-shell-repl/
-date:                  2024-02-01T22:04:10.508690-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z interaktywnej powłoki (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/vba/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:10.508690-07:00
+description: "Interaktywna pow\u0142oka, czyli p\u0119tla czytaj-wykonaj-drukuj (REPL),\
+  \ pozwala u\u017Cytkownikom wprowadza\u0107 komendy, wykonywa\u0107 je i widzie\u0107\
+  \ wyniki w czasie\u2026"
+lastmod: 2024-02-18 23:08:49.435830
+model: gpt-4-0125-preview
+summary: "Interaktywna pow\u0142oka, czyli p\u0119tla czytaj-wykonaj-drukuj (REPL),\
+  \ pozwala u\u017Cytkownikom wprowadza\u0107 komendy, wykonywa\u0107 je i widzie\u0107\
+  \ wyniki w czasie\u2026"
+title: "Korzystanie z interaktywnej pow\u0142oki (REPL)"
 ---
 
 {{< edit_this_page >}}

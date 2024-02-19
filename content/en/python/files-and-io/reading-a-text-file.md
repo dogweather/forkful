@@ -1,13 +1,14 @@
 ---
-title:                "Reading a text file"
 aliases:
 - /en/python/reading-a-text-file/
-date:                  2024-01-20T17:54:55.075228-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Reading a text file"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/reading-a-text-file.md"
+date: 2024-01-20 17:54:55.075228-07:00
+description: "Reading a text file in Python is grabbing data from a file that's accessible\
+  \ on your disk or over a network. Programmers read files to use the stored data\u2026"
+lastmod: 2024-02-18 23:09:10.698872
+model: gpt-4-1106-preview
+summary: "Reading a text file in Python is grabbing data from a file that's accessible\
+  \ on your disk or over a network. Programmers read files to use the stored data\u2026"
+title: Reading a text file
 ---
 
 {{< edit_this_page >}}

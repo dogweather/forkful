@@ -1,14 +1,16 @@
 ---
-title:                "Analizando HTML"
 aliases:
 - /es/bash/parsing-html/
-date:                  2024-02-03T19:11:21.220880-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analizando HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:11:21.220880-07:00
+description: "Parsear HTML significa tamizar la estructura y el contenido de un archivo\
+  \ HTML para extraer informaci\xF3n. Los programadores lo hacen para acceder a datos,\u2026"
+lastmod: 2024-02-18 23:09:10.165074
+model: gpt-4-0125-preview
+summary: "Parsear HTML significa tamizar la estructura y el contenido de un archivo\
+  \ HTML para extraer informaci\xF3n. Los programadores lo hacen para acceder a datos,\u2026"
+title: Analizando HTML
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Uuden projektin aloittaminen"
 aliases:
 - /fi/cpp/starting-a-new-project/
-date:                  2024-01-20T18:03:15.293824-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Uuden projektin aloittaminen"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/starting-a-new-project.md"
+date: 2024-01-20 18:03:15.293824-07:00
+description: "Uuden projektin aloittaminen tarkoittaa tyhj\xE4lt\xE4 p\xF6yd\xE4lt\xE4\
+  \ alkamista, koodipohjan rakentamista. Ohjelmoijat tekev\xE4t t\xE4m\xE4n uusien\
+  \ ideoiden testailuun,\u2026"
+lastmod: 2024-02-18 23:09:07.944500
+model: gpt-4-1106-preview
+summary: "Uuden projektin aloittaminen tarkoittaa tyhj\xE4lt\xE4 p\xF6yd\xE4lt\xE4\
+  \ alkamista, koodipohjan rakentamista. Ohjelmoijat tekev\xE4t t\xE4m\xE4n uusien\
+  \ ideoiden testailuun,\u2026"
+title: Uuden projektin aloittaminen
 ---
 
 {{< edit_this_page >}}

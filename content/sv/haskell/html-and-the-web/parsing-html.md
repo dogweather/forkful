@@ -1,12 +1,14 @@
 ---
-title:                "Tolka HTML"
 aliases:
 - /sv/haskell/parsing-html/
-date:                  2024-01-20T15:31:59.808672-07:00
-simple_title:         "Tolka HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/parsing-html.md"
+date: 2024-01-20 15:31:59.808672-07:00
+description: "Att parsa HTML inneb\xE4r att man omvandlar HTML-str\xE4ngar till en\
+  \ datastruktur som datorn kan jobba med. Programmerare g\xF6r detta f\xF6r att enkelt\
+  \ kunna\u2026"
+lastmod: 2024-02-18 23:08:51.835094
+summary: "Att parsa HTML inneb\xE4r att man omvandlar HTML-str\xE4ngar till en datastruktur\
+  \ som datorn kan jobba med. Programmerare g\xF6r detta f\xF6r att enkelt kunna\u2026"
+title: Tolka HTML
 ---
 
 {{< edit_this_page >}}

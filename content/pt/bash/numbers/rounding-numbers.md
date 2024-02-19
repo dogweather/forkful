@@ -1,13 +1,14 @@
 ---
-title:                "Arredondamento de números"
 aliases:
 - /pt/bash/rounding-numbers/
-date:                  2024-01-26T03:42:45.205559-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arredondamento de números"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/rounding-numbers.md"
+date: 2024-01-26 03:42:45.205559-07:00
+description: "Arredondar n\xFAmeros significa cortar os decimais para um valor mais\
+  \ simples que seja suficiente para um determinado contexto. Programadores arredondam\u2026"
+lastmod: 2024-02-18 23:08:58.318493
+model: gpt-4-0125-preview
+summary: "Arredondar n\xFAmeros significa cortar os decimais para um valor mais simples\
+  \ que seja suficiente para um determinado contexto. Programadores arredondam\u2026"
+title: "Arredondamento de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

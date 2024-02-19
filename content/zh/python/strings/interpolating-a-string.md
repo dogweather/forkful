@@ -1,16 +1,23 @@
 ---
-title:                "字符串插值"
 aliases:
 - /zh/python/interpolating-a-string/
-date:                  2024-01-28T21:23:54.472553-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "字符串插值"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/interpolating-a-string.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:23:54.472553-07:00
+description: "\u5B57\u7B26\u4E32\u5185\u63D2\u662F\u4E00\u79CD\u5728\u5B57\u7B26\u4E32\
+  \u5E38\u91CF\u4E2D\u5D4C\u5165\u8868\u8FBE\u5F0F\u7684\u65B9\u6CD5\u3002\u7A0B\u5E8F\
+  \u5458\u4F7F\u7528\u5B83\u6765\u52A8\u6001\u5730\u5C06\u503C\u63D2\u5165\u5230\u5B57\
+  \u7B26\u4E32\u4E2D\uFF0C\u8FD9\u4F7F\u5F97\u4EE3\u7801\u6BD4\u4F20\u7EDF\u7684\u5B57\
+  \u7B26\u4E32\u8FDE\u63A5\u66F4\u52A0\u6613\u8BFB\u548C\u6E05\u6D01\u3002"
+lastmod: 2024-02-18 23:08:58.778604
+model: gpt-4-0125-preview
+summary: "\u5B57\u7B26\u4E32\u5185\u63D2\u662F\u4E00\u79CD\u5728\u5B57\u7B26\u4E32\
+  \u5E38\u91CF\u4E2D\u5D4C\u5165\u8868\u8FBE\u5F0F\u7684\u65B9\u6CD5\u3002\u7A0B\u5E8F\
+  \u5458\u4F7F\u7528\u5B83\u6765\u52A8\u6001\u5730\u5C06\u503C\u63D2\u5165\u5230\u5B57\
+  \u7B26\u4E32\u4E2D\uFF0C\u8FD9\u4F7F\u5F97\u4EE3\u7801\u6BD4\u4F20\u7EDF\u7684\u5B57\
+  \u7B26\u4E32\u8FDE\u63A5\u66F4\u52A0\u6613\u8BFB\u548C\u6E05\u6D01\u3002"
+title: "\u5B57\u7B26\u4E32\u63D2\u503C"
 ---
 
 {{< edit_this_page >}}

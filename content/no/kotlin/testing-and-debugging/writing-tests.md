@@ -1,14 +1,18 @@
 ---
-title:                "Skrive tester"
 aliases:
 - /no/kotlin/writing-tests/
-date:                  2024-02-03T19:31:08.123772-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skrive tester"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:08.123772-07:00
+description: "\xC5 skrive tester i Kotlin inneb\xE6rer \xE5 lage kodeutsnitt som automatisk\
+  \ validerer den funksjonelle korrektheten av programvaremodulene dine, og s\xF8\
+  rger for at\u2026"
+lastmod: 2024-02-18 23:08:53.855899
+model: gpt-4-0125-preview
+summary: "\xC5 skrive tester i Kotlin inneb\xE6rer \xE5 lage kodeutsnitt som automatisk\
+  \ validerer den funksjonelle korrektheten av programvaremodulene dine, og s\xF8\
+  rger for at\u2026"
+title: Skrive tester
 ---
 
 {{< edit_this_page >}}

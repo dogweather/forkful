@@ -1,13 +1,16 @@
 ---
-title:                "Lecture d'un fichier texte"
 aliases:
 - /fr/elixir/reading-a-text-file/
-date:                  2024-01-20T17:53:53.809833-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lecture d'un fichier texte"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/reading-a-text-file.md"
+date: 2024-01-20 17:53:53.809833-07:00
+description: "Lire un fichier texte en programmation, c'est r\xE9colter le contenu\
+  \ d'un fichier pour l'utiliser ou le modifier. En tant que programmeurs, on fait\
+  \ \xE7a pour\u2026"
+lastmod: 2024-02-18 23:09:08.454011
+model: gpt-4-1106-preview
+summary: "Lire un fichier texte en programmation, c'est r\xE9colter le contenu d'un\
+  \ fichier pour l'utiliser ou le modifier. En tant que programmeurs, on fait \xE7\
+  a pour\u2026"
+title: Lecture d'un fichier texte
 ---
 
 {{< edit_this_page >}}

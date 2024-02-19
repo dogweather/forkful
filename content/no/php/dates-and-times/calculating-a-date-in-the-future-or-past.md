@@ -1,13 +1,16 @@
 ---
-title:                "Beregning av en dato i fremtiden eller fortiden"
 aliases:
 - /no/php/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:31:37.721663-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Beregning av en dato i fremtiden eller fortiden"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:31:37.721663-07:00
+description: "\xC5 regne ut en dato i fremtiden eller fortiden er \xE5 finne eksakte\
+  \ dager f\xF8r eller etter en gitt dato. Programmerere gj\xF8r dette for \xE5 h\xE5\
+  ndtere eventer,\u2026"
+lastmod: 2024-02-18 23:08:53.988082
+model: gpt-4-1106-preview
+summary: "\xC5 regne ut en dato i fremtiden eller fortiden er \xE5 finne eksakte dager\
+  \ f\xF8r eller etter en gitt dato. Programmerere gj\xF8r dette for \xE5 h\xE5ndtere\
+  \ eventer,\u2026"
+title: Beregning av en dato i fremtiden eller fortiden
 ---
 
 {{< edit_this_page >}}

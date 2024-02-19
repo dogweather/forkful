@@ -1,14 +1,26 @@
 ---
-title:                "将代码组织成函数"
 aliases:
 - /zh/c/organizing-code-into-functions/
-date:                  2024-02-03T17:59:13.926767-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "将代码组织成函数"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/organizing-code-into-functions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:13.926767-07:00
+description: "\u5728 C \u8BED\u8A00\u4E2D\uFF0C\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\
+  \u51FD\u6570\u5305\u542B\u4E86\u5C06\u590D\u6742\u4EFB\u52A1\u5206\u89E3\u6210\u66F4\
+  \u5C0F\u3001\u53EF\u91CD\u7528\u7684\u4EE3\u7801\u5757\u7684\u8FC7\u7A0B\u3002\u8FD9\
+  \u79CD\u505A\u6CD5\u63D0\u9AD8\u4E86\u4EE3\u7801\u7684\u53EF\u8BFB\u6027\uFF0C\u7B80\
+  \u5316\u4E86\u8C03\u8BD5\u8FC7\u7A0B\uFF0C\u5E76\u4FC3\u8FDB\u4E86\u4EE3\u7801\u91CD\
+  \u7528\uFF0C\u4F7F\u5F97\u5E94\u7528\u7A0B\u5E8F\u66F4\u52A0\u6A21\u5757\u5316\u4E14\
+  \u6613\u4E8E\u7EF4\u62A4\u3002"
+lastmod: 2024-02-18 23:08:59.564754
+model: gpt-4-0125-preview
+summary: "\u5728 C \u8BED\u8A00\u4E2D\uFF0C\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\u51FD\
+  \u6570\u5305\u542B\u4E86\u5C06\u590D\u6742\u4EFB\u52A1\u5206\u89E3\u6210\u66F4\u5C0F\
+  \u3001\u53EF\u91CD\u7528\u7684\u4EE3\u7801\u5757\u7684\u8FC7\u7A0B\u3002\u8FD9\u79CD\
+  \u505A\u6CD5\u63D0\u9AD8\u4E86\u4EE3\u7801\u7684\u53EF\u8BFB\u6027\uFF0C\u7B80\u5316\
+  \u4E86\u8C03\u8BD5\u8FC7\u7A0B\uFF0C\u5E76\u4FC3\u8FDB\u4E86\u4EE3\u7801\u91CD\u7528\
+  \uFF0C\u4F7F\u5F97\u5E94\u7528\u7A0B\u5E8F\u66F4\u52A0\u6A21\u5757\u5316\u4E14\u6613\
+  \u4E8E\u7EF4\u62A4\u3002"
+title: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\u51FD\u6570"
 ---
 
 {{< edit_this_page >}}

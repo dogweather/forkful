@@ -1,13 +1,16 @@
 ---
-title:                "Søking og erstatting av tekst"
 aliases:
 - /no/clojure/searching-and-replacing-text/
-date:                  2024-01-20T17:58:03.253255-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Søking og erstatting av tekst"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:03.253255-07:00
+description: "\xC5 s\xF8ke og erstatte tekst g\xE5r ut p\xE5 \xE5 finne spesifikke\
+  \ strenger i data og bytte dem ut med noe annet. Programmerere bruker dette for\
+  \ \xE5 masseendre kode,\u2026"
+lastmod: 2024-02-18 23:08:53.550444
+model: gpt-4-1106-preview
+summary: "\xC5 s\xF8ke og erstatte tekst g\xE5r ut p\xE5 \xE5 finne spesifikke strenger\
+  \ i data og bytte dem ut med noe annet. Programmerere bruker dette for \xE5 masseendre\
+  \ kode,\u2026"
+title: "S\xF8king og erstatting av tekst"
 ---
 
 {{< edit_this_page >}}

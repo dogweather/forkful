@@ -1,14 +1,17 @@
 ---
-title:                "Enviando uma solicitação HTTP"
 aliases:
 - /pt/go/sending-an-http-request/
-date:                  2024-02-03T18:08:39.714256-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Enviando uma solicitação HTTP"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/sending-an-http-request.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:39.714256-07:00
+description: "Enviar uma requisi\xE7\xE3o HTTP envolve iniciar uma chamada de sua\
+  \ aplica\xE7\xE3o Go para um servidor web, API ou qualquer outro servi\xE7o baseado\
+  \ em HTTP.\u2026"
+lastmod: 2024-02-18 23:08:57.664991
+model: gpt-4-0125-preview
+summary: "Enviar uma requisi\xE7\xE3o HTTP envolve iniciar uma chamada de sua aplica\xE7\
+  \xE3o Go para um servidor web, API ou qualquer outro servi\xE7o baseado em HTTP.\u2026"
+title: "Enviando uma solicita\xE7\xE3o HTTP"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
 aliases:
 - /pl/rust/reading-a-text-file/
-date:                  2024-01-20T17:55:18.500741-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie pliku tekstowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/reading-a-text-file.md"
+date: 2024-01-20 17:55:18.500741-07:00
+description: "Czytanie pliku tekstowego to odczytywanie danych z pliku zapisanego\
+  \ w formacie tekstowym. Programi\u015Bci robi\u0105 to, by np. wczyta\u0107 konfiguracj\u0119\
+  , dane\u2026"
+lastmod: 2024-02-18 23:08:49.407076
+model: gpt-4-1106-preview
+summary: "Czytanie pliku tekstowego to odczytywanie danych z pliku zapisanego w formacie\
+  \ tekstowym. Programi\u015Bci robi\u0105 to, by np. wczyta\u0107 konfiguracj\u0119\
+  , dane\u2026"
+title: Odczytywanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

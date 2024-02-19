@@ -1,12 +1,15 @@
 ---
-title:                "Análise de HTML"
 aliases:
 - /pt/swift/parsing-html/
-date:                  2024-01-20T15:34:13.802519-07:00
-simple_title:         "Análise de HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/parsing-html.md"
+date: 2024-01-20 15:34:13.802519-07:00
+description: "Parsear HTML \xE9 o ato de transformar texto HTML em algo que seu programa\
+  \ entenda e possa manipular. Programadores fazem isso para extrair informa\xE7\xF5\
+  es,\u2026"
+lastmod: 2024-02-18 23:08:58.488941
+summary: "Parsear HTML \xE9 o ato de transformar texto HTML em algo que seu programa\
+  \ entenda e possa manipular. Programadores fazem isso para extrair informa\xE7\xF5\
+  es,\u2026"
+title: "An\xE1lise de HTML"
 ---
 
 {{< edit_this_page >}}

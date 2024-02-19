@@ -1,15 +1,20 @@
 ---
-title:                "Ghi log"
 aliases:
 - /vi/ruby/logging/
-date:                  2024-01-28T22:03:21.294276-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ghi log"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/logging.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:03:21.294276-07:00
+description: "Ghi ch\xE9p trong l\u1EADp tr\xECnh nh\u01B0 l\xE0 vi\u1EC7c gi\u1EEF\
+  \ m\u1ED9t nh\u1EADt k\xFD cho \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n. \u0110\xF3\
+  \ l\xE0 s\u1EF1 ghi ch\xE9p c\xF3 h\u1EC7 th\u1ED1ng c\xE1c s\u1EF1 ki\u1EC7n, th\xF4\
+  ng \u0111i\u1EC7p v\xE0 \u0111i\u1EC3m d\u1EEF li\u1EC7u m\xE0 cho\u2026"
+lastmod: 2024-02-18 23:08:51.292630
+model: gpt-4-0125-preview
+summary: "Ghi ch\xE9p trong l\u1EADp tr\xECnh nh\u01B0 l\xE0 vi\u1EC7c gi\u1EEF m\u1ED9\
+  t nh\u1EADt k\xFD cho \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n. \u0110\xF3 l\xE0 s\u1EF1\
+  \ ghi ch\xE9p c\xF3 h\u1EC7 th\u1ED1ng c\xE1c s\u1EF1 ki\u1EC7n, th\xF4ng \u0111\
+  i\u1EC7p v\xE0 \u0111i\u1EC3m d\u1EEF li\u1EC7u m\xE0 cho\u2026"
+title: Ghi log
 ---
 
 {{< edit_this_page >}}

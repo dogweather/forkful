@@ -1,14 +1,17 @@
 ---
-title:                "Envoyer une requête HTTP"
 aliases:
 - /fr/go/sending-an-http-request/
-date:                  2024-02-03T18:08:42.539707-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Envoyer une requête HTTP"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/sending-an-http-request.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:42.539707-07:00
+description: "Envoyer une requ\xEAte HTTP implique d'initier un appel depuis votre\
+  \ application Go vers un serveur web, une API ou tout autre service bas\xE9 sur\
+  \ HTTP. Les\u2026"
+lastmod: 2024-02-18 23:09:08.228878
+model: gpt-4-0125-preview
+summary: "Envoyer une requ\xEAte HTTP implique d'initier un appel depuis votre application\
+  \ Go vers un serveur web, une API ou tout autre service bas\xE9 sur HTTP. Les\u2026"
+title: "Envoyer une requ\xEAte HTTP"
 ---
 
 {{< edit_this_page >}}

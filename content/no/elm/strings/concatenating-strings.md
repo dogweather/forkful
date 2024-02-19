@@ -1,13 +1,16 @@
 ---
-title:                "Sammenslåing av strenger"
 aliases:
 - /no/elm/concatenating-strings/
-date:                  2024-01-20T17:34:36.708009-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammenslåing av strenger"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/concatenating-strings.md"
+date: 2024-01-20 17:34:36.708009-07:00
+description: "I Elm handler sammensl\xE5ing av strenger om \xE5 sette sammen to eller\
+  \ flere tekstfragmenter til en lengre tekst. Vi gj\xF8r dette for \xE5 bygge dynamisk\
+  \ innhold,\u2026"
+lastmod: 2024-02-18 23:08:53.803252
+model: gpt-4-1106-preview
+summary: "I Elm handler sammensl\xE5ing av strenger om \xE5 sette sammen to eller\
+  \ flere tekstfragmenter til en lengre tekst. Vi gj\xF8r dette for \xE5 bygge dynamisk\
+  \ innhold,\u2026"
+title: "Sammensl\xE5ing av strenger"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Escribiendo un archivo de texto"
 aliases:
 - /es/google-apps-script/writing-a-text-file/
-date:                  2024-02-01T22:08:04.220737-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escribiendo un archivo de texto"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/google-apps-script/writing-a-text-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:08:04.220737-07:00
+description: "Escribir un archivo de texto en Google Apps Script permite a los desarrolladores\
+  \ almacenar datos de manera persistente, haci\xE9ndolos accesibles para uso\u2026"
+lastmod: 2024-02-18 23:09:09.529683
+model: gpt-4-0125-preview
+summary: "Escribir un archivo de texto en Google Apps Script permite a los desarrolladores\
+  \ almacenar datos de manera persistente, haci\xE9ndolos accesibles para uso\u2026"
+title: Escribiendo un archivo de texto
 ---
 
 {{< edit_this_page >}}

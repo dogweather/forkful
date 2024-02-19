@@ -1,15 +1,20 @@
 ---
-title:                "Viết hoa một chuỗi"
 aliases:
 - /vi/python/capitalizing-a-string/
-date:                  2024-01-28T21:55:51.532865-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Viết hoa một chuỗi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/python/capitalizing-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:55:51.532865-07:00
+description: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 chuy\u1EC3\
+  n k\xFD t\u1EF1 \u0111\u1EA7u ti\xEAn th\xE0nh ch\u1EEF c\xE1i in hoa v\xE0 ph\u1EA7\
+  n c\xF2n l\u1EA1i th\xE0nh ch\u1EEF c\xE1i th\u01B0\u1EDDng. C\xE1c l\u1EADp tr\xEC\
+  nh vi\xEAn th\u01B0\u1EDDng th\u1EF1c hi\u1EC7n vi\u1EC7c\u2026"
+lastmod: 2024-02-18 23:08:50.249139
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 chuy\u1EC3\
+  n k\xFD t\u1EF1 \u0111\u1EA7u ti\xEAn th\xE0nh ch\u1EEF c\xE1i in hoa v\xE0 ph\u1EA7\
+  n c\xF2n l\u1EA1i th\xE0nh ch\u1EEF c\xE1i th\u01B0\u1EDDng. C\xE1c l\u1EADp tr\xEC\
+  nh vi\xEAn th\u01B0\u1EDDng th\u1EF1c hi\u1EC7n vi\u1EC7c\u2026"
+title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 ---
 
 {{< edit_this_page >}}

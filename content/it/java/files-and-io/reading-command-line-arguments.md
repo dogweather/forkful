@@ -1,13 +1,14 @@
 ---
-title:                "Lettura degli argomenti della riga di comando"
 aliases:
 - /it/java/reading-command-line-arguments/
-date:                  2024-01-20T17:56:14.846737-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lettura degli argomenti della riga di comando"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/java/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:14.846737-07:00
+description: "Leggere gli argomenti della riga di comando significa accedere ai parametri\
+  \ passati al tuo programma quando viene avviato da una shell. I programmatori lo\u2026"
+lastmod: 2024-02-18 23:08:55.780250
+model: gpt-4-1106-preview
+summary: "Leggere gli argomenti della riga di comando significa accedere ai parametri\
+  \ passati al tuo programma quando viene avviato da una shell. I programmatori lo\u2026"
+title: Lettura degli argomenti della riga di comando
 ---
 
 {{< edit_this_page >}}

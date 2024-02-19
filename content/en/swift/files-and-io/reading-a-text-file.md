@@ -1,13 +1,15 @@
 ---
-title:                "Reading a text file"
 aliases:
 - /en/swift/reading-a-text-file/
-date:                  2024-01-20T17:55:16.032113-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Reading a text file"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/reading-a-text-file.md"
+date: 2024-01-20 17:55:16.032113-07:00
+description: "Reading a text file in Swift means grabbing the content from a file\
+  \ stored on disk. Programmers do this to work with saved data like configurations,\
+  \ logs,\u2026"
+lastmod: 2024-02-18 23:09:11.413605
+model: gpt-4-1106-preview
+summary: "Reading a text file in Swift means grabbing the content from a file stored\
+  \ on disk. Programmers do this to work with saved data like configurations, logs,\u2026"
+title: Reading a text file
 ---
 
 {{< edit_this_page >}}

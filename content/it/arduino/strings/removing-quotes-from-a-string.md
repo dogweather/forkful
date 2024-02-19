@@ -1,13 +1,15 @@
 ---
-title:                "Rimuovere le virgolette da una stringa"
 aliases:
 - /it/arduino/removing-quotes-from-a-string/
-date:                  2024-01-26T03:36:36.524473-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Rimuovere le virgolette da una stringa"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:36:36.524473-07:00
+description: "Rimuovere le virgolette da una stringa significa eliminare qualsiasi\
+  \ istanza di caratteri di virgolette singole (`'`) o doppie (`\"`) che racchiudono\
+  \ il\u2026"
+lastmod: 2024-02-18 23:08:56.123499
+model: gpt-4-0125-preview
+summary: "Rimuovere le virgolette da una stringa significa eliminare qualsiasi istanza\
+  \ di caratteri di virgolette singole (`'`) o doppie (`\"`) che racchiudono il\u2026"
+title: Rimuovere le virgolette da una stringa
 ---
 
 {{< edit_this_page >}}

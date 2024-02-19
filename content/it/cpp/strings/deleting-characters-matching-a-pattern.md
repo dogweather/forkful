@@ -1,13 +1,14 @@
 ---
-title:                "Eliminazione di caratteri che corrispondono a un pattern"
 aliases:
 - /it/cpp/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:55.748105-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Eliminazione di caratteri che corrispondono a un pattern"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:55.748105-07:00
+description: "(\"Cosa & Perch\xE9?\") Rimuovere caratteri che corrispondono a un modello\
+  \ \xE8 come filtrare il testo. I programmatori lo fanno per pulire i dati, estrarre\u2026"
+lastmod: 2024-02-18 23:08:56.158124
+model: gpt-4-1106-preview
+summary: "(\"Cosa & Perch\xE9?\") Rimuovere caratteri che corrispondono a un modello\
+  \ \xE8 come filtrare il testo. I programmatori lo fanno per pulire i dati, estrarre\u2026"
+title: Eliminazione di caratteri che corrispondono a un pattern
 ---
 
 {{< edit_this_page >}}

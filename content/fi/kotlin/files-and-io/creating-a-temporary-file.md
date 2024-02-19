@@ -1,13 +1,16 @@
 ---
-title:                "Väliaikaistiedoston luominen"
 aliases:
 - /fi/kotlin/creating-a-temporary-file/
-date:                  2024-01-20T17:40:53.145710-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Väliaikaistiedoston luominen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:53.145710-07:00
+description: "V\xE4liaikaistiedosto on hetkellisesti k\xE4ytett\xE4v\xE4 tiedosto,\
+  \ johon ohjelmat voivat tallentaa dataa turvallisesti. Ohjelmoijat luovat niit\xE4\
+  \ datan v\xE4liaikaiseen\u2026"
+lastmod: 2024-02-18 23:09:07.595867
+model: gpt-4-1106-preview
+summary: "V\xE4liaikaistiedosto on hetkellisesti k\xE4ytett\xE4v\xE4 tiedosto, johon\
+  \ ohjelmat voivat tallentaa dataa turvallisesti. Ohjelmoijat luovat niit\xE4 datan\
+  \ v\xE4liaikaiseen\u2026"
+title: "V\xE4liaikaistiedoston luominen"
 ---
 
 {{< edit_this_page >}}

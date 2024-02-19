@@ -1,15 +1,20 @@
 ---
-title:                "Tái cấu trúc mã"
 aliases:
 - /vi/kotlin/refactoring/
-date:                  2024-01-28T22:07:07.118424-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tái cấu trúc mã"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/kotlin/refactoring.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:07:07.118424-07:00
+description: "T\xE1i c\u1EA5u tr\xFAc l\xE0 quy tr\xECnh ch\u1EC9nh s\u1EEDa m\xE3\
+  \ ngu\u1ED3n hi\u1EC7n c\xF3 nh\u1EB1m c\u1EA3i thi\u1EC7n c\u1EA5u tr\xFAc, \u0111\
+  \u1ED9 d\u1EC5 \u0111\u1ECDc, v\xE0 hi\u1EC7u su\u1EA5t c\u1EE7a n\xF3 m\xE0 kh\xF4\
+  ng thay \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0i c\u1EE7a\u2026"
+lastmod: 2024-02-18 23:08:50.660705
+model: gpt-4-0125-preview
+summary: "T\xE1i c\u1EA5u tr\xFAc l\xE0 quy tr\xECnh ch\u1EC9nh s\u1EEDa m\xE3 ngu\u1ED3\
+  n hi\u1EC7n c\xF3 nh\u1EB1m c\u1EA3i thi\u1EC7n c\u1EA5u tr\xFAc, \u0111\u1ED9 d\u1EC5\
+  \ \u0111\u1ECDc, v\xE0 hi\u1EC7u su\u1EA5t c\u1EE7a n\xF3 m\xE0 kh\xF4ng thay \u0111\
+  \u1ED5i h\xE0nh vi b\xEAn ngo\xE0i c\u1EE7a\u2026"
+title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 ---
 
 {{< edit_this_page >}}

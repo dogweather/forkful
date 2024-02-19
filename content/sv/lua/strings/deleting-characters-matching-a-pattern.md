@@ -1,13 +1,14 @@
 ---
-title:                "Ta bort tecken som matchar ett mönster"
 aliases:
 - /sv/lua/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:43:00.193610-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ta bort tecken som matchar ett mönster"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/lua/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:43:00.193610-07:00
+description: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att man letar\
+  \ igenom en textstr\xE4ng och tar bort specifika tecken eller sekvenser av tecken.\u2026"
+lastmod: 2024-02-18 23:08:51.903669
+model: gpt-4-1106-preview
+summary: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att man letar igenom\
+  \ en textstr\xE4ng och tar bort specifika tecken eller sekvenser av tecken.\u2026"
+title: "Ta bort tecken som matchar ett m\xF6nster"
 ---
 
 {{< edit_this_page >}}

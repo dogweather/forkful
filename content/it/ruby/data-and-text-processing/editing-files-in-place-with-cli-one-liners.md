@@ -1,13 +1,14 @@
 ---
-title:                "Modifica dei file sul posto con righe di comando CLI"
 aliases:
 - /it/ruby/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:20:52.144967-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Modifica dei file sul posto con righe di comando CLI"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:20:52.144967-07:00
+description: "Modificare file sul posto con i one-liner CLI (Interfaccia a Riga di\
+  \ Comando) in Ruby ti consente di modificare i file direttamente dal tuo terminale,\u2026"
+lastmod: 2024-02-18 23:08:56.379097
+model: gpt-4-0125-preview
+summary: "Modificare file sul posto con i one-liner CLI (Interfaccia a Riga di Comando)\
+  \ in Ruby ti consente di modificare i file direttamente dal tuo terminale,\u2026"
+title: Modifica dei file sul posto con righe di comando CLI
 ---
 
 {{< edit_this_page >}}

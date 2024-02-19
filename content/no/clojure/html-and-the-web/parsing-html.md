@@ -1,14 +1,18 @@
 ---
-title:                "Analysering av HTML"
 aliases:
 - /no/clojure/parsing-html/
-date:                  2024-02-03T19:12:14.751264-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analysering av HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:14.751264-07:00
+description: "\xC5 tolke HTML i Clojure inneb\xE6rer \xE5 programmelt trekke ut informasjon\
+  \ fra HTML-dokumenter. Programmerere gj\xF8r dette for \xE5 f\xE5 tilgang til, manipulere\
+  \ eller\u2026"
+lastmod: 2024-02-18 23:08:53.562398
+model: gpt-4-0125-preview
+summary: "\xC5 tolke HTML i Clojure inneb\xE6rer \xE5 programmelt trekke ut informasjon\
+  \ fra HTML-dokumenter. Programmerere gj\xF8r dette for \xE5 f\xE5 tilgang til, manipulere\
+  \ eller\u2026"
+title: Analysering av HTML
 ---
 
 {{< edit_this_page >}}

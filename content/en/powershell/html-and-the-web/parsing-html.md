@@ -1,12 +1,15 @@
 ---
-title:                "Parsing HTML"
 aliases:
 - /en/powershell/parsing-html/
-date:                  2024-02-03T19:03:00.218296-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Parsing HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/powershell/parsing-html.md"
+date: 2024-02-03 19:03:00.218296-07:00
+description: "Parsing HTML in PowerShell is about dissecting HTML content to extract\
+  \ specific data or to automate web-related tasks. Programmers do it to interact\
+  \ with\u2026"
+lastmod: 2024-02-18 23:09:11.271744
+model: gpt-4-0125-preview
+summary: "Parsing HTML in PowerShell is about dissecting HTML content to extract specific\
+  \ data or to automate web-related tasks. Programmers do it to interact with\u2026"
+title: Parsing HTML
 ---
 
 {{< edit_this_page >}}

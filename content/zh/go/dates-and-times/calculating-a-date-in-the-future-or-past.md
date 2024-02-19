@@ -1,14 +1,26 @@
 ---
-title:                "计算未来或过去的日期"
 aliases:
 - /zh/go/calculating-a-date-in-the-future-or-past/
-date:                  2024-02-03T17:52:41.975632-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "计算未来或过去的日期"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:52:41.975632-07:00
+description: "\u5728 Go \u4E2D\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u67D0\
+  \u4E2A\u65E5\u671F\u6D89\u53CA\u5230\u5BF9\u65E5\u671F\u548C\u65F6\u95F4\u503C\u7684\
+  \u64CD\u4F5C\uFF0C\u4EE5\u786E\u5B9A\u76F8\u5BF9\u4E8E\u7ED9\u5B9A\u65E5\u671F\u7684\
+  \u7279\u5B9A\u70B9\u3002\u7A0B\u5E8F\u5458\u901A\u5E38\u4E3A\u9700\u8981\u8FDB\u884C\
+  \u8C03\u5EA6\u3001\u622A\u6B62\u65E5\u671F\u3001\u63D0\u9192\u6216\u4EFB\u4F55\u65F6\
+  \u95F4\u8FDB\u5EA6\u6216\u56DE\u9000\u81F3\u5173\u91CD\u8981\u7684\u529F\u80FD\u7684\
+  \u5E94\u7528\u7A0B\u5E8F\u6267\u884C\u6B64\u4EFB\u52A1\u3002"
+lastmod: 2024-02-18 23:08:58.721241
+model: gpt-4-0125-preview
+summary: "\u5728 Go \u4E2D\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u67D0\u4E2A\
+  \u65E5\u671F\u6D89\u53CA\u5230\u5BF9\u65E5\u671F\u548C\u65F6\u95F4\u503C\u7684\u64CD\
+  \u4F5C\uFF0C\u4EE5\u786E\u5B9A\u76F8\u5BF9\u4E8E\u7ED9\u5B9A\u65E5\u671F\u7684\u7279\
+  \u5B9A\u70B9\u3002\u7A0B\u5E8F\u5458\u901A\u5E38\u4E3A\u9700\u8981\u8FDB\u884C\u8C03\
+  \u5EA6\u3001\u622A\u6B62\u65E5\u671F\u3001\u63D0\u9192\u6216\u4EFB\u4F55\u65F6\u95F4\
+  \u8FDB\u5EA6\u6216\u56DE\u9000\u81F3\u5173\u91CD\u8981\u7684\u529F\u80FD\u7684\u5E94\
+  \u7528\u7A0B\u5E8F\u6267\u884C\u6B64\u4EFB\u52A1\u3002"
+title: "\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u65E5\u671F"
 ---
 
 {{< edit_this_page >}}

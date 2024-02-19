@@ -1,14 +1,17 @@
 ---
-title:                "Protokollierung"
 aliases:
 - /de/c/logging/
-date:                  2024-02-03T17:59:03.561730-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Protokollierung"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/logging.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:03.561730-07:00
+description: "Das Protokollieren in C beinhaltet die Aufzeichnung des Ablaufs und\
+  \ bemerkenswerter Ereignisse eines Programms w\xE4hrend seiner Laufzeit und bietet\
+  \ eine\u2026"
+lastmod: 2024-02-18 23:09:05.381048
+model: gpt-4-0125-preview
+summary: "Das Protokollieren in C beinhaltet die Aufzeichnung des Ablaufs und bemerkenswerter\
+  \ Ereignisse eines Programms w\xE4hrend seiner Laufzeit und bietet eine\u2026"
+title: Protokollierung
 ---
 
 {{< edit_this_page >}}

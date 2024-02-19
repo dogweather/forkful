@@ -1,13 +1,16 @@
 ---
-title:                "Interpolación de cadenas de texto"
 aliases:
 - /es/kotlin/interpolating-a-string/
-date:                  2024-01-20T17:51:34.250543-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolación de cadenas de texto"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/interpolating-a-string.md"
+date: 2024-01-20 17:51:34.250543-07:00
+description: "La interpolaci\xF3n de cadenas permite incrustar valores de variables\
+  \ directamente en una cadena de texto. Los programadores lo usan para hacer el c\xF3\
+  digo m\xE1s\u2026"
+lastmod: 2024-02-18 23:09:09.921048
+model: gpt-4-1106-preview
+summary: "La interpolaci\xF3n de cadenas permite incrustar valores de variables directamente\
+  \ en una cadena de texto. Los programadores lo usan para hacer el c\xF3digo m\xE1\
+  s\u2026"
+title: "Interpolaci\xF3n de cadenas de texto"
 ---
 
 {{< edit_this_page >}}

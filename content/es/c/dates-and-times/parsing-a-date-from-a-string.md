@@ -1,14 +1,16 @@
 ---
-title:                "Interpretando una fecha de una cadena de texto"
 aliases:
 - /es/c/parsing-a-date-from-a-string/
-date:                  2024-02-03T17:59:50.064496-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interpretando una fecha de una cadena de texto"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:50.064496-07:00
+description: "Analizar una fecha desde una cadena en C implica convertir representaciones\
+  \ textuales de fechas en un formato que los programas pueden manipular y\u2026"
+lastmod: 2024-02-18 23:09:10.512660
+model: gpt-4-0125-preview
+summary: "Analizar una fecha desde una cadena en C implica convertir representaciones\
+  \ textuales de fechas en un formato que los programas pueden manipular y\u2026"
+title: Interpretando una fecha de una cadena de texto
 ---
 
 {{< edit_this_page >}}

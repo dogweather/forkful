@@ -1,13 +1,16 @@
 ---
-title:                "Loggning"
 aliases:
 - /sv/php/logging/
-date:                  2024-01-26T01:07:14.081038-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Loggning"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/logging.md"
+date: 2024-01-26 01:07:14.081038-07:00
+description: "Loggning liknar i grunden att h\xE5lla en dagbok f\xF6r din kod; det\
+  \ \xE4r handlingen att registrera h\xE4ndelser, fel och andra betydande datapunkter\
+  \ som intr\xE4ffar\u2026"
+lastmod: 2024-02-18 23:08:51.884531
+model: gpt-4-1106-preview
+summary: "Loggning liknar i grunden att h\xE5lla en dagbok f\xF6r din kod; det \xE4\
+  r handlingen att registrera h\xE4ndelser, fel och andra betydande datapunkter som\
+  \ intr\xE4ffar\u2026"
+title: Loggning
 ---
 
 {{< edit_this_page >}}

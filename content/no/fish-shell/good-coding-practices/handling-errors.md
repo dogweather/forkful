@@ -1,13 +1,16 @@
 ---
-title:                "Feilhåndtering"
 aliases:
 - /no/fish-shell/handling-errors/
-date:                  2024-01-26T00:51:56.387782-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Feilhåndtering"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/handling-errors.md"
+date: 2024-01-26 00:51:56.387782-07:00
+description: "Feilh\xE5ndtering lar skriptet ditt takle det uventede p\xE5 en n\xE5\
+  dig m\xE5te. Vi gj\xF8r det for \xE5 h\xE5ndtere feil uten \xE5 gj\xF8re brukernes\
+  \ h\xE5r gr\xE5tt."
+lastmod: 2024-02-18 23:08:54.358979
+model: gpt-4-1106-preview
+summary: "Feilh\xE5ndtering lar skriptet ditt takle det uventede p\xE5 en n\xE5dig\
+  \ m\xE5te. Vi gj\xF8r det for \xE5 h\xE5ndtere feil uten \xE5 gj\xF8re brukernes\
+  \ h\xE5r gr\xE5tt."
+title: "Feilh\xE5ndtering"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Escribiendo pruebas"
 aliases:
 - /es/php/writing-tests/
-date:                  2024-02-03T19:31:17.430741-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escribiendo pruebas"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:17.430741-07:00
+description: "Escribir pruebas en programaci\xF3n implica crear y ejecutar scripts\
+  \ que verifican que el c\xF3digo se comporte como se espera bajo diversas condiciones.\
+  \ Los\u2026"
+lastmod: 2024-02-18 23:09:10.077744
+model: gpt-4-0125-preview
+summary: "Escribir pruebas en programaci\xF3n implica crear y ejecutar scripts que\
+  \ verifican que el c\xF3digo se comporte como se espera bajo diversas condiciones.\
+  \ Los\u2026"
+title: Escribiendo pruebas
 ---
 
 {{< edit_this_page >}}

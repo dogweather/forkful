@@ -1,14 +1,24 @@
 ---
-title:                "编写文本文件"
 aliases:
 - /zh/fish-shell/writing-a-text-file/
-date:                  2024-02-03T19:27:45.299688-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "编写文本文件"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:45.299688-07:00
+description: "\u5728 Fish Shell \u4E2D\u5199\u5165\u6587\u672C\u6587\u4EF6\u5141\u8BB8\
+  \u60A8\u6301\u4E45\u5730\u5B58\u50A8\u6570\u636E\uFF0C\u4F7F\u6570\u636E\u6613\u4E8E\
+  \u68C0\u7D22\u6216\u901A\u8FC7\u540C\u4E00\u4E2A Fish \u811A\u672C\u6216\u5176\u4ED6\
+  \u7A0B\u5E8F\u8FDB\u884C\u64CD\u4F5C\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\
+  \u4E3A\u4E86\u65E5\u5FD7\u8BB0\u5F55\u3001\u4FDD\u5B58\u914D\u7F6E\u8BBE\u7F6E\u6216\
+  \u5BFC\u51FA\u6570\u636E\u4EE5\u8FDB\u884C\u8FDB\u4E00\u6B65\u5904\u7406\u3002"
+lastmod: 2024-02-18 23:08:59.536039
+model: gpt-4-0125-preview
+summary: "\u5728 Fish Shell \u4E2D\u5199\u5165\u6587\u672C\u6587\u4EF6\u5141\u8BB8\
+  \u60A8\u6301\u4E45\u5730\u5B58\u50A8\u6570\u636E\uFF0C\u4F7F\u6570\u636E\u6613\u4E8E\
+  \u68C0\u7D22\u6216\u901A\u8FC7\u540C\u4E00\u4E2A Fish \u811A\u672C\u6216\u5176\u4ED6\
+  \u7A0B\u5E8F\u8FDB\u884C\u64CD\u4F5C\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\
+  \u4E3A\u4E86\u65E5\u5FD7\u8BB0\u5F55\u3001\u4FDD\u5B58\u914D\u7F6E\u8BBE\u7F6E\u6216\
+  \u5BFC\u51FA\u6570\u636E\u4EE5\u8FDB\u884C\u8FDB\u4E00\u6B65\u5904\u7406\u3002"
+title: "\u7F16\u5199\u6587\u672C\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

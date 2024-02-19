@@ -1,14 +1,17 @@
 ---
-title:                "Einen String großschreiben"
 aliases:
 - /de/bash/capitalizing-a-string/
-date:                  2024-02-03T19:04:48.107457-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Einen String großschreiben"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:04:48.107457-07:00
+description: "Das Kapitalisieren eines Strings in Bash beinhaltet die Umwandlung des\
+  \ ersten Buchstabens des Strings in einen Gro\xDFbuchstaben, w\xE4hrend der Rest\
+  \ des\u2026"
+lastmod: 2024-02-18 23:09:05.034221
+model: gpt-4-0125-preview
+summary: "Das Kapitalisieren eines Strings in Bash beinhaltet die Umwandlung des ersten\
+  \ Buchstabens des Strings in einen Gro\xDFbuchstaben, w\xE4hrend der Rest des\u2026"
+title: "Einen String gro\xDFschreiben"
 ---
 
 {{< edit_this_page >}}

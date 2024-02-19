@@ -1,14 +1,18 @@
 ---
-title:                "Criando um arquivo temporário"
 aliases:
 - /pt/go/creating-a-temporary-file/
-date:                  2024-02-03T17:55:26.288743-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Criando um arquivo temporário"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/creating-a-temporary-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:26.288743-07:00
+description: "Criar um arquivo tempor\xE1rio em Go permite a gera\xE7\xE3o de um arquivo\
+  \ n\xE3o persistente projetado para uso de curto prazo, principalmente para tarefas\
+  \ como\u2026"
+lastmod: 2024-02-18 23:08:57.689636
+model: gpt-4-0125-preview
+summary: "Criar um arquivo tempor\xE1rio em Go permite a gera\xE7\xE3o de um arquivo\
+  \ n\xE3o persistente projetado para uso de curto prazo, principalmente para tarefas\
+  \ como\u2026"
+title: "Criando um arquivo tempor\xE1rio"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,30 @@
 ---
-title:                "표준 에러에 쓰기"
 aliases:
 - /ko/arduino/writing-to-standard-error/
-date:                  2024-02-03T19:32:44.934967-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "표준 에러에 쓰기"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:44.934967-07:00
+description: "\uC544\uB450\uC774\uB178 \uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C\
+  \ \uD45C\uC900 \uC624\uB958(stderr)\uB85C \uC4F0\uAE30\uB294 \uC624\uB958 \uBA54\
+  \uC2DC\uC9C0\uC640 \uC9C4\uB2E8\uC744 \uD45C\uC900 \uCD9C\uB825(stdout)\uACFC \uC11E\
+  \uC774\uC9C0 \uC54A\uB3C4\uB85D \uBCC4\uB3C4\uC758 \uCC44\uB110\uB85C \uC804\uB2EC\
+  \uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uC774\uB97C \uD1B5\uD574 \uC77C\uBC18 \uD504\uB85C\uADF8\uB7A8\
+  \ \uCD9C\uB825\uACFC \uC624\uB958 \uBA54\uC2DC\uC9C0\uB97C \uAD6C\uBD84\uD558\uC5EC\
+  \ \uB514\uBC84\uAE45\uACFC \uB85C\uADF8 \uBD84\uC11D\uC744 \uB354\uC6B1 \uAC04\uB2E8\
+  \uD558\uAC8C \uB9CC\uB4ED\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.644582
+model: gpt-4-0125-preview
+summary: "\uC544\uB450\uC774\uB178 \uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uD45C\
+  \uC900 \uC624\uB958(stderr)\uB85C \uC4F0\uAE30\uB294 \uC624\uB958 \uBA54\uC2DC\uC9C0\
+  \uC640 \uC9C4\uB2E8\uC744 \uD45C\uC900 \uCD9C\uB825(stdout)\uACFC \uC11E\uC774\uC9C0\
+  \ \uC54A\uB3C4\uB85D \uBCC4\uB3C4\uC758 \uCC44\uB110\uB85C \uC804\uB2EC\uD558\uB294\
+  \ \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\
+  \uC740 \uC774\uB97C \uD1B5\uD574 \uC77C\uBC18 \uD504\uB85C\uADF8\uB7A8 \uCD9C\uB825\
+  \uACFC \uC624\uB958 \uBA54\uC2DC\uC9C0\uB97C \uAD6C\uBD84\uD558\uC5EC \uB514\uBC84\
+  \uAE45\uACFC \uB85C\uADF8 \uBD84\uC11D\uC744 \uB354\uC6B1 \uAC04\uB2E8\uD558\uAC8C\
+  \ \uB9CC\uB4ED\uB2C8\uB2E4."
+title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
 ---
 
 {{< edit_this_page >}}

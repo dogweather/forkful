@@ -1,13 +1,24 @@
 ---
-title:                "XML के साथ काम करना"
 aliases:
 - /hi/java/working-with-xml/
-date:                  2024-01-26T04:33:49.378142-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML के साथ काम करना"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/java/working-with-xml.md"
+date: 2024-01-26 04:33:49.378142-07:00
+description: "Java \u0915\u0947 \u0938\u093E\u0925 XML \u0915\u0947 \u0938\u093E\u0925\
+  \ \u0915\u093E\u092E \u0915\u0930\u0928\u093E \u0907\u0938\u0915\u0947 \u0935\u093F\
+  \u0936\u094D\u0932\u0947\u0937\u0923 (parsing), \u092A\u094D\u0930\u0936\u094D\u0928\
+  \ (querying), \u0914\u0930 XML \u0926\u0938\u094D\u0924\u093E\u0935\u0947\u091C\u094B\
+  \u0902 \u0915\u0947 \u0938\u0902\u0936\u094B\u0927\u0928 (manipulating) \u0915\u094B\
+  \ \u0936\u093E\u092E\u093F\u0932 \u0915\u0930\u0924\u093E \u0939\u0948\u0964 \u092A\
+  \u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u0930 \u0910\u0938\u093E\u2026"
+lastmod: 2024-02-18 23:09:03.159211
+model: gpt-4-0125-preview
+summary: "Java \u0915\u0947 \u0938\u093E\u0925 XML \u0915\u0947 \u0938\u093E\u0925\
+  \ \u0915\u093E\u092E \u0915\u0930\u0928\u093E \u0907\u0938\u0915\u0947 \u0935\u093F\
+  \u0936\u094D\u0932\u0947\u0937\u0923 (parsing), \u092A\u094D\u0930\u0936\u094D\u0928\
+  \ (querying), \u0914\u0930 XML \u0926\u0938\u094D\u0924\u093E\u0935\u0947\u091C\u094B\
+  \u0902 \u0915\u0947 \u0938\u0902\u0936\u094B\u0927\u0928 (manipulating) \u0915\u094B\
+  \ \u0936\u093E\u092E\u093F\u0932 \u0915\u0930\u0924\u093E \u0939\u0948\u0964 \u092A\
+  \u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u0930 \u0910\u0938\u093E\u2026"
+title: "XML \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

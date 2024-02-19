@@ -1,14 +1,18 @@
 ---
-title:                "Pobieranie aktualnej daty"
 aliases:
 - /pl/swift/getting-the-current-date/
-date:                  2024-02-03T19:11:19.542755-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pobieranie aktualnej daty"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:11:19.542755-07:00
+description: "Pobieranie aktualnej daty w j\u0119zyku Swift polega na u\u017Cyciu\
+  \ klasy `Date`, aby uzyska\u0107 dost\u0119p do daty i czasu, w kt\xF3rym aplikacja\
+  \ jest uruchamiana.\u2026"
+lastmod: 2024-02-18 23:08:49.963053
+model: gpt-4-0125-preview
+summary: "Pobieranie aktualnej daty w j\u0119zyku Swift polega na u\u017Cyciu klasy\
+  \ `Date`, aby uzyska\u0107 dost\u0119p do daty i czasu, w kt\xF3rym aplikacja jest\
+  \ uruchamiana.\u2026"
+title: Pobieranie aktualnej daty
 ---
 
 {{< edit_this_page >}}

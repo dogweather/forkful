@@ -1,13 +1,14 @@
 ---
-title:                "Umgang mit komplexen Zahlen"
 aliases:
 - /de/elixir/working-with-complex-numbers/
-date:                  2024-01-26T04:38:48.117873-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Umgang mit komplexen Zahlen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/working-with-complex-numbers.md"
+date: 2024-01-26 04:38:48.117873-07:00
+description: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil\
+  \ (wie `3 + 4i`). Sie werden in der Ingenieurwissenschaft, Physik und bei bestimmten\u2026"
+lastmod: 2024-02-18 23:09:04.545484
+model: gpt-4-0125-preview
+summary: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil (wie\
+  \ `3 + 4i`). Sie werden in der Ingenieurwissenschaft, Physik und bei bestimmten\u2026"
+title: Umgang mit komplexen Zahlen
 ---
 
 {{< edit_this_page >}}

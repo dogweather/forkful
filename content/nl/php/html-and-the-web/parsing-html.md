@@ -1,15 +1,17 @@
 ---
-title:                "HTML Parsen"
 aliases:
 - /nl/php/parsing-html/
-date:                  2024-01-28T22:03:37.901356-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML Parsen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/php/parsing-html.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:03:37.901356-07:00
+description: "HTML parsen betekent het verwerken en analyseren van de structuur en\
+  \ inhoud van HTML-code. Programmeurs doen dit om websites te schrapen, gegevens\
+  \ te\u2026"
+lastmod: 2024-02-18 23:09:01.942616
+model: gpt-4-0125-preview
+summary: "HTML parsen betekent het verwerken en analyseren van de structuur en inhoud\
+  \ van HTML-code. Programmeurs doen dit om websites te schrapen, gegevens te\u2026"
+title: HTML Parsen
 ---
 
 {{< edit_this_page >}}

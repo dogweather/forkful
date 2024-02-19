@@ -1,14 +1,17 @@
 ---
-title:                "Lavorare con YAML"
 aliases:
 - /it/elm/working-with-yaml/
-date:                  2024-02-03T19:25:17.972536-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:25:17.972536-07:00
+description: "Elm non supporta nativamente YAML, un formato di serializzazione dei\
+  \ dati spesso utilizzato per file di configurazione o condivisione di dati, a causa\
+  \ del\u2026"
+lastmod: 2024-02-18 23:08:55.825487
+model: gpt-4-0125-preview
+summary: "Elm non supporta nativamente YAML, un formato di serializzazione dei dati\
+  \ spesso utilizzato per file di configurazione o condivisione di dati, a causa del\u2026"
+title: Lavorare con YAML
 ---
 
 {{< edit_this_page >}}

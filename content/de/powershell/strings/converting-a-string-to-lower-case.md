@@ -1,13 +1,15 @@
 ---
-title:                "Umformung eines Strings in Kleinbuchstaben"
 aliases:
 - /de/powershell/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:51.192520-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Umformung eines Strings in Kleinbuchstaben"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:51.192520-07:00
+description: "Strings in Kleinbuchstaben zu konvertieren bedeutet, alle Buchstaben\
+  \ eines Texts in untere Zeichen umzuwandeln. Programmierer nutzen diese Technik,\
+  \ um\u2026"
+lastmod: 2024-02-18 23:09:05.085420
+model: gpt-4-1106-preview
+summary: "Strings in Kleinbuchstaben zu konvertieren bedeutet, alle Buchstaben eines\
+  \ Texts in untere Zeichen umzuwandeln. Programmierer nutzen diese Technik, um\u2026"
+title: Umformung eines Strings in Kleinbuchstaben
 ---
 
 {{< edit_this_page >}}

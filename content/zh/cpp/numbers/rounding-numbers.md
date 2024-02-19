@@ -1,13 +1,22 @@
 ---
-title:                "数字取整"
 aliases:
 - /zh/cpp/rounding-numbers/
-date:                  2024-01-26T03:44:39.958014-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "数字取整"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/rounding-numbers.md"
+date: 2024-01-26 03:44:39.958014-07:00
+description: "\u6570\u5B57\u56DB\u820D\u4E94\u5165\u610F\u5473\u7740\u5C06\u4E00\u4E2A\
+  \u503C\u8C03\u6574\u5230\u6700\u8FD1\u7684\u6574\u6570\u6216\u6307\u5B9A\u7684\u7CBE\
+  \u5EA6\u3002\u5F00\u53D1\u4EBA\u5458\u8FDB\u884C\u56DB\u820D\u4E94\u5165\u64CD\u4F5C\
+  \u662F\u4E3A\u4E86\u7B80\u5316\u3001\u7B26\u5408\u73B0\u5B9E\u4E16\u754C\u7684\u9650\
+  \u5236\uFF0C\u6216\u901A\u8FC7\u4E22\u5F03\u591A\u4F59\u7684\u7CBE\u5EA6\u6765\u63D0\
+  \u9AD8\u6027\u80FD\u3002"
+lastmod: 2024-02-18 23:08:59.400995
+model: gpt-4-0125-preview
+summary: "\u6570\u5B57\u56DB\u820D\u4E94\u5165\u610F\u5473\u7740\u5C06\u4E00\u4E2A\
+  \u503C\u8C03\u6574\u5230\u6700\u8FD1\u7684\u6574\u6570\u6216\u6307\u5B9A\u7684\u7CBE\
+  \u5EA6\u3002\u5F00\u53D1\u4EBA\u5458\u8FDB\u884C\u56DB\u820D\u4E94\u5165\u64CD\u4F5C\
+  \u662F\u4E3A\u4E86\u7B80\u5316\u3001\u7B26\u5408\u73B0\u5B9E\u4E16\u754C\u7684\u9650\
+  \u5236\uFF0C\u6216\u901A\u8FC7\u4E22\u5F03\u591A\u4F59\u7684\u7CBE\u5EA6\u6765\u63D0\
+  \u9AD8\u6027\u80FD\u3002"
+title: "\u6570\u5B57\u53D6\u6574"
 ---
 
 {{< edit_this_page >}}

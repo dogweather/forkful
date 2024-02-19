@@ -1,13 +1,14 @@
 ---
-title:                "Refaktoryzacja"
 aliases:
 - /pl/fish-shell/refactoring/
-date:                  2024-01-26T01:18:23.912725-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refaktoryzacja"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/refactoring.md"
+date: 2024-01-26 01:18:23.912725-07:00
+description: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu bez\
+  \ zmieniania jego zewn\u0119trznego zachowania w celu poprawy atrybut\xF3w niefunkcjonalnych.\u2026"
+lastmod: 2024-02-18 23:08:50.044885
+model: gpt-4-0125-preview
+summary: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu bez zmieniania\
+  \ jego zewn\u0119trznego zachowania w celu poprawy atrybut\xF3w niefunkcjonalnych.\u2026"
+title: Refaktoryzacja
 ---
 
 {{< edit_this_page >}}

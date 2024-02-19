@@ -1,13 +1,16 @@
 ---
-title:                "Virheenjäljitystulosteiden tulostaminen"
 aliases:
 - /fi/powershell/printing-debug-output/
-date:                  2024-01-20T17:53:20.875049-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheenjäljitystulosteiden tulostaminen"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/printing-debug-output.md"
+date: 2024-01-20 17:53:20.875049-07:00
+description: "Tulostus debug-viestinn\xE4ss\xE4 tarkoittaa koodin suorituksen aikana\
+  \ tuotettujen viestien n\xE4ytt\xE4mist\xE4. Kehitt\xE4j\xE4t k\xE4ytt\xE4v\xE4\
+  t sit\xE4 virheiden j\xE4ljitt\xE4miseen ja\u2026"
+lastmod: 2024-02-18 23:09:07.856091
+model: gpt-4-1106-preview
+summary: "Tulostus debug-viestinn\xE4ss\xE4 tarkoittaa koodin suorituksen aikana tuotettujen\
+  \ viestien n\xE4ytt\xE4mist\xE4. Kehitt\xE4j\xE4t k\xE4ytt\xE4v\xE4t sit\xE4 virheiden\
+  \ j\xE4ljitt\xE4miseen ja\u2026"
+title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 ---
 
 {{< edit_this_page >}}

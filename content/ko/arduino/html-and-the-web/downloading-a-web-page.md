@@ -1,14 +1,23 @@
 ---
-title:                "웹 페이지 다운로드하기"
 aliases:
 - /ko/arduino/downloading-a-web-page/
-date:                  2024-01-20T17:43:40.501829-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "웹 페이지 다운로드하기"
-
-tag:                  "HTML and the Web"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/downloading-a-web-page.md"
+date: 2024-01-20 17:43:40.501829-07:00
+description: "\uC6F9\uD398\uC774\uC9C0\uB97C \uB2E4\uC6B4\uB85C\uB4DC\uD558\uB294\
+  \ \uAC83\uC740 \uADF8 \uB0B4\uC6A9\uC744 \uC778\uD130\uB137\uC5D0\uC11C \uC9C1\uC811\
+  \ \uBC1B\uC544\uC624\uB294 \uD589\uC704\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\
+  \uBA38\uB4E4\uC740 \uC790\uB3D9\uC73C\uB85C \uB370\uC774\uD130\uB97C \uC218\uC9D1\
+  \uD558\uAC70\uB098 \uC6D0\uACA9\uC73C\uB85C \uC7A5\uCE58\uB97C \uC81C\uC5B4\uD558\
+  \uAE30 \uC704\uD574 \uC774 \uAE30\uB2A5\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.618320
+model: gpt-4-1106-preview
+summary: "\uC6F9\uD398\uC774\uC9C0\uB97C \uB2E4\uC6B4\uB85C\uB4DC\uD558\uB294 \uAC83\
+  \uC740 \uADF8 \uB0B4\uC6A9\uC744 \uC778\uD130\uB137\uC5D0\uC11C \uC9C1\uC811 \uBC1B\
+  \uC544\uC624\uB294 \uD589\uC704\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB4E4\uC740 \uC790\uB3D9\uC73C\uB85C \uB370\uC774\uD130\uB97C \uC218\uC9D1\uD558\
+  \uAC70\uB098 \uC6D0\uACA9\uC73C\uB85C \uC7A5\uCE58\uB97C \uC81C\uC5B4\uD558\uAE30\
+  \ \uC704\uD574 \uC774 \uAE30\uB2A5\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+title: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

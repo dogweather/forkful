@@ -1,12 +1,14 @@
 ---
-title:                "Using an interactive shell (REPL)"
 aliases:
 - /en/go/using-an-interactive-shell-repl/
-date:                  2024-02-03T17:50:12.851556-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using an interactive shell (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/using-an-interactive-shell-repl.md"
+date: 2024-02-03 17:50:12.851556-07:00
+description: "An interactive shell, or Read-Eval-Print Loop (REPL), lets you experiment\
+  \ with Go code in real-time, executing commands and getting immediate feedback.\u2026"
+lastmod: 2024-02-18 23:09:10.598330
+model: gpt-4-0125-preview
+summary: "An interactive shell, or Read-Eval-Print Loop (REPL), lets you experiment\
+  \ with Go code in real-time, executing commands and getting immediate feedback.\u2026"
+title: Using an interactive shell (REPL)
 ---
 
 {{< edit_this_page >}}

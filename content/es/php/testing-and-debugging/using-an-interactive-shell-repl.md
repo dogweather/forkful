@@ -1,13 +1,16 @@
 ---
-title:                "Usando una shell interactiva (REPL)"
 aliases:
 - /es/php/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:16:20.307341-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando una shell interactiva (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:16:20.307341-07:00
+description: "Una shell interactiva, o REPL (Bucle Leer-Evaluar-Imprimir), te permite\
+  \ escribir y ejecutar c\xF3digo PHP al momento. Es ideal para experimentar, depurar,\
+  \ o\u2026"
+lastmod: 2024-02-18 23:09:10.075653
+model: gpt-4-0125-preview
+summary: "Una shell interactiva, o REPL (Bucle Leer-Evaluar-Imprimir), te permite\
+  \ escribir y ejecutar c\xF3digo PHP al momento. Es ideal para experimentar, depurar,\
+  \ o\u2026"
+title: Usando una shell interactiva (REPL)
 ---
 
 {{< edit_this_page >}}

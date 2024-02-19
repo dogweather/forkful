@@ -1,14 +1,18 @@
 ---
-title:                "Usando expressões regulares"
 aliases:
 - /pt/php/using-regular-expressions/
-date:                  2024-02-03T19:17:33.193945-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando expressões regulares"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:17:33.193945-07:00
+description: "Express\xF5es regulares (regex) em PHP s\xE3o padr\xF5es usados para\
+  \ combinar combina\xE7\xF5es de caracteres em strings, permitindo opera\xE7\xF5\
+  es sofisticadas de busca e\u2026"
+lastmod: 2024-02-18 23:08:58.230900
+model: gpt-4-0125-preview
+summary: "Express\xF5es regulares (regex) em PHP s\xE3o padr\xF5es usados para combinar\
+  \ combina\xE7\xF5es de caracteres em strings, permitindo opera\xE7\xF5es sofisticadas\
+  \ de busca e\u2026"
+title: "Usando express\xF5es regulares"
 ---
 
 {{< edit_this_page >}}

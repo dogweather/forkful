@@ -1,12 +1,14 @@
 ---
-title:                "HTML:n jäsentäminen"
 aliases:
 - /fi/kotlin/parsing-html/
-date:                  2024-01-20T15:32:28.787617-07:00
-simple_title:         "HTML:n jäsentäminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/parsing-html.md"
+date: 2024-01-20 15:32:28.787617-07:00
+description: "HTML-tiedostojen j\xE4sent\xE4minen eli parsing tarkoittaa HTML-koodin\
+  \ muuttamista rakenteelliseksi tiedoksi, mit\xE4 ohjelma voi k\xE4ytt\xE4\xE4 hy\xF6\
+  dyksi. Koodaajat\u2026"
+lastmod: 2024-02-18 23:09:07.572585
+summary: "HTML-tiedostojen j\xE4sent\xE4minen eli parsing tarkoittaa HTML-koodin muuttamista\
+  \ rakenteelliseksi tiedoksi, mit\xE4 ohjelma voi k\xE4ytt\xE4\xE4 hy\xF6dyksi. Koodaajat\u2026"
+title: "HTML:n j\xE4sent\xE4minen"
 ---
 
 {{< edit_this_page >}}

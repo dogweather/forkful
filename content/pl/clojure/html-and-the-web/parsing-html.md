@@ -1,14 +1,18 @@
 ---
-title:                "Analiza składniowa HTML"
 aliases:
 - /pl/clojure/parsing-html/
-date:                  2024-02-03T19:11:50.248374-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analiza składniowa HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:11:50.248374-07:00
+description: "Parsowanie HTML w Clojure wi\u0105\u017Ce si\u0119 z programowym ekstrahowaniem\
+  \ informacji z dokument\xF3w HTML. Programi\u015Bci robi\u0105 to, aby uzyska\u0107\
+  \ dost\u0119p, manipulowa\u0107 lub\u2026"
+lastmod: 2024-02-18 23:08:49.262650
+model: gpt-4-0125-preview
+summary: "Parsowanie HTML w Clojure wi\u0105\u017Ce si\u0119 z programowym ekstrahowaniem\
+  \ informacji z dokument\xF3w HTML. Programi\u015Bci robi\u0105 to, aby uzyska\u0107\
+  \ dost\u0119p, manipulowa\u0107 lub\u2026"
+title: "Analiza sk\u0142adniowa HTML"
 ---
 
 {{< edit_this_page >}}

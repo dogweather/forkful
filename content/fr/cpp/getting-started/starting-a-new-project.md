@@ -1,13 +1,16 @@
 ---
-title:                "Lancement d'un nouveau projet"
 aliases:
 - /fr/cpp/starting-a-new-project/
-date:                  2024-01-20T18:03:26.382860-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lancement d'un nouveau projet"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/starting-a-new-project.md"
+date: 2024-01-20 18:03:26.382860-07:00
+description: "D\xE9marrer un nouveau projet en C++, c'est cr\xE9er un monde de possibilit\xE9\
+  s. Les programmeurs se lancent dans cette aventure pour r\xE9soudre des probl\xE8\
+  mes,\u2026"
+lastmod: 2024-02-18 23:09:09.161466
+model: gpt-4-1106-preview
+summary: "D\xE9marrer un nouveau projet en C++, c'est cr\xE9er un monde de possibilit\xE9\
+  s. Les programmeurs se lancent dans cette aventure pour r\xE9soudre des probl\xE8\
+  mes,\u2026"
+title: Lancement d'un nouveau projet
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Scrivere un file di testo"
 aliases:
 - /it/ruby/writing-a-text-file/
-date:                  2024-02-03T19:29:06.833963-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Scrivere un file di testo"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:06.833963-07:00
+description: "Scrivere su un file di testo in Ruby \xE8 un'operazione fondamentale\
+  \ che consente di conservare output e dati in modo persistente, rendendo possibili\u2026"
+lastmod: 2024-02-18 23:08:56.400600
+model: gpt-4-0125-preview
+summary: "Scrivere su un file di testo in Ruby \xE8 un'operazione fondamentale che\
+  \ consente di conservare output e dati in modo persistente, rendendo possibili\u2026"
+title: Scrivere un file di testo
 ---
 
 {{< edit_this_page >}}

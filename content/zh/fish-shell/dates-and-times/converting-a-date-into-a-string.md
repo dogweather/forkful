@@ -1,14 +1,21 @@
 ---
-title:                "将日期转换为字符串"
 aliases:
 - /zh/fish-shell/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:31.952036-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "将日期转换为字符串"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:31.952036-07:00
+description: "\u8F6C\u6362\u65E5\u671F\u5230\u5B57\u7B26\u4E32\u5C31\u662F\u628A\u65E5\
+  \u671F\u4ECE\u5176\u539F\u59CB\u683C\u5F0F\u53D8\u6210\u6587\u672C\u5F62\u5F0F\u3002\
+  \u8FD9\u8BA9\u7A0B\u5E8F\u5458\u80FD\u66F4\u7075\u6D3B\u5730\u5904\u7406\u548C\u663E\
+  \u793A\u65E5\u671F\uFF0C\u6BD4\u5982\u5728\u65E5\u5FD7\u6587\u4EF6\u6216\u7528\u6237\
+  \u754C\u9762\u4E2D\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.529801
+model: gpt-4-1106-preview
+summary: "\u8F6C\u6362\u65E5\u671F\u5230\u5B57\u7B26\u4E32\u5C31\u662F\u628A\u65E5\
+  \u671F\u4ECE\u5176\u539F\u59CB\u683C\u5F0F\u53D8\u6210\u6587\u672C\u5F62\u5F0F\u3002\
+  \u8FD9\u8BA9\u7A0B\u5E8F\u5458\u80FD\u66F4\u7075\u6D3B\u5730\u5904\u7406\u548C\u663E\
+  \u793A\u65E5\u671F\uFF0C\u6BD4\u5982\u5728\u65E5\u5FD7\u6587\u4EF6\u6216\u7528\u6237\
+  \u754C\u9762\u4E2D\u3002"
+title: "\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32"
 ---
 
 {{< edit_this_page >}}

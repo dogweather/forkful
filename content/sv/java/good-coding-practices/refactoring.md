@@ -1,13 +1,16 @@
 ---
-title:                "Refaktorisering"
 aliases:
 - /sv/java/refactoring/
-date:                  2024-01-26T01:18:56.548129-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refaktorisering"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/refactoring.md"
+date: 2024-01-26 01:18:56.548129-07:00
+description: "Refaktorisering \xE4r processen att omstrukturera befintlig datorkod\u2014\
+  \xE4ndra faktoriseringen\u2014utan att \xE4ndra dess externa beteende. Programmerare\
+  \ g\xF6r detta f\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.677187
+model: gpt-4-0125-preview
+summary: "Refaktorisering \xE4r processen att omstrukturera befintlig datorkod\u2014\
+  \xE4ndra faktoriseringen\u2014utan att \xE4ndra dess externa beteende. Programmerare\
+  \ g\xF6r detta f\xF6r\u2026"
+title: Refaktorisering
 ---
 
 {{< edit_this_page >}}

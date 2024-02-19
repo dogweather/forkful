@@ -1,13 +1,16 @@
 ---
-title:                "Uthenting av delstrenger"
 aliases:
 - /no/swift/extracting-substrings/
-date:                  2024-01-20T17:46:28.602465-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Uthenting av delstrenger"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/extracting-substrings.md"
+date: 2024-01-20 17:46:28.602465-07:00
+description: "Utdrag av understrenger betyr \xE5 velge spesifikke deler av en streng.\
+  \ Programmerere gj\xF8r dette for \xE5 manipulere, analysere eller formatere tekstdata\
+  \ mer\u2026"
+lastmod: 2024-02-18 23:08:54.258572
+model: gpt-4-1106-preview
+summary: "Utdrag av understrenger betyr \xE5 velge spesifikke deler av en streng.\
+  \ Programmerere gj\xF8r dette for \xE5 manipulere, analysere eller formatere tekstdata\
+  \ mer\u2026"
+title: Uthenting av delstrenger
 ---
 
 {{< edit_this_page >}}

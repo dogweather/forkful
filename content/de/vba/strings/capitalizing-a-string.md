@@ -1,14 +1,16 @@
 ---
-title:                "Einen String großschreiben"
 aliases:
 - /de/vba/capitalizing-a-string/
-date:                  2024-02-01T21:50:22.379011-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Einen String großschreiben"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/vba/capitalizing-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:22.379011-07:00
+description: "Das Kapitalisieren eines Strings in Visual Basic for Applications (VBA)\
+  \ beinhaltet die Umwandlung des ersten Zeichens jedes Wortes in einem String in\u2026"
+lastmod: 2024-02-18 23:09:04.668809
+model: gpt-4-0125-preview
+summary: "Das Kapitalisieren eines Strings in Visual Basic for Applications (VBA)\
+  \ beinhaltet die Umwandlung des ersten Zeichens jedes Wortes in einem String in\u2026"
+title: "Einen String gro\xDFschreiben"
 ---
 
 {{< edit_this_page >}}

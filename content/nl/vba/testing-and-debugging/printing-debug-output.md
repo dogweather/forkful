@@ -1,14 +1,16 @@
 ---
-title:                "Afdrukken van debug output"
 aliases:
 - /nl/vba/printing-debug-output/
-date:                  2024-02-01T21:58:45.231882-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Afdrukken van debug output"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/vba/printing-debug-output.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:45.231882-07:00
+description: "Debuguitvoer afdrukken in Visual Basic for Applications (VBA) houdt\
+  \ in dat je strategisch printopdrachten in je code plaatst om variabelwaarden,\u2026"
+lastmod: 2024-02-18 23:09:01.668770
+model: gpt-4-0125-preview
+summary: "Debuguitvoer afdrukken in Visual Basic for Applications (VBA) houdt in dat\
+  \ je strategisch printopdrachten in je code plaatst om variabelwaarden,\u2026"
+title: Afdrukken van debug output
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,21 @@
 ---
-title:                "부분 문자열 추출"
 aliases:
 - /ko/c-sharp/extracting-substrings/
-date:                  2024-01-20T17:45:11.393115-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "부분 문자열 추출"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/extracting-substrings.md"
+date: 2024-01-20 17:45:11.393115-07:00
+description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uBD80\uBD84\uC744 \uB044\
+  \uC9D1\uC5B4\uB0B4\uB294 \uAC83\uC744 '\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C\
+  '\uC774\uB77C\uACE0 \uD569\uB2C8\uB2E4. \uB370\uC774\uD130 \uCC98\uB9AC, \uC785\uB825\
+  \ \uAC80\uC99D, \uD639\uC740 \uBB38\uC790\uC5F4 \uD615\uD0DC\uC18C\uB97C \uBD84\uC11D\
+  \uD560 \uB54C \uD544\uC694\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.202490
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uBD80\uBD84\uC744 \uB044\uC9D1\
+  \uC5B4\uB0B4\uB294 \uAC83\uC744 '\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C'\uC774\
+  \uB77C\uACE0 \uD569\uB2C8\uB2E4. \uB370\uC774\uD130 \uCC98\uB9AC, \uC785\uB825 \uAC80\
+  \uC99D, \uD639\uC740 \uBB38\uC790\uC5F4 \uD615\uD0DC\uC18C\uB97C \uBD84\uC11D\uD560\
+  \ \uB54C \uD544\uC694\uD569\uB2C8\uB2E4."
+title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C"
 ---
 
 {{< edit_this_page >}}

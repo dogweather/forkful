@@ -1,13 +1,14 @@
 ---
-title:                "Manipulation de fichiers avec des commandes en une ligne en CLI"
 aliases:
 - /fr/ruby/manipulating-files-with-cli-one-liners/
-date:                  2024-01-27T16:21:33.298146-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulation de fichiers avec des commandes en une ligne en CLI"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/manipulating-files-with-cli-one-liners.md"
+date: 2024-01-27 16:21:33.298146-07:00
+description: "Manipuler des fichiers avec des lignes de commande (CLI) one-liners\
+  \ en Ruby consiste \xE0 effectuer des op\xE9rations courantes sur des fichiers directement\u2026"
+lastmod: 2024-02-18 23:09:09.401511
+model: gpt-4-0125-preview
+summary: "Manipuler des fichiers avec des lignes de commande (CLI) one-liners en Ruby\
+  \ consiste \xE0 effectuer des op\xE9rations courantes sur des fichiers directement\u2026"
+title: Manipulation de fichiers avec des commandes en une ligne en CLI
 ---
 
 {{< edit_this_page >}}

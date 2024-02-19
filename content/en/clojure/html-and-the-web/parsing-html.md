@@ -1,12 +1,14 @@
 ---
-title:                "Parsing HTML"
 aliases:
 - /en/clojure/parsing-html/
-date:                  2024-02-03T19:02:49.120272-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Parsing HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/parsing-html.md"
+date: 2024-02-03 19:02:49.120272-07:00
+description: "Parsing HTML in Clojure involves programmatically extracting information\
+  \ from HTML documents. Programmers do this to access, manipulate, or monitor web\u2026"
+lastmod: 2024-02-18 23:09:10.721462
+model: gpt-4-0125-preview
+summary: "Parsing HTML in Clojure involves programmatically extracting information\
+  \ from HTML documents. Programmers do this to access, manipulate, or monitor web\u2026"
+title: Parsing HTML
 ---
 
 {{< edit_this_page >}}

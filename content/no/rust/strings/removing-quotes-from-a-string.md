@@ -1,13 +1,16 @@
 ---
-title:                "Fjerne anførselstegn fra en streng"
 aliases:
 - /no/rust/removing-quotes-from-a-string/
-date:                  2024-01-26T03:41:46.337564-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Fjerne anførselstegn fra en streng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:41:46.337564-07:00
+description: "\xC5 fjerne anf\xF8rselstegn fra en streng i Rust handler om \xE5 stripe\
+  \ bort un\xF8dvendige ekstra anf\xF8rselstegn som kan v\xE6re pakket rundt tekstdataene\
+  \ dine.\u2026"
+lastmod: 2024-02-18 23:08:53.673660
+model: gpt-4-0125-preview
+summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i Rust handler om \xE5 stripe\
+  \ bort un\xF8dvendige ekstra anf\xF8rselstegn som kan v\xE6re pakket rundt tekstdataene\
+  \ dine.\u2026"
+title: "Fjerne anf\xF8rselstegn fra en streng"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Tolka HTML"
 aliases:
 - /sv/clojure/parsing-html/
-date:                  2024-02-03T19:11:52.088591-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tolka HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:11:52.088591-07:00
+description: "Att tolka HTML i Clojure inneb\xE4r att man programmatiskt extraherar\
+  \ information fr\xE5n HTML-dokument. Programmerare g\xF6r detta f\xF6r att f\xE5\
+  \ \xE5tkomst till,\u2026"
+lastmod: 2024-02-18 23:08:51.460103
+model: gpt-4-0125-preview
+summary: "Att tolka HTML i Clojure inneb\xE4r att man programmatiskt extraherar information\
+  \ fr\xE5n HTML-dokument. Programmerare g\xF6r detta f\xF6r att f\xE5 \xE5tkomst\
+  \ till,\u2026"
+title: Tolka HTML
 ---
 
 {{< edit_this_page >}}

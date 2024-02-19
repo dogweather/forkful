@@ -1,13 +1,14 @@
 ---
-title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 aliases:
 - /fi/java/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:45.419134-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:45.419134-07:00
+description: "Muuttaa stringin pieniksi kirjaimiksi. Teemme n\xE4in muun muassa tiedon\
+  \ normalisointiin ja vertailuihin, jolloin isot kirjaimet eiv\xE4t vaikuta tulokseen."
+lastmod: 2024-02-18 23:09:07.444431
+model: gpt-4-1106-preview
+summary: "Muuttaa stringin pieniksi kirjaimiksi. Teemme n\xE4in muun muassa tiedon\
+  \ normalisointiin ja vertailuihin, jolloin isot kirjaimet eiv\xE4t vaikuta tulokseen."
+title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 ---
 
 {{< edit_this_page >}}

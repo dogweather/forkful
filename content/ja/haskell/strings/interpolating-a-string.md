@@ -1,14 +1,21 @@
 ---
-title:                "文字列の補間"
 aliases:
 - /ja/haskell/interpolating-a-string/
-date:                  2024-01-20T17:50:59.001766-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "文字列の補間"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/interpolating-a-string.md"
+date: 2024-01-20 17:50:59.001766-07:00
+description: "\u6587\u5B57\u5217\u88DC\u9593\u306F\u3001\u5909\u6570\u3084\u5F0F\u306E\
+  \u5024\u3092\u6587\u5B57\u5217\u4E2D\u306B\u57CB\u3081\u8FBC\u3080\u3053\u3068\u3002\
+  \u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\u52D5\u7684\u306B\u5185\u5BB9\u3092\
+  \u5909\u66F4\u3059\u308B\u30E1\u30C3\u30BB\u30FC\u30B8\u3084\u30C7\u30FC\u30BF\u3092\
+  \u7C21\u5358\u306B\u751F\u6210\u3059\u308B\u305F\u3081\u306B\u4F7F\u3046\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:54.943514
+model: gpt-4-1106-preview
+summary: "\u6587\u5B57\u5217\u88DC\u9593\u306F\u3001\u5909\u6570\u3084\u5F0F\u306E\
+  \u5024\u3092\u6587\u5B57\u5217\u4E2D\u306B\u57CB\u3081\u8FBC\u3080\u3053\u3068\u3002\
+  \u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\u52D5\u7684\u306B\u5185\u5BB9\u3092\
+  \u5909\u66F4\u3059\u308B\u30E1\u30C3\u30BB\u30FC\u30B8\u3084\u30C7\u30FC\u30BF\u3092\
+  \u7C21\u5358\u306B\u751F\u6210\u3059\u308B\u305F\u3081\u306B\u4F7F\u3046\u3002"
+title: "\u6587\u5B57\u5217\u306E\u88DC\u9593"
 ---
 
 {{< edit_this_page >}}

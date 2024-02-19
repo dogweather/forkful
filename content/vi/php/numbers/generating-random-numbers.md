@@ -1,15 +1,20 @@
 ---
-title:                "Sinh số ngẫu nhiên"
 aliases:
 - /vi/php/generating-random-numbers/
-date:                  2024-01-28T22:01:47.207669-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sinh số ngẫu nhiên"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/php/generating-random-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:47.207669-07:00
+description: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong PHP l\xE0 v\u1EC1\
+  \ vi\u1EC7c s\u1EA3n xu\u1EA5t c\xE1c gi\xE1 tr\u1ECB kh\xF4ng th\u1EC3 \u0111o\xE1\
+  n tr\u01B0\u1EDBc trong m\u1ED9t d\u1EA3i gi\xE1 tr\u1ECB nh\u1EA5t \u0111\u1ECB\
+  nh, \u0111i\u1EC1u n\xE0y r\u1EA5t quan tr\u1ECDng cho c\xE1c t\xE1c\u2026"
+lastmod: 2024-02-18 23:08:50.786161
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong PHP l\xE0 v\u1EC1 vi\u1EC7\
+  c s\u1EA3n xu\u1EA5t c\xE1c gi\xE1 tr\u1ECB kh\xF4ng th\u1EC3 \u0111o\xE1n tr\u01B0\
+  \u1EDBc trong m\u1ED9t d\u1EA3i gi\xE1 tr\u1ECB nh\u1EA5t \u0111\u1ECBnh, \u0111\
+  i\u1EC1u n\xE0y r\u1EA5t quan tr\u1ECDng cho c\xE1c t\xE1c\u2026"
+title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 ---
 
 {{< edit_this_page >}}

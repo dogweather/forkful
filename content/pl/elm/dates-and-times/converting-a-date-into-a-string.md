@@ -1,13 +1,16 @@
 ---
-title:                "Konwersja daty na łańcuch znaków"
 aliases:
 - /pl/elm/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:34.829892-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konwersja daty na łańcuch znaków"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:34.829892-07:00
+description: "\"Co i dlaczego?\" Zamiana daty na ci\u0105g znak\xF3w w Elm to proces\
+  \ przekszta\u0142cenia warto\u015Bci daty (kt\xF3r\u0105 komputer rozumie) na tekst,\
+  \ kt\xF3ry jest czytelny dla\u2026"
+lastmod: 2024-02-18 23:08:49.530058
+model: gpt-4-1106-preview
+summary: "\"Co i dlaczego?\" Zamiana daty na ci\u0105g znak\xF3w w Elm to proces przekszta\u0142\
+  cenia warto\u015Bci daty (kt\xF3r\u0105 komputer rozumie) na tekst, kt\xF3ry jest\
+  \ czytelny dla\u2026"
+title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 ---
 
 {{< edit_this_page >}}

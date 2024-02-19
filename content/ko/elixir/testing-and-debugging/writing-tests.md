@@ -1,14 +1,30 @@
 ---
-title:                "테스트 작성하기"
 aliases:
 - /ko/elixir/writing-tests/
-date:                  2024-02-03T19:30:48.799043-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "테스트 작성하기"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:30:48.799043-07:00
+description: "Elixir\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uC791\uC131\uD55C\uB2E4\
+  \uB294 \uAC83\uC740 \uCF54\uB4DC\uC758 \uB3D9\uC791\uC744 \uAC80\uC99D\uD558\uAE30\
+  \ \uC704\uD574 \uC790\uB3D9\uD654\uB41C \uC2A4\uD06C\uB9BD\uD2B8\uB97C \uB9CC\uB4DC\
+  \uB294 \uAC83\uC744 \uC758\uBBF8\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB294 \uC774\uB97C \uD1B5\uD574 \uD488\uC9C8\uC744 \uBCF4\uC7A5\uD558\uACE0, \uD68C\
+  \uADC0\uB97C \uBC29\uC9C0\uD558\uBA70, \uCF54\uB4DC \uB9AC\uD329\uD1A0\uB9C1\uC744\
+  \ \uC6A9\uC774\uD558\uAC8C \uD558\uC5EC \uAC1C\uBC1C \uD504\uB85C\uC138\uC2A4\uB97C\
+  \ \uB354 \uC2E0\uB8B0\uC131 \uC788\uACE0 \uD6A8\uC728\uC801\uC73C\uB85C \uB9CC\uB4ED\
+  \uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:05.760546
+model: gpt-4-0125-preview
+summary: "Elixir\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uC791\uC131\uD55C\uB2E4\uB294\
+  \ \uAC83\uC740 \uCF54\uB4DC\uC758 \uB3D9\uC791\uC744 \uAC80\uC99D\uD558\uAE30 \uC704\
+  \uD574 \uC790\uB3D9\uD654\uB41C \uC2A4\uD06C\uB9BD\uD2B8\uB97C \uB9CC\uB4DC\uB294\
+  \ \uAC83\uC744 \uC758\uBBF8\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB294\
+  \ \uC774\uB97C \uD1B5\uD574 \uD488\uC9C8\uC744 \uBCF4\uC7A5\uD558\uACE0, \uD68C\uADC0\
+  \uB97C \uBC29\uC9C0\uD558\uBA70, \uCF54\uB4DC \uB9AC\uD329\uD1A0\uB9C1\uC744 \uC6A9\
+  \uC774\uD558\uAC8C \uD558\uC5EC \uAC1C\uBC1C \uD504\uB85C\uC138\uC2A4\uB97C \uB354\
+  \ \uC2E0\uB8B0\uC131 \uC788\uACE0 \uD6A8\uC728\uC801\uC73C\uB85C \uB9CC\uB4ED\uB2C8\
+  \uB2E4."
+title: "\uD14C\uC2A4\uD2B8 \uC791\uC131\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

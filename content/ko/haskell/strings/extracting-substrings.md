@@ -1,14 +1,22 @@
 ---
-title:                "부분 문자열 추출"
 aliases:
 - /ko/haskell/extracting-substrings/
-date:                  2024-01-20T17:45:57.299342-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "부분 문자열 추출"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/extracting-substrings.md"
+date: 2024-01-20 17:45:57.299342-07:00
+description: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uBD80\uBD84 \uBB38\uC790\uC5F4\uC744\
+  \ \uCD94\uCD9C\uD55C\uB2E4\uB294 \uAC74 \uC8FC\uC5B4\uC9C4 \uBB38\uC790\uC5F4\uC758\
+  \ \uC77C\uBD80\uB97C \uBF51\uC544\uB0B4\uB294 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uB370\
+  \uC774\uD130 \uCC98\uB9AC\uB098 \uD328\uD134 \uB9E4\uCE6D \uB54C\uBB38\uC5D0 \uD504\
+  \uB85C\uADF8\uB798\uBA38\uB4E4\uC774 \uC790\uC8FC \uC0AC\uC6A9\uD569\uB2C8\uB2E4\
+  ."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:06.269513
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uBD80\uBD84 \uBB38\uC790\uC5F4\uC744 \uCD94\
+  \uCD9C\uD55C\uB2E4\uB294 \uAC74 \uC8FC\uC5B4\uC9C4 \uBB38\uC790\uC5F4\uC758 \uC77C\
+  \uBD80\uB97C \uBF51\uC544\uB0B4\uB294 \uC791\uC5C5\uC785\uB2C8\uB2E4. \uB370\uC774\
+  \uD130 \uCC98\uB9AC\uB098 \uD328\uD134 \uB9E4\uCE6D \uB54C\uBB38\uC5D0 \uD504\uB85C\
+  \uADF8\uB798\uBA38\uB4E4\uC774 \uC790\uC8FC \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C"
 ---
 
 {{< edit_this_page >}}

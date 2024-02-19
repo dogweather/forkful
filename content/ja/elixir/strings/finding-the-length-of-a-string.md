@@ -1,14 +1,19 @@
 ---
-title:                "文字列の長さを求める"
 aliases:
 - /ja/elixir/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:22.194435-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "文字列の長さを求める"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:22.194435-07:00
+description: "\u6587\u5B57\u5217\u306E\u9577\u3055\u3092\u77E5\u308B\u306E\u306F\u57FA\
+  \u672C\u3002\u30E1\u30E2\u30EA\u4F7F\u7528\u91CF\u3001\u30C7\u30FC\u30BF\u69CB\u9020\
+  \u306E\u30D0\u30EA\u30C7\u30FC\u30B7\u30E7\u30F3\u3001\u30E6\u30FC\u30B6\u30FC\u5165\
+  \u529B\u306E\u51E6\u7406\u306B\u4E0D\u53EF\u6B20\u3067\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:54.634814
+model: gpt-4-1106-preview
+summary: "\u6587\u5B57\u5217\u306E\u9577\u3055\u3092\u77E5\u308B\u306E\u306F\u57FA\
+  \u672C\u3002\u30E1\u30E2\u30EA\u4F7F\u7528\u91CF\u3001\u30C7\u30FC\u30BF\u69CB\u9020\
+  \u306E\u30D0\u30EA\u30C7\u30FC\u30B7\u30E7\u30F3\u3001\u30E6\u30FC\u30B6\u30FC\u5165\
+  \u529B\u306E\u51E6\u7406\u306B\u4E0D\u53EF\u6B20\u3067\u3059\u3002"
+title: "\u6587\u5B57\u5217\u306E\u9577\u3055\u3092\u6C42\u3081\u308B"
 ---
 
 {{< edit_this_page >}}

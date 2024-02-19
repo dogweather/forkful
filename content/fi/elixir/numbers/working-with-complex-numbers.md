@@ -1,13 +1,16 @@
 ---
-title:                "Kompleksilukujen käsittely"
 aliases:
 - /fi/elixir/working-with-complex-numbers/
-date:                  2024-01-26T04:39:18.685492-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kompleksilukujen käsittely"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/working-with-complex-numbers.md"
+date: 2024-01-26 04:39:18.685492-07:00
+description: "Kompleksiluvuilla on reaaliosa ja imagin\xE4\xE4riosa (kuten `3 + 4i`).\
+  \ Niit\xE4 k\xE4ytet\xE4\xE4n tekniikassa, fysiikassa sek\xE4 tietyiss\xE4 tietojenk\xE4\
+  sittelyn ongelmissa.\u2026"
+lastmod: 2024-02-18 23:09:07.267094
+model: gpt-4-0125-preview
+summary: "Kompleksiluvuilla on reaaliosa ja imagin\xE4\xE4riosa (kuten `3 + 4i`).\
+  \ Niit\xE4 k\xE4ytet\xE4\xE4n tekniikassa, fysiikassa sek\xE4 tietyiss\xE4 tietojenk\xE4\
+  sittelyn ongelmissa.\u2026"
+title: "Kompleksilukujen k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

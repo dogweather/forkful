@@ -1,13 +1,14 @@
 ---
-title:                "Usando un depurador"
 aliases:
 - /es/c-sharp/using-a-debugger/
-date:                  2024-01-26T03:48:00.764822-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando un depurador"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/using-a-debugger.md"
+date: 2024-01-26 03:48:00.764822-07:00
+description: "Usar un depurador significa aprovechar herramientas especializadas para\
+  \ probar y diagnosticar c\xF3digo. Los programadores lo hacen para eliminar errores,\u2026"
+lastmod: 2024-02-18 23:09:09.987000
+model: gpt-4-0125-preview
+summary: "Usar un depurador significa aprovechar herramientas especializadas para\
+  \ probar y diagnosticar c\xF3digo. Los programadores lo hacen para eliminar errores,\u2026"
+title: Usando un depurador
 ---
 
 {{< edit_this_page >}}

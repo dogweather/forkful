@@ -1,14 +1,20 @@
 ---
-title:                "YAML を操作する"
 aliases:
 - /ja/fish-shell/working-with-yaml/
-date:                  2024-02-03T19:25:41.306129-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "YAML を操作する"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:25:41.306129-07:00
+description: "YAML\u3092\u64CD\u4F5C\u3059\u308B\u3068\u306F\u3001\u8A2D\u5B9A\u30D5\
+  \u30A1\u30A4\u30EB\u7528\u306E\u30C7\u30FC\u30BF\u76F4\u5217\u5316\u30D5\u30A9\u30FC\
+  \u30DE\u30C3\u30C8\u3067\u3042\u308BYAML\uFF08YAML Ain't Markup Language\uFF09\u30D5\
+  \u30A1\u30A4\u30EB\u3092\u30D1\u30FC\u30B7\u30F3\u30B0\u3057\u3001Fish\u2026"
+lastmod: 2024-02-18 23:08:55.328293
+model: gpt-4-0125-preview
+summary: "YAML\u3092\u64CD\u4F5C\u3059\u308B\u3068\u306F\u3001\u8A2D\u5B9A\u30D5\u30A1\
+  \u30A4\u30EB\u7528\u306E\u30C7\u30FC\u30BF\u76F4\u5217\u5316\u30D5\u30A9\u30FC\u30DE\
+  \u30C3\u30C8\u3067\u3042\u308BYAML\uFF08YAML Ain't Markup Language\uFF09\u30D5\u30A1\
+  \u30A4\u30EB\u3092\u30D1\u30FC\u30B7\u30F3\u30B0\u3057\u3001Fish\u2026"
+title: "YAML \u3092\u64CD\u4F5C\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

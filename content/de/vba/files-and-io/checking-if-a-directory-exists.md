@@ -1,14 +1,18 @@
 ---
-title:                "Überprüfung, ob ein Verzeichnis existiert"
 aliases:
 - /de/vba/checking-if-a-directory-exists/
-date:                  2024-02-01T21:48:56.708620-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/vba/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:48:56.708620-07:00
+description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Visual Basic f\xFCr Anwendungen\
+  \ (VBA) existiert, bedeutet, die Anwesenheit eines Ordners innerhalb des Dateisystems\
+  \ zu\u2026"
+lastmod: 2024-02-18 23:09:04.706077
+model: gpt-4-0125-preview
+summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Visual Basic f\xFCr Anwendungen\
+  \ (VBA) existiert, bedeutet, die Anwesenheit eines Ordners innerhalb des Dateisystems\
+  \ zu\u2026"
+title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 ---
 
 {{< edit_this_page >}}

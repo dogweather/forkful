@@ -1,13 +1,16 @@
 ---
-title:                "Loggføring"
 aliases:
 - /no/kotlin/logging/
-date:                  2024-01-26T01:07:52.139055-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Loggføring"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/logging.md"
+date: 2024-01-26 01:07:52.139055-07:00
+description: "Logging, eller loggf\xF8ring, er i sin kjerne praksisen med \xE5 registrere\
+  \ hendelser og data fra en programvareapplikasjon til en ekstern utgang, som en\
+  \ fil\u2026"
+lastmod: 2024-02-18 23:08:53.858836
+model: gpt-4-1106-preview
+summary: "Logging, eller loggf\xF8ring, er i sin kjerne praksisen med \xE5 registrere\
+  \ hendelser og data fra en programvareapplikasjon til en ekstern utgang, som en\
+  \ fil\u2026"
+title: "Loggf\xF8ring"
 ---
 
 {{< edit_this_page >}}

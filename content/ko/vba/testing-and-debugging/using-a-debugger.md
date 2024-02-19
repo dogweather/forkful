@@ -1,14 +1,28 @@
 ---
-title:                "디버거 사용하기"
 aliases:
 - /ko/vba/using-a-debugger/
-date:                  2024-02-01T22:03:43.656132-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "디버거 사용하기"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/vba/using-a-debugger.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:43.656132-07:00
+description: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uB514\uBC84\uAC70\uB97C\
+  \ \uC0AC\uC6A9\uD55C\uB2E4\uB294 \uAC83\uC740 \uCF54\uB4DC\uB97C \uB2E8\uACC4\uBCC4\
+  \uB85C \uC2E4\uD589\uD558\uC5EC \uC2E4\uD589 \uD750\uB984\uACFC \uBCC0\uC218 \uC0C1\
+  \uD0DC\uB97C \uAC80\uC0AC\uD558\uB294 \uACFC\uC815\uC744 \uD3EC\uD568\uD569\uB2C8\
+  \uB2E4. \uC774 \uACFC\uC815\uC740 \uCF54\uB4DC\uC5D0\uC11C \uC624\uB958\uB97C \uC2DD\
+  \uBCC4\uD558\uACE0 \uC218\uC815\uD558\uB294 \uB370 \uC911\uC694\uD558\uBA70, \uACB0\
+  \uAD6D \uCF54\uB4DC\uAC00 \uC608\uC0C1\uB300\uB85C \uC2E4\uD589\uB418\uB3C4\uB85D\
+  \ \uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:05.960177
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uB514\uBC84\uAC70\uB97C\
+  \ \uC0AC\uC6A9\uD55C\uB2E4\uB294 \uAC83\uC740 \uCF54\uB4DC\uB97C \uB2E8\uACC4\uBCC4\
+  \uB85C \uC2E4\uD589\uD558\uC5EC \uC2E4\uD589 \uD750\uB984\uACFC \uBCC0\uC218 \uC0C1\
+  \uD0DC\uB97C \uAC80\uC0AC\uD558\uB294 \uACFC\uC815\uC744 \uD3EC\uD568\uD569\uB2C8\
+  \uB2E4. \uC774 \uACFC\uC815\uC740 \uCF54\uB4DC\uC5D0\uC11C \uC624\uB958\uB97C \uC2DD\
+  \uBCC4\uD558\uACE0 \uC218\uC815\uD558\uB294 \uB370 \uC911\uC694\uD558\uBA70, \uACB0\
+  \uAD6D \uCF54\uB4DC\uAC00 \uC608\uC0C1\uB300\uB85C \uC2E4\uD589\uB418\uB3C4\uB85D\
+  \ \uD569\uB2C8\uB2E4."
+title: "\uB514\uBC84\uAC70 \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

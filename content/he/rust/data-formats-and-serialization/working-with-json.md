@@ -1,14 +1,27 @@
 ---
-title:                "עבודה עם JSON"
 aliases:
 - /he/rust/working-with-json/
-date:                  2024-02-03T19:24:34.653598-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "עבודה עם JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/rust/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:24:34.653598-07:00
+description: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD JSON (\u05EA\u05D9\u05D0\
+  \u05D5\u05E8 \u05D0\u05D5\u05D1\u05D9\u05D9\u05E7\u05D8 \u05E9\u05DC JavaScript)\
+  \ \u05D1-Rust \u05D4\u05D9\u05D0 \u05E2\u05DC \u05E4\u05E8\u05E1\u05D5\u05E8 \u05E0\
+  \u05EA\u05D5\u05E0\u05D9 JSON \u05DC\u05EA\u05D5\u05DA \u05DE\u05D1\u05E0\u05D9\
+  \ \u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05E9\u05DC Rust \u05D5\u05E1\u05D9\u05D3\
+  \u05D5\u05E8 \u05DE\u05D7\u05D3\u05E9 \u05E9\u05DC \u05DE\u05D1\u05E0\u05D9 \u05E0\
+  \u05EA\u05D5\u05E0\u05D9\u05DD \u05E9\u05DC Rust \u05D1\u05D7\u05D6\u05E8\u05D4\
+  \ \u05DC-JSON.\u2026"
+lastmod: 2024-02-18 23:08:52.637579
+model: gpt-4-0125-preview
+summary: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD JSON (\u05EA\u05D9\u05D0\u05D5\
+  \u05E8 \u05D0\u05D5\u05D1\u05D9\u05D9\u05E7\u05D8 \u05E9\u05DC JavaScript) \u05D1\
+  -Rust \u05D4\u05D9\u05D0 \u05E2\u05DC \u05E4\u05E8\u05E1\u05D5\u05E8 \u05E0\u05EA\
+  \u05D5\u05E0\u05D9 JSON \u05DC\u05EA\u05D5\u05DA \u05DE\u05D1\u05E0\u05D9 \u05E0\
+  \u05EA\u05D5\u05E0\u05D9\u05DD \u05E9\u05DC Rust \u05D5\u05E1\u05D9\u05D3\u05D5\u05E8\
+  \ \u05DE\u05D7\u05D3\u05E9 \u05E9\u05DC \u05DE\u05D1\u05E0\u05D9 \u05E0\u05EA\u05D5\
+  \u05E0\u05D9\u05DD \u05E9\u05DC Rust \u05D1\u05D7\u05D6\u05E8\u05D4 \u05DC-JSON.\u2026"
+title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD JSON"
 ---
 
 {{< edit_this_page >}}

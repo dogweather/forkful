@@ -1,14 +1,31 @@
 ---
-title:                "디렉토리가 존재하는지 확인하기"
 aliases:
 - /ko/fish-shell/checking-if-a-directory-exists/
-date:                  2024-02-03T19:07:31.793692-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "디렉토리가 존재하는지 확인하기"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:07:31.793692-07:00
+description: "Fish Shell\uC5D0\uC11C \uB514\uB809\uD1A0\uB9AC\uC758 \uC874\uC7AC \uC5EC\
+  \uBD80\uB97C \uD655\uC778\uD558\uB294 \uAC83\uC740, \uC2A4\uD06C\uB9BD\uD2B8\uAC00\
+  \ \uB514\uB809\uD1A0\uB9AC \uAD6C\uC870\uC758 \uC874\uC7AC \uB610\uB294 \uBD80\uC7AC\
+  \uC5D0 \uAE30\uBC18\uD55C \uACB0\uC815\uC744 \uB0B4\uB9B4 \uC218 \uC788\uAC8C \uD558\
+  \uC5EC, \uC870\uAC74\uBD80 \uD30C\uC77C \uC791\uC5C5, \uB85C\uAE45, \uB610\uB294\
+  \ \uD658\uACBD \uC124\uC815\uACFC \uAC19\uC740 \uC791\uC5C5\uC744 \uAC00\uB2A5\uD558\
+  \uAC8C \uD569\uB2C8\uB2E4. \uC774 \uAE30\uBC95\uC740 \uD30C\uC77C\uC2DC\uC2A4\uD15C\
+  \uACFC \uC608\uCE21 \uAC00\uB2A5\uD55C \uBC29\uC2DD\uC73C\uB85C \uC0C1\uD638 \uC791\
+  \uC6A9\uD558\uB294\u2026"
+lastmod: 2024-02-18 23:09:06.903937
+model: gpt-4-0125-preview
+summary: "Fish Shell\uC5D0\uC11C \uB514\uB809\uD1A0\uB9AC\uC758 \uC874\uC7AC \uC5EC\
+  \uBD80\uB97C \uD655\uC778\uD558\uB294 \uAC83\uC740, \uC2A4\uD06C\uB9BD\uD2B8\uAC00\
+  \ \uB514\uB809\uD1A0\uB9AC \uAD6C\uC870\uC758 \uC874\uC7AC \uB610\uB294 \uBD80\uC7AC\
+  \uC5D0 \uAE30\uBC18\uD55C \uACB0\uC815\uC744 \uB0B4\uB9B4 \uC218 \uC788\uAC8C \uD558\
+  \uC5EC, \uC870\uAC74\uBD80 \uD30C\uC77C \uC791\uC5C5, \uB85C\uAE45, \uB610\uB294\
+  \ \uD658\uACBD \uC124\uC815\uACFC \uAC19\uC740 \uC791\uC5C5\uC744 \uAC00\uB2A5\uD558\
+  \uAC8C \uD569\uB2C8\uB2E4. \uC774 \uAE30\uBC95\uC740 \uD30C\uC77C\uC2DC\uC2A4\uD15C\
+  \uACFC \uC608\uCE21 \uAC00\uB2A5\uD55C \uBC29\uC2DD\uC73C\uB85C \uC0C1\uD638 \uC791\
+  \uC6A9\uD558\uB294\u2026"
+title: "\uB514\uB809\uD1A0\uB9AC\uAC00 \uC874\uC7AC\uD558\uB294\uC9C0 \uD655\uC778\
+  \uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,22 @@
 ---
-title:                "Làm việc với XML"
 aliases:
 - /vi/clojure/working-with-xml/
-date:                  2024-01-28T22:11:27.423702-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/clojure/working-with-xml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:27.423702-07:00
+description: "XML l\xE0 m\u1ED9t ng\xF4n ng\u1EEF \u0111\xE1nh d\u1EA5u \u0111\u01B0\
+  \u1EE3c thi\u1EBFt k\u1EBF \u0111\u1EC3 m\xE3 h\xF3a t\xE0i li\u1EC7u m\u1ED9t c\xE1\
+  ch c\xF3 th\u1EC3 \u0111\u1ECDc \u0111\u01B0\u1EE3c b\u1EDFi c\u1EA3 con ng\u01B0\
+  \u1EDDi v\xE0 m\xE1y m\xF3c. N\xF3 \u0111\xF3ng m\u1ED9t vai tr\xF2 ch\xEDnh trong\
+  \ c\xE1c\u2026"
+lastmod: 2024-02-18 23:08:50.341315
+model: gpt-4-0125-preview
+summary: "XML l\xE0 m\u1ED9t ng\xF4n ng\u1EEF \u0111\xE1nh d\u1EA5u \u0111\u01B0\u1EE3\
+  c thi\u1EBFt k\u1EBF \u0111\u1EC3 m\xE3 h\xF3a t\xE0i li\u1EC7u m\u1ED9t c\xE1ch\
+  \ c\xF3 th\u1EC3 \u0111\u1ECDc \u0111\u01B0\u1EE3c b\u1EDFi c\u1EA3 con ng\u01B0\
+  \u1EDDi v\xE0 m\xE1y m\xF3c. N\xF3 \u0111\xF3ng m\u1ED9t vai tr\xF2 ch\xEDnh trong\
+  \ c\xE1c\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 ---
 
 {{< edit_this_page >}}

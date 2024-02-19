@@ -1,15 +1,16 @@
 ---
-title:                "Een tekstbestand lezen"
 aliases:
 - /nl/rust/reading-a-text-file/
-date:                  2024-01-28T22:05:01.404213-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een tekstbestand lezen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/reading-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:05:01.404213-07:00
+description: "Een tekstbestand lezen is het verkrijgen van tekstinhoud uit een .txt-bestand\
+  \ op je schijf. Programmeurs doen dit om gegevens te verwerken zoals\u2026"
+lastmod: 2024-02-18 23:09:01.638319
+model: gpt-4-0125-preview
+summary: "Een tekstbestand lezen is het verkrijgen van tekstinhoud uit een .txt-bestand\
+  \ op je schijf. Programmeurs doen dit om gegevens te verwerken zoals\u2026"
+title: Een tekstbestand lezen
 ---
 
 {{< edit_this_page >}}

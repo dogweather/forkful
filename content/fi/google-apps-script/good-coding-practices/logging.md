@@ -1,14 +1,18 @@
 ---
-title:                "Lokiointi"
 aliases:
 - /fi/google-apps-script/logging/
-date:                  2024-02-01T21:56:00.882655-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lokiointi"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/logging.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:56:00.882655-07:00
+description: "Ohjelmistokehityksess\xE4 lokitus tarkoittaa tapahtumien, virheiden\
+  \ tai merkitt\xE4vien esiintymien tallentamista suoritusaikana. Ohjelmoijat tekev\xE4\
+  t n\xE4in\u2026"
+lastmod: 2024-02-18 23:09:07.143090
+model: gpt-4-0125-preview
+summary: "Ohjelmistokehityksess\xE4 lokitus tarkoittaa tapahtumien, virheiden tai\
+  \ merkitt\xE4vien esiintymien tallentamista suoritusaikana. Ohjelmoijat tekev\xE4\
+  t n\xE4in\u2026"
+title: Lokiointi
 ---
 
 {{< edit_this_page >}}

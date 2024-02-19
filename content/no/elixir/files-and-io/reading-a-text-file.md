@@ -1,13 +1,15 @@
 ---
-title:                "Lese en tekstfil"
 aliases:
 - /no/elixir/reading-a-text-file/
-date:                  2024-01-20T17:53:55.205184-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lese en tekstfil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/reading-a-text-file.md"
+date: 2024-01-20 17:53:55.205184-07:00
+description: "\xC5 lese en tekstfil handler om \xE5 laste innholdet fra filen inn\
+  \ i programmet. Programmerere gj\xF8r dette for \xE5 manipulere data, lagre innstillinger,\
+  \ eller\u2026"
+lastmod: 2024-02-18 23:08:53.621597
+model: gpt-4-1106-preview
+summary: "\xC5 lese en tekstfil handler om \xE5 laste innholdet fra filen inn i programmet.\
+  \ Programmerere gj\xF8r dette for \xE5 manipulere data, lagre innstillinger, eller\u2026"
+title: Lese en tekstfil
 ---
 
 {{< edit_this_page >}}

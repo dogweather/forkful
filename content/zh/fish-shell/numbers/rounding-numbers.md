@@ -1,13 +1,20 @@
 ---
-title:                "数字取整"
 aliases:
 - /zh/fish-shell/rounding-numbers/
-date:                  2024-01-26T03:45:04.999047-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "数字取整"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/rounding-numbers.md"
+date: 2024-01-26 03:45:04.999047-07:00
+description: "\u56DB\u820D\u4E94\u5165\u662F\u6307\u53BB\u6389\u5C0F\u6570\u70B9\u540E\
+  \u7684\u6570\u5B57\uFF0C\u4EE5\u7B80\u5316\u6570\u636E\u6216\u9002\u5E94\u7279\u5B9A\
+  \u683C\u5F0F\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u663E\u793A\
+  \u66F4\u53CB\u597D\u3001\u5B58\u50A8\u66F4\u9AD8\u6548\uFF0C\u6216\u5F53\u5C0F\u6570\
+  \u7CBE\u5EA6\u4E0D\u662F\u95EE\u9898\u65F6\u3002"
+lastmod: 2024-02-18 23:08:59.512640
+model: gpt-4-0125-preview
+summary: "\u56DB\u820D\u4E94\u5165\u662F\u6307\u53BB\u6389\u5C0F\u6570\u70B9\u540E\
+  \u7684\u6570\u5B57\uFF0C\u4EE5\u7B80\u5316\u6570\u636E\u6216\u9002\u5E94\u7279\u5B9A\
+  \u683C\u5F0F\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u663E\u793A\
+  \u66F4\u53CB\u597D\u3001\u5B58\u50A8\u66F4\u9AD8\u6548\uFF0C\u6216\u5F53\u5C0F\u6570\
+  \u7CBE\u5EA6\u4E0D\u662F\u95EE\u9898\u65F6\u3002"
+title: "\u6570\u5B57\u53D6\u6574"
 ---
 
 {{< edit_this_page >}}

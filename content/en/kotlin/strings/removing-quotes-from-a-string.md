@@ -1,13 +1,14 @@
 ---
-title:                "Removing quotes from a string"
 aliases:
 - /en/kotlin/removing-quotes-from-a-string/
-date:                  2024-01-25T20:50:29.706335-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Removing quotes from a string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/removing-quotes-from-a-string.md"
+date: 2024-01-25 20:50:29.706335-07:00
+description: "Removing quotes from a string means stripping out any instances of quote\
+  \ characters, either single (' ') or double (\" \"), from the text data you're\u2026"
+lastmod: 2024-02-18 23:09:11.001202
+model: gpt-4-1106-preview
+summary: "Removing quotes from a string means stripping out any instances of quote\
+  \ characters, either single (' ') or double (\" \"), from the text data you're\u2026"
+title: Removing quotes from a string
 ---
 
 {{< edit_this_page >}}

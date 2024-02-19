@@ -1,12 +1,14 @@
 ---
-title:                "Converting a date into a string"
 aliases:
 - /en/google-apps-script/converting-a-date-into-a-string/
-date:                  2024-02-01T21:12:12.817086-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Converting a date into a string"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/google-apps-script/converting-a-date-into-a-string.md"
+date: 2024-02-01 21:12:12.817086-07:00
+description: "Converting dates into strings is a fundamental task that enables programmers\
+  \ to manipulate and display date information in a human-readable format. This\u2026"
+lastmod: 2024-02-18 23:09:10.650911
+model: gpt-4-0125-preview
+summary: "Converting dates into strings is a fundamental task that enables programmers\
+  \ to manipulate and display date information in a human-readable format. This\u2026"
+title: Converting a date into a string
 ---
 
 {{< edit_this_page >}}

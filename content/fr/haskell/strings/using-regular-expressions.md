@@ -1,14 +1,18 @@
 ---
-title:                "Utilisation des expressions régulières"
 aliases:
 - /fr/haskell/using-regular-expressions/
-date:                  2024-02-03T19:16:48.940000-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation des expressions régulières"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:16:48.940000-07:00
+description: "Les expressions r\xE9guli\xE8res en programmation sont des s\xE9quences\
+  \ de caract\xE8res qui d\xE9finissent un motif de recherche, g\xE9n\xE9ralement\
+  \ employ\xE9 pour la recherche\u2026"
+lastmod: 2024-02-18 23:09:08.863972
+model: gpt-4-0125-preview
+summary: "Les expressions r\xE9guli\xE8res en programmation sont des s\xE9quences\
+  \ de caract\xE8res qui d\xE9finissent un motif de recherche, g\xE9n\xE9ralement\
+  \ employ\xE9 pour la recherche\u2026"
+title: "Utilisation des expressions r\xE9guli\xE8res"
 ---
 
 {{< edit_this_page >}}

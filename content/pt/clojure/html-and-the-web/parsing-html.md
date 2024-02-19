@@ -1,14 +1,16 @@
 ---
-title:                "Analisando HTML"
 aliases:
 - /pt/clojure/parsing-html/
-date:                  2024-02-03T19:11:41.138354-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analisando HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:11:41.138354-07:00
+description: "Analisar HTML em Clojure envolve extrair programaticamente informa\xE7\
+  \xF5es de documentos HTML. Programadores fazem isso para acessar, manipular ou monitorar\u2026"
+lastmod: 2024-02-18 23:08:57.800575
+model: gpt-4-0125-preview
+summary: "Analisar HTML em Clojure envolve extrair programaticamente informa\xE7\xF5\
+  es de documentos HTML. Programadores fazem isso para acessar, manipular ou monitorar\u2026"
+title: Analisando HTML
 ---
 
 {{< edit_this_page >}}

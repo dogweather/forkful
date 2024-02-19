@@ -1,14 +1,28 @@
 ---
-title:                "HTML 분석하기"
 aliases:
 - /ko/google-apps-script/parsing-html/
-date:                  2024-02-01T21:57:33.348924-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML 분석하기"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/parsing-html.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:33.348924-07:00
+description: "Google Apps Script\uC5D0\uC11C HTML \uD30C\uC2F1\uC740 HTML \uCF58\uD150\
+  \uCE20\uC5D0\uC11C \uB370\uC774\uD130\uB97C \uCD94\uCD9C\uD558\uB294 \uAC83\uC744\
+  \ \uD3EC\uD568\uD558\uBA70, \uD2B9\uD788 \uC6F9 \uD398\uC774\uC9C0\uB098 \uC6F9\
+  \ \uAE30\uBC18 \uB370\uC774\uD130 \uC18C\uC2A4\uC640 \uC0C1\uD638\uC791\uC6A9\uD560\
+  \ \uB54C \uC720\uC6A9\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\
+  \ \uC774 \uC791\uC5C5\uC744 \uB370\uC774\uD130 \uC218\uC9D1\uC744 \uC790\uB3D9\uD654\
+  \uD558\uACE0, \uC6F9 \uCF58\uD150\uCE20\uB97C \uC870\uC791\uD558\uAC70\uB098, Google\
+  \ Apps\uC5D0\u2026"
+lastmod: 2024-02-18 23:09:05.551488
+model: gpt-4-0125-preview
+summary: "Google Apps Script\uC5D0\uC11C HTML \uD30C\uC2F1\uC740 HTML \uCF58\uD150\
+  \uCE20\uC5D0\uC11C \uB370\uC774\uD130\uB97C \uCD94\uCD9C\uD558\uB294 \uAC83\uC744\
+  \ \uD3EC\uD568\uD558\uBA70, \uD2B9\uD788 \uC6F9 \uD398\uC774\uC9C0\uB098 \uC6F9\
+  \ \uAE30\uBC18 \uB370\uC774\uD130 \uC18C\uC2A4\uC640 \uC0C1\uD638\uC791\uC6A9\uD560\
+  \ \uB54C \uC720\uC6A9\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740\
+  \ \uC774 \uC791\uC5C5\uC744 \uB370\uC774\uD130 \uC218\uC9D1\uC744 \uC790\uB3D9\uD654\
+  \uD558\uACE0, \uC6F9 \uCF58\uD150\uCE20\uB97C \uC870\uC791\uD558\uAC70\uB098, Google\
+  \ Apps\uC5D0\u2026"
+title: "HTML \uBD84\uC11D\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

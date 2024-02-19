@@ -1,15 +1,31 @@
 ---
-title:                "Использование интерактивной оболочки (REPL)"
 aliases:
 - /ru/clojure/using-an-interactive-shell-repl/
-date:                  2024-01-29T00:04:01.113664-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Использование интерактивной оболочки (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/clojure/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-01-29, gpt-4-0125-preview, translated from English
+- 2024-01-29, gpt-4-0125-preview, translated from English
+date: 2024-01-29 00:04:01.113664-07:00
+description: "REPL \u0438\u043B\u0438 Read-Eval-Print Loop \u2013 \u044D\u0442\u043E\
+  \ \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043D\u0430\u044F \u0441\u0440\
+  \u0435\u0434\u0430 \u0434\u043B\u044F \u0434\u0438\u043D\u0430\u043C\u0438\u0447\
+  \u0435\u0441\u043A\u043E\u0433\u043E \u0442\u0435\u0441\u0442\u0438\u0440\u043E\u0432\
+  \u0430\u043D\u0438\u044F \u043A\u043E\u0434\u0430 Clojure \u043F\u043E \u0447\u0430\
+  \u0441\u0442\u044F\u043C. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\
+  \u0441\u0442\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044E\u0442\
+  \ \u0435\u0435 \u0434\u043B\u044F \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\
+  \u044F\u2026"
+lastmod: 2024-02-18 23:08:56.585023
+model: gpt-4-0125-preview
+summary: "REPL \u0438\u043B\u0438 Read-Eval-Print Loop \u2013 \u044D\u0442\u043E \u043F\
+  \u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043D\u0430\u044F \u0441\u0440\u0435\u0434\
+  \u0430 \u0434\u043B\u044F \u0434\u0438\u043D\u0430\u043C\u0438\u0447\u0435\u0441\
+  \u043A\u043E\u0433\u043E \u0442\u0435\u0441\u0442\u0438\u0440\u043E\u0432\u0430\u043D\
+  \u0438\u044F \u043A\u043E\u0434\u0430 Clojure \u043F\u043E \u0447\u0430\u0441\u0442\
+  \u044F\u043C. \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442\
+  \u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044E\u0442 \u0435\u0435\
+  \ \u0434\u043B\u044F \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u044F\u2026"
+title: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435\
+  \ \u0438\u043D\u0442\u0435\u0440\u0430\u043A\u0442\u0438\u0432\u043D\u043E\u0439\
+  \ \u043E\u0431\u043E\u043B\u043E\u0447\u043A\u0438 (REPL)"
 ---
 
 {{< edit_this_page >}}

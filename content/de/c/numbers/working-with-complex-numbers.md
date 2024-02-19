@@ -1,14 +1,16 @@
 ---
-title:                "Arbeiten mit komplexen Zahlen"
 aliases:
 - /de/c/working-with-complex-numbers/
-date:                  2024-02-03T18:13:53.913110-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeiten mit komplexen Zahlen"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:13:53.913110-07:00
+description: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil,\
+  \ dargestellt als `a + bi`, wobei `i` die Quadratwurzel von `-1` ist. Programmierer\u2026"
+lastmod: 2024-02-18 23:09:05.366191
+model: gpt-4-0125-preview
+summary: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil, dargestellt\
+  \ als `a + bi`, wobei `i` die Quadratwurzel von `-1` ist. Programmierer\u2026"
+title: Arbeiten mit komplexen Zahlen
 ---
 
 {{< edit_this_page >}}

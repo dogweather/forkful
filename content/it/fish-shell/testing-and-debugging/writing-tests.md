@@ -1,14 +1,16 @@
 ---
-title:                "Scrivere test"
 aliases:
 - /it/fish-shell/writing-tests/
-date:                  2024-02-03T19:30:48.734497-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Scrivere test"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:30:48.734497-07:00
+description: "Scrivere test in Fish Shell comporta la creazione di script che eseguono\
+  \ automaticamente il tuo codice per validarne il comportamento rispetto ai\u2026"
+lastmod: 2024-02-18 23:08:56.299002
+model: gpt-4-0125-preview
+summary: "Scrivere test in Fish Shell comporta la creazione di script che eseguono\
+  \ automaticamente il tuo codice per validarne il comportamento rispetto ai\u2026"
+title: Scrivere test
 ---
 
 {{< edit_this_page >}}

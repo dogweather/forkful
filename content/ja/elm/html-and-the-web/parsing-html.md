@@ -1,14 +1,28 @@
 ---
-title:                "HTMLの解析"
 aliases:
 - /ja/elm/parsing-html/
-date:                  2024-02-03T19:12:21.337482-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTMLの解析"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:21.337482-07:00
+description: "Elm\u3067HTML\u3092\u89E3\u6790\u3059\u308B\u3068\u306F\u3001HTML\u30C9\
+  \u30AD\u30E5\u30E1\u30F3\u30C8\u304B\u3089\u60C5\u5831\u3092\u62BD\u51FA\u3059\u308B\
+  \u3053\u3068\u3092\u6307\u3057\u307E\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\
+  \u306F\u3001HTML\u3092\u8FD4\u3059Web\u30B3\u30F3\u30C6\u30F3\u30C4\u3084API\u3068\
+  \u9023\u643A\u3059\u308B\u305F\u3081\u306B\u3053\u306E\u4F5C\u696D\u3092\u884C\u3044\
+  \u3001\u3088\u308A\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u3067\u30C0\u30A4\
+  \u30CA\u30DF\u30C3\u30AF\u306AWeb\u30A2\u30D7\u30EA\u30B1\u30FC\u30B7\u30E7\u30F3\
+  \u3092\u4F5C\u6210\u3057\u307E\u3059\u3002"
+lastmod: 2024-02-18 23:08:54.838834
+model: gpt-4-0125-preview
+summary: "Elm\u3067HTML\u3092\u89E3\u6790\u3059\u308B\u3068\u306F\u3001HTML\u30C9\u30AD\
+  \u30E5\u30E1\u30F3\u30C8\u304B\u3089\u60C5\u5831\u3092\u62BD\u51FA\u3059\u308B\u3053\
+  \u3068\u3092\u6307\u3057\u307E\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\
+  \u3001HTML\u3092\u8FD4\u3059Web\u30B3\u30F3\u30C6\u30F3\u30C4\u3084API\u3068\u9023\
+  \u643A\u3059\u308B\u305F\u3081\u306B\u3053\u306E\u4F5C\u696D\u3092\u884C\u3044\u3001\
+  \u3088\u308A\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u3067\u30C0\u30A4\u30CA\
+  \u30DF\u30C3\u30AF\u306AWeb\u30A2\u30D7\u30EA\u30B1\u30FC\u30B7\u30E7\u30F3\u3092\
+  \u4F5C\u6210\u3057\u307E\u3059\u3002"
+title: "HTML\u306E\u89E3\u6790"
 ---
 
 {{< edit_this_page >}}

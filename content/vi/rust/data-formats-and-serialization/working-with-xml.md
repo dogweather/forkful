@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với XML"
 aliases:
 - /vi/rust/working-with-xml/
-date:                  2024-01-28T22:12:37.461538-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/working-with-xml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:37.461538-07:00
+description: "XML, vi\u1EBFt t\u1EAFt c\u1EE7a eXtensible Markup Language, gi\u1ED1\
+  ng nh\u01B0 anh em h\u1ECD d\xE0i d\xF2ng c\u1EE7a JSON. B\u1EA1n s\u1EBD ph\u1EA3\
+  i \u0111\u1ED1i m\u1EB7t v\u1EDBi XML khi l\xE0m vi\u1EC7c v\u1EDBi c\xE1c h\u1EC7\
+  \ th\u1ED1ng c\u0169, ph\u1EA7n\u2026"
+lastmod: 2024-02-18 23:08:50.488815
+model: gpt-4-0125-preview
+summary: "XML, vi\u1EBFt t\u1EAFt c\u1EE7a eXtensible Markup Language, gi\u1ED1ng\
+  \ nh\u01B0 anh em h\u1ECD d\xE0i d\xF2ng c\u1EE7a JSON. B\u1EA1n s\u1EBD ph\u1EA3\
+  i \u0111\u1ED1i m\u1EB7t v\u1EDBi XML khi l\xE0m vi\u1EC7c v\u1EDBi c\xE1c h\u1EC7\
+  \ th\u1ED1ng c\u0169, ph\u1EA7n\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Reading command line arguments"
 aliases:
 - /en/lua/reading-command-line-arguments/
-date:                  2024-01-20T17:56:27.955313-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Reading command line arguments"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:27.955313-07:00
+description: "Reading command line arguments means grabbing the extra bits you type\
+  \ after your script\u2019s name in the console. Programmers do this to tweak a program's\u2026"
+lastmod: 2024-02-18 23:09:11.193668
+model: gpt-4-1106-preview
+summary: "Reading command line arguments means grabbing the extra bits you type after\
+  \ your script\u2019s name in the console. Programmers do this to tweak a program's\u2026"
+title: Reading command line arguments
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,17 @@
 ---
-title:                "Arbeiten mit komplexen Zahlen"
 aliases:
 - /de/go/working-with-complex-numbers/
-date:                  2024-02-03T18:14:04.832406-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeiten mit komplexen Zahlen"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:14:04.832406-07:00
+description: "Die Arbeit mit komplexen Zahlen in der Programmierung beinhaltet die\
+  \ Manipulation von Zahlen, die sowohl einen Real- als auch einen Imagin\xE4rteil\
+  \ haben,\u2026"
+lastmod: 2024-02-18 23:09:04.356397
+model: gpt-4-0125-preview
+summary: "Die Arbeit mit komplexen Zahlen in der Programmierung beinhaltet die Manipulation\
+  \ von Zahlen, die sowohl einen Real- als auch einen Imagin\xE4rteil haben,\u2026"
+title: Arbeiten mit komplexen Zahlen
 ---
 
 {{< edit_this_page >}}

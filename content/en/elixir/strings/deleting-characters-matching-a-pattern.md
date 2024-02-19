@@ -1,13 +1,14 @@
 ---
-title:                "Deleting characters matching a pattern"
 aliases:
 - /en/elixir/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:59.535072-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Deleting characters matching a pattern"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:59.535072-07:00
+description: "Deleting characters matching a pattern is all about finding specific\
+  \ sequences of characters and getting rid of them. Programmers do this to sanitize\u2026"
+lastmod: 2024-02-18 23:09:10.749842
+model: gpt-4-1106-preview
+summary: "Deleting characters matching a pattern is all about finding specific sequences\
+  \ of characters and getting rid of them. Programmers do this to sanitize\u2026"
+title: Deleting characters matching a pattern
 ---
 
 {{< edit_this_page >}}

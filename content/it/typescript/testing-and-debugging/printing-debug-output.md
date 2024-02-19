@@ -1,13 +1,14 @@
 ---
-title:                "Stampa dell'output di debug"
 aliases:
 - /it/typescript/printing-debug-output/
-date:                  2024-01-20T17:53:26.024011-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Stampa dell'output di debug"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/printing-debug-output.md"
+date: 2024-01-20 17:53:26.024011-07:00
+description: "Stampare l'output di debug \xE8 mostrare valori e messaggi nel terminale\
+  \ per tracciare cosa succede nel tuo codice. I programmatori lo fanno per capire\u2026"
+lastmod: 2024-02-18 23:08:55.642712
+model: gpt-4-1106-preview
+summary: "Stampare l'output di debug \xE8 mostrare valori e messaggi nel terminale\
+  \ per tracciare cosa succede nel tuo codice. I programmatori lo fanno per capire\u2026"
+title: Stampa dell'output di debug
 ---
 
 {{< edit_this_page >}}

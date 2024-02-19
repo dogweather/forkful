@@ -1,13 +1,16 @@
 ---
-title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 aliases:
 - /fi/swift/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:56.304409-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:56.304409-07:00
+description: "HTTP-pyynt\xF6 perusautentikaatiolla on tapa l\xE4hett\xE4\xE4 k\xE4\
+  ytt\xE4j\xE4nimi ja salasana verkon yli turvallisesti. Ohjelmoijat k\xE4ytt\xE4\
+  v\xE4t t\xE4t\xE4 tapaa, kun heid\xE4n t\xE4ytyy\u2026"
+lastmod: 2024-02-18 23:09:07.989460
+model: gpt-4-1106-preview
+summary: "HTTP-pyynt\xF6 perusautentikaatiolla on tapa l\xE4hett\xE4\xE4 k\xE4ytt\xE4\
+  j\xE4nimi ja salasana verkon yli turvallisesti. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4\
+  t\xE4 tapaa, kun heid\xE4n t\xE4ytyy\u2026"
+title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 ---
 
 {{< edit_this_page >}}

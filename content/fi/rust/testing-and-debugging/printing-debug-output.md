@@ -1,13 +1,14 @@
 ---
-title:                "Virheenjäljitystulosteiden tulostaminen"
 aliases:
 - /fi/rust/printing-debug-output/
-date:                  2024-01-20T17:53:31.027454-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheenjäljitystulosteiden tulostaminen"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/printing-debug-output.md"
+date: 2024-01-20 17:53:31.027454-07:00
+description: "Debug-tulostus auttaa n\xE4kem\xE4\xE4n mit\xE4 koodissasi tapahtuu.\
+  \ K\xE4yt\xE4mme sit\xE4 virheiden j\xE4ljitt\xE4miseen ja koodin toiminnan varmistamiseen."
+lastmod: 2024-02-18 23:09:07.366570
+model: gpt-4-1106-preview
+summary: "Debug-tulostus auttaa n\xE4kem\xE4\xE4n mit\xE4 koodissasi tapahtuu. K\xE4\
+  yt\xE4mme sit\xE4 virheiden j\xE4ljitt\xE4miseen ja koodin toiminnan varmistamiseen."
+title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 ---
 
 {{< edit_this_page >}}

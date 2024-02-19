@@ -1,13 +1,16 @@
 ---
-title:                "Konwersja daty na łańcuch znaków"
 aliases:
 - /pl/powershell/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:29.994754-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konwersja daty na łańcuch znaków"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:29.994754-07:00
+description: "Co to jest konwersja daty na \u0142a\u0144cuch znak\xF3w? To proces\
+  \ zmiany formatu daty z jej wbudowanego typu w PowerShell do postaci tekstowej,\
+  \ czyli stringa. Po co\u2026"
+lastmod: 2024-02-18 23:08:49.840309
+model: gpt-4-1106-preview
+summary: "Co to jest konwersja daty na \u0142a\u0144cuch znak\xF3w? To proces zmiany\
+  \ formatu daty z jej wbudowanego typu w PowerShell do postaci tekstowej, czyli stringa.\
+  \ Po co\u2026"
+title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,17 @@
 ---
-title:                "Lecture d'un fichier texte"
 aliases:
 - /fr/vba/reading-a-text-file/
-date:                  2024-02-01T21:58:22.512990-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lecture d'un fichier texte"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/vba/reading-a-text-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:58:22.512990-07:00
+description: "Lire un fichier texte en Visual Basic pour Applications (VBA) implique\
+  \ d'acc\xE9der programmatiquement et d'extraire le contenu d'un fichier texte depuis\
+  \ une\u2026"
+lastmod: 2024-02-18 23:09:08.600028
+model: gpt-4-0125-preview
+summary: "Lire un fichier texte en Visual Basic pour Applications (VBA) implique d'acc\xE9\
+  der programmatiquement et d'extraire le contenu d'un fichier texte depuis une\u2026"
+title: Lecture d'un fichier texte
 ---
 
 {{< edit_this_page >}}

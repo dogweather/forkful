@@ -1,13 +1,16 @@
 ---
-title:                "Umgang mit komplexen Zahlen"
 aliases:
 - /de/typescript/working-with-complex-numbers/
-date:                  2024-01-26T04:46:08.755653-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Umgang mit komplexen Zahlen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/working-with-complex-numbers.md"
+date: 2024-01-26 04:46:08.755653-07:00
+description: "Komplexe Zahlen, bestehend aus einem Realteil und einem Imagin\xE4rteil\
+  \ (\xFCblicherweise geschrieben als a + bi), erm\xF6glichen Berechnungen, die mit\
+  \ nur reellen\u2026"
+lastmod: 2024-02-18 23:09:04.590246
+model: gpt-4-0125-preview
+summary: "Komplexe Zahlen, bestehend aus einem Realteil und einem Imagin\xE4rteil\
+  \ (\xFCblicherweise geschrieben als a + bi), erm\xF6glichen Berechnungen, die mit\
+  \ nur reellen\u2026"
+title: Umgang mit komplexen Zahlen
 ---
 
 {{< edit_this_page >}}

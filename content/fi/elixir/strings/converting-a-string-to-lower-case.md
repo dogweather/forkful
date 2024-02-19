@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 aliases:
 - /fi/elixir/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:38:03.153578-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:38:03.153578-07:00
+description: "Muuttaminen merkkijono pienaakkosiksi tarkoittaa kirjainten muuttamista\
+  \ kirjainkoosta riippumattomiksi. Koodarit tekev\xE4t t\xE4m\xE4n yleens\xE4 tekstin\
+  \ vertailua\u2026"
+lastmod: 2024-02-18 23:09:07.259772
+model: gpt-4-1106-preview
+summary: "Muuttaminen merkkijono pienaakkosiksi tarkoittaa kirjainten muuttamista\
+  \ kirjainkoosta riippumattomiksi. Koodarit tekev\xE4t t\xE4m\xE4n yleens\xE4 tekstin\
+  \ vertailua\u2026"
+title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 ---
 
 {{< edit_this_page >}}

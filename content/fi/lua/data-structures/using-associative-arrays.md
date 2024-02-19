@@ -1,15 +1,18 @@
 ---
-title:                "Assosiatiivisten taulukoiden käyttö"
 aliases:
 - /fi/lua/using-associative-arrays/
-date:                  2024-01-30T19:12:26.930476-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Assosiatiivisten taulukoiden käyttö"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:26.930476-07:00
+description: "Assosiatiiviset taulukot ovat kuin salaiset k\xE4ttelytiedot Luassa\u2014\
+  sen sijaan, ett\xE4 vain numerot j\xE4rjestyisiv\xE4t uskollisesti indeksin mukaan,\
+  \ avaimiksi voi\u2026"
+lastmod: 2024-02-18 23:09:07.749750
+model: gpt-4-0125-preview
+summary: "Assosiatiiviset taulukot ovat kuin salaiset k\xE4ttelytiedot Luassa\u2014\
+  sen sijaan, ett\xE4 vain numerot j\xE4rjestyisiv\xE4t uskollisesti indeksin mukaan,\
+  \ avaimiksi voi\u2026"
+title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

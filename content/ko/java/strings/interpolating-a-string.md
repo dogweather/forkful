@@ -1,14 +1,23 @@
 ---
-title:                "문자열 보간하기"
 aliases:
 - /ko/java/interpolating-a-string/
-date:                  2024-01-20T17:50:54.906274-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "문자열 보간하기"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/interpolating-a-string.md"
+date: 2024-01-20 17:50:54.906274-07:00
+description: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uC774\uB780 \uBB34\uC5C7\uC774\uACE0\
+  \ \uC65C \uC0AC\uC6A9\uD558\uB294\uAC00? \uBB38\uC790\uC5F4 \uBCF4\uAC04\uC740 \uBCC0\
+  \uC218\uB098 \uD45C\uD604\uC2DD\uC758 \uAC12\uC744 \uBB38\uC790\uC5F4 \uC548\uC5D0\
+  \ \uC9C1\uC811 \uC0BD\uC785\uD558\uB294 \uAE30\uBC95\uC785\uB2C8\uB2E4. \uCF54\uB4DC\
+  \uB97C \uB354 \uBA85\uD655\uD558\uACE0 \uAC04\uACB0\uD558\uAC8C \uB9CC\uB4E4\uAE30\
+  \ \uC704\uD574 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:05.999285
+model: gpt-4-1106-preview
+summary: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uC774\uB780 \uBB34\uC5C7\uC774\uACE0 \uC65C\
+  \ \uC0AC\uC6A9\uD558\uB294\uAC00? \uBB38\uC790\uC5F4 \uBCF4\uAC04\uC740 \uBCC0\uC218\
+  \uB098 \uD45C\uD604\uC2DD\uC758 \uAC12\uC744 \uBB38\uC790\uC5F4 \uC548\uC5D0 \uC9C1\
+  \uC811 \uC0BD\uC785\uD558\uB294 \uAE30\uBC95\uC785\uB2C8\uB2E4. \uCF54\uB4DC\uB97C\
+  \ \uB354 \uBA85\uD655\uD558\uACE0 \uAC04\uACB0\uD558\uAC8C \uB9CC\uB4E4\uAE30 \uC704\
+  \uD574 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

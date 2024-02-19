@@ -1,14 +1,18 @@
 ---
-title:                "Sử dụng biểu thức chính quy"
 aliases:
 - /vi/vba/using-regular-expressions/
-date:                  2024-02-01T22:05:13.483732-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng biểu thức chính quy"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/using-regular-expressions.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:05:13.483732-07:00
+description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) trong Visual Basic for Applications\
+  \ (VBA) cung c\u1EA5p m\u1ED9t c\xE1ch m\u1EA1nh m\u1EBD \u0111\u1EC3 t\xECm ki\u1EBF\
+  m, so kh\u1EDBp v\xE0 thao t\xE1c v\u1EDBi chu\u1ED7i. C\xE1c l\u1EADp tr\xECnh\u2026"
+lastmod: 2024-02-18 23:08:50.497867
+model: gpt-4-0125-preview
+summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) trong Visual Basic for Applications\
+  \ (VBA) cung c\u1EA5p m\u1ED9t c\xE1ch m\u1EA1nh m\u1EBD \u0111\u1EC3 t\xECm ki\u1EBF\
+  m, so kh\u1EDBp v\xE0 thao t\xE1c v\u1EDBi chu\u1ED7i. C\xE1c l\u1EADp tr\xECnh\u2026"
+title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Komentoriviparametrien lukeminen"
 aliases:
 - /fi/vba/reading-command-line-arguments/
-date:                  2024-02-01T21:59:14.314566-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Komentoriviparametrien lukeminen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:14.314566-07:00
+description: "Komennoriviparametrien lukeminen Visual Basic for Applications (VBA):ssa\
+  \ liittyy parametrien k\xE4ytt\xF6\xF6n ohjelmasi suorituksen yhteydess\xE4. T\xE4\
+  t\xE4 tekniikkaa\u2026"
+lastmod: 2024-02-18 23:09:07.428993
+model: gpt-4-0125-preview
+summary: "Komennoriviparametrien lukeminen Visual Basic for Applications (VBA):ssa\
+  \ liittyy parametrien k\xE4ytt\xF6\xF6n ohjelmasi suorituksen yhteydess\xE4. T\xE4\
+  t\xE4 tekniikkaa\u2026"
+title: Komentoriviparametrien lukeminen
 ---
 
 {{< edit_this_page >}}

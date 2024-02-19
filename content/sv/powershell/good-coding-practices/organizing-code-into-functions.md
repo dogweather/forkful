@@ -1,13 +1,16 @@
 ---
-title:                "Att organisera kod i funktioner"
 aliases:
 - /sv/powershell/organizing-code-into-functions/
-date:                  2024-01-26T01:11:44.591230-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Att organisera kod i funktioner"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/organizing-code-into-functions.md"
+date: 2024-01-26 01:11:44.591230-07:00
+description: "Att organisera kod i funktioner handlar om att kapsla in delar av kod\
+  \ som utf\xF6r specifika uppgifter och ge dem ett namn. Det g\xF6rs f\xF6r att g\xF6\
+  ra koden\u2026"
+lastmod: 2024-02-18 23:08:52.009307
+model: gpt-4-1106-preview
+summary: "Att organisera kod i funktioner handlar om att kapsla in delar av kod som\
+  \ utf\xF6r specifika uppgifter och ge dem ett namn. Det g\xF6rs f\xF6r att g\xF6\
+  ra koden\u2026"
+title: Att organisera kod i funktioner
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Generering av tilfeldige tall"
 aliases:
 - /no/python/generating-random-numbers/
-date:                  2024-01-27T20:34:56.575367-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generering av tilfeldige tall"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/generating-random-numbers.md"
+date: 2024-01-27 20:34:56.575367-07:00
+description: "Generering av tilfeldige tall inneb\xE6rer \xE5 skape tall som ikke\
+  \ kan forutsies med rimelighet bedre enn ved sjansen, noe som er essensielt for\
+  \ utviklingen av\u2026"
+lastmod: 2024-02-18 23:08:53.520454
+model: gpt-4-0125-preview
+summary: "Generering av tilfeldige tall inneb\xE6rer \xE5 skape tall som ikke kan\
+  \ forutsies med rimelighet bedre enn ved sjansen, noe som er essensielt for utviklingen\
+  \ av\u2026"
+title: Generering av tilfeldige tall
 ---
 
 {{< edit_this_page >}}

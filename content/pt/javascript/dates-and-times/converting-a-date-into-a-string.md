@@ -1,13 +1,15 @@
 ---
-title:                "Convertendo uma data em uma string"
 aliases:
 - /pt/javascript/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:04.274405-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Convertendo uma data em uma string"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:04.274405-07:00
+description: "Converter uma data em uma string significa transformar um objeto de\
+  \ data em uma sequ\xEAncia de caracteres leg\xEDveis. Programadores fazem isso para\
+  \ formatar\u2026"
+lastmod: 2024-02-18 23:08:58.543575
+model: gpt-4-1106-preview
+summary: "Converter uma data em uma string significa transformar um objeto de data\
+  \ em uma sequ\xEAncia de caracteres leg\xEDveis. Programadores fazem isso para formatar\u2026"
+title: Convertendo uma data em uma string
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 aliases:
 - /fi/javascript/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:39:09.654545-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:39:09.654545-07:00
+description: "Kun muunnetaan merkkijono pieniksi kirjaimiksi, tekstiin sovelletaan\
+  \ yhten\xE4ist\xE4 muotoilua, joka on kaikki pienill\xE4 kirjaimilla. Koodarit tekev\xE4\
+  t t\xE4t\xE4\u2026"
+lastmod: 2024-02-18 23:09:08.021882
+model: gpt-4-1106-preview
+summary: "Kun muunnetaan merkkijono pieniksi kirjaimiksi, tekstiin sovelletaan yhten\xE4\
+  ist\xE4 muotoilua, joka on kaikki pienill\xE4 kirjaimilla. Koodarit tekev\xE4t t\xE4\
+  t\xE4\u2026"
+title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 ---
 
 {{< edit_this_page >}}

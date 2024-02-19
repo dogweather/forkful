@@ -1,13 +1,16 @@
 ---
-title:                "Ta bort citattecken från en sträng"
 aliases:
 - /sv/php/removing-quotes-from-a-string/
-date:                  2024-01-26T03:40:42.256316-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ta bort citattecken från en sträng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:40:42.256316-07:00
+description: "Att ta bort citattecken fr\xE5n en str\xE4ng i PHP betyder att ta bort\
+  \ de irriterande dubbla (`\"`) eller enkla (`'`) citattecknen som kan st\xF6ka till\
+  \ din\u2026"
+lastmod: 2024-02-18 23:08:51.866800
+model: gpt-4-0125-preview
+summary: "Att ta bort citattecken fr\xE5n en str\xE4ng i PHP betyder att ta bort de\
+  \ irriterande dubbla (`\"`) eller enkla (`'`) citattecknen som kan st\xF6ka till\
+  \ din\u2026"
+title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

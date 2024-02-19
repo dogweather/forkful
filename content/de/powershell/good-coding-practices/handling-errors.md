@@ -1,13 +1,14 @@
 ---
-title:                "Fehlerbehandlung"
 aliases:
 - /de/powershell/handling-errors/
-date:                  2024-01-26T00:55:37.846233-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Fehlerbehandlung"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/handling-errors.md"
+date: 2024-01-26 00:55:37.846233-07:00
+description: "Fehler in PowerShell zu behandeln bedeutet, Missgeschicke zu antizipieren\
+  \ und sie reibungslos zu verwalten. Programmierer machen dies, um Abst\xFCrze zu\u2026"
+lastmod: 2024-02-18 23:09:05.109031
+model: gpt-4-1106-preview
+summary: "Fehler in PowerShell zu behandeln bedeutet, Missgeschicke zu antizipieren\
+  \ und sie reibungslos zu verwalten. Programmierer machen dies, um Abst\xFCrze zu\u2026"
+title: Fehlerbehandlung
 ---
 
 {{< edit_this_page >}}

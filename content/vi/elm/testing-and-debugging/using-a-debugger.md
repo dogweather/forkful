@@ -1,15 +1,22 @@
 ---
-title:                "Sử dụng bộ gỡ lỗi"
 aliases:
 - /vi/elm/using-a-debugger/
-date:                  2024-01-28T22:10:07.139945-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng bộ gỡ lỗi"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elm/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:10:07.139945-07:00
+description: "G\u1EE1 l\u1ED7i trong Elm bao g\u1ED3m vi\u1EC7c x\xE1c \u0111\u1ECB\
+  nh v\xE0 lo\u1EA1i b\u1ECF l\u1ED7i t\u1EEB code c\u1EE7a b\u1EA1n. L\u1EADp tr\xEC\
+  nh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u1EA3m\
+  \ b\u1EA3o r\u1EB1ng c\xE1c \u1EE9ng d\u1EE5ng c\u1EE7a h\u1ECD ho\u1EA1t \u0111\
+  \u1ED9ng\u2026"
+lastmod: 2024-02-18 23:08:50.608663
+model: gpt-4-0125-preview
+summary: "G\u1EE1 l\u1ED7i trong Elm bao g\u1ED3m vi\u1EC7c x\xE1c \u0111\u1ECBnh\
+  \ v\xE0 lo\u1EA1i b\u1ECF l\u1ED7i t\u1EEB code c\u1EE7a b\u1EA1n. L\u1EADp tr\xEC\
+  nh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u1EA3m\
+  \ b\u1EA3o r\u1EB1ng c\xE1c \u1EE9ng d\u1EE5ng c\u1EE7a h\u1ECD ho\u1EA1t \u0111\
+  \u1ED9ng\u2026"
+title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

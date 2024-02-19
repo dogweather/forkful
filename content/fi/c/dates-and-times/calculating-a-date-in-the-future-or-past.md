@@ -1,14 +1,19 @@
 ---
-title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
 aliases:
 - /fi/c/calculating-a-date-in-the-future-or-past/
-date:                  2024-02-03T17:53:17.528120-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:17.528120-07:00
+description: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen\
+  \ tarkoittaa tietyn p\xE4iv\xE4m\xE4\xE4r\xE4n m\xE4\xE4ritt\xE4mist\xE4 lis\xE4\
+  \xE4m\xE4ll\xE4 tai v\xE4hent\xE4m\xE4ll\xE4 tietty m\xE4\xE4r\xE4 p\xE4ivi\xE4\
+  ,\u2026"
+lastmod: 2024-02-18 23:09:08.148276
+model: gpt-4-0125-preview
+summary: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tarkoittaa\
+  \ tietyn p\xE4iv\xE4m\xE4\xE4r\xE4n m\xE4\xE4ritt\xE4mist\xE4 lis\xE4\xE4m\xE4ll\xE4\
+  \ tai v\xE4hent\xE4m\xE4ll\xE4 tietty m\xE4\xE4r\xE4 p\xE4ivi\xE4,\u2026"
+title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 ---
 
 {{< edit_this_page >}}

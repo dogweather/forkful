@@ -1,13 +1,20 @@
 ---
-title:                "使用调试器"
 aliases:
 - /zh/javascript/using-a-debugger/
-date:                  2024-01-26T03:50:03.697954-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用调试器"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/using-a-debugger.md"
+date: 2024-01-26 03:50:03.697954-07:00
+description: "\u4F7F\u7528\u8C03\u8BD5\u5668\u610F\u5473\u7740\u5229\u7528\u4E13\u4E1A\
+  \u5DE5\u5177\u6DF1\u5165\u60A8\u7684\u4EE3\u7801\u5185\u90E8\uFF0C\u9010\u6B65\u89C2\
+  \u5BDF\u5176\u8FD0\u884C\u60C5\u51B5\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\
+  \u4E3A\u4E86\u6D88\u9664\u9519\u8BEF\u3001\u4F18\u5316\u6027\u80FD\u548C\u7406\u89E3\
+  \u4EE3\u7801\u884C\u4E3A\u3002"
+lastmod: 2024-02-18 23:08:59.483610
+model: gpt-4-0125-preview
+summary: "\u4F7F\u7528\u8C03\u8BD5\u5668\u610F\u5473\u7740\u5229\u7528\u4E13\u4E1A\
+  \u5DE5\u5177\u6DF1\u5165\u60A8\u7684\u4EE3\u7801\u5185\u90E8\uFF0C\u9010\u6B65\u89C2\
+  \u5BDF\u5176\u8FD0\u884C\u60C5\u51B5\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\
+  \u4E3A\u4E86\u6D88\u9664\u9519\u8BEF\u3001\u4F18\u5316\u6027\u80FD\u548C\u7406\u89E3\
+  \u4EE3\u7801\u884C\u4E3A\u3002"
+title: "\u4F7F\u7528\u8C03\u8BD5\u5668"
 ---
 
 {{< edit_this_page >}}

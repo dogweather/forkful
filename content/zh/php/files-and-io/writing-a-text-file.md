@@ -1,14 +1,22 @@
 ---
-title:                "编写文本文件"
 aliases:
 - /zh/php/writing-a-text-file/
-date:                  2024-02-03T19:28:45.026444-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "编写文本文件"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:28:45.026444-07:00
+description: "\u5728PHP\u4E2D\u5199\u5165\u6587\u672C\u6587\u4EF6\u5305\u62EC\u521B\
+  \u5EFA\u6216\u6253\u5F00\u6587\u4EF6\u5E76\u5411\u5176\u4E2D\u63D2\u5165\u5185\u5BB9\
+  \u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u5C06\u6570\u636E\uFF08\
+  \u5982\u7528\u6237\u751F\u6210\u7684\u5185\u5BB9\u6216\u65E5\u5FD7\uFF09\u6301\u4E45\
+  \u5316\uFF0C\u8D85\u51FA\u7A0B\u5E8F\u7684\u751F\u547D\u5468\u671F\u3002"
+lastmod: 2024-02-18 23:08:59.232574
+model: gpt-4-0125-preview
+summary: "\u5728PHP\u4E2D\u5199\u5165\u6587\u672C\u6587\u4EF6\u5305\u62EC\u521B\u5EFA\
+  \u6216\u6253\u5F00\u6587\u4EF6\u5E76\u5411\u5176\u4E2D\u63D2\u5165\u5185\u5BB9\u3002\
+  \u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u5C06\u6570\u636E\uFF08\u5982\
+  \u7528\u6237\u751F\u6210\u7684\u5185\u5BB9\u6216\u65E5\u5FD7\uFF09\u6301\u4E45\u5316\
+  \uFF0C\u8D85\u51FA\u7A0B\u5E8F\u7684\u751F\u547D\u5468\u671F\u3002"
+title: "\u7F16\u5199\u6587\u672C\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

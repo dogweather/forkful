@@ -1,12 +1,14 @@
 ---
-title:                "Concatenating strings"
 aliases:
 - /en/c/concatenating-strings/
-date:                  2024-02-03T17:50:07.213729-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Concatenating strings"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/concatenating-strings.md"
+date: 2024-02-03 17:50:07.213729-07:00
+description: "String concatenation in C involves joining two or more strings end-to-end\
+  \ to form a new string. Programmers perform this operation to dynamically\u2026"
+lastmod: 2024-02-18 23:09:11.514560
+model: gpt-4-0125-preview
+summary: "String concatenation in C involves joining two or more strings end-to-end\
+  \ to form a new string. Programmers perform this operation to dynamically\u2026"
+title: Concatenating strings
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Lokitiedostot"
 aliases:
 - /fi/c/logging/
-date:                  2024-02-03T17:59:02.768262-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lokitiedostot"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/logging.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:02.768262-07:00
+description: "Lokitus C:ss\xE4 tarkoittaa ohjelman kulun ja merkitt\xE4vien tapahtumien\
+  \ tallentamista sen suorituksen aikana, tarjoten konkreettisen katsauksen sen\u2026"
+lastmod: 2024-02-18 23:09:08.139979
+model: gpt-4-0125-preview
+summary: "Lokitus C:ss\xE4 tarkoittaa ohjelman kulun ja merkitt\xE4vien tapahtumien\
+  \ tallentamista sen suorituksen aikana, tarjoten konkreettisen katsauksen sen\u2026"
+title: Lokitiedostot
 ---
 
 {{< edit_this_page >}}

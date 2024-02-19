@@ -1,14 +1,18 @@
 ---
-title:                "Überprüfung, ob ein Verzeichnis existiert"
 aliases:
 - /de/google-apps-script/checking-if-a-directory-exists/
-date:                  2024-02-01T21:48:56.631355-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/google-apps-script/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:48:56.631355-07:00
+description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Google Apps Script existiert,\
+  \ beinhaltet die Verifizierung der Pr\xE4senz eines Ordners innerhalb von Google\
+  \ Drive.\u2026"
+lastmod: 2024-02-18 23:09:04.431183
+model: gpt-4-0125-preview
+summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Google Apps Script existiert,\
+  \ beinhaltet die Verifizierung der Pr\xE4senz eines Ordners innerhalb von Google\
+  \ Drive.\u2026"
+title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 ---
 
 {{< edit_this_page >}}

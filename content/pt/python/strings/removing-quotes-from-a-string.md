@@ -1,13 +1,15 @@
 ---
-title:                "Removendo aspas de uma string"
 aliases:
 - /pt/python/removing-quotes-from-a-string/
-date:                  2024-01-26T03:41:10.956152-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Removendo aspas de uma string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:41:10.956152-07:00
+description: "Remover aspas de uma string geralmente significa descartar marcas de\
+  \ aspas duplas (\") ou simples (') desnecess\xE1rias. Os programadores fazem isso\
+  \ para\u2026"
+lastmod: 2024-02-18 23:08:57.749585
+model: gpt-4-0125-preview
+summary: "Remover aspas de uma string geralmente significa descartar marcas de aspas\
+  \ duplas (\") ou simples (') desnecess\xE1rias. Os programadores fazem isso para\u2026"
+title: Removendo aspas de uma string
 ---
 
 {{< edit_this_page >}}

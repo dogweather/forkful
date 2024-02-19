@@ -1,13 +1,16 @@
 ---
-title:                "Exibindo saídas de depuração"
 aliases:
 - /pt/kotlin/printing-debug-output/
-date:                  2024-01-20T17:53:02.557226-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Exibindo saídas de depuração"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/printing-debug-output.md"
+date: 2024-01-20 17:53:02.557226-07:00
+description: "Mostrar outputs de debug \xE9 basicamente imprimir mensagens no console\
+  \ do seu programa para entender o que est\xE1 acontecendo durante a execu\xE7\xE3\
+  o.\u2026"
+lastmod: 2024-02-18 23:08:58.111374
+model: gpt-4-1106-preview
+summary: "Mostrar outputs de debug \xE9 basicamente imprimir mensagens no console\
+  \ do seu programa para entender o que est\xE1 acontecendo durante a execu\xE7\xE3\
+  o.\u2026"
+title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

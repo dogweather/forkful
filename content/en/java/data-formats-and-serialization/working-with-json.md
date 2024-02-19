@@ -1,13 +1,14 @@
 ---
-title:                "Working with JSON"
 aliases:
 - /en/java/working-with-json/
-date:                  2024-01-25T03:57:30.429534-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Working with JSON"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/working-with-json.md"
+date: 2024-01-25 03:57:30.429534-07:00
+description: "Working with JSON (JavaScript Object Notation) means handling this lightweight\
+  \ data-interchange format inside your Java applications. Programmers go for\u2026"
+lastmod: 2024-02-18 23:09:10.951691
+model: gpt-4-1106-preview
+summary: "Working with JSON (JavaScript Object Notation) means handling this lightweight\
+  \ data-interchange format inside your Java applications. Programmers go for\u2026"
+title: Working with JSON
 ---
 
 {{< edit_this_page >}}

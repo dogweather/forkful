@@ -1,13 +1,15 @@
 ---
-title:                "Converting a date into a string"
 aliases:
 - /en/python/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:21.660960-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Converting a date into a string"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:21.660960-07:00
+description: "Converting dates into strings changes a date object to a text format.\
+  \ Programmers do this to display dates in a user-friendly way or to prepare them\
+  \ for\u2026"
+lastmod: 2024-02-18 23:09:10.692908
+model: gpt-4-1106-preview
+summary: "Converting dates into strings changes a date object to a text format. Programmers\
+  \ do this to display dates in a user-friendly way or to prepare them for\u2026"
+title: Converting a date into a string
 ---
 
 {{< edit_this_page >}}

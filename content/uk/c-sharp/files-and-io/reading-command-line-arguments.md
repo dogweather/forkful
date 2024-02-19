@@ -1,13 +1,17 @@
 ---
-title:                "Читання аргументів командного рядка"
 aliases:
 - /uk/c-sharp/reading-command-line-arguments/
-date:                  2024-01-20T17:55:34.179201-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Читання аргументів командного рядка"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c-sharp/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:34.179201-07:00
+description: "Reading command line arguments means grabbing the extra bits of data\
+  \ you pass to a program when you start it in a console. Programmers do it to let\
+  \ users\u2026"
+lastmod: 2024-02-18 23:09:00.368577
+model: gpt-4-1106-preview
+summary: "Reading command line arguments means grabbing the extra bits of data you\
+  \ pass to a program when you start it in a console. Programmers do it to let users\u2026"
+title: "\u0427\u0438\u0442\u0430\u043D\u043D\u044F \u0430\u0440\u0433\u0443\u043C\u0435\
+  \u043D\u0442\u0456\u0432 \u043A\u043E\u043C\u0430\u043D\u0434\u043D\u043E\u0433\u043E\
+  \ \u0440\u044F\u0434\u043A\u0430"
 ---
 
 {{< edit_this_page >}}

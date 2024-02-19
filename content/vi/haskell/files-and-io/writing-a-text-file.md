@@ -1,15 +1,20 @@
 ---
-title:                "Viết một tệp văn bản"
 aliases:
 - /vi/haskell/writing-a-text-file/
-date:                  2024-01-28T22:12:53.536711-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Viết một tệp văn bản"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/haskell/writing-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:53.536711-07:00
+description: "Trong Haskell, vi\u1EC7c ghi m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0\
+  \ v\u1EC1 vi\u1EC7c l\u01B0u d\u1EEF li\u1EC7u v\xE0o m\u1ED9t t\u1EC7p. L\u1EAD\
+  p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 duy tr\xEC d\u1EEF\
+  \ li\u1EC7u gi\u1EEFa c\xE1c phi\xEAn l\xE0m vi\u1EC7c, chia\u2026"
+lastmod: 2024-02-18 23:08:50.765127
+model: gpt-4-0125-preview
+summary: "Trong Haskell, vi\u1EC7c ghi m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 v\u1EC1\
+  \ vi\u1EC7c l\u01B0u d\u1EEF li\u1EC7u v\xE0o m\u1ED9t t\u1EC7p. L\u1EADp tr\xEC\
+  nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 duy tr\xEC d\u1EEF li\u1EC7\
+  u gi\u1EEFa c\xE1c phi\xEAn l\xE0m vi\u1EC7c, chia\u2026"
+title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 ---
 
 {{< edit_this_page >}}

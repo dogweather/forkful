@@ -1,13 +1,16 @@
 ---
-title:                "Wysyłanie żądania HTTP"
 aliases:
 - /pl/ruby/sending-an-http-request/
-date:                  2024-01-20T18:00:39.376305-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wysyłanie żądania HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/sending-an-http-request.md"
+date: 2024-01-20 18:00:39.376305-07:00
+description: "Wysy\u0142anie \u017C\u0105dania HTTP to spos\xF3b na komunikacj\u0119\
+  \ Twojego programu z serwerem webowym; wy\u015Blij zapytanie i odbierz odpowied\u017A\
+  . Programi\u015Bci to robi\u0105, aby\u2026"
+lastmod: 2024-02-18 23:08:50.122817
+model: gpt-4-1106-preview
+summary: "Wysy\u0142anie \u017C\u0105dania HTTP to spos\xF3b na komunikacj\u0119 Twojego\
+  \ programu z serwerem webowym; wy\u015Blij zapytanie i odbierz odpowied\u017A. Programi\u015B\
+  ci to robi\u0105, aby\u2026"
+title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 ---
 
 {{< edit_this_page >}}

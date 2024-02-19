@@ -1,13 +1,16 @@
 ---
-title:                "Manipulowanie plikami za pomocą jednolinijkowców CLI"
 aliases:
 - /pl/bash/manipulating-files-with-cli-one-liners/
-date:                  2024-01-27T16:20:58.168067-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Manipulowanie plikami za pomocą jednolinijkowców CLI"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/manipulating-files-with-cli-one-liners.md"
+date: 2024-01-27 16:20:58.168067-07:00
+description: "Manipulowanie plikami za pomoc\u0105 jednoliniowych polece\u0144 CLI\
+  \ (Command Line Interface) polega na u\u017Cywaniu skrypt\xF3w Bash lub polece\u0144\
+  \ do wykonywania dzia\u0142a\u0144 na\u2026"
+lastmod: 2024-02-18 23:08:49.778803
+model: gpt-4-0125-preview
+summary: "Manipulowanie plikami za pomoc\u0105 jednoliniowych polece\u0144 CLI (Command\
+  \ Line Interface) polega na u\u017Cywaniu skrypt\xF3w Bash lub polece\u0144 do wykonywania\
+  \ dzia\u0142a\u0144 na\u2026"
+title: "Manipulowanie plikami za pomoc\u0105 jednolinijkowc\xF3w CLI"
 ---
 
 {{< edit_this_page >}}

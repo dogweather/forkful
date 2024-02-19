@@ -1,13 +1,16 @@
 ---
-title:                "Tulevan tai menneen päivämäärän laskeminen"
 aliases:
 - /fi/arduino/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:31:03.329616-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:31:03.329616-07:00
+description: "Mit\xE4 on p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tulevaisuuteen tai\
+  \ menneisyyteen? K\xE4yt\xE4nn\xF6ss\xE4 s\xE4\xE4d\xE4mme kelloja ja kalentereita\
+  \ ohjelmallisesti. Miksi? Kalenteritoiminnot\u2026"
+lastmod: 2024-02-18 23:09:07.913721
+model: gpt-4-1106-preview
+summary: "Mit\xE4 on p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tulevaisuuteen tai menneisyyteen?\
+  \ K\xE4yt\xE4nn\xF6ss\xE4 s\xE4\xE4d\xE4mme kelloja ja kalentereita ohjelmallisesti.\
+  \ Miksi? Kalenteritoiminnot\u2026"
+title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 ---
 
 {{< edit_this_page >}}

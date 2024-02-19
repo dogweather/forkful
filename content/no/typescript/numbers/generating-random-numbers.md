@@ -1,13 +1,14 @@
 ---
-title:                "Generering av tilfeldige tall"
 aliases:
 - /no/typescript/generating-random-numbers/
-date:                  2024-01-27T20:35:31.974820-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generering av tilfeldige tall"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/generating-random-numbers.md"
+date: 2024-01-27 20:35:31.974820-07:00
+description: "Generering av tilfeldige tall i TypeScript handler om \xE5 skape uforutsigbare\
+  \ numeriske verdier innenfor et spesifisert omr\xE5de. Programmerere utnytter disse\u2026"
+lastmod: 2024-02-18 23:08:53.641096
+model: gpt-4-0125-preview
+summary: "Generering av tilfeldige tall i TypeScript handler om \xE5 skape uforutsigbare\
+  \ numeriske verdier innenfor et spesifisert omr\xE5de. Programmerere utnytter disse\u2026"
+title: Generering av tilfeldige tall
 ---
 
 {{< edit_this_page >}}

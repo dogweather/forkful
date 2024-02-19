@@ -1,15 +1,21 @@
 ---
-title:                "Sử dụng mảng liên kết"
 aliases:
 - /vi/rust/using-associative-arrays/
-date:                  2024-01-30T19:13:13.402010-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng mảng liên kết"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:13:13.402010-07:00
+description: "M\u1EA3ng k\u1EBFt h\u1EE3p, hay c\xF2n \u0111\u01B0\u1EE3c g\u1ECD\
+  i l\xE0 \"b\u1EA3n \u0111\u1ED3 b\u0103m\" b\u1EDFi nh\u1EEFng l\u1EADp tr\xECnh\
+  \ vi\xEAn Rust, l\xE0 nh\u1EEFng t\u1EADp h\u1EE3p l\u01B0u tr\u1EEF d\u1EEF li\u1EC7\
+  u d\u01B0\u1EDBi d\u1EA1ng c\u1EB7p kh\xF3a-gi\xE1 tr\u1ECB. L\u1EADp tr\xECnh vi\xEA\
+  n\u2026"
+lastmod: 2024-02-18 23:08:50.454070
+model: gpt-4-0125-preview
+summary: "M\u1EA3ng k\u1EBFt h\u1EE3p, hay c\xF2n \u0111\u01B0\u1EE3c g\u1ECDi l\xE0\
+  \ \"b\u1EA3n \u0111\u1ED3 b\u0103m\" b\u1EDFi nh\u1EEFng l\u1EADp tr\xECnh vi\xEA\
+  n Rust, l\xE0 nh\u1EEFng t\u1EADp h\u1EE3p l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u d\u01B0\
+  \u1EDBi d\u1EA1ng c\u1EB7p kh\xF3a-gi\xE1 tr\u1ECB. L\u1EADp tr\xECnh vi\xEAn\u2026"
+title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 ---
 
 {{< edit_this_page >}}

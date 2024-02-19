@@ -1,14 +1,18 @@
 ---
-title:                "Escrevendo um arquivo de texto"
 aliases:
 - /pt/elixir/writing-a-text-file/
-date:                  2024-02-03T19:27:38.478600-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escrevendo um arquivo de texto"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:27:38.478600-07:00
+description: "Escrever em um arquivo de texto em Elixir \xE9 uma habilidade essencial\
+  \ para desenvolvedores, permitindo a persist\xEAncia de dados, registro (logging)\
+  \ ou\u2026"
+lastmod: 2024-02-18 23:08:57.861968
+model: gpt-4-0125-preview
+summary: "Escrever em um arquivo de texto em Elixir \xE9 uma habilidade essencial\
+  \ para desenvolvedores, permitindo a persist\xEAncia de dados, registro (logging)\
+  \ ou\u2026"
+title: Escrevendo um arquivo de texto
 ---
 
 {{< edit_this_page >}}

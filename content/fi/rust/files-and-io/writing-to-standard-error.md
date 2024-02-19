@@ -1,14 +1,17 @@
 ---
-title:                "Kirjoittaminen standardivirheeseen"
 aliases:
 - /fi/rust/writing-to-standard-error/
-date:                  2024-02-03T19:34:36.675655-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kirjoittaminen standardivirheeseen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:34:36.675655-07:00
+description: "Virheilmoitusten kirjoittaminen standardivirheeseen (stderr) Rustissa\
+  \ tarkoittaa virheilmoitusten ja diagnostiikkatietojen ohjaamista konsoliin erill\xE4\
+  \xE4n\u2026"
+lastmod: 2024-02-18 23:09:07.381387
+model: gpt-4-0125-preview
+summary: "Virheilmoitusten kirjoittaminen standardivirheeseen (stderr) Rustissa tarkoittaa\
+  \ virheilmoitusten ja diagnostiikkatietojen ohjaamista konsoliin erill\xE4\xE4n\u2026"
+title: Kirjoittaminen standardivirheeseen
 ---
 
 {{< edit_this_page >}}

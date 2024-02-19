@@ -1,13 +1,16 @@
 ---
-title:                "Ta bort tecken som matchar ett mönster"
 aliases:
 - /sv/swift/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:43:04.326707-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ta bort tecken som matchar ett mönster"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:43:04.326707-07:00
+description: "Att ta bort tecken som matchar ett m\xF6nster inneb\xE4r att du selektivt\
+  \ raderar delar av en str\xE4ng baserat p\xE5 specifika kriterier, s\xE5som alla\
+  \ siffror eller\u2026"
+lastmod: 2024-02-18 23:08:52.109341
+model: gpt-4-1106-preview
+summary: "Att ta bort tecken som matchar ett m\xF6nster inneb\xE4r att du selektivt\
+  \ raderar delar av en str\xE4ng baserat p\xE5 specifika kriterier, s\xE5som alla\
+  \ siffror eller\u2026"
+title: "Ta bort tecken som matchar ett m\xF6nster"
 ---
 
 {{< edit_this_page >}}

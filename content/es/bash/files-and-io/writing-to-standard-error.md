@@ -1,14 +1,17 @@
 ---
-title:                "Escribiendo en el error estándar"
 aliases:
 - /es/bash/writing-to-standard-error/
-date:                  2024-02-03T19:32:09.597875-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Escribiendo en el error estándar"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:09.597875-07:00
+description: "Escribir en el error est\xE1ndar (stderr) en Bash se trata de dirigir\
+  \ mensajes de error o cualquier salida de diagn\xF3stico importante, separ\xE1ndola\
+  \ de la\u2026"
+lastmod: 2024-02-18 23:09:10.185244
+model: gpt-4-0125-preview
+summary: "Escribir en el error est\xE1ndar (stderr) en Bash se trata de dirigir mensajes\
+  \ de error o cualquier salida de diagn\xF3stico importante, separ\xE1ndola de la\u2026"
+title: "Escribiendo en el error est\xE1ndar"
 ---
 
 {{< edit_this_page >}}

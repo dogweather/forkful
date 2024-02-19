@@ -1,13 +1,14 @@
 ---
-title:                "Lavorare con i numeri complessi"
 aliases:
 - /it/swift/working-with-complex-numbers/
-date:                  2024-01-26T04:45:41.622823-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con i numeri complessi"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/working-with-complex-numbers.md"
+date: 2024-01-26 04:45:41.622823-07:00
+description: "Swift non ha un supporto integrato per i numeri complessi, ma possiamo\
+  \ crearne uno nostro: ```Swift struct NumeroComplesso { var reale: Double var\u2026"
+lastmod: 2024-02-18 23:08:56.206930
+model: gpt-4-0125-preview
+summary: "Swift non ha un supporto integrato per i numeri complessi, ma possiamo crearne\
+  \ uno nostro: ```Swift struct NumeroComplesso { var reale: Double var\u2026"
+title: Lavorare con i numeri complessi
 ---
 
 {{< edit_this_page >}}

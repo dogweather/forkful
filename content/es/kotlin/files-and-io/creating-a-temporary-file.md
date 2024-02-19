@@ -1,13 +1,16 @@
 ---
-title:                "Creando un archivo temporal"
 aliases:
 - /es/kotlin/creating-a-temporary-file/
-date:                  2024-01-20T17:41:14.121002-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Creando un archivo temporal"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:14.121002-07:00
+description: "Crear archivos temporales es el proceso de generar ficheros que s\xF3\
+  lo se necesitan durante la ejecuci\xF3n de un programa. Los programadores los utilizan\
+  \ para\u2026"
+lastmod: 2024-02-18 23:09:09.957249
+model: gpt-4-1106-preview
+summary: "Crear archivos temporales es el proceso de generar ficheros que s\xF3lo\
+  \ se necesitan durante la ejecuci\xF3n de un programa. Los programadores los utilizan\
+  \ para\u2026"
+title: Creando un archivo temporal
 ---
 
 {{< edit_this_page >}}

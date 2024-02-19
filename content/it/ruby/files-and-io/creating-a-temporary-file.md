@@ -1,13 +1,16 @@
 ---
-title:                "Creazione di un file temporaneo"
 aliases:
 - /it/ruby/creating-a-temporary-file/
-date:                  2024-01-20T17:41:13.078262-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Creazione di un file temporaneo"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:13.078262-07:00
+description: "Creare un file temporaneo significa generare un file che \xE8 destinato\
+  \ ad essere usato per un breve periodo. I programmatori lo fanno per manipolare\
+  \ dati\u2026"
+lastmod: 2024-02-18 23:08:56.401578
+model: gpt-4-1106-preview
+summary: "Creare un file temporaneo significa generare un file che \xE8 destinato\
+  \ ad essere usato per un breve periodo. I programmatori lo fanno per manipolare\
+  \ dati\u2026"
+title: Creazione di un file temporaneo
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,28 @@
 ---
-title:                "부분 문자열 추출하기"
 aliases:
 - /ko/vba/extracting-substrings/
-date:                  2024-02-01T21:53:18.909668-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "부분 문자열 추출하기"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/vba/extracting-substrings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:53:18.909668-07:00
+description: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uBB38\uC790\uC5F4 \uCD94\
+  \uCD9C\uC740 \uC8FC\uC5B4\uC9C4 \uAE30\uC900\uC5D0 \uB530\uB77C \uBB38\uC790\uC5F4\
+  \uC758 \uD2B9\uC815 \uBD80\uBD84\uC744 \uBD84\uB9AC\uD558\uB294 \uAC83\uC744 \uB9D0\
+  \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB370\uC774\uD130\
+  \ \uD30C\uC2F1, \uC720\uD6A8\uC131 \uAC80\uC0AC, \uADF8\uB9AC\uACE0 \uD3EC\uB9F7\
+  \uD305\uACFC \uAC19\uC740 \uC791\uC5C5\uC744 \uC704\uD574 \uC774\uB97C \uC218\uD589\
+  \uD558\uBA70, \uD14D\uC2A4\uD2B8 \uB370\uC774\uD130\uC5D0\uC11C \uC815\uBCF4\uB97C\
+  \ \uC870\uC791\uD558\uACE0\u2026"
+lastmod: 2024-02-18 23:09:05.933606
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uBB38\uC790\uC5F4 \uCD94\
+  \uCD9C\uC740 \uC8FC\uC5B4\uC9C4 \uAE30\uC900\uC5D0 \uB530\uB77C \uBB38\uC790\uC5F4\
+  \uC758 \uD2B9\uC815 \uBD80\uBD84\uC744 \uBD84\uB9AC\uD558\uB294 \uAC83\uC744 \uB9D0\
+  \uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB370\uC774\uD130\
+  \ \uD30C\uC2F1, \uC720\uD6A8\uC131 \uAC80\uC0AC, \uADF8\uB9AC\uACE0 \uD3EC\uB9F7\
+  \uD305\uACFC \uAC19\uC740 \uC791\uC5C5\uC744 \uC704\uD574 \uC774\uB97C \uC218\uD589\
+  \uD558\uBA70, \uD14D\uC2A4\uD2B8 \uB370\uC774\uD130\uC5D0\uC11C \uC815\uBCF4\uB97C\
+  \ \uC870\uC791\uD558\uACE0\u2026"
+title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

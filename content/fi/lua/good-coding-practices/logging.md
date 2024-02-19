@@ -1,13 +1,16 @@
 ---
-title:                "Lokitus"
 aliases:
 - /fi/lua/logging/
-date:                  2024-01-26T01:07:36.097219-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lokitus"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/logging.md"
+date: 2024-01-26 01:07:36.097219-07:00
+description: "Lokitus on k\xE4yt\xE4nt\xF6 tallentaa tapahtumia, virheit\xE4 ja muita\
+  \ merkitt\xE4vi\xE4 datapisteit\xE4, jotka ilmenev\xE4t ohjelmistosovelluksen elinkaaren\
+  \ aikana. Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:07.763920
+model: gpt-4-1106-preview
+summary: "Lokitus on k\xE4yt\xE4nt\xF6 tallentaa tapahtumia, virheit\xE4 ja muita\
+  \ merkitt\xE4vi\xE4 datapisteit\xE4, jotka ilmenev\xE4t ohjelmistosovelluksen elinkaaren\
+  \ aikana. Ohjelmoijat\u2026"
+title: Lokitus
 ---
 
 {{< edit_this_page >}}

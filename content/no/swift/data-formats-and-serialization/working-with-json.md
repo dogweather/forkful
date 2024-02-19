@@ -1,14 +1,18 @@
 ---
-title:                "Arbeider med JSON"
 aliases:
 - /no/swift/working-with-json/
-date:                  2024-02-03T19:24:07.266765-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeider med JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:24:07.266765-07:00
+description: "\xC5 jobbe med JSON i Swift betyr \xE5 h\xE5ndtere et lettvekts dataformat\
+  \ for datautveksling. Programmerere bruker JSON for \xE5 overf\xF8re data mellom\
+  \ en server og en\u2026"
+lastmod: 2024-02-18 23:08:54.289561
+model: gpt-4-0125-preview
+summary: "\xC5 jobbe med JSON i Swift betyr \xE5 h\xE5ndtere et lettvekts dataformat\
+  \ for datautveksling. Programmerere bruker JSON for \xE5 overf\xF8re data mellom\
+  \ en server og en\u2026"
+title: Arbeider med JSON
 ---
 
 {{< edit_this_page >}}

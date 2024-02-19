@@ -1,13 +1,16 @@
 ---
-title:                "Lese kommandolinjeargumenter"
 aliases:
 - /no/elm/reading-command-line-arguments/
-date:                  2024-01-20T17:55:58.007157-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lese kommandolinjeargumenter"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:58.007157-07:00
+description: "Kommandolinjeargumenter lar brukere p\xE5virke et programs oppf\xF8\
+  rsel ved oppstart. Vi bruker det for \xE5 tilpasse kj\xF8ringen av koden uten \xE5\
+  \ endre selve\u2026"
+lastmod: 2024-02-18 23:08:53.826068
+model: gpt-4-1106-preview
+summary: "Kommandolinjeargumenter lar brukere p\xE5virke et programs oppf\xF8rsel\
+  \ ved oppstart. Vi bruker det for \xE5 tilpasse kj\xF8ringen av koden uten \xE5\
+  \ endre selve\u2026"
+title: Lese kommandolinjeargumenter
 ---
 
 {{< edit_this_page >}}

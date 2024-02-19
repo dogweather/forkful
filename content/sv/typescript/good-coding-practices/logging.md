@@ -1,13 +1,16 @@
 ---
-title:                "Loggning"
 aliases:
 - /sv/typescript/logging/
-date:                  2024-01-26T01:09:28.099358-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Loggning"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/logging.md"
+date: 2024-01-26 01:09:28.099358-07:00
+description: "Loggning \xE4r processen att registrera h\xE4ndelser, fel och annan\
+  \ viktig information under ett programs utf\xF6rande till ett externt medium, ofta\
+  \ filer eller\u2026"
+lastmod: 2024-02-18 23:08:51.549700
+model: gpt-4-1106-preview
+summary: "Loggning \xE4r processen att registrera h\xE4ndelser, fel och annan viktig\
+  \ information under ett programs utf\xF6rande till ett externt medium, ofta filer\
+  \ eller\u2026"
+title: Loggning
 ---
 
 {{< edit_this_page >}}

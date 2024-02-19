@@ -1,14 +1,21 @@
 ---
-title:                "匹配模式删除字符"
 aliases:
 - /zh/lua/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:49.387889-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "匹配模式删除字符"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/lua/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:49.387889-07:00
+description: "\u5220\u9664\u5B57\u7B26\u6A21\u5F0F\u5339\u914D\u5C31\u662F\u627E\u5230\
+  \u7B26\u5408\u7279\u5B9A\u6A21\u5F0F\u7684\u5B57\u7B26\uFF0C\u5E76\u5C06\u5B83\u4EEC\
+  \u4ECE\u6587\u672C\u4E2D\u79FB\u9664\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\
+  \u4E3A\u4E86\u6E05\u7406\u6570\u636E\uFF0C\u6216\u8005\u907F\u514D\u65E0\u5173\u4FE1\
+  \u606F\u5E72\u6270\u5904\u7406\u8FC7\u7A0B\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.239883
+model: gpt-4-1106-preview
+summary: "\u5220\u9664\u5B57\u7B26\u6A21\u5F0F\u5339\u914D\u5C31\u662F\u627E\u5230\
+  \u7B26\u5408\u7279\u5B9A\u6A21\u5F0F\u7684\u5B57\u7B26\uFF0C\u5E76\u5C06\u5B83\u4EEC\
+  \u4ECE\u6587\u672C\u4E2D\u79FB\u9664\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\
+  \u4E3A\u4E86\u6E05\u7406\u6570\u636E\uFF0C\u6216\u8005\u907F\u514D\u65E0\u5173\u4FE1\
+  \u606F\u5E72\u6270\u5904\u7406\u8FC7\u7A0B\u3002"
+title: "\u5339\u914D\u6A21\u5F0F\u5220\u9664\u5B57\u7B26"
 ---
 
 {{< edit_this_page >}}

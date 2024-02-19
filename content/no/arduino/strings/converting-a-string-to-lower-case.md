@@ -1,13 +1,15 @@
 ---
-title:                "Konvertere en streng til små bokstaver"
 aliases:
 - /no/arduino/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:37:45.131988-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konvertere en streng til små bokstaver"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:37:45.131988-07:00
+description: "Konvertering av en streng til sm\xE5 bokstaver betyr \xE5 endre alle\
+  \ store bokstaver i teksten til sm\xE5 bokstaver. Programmerere gj\xF8r dette for\
+  \ enklere\u2026"
+lastmod: 2024-02-18 23:08:54.128990
+model: gpt-4-1106-preview
+summary: "Konvertering av en streng til sm\xE5 bokstaver betyr \xE5 endre alle store\
+  \ bokstaver i teksten til sm\xE5 bokstaver. Programmerere gj\xF8r dette for enklere\u2026"
+title: "Konvertere en streng til sm\xE5 bokstaver"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,17 @@
 ---
-title:                "Zaokrąglanie liczb"
 aliases:
 - /pl/c/rounding-numbers/
-date:                  2024-02-03T18:07:45.330322-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zaokrąglanie liczb"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/rounding-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:45.330322-07:00
+description: "Zaokr\u0105glanie liczb to proces dostosowywania cyfr liczby w celu\
+  \ zmniejszenia jej precyzji zgodnie z pewnymi zasadami, albo w kierunku najbli\u017C\
+  szej liczby\u2026"
+lastmod: 2024-02-18 23:08:50.074390
+model: gpt-4-0125-preview
+summary: "Zaokr\u0105glanie liczb to proces dostosowywania cyfr liczby w celu zmniejszenia\
+  \ jej precyzji zgodnie z pewnymi zasadami, albo w kierunku najbli\u017Cszej liczby\u2026"
+title: "Zaokr\u0105glanie liczb"
 ---
 
 {{< edit_this_page >}}

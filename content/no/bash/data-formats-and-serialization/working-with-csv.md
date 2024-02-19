@@ -1,14 +1,18 @@
 ---
-title:                "Arbeide med CSV"
 aliases:
 - /no/bash/working-with-csv/
-date:                  2024-02-03T19:18:49.382736-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeide med CSV"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/working-with-csv.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:18:49.382736-07:00
+description: "\xC5 arbeide med CSV-filer (Comma-Separated Values) i Bash inneb\xE6\
+  rer \xE5 behandle og manipulere tabelldata lagret i vanlig tekstformat. Dette er\
+  \ essensielt for\u2026"
+lastmod: 2024-02-18 23:08:54.079809
+model: gpt-4-0125-preview
+summary: "\xC5 arbeide med CSV-filer (Comma-Separated Values) i Bash inneb\xE6rer\
+  \ \xE5 behandle og manipulere tabelldata lagret i vanlig tekstformat. Dette er essensielt\
+  \ for\u2026"
+title: Arbeide med CSV
 ---
 
 {{< edit_this_page >}}

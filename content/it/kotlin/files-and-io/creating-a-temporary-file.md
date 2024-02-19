@@ -1,13 +1,14 @@
 ---
-title:                "Creazione di un file temporaneo"
 aliases:
 - /it/kotlin/creating-a-temporary-file/
-date:                  2024-01-20T17:40:50.479066-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Creazione di un file temporaneo"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:50.479066-07:00
+description: "Creare un file temporaneo significa generare un file che \xE8 destinato\
+  \ a esistere per breve tempo, spesso solo per la durata dell'esecuzione di un\u2026"
+lastmod: 2024-02-18 23:08:55.864612
+model: gpt-4-1106-preview
+summary: "Creare un file temporaneo significa generare un file che \xE8 destinato\
+  \ a esistere per breve tempo, spesso solo per la durata dell'esecuzione di un\u2026"
+title: Creazione di un file temporaneo
 ---
 
 {{< edit_this_page >}}

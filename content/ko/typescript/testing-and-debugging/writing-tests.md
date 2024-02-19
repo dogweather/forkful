@@ -1,14 +1,30 @@
 ---
-title:                "테스트 작성하기"
 aliases:
 - /ko/typescript/writing-tests/
-date:                  2024-02-03T19:32:33.502674-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "테스트 작성하기"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:33.502674-07:00
+description: "TypeScript\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uC791\uC131\uD55C\uB2E4\
+  \uB294 \uAC83\uC740 \uCF54\uB4DC\uC758 \uAE30\uB2A5\uC131\uACFC \uC815\uD655\uC131\
+  \uC744 \uAC80\uC99D\uD558\uAE30 \uC704\uD55C \uC790\uB3D9\uD654\uB41C \uC2A4\uD06C\
+  \uB9BD\uD2B8\uB97C \uB9CC\uB4DC\uB294 \uAC83\uC744 \uC758\uBBF8\uD569\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC2E0\uB8B0\uC131\uC744 \uBCF4\uC7A5\
+  \uD558\uACE0, \uBC84\uADF8\uB97C \uBE60\uB974\uAC8C \uBC1C\uACAC\uD558\uBA70, \uC720\
+  \uC9C0\uBCF4\uC218 \uAC00\uB2A5\uD55C \uCF54\uB4DC \uC131\uC7A5\uC744 \uC6A9\uC774\
+  \uD558\uAC8C \uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uD569\uB2C8\uB2E4\
+  .\u2026"
+lastmod: 2024-02-18 23:09:05.824899
+model: gpt-4-0125-preview
+summary: "TypeScript\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uC791\uC131\uD55C\uB2E4\
+  \uB294 \uAC83\uC740 \uCF54\uB4DC\uC758 \uAE30\uB2A5\uC131\uACFC \uC815\uD655\uC131\
+  \uC744 \uAC80\uC99D\uD558\uAE30 \uC704\uD55C \uC790\uB3D9\uD654\uB41C \uC2A4\uD06C\
+  \uB9BD\uD2B8\uB97C \uB9CC\uB4DC\uB294 \uAC83\uC744 \uC758\uBBF8\uD569\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC2E0\uB8B0\uC131\uC744 \uBCF4\uC7A5\
+  \uD558\uACE0, \uBC84\uADF8\uB97C \uBE60\uB974\uAC8C \uBC1C\uACAC\uD558\uBA70, \uC720\
+  \uC9C0\uBCF4\uC218 \uAC00\uB2A5\uD55C \uCF54\uB4DC \uC131\uC7A5\uC744 \uC6A9\uC774\
+  \uD558\uAC8C \uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uD569\uB2C8\uB2E4\
+  .\u2026"
+title: "\uD14C\uC2A4\uD2B8 \uC791\uC131\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Obsługa błędów"
 aliases:
 - /pl/elixir/handling-errors/
-date:                  2024-01-26T00:51:15.300791-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Obsługa błędów"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/handling-errors.md"
+date: 2024-01-26 00:51:15.300791-07:00
+description: "Obs\u0142uga b\u0142\u0119d\xF3w oznacza pisanie kodu, kt\xF3ry mo\u017C\
+  e poradzi\u0107 sobie z sytuacjami, kiedy co\u015B p\xF3jdzie nie tak. Programi\u015B\
+  ci robi\u0105 to, aby zapobiec awariom i aby\u2026"
+lastmod: 2024-02-18 23:08:49.313078
+model: gpt-4-1106-preview
+summary: "Obs\u0142uga b\u0142\u0119d\xF3w oznacza pisanie kodu, kt\xF3ry mo\u017C\
+  e poradzi\u0107 sobie z sytuacjami, kiedy co\u015B p\xF3jdzie nie tak. Programi\u015B\
+  ci robi\u0105 to, aby zapobiec awariom i aby\u2026"
+title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 ---
 
 {{< edit_this_page >}}

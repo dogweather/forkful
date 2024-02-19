@@ -1,13 +1,16 @@
 ---
-title:                "Enviando uma requisição HTTP"
 aliases:
 - /pt/python/sending-an-http-request/
-date:                  2024-01-20T18:00:28.560747-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando uma requisição HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/sending-an-http-request.md"
+date: 2024-01-20 18:00:28.560747-07:00
+description: "Enviar um pedido HTTP \xE9 como voc\xEA faz seu c\xF3digo conversar\
+  \ com a web. Programadores fazem isso para buscar dados, enviar informa\xE7\xF5\
+  es, interagir com APIs \u2013\u2026"
+lastmod: 2024-02-18 23:08:57.758033
+model: gpt-4-1106-preview
+summary: "Enviar um pedido HTTP \xE9 como voc\xEA faz seu c\xF3digo conversar com\
+  \ a web. Programadores fazem isso para buscar dados, enviar informa\xE7\xF5es, interagir\
+  \ com APIs \u2013\u2026"
+title: "Enviando uma requisi\xE7\xE3o HTTP"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Att arbeta med komplexa tal"
 aliases:
 - /sv/clojure/working-with-complex-numbers/
-date:                  2024-01-26T04:38:46.696347-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med komplexa tal"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/working-with-complex-numbers.md"
+date: 2024-01-26 04:38:46.696347-07:00
+description: "Komplexa tal utvidgar de reella talen med en ytterligare del, den imagin\xE4\
+  ra enheten 'i'. Programmerare anv\xE4nder dem inom olika omr\xE5den, inklusive\u2026"
+lastmod: 2024-02-18 23:08:51.456481
+model: gpt-4-0125-preview
+summary: "Komplexa tal utvidgar de reella talen med en ytterligare del, den imagin\xE4\
+  ra enheten 'i'. Programmerare anv\xE4nder dem inom olika omr\xE5den, inklusive\u2026"
+title: Att arbeta med komplexa tal
 ---
 
 {{< edit_this_page >}}

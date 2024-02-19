@@ -1,15 +1,20 @@
 ---
-title:                "In ra thông tin gỡ lỗi"
 aliases:
 - /vi/clojure/printing-debug-output/
-date:                  2024-01-28T22:04:25.935328-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "In ra thông tin gỡ lỗi"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/clojure/printing-debug-output.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:04:25.935328-07:00
+description: "Vi\u1EC7c in ra \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\u1ED7i gi\u1ED1\
+  ng nh\u01B0 vi\u1EC7c \u0111\u1EC3 l\u1EA1i nh\u1EEFng m\u1EA9u b\xE1nh m\xEC trong\
+  \ m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1n: n\xF3 hi\u1EC3n th\u1ECB l\u1ED9 tr\xECnh c\u1EE7\
+  a d\u1EEF li\u1EC7u v\xE0 lu\u1ED3ng l\xF4gic trong qu\xE1 tr\xECnh\u2026"
+lastmod: 2024-02-18 23:08:50.317682
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c in ra \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\u1ED7i gi\u1ED1\
+  ng nh\u01B0 vi\u1EC7c \u0111\u1EC3 l\u1EA1i nh\u1EEFng m\u1EA9u b\xE1nh m\xEC trong\
+  \ m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1n: n\xF3 hi\u1EC3n th\u1ECB l\u1ED9 tr\xECnh c\u1EE7\
+  a d\u1EEF li\u1EC7u v\xE0 lu\u1ED3ng l\xF4gic trong qu\xE1 tr\xECnh\u2026"
+title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

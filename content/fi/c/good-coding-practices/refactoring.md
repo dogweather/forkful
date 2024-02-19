@@ -1,14 +1,16 @@
 ---
-title:                "Koodin uudelleenkirjoitus"
 aliases:
 - /fi/c/refactoring/
-date:                  2024-02-03T18:07:29.698784-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Koodin uudelleenkirjoitus"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/refactoring.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:29.698784-07:00
+description: "Ohjelmoinnissa refaktorointi tarkoittaa olemassa olevan koodin uudelleenrakentamista\
+  \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Tavoitteena on parantaa ei-\u2026"
+lastmod: 2024-02-18 23:09:08.142200
+model: gpt-4-0125-preview
+summary: "Ohjelmoinnissa refaktorointi tarkoittaa olemassa olevan koodin uudelleenrakentamista\
+  \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Tavoitteena on parantaa ei-\u2026"
+title: Koodin uudelleenkirjoitus
 ---
 
 {{< edit_this_page >}}

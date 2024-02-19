@@ -1,14 +1,16 @@
 ---
-title:                "Code organiseren in functies"
 aliases:
 - /nl/go/organizing-code-into-functions/
-date:                  2024-02-03T17:59:34.325902-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Code organiseren in functies"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/organizing-code-into-functions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:34.325902-07:00
+description: "Het organiseren van code in functies in Go omvat het opsplitsen van\
+  \ code in herbruikbare, modulaire blokken die specifieke taken uitvoeren. Deze aanpak\u2026"
+lastmod: 2024-02-18 23:09:01.344694
+model: gpt-4-0125-preview
+summary: "Het organiseren van code in functies in Go omvat het opsplitsen van code\
+  \ in herbruikbare, modulaire blokken die specifieke taken uitvoeren. Deze aanpak\u2026"
+title: Code organiseren in functies
 ---
 
 {{< edit_this_page >}}

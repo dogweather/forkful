@@ -1,14 +1,29 @@
 ---
-title:                "정규 표현식 사용하기"
 aliases:
 - /ko/powershell/using-regular-expressions/
-date:                  2024-02-03T19:17:47.514377-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "정규 표현식 사용하기"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:17:47.514377-07:00
+description: "\uC815\uADDC \uD45C\uD604\uC2DD(regex)\uC740 \uC8FC\uB85C \uBB38\uC790\
+  \uC5F4 \uAC80\uC0C9\uACFC \uC870\uC791\uC744 \uC704\uD574 \uC0AC\uC6A9\uB418\uB294\
+  \ \uAC80\uC0C9 \uD328\uD134\uC744 \uD615\uC131\uD558\uB294 \uBB38\uC790\uC758 \uC2DC\
+  \uD000\uC2A4\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB370\
+  \uC774\uD130 \uAC80\uC99D, \uAD6C\uBB38 \uBD84\uC11D \uBC0F \uBCC0\uD658\uACFC \uAC19\
+  \uC740 \uC791\uC5C5\uC5D0 PowerShell\uC5D0\uC11C \uC815\uADDC \uD45C\uD604\uC2DD\
+  \uC744 \uD65C\uC6A9\uD569\uB2C8\uB2E4. \uC774\uB294 \uBCF5\uC7A1\uD55C \uD328\uD134\
+  \uC744 \uCC98\uB9AC\uD558\uB294 \uB370 \uC788\uC5B4 \uADF8 \uD6A8\uC728\uC131\uACFC\
+  \u2026"
+lastmod: 2024-02-18 23:09:06.535525
+model: gpt-4-0125-preview
+summary: "\uC815\uADDC \uD45C\uD604\uC2DD(regex)\uC740 \uC8FC\uB85C \uBB38\uC790\uC5F4\
+  \ \uAC80\uC0C9\uACFC \uC870\uC791\uC744 \uC704\uD574 \uC0AC\uC6A9\uB418\uB294 \uAC80\
+  \uC0C9 \uD328\uD134\uC744 \uD615\uC131\uD558\uB294 \uBB38\uC790\uC758 \uC2DC\uD000\
+  \uC2A4\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB370\uC774\
+  \uD130 \uAC80\uC99D, \uAD6C\uBB38 \uBD84\uC11D \uBC0F \uBCC0\uD658\uACFC \uAC19\uC740\
+  \ \uC791\uC5C5\uC5D0 PowerShell\uC5D0\uC11C \uC815\uADDC \uD45C\uD604\uC2DD\uC744\
+  \ \uD65C\uC6A9\uD569\uB2C8\uB2E4. \uC774\uB294 \uBCF5\uC7A1\uD55C \uD328\uD134\uC744\
+  \ \uCC98\uB9AC\uD558\uB294 \uB370 \uC788\uC5B4 \uADF8 \uD6A8\uC728\uC131\uACFC\u2026"
+title: "\uC815\uADDC \uD45C\uD604\uC2DD \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

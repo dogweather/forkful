@@ -1,16 +1,17 @@
 ---
-title:                "Analysering av HTML"
 aliases:
 - /no/javascript/parsing-html/
-date:                  2024-01-28T03:00:44.896374-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analysering av HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/parsing-html.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 03:00:44.896374-07:00
+description: "\xC5 parse HTML betyr \xE5 trekke ut data fra HTML-dokumenter. Programmerere\
+  \ gj\xF8r dette for \xE5 samhandle med eller manipulere webinnhold, automatisere\u2026"
+lastmod: 2024-02-18 23:08:54.307077
+model: gpt-4-0125-preview
+summary: "\xC5 parse HTML betyr \xE5 trekke ut data fra HTML-dokumenter. Programmerere\
+  \ gj\xF8r dette for \xE5 samhandle med eller manipulere webinnhold, automatisere\u2026"
+title: Analysering av HTML
 ---
 
 {{< edit_this_page >}}

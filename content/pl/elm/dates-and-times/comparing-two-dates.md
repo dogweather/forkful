@@ -1,13 +1,16 @@
 ---
-title:                "Porównywanie dwóch dat"
 aliases:
 - /pl/elm/comparing-two-dates/
-date:                  2024-01-20T17:32:42.576260-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Porównywanie dwóch dat"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/comparing-two-dates.md"
+date: 2024-01-20 17:32:42.576260-07:00
+description: "Por\xF3wnywanie dw\xF3ch dat to sprawdzanie, kt\xF3ra jest wcze\u015B\
+  niejsza, r\xF3wna lub p\xF3\u017Aniejsza. Programi\u015Bci robi\u0105 to, by obs\u0142\
+  u\u017Cy\u0107 terminy, harmonogramy oraz\u2026"
+lastmod: 2024-02-18 23:08:49.530960
+model: gpt-4-1106-preview
+summary: "Por\xF3wnywanie dw\xF3ch dat to sprawdzanie, kt\xF3ra jest wcze\u015Bniejsza,\
+  \ r\xF3wna lub p\xF3\u017Aniejsza. Programi\u015Bci robi\u0105 to, by obs\u0142\
+  u\u017Cy\u0107 terminy, harmonogramy oraz\u2026"
+title: "Por\xF3wnywanie dw\xF3ch dat"
 ---
 
 {{< edit_this_page >}}

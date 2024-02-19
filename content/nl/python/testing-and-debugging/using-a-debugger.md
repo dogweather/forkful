@@ -1,15 +1,17 @@
 ---
-title:                "Een debugger gebruiken"
 aliases:
 - /nl/python/using-a-debugger/
-date:                  2024-01-28T22:09:44.760902-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een debugger gebruiken"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/python/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:44.760902-07:00
+description: "\"Een debugger gebruiken\" gaat over het stapsgewijs doorlopen van je\
+  \ Python-code om bugs te ontdekken en het gedrag te begrijpen. We doen dit omdat\
+  \ het\u2026"
+lastmod: 2024-02-18 23:09:01.438760
+model: gpt-4-0125-preview
+summary: "\"Een debugger gebruiken\" gaat over het stapsgewijs doorlopen van je Python-code\
+  \ om bugs te ontdekken en het gedrag te begrijpen. We doen dit omdat het\u2026"
+title: Een debugger gebruiken
 ---
 
 {{< edit_this_page >}}

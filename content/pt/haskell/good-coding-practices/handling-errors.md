@@ -1,13 +1,16 @@
 ---
-title:                "Tratamento de erros"
 aliases:
 - /pt/haskell/handling-errors/
-date:                  2024-01-26T00:53:44.666531-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tratamento de erros"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/handling-errors.md"
+date: 2024-01-26 00:53:44.666531-07:00
+description: "Tratar erros em programa\xE7\xE3o \xE9 sobre gerenciar o inesperado\u2014\
+  coisas que podem dar errado. Programadores fazem isso para garantir que seus programas\
+  \ possam\u2026"
+lastmod: 2024-02-18 23:08:58.206488
+model: gpt-4-1106-preview
+summary: "Tratar erros em programa\xE7\xE3o \xE9 sobre gerenciar o inesperado\u2014\
+  coisas que podem dar errado. Programadores fazem isso para garantir que seus programas\
+  \ possam\u2026"
+title: Tratamento de erros
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Att använda reguljära uttryck"
 aliases:
 - /sv/typescript/using-regular-expressions/
-date:                  2024-02-03T19:18:27.496529-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda reguljära uttryck"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:18:27.496529-07:00
+description: "Regulj\xE4ra uttryck, eller regex, \xE4r ett kraftfullt verktyg f\xF6\
+  r m\xF6nstermatchning och s\xF6kning i programmering. Programmerare anv\xE4nder\
+  \ regex f\xF6r uppgifter som\u2026"
+lastmod: 2024-02-18 23:08:51.533955
+model: gpt-4-0125-preview
+summary: "Regulj\xE4ra uttryck, eller regex, \xE4r ett kraftfullt verktyg f\xF6r m\xF6\
+  nstermatchning och s\xF6kning i programmering. Programmerare anv\xE4nder regex f\xF6\
+  r uppgifter som\u2026"
+title: "Att anv\xE4nda regulj\xE4ra uttryck"
 ---
 
 {{< edit_this_page >}}

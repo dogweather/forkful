@@ -1,14 +1,22 @@
 ---
-title:                "新プロジェクトの開始"
 aliases:
 - /ja/google-apps-script/starting-a-new-project/
-date:                  2024-02-01T22:03:04.558586-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "新プロジェクトの開始"
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/google-apps-script/starting-a-new-project.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:04.558586-07:00
+description: "Google Apps Script (GAS)\u3067\u65B0\u3057\u3044\u30D7\u30ED\u30B8\u30A7\
+  \u30AF\u30C8\u3092\u59CB\u3081\u308B\u3068\u306F\u3001Google\u30A8\u30B3\u30B7\u30B9\
+  \u30C6\u30E0\uFF08Google Drive\u3001Docs\u3001Sheets\u306A\u3069\uFF09\u5185\u3067\
+  \u30B9\u30AF\u30EA\u30D7\u30C8\u30D5\u30A1\u30A4\u30EB\u3092\u521D\u671F\u5316\u3057\
+  \u3066\u3001\u30BF\u30B9\u30AF\u3092\u81EA\u52D5\u5316\u3057\u305F\u308A\u3001Google\u2026"
+lastmod: 2024-02-18 23:08:54.523580
+model: gpt-4-0125-preview
+summary: "Google Apps Script (GAS)\u3067\u65B0\u3057\u3044\u30D7\u30ED\u30B8\u30A7\
+  \u30AF\u30C8\u3092\u59CB\u3081\u308B\u3068\u306F\u3001Google\u30A8\u30B3\u30B7\u30B9\
+  \u30C6\u30E0\uFF08Google Drive\u3001Docs\u3001Sheets\u306A\u3069\uFF09\u5185\u3067\
+  \u30B9\u30AF\u30EA\u30D7\u30C8\u30D5\u30A1\u30A4\u30EB\u3092\u521D\u671F\u5316\u3057\
+  \u3066\u3001\u30BF\u30B9\u30AF\u3092\u81EA\u52D5\u5316\u3057\u305F\u308A\u3001Google\u2026"
+title: "\u65B0\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u306E\u958B\u59CB"
 ---
 
 {{< edit_this_page >}}

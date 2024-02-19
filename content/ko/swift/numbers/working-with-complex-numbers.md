@@ -1,13 +1,22 @@
 ---
-title:                "복소수 다루기"
 aliases:
 - /ko/swift/working-with-complex-numbers/
-date:                  2024-01-26T04:45:46.648275-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "복소수 다루기"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/swift/working-with-complex-numbers.md"
+date: 2024-01-26 04:45:46.648275-07:00
+description: "\uBCF5\uC18C\uC218\uB294 \uC2E4\uC218 \uBD80\uBD84\uACFC \uD5C8\uC218\
+  \ \uBD80\uBD84(\uC608: 3 + 4i)\uC744 \uAC00\uC9C0\uACE0 \uC788\uC2B5\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 Swift\uC5D0\uC11C \uC2E0\uD638 \uCC98\
+  \uB9AC, \uD2B9\uC815 \uC218\uD559 \uBB38\uC81C \uD574\uACB0, \uBB3C\uB9AC \uC2DC\
+  \uBBAC\uB808\uC774\uC158 \uB4F1\uC758 \uC791\uC5C5\uC5D0 \uBCF5\uC18C\uC218\uB97C\
+  \ \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.739595
+model: gpt-4-0125-preview
+summary: "\uBCF5\uC18C\uC218\uB294 \uC2E4\uC218 \uBD80\uBD84\uACFC \uD5C8\uC218 \uBD80\
+  \uBD84(\uC608: 3 + 4i)\uC744 \uAC00\uC9C0\uACE0 \uC788\uC2B5\uB2C8\uB2E4. \uD504\
+  \uB85C\uADF8\uB798\uBA38\uB4E4\uC740 Swift\uC5D0\uC11C \uC2E0\uD638 \uCC98\uB9AC\
+  , \uD2B9\uC815 \uC218\uD559 \uBB38\uC81C \uD574\uACB0, \uBB3C\uB9AC \uC2DC\uBBAC\
+  \uB808\uC774\uC158 \uB4F1\uC758 \uC791\uC5C5\uC5D0 \uBCF5\uC18C\uC218\uB97C \uC0AC\
+  \uC6A9\uD569\uB2C8\uB2E4."
+title: "\uBCF5\uC18C\uC218 \uB2E4\uB8E8\uAE30"
 ---
 
 {{< edit_this_page >}}

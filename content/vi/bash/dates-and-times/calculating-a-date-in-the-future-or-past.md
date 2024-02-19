@@ -1,15 +1,20 @@
 ---
-title:                "Tính toán ngày trong tương lai hoặc quá khứ"
 aliases:
 - /vi/bash/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-28T21:55:33.339814-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tính toán ngày trong tương lai hoặc quá khứ"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/bash/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:55:33.339814-07:00
+description: "Vi\u1EC7c t\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai\
+  \ ho\u1EB7c qu\xE1 kh\u1EE9 l\xE0 \u0111\u1EC3 t\xECm ra ng\xE0y tr\u01B0\u1EDB\
+  c ho\u1EB7c sau m\u1ED9t kho\u1EA3ng th\u1EDDi gian nh\u1EA5t \u0111\u1ECBnh. L\u1EAD\
+  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y\u2026"
+lastmod: 2024-02-18 23:08:50.900195
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c t\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7\
+  c qu\xE1 kh\u1EE9 l\xE0 \u0111\u1EC3 t\xECm ra ng\xE0y tr\u01B0\u1EDBc ho\u1EB7\
+  c sau m\u1ED9t kho\u1EA3ng th\u1EDDi gian nh\u1EA5t \u0111\u1ECBnh. L\u1EADp tr\xEC\
+  nh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y\u2026"
+title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
 ---
 
 {{< edit_this_page >}}

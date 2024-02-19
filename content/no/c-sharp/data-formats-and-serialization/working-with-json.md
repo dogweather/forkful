@@ -1,14 +1,16 @@
 ---
-title:                "Arbeider med JSON"
 aliases:
 - /no/c-sharp/working-with-json/
-date:                  2024-02-03T19:22:11.840105-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeider med JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:22:11.840105-07:00
+description: "Arbeid med JSON (JavaScript Object Notation) involverer parsing, generering\
+  \ og sp\xF8rring av JSON-data, noe som gj\xF8r det til en kritisk ferdighet for\u2026"
+lastmod: 2024-02-18 23:08:53.914506
+model: gpt-4-0125-preview
+summary: "Arbeid med JSON (JavaScript Object Notation) involverer parsing, generering\
+  \ og sp\xF8rring av JSON-data, noe som gj\xF8r det til en kritisk ferdighet for\u2026"
+title: Arbeider med JSON
 ---
 
 {{< edit_this_page >}}

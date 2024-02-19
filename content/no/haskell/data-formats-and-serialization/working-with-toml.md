@@ -1,13 +1,16 @@
 ---
-title:                "Jobbe med TOML"
 aliases:
 - /no/haskell/working-with-toml/
-date:                  2024-01-26T04:22:44.089246-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Jobbe med TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/working-with-toml.md"
+date: 2024-01-26 04:22:44.089246-07:00
+description: "Arbeid med TOML inneb\xE6rer parsing og generering av TOML (Toms \xC5\
+  penbare, Minimale Spr\xE5k) data med Haskell. Programmerere gj\xF8r dette for enkelt\
+  \ \xE5 h\xE5ndtere\u2026"
+lastmod: 2024-02-18 23:08:53.957358
+model: gpt-4-0125-preview
+summary: "Arbeid med TOML inneb\xE6rer parsing og generering av TOML (Toms \xC5penbare,\
+  \ Minimale Spr\xE5k) data med Haskell. Programmerere gj\xF8r dette for enkelt \xE5\
+  \ h\xE5ndtere\u2026"
+title: Jobbe med TOML
 ---
 
 {{< edit_this_page >}}

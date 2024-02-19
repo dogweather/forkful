@@ -1,13 +1,16 @@
 ---
-title:                "Väliaikaistiedoston luominen"
 aliases:
 - /fi/typescript/creating-a-temporary-file/
-date:                  2024-01-20T17:41:42.172042-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Väliaikaistiedoston luominen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:42.172042-07:00
+description: "Tilap\xE4istiedosto on v\xE4liaikainen tallennuspaikka dataa varten.\
+  \ Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4, kun haluavat k\xE4sitell\xE4 tietoa,\
+  \ joka ei vaadi pysyv\xE4\xE4\u2026"
+lastmod: 2024-02-18 23:09:07.339669
+model: gpt-4-1106-preview
+summary: "Tilap\xE4istiedosto on v\xE4liaikainen tallennuspaikka dataa varten. Ohjelmoijat\
+  \ k\xE4ytt\xE4v\xE4t niit\xE4, kun haluavat k\xE4sitell\xE4 tietoa, joka ei vaadi\
+  \ pysyv\xE4\xE4\u2026"
+title: "V\xE4liaikaistiedoston luominen"
 ---
 
 {{< edit_this_page >}}

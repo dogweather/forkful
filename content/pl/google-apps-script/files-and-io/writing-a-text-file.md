@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie pliku tekstowego"
 aliases:
 - /pl/google-apps-script/writing-a-text-file/
-date:                  2024-02-01T22:08:11.417278-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie pliku tekstowego"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/writing-a-text-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:08:11.417278-07:00
+description: "Tworzenie pliku tekstowego w Google Apps Script pozwala deweloperom\
+  \ na trwa\u0142e przechowywanie danych, umo\u017Cliwiaj\u0105c ich dost\u0119pno\u015B\
+  \u0107 na przysz\u0142e u\u017Cycie lub\u2026"
+lastmod: 2024-02-18 23:08:49.172837
+model: gpt-4-0125-preview
+summary: "Tworzenie pliku tekstowego w Google Apps Script pozwala deweloperom na trwa\u0142\
+  e przechowywanie danych, umo\u017Cliwiaj\u0105c ich dost\u0119pno\u015B\u0107 na\
+  \ przysz\u0142e u\u017Cycie lub\u2026"
+title: Pisanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

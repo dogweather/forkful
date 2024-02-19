@@ -1,13 +1,15 @@
 ---
-title:                "Printing debug output"
 aliases:
 - /en/php/printing-debug-output/
-date:                  2024-01-20T17:53:03.682497-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Printing debug output"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/printing-debug-output.md"
+date: 2024-01-20 17:53:03.682497-07:00
+description: "Printing debug output is about slapping your code's internal data onto\
+  \ the screen to figure out what's going on. Programmers do it for a sanity check,\
+  \ to\u2026"
+lastmod: 2024-02-18 23:09:11.139717
+model: gpt-4-1106-preview
+summary: "Printing debug output is about slapping your code's internal data onto the\
+  \ screen to figure out what's going on. Programmers do it for a sanity check, to\u2026"
+title: Printing debug output
 ---
 
 {{< edit_this_page >}}

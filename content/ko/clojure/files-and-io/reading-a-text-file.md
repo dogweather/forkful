@@ -1,14 +1,21 @@
 ---
-title:                "텍스트 파일 읽기"
 aliases:
 - /ko/clojure/reading-a-text-file/
-date:                  2024-01-20T17:53:54.165278-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "텍스트 파일 읽기"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/reading-a-text-file.md"
+date: 2024-01-20 17:53:54.165278-07:00
+description: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30\uB780, \uD30C\uC77C\uC5D0\
+  \ \uC800\uC7A5\uB41C \uC815\uBCF4\uB97C \uBD88\uB7EC\uC624\uB294 \uAC83\uC785\uB2C8\
+  \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uB370\uC774\uD130 \uCC98\uB9AC, \uC124\
+  \uC815 \uBD88\uB7EC\uC624\uAE30 \uB4F1 \uB2E4\uC591\uD55C \uC774\uC720\uB85C \uD30C\
+  \uC77C\uC744 \uC77D\uC2B5\uB2C8\uB2E4."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:05.716896
+model: gpt-4-1106-preview
+summary: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30\uB780, \uD30C\uC77C\uC5D0 \uC800\
+  \uC7A5\uB41C \uC815\uBCF4\uB97C \uBD88\uB7EC\uC624\uB294 \uAC83\uC785\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB294 \uB370\uC774\uD130 \uCC98\uB9AC, \uC124\uC815\
+  \ \uBD88\uB7EC\uC624\uAE30 \uB4F1 \uB2E4\uC591\uD55C \uC774\uC720\uB85C \uD30C\uC77C\
+  \uC744 \uC77D\uC2B5\uB2C8\uB2E4."
+title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
 ---
 
 {{< edit_this_page >}}

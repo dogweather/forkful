@@ -1,14 +1,26 @@
 ---
-title:                "生成随机数"
 aliases:
 - /zh/vba/generating-random-numbers/
-date:                  2024-02-01T21:54:15.045451-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "生成随机数"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/vba/generating-random-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:54:15.045451-07:00
+description: "\u5728 Visual Basic for Applications\uFF08VBA\uFF09\u4E2D\u751F\u6210\
+  \u968F\u673A\u6570\u53EF\u4EE5\u8BA9\u7A0B\u5E8F\u6A21\u62DF\u5177\u6709\u673A\u4F1A\
+  \u6216\u53EF\u53D8\u6027\u5143\u7D20\u7684\u8FC7\u7A0B\uFF0C\u4F8B\u5982\u63B7\u9AB0\
+  \u5B50\u6216\u62BD\u6837\u6570\u636E\u3002\u7A0B\u5E8F\u5458\u4F7F\u7528\u8FD9\u4E9B\
+  \u6280\u672F\u6765\u5F00\u53D1\u6A21\u578B\u3001\u6E38\u620F\u6216\u8005\u5728\u9884\
+  \u6D4B\u7ED3\u679C\u4E0D\u73B0\u5B9E\u6216\u4E0D\u90A3\u4E48\u6709\u7528\u7684\u60C5\
+  \u51B5\u4E0B\u7684\u6A21\u62DF\u3002"
+lastmod: 2024-02-18 23:08:58.976454
+model: gpt-4-0125-preview
+summary: "\u5728 Visual Basic for Applications\uFF08VBA\uFF09\u4E2D\u751F\u6210\u968F\
+  \u673A\u6570\u53EF\u4EE5\u8BA9\u7A0B\u5E8F\u6A21\u62DF\u5177\u6709\u673A\u4F1A\u6216\
+  \u53EF\u53D8\u6027\u5143\u7D20\u7684\u8FC7\u7A0B\uFF0C\u4F8B\u5982\u63B7\u9AB0\u5B50\
+  \u6216\u62BD\u6837\u6570\u636E\u3002\u7A0B\u5E8F\u5458\u4F7F\u7528\u8FD9\u4E9B\u6280\
+  \u672F\u6765\u5F00\u53D1\u6A21\u578B\u3001\u6E38\u620F\u6216\u8005\u5728\u9884\u6D4B\
+  \u7ED3\u679C\u4E0D\u73B0\u5B9E\u6216\u4E0D\u90A3\u4E48\u6709\u7528\u7684\u60C5\u51B5\
+  \u4E0B\u7684\u6A21\u62DF\u3002"
+title: "\u751F\u6210\u968F\u673A\u6570"
 ---
 
 {{< edit_this_page >}}

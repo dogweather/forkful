@@ -1,14 +1,23 @@
 ---
-title:                "テキストの検索と置換"
 aliases:
 - /ja/powershell/searching-and-replacing-text/
-date:                  2024-01-20T17:58:26.108661-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "テキストの検索と置換"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/powershell/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:26.108661-07:00
+description: "\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u30C6\u30AD\u30B9\u30C8\u3092\
+  \u63A2\u3057\u3066\u7F6E\u304D\u63DB\u3048\u308B\u3053\u3068\u3067\u3001\u30D5\u30A1\
+  \u30A4\u30EB\u3084\u30B3\u30FC\u30C9\u5185\u306E\u6587\u5B57\u5217\u3092\u7D20\u65E9\
+  \u304F\u5909\u66F4\u3057\u307E\u3059\u3002\u4F5C\u696D\u52B9\u7387\u3092\u4E0A\u3052\
+  \u308B\u305F\u3081\u3001\u30A8\u30E9\u30FC\u3092\u4F4E\u6E1B\u3059\u308B\u305F\u3081\
+  \u306B\u3053\u308C\u306F\u91CD\u8981\u3067\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.099475
+model: gpt-4-1106-preview
+summary: "\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u30C6\u30AD\u30B9\u30C8\u3092\
+  \u63A2\u3057\u3066\u7F6E\u304D\u63DB\u3048\u308B\u3053\u3068\u3067\u3001\u30D5\u30A1\
+  \u30A4\u30EB\u3084\u30B3\u30FC\u30C9\u5185\u306E\u6587\u5B57\u5217\u3092\u7D20\u65E9\
+  \u304F\u5909\u66F4\u3057\u307E\u3059\u3002\u4F5C\u696D\u52B9\u7387\u3092\u4E0A\u3052\
+  \u308B\u305F\u3081\u3001\u30A8\u30E9\u30FC\u3092\u4F4E\u6E1B\u3059\u308B\u305F\u3081\
+  \u306B\u3053\u308C\u306F\u91CD\u8981\u3067\u3059\u3002"
+title: "\u30C6\u30AD\u30B9\u30C8\u306E\u691C\u7D22\u3068\u7F6E\u63DB"
 ---
 
 {{< edit_this_page >}}

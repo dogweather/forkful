@@ -1,14 +1,31 @@
 ---
-title:                "JSON के साथ काम करना"
 aliases:
 - /hi/lua/working-with-json/
-date:                  2024-02-03T19:24:13.043047-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "JSON के साथ काम करना"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/lua/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:24:13.043047-07:00
+description: "Lua \u092E\u0947\u0902 JSON \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\
+  \u092E \u0915\u0930\u0928\u093E \u0936\u093E\u092E\u093F\u0932 \u0939\u0948 \u091C\
+  \u0947\u0938\u0928-\u0938\u094D\u0935\u0930\u0942\u092A\u093F\u0924 \u0938\u094D\
+  \u091F\u094D\u0930\u093F\u0902\u0917\u094D\u0938 \u0915\u094B Lua \u091F\u0947\u092C\
+  \u0932\u094D\u0938 \u092E\u0947\u0902 \u092A\u093E\u0930\u094D\u0938 \u0915\u0930\
+  \u0928\u093E \u0914\u0930 \u0907\u0938\u0915\u0947 \u0935\u093F\u092A\u0930\u0940\
+  \u0924, \u091C\u094B Lua \u0905\u0928\u0941\u092A\u094D\u0930\u092F\u094B\u0917\u094B\
+  \u0902 \u0914\u0930 \u0935\u0947\u092C \u0938\u0947\u0935\u093E\u0913\u0902 \u092F\
+  \u093E \u092C\u093E\u0939\u094D\u092F APIs\u2026"
+lastmod: 2024-02-18 23:09:03.614949
+model: gpt-4-0125-preview
+summary: "Lua \u092E\u0947\u0902 JSON \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\
+  \u092E \u0915\u0930\u0928\u093E \u0936\u093E\u092E\u093F\u0932 \u0939\u0948 \u091C\
+  \u0947\u0938\u0928-\u0938\u094D\u0935\u0930\u0942\u092A\u093F\u0924 \u0938\u094D\
+  \u091F\u094D\u0930\u093F\u0902\u0917\u094D\u0938 \u0915\u094B Lua \u091F\u0947\u092C\
+  \u0932\u094D\u0938 \u092E\u0947\u0902 \u092A\u093E\u0930\u094D\u0938 \u0915\u0930\
+  \u0928\u093E \u0914\u0930 \u0907\u0938\u0915\u0947 \u0935\u093F\u092A\u0930\u0940\
+  \u0924, \u091C\u094B Lua \u0905\u0928\u0941\u092A\u094D\u0930\u092F\u094B\u0917\u094B\
+  \u0902 \u0914\u0930 \u0935\u0947\u092C \u0938\u0947\u0935\u093E\u0913\u0902 \u092F\
+  \u093E \u092C\u093E\u0939\u094D\u092F APIs\u2026"
+title: "JSON \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\
+  \u093E"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,20 @@
 ---
-title:                "使用TOML"
 aliases:
 - /zh/ruby/working-with-toml/
-date:                  2024-01-26T04:26:00.781831-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/working-with-toml.md"
+date: 2024-01-26 04:26:00.781831-07:00
+description: "TOML \u662F\u4E00\u79CD\u914D\u7F6E\u6587\u4EF6\u683C\u5F0F\uFF0C\u7531\
+  \u4E8E\u5176\u6E05\u6670\u7684\u8BED\u4E49\u800C\u6613\u4E8E\u9605\u8BFB\u3002\u7A0B\
+  \u5E8F\u5458\u4F7F\u7528 TOML \u6765\u7BA1\u7406\u5E94\u7528\u914D\u7F6E\u548C\u6570\
+  \u636E\u5E8F\u5217\u5316\uFF0C\u65E0\u9700 XML \u7684\u7E41\u91CD\u6216 YAML \u7684\
+  \u602A\u7656\u3002"
+lastmod: 2024-02-18 23:08:59.660909
+model: gpt-4-0125-preview
+summary: "TOML \u662F\u4E00\u79CD\u914D\u7F6E\u6587\u4EF6\u683C\u5F0F\uFF0C\u7531\u4E8E\
+  \u5176\u6E05\u6670\u7684\u8BED\u4E49\u800C\u6613\u4E8E\u9605\u8BFB\u3002\u7A0B\u5E8F\
+  \u5458\u4F7F\u7528 TOML \u6765\u7BA1\u7406\u5E94\u7528\u914D\u7F6E\u548C\u6570\u636E\
+  \u5E8F\u5217\u5316\uFF0C\u65E0\u9700 XML \u7684\u7E41\u91CD\u6216 YAML \u7684\u602A\
+  \u7656\u3002"
+title: "\u4F7F\u7528TOML"
 ---
 
 {{< edit_this_page >}}

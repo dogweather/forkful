@@ -1,14 +1,17 @@
 ---
-title:                "Quotes uit een string verwijderen"
 aliases:
 - /nl/go/removing-quotes-from-a-string/
-date:                  2024-02-03T18:07:06.916991-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Quotes uit een string verwijderen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:07:06.916991-07:00
+description: "Het verwijderen van aanhalingstekens uit een string in Go gaat over\
+  \ het elimineren van de leidende en sluitende aanhalingstekens (`\"` of `'`) van\
+  \ een\u2026"
+lastmod: 2024-02-18 23:09:01.324749
+model: gpt-4-0125-preview
+summary: "Het verwijderen van aanhalingstekens uit een string in Go gaat over het\
+  \ elimineren van de leidende en sluitende aanhalingstekens (`\"` of `'`) van een\u2026"
+title: Quotes uit een string verwijderen
 ---
 
 {{< edit_this_page >}}

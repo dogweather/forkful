@@ -1,13 +1,16 @@
 ---
-title:                "Gestion des erreurs"
 aliases:
 - /fr/haskell/handling-errors/
-date:                  2024-01-26T00:54:00.536647-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Gestion des erreurs"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/handling-errors.md"
+date: 2024-01-26 00:54:00.536647-07:00
+description: "La gestion des erreurs en programmation consiste \xE0 g\xE9rer l'inattendu\u2014\
+  les choses qui peuvent mal tourner. Les programmeurs le font pour s'assurer que\
+  \ leurs\u2026"
+lastmod: 2024-02-18 23:09:08.883394
+model: gpt-4-1106-preview
+summary: "La gestion des erreurs en programmation consiste \xE0 g\xE9rer l'inattendu\u2014\
+  les choses qui peuvent mal tourner. Les programmeurs le font pour s'assurer que\
+  \ leurs\u2026"
+title: Gestion des erreurs
 ---
 
 {{< edit_this_page >}}

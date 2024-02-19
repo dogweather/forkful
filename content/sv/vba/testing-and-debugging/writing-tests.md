@@ -1,14 +1,18 @@
 ---
-title:                "Skriva tester"
 aliases:
 - /sv/vba/writing-tests/
-date:                  2024-02-01T22:08:56.776142-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriva tester"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/writing-tests.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:08:56.776142-07:00
+description: "Att skriva tester inom programmering inneb\xE4r att skapa specifika\
+  \ procedurer f\xF6r att validera funktionaliteten och prestandan hos dina kodsegment,\
+  \ f\xF6r att\u2026"
+lastmod: 2024-02-18 23:08:51.630546
+model: gpt-4-0125-preview
+summary: "Att skriva tester inom programmering inneb\xE4r att skapa specifika procedurer\
+  \ f\xF6r att validera funktionaliteten och prestandan hos dina kodsegment, f\xF6\
+  r att\u2026"
+title: Skriva tester
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng vỏ tương tác (REPL)"
 aliases:
 - /vi/java/using-an-interactive-shell-repl/
-date:                  2024-01-28T22:09:44.621354-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng vỏ tương tác (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/java/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:44.621354-07:00
+description: "REPL (Read-Eval-Print Loop - V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1\
+  nh gi\xE1-In) l\xE0 m\u1ED9t shell t\u01B0\u01A1ng t\xE1c x\u1EED l\xFD \u0111\u01A1\
+  n l\u1EBB nh\u1EADp t\u1EEB ng\u01B0\u1EDDi d\xF9ng, th\u1EF1c thi m\xE3 l\u1EC7\
+  nh v\xE0 tr\u1EA3 v\u1EC1 k\u1EBFt qu\u1EA3. L\u1EADp\u2026"
+lastmod: 2024-02-18 23:08:50.559046
+model: gpt-4-0125-preview
+summary: "REPL (Read-Eval-Print Loop - V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh\
+  \ gi\xE1-In) l\xE0 m\u1ED9t shell t\u01B0\u01A1ng t\xE1c x\u1EED l\xFD \u0111\u01A1\
+  n l\u1EBB nh\u1EADp t\u1EEB ng\u01B0\u1EDDi d\xF9ng, th\u1EF1c thi m\xE3 l\u1EC7\
+  nh v\xE0 tr\u1EA3 v\u1EC1 k\u1EBFt qu\u1EA3. L\u1EADp\u2026"
+title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,16 @@
 ---
-title:                "Quotes verwijderen uit een string"
 aliases:
 - /nl/javascript/removing-quotes-from-a-string/
-date:                  2024-01-28T22:06:38.804383-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Quotes verwijderen uit een string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/javascript/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:06:38.804383-07:00
+description: "Aanhalingstekens uit een string verwijderen betekent dat je afkomt van\
+  \ die vervelende aanhalingstekens die je code in de war kunnen brengen, vooral\u2026"
+lastmod: 2024-02-18 23:09:02.262426
+model: gpt-4-0125-preview
+summary: "Aanhalingstekens uit een string verwijderen betekent dat je afkomt van die\
+  \ vervelende aanhalingstekens die je code in de war kunnen brengen, vooral\u2026"
+title: Quotes verwijderen uit een string
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,18 @@
 ---
-title:                "Bruke associative tabeller"
 aliases:
 - /no/c-sharp/using-associative-arrays/
-date:                  2024-01-30T19:10:44.325808-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke associative tabeller"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:44.325808-07:00
+description: "Assosiative tabeller, eller ordb\xF8ker i C#, lar deg lagre og h\xE5\
+  ndtere par av n\xF8kler og verdier. De er din go-to n\xE5r du trenger \xE5 hente\
+  \ verdier raskt basert\u2026"
+lastmod: 2024-02-18 23:08:53.886908
+model: gpt-4-0125-preview
+summary: "Assosiative tabeller, eller ordb\xF8ker i C#, lar deg lagre og h\xE5ndtere\
+  \ par av n\xF8kler og verdier. De er din go-to n\xE5r du trenger \xE5 hente verdier\
+  \ raskt basert\u2026"
+title: Bruke associative tabeller
 ---
 
 {{< edit_this_page >}}

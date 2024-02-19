@@ -1,13 +1,16 @@
 ---
-title:                "Zaokrąglanie liczb"
 aliases:
 - /pl/php/rounding-numbers/
-date:                  2024-01-26T03:46:10.530588-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Zaokrąglanie liczb"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/rounding-numbers.md"
+date: 2024-01-26 03:46:10.530588-07:00
+description: "Zaokr\u0105glanie liczb oznacza ucinanie miejsc dziesi\u0119tnych do\
+  \ okre\u015Blonej precyzji, cz\u0119sto do liczb ca\u0142kowitych. Programi\u015B\
+  ci zaokr\u0105glaj\u0105, aby upraszcza\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.689382
+model: gpt-4-0125-preview
+summary: "Zaokr\u0105glanie liczb oznacza ucinanie miejsc dziesi\u0119tnych do okre\u015B\
+  lonej precyzji, cz\u0119sto do liczb ca\u0142kowitych. Programi\u015Bci zaokr\u0105\
+  glaj\u0105, aby upraszcza\u0107\u2026"
+title: "Zaokr\u0105glanie liczb"
 ---
 
 {{< edit_this_page >}}

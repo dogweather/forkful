@@ -1,14 +1,18 @@
 ---
-title:                "Gör om en sträng till versaler"
 aliases:
 - /sv/java/capitalizing-a-string/
-date:                  2024-02-03T19:05:45.795609-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gör om en sträng till versaler"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:45.795609-07:00
+description: "Att g\xF6ra f\xF6rsta bokstaven i varje ord i en str\xE4ng till versal\
+  \ inneb\xE4r att man modifierar f\xF6rsta bokstaven till att vara stor bokstav medan\
+  \ resten g\xF6r man\u2026"
+lastmod: 2024-02-18 23:08:51.653509
+model: gpt-4-0125-preview
+summary: "Att g\xF6ra f\xF6rsta bokstaven i varje ord i en str\xE4ng till versal inneb\xE4\
+  r att man modifierar f\xF6rsta bokstaven till att vara stor bokstav medan resten\
+  \ g\xF6r man\u2026"
+title: "G\xF6r om en str\xE4ng till versaler"
 ---
 
 {{< edit_this_page >}}

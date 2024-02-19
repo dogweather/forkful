@@ -1,13 +1,16 @@
 ---
-title:                "Wyszukiwanie i zamiana tekstu"
 aliases:
 - /pl/powershell/searching-and-replacing-text/
-date:                  2024-01-20T17:58:51.640634-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wyszukiwanie i zamiana tekstu"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/searching-and-replacing-text.md"
+date: 2024-01-20 17:58:51.640634-07:00
+description: "Szukanie i zamiana tekstu to podstawy edycji - znajdujesz ci\u0105gi\
+  \ znak\xF3w i zamieniasz je na co\u015B innego. Programi\u015Bci robi\u0105 to,\
+  \ aby szybko aktualizowa\u0107 kod,\u2026"
+lastmod: 2024-02-18 23:08:49.812210
+model: gpt-4-1106-preview
+summary: "Szukanie i zamiana tekstu to podstawy edycji - znajdujesz ci\u0105gi znak\xF3\
+  w i zamieniasz je na co\u015B innego. Programi\u015Bci robi\u0105 to, aby szybko\
+  \ aktualizowa\u0107 kod,\u2026"
+title: Wyszukiwanie i zamiana tekstu
 ---
 
 {{< edit_this_page >}}

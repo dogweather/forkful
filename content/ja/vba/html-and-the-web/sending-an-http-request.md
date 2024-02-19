@@ -1,14 +1,26 @@
 ---
-title:                "HTTPリクエストの送信"
 aliases:
 - /ja/vba/sending-an-http-request/
-date:                  2024-02-01T22:02:13.326794-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTTPリクエストの送信"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/vba/sending-an-http-request.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:02:13.326794-07:00
+description: "Visual Basic for Applications (VBA) \u3067\u306E HTTP \u30EA\u30AF\u30A8\
+  \u30B9\u30C8\u306E\u9001\u4FE1\u306F\u3001HTTP \u4E0A\u3067\u30EA\u30AF\u30A8\u30B9\
+  \u30C8\u3092\u884C\u306A\u3063\u3066 Web \u30EA\u30BD\u30FC\u30B9\u3084 Web \u30B5\
+  \u30FC\u30D3\u30B9\u306B\u30D7\u30ED\u30B0\u30E9\u30E0\u306B\u3088\u3063\u3066\u30A2\
+  \u30AF\u30BB\u30B9\u3059\u308B\u3053\u3068\u3092\u610F\u5473\u3057\u307E\u3059\u3002\
+  \u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\u30C7\u30FC\u30BF\u3092\u53D6\u5F97\
+  \u3057\u305F\u308A\u3001\u30AA\u30F3\u30E9\u30A4\u30F3 API\u2026"
+lastmod: 2024-02-18 23:08:54.757481
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications (VBA) \u3067\u306E HTTP \u30EA\u30AF\u30A8\
+  \u30B9\u30C8\u306E\u9001\u4FE1\u306F\u3001HTTP \u4E0A\u3067\u30EA\u30AF\u30A8\u30B9\
+  \u30C8\u3092\u884C\u306A\u3063\u3066 Web \u30EA\u30BD\u30FC\u30B9\u3084 Web \u30B5\
+  \u30FC\u30D3\u30B9\u306B\u30D7\u30ED\u30B0\u30E9\u30E0\u306B\u3088\u3063\u3066\u30A2\
+  \u30AF\u30BB\u30B9\u3059\u308B\u3053\u3068\u3092\u610F\u5473\u3057\u307E\u3059\u3002\
+  \u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\u30C7\u30FC\u30BF\u3092\u53D6\u5F97\
+  \u3057\u305F\u308A\u3001\u30AA\u30F3\u30E9\u30A4\u30F3 API\u2026"
+title: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u306E\u9001\u4FE1"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Merkkijonosta lainausmerkkien poistaminen"
 aliases:
 - /fi/typescript/removing-quotes-from-a-string/
-date:                  2024-01-26T03:42:25.143167-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonosta lainausmerkkien poistaminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:42:25.143167-07:00
+description: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa ymp\xE4r\xF6ivien\
+  \ yksitt\xE4isten (`'`) tai kaksinkertaisten (`\"`) lainausmerkkien poistamista,\
+  \ jotka\u2026"
+lastmod: 2024-02-18 23:09:07.305858
+model: gpt-4-0125-preview
+summary: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa ymp\xE4r\xF6ivien yksitt\xE4\
+  isten (`'`) tai kaksinkertaisten (`\"`) lainausmerkkien poistamista, jotka\u2026"
+title: Merkkijonosta lainausmerkkien poistaminen
 ---
 
 {{< edit_this_page >}}

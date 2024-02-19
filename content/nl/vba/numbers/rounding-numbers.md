@@ -1,14 +1,16 @@
 ---
-title:                "Afronden van getallen"
 aliases:
 - /nl/vba/rounding-numbers/
-date:                  2024-02-01T22:01:14.240737-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Afronden van getallen"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/vba/rounding-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:14.240737-07:00
+description: "Afronden van getallen in programmeren gaat over het benaderen van een\
+  \ getal tot het dichtstbijzijnde gehele getal of tot een bepaald aantal decimalen.\u2026"
+lastmod: 2024-02-18 23:09:01.660042
+model: gpt-4-0125-preview
+summary: "Afronden van getallen in programmeren gaat over het benaderen van een getal\
+  \ tot het dichtstbijzijnde gehele getal of tot een bepaald aantal decimalen.\u2026"
+title: Afronden van getallen
 ---
 
 {{< edit_this_page >}}

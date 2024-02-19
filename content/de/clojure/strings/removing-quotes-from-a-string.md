@@ -1,13 +1,16 @@
 ---
-title:                "Anführungszeichen aus einem String entfernen"
 aliases:
 - /de/clojure/removing-quotes-from-a-string/
-date:                  2024-01-26T03:38:45.842793-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Anführungszeichen aus einem String entfernen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:38:45.842793-07:00
+description: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, sich\
+  \ von diesen l\xE4stigen doppelten oder einfachen Anf\xFChrungszeichen zu befreien,\
+  \ die Ihren\u2026"
+lastmod: 2024-02-18 23:09:04.494244
+model: gpt-4-0125-preview
+summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, sich von\
+  \ diesen l\xE4stigen doppelten oder einfachen Anf\xFChrungszeichen zu befreien,\
+  \ die Ihren\u2026"
+title: "Anf\xFChrungszeichen aus einem String entfernen"
 ---
 
 {{< edit_this_page >}}

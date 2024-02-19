@@ -1,13 +1,16 @@
 ---
-title:                "Hämta en webbsida"
 aliases:
 - /sv/python/downloading-a-web-page/
-date:                  2024-01-20T17:44:45.834180-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Hämta en webbsida"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/downloading-a-web-page.md"
+date: 2024-01-20 17:44:45.834180-07:00
+description: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta HTML-koden fr\xE5\
+  n en server. Programmerare g\xF6r detta f\xF6r att analysera inneh\xE5llet, skrapa\
+  \ data eller testa\u2026"
+lastmod: 2024-02-18 23:08:51.420661
+model: gpt-4-1106-preview
+summary: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta HTML-koden fr\xE5n en\
+  \ server. Programmerare g\xF6r detta f\xF6r att analysera inneh\xE5llet, skrapa\
+  \ data eller testa\u2026"
+title: "H\xE4mta en webbsida"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Analysering av HTML"
 aliases:
 - /no/c/parsing-html/
-date:                  2024-02-03T17:59:54.287380-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analysering av HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:54.287380-07:00
+description: "Parsing av HTML i C inneb\xE6rer analyse av HTML-dokumenter for effektivt\
+  \ \xE5 trekke ut data, struktur eller spesifikke deler, ofte som et forstadium til\u2026"
+lastmod: 2024-02-18 23:08:54.391793
+model: gpt-4-0125-preview
+summary: "Parsing av HTML i C inneb\xE6rer analyse av HTML-dokumenter for effektivt\
+  \ \xE5 trekke ut data, struktur eller spesifikke deler, ofte som et forstadium til\u2026"
+title: Analysering av HTML
 ---
 
 {{< edit_this_page >}}

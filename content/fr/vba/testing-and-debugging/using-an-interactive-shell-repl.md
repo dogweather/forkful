@@ -1,14 +1,18 @@
 ---
-title:                "Utiliser un shell interactif (REPL)"
 aliases:
 - /fr/vba/using-an-interactive-shell-repl/
-date:                  2024-02-01T22:03:42.747543-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utiliser un shell interactif (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/vba/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:42.747543-07:00
+description: "Un shell interactif, ou boucle de lecture-\xE9valuation-affichage (REPL\
+  \ pour Read-Eval-Print Loop), permet aux utilisateurs de saisir des commandes, de\
+  \ les\u2026"
+lastmod: 2024-02-18 23:09:08.580626
+model: gpt-4-0125-preview
+summary: "Un shell interactif, ou boucle de lecture-\xE9valuation-affichage (REPL\
+  \ pour Read-Eval-Print Loop), permet aux utilisateurs de saisir des commandes, de\
+  \ les\u2026"
+title: Utiliser un shell interactif (REPL)
 ---
 
 {{< edit_this_page >}}

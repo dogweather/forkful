@@ -1,14 +1,16 @@
 ---
-title:                "Verifica se una directory esiste"
 aliases:
 - /it/clojure/checking-if-a-directory-exists/
-date:                  2024-02-03T19:07:15.497945-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verifica se una directory esiste"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:07:15.497945-07:00
+description: "Verificare se una directory esiste in Clojure comporta la verifica della\
+  \ presenza di una directory del sistema di file all'interno della tua applicazione\u2026"
+lastmod: 2024-02-18 23:08:55.574442
+model: gpt-4-0125-preview
+summary: "Verificare se una directory esiste in Clojure comporta la verifica della\
+  \ presenza di una directory del sistema di file all'interno della tua applicazione\u2026"
+title: Verifica se una directory esiste
 ---
 
 {{< edit_this_page >}}

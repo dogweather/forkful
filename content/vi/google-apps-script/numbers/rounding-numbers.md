@@ -1,14 +1,21 @@
 ---
-title:                "Làm tròn số"
 aliases:
 - /vi/google-apps-script/rounding-numbers/
-date:                  2024-02-01T22:01:29.986468-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm tròn số"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/google-apps-script/rounding-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:29.986468-07:00
+description: "L\xE0m tr\xF2n s\u1ED1, m\u1ED9t kh\xE1i ni\u1EC7m c\u01A1 b\u1EA3n\
+  \ trong l\u1EADp tr\xECnh m\xE1y t\xEDnh, bao g\u1ED3m vi\u1EC7c \u0111i\u1EC1u\
+  \ ch\u1EC9nh m\u1ED9t s\u1ED1 \u0111\u1EC3 g\u1EA7n v\u1EDBi s\u1ED1 nguy\xEAn ho\u1EB7\
+  c \u0111\u1EBFn m\u1ED9t s\u1ED1 l\u01B0\u1EE3ng ch\u1ED7 th\u1EADp ph\xE2n c\u1EE5\
+  \u2026"
+lastmod: 2024-02-18 23:08:50.213512
+model: gpt-4-0125-preview
+summary: "L\xE0m tr\xF2n s\u1ED1, m\u1ED9t kh\xE1i ni\u1EC7m c\u01A1 b\u1EA3n trong\
+  \ l\u1EADp tr\xECnh m\xE1y t\xEDnh, bao g\u1ED3m vi\u1EC7c \u0111i\u1EC1u ch\u1EC9\
+  nh m\u1ED9t s\u1ED1 \u0111\u1EC3 g\u1EA7n v\u1EDBi s\u1ED1 nguy\xEAn ho\u1EB7c \u0111\
+  \u1EBFn m\u1ED9t s\u1ED1 l\u01B0\u1EE3ng ch\u1ED7 th\u1EADp ph\xE2n c\u1EE5\u2026"
+title: "L\xE0m tr\xF2n s\u1ED1"
 ---
 
 {{< edit_this_page >}}

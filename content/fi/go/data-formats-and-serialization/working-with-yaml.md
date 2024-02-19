@@ -1,14 +1,18 @@
 ---
-title:                "Työskentely YAML:n kanssa"
 aliases:
 - /fi/go/working-with-yaml/
-date:                  2024-02-03T18:13:55.325983-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Työskentely YAML:n kanssa"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/working-with-yaml.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:13:55.325983-07:00
+description: "YAML:n k\xE4sittely Go:ssa k\xE4sitt\xE4\xE4 YAML (YAML Ain't Markup\
+  \ Language) -tiedostojen j\xE4sent\xE4misen Go:n tietorakenteisiin ja p\xE4invastoin.\
+  \ Ohjelmoijat tekev\xE4t\u2026"
+lastmod: 2024-02-18 23:09:07.109065
+model: gpt-4-0125-preview
+summary: "YAML:n k\xE4sittely Go:ssa k\xE4sitt\xE4\xE4 YAML (YAML Ain't Markup Language)\
+  \ -tiedostojen j\xE4sent\xE4misen Go:n tietorakenteisiin ja p\xE4invastoin. Ohjelmoijat\
+  \ tekev\xE4t\u2026"
+title: "Ty\xF6skentely YAML:n kanssa"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,17 @@
 ---
-title:                "Analysering av HTML"
 aliases:
 - /no/google-apps-script/parsing-html/
-date:                  2024-02-01T21:56:44.287959-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analysering av HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/google-apps-script/parsing-html.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:56:44.287959-07:00
+description: "Parsing av HTML i Google Apps Script inneb\xE6rer \xE5 ekstrahere data\
+  \ fra HTML-innhold, som er spesielt nyttig n\xE5r man interagerer med nettsider\
+  \ eller\u2026"
+lastmod: 2024-02-18 23:08:53.478261
+model: gpt-4-0125-preview
+summary: "Parsing av HTML i Google Apps Script inneb\xE6rer \xE5 ekstrahere data fra\
+  \ HTML-innhold, som er spesielt nyttig n\xE5r man interagerer med nettsider eller\u2026"
+title: Analysering av HTML
 ---
 
 {{< edit_this_page >}}

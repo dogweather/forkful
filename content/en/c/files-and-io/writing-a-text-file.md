@@ -1,12 +1,15 @@
 ---
-title:                "Writing a text file"
 aliases:
 - /en/c/writing-a-text-file/
-date:                  2024-02-03T17:50:12.857742-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Writing a text file"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/writing-a-text-file.md"
+date: 2024-02-03 17:50:12.857742-07:00
+description: "Writing a text file in C involves creating or opening a file in write\
+  \ mode and then using C's file I/O functions to save text data to it. Programmers\
+  \ do\u2026"
+lastmod: 2024-02-18 23:09:11.540507
+model: gpt-4-0125-preview
+summary: "Writing a text file in C involves creating or opening a file in write mode\
+  \ and then using C's file I/O functions to save text data to it. Programmers do\u2026"
+title: Writing a text file
 ---
 
 {{< edit_this_page >}}

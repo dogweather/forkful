@@ -1,14 +1,18 @@
 ---
-title:                "Gör om en sträng till versaler"
 aliases:
 - /sv/cpp/capitalizing-a-string/
-date:                  2024-02-03T19:05:14.842233-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gör om en sträng till versaler"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:14.842233-07:00
+description: "Att g\xF6ra en str\xE4ngs f\xF6rsta bokstav i varje ord versal handlar\
+  \ om att konvertera den initiala karakt\xE4ren av varje ord i str\xE4ngen till versal\
+  \ om den \xE4r i\u2026"
+lastmod: 2024-02-18 23:08:52.067629
+model: gpt-4-0125-preview
+summary: "Att g\xF6ra en str\xE4ngs f\xF6rsta bokstav i varje ord versal handlar om\
+  \ att konvertera den initiala karakt\xE4ren av varje ord i str\xE4ngen till versal\
+  \ om den \xE4r i\u2026"
+title: "G\xF6r om en str\xE4ng till versaler"
 ---
 
 {{< edit_this_page >}}

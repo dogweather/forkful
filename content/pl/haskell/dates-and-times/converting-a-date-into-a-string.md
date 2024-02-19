@@ -1,13 +1,16 @@
 ---
-title:                "Konwersja daty na łańcuch znaków"
 aliases:
 - /pl/haskell/converting-a-date-into-a-string/
-date:                  2024-01-20T17:36:41.610940-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konwersja daty na łańcuch znaków"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:36:41.610940-07:00
+description: "Co i dlaczego? Konwersja daty na tekst to proces zmiany formatu daty\
+  \ na \u0142a\u0144cuch znak\xF3w. Programi\u015Bci robi\u0105 to, by daty by\u0142\
+  y czytelne dla ludzi i by mo\u017Cna\u2026"
+lastmod: 2024-02-18 23:08:49.664394
+model: gpt-4-1106-preview
+summary: "Co i dlaczego? Konwersja daty na tekst to proces zmiany formatu daty na\
+  \ \u0142a\u0144cuch znak\xF3w. Programi\u015Bci robi\u0105 to, by daty by\u0142\
+  y czytelne dla ludzi i by mo\u017Cna\u2026"
+title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 ---
 
 {{< edit_this_page >}}

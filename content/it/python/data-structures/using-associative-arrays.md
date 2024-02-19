@@ -1,15 +1,16 @@
 ---
-title:                "Utilizzo di array associativi"
 aliases:
 - /it/python/using-associative-arrays/
-date:                  2024-01-30T19:12:40.213462-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di array associativi"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/python/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:40.213462-07:00
+description: "Gli array associativi, noti in Python come dizionari, mappano chiavi\
+  \ a valori, rendendo facile recuperare, modificare o tenere traccia dei dati mediante\u2026"
+lastmod: 2024-02-18 23:08:55.514464
+model: gpt-4-0125-preview
+summary: "Gli array associativi, noti in Python come dizionari, mappano chiavi a valori,\
+  \ rendendo facile recuperare, modificare o tenere traccia dei dati mediante\u2026"
+title: Utilizzo di array associativi
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Genererer tilfeldige tall"
 aliases:
 - /no/c/generating-random-numbers/
-date:                  2024-02-03T17:57:29.467098-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Genererer tilfeldige tall"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/generating-random-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:29.467098-07:00
+description: "\xC5 generere tilfeldige tall i C inneb\xE6rer \xE5 skape verdier som\
+  \ er uforutsigbare og f\xF8lger en spesifikk fordeling, som uniform eller normal.\
+  \ Denne evnen er\u2026"
+lastmod: 2024-02-18 23:08:54.389751
+model: gpt-4-0125-preview
+summary: "\xC5 generere tilfeldige tall i C inneb\xE6rer \xE5 skape verdier som er\
+  \ uforutsigbare og f\xF8lger en spesifikk fordeling, som uniform eller normal. Denne\
+  \ evnen er\u2026"
+title: Genererer tilfeldige tall
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Lendo argumentos da linha de comando"
 aliases:
 - /pt/elm/reading-command-line-arguments/
-date:                  2024-01-20T17:55:59.018003-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lendo argumentos da linha de comando"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:59.018003-07:00
+description: "Ler argumentos da linha de comando \xE9 o processo de capturar dados\
+  \ passados ao executar um programa. Programadores fazem isso para permitir que seus\u2026"
+lastmod: 2024-02-18 23:08:58.075178
+model: gpt-4-1106-preview
+summary: "Ler argumentos da linha de comando \xE9 o processo de capturar dados passados\
+  \ ao executar um programa. Programadores fazem isso para permitir que seus\u2026"
+title: Lendo argumentos da linha de comando
 ---
 
 {{< edit_this_page >}}

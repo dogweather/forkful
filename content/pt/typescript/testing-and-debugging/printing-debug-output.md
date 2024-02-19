@@ -1,13 +1,16 @@
 ---
-title:                "Exibindo saídas de depuração"
 aliases:
 - /pt/typescript/printing-debug-output/
-date:                  2024-01-20T17:53:47.711536-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Exibindo saídas de depuração"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/printing-debug-output.md"
+date: 2024-01-20 17:53:47.711536-07:00
+description: "Imprimir sa\xEDdas de depura\xE7\xE3o \xE9 soltar info \xFAtil no console\
+  \ que ajuda a entender o que seu c\xF3digo est\xE1 aprontando. Programadores fazem\
+  \ isso pra desenrolar\u2026"
+lastmod: 2024-02-18 23:08:57.887527
+model: gpt-4-1106-preview
+summary: "Imprimir sa\xEDdas de depura\xE7\xE3o \xE9 soltar info \xFAtil no console\
+  \ que ajuda a entender o que seu c\xF3digo est\xE1 aprontando. Programadores fazem\
+  \ isso pra desenrolar\u2026"
+title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

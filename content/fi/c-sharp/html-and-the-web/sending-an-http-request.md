@@ -1,13 +1,16 @@
 ---
-title:                "HTTP-pyynnön lähettäminen"
 aliases:
 - /fi/c-sharp/sending-an-http-request/
-date:                  2024-01-20T17:59:12.786156-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-pyynnön lähettäminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/sending-an-http-request.md"
+date: 2024-01-20 17:59:12.786156-07:00
+description: "HTTP-pyynt\xF6jen l\xE4hett\xE4minen on tapa kommunikoida verkkopalveluiden\
+  \ kanssa. Koodarit tekev\xE4t t\xE4m\xE4n hakeakseen tietoja tai l\xE4hett\xE4\xE4\
+  kseen niit\xE4, ja usein\u2026"
+lastmod: 2024-02-18 23:09:07.617245
+model: gpt-4-1106-preview
+summary: "HTTP-pyynt\xF6jen l\xE4hett\xE4minen on tapa kommunikoida verkkopalveluiden\
+  \ kanssa. Koodarit tekev\xE4t t\xE4m\xE4n hakeakseen tietoja tai l\xE4hett\xE4\xE4\
+  kseen niit\xE4, ja usein\u2026"
+title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 ---
 
 {{< edit_this_page >}}

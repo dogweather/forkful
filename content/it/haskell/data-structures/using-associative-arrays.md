@@ -1,16 +1,17 @@
 ---
-title:                "Utilizzo di array associativi"
 aliases:
 - /it/haskell/using-associative-arrays/
-date:                  2024-01-30T19:11:28.680730-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilizzo di array associativi"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, dogweather, reviewed
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, dogweather, reviewed
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:11:28.680730-07:00
+description: "Gli array associativi, o dizionari, in Haskell riguardano principalmente\
+  \ la mappatura di chiavi a valori per una ricerca veloce e una gestione efficiente\u2026"
+lastmod: 2024-02-18 23:08:55.923383
+model: gpt-4-0125-preview
+summary: "Gli array associativi, o dizionari, in Haskell riguardano principalmente\
+  \ la mappatura di chiavi a valori per una ricerca veloce e una gestione efficiente\u2026"
+title: Utilizzo di array associativi
 ---
 
 {{< edit_this_page >}}

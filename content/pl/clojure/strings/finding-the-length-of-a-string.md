@@ -1,13 +1,18 @@
 ---
-title:                "Znalezienie długości ciągu znaków"
 aliases:
 - /pl/clojure/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:18.254753-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Znalezienie długości ciągu znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:18.254753-07:00
+description: "D\u0142ugo\u015B\u0107 \u0142a\u0144cucha to liczba znak\xF3w w tek\u015B\
+  cie. Programi\u015Bci licz\u0105 j\u0105, by zarz\u0105dza\u0107 danymi tekstowymi\
+  \ \u2013 np. sprawdzi\u0107, czy has\u0142o ma odpowiedni\u0105 d\u0142ugo\u015B\
+  \u0107 lub\u2026"
+lastmod: 2024-02-18 23:08:49.256054
+model: gpt-4-1106-preview
+summary: "D\u0142ugo\u015B\u0107 \u0142a\u0144cucha to liczba znak\xF3w w tek\u015B\
+  cie. Programi\u015Bci licz\u0105 j\u0105, by zarz\u0105dza\u0107 danymi tekstowymi\
+  \ \u2013 np. sprawdzi\u0107, czy has\u0142o ma odpowiedni\u0105 d\u0142ugo\u015B\
+  \u0107 lub\u2026"
+title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 ---
 
 {{< edit_this_page >}}

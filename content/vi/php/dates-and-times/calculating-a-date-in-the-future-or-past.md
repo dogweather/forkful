@@ -1,15 +1,20 @@
 ---
-title:                "Tính toán ngày trong tương lai hoặc quá khứ"
 aliases:
 - /vi/php/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-28T21:56:05.941217-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tính toán ngày trong tương lai hoặc quá khứ"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/php/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:05.941217-07:00
+description: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9\
+  \ c\xF3 ngh\u0129a l\xE0 t\xECm ki\u1EBFm m\u1ED9t ng\xE0y tr\u01B0\u1EDBc ho\u1EB7\
+  c sau m\u1ED9t th\u1EDDi \u0111i\u1EC3m c\u1EE5 th\u1EC3. C\xE1c l\u1EADp tr\xEC\
+  nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y cho c\xE1c\u2026"
+lastmod: 2024-02-18 23:08:50.805812
+model: gpt-4-0125-preview
+summary: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9\
+  \ c\xF3 ngh\u0129a l\xE0 t\xECm ki\u1EBFm m\u1ED9t ng\xE0y tr\u01B0\u1EDBc ho\u1EB7\
+  c sau m\u1ED9t th\u1EDDi \u0111i\u1EC3m c\u1EE5 th\u1EC3. C\xE1c l\u1EADp tr\xEC\
+  nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y cho c\xE1c\u2026"
+title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
 ---
 
 {{< edit_this_page >}}

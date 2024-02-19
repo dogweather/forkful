@@ -1,14 +1,17 @@
 ---
-title:                "Skrive tester"
 aliases:
 - /no/ruby/writing-tests/
-date:                  2024-02-03T19:31:58.148648-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skrive tester"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:58.148648-07:00
+description: "Testing i Ruby handler om \xE5 verifisere at koden din oppf\xF8rer seg\
+  \ som forventet under ulike forhold. Programmerere skriver tester for \xE5 sikre\
+  \ korrekthet,\u2026"
+lastmod: 2024-02-18 23:08:54.441834
+model: gpt-4-0125-preview
+summary: "Testing i Ruby handler om \xE5 verifisere at koden din oppf\xF8rer seg som\
+  \ forventet under ulike forhold. Programmerere skriver tester for \xE5 sikre korrekthet,\u2026"
+title: Skrive tester
 ---
 
 {{< edit_this_page >}}

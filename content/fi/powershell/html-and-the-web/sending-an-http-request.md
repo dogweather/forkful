@@ -1,13 +1,16 @@
 ---
-title:                "HTTP-pyynnön lähettäminen"
 aliases:
 - /fi/powershell/sending-an-http-request/
-date:                  2024-01-20T18:00:44.528628-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-pyynnön lähettäminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/sending-an-http-request.md"
+date: 2024-01-20 18:00:44.528628-07:00
+description: "HTTP-pyynt\xF6jen l\xE4hett\xE4minen on tapa kommunikoida verkon yli\
+  \ olevien palvelimien kanssa, esimerkiksi noutaaksesi dataa tai l\xE4hetett\xE4\
+  ess\xE4si sit\xE4.\u2026"
+lastmod: 2024-02-18 23:09:07.849001
+model: gpt-4-1106-preview
+summary: "HTTP-pyynt\xF6jen l\xE4hett\xE4minen on tapa kommunikoida verkon yli olevien\
+  \ palvelimien kanssa, esimerkiksi noutaaksesi dataa tai l\xE4hetett\xE4ess\xE4si\
+  \ sit\xE4.\u2026"
+title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 ---
 
 {{< edit_this_page >}}

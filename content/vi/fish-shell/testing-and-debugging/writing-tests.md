@@ -1,15 +1,22 @@
 ---
-title:                "Viết các bài kiểm tra"
 aliases:
 - /vi/fish-shell/writing-tests/
-date:                  2024-01-28T22:13:46.216228-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Viết các bài kiểm tra"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/writing-tests.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:13:46.216228-07:00
+description: "Vi\u1EBFt ki\u1EC3m th\u1EED l\xE0 t\u1EA1o ra nh\u1EEFng b\xE0i ki\u1EC3\
+  m tra nh\u1ECF \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o r\u1EB1ng m\xE3 c\u1EE7a b\u1EA1\
+  n ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i. L\u1EADp tr\xECnh vi\xEA\
+  n vi\u1EBFt ki\u1EC3m th\u1EED \u0111\u1EC3 b\u1EAFt l\u1ED7i s\u1EDBm, ti\u1EBF\
+  t ki\u1EC7m\u2026"
+lastmod: 2024-02-18 23:08:51.189398
+model: gpt-4-0125-preview
+summary: "Vi\u1EBFt ki\u1EC3m th\u1EED l\xE0 t\u1EA1o ra nh\u1EEFng b\xE0i ki\u1EC3\
+  m tra nh\u1ECF \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o r\u1EB1ng m\xE3 c\u1EE7a b\u1EA1\
+  n ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i. L\u1EADp tr\xECnh vi\xEA\
+  n vi\u1EBFt ki\u1EC3m th\u1EED \u0111\u1EC3 b\u1EAFt l\u1ED7i s\u1EDBm, ti\u1EBF\
+  t ki\u1EC7m\u2026"
+title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 ---
 
 {{< edit_this_page >}}

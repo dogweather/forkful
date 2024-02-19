@@ -1,13 +1,14 @@
 ---
-title:                "Suchen und Ersetzen von Text"
 aliases:
 - /de/elixir/searching-and-replacing-text/
-date:                  2024-01-20T17:57:30.235451-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Suchen und Ersetzen von Text"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:30.235451-07:00
+description: "Suchen und Ersetzen von Text ist ein Vorgang, bei dem bestimmte Textmuster\
+  \ gefunden und durch andere ersetzt werden. Programmierer nutzen diese Technik,\u2026"
+lastmod: 2024-02-18 23:09:04.536227
+model: gpt-4-1106-preview
+summary: "Suchen und Ersetzen von Text ist ein Vorgang, bei dem bestimmte Textmuster\
+  \ gefunden und durch andere ersetzt werden. Programmierer nutzen diese Technik,\u2026"
+title: Suchen und Ersetzen von Text
 ---
 
 {{< edit_this_page >}}

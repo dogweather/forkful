@@ -1,14 +1,16 @@
 ---
-title:                "Einen Datum aus einem String auslesen"
 aliases:
 - /de/vba/parsing-a-date-from-a-string/
-date:                  2024-02-01T21:57:36.322861-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Einen Datum aus einem String auslesen"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/vba/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:57:36.322861-07:00
+description: "Das Parsen eines Datums aus einem String in Visual Basic for Applications\
+  \ (VBA) bedeutet, einen Text, der ein Datum repr\xE4sentiert, in einen Datumsdatentyp\u2026"
+lastmod: 2024-02-18 23:09:04.700335
+model: gpt-4-0125-preview
+summary: "Das Parsen eines Datums aus einem String in Visual Basic for Applications\
+  \ (VBA) bedeutet, einen Text, der ein Datum repr\xE4sentiert, in einen Datumsdatentyp\u2026"
+title: Einen Datum aus einem String auslesen
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Numerojen pyöristäminen"
 aliases:
 - /fi/fish-shell/rounding-numbers/
-date:                  2024-01-26T03:45:20.356222-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Numerojen pyöristäminen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/rounding-numbers.md"
+date: 2024-01-26 03:45:20.356222-07:00
+description: "Numeroiden py\xF6rist\xE4minen on desimaalipaikkojen karsimista, jotta\
+  \ tiedot olisivat yksinkertaisempia tai sopisivat tiettyihin formaatteihin. Ohjelmoijat\u2026"
+lastmod: 2024-02-18 23:09:08.076128
+model: gpt-4-0125-preview
+summary: "Numeroiden py\xF6rist\xE4minen on desimaalipaikkojen karsimista, jotta tiedot\
+  \ olisivat yksinkertaisempia tai sopisivat tiettyihin formaatteihin. Ohjelmoijat\u2026"
+title: "Numerojen py\xF6rist\xE4minen"
 ---
 
 {{< edit_this_page >}}

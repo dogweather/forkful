@@ -1,15 +1,20 @@
 ---
-title:                "So sánh hai ngày"
 aliases:
 - /vi/kotlin/comparing-two-dates/
-date:                  2024-01-28T21:56:34.118245-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "So sánh hai ngày"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/kotlin/comparing-two-dates.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:34.118245-07:00
+description: "So s\xE1nh hai ng\xE0y ngh\u0129a l\xE0 ki\u1EC3m tra xem ng\xE0y n\xE0\
+  o \u0111\u1EBFn tr\u01B0\u1EDBc ho\u1EB7c sau ng\xE0y kia, ho\u1EB7c n\u1EBFu ch\xFA\
+  ng l\xE0 c\xF9ng m\u1ED9t th\u1EDDi \u0111i\u1EC3m. L\u1EADp tr\xECnh vi\xEAn th\u1EF1\
+  c hi\u1EC7n \u0111i\u1EC1u n\xE0y cho\u2026"
+lastmod: 2024-02-18 23:08:50.665075
+model: gpt-4-0125-preview
+summary: "So s\xE1nh hai ng\xE0y ngh\u0129a l\xE0 ki\u1EC3m tra xem ng\xE0y n\xE0\
+  o \u0111\u1EBFn tr\u01B0\u1EDBc ho\u1EB7c sau ng\xE0y kia, ho\u1EB7c n\u1EBFu ch\xFA\
+  ng l\xE0 c\xF9ng m\u1ED9t th\u1EDDi \u0111i\u1EC3m. L\u1EADp tr\xECnh vi\xEAn th\u1EF1\
+  c hi\u1EC7n \u0111i\u1EC1u n\xE0y cho\u2026"
+title: "So s\xE1nh hai ng\xE0y"
 ---
 
 {{< edit_this_page >}}

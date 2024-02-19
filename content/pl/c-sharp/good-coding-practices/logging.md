@@ -1,13 +1,16 @@
 ---
-title:                "Rejestrowanie zdarzeń"
 aliases:
 - /pl/c-sharp/logging/
-date:                  2024-01-26T01:01:13.907882-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rejestrowanie zdarzeń"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/logging.md"
+date: 2024-01-26 01:01:13.907882-07:00
+description: "Logowanie to proces rejestrowania zdarze\u0144 aplikacji i danych wyj\u015B\
+  ciowych podczas jej dzia\u0142ania. Programi\u015Bci loguj\u0105, aby diagnozowa\u0107\
+  \ b\u0142\u0119dy, monitorowa\u0107\u2026"
+lastmod: 2024-02-18 23:08:49.616981
+model: gpt-4-1106-preview
+summary: "Logowanie to proces rejestrowania zdarze\u0144 aplikacji i danych wyj\u015B\
+  ciowych podczas jej dzia\u0142ania. Programi\u015Bci loguj\u0105, aby diagnozowa\u0107\
+  \ b\u0142\u0119dy, monitorowa\u0107\u2026"
+title: "Rejestrowanie zdarze\u0144"
 ---
 
 {{< edit_this_page >}}

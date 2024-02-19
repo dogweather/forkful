@@ -1,14 +1,16 @@
 ---
-title:                "Scrivere sull'errore standard"
 aliases:
 - /it/kotlin/writing-to-standard-error/
-date:                  2024-02-03T19:33:44.748694-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Scrivere sull'errore standard"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:33:44.748694-07:00
+description: "Scrivere su standard error (stderr) consiste nell'inviare messaggi di\
+  \ errore e diagnostica su un flusso separato, distinto dall'output standard (stdout),\u2026"
+lastmod: 2024-02-18 23:08:55.861803
+model: gpt-4-0125-preview
+summary: "Scrivere su standard error (stderr) consiste nell'inviare messaggi di errore\
+  \ e diagnostica su un flusso separato, distinto dall'output standard (stdout),\u2026"
+title: Scrivere sull'errore standard
 ---
 
 {{< edit_this_page >}}

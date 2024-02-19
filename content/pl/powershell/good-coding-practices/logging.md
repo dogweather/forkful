@@ -1,13 +1,16 @@
 ---
-title:                "Rejestrowanie zdarzeń"
 aliases:
 - /pl/powershell/logging/
-date:                  2024-01-26T01:07:26.915567-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rejestrowanie zdarzeń"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/logging.md"
+date: 2024-01-26 01:07:26.915567-07:00
+description: "Logowanie polega po prostu na pozostawianiu \u015Bladu w kodzie \u2013\
+  \ to spos\xF3b na \u015Bledzenie tego, co si\u0119 dzieje, gdy skrypt jest uruchamiany\
+  \ \"na \u017Cywo\".\u2026"
+lastmod: 2024-02-18 23:08:49.835410
+model: gpt-4-1106-preview
+summary: "Logowanie polega po prostu na pozostawianiu \u015Bladu w kodzie \u2013 to\
+  \ spos\xF3b na \u015Bledzenie tego, co si\u0119 dzieje, gdy skrypt jest uruchamiany\
+  \ \"na \u017Cywo\".\u2026"
+title: "Rejestrowanie zdarze\u0144"
 ---
 
 {{< edit_this_page >}}

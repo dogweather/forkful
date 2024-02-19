@@ -1,15 +1,18 @@
 ---
-title:                "Korzystanie z tablic asocjacyjnych"
 aliases:
 - /pl/lua/using-associative-arrays/
-date:                  2024-01-30T19:12:07.716226-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z tablic asocjacyjnych"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:07.716226-07:00
+description: "Tablice asocjacyjne to jak tajne u\u015Bciski d\u0142oni dla danych\
+  \ w Lua \u2014 zamiast samych numer\xF3w ustawiaj\u0105cych si\u0119 pos\u0142usznie\
+  \ wed\u0142ug indeksu, Twoje klucze mog\u0105\u2026"
+lastmod: 2024-02-18 23:08:49.732724
+model: gpt-4-0125-preview
+summary: "Tablice asocjacyjne to jak tajne u\u015Bciski d\u0142oni dla danych w Lua\
+  \ \u2014 zamiast samych numer\xF3w ustawiaj\u0105cych si\u0119 pos\u0142usznie wed\u0142\
+  ug indeksu, Twoje klucze mog\u0105\u2026"
+title: Korzystanie z tablic asocjacyjnych
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Praca z XML"
 aliases:
 - /pl/typescript/working-with-xml/
-date:                  2024-01-26T04:36:46.287204-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Praca z XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/working-with-xml.md"
+date: 2024-01-26 04:36:46.287204-07:00
+description: "Praca z XML oznacza parsowanie, manipulacj\u0119 i zapisywanie danych\
+  \ XML za pomoc\u0105 programowania. Programi\u015Bci obs\u0142uguj\u0105 XML, aby\
+  \ wymienia\u0107 dane mi\u0119dzy r\xF3\u017Cnymi\u2026"
+lastmod: 2024-02-18 23:08:49.371988
+model: gpt-4-0125-preview
+summary: "Praca z XML oznacza parsowanie, manipulacj\u0119 i zapisywanie danych XML\
+  \ za pomoc\u0105 programowania. Programi\u015Bci obs\u0142uguj\u0105 XML, aby wymienia\u0107\
+  \ dane mi\u0119dzy r\xF3\u017Cnymi\u2026"
+title: Praca z XML
 ---
 
 {{< edit_this_page >}}

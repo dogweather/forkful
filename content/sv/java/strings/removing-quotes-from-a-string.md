@@ -1,13 +1,16 @@
 ---
-title:                "Ta bort citattecken från en sträng"
 aliases:
 - /sv/java/removing-quotes-from-a-string/
-date:                  2024-01-26T03:40:11.030429-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ta bort citattecken från en sträng"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:40:11.030429-07:00
+description: "Att ta bort citationstecken fr\xE5n en str\xE4ng inneb\xE4r att strippa\
+  \ bort alla citattecken\u2014enkla (' '), dubbla (\" \") eller b\xE5da\u2014fr\xE5\
+  n textdata. Programmerare g\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.658107
+model: gpt-4-0125-preview
+summary: "Att ta bort citationstecken fr\xE5n en str\xE4ng inneb\xE4r att strippa\
+  \ bort alla citattecken\u2014enkla (' '), dubbla (\" \") eller b\xE5da\u2014fr\xE5\
+  n textdata. Programmerare g\xF6r\u2026"
+title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

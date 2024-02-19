@@ -1,13 +1,16 @@
 ---
-title:                "Lancement d'un nouveau projet"
 aliases:
 - /fr/java/starting-a-new-project/
-date:                  2024-01-20T18:03:51.148272-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lancement d'un nouveau projet"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/starting-a-new-project.md"
+date: 2024-01-20 18:03:51.148272-07:00
+description: "Lancer un nouveau projet Java, c'est cr\xE9er un espace o\xF9 votre\
+  \ code va prendre vie. On le fait pour transformer une id\xE9e en une application\
+  \ qui peut\u2026"
+lastmod: 2024-02-18 23:09:08.629244
+model: gpt-4-1106-preview
+summary: "Lancer un nouveau projet Java, c'est cr\xE9er un espace o\xF9 votre code\
+  \ va prendre vie. On le fait pour transformer une id\xE9e en une application qui\
+  \ peut\u2026"
+title: Lancement d'un nouveau projet
 ---
 
 {{< edit_this_page >}}

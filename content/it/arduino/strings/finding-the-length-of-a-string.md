@@ -1,13 +1,14 @@
 ---
-title:                "Trovare la lunghezza di una stringa"
 aliases:
 - /it/arduino/finding-the-length-of-a-string/
-date:                  2024-01-20T17:46:53.813008-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Trovare la lunghezza di una stringa"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:46:53.813008-07:00
+description: "Trovare la lunghezza di una stringa significa contare il numero di caratteri\
+  \ che la compongono. I programmatori lo fanno per esigenze come la validazione\u2026"
+lastmod: 2024-02-18 23:08:56.125999
+model: gpt-4-1106-preview
+summary: "Trovare la lunghezza di una stringa significa contare il numero di caratteri\
+  \ che la compongono. I programmatori lo fanno per esigenze come la validazione\u2026"
+title: Trovare la lunghezza di una stringa
 ---
 
 {{< edit_this_page >}}

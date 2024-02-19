@@ -1,13 +1,16 @@
 ---
-title:                "Skicka en HTTP-förfrågan med Basic-autentisering"
 aliases:
 - /sv/elixir/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:01:47.128414-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skicka en HTTP-förfrågan med Basic-autentisering"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:01:47.128414-07:00
+description: "Att skicka en HTTP-beg\xE4ran med basautentisering inneb\xE4r att du\
+  \ anv\xE4nder anv\xE4ndarnamn och l\xF6senord f\xF6r att f\xE5 tillg\xE5ng till\
+  \ en resurs p\xE5 webben.\u2026"
+lastmod: 2024-02-18 23:08:51.502289
+model: gpt-4-1106-preview
+summary: "Att skicka en HTTP-beg\xE4ran med basautentisering inneb\xE4r att du anv\xE4\
+  nder anv\xE4ndarnamn och l\xF6senord f\xF6r att f\xE5 tillg\xE5ng till en resurs\
+  \ p\xE5 webben.\u2026"
+title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 ---
 
 {{< edit_this_page >}}

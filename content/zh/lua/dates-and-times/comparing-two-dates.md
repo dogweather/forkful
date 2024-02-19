@@ -1,14 +1,19 @@
 ---
-title:                "比较两个日期"
 aliases:
 - /zh/lua/comparing-two-dates/
-date:                  2024-01-20T17:33:17.521019-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "比较两个日期"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/lua/comparing-two-dates.md"
+date: 2024-01-20 17:33:17.521019-07:00
+description: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F\u5C31\u662F\u5224\u65AD\u5B83\u4EEC\
+  \u7684\u65E9\u665A\u987A\u5E8F\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u901A\u5E38\
+  \u662F\u4E3A\u4E86\u6392\u5E8F\u4E8B\u4EF6\u3001\u9A8C\u8BC1\u671F\u9650\uFF0C\u6216\
+  \u662F\u6D4B\u7B97\u65F6\u95F4\u95F4\u9694\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.264387
+model: gpt-4-1106-preview
+summary: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F\u5C31\u662F\u5224\u65AD\u5B83\u4EEC\
+  \u7684\u65E9\u665A\u987A\u5E8F\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u901A\u5E38\
+  \u662F\u4E3A\u4E86\u6392\u5E8F\u4E8B\u4EF6\u3001\u9A8C\u8BC1\u671F\u9650\uFF0C\u6216\
+  \u662F\u6D4B\u7B97\u65F6\u95F4\u95F4\u9694\u3002"
+title: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F"
 ---
 
 {{< edit_this_page >}}

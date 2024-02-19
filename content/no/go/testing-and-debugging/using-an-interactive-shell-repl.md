@@ -1,14 +1,16 @@
 ---
-title:                "Bruk av interaktiv shell (REPL)"
 aliases:
 - /no/go/using-an-interactive-shell-repl/
-date:                  2024-02-03T18:10:30.795295-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruk av interaktiv shell (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:30.795295-07:00
+description: "En interaktiv shell, eller Read-Eval-Print Loop (REPL), lar deg eksperimentere\
+  \ med Go-kode i sanntid, kj\xF8re kommandoer og f\xE5 umiddelbar tilbakemelding.\u2026"
+lastmod: 2024-02-18 23:08:53.437633
+model: gpt-4-0125-preview
+summary: "En interaktiv shell, eller Read-Eval-Print Loop (REPL), lar deg eksperimentere\
+  \ med Go-kode i sanntid, kj\xF8re kommandoer og f\xE5 umiddelbar tilbakemelding.\u2026"
+title: Bruk av interaktiv shell (REPL)
 ---
 
 {{< edit_this_page >}}

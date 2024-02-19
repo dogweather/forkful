@@ -1,14 +1,17 @@
 ---
-title:                "Capitalizando una cadena de texto"
 aliases:
 - /es/bash/capitalizing-a-string/
-date:                  2024-02-03T19:04:49.084996-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Capitalizando una cadena de texto"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:04:49.084996-07:00
+description: "Capitalizar una cadena en Bash implica transformar el primer car\xE1\
+  cter de la cadena a may\xFAscula mientras que el resto de la cadena permanece sin\
+  \ cambios.\u2026"
+lastmod: 2024-02-18 23:09:10.147050
+model: gpt-4-0125-preview
+summary: "Capitalizar una cadena en Bash implica transformar el primer car\xE1cter\
+  \ de la cadena a may\xFAscula mientras que el resto de la cadena permanece sin cambios.\u2026"
+title: Capitalizando una cadena de texto
 ---
 
 {{< edit_this_page >}}

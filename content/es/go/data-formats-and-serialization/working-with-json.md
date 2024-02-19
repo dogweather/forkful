@@ -1,14 +1,16 @@
 ---
-title:                "Trabajando con JSON"
 aliases:
 - /es/go/working-with-json/
-date:                  2024-02-03T18:12:07.073139-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:12:07.073139-07:00
+description: "Trabajar con JSON (JavaScript Object Notation) en Go implica codificar\
+  \ y decodificar datos entre estructuras de datos de Go y el formato JSON. Esta tarea\u2026"
+lastmod: 2024-02-18 23:09:09.480733
+model: gpt-4-0125-preview
+summary: "Trabajar con JSON (JavaScript Object Notation) en Go implica codificar y\
+  \ decodificar datos entre estructuras de datos de Go y el formato JSON. Esta tarea\u2026"
+title: Trabajando con JSON
 ---
 
 {{< edit_this_page >}}

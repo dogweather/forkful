@@ -1,13 +1,16 @@
 ---
-title:                "Interpolacja łańcuchów znaków"
 aliases:
 - /pl/typescript/interpolating-a-string/
-date:                  2024-01-20T17:51:40.464485-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolacja łańcuchów znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/interpolating-a-string.md"
+date: 2024-01-20 17:51:40.464485-07:00
+description: "Interpolacja to wplecenie zmiennej w ci\u0105g tekstowy, co u\u0142\
+  atwia tworzenie dynamicznego tekstu. Programi\u015Bci u\u017Cywaj\u0105 interpolacji,\
+  \ aby \u0142atwo \u0142\u0105czy\u0107 sta\u0142e\u2026"
+lastmod: 2024-02-18 23:08:49.334528
+model: gpt-4-1106-preview
+summary: "Interpolacja to wplecenie zmiennej w ci\u0105g tekstowy, co u\u0142atwia\
+  \ tworzenie dynamicznego tekstu. Programi\u015Bci u\u017Cywaj\u0105 interpolacji,\
+  \ aby \u0142atwo \u0142\u0105czy\u0107 sta\u0142e\u2026"
+title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 ---
 
 {{< edit_this_page >}}

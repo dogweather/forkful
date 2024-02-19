@@ -1,14 +1,16 @@
 ---
-title:                "Analysering av en dato fra en streng"
 aliases:
 - /no/go/parsing-a-date-from-a-string/
-date:                  2024-02-03T18:05:11.013444-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analysering av en dato fra en streng"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:05:11.013444-07:00
+description: "\xC5 parse en dato fra en streng i Go inneb\xE6rer \xE5 konvertere datoen\
+  \ representert som tekst til et mer brukbart format (f.eks. `time.Time`). Programmerere\u2026"
+lastmod: 2024-02-18 23:08:53.445868
+model: gpt-4-0125-preview
+summary: "\xC5 parse en dato fra en streng i Go inneb\xE6rer \xE5 konvertere datoen\
+  \ representert som tekst til et mer brukbart format (f.eks. `time.Time`). Programmerere\u2026"
+title: Analysering av en dato fra en streng
 ---
 
 {{< edit_this_page >}}

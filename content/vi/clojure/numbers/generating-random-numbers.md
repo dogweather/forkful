@@ -1,15 +1,21 @@
 ---
-title:                "Sinh số ngẫu nhiên"
 aliases:
 - /vi/clojure/generating-random-numbers/
-date:                  2024-01-28T22:01:29.669205-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sinh số ngẫu nhiên"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/clojure/generating-random-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:29.669205-07:00
+description: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong l\u1EADp tr\xEC\
+  nh l\xE0 v\u1EC1 vi\u1EC7c t\u1EA1o ra c\xE1c gi\xE1 tr\u1ECB kh\xF4ng th\u1EC3\
+  \ \u0111\u01B0\u1EE3c d\u1EF1 \u0111o\xE1n m\u1ED9t c\xE1ch logic tr\u01B0\u1EDB\
+  c th\u1EDDi \u0111i\u1EC3m. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7\
+  c\u2026"
+lastmod: 2024-02-18 23:08:50.309961
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong l\u1EADp tr\xECnh l\xE0\
+  \ v\u1EC1 vi\u1EC7c t\u1EA1o ra c\xE1c gi\xE1 tr\u1ECB kh\xF4ng th\u1EC3 \u0111\u01B0\
+  \u1EE3c d\u1EF1 \u0111o\xE1n m\u1ED9t c\xE1ch logic tr\u01B0\u1EDBc th\u1EDDi \u0111\
+  i\u1EC3m. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c\u2026"
+title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 ---
 
 {{< edit_this_page >}}

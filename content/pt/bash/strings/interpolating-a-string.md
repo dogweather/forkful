@@ -1,13 +1,16 @@
 ---
-title:                "Interpolando uma string"
 aliases:
 - /pt/bash/interpolating-a-string/
-date:                  2024-01-20T17:50:36.504584-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolando uma string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/interpolating-a-string.md"
+date: 2024-01-20 17:50:36.504584-07:00
+description: "Interpolar uma string \xE9 o ato de inserir vari\xE1veis ou express\xF5\
+  es dentro de uma cadeia de texto, de modo a criar um novo valor. Programadores fazem\
+  \ isso\u2026"
+lastmod: 2024-02-18 23:08:58.309962
+model: gpt-4-1106-preview
+summary: "Interpolar uma string \xE9 o ato de inserir vari\xE1veis ou express\xF5\
+  es dentro de uma cadeia de texto, de modo a criar um novo valor. Programadores fazem\
+  \ isso\u2026"
+title: Interpolando uma string
 ---
 
 {{< edit_this_page >}}

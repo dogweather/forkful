@@ -1,13 +1,16 @@
 ---
-title:                "Uuden projektin aloittaminen"
 aliases:
 - /fi/typescript/starting-a-new-project/
-date:                  2024-01-20T18:05:04.507924-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Uuden projektin aloittaminen"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/starting-a-new-project.md"
+date: 2024-01-20 18:05:04.507924-07:00
+description: "Aloitetaan uusi projekti tarkoittaa puhtaalta p\xF6yd\xE4lt\xE4 l\xE4\
+  ht\xF6\xE4, uuden sovelluksen tai kirjaston kehitt\xE4mist\xE4. Ohjelmoijat tekev\xE4\
+  t t\xE4m\xE4n, kun heill\xE4 on uusi\u2026"
+lastmod: 2024-02-18 23:09:07.319531
+model: gpt-4-1106-preview
+summary: "Aloitetaan uusi projekti tarkoittaa puhtaalta p\xF6yd\xE4lt\xE4 l\xE4ht\xF6\
+  \xE4, uuden sovelluksen tai kirjaston kehitt\xE4mist\xE4. Ohjelmoijat tekev\xE4\
+  t t\xE4m\xE4n, kun heill\xE4 on uusi\u2026"
+title: Uuden projektin aloittaminen
 ---
 
 {{< edit_this_page >}}

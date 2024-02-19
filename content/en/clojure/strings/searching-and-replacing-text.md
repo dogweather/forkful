@@ -1,13 +1,14 @@
 ---
-title:                "Searching and replacing text"
 aliases:
 - /en/clojure/searching-and-replacing-text/
-date:                  2024-01-20T17:57:33.332118-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Searching and replacing text"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:33.332118-07:00
+description: "Searching and replacing text lets you find specific strings in a body\
+  \ of text and swap them out with something else. Programmers do it for quick edits,\u2026"
+lastmod: 2024-02-18 23:09:10.708703
+model: gpt-4-1106-preview
+summary: "Searching and replacing text lets you find specific strings in a body of\
+  \ text and swap them out with something else. Programmers do it for quick edits,\u2026"
+title: Searching and replacing text
 ---
 
 {{< edit_this_page >}}

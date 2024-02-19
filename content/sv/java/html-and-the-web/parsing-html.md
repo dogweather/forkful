@@ -1,14 +1,18 @@
 ---
-title:                "Tolka HTML"
 aliases:
 - /sv/java/parsing-html/
-date:                  2024-02-03T19:12:27.561168-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tolka HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:27.561168-07:00
+description: "Att tolka HTML inneb\xE4r att gr\xE4va igenom m\xE4rkspr\xE5ket f\xF6\
+  r att extrahera data som text, l\xE4nkar eller andra element. Vi g\xF6r det f\xF6\
+  r att interagera med eller\u2026"
+lastmod: 2024-02-18 23:08:51.667333
+model: gpt-4-0125-preview
+summary: "Att tolka HTML inneb\xE4r att gr\xE4va igenom m\xE4rkspr\xE5ket f\xF6r att\
+  \ extrahera data som text, l\xE4nkar eller andra element. Vi g\xF6r det f\xF6r att\
+  \ interagera med eller\u2026"
+title: Tolka HTML
 ---
 
 {{< edit_this_page >}}

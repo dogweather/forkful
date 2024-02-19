@@ -1,14 +1,17 @@
 ---
-title:                "Registro"
 aliases:
 - /pt/vba/logging/
-date:                  2024-02-01T21:56:09.586086-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Registro"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/vba/logging.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:56:09.586086-07:00
+description: "Registrar em Visual Basic para Aplica\xE7\xF5es (VBA) envolve gravar\
+  \ informa\xE7\xF5es sobre o comportamento em tempo de execu\xE7\xE3o de um programa\
+  \ em um arquivo,\u2026"
+lastmod: 2024-02-18 23:08:57.981203
+model: gpt-4-0125-preview
+summary: "Registrar em Visual Basic para Aplica\xE7\xF5es (VBA) envolve gravar informa\xE7\
+  \xF5es sobre o comportamento em tempo de execu\xE7\xE3o de um programa em um arquivo,\u2026"
+title: Registro
 ---
 
 {{< edit_this_page >}}

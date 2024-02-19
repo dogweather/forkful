@@ -1,15 +1,20 @@
 ---
-title:                "Viết hoa một chuỗi"
 aliases:
 - /vi/c-sharp/capitalizing-a-string/
-date:                  2024-01-28T21:56:04.715646-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Viết hoa một chuỗi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/capitalizing-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:04.715646-07:00
+description: "Chuy\u1EC3n m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF hoa trong l\u1EAD\
+  p tr\xECnh ngh\u0129a l\xE0 l\xE0m cho t\u1EA5t c\u1EA3 c\xE1c ch\u1EEF c\xE1i trong\
+  \ m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF hoa. \u0110\xE2y l\xE0 m\u1ED9t t\xE1c v\u1EE5\
+  \ ph\u1ED5 bi\u1EBFn \u0111\u1EC3 \u0111\u1ECBnh d\u1EA1ng\u2026"
+lastmod: 2024-02-18 23:08:50.679014
+model: gpt-4-0125-preview
+summary: "Chuy\u1EC3n m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF hoa trong l\u1EADp tr\xEC\
+  nh ngh\u0129a l\xE0 l\xE0m cho t\u1EA5t c\u1EA3 c\xE1c ch\u1EEF c\xE1i trong m\u1ED9\
+  t chu\u1ED7i th\xE0nh ch\u1EEF hoa. \u0110\xE2y l\xE0 m\u1ED9t t\xE1c v\u1EE5 ph\u1ED5\
+  \ bi\u1EBFn \u0111\u1EC3 \u0111\u1ECBnh d\u1EA1ng\u2026"
+title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 ---
 
 {{< edit_this_page >}}

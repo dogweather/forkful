@@ -1,13 +1,20 @@
 ---
-title:                "将代码组织成函数"
 aliases:
 - /zh/javascript/organizing-code-into-functions/
-date:                  2024-01-26T01:11:13.546249-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "将代码组织成函数"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/organizing-code-into-functions.md"
+date: 2024-01-26 01:11:13.546249-07:00
+description: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u4E3A\u51FD\u6570\u53EF\u4EE5\u5C06\u4EFB\
+  \u52A1\u5212\u5206\u4E3A\u53EF\u91CD\u590D\u4F7F\u7528\u7684\u7247\u6BB5\uFF0C\u4F7F\
+  \u4EE3\u7801\u66F4\u52A0\u6E05\u6670\u4E14\u6613\u4E8E\u7EF4\u62A4\u3002\u901A\u8FC7\
+  \u8FD9\u6837\u505A\u53EF\u4EE5\u51CF\u5C11\u5197\u4F59\u3001\u7B80\u5316\u6D4B\u8BD5\
+  \u5E76\u63D0\u9AD8\u53EF\u8BFB\u6027\u3002"
+lastmod: 2024-02-18 23:08:59.484419
+model: gpt-4-1106-preview
+summary: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u4E3A\u51FD\u6570\u53EF\u4EE5\u5C06\u4EFB\
+  \u52A1\u5212\u5206\u4E3A\u53EF\u91CD\u590D\u4F7F\u7528\u7684\u7247\u6BB5\uFF0C\u4F7F\
+  \u4EE3\u7801\u66F4\u52A0\u6E05\u6670\u4E14\u6613\u4E8E\u7EF4\u62A4\u3002\u901A\u8FC7\
+  \u8FD9\u6837\u505A\u53EF\u4EE5\u51CF\u5C11\u5197\u4F59\u3001\u7B80\u5316\u6D4B\u8BD5\
+  \u5E76\u63D0\u9AD8\u53EF\u8BFB\u6027\u3002"
+title: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\u51FD\u6570"
 ---
 
 {{< edit_this_page >}}

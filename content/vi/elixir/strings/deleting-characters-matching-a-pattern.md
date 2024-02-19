@@ -1,15 +1,21 @@
 ---
-title:                "Xóa các ký tự phù hợp với một mẫu"
 aliases:
 - /vi/elixir/deleting-characters-matching-a-pattern/
-date:                  2024-01-28T21:59:14.304736-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Xóa các ký tự phù hợp với một mẫu"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:59:14.304736-07:00
+description: "X\xF3a k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu l\xE0\
+  \ vi\u1EC7c t\xECm ki\u1EBFm c\xE1c chu\u1ED7i k\xFD t\u1EF1 c\u1EE5 th\u1EC3 v\xE0\
+  \ lo\u1EA1i b\u1ECF ch\xFAng. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0\
+  y \u0111\u1EC3 l\xE0m s\u1EA1ch d\u1EEF li\u1EC7u, \u0111\u1ECBnh d\u1EA1ng n\u1ED9\
+  i\u2026"
+lastmod: 2024-02-18 23:08:50.343474
+model: gpt-4-0125-preview
+summary: "X\xF3a k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu l\xE0 vi\u1EC7\
+  c t\xECm ki\u1EBFm c\xE1c chu\u1ED7i k\xFD t\u1EF1 c\u1EE5 th\u1EC3 v\xE0 lo\u1EA1\
+  i b\u1ECF ch\xFAng. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\
+  \u1EC3 l\xE0m s\u1EA1ch d\u1EEF li\u1EC7u, \u0111\u1ECBnh d\u1EA1ng n\u1ED9i\u2026"
+title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 ---
 
 {{< edit_this_page >}}

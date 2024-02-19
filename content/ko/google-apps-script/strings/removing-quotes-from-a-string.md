@@ -1,14 +1,30 @@
 ---
-title:                "문자열에서 따옴표 제거하기"
 aliases:
 - /ko/google-apps-script/removing-quotes-from-a-string/
-date:                  2024-02-01T22:00:10.548387-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "문자열에서 따옴표 제거하기"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:10.548387-07:00
+description: "Google Apps Script\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\
+  \uC634\uD45C\uB97C \uC81C\uAC70\uD558\uB294 \uAC83\uC740 \uC8FC\uB85C \uD30C\uC2F1\
+  \uB41C JSON \uAC1D\uCCB4, \uC0AC\uC6A9\uC790 \uC785\uB825 \uB610\uB294 \uB370\uC774\
+  \uD130 \uCD94\uCD9C\uC5D0\uC11C \uBE44\uB86F\uB41C \uBB38\uC790\uC5F4 \uB370\uC774\
+  \uD130\uB97C \uB458\uB7EC\uC2FC \uBD88\uD544\uC694\uD55C \uB530\uC634\uD45C\uB97C\
+  \ \uC81C\uAC70\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\
+  \uB294 \uC774\uB97C \uCC98\uB9AC\uD558\uC5EC \uB370\uC774\uD130\uB97C \uC815\uC81C\
+  \uD558\uAC70\uB098 \uD45C\uC900\uD654\uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\
+  \uC744\u2026"
+lastmod: 2024-02-18 23:09:05.534743
+model: gpt-4-0125-preview
+summary: "Google Apps Script\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\
+  \uD45C\uB97C \uC81C\uAC70\uD558\uB294 \uAC83\uC740 \uC8FC\uB85C \uD30C\uC2F1\uB41C\
+  \ JSON \uAC1D\uCCB4, \uC0AC\uC6A9\uC790 \uC785\uB825 \uB610\uB294 \uB370\uC774\uD130\
+  \ \uCD94\uCD9C\uC5D0\uC11C \uBE44\uB86F\uB41C \uBB38\uC790\uC5F4 \uB370\uC774\uD130\
+  \uB97C \uB458\uB7EC\uC2FC \uBD88\uD544\uC694\uD55C \uB530\uC634\uD45C\uB97C \uC81C\
+  \uAC70\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB294\
+  \ \uC774\uB97C \uCC98\uB9AC\uD558\uC5EC \uB370\uC774\uD130\uB97C \uC815\uC81C\uD558\
+  \uAC70\uB098 \uD45C\uC900\uD654\uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744\
+  \u2026"
+title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C \uC81C\uAC70\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

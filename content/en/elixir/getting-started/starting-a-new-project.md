@@ -1,13 +1,14 @@
 ---
-title:                "Starting a new project"
 aliases:
 - /en/elixir/starting-a-new-project/
-date:                  2024-01-20T18:03:06.150515-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Starting a new project"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/starting-a-new-project.md"
+date: 2024-01-20 18:03:06.150515-07:00
+description: "Starting a new Elixir project means setting up a fresh Mix project structure.\
+  \ Programmers do this to kick things off with organized code and automated\u2026"
+lastmod: 2024-02-18 23:09:10.766383
+model: gpt-4-1106-preview
+summary: "Starting a new Elixir project means setting up a fresh Mix project structure.\
+  \ Programmers do this to kick things off with organized code and automated\u2026"
+title: Starting a new project
 ---
 
 {{< edit_this_page >}}

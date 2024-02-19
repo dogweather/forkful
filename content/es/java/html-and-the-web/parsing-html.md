@@ -1,12 +1,15 @@
 ---
-title:                "Análisis de HTML"
 aliases:
 - /es/java/parsing-html/
-date:                  2024-01-20T15:32:30.888958-07:00
-simple_title:         "Análisis de HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/parsing-html.md"
+date: 2024-01-20 15:32:30.888958-07:00
+description: "Parsear HTML es el proceso de convertir el c\xF3digo HTML en algo que\
+  \ tu programa pueda entender y manipular. Los programadores lo hacen para interactuar\
+  \ con\u2026"
+lastmod: 2024-02-18 23:09:09.842655
+summary: "Parsear HTML es el proceso de convertir el c\xF3digo HTML en algo que tu\
+  \ programa pueda entender y manipular. Los programadores lo hacen para interactuar\
+  \ con\u2026"
+title: "An\xE1lisis de HTML"
 ---
 
 {{< edit_this_page >}}

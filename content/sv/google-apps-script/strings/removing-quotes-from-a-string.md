@@ -1,14 +1,18 @@
 ---
-title:                "Ta bort citattecken från en sträng"
 aliases:
 - /sv/google-apps-script/removing-quotes-from-a-string/
-date:                  2024-02-01T22:00:17.985295-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Ta bort citattecken från en sträng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/google-apps-script/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:00:17.985295-07:00
+description: "Att ta bort citattecken fr\xE5n en str\xE4ng i Google Apps Script handlar\
+  \ om att eliminera on\xF6diga citationstecken som kan omge dina str\xE4ngdata, vanligtvis\
+  \ fr\xE5n\u2026"
+lastmod: 2024-02-18 23:08:51.365415
+model: gpt-4-0125-preview
+summary: "Att ta bort citattecken fr\xE5n en str\xE4ng i Google Apps Script handlar\
+  \ om att eliminera on\xF6diga citationstecken som kan omge dina str\xE4ngdata, vanligtvis\
+  \ fr\xE5n\u2026"
+title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

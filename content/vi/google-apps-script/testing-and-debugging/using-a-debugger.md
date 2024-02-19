@@ -1,14 +1,20 @@
 ---
-title:                "Sử dụng trình gỡ lỗi"
 aliases:
 - /vi/google-apps-script/using-a-debugger/
-date:                  2024-02-01T22:03:47.487104-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng trình gỡ lỗi"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/google-apps-script/using-a-debugger.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:03:47.487104-07:00
+description: "Qu\xE1 tr\xECnh g\u1EE1 l\u1ED7i trong Google Apps Script (GAS) bao\
+  \ g\u1ED3m vi\u1EC7c x\xE1c \u0111\u1ECBnh v\xE0 lo\u1EA1i b\u1ECF l\u1ED7i t\u1EEB\
+  \ c\xE1c k\u1ECBch b\u1EA3n \u0111\u01B0\u1EE3c thi\u1EBFt k\u1EBF \u0111\u1EC3\
+  \ t\u1EF1 \u0111\u1ED9ng h\xF3a Google Apps ho\u1EB7c x\xE2y\u2026"
+lastmod: 2024-02-18 23:08:50.225132
+model: gpt-4-0125-preview
+summary: "Qu\xE1 tr\xECnh g\u1EE1 l\u1ED7i trong Google Apps Script (GAS) bao g\u1ED3\
+  m vi\u1EC7c x\xE1c \u0111\u1ECBnh v\xE0 lo\u1EA1i b\u1ECF l\u1ED7i t\u1EEB c\xE1\
+  c k\u1ECBch b\u1EA3n \u0111\u01B0\u1EE3c thi\u1EBFt k\u1EBF \u0111\u1EC3 t\u1EF1\
+  \ \u0111\u1ED9ng h\xF3a Google Apps ho\u1EB7c x\xE2y\u2026"
+title: "S\u1EED d\u1EE5ng tr\xECnh g\u1EE1 l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

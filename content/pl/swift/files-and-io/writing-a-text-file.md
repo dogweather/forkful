@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie pliku tekstowego"
 aliases:
 - /pl/swift/writing-a-text-file/
-date:                  2024-02-03T19:29:57.814832-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie pliku tekstowego"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:57.814832-07:00
+description: "Pisanie plik\xF3w tekstowych w j\u0119zyku Swift pozwala na trwa\u0142\
+  e przechowywanie danych tekstowych w systemie plik\xF3w, co jest niezb\u0119dne\
+  \ do zada\u0144 takich jak\u2026"
+lastmod: 2024-02-18 23:08:49.970759
+model: gpt-4-0125-preview
+summary: "Pisanie plik\xF3w tekstowych w j\u0119zyku Swift pozwala na trwa\u0142e\
+  \ przechowywanie danych tekstowych w systemie plik\xF3w, co jest niezb\u0119dne\
+  \ do zada\u0144 takich jak\u2026"
+title: Pisanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

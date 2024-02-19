@@ -1,14 +1,18 @@
 ---
-title:                "Sette stor bokstav i en streng"
 aliases:
 - /no/c-sharp/capitalizing-a-string/
-date:                  2024-02-03T19:06:20.849523-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sette stor bokstav i en streng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:20.849523-07:00
+description: "\xC5 gj\xF8re f\xF8rste bokstav i en streng stor i C# inneb\xE6rer \xE5\
+  \ konvertere den f\xF8rste bokstaven i en streng til stor bokstav hvis den ikke\
+  \ allerede er det. Denne\u2026"
+lastmod: 2024-02-18 23:08:53.877311
+model: gpt-4-0125-preview
+summary: "\xC5 gj\xF8re f\xF8rste bokstav i en streng stor i C# inneb\xE6rer \xE5\
+  \ konvertere den f\xF8rste bokstaven i en streng til stor bokstav hvis den ikke\
+  \ allerede er det. Denne\u2026"
+title: Sette stor bokstav i en streng
 ---
 
 {{< edit_this_page >}}

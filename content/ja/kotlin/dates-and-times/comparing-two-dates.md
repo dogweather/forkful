@@ -1,14 +1,15 @@
 ---
-title:                "日付を比較する"
 aliases:
 - /ja/kotlin/comparing-two-dates/
-date:                  2024-01-20T17:33:24.704536-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "日付を比較する"
-
-tag:                  "Dates and Times"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/comparing-two-dates.md"
+date: 2024-01-20 17:33:24.704536-07:00
+description: "Comparing two dates in Kotlin means to check if one date comes before\
+  \ or after another or if they're the same. Programmers do this to handle events,\u2026"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:54.891026
+model: gpt-4-1106-preview
+summary: "Comparing two dates in Kotlin means to check if one date comes before or\
+  \ after another or if they're the same. Programmers do this to handle events,\u2026"
+title: "\u65E5\u4ED8\u3092\u6BD4\u8F03\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

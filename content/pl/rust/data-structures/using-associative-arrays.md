@@ -1,15 +1,18 @@
 ---
-title:                "Korzystanie z tablic asocjacyjnych"
 aliases:
 - /pl/rust/using-associative-arrays/
-date:                  2024-01-30T19:12:53.670203-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z tablic asocjacyjnych"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:53.670203-07:00
+description: "Tablice asocjacyjne, czyli to, co Rustaceanie nazywaj\u0105 \"mapami\
+  \ hash\", to kolekcje przechowuj\u0105ce dane w parach klucz-warto\u015B\u0107.\
+  \ Programi\u015Bci u\u017Cywaj\u0105 ich do\u2026"
+lastmod: 2024-02-18 23:08:49.383190
+model: gpt-4-0125-preview
+summary: "Tablice asocjacyjne, czyli to, co Rustaceanie nazywaj\u0105 \"mapami hash\"\
+  , to kolekcje przechowuj\u0105ce dane w parach klucz-warto\u015B\u0107. Programi\u015B\
+  ci u\u017Cywaj\u0105 ich do\u2026"
+title: Korzystanie z tablic asocjacyjnych
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Kahden päivämäärän vertailu"
 aliases:
 - /fi/c-sharp/comparing-two-dates/
-date:                  2024-01-20T17:32:32.610973-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Kahden päivämäärän vertailu"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/comparing-two-dates.md"
+date: 2024-01-20 17:32:32.610973-07:00
+description: "Vertaillaan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 tiet\xE4\xE4ksemme,\
+  \ kumpi on ensin tai paljonko aikaa on kulunut niiden v\xE4lill\xE4. Ohjelmoijat\
+  \ tekev\xE4t t\xE4m\xE4n hallitakseen\u2026"
+lastmod: 2024-02-18 23:09:07.634236
+model: gpt-4-1106-preview
+summary: "Vertaillaan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 tiet\xE4\xE4ksemme, kumpi\
+  \ on ensin tai paljonko aikaa on kulunut niiden v\xE4lill\xE4. Ohjelmoijat tekev\xE4\
+  t t\xE4m\xE4n hallitakseen\u2026"
+title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 ---
 
 {{< edit_this_page >}}

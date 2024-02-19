@@ -1,13 +1,22 @@
 ---
-title:                "在编程中使用交互式Shell（REPL）"
 aliases:
 - /zh/clojure/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:13:15.216774-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "在编程中使用交互式Shell（REPL）"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:13:15.216774-07:00
+description: "REPL\uFF0C\u5373\u8BFB\u53D6-\u6C42\u503C-\u6253\u5370\u5FAA\u73AF\uFF0C\
+  \u662F\u4E00\u4E2A\u7528\u4E8E\u52A8\u6001\u6D4B\u8BD5Clojure\u4EE3\u7801\u7684\u7F16\
+  \u7A0B\u73AF\u5883\uFF0C\u9010\u5757\u8FDB\u884C\u3002\u7F16\u7A0B\u4EBA\u5458\u4F7F\
+  \u7528\u5B83\u6765\u7ACB\u5373\u53CD\u9988\u3001\u8FED\u4EE3\u5F00\u53D1\u548C\u5FEB\
+  \u901F\u5B9E\u9A8C\uFF0C\u65E0\u9700\u7F16\u8BD1\u6216\u8BBE\u7F6E\u5B8C\u6574\u7684\
+  \u9879\u76EE\u73AF\u5883\u7684\u5F00\u9500\u3002"
+lastmod: 2024-02-18 23:08:58.829815
+model: gpt-4-0125-preview
+summary: "REPL\uFF0C\u5373\u8BFB\u53D6-\u6C42\u503C-\u6253\u5370\u5FAA\u73AF\uFF0C\
+  \u662F\u4E00\u4E2A\u7528\u4E8E\u52A8\u6001\u6D4B\u8BD5Clojure\u4EE3\u7801\u7684\u7F16\
+  \u7A0B\u73AF\u5883\uFF0C\u9010\u5757\u8FDB\u884C\u3002\u7F16\u7A0B\u4EBA\u5458\u4F7F\
+  \u7528\u5B83\u6765\u7ACB\u5373\u53CD\u9988\u3001\u8FED\u4EE3\u5F00\u53D1\u548C\u5FEB\
+  \u901F\u5B9E\u9A8C\uFF0C\u65E0\u9700\u7F16\u8BD1\u6216\u8BBE\u7F6E\u5B8C\u6574\u7684\
+  \u9879\u76EE\u73AF\u5883\u7684\u5F00\u9500\u3002"
+title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uFF09"
 ---
 
 {{< edit_this_page >}}

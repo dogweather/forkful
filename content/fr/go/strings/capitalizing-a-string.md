@@ -1,14 +1,18 @@
 ---
-title:                "Mettre une chaîne en majuscules"
 aliases:
 - /fr/go/capitalizing-a-string/
-date:                  2024-02-03T17:52:37.674346-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Mettre une chaîne en majuscules"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:52:37.674346-07:00
+description: "Capitaliser une cha\xEEne de caract\xE8res consiste \xE0 transformer\
+  \ en majuscule le premier caract\xE8re d'une cha\xEEne donn\xE9e s'il est en minuscule,\
+  \ pour s'assurer\u2026"
+lastmod: 2024-02-18 23:09:08.210426
+model: gpt-4-0125-preview
+summary: "Capitaliser une cha\xEEne de caract\xE8res consiste \xE0 transformer en\
+  \ majuscule le premier caract\xE8re d'une cha\xEEne donn\xE9e s'il est en minuscule,\
+  \ pour s'assurer\u2026"
+title: "Mettre une cha\xEEne en majuscules"
 ---
 
 {{< edit_this_page >}}

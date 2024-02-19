@@ -1,13 +1,16 @@
 ---
-title:                "Trabajando con TOML"
 aliases:
 - /es/swift/working-with-toml/
-date:                  2024-01-26T04:26:30.140039-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/working-with-toml.md"
+date: 2024-01-26 04:26:30.140039-07:00
+description: "TOML (Tom's Obvious, Minimal Language - El Lenguaje M\xEDnimo y Obvio\
+  \ de Tom) es un formato de serializaci\xF3n de datos que es f\xE1cil de leer debido\
+  \ a su\u2026"
+lastmod: 2024-02-18 23:09:10.383918
+model: gpt-4-0125-preview
+summary: "TOML (Tom's Obvious, Minimal Language - El Lenguaje M\xEDnimo y Obvio de\
+  \ Tom) es un formato de serializaci\xF3n de datos que es f\xE1cil de leer debido\
+  \ a su\u2026"
+title: Trabajando con TOML
 ---
 
 {{< edit_this_page >}}

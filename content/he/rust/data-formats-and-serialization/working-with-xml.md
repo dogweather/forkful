@@ -1,13 +1,26 @@
 ---
-title:                "עבודה עם XML"
 aliases:
 - /he/rust/working-with-xml/
-date:                  2024-01-26T04:36:06.786893-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "עבודה עם XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/rust/working-with-xml.md"
+date: 2024-01-26 04:36:06.786893-07:00
+description: "XML, \u05E9\u05D4\u05D5\u05D0 \u05E8\u05D0\u05E9\u05D9 \u05EA\u05D9\u05D1\
+  \u05D5\u05EA \u05E9\u05DC eXtensible Markup Language, \u05D4\u05D5\u05D0 \u05DB\u05DE\
+  \u05D5 \u05D4\u05D1\u05DF \u05D3\u05D5\u05D3 \u05D4\u05DE\u05E1\u05D5\u05E8\u05D1\
+  \u05DC \u05E9\u05DC JSON. \u05EA\u05EA\u05DE\u05D5\u05D3\u05D3 \u05E2\u05DD XML\
+  \ \u05DB\u05D0\u05E9\u05E8 \u05D0\u05EA\u05D4 \u05DE\u05EA\u05E2\u05E1\u05E7 \u05E2\
+  \u05DD \u05DE\u05E2\u05E8\u05DB\u05D5\u05EA \u05D9\u05E9\u05E0\u05D5\u05EA, \u05EA\
+  \u05D5\u05DB\u05E0\u05D5\u05EA \u05D0\u05E8\u05D2\u05D5\u05E0\u05D9\u05D5\u05EA\
+  \ \u05D0\u05D5 API-\u2026"
+lastmod: 2024-02-18 23:08:52.640704
+model: gpt-4-0125-preview
+summary: "XML, \u05E9\u05D4\u05D5\u05D0 \u05E8\u05D0\u05E9\u05D9 \u05EA\u05D9\u05D1\
+  \u05D5\u05EA \u05E9\u05DC eXtensible Markup Language, \u05D4\u05D5\u05D0 \u05DB\u05DE\
+  \u05D5 \u05D4\u05D1\u05DF \u05D3\u05D5\u05D3 \u05D4\u05DE\u05E1\u05D5\u05E8\u05D1\
+  \u05DC \u05E9\u05DC JSON. \u05EA\u05EA\u05DE\u05D5\u05D3\u05D3 \u05E2\u05DD XML\
+  \ \u05DB\u05D0\u05E9\u05E8 \u05D0\u05EA\u05D4 \u05DE\u05EA\u05E2\u05E1\u05E7 \u05E2\
+  \u05DD \u05DE\u05E2\u05E8\u05DB\u05D5\u05EA \u05D9\u05E9\u05E0\u05D5\u05EA, \u05EA\
+  \u05D5\u05DB\u05E0\u05D5\u05EA \u05D0\u05E8\u05D2\u05D5\u05E0\u05D9\u05D5\u05EA\
+  \ \u05D0\u05D5 API-\u2026"
+title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD XML"
 ---
 
 {{< edit_this_page >}}

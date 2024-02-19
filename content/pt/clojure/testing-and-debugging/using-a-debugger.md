@@ -1,13 +1,16 @@
 ---
-title:                "Usando um depurador"
 aliases:
 - /pt/clojure/using-a-debugger/
-date:                  2024-01-26T03:48:18.335639-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando um depurador"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/using-a-debugger.md"
+date: 2024-01-26 03:48:18.335639-07:00
+description: "Usar um depurador significa que voc\xEA est\xE1 se equipando com uma\
+  \ lupa para examinar seu c\xF3digo. Os programadores fazem isso para eliminar bugs,\
+  \ entender o\u2026"
+lastmod: 2024-02-18 23:08:57.807194
+model: gpt-4-0125-preview
+summary: "Usar um depurador significa que voc\xEA est\xE1 se equipando com uma lupa\
+  \ para examinar seu c\xF3digo. Os programadores fazem isso para eliminar bugs, entender\
+  \ o\u2026"
+title: Usando um depurador
 ---
 
 {{< edit_this_page >}}

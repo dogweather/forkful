@@ -1,14 +1,16 @@
 ---
-title:                "Trabajando con JSON"
 aliases:
 - /es/java/working-with-json/
-date:                  2024-02-03T19:23:17.319349-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabajando con JSON"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:23:17.319349-07:00
+description: "Trabajar con JSON (Notaci\xF3n de Objetos de JavaScript) significa manejar\
+  \ este formato ligero de intercambio de datos dentro de tus aplicaciones Java. Los\u2026"
+lastmod: 2024-02-18 23:09:09.868146
+model: gpt-4-0125-preview
+summary: "Trabajar con JSON (Notaci\xF3n de Objetos de JavaScript) significa manejar\
+  \ este formato ligero de intercambio de datos dentro de tus aplicaciones Java. Los\u2026"
+title: Trabajando con JSON
 ---
 
 {{< edit_this_page >}}

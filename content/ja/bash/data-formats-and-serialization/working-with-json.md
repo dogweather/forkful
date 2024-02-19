@@ -1,14 +1,24 @@
 ---
-title:                "JSONを活用する"
 aliases:
 - /ja/bash/working-with-json/
-date:                  2024-02-03T19:21:46.614494-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "JSONを活用する"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:21:46.614494-07:00
+description: "Bash\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u3067\u306EJSON\u306E\
+  \u53D6\u308A\u6271\u3044\u306B\u306F\u3001\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\
+  \u304B\u3089\u76F4\u63A5JSON\u30C7\u30FC\u30BF\u3092\u89E3\u6790\u3001\u62BD\u51FA\
+  \u3001\u304A\u3088\u3073\u64CD\u4F5C\u3059\u308B\u3053\u3068\u304C\u542B\u307E\u308C\
+  \u307E\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\u30B7\u30A7\u30EB\
+  \u30B9\u30AF\u30EA\u30D7\u30C8\u3092Web\u2026"
+lastmod: 2024-02-18 23:08:55.094074
+model: gpt-4-0125-preview
+summary: "Bash\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u3067\u306EJSON\u306E\u53D6\
+  \u308A\u6271\u3044\u306B\u306F\u3001\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u304B\
+  \u3089\u76F4\u63A5JSON\u30C7\u30FC\u30BF\u3092\u89E3\u6790\u3001\u62BD\u51FA\u3001\
+  \u304A\u3088\u3073\u64CD\u4F5C\u3059\u308B\u3053\u3068\u304C\u542B\u307E\u308C\u307E\
+  \u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\u30B7\u30A7\u30EB\u30B9\
+  \u30AF\u30EA\u30D7\u30C8\u3092Web\u2026"
+title: "JSON\u3092\u6D3B\u7528\u3059\u308B"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
 aliases:
 - /pl/cpp/creating-a-temporary-file/
-date:                  2024-01-20T17:39:39.412613-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tworzenie pliku tymczasowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/creating-a-temporary-file.md"
+date: 2024-01-20 17:39:39.412613-07:00
+description: "(\"Co i dlaczego?\") Tworzenie pliku tymczasowego daje ci miejsce do\
+  \ przechowywania danych, kt\xF3re s\u0105 wa\u017Cne w trakcie wykonywania programu,\
+  \ ale nie po jego\u2026"
+lastmod: 2024-02-18 23:08:49.930809
+model: gpt-4-1106-preview
+summary: "(\"Co i dlaczego?\") Tworzenie pliku tymczasowego daje ci miejsce do przechowywania\
+  \ danych, kt\xF3re s\u0105 wa\u017Cne w trakcie wykonywania programu, ale nie po\
+  \ jego\u2026"
+title: Tworzenie pliku tymczasowego
 ---
 
 {{< edit_this_page >}}

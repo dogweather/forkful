@@ -1,13 +1,16 @@
 ---
-title:                "Reading a text file"
 aliases:
 - /en/powershell/reading-a-text-file/
-date:                  2024-01-20T17:55:00.852821-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Reading a text file"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/powershell/reading-a-text-file.md"
+date: 2024-01-20 17:55:00.852821-07:00
+description: "Reading a text file means pulling its content into a form your program\
+  \ can work with. Programmers do it for data processing, configuration, logging \u2013\
+  \u2026"
+lastmod: 2024-02-18 23:09:11.291439
+model: gpt-4-1106-preview
+summary: "Reading a text file means pulling its content into a form your program can\
+  \ work with. Programmers do it for data processing, configuration, logging \u2013\
+  \u2026"
+title: Reading a text file
 ---
 
 {{< edit_this_page >}}

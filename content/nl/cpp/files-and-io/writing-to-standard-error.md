@@ -1,15 +1,16 @@
 ---
-title:                "Schrijven naar standaardfout"
 aliases:
 - /nl/cpp/writing-to-standard-error/
-date:                  2024-01-28T22:13:29.063582-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Schrijven naar standaardfout"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/cpp/writing-to-standard-error.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:13:29.063582-07:00
+description: "Schrijven naar standaardfout (`stderr`) betekent het verzenden van foutmeldingen\
+  \ en diagnostiek naar een aparte stroom, los van reguliere uitvoer\u2026"
+lastmod: 2024-02-18 23:09:02.200773
+model: gpt-4-0125-preview
+summary: "Schrijven naar standaardfout (`stderr`) betekent het verzenden van foutmeldingen\
+  \ en diagnostiek naar een aparte stroom, los van reguliere uitvoer\u2026"
+title: Schrijven naar standaardfout
 ---
 
 {{< edit_this_page >}}

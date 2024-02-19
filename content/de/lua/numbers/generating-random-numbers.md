@@ -1,13 +1,15 @@
 ---
-title:                "Generierung von Zufallszahlen"
 aliases:
 - /de/lua/generating-random-numbers/
-date:                  2024-01-27T20:34:21.654921-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generierung von Zufallszahlen"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/generating-random-numbers.md"
+date: 2024-01-27 20:34:21.654921-07:00
+description: "Die Generierung von Zufallszahlen in der Programmierung geht darum,\
+  \ unvorhersehbare numerische Werte zu erzeugen, die f\xFCr eine Vielzahl von Zwecken\
+  \ wie\u2026"
+lastmod: 2024-02-18 23:09:05.002866
+model: gpt-4-0125-preview
+summary: "Die Generierung von Zufallszahlen in der Programmierung geht darum, unvorhersehbare\
+  \ numerische Werte zu erzeugen, die f\xFCr eine Vielzahl von Zwecken wie\u2026"
+title: Generierung von Zufallszahlen
 ---
 
 {{< edit_this_page >}}

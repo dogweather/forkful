@@ -1,13 +1,16 @@
 ---
-title:                "Omvandla ett datum till en sträng"
 aliases:
 - /sv/php/converting-a-date-into-a-string/
-date:                  2024-01-20T17:37:08.333479-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Omvandla ett datum till en sträng"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/converting-a-date-into-a-string.md"
+date: 2024-01-20 17:37:08.333479-07:00
+description: "Omformningen av ett datum till en textstr\xE4ng m\xF6jligg\xF6r smidig\
+  \ presentation och lagring. Programmerare g\xF6r detta f\xF6r att f\xF6rb\xE4ttra\
+  \ anv\xE4ndarupplevelse eller\u2026"
+lastmod: 2024-02-18 23:08:51.889334
+model: gpt-4-1106-preview
+summary: "Omformningen av ett datum till en textstr\xE4ng m\xF6jligg\xF6r smidig presentation\
+  \ och lagring. Programmerare g\xF6r detta f\xF6r att f\xF6rb\xE4ttra anv\xE4ndarupplevelse\
+  \ eller\u2026"
+title: "Omvandla ett datum till en str\xE4ng"
 ---
 
 {{< edit_this_page >}}

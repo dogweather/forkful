@@ -1,14 +1,16 @@
 ---
-title:                "Analisi del HTML"
 aliases:
 - /it/go/parsing-html/
-date:                  2024-02-03T18:00:03.367810-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analisi del HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:00:03.367810-07:00
+description: "L'analisi dell'HTML in Go comporta l'analisi del contenuto dei file\
+  \ HTML per estrarre dati, manipolare la struttura o convertire l'HTML in altri formati.\u2026"
+lastmod: 2024-02-18 23:08:55.429804
+model: gpt-4-0125-preview
+summary: "L'analisi dell'HTML in Go comporta l'analisi del contenuto dei file HTML\
+  \ per estrarre dati, manipolare la struttura o convertire l'HTML in altri formati.\u2026"
+title: Analisi del HTML
 ---
 
 {{< edit_this_page >}}

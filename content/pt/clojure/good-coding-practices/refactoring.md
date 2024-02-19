@@ -1,13 +1,16 @@
 ---
-title:                "Refatoração"
 aliases:
 - /pt/clojure/refactoring/
-date:                  2024-01-26T01:17:22.183084-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refatoração"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/refactoring.md"
+date: 2024-01-26 01:17:22.183084-07:00
+description: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o c\xF3digo de computador\
+  \ existente sem alterar seu comportamento externo, visando melhorar atributos n\xE3\
+  o\u2026"
+lastmod: 2024-02-18 23:08:57.810883
+model: gpt-4-0125-preview
+summary: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o c\xF3digo de computador\
+  \ existente sem alterar seu comportamento externo, visando melhorar atributos n\xE3\
+  o\u2026"
+title: "Refatora\xE7\xE3o"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Hämta en webbsida"
 aliases:
 - /sv/arduino/downloading-a-web-page/
-date:                  2024-01-20T17:43:32.772197-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Hämta en webbsida"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/downloading-a-web-page.md"
+date: 2024-01-20 17:43:32.772197-07:00
+description: "Ladda ner en webbsida inneb\xE4r att h\xE4mta HTML-data fr\xE5n en server\
+  \ till din Arduino. Programmerare g\xF6r det f\xF6r att interagera med webben, samla\
+  \ data eller\u2026"
+lastmod: 2024-02-18 23:08:52.043323
+model: gpt-4-1106-preview
+summary: "Ladda ner en webbsida inneb\xE4r att h\xE4mta HTML-data fr\xE5n en server\
+  \ till din Arduino. Programmerare g\xF6r det f\xF6r att interagera med webben, samla\
+  \ data eller\u2026"
+title: "H\xE4mta en webbsida"
 ---
 
 {{< edit_this_page >}}

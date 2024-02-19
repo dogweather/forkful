@@ -1,13 +1,14 @@
 ---
-title:                "Working with complex numbers"
 aliases:
 - /en/powershell/working-with-complex-numbers/
-date:                  2024-01-25T03:00:03.460077-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Working with complex numbers"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/powershell/working-with-complex-numbers.md"
+date: 2024-01-25 03:00:03.460077-07:00
+description: "Complex numbers, the ones with a real part and an imaginary part (like\
+  \ 3 + 4i), are vital in fields like engineering, physics, and data science.\u2026"
+lastmod: 2024-02-18 23:09:11.265954
+model: gpt-4-1106-preview
+summary: "Complex numbers, the ones with a real part and an imaginary part (like 3\
+  \ + 4i), are vital in fields like engineering, physics, and data science.\u2026"
+title: Working with complex numbers
 ---
 
 {{< edit_this_page >}}

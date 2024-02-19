@@ -1,13 +1,14 @@
 ---
-title:                "Searching and replacing text"
 aliases:
 - /en/haskell/searching-and-replacing-text/
-date:                  2024-01-20T17:57:57.492309-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Searching and replacing text"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:57.492309-07:00
+description: Searching and replacing text lets you find strings and swap them out.
+  Programmers use it to update code, refactor, or change data quickly.
+lastmod: 2024-02-18 23:09:11.081381
+model: gpt-4-1106-preview
+summary: Searching and replacing text lets you find strings and swap them out. Programmers
+  use it to update code, refactor, or change data quickly.
+title: Searching and replacing text
 ---
 
 {{< edit_this_page >}}

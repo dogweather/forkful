@@ -1,13 +1,16 @@
 ---
-title:                "Sammenslåing av strenger"
 aliases:
 - /no/ruby/concatenating-strings/
-date:                  2024-01-20T17:35:46.704887-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammenslåing av strenger"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/concatenating-strings.md"
+date: 2024-01-20 17:35:46.704887-07:00
+description: "I programmering betyr \xE5 \"konkatenere\" strenger \xE5 sette dem sammen\
+  \ til \xE9n. Programutviklere konkatenere strenger for \xE5 bygge setninger, lage\
+  \ meldinger,\u2026"
+lastmod: 2024-02-18 23:08:54.428978
+model: gpt-4-1106-preview
+summary: "I programmering betyr \xE5 \"konkatenere\" strenger \xE5 sette dem sammen\
+  \ til \xE9n. Programutviklere konkatenere strenger for \xE5 bygge setninger, lage\
+  \ meldinger,\u2026"
+title: "Sammensl\xE5ing av strenger"
 ---
 
 {{< edit_this_page >}}

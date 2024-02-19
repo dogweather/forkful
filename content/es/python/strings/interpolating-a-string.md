@@ -1,16 +1,17 @@
 ---
-title:                "Interpolando una cadena de caracteres"
 aliases:
 - /es/python/interpolating-a-string/
-date:                  2024-01-28T21:23:50.789079-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interpolando una cadena de caracteres"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/interpolating-a-string.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:23:50.789079-07:00
+description: "La interpolaci\xF3n de cadenas es el m\xE9todo de incrustar expresiones\
+  \ dentro de literales de cadena. Los programadores lo utilizan para insertar valores\u2026"
+lastmod: 2024-02-18 23:09:09.541213
+model: gpt-4-0125-preview
+summary: "La interpolaci\xF3n de cadenas es el m\xE9todo de incrustar expresiones\
+  \ dentro de literales de cadena. Los programadores lo utilizan para insertar valores\u2026"
+title: Interpolando una cadena de caracteres
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Scrivere test"
 aliases:
 - /it/bash/writing-tests/
-date:                  2024-02-03T19:29:32.489874-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Scrivere test"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:32.489874-07:00
+description: "Scrivere test in Bash comporta la creazione di script per casi di test\
+  \ al fine di convalidare la funzionalit\xE0 dei vostri script Bash. I programmatori\u2026"
+lastmod: 2024-02-18 23:08:56.055912
+model: gpt-4-0125-preview
+summary: "Scrivere test in Bash comporta la creazione di script per casi di test al\
+  \ fine di convalidare la funzionalit\xE0 dei vostri script Bash. I programmatori\u2026"
+title: Scrivere test
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Lese en tekstfil"
 aliases:
 - /no/javascript/reading-a-text-file/
-date:                  2024-01-20T17:54:32.991132-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lese en tekstfil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/reading-a-text-file.md"
+date: 2024-01-20 17:54:32.991132-07:00
+description: "Lesing av tekstfil betyr \xE5 hente tekstdata fra en fil p\xE5 disket.\
+  \ Programmerere gj\xF8r dette for \xE5 bearbeide data, konfigurere apper eller bare\
+  \ for \xE5 vise\u2026"
+lastmod: 2024-02-18 23:08:54.325748
+model: gpt-4-1106-preview
+summary: "Lesing av tekstfil betyr \xE5 hente tekstdata fra en fil p\xE5 disket. Programmerere\
+  \ gj\xF8r dette for \xE5 bearbeide data, konfigurere apper eller bare for \xE5 vise\u2026"
+title: Lese en tekstfil
 ---
 
 {{< edit_this_page >}}

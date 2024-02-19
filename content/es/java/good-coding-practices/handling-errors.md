@@ -1,13 +1,15 @@
 ---
-title:                "Manejo de errores"
 aliases:
 - /es/java/handling-errors/
-date:                  2024-01-26T00:53:09.294389-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Manejo de errores"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/handling-errors.md"
+date: 2024-01-26 00:53:09.294389-07:00
+description: "Manejar errores significa escribir c\xF3digo que anticipa y gestiona\
+  \ situaciones cuando las cosas salen mal. Los programadores lo hacen para hacer\
+  \ el\u2026"
+lastmod: 2024-02-18 23:09:09.852888
+model: gpt-4-1106-preview
+summary: "Manejar errores significa escribir c\xF3digo que anticipa y gestiona situaciones\
+  \ cuando las cosas salen mal. Los programadores lo hacen para hacer el\u2026"
+title: Manejo de errores
 ---
 
 {{< edit_this_page >}}

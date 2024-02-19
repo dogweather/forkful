@@ -1,14 +1,18 @@
 ---
-title:                "Reguläre Ausdrücke verwenden"
 aliases:
 - /de/c-sharp/using-regular-expressions/
-date:                  2024-02-03T19:16:27.551915-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Reguläre Ausdrücke verwenden"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:16:27.551915-07:00
+description: "Regul\xE4re Ausdr\xFCcke (regex) in C# sind ein m\xE4chtiges Werkzeug\
+  \ f\xFCr das Musterabgleichen innerhalb von Zeichenketten, das es Programmierern\
+  \ erm\xF6glicht,\u2026"
+lastmod: 2024-02-18 23:09:04.860801
+model: gpt-4-0125-preview
+summary: "Regul\xE4re Ausdr\xFCcke (regex) in C# sind ein m\xE4chtiges Werkzeug f\xFC\
+  r das Musterabgleichen innerhalb von Zeichenketten, das es Programmierern erm\xF6\
+  glicht,\u2026"
+title: "Regul\xE4re Ausdr\xFCcke verwenden"
 ---
 
 {{< edit_this_page >}}

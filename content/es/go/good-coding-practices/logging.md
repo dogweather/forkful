@@ -1,14 +1,18 @@
 ---
-title:                "Registro"
 aliases:
 - /es/go/logging/
-date:                  2024-02-03T17:58:55.244930-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Registro"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/logging.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:58:55.244930-07:00
+description: "El registro (logging) en el desarrollo de software es el proceso de\
+  \ grabar informaci\xF3n sobre la ejecuci\xF3n de un programa, dise\xF1ado para rastrear\
+  \ su\u2026"
+lastmod: 2024-02-18 23:09:09.463262
+model: gpt-4-0125-preview
+summary: "El registro (logging) en el desarrollo de software es el proceso de grabar\
+  \ informaci\xF3n sobre la ejecuci\xF3n de un programa, dise\xF1ado para rastrear\
+  \ su\u2026"
+title: Registro
 ---
 
 {{< edit_this_page >}}

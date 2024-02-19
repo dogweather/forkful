@@ -1,13 +1,16 @@
 ---
-title:                "Ta bort tecken som matchar ett mönster"
 aliases:
 - /sv/elm/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:16.710962-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Ta bort tecken som matchar ett mönster"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:16.710962-07:00
+description: "Att ta bort tecken som matchar ett m\xF6nster \xE4r en process d\xE4\
+  r vissa teckenstr\xE4ngar rensas bort fr\xE5n data baserat p\xE5 specifika kriterier.\
+  \ Programmerare g\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.694919
+model: gpt-4-1106-preview
+summary: "Att ta bort tecken som matchar ett m\xF6nster \xE4r en process d\xE4r vissa\
+  \ teckenstr\xE4ngar rensas bort fr\xE5n data baserat p\xE5 specifika kriterier.\
+  \ Programmerare g\xF6r\u2026"
+title: "Ta bort tecken som matchar ett m\xF6nster"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Lokitus"
 aliases:
 - /fi/ruby/logging/
-date:                  2024-01-26T01:08:50.605300-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lokitus"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/logging.md"
+date: 2024-01-26 01:08:50.605300-07:00
+description: "Lokitus ohjelmoinnissa on kuin p\xE4iv\xE4kirjan pit\xE4mist\xE4 sovelluksellesi.\
+  \ Se on systemaattista tapahtumien, viestien ja datapisteiden tallentamista, jotka\u2026"
+lastmod: 2024-02-18 23:09:08.189849
+model: gpt-4-1106-preview
+summary: "Lokitus ohjelmoinnissa on kuin p\xE4iv\xE4kirjan pit\xE4mist\xE4 sovelluksellesi.\
+  \ Se on systemaattista tapahtumien, viestien ja datapisteiden tallentamista, jotka\u2026"
+title: Lokitus
 ---
 
 {{< edit_this_page >}}

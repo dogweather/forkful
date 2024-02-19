@@ -1,13 +1,16 @@
 ---
-title:                "Registro de Actividades en Programación"
 aliases:
 - /es/fish-shell/logging/
-date:                  2024-01-26T01:03:27.732027-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registro de Actividades en Programación"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/logging.md"
+date: 2024-01-26 01:03:27.732027-07:00
+description: "Registrar es esencialmente anotar lo que tu aplicaci\xF3n est\xE1 haciendo:\
+  \ un diario, por as\xED decirlo, pero para el c\xF3digo. Los programadores lo hacen\
+  \ para\u2026"
+lastmod: 2024-02-18 23:09:10.460444
+model: gpt-4-1106-preview
+summary: "Registrar es esencialmente anotar lo que tu aplicaci\xF3n est\xE1 haciendo:\
+  \ un diario, por as\xED decirlo, pero para el c\xF3digo. Los programadores lo hacen\
+  \ para\u2026"
+title: "Registro de Actividades en Programaci\xF3n"
 ---
 
 {{< edit_this_page >}}

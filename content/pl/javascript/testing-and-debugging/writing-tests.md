@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie testów"
 aliases:
 - /pl/javascript/writing-tests/
-date:                  2024-02-03T19:31:40.492830-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie testów"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:31:40.492830-07:00
+description: "Pisanie test\xF3w w JavaScript odnosi si\u0119 do praktyki tworzenia\
+  \ automatycznych skrypt\xF3w, kt\xF3re uruchamiaj\u0105 tw\xF3j kod, aby upewni\u0107\
+  \ si\u0119, \u017Ce dzia\u0142a on zgodnie z\u2026"
+lastmod: 2024-02-18 23:08:49.997288
+model: gpt-4-0125-preview
+summary: "Pisanie test\xF3w w JavaScript odnosi si\u0119 do praktyki tworzenia automatycznych\
+  \ skrypt\xF3w, kt\xF3re uruchamiaj\u0105 tw\xF3j kod, aby upewni\u0107 si\u0119\
+  , \u017Ce dzia\u0142a on zgodnie z\u2026"
+title: "Pisanie test\xF3w"
 ---
 
 {{< edit_this_page >}}

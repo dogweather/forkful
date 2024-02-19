@@ -1,15 +1,20 @@
 ---
-title:                "Làm việc với XML"
 aliases:
 - /vi/typescript/working-with-xml/
-date:                  2024-01-28T22:12:22.634703-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/typescript/working-with-xml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:22.634703-07:00
+description: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch\
+  \ c\xFA ph\xE1p, thao t\xE1c v\xE0 vi\u1EBFt d\u1EEF li\u1EC7u XML b\u1EB1ng c\xE1\
+  ch s\u1EED d\u1EE5ng l\u1EADp tr\xECnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn x\u1EED\
+  \ l\xFD XML \u0111\u1EC3 trao \u0111\u1ED5i d\u1EEF li\u1EC7u\u2026"
+lastmod: 2024-02-18 23:08:50.441963
+model: gpt-4-0125-preview
+summary: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch c\xFA\
+  \ ph\xE1p, thao t\xE1c v\xE0 vi\u1EBFt d\u1EEF li\u1EC7u XML b\u1EB1ng c\xE1ch s\u1EED\
+  \ d\u1EE5ng l\u1EADp tr\xECnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn x\u1EED l\xFD XML\
+  \ \u0111\u1EC3 trao \u0111\u1ED5i d\u1EEF li\u1EC7u\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 ---
 
 {{< edit_this_page >}}

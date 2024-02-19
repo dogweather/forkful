@@ -1,14 +1,16 @@
 ---
-title:                "Analizando HTML"
 aliases:
 - /es/lua/parsing-html/
-date:                  2024-02-03T19:12:29.563630-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analizando HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/lua/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:12:29.563630-07:00
+description: "Analizar HTML implica extraer datos e informaci\xF3n de documentos HTML,\
+  \ lo cual es crucial para el raspado web, an\xE1lisis de datos y tareas de\u2026"
+lastmod: 2024-02-18 23:09:10.117157
+model: gpt-4-0125-preview
+summary: "Analizar HTML implica extraer datos e informaci\xF3n de documentos HTML,\
+  \ lo cual es crucial para el raspado web, an\xE1lisis de datos y tareas de\u2026"
+title: Analizando HTML
 ---
 
 {{< edit_this_page >}}

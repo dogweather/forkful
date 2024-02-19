@@ -1,15 +1,20 @@
 ---
-title:                "Tìm kiếm và thay thế văn bản"
 aliases:
 - /vi/python/searching-and-replacing-text/
-date:                  2024-01-28T22:07:33.742544-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tìm kiếm và thay thế văn bản"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/python/searching-and-replacing-text.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:07:33.742544-07:00
+description: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n l\xE0 vi\u1EC7\
+  c t\xECm ki\u1EBFm c\xE1c chu\u1ED7i trong m\u1ED9t kh\u1ED1i v\u0103n b\u1EA3n\
+  \ v\xE0 thay \u0111\u1ED5i ch\xFAng th\xE0nh c\xE1i kh\xE1c. L\u1EADp tr\xECnh vi\xEA\
+  n l\xE0m vi\u1EC7c n\xE0y \u0111\u1EC3 ch\u1EC9nh s\u1EEDa\u2026"
+lastmod: 2024-02-18 23:08:50.251441
+model: gpt-4-0125-preview
+summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n l\xE0 vi\u1EC7c t\xEC\
+  m ki\u1EBFm c\xE1c chu\u1ED7i trong m\u1ED9t kh\u1ED1i v\u0103n b\u1EA3n v\xE0 thay\
+  \ \u0111\u1ED5i ch\xFAng th\xE0nh c\xE1i kh\xE1c. L\u1EADp tr\xECnh vi\xEAn l\xE0\
+  m vi\u1EC7c n\xE0y \u0111\u1EC3 ch\u1EC9nh s\u1EEDa\u2026"
+title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 ---
 
 {{< edit_this_page >}}

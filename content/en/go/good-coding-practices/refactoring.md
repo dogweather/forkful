@@ -1,12 +1,15 @@
 ---
-title:                "Refactoring"
 aliases:
 - /en/go/refactoring/
-date:                  2024-02-03T17:50:21.719631-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactoring"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/refactoring.md"
+date: 2024-02-03 17:50:21.719631-07:00
+description: "Refactoring in programming involves restructuring existing computer\
+  \ code\u2014changing the factoring\u2014without changing its external behavior.\
+  \ Programmers\u2026"
+lastmod: 2024-02-18 23:09:10.605133
+model: gpt-4-0125-preview
+summary: "Refactoring in programming involves restructuring existing computer code\u2014\
+  changing the factoring\u2014without changing its external behavior. Programmers\u2026"
+title: Refactoring
 ---
 
 {{< edit_this_page >}}

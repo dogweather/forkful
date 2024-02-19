@@ -1,15 +1,29 @@
 ---
-title:                "Склеивание строк"
 aliases:
 - /ru/clojure/concatenating-strings/
-date:                  2024-01-28T23:55:58.881059-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Склеивание строк"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/clojure/concatenating-strings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 23:55:58.881059-07:00
+description: "\u041A\u043E\u043D\u043A\u0430\u0442\u0435\u043D\u0430\u0446\u0438\u044F\
+  \ \u0441\u0442\u0440\u043E\u043A - \u044D\u0442\u043E \u0438\u0445 \u0441\u043E\u0435\
+  \u0434\u0438\u043D\u0435\u043D\u0438\u0435 \u0432\u0441\u0442\u044B\u043A - \"hello\"\
+  \ + \"world\" \u043F\u0440\u0435\u0432\u0440\u0430\u0449\u0430\u0435\u0442\u0441\
+  \u044F \u0432 \"helloworld\". \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\
+  \u0441\u0442\u044B \u0434\u0435\u043B\u0430\u044E\u0442 \u044D\u0442\u043E \u0434\
+  \u043B\u044F \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u044F \u0442\u0435\u043A\
+  \u0441\u0442\u0430, \u0442\u0430\u043A\u043E\u0433\u043E \u043A\u0430\u043A URL-\u2026"
+lastmod: 2024-02-18 23:08:56.573324
+model: gpt-4-0125-preview
+summary: "\u041A\u043E\u043D\u043A\u0430\u0442\u0435\u043D\u0430\u0446\u0438\u044F\
+  \ \u0441\u0442\u0440\u043E\u043A - \u044D\u0442\u043E \u0438\u0445 \u0441\u043E\u0435\
+  \u0434\u0438\u043D\u0435\u043D\u0438\u0435 \u0432\u0441\u0442\u044B\u043A - \"hello\"\
+  \ + \"world\" \u043F\u0440\u0435\u0432\u0440\u0430\u0449\u0430\u0435\u0442\u0441\
+  \u044F \u0432 \"helloworld\". \u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\
+  \u0441\u0442\u044B \u0434\u0435\u043B\u0430\u044E\u0442 \u044D\u0442\u043E \u0434\
+  \u043B\u044F \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u044F \u0442\u0435\u043A\
+  \u0441\u0442\u0430, \u0442\u0430\u043A\u043E\u0433\u043E \u043A\u0430\u043A URL-\u2026"
+title: "\u0421\u043A\u043B\u0435\u0438\u0432\u0430\u043D\u0438\u0435 \u0441\u0442\u0440\
+  \u043E\u043A"
 ---
 
 {{< edit_this_page >}}

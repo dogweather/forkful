@@ -1,13 +1,16 @@
 ---
-title:                "Korzystanie z debugera"
 aliases:
 - /pl/bash/using-a-debugger/
-date:                  2024-01-26T03:47:48.517790-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z debugera"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/using-a-debugger.md"
+date: 2024-01-26 03:47:48.517790-07:00
+description: "U\u017Cycie debugera w Bashu oznacza wykorzystywanie narz\u0119dzi do\
+  \ testowania i znajdowania problem\xF3w w skryptach, takich jak pu\u0142apki na\
+  \ b\u0142\u0119dy, kt\xF3re powoduj\u0105\u2026"
+lastmod: 2024-02-18 23:08:49.789253
+model: gpt-4-0125-preview
+summary: "U\u017Cycie debugera w Bashu oznacza wykorzystywanie narz\u0119dzi do testowania\
+  \ i znajdowania problem\xF3w w skryptach, takich jak pu\u0142apki na b\u0142\u0119\
+  dy, kt\xF3re powoduj\u0105\u2026"
+title: Korzystanie z debugera
 ---
 
 {{< edit_this_page >}}

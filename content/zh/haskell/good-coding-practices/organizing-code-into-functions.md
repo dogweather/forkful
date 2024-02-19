@@ -1,13 +1,24 @@
 ---
-title:                "将代码组织成函数"
 aliases:
 - /zh/haskell/organizing-code-into-functions/
-date:                  2024-01-26T01:10:30.687313-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "将代码组织成函数"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/organizing-code-into-functions.md"
+date: 2024-01-26 01:10:30.687313-07:00
+description: "\u5728 Haskell \u4E2D\u7EC4\u7EC7\u4EE3\u7801\u8FDB\u5165\u51FD\u6570\
+  \u610F\u5473\u7740\u5C06\u4F60\u7684\u4EE3\u7801\u5206\u89E3\u6210\u53EF\u590D\u7528\
+  \u7684\u3001\u6709\u540D\u79F0\u7684\u4EE3\u7801\u5757\u3002\u4E3A\u4EC0\u4E48\u8FD9\
+  \u4E48\u505A\uFF1F\u5B83\u80FD\u4F7F\u4F60\u7684\u4EE3\u7801\u9075\u5FAA\"\u4E0D\
+  \u8981\u91CD\u590D\u81EA\u5DF1\"(Don't Repeat Yourself\uFF0C\u5373 DRY)\u539F\u5219\
+  \uFF0C\u4F7F\u4EE3\u7801\u53EF\u8BFB\u6027\u66F4\u5F3A\uFF0C\u4E14\u66F4\u6613\u4E8E\
+  \u8C03\u8BD5\u3002"
+lastmod: 2024-02-18 23:08:59.174927
+model: gpt-4-1106-preview
+summary: "\u5728 Haskell \u4E2D\u7EC4\u7EC7\u4EE3\u7801\u8FDB\u5165\u51FD\u6570\u610F\
+  \u5473\u7740\u5C06\u4F60\u7684\u4EE3\u7801\u5206\u89E3\u6210\u53EF\u590D\u7528\u7684\
+  \u3001\u6709\u540D\u79F0\u7684\u4EE3\u7801\u5757\u3002\u4E3A\u4EC0\u4E48\u8FD9\u4E48\
+  \u505A\uFF1F\u5B83\u80FD\u4F7F\u4F60\u7684\u4EE3\u7801\u9075\u5FAA\"\u4E0D\u8981\
+  \u91CD\u590D\u81EA\u5DF1\"(Don't Repeat Yourself\uFF0C\u5373 DRY)\u539F\u5219\uFF0C\
+  \u4F7F\u4EE3\u7801\u53EF\u8BFB\u6027\u66F4\u5F3A\uFF0C\u4E14\u66F4\u6613\u4E8E\u8C03\
+  \u8BD5\u3002"
+title: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\u51FD\u6570"
 ---
 
 {{< edit_this_page >}}

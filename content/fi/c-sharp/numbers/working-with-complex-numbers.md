@@ -1,13 +1,16 @@
 ---
-title:                "Kompleksilukujen käsittely"
 aliases:
 - /fi/c-sharp/working-with-complex-numbers/
-date:                  2024-01-26T04:38:50.740778-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kompleksilukujen käsittely"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/working-with-complex-numbers.md"
+date: 2024-01-26 04:38:50.740778-07:00
+description: "Kompleksiluvut laajentavat lukuj\xE4rjestelm\xE4\xE4mme sis\xE4lt\xE4\
+  m\xE4\xE4n imaginaarisia lukuja, mik\xE4 mahdollistaa yht\xE4l\xF6iden ratkaisun,\
+  \ kun todellisia ratkaisuja ei ole.\u2026"
+lastmod: 2024-02-18 23:09:07.613950
+model: gpt-4-0125-preview
+summary: "Kompleksiluvut laajentavat lukuj\xE4rjestelm\xE4\xE4mme sis\xE4lt\xE4m\xE4\
+  \xE4n imaginaarisia lukuja, mik\xE4 mahdollistaa yht\xE4l\xF6iden ratkaisun, kun\
+  \ todellisia ratkaisuja ei ole.\u2026"
+title: "Kompleksilukujen k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

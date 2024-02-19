@@ -1,15 +1,18 @@
 ---
-title:                "Làm việc với XML"
 aliases:
 - /vi/java/working-with-xml/
-date:                  2024-01-28T22:12:07.986917-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Làm việc với XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/java/working-with-xml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:07.986917-07:00
+description: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch\
+  \ c\xFA ph\xE1p (parsing), truy v\u1EA5n (querying), v\xE0 thao t\xE1c (manipulating)\
+  \ c\xE1c t\xE0i li\u1EC7u XML b\u1EB1ng Java. C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
+lastmod: 2024-02-18 23:08:50.583810
+model: gpt-4-0125-preview
+summary: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA\
+  \ ph\xE1p (parsing), truy v\u1EA5n (querying), v\xE0 thao t\xE1c (manipulating)\
+  \ c\xE1c t\xE0i li\u1EC7u XML b\u1EB1ng Java. C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
+title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 ---
 
 {{< edit_this_page >}}

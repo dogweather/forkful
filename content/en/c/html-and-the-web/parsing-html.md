@@ -1,12 +1,15 @@
 ---
-title:                "Parsing HTML"
 aliases:
 - /en/c/parsing-html/
-date:                  2024-02-03T17:50:12.004223-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Parsing HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/parsing-html.md"
+date: 2024-02-03 17:50:12.004223-07:00
+description: "Parsing HTML in C involves analyzing HTML documents to extract data,\
+  \ structure, or specific parts efficiently, often as a precursor to data mining\
+  \ or web\u2026"
+lastmod: 2024-02-18 23:09:11.520432
+model: gpt-4-0125-preview
+summary: "Parsing HTML in C involves analyzing HTML documents to extract data, structure,\
+  \ or specific parts efficiently, often as a precursor to data mining or web\u2026"
+title: Parsing HTML
 ---
 
 {{< edit_this_page >}}

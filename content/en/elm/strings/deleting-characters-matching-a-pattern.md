@@ -1,13 +1,14 @@
 ---
-title:                "Deleting characters matching a pattern"
 aliases:
 - /en/elm/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:41:49.379883-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Deleting characters matching a pattern"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:41:49.379883-07:00
+description: "Deleting characters matching a pattern means to wipe out specific sets\
+  \ of characters from text, based on rules (patterns). Programmers do this for text\u2026"
+lastmod: 2024-02-18 23:09:10.956480
+model: gpt-4-1106-preview
+summary: "Deleting characters matching a pattern means to wipe out specific sets of\
+  \ characters from text, based on rules (patterns). Programmers do this for text\u2026"
+title: Deleting characters matching a pattern
 ---
 
 {{< edit_this_page >}}

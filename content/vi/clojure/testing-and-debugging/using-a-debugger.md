@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng bộ gỡ lỗi"
 aliases:
 - /vi/clojure/using-a-debugger/
-date:                  2024-01-28T22:08:49.513048-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng bộ gỡ lỗi"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/clojure/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:08:49.513048-07:00
+description: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i c\xF3 ngh\u0129\
+  a l\xE0 b\u1EA1n \u0111\xE3 trang b\u1ECB cho m\xECnh m\u1ED9t chi\u1EBFc k\xED\
+  nh l\xFAp \u0111\u1EC3 xem x\xE9t m\xE3 c\u1EE7a m\xECnh. C\xE1c l\u1EADp tr\xEC\
+  nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 lo\u1EA1i b\u1ECF l\u1ED7i,\u2026"
+lastmod: 2024-02-18 23:08:50.319852
+model: gpt-4-0125-preview
+summary: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i c\xF3 ngh\u0129a l\xE0\
+  \ b\u1EA1n \u0111\xE3 trang b\u1ECB cho m\xECnh m\u1ED9t chi\u1EBFc k\xEDnh l\xFA\
+  p \u0111\u1EC3 xem x\xE9t m\xE3 c\u1EE7a m\xECnh. C\xE1c l\u1EADp tr\xECnh vi\xEA\
+  n l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 lo\u1EA1i b\u1ECF l\u1ED7i,\u2026"
+title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

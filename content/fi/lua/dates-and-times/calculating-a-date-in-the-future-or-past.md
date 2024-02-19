@@ -1,13 +1,16 @@
 ---
-title:                "Tulevan tai menneen päivämäärän laskeminen"
 aliases:
 - /fi/lua/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:31:24.723669-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:31:24.723669-07:00
+description: "Lasketaan p\xE4iv\xE4m\xE4\xE4r\xE4 tulevaisuudessa tai menneisyydess\xE4\
+  . Koodarit tekev\xE4t t\xE4t\xE4 ajoituksen, m\xE4\xE4r\xE4aikojen ja tapahtumaseurannan\
+  \ vuoksi."
+lastmod: 2024-02-18 23:09:07.771496
+model: gpt-4-1106-preview
+summary: "Lasketaan p\xE4iv\xE4m\xE4\xE4r\xE4 tulevaisuudessa tai menneisyydess\xE4\
+  . Koodarit tekev\xE4t t\xE4t\xE4 ajoituksen, m\xE4\xE4r\xE4aikojen ja tapahtumaseurannan\
+  \ vuoksi."
+title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Konwersja łańcucha znaków na małe litery"
 aliases:
 - /pl/google-apps-script/converting-a-string-to-lower-case/
-date:                  2024-02-01T21:52:43.201249-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Konwersja łańcucha znaków na małe litery"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/google-apps-script/converting-a-string-to-lower-case.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:52:43.201249-07:00
+description: "Konwersja ci\u0105g\xF3w znak\xF3w na ma\u0142e litery w Google Apps\
+  \ Script, chmurowym j\u0119zyku skryptowym do automatyzacji zada\u0144 w produktach\
+  \ Google, jest podstawowym\u2026"
+lastmod: 2024-02-18 23:08:49.131728
+model: gpt-4-0125-preview
+summary: "Konwersja ci\u0105g\xF3w znak\xF3w na ma\u0142e litery w Google Apps Script,\
+  \ chmurowym j\u0119zyku skryptowym do automatyzacji zada\u0144 w produktach Google,\
+  \ jest podstawowym\u2026"
+title: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery"
 ---
 
 {{< edit_this_page >}}

@@ -1,12 +1,14 @@
 ---
-title:                "Deleting characters matching a pattern"
 aliases:
 - /en/google-apps-script/deleting-characters-matching-a-pattern/
-date:                  2024-02-01T21:12:15.582559-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Deleting characters matching a pattern"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/google-apps-script/deleting-characters-matching-a-pattern.md"
+date: 2024-02-01 21:12:15.582559-07:00
+description: "Deleting characters matching a specific pattern is a technique used\
+  \ to cleanse or format strings in programming. In the context of Google Apps Script,\u2026"
+lastmod: 2024-02-18 23:09:10.623299
+model: gpt-4-0125-preview
+summary: "Deleting characters matching a specific pattern is a technique used to cleanse\
+  \ or format strings in programming. In the context of Google Apps Script,\u2026"
+title: Deleting characters matching a pattern
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Einen neuen Projekt starten"
 aliases:
 - /de/php/starting-a-new-project/
-date:                  2024-01-20T18:04:08.885079-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Einen neuen Projekt starten"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/starting-a-new-project.md"
+date: 2024-01-20 18:04:08.885079-07:00
+description: "Ein neues Projekt starten bedeutet, eine frische Codebasis aufzubauen.\
+  \ Programmierer machen das, um Ideen in funktionierende Software umzusetzen und\u2026"
+lastmod: 2024-02-18 23:09:04.962811
+model: gpt-4-1106-preview
+summary: "Ein neues Projekt starten bedeutet, eine frische Codebasis aufzubauen. Programmierer\
+  \ machen das, um Ideen in funktionierende Software umzusetzen und\u2026"
+title: Einen neuen Projekt starten
 ---
 
 {{< edit_this_page >}}

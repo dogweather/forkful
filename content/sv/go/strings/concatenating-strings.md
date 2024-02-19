@@ -1,14 +1,18 @@
 ---
-title:                "Sammanfoga strängar"
 aliases:
 - /sv/go/concatenating-strings/
-date:                  2024-02-03T17:54:07.472373-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sammanfoga strängar"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/concatenating-strings.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:07.472373-07:00
+description: "Att sammanfoga str\xE4ngar inneb\xE4r att man sammanfogar tv\xE5 eller\
+  \ flera str\xE4ngar fr\xE5n slut till slut f\xF6r att bilda en ny str\xE4ng. Programmerare\
+  \ g\xF6r detta f\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.324774
+model: gpt-4-0125-preview
+summary: "Att sammanfoga str\xE4ngar inneb\xE4r att man sammanfogar tv\xE5 eller flera\
+  \ str\xE4ngar fr\xE5n slut till slut f\xF6r att bilda en ny str\xE4ng. Programmerare\
+  \ g\xF6r detta f\xF6r\u2026"
+title: "Sammanfoga str\xE4ngar"
 ---
 
 {{< edit_this_page >}}

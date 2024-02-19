@@ -1,14 +1,21 @@
 ---
-title:                "字符串拼接"
 aliases:
 - /zh/lua/concatenating-strings/
-date:                  2024-01-20T17:35:18.818263-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "字符串拼接"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/lua/concatenating-strings.md"
+date: 2024-01-20 17:35:18.818263-07:00
+description: "\u5728Lua\u4E2D\uFF0C\u5B57\u7B26\u4E32\u62FC\u63A5\u5C31\u662F\u5C06\
+  \u4E24\u4E2A\u6216\u591A\u4E2A\u5B57\u7B26\u4E32\u5408\u6210\u4E00\u4E2A\u3002\u7A0B\
+  \u5E8F\u5458\u62FC\u63A5\u5B57\u7B26\u4E32\u4E3A\u4E86\u521B\u5EFA\u52A8\u6001\u6D88\
+  \u606F\uFF0C\u7EC4\u7EC7\u6570\u636E\uFF0C\u6216\u6784\u5EFA\u7A0B\u5E8F\u8FD0\u884C\
+  \u65F6\u624D\u80FD\u786E\u5B9A\u7684\u5B57\u7B26\u4E32\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.246545
+model: gpt-4-1106-preview
+summary: "\u5728Lua\u4E2D\uFF0C\u5B57\u7B26\u4E32\u62FC\u63A5\u5C31\u662F\u5C06\u4E24\
+  \u4E2A\u6216\u591A\u4E2A\u5B57\u7B26\u4E32\u5408\u6210\u4E00\u4E2A\u3002\u7A0B\u5E8F\
+  \u5458\u62FC\u63A5\u5B57\u7B26\u4E32\u4E3A\u4E86\u521B\u5EFA\u52A8\u6001\u6D88\u606F\
+  \uFF0C\u7EC4\u7EC7\u6570\u636E\uFF0C\u6216\u6784\u5EFA\u7A0B\u5E8F\u8FD0\u884C\u65F6\
+  \u624D\u80FD\u786E\u5B9A\u7684\u5B57\u7B26\u4E32\u3002"
+title: "\u5B57\u7B26\u4E32\u62FC\u63A5"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,18 @@
 ---
-title:                "Att använda associativa arrayer"
 aliases:
 - /sv/php/using-associative-arrays/
-date:                  2024-01-30T19:12:32.693538-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda associativa arrayer"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:32.693538-07:00
+description: "Associativa arrayer i PHP \xE4r som superladdade listor d\xE4r varje\
+  \ element kan n\xE5s genom att anv\xE4nda ett l\xE4sbart nyckelv\xE4rde ist\xE4\
+  llet f\xF6r bara siffror.\u2026"
+lastmod: 2024-02-18 23:08:51.871471
+model: gpt-4-0125-preview
+summary: "Associativa arrayer i PHP \xE4r som superladdade listor d\xE4r varje element\
+  \ kan n\xE5s genom att anv\xE4nda ett l\xE4sbart nyckelv\xE4rde ist\xE4llet f\xF6\
+  r bara siffror.\u2026"
+title: "Att anv\xE4nda associativa arrayer"
 ---
 
 {{< edit_this_page >}}

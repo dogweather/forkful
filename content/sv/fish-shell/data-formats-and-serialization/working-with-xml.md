@@ -1,13 +1,14 @@
 ---
-title:                "Att arbeta med XML"
 aliases:
 - /sv/fish-shell/working-with-xml/
-date:                  2024-01-26T04:30:44.214195-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/working-with-xml.md"
+date: 2024-01-26 04:30:44.214195-07:00
+description: "Att arbeta med XML inneb\xE4r att hantera data i ett utbrett, strukturerat\
+  \ format som anv\xE4nds i konfigurationer, meddelanden och mer. Programmerare\u2026"
+lastmod: 2024-02-18 23:08:52.231251
+model: gpt-4-0125-preview
+summary: "Att arbeta med XML inneb\xE4r att hantera data i ett utbrett, strukturerat\
+  \ format som anv\xE4nds i konfigurationer, meddelanden och mer. Programmerare\u2026"
+title: Att arbeta med XML
 ---
 
 {{< edit_this_page >}}

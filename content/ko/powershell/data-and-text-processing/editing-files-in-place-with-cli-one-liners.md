@@ -1,13 +1,29 @@
 ---
-title:                "CLI 한 줄 명령어로 파일을 제자리에서 편집하기"
 aliases:
 - /ko/powershell/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:21:09.846719-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "CLI 한 줄 명령어로 파일을 제자리에서 편집하기"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:21:09.846719-07:00
+description: "PowerShell\uC5D0\uC11C CLI \uC6D0 \uB77C\uC774\uB108\uB85C \uD604\uC7A5\
+  \ \uB0B4 \uD30C\uC77C \uD3B8\uC9D1\uC740 \uD3B8\uC9D1\uAE30\uC5D0\uC11C \uD30C\uC77C\
+  \uC744 \uC5F4 \uD544\uC694 \uC5C6\uC774 \uBA85\uB839 \uC904\uC5D0\uC11C \uC9C1\uC811\
+  \ \uD30C\uC77C\uC744 \uC218\uC815\uD558\uB294 \uAC83\uC5D0 \uAD00\uD55C \uAC83\uC785\
+  \uB2C8\uB2E4. \uC774 \uC811\uADFC \uBC29\uC2DD\uC740 \uC2DC\uAC04\uC744 \uC808\uC57D\
+  \uD558\uBA70, \uC5EC\uB7EC \uD30C\uC77C\uC5D0 \uAC78\uCCD0 \uBC18\uBCF5 \uD3B8\uC9D1\
+  \ \uC791\uC5C5\uC744 \uC790\uB3D9\uD654\uD558\uAC70\uB098 \uC77C\uAD04 \uCC98\uB9AC\
+  \uD558\uAE30\uC5D0 \uD2B9\uD788 \uC720\uC6A9\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4\
+  ."
+lastmod: 2024-02-18 23:09:06.547812
+model: gpt-4-0125-preview
+summary: "PowerShell\uC5D0\uC11C CLI \uC6D0 \uB77C\uC774\uB108\uB85C \uD604\uC7A5\
+  \ \uB0B4 \uD30C\uC77C \uD3B8\uC9D1\uC740 \uD3B8\uC9D1\uAE30\uC5D0\uC11C \uD30C\uC77C\
+  \uC744 \uC5F4 \uD544\uC694 \uC5C6\uC774 \uBA85\uB839 \uC904\uC5D0\uC11C \uC9C1\uC811\
+  \ \uD30C\uC77C\uC744 \uC218\uC815\uD558\uB294 \uAC83\uC5D0 \uAD00\uD55C \uAC83\uC785\
+  \uB2C8\uB2E4. \uC774 \uC811\uADFC \uBC29\uC2DD\uC740 \uC2DC\uAC04\uC744 \uC808\uC57D\
+  \uD558\uBA70, \uC5EC\uB7EC \uD30C\uC77C\uC5D0 \uAC78\uCCD0 \uBC18\uBCF5 \uD3B8\uC9D1\
+  \ \uC791\uC5C5\uC744 \uC790\uB3D9\uD654\uD558\uAC70\uB098 \uC77C\uAD04 \uCC98\uB9AC\
+  \uD558\uAE30\uC5D0 \uD2B9\uD788 \uC720\uC6A9\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4\
+  ."
+title: "CLI \uD55C \uC904 \uBA85\uB839\uC5B4\uB85C \uD30C\uC77C\uC744 \uC81C\uC790\
+  \uB9AC\uC5D0\uC11C \uD3B8\uC9D1\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

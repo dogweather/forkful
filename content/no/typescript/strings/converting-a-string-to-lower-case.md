@@ -1,13 +1,16 @@
 ---
-title:                "Konvertere en streng til små bokstaver"
 aliases:
 - /no/typescript/converting-a-string-to-lower-case/
-date:                  2024-01-20T17:39:29.234329-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konvertere en streng til små bokstaver"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/converting-a-string-to-lower-case.md"
+date: 2024-01-20 17:39:29.234329-07:00
+description: "\xC5 konvertere en streng til sm\xE5 bokstaver betyr at alle store bokstaver\
+  \ i strengen gj\xF8res om til sm\xE5 bokstaver. Programmere gj\xF8r dette for \xE5\
+  \ standardisere\u2026"
+lastmod: 2024-02-18 23:08:53.632856
+model: gpt-4-1106-preview
+summary: "\xC5 konvertere en streng til sm\xE5 bokstaver betyr at alle store bokstaver\
+  \ i strengen gj\xF8res om til sm\xE5 bokstaver. Programmere gj\xF8r dette for \xE5\
+  \ standardisere\u2026"
+title: "Konvertere en streng til sm\xE5 bokstaver"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Envoi d'une requête HTTP avec authentification de base"
 aliases:
 - /fr/ruby/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:31.480111-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Envoi d'une requête HTTP avec authentification de base"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:31.480111-07:00
+description: "Envoyer une requ\xEAte HTTP avec une authentification basique c\u2019\
+  est ins\xE9rer vos identifiants dans une requ\xEAte pour acc\xE9der \xE0 des ressources\
+  \ prot\xE9g\xE9es. Les\u2026"
+lastmod: 2024-02-18 23:09:09.407045
+model: gpt-4-1106-preview
+summary: "Envoyer une requ\xEAte HTTP avec une authentification basique c\u2019est\
+  \ ins\xE9rer vos identifiants dans une requ\xEAte pour acc\xE9der \xE0 des ressources\
+  \ prot\xE9g\xE9es. Les\u2026"
+title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 ---
 
 {{< edit_this_page >}}

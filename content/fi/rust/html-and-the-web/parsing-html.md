@@ -1,14 +1,18 @@
 ---
-title:                "HTML:n jäsennys"
 aliases:
 - /fi/rust/parsing-html/
-date:                  2024-02-03T19:13:00.379539-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "HTML:n jäsennys"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:13:00.379539-07:00
+description: "HTML:n j\xE4sent\xE4minen Rustilla koskee tietojen poimimista HTML-dokumenteista,\
+  \ mik\xE4 on olennaista web-skaapaukselle, datan poiminnalle tai web-kiipij\xF6\
+  iden\u2026"
+lastmod: 2024-02-18 23:09:07.361474
+model: gpt-4-0125-preview
+summary: "HTML:n j\xE4sent\xE4minen Rustilla koskee tietojen poimimista HTML-dokumenteista,\
+  \ mik\xE4 on olennaista web-skaapaukselle, datan poiminnalle tai web-kiipij\xF6\
+  iden\u2026"
+title: "HTML:n j\xE4sennys"
 ---
 
 {{< edit_this_page >}}

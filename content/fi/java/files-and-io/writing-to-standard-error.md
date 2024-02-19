@@ -1,14 +1,18 @@
 ---
-title:                "Kirjoittaminen standardivirheeseen"
 aliases:
 - /fi/java/writing-to-standard-error/
-date:                  2024-02-03T19:33:45.938050-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kirjoittaminen standardivirheeseen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:33:45.938050-07:00
+description: "Standardivirheeseen (stderr) kirjoittaminen tarkoittaa virheviestien\
+  \ ja diagnostiikkatietojen tulostamista konsoliin tai terminaaliin. Ohjelmoijat\
+  \ tekev\xE4t\u2026"
+lastmod: 2024-02-18 23:09:07.475855
+model: gpt-4-0125-preview
+summary: "Standardivirheeseen (stderr) kirjoittaminen tarkoittaa virheviestien ja\
+  \ diagnostiikkatietojen tulostamista konsoliin tai terminaaliin. Ohjelmoijat tekev\xE4\
+  t\u2026"
+title: Kirjoittaminen standardivirheeseen
 ---
 
 {{< edit_this_page >}}

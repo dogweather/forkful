@@ -1,14 +1,24 @@
 ---
-title:                "使用JSON进行编程"
 aliases:
 - /zh/swift/working-with-json/
-date:                  2024-02-03T19:24:13.649974-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用JSON进行编程"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/working-with-json.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:24:13.649974-07:00
+description: "\u5728 Swift \u4E2D\u5904\u7406 JSON \u610F\u5473\u7740\u5904\u7406\u4E00\
+  \u79CD\u8F7B\u91CF\u7EA7\u7684\u6570\u636E\u4EA4\u6362\u683C\u5F0F\u3002\u7A0B\u5E8F\
+  \u5458\u4F7F\u7528 JSON \u5728\u670D\u52A1\u5668\u548C\u7F51\u7EDC\u5E94\u7528\u7A0B\
+  \u5E8F\u4E4B\u95F4\u4F20\u8F93\u6570\u636E\uFF0C\u56E0\u4E3A\u5B83\u6613\u4E8E\u9605\
+  \u8BFB\u548C\u89E3\u6790\uFF0C\u5BF9\u4EBA\u548C\u673A\u5668\u90FD\u5F88\u53CB\u597D\
+  \u3002"
+lastmod: 2024-02-18 23:08:59.461136
+model: gpt-4-0125-preview
+summary: "\u5728 Swift \u4E2D\u5904\u7406 JSON \u610F\u5473\u7740\u5904\u7406\u4E00\
+  \u79CD\u8F7B\u91CF\u7EA7\u7684\u6570\u636E\u4EA4\u6362\u683C\u5F0F\u3002\u7A0B\u5E8F\
+  \u5458\u4F7F\u7528 JSON \u5728\u670D\u52A1\u5668\u548C\u7F51\u7EDC\u5E94\u7528\u7A0B\
+  \u5E8F\u4E4B\u95F4\u4F20\u8F93\u6570\u636E\uFF0C\u56E0\u4E3A\u5B83\u6613\u4E8E\u9605\
+  \u8BFB\u548C\u89E3\u6790\uFF0C\u5BF9\u4EBA\u548C\u673A\u5668\u90FD\u5F88\u53CB\u597D\
+  \u3002"
+title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 ---
 
 {{< edit_this_page >}}

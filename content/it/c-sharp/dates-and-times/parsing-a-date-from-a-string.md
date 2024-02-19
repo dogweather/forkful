@@ -1,14 +1,16 @@
 ---
-title:                "Analisi di una data da una stringa"
 aliases:
 - /it/c-sharp/parsing-a-date-from-a-string/
-date:                  2024-02-03T19:13:39.680527-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analisi di una data da una stringa"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:13:39.680527-07:00
+description: "Effettuare il parsing di una data da una stringa in C# implica la conversione\
+  \ delle rappresentazioni testuali di date e orari in un oggetto `DateTime`.\u2026"
+lastmod: 2024-02-18 23:08:55.897567
+model: gpt-4-0125-preview
+summary: "Effettuare il parsing di una data da una stringa in C# implica la conversione\
+  \ delle rappresentazioni testuali di date e orari in un oggetto `DateTime`.\u2026"
+title: Analisi di una data da una stringa
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,14 @@
 ---
-title:                "Recherche et remplacement de texte"
 aliases:
 - /fr/cpp/searching-and-replacing-text/
-date:                  2024-01-20T17:57:22.984759-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Recherche et remplacement de texte"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:22.984759-07:00
+description: "La recherche et le remplacement de texte permettent de trouver des cha\xEE\
+  nes sp\xE9cifiques dans un texte et de les remplacer par d'autres. Les programmeurs\u2026"
+lastmod: 2024-02-18 23:09:09.143999
+model: gpt-4-1106-preview
+summary: "La recherche et le remplacement de texte permettent de trouver des cha\xEE\
+  nes sp\xE9cifiques dans un texte et de les remplacer par d'autres. Les programmeurs\u2026"
+title: Recherche et remplacement de texte
 ---
 
 {{< edit_this_page >}}

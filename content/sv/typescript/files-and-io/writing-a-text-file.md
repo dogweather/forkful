@@ -1,14 +1,18 @@
 ---
-title:                "Att skriva en textfil"
 aliases:
 - /sv/typescript/writing-a-text-file/
-date:                  2024-02-03T19:29:42.085463-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att skriva en textfil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:42.085463-07:00
+description: "Att skriva en textfil i TypeScript \xE4r en kritisk f\xE4rdighet f\xF6\
+  r datalagring, konfigurationer eller loggenerering. Programmerare utf\xF6r ofta\
+  \ denna uppgift\u2026"
+lastmod: 2024-02-18 23:08:51.561217
+model: gpt-4-0125-preview
+summary: "Att skriva en textfil i TypeScript \xE4r en kritisk f\xE4rdighet f\xF6r\
+  \ datalagring, konfigurationer eller loggenerering. Programmerare utf\xF6r ofta\
+  \ denna uppgift\u2026"
+title: Att skriva en textfil
 ---
 
 {{< edit_this_page >}}

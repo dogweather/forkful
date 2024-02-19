@@ -1,14 +1,18 @@
 ---
-title:                "Merkkijonojen yhdistäminen"
 aliases:
 - /fi/google-apps-script/concatenating-strings/
-date:                  2024-02-01T21:50:22.075818-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonojen yhdistäminen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/google-apps-script/concatenating-strings.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:50:22.075818-07:00
+description: "Merkkijonojen yhdist\xE4minen tarkoittaa kahden tai useamman merkkijonon\
+  \ yhdist\xE4mist\xE4 yhdeksi merkkijonoksi. Ohjelmoijat tekev\xE4t t\xE4t\xE4 dynaamisten\
+  \ viestien,\u2026"
+lastmod: 2024-02-18 23:09:07.125539
+model: gpt-4-0125-preview
+summary: "Merkkijonojen yhdist\xE4minen tarkoittaa kahden tai useamman merkkijonon\
+  \ yhdist\xE4mist\xE4 yhdeksi merkkijonoksi. Ohjelmoijat tekev\xE4t t\xE4t\xE4 dynaamisten\
+  \ viestien,\u2026"
+title: "Merkkijonojen yhdist\xE4minen"
 ---
 
 {{< edit_this_page >}}

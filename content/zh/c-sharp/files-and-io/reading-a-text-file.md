@@ -1,14 +1,19 @@
 ---
-title:                "阅读文本文件"
 aliases:
 - /zh/c-sharp/reading-a-text-file/
-date:                  2024-01-20T17:54:21.632336-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "阅读文本文件"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/reading-a-text-file.md"
+date: 2024-01-20 17:54:21.632336-07:00
+description: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u8BFB\u53D6\u6587\u672C\u6587\u4EF6\u662F\
+  \u6307\u63D0\u53D6\u5B58\u50A8\u5728\u6587\u4EF6\u4E2D\u7684\u6570\u636E\u3002\u7A0B\
+  \u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u5904\u7406\u5B58\u50A8\u7684\u4FE1\
+  \u606F\uFF0C\u5982\u914D\u7F6E\u3001\u65E5\u5FD7\u6216\u7528\u6237\u6570\u636E\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.147941
+model: gpt-4-1106-preview
+summary: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u8BFB\u53D6\u6587\u672C\u6587\u4EF6\u662F\
+  \u6307\u63D0\u53D6\u5B58\u50A8\u5728\u6587\u4EF6\u4E2D\u7684\u6570\u636E\u3002\u7A0B\
+  \u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u5904\u7406\u5B58\u50A8\u7684\u4FE1\
+  \u606F\uFF0C\u5982\u914D\u7F6E\u3001\u65E5\u5FD7\u6216\u7528\u6237\u6570\u636E\u3002"
+title: "\u9605\u8BFB\u6587\u672C\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

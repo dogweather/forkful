@@ -1,14 +1,20 @@
 ---
-title:                "Lấy ngày hiện tại"
 aliases:
 - /vi/c/getting-the-current-date/
-date:                  2024-02-03T17:57:50.649739-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lấy ngày hiện tại"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/getting-the-current-date.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:50.649739-07:00
+description: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong C \u0111\xF2i h\u1ECFi ph\u1EA3\
+  i truy c\u1EADp v\xE0o th\u01B0 vi\u1EC7n chu\u1EA9n C \u0111\u1EC3 l\u1EA5y v\xE0\
+  \ \u0111\u1ECBnh d\u1EA1ng ng\xE0y v\xE0 gi\u1EDD hi\u1EC7n t\u1EA1i c\u1EE7a h\u1EC7\
+  \ th\u1ED1ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng c\u1EA7n\u2026"
+lastmod: 2024-02-18 23:08:51.246296
+model: gpt-4-0125-preview
+summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong C \u0111\xF2i h\u1ECFi ph\u1EA3\
+  i truy c\u1EADp v\xE0o th\u01B0 vi\u1EC7n chu\u1EA9n C \u0111\u1EC3 l\u1EA5y v\xE0\
+  \ \u0111\u1ECBnh d\u1EA1ng ng\xE0y v\xE0 gi\u1EDD hi\u1EC7n t\u1EA1i c\u1EE7a h\u1EC7\
+  \ th\u1ED1ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng c\u1EA7n\u2026"
+title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 ---
 
 {{< edit_this_page >}}

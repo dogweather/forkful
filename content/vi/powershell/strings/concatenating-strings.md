@@ -1,15 +1,20 @@
 ---
-title:                "Nối chuỗi ký tự"
 aliases:
 - /vi/powershell/concatenating-strings/
-date:                  2024-01-28T21:57:20.426371-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Nối chuỗi ký tự"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/powershell/concatenating-strings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:57:20.426371-07:00
+description: "K\u1EBFt h\u1EE3p chu\u1ED7i, hay c\xF2n g\u1ECDi l\xE0 n\u1ED1i chu\u1ED7\
+  i, gi\u1ED1ng nh\u01B0 vi\u1EC7c t\u1EA1o m\u1ED9t \u0111o\xE0n t\xE0u t\u1EEB c\xE1\
+  c t\u1EEB. Ch\xFAng ta th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 li\xEA\
+  n k\u1EBFt c\xE1c gi\xE1 tr\u1ECB v\u0103n b\u1EA3n l\u1EA1i v\u1EDBi\u2026"
+lastmod: 2024-02-18 23:08:50.922785
+model: gpt-4-0125-preview
+summary: "K\u1EBFt h\u1EE3p chu\u1ED7i, hay c\xF2n g\u1ECDi l\xE0 n\u1ED1i chu\u1ED7\
+  i, gi\u1ED1ng nh\u01B0 vi\u1EC7c t\u1EA1o m\u1ED9t \u0111o\xE0n t\xE0u t\u1EEB c\xE1\
+  c t\u1EEB. Ch\xFAng ta th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 li\xEA\
+  n k\u1EBFt c\xE1c gi\xE1 tr\u1ECB v\u0103n b\u1EA3n l\u1EA1i v\u1EDBi\u2026"
+title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 ---
 
 {{< edit_this_page >}}

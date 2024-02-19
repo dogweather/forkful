@@ -1,15 +1,16 @@
 ---
-title:                "Twee datums vergelijken"
 aliases:
 - /nl/java/comparing-two-dates/
-date:                  2024-01-28T21:56:28.412141-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Twee datums vergelijken"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/java/comparing-two-dates.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:28.412141-07:00
+description: "Twee datums vergelijken betekent uitzoeken of de ene datum v\xF3\xF3\
+  r, na, of hetzelfde is als een andere. Programmeurs doen dit om planning, deadlines,\u2026"
+lastmod: 2024-02-18 23:09:01.726868
+model: gpt-4-0125-preview
+summary: "Twee datums vergelijken betekent uitzoeken of de ene datum v\xF3\xF3r, na,\
+  \ of hetzelfde is als een andere. Programmeurs doen dit om planning, deadlines,\u2026"
+title: Twee datums vergelijken
 ---
 
 {{< edit_this_page >}}

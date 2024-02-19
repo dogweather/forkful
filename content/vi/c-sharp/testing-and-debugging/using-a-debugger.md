@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng bộ gỡ lỗi"
 aliases:
 - /vi/c-sharp/using-a-debugger/
-date:                  2024-01-28T22:09:03.444332-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng bộ gỡ lỗi"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:09:03.444332-07:00
+description: "S\u1EED d\u1EE5ng debugger (tr\xECnh g\u1EE1 r\u1ED1i) c\xF3 ngh\u0129\
+  a l\xE0 t\u1EADn d\u1EE5ng c\xE1c c\xF4ng c\u1EE5 chuy\xEAn bi\u1EC7t \u0111\u1EC3\
+  \ ki\u1EC3m tra v\xE0 ch\u1EA9n \u0111o\xE1n code. C\xE1c l\u1EADp tr\xECnh vi\xEA\
+  n l\xE0m vi\u1EC7c n\xE0y \u0111\u1EC3 t\xECm v\xE0 s\u1EEDa\u2026"
+lastmod: 2024-02-18 23:08:50.703532
+model: gpt-4-0125-preview
+summary: "S\u1EED d\u1EE5ng debugger (tr\xECnh g\u1EE1 r\u1ED1i) c\xF3 ngh\u0129a\
+  \ l\xE0 t\u1EADn d\u1EE5ng c\xE1c c\xF4ng c\u1EE5 chuy\xEAn bi\u1EC7t \u0111\u1EC3\
+  \ ki\u1EC3m tra v\xE0 ch\u1EA9n \u0111o\xE1n code. C\xE1c l\u1EADp tr\xECnh vi\xEA\
+  n l\xE0m vi\u1EC7c n\xE0y \u0111\u1EC3 t\xECm v\xE0 s\u1EEDa\u2026"
+title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

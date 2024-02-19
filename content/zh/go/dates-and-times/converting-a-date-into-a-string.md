@@ -1,14 +1,24 @@
 ---
-title:                "将日期转化为字符串"
 aliases:
 - /zh/go/converting-a-date-into-a-string/
-date:                  2024-02-03T17:54:20.872387-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "将日期转化为字符串"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:54:20.872387-07:00
+description: "\u5728 Go \u4E2D\uFF0C\u5C06\u65E5\u671F\u8F6C\u6362\u6210\u5B57\u7B26\
+  \u4E32\u6D89\u53CA\u5C06 `time.Time` \u5BF9\u8C61\u8F6C\u6362\u6210\u53EF\u8BFB\u7684\
+  \u5B57\u7B26\u4E32\u683C\u5F0F\u3002\u7A0B\u5E8F\u5458\u7ECF\u5E38\u6267\u884C\u8FD9\
+  \u79CD\u64CD\u4F5C\uFF0C\u4EE5\u4FBF\u4EE5\u7528\u6237\u53CB\u597D\u65B9\u5F0F\u663E\
+  \u793A\u65E5\u671F\u6216\u5C06\u65E5\u671F\u5E8F\u5217\u5316\u5B58\u50A8\u548C\u4F20\
+  \u8F93\u4E3A\u4E00\u81F4\u7684\u683C\u5F0F\u3002"
+lastmod: 2024-02-18 23:08:58.719368
+model: gpt-4-0125-preview
+summary: "\u5728 Go \u4E2D\uFF0C\u5C06\u65E5\u671F\u8F6C\u6362\u6210\u5B57\u7B26\u4E32\
+  \u6D89\u53CA\u5C06 `time.Time` \u5BF9\u8C61\u8F6C\u6362\u6210\u53EF\u8BFB\u7684\u5B57\
+  \u7B26\u4E32\u683C\u5F0F\u3002\u7A0B\u5E8F\u5458\u7ECF\u5E38\u6267\u884C\u8FD9\u79CD\
+  \u64CD\u4F5C\uFF0C\u4EE5\u4FBF\u4EE5\u7528\u6237\u53CB\u597D\u65B9\u5F0F\u663E\u793A\
+  \u65E5\u671F\u6216\u5C06\u65E5\u671F\u5E8F\u5217\u5316\u5B58\u50A8\u548C\u4F20\u8F93\
+  \u4E3A\u4E00\u81F4\u7684\u683C\u5F0F\u3002"
+title: "\u5C06\u65E5\u671F\u8F6C\u5316\u4E3A\u5B57\u7B26\u4E32"
 ---
 
 {{< edit_this_page >}}

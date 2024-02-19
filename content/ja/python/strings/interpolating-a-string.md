@@ -1,16 +1,27 @@
 ---
-title:                "文字列の補間"
 aliases:
 - /ja/python/interpolating-a-string/
-date:                  2024-01-28T21:24:03.388408-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "文字列の補間"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/interpolating-a-string.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:24:03.388408-07:00
+description: "\u6587\u5B57\u5217\u88DC\u9593\u3068\u306F\u3001\u6587\u5B57\u5217\u30EA\
+  \u30C6\u30E9\u30EB\u5185\u306B\u5F0F\u3092\u57CB\u3081\u8FBC\u3080\u65B9\u6CD5\u3067\
+  \u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u52D5\u7684\u306B\u6587\u5B57\
+  \u5217\u306B\u5024\u3092\u633F\u5165\u3059\u308B\u305F\u3081\u306B\u3053\u308C\u3092\
+  \u4F7F\u7528\u3057\u3001\u3053\u308C\u306B\u3088\u308A\u30B3\u30FC\u30C9\u304C\u5F93\
+  \u6765\u306E\u6587\u5B57\u5217\u9023\u7D50\u3088\u308A\u3082\u8AAD\u307F\u3084\u3059\
+  \u304F\u3001\u6E05\u6F54\u306B\u306A\u308A\u307E\u3059\u3002"
+lastmod: 2024-02-18 23:08:54.550891
+model: gpt-4-0125-preview
+summary: "\u6587\u5B57\u5217\u88DC\u9593\u3068\u306F\u3001\u6587\u5B57\u5217\u30EA\
+  \u30C6\u30E9\u30EB\u5185\u306B\u5F0F\u3092\u57CB\u3081\u8FBC\u3080\u65B9\u6CD5\u3067\
+  \u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u52D5\u7684\u306B\u6587\u5B57\
+  \u5217\u306B\u5024\u3092\u633F\u5165\u3059\u308B\u305F\u3081\u306B\u3053\u308C\u3092\
+  \u4F7F\u7528\u3057\u3001\u3053\u308C\u306B\u3088\u308A\u30B3\u30FC\u30C9\u304C\u5F93\
+  \u6765\u306E\u6587\u5B57\u5217\u9023\u7D50\u3088\u308A\u3082\u8AAD\u307F\u3084\u3059\
+  \u304F\u3001\u6E05\u6F54\u306B\u306A\u308A\u307E\u3059\u3002"
+title: "\u6587\u5B57\u5217\u306E\u88DC\u9593"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,24 @@
 ---
-title:                "使用关联数组"
 aliases:
 - /zh/ruby/using-associative-arrays/
-date:                  2024-01-30T19:12:51.268941-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用关联数组"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:12:51.268941-07:00
+description: "\u5173\u8054\u6570\u7EC4\uFF0C\u5728Ruby\u4E2D\u66F4\u5E38\u88AB\u79F0\
+  \u4E3A\u6563\u5217(hash)\uFF0C\u5141\u8BB8\u5C06\u552F\u4E00\u7684\u952E\u4E0E\u503C\
+  \u914D\u5BF9\u3002\u5F53\u4F60\u9700\u8981\u901A\u8FC7\u7279\u5B9A\u7684\u53C2\u8003\
+  \u6765\u8DDF\u8E2A\u5143\u7D20\uFF0C\u5982\u5B58\u50A8\u5BF9\u8C61\u7684\u5C5E\u6027\
+  \u6216\u901A\u8FC7\u552F\u4E00\u6807\u8BC6\u7B26\u5FEB\u901F\u8BBF\u95EE\u6570\u636E\
+  \u65F6\uFF0C\u5B83\u4EEC\u662F\u4E0D\u53EF\u6216\u7F3A\u7684\u3002"
+lastmod: 2024-02-18 23:08:59.593026
+model: gpt-4-0125-preview
+summary: "\u5173\u8054\u6570\u7EC4\uFF0C\u5728Ruby\u4E2D\u66F4\u5E38\u88AB\u79F0\u4E3A\
+  \u6563\u5217(hash)\uFF0C\u5141\u8BB8\u5C06\u552F\u4E00\u7684\u952E\u4E0E\u503C\u914D\
+  \u5BF9\u3002\u5F53\u4F60\u9700\u8981\u901A\u8FC7\u7279\u5B9A\u7684\u53C2\u8003\u6765\
+  \u8DDF\u8E2A\u5143\u7D20\uFF0C\u5982\u5B58\u50A8\u5BF9\u8C61\u7684\u5C5E\u6027\u6216\
+  \u901A\u8FC7\u552F\u4E00\u6807\u8BC6\u7B26\u5FEB\u901F\u8BBF\u95EE\u6570\u636E\u65F6\
+  \uFF0C\u5B83\u4EEC\u662F\u4E0D\u53EF\u6216\u7F3A\u7684\u3002"
+title: "\u4F7F\u7528\u5173\u8054\u6570\u7EC4"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Registro de Información"
 aliases:
 - /es/vba/logging/
-date:                  2024-02-01T21:55:38.315921-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Registro de Información"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/vba/logging.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:38.315921-07:00
+description: "Registrar en Visual Basic para Aplicaciones (VBA) implica grabar informaci\xF3\
+  n sobre el comportamiento en tiempo de ejecuci\xF3n de un programa en un archivo,\u2026"
+lastmod: 2024-02-18 23:09:09.804542
+model: gpt-4-0125-preview
+summary: "Registrar en Visual Basic para Aplicaciones (VBA) implica grabar informaci\xF3\
+  n sobre el comportamiento en tiempo de ejecuci\xF3n de un programa en un archivo,\u2026"
+title: "Registro de Informaci\xF3n"
 ---
 
 {{< edit_this_page >}}

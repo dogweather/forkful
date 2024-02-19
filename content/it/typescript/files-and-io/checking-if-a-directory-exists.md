@@ -1,14 +1,17 @@
 ---
-title:                "Verifica se una directory esiste"
 aliases:
 - /it/typescript/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:46.882207-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Verifica se una directory esiste"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:46.882207-07:00
+description: "Controllare se una directory esiste in TypeScript \xE8 essenziale per\
+  \ compiti di gestione dei file, come leggere o scrivere dati su file, assicurando\
+  \ che le\u2026"
+lastmod: 2024-02-18 23:08:55.654030
+model: gpt-4-0125-preview
+summary: "Controllare se una directory esiste in TypeScript \xE8 essenziale per compiti\
+  \ di gestione dei file, come leggere o scrivere dati su file, assicurando che le\u2026"
+title: Verifica se una directory esiste
 ---
 
 {{< edit_this_page >}}

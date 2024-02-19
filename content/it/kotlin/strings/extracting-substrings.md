@@ -1,13 +1,15 @@
 ---
-title:                "Estrazione di sottostringhe"
 aliases:
 - /it/kotlin/extracting-substrings/
-date:                  2024-01-20T17:46:05.439787-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Estrazione di sottostringhe"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/extracting-substrings.md"
+date: 2024-01-20 17:46:05.439787-07:00
+description: "Estrarre sottosequenze significa prendere pezzi di una stringa. Gli\
+  \ sviluppatori lo fanno per analizzare i dati, pulire input o solo per estrarre\
+  \ le parti\u2026"
+lastmod: 2024-02-18 23:08:55.835699
+model: gpt-4-1106-preview
+summary: "Estrarre sottosequenze significa prendere pezzi di una stringa. Gli sviluppatori\
+  \ lo fanno per analizzare i dati, pulire input o solo per estrarre le parti\u2026"
+title: Estrazione di sottostringhe
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Korzystanie z interaktywnego shella (REPL)"
 aliases:
 - /pl/powershell/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:16:47.726459-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z interaktywnego shella (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:16:47.726459-07:00
+description: "Interaktywna pow\u0142oka, czyli p\u0119tla Read-Eval-Print (REPL),\
+  \ pozwala na wprowadzanie polece\u0144 PowerShell i uzyskiwanie natychmiastowego\
+  \ odzewu. Programi\u015Bci\u2026"
+lastmod: 2024-02-18 23:08:49.830520
+model: gpt-4-0125-preview
+summary: "Interaktywna pow\u0142oka, czyli p\u0119tla Read-Eval-Print (REPL), pozwala\
+  \ na wprowadzanie polece\u0144 PowerShell i uzyskiwanie natychmiastowego odzewu.\
+  \ Programi\u015Bci\u2026"
+title: Korzystanie z interaktywnego shella (REPL)
 ---
 
 {{< edit_this_page >}}

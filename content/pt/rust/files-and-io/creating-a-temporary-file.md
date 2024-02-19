@@ -1,13 +1,16 @@
 ---
-title:                "Criando um arquivo temporário"
 aliases:
 - /pt/rust/creating-a-temporary-file/
-date:                  2024-01-20T17:41:21.936140-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Criando um arquivo temporário"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:21.936140-07:00
+description: "Criar um arquivo tempor\xE1rio \xE9 o processo de gerar um arquivo que\
+  \ \xE9 projetado para ser utilizado durante a execu\xE7\xE3o de um programa e, normalmente,\
+  \ apagado\u2026"
+lastmod: 2024-02-18 23:08:57.948051
+model: gpt-4-1106-preview
+summary: "Criar um arquivo tempor\xE1rio \xE9 o processo de gerar um arquivo que \xE9\
+  \ projetado para ser utilizado durante a execu\xE7\xE3o de um programa e, normalmente,\
+  \ apagado\u2026"
+title: "Criando um arquivo tempor\xE1rio"
 ---
 
 {{< edit_this_page >}}

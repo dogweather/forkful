@@ -1,15 +1,20 @@
 ---
-title:                "Sử dụng mảng liên kết"
 aliases:
 - /vi/cpp/using-associative-arrays/
-date:                  2024-01-30T19:10:43.102990-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng mảng liên kết"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/cpp/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:10:43.102990-07:00
+description: "M\u1EA3ng k\u1EBFt h\u1EE3p, \u0111\u01B0\u1EE3c bi\u1EBFt \u0111\u1EBF\
+  n v\u1EDBi t\xEAn `std::map` ho\u1EB7c `std::unordered_map` trong C++, \u0111\xE3\
+  \ l\u1EA5p \u0111\u1EA7y kho\u1EA3ng tr\u1ED1ng gi\u1EEFa ch\u1EC9 s\u1ED1 m\u1EA3\
+  ng v\xE0 d\u1EEF li\u1EC7u th\u1EF1c t\u1EBF, cho ph\xE9p\u2026"
+lastmod: 2024-02-18 23:08:51.036453
+model: gpt-4-0125-preview
+summary: "M\u1EA3ng k\u1EBFt h\u1EE3p, \u0111\u01B0\u1EE3c bi\u1EBFt \u0111\u1EBF\
+  n v\u1EDBi t\xEAn `std::map` ho\u1EB7c `std::unordered_map` trong C++, \u0111\xE3\
+  \ l\u1EA5p \u0111\u1EA7y kho\u1EA3ng tr\u1ED1ng gi\u1EEFa ch\u1EC9 s\u1ED1 m\u1EA3\
+  ng v\xE0 d\u1EEF li\u1EC7u th\u1EF1c t\u1EBF, cho ph\xE9p\u2026"
+title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 ---
 
 {{< edit_this_page >}}

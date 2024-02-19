@@ -1,12 +1,15 @@
 ---
-title:                "Working with YAML"
 aliases:
 - /en/fish-shell/working-with-yaml/
-date:                  2024-02-03T19:03:10.609396-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Working with YAML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/working-with-yaml.md"
+date: 2024-02-03 19:03:10.609396-07:00
+description: "Working with YAML involves parsing and manipulating YAML (YAML Ain't\
+  \ Markup Language) files, a data serialization format used for configuration files,\
+  \ in\u2026"
+lastmod: 2024-02-18 23:09:11.501116
+model: gpt-4-0125-preview
+summary: "Working with YAML involves parsing and manipulating YAML (YAML Ain't Markup\
+  \ Language) files, a data serialization format used for configuration files, in\u2026"
+title: Working with YAML
 ---
 
 {{< edit_this_page >}}

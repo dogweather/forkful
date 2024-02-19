@@ -1,14 +1,18 @@
 ---
-title:                "Mettre en majuscule une chaîne"
 aliases:
 - /fr/java/capitalizing-a-string/
-date:                  2024-02-03T19:05:43.567344-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Mettre en majuscule une chaîne"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:05:43.567344-07:00
+description: "Capitaliser une cha\xEEne consiste \xE0 modifier en majuscule la premi\xE8\
+  re lettre de chaque mot de la cha\xEEne, tout en veillant \xE0 ce que le reste reste\
+  \ en\u2026"
+lastmod: 2024-02-18 23:09:08.609721
+model: gpt-4-0125-preview
+summary: "Capitaliser une cha\xEEne consiste \xE0 modifier en majuscule la premi\xE8\
+  re lettre de chaque mot de la cha\xEEne, tout en veillant \xE0 ce que le reste reste\
+  \ en\u2026"
+title: "Mettre en majuscule une cha\xEEne"
 ---
 
 {{< edit_this_page >}}

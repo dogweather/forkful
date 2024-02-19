@@ -1,15 +1,30 @@
 ---
-title:                "Работа с XML"
 aliases:
 - /ru/cpp/working-with-xml/
-date:                  2024-01-29T00:04:59.588552-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Работа с XML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/cpp/working-with-xml.md"
 changelog:
-  - 2024-01-29, gpt-4-0125-preview, translated from English
+- 2024-01-29, gpt-4-0125-preview, translated from English
+date: 2024-01-29 00:04:59.588552-07:00
+description: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 XML \u043F\u0440\u0435\u0434\
+  \u043F\u043E\u043B\u0430\u0433\u0430\u0435\u0442 \u0430\u043D\u0430\u043B\u0438\u0437\
+  , \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u0438 \u043C\u0430\u043D\u0438\
+  \u043F\u0443\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u0434\u0430\u043D\
+  \u043D\u044B\u043C\u0438 XML (eXtensible Markup Language, \u0420\u0430\u0441\u0448\
+  \u0438\u0440\u044F\u0435\u043C\u044B\u0439 \u044F\u0437\u044B\u043A \u0440\u0430\
+  \u0437\u043C\u0435\u0442\u043A\u0438). \u041F\u0440\u043E\u0433\u0440\u0430\u043C\
+  \u043C\u0438\u0441\u0442\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044E\
+  \u0442\u2026"
+lastmod: 2024-02-18 23:08:57.387539
+model: gpt-4-0125-preview
+summary: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 XML \u043F\u0440\u0435\u0434\
+  \u043F\u043E\u043B\u0430\u0433\u0430\u0435\u0442 \u0430\u043D\u0430\u043B\u0438\u0437\
+  , \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u0438 \u043C\u0430\u043D\u0438\
+  \u043F\u0443\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u0434\u0430\u043D\
+  \u043D\u044B\u043C\u0438 XML (eXtensible Markup Language, \u0420\u0430\u0441\u0448\
+  \u0438\u0440\u044F\u0435\u043C\u044B\u0439 \u044F\u0437\u044B\u043A \u0440\u0430\
+  \u0437\u043C\u0435\u0442\u043A\u0438). \u041F\u0440\u043E\u0433\u0440\u0430\u043C\
+  \u043C\u0438\u0441\u0442\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044E\
+  \u0442\u2026"
+title: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 XML"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Tiedostojen käsittely yhden rivin komentorivikomennoilla"
 aliases:
 - /fi/ruby/manipulating-files-with-cli-one-liners/
-date:                  2024-01-27T16:21:50.076982-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tiedostojen käsittely yhden rivin komentorivikomennoilla"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/manipulating-files-with-cli-one-liners.md"
+date: 2024-01-27 16:21:50.076982-07:00
+description: "Tiedostojen k\xE4sittely Ruby-yksirivisill\xE4 CLI-komennoilla on kyse\
+  \ yleisten tiedosto-operaatioiden suorittamisesta suoraan terminaalista k\xE4ytt\xE4\
+  en Ruby-\u2026"
+lastmod: 2024-02-18 23:09:08.176972
+model: gpt-4-0125-preview
+summary: "Tiedostojen k\xE4sittely Ruby-yksirivisill\xE4 CLI-komennoilla on kyse yleisten\
+  \ tiedosto-operaatioiden suorittamisesta suoraan terminaalista k\xE4ytt\xE4en Ruby-\u2026"
+title: "Tiedostojen k\xE4sittely yhden rivin komentorivikomennoilla"
 ---
 
 {{< edit_this_page >}}

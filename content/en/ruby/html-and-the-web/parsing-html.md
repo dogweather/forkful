@@ -1,12 +1,13 @@
 ---
-title:                "Parsing HTML"
 aliases:
 - /en/ruby/parsing-html/
-date:                  2024-01-20T15:33:38.456428-07:00
-simple_title:         "Parsing HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/parsing-html.md"
+date: 2024-01-20 15:33:38.456428-07:00
+description: "Parsing HTML means tearing apart a chuck of HTML code to grasp its structure\
+  \ and content. Programmers do it to extract data, manipulate content, or\u2026"
+lastmod: 2024-02-18 23:09:11.563696
+summary: "Parsing HTML means tearing apart a chuck of HTML code to grasp its structure\
+  \ and content. Programmers do it to extract data, manipulate content, or\u2026"
+title: Parsing HTML
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Analisando HTML"
 aliases:
 - /pt/cpp/parsing-html/
-date:                  2024-02-03T19:11:35.767137-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analisando HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:11:35.767137-07:00
+description: "Analisar HTML significa decompor o conte\xFAdo HTML em algo que um programa\
+  \ possa entender e manipular. Os programadores fazem isso para extrair dados,\u2026"
+lastmod: 2024-02-18 23:08:58.447514
+model: gpt-4-0125-preview
+summary: "Analisar HTML significa decompor o conte\xFAdo HTML em algo que um programa\
+  \ possa entender e manipular. Os programadores fazem isso para extrair dados,\u2026"
+title: Analisando HTML
 ---
 
 {{< edit_this_page >}}

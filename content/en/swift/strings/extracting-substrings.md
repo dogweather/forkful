@@ -1,13 +1,16 @@
 ---
-title:                "Extracting substrings"
 aliases:
 - /en/swift/extracting-substrings/
-date:                  2024-01-20T17:47:02.258438-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extracting substrings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/extracting-substrings.md"
+date: 2024-01-20 17:47:02.258438-07:00
+description: "Extracting substrings means grabbing just a piece of a string\u2014\
+  like snipping a ribbon to the length you need. Programmers do this to isolate, analyze,\
+  \ or\u2026"
+lastmod: 2024-02-18 23:09:11.385864
+model: gpt-4-1106-preview
+summary: "Extracting substrings means grabbing just a piece of a string\u2014like\
+  \ snipping a ribbon to the length you need. Programmers do this to isolate, analyze,\
+  \ or\u2026"
+title: Extracting substrings
 ---
 
 {{< edit_this_page >}}

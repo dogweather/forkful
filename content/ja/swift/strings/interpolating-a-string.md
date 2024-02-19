@@ -1,14 +1,23 @@
 ---
-title:                "文字列の補間"
 aliases:
 - /ja/swift/interpolating-a-string/
-date:                  2024-01-20T17:51:44.817858-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "文字列の補間"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/interpolating-a-string.md"
+date: 2024-01-20 17:51:44.817858-07:00
+description: "\u6587\u5B57\u5217\u88DC\u9593\u3068\u306F\u3001\u6587\u5B57\u5217\u306B\
+  \u5909\u6570\u3084\u5B9A\u6570\u3001\u30EA\u30C6\u30E9\u30EB\u3001\u5F0F\u3092\u57CB\
+  \u3081\u8FBC\u3080\u3053\u3068\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u306F\u3001\u52D5\
+  \u7684\u306A\u6587\u5B57\u5217\u3092\u4F5C\u3063\u305F\u308A\u3001\u8AAD\u307F\u3084\
+  \u3059\u3044\u51FA\u529B\u3092\u751F\u6210\u3057\u305F\u308A\u3059\u308B\u305F\u3081\
+  \u306B\u3053\u308C\u3092\u884C\u3044\u307E\u3059\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:55.216655
+model: gpt-4-1106-preview
+summary: "\u6587\u5B57\u5217\u88DC\u9593\u3068\u306F\u3001\u6587\u5B57\u5217\u306B\
+  \u5909\u6570\u3084\u5B9A\u6570\u3001\u30EA\u30C6\u30E9\u30EB\u3001\u5F0F\u3092\u57CB\
+  \u3081\u8FBC\u3080\u3053\u3068\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u306F\u3001\u52D5\
+  \u7684\u306A\u6587\u5B57\u5217\u3092\u4F5C\u3063\u305F\u308A\u3001\u8AAD\u307F\u3084\
+  \u3059\u3044\u51FA\u529B\u3092\u751F\u6210\u3057\u305F\u308A\u3059\u308B\u305F\u3081\
+  \u306B\u3053\u308C\u3092\u884C\u3044\u307E\u3059\u3002"
+title: "\u6587\u5B57\u5217\u306E\u88DC\u9593"
 ---
 
 {{< edit_this_page >}}

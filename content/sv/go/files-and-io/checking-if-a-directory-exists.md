@@ -1,14 +1,18 @@
 ---
-title:                "Kontrollera om en katalog existerar"
 aliases:
 - /sv/go/checking-if-a-directory-exists/
-date:                  2024-02-03T17:53:23.406072-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kontrollera om en katalog existerar"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:53:23.406072-07:00
+description: "Att kontrollera om en katalog finns i Go \xE4r avg\xF6rande f\xF6r applikationer\
+  \ som interagerar med filsystemet, f\xF6r att undvika fel n\xE4r man f\xF6rs\xF6\
+  ker komma \xE5t\u2026"
+lastmod: 2024-02-18 23:08:51.348456
+model: gpt-4-0125-preview
+summary: "Att kontrollera om en katalog finns i Go \xE4r avg\xF6rande f\xF6r applikationer\
+  \ som interagerar med filsystemet, f\xF6r att undvika fel n\xE4r man f\xF6rs\xF6\
+  ker komma \xE5t\u2026"
+title: Kontrollera om en katalog existerar
 ---
 
 {{< edit_this_page >}}

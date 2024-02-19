@@ -1,13 +1,12 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
 aliases:
 - /pl/ruby/creating-a-temporary-file/
-date:                  2024-01-20T17:41:32.401596-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tworzenie pliku tymczasowego"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/creating-a-temporary-file.md"
+date: 2024-01-20 17:41:32.401596-07:00
+description: ''
+lastmod: 2024-02-18 23:08:50.144898
+model: gpt-4-1106-preview
+summary: ''
+title: Tworzenie pliku tymczasowego
 ---
 
 {{< edit_this_page >}}

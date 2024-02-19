@@ -1,14 +1,17 @@
 ---
-title:                "Interpolando una cadena de texto"
 aliases:
 - /es/go/interpolating-a-string/
-date:                  2024-02-03T17:58:22.687173-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interpolando una cadena de texto"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/interpolating-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:58:22.687173-07:00
+description: "La interpolaci\xF3n de cadenas es un m\xE9todo para construir cadenas\
+  \ que incorporan variables, permitiendo la creaci\xF3n din\xE1mica de cadenas. Los\
+  \ programadores\u2026"
+lastmod: 2024-02-18 23:09:09.438647
+model: gpt-4-0125-preview
+summary: "La interpolaci\xF3n de cadenas es un m\xE9todo para construir cadenas que\
+  \ incorporan variables, permitiendo la creaci\xF3n din\xE1mica de cadenas. Los programadores\u2026"
+title: Interpolando una cadena de texto
 ---
 
 {{< edit_this_page >}}

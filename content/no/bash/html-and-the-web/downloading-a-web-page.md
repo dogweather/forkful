@@ -1,13 +1,16 @@
 ---
-title:                "Nedlasting av en nettside"
 aliases:
 - /no/bash/downloading-a-web-page/
-date:                  2024-01-20T17:43:49.848592-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Nedlasting av en nettside"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/downloading-a-web-page.md"
+date: 2024-01-20 17:43:49.848592-07:00
+description: "Last ned en nettside betyr \xE5 hente HTML-innholdet fra en nettadresse.\
+  \ Programmerere gj\xF8r dette for \xE5 analysere innholdet, teste tilgjengelighet,\
+  \ eller\u2026"
+lastmod: 2024-02-18 23:08:54.057135
+model: gpt-4-1106-preview
+summary: "Last ned en nettside betyr \xE5 hente HTML-innholdet fra en nettadresse.\
+  \ Programmerere gj\xF8r dette for \xE5 analysere innholdet, teste tilgjengelighet,\
+  \ eller\u2026"
+title: Nedlasting av en nettside
 ---
 
 {{< edit_this_page >}}

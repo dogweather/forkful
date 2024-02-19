@@ -1,13 +1,24 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
 aliases:
 - /hi/javascript/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:01:51.536840-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:01:51.536840-07:00
+description: "HTTP request \u0915\u0947 \u0938\u093E\u0925 basic authentication \u090F\
+  \u0915 \u0938\u0930\u0932 \u0924\u0930\u0940\u0915\u093E \u0939\u0948 \u091C\u093F\
+  \u0938\u092E\u0947\u0902 username \u0914\u0930 password \u0915\u094B encode \u0915\
+  \u0930\u0915\u0947 request headers \u092E\u0947\u0902 \u092D\u0947\u091C\u093E \u091C\
+  \u093E\u0924\u093E \u0939\u0948\u0964 \u092F\u0939 \u0924\u0915\u0928\u0940\u0915\
+  \ \u0935\u0947\u092C\u2026"
+lastmod: 2024-02-18 23:09:04.043108
+model: gpt-4-1106-preview
+summary: "HTTP request \u0915\u0947 \u0938\u093E\u0925 basic authentication \u090F\
+  \u0915 \u0938\u0930\u0932 \u0924\u0930\u0940\u0915\u093E \u0939\u0948 \u091C\u093F\
+  \u0938\u092E\u0947\u0902 username \u0914\u0930 password \u0915\u094B encode \u0915\
+  \u0930\u0915\u0947 request headers \u092E\u0947\u0902 \u092D\u0947\u091C\u093E \u091C\
+  \u093E\u0924\u093E \u0939\u0948\u0964 \u092F\u0939 \u0924\u0915\u0928\u0940\u0915\
+  \ \u0935\u0947\u092C\u2026"
+title: "\u092C\u0947\u0938\u093F\u0915 \u092A\u094D\u0930\u092E\u093E\u0923\u0940\u0915\
+  \u0930\u0923 \u0915\u0947 \u0938\u093E\u0925 HTTP \u0905\u0928\u0941\u0930\u094B\
+  \u0927 \u092D\u0947\u091C\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

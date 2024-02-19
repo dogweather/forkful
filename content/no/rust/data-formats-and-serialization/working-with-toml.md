@@ -1,13 +1,15 @@
 ---
-title:                "Jobbe med TOML"
 aliases:
 - /no/rust/working-with-toml/
-date:                  2024-01-26T04:26:13.785024-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Jobbe med TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/working-with-toml.md"
+date: 2024-01-26 04:26:13.785024-07:00
+description: "TOML er et menneskelesbart data serialiseringsspr\xE5k, ofte brukt for\
+  \ konfigurasjoner. Programmerere bruker TOML p\xE5 grunn av dets enkelhet og klarhet,\
+  \ som\u2026"
+lastmod: 2024-02-18 23:08:53.708089
+model: gpt-4-0125-preview
+summary: "TOML er et menneskelesbart data serialiseringsspr\xE5k, ofte brukt for konfigurasjoner.\
+  \ Programmerere bruker TOML p\xE5 grunn av dets enkelhet og klarhet, som\u2026"
+title: Jobbe med TOML
 ---
 
 {{< edit_this_page >}}

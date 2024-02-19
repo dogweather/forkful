@@ -1,14 +1,23 @@
 ---
-title:                "字符串拼接"
 aliases:
 - /zh/ruby/concatenating-strings/
-date:                  2024-01-20T17:35:36.795448-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "字符串拼接"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/concatenating-strings.md"
+date: 2024-01-20 17:35:36.795448-07:00
+description: "\u5B57\u7B26\u4E32\u62FC\u63A5\u662F\u5C06\u4E24\u4E2A\u6216\u66F4\u591A\
+  \u7684\u5B57\u7B26\u4E32\u8FDE\u63A5\u8D77\u6765\u5F62\u6210\u4E00\u4E2A\u65B0\u5B57\
+  \u7B26\u4E32\u7684\u8FC7\u7A0B\u3002\u7A0B\u5E8F\u5458\u505A\u8FD9\u4E8B\u4E3B\u8981\
+  \u662F\u4E3A\u4E86\u6784\u9020\u8F93\u51FA\u3001\u751F\u6210\u52A8\u6001\u5185\u5BB9\
+  \u6216\u8005\u5728\u5C06\u6570\u636E\u5B58\u50A8\u5230\u6587\u4EF6\u6216\u6570\u636E\
+  \u5E93\u4E4B\u524D\u8FDB\u884C\u683C\u5F0F\u5316\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.592143
+model: gpt-4-1106-preview
+summary: "\u5B57\u7B26\u4E32\u62FC\u63A5\u662F\u5C06\u4E24\u4E2A\u6216\u66F4\u591A\
+  \u7684\u5B57\u7B26\u4E32\u8FDE\u63A5\u8D77\u6765\u5F62\u6210\u4E00\u4E2A\u65B0\u5B57\
+  \u7B26\u4E32\u7684\u8FC7\u7A0B\u3002\u7A0B\u5E8F\u5458\u505A\u8FD9\u4E8B\u4E3B\u8981\
+  \u662F\u4E3A\u4E86\u6784\u9020\u8F93\u51FA\u3001\u751F\u6210\u52A8\u6001\u5185\u5BB9\
+  \u6216\u8005\u5728\u5C06\u6570\u636E\u5B58\u50A8\u5230\u6587\u4EF6\u6216\u6570\u636E\
+  \u5E93\u4E4B\u524D\u8FDB\u884C\u683C\u5F0F\u5316\u3002"
+title: "\u5B57\u7B26\u4E32\u62FC\u63A5"
 ---
 
 {{< edit_this_page >}}

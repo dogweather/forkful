@@ -1,14 +1,18 @@
 ---
-title:                "Debuggerin käyttö"
 aliases:
 - /fi/go/using-a-debugger/
-date:                  2024-02-03T18:10:21.701556-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Debuggerin käyttö"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/using-a-debugger.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:21.701556-07:00
+description: "Go-ohjelmoinnissa virheenj\xE4ljityksen k\xE4ytt\xF6 tarkoittaa ty\xF6\
+  kalujen tai ominaisuuksien hy\xF6dynt\xE4mist\xE4 ohjelman tilan tarkasteluun ja\
+  \ muokkaamiseen sen\u2026"
+lastmod: 2024-02-18 23:09:07.090480
+model: gpt-4-0125-preview
+summary: "Go-ohjelmoinnissa virheenj\xE4ljityksen k\xE4ytt\xF6 tarkoittaa ty\xF6kalujen\
+  \ tai ominaisuuksien hy\xF6dynt\xE4mist\xE4 ohjelman tilan tarkasteluun ja muokkaamiseen\
+  \ sen\u2026"
+title: "Debuggerin k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,15 @@
 ---
-title:                "Iniciando un nuevo proyecto"
 aliases:
 - /es/elm/starting-a-new-project/
-date:                  2024-01-20T18:03:18.155298-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Iniciando un nuevo proyecto"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/starting-a-new-project.md"
+date: 2024-01-20 18:03:18.155298-07:00
+description: "Iniciar un proyecto nuevo significa configurar el entorno base para\
+  \ escribir y ejecutar c\xF3digo. Lo hacemos para proveer una estructura s\xF3lida\
+  \ y un punto\u2026"
+lastmod: 2024-02-18 23:09:09.891452
+model: gpt-4-1106-preview
+summary: "Iniciar un proyecto nuevo significa configurar el entorno base para escribir\
+  \ y ejecutar c\xF3digo. Lo hacemos para proveer una estructura s\xF3lida y un punto\u2026"
+title: Iniciando un nuevo proyecto
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Satunnaisten numeroiden generointi"
 aliases:
 - /fi/c/generating-random-numbers/
-date:                  2024-02-03T17:57:47.675787-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Satunnaisten numeroiden generointi"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/generating-random-numbers.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:57:47.675787-07:00
+description: "Satunnaislukujen generointi C-kieless\xE4 tarkoittaa arvojen luomista,\
+  \ jotka ovat ennalta arvaamattomia ja noudattavat tietty\xE4 jakaumaa, kuten tasajakaumaa\u2026"
+lastmod: 2024-02-18 23:09:08.127464
+model: gpt-4-0125-preview
+summary: "Satunnaislukujen generointi C-kieless\xE4 tarkoittaa arvojen luomista, jotka\
+  \ ovat ennalta arvaamattomia ja noudattavat tietty\xE4 jakaumaa, kuten tasajakaumaa\u2026"
+title: Satunnaisten numeroiden generointi
 ---
 
 {{< edit_this_page >}}

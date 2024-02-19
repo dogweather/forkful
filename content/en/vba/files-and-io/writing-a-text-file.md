@@ -1,12 +1,14 @@
 ---
-title:                "Writing a text file"
 aliases:
 - /en/vba/writing-a-text-file/
-date:                  2024-02-01T21:30:36.580625-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Writing a text file"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/vba/writing-a-text-file.md"
+date: 2024-02-01 21:30:36.580625-07:00
+description: "Writing a text file in Visual Basic for Applications (VBA) involves\
+  \ creating, modifying, or appending text data to files, a fundamental task for storing\u2026"
+lastmod: 2024-02-18 23:09:10.907858
+model: gpt-4-0125-preview
+summary: "Writing a text file in Visual Basic for Applications (VBA) involves creating,\
+  \ modifying, or appending text data to files, a fundamental task for storing\u2026"
+title: Writing a text file
 ---
 
 {{< edit_this_page >}}

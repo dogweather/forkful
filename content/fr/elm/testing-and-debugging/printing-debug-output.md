@@ -1,13 +1,16 @@
 ---
-title:                "Affichage des sorties de débogage"
 aliases:
 - /fr/elm/printing-debug-output/
-date:                  2024-01-20T17:52:19.416586-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Affichage des sorties de débogage"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/printing-debug-output.md"
+date: 2024-01-20 17:52:19.416586-07:00
+description: "Qu'est-ce que c'est l'impression de d\xE9bogage ? C\u2019est l\u2019\
+  art de balancer des infos dans la console pour comprendre ce qui se passe dans ton\
+  \ code. Pourquoi\u2026"
+lastmod: 2024-02-18 23:09:08.737104
+model: gpt-4-1106-preview
+summary: "Qu'est-ce que c'est l'impression de d\xE9bogage ? C\u2019est l\u2019art\
+  \ de balancer des infos dans la console pour comprendre ce qui se passe dans ton\
+  \ code. Pourquoi\u2026"
+title: "Affichage des sorties de d\xE9bogage"
 ---
 
 {{< edit_this_page >}}

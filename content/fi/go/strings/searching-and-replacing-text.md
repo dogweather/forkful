@@ -1,14 +1,18 @@
 ---
-title:                "Tekstin etsiminen ja korvaaminen"
 aliases:
 - /fi/go/searching-and-replacing-text/
-date:                  2024-02-03T18:08:24.035740-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tekstin etsiminen ja korvaaminen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:24.035740-07:00
+description: "Tekstin etsiminen ja korvaaminen ohjelmoinnissa helpottaa merkkijonojen\
+  \ muokkausta ja hallintaa, mik\xE4 on perusteht\xE4v\xE4 datan k\xE4sittelyss\xE4\
+  \ ja\u2026"
+lastmod: 2024-02-18 23:09:07.067309
+model: gpt-4-0125-preview
+summary: "Tekstin etsiminen ja korvaaminen ohjelmoinnissa helpottaa merkkijonojen\
+  \ muokkausta ja hallintaa, mik\xE4 on perusteht\xE4v\xE4 datan k\xE4sittelyss\xE4\
+  \ ja\u2026"
+title: Tekstin etsiminen ja korvaaminen
 ---
 
 {{< edit_this_page >}}

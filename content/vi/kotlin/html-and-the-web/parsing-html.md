@@ -1,15 +1,20 @@
 ---
-title:                "Phân Tích Cú Pháp HTML"
 aliases:
 - /vi/kotlin/parsing-html/
-date:                  2024-01-28T22:03:55.520119-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Phân Tích Cú Pháp HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/kotlin/parsing-html.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:03:55.520119-07:00
+description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xED\
+  ch c\xFA ph\xE1p \u0111\xE1nh d\u1EA5u c\u1EE7a m\u1ED9t trang web th\xE0nh c\xE1\
+  i g\xEC \u0111\xF3 m\xE0 ch\u01B0\u01A1ng tr\xECnh c\xF3 th\u1EC3 hi\u1EC3u v\xE0\
+  \ thao t\xE1c \u0111\u01B0\u1EE3c. L\u1EADp tr\xECnh\u2026"
+lastmod: 2024-02-18 23:08:50.648628
+model: gpt-4-0125-preview
+summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xED\
+  ch c\xFA ph\xE1p \u0111\xE1nh d\u1EA5u c\u1EE7a m\u1ED9t trang web th\xE0nh c\xE1\
+  i g\xEC \u0111\xF3 m\xE0 ch\u01B0\u01A1ng tr\xECnh c\xF3 th\u1EC3 hi\u1EC3u v\xE0\
+  \ thao t\xE1c \u0111\u01B0\u1EE3c. L\u1EADp tr\xECnh\u2026"
+title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 ---
 
 {{< edit_this_page >}}

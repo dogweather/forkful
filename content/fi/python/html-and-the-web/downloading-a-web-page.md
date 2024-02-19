@@ -1,13 +1,16 @@
 ---
-title:                "Verkkosivun lataaminen"
 aliases:
 - /fi/python/downloading-a-web-page/
-date:                  2024-01-20T17:44:43.398325-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Verkkosivun lataaminen"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/downloading-a-web-page.md"
+date: 2024-01-20 17:44:43.398325-07:00
+description: "Ladataan web-sivu Pythonilla tarkoittaa sen sis\xE4ll\xF6n noutamista\
+  \ internetist\xE4. Koodarit tekev\xE4t t\xE4t\xE4 datan analysointiin, sis\xE4ll\xF6\
+  n ker\xE4\xE4miseen tai\u2026"
+lastmod: 2024-02-18 23:09:07.182319
+model: gpt-4-1106-preview
+summary: "Ladataan web-sivu Pythonilla tarkoittaa sen sis\xE4ll\xF6n noutamista internetist\xE4\
+  . Koodarit tekev\xE4t t\xE4t\xE4 datan analysointiin, sis\xE4ll\xF6n ker\xE4\xE4\
+  miseen tai\u2026"
+title: Verkkosivun lataaminen
 ---
 
 {{< edit_this_page >}}

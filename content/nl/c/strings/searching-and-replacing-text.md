@@ -1,14 +1,16 @@
 ---
-title:                "Tekst zoeken en vervangen"
 aliases:
 - /nl/c/searching-and-replacing-text/
-date:                  2024-02-03T18:08:15.121101-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tekst zoeken en vervangen"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:15.121101-07:00
+description: "Tekst zoeken en vervangen in C omvat het identificeren van specifieke\
+  \ substrings binnen een grotere string en deze vervangen door andere substrings.\u2026"
+lastmod: 2024-02-18 23:09:02.355781
+model: gpt-4-0125-preview
+summary: "Tekst zoeken en vervangen in C omvat het identificeren van specifieke substrings\
+  \ binnen een grotere string en deze vervangen door andere substrings.\u2026"
+title: Tekst zoeken en vervangen
 ---
 
 {{< edit_this_page >}}

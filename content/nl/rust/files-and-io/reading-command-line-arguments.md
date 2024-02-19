@@ -1,15 +1,16 @@
 ---
-title:                "Commandoregelargumenten lezen"
 aliases:
 - /nl/rust/reading-command-line-arguments/
-date:                  2024-01-28T22:05:19.510539-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Commandoregelargumenten lezen"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/reading-command-line-arguments.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:05:19.510539-07:00
+description: "Het lezen van commandoregelargumenten in Rust stelt programma's in staat\
+  \ om gebruikersinvoer bij opstart te nemen. Het is essentieel voor aangepast gedrag\u2026"
+lastmod: 2024-02-18 23:09:01.636238
+model: gpt-4-0125-preview
+summary: "Het lezen van commandoregelargumenten in Rust stelt programma's in staat\
+  \ om gebruikersinvoer bij opstart te nemen. Het is essentieel voor aangepast gedrag\u2026"
+title: Commandoregelargumenten lezen
 ---
 
 {{< edit_this_page >}}

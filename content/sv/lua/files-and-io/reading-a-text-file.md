@@ -1,13 +1,14 @@
 ---
-title:                "Läsa en textfil"
 aliases:
 - /sv/lua/reading-a-text-file/
-date:                  2024-01-20T17:54:46.014268-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Läsa en textfil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/lua/reading-a-text-file.md"
+date: 2024-01-20 17:54:46.014268-07:00
+description: "I Lua l\xE4ser du en textfil f\xF6r att h\xE4mta information. Programmerare\
+  \ g\xF6r det f\xF6r att spara, \xE4ndra eller anv\xE4nda data."
+lastmod: 2024-02-18 23:08:51.935411
+model: gpt-4-1106-preview
+summary: "I Lua l\xE4ser du en textfil f\xF6r att h\xE4mta information. Programmerare\
+  \ g\xF6r det f\xF6r att spara, \xE4ndra eller anv\xE4nda data."
+title: "L\xE4sa en textfil"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,16 @@
 ---
-title:                "Samenvoegen van strings"
 aliases:
 - /nl/haskell/concatenating-strings/
-date:                  2024-01-28T21:57:14.523765-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Samenvoegen van strings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/haskell/concatenating-strings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:57:14.523765-07:00
+description: "Het aaneenschakelen van strings betekent dat je ze achter elkaar plakt.\
+  \ Programmeurs doen dit wanneer ze stukjes tekst aan elkaar moeten naaien om een\u2026"
+lastmod: 2024-02-18 23:09:01.889749
+model: gpt-4-0125-preview
+summary: "Het aaneenschakelen van strings betekent dat je ze achter elkaar plakt.\
+  \ Programmeurs doen dit wanneer ze stukjes tekst aan elkaar moeten naaien om een\u2026"
+title: Samenvoegen van strings
 ---
 
 {{< edit_this_page >}}

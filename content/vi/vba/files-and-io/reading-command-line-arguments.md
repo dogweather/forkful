@@ -1,14 +1,20 @@
 ---
-title:                "Đọc đối số từ dòng lệnh"
 aliases:
 - /vi/vba/reading-command-line-arguments/
-date:                  2024-02-01T21:59:56.105209-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Đọc đối số từ dòng lệnh"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/reading-command-line-arguments.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:59:56.105209-07:00
+description: "Vi\u1EC7c \u0111\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7\
+  nh trong Visual Basic for Applications (VBA) bao g\u1ED3m vi\u1EC7c truy c\u1EAD\
+  p c\xE1c tham s\u1ED1 \u0111\u01B0\u1EE3c truy\u1EC1n \u0111\u1EBFn ch\u01B0\u01A1\
+  ng tr\xECnh c\u1EE7a b\u1EA1n khi th\u1EF1c\u2026"
+lastmod: 2024-02-18 23:08:50.526964
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c \u0111\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh trong\
+  \ Visual Basic for Applications (VBA) bao g\u1ED3m vi\u1EC7c truy c\u1EADp c\xE1\
+  c tham s\u1ED1 \u0111\u01B0\u1EE3c truy\u1EC1n \u0111\u1EBFn ch\u01B0\u01A1ng tr\xEC\
+  nh c\u1EE7a b\u1EA1n khi th\u1EF1c\u2026"
+title: "\u0110\u1ECDc \u0111\u1ED1i s\u1ED1 t\u1EEB d\xF2ng l\u1EC7nh"
 ---
 
 {{< edit_this_page >}}

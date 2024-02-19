@@ -1,15 +1,20 @@
 ---
-title:                "Tìm kiếm và thay thế văn bản"
 aliases:
 - /vi/arduino/searching-and-replacing-text/
-date:                  2024-01-28T22:07:34.890695-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tìm kiếm và thay thế văn bản"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/searching-and-replacing-text.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:07:34.890695-07:00
+description: "Vi\u1EC7c t\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n cho\
+  \ ph\xE9p b\u1EA1n t\xECm c\xE1c k\xFD t\u1EF1 ho\u1EB7c chu\u1ED7i c\u1EE5 th\u1EC3\
+  \ trong m\u1ED9t v\u0103n b\u1EA3n v\xE0 thay th\u1EBF ch\xFAng b\u1EB1ng c\xE1\
+  i kh\xE1c. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u\u2026"
+lastmod: 2024-02-18 23:08:50.974374
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c t\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n cho ph\xE9\
+  p b\u1EA1n t\xECm c\xE1c k\xFD t\u1EF1 ho\u1EB7c chu\u1ED7i c\u1EE5 th\u1EC3 trong\
+  \ m\u1ED9t v\u0103n b\u1EA3n v\xE0 thay th\u1EBF ch\xFAng b\u1EB1ng c\xE1i kh\xE1\
+  c. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u\u2026"
+title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 ---
 
 {{< edit_this_page >}}

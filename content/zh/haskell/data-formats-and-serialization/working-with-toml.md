@@ -1,13 +1,20 @@
 ---
-title:                "使用TOML"
 aliases:
 - /zh/haskell/working-with-toml/
-date:                  2024-01-26T04:22:46.368152-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/working-with-toml.md"
+date: 2024-01-26 04:22:46.368152-07:00
+description: "\u4F7F\u7528TOML\u6D89\u53CA\u4F7F\u7528Haskell\u89E3\u6790\u548C\u751F\
+  \u6210TOML\uFF08Tom\u7684\u660E\u663E\uFF0C\u6700\u5C0F\u8BED\u8A00\uFF09\u6570\u636E\
+  \u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u8F7B\u677E\u7BA1\u7406\
+  \u914D\u7F6E\u6587\u4EF6\u6216\u6570\u636E\u4EA4\u6362\uFF0C\u5E76\u63D0\u4F9B\u5F3A\
+  \u7C7B\u578B\u4FDD\u8BC1\u548C\u6700\u5C0F\u7684\u8BED\u6CD5\u9EBB\u70E6\u3002"
+lastmod: 2024-02-18 23:08:59.199267
+model: gpt-4-0125-preview
+summary: "\u4F7F\u7528TOML\u6D89\u53CA\u4F7F\u7528Haskell\u89E3\u6790\u548C\u751F\u6210\
+  TOML\uFF08Tom\u7684\u660E\u663E\uFF0C\u6700\u5C0F\u8BED\u8A00\uFF09\u6570\u636E\u3002\
+  \u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u8F7B\u677E\u7BA1\u7406\u914D\
+  \u7F6E\u6587\u4EF6\u6216\u6570\u636E\u4EA4\u6362\uFF0C\u5E76\u63D0\u4F9B\u5F3A\u7C7B\
+  \u578B\u4FDD\u8BC1\u548C\u6700\u5C0F\u7684\u8BED\u6CD5\u9EBB\u70E6\u3002"
+title: "\u4F7F\u7528TOML"
 ---
 
 {{< edit_this_page >}}

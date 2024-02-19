@@ -1,13 +1,14 @@
 ---
-title:                "Satunnaislukujen generointi"
 aliases:
 - /fi/kotlin/generating-random-numbers/
-date:                  2024-01-27T20:34:49.745033-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Satunnaislukujen generointi"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/generating-random-numbers.md"
+date: 2024-01-27 20:34:49.745033-07:00
+description: "Satunnaislukujen tuottaminen ohjelmoinnissa tarkoittaa sellaisten lukujen\
+  \ luomista, joilla ei ole ennustettavaa kaavaa. Ohjelmoijat tekev\xE4t n\xE4in monista\u2026"
+lastmod: 2024-02-18 23:09:07.570550
+model: gpt-4-0125-preview
+summary: "Satunnaislukujen tuottaminen ohjelmoinnissa tarkoittaa sellaisten lukujen\
+  \ luomista, joilla ei ole ennustettavaa kaavaa. Ohjelmoijat tekev\xE4t n\xE4in monista\u2026"
+title: Satunnaislukujen generointi
 ---
 
 {{< edit_this_page >}}

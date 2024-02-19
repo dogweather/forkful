@@ -1,13 +1,16 @@
 ---
-title:                "Att arbeta med TOML"
 aliases:
 - /sv/python/working-with-toml/
-date:                  2024-01-26T04:25:34.436377-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/working-with-toml.md"
+date: 2024-01-26 04:25:34.436377-07:00
+description: "TOML, en f\xF6rkortning f\xF6r Toms Obvious, Minimal Language, \xE4\
+  r ett format f\xF6r dataseriering liknande JSON eller YAML, men som siktar p\xE5\
+  \ enkelhet och\u2026"
+lastmod: 2024-02-18 23:08:51.444218
+model: gpt-4-0125-preview
+summary: "TOML, en f\xF6rkortning f\xF6r Toms Obvious, Minimal Language, \xE4r ett\
+  \ format f\xF6r dataseriering liknande JSON eller YAML, men som siktar p\xE5 enkelhet\
+  \ och\u2026"
+title: Att arbeta med TOML
 ---
 
 {{< edit_this_page >}}

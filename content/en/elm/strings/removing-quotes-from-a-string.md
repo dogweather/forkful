@@ -1,13 +1,14 @@
 ---
-title:                "Removing quotes from a string"
 aliases:
 - /en/elm/removing-quotes-from-a-string/
-date:                  2024-01-25T20:49:59.692157-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Removing quotes from a string"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/removing-quotes-from-a-string.md"
+date: 2024-01-25 20:49:59.692157-07:00
+description: "Removing quotes from a string means stripping away those extra double\
+  \ or single quotation marks that you don't actually need in the processed text.\u2026"
+lastmod: 2024-02-18 23:09:10.960253
+model: gpt-4-1106-preview
+summary: "Removing quotes from a string means stripping away those extra double or\
+  \ single quotation marks that you don't actually need in the processed text.\u2026"
+title: Removing quotes from a string
 ---
 
 {{< edit_this_page >}}

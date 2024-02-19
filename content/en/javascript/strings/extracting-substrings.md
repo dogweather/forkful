@@ -1,13 +1,14 @@
 ---
-title:                "Extracting substrings"
 aliases:
 - /en/javascript/extracting-substrings/
-date:                  2024-01-20T17:45:59.182526-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extracting substrings"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/extracting-substrings.md"
+date: 2024-01-20 17:45:59.182526-07:00
+description: Extracting substrings means grabbing a piece of a string. Programmers
+  slice and dice strings to isolate data, input some format, or tweak text for output.
+lastmod: 2024-02-18 23:09:11.427239
+model: gpt-4-1106-preview
+summary: Extracting substrings means grabbing a piece of a string. Programmers slice
+  and dice strings to isolate data, input some format, or tweak text for output.
+title: Extracting substrings
 ---
 
 {{< edit_this_page >}}

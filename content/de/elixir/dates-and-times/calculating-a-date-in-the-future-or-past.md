@@ -1,13 +1,14 @@
 ---
-title:                "Berechnung eines zukünftigen oder vergangenen Datums"
 aliases:
 - /de/elixir/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:28:32.420577-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Berechnung eines zukünftigen oder vergangenen Datums"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:28:32.420577-07:00
+description: "Datumskalkulation in der Zukunft oder Vergangenheit bedeutet, ein bestimmtes\
+  \ Date aus einem Startdatum zu berechnen, indem Tage, Wochen oder Jahre\u2026"
+lastmod: 2024-02-18 23:09:04.566012
+model: gpt-4-1106-preview
+summary: "Datumskalkulation in der Zukunft oder Vergangenheit bedeutet, ein bestimmtes\
+  \ Date aus einem Startdatum zu berechnen, indem Tage, Wochen oder Jahre\u2026"
+title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 ---
 
 {{< edit_this_page >}}

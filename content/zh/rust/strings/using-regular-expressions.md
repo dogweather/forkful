@@ -1,14 +1,26 @@
 ---
-title:                "使用正则表达式"
 aliases:
 - /zh/rust/using-regular-expressions/
-date:                  2024-02-03T19:19:00.639283-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用正则表达式"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:19:00.639283-07:00
+description: "\u6B63\u5219\u8868\u8FBE\u5F0F\uFF0C\u6216\u79F0regex\uFF0C\u5141\u8BB8\
+  \u5F00\u53D1\u8005\u4F7F\u7528\u9AD8\u7EA7\u6A21\u5F0F\u5339\u914D\u6280\u5DE7\u6765\
+  \u641C\u7D22\u3001\u5339\u914D\u4EE5\u53CA\u64CD\u4F5C\u5B57\u7B26\u4E32\u3002\u5728\
+  Rust\u4E2D\uFF0C\u5229\u7528regex\u6709\u52A9\u4E8E\u9AD8\u6548\u5730\u89E3\u6790\
+  \u548C\u5904\u7406\u6587\u672C\u6570\u636E\uFF0C\u4F7F\u5F97\u6570\u636E\u9A8C\u8BC1\
+  \u3001\u641C\u7D22\u548C\u6587\u672C\u8F6C\u6362\u7B49\u4EFB\u52A1\u66F4\u52A0\u6D41\
+  \u7545\u548C\u53EF\u7EF4\u62A4\u3002"
+lastmod: 2024-02-18 23:08:58.932623
+model: gpt-4-0125-preview
+summary: "\u6B63\u5219\u8868\u8FBE\u5F0F\uFF0C\u6216\u79F0regex\uFF0C\u5141\u8BB8\u5F00\
+  \u53D1\u8005\u4F7F\u7528\u9AD8\u7EA7\u6A21\u5F0F\u5339\u914D\u6280\u5DE7\u6765\u641C\
+  \u7D22\u3001\u5339\u914D\u4EE5\u53CA\u64CD\u4F5C\u5B57\u7B26\u4E32\u3002\u5728Rust\u4E2D\
+  \uFF0C\u5229\u7528regex\u6709\u52A9\u4E8E\u9AD8\u6548\u5730\u89E3\u6790\u548C\u5904\
+  \u7406\u6587\u672C\u6570\u636E\uFF0C\u4F7F\u5F97\u6570\u636E\u9A8C\u8BC1\u3001\u641C\
+  \u7D22\u548C\u6587\u672C\u8F6C\u6362\u7B49\u4EFB\u52A1\u66F4\u52A0\u6D41\u7545\u548C\
+  \u53EF\u7EF4\u62A4\u3002"
+title: "\u4F7F\u7528\u6B63\u5219\u8868\u8FBE\u5F0F"
 ---
 
 {{< edit_this_page >}}

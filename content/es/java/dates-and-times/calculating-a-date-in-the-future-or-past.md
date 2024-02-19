@@ -1,13 +1,15 @@
 ---
-title:                "Calcular una fecha en el futuro o pasado"
 aliases:
 - /es/java/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:31:27.187748-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Calcular una fecha en el futuro o pasado"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:31:27.187748-07:00
+description: "Calcular una fecha en el futuro o en el pasado significa encontrar una\
+  \ fecha determinada antes o despu\xE9s de una fecha de referencia. Los programadores\
+  \ lo\u2026"
+lastmod: 2024-02-18 23:09:09.859404
+model: gpt-4-1106-preview
+summary: "Calcular una fecha en el futuro o en el pasado significa encontrar una fecha\
+  \ determinada antes o despu\xE9s de una fecha de referencia. Los programadores lo\u2026"
+title: Calcular una fecha en el futuro o pasado
 ---
 
 {{< edit_this_page >}}

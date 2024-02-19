@@ -1,14 +1,26 @@
 ---
-title:                "编写文本文件"
 aliases:
 - /zh/rust/writing-a-text-file/
-date:                  2024-02-03T19:29:18.023531-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "编写文本文件"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:29:18.023531-07:00
+description: "\u5728 Rust \u4E2D\u5199\u5165\u6587\u672C\u6587\u4EF6\u6D89\u53CA\u5728\
+  \u6587\u4EF6\u7CFB\u7EDF\u4E0A\u521B\u5EFA\u3001\u5199\u5165\uFF0C\u4EE5\u53CA\u53EF\
+  \u80FD\u5411\u6587\u4EF6\u8FFD\u52A0\u6570\u636E\u3002\u7A0B\u5E8F\u5458\u6267\u884C\
+  \u8FD9\u4E00\u64CD\u4F5C\u662F\u4E3A\u4E86\u6301\u4E45\u5316\u6570\u636E\uFF0C\u5982\
+  \u5E94\u7528\u7A0B\u5E8F\u65E5\u5FD7\u3001\u914D\u7F6E\u6216\u7528\u6237\u751F\u6210\
+  \u7684\u5185\u5BB9\uFF0C\u786E\u4FDD\u6570\u636E\u5728\u7A0B\u5E8F\u6267\u884C\u8303\
+  \u56F4\u4E4B\u5916\u7684\u6301\u4E45\u6027\u3002"
+lastmod: 2024-02-18 23:08:58.957403
+model: gpt-4-0125-preview
+summary: "\u5728 Rust \u4E2D\u5199\u5165\u6587\u672C\u6587\u4EF6\u6D89\u53CA\u5728\
+  \u6587\u4EF6\u7CFB\u7EDF\u4E0A\u521B\u5EFA\u3001\u5199\u5165\uFF0C\u4EE5\u53CA\u53EF\
+  \u80FD\u5411\u6587\u4EF6\u8FFD\u52A0\u6570\u636E\u3002\u7A0B\u5E8F\u5458\u6267\u884C\
+  \u8FD9\u4E00\u64CD\u4F5C\u662F\u4E3A\u4E86\u6301\u4E45\u5316\u6570\u636E\uFF0C\u5982\
+  \u5E94\u7528\u7A0B\u5E8F\u65E5\u5FD7\u3001\u914D\u7F6E\u6216\u7528\u6237\u751F\u6210\
+  \u7684\u5185\u5BB9\uFF0C\u786E\u4FDD\u6570\u636E\u5728\u7A0B\u5E8F\u6267\u884C\u8303\
+  \u56F4\u4E4B\u5916\u7684\u6301\u4E45\u6027\u3002"
+title: "\u7F16\u5199\u6587\u672C\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

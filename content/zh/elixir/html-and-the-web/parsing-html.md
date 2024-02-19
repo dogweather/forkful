@@ -1,14 +1,24 @@
 ---
-title:                "解析HTML"
 aliases:
 - /zh/elixir/parsing-html/
-date:                  2024-02-03T19:11:59.384677-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "解析HTML"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/parsing-html.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:11:59.384677-07:00
+description: "\u5728 Elixir \u4E2D\u89E3\u6790 HTML \u6D89\u53CA\u5230\u4ECE HTML\
+  \ \u6587\u6863\u4E2D\u63D0\u53D6\u4FE1\u606F\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\
+  \u505A\u662F\u4E3A\u4E86\u4EE5\u7F16\u7A0B\u65B9\u5F0F\u4E0E\u7F51\u9875\u4E92\u52A8\
+  \u3001\u6293\u53D6\u6570\u636E\u6216\u81EA\u52A8\u5316\u7F51\u7EDC\u4EA4\u4E92\uFF0C\
+  \u4F7F\u5E94\u7528\u7A0B\u5E8F\u80FD\u591F\u52A8\u6001\u7406\u89E3\u548C\u5229\u7528\
+  \u7F51\u9875\u5185\u5BB9\u3002"
+lastmod: 2024-02-18 23:08:58.864009
+model: gpt-4-0125-preview
+summary: "\u5728 Elixir \u4E2D\u89E3\u6790 HTML \u6D89\u53CA\u5230\u4ECE HTML \u6587\
+  \u6863\u4E2D\u63D0\u53D6\u4FE1\u606F\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\
+  \u4E3A\u4E86\u4EE5\u7F16\u7A0B\u65B9\u5F0F\u4E0E\u7F51\u9875\u4E92\u52A8\u3001\u6293\
+  \u53D6\u6570\u636E\u6216\u81EA\u52A8\u5316\u7F51\u7EDC\u4EA4\u4E92\uFF0C\u4F7F\u5E94\
+  \u7528\u7A0B\u5E8F\u80FD\u591F\u52A8\u6001\u7406\u89E3\u548C\u5229\u7528\u7F51\u9875\
+  \u5185\u5BB9\u3002"
+title: "\u89E3\u6790HTML"
 ---
 
 {{< edit_this_page >}}

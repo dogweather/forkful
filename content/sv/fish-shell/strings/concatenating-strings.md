@@ -1,13 +1,16 @@
 ---
-title:                "Sammanslagning av strängar"
 aliases:
 - /sv/fish-shell/concatenating-strings/
-date:                  2024-01-20T17:34:49.963072-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammanslagning av strängar"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/concatenating-strings.md"
+date: 2024-01-20 17:34:49.963072-07:00
+description: "Konkatenering av str\xE4ngar handlar om att smidigt s\xE4tta ihop flera\
+  \ textstycken till en enda str\xE4ng. Programmerare g\xF6r detta f\xF6r att skapa\
+  \ dynamiska\u2026"
+lastmod: 2024-02-18 23:08:52.197810
+model: gpt-4-1106-preview
+summary: "Konkatenering av str\xE4ngar handlar om att smidigt s\xE4tta ihop flera\
+  \ textstycken till en enda str\xE4ng. Programmerare g\xF6r detta f\xF6r att skapa\
+  \ dynamiska\u2026"
+title: "Sammanslagning av str\xE4ngar"
 ---
 
 {{< edit_this_page >}}

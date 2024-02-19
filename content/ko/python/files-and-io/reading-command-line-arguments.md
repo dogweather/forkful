@@ -1,14 +1,25 @@
 ---
-title:                "명령줄 인수 읽기"
 aliases:
 - /ko/python/reading-command-line-arguments/
-date:                  2024-01-20T17:56:50.289078-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "명령줄 인수 읽기"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:50.289078-07:00
+description: "(\uBB34\uC5C7\uACFC \uC65C?) \uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC778\uC790\
+  \ \uC77D\uAE30\uB294 \uD130\uBBF8\uB110\uC774\uB098 \uBA85\uB839 \uD504\uB86C\uD504\
+  \uD2B8\uC5D0\uC11C \uD504\uB85C\uADF8\uB7A8\uC73C\uB85C \uB9E4\uAC1C\uBCC0\uC218\
+  \uB97C \uC804\uB2EC\uD558\uB294 \uBC29\uBC95\uC778\uB370\uC694. \uD504\uB85C\uADF8\
+  \uB7A8\uC744 \uC720\uC5F0\uD558\uAC8C \uB9CC\uB4E4\uACE0 \uC0AC\uC6A9\uC790\uAC00\
+  \ \uC785\uB825\uC744 \uCEE4\uC2A4\uD140\uD560 \uC218 \uC788\uAC8C \uD574\uC8FC\uC8E0\
+  ."
+isCJKLanguage: true
+lastmod: 2024-02-18 23:09:05.648833
+model: gpt-4-1106-preview
+summary: "(\uBB34\uC5C7\uACFC \uC65C?) \uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC778\uC790\
+  \ \uC77D\uAE30\uB294 \uD130\uBBF8\uB110\uC774\uB098 \uBA85\uB839 \uD504\uB86C\uD504\
+  \uD2B8\uC5D0\uC11C \uD504\uB85C\uADF8\uB7A8\uC73C\uB85C \uB9E4\uAC1C\uBCC0\uC218\
+  \uB97C \uC804\uB2EC\uD558\uB294 \uBC29\uBC95\uC778\uB370\uC694. \uD504\uB85C\uADF8\
+  \uB7A8\uC744 \uC720\uC5F0\uD558\uAC8C \uB9CC\uB4E4\uACE0 \uC0AC\uC6A9\uC790\uAC00\
+  \ \uC785\uB825\uC744 \uCEE4\uC2A4\uD140\uD560 \uC218 \uC788\uAC8C \uD574\uC8FC\uC8E0\
+  ."
+title: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30"
 ---
 
 {{< edit_this_page >}}

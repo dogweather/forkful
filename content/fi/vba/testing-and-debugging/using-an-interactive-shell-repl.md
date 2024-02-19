@@ -1,14 +1,18 @@
 ---
-title:                "Interaktiivisen kuoren (REPL) käyttö"
 aliases:
 - /fi/vba/using-an-interactive-shell-repl/
-date:                  2024-02-01T22:04:19.172452-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Interaktiivisen kuoren (REPL) käyttö"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/vba/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:19.172452-07:00
+description: "Interaktiivinen kuori eli Lue-Eval-Tulosta -silmukka (REPL) mahdollistaa\
+  \ k\xE4ytt\xE4j\xE4n sy\xF6tt\xE4mien komentojen suorittamisen ja tulosten n\xE4\
+  kemisen reaaliajassa.\u2026"
+lastmod: 2024-02-18 23:09:07.412726
+model: gpt-4-0125-preview
+summary: "Interaktiivinen kuori eli Lue-Eval-Tulosta -silmukka (REPL) mahdollistaa\
+  \ k\xE4ytt\xE4j\xE4n sy\xF6tt\xE4mien komentojen suorittamisen ja tulosten n\xE4\
+  kemisen reaaliajassa.\u2026"
+title: "Interaktiivisen kuoren (REPL) k\xE4ytt\xF6"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Arbeta med XML"
 aliases:
 - /sv/vba/working-with-xml/
-date:                  2024-02-01T22:06:54.381527-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arbeta med XML"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/working-with-xml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:06:54.381527-07:00
+description: "Att arbeta med XML i Visual Basic for Applications (VBA) inneb\xE4r\
+  \ att analysera, skapa och modifiera XML-dokument inom ramen f\xF6r Microsoft Office-\u2026"
+lastmod: 2024-02-18 23:08:51.652476
+model: gpt-4-0125-preview
+summary: "Att arbeta med XML i Visual Basic for Applications (VBA) inneb\xE4r att\
+  \ analysera, skapa och modifiera XML-dokument inom ramen f\xF6r Microsoft Office-\u2026"
+title: Arbeta med XML
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Scrivere test"
 aliases:
 - /it/go/writing-tests/
-date:                  2024-02-03T18:15:02.346264-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Scrivere test"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:15:02.346264-07:00
+description: "Scrivere test in Go comporta la creazione di piccoli frammenti di codice\
+  \ gestibili che validano la funzionalit\xE0 e il comportamento della tua applicazione.\u2026"
+lastmod: 2024-02-18 23:08:55.436036
+model: gpt-4-0125-preview
+summary: "Scrivere test in Go comporta la creazione di piccoli frammenti di codice\
+  \ gestibili che validano la funzionalit\xE0 e il comportamento della tua applicazione.\u2026"
+title: Scrivere test
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,30 @@
 ---
-title:                "정규 표현식 사용하기"
 aliases:
 - /ko/java/using-regular-expressions/
-date:                  2024-02-03T19:17:49.982956-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "정규 표현식 사용하기"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:17:49.982956-07:00
+description: "\uC790\uBC14\uC5D0\uC11C\uC758 \uC815\uADDC \uD45C\uD604\uC2DD(regex)\uC740\
+  \ \uCF54\uB4DC \uB0B4\uC758 \uBB38\uC790\uC5F4\uC744 \uAC80\uC0C9, \uC870\uC791\
+  , \uB610\uB294 \uC720\uD6A8\uC131 \uAC80\uC0AC\uD558\uAE30 \uC704\uD55C \uD2B9\uC815\
+  \ \uD328\uD134\uC744 \uC815\uC758\uD560 \uC218 \uC788\uAC8C \uD569\uB2C8\uB2E4.\
+  \ \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB85C\uADF8 \uD30C\uC77C\uC744 \uD30C\
+  \uC2F1\uD558\uB294 \uC791\uC5C5, \uC0AC\uC6A9\uC790 \uC785\uB825\uC758 \uC720\uD6A8\
+  \uC131\uC744 \uAC80\uC99D\uD558\uAC70\uB098, \uD14D\uC2A4\uD2B8 \uB0B4\uC5D0\uC11C\
+  \ \uD2B9\uC815 \uD328\uD134\uC744 \uAC80\uC0C9\uD558\uB294 \uB4F1\uC758 \uC791\uC5C5\
+  \uC5D0 \uC774\uB97C\u2026"
+lastmod: 2024-02-18 23:09:06.005306
+model: gpt-4-0125-preview
+summary: "\uC790\uBC14\uC5D0\uC11C\uC758 \uC815\uADDC \uD45C\uD604\uC2DD(regex)\uC740\
+  \ \uCF54\uB4DC \uB0B4\uC758 \uBB38\uC790\uC5F4\uC744 \uAC80\uC0C9, \uC870\uC791\
+  , \uB610\uB294 \uC720\uD6A8\uC131 \uAC80\uC0AC\uD558\uAE30 \uC704\uD55C \uD2B9\uC815\
+  \ \uD328\uD134\uC744 \uC815\uC758\uD560 \uC218 \uC788\uAC8C \uD569\uB2C8\uB2E4.\
+  \ \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uB85C\uADF8 \uD30C\uC77C\uC744 \uD30C\
+  \uC2F1\uD558\uB294 \uC791\uC5C5, \uC0AC\uC6A9\uC790 \uC785\uB825\uC758 \uC720\uD6A8\
+  \uC131\uC744 \uAC80\uC99D\uD558\uAC70\uB098, \uD14D\uC2A4\uD2B8 \uB0B4\uC5D0\uC11C\
+  \ \uD2B9\uC815 \uD328\uD134\uC744 \uAC80\uC0C9\uD558\uB294 \uB4F1\uC758 \uC791\uC5C5\
+  \uC5D0 \uC774\uB97C\u2026"
+title: "\uC815\uADDC \uD45C\uD604\uC2DD \uC0AC\uC6A9\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,18 @@
 ---
-title:                "Überprüfung, ob ein Verzeichnis existiert"
 aliases:
 - /de/powershell/checking-if-a-directory-exists/
-date:                  2024-02-03T19:08:42.579423-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:08:42.579423-07:00
+description: "In PowerShell ist die \xDCberpr\xFCfung, ob ein Verzeichnis existiert,\
+  \ eine h\xE4ufige Aufgabe, die Skripte dabei unterst\xFCtzt, Entscheidungen basierend\
+  \ auf der\u2026"
+lastmod: 2024-02-18 23:09:05.116503
+model: gpt-4-0125-preview
+summary: "In PowerShell ist die \xDCberpr\xFCfung, ob ein Verzeichnis existiert, eine\
+  \ h\xE4ufige Aufgabe, die Skripte dabei unterst\xFCtzt, Entscheidungen basierend\
+  \ auf der\u2026"
+title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 ---
 
 {{< edit_this_page >}}

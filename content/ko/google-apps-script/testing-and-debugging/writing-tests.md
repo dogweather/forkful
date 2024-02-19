@@ -1,14 +1,30 @@
 ---
-title:                "테스트 작성하기"
 aliases:
 - /ko/google-apps-script/writing-tests/
-date:                  2024-02-01T22:10:10.787021-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "테스트 작성하기"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/writing-tests.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:10:10.787021-07:00
+description: "Google Apps \uC2A4\uD06C\uB9BD\uD2B8(GAS)\uC5D0\uC11C \uD14C\uC2A4\uD2B8\
+  \uB97C \uC791\uC131\uD55C\uB2E4\uB294 \uAC83\uC740 \uCF54\uB4DC\uC758 \uB3D9\uC791\
+  \uC744 \uB2E4\uC591\uD55C \uC0C1\uD669\uC5D0\uC11C \uC608\uC0C1\uB300\uB85C \uC218\
+  \uD589\uD558\uB294\uC9C0 \uD655\uC778\uD558\uAE30 \uC704\uD574 \uC790\uB3D9\uD654\
+  \uB41C \uC2A4\uD06C\uB9BD\uD2B8\uB97C \uB9CC\uB4DC\uB294 \uAC83\uC785\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774\uB97C \uD1B5\uD574 \uC870\uAE30\
+  \uC5D0 \uBC84\uADF8\uB97C \uC7A1\uACE0, \uCF54\uB4DC \uD488\uC9C8\uC744 \uAC1C\uC120\
+  \uD558\uBA70, \uC5C5\uB370\uC774\uD2B8\uC640 \uC720\uC9C0\uBCF4\uC218\uB97C \uC27D\
+  \uAC8C \uD560 \uC218\u2026"
+lastmod: 2024-02-18 23:09:05.561916
+model: gpt-4-0125-preview
+summary: "Google Apps \uC2A4\uD06C\uB9BD\uD2B8(GAS)\uC5D0\uC11C \uD14C\uC2A4\uD2B8\
+  \uB97C \uC791\uC131\uD55C\uB2E4\uB294 \uAC83\uC740 \uCF54\uB4DC\uC758 \uB3D9\uC791\
+  \uC744 \uB2E4\uC591\uD55C \uC0C1\uD669\uC5D0\uC11C \uC608\uC0C1\uB300\uB85C \uC218\
+  \uD589\uD558\uB294\uC9C0 \uD655\uC778\uD558\uAE30 \uC704\uD574 \uC790\uB3D9\uD654\
+  \uB41C \uC2A4\uD06C\uB9BD\uD2B8\uB97C \uB9CC\uB4DC\uB294 \uAC83\uC785\uB2C8\uB2E4\
+  . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774\uB97C \uD1B5\uD574 \uC870\uAE30\
+  \uC5D0 \uBC84\uADF8\uB97C \uC7A1\uACE0, \uCF54\uB4DC \uD488\uC9C8\uC744 \uAC1C\uC120\
+  \uD558\uBA70, \uC5C5\uB370\uC774\uD2B8\uC640 \uC720\uC9C0\uBCF4\uC218\uB97C \uC27D\
+  \uAC8C \uD560 \uC218\u2026"
+title: "\uD14C\uC2A4\uD2B8 \uC791\uC131\uD558\uAE30"
 ---
 
 {{< edit_this_page >}}

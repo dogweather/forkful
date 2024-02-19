@@ -1,12 +1,14 @@
 ---
-title:                "Using an interactive shell (REPL)"
 aliases:
 - /en/google-apps-script/using-an-interactive-shell-repl/
-date:                  2024-02-01T21:12:08.411965-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Using an interactive shell (REPL)"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/google-apps-script/using-an-interactive-shell-repl.md"
+date: 2024-02-01 21:12:08.411965-07:00
+description: "An interactive shell, or Read-Eval-Print Loop (REPL), is a simple, interactive\
+  \ programming environment that takes single user inputs (expressions),\u2026"
+lastmod: 2024-02-18 23:09:10.641121
+model: gpt-4-0125-preview
+summary: "An interactive shell, or Read-Eval-Print Loop (REPL), is a simple, interactive\
+  \ programming environment that takes single user inputs (expressions),\u2026"
+title: Using an interactive shell (REPL)
 ---
 
 {{< edit_this_page >}}

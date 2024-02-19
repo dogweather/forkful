@@ -1,14 +1,18 @@
 ---
-title:                "Att använda en debugger"
 aliases:
 - /sv/vba/using-a-debugger/
-date:                  2024-02-01T22:04:06.162324-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att använda en debugger"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/vba/using-a-debugger.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:04:06.162324-07:00
+description: "Att anv\xE4nda en fels\xF6kare i Visual Basic for Applications (VBA)\
+  \ inneb\xE4r att k\xF6ra din kod steg f\xF6r steg f\xF6r att inspektera dess exekveringsfl\xF6\
+  de och\u2026"
+lastmod: 2024-02-18 23:08:51.631569
+model: gpt-4-0125-preview
+summary: "Att anv\xE4nda en fels\xF6kare i Visual Basic for Applications (VBA) inneb\xE4\
+  r att k\xF6ra din kod steg f\xF6r steg f\xF6r att inspektera dess exekveringsfl\xF6\
+  de och\u2026"
+title: "Att anv\xE4nda en debugger"
 ---
 
 {{< edit_this_page >}}

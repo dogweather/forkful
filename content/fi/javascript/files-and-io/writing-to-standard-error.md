@@ -1,14 +1,16 @@
 ---
-title:                "Kirjoittaminen standardivirheeseen"
 aliases:
 - /fi/javascript/writing-to-standard-error/
-date:                  2024-02-03T19:33:42.557424-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kirjoittaminen standardivirheeseen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:33:42.557424-07:00
+description: "Standardivirheeseen (stderr) kirjoittaminen JavaScriptill\xE4 tarkoittaa\
+  \ virheilmoitusten tai mink\xE4 tahansa kriittisen tiedon ohjaamista tiettyyn, erilliseen\u2026"
+lastmod: 2024-02-18 23:09:08.053750
+model: gpt-4-0125-preview
+summary: "Standardivirheeseen (stderr) kirjoittaminen JavaScriptill\xE4 tarkoittaa\
+  \ virheilmoitusten tai mink\xE4 tahansa kriittisen tiedon ohjaamista tiettyyn, erilliseen\u2026"
+title: Kirjoittaminen standardivirheeseen
 ---
 
 {{< edit_this_page >}}

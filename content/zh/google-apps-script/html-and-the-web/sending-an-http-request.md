@@ -1,14 +1,24 @@
 ---
-title:                "发送HTTP请求"
 aliases:
 - /zh/google-apps-script/sending-an-http-request/
-date:                  2024-02-01T22:01:42.615950-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "发送HTTP请求"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/google-apps-script/sending-an-http-request.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:42.615950-07:00
+description: "\u5728 Google Apps \u811A\u672C\u4E2D\u53D1\u9001 HTTP \u8BF7\u6C42\u662F\
+  \u901A\u8FC7\u7F16\u7A0B\u65B9\u5F0F\u5411\u5916\u90E8\u7F51\u7EDC\u670D\u52A1\u5668\
+  \u6216 API \u53D1\u8D77\u8C03\u7528\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\
+  \u4E3A\u4E86\u68C0\u7D22\u6216\u53D1\u9001\u6570\u636E\u5230\u7F51\u7EDC\u670D\u52A1\
+  \uFF0C\u5C06\u5927\u91CF\u7684\u7F51\u7EDC\u8D44\u6E90\u548C\u529F\u80FD\u76F4\u63A5\
+  \u96C6\u6210\u5230\u4ED6\u4EEC\u7684 Google Apps \u811A\u672C\u9879\u76EE\u4E2D\u3002"
+lastmod: 2024-02-18 23:08:58.746879
+model: gpt-4-0125-preview
+summary: "\u5728 Google Apps \u811A\u672C\u4E2D\u53D1\u9001 HTTP \u8BF7\u6C42\u662F\
+  \u901A\u8FC7\u7F16\u7A0B\u65B9\u5F0F\u5411\u5916\u90E8\u7F51\u7EDC\u670D\u52A1\u5668\
+  \u6216 API \u53D1\u8D77\u8C03\u7528\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\
+  \u4E3A\u4E86\u68C0\u7D22\u6216\u53D1\u9001\u6570\u636E\u5230\u7F51\u7EDC\u670D\u52A1\
+  \uFF0C\u5C06\u5927\u91CF\u7684\u7F51\u7EDC\u8D44\u6E90\u548C\u529F\u80FD\u76F4\u63A5\
+  \u96C6\u6210\u5230\u4ED6\u4EEC\u7684 Google Apps \u811A\u672C\u9879\u76EE\u4E2D\u3002"
+title: "\u53D1\u9001HTTP\u8BF7\u6C42"
 ---
 
 {{< edit_this_page >}}

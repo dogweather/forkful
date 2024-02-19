@@ -1,12 +1,15 @@
 ---
-title:                "Checking if a directory exists"
 aliases:
 - /en/bash/checking-if-a-directory-exists/
-date:                  2024-02-03T19:02:28.984607-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Checking if a directory exists"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/checking-if-a-directory-exists.md"
+date: 2024-02-03 19:02:28.984607-07:00
+description: "In Bash programming, checking if a directory exists is an essential\
+  \ control mechanism used to verify the presence of a directory before performing\
+  \ file\u2026"
+lastmod: 2024-02-18 23:09:11.244326
+model: gpt-4-0125-preview
+summary: "In Bash programming, checking if a directory exists is an essential control\
+  \ mechanism used to verify the presence of a directory before performing file\u2026"
+title: Checking if a directory exists
 ---
 
 {{< edit_this_page >}}

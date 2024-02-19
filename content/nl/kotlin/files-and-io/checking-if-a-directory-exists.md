@@ -1,15 +1,16 @@
 ---
-title:                "Controleren of een directory bestaat"
 aliases:
 - /nl/kotlin/checking-if-a-directory-exists/
-date:                  2024-01-28T21:56:04.853357-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Controleren of een directory bestaat"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/kotlin/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 21:56:04.853357-07:00
+description: "Controleren of een map bestaat in Kotlin stelt je in staat te bevestigen\
+  \ of een map aanwezig is voordat je probeert er bestanden te lezen of te schrijven.\u2026"
+lastmod: 2024-02-18 23:09:01.821768
+model: gpt-4-0125-preview
+summary: "Controleren of een map bestaat in Kotlin stelt je in staat te bevestigen\
+  \ of een map aanwezig is voordat je probeert er bestanden te lezen of te schrijven.\u2026"
+title: Controleren of een directory bestaat
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,17 @@
 ---
-title:                "Refactoring"
 aliases:
 - /nl/kotlin/refactoring/
-date:                  2024-01-28T22:06:12.024104-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refactoring"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/kotlin/refactoring.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:06:12.024104-07:00
+description: "Refactoring is het proces van het aanpassen van bestaande code om de\
+  \ structuur, leesbaarheid, en prestatie te verbeteren zonder het externe gedrag\
+  \ te\u2026"
+lastmod: 2024-02-18 23:09:01.814933
+model: gpt-4-0125-preview
+summary: "Refactoring is het proces van het aanpassen van bestaande code om de structuur,\
+  \ leesbaarheid, en prestatie te verbeteren zonder het externe gedrag te\u2026"
+title: Refactoring
 ---
 
 {{< edit_this_page >}}

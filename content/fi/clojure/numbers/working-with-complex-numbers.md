@@ -1,13 +1,16 @@
 ---
-title:                "Kompleksilukujen käsittely"
 aliases:
 - /fi/clojure/working-with-complex-numbers/
-date:                  2024-01-26T04:39:00.704047-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kompleksilukujen käsittely"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/working-with-complex-numbers.md"
+date: 2024-01-26 04:39:00.704047-07:00
+description: "Kompleksiluvut laajentavat reaalilukuja lis\xE4osalla, kuvitteellisella\
+  \ yksik\xF6ll\xE4 'i'. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 useilla alueilla,\
+  \ mukaan lukien\u2026"
+lastmod: 2024-02-18 23:09:07.222150
+model: gpt-4-0125-preview
+summary: "Kompleksiluvut laajentavat reaalilukuja lis\xE4osalla, kuvitteellisella\
+  \ yksik\xF6ll\xE4 'i'. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 useilla alueilla,\
+  \ mukaan lukien\u2026"
+title: "Kompleksilukujen k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

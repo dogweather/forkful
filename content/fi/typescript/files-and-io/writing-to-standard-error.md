@@ -1,14 +1,18 @@
 ---
-title:                "Kirjoittaminen standardivirheeseen"
 aliases:
 - /fi/typescript/writing-to-standard-error/
-date:                  2024-02-03T19:34:46.924887-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Kirjoittaminen standardivirheeseen"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:34:46.924887-07:00
+description: "TypeScriptiss\xE4 standardivirheeseen (stderr) kirjoittaminen tarkoittaa\
+  \ virheviestien tai lokien suoraan l\xE4hett\xE4mist\xE4 ymp\xE4rist\xF6n virhetulostevirtaan\
+  \ (esim.\u2026"
+lastmod: 2024-02-18 23:09:07.336477
+model: gpt-4-0125-preview
+summary: "TypeScriptiss\xE4 standardivirheeseen (stderr) kirjoittaminen tarkoittaa\
+  \ virheviestien tai lokien suoraan l\xE4hett\xE4mist\xE4 ymp\xE4rist\xF6n virhetulostevirtaan\
+  \ (esim.\u2026"
+title: Kirjoittaminen standardivirheeseen
 ---
 
 {{< edit_this_page >}}

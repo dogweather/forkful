@@ -1,13 +1,16 @@
 ---
-title:                "Gestion des erreurs"
 aliases:
 - /fr/kotlin/handling-errors/
-date:                  2024-01-26T00:54:37.810763-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Gestion des erreurs"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/handling-errors.md"
+date: 2024-01-26 00:54:37.810763-07:00
+description: "La gestion des erreurs est la mani\xE8re dont votre code traite les\
+  \ probl\xE8mes qui surviennent pendant l'ex\xE9cution \u2014 comme g\xE9rer un impr\xE9\
+  vu sans le laisser\u2026"
+lastmod: 2024-02-18 23:09:08.789197
+model: gpt-4-1106-preview
+summary: "La gestion des erreurs est la mani\xE8re dont votre code traite les probl\xE8\
+  mes qui surviennent pendant l'ex\xE9cution \u2014 comme g\xE9rer un impr\xE9vu sans\
+  \ le laisser\u2026"
+title: Gestion des erreurs
 ---
 
 {{< edit_this_page >}}

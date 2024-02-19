@@ -1,13 +1,14 @@
 ---
-title:                "Calculating a date in the future or past"
 aliases:
 - /en/python/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:31:51.075923-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Calculating a date in the future or past"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:31:51.075923-07:00
+description: "Calculating a future or past date means finding a date before or after\
+  \ a specified time interval. Programmers do it for reminders, expiration dates,\u2026"
+lastmod: 2024-02-18 23:09:10.694898
+model: gpt-4-1106-preview
+summary: "Calculating a future or past date means finding a date before or after a\
+  \ specified time interval. Programmers do it for reminders, expiration dates,\u2026"
+title: Calculating a date in the future or past
 ---
 
 {{< edit_this_page >}}

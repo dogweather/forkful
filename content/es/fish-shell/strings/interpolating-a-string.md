@@ -1,13 +1,14 @@
 ---
-title:                "Interpolación de cadenas de texto"
 aliases:
 - /es/fish-shell/interpolating-a-string/
-date:                  2024-01-20T17:50:36.479815-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolación de cadenas de texto"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/interpolating-a-string.md"
+date: 2024-01-20 17:50:36.479815-07:00
+description: "Interpolar una cadena consiste en insertar variables o expresiones en\
+  \ medio de una cadena de texto. Programadores lo hacen para construir mensajes\u2026"
+lastmod: 2024-02-18 23:09:10.435953
+model: gpt-4-1106-preview
+summary: "Interpolar una cadena consiste en insertar variables o expresiones en medio\
+  \ de una cadena de texto. Programadores lo hacen para construir mensajes\u2026"
+title: "Interpolaci\xF3n de cadenas de texto"
 ---
 
 {{< edit_this_page >}}

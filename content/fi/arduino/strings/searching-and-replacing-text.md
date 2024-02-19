@@ -1,13 +1,16 @@
 ---
-title:                "Tekstin etsiminen ja korvaaminen"
 aliases:
 - /fi/arduino/searching-and-replacing-text/
-date:                  2024-01-20T17:57:10.440034-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tekstin etsiminen ja korvaaminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:10.440034-07:00
+description: "Tekstin etsiminen ja korvaaminen tarkoittaa sopivan merkkijonon l\xF6\
+  yt\xE4mist\xE4 tekstist\xE4 ja sen muuttamista toiseksi. Ohjelmoijat k\xE4ytt\xE4\
+  v\xE4t t\xE4t\xE4 toimintoa\u2026"
+lastmod: 2024-02-18 23:09:07.884217
+model: gpt-4-1106-preview
+summary: "Tekstin etsiminen ja korvaaminen tarkoittaa sopivan merkkijonon l\xF6yt\xE4\
+  mist\xE4 tekstist\xE4 ja sen muuttamista toiseksi. Ohjelmoijat k\xE4ytt\xE4v\xE4\
+  t t\xE4t\xE4 toimintoa\u2026"
+title: Tekstin etsiminen ja korvaaminen
 ---
 
 {{< edit_this_page >}}

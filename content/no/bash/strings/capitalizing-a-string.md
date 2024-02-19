@@ -1,14 +1,18 @@
 ---
-title:                "Sette stor bokstav i en streng"
 aliases:
 - /no/bash/capitalizing-a-string/
-date:                  2024-02-03T19:04:53.082612-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sette stor bokstav i en streng"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/capitalizing-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:04:53.082612-07:00
+description: "\xC5 sette stor forbokstav i en streng i Bash inneb\xE6rer \xE5 omdanne\
+  \ det f\xF8rste tegnet i strengen til en stor bokstav, mens resten av strengen forblir\
+  \ uendret.\u2026"
+lastmod: 2024-02-18 23:08:54.040119
+model: gpt-4-0125-preview
+summary: "\xC5 sette stor forbokstav i en streng i Bash inneb\xE6rer \xE5 omdanne\
+  \ det f\xF8rste tegnet i strengen til en stor bokstav, mens resten av strengen forblir\
+  \ uendret.\u2026"
+title: Sette stor bokstav i en streng
 ---
 
 {{< edit_this_page >}}

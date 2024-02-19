@@ -1,15 +1,20 @@
 ---
-title:                "Viết một tệp văn bản"
 aliases:
 - /vi/cpp/writing-a-text-file/
-date:                  2024-01-28T22:12:18.722389-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Viết một tệp văn bản"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/cpp/writing-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:12:18.722389-07:00
+description: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong C++ c\xF3 ngh\u0129\
+  a l\xE0 t\u1EA1o ho\u1EB7c ch\u1EC9nh s\u1EEDa m\u1ED9t t\u1EC7p \u0111\u1EC3 l\u01B0\
+  u tr\u1EEF d\u1EEF li\u1EC7u v\u0103n b\u1EA3n. L\u1EADp tr\xECnh vi\xEAn th\u1EF1\
+  c hi\u1EC7n \u0111\u1EC3 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u nh\u01B0 c\u1EA5u\u2026"
+lastmod: 2024-02-18 23:08:51.064174
+model: gpt-4-0125-preview
+summary: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong C++ c\xF3 ngh\u0129\
+  a l\xE0 t\u1EA1o ho\u1EB7c ch\u1EC9nh s\u1EEDa m\u1ED9t t\u1EC7p \u0111\u1EC3 l\u01B0\
+  u tr\u1EEF d\u1EEF li\u1EC7u v\u0103n b\u1EA3n. L\u1EADp tr\xECnh vi\xEAn th\u1EF1\
+  c hi\u1EC7n \u0111\u1EC3 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u nh\u01B0 c\u1EA5u\u2026"
+title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 ---
 
 {{< edit_this_page >}}

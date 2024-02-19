@@ -1,13 +1,24 @@
 ---
-title:                "복소수 다루기"
 aliases:
 - /ko/java/working-with-complex-numbers/
-date:                  2024-01-26T04:42:11.013235-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "복소수 다루기"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/working-with-complex-numbers.md"
+date: 2024-01-26 04:42:11.013235-07:00
+description: "\uBCF5\uC18C\uC218\uB294 \uAC00\uC0C1 \uB2E8\uC704\uC778 `i`\uB97C \uCD94\
+  \uAC00\uD568\uC73C\uB85C\uC368 \uC2E4\uC218 \uC120\uC744 \uD655\uC7A5\uD558\uBA70\
+  , \uC5EC\uAE30\uC11C `i^2 = -1` \uC785\uB2C8\uB2E4. \uBCF5\uC18C\uC218\uB294 \uC804\
+  \uAE30 \uC804\uB958\uC640 \uC2E0\uD638 \uCC98\uB9AC\uC640 \uAC19\uC740 \uC2E4\uC218\
+  \uB85C\uB294 \uB2E4\uB8F0 \uC218 \uC5C6\uB294 \uD604\uC0C1\uC744 \uBAA8\uB378\uB9C1\
+  \uD558\uB294 \uACF5\uD559, \uBB3C\uB9AC\uD559, \uACE0\uAE09 \uC218\uD559\uACFC \uAC19\
+  \uC740 \uBD84\uC57C\uC5D0\uC11C \uC911\uC694\uD569\uB2C8\uB2E4."
+lastmod: 2024-02-18 23:09:06.011188
+model: gpt-4-0125-preview
+summary: "\uBCF5\uC18C\uC218\uB294 \uAC00\uC0C1 \uB2E8\uC704\uC778 `i`\uB97C \uCD94\
+  \uAC00\uD568\uC73C\uB85C\uC368 \uC2E4\uC218 \uC120\uC744 \uD655\uC7A5\uD558\uBA70\
+  , \uC5EC\uAE30\uC11C `i^2 = -1` \uC785\uB2C8\uB2E4. \uBCF5\uC18C\uC218\uB294 \uC804\
+  \uAE30 \uC804\uB958\uC640 \uC2E0\uD638 \uCC98\uB9AC\uC640 \uAC19\uC740 \uC2E4\uC218\
+  \uB85C\uB294 \uB2E4\uB8F0 \uC218 \uC5C6\uB294 \uD604\uC0C1\uC744 \uBAA8\uB378\uB9C1\
+  \uD558\uB294 \uACF5\uD559, \uBB3C\uB9AC\uD559, \uACE0\uAE09 \uC218\uD559\uACFC \uAC19\
+  \uC740 \uBD84\uC57C\uC5D0\uC11C \uC911\uC694\uD569\uB2C8\uB2E4."
+title: "\uBCF5\uC18C\uC218 \uB2E4\uB8E8\uAE30"
 ---
 
 {{< edit_this_page >}}

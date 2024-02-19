@@ -1,13 +1,14 @@
 ---
-title:                "Bruke et interaktivt skall (REPL)"
 aliases:
 - /no/elm/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:13:36.263906-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Bruke et interaktivt skall (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:13:36.263906-07:00
+description: "Read-Eval-Print Loop (REPL) er et enkelt, interaktivt programmeringsmilj\xF8\
+  \ som tar enkeltbrukerinput, evaluerer dem, og returnerer resultatet til brukeren.\u2026"
+lastmod: 2024-02-18 23:08:53.812813
+model: gpt-4-0125-preview
+summary: "Read-Eval-Print Loop (REPL) er et enkelt, interaktivt programmeringsmilj\xF8\
+  \ som tar enkeltbrukerinput, evaluerer dem, og returnerer resultatet til brukeren.\u2026"
+title: Bruke et interaktivt skall (REPL)
 ---
 
 {{< edit_this_page >}}

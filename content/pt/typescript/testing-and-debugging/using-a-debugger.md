@@ -1,13 +1,14 @@
 ---
-title:                "Usando um depurador"
 aliases:
 - /pt/typescript/using-a-debugger/
-date:                  2024-01-26T04:11:08.800109-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando um depurador"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/using-a-debugger.md"
+date: 2024-01-26 04:11:08.800109-07:00
+description: "Um depurador \xE9 uma ferramenta que permite examinar e alterar os mecanismos\
+  \ internos do seu c\xF3digo enquanto ele \xE9 executado. Os programadores usam para\u2026"
+lastmod: 2024-02-18 23:08:57.889473
+model: gpt-4-0125-preview
+summary: "Um depurador \xE9 uma ferramenta que permite examinar e alterar os mecanismos\
+  \ internos do seu c\xF3digo enquanto ele \xE9 executado. Os programadores usam para\u2026"
+title: Usando um depurador
 ---
 
 {{< edit_this_page >}}

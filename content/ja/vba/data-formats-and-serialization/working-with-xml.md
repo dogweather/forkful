@@ -1,14 +1,26 @@
 ---
-title:                "XMLとの作業"
 aliases:
 - /ja/vba/working-with-xml/
-date:                  2024-02-01T22:07:15.479344-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XMLとの作業"
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/vba/working-with-xml.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:07:15.479344-07:00
+description: "Visual Basic for Applications (VBA) \u3067 XML \u3092\u6271\u3046\u3053\
+  \u3068\u306F\u3001Microsoft Office \u30A2\u30D7\u30EA\u30B1\u30FC\u30B7\u30E7\u30F3\
+  \u306E\u6587\u8108\u5185\u3067 XML \u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\u3092\u89E3\
+  \u6790\u3001\u4F5C\u6210\u3001\u304A\u3088\u3073\u5909\u66F4\u3059\u308B\u3053\u3068\
+  \u3092\u542B\u307F\u307E\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\
+  Office \u30A2\u30D7\u30EA\u30B1\u30FC\u30B7\u30E7\u30F3\u3092 XML \u3092\u51FA\u529B\
+  \u3059\u308B Web\u2026"
+lastmod: 2024-02-18 23:08:54.784769
+model: gpt-4-0125-preview
+summary: "Visual Basic for Applications (VBA) \u3067 XML \u3092\u6271\u3046\u3053\u3068\
+  \u306F\u3001Microsoft Office \u30A2\u30D7\u30EA\u30B1\u30FC\u30B7\u30E7\u30F3\u306E\
+  \u6587\u8108\u5185\u3067 XML \u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\u3092\u89E3\u6790\
+  \u3001\u4F5C\u6210\u3001\u304A\u3088\u3073\u5909\u66F4\u3059\u308B\u3053\u3068\u3092\
+  \u542B\u307F\u307E\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001Office\
+  \ \u30A2\u30D7\u30EA\u30B1\u30FC\u30B7\u30E7\u30F3\u3092 XML \u3092\u51FA\u529B\u3059\
+  \u308B Web\u2026"
+title: "XML\u3068\u306E\u4F5C\u696D"
 ---
 
 {{< edit_this_page >}}

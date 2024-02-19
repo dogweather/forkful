@@ -1,13 +1,14 @@
 ---
-title:                "Using a debugger"
 aliases:
 - /en/bash/using-a-debugger/
-date:                  2024-01-25T20:50:20.306001-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Using a debugger"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/using-a-debugger.md"
+date: 2024-01-25 20:50:20.306001-07:00
+description: "Using a debugger in Bash means harnessing tools to test and find issues\
+  \ in your scripts, like trapping bugs that crash your code or sneakily make it\u2026"
+lastmod: 2024-02-18 23:09:11.234638
+model: gpt-4-1106-preview
+summary: "Using a debugger in Bash means harnessing tools to test and find issues\
+  \ in your scripts, like trapping bugs that crash your code or sneakily make it\u2026"
+title: Using a debugger
 ---
 
 {{< edit_this_page >}}

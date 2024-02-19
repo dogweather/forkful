@@ -1,14 +1,20 @@
 ---
-title:                "Tìm kiếm và thay thế văn bản"
 aliases:
 - /vi/vba/searching-and-replacing-text/
-date:                  2024-02-01T22:01:48.721039-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tìm kiếm và thay thế văn bản"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/vba/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:48.721039-07:00
+description: "Vi\u1EC7c t\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong\
+  \ Visual Basic cho \u1EE8ng d\u1EE5ng (VBA) l\xE0 thi\u1EBFt y\u1EBFu \u0111\u1EC3\
+  \ ch\u1EC9nh s\u1EEDa c\xE1c t\xE0i li\u1EC7u, b\u1EA3ng t\xEDnh v\xE0 c\u01A1 s\u1EDF\
+  \ d\u1EEF li\u1EC7u m\u1ED9t c\xE1ch l\u1EADp\u2026"
+lastmod: 2024-02-18 23:08:50.492259
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c t\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong Visual\
+  \ Basic cho \u1EE8ng d\u1EE5ng (VBA) l\xE0 thi\u1EBFt y\u1EBFu \u0111\u1EC3 ch\u1EC9\
+  nh s\u1EEDa c\xE1c t\xE0i li\u1EC7u, b\u1EA3ng t\xEDnh v\xE0 c\u01A1 s\u1EDF d\u1EEF\
+  \ li\u1EC7u m\u1ED9t c\xE1ch l\u1EADp\u2026"
+title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 ---
 
 {{< edit_this_page >}}

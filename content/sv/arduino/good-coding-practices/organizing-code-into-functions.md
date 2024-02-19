@@ -1,13 +1,16 @@
 ---
-title:                "Att organisera kod i funktioner"
 aliases:
 - /sv/arduino/organizing-code-into-functions/
-date:                  2024-01-26T01:08:33.244094-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Att organisera kod i funktioner"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/organizing-code-into-functions.md"
+date: 2024-01-26 01:08:33.244094-07:00
+description: "Att organisera kod i funktioner inneb\xE4r att dela upp koden i \xE5\
+  teranv\xE4ndbara delar, d\xE4r varje del utf\xF6r ett specifikt jobb. Programmerare\
+  \ g\xF6r detta f\xF6r att\u2026"
+lastmod: 2024-02-18 23:08:52.048873
+model: gpt-4-1106-preview
+summary: "Att organisera kod i funktioner inneb\xE4r att dela upp koden i \xE5teranv\xE4\
+  ndbara delar, d\xE4r varje del utf\xF6r ett specifikt jobb. Programmerare g\xF6\
+  r detta f\xF6r att\u2026"
+title: Att organisera kod i funktioner
 ---
 
 {{< edit_this_page >}}

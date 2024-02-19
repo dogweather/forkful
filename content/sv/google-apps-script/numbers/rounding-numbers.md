@@ -1,14 +1,17 @@
 ---
-title:                "Avrundning av nummer"
 aliases:
 - /sv/google-apps-script/rounding-numbers/
-date:                  2024-02-01T22:01:40.161345-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Avrundning av nummer"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/google-apps-script/rounding-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:40.161345-07:00
+description: "Att avrunda tal, ett grundl\xE4ggande koncept inom dataprogrammering,\
+  \ inneb\xE4r att justera ett tal till dess n\xE4rmaste heltal eller till ett angivet\
+  \ antal\u2026"
+lastmod: 2024-02-18 23:08:51.372883
+model: gpt-4-0125-preview
+summary: "Att avrunda tal, ett grundl\xE4ggande koncept inom dataprogrammering, inneb\xE4\
+  r att justera ett tal till dess n\xE4rmaste heltal eller till ett angivet antal\u2026"
+title: Avrundning av nummer
 ---
 
 {{< edit_this_page >}}

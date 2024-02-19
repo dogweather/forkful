@@ -1,13 +1,26 @@
 ---
-title:                "HTTP अनुरोध भेजना"
 aliases:
 - /hi/typescript/sending-an-http-request/
-date:                  2024-01-20T18:01:11.598799-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP अनुरोध भेजना"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/sending-an-http-request.md"
+date: 2024-01-20 18:01:11.598799-07:00
+description: "HTTP request \u0935\u0947\u092C \u0938\u0930\u094D\u0935\u0930 \u0938\
+  \u0947 \u091C\u093E\u0928\u0915\u093E\u0930\u0940 \u092E\u093E\u0902\u0917\u0928\
+  \u0947 \u0915\u093E \u090F\u0915 \u0924\u0930\u0940\u0915\u093E \u0939\u0948\u0964\
+  \ Programmers \u0907\u0938\u0947 \u0921\u0947\u091F\u093E \u092A\u093E\u0928\u0947\
+  , \u0905\u092A\u0921\u0947\u091F \u0915\u0930\u0928\u0947, \u092F\u093E \u0938\u0930\
+  \u094D\u0935\u0930 \u092A\u0930 \u0915\u093E\u0930\u094D\u0930\u0935\u093E\u0908\
+  \ \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u092D\u0947\u091C\u0924\
+  \u0947 \u0939\u0948\u0902\u0964"
+lastmod: 2024-02-18 23:09:02.873707
+model: gpt-4-1106-preview
+summary: "HTTP request \u0935\u0947\u092C \u0938\u0930\u094D\u0935\u0930 \u0938\u0947\
+  \ \u091C\u093E\u0928\u0915\u093E\u0930\u0940 \u092E\u093E\u0902\u0917\u0928\u0947\
+  \ \u0915\u093E \u090F\u0915 \u0924\u0930\u0940\u0915\u093E \u0939\u0948\u0964 Programmers\
+  \ \u0907\u0938\u0947 \u0921\u0947\u091F\u093E \u092A\u093E\u0928\u0947, \u0905\u092A\
+  \u0921\u0947\u091F \u0915\u0930\u0928\u0947, \u092F\u093E \u0938\u0930\u094D\u0935\
+  \u0930 \u092A\u0930 \u0915\u093E\u0930\u094D\u0930\u0935\u093E\u0908 \u0915\u0930\
+  \u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u092D\u0947\u091C\u0924\u0947 \u0939\
+  \u0948\u0902\u0964"
+title: "HTTP \u0905\u0928\u0941\u0930\u094B\u0927 \u092D\u0947\u091C\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,20 @@
 ---
-title:                "使用TOML"
 aliases:
 - /zh/java/working-with-toml/
-date:                  2024-01-26T04:23:07.183110-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/working-with-toml.md"
+date: 2024-01-26 04:23:07.183110-07:00
+description: "TOML\u4EE3\u8868Tom\u7684\u660E\u663E\u7684\u3001\u6700\u5C0F\u5316\u7684\
+  \u8BED\u8A00\u3002\u5B83\u662F\u4E00\u79CD\u7528\u4E8E\u914D\u7F6E\u6587\u4EF6\u7684\
+  \u6570\u636E\u5E8F\u5217\u5316\u683C\u5F0F\u3002\u7A0B\u5E8F\u5458\u4E4B\u6240\u4EE5\
+  \u4F7F\u7528\u5B83\uFF0C\u662F\u56E0\u4E3A\u5B83\u6613\u4E8E\u8BFB\u5199\uFF0C\u5E76\
+  \u4E14\u80FD\u591F\u5F88\u597D\u5730\u6620\u5C04\u5230\u54C8\u5E0C\u8868\u4E0A\u3002"
+lastmod: 2024-02-18 23:08:59.042046
+model: gpt-4-0125-preview
+summary: "TOML\u4EE3\u8868Tom\u7684\u660E\u663E\u7684\u3001\u6700\u5C0F\u5316\u7684\
+  \u8BED\u8A00\u3002\u5B83\u662F\u4E00\u79CD\u7528\u4E8E\u914D\u7F6E\u6587\u4EF6\u7684\
+  \u6570\u636E\u5E8F\u5217\u5316\u683C\u5F0F\u3002\u7A0B\u5E8F\u5458\u4E4B\u6240\u4EE5\
+  \u4F7F\u7528\u5B83\uFF0C\u662F\u56E0\u4E3A\u5B83\u6613\u4E8E\u8BFB\u5199\uFF0C\u5E76\
+  \u4E14\u80FD\u591F\u5F88\u597D\u5730\u6620\u5C04\u5230\u54C8\u5E0C\u8868\u4E0A\u3002"
+title: "\u4F7F\u7528TOML"
 ---
 
 {{< edit_this_page >}}

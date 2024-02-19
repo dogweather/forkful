@@ -1,13 +1,16 @@
 ---
-title:                "Imprimiendo salida de depuración"
 aliases:
 - /es/php/printing-debug-output/
-date:                  2024-01-20T17:53:09.336681-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Imprimiendo salida de depuración"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/printing-debug-output.md"
+date: 2024-01-20 17:53:09.336681-07:00
+description: "Imprimir salida de depuraci\xF3n en PHP significa mostrar datos en pantalla\
+  \ para entender qu\xE9 est\xE1 pasando dentro de tu c\xF3digo. Los programadores\
+  \ lo hacen\u2026"
+lastmod: 2024-02-18 23:09:10.076681
+model: gpt-4-1106-preview
+summary: "Imprimir salida de depuraci\xF3n en PHP significa mostrar datos en pantalla\
+  \ para entender qu\xE9 est\xE1 pasando dentro de tu c\xF3digo. Los programadores\
+  \ lo hacen\u2026"
+title: "Imprimiendo salida de depuraci\xF3n"
 ---
 
 {{< edit_this_page >}}

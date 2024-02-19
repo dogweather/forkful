@@ -1,15 +1,16 @@
 ---
-title:                "Usando arrays associativos"
 aliases:
 - /pt/java/using-associative-arrays/
-date:                  2024-01-30T19:11:42.308637-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando arrays associativos"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:11:42.308637-07:00
+description: "Em Java, arrays associativos, ou mapas, permitem armazenar pares chave-valor\
+  \ para uma busca e manipula\xE7\xE3o de dados eficiente. Programadores os utilizam\u2026"
+lastmod: 2024-02-18 23:08:58.011495
+model: gpt-4-0125-preview
+summary: "Em Java, arrays associativos, ou mapas, permitem armazenar pares chave-valor\
+  \ para uma busca e manipula\xE7\xE3o de dados eficiente. Programadores os utilizam\u2026"
+title: Usando arrays associativos
 ---
 
 {{< edit_this_page >}}

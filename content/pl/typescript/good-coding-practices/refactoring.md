@@ -1,13 +1,16 @@
 ---
-title:                "Refaktoryzacja"
 aliases:
 - /pl/typescript/refactoring/
-date:                  2024-01-26T03:36:38.728545-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Refaktoryzacja"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/refactoring.md"
+date: 2024-01-26 03:36:38.728545-07:00
+description: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu komputerowego\
+  \ bez zmiany jego zewn\u0119trznego zachowania. Programi\u015Bci wykonuj\u0105 j\u0105\
+  , aby kod by\u0142\u2026"
+lastmod: 2024-02-18 23:08:49.356139
+model: gpt-4-0125-preview
+summary: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu komputerowego\
+  \ bez zmiany jego zewn\u0119trznego zachowania. Programi\u015Bci wykonuj\u0105 j\u0105\
+  , aby kod by\u0142\u2026"
+title: Refaktoryzacja
 ---
 
 {{< edit_this_page >}}

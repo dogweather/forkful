@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonojen yhdistäminen"
 aliases:
 - /fi/swift/concatenating-strings/
-date:                  2024-01-20T17:35:41.161529-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonojen yhdistäminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/concatenating-strings.md"
+date: 2024-01-20 17:35:41.161529-07:00
+description: "Yhdist\xE4mme merkkijonoja siksikin, ett\xE4 voimme luoda pitki\xE4\
+  \ tekstinp\xE4tki\xE4 pienist\xE4 palasista. T\xE4t\xE4 tekev\xE4t ohjelmoijat everywhere\
+  \ luodaakseen dynaamisia\u2026"
+lastmod: 2024-02-18 23:09:07.980989
+model: gpt-4-1106-preview
+summary: "Yhdist\xE4mme merkkijonoja siksikin, ett\xE4 voimme luoda pitki\xE4 tekstinp\xE4\
+  tki\xE4 pienist\xE4 palasista. T\xE4t\xE4 tekev\xE4t ohjelmoijat everywhere luodaakseen\
+  \ dynaamisia\u2026"
+title: "Merkkijonojen yhdist\xE4minen"
 ---
 
 {{< edit_this_page >}}

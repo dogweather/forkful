@@ -1,13 +1,16 @@
 ---
-title:                "Łączenie łańcuchów znaków"
 aliases:
 - /pl/elixir/concatenating-strings/
-date:                  2024-01-27T10:42:57.388533-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Łączenie łańcuchów znaków"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/concatenating-strings.md"
+date: 2024-01-27 10:42:57.388533-07:00
+description: "Konkatenacja ci\u0105g\xF3w polega na \u0142\u0105czeniu dw\xF3ch lub\
+  \ wi\u0119cej ci\u0105g\xF3w znak\xF3w, aby utworzy\u0107 jednolity tekst. Mo\u017C\
+  esz potrzebowa\u0107 \u0142\u0105czy\u0107 teksty, generuj\u0105c\u2026"
+lastmod: 2024-02-18 23:08:49.297982
+model: gpt-4-0125-preview
+summary: "Konkatenacja ci\u0105g\xF3w polega na \u0142\u0105czeniu dw\xF3ch lub wi\u0119\
+  cej ci\u0105g\xF3w znak\xF3w, aby utworzy\u0107 jednolity tekst. Mo\u017Cesz potrzebowa\u0107\
+  \ \u0142\u0105czy\u0107 teksty, generuj\u0105c\u2026"
+title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 ---
 
 {{< edit_this_page >}}

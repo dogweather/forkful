@@ -1,13 +1,27 @@
 ---
-title:                "कमांड लाइन आर्गुमेंट्स पढ़ना"
 aliases:
 - /hi/java/reading-command-line-arguments/
-date:                  2024-01-20T17:56:46.662451-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "कमांड लाइन आर्गुमेंट्स पढ़ना"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/java/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:46.662451-07:00
+description: "Command line arguments \u0935\u094B \u092A\u0948\u0930\u093E\u092E\u0940\
+  \u091F\u0930 \u0939\u094B\u0924\u0947 \u0939\u0948\u0902 \u091C\u094B \u0939\u092E\
+  \ Java \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E \u0915\u094B \u0930\
+  \u0928 \u0915\u0930\u0924\u0947 \u0935\u0915\u094D\u0924 pass \u0915\u0930\u0924\
+  \u0947 \u0939\u0948\u0902\u0964 \u092F\u0947 \u0907\u0938\u0932\u093F\u090F \u091C\
+  \u093C\u0930\u0942\u0930\u0940 \u0939\u094B\u0924\u0947 \u0939\u0948\u0902 \u0915\
+  \u094D\u092F\u094B\u0902\u0915\u093F \u0907\u0928\u0915\u0940 \u092E\u0926\u0926\
+  \ \u0938\u0947 \u0939\u092E program\u2026"
+lastmod: 2024-02-18 23:09:03.143357
+model: gpt-4-1106-preview
+summary: "Command line arguments \u0935\u094B \u092A\u0948\u0930\u093E\u092E\u0940\
+  \u091F\u0930 \u0939\u094B\u0924\u0947 \u0939\u0948\u0902 \u091C\u094B \u0939\u092E\
+  \ Java \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E \u0915\u094B \u0930\
+  \u0928 \u0915\u0930\u0924\u0947 \u0935\u0915\u094D\u0924 pass \u0915\u0930\u0924\
+  \u0947 \u0939\u0948\u0902\u0964 \u092F\u0947 \u0907\u0938\u0932\u093F\u090F \u091C\
+  \u093C\u0930\u0942\u0930\u0940 \u0939\u094B\u0924\u0947 \u0939\u0948\u0902 \u0915\
+  \u094D\u092F\u094B\u0902\u0915\u093F \u0907\u0928\u0915\u0940 \u092E\u0926\u0926\
+  \ \u0938\u0947 \u0939\u092E program\u2026"
+title: "\u0915\u092E\u093E\u0902\u0921 \u0932\u093E\u0907\u0928 \u0906\u0930\u094D\
+  \u0917\u0941\u092E\u0947\u0902\u091F\u094D\u0938 \u092A\u0922\u093C\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

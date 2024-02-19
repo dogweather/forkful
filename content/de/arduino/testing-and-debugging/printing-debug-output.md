@@ -1,13 +1,14 @@
 ---
-title:                "Debug-Ausgaben drucken"
 aliases:
 - /de/arduino/printing-debug-output/
-date:                  2024-01-20T17:51:49.348762-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Debug-Ausgaben drucken"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/printing-debug-output.md"
+date: 2024-01-20 17:51:49.348762-07:00
+description: "Debug-Ausgaben drucken hei\xDFt, Informationen w\xE4hrend der Laufzeit\
+  \ eines Programms zur Problemdiagnose auszugeben. Entwickler nutzen es, um den\u2026"
+lastmod: 2024-02-18 23:09:05.147705
+model: gpt-4-1106-preview
+summary: "Debug-Ausgaben drucken hei\xDFt, Informationen w\xE4hrend der Laufzeit eines\
+  \ Programms zur Problemdiagnose auszugeben. Entwickler nutzen es, um den\u2026"
+title: Debug-Ausgaben drucken
 ---
 
 {{< edit_this_page >}}

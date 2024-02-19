@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonon interpolointi"
 aliases:
 - /fi/elixir/interpolating-a-string/
-date:                  2024-01-20T17:50:51.017516-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon interpolointi"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/interpolating-a-string.md"
+date: 2024-01-20 17:50:51.017516-07:00
+description: "Mik\xE4 on merkkijonointerpolointi, ja miksi sit\xE4 k\xE4ytet\xE4\xE4\
+  n? Elixiriss\xE4 merkkijonointerpolointi tarkoittaa muuttujan arvon \"liitt\xE4\
+  mist\xE4\" merkkijonoon. Sit\xE4\u2026"
+lastmod: 2024-02-18 23:09:07.258785
+model: gpt-4-1106-preview
+summary: "Mik\xE4 on merkkijonointerpolointi, ja miksi sit\xE4 k\xE4ytet\xE4\xE4n?\
+  \ Elixiriss\xE4 merkkijonointerpolointi tarkoittaa muuttujan arvon \"liitt\xE4mist\xE4\
+  \" merkkijonoon. Sit\xE4\u2026"
+title: Merkkijonon interpolointi
 ---
 
 {{< edit_this_page >}}

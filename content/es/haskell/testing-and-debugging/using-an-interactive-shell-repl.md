@@ -1,13 +1,14 @@
 ---
-title:                "Usando una shell interactiva (REPL)"
 aliases:
 - /es/haskell/using-an-interactive-shell-repl/
-date:                  2024-01-26T04:14:42.696727-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando una shell interactiva (REPL)"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/using-an-interactive-shell-repl.md"
+date: 2024-01-26 04:14:42.696727-07:00
+description: "Una shell interactiva, o REPL (Bucle Leer-Evaluar-Imprimir), en Haskell\
+  \ te permite ejecutar fragmentos de c\xF3digo en vivo. Es un espacio de juego para\u2026"
+lastmod: 2024-02-18 23:09:10.029673
+model: gpt-4-0125-preview
+summary: "Una shell interactiva, o REPL (Bucle Leer-Evaluar-Imprimir), en Haskell\
+  \ te permite ejecutar fragmentos de c\xF3digo en vivo. Es un espacio de juego para\u2026"
+title: Usando una shell interactiva (REPL)
 ---
 
 {{< edit_this_page >}}

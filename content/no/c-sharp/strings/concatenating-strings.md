@@ -1,13 +1,16 @@
 ---
-title:                "Sammenslåing av strenger"
 aliases:
 - /no/c-sharp/concatenating-strings/
-date:                  2024-01-20T17:34:15.048974-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sammenslåing av strenger"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/concatenating-strings.md"
+date: 2024-01-20 17:34:15.048974-07:00
+description: "Sammenkjeding av strenger i C# er det \xE5 sl\xE5 sammen tekst. Det\
+  \ lar deg raskt sette sammen variabler, input og statisk tekst for utskrift, lagring\
+  \ eller\u2026"
+lastmod: 2024-02-18 23:08:53.885964
+model: gpt-4-1106-preview
+summary: "Sammenkjeding av strenger i C# er det \xE5 sl\xE5 sammen tekst. Det lar\
+  \ deg raskt sette sammen variabler, input og statisk tekst for utskrift, lagring\
+  \ eller\u2026"
+title: "Sammensl\xE5ing av strenger"
 ---
 
 {{< edit_this_page >}}

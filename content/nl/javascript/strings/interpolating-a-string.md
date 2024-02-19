@@ -1,15 +1,18 @@
 ---
-title:                "Een string interpoleren"
 aliases:
 - /nl/javascript/interpolating-a-string/
-date:                  2024-01-28T22:01:57.584565-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een string interpoleren"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/javascript/interpolating-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:57.584565-07:00
+description: "Stringinterpolatie is een manier om variabelen rechtstreeks in een string\
+  \ in te sluiten. Programmeurs gebruiken het om variabelen en strings effici\xEB\
+  nt te\u2026"
+lastmod: 2024-02-18 23:09:02.260253
+model: gpt-4-0125-preview
+summary: "Stringinterpolatie is een manier om variabelen rechtstreeks in een string\
+  \ in te sluiten. Programmeurs gebruiken het om variabelen en strings effici\xEB\
+  nt te\u2026"
+title: Een string interpoleren
 ---
 
 {{< edit_this_page >}}

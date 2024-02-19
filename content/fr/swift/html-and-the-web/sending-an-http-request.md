@@ -1,13 +1,16 @@
 ---
-title:                "Envoi d'une requête HTTP"
 aliases:
 - /fr/swift/sending-an-http-request/
-date:                  2024-01-20T18:00:41.284427-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Envoi d'une requête HTTP"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/sending-an-http-request.md"
+date: 2024-01-20 18:00:41.284427-07:00
+description: "Envoyer une requ\xEAte HTTP, c'est comme exp\xE9dier une lettre sur\
+  \ Internet pour r\xE9cup\xE9rer des donn\xE9es ou interagir avec des services. Les\
+  \ devs le font pour\u2026"
+lastmod: 2024-02-18 23:09:09.205293
+model: gpt-4-1106-preview
+summary: "Envoyer une requ\xEAte HTTP, c'est comme exp\xE9dier une lettre sur Internet\
+  \ pour r\xE9cup\xE9rer des donn\xE9es ou interagir avec des services. Les devs le\
+  \ font pour\u2026"
+title: "Envoi d'une requ\xEAte HTTP"
 ---
 
 {{< edit_this_page >}}

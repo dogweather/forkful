@@ -1,13 +1,15 @@
 ---
-title:                "Organisering av kode i funksjoner"
 aliases:
 - /no/php/organizing-code-into-functions/
-date:                  2024-01-26T01:11:38.477086-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organisering av kode i funksjoner"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/organizing-code-into-functions.md"
+date: 2024-01-26 01:11:38.477086-07:00
+description: "\xC5 organisere kode i funksjoner handler om \xE5 dele opp koden din\
+  \ i gjenbrukbare blokker med definerte form\xE5l. Vi gj\xF8r dette for \xE5 holde\
+  \ ting ryddig,\u2026"
+lastmod: 2024-02-18 23:08:53.980580
+model: gpt-4-1106-preview
+summary: "\xC5 organisere kode i funksjoner handler om \xE5 dele opp koden din i gjenbrukbare\
+  \ blokker med definerte form\xE5l. Vi gj\xF8r dette for \xE5 holde ting ryddig,\u2026"
+title: Organisering av kode i funksjoner
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,24 @@
 ---
-title:                "字符串大写化"
 aliases:
 - /zh/google-apps-script/capitalizing-a-string/
-date:                  2024-02-01T21:48:52.783846-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "字符串大写化"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/google-apps-script/capitalizing-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:48:52.783846-07:00
+description: "\u5C06\u5B57\u7B26\u4E32\u9996\u5B57\u6BCD\u5927\u5199\u6D89\u53CA\u4FEE\
+  \u6539\u8F93\u5165\uFF0C\u4F7F\u5F97\u7B2C\u4E00\u4E2A\u5B57\u7B26\u4E3A\u5927\u5199\
+  \uFF0C\u800C\u5176\u4F59\u4FDD\u6301\u5C0F\u5199\uFF0C\u901A\u5E38\u7528\u4E8E\u683C\
+  \u5F0F\u5316\u540D\u79F0\u6216\u6807\u9898\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\
+  \u662F\u4E3A\u4E86\u786E\u4FDD\u6570\u636E\u4E00\u81F4\u6027\u5E76\u63D0\u9AD8\u7528\
+  \u6237\u754C\u9762\u6216\u6587\u6863\u4E2D\u7684\u53EF\u8BFB\u6027\u3002"
+lastmod: 2024-02-18 23:08:58.733020
+model: gpt-4-0125-preview
+summary: "\u5C06\u5B57\u7B26\u4E32\u9996\u5B57\u6BCD\u5927\u5199\u6D89\u53CA\u4FEE\
+  \u6539\u8F93\u5165\uFF0C\u4F7F\u5F97\u7B2C\u4E00\u4E2A\u5B57\u7B26\u4E3A\u5927\u5199\
+  \uFF0C\u800C\u5176\u4F59\u4FDD\u6301\u5C0F\u5199\uFF0C\u901A\u5E38\u7528\u4E8E\u683C\
+  \u5F0F\u5316\u540D\u79F0\u6216\u6807\u9898\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\
+  \u662F\u4E3A\u4E86\u786E\u4FDD\u6570\u636E\u4E00\u81F4\u6027\u5E76\u63D0\u9AD8\u7528\
+  \u6237\u754C\u9762\u6216\u6587\u6863\u4E2D\u7684\u53EF\u8BFB\u6027\u3002"
+title: "\u5B57\u7B26\u4E32\u5927\u5199\u5316"
 ---
 
 {{< edit_this_page >}}

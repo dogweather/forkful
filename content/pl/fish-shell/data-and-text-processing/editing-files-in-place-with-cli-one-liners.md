@@ -1,13 +1,16 @@
 ---
-title:                "Edycja plików w miejscu przy użyciu jednolinijkowców CLI"
 aliases:
 - /pl/fish-shell/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:21:35.961609-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Edycja plików w miejscu przy użyciu jednolinijkowców CLI"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:21:35.961609-07:00
+description: "Edycja plik\xF3w bezpo\u015Brednio z linii polece\u0144 za pomoc\u0105\
+  \ jednolinijkowc\xF3w CLI polega na dokonywaniu zmian bezpo\u015Brednio w plikach,\
+  \ bez otwierania ich w\u2026"
+lastmod: 2024-02-18 23:08:50.032663
+model: gpt-4-0125-preview
+summary: "Edycja plik\xF3w bezpo\u015Brednio z linii polece\u0144 za pomoc\u0105 jednolinijkowc\xF3\
+  w CLI polega na dokonywaniu zmian bezpo\u015Brednio w plikach, bez otwierania ich\
+  \ w\u2026"
+title: "Edycja plik\xF3w w miejscu przy u\u017Cyciu jednolinijkowc\xF3w CLI"
 ---
 
 {{< edit_this_page >}}

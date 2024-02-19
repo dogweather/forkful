@@ -1,14 +1,16 @@
 ---
-title:                "Pisanie pliku tekstowego"
 aliases:
 - /pl/vba/writing-a-text-file/
-date:                  2024-02-01T22:08:13.829313-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie pliku tekstowego"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/vba/writing-a-text-file.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:08:13.829313-07:00
+description: "Tworzenie pliku tekstowego w Visual Basic for Applications (VBA) polega\
+  \ na tworzeniu, modyfikowaniu lub dodawaniu danych tekstowych do plik\xF3w, co jest\u2026"
+lastmod: 2024-02-18 23:08:49.454066
+model: gpt-4-0125-preview
+summary: "Tworzenie pliku tekstowego w Visual Basic for Applications (VBA) polega\
+  \ na tworzeniu, modyfikowaniu lub dodawaniu danych tekstowych do plik\xF3w, co jest\u2026"
+title: Pisanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

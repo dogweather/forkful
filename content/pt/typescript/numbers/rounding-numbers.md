@@ -1,13 +1,16 @@
 ---
-title:                "Arredondamento de números"
 aliases:
 - /pt/typescript/rounding-numbers/
-date:                  2024-01-26T03:46:57.107413-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Arredondamento de números"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/rounding-numbers.md"
+date: 2024-01-26 03:46:57.107413-07:00
+description: "Arredondar n\xFAmeros \xE9 reduzir um n\xFAmero para uma precis\xE3\
+  o espec\xEDfica. Programadores fazem isso para controlar a sa\xEDda num\xE9rica\
+  \ para leitura, fins de\u2026"
+lastmod: 2024-02-18 23:08:57.880089
+model: gpt-4-0125-preview
+summary: "Arredondar n\xFAmeros \xE9 reduzir um n\xFAmero para uma precis\xE3o espec\xED\
+  fica. Programadores fazem isso para controlar a sa\xEDda num\xE9rica para leitura,\
+  \ fins de\u2026"
+title: "Arredondamento de n\xFAmeros"
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,20 @@
 ---
-title:                "Viết các bài kiểm tra"
 aliases:
 - /vi/typescript/writing-tests/
-date:                  2024-01-28T22:13:32.555306-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Viết các bài kiểm tra"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/typescript/writing-tests.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:13:32.555306-07:00
+description: "Vi\u1EBFt ki\u1EC3m th\u1EED ngh\u0129a l\xE0 t\u1EA1o ra m\xE3 l\u1EC7\
+  nh \u0111\u1EC3 ki\u1EC3m tra xem m\xE3 l\u1EC7nh kh\xE1c c\xF3 ho\u1EA1t \u0111\
+  \u1ED9ng \u0111\xFAng kh\xF4ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m v\u1EAD\
+  y \u0111\u1EC3 ph\xE1t hi\u1EC7n l\u1ED7i s\u1EDBm, ti\u1EBFt ki\u1EC7m\u2026"
+lastmod: 2024-02-18 23:08:50.419297
+model: gpt-4-0125-preview
+summary: "Vi\u1EBFt ki\u1EC3m th\u1EED ngh\u0129a l\xE0 t\u1EA1o ra m\xE3 l\u1EC7\
+  nh \u0111\u1EC3 ki\u1EC3m tra xem m\xE3 l\u1EC7nh kh\xE1c c\xF3 ho\u1EA1t \u0111\
+  \u1ED9ng \u0111\xFAng kh\xF4ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m v\u1EAD\
+  y \u0111\u1EC3 ph\xE1t hi\u1EC7n l\u1ED7i s\u1EDBm, ti\u1EBFt ki\u1EC7m\u2026"
+title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 ---
 
 {{< edit_this_page >}}

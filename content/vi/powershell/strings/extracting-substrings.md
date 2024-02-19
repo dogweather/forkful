@@ -1,15 +1,20 @@
 ---
-title:                "Trích xuất chuỗi con"
 aliases:
 - /vi/powershell/extracting-substrings/
-date:                  2024-01-28T22:00:17.861084-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trích xuất chuỗi con"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/powershell/extracting-substrings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:00:17.861084-07:00
+description: "Tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5\
+  y ra c\xE1c ph\u1EA7n nh\u1ECF h\u01A1n t\u1EEB m\u1ED9t chu\u1ED7i d\u1EF1a tr\xEA\
+  n m\u1ED9t s\u1ED1 ti\xEAu ch\xED nh\u1EA5t \u0111\u1ECBnh. C\xE1c l\u1EADp tr\xEC\
+  nh vi\xEAn tr\xEDch xu\u1EA5t chu\u1ED7i con \u0111\u1EC3\u2026"
+lastmod: 2024-02-18 23:08:50.919586
+model: gpt-4-0125-preview
+summary: "Tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5\
+  y ra c\xE1c ph\u1EA7n nh\u1ECF h\u01A1n t\u1EEB m\u1ED9t chu\u1ED7i d\u1EF1a tr\xEA\
+  n m\u1ED9t s\u1ED1 ti\xEAu ch\xED nh\u1EA5t \u0111\u1ECBnh. C\xE1c l\u1EADp tr\xEC\
+  nh vi\xEAn tr\xEDch xu\u1EA5t chu\u1ED7i con \u0111\u1EC3\u2026"
+title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 ---
 
 {{< edit_this_page >}}

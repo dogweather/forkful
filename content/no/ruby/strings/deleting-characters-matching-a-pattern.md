@@ -1,13 +1,15 @@
 ---
-title:                "Slette tegn som matcher et mønster"
 aliases:
 - /no/ruby/deleting-characters-matching-a-pattern/
-date:                  2024-01-20T17:42:52.951576-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Slette tegn som matcher et mønster"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/deleting-characters-matching-a-pattern.md"
+date: 2024-01-20 17:42:52.951576-07:00
+description: "Hva er det og hvorfor? Vi sletter tegn som samsvarer med et m\xF8nster\
+  \ for \xE5 rense strenger - for \xE5 fjerne u\xF8nskede karakterer eller formatere\
+  \ data.\u2026"
+lastmod: 2024-02-18 23:08:54.421746
+model: gpt-4-1106-preview
+summary: "Hva er det og hvorfor? Vi sletter tegn som samsvarer med et m\xF8nster for\
+  \ \xE5 rense strenger - for \xE5 fjerne u\xF8nskede karakterer eller formatere data.\u2026"
+title: "Slette tegn som matcher et m\xF8nster"
 ---
 
 {{< edit_this_page >}}

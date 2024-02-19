@@ -1,13 +1,14 @@
 ---
-title:                "Att arbeta med komplexa tal"
 aliases:
 - /sv/powershell/working-with-complex-numbers/
-date:                  2024-01-26T04:44:09.636982-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Att arbeta med komplexa tal"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/working-with-complex-numbers.md"
+date: 2024-01-26 04:44:09.636982-07:00
+description: "Komplexa tal, de med en reell del och en imagin\xE4r del (som 3 + 4i),\
+  \ \xE4r avg\xF6rande inom omr\xE5den som ingenj\xF6rsvetenskap, fysik och data vetenskap.\u2026"
+lastmod: 2024-02-18 23:08:51.995961
+model: gpt-4-0125-preview
+summary: "Komplexa tal, de med en reell del och en imagin\xE4r del (som 3 + 4i), \xE4\
+  r avg\xF6rande inom omr\xE5den som ingenj\xF6rsvetenskap, fysik och data vetenskap.\u2026"
+title: Att arbeta med komplexa tal
 ---
 
 {{< edit_this_page >}}

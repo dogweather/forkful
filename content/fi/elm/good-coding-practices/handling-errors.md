@@ -1,13 +1,16 @@
 ---
-title:                "Virheiden käsittely"
 aliases:
 - /fi/elm/handling-errors/
-date:                  2024-01-26T00:51:19.600762-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheiden käsittely"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/handling-errors.md"
+date: 2024-01-26 00:51:19.600762-07:00
+description: "Virheiden k\xE4sittely tarkoittaa koodin kirjoittamista, joka osaa ennakoida\
+  \ ja k\xE4sitell\xE4 ongelmia. Ohjelmoijat tekev\xE4t sit\xE4 v\xE4ltt\xE4\xE4kseen\
+  \ kaatumisia,\u2026"
+lastmod: 2024-02-18 23:09:07.536899
+model: gpt-4-1106-preview
+summary: "Virheiden k\xE4sittely tarkoittaa koodin kirjoittamista, joka osaa ennakoida\
+  \ ja k\xE4sitell\xE4 ongelmia. Ohjelmoijat tekev\xE4t sit\xE4 v\xE4ltt\xE4\xE4kseen\
+  \ kaatumisia,\u2026"
+title: "Virheiden k\xE4sittely"
 ---
 
 {{< edit_this_page >}}

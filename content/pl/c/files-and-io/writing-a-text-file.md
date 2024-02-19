@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie pliku tekstowego"
 aliases:
 - /pl/c/writing-a-text-file/
-date:                  2024-02-03T18:14:47.757607-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie pliku tekstowego"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:14:47.757607-07:00
+description: "Zapisywanie pliku tekstowego w j\u0119zyku C polega na utworzeniu lub\
+  \ otwarciu pliku w trybie zapisu, a nast\u0119pnie wykorzystaniu funkcji wej\u015B\
+  cia/wyj\u015Bcia plik\xF3w\u2026"
+lastmod: 2024-02-18 23:08:50.099921
+model: gpt-4-0125-preview
+summary: "Zapisywanie pliku tekstowego w j\u0119zyku C polega na utworzeniu lub otwarciu\
+  \ pliku w trybie zapisu, a nast\u0119pnie wykorzystaniu funkcji wej\u015Bcia/wyj\u015B\
+  cia plik\xF3w\u2026"
+title: Pisanie pliku tekstowego
 ---
 
 {{< edit_this_page >}}

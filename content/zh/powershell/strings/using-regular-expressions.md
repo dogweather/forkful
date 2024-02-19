@@ -1,14 +1,26 @@
 ---
-title:                "使用正则表达式"
 aliases:
 - /zh/powershell/using-regular-expressions/
-date:                  2024-02-03T19:18:18.340097-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用正则表达式"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:18:18.340097-07:00
+description: "\u6B63\u5219\u8868\u8FBE\u5F0F\uFF08regex\uFF09\u662F\u7EC4\u6210\u641C\
+  \u7D22\u6A21\u5F0F\u7684\u5B57\u7B26\u5E8F\u5217\uFF0C\u4E3B\u8981\u7528\u4E8E\u5B57\
+  \u7B26\u4E32\u7684\u641C\u7D22\u548C\u64CD\u4F5C\u3002\u7A0B\u5E8F\u5458\u5728 PowerShell\
+  \ \u4E2D\u5229\u7528\u6B63\u5219\u8868\u8FBE\u5F0F\u8FDB\u884C\u6570\u636E\u9A8C\
+  \u8BC1\u3001\u89E3\u6790\u548C\u8F6C\u6362\u4EFB\u52A1\uFF0C\u56E0\u4E3A\u5B83\u5728\
+  \u5904\u7406\u590D\u6742\u6A21\u5F0F\u65F6\u7684\u6548\u7387\u548C\u7075\u6D3B\u6027\
+  \u3002"
+lastmod: 2024-02-18 23:08:59.321102
+model: gpt-4-0125-preview
+summary: "\u6B63\u5219\u8868\u8FBE\u5F0F\uFF08regex\uFF09\u662F\u7EC4\u6210\u641C\u7D22\
+  \u6A21\u5F0F\u7684\u5B57\u7B26\u5E8F\u5217\uFF0C\u4E3B\u8981\u7528\u4E8E\u5B57\u7B26\
+  \u4E32\u7684\u641C\u7D22\u548C\u64CD\u4F5C\u3002\u7A0B\u5E8F\u5458\u5728 PowerShell\
+  \ \u4E2D\u5229\u7528\u6B63\u5219\u8868\u8FBE\u5F0F\u8FDB\u884C\u6570\u636E\u9A8C\
+  \u8BC1\u3001\u89E3\u6790\u548C\u8F6C\u6362\u4EFB\u52A1\uFF0C\u56E0\u4E3A\u5B83\u5728\
+  \u5904\u7406\u590D\u6742\u6A21\u5F0F\u65F6\u7684\u6548\u7387\u548C\u7075\u6D3B\u6027\
+  \u3002"
+title: "\u4F7F\u7528\u6B63\u5219\u8868\u8FBE\u5F0F"
 ---
 
 {{< edit_this_page >}}

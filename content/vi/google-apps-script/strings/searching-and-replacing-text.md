@@ -1,14 +1,20 @@
 ---
-title:                "Tìm kiếm và thay thế văn bản"
 aliases:
 - /vi/google-apps-script/searching-and-replacing-text/
-date:                  2024-02-01T22:01:51.211448-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Tìm kiếm và thay thế văn bản"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/google-apps-script/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:01:51.211448-07:00
+description: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong Google\
+  \ Apps Script l\xE0 vi\u1EC7c x\xE1c \u0111\u1ECBnh ch\u01B0\u01A1ng tr\xECnh c\xE1\
+  c chu\u1ED7i c\u1EE5 th\u1EC3 trong m\u1ED9t t\xE0i li\u1EC7u, b\u1EA3ng t\xEDnh,\
+  \ ho\u1EB7c b\u1EA5t k\u1EF3 lo\u1EA1i n\u1ED9i\u2026"
+lastmod: 2024-02-18 23:08:50.202110
+model: gpt-4-0125-preview
+summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong Google Apps\
+  \ Script l\xE0 vi\u1EC7c x\xE1c \u0111\u1ECBnh ch\u01B0\u01A1ng tr\xECnh c\xE1c\
+  \ chu\u1ED7i c\u1EE5 th\u1EC3 trong m\u1ED9t t\xE0i li\u1EC7u, b\u1EA3ng t\xEDnh,\
+  \ ho\u1EB7c b\u1EA5t k\u1EF3 lo\u1EA1i n\u1ED9i\u2026"
+title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 ---
 
 {{< edit_this_page >}}

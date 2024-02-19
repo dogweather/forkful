@@ -1,15 +1,21 @@
 ---
-title:                "Sinh số ngẫu nhiên"
 aliases:
 - /vi/javascript/generating-random-numbers/
-date:                  2024-01-28T22:01:15.268075-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Sinh số ngẫu nhiên"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/generating-random-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:01:15.268075-07:00
+description: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong JavaScript l\xE0\
+  \ m\u1ED9t k\u1EF9 thu\u1EADt \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3\
+  \ t\u1EA1o s\u1EF1 kh\xF4ng d\u1EF1 \u0111o\xE1n tr\u01B0\u1EDBc trong c\xE1c \u1EE9\
+  ng d\u1EE5ng, t\u1EEB c\xE1c tr\xF2 ch\u01A1i c\u1EA7n h\xE0nh vi \u0111\u1ED1i\
+  \ th\u1EE7\u2026"
+lastmod: 2024-02-18 23:08:51.131440
+model: gpt-4-0125-preview
+summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong JavaScript l\xE0 m\u1ED9\
+  t k\u1EF9 thu\u1EADt \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 t\u1EA1\
+  o s\u1EF1 kh\xF4ng d\u1EF1 \u0111o\xE1n tr\u01B0\u1EDBc trong c\xE1c \u1EE9ng d\u1EE5\
+  ng, t\u1EEB c\xE1c tr\xF2 ch\u01A1i c\u1EA7n h\xE0nh vi \u0111\u1ED1i th\u1EE7\u2026"
+title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 ---
 
 {{< edit_this_page >}}

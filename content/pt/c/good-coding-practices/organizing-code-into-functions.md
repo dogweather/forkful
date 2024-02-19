@@ -1,14 +1,17 @@
 ---
-title:                "Organizando código em funções"
 aliases:
 - /pt/c/organizing-code-into-functions/
-date:                  2024-02-03T17:59:03.725241-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Organizando código em funções"
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/organizing-code-into-functions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:59:03.725241-07:00
+description: "Organizar o c\xF3digo em fun\xE7\xF5es em C envolve dividir tarefas\
+  \ complexas em blocos menores e reutiliz\xE1veis de c\xF3digo. Essa pr\xE1tica melhora\
+  \ a legibilidade,\u2026"
+lastmod: 2024-02-18 23:08:58.625324
+model: gpt-4-0125-preview
+summary: "Organizar o c\xF3digo em fun\xE7\xF5es em C envolve dividir tarefas complexas\
+  \ em blocos menores e reutiliz\xE1veis de c\xF3digo. Essa pr\xE1tica melhora a legibilidade,\u2026"
+title: "Organizando c\xF3digo em fun\xE7\xF5es"
 ---
 
 {{< edit_this_page >}}

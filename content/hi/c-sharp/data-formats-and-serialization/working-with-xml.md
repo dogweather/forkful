@@ -1,13 +1,26 @@
 ---
-title:                "XML के साथ काम करना"
 aliases:
 - /hi/c-sharp/working-with-xml/
-date:                  2024-01-26T04:30:31.673395-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "XML के साथ काम करना"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/working-with-xml.md"
+date: 2024-01-26 04:30:31.673395-07:00
+description: "XML (eXtensible Markup Language) \u0921\u0947\u091F\u093E \u0915\u094B\
+  \ \u090F\u0915 \u092A\u0920\u0928\u0940\u092F \u092A\u094D\u0930\u093E\u0930\u0942\
+  \u092A \u092E\u0947\u0902 \u0938\u0902\u0930\u091A\u0928\u093E \u0926\u0947\u0928\
+  \u0947 \u0915\u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902 \u0939\u0948\u0964\
+  \ \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u0930 XML \u0915\u094B\
+  \ \u0915\u0949\u0928\u094D\u092B\u093F\u0917\u0930\u0947\u0936\u0928, \u090F\u092A\
+  \u094D\u0938 \u0915\u0947 \u092C\u0940\u091A \u0921\u0947\u091F\u093E \u0906\u0926\
+  \u093E\u0928-\u092A\u094D\u0930\u0926\u093E\u0928, \u0914\u0930\u2026"
+lastmod: 2024-02-18 23:09:03.390660
+model: gpt-4-0125-preview
+summary: "XML (eXtensible Markup Language) \u0921\u0947\u091F\u093E \u0915\u094B \u090F\
+  \u0915 \u092A\u0920\u0928\u0940\u092F \u092A\u094D\u0930\u093E\u0930\u0942\u092A\
+  \ \u092E\u0947\u0902 \u0938\u0902\u0930\u091A\u0928\u093E \u0926\u0947\u0928\u0947\
+  \ \u0915\u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902 \u0939\u0948\u0964 \u092A\
+  \u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u0930 XML \u0915\u094B \u0915\u0949\
+  \u0928\u094D\u092B\u093F\u0917\u0930\u0947\u0936\u0928, \u090F\u092A\u094D\u0938\
+  \ \u0915\u0947 \u092C\u0940\u091A \u0921\u0947\u091F\u093E \u0906\u0926\u093E\u0928\
+  -\u092A\u094D\u0930\u0926\u093E\u0928, \u0914\u0930\u2026"
+title: "XML \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\u093E"
 ---
 
 {{< edit_this_page >}}

@@ -1,13 +1,16 @@
 ---
-title:                "Enviando uma requisição HTTP com autenticação básica"
 aliases:
 - /pt/lua/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:05.405162-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando uma requisição HTTP com autenticação básica"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/lua/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:05.405162-07:00
+description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
+  \ que voc\xEA est\xE1 acessando um recurso protegido na web com usu\xE1rio e senha.\
+  \ Programadores fazem\u2026"
+lastmod: 2024-02-18 23:08:58.281934
+model: gpt-4-1106-preview
+summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
+  \ que voc\xEA est\xE1 acessando um recurso protegido na web com usu\xE1rio e senha.\
+  \ Programadores fazem\u2026"
+title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 ---
 
 {{< edit_this_page >}}

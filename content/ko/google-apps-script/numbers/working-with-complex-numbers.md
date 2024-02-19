@@ -1,14 +1,28 @@
 ---
-title:                "복잡한 숫자를 다루기"
 aliases:
 - /ko/google-apps-script/working-with-complex-numbers/
-date:                  2024-02-01T22:07:40.131790-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "복잡한 숫자를 다루기"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/google-apps-script/working-with-complex-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:07:40.131790-07:00
+description: "\uBCF5\uC18C\uC218\uB294 \uC2E4\uC218 \uBD80\uC640 \uD5C8\uC218 \uBD80\
+  \uC758 \uC870\uD569(e.g., 3 + 4i)\uC73C\uB85C \uD45C\uD604\uB418\uBA70, \uD2B9\uD788\
+  \ \uC5D4\uC9C0\uB2C8\uC5B4\uB9C1, \uBB3C\uB9AC\uD559 \uBC0F \uC751\uC6A9 \uC218\uD559\
+  \uC5D0\uC11C \uB2E4\uC591\uD55C \uACC4\uC0B0 \uBB38\uC81C\uC5D0 \uC788\uC5B4 \uAE30\
+  \uBCF8\uC801\uC785\uB2C8\uB2E4. Google Apps Script\uC5D0\uC11C \uC774\uB7EC\uD55C\
+  \ \uC218\uB97C \uB2E4\uB8E8\uB294 \uBC29\uBC95\uC744 \uBC30\uC6B0\uB294 \uAC83\uC740\
+  \ \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC774 \uACFC\uD559\uC801 \uACC4\uC0B0, \uC2E0\
+  \uD638 \uCC98\uB9AC\u2026"
+lastmod: 2024-02-18 23:09:05.544590
+model: gpt-4-0125-preview
+summary: "\uBCF5\uC18C\uC218\uB294 \uC2E4\uC218 \uBD80\uC640 \uD5C8\uC218 \uBD80\uC758\
+  \ \uC870\uD569(e.g., 3 + 4i)\uC73C\uB85C \uD45C\uD604\uB418\uBA70, \uD2B9\uD788\
+  \ \uC5D4\uC9C0\uB2C8\uC5B4\uB9C1, \uBB3C\uB9AC\uD559 \uBC0F \uC751\uC6A9 \uC218\uD559\
+  \uC5D0\uC11C \uB2E4\uC591\uD55C \uACC4\uC0B0 \uBB38\uC81C\uC5D0 \uC788\uC5B4 \uAE30\
+  \uBCF8\uC801\uC785\uB2C8\uB2E4. Google Apps Script\uC5D0\uC11C \uC774\uB7EC\uD55C\
+  \ \uC218\uB97C \uB2E4\uB8E8\uB294 \uBC29\uBC95\uC744 \uBC30\uC6B0\uB294 \uAC83\uC740\
+  \ \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC774 \uACFC\uD559\uC801 \uACC4\uC0B0, \uC2E0\
+  \uD638 \uCC98\uB9AC\u2026"
+title: "\uBCF5\uC7A1\uD55C \uC22B\uC790\uB97C \uB2E4\uB8E8\uAE30"
 ---
 
 {{< edit_this_page >}}

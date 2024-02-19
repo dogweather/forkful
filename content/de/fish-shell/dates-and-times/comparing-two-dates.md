@@ -1,13 +1,14 @@
 ---
-title:                "Vergleich von zwei Daten"
 aliases:
 - /de/fish-shell/comparing-two-dates/
-date:                  2024-01-20T17:32:45.268915-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Vergleich von zwei Daten"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/comparing-two-dates.md"
+date: 2024-01-20 17:32:45.268915-07:00
+description: "Das Vergleichen von zwei Daten bedeutet, sie hinsichtlich ihrer zeitlichen\
+  \ Reihenfolge zu pr\xFCfen. Programmierer machen das, um Zeitabschnitte zu\u2026"
+lastmod: 2024-02-18 23:09:05.339523
+model: gpt-4-1106-preview
+summary: "Das Vergleichen von zwei Daten bedeutet, sie hinsichtlich ihrer zeitlichen\
+  \ Reihenfolge zu pr\xFCfen. Programmierer machen das, um Zeitabschnitte zu\u2026"
+title: Vergleich von zwei Daten
 ---
 
 {{< edit_this_page >}}

@@ -1,15 +1,16 @@
 ---
-title:                "Werken met TOML"
 aliases:
 - /nl/python/working-with-toml/
-date:                  2024-01-28T22:11:36.672150-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Werken met TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/python/working-with-toml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:11:36.672150-07:00
+description: "TOML, een afkorting voor Tom's Obvious, Minimal Language, is een data-serialisatieformaat\
+  \ vergelijkbaar met JSON of YAML, maar streeft naar eenvoud en\u2026"
+lastmod: 2024-02-18 23:09:01.458975
+model: gpt-4-0125-preview
+summary: "TOML, een afkorting voor Tom's Obvious, Minimal Language, is een data-serialisatieformaat\
+  \ vergelijkbaar met JSON of YAML, maar streeft naar eenvoud en\u2026"
+title: Werken met TOML
 ---
 
 {{< edit_this_page >}}

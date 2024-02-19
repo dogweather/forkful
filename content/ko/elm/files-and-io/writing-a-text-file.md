@@ -1,14 +1,30 @@
 ---
-title:                "텍스트 파일 쓰기"
 aliases:
 - /ko/elm/writing-a-text-file/
-date:                  2024-02-03T19:28:02.752612-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "텍스트 파일 쓰기"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/writing-a-text-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:28:02.752612-07:00
+description: "Elm\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC791\uC131\uD55C\
+  \uB2E4\uB294 \uAC83\uC740 Elm \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC5D0\uC11C \uD14D\
+  \uC2A4\uD2B8 \uB370\uC774\uD130\uB97C \uD30C\uC77C\uC5D0 \uC0DD\uC131\uD558\uACE0\
+  \ \uC800\uC7A5\uD558\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC740 \uC885\uC885 \uB2E4\uB978 \uC560\uD50C\uB9AC\uCF00\uC774\
+  \uC158\uC5D0\uC11C \uC0AC\uC6A9\uD558\uAC70\uB098 \uAE30\uB85D \uBCF4\uAD00 \uBAA9\
+  \uC801\uC73C\uB85C \uBCF4\uACE0\uC11C, \uB85C\uADF8, \uB610\uB294 \uAD6C\uC870\uD654\
+  \uB41C \uD14D\uC2A4\uD2B8 \uD615\uC2DD(e.g., JSON, CSV)\uC758 \uB370\uC774\uD130\
+  \uB97C\u2026"
+lastmod: 2024-02-18 23:09:06.113531
+model: gpt-4-0125-preview
+summary: "Elm\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC791\uC131\uD55C\
+  \uB2E4\uB294 \uAC83\uC740 Elm \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC5D0\uC11C \uD14D\
+  \uC2A4\uD2B8 \uB370\uC774\uD130\uB97C \uD30C\uC77C\uC5D0 \uC0DD\uC131\uD558\uACE0\
+  \ \uC800\uC7A5\uD558\uB294 \uAC83\uC744 \uB9D0\uD569\uB2C8\uB2E4. \uD504\uB85C\uADF8\
+  \uB798\uBA38\uB4E4\uC740 \uC885\uC885 \uB2E4\uB978 \uC560\uD50C\uB9AC\uCF00\uC774\
+  \uC158\uC5D0\uC11C \uC0AC\uC6A9\uD558\uAC70\uB098 \uAE30\uB85D \uBCF4\uAD00 \uBAA9\
+  \uC801\uC73C\uB85C \uBCF4\uACE0\uC11C, \uB85C\uADF8, \uB610\uB294 \uAD6C\uC870\uD654\
+  \uB41C \uD14D\uC2A4\uD2B8 \uD615\uC2DD(e.g., JSON, CSV)\uC758 \uB370\uC774\uD130\
+  \uB97C\u2026"
+title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC4F0\uAE30"
 ---
 
 {{< edit_this_page >}}

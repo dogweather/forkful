@@ -1,12 +1,13 @@
 ---
-title:                "Parsing HTML"
 aliases:
 - /en/java/parsing-html/
-date:                  2024-01-20T15:32:16.739950-07:00
-simple_title:         "Parsing HTML"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/parsing-html.md"
+date: 2024-01-20 15:32:16.739950-07:00
+description: "Parsing HTML means digging through the markup to extract data like text,\
+  \ links, or other elements. We do it to interact with or scrape web content,\u2026"
+lastmod: 2024-02-18 23:09:10.928843
+summary: "Parsing HTML means digging through the markup to extract data like text,\
+  \ links, or other elements. We do it to interact with or scrape web content,\u2026"
+title: Parsing HTML
 ---
 
 {{< edit_this_page >}}

@@ -1,14 +1,16 @@
 ---
-title:                "Pesquisando e substituindo texto"
 aliases:
 - /pt/c/searching-and-replacing-text/
-date:                  2024-02-03T18:08:25.026823-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pesquisando e substituindo texto"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/searching-and-replacing-text.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:08:25.026823-07:00
+description: "Pesquisar e substituir texto em C envolve identificar substrings espec\xED\
+  ficas dentro de uma string maior e substitu\xED-las por diferentes substrings.\u2026"
+lastmod: 2024-02-18 23:08:58.603002
+model: gpt-4-0125-preview
+summary: "Pesquisar e substituir texto em C envolve identificar substrings espec\xED\
+  ficas dentro de uma string maior e substitu\xED-las por diferentes substrings.\u2026"
+title: Pesquisando e substituindo texto
 ---
 
 {{< edit_this_page >}}

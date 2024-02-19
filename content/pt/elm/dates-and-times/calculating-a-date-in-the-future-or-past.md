@@ -1,13 +1,14 @@
 ---
-title:                "Calculando uma data no futuro ou passado"
 aliases:
 - /pt/elm/calculating-a-date-in-the-future-or-past/
-date:                  2024-01-20T17:30:55.147423-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Calculando uma data no futuro ou passado"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/calculating-a-date-in-the-future-or-past.md"
+date: 2024-01-20 17:30:55.147423-07:00
+description: "Calcular uma data no futuro ou no passado \xE9 determinar um dia espec\xED\
+  fico antes ou depois de uma data conhecida. Programadores fazem isso para agendar\u2026"
+lastmod: 2024-02-18 23:08:58.073402
+model: gpt-4-1106-preview
+summary: "Calcular uma data no futuro ou no passado \xE9 determinar um dia espec\xED\
+  fico antes ou depois de uma data conhecida. Programadores fazem isso para agendar\u2026"
+title: Calculando uma data no futuro ou passado
 ---
 
 {{< edit_this_page >}}

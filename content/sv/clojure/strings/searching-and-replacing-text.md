@@ -1,13 +1,16 @@
 ---
-title:                "Sökning och ersättning av text"
 aliases:
 - /sv/clojure/searching-and-replacing-text/
-date:                  2024-01-20T17:57:27.875527-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Sökning och ersättning av text"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/searching-and-replacing-text.md"
+date: 2024-01-20 17:57:27.875527-07:00
+description: "Att s\xF6ka och ers\xE4tta text handlar om att hitta specifika textstr\xE4\
+  ngar och byta ut dem mot andra. Programmerare g\xF6r det f\xF6r att uppdatera data,\
+  \ refactora\u2026"
+lastmod: 2024-02-18 23:08:51.448017
+model: gpt-4-1106-preview
+summary: "Att s\xF6ka och ers\xE4tta text handlar om att hitta specifika textstr\xE4\
+  ngar och byta ut dem mot andra. Programmerare g\xF6r det f\xF6r att uppdatera data,\
+  \ refactora\u2026"
+title: "S\xF6kning och ers\xE4ttning av text"
 ---
 
 {{< edit_this_page >}}

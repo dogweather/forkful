@@ -1,14 +1,18 @@
 ---
-title:                "Skapa en tillfällig fil"
 aliases:
 - /sv/go/creating-a-temporary-file/
-date:                  2024-02-03T17:55:37.462085-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skapa en tillfällig fil"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/creating-a-temporary-file.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:55:37.462085-07:00
+description: "Att skapa en tempor\xE4r fil i Go m\xF6jligg\xF6r skapandet av en icke-persistent\
+  \ fil avsedd f\xF6r kortvarig anv\xE4ndning, fr\xE4mst f\xF6r uppgifter s\xE5som\
+  \ att lagra\u2026"
+lastmod: 2024-02-18 23:08:51.353692
+model: gpt-4-0125-preview
+summary: "Att skapa en tempor\xE4r fil i Go m\xF6jligg\xF6r skapandet av en icke-persistent\
+  \ fil avsedd f\xF6r kortvarig anv\xE4ndning, fr\xE4mst f\xF6r uppgifter s\xE5som\
+  \ att lagra\u2026"
+title: "Skapa en tillf\xE4llig fil"
 ---
 
 {{< edit_this_page >}}

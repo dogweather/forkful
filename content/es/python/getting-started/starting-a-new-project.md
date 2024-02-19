@@ -1,13 +1,14 @@
 ---
-title:                "Iniciando un nuevo proyecto"
 aliases:
 - /es/python/starting-a-new-project/
-date:                  2024-01-20T18:04:18.122396-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Iniciando un nuevo proyecto"
-
-tag:                  "Getting Started"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/starting-a-new-project.md"
+date: 2024-01-20 18:04:18.122396-07:00
+description: "Iniciar un nuevo proyecto es como plantar una semilla; le das vida a\
+  \ una nueva idea. Los programadores arrancan proyectos para solucionar problemas,\u2026"
+lastmod: 2024-02-18 23:09:09.556973
+model: gpt-4-1106-preview
+summary: "Iniciar un nuevo proyecto es como plantar una semilla; le das vida a una\
+  \ nueva idea. Los programadores arrancan proyectos para solucionar problemas,\u2026"
+title: Iniciando un nuevo proyecto
 ---
 
 {{< edit_this_page >}}

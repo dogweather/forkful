@@ -1,13 +1,16 @@
 ---
-title:                "Trabalhando com números complexos"
 aliases:
 - /pt/c-sharp/working-with-complex-numbers/
-date:                  2024-01-26T04:38:29.447592-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com números complexos"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/working-with-complex-numbers.md"
+date: 2024-01-26 04:38:29.447592-07:00
+description: "N\xFAmeros complexos expandem nosso sistema num\xE9rico para incluir\
+  \ n\xFAmeros imagin\xE1rios, permitindo-nos resolver equa\xE7\xF5es que n\xE3o t\xEA\
+  m solu\xE7\xF5es reais.\u2026"
+lastmod: 2024-02-18 23:08:58.151566
+model: gpt-4-0125-preview
+summary: "N\xFAmeros complexos expandem nosso sistema num\xE9rico para incluir n\xFA\
+  meros imagin\xE1rios, permitindo-nos resolver equa\xE7\xF5es que n\xE3o t\xEAm solu\xE7\
+  \xF5es reais.\u2026"
+title: "Trabalhando com n\xFAmeros complexos"
 ---
 
 {{< edit_this_page >}}

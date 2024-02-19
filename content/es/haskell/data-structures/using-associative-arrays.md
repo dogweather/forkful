@@ -1,16 +1,18 @@
 ---
-title:                "Uso de matrices asociativas"
 aliases:
 - /es/haskell/using-associative-arrays/
-date:                  2024-01-30T19:11:23.298680-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Uso de matrices asociativas"
-
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, dogweather, reviewed
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+- 2024-01-30, dogweather, reviewed
+- 2024-01-30, gpt-4-0125-preview, translated from English
+date: 2024-01-30 19:11:23.298680-07:00
+description: "Los arrays asociativos, o diccionarios, en Haskell tratan sobre mapear\
+  \ claves a valores para una b\xFAsqueda r\xE1pida y un manejo eficiente de datos.\
+  \ Los\u2026"
+lastmod: 2024-02-18 23:09:10.020393
+model: gpt-4-0125-preview
+summary: "Los arrays asociativos, o diccionarios, en Haskell tratan sobre mapear claves\
+  \ a valores para una b\xFAsqueda r\xE1pida y un manejo eficiente de datos. Los\u2026"
+title: Uso de matrices asociativas
 ---
 
 {{< edit_this_page >}}

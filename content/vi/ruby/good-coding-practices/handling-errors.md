@@ -1,16 +1,21 @@
 ---
-title:                "Xử lý lỗi"
 aliases:
 - /vi/ruby/handling-errors/
-date:                  2024-01-28T22:02:06.431511-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Xử lý lỗi"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/handling-errors.md"
 changelog:
-  - 2024-01-21, dogweather, Reviewed for accuracy
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-21, dogweather, Reviewed for accuracy
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 22:02:06.431511-07:00
+description: "X\u1EED l\xFD l\u1ED7i ch\xEDnh l\xE0 vi\u1EC7c d\u1EF1 ph\xF2ng nh\u1EEF\
+  ng \u0111i\u1EC1u kh\xF4ng mong \u0111\u1EE3i trong code \u2014 qu\u1EA3n l\xFD\
+  \ l\u1ED7i m\u1ED9t c\xE1ch nh\u1EB9 nh\xE0ng m\xE0 kh\xF4ng l\xE0m s\u1EADp ch\u01B0\
+  \u01A1ng tr\xECnh. L\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
+lastmod: 2024-02-18 23:08:51.293822
+model: gpt-4-0125-preview
+summary: "X\u1EED l\xFD l\u1ED7i ch\xEDnh l\xE0 vi\u1EC7c d\u1EF1 ph\xF2ng nh\u1EEF\
+  ng \u0111i\u1EC1u kh\xF4ng mong \u0111\u1EE3i trong code \u2014 qu\u1EA3n l\xFD\
+  \ l\u1ED7i m\u1ED9t c\xE1ch nh\u1EB9 nh\xE0ng m\xE0 kh\xF4ng l\xE0m s\u1EADp ch\u01B0\
+  \u01A1ng tr\xECnh. L\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
+title: "X\u1EED l\xFD l\u1ED7i"
 ---
 
 {{< edit_this_page >}}

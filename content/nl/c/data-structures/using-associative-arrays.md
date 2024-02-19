@@ -1,14 +1,16 @@
 ---
-title:                "Gebruik van associatieve arrays"
 aliases:
 - /nl/c/using-associative-arrays/
-date:                  2024-02-03T18:10:44.093572-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Gebruik van associatieve arrays"
-tag:                  "Data Structures"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/using-associative-arrays.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 18:10:44.093572-07:00
+description: "Associatieve arrays, bekend in andere talen als mappen of woordenboeken,\
+  \ zijn sleutel-waarde paren die worden gebruikt voor effici\xEBnte gegevensopzoeking\u2026"
+lastmod: 2024-02-18 23:09:02.364656
+model: gpt-4-0125-preview
+summary: "Associatieve arrays, bekend in andere talen als mappen of woordenboeken,\
+  \ zijn sleutel-waarde paren die worden gebruikt voor effici\xEBnte gegevensopzoeking\u2026"
+title: Gebruik van associatieve arrays
 ---
 
 {{< edit_this_page >}}

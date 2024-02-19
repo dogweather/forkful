@@ -1,13 +1,16 @@
 ---
-title:                "Interpolation de chaînes de caractères"
 aliases:
 - /fr/elm/interpolating-a-string/
-date:                  2024-01-20T17:50:33.031347-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolation de chaînes de caractères"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/interpolating-a-string.md"
+date: 2024-01-20 17:50:33.031347-07:00
+description: "L'interpolation de cha\xEEne permet d'ins\xE9rer des valeurs variables\
+  \ dans un texte fixe. Les programmeurs l'utilisent pour composer des messages personnalis\xE9\
+  s\u2026"
+lastmod: 2024-02-18 23:09:08.716816
+model: gpt-4-1106-preview
+summary: "L'interpolation de cha\xEEne permet d'ins\xE9rer des valeurs variables dans\
+  \ un texte fixe. Les programmeurs l'utilisent pour composer des messages personnalis\xE9\
+  s\u2026"
+title: "Interpolation de cha\xEEnes de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

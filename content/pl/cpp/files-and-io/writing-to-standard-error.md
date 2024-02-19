@@ -1,14 +1,18 @@
 ---
-title:                "Pisanie do standardowego błędu"
 aliases:
 - /pl/cpp/writing-to-standard-error/
-date:                  2024-02-03T19:32:53.775582-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Pisanie do standardowego błędu"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/writing-to-standard-error.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:53.775582-07:00
+description: "Pisanie do standardowego b\u0142\u0119du (`stderr`) w C++ polega na\
+  \ wyprowadzaniu komunikat\xF3w o b\u0142\u0119dach lub diagnostyki, kt\xF3re s\u0105\
+  \ oddzielone od g\u0142\xF3wnego wyniku\u2026"
+lastmod: 2024-02-18 23:08:49.927864
+model: gpt-4-0125-preview
+summary: "Pisanie do standardowego b\u0142\u0119du (`stderr`) w C++ polega na wyprowadzaniu\
+  \ komunikat\xF3w o b\u0142\u0119dach lub diagnostyki, kt\xF3re s\u0105 oddzielone\
+  \ od g\u0142\xF3wnego wyniku\u2026"
+title: "Pisanie do standardowego b\u0142\u0119du"
 ---
 
 {{< edit_this_page >}}

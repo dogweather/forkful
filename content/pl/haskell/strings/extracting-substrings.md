@@ -1,13 +1,12 @@
 ---
-title:                "Wycinanie podłańcuchów"
 aliases:
 - /pl/haskell/extracting-substrings/
-date:                  2024-01-20T17:45:52.690580-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wycinanie podłańcuchów"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/extracting-substrings.md"
+date: 2024-01-20 17:45:52.690580-07:00
+description: '"'
+lastmod: 2024-02-18 23:08:49.642781
+model: gpt-4-1106-preview
+summary: '"'
+title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 ---
 
 {{< edit_this_page >}}

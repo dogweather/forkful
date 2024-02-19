@@ -1,13 +1,16 @@
 ---
-title:                "Skrive ut feilsøkingsdata"
 aliases:
 - /no/bash/printing-debug-output/
-date:                  2024-01-20T17:51:47.509789-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skrive ut feilsøkingsdata"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/printing-debug-output.md"
+date: 2024-01-20 17:51:47.509789-07:00
+description: "\xC5 skrive ut feils\xF8kingsdata i terminalen hjelper programmerere\
+  \ \xE5 forst\xE5 hva som foreg\xE5r under hetta. Det er som \xE5 ha et kart n\xE5\
+  r du navigerer i en ny by -\u2026"
+lastmod: 2024-02-18 23:08:54.060902
+model: gpt-4-1106-preview
+summary: "\xC5 skrive ut feils\xF8kingsdata i terminalen hjelper programmerere \xE5\
+  \ forst\xE5 hva som foreg\xE5r under hetta. Det er som \xE5 ha et kart n\xE5r du\
+  \ navigerer i en ny by -\u2026"
+title: "Skrive ut feils\xF8kingsdata"
 ---
 
 {{< edit_this_page >}}

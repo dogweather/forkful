@@ -1,14 +1,18 @@
 ---
-title:                "Wysyłanie żądania HTTP"
 aliases:
 - /pl/vba/sending-an-http-request/
-date:                  2024-02-01T22:02:57.236021-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Wysyłanie żądania HTTP"
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/vba/sending-an-http-request.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 22:02:57.236021-07:00
+description: "Wysy\u0142anie zapytania HTTP w Visual Basic for Applications (VBA)\
+  \ polega na programistycznym dost\u0119pie do zasob\xF3w sieciowych lub us\u0142\
+  ug sieciowych poprzez\u2026"
+lastmod: 2024-02-18 23:08:49.430386
+model: gpt-4-0125-preview
+summary: "Wysy\u0142anie zapytania HTTP w Visual Basic for Applications (VBA) polega\
+  \ na programistycznym dost\u0119pie do zasob\xF3w sieciowych lub us\u0142ug sieciowych\
+  \ poprzez\u2026"
+title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 ---
 
 {{< edit_this_page >}}

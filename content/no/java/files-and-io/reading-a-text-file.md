@@ -1,13 +1,16 @@
 ---
-title:                "Lese en tekstfil"
 aliases:
 - /no/java/reading-a-text-file/
-date:                  2024-01-20T17:54:28.131315-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lese en tekstfil"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/reading-a-text-file.md"
+date: 2024-01-20 17:54:28.131315-07:00
+description: "\xC5 lese en tekstfil betyr at vi programmerere henter tekstdata fra\
+  \ en fil p\xE5 disken. Vi gj\xF8r det for \xE5 manipulere data, hente innstillinger,\
+  \ eller\u2026"
+lastmod: 2024-02-18 23:08:53.787249
+model: gpt-4-1106-preview
+summary: "\xC5 lese en tekstfil betyr at vi programmerere henter tekstdata fra en\
+  \ fil p\xE5 disken. Vi gj\xF8r det for \xE5 manipulere data, hente innstillinger,\
+  \ eller\u2026"
+title: Lese en tekstfil
 ---
 
 {{< edit_this_page >}}

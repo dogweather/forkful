@@ -1,14 +1,18 @@
 ---
-title:                "Skriva tester"
 aliases:
 - /sv/rust/writing-tests/
-date:                  2024-02-03T19:32:49.814664-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Skriva tester"
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/writing-tests.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:32:49.814664-07:00
+description: "Att skriva tester i Rust inneb\xE4r att skapa automatiserade kontroller\
+  \ f\xF6r att s\xE4kerst\xE4lla att din kod fungerar som f\xF6rv\xE4ntat. Programmerare\
+  \ g\xF6r detta f\xF6r\u2026"
+lastmod: 2024-02-18 23:08:51.587268
+model: gpt-4-0125-preview
+summary: "Att skriva tester i Rust inneb\xE4r att skapa automatiserade kontroller\
+  \ f\xF6r att s\xE4kerst\xE4lla att din kod fungerar som f\xF6rv\xE4ntat. Programmerare\
+  \ g\xF6r detta f\xF6r\u2026"
+title: Skriva tester
 ---
 
 {{< edit_this_page >}}

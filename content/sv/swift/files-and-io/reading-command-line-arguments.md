@@ -1,13 +1,16 @@
 ---
-title:                "Läsa in kommandoradsargument"
 aliases:
 - /sv/swift/reading-command-line-arguments/
-date:                  2024-01-20T17:56:50.578773-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Läsa in kommandoradsargument"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/reading-command-line-arguments.md"
+date: 2024-01-20 17:56:50.578773-07:00
+description: "Kommandoradsargument \xE4r parametrar som skickas till ett program vid\
+  \ start. Programmerare anv\xE4nder dem f\xF6r att styra programbeteendet utan att\
+  \ \xE4ndra koden."
+lastmod: 2024-02-18 23:08:52.139087
+model: gpt-4-1106-preview
+summary: "Kommandoradsargument \xE4r parametrar som skickas till ett program vid start.\
+  \ Programmerare anv\xE4nder dem f\xF6r att styra programbeteendet utan att \xE4\
+  ndra koden."
+title: "L\xE4sa in kommandoradsargument"
 ---
 
 {{< edit_this_page >}}

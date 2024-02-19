@@ -1,14 +1,16 @@
 ---
-title:                "Die Länge einer Zeichenkette ermitteln"
 aliases:
 - /de/c/finding-the-length-of-a-string/
-date:                  2024-02-03T17:56:23.691369-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Die Länge einer Zeichenkette ermitteln"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 17:56:23.691369-07:00
+description: "Die Ermittlung der L\xE4nge eines Strings in C beinhaltet die Bestimmung\
+  \ der Anzahl der Zeichen vor dem Nullterminator `\\0`. Programmierer tun dies, um\u2026"
+lastmod: 2024-02-18 23:09:05.362770
+model: gpt-4-0125-preview
+summary: "Die Ermittlung der L\xE4nge eines Strings in C beinhaltet die Bestimmung\
+  \ der Anzahl der Zeichen vor dem Nullterminator `\\0`. Programmierer tun dies, um\u2026"
+title: "Die L\xE4nge einer Zeichenkette ermitteln"
 ---
 
 {{< edit_this_page >}}

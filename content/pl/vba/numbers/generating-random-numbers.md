@@ -1,14 +1,18 @@
 ---
-title:                "Generowanie liczb losowych"
 aliases:
 - /pl/vba/generating-random-numbers/
-date:                  2024-02-01T21:55:43.855562-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Generowanie liczb losowych"
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/vba/generating-random-numbers.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:55:43.855562-07:00
+description: "Generowanie losowych liczb w Visual Basic for Applications (VBA) umo\u017C\
+  liwia programom symulowanie proces\xF3w z elementami szansy lub zmienno\u015Bci,\
+  \ takimi jak\u2026"
+lastmod: 2024-02-18 23:08:49.429347
+model: gpt-4-0125-preview
+summary: "Generowanie losowych liczb w Visual Basic for Applications (VBA) umo\u017C\
+  liwia programom symulowanie proces\xF3w z elementami szansy lub zmienno\u015Bci,\
+  \ takimi jak\u2026"
+title: Generowanie liczb losowych
 ---
 
 {{< edit_this_page >}}

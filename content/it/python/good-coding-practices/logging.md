@@ -1,13 +1,14 @@
 ---
-title:                "Registrazione delle Attività (Logging)"
 aliases:
 - /it/python/logging/
-date:                  2024-01-26T01:08:22.551238-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registrazione delle Attività (Logging)"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/python/logging.md"
+date: 2024-01-26 01:08:22.551238-07:00
+description: "Il logging \xE8 il processo di registrazione degli eventi di un'applicazione\
+  \ mentre questa \xE8 in esecuzione, fornendo una traccia di briciole per analisi\u2026"
+lastmod: 2024-02-18 23:08:55.527419
+model: gpt-4-1106-preview
+summary: "Il logging \xE8 il processo di registrazione degli eventi di un'applicazione\
+  \ mentre questa \xE8 in esecuzione, fornendo una traccia di briciole per analisi\u2026"
+title: "Registrazione delle Attivit\xE0 (Logging)"
 ---
 
 {{< edit_this_page >}}

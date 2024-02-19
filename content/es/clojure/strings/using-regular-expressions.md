@@ -1,14 +1,16 @@
 ---
-title:                "Usando expresiones regulares"
 aliases:
 - /es/clojure/using-regular-expressions/
-date:                  2024-02-03T19:16:19.641755-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Usando expresiones regulares"
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/using-regular-expressions.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:16:19.641755-07:00
+description: "Las expresiones regulares, una herramienta poderosa para el emparejamiento\
+  \ de patrones y la manipulaci\xF3n de datos, son esenciales en tareas de\u2026"
+lastmod: 2024-02-18 23:09:09.592395
+model: gpt-4-0125-preview
+summary: "Las expresiones regulares, una herramienta poderosa para el emparejamiento\
+  \ de patrones y la manipulaci\xF3n de datos, son esenciales en tareas de\u2026"
+title: Usando expresiones regulares
 ---
 
 {{< edit_this_page >}}

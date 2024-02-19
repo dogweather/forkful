@@ -1,13 +1,14 @@
 ---
-title:                "Comparing two dates"
 aliases:
 - /en/arduino/comparing-two-dates/
-date:                  2024-01-20T17:32:19.187930-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Comparing two dates"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/comparing-two-dates.md"
+date: 2024-01-20 17:32:19.187930-07:00
+description: "Comparing two dates means figuring out which one is earlier, later,\
+  \ or if they're the same. Programmers do it to track time-based events, like scheduling\u2026"
+lastmod: 2024-02-18 23:09:11.327302
+model: gpt-4-1106-preview
+summary: "Comparing two dates means figuring out which one is earlier, later, or if\
+  \ they're the same. Programmers do it to track time-based events, like scheduling\u2026"
+title: Comparing two dates
 ---
 
 {{< edit_this_page >}}

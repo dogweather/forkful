@@ -1,14 +1,21 @@
 ---
-title:                "创建临时文件"
 aliases:
 - /zh/fish-shell/creating-a-temporary-file/
-date:                  2024-01-20T17:40:01.433272-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "创建临时文件"
-
-tag:                  "Files and I/O"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/creating-a-temporary-file.md"
+date: 2024-01-20 17:40:01.433272-07:00
+description: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6\u5C31\u662F\u751F\u6210\u4E00\u4E2A\
+  \u77ED\u6682\u5B58\u5728\uFF0C\u5904\u7406\u4E2D\u95F4\u6570\u636E\u7684\u6587\u4EF6\
+  \u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u907F\u514D\u5E72\u6270\
+  \u6B63\u5F0F\u8FD0\u4F5C\u4E2D\u7684\u6570\u636E\uFF0C\u6216\u8005\u6D4B\u8BD5\u4EE3\
+  \u7801\u65F6\u4E0D\u7834\u574F\u6301\u4E45\u6570\u636E\u3002"
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:59.536964
+model: gpt-4-1106-preview
+summary: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6\u5C31\u662F\u751F\u6210\u4E00\u4E2A\
+  \u77ED\u6682\u5B58\u5728\uFF0C\u5904\u7406\u4E2D\u95F4\u6570\u636E\u7684\u6587\u4EF6\
+  \u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u907F\u514D\u5E72\u6270\
+  \u6B63\u5F0F\u8FD0\u4F5C\u4E2D\u7684\u6570\u636E\uFF0C\u6216\u8005\u6D4B\u8BD5\u4EE3\
+  \u7801\u65F6\u4E0D\u7834\u574F\u6301\u4E45\u6570\u636E\u3002"
+title: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

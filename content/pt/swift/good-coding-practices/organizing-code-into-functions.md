@@ -1,13 +1,16 @@
 ---
-title:                "Organizando o código em funções"
 aliases:
 - /pt/swift/organizing-code-into-functions/
-date:                  2024-01-26T01:16:10.636724-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Organizando o código em funções"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/organizing-code-into-functions.md"
+date: 2024-01-26 01:16:10.636724-07:00
+description: "Agrupar c\xF3digo em fun\xE7\xF5es \xE9 decompor tarefas em peda\xE7\
+  os reutiliz\xE1veis. Isso torna o c\xF3digo limpo, menos propenso a erros e mais\
+  \ f\xE1cil de depurar ou\u2026"
+lastmod: 2024-02-18 23:08:58.496352
+model: gpt-4-0125-preview
+summary: "Agrupar c\xF3digo em fun\xE7\xF5es \xE9 decompor tarefas em peda\xE7os reutiliz\xE1\
+  veis. Isso torna o c\xF3digo limpo, menos propenso a erros e mais f\xE1cil de depurar\
+  \ ou\u2026"
+title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 ---
 
 {{< edit_this_page >}}

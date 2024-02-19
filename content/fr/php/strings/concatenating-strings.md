@@ -1,13 +1,16 @@
 ---
-title:                "Concaténation de chaînes de caractères"
 aliases:
 - /fr/php/concatenating-strings/
-date:                  2024-01-20T17:35:08.271994-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concaténation de chaînes de caractères"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/php/concatenating-strings.md"
+date: 2024-01-20 17:35:08.271994-07:00
+description: "Concat\xE9ner des cha\xEEnes de caract\xE8res, c'est comme assembler\
+  \ des LEGO : on les joint bout \xE0 bout pour former un tout. Les programmeurs font\
+  \ \xE7a pour cr\xE9er\u2026"
+lastmod: 2024-02-18 23:09:08.913398
+model: gpt-4-1106-preview
+summary: "Concat\xE9ner des cha\xEEnes de caract\xE8res, c'est comme assembler des\
+  \ LEGO : on les joint bout \xE0 bout pour former un tout. Les programmeurs font\
+  \ \xE7a pour cr\xE9er\u2026"
+title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 ---
 
 {{< edit_this_page >}}

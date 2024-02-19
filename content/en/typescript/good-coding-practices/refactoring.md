@@ -1,13 +1,14 @@
 ---
-title:                "Refactoring"
 aliases:
 - /en/typescript/refactoring/
-date:                  2024-01-25T02:11:42.479969-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Refactoring"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/refactoring.md"
+date: 2024-01-25 02:11:42.479969-07:00
+description: "Refactoring is the process of restructuring existing computer code without\
+  \ changing its external behavior. Programmers do it to make code cleaner, more\u2026"
+lastmod: 2024-02-18 23:09:10.815671
+model: gpt-4-1106-preview
+summary: "Refactoring is the process of restructuring existing computer code without\
+  \ changing its external behavior. Programmers do it to make code cleaner, more\u2026"
+title: Refactoring
 ---
 
 {{< edit_this_page >}}

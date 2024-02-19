@@ -1,14 +1,17 @@
 ---
-title:                "Een datum omzetten naar een string"
 aliases:
 - /nl/google-apps-script/converting-a-date-into-a-string/
-date:                  2024-02-01T21:51:33.980320-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Een datum omzetten naar een string"
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/google-apps-script/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-02-01, gpt-4-0125-preview, translated from English
+- 2024-02-01, gpt-4-0125-preview, translated from English
+date: 2024-02-01 21:51:33.980320-07:00
+description: "Het converteren van data naar tekstreeksen is een fundamentele taak\
+  \ die programmeurs in staat stelt om datumgegevens te manipuleren en weer te geven\
+  \ in\u2026"
+lastmod: 2024-02-18 23:09:01.398674
+model: gpt-4-0125-preview
+summary: "Het converteren van data naar tekstreeksen is een fundamentele taak die\
+  \ programmeurs in staat stelt om datumgegevens te manipuleren en weer te geven in\u2026"
+title: Een datum omzetten naar een string
 ---
 
 {{< edit_this_page >}}

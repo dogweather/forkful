@@ -1,13 +1,14 @@
 ---
-title:                "Lesen von Kommandozeilenargumenten"
 aliases:
 - /de/bash/reading-command-line-arguments/
-date:                  2024-01-20T17:55:17.336418-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lesen von Kommandozeilenargumenten"
-
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/reading-command-line-arguments.md"
+date: 2024-01-20 17:55:17.336418-07:00
+description: "Kommandozeilenargumente sind Parameter, die einem Bash-Skript \xFCbergeben\
+  \ werden, um sein Verhalten dynamisch anzupassen. Programmierer nutzen dies, um\u2026"
+lastmod: 2024-02-18 23:09:05.070755
+model: gpt-4-1106-preview
+summary: "Kommandozeilenargumente sind Parameter, die einem Bash-Skript \xFCbergeben\
+  \ werden, um sein Verhalten dynamisch anzupassen. Programmierer nutzen dies, um\u2026"
+title: Lesen von Kommandozeilenargumenten
 ---
 
 {{< edit_this_page >}}

@@ -1,16 +1,17 @@
 ---
-title:                "Analizando una fecha a partir de una cadena de texto"
 aliases:
 - /es/elixir/parsing-a-date-from-a-string/
-date:                  2024-01-28T02:05:05.416869-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Analizando una fecha a partir de una cadena de texto"
-
-tag:                  "Dates and Times"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-01-28, dogweather, reviewed
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+- 2024-01-28, dogweather, reviewed
+- 2024-01-28, gpt-4-0125-preview, translated from English
+date: 2024-01-28 02:05:05.416869-07:00
+description: "Convertir una fecha de un string se trata de tomar texto, como \"2023-04-05\"\
+  , y convertirlo a un formato de fecha que tu programa pueda entender y usar.\u2026"
+lastmod: 2024-02-18 23:09:09.658318
+model: gpt-4-0125-preview
+summary: "Convertir una fecha de un string se trata de tomar texto, como \"2023-04-05\"\
+  , y convertirlo a un formato de fecha que tu programa pueda entender y usar.\u2026"
+title: Analizando una fecha a partir de una cadena de texto
 ---
 
 {{< edit_this_page >}}

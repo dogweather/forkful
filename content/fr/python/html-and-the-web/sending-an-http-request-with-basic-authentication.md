@@ -1,13 +1,16 @@
 ---
-title:                "Envoi d'une requête HTTP avec authentification de base"
 aliases:
 - /fr/python/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:02:27.847200-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Envoi d'une requête HTTP avec authentification de base"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:02:27.847200-07:00
+description: "Envoyer une requ\xEAte HTTP avec authentification de base, c'est transmettre\
+  \ un nom d'utilisateur et un mot de passe pour acc\xE9der \xE0 des ressources prot\xE9\
+  g\xE9es\u2026"
+lastmod: 2024-02-18 23:09:08.339777
+model: gpt-4-1106-preview
+summary: "Envoyer une requ\xEAte HTTP avec authentification de base, c'est transmettre\
+  \ un nom d'utilisateur et un mot de passe pour acc\xE9der \xE0 des ressources prot\xE9\
+  g\xE9es\u2026"
+title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 ---
 
 {{< edit_this_page >}}

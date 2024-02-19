@@ -1,12 +1,14 @@
 ---
-title:                "Writing to standard error"
 aliases:
 - /en/clojure/writing-to-standard-error/
-date:                  2024-02-03T19:03:54.587811-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Writing to standard error"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/writing-to-standard-error.md"
+date: 2024-02-03 19:03:54.587811-07:00
+description: "Writing to standard error (stderr) is about directing error messages\
+  \ and diagnostics to the stderr stream, separate from standard output (stdout).\u2026"
+lastmod: 2024-02-18 23:09:10.740092
+model: gpt-4-0125-preview
+summary: "Writing to standard error (stderr) is about directing error messages and\
+  \ diagnostics to the stderr stream, separate from standard output (stdout).\u2026"
+title: Writing to standard error
 ---
 
 {{< edit_this_page >}}

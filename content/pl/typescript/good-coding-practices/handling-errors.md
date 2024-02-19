@@ -1,13 +1,16 @@
 ---
-title:                "Obsługa błędów"
 aliases:
 - /pl/typescript/handling-errors/
-date:                  2024-01-26T00:58:56.810940-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Obsługa błędów"
-
-tag:                  "Good Coding Practices"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/handling-errors.md"
+date: 2024-01-26 00:58:56.810940-07:00
+description: "Obs\u0142uga b\u0142\u0119d\xF3w polega na oczekiwaniu na nieoczekiwane;\
+  \ to, jak zarz\u0105dzamy sytuacjami, gdy co\u015B idzie nie tak w naszym kodzie.\
+  \ Robimy to, aby unikn\u0105\u0107 awarii\u2026"
+lastmod: 2024-02-18 23:08:49.355238
+model: gpt-4-1106-preview
+summary: "Obs\u0142uga b\u0142\u0119d\xF3w polega na oczekiwaniu na nieoczekiwane;\
+  \ to, jak zarz\u0105dzamy sytuacjami, gdy co\u015B idzie nie tak w naszym kodzie.\
+  \ Robimy to, aby unikn\u0105\u0107 awarii\u2026"
+title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 ---
 
 {{< edit_this_page >}}

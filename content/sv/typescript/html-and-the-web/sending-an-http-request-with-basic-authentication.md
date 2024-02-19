@@ -1,13 +1,16 @@
 ---
-title:                "Skicka en HTTP-förfrågan med Basic-autentisering"
 aliases:
 - /sv/typescript/sending-an-http-request-with-basic-authentication/
-date:                  2024-01-20T18:03:00.738582-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skicka en HTTP-förfrågan med Basic-autentisering"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/sending-an-http-request-with-basic-authentication.md"
+date: 2024-01-20 18:03:00.738582-07:00
+description: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering\
+  \ inneb\xE4r att en klient skickar anv\xE4ndarnamn och l\xF6senord kodat i bas64-format\
+  \ i en HTTP-header\u2026"
+lastmod: 2024-02-18 23:08:51.543180
+model: gpt-4-1106-preview
+summary: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering inneb\xE4\
+  r att en klient skickar anv\xE4ndarnamn och l\xF6senord kodat i bas64-format i en\
+  \ HTTP-header\u2026"
+title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 ---
 
 {{< edit_this_page >}}

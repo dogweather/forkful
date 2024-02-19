@@ -1,14 +1,13 @@
 ---
-title:                "文字列の長さを求める"
 aliases:
 - /ja/c-sharp/finding-the-length-of-a-string/
-date:                  2024-01-20T17:47:01.839401-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "文字列の長さを求める"
-
-tag:                  "Strings"
-isCJKLanguage:        true
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/finding-the-length-of-a-string.md"
+date: 2024-01-20 17:47:01.839401-07:00
+description: ''
+isCJKLanguage: true
+lastmod: 2024-02-18 23:08:54.909464
+model: gpt-4-1106-preview
+summary: ''
+title: "\u6587\u5B57\u5217\u306E\u9577\u3055\u3092\u6C42\u3081\u308B"
 ---
 
 {{< edit_this_page >}}

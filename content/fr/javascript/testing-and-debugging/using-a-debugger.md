@@ -1,13 +1,16 @@
 ---
-title:                "Utilisation d'un débogueur"
 aliases:
 - /fr/javascript/using-a-debugger/
-date:                  2024-01-26T03:49:46.740623-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Utilisation d'un débogueur"
-
-tag:                  "Testing and Debugging"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/using-a-debugger.md"
+date: 2024-01-26 03:49:46.740623-07:00
+description: "Utiliser un d\xE9bogueur signifie recourir \xE0 des outils sp\xE9cialis\xE9\
+  s qui vous permettent de jeter un coup d'\u0153il sous le capot de votre code, en\
+  \ le regardant\u2026"
+lastmod: 2024-02-18 23:09:09.261071
+model: gpt-4-0125-preview
+summary: "Utiliser un d\xE9bogueur signifie recourir \xE0 des outils sp\xE9cialis\xE9\
+  s qui vous permettent de jeter un coup d'\u0153il sous le capot de votre code, en\
+  \ le regardant\u2026"
+title: "Utilisation d'un d\xE9bogueur"
 ---
 
 {{< edit_this_page >}}

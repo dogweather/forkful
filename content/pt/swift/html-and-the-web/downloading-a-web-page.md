@@ -1,13 +1,16 @@
 ---
-title:                "Baixando uma página da web"
 aliases:
 - /pt/swift/downloading-a-web-page/
-date:                  2024-01-20T17:45:05.028676-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Baixando uma página da web"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/downloading-a-web-page.md"
+date: 2024-01-20 17:45:05.028676-07:00
+description: "Baixar uma p\xE1gina da web \xE9 basicamente pegar dados de um site\
+  \ para us\xE1-los no seu app. Programadores fazem isso para obter conte\xFAdo atualizado,\
+  \ interagir\u2026"
+lastmod: 2024-02-18 23:08:58.489816
+model: gpt-4-1106-preview
+summary: "Baixar uma p\xE1gina da web \xE9 basicamente pegar dados de um site para\
+  \ us\xE1-los no seu app. Programadores fazem isso para obter conte\xFAdo atualizado,\
+  \ interagir\u2026"
+title: "Baixando uma p\xE1gina da web"
 ---
 
 {{< edit_this_page >}}

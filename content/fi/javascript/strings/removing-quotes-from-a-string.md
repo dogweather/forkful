@@ -1,13 +1,16 @@
 ---
-title:                "Merkkijonosta lainausmerkkien poistaminen"
 aliases:
 - /fi/javascript/removing-quotes-from-a-string/
-date:                  2024-01-26T03:40:59.053178-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonosta lainausmerkkien poistaminen"
-
-tag:                  "Strings"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/removing-quotes-from-a-string.md"
+date: 2024-01-26 03:40:59.053178-07:00
+description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa n\xE4iden kiusallisten\
+  \ lainausmerkkien h\xE4vitt\xE4mist\xE4, jotka voivat sotkea koodiasi, erityisesti\
+  \ kun olet\u2026"
+lastmod: 2024-02-18 23:09:08.022907
+model: gpt-4-0125-preview
+summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa n\xE4iden kiusallisten\
+  \ lainausmerkkien h\xE4vitt\xE4mist\xE4, jotka voivat sotkea koodiasi, erityisesti\
+  \ kun olet\u2026"
+title: Merkkijonosta lainausmerkkien poistaminen
 ---
 
 {{< edit_this_page >}}

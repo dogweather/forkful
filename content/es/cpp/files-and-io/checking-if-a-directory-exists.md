@@ -1,14 +1,17 @@
 ---
-title:                "Comprobando si un directorio existe"
 aliases:
 - /es/cpp/checking-if-a-directory-exists/
-date:                  2024-02-03T19:06:44.774452-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Comprobando si un directorio existe"
-tag:                  "Files and I/O"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/checking-if-a-directory-exists.md"
 changelog:
-  - 2024-02-03, gpt-4-0125-preview, translated from English
+- 2024-02-03, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:06:44.774452-07:00
+description: "Comprobar si un directorio existe trata de determinar la presencia de\
+  \ un directorio en una ruta especificada antes de realizar operaciones como leer\
+  \ o\u2026"
+lastmod: 2024-02-18 23:09:10.327347
+model: gpt-4-0125-preview
+summary: "Comprobar si un directorio existe trata de determinar la presencia de un\
+  \ directorio en una ruta especificada antes de realizar operaciones como leer o\u2026"
+title: Comprobando si un directorio existe
 ---
 
 {{< edit_this_page >}}

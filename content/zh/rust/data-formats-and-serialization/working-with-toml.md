@@ -1,13 +1,20 @@
 ---
-title:                "使用TOML"
 aliases:
 - /zh/rust/working-with-toml/
-date:                  2024-01-26T04:26:18.940320-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用TOML"
-
-tag:                  "Data Formats and Serialization"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/working-with-toml.md"
+date: 2024-01-26 04:26:18.940320-07:00
+description: "TOML \u662F\u4E00\u79CD\u4EBA\u7C7B\u53EF\u8BFB\u7684\u6570\u636E\u5E8F\
+  \u5217\u5316\u8BED\u8A00\uFF0C\u7ECF\u5E38\u7528\u4E8E\u914D\u7F6E\u6587\u4EF6\u3002\
+  \u7A0B\u5E8F\u5458\u4E4B\u6240\u4EE5\u4F7F\u7528 TOML\uFF0C\u662F\u56E0\u4E3A\u5B83\
+  \u7684\u7B80\u5355\u548C\u6E05\u6670\uFF0C\u80FD\u591F\u8F7B\u677E\u8F6C\u6362\u6210\
+  \ Rust \u4E2D\u7684\u54C8\u5E0C\u6620\u5C04\u3002"
+lastmod: 2024-02-18 23:08:58.962184
+model: gpt-4-0125-preview
+summary: "TOML \u662F\u4E00\u79CD\u4EBA\u7C7B\u53EF\u8BFB\u7684\u6570\u636E\u5E8F\u5217\
+  \u5316\u8BED\u8A00\uFF0C\u7ECF\u5E38\u7528\u4E8E\u914D\u7F6E\u6587\u4EF6\u3002\u7A0B\
+  \u5E8F\u5458\u4E4B\u6240\u4EE5\u4F7F\u7528 TOML\uFF0C\u662F\u56E0\u4E3A\u5B83\u7684\
+  \u7B80\u5355\u548C\u6E05\u6670\uFF0C\u80FD\u591F\u8F7B\u677E\u8F6C\u6362\u6210 Rust\
+  \ \u4E2D\u7684\u54C8\u5E0C\u6620\u5C04\u3002"
+title: "\u4F7F\u7528TOML"
 ---
 
 {{< edit_this_page >}}

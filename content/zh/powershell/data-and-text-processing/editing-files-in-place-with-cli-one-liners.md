@@ -1,13 +1,24 @@
 ---
-title:                "使用命令行一行命令就地编辑文件"
 aliases:
 - /zh/powershell/editing-files-in-place-with-cli-one-liners/
-date:                  2024-01-27T16:20:39.385824-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "使用命令行一行命令就地编辑文件"
-
-tag:                  "Data and Text Processing"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/editing-files-in-place-with-cli-one-liners.md"
+date: 2024-01-27 16:20:39.385824-07:00
+description: "\u5728 PowerShell \u4E2D\u4F7F\u7528 CLI \u5355\u884C\u547D\u4EE4\u5C31\
+  \u5730\u7F16\u8F91\u6587\u4EF6\uFF0C\u662F\u6307\u76F4\u63A5\u4ECE\u547D\u4EE4\u884C\
+  \u5BF9\u6587\u4EF6\u8FDB\u884C\u4FEE\u6539\uFF0C\u65E0\u9700\u5728\u7F16\u8F91\u5668\
+  \u4E2D\u6253\u5F00\u5B83\u4EEC\u3002\u8FD9\u79CD\u65B9\u6CD5\u8282\u7701\u65F6\u95F4\
+  \uFF0C\u5E76\u4E14\u5BF9\u4E8E\u6279\u5904\u7406\u6216\u81EA\u52A8\u5316\u591A\u4E2A\
+  \u6587\u4EF6\u4E2D\u7684\u91CD\u590D\u7F16\u8F91\u4EFB\u52A1\u7279\u522B\u6709\u7528\
+  \u3002"
+lastmod: 2024-02-18 23:08:59.328164
+model: gpt-4-0125-preview
+summary: "\u5728 PowerShell \u4E2D\u4F7F\u7528 CLI \u5355\u884C\u547D\u4EE4\u5C31\u5730\
+  \u7F16\u8F91\u6587\u4EF6\uFF0C\u662F\u6307\u76F4\u63A5\u4ECE\u547D\u4EE4\u884C\u5BF9\
+  \u6587\u4EF6\u8FDB\u884C\u4FEE\u6539\uFF0C\u65E0\u9700\u5728\u7F16\u8F91\u5668\u4E2D\
+  \u6253\u5F00\u5B83\u4EEC\u3002\u8FD9\u79CD\u65B9\u6CD5\u8282\u7701\u65F6\u95F4\uFF0C\
+  \u5E76\u4E14\u5BF9\u4E8E\u6279\u5904\u7406\u6216\u81EA\u52A8\u5316\u591A\u4E2A\u6587\
+  \u4EF6\u4E2D\u7684\u91CD\u590D\u7F16\u8F91\u4EFB\u52A1\u7279\u522B\u6709\u7528\u3002"
+title: "\u4F7F\u7528\u547D\u4EE4\u884C\u4E00\u884C\u547D\u4EE4\u5C31\u5730\u7F16\u8F91\
+  \u6587\u4EF6"
 ---
 
 {{< edit_this_page >}}

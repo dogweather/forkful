@@ -1,13 +1,16 @@
 ---
-title:                "Å sende en HTTP-forespørsel"
 aliases:
 - /no/clojure/sending-an-http-request/
-date:                  2024-01-20T17:59:42.427244-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Å sende en HTTP-forespørsel"
-
-tag:                  "HTML and the Web"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/sending-an-http-request.md"
+date: 2024-01-20 17:59:42.427244-07:00
+description: "\xC5 sende en HTTP-foresp\xF8rsel inneb\xE6rer \xE5 kommunisere med\
+  \ en webserver for \xE5 hente eller sende data. Programmerere gj\xF8r dette for\
+  \ \xE5 integrere tjenester,\u2026"
+lastmod: 2024-02-18 23:08:53.561463
+model: gpt-4-1106-preview
+summary: "\xC5 sende en HTTP-foresp\xF8rsel inneb\xE6rer \xE5 kommunisere med en webserver\
+  \ for \xE5 hente eller sende data. Programmerere gj\xF8r dette for \xE5 integrere\
+  \ tjenester,\u2026"
+title: "\xC5 sende en HTTP-foresp\xF8rsel"
 ---
 
 {{< edit_this_page >}}

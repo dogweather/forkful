@@ -1,13 +1,15 @@
 ---
-title:                "Lavorare con i numeri complessi"
 aliases:
 - /it/elm/working-with-complex-numbers/
-date:                  2024-01-26T04:39:24.822224-07:00
-model:                 gpt-4-0125-preview
-simple_title:         "Lavorare con i numeri complessi"
-
-tag:                  "Numbers"
-editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/working-with-complex-numbers.md"
+date: 2024-01-26 04:39:24.822224-07:00
+description: "I numeri complessi sono una combinazione di numeri reali e immaginari,\
+  \ come `a + bi` dove `i` \xE8 la radice quadrata di -1. Sono fondamentali in campi\
+  \ come\u2026"
+lastmod: 2024-02-18 23:08:55.800323
+model: gpt-4-0125-preview
+summary: "I numeri complessi sono una combinazione di numeri reali e immaginari, come\
+  \ `a + bi` dove `i` \xE8 la radice quadrata di -1. Sono fondamentali in campi come\u2026"
+title: Lavorare con i numeri complessi
 ---
 
 {{< edit_this_page >}}
